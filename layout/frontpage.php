@@ -45,11 +45,6 @@ $showfooterleft = ($hasfooterleft && !$PAGE->blocks->region_completely_docked('f
 $showfootermiddle = ($hasfootermiddle && !$PAGE->blocks->region_completely_docked('footer-middle', $OUTPUT));
 $showfooterright = ($hasfooterright && !$PAGE->blocks->region_completely_docked('footer-right', $OUTPUT));
 
-$hasfacebook = (!empty($PAGE->theme->settings->facebook));
-$hastwitter = (!empty($PAGE->theme->settings->twitter));
-$hasgoogleplus = (!empty($PAGE->theme->settings->googleplus));
-$haslinkedin = (!empty($PAGE->theme->settings->linkedin));
-
 $hasslide1 = (!empty($PAGE->theme->settings->slide1));
 $hasslide1image = (!empty($PAGE->theme->settings->slide1image));
 $hasslide1caption = (!empty($PAGE->theme->settings->slide1caption));
@@ -83,6 +78,7 @@ $haslogo = (!empty($PAGE->theme->settings->logo));
 
 /* Social settings */
 
+/*
 if ($hasfacebook) {
 	$facebook = $PAGE->theme->settings->facebook;
 }
@@ -98,7 +94,7 @@ if ($haslinkedin) {
 if ($hasgoogleplus) {
 	$googleplus = $PAGE->theme->settings->googleplus;
 }
-
+*/
 
 /* Slide1 settings */
 if ($hasslide1) {
