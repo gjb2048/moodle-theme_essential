@@ -58,7 +58,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_essential/slide1image';
     $title = get_string('slide1image','theme_essential');
     $description = get_string('slide1imagedesc', 'theme_essential');
-	$setting = new admin_setting_configtext($name, $title, $description, '');
+	$setting = new admin_setting_configstoredfile($name, $title, $description, 'slide1image');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
@@ -92,7 +92,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_essential/slide2image';
     $title = get_string('slide2image','theme_essential');
     $description = get_string('slide2imagedesc', 'theme_essential');
-	$setting = new admin_setting_configtext($name, $title, $description, '');
+	$setting = new admin_setting_configstoredfile($name, $title, $description, 'slide2image');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
@@ -126,7 +126,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_essential/slide3image';
     $title = get_string('slide3image','theme_essential');
     $description = get_string('slide3imagedesc', 'theme_essential');
-	$setting = new admin_setting_configtext($name, $title, $description, '');
+	$setting = new admin_setting_configstoredfile($name, $title, $description, 'slide3image');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
@@ -160,7 +160,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_essential/slide4image';
     $title = get_string('slide4image','theme_essential');
     $description = get_string('slide4imagedesc', 'theme_essential');
-	$setting = new admin_setting_configtext($name, $title, $description, '');
+	$setting = new admin_setting_configstoredfile($name, $title, $description, 'slide4image');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
