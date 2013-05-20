@@ -78,5 +78,5 @@ if (strpos($useragent, 'MSIE 8') || strpos($useragent, 'MSIE 7')) {
 }
 
 $THEME->javascripts_footer = array(
-    'jquery','modernizr','jquery.cslider',
+    'modernizr','jquery.cslider',
 );

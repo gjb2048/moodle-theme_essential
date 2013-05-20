@@ -158,3 +158,7 @@ function essential_set_slide4image($css, $slide4image) {
 
     return $css;
 }
+
+function theme_essential_page_init(moodle_page $page) {
+    $page->requires->jquery();
+}
