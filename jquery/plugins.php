@@ -38,5 +38,5 @@
 
 $plugins = array(
     'modernizr'   => array('files' => array('modernizr.js')), // Do not forget to bump up version after modification!
-    'cslider'     => array('files' => array('jquery.cslider.js'))
+    'cslider'     => array('files' => array('jquery.cslider.js')),
 );
