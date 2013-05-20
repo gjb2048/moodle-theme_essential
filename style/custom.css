@@ -215,8 +215,17 @@ a#button-purple:visited {
 background:#cc33cc;
 }
 
-a:#button-purplehover {
+a#button-purple:hover {
 background:#993399;
+}
+
+a#button-orange, 
+a#button-orange:visited {
+background:#ff9900;
+}
+
+a#button-orange:hover {
+background:#eb6909;
 }
 
 a#button, 
