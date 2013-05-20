@@ -1,4 +1,4 @@
-moodle-theme_essential
+The "Essential" Moodle Theme
 ======================
 
 With 2.5 now release I thought it time to take the opportunity to build a new theme that would push the new theme engine to it's limits a bit. With that in mind I am happy to introduce the new "Essential" theme.
