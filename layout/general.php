@@ -43,11 +43,6 @@ $showfooterleft = ($hasfooterleft && !$PAGE->blocks->region_completely_docked('f
 $showfootermiddle = ($hasfootermiddle && !$PAGE->blocks->region_completely_docked('footer-middle', $OUTPUT));
 $showfooterright = ($hasfooterright && !$PAGE->blocks->region_completely_docked('footer-right', $OUTPUT));
 
-$hasfacebook = (!empty($PAGE->theme->settings->facebook));
-$hastwitter = (!empty($PAGE->theme->settings->twitter));
-$hasgoogleplus = (!empty($PAGE->theme->settings->googleplus));
-$haslinkedin = (!empty($PAGE->theme->settings->linkedin));
-
 // If there can be a sidepost region on this page and we are editing, always
 // show it so blocks can be dragged into it.
 if ($PAGE->user_is_editing()) {
