@@ -166,11 +166,16 @@ a#button-orange {
 margin:10px 0px;
 }
 
-a#button, a:visited#button,
-a#button-green, a:visited#button,
-a#button-red, a:visited#button,
-a#button-orange, a:visited#button,
-a#button-purple, a:visited#button {
+a#button, 
+a#button:visited,
+a#button-green,
+a#button-green:visited,
+a#button-red,
+a#button-red:visited,
+a#button-orange,
+a#button-orange:visited,
+a#button-purple,
+a#button-purple:visited {
 color:#fff;
 width:100px;
 padding:6px 15px;
@@ -178,48 +183,48 @@ font-size:14px;
 border-radius:5px;
 }
 
-a:hover#button,
-a:hover#button-red,
-a:hover#button-green,
-a:hover#button-purple,
-a:hover#button-orange{
+a#button:hover,
+a#button-red:hover,
+a#button-green:hover,
+a#button-purple:hover,
+a#button-orange:hover{
 color:#fff;
 text-decoration:none;
 }
 
 a#button-red, 
-a:visited#button-red {
+a#button-red:visited {
 background:#ff3300;
 }
 
-a:hover#button-red {
+a#button-red:hover {
 background:#cc3300;
 }
 
 a#button-green, 
-a:visited#button-green {
+a#button-green:visited {
 background:#33cc00;
 }
 
-a:hover#button-green {
+a#button-green:hover {
 background:#009933;
 }
 
 a#button-purple, 
-a:visited#button-purple {
+a#button-purple:visited {
 background:#cc33cc;
 }
 
-a:hover#button-purple {
+a:#button-purplehover {
 background:#993399;
 }
 
 a#button, 
-a:visited#button {
+a#button:visited {
 background:[[setting:themecolor]];
 }
 
-a:hover#button {
+a#button:hover {
 background:[[setting:themehovercolor]];
 }
 
@@ -407,11 +412,16 @@ background: url([[pix:theme|dot]]) left center repeat-x;
 background-size: 4px 20px;
 }
 
-
 h2.pagetitle span {
 background: white url([[pix:theme|body-back]]) repeat;
 padding-right: 8px;
 }
+
+.firstword {
+	color: [[setting:themecolor]] !important;
+	margin-right: -5px;
+}
+
 
 .container-fluid {
 	max-width: 1200px;
@@ -789,6 +799,11 @@ text-align: left;
 .block_course_badges .header .title h2:before {
 	content:"\f091";
 }
+
+.block_twitter_search .header .title h2:before {
+	content:"\f099";
+}
+
 
 
 /* @end */

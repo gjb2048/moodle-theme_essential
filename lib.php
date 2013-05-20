@@ -29,6 +29,9 @@ function essential_process_css($css, $theme) {
 
 	// Set the theme color    if (!empty($theme->settings->themecolor)) {        $themecolor = $theme->settings->themecolor;    } else {        $themecolor = null;    }    $css = essential_set_themecolor($css, $themecolor);
     
+    // Set the theme hover color
+    if (!empty($theme->settings->themehovercolor)) {        $themehovercolor = $theme->settings->themehovercolor;    } else {        $themehovercolor = null;    }    $css = essential_set_themehovercolor($css, $themehovercolor);
+    
     
     // Set the background image for the logo.
     $logo = $theme->setting_file_url('logo', 'logo');
@@ -110,6 +113,8 @@ function essential_set_customcss($css, $customcss) {
 }
 
 function essential_set_themecolor($css, $themecolor) {    $tag = '[[setting:themecolor]]';    $replacement = $themecolor;    if (is_null($replacement)) {        $replacement = '#30add1';    }    $css = str_replace($tag, $replacement, $css);    return $css;}
+
+function essential_set_themehovercolor($css, $themehovercolor) {    $tag = '[[setting:themehovercolor]]';    $replacement = $themehovercolor;    if (is_null($replacement)) {        $replacement = '#29a1c4';    }    $css = str_replace($tag, $replacement, $css);    return $css;}
 
 function essential_set_slide1image($css, $slide1image) {
     $tag = '[[setting:slide1image]]';
