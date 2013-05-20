@@ -176,7 +176,8 @@ echo $OUTPUT->doctype() ?>
         	<nav class="breadcrumb-button"><?php echo $PAGE->button; ?></nav>
         	<?php echo $OUTPUT->navbar(); ?>
     		<?php } ?>
-    		<?php echo $coursecontentheader; ?>   
+    		<?php echo $coursecontentheader; ?>
+    		<h2 class="pagetitle"><span><?php echo $PAGE->title ?></span></h2>  
     		<?php echo $OUTPUT->main_content() ?>
     		<?php echo $coursecontentfooter; ?>
 		</section>
