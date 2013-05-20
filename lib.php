@@ -48,6 +48,7 @@ function essential_process_css($css, $theme) {
     // Set Slide Images.
     $imageno = '1';
     $setting = 'slide'.$imageno.'image';
+	// Creates the url for image file which is then served up by 'theme_essential_pluginfile' below.
 	$slideimage = $theme->setting_file_url($setting, $setting);
 	$css = essential_set_slideimage($css, $slideimage, $setting);
 	
@@ -85,12 +86,24 @@ function essential_set_logo($css, $logo) {
 }
 
 function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
-    if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'logo') {
-        $theme = theme_config::load('essential');
-        return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
-    } else {
-        send_file_not_found();
-    }    
+	if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'logo') {
+		$theme = theme_config::load('essential');
+		return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
+	} else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'slide1image') {
+		$theme = theme_config::load('essential');
+		return $theme->setting_file_serve('slide1image', $args, $forcedownload, $options);
+	} else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'slide2image') {
+		$theme = theme_config::load('essential');
+		return $theme->setting_file_serve('slide2image', $args, $forcedownload, $options);
+	} else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'slide3image') {
+		$theme = theme_config::load('essential');
+		return $theme->setting_file_serve('slide3image', $args, $forcedownload, $options);
+	} else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'slide4image') {
+		$theme = theme_config::load('essential');
+		return $theme->setting_file_serve('slide4image', $args, $forcedownload, $options);
+	} else {
+		send_file_not_found();
+	}   
 }
 
 function essential_set_customcss($css, $customcss) {
@@ -114,6 +127,7 @@ function essential_set_slideimage($css, $slideimage, $setting) {
 	$tag = '[[setting:'.$setting.']]';
 	$replacement = $slideimage;
 	if (is_null($replacement)) {
+		// Get default image from themes 'images' folder of the name in $setting.
 		$replacement = $OUTPUT->pix_url('images/'.$setting, 'theme');
 	}
 	$css = str_replace($tag, $replacement, $css);

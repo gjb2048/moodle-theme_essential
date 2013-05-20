@@ -101,52 +101,68 @@ if ($hasslide1) {
 	$slide1 = $PAGE->theme->settings->slide1;
 }
 if ($hasslide1image) {
-	$slide1image = $PAGE->theme->settings->slide1image;
+	$slide1image = $PAGE->theme->setting_file_url('slide1image', 'slide1image');
+	if (is_null($slide1image)) {
+	// Get default image 'slide1image' from themes 'images' folder.
+		$slide1image = $OUTPUT->pix_url('images/slide1image', 'theme');
+	}
 }
 if ($hasslide1caption){
-	$slide1caption = $PAGE->theme->settings->slide1caption;
+    $slide1caption = $PAGE->theme->settings->slide1caption;
 } 
 if ($hasslide1url){
-	$slide1url = $PAGE->theme->settings->slide1url;
+    $slide1url = $PAGE->theme->settings->slide1url;
 }
 /* slide2 settings */
 if ($hasslide2){
-	$slide2 = $PAGE->theme->settings->slide2;
+    $slide2 = $PAGE->theme->settings->slide2;
 }
 if ($hasslide2image) {
-	$slide2image = $PAGE->theme->settings->slide2image;
+    $slide2image = $PAGE->theme->setting_file_url('slide2image', 'slide2image');
+    if (is_null($slide2image)) {
+        // Get default image 'slide2image' from themes 'images' folder.
+        $slide3image = $OUTPUT->pix_url('images/slide2image', 'theme');
+    }
 }
 if ($hasslide2caption){
-	$slide2caption = $PAGE->theme->settings->slide2caption;
+    $slide2caption = $PAGE->theme->settings->slide2caption;
 } 
 if ($hasslide2url){
-	$slide2url = $PAGE->theme->settings->slide2url;
+    $slide2url = $PAGE->theme->settings->slide2url;
 }
 /* slide3 settings */
 if ($hasslide3){
-	$slide3 = $PAGE->theme->settings->slide3;
+    $slide3 = $PAGE->theme->settings->slide3;
 }
 if ($hasslide3image) {
-	$slide3image = $PAGE->theme->settings->slide3image;
+    $slide3image = $PAGE->theme->setting_file_url('slide3image', 'slide3image');
+    if (is_null($slide3image)) {
+        // Get default image 'slide3image' from themes 'images' folder.
+        $slide3image = $OUTPUT->pix_url('images/slide3image', 'theme');
+    }
 }
 if ($hasslide3caption){
-	$slide3caption = $PAGE->theme->settings->slide3caption;
+    $slide3caption = $PAGE->theme->settings->slide3caption;
 } 
 if ($hasslide3url){
-	$slide3url = $PAGE->theme->settings->slide3url;
+    $slide3url = $PAGE->theme->settings->slide3url;
 }
 /* slide4 settings */
 if ($hasslide4){
-	$slide4 = $PAGE->theme->settings->slide4;
+    $slide4 = $PAGE->theme->settings->slide4;
 }
 if ($hasslide4image) {
-	$slide4image = $PAGE->theme->settings->slide4image;
+    $slide4image = $PAGE->theme->setting_file_url('slide4image', 'slide4image');
+    if (is_null($slide4image)) {
+        // Get default image 'slide4image' from themes 'images' folder.
+        $slide4image = $OUTPUT->pix_url('images/slide4image', 'theme');
+    }
 }
 if ($hasslide4caption){
-	$slide4caption = $PAGE->theme->settings->slide4caption;
+    $slide4caption = $PAGE->theme->settings->slide4caption;
 } 
 if ($hasslide4url){
-	$slide4url = $PAGE->theme->settings->slide4url;
+    $slide4url = $PAGE->theme->settings->slide4url;
 }
 
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
