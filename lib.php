@@ -46,24 +46,20 @@ function essential_process_css($css, $theme) {
     $css = essential_set_customcss($css, $customcss);
     
     // Set Slide Images.
-    $imageno = '1';
-    $setting = 'slide'.$imageno.'image';
+    $setting = 'slide1image';
 	// Creates the url for image file which is then served up by 'theme_essential_pluginfile' below.
 	$slideimage = $theme->setting_file_url($setting, $setting);
 	$css = essential_set_slideimage($css, $slideimage, $setting);
 	
-	$imageno = '2';
-    $setting = 'slide'.$imageno.'image';
+	$setting = 'slide2image';
 	$slideimage = $theme->setting_file_url($setting, $setting);
 	$css = essential_set_slideimage($css, $slideimage, $setting);
 	
-	$imageno = '3';
-    $setting = 'slide'.$imageno.'image';
+	$setting = 'slide3image';
 	$slideimage = $theme->setting_file_url($setting, $setting);
 	$css = essential_set_slideimage($css, $slideimage, $setting);
 	
-	$imageno = '4';
-    $setting = 'slide'.$imageno.'image';
+	$setting = 'slide4image';
 	$slideimage = $theme->setting_file_url($setting, $setting);
 	$css = essential_set_slideimage($css, $slideimage, $setting);
 
