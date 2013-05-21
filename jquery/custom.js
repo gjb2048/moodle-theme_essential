@@ -4,6 +4,9 @@ $(function() {
 			return '<span class="firstword">' + match + '</span>';
 		});
 	});
-})
-( jQuery );
 	
+	$('#da-slider').cslider({
+		autoplay	: true,
+		interval : 6000
+	});
+});
