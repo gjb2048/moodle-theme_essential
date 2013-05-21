@@ -158,5 +158,5 @@ function theme_essential_page_init(moodle_page $page) {
     $page->requires->jquery();
     $page->requires->jquery_plugin('modernizr', 'theme_essential');
     $page->requires->jquery_plugin('cslider', 'theme_essential');
-    $page->requires->jquery_plugin('custom', 'theme_essential');
+    $page->requires->jquery_plugin('custom', 'theme_essential');   
 }
