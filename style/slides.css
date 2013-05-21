@@ -131,8 +131,8 @@
 	background: #ddd;
 	margin: 3px;
 	cursor: pointer;
-	box-shadow: 
-		1px 1px 1px rgba(0,0,0,0.1) inset, 
+	box-shadow:
+		1px 1px 1px rgba(0,0,0,0.1) inset,
 		1px 1px 1px rgba(255,255,255,0.1);
 }
 .da-dots span.da-dots-current:after{
@@ -166,8 +166,8 @@
 	cursor: pointer;
 	z-index: 2000;
 	opacity: 0;
-	box-shadow: 
-		1px 1px 1px rgba(0,0,0,0.1) inset, 
+	box-shadow:
+		1px 1px 1px rgba(0,0,0,0.1) inset,
 		1px 1px 1px rgba(255,255,255,0.1);
 	-webkit-transition: opacity 0.4s ease-in-out 0.2s;
 	-moz-transition: opacity 0.4s ease-in-out 0.2s;

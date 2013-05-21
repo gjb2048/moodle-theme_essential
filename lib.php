@@ -26,17 +26,26 @@
 
 function essential_process_css($css, $theme) {
 
+    // Set the theme color.
+    if (!empty($theme->settings->themecolor)) {
+        $themecolor = $theme->settings->themecolor;
+    } else {
+        $themecolor = null;
+    }
+    $css = essential_set_themecolor($css, $themecolor);
 
-	// Set the theme color    if (!empty($theme->settings->themecolor)) {        $themecolor = $theme->settings->themecolor;    } else {        $themecolor = null;    }    $css = essential_set_themecolor($css, $themecolor);
-    
-    // Set the theme hover color
-    if (!empty($theme->settings->themehovercolor)) {        $themehovercolor = $theme->settings->themehovercolor;    } else {        $themehovercolor = null;    }    $css = essential_set_themehovercolor($css, $themehovercolor);
-    
-    
+    // Set the theme hover color.
+    if (!empty($theme->settings->themehovercolor)) {
+        $themehovercolor = $theme->settings->themehovercolor;
+    } else {
+        $themehovercolor = null;
+    }
+    $css = essential_set_themehovercolor($css, $themehovercolor);
+
     // Set the background image for the logo.
     $logo = $theme->setting_file_url('logo', 'logo');
     $css = essential_set_logo($css, $logo);
-    
+
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
         $customcss = $theme->settings->customcss;
@@ -44,29 +53,28 @@ function essential_process_css($css, $theme) {
         $customcss = null;
     }
     $css = essential_set_customcss($css, $customcss);
-    
+
     // Set Slide Images.
     $setting = 'slide1image';
-	// Creates the url for image file which is then served up by 'theme_essential_pluginfile' below.
-	$slideimage = $theme->setting_file_url($setting, $setting);
-	$css = essential_set_slideimage($css, $slideimage, $setting);
-	
-	$setting = 'slide2image';
-	$slideimage = $theme->setting_file_url($setting, $setting);
-	$css = essential_set_slideimage($css, $slideimage, $setting);
-	
-	$setting = 'slide3image';
-	$slideimage = $theme->setting_file_url($setting, $setting);
-	$css = essential_set_slideimage($css, $slideimage, $setting);
-	
-	$setting = 'slide4image';
-	$slideimage = $theme->setting_file_url($setting, $setting);
-	$css = essential_set_slideimage($css, $slideimage, $setting);
+    // Creates the url for image file which is then served up by 'theme_essential_pluginfile' below.
+    $slideimage = $theme->setting_file_url($setting, $setting);
+    $css = essential_set_slideimage($css, $slideimage, $setting);
+
+    $setting = 'slide2image';
+    $slideimage = $theme->setting_file_url($setting, $setting);
+    $css = essential_set_slideimage($css, $slideimage, $setting);
+
+    $setting = 'slide3image';
+    $slideimage = $theme->setting_file_url($setting, $setting);
+    $css = essential_set_slideimage($css, $slideimage, $setting);
+
+    $setting = 'slide4image';
+    $slideimage = $theme->setting_file_url($setting, $setting);
+    $css = essential_set_slideimage($css, $slideimage, $setting);
 
     return $css;
-	}
-	
-	
+}
+
 
 function essential_set_logo($css, $logo) {
     global $OUTPUT;
@@ -82,24 +90,24 @@ function essential_set_logo($css, $logo) {
 }
 
 function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
-	if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'logo') {
-		$theme = theme_config::load('essential');
-		return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
-	} else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'slide1image') {
-		$theme = theme_config::load('essential');
-		return $theme->setting_file_serve('slide1image', $args, $forcedownload, $options);
-	} else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'slide2image') {
-		$theme = theme_config::load('essential');
-		return $theme->setting_file_serve('slide2image', $args, $forcedownload, $options);
-	} else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'slide3image') {
-		$theme = theme_config::load('essential');
-		return $theme->setting_file_serve('slide3image', $args, $forcedownload, $options);
-	} else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'slide4image') {
-		$theme = theme_config::load('essential');
-		return $theme->setting_file_serve('slide4image', $args, $forcedownload, $options);
-	} else {
-		send_file_not_found();
-	}   
+    if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'logo') {
+        $theme = theme_config::load('essential');
+        return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
+    } else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'slide1image') {
+        $theme = theme_config::load('essential');
+        return $theme->setting_file_serve('slide1image', $args, $forcedownload, $options);
+    } else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'slide2image') {
+        $theme = theme_config::load('essential');
+        return $theme->setting_file_serve('slide2image', $args, $forcedownload, $options);
+    } else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'slide3image') {
+        $theme = theme_config::load('essential');
+        return $theme->setting_file_serve('slide3image', $args, $forcedownload, $options);
+    } else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'slide4image') {
+        $theme = theme_config::load('essential');
+        return $theme->setting_file_serve('slide4image', $args, $forcedownload, $options);
+    } else {
+        send_file_not_found();
+    }
 }
 
 function essential_set_customcss($css, $customcss) {
@@ -114,20 +122,36 @@ function essential_set_customcss($css, $customcss) {
     return $css;
 }
 
-function essential_set_themecolor($css, $themecolor) {    $tag = '[[setting:themecolor]]';    $replacement = $themecolor;    if (is_null($replacement)) {        $replacement = '#30add1';    }    $css = str_replace($tag, $replacement, $css);    return $css;}
+function essential_set_themecolor($css, $themecolor) {
+    $tag = '[[setting:themecolor]]';
+    $replacement = $themecolor;
+    if (is_null($replacement)) {
+        $replacement = '#30add1';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
 
-function essential_set_themehovercolor($css, $themehovercolor) {    $tag = '[[setting:themehovercolor]]';    $replacement = $themehovercolor;    if (is_null($replacement)) {        $replacement = '#29a1c4';    }    $css = str_replace($tag, $replacement, $css);    return $css;}
+function essential_set_themehovercolor($css, $themehovercolor) {
+    $tag = '[[setting:themehovercolor]]';
+    $replacement = $themehovercolor;
+    if (is_null($replacement)) {
+        $replacement = '#29a1c4';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
 
 function essential_set_slideimage($css, $slideimage, $setting) {
-	global $OUTPUT;
-	$tag = '[[setting:'.$setting.']]';
-	$replacement = $slideimage;
-	if (is_null($replacement)) {
-		// Get default image from themes 'images' folder of the name in $setting.
-		$replacement = $OUTPUT->pix_url('images/'.$setting, 'theme');
-	}
-	$css = str_replace($tag, $replacement, $css);
-	return $css;
+    global $OUTPUT;
+    $tag = '[[setting:'.$setting.']]';
+    $replacement = $slideimage;
+    if (is_null($replacement)) {
+        // Get default image from themes 'images' folder of the name in $setting.
+        $replacement = $OUTPUT->pix_url('images/'.$setting, 'theme');
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
 }
 
 function theme_essential_page_init(moodle_page $page) {
