@@ -99,25 +99,25 @@ echo $OUTPUT->doctype() ?>
     <!-- Google web fonts -->
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
-  	<style type="text/css">
+    <style type="text/css">
         @font-face {
-		font-family: 'FontAwesome';
-		src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.eot');
-		src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
-			url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.woff') format('woff'), 
-			url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.ttf') format('truetype'), 
-			url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.svg') format('svg');
-		font-weight: normal;
-  		font-style: normal;
+        font-family: 'FontAwesome';
+        src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.eot');
+        src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+            url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.woff') format('woff'),
+            url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.ttf') format('truetype'),
+            url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.svg') format('svg');
+        font-weight: normal;
+        font-style: normal;
     </style>
     <style type="text/css">
         @font-face {
-		font-family: 'soul_paparegular';
-		src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/soulpapa-webfont.eot');
-		src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/soulpapa-webfont.eot?#iefix') format('embedded-opentype'),
-			url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/soulpapa-webfont.woff') format('woff'), 
-			url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/soulpapa-webfont.ttf') format('truetype'), 
-			url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/soulpapa-webfont.svg') format('svg');
+        font-family: 'soul_paparegular';
+        src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/soulpapa-webfont.eot');
+        src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/soulpapa-webfont.eot?#iefix') format('embedded-opentype'),
+            url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/soulpapa-webfont.woff') format('woff'),
+            url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/soulpapa-webfont.ttf') format('truetype'),
+            url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/soulpapa-webfont.svg') format('svg');
     </style>
 </head>
 
@@ -152,72 +152,71 @@ echo $OUTPUT->doctype() ?>
 </header>
 
 <div id="page" class="container-fluid">
-		
-	<div id="page-content" class="row-fluid">
+        
+    <div id="page-content" class="row-fluid">
 
-		<?php if ($layout === 'pre-and-post') { ?>
-    	<section id="region-main" class="span6 desktop-first-column">
-	<?php } else if ($layout === 'side-post-only') { ?>
-    	<section id="region-main" class="span8 desktop-first-column">
-	<?php } else if ($layout === 'side-pre-only') { ?>
-    	<section id="region-main" class="span9 desktop-first-column">
-	<?php } else if ($layout === 'content-only') { ?>
-    	<section id="region-main" class="span12">
-	<?php } ?>
-			<?php if ($hasnavbar) { ?>
-        	<nav class="breadcrumb-button"><?php echo $PAGE->button; ?></nav>
-        	<?php echo $OUTPUT->navbar(); ?>
-    		<?php } ?>
-    		<?php echo $coursecontentheader; ?>   
-    		<?php echo $OUTPUT->main_content() ?>
-    		<?php echo $coursecontentfooter; ?>
-		</section>
-		<?php if ($layout === 'pre-and-post') { ?>
-		<div class="span6">
-		<?php } else if ($layout === 'side-post-only') { ?>
-		<div class="span3">
-		<?php } else if ($layout === 'side-pre-only') { ?>
-		<div class="span3">
-		<?php } else if ($layout === 'content-only') { ?>
-		<div class="span0">
-		<?php } ?>
-			<?php if ($layout === 'pre-and-post') { ?>
-			<div class="span6">
-			<?php } else { ?>
-			<div class="span12" id="move">
-			<?php } ?>
-				<?php if ($layout === 'side-post-only' OR $layout === 'pre-and-post') { ?>
-				<div id="region-post" class="block-region">
-					<div class="region-content">
-					<?php echo $OUTPUT->blocks_for_region('side-post'); ?>
-					</div>
-				</div>
-				<?php } ?>
-       		</div>
-        	<?php if ($layout === 'pre-and-post') { ?>
-			<div class="span6">
-			<?php } else { ?>
-			<div class="span12">
-			<?php } ?>
-        		<?php if ($layout === 'side-pre-only' OR $layout === 'pre-and-post') { ?>
-        		<div id="region-pre" class="block-region">
-        			<div class="region-content">
-					<?php echo $OUTPUT->blocks_for_region('side-pre'); ?>
-					</div>
-				</div>
-				<?php } ?>
-			</div>
-		</div>
-	</div>
-</div>		
+        <?php if ($layout === 'pre-and-post') { ?>
+        <section id="region-main" class="span6 desktop-first-column">
+    <?php } else if ($layout === 'side-post-only') { ?>
+        <section id="region-main" class="span8 desktop-first-column">
+    <?php } else if ($layout === 'side-pre-only') { ?>
+        <section id="region-main" class="span9 desktop-first-column">
+    <?php } else if ($layout === 'content-only') { ?>
+        <section id="region-main" class="span12">
+    <?php } ?>
+            <?php if ($hasnavbar) { ?>
+            <nav class="breadcrumb-button"><?php echo $PAGE->button; ?></nav>
+            <?php echo $OUTPUT->navbar(); ?>
+            <?php } ?>
+            <?php echo $coursecontentheader; ?>   
+            <?php echo $OUTPUT->main_content() ?>
+            <?php echo $coursecontentfooter; ?>
+        </section>
+        <?php if ($layout === 'pre-and-post') { ?>
+        <div class="span6">
+        <?php } else if ($layout === 'side-post-only') { ?>
+        <div class="span3">
+        <?php } else if ($layout === 'side-pre-only') { ?>
+        <div class="span3">
+        <?php } else if ($layout === 'content-only') { ?>
+        <div class="span0">
+        <?php } ?>
+            <?php if ($layout === 'pre-and-post') { ?>
+            <div class="span6">
+            <?php } else { ?>
+            <div class="span12" id="move">
+            <?php } ?>
+                <?php if ($layout === 'side-post-only' OR $layout === 'pre-and-post') { ?>
+                <div id="region-post" class="block-region">
+                    <div class="region-content">
+                    <?php echo $OUTPUT->blocks_for_region('side-post'); ?>
+                    </div>
+                </div>
+                <?php } ?>
+            </div>
+            <?php if ($layout === 'pre-and-post') { ?>
+            <div class="span6">
+            <?php } else { ?>
+            <div class="span12">
+            <?php } ?>
+                <?php if ($layout === 'side-pre-only' OR $layout === 'pre-and-post') { ?>
+                <div id="region-pre" class="block-region">
+                    <div class="region-content">
+                    <?php echo $OUTPUT->blocks_for_region('side-pre'); ?>
+                    </div>
+                </div>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+</div>
 
 <footer id="page-footer">
-	<div class="container">
-		<div class="row-fluid">
-			<?php include('footer.php')
-			?>
-		</div>
-	</div>				    
+    <div class="container">
+        <div class="row-fluid">
+            <?php require('footer.php'); ?>
+        </div>
+    </div>
 </footer>
 
 <?php echo $OUTPUT->standard_footer_html(); ?>

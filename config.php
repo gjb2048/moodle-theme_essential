@@ -26,15 +26,13 @@
 
 $THEME->name = 'essential';
 
-/////////////////////////////////
 // The only thing you need to change in this file when copying it to
 // create a new theme is the name above. You also need to change the name
 // in version.php and lang/en/theme_essential.php as well.
-//////////////////////////////////
-//
+
 $THEME->doctype = 'html5';
 $THEME->parents = array('bootstrapbase');
-$THEME->sheets = array('custom','slides','font-awesome');
+$THEME->sheets = array('custom', 'slides', 'font-awesome');
 $THEME->supportscssoptimisation = false;
 $THEME->yuicssmodules = array();
 
@@ -53,13 +51,13 @@ $THEME->layouts = array(
     // Most pages - if we encounter an unknown or a missing page type, this one is used.
     'frontpage' => array(
         'file' => 'frontpage.php',
-        'regions' => array('side-pre','side-post','footer-left','footer-middle','footer-right','hidden-dock'),
+        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
         'defaultregion' => 'side-post',
-         'options' => array('nonavbar'=>true),
+        'options' => array('nonavbar'=>true),
     ),
     'course' => array(
         'file' => 'course.php',
-        'regions' => array('side-pre','side-post','footer-left','footer-middle','footer-right'),
+        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-post',
          'options' => array('nonavbar'=>false),
     ),
