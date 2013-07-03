@@ -46,14 +46,6 @@ function essential_process_css($css, $theme) {
     $logo = $theme->setting_file_url('logo', 'logo');
     $css = essential_set_logo($css, $logo);
 
-    // Set custom CSS.
-    if (!empty($theme->settings->customcss)) {
-        $customcss = $theme->settings->customcss;
-    } else {
-        $customcss = null;
-    }
-    $css = essential_set_customcss($css, $customcss);
-
     // Set Slide Images.
     $setting = 'slide1image';
     // Creates the url for image file which is then served up by 'theme_essential_pluginfile' below.
@@ -108,18 +100,6 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
     } else {
         send_file_not_found();
     }
-}
-
-function essential_set_customcss($css, $customcss) {
-    $tag = '[[setting:customcss]]';
-    $replacement = $customcss;
-    if (is_null($replacement)) {
-        $replacement = '';
-    }
-
-    $css = str_replace($tag, $replacement, $css);
-
-    return $css;
 }
 
 function essential_set_themecolor($css, $themecolor) {
