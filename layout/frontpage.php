@@ -431,12 +431,9 @@ echo $OUTPUT->doctype() ?>
     </div>
 </div>
 <?php } ?>
-<footer id="page-footer">
-    <div class="container-fluid">
-        <div class="row-fluid">
+
+<footer id="page-footer" class="container-fluid">
             <?php require('footer.php'); ?>
-        </div>
-    </div>                  
 </footer>
 
 <?php echo $OUTPUT->standard_footer_html(); ?>
