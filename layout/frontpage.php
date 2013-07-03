@@ -441,14 +441,14 @@ echo $OUTPUT->doctype() ?>
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
 
 <script type="text/javascript">
-            $(function() {
-            
-                $('#da-slider').cslider({
-                    autoplay    : true,
-                    interval : 6000
-                });
-            
-            });
+			$(function() {
+			
+				$('#da-slider').cslider({
+					autoplay	: true,
+					bgincrement	: 450
+				});
+			
+			});
 </script>
 
 </body>
