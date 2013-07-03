@@ -101,23 +101,15 @@ echo $OUTPUT->doctype() ?>
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
     <style type="text/css">
         @font-face {
-        font-family: 'FontAwesome';
-        src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.eot');
-        src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
-            url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.woff') format('woff'),
-            url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.ttf') format('truetype'),
-            url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.svg') format('svg');
-        font-weight: normal;
-        font-style: normal;
-    </style>
-    <style type="text/css">
-        @font-face {
-        font-family: 'soul_paparegular';
-        src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/soulpapa-webfont.eot');
-        src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/soulpapa-webfont.eot?#iefix') format('embedded-opentype'),
-            url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/soulpapa-webfont.woff') format('woff'),
-            url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/soulpapa-webfont.ttf') format('truetype'),
-            url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/soulpapa-webfont.svg') format('svg');
+  		font-family: 'FontAwesome';
+  		src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.eot?v=3.2.1');
+  		src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), 
+  			url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.woff?v=3.2.1') format('woff'), 
+  			url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.ttf?v=3.2.1') format('truetype'), 
+  			url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
+  		font-weight: normal;
+  		font-style: normal;
+		}
     </style>
 </head>
 

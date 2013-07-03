@@ -206,7 +206,7 @@ echo $OUTPUT->doctype() ?>
 <head>
     <title><?php echo $PAGE->title ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->pix_url('favicon', 'theme')?>" />
-    <meta name="author" content="Site by Pukunui Australia" /> 
+    <meta name="author" content="Site by Klevar" /> 
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google web fonts -->
@@ -214,23 +214,15 @@ echo $OUTPUT->doctype() ?>
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
     <style type="text/css">
         @font-face {
-        font-family: 'FontAwesome';
-        src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.eot');
-        src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
-            url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.woff') format('woff'), 
-            url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.ttf') format('truetype'), 
-            url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.svg') format('svg');
-        font-weight: normal;
-        font-style: normal;
-    </style>
-    <style type="text/css">
-        @font-face {
-        font-family: 'soul_paparegular';
-        src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/soulpapa-webfont.eot');
-        src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/soulpapa-webfont.eot?#iefix') format('embedded-opentype'),
-            url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/soulpapa-webfont.woff') format('woff'), 
-            url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/soulpapa-webfont.ttf') format('truetype'), 
-            url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/soulpapa-webfont.svg') format('svg');
+  		font-family: 'FontAwesome';
+  		src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.eot?v=3.2.1');
+  		src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), 
+  			url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.woff?v=3.2.1') format('woff'), 
+  			url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.ttf?v=3.2.1') format('truetype'), 
+  			url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
+  		font-weight: normal;
+  		font-style: normal;
+		}
     </style>
 </head>
 
@@ -268,9 +260,9 @@ echo $OUTPUT->doctype() ?>
 <div id="page" class="container-fluid">
 
 <?php // Start slideshow.
-    if ($hasslideshow) {
+    if ($hasslideshow && !strpos($checkuseragent, 'MSIE 7')) { // Hide slideshow for IE7
 ?>
-    <div id="da-slider" class="da-slider" style="background-position: 8650% 0%;">
+    <div id="da-slider" class="da-slider hidden-phone" style="background-position: 8650% 0%;">
 
     <?php if ($hasslide1) { ?>
         <div class="da-slide da-slide-toleft">
@@ -343,7 +335,7 @@ echo $OUTPUT->doctype() ?>
         </nav>
         
     </div>
-<?php } ?>
+<?php } // End slideshow. ?>
 
  <div class="bor"></div>
         <?php echo $OUTPUT->main_content() ?>
@@ -357,6 +349,8 @@ echo $OUTPUT->doctype() ?>
     <?php } ?>
         <?php echo $coursecontentheader; ?>
         
+<?php
+/* ***** Commented out as the following hard-coded content was displaying in the source code when hidden via CSS
 <div class="row-fluid" id="middle-blocks">
     <div class="span4">
         <!-- Service #1 -->
@@ -393,6 +387,8 @@ echo $OUTPUT->doctype() ?>
         </div>
     </div>
 </div>
+*/
+?>
         <?php echo $coursecontentfooter; ?>
     </section>
     
@@ -408,6 +404,8 @@ echo $OUTPUT->doctype() ?>
     </aside>
 </div>
 
+<?php
+/* ***** Commented out as the following hard-coded content was displaying in the source code when hidden via CSS
 <div class="sponsors">
         <h4>Our Sponsors</h4>
         <a href="<?php echo $CFG->wwwroot;?>/mod/book/view.php?id=39">
@@ -417,7 +415,8 @@ echo $OUTPUT->doctype() ?>
         <img src="<?php echo $OUTPUT->pix_url('sponsors/freemoodle', 'theme'); ?>" alt="Free Moodle" a href="">
         </a>
 </div>
-
+*/
+?>
 <?php if (is_siteadmin()) { ?>
 <div class="hidden-blocks">
     <div class="row-fluid">

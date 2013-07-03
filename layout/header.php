@@ -27,13 +27,33 @@
 $hasfacebook    = (empty($PAGE->theme->settings->facebook)) ? false : $PAGE->theme->settings->facebook;
 $hastwitter     = (empty($PAGE->theme->settings->twitter)) ? false : $PAGE->theme->settings->twitter;
 $hasgoogleplus  = (empty($PAGE->theme->settings->googleplus)) ? false : $PAGE->theme->settings->googleplus;
-$hasflickr      = (empty($PAGE->theme->settings->flickr)) ? false : $PAGE->theme->settings->flickr;
-$haspicasa      = (empty($PAGE->theme->settings->picasa)) ? false : $PAGE->theme->settings->picasa;
 $haslinkedin    = (empty($PAGE->theme->settings->linkedin)) ? false : $PAGE->theme->settings->linkedin;
 $hasyoutube     = (empty($PAGE->theme->settings->youtube)) ? false : $PAGE->theme->settings->youtube;
+$hasflickr      = (empty($PAGE->theme->settings->flickr)) ? false : $PAGE->theme->settings->flickr;
 
+/* Modified to check for IE 7/8. Switch headers to remove backgound-size CSS (in Custom CSS) functionality if true */
+$checkuseragent = '';
+if (!empty($_SERVER['HTTP_USER_AGENT'])) {
+    $checkuseragent = $_SERVER['HTTP_USER_AGENT'];
+}
 ?>
-<header id="page-header" class="clearfix">
+
+<?php
+// Check if IE7 browser and display message
+if (strpos($checkuseragent, 'MSIE 7')) {?>
+    <p id="ie7message">Sorry, this site requires <strong>Internet Explorer 8</strong> or higher to display and function correctly. Please update your browser via Windows Update, or <a href="http://windows.microsoft.com/en-au/internet-explorer/download-ie" target="_blank">download the latest version here</a>. Alternatively, you can try installing the <a href="http://www.google.com/chromeframe" target="_blank">ChromeFrame plugin</a> which may solve some of the issues experienced in older browsers. If you continue having problems accessing this website or the updates mentioned above, please contact your Helpdesk for further assistance.</p>
+<?php
+}?>
+
+<?php
+if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
+    <header id="page-header-IE7-8" class="clearfix">
+<?php
+} else { ?>
+    <header id="page-header" class="clearfix">
+<?php
+} ?>
+
     <div class="container-fluid">
     <div class="row">
     <!-- HEADER: LOGO AREA -->
@@ -51,16 +71,22 @@ $hasyoutube     = (empty($PAGE->theme->settings->youtube)) ? false : $PAGE->them
             <ul class="socials unstyled">
             <p>Our Social Networks</p>
                 <?php if ($hasgoogleplus) { ?>
-                <li><a class="googleplus" href="<?php echo $hasgoogleplus; ?>"></a></li>
+                <li><a href="<?php echo $hasgoogleplus; ?>"><i class="icon-google-plus-sign"></i></a></li>
                 <?php } ?>
                 <?php if ($hastwitter) { ?>
-                <li><a class="twitter" href="<?php echo $hastwitter; ?>"></a></li>
+                <li><a href="<?php echo $hastwitter; ?>"><i class="icon-twitter-sign"></i></a></li>
                 <?php } ?>
                 <?php if ($hasfacebook) { ?>
-                <li><a class="facebook" href="<?php echo $hasfacebook; ?>"></a></li>
+                <li><a href="<?php echo $hasfacebook; ?>"><i class="icon-facebook-sign"></i></a></li>
                 <?php } ?>
                 <?php if ($haslinkedin) { ?>
-                <li><a class="linkedin" href="<?php echo $haslinkedin; ?>"></a></li>
+                <li><a href="<?php echo $haslinkedin; ?>"><i class="icon-linkedin-sign"></i></a></li>
+                <?php } ?>
+                <?php if ($hasyoutube) { ?>
+                <li><a href="<?php echo $hasyoutube; ?>"><i class="icon-youtube-sign"></i></a></li>
+                <?php } ?>
+                <?php if ($hasflickr) { ?>
+                <li><a href="<?php echo $hasflickr; ?>"><i class="icon-flickr"></i></a></li>
                 <?php } ?>
             </ul>
         </div>
