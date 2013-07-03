@@ -128,14 +128,11 @@ $string['twitterdesc'] = 'Enter the URL of your Twitter feed. (i.e http://www.tw
 $string['googleplus'] = 'Google+ URL';
 $string['googleplusdesc'] = 'Enter the URL of your Google+ profile. (i.e http://plus.google.com/107817105228930159735)';
 
-$string['flickr'] = 'Flickr URL';
-$string['flickrdesc'] = 'Enter the URL of your Flickr page. (i.e http://www.flickr.com/mycollege)';
-
-$string['picasa'] = 'Picasa URL';
-$string['picasadesc'] = 'Enter the URL of your Picasa page. (i.e http://picasaweb.google.com/107817105228930159735)';
-
 $string['linkedin'] = 'LinkedIn URL';
 $string['linkedindesc'] = 'Enter the URL of your LinkedIn profile. (i.e http://www.linkedin.com/company/mycollege)';
 
 $string['youtube'] = 'YouTube URL';
 $string['youtubedesc'] = 'Enter the URL of your YouTube channel. (i.e http://www.youtube.com/mycollege)';
+
+$string['flickr'] = 'Flickr URL';
+$string['flickrdesc'] = 'Enter the URL of your Flickr page. (i.e http://www.flickr.com/mycollege)';

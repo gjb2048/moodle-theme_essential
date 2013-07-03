@@ -239,14 +239,21 @@ if ($ADMIN->fulltree) {
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $settings->add($setting);
-
-    // Custom CSS file.
-    $name = 'theme_essential/customcss';
-    $title = get_string('customcss', 'theme_essential');
-    $description = get_string('customcssdesc', 'theme_essential');
+    
+    // YouTube url setting.
+    $name = 'theme_essential/youtube';
+    $title = get_string('youtube', 'theme_essential');
+    $description = get_string('youtubedesc', 'theme_essential');
     $default = '';
-    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $settings->add($setting);
+    
+    // Flickr url setting.
+    $name = 'theme_essential/flickr';
+    $title = get_string('flickr', 'theme_essential');
+    $description = get_string('flickrdesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
     $settings->add($setting);
 
     // Footnote setting.
