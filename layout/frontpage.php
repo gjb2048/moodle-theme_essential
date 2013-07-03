@@ -97,6 +97,7 @@ if ($hasgoogleplus) {
 */
 
 /* Slide1 settings */
+$hideonphone = $PAGE->theme->settings-> hideonphone;
 if ($hasslide1) {
     $slide1 = $PAGE->theme->settings->slide1;
 }
@@ -262,7 +263,7 @@ echo $OUTPUT->doctype() ?>
 <?php // Start slideshow.
     if ($hasslideshow && !strpos($checkuseragent, 'MSIE 7')) { // Hide slideshow for IE7
 ?>
-    <div id="da-slider" class="da-slider hidden-phone" style="background-position: 8650% 0%;">
+    <div id="da-slider" class="da-slider <?php echo $hideonphone ?>" style="background-position: 8650% 0%;">
 
     <?php if ($hasslide1) { ?>
         <div class="da-slide da-slide-toleft">

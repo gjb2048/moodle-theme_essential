@@ -57,6 +57,18 @@ if ($ADMIN->fulltree) {
     $settings->add($setting);
 
     /* Slideshow Widget Settings */
+    
+    // Hde slideshow on phones.
+    $name = 'theme_essential/hideonphone';
+    $title = get_string('hideonphone' , 'theme_essential');
+    $description = get_string('hideonphonedesc', 'theme_essential');
+    $display = get_string('display', 'theme_essential');
+    $dontdisplay = get_string('dontdisplay', 'theme_essential');
+    $default = 'display';
+    $choices = array(''=>$display, 'hidden-phone'=>$dontdisplay);
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
 
     /*
      * Slide 1

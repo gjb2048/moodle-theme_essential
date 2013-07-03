@@ -69,6 +69,11 @@ $string['region-footer-right'] = 'Footer (Right)';
 $string['region-hidden-dock'] = 'Hidden from users';
 
 /* Slideshow */
+$string['hideonphone'] = 'Slideshow on Mobiles';
+$string['hideonphonedesc'] = 'Choose if you wish to have the slideshow shown on mobiles or not';
+$string['display'] = 'Display';
+$string['dontdisplay'] = 'Do not Display';
+
 $string['slideshowTitle'] = 'Slideshow';
 $string['slide1'] = 'Slide 1 Title';
 $string['slide1desc'] = 'Enter a descriptive title for your slide';
