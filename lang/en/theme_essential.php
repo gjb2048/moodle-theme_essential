@@ -66,6 +66,7 @@ $string['region-side-pre'] = 'Left';
 $string['region-footer-left'] = 'Footer (Left)';
 $string['region-footer-middle'] = 'Footer (Middle)';
 $string['region-footer-right'] = 'Footer (Right)';
+$string['region-hidden-dock'] = 'Hidden from users';
 
 /* Slideshow */
 $string['slideshowTitle'] = 'Slideshow';
