@@ -40,9 +40,8 @@ if (!empty($_SERVER['HTTP_USER_AGENT'])) {
 
 <?php
 // Check if IE7 browser and display message
-if (strpos($checkuseragent, 'MSIE 7')) {?>
-    <p id="ie7message">Sorry, this site requires <strong>Internet Explorer 8</strong> or higher to display and function correctly. Please update your browser via Windows Update, or <a href="http://windows.microsoft.com/en-au/internet-explorer/download-ie" target="_blank">download the latest version here</a>. Alternatively, you can try installing the <a href="http://www.google.com/chromeframe" target="_blank">ChromeFrame plugin</a> which may solve some of the issues experienced in older browsers. If you continue having problems accessing this website or the updates mentioned above, please contact your Helpdesk for further assistance.</p>
-<?php
+if (strpos($checkuseragent, 'MSIE 7')) {
+	echo get_string('ie7message', 'theme_essential');
 }?>
 
 <?php
