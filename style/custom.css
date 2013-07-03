@@ -76,7 +76,7 @@ a:hover{
 /* @group Header */
 
 #page-header {
-    padding: 25px 0px 0px 0px;
+    padding: 12px 0px 0px 0px;
     border-bottom: 1px solid #DDD;
     background: url([[pix:theme|header-back]]) repeat;
 }
@@ -97,6 +97,17 @@ a.logo {
     margin: 0;
     padding: 0;
     width: 100%;
+}
+
+.breadcrumb-button input[type="submit"]{
+	background: [[setting:themecolor]];
+	color: #fff;
+	text-shadow: none;
+	border: 0px none;
+}
+
+.breadcrumb-button input[type="submit"]:hover {
+	background: [[setting:themehovercolor]];
 }
 
 /* @group Social Buttons */
@@ -131,19 +142,6 @@ ul.socials {
     float: right;
     margin-top: 10px;
     text-align: center;
-}
-
-.socials .twitter::before {
-    content:"\f081";
-}
-.socials .facebook::before {
-    content:"\f082";
-}
-.socials .googleplus::before {
-    content:"\f0d4";
-}
-.socials .linkedin::before {
-    content:"\f08c";
 }
 
 /* @end */
@@ -307,7 +305,7 @@ h2.pagetitle span {
 
 .forumpost .picture img {
     border-radius:250px;
-    box-shadow:0px 0px 3px #29A1C4;
+    box-shadow:0px 0px 3px [[setting:themecolor]];
     margin-right: 10px;
 }
 
@@ -628,7 +626,7 @@ table#greyboxleft h2 {
 }
 
 .block_blog_menu .header .title h2:before {
-    content:"\f14b";
+    content:"\f02d";
 }
 
 .block_quiz_results .header .title h2:before {
@@ -700,7 +698,7 @@ table#greyboxleft h2 {
 }
 
 .block_recent_activity .header .title h2:before {
-    content:"\f069";
+    content:"\f017";
 }
 
 .block_search_forums .header .title h2:before {
@@ -964,10 +962,3 @@ img.profilepicture
     font-weight: normal;
     background: transparent;
 }
-
-/* @group Custom CSS */
-
-[[setting:customcss]]
-
-
-/* @end */
