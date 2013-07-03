@@ -520,6 +520,8 @@ table#greyboxleft h2 {
 #page-footer .block {
     border: 0px none;
     background: transparent;
+    width: 100%;
+    padding: 0px;
 }
 
 #page-footer .block .header .title h2:before {
@@ -560,7 +562,7 @@ table#greyboxleft h2 {
 
 .hidden-blocks .block {
     float: right;
-    min-width: 200px;
+    width: 250px;
     margin-left: 10px;
 }
 
@@ -807,6 +809,7 @@ table#greyboxleft h2 {
     padding-top: 10px;
     color: #DDD;
     border-top: 3px solid [[setting:themecolor]];
+    text-align: left;
 }
 
 .helplink {
@@ -822,6 +825,12 @@ table#greyboxleft h2 {
     margin-left: auto;
 }
 
+#page-footer .span4 {
+	padding: 30px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
 #page-footer hr {
     border-top: 1px solid #333;
     padding: 0px;
@@ -835,10 +844,6 @@ table#greyboxleft h2 {
     border-bottom: 1px solid #313131;
     margin-bottom: 4px;
     color: #CCC;
-}
-
-#page-footer .span4 {
-    width: 300px;
 }
 
 #page-footer ul,
