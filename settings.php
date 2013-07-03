@@ -43,6 +43,7 @@ if ($ADMIN->fulltree) {
     $default = '#30add1';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
     // Main theme Hover colour setting.
@@ -52,6 +53,7 @@ if ($ADMIN->fulltree) {
     $default = '#29a1c4';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
     /* Slideshow Widget Settings */
