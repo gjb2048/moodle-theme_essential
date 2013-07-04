@@ -3,7 +3,7 @@
 	height: 300px;
 	position: relative;
 	margin: 10px auto;
-   margin-bottom:20px;
+    margin-bottom:20px;
 	overflow: hidden;
 	background: transparent url([[pix:theme|header-back]]) repeat 0% 0%;
     border: 1px solid #eee;
@@ -24,7 +24,7 @@
 	text-align: left;
 }
 .da-slide-current{
-	z-index: 1000;
+	z-index: 500;
 }
 .da-slider-fb .da-slide{
 	left: 100%;
