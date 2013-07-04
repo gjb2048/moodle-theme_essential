@@ -117,9 +117,11 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<?php if ($hasheader) { ?>
-<?php include('header.php') ?>
-<?php } ?>
+<?php 
+if ($hasheader) {
+    include('header.php');
+}
+?>
 
 <header role="banner" class="navbar">
     <nav role="navigation" class="navbar-inner">
@@ -149,18 +151,19 @@ echo $OUTPUT->doctype() ?>
 
         <?php if ($layout === 'pre-and-post') { ?>
         <section id="region-main" class="span6 desktop-first-column">
-    <?php } else if ($layout === 'side-post-only') { ?>
+        <?php } else if ($layout === 'side-post-only') { ?>
         <section id="region-main" class="span8 desktop-first-column">
-    <?php } else if ($layout === 'side-pre-only') { ?>
+        <?php } else if ($layout === 'side-pre-only') { ?>
         <section id="region-main" class="span9 desktop-first-column">
-    <?php } else if ($layout === 'content-only') { ?>
+        <?php } else if ($layout === 'content-only') { ?>
         <section id="region-main" class="span12">
-    <?php } ?>
+        <?php } ?>
             <?php if ($hasnavbar) { ?>
             <nav class="breadcrumb-button"><?php echo $PAGE->button; ?></nav>
             <?php echo $OUTPUT->navbar(); ?>
             <?php } ?>
-            <?php echo $coursecontentheader; ?>   
+            <?php echo $coursecontentheader; ?>
+            <h2 class="pagetitle"><span><?php echo $PAGE->title ?></span></h2>  
             <?php echo $OUTPUT->main_content() ?>
             <?php echo $coursecontentfooter; ?>
         </section>
@@ -178,30 +181,26 @@ echo $OUTPUT->doctype() ?>
             <?php } else { ?>
             <div class="span12" id="move">
             <?php } ?>
-                <?php if ($layout === 'side-post-only' OR $layout === 'pre-and-post') { ?>
                 <div id="region-post" class="block-region">
                     <div class="region-content">
                     <?php echo $OUTPUT->blocks_for_region('side-post'); ?>
                     </div>
                 </div>
-                <?php } ?>
             </div>
             <?php if ($layout === 'pre-and-post') { ?>
             <div class="span6">
             <?php } else { ?>
             <div class="span12">
             <?php } ?>
-                <?php if ($layout === 'side-pre-only' OR $layout === 'pre-and-post') { ?>
                 <div id="region-pre" class="block-region">
                     <div class="region-content">
                     <?php echo $OUTPUT->blocks_for_region('side-pre'); ?>
                     </div>
                 </div>
-                <?php } ?>
             </div>
         </div>
     </div>
-</div>
+</div>      
 
 <footer id="page-footer" class="container-fluid">
             <?php require('footer.php'); ?>

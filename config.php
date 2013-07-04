@@ -48,19 +48,66 @@ $THEME->plugins_exclude_sheets = array(
 );
 
 $THEME->layouts = array(
-    // Most pages - if we encounter an unknown or a missing page type, this one is used.
+    // Front page.
     'frontpage' => array(
         'file' => 'frontpage.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
         'defaultregion' => 'hidden-dock',
         'options' => array('nonavbar'=>true),
     ),
+    // Standard layout with blocks, this is recommended for most pages with general information.
+    'standard' => array(
+        'file' => 'general.php',
+        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
+        'defaultregion' => 'side-pre',
+    ),
+    // Course page.
     'course' => array(
         'file' => 'course.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-post',
          'options' => array('nonavbar'=>false),
     ),
+    // Page content and modules.
+    'incourse' => array(
+        'file' => 'general.php',
+        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
+        'defaultregion' => 'side-pre',
+    ),
+    // Category listing page.
+    	'coursecategory' => array(
+        'file' => 'general.php',
+        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
+        'defaultregion' => 'side-post',
+    ),
+    // My dashboard page.
+    'mydashboard' => array(
+        'file' => 'general.php',
+        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
+        'defaultregion' => 'side-pre',
+        'options' => array('langmenu'=>true),
+    ),
+    // My public page.
+    'mypublic' => array(
+        'file' => 'general.php',
+        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
+        'defaultregion' => 'side-pre',
+        'options' => array('langmenu'=>true),
+    ),
+    // Public Login page.
+    'login' => array(
+        'file' => 'general.php',
+        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
+        'defaultregion' => 'side-pre',
+        'options' => array('langmenu'=>true),
+    ),
+    // Server administration scripts.
+    'admin' => array(
+        'file' => 'general.php',
+        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
+        'defaultregion' => 'side-pre',
+    ),
+
 );
 
 
