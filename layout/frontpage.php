@@ -76,25 +76,6 @@ if ($PAGE->user_is_editing()) {
 
 $haslogo = (!empty($PAGE->theme->settings->logo));
 
-/* Social settings */
-
-/*
-if ($hasfacebook) {
-    $facebook = $PAGE->theme->settings->facebook;
-}
-
-if ($hastwitter) {
-    $twitter = $PAGE->theme->settings->twitter;
-}
-
-if ($haslinkedin) {
-    $linkedin = $PAGE->theme->settings->linkedin;
-}
-
-if ($hasgoogleplus) {
-    $googleplus = $PAGE->theme->settings->googleplus;
-}
-*/
 
 /* Slide1 settings */
 $hideonphone = $PAGE->theme->settings-> hideonphone;
@@ -260,7 +241,8 @@ echo $OUTPUT->doctype() ?>
 
 <div id="page" class="container-fluid">
 
-<?php // Start slideshow.
+<!-- Start Slideshow -->
+<?php 
     if ($hasslideshow && !strpos($checkuseragent, 'MSIE 7')) { // Hide slideshow for IE7
 ?>
     <div id="da-slider" class="da-slider <?php echo $hideonphone ?>" style="background-position: 8650% 0%;">
@@ -336,7 +318,47 @@ echo $OUTPUT->doctype() ?>
         </nav>
         
     </div>
-<?php } // End slideshow. ?>
+<?php } ?>
+<!-- End Slideshow -->
+
+<!-- Start Marketing Spots -->
+<?php if($PAGE->theme->settings->togglemarketing==1) { ?>
+
+<div class="row-fluid" id="middle-blocks">
+    <div class="span4">
+        <!-- Advert #1 -->
+        <div class="service">
+            <!-- Icon & title. Font Awesome icon used. -->
+            <h5><span><i class="icon-<?php echo $PAGE->theme->settings->marketing1icon ?>"></i> <?php echo $PAGE->theme->settings->marketing1 ?></span></h5>
+            <?php echo $PAGE->theme->settings->marketing1content ?>
+            <p align="right"><a href="<?php echo $PAGE->theme->settings->marketing1buttonurl ?>" id="button"><?php echo $PAGE->theme->settings->marketing1buttontext ?></a></p>
+        </div>
+    </div>
+    
+    <div class="span4">
+        <!-- Advert #2 -->
+        <div class="service">
+            <!-- Icon & title. Font Awesome icon used. -->
+            <h5><span><i class="icon-<?php echo $PAGE->theme->settings->marketing2icon ?>"></i> <?php echo $PAGE->theme->settings->marketing2 ?></span></h5>
+            <?php echo $PAGE->theme->settings->marketing2content ?>
+            <p align="right"><a href="<?php echo $PAGE->theme->settings->marketing2buttonurl ?>" id="button"><?php echo $PAGE->theme->settings->marketing2buttontext ?></a></p>
+        </div>
+    </div>
+    
+    <div class="span4">
+        <!-- Advert #3 -->
+        <div class="service">
+            <!-- Icon & title. Font Awesome icon used. -->
+            <h5><span><i class="icon-<?php echo $PAGE->theme->settings->marketing3icon ?>"></i> <?php echo $PAGE->theme->settings->marketing3 ?></span></h5>
+            <?php echo $PAGE->theme->settings->marketing3content ?>
+            <p align="right"><a href="<?php echo $PAGE->theme->settings->marketing3buttonurl ?>" id="button"><?php echo $PAGE->theme->settings->marketing3buttontext ?></a></p>
+        </div>
+    </div>
+</div>
+
+<!-- End Marketing Spots -->
+
+<?php } ?>
 
  <div class="bor"></div>
         <?php echo $OUTPUT->main_content() ?>
@@ -350,46 +372,9 @@ echo $OUTPUT->doctype() ?>
     <?php } ?>
         <?php echo $coursecontentheader; ?>
         
-<?php
-/* ***** Commented out as the following hard-coded content was displaying in the source code when hidden via CSS
-<div class="row-fluid" id="middle-blocks">
-    <div class="span4">
-        <!-- Service #1 -->
-        <div class="service">
-            <!-- Icon & title. Font Awesome icon used. -->
-            <h5><span><i class="icon-magic"></i> Our Keynote Speakers</span></h5>
-            <p>Each year we search the globe to source recognised passionate experts in the fields of both Moodle and online
-            education to present at the essential. This year we have six fantastic keynotes that are sure to engage all our
-            attendees.</p><p align="right"><a href="<?php echo $CFG->wwwroot;?>/mod/book/view.php?id=1853" id="button">Meet
-            our Keynotes</a></p>
-        </div>
-    </div>
-    
-    <div class="span4">
-        <!-- Service #2 -->
-        <div class="service">
-            <!-- Icon & title. Font Awesome icon used. -->
-            <h5><span><i class="icon-calendar"></i> The iMoot Program</span></h5>
-            <p>iMoot provides a 4 day program with 2 simultaneous that runs 24 hours a day. This means that whenever you are here,
-            there is guarranteed to be something that should interest you. All sessions are recorded and available for immediate
-            viewing.</p><p align="right"><a href="<?php echo $CFG->wwwroot;?>/local/schedule/schedulehtml.php" id="button">View
-            The Program</a></p>
-        </div>
-    </div>
-    
-    <div class="span4">
-        <!-- Service #3 -->
-        <div class="service">
-            <!-- Icon & title. Font Awesome icon used. -->
-            <h5><span><i class="icon-bullhorn"></i> Presenting at iMoot</span></h5>
-            <p>Presenting at iMoot provides educators the opportunity to share their knowledge with a gobal audience. Many
-            presenters have delivered at local Moots, others are brand new. All are passionate experts in their field.</p>
-            <p align="right"><a href="<?php echo $CFG->wwwroot;?>/mod/data/view.php?id=10" id="button">Present at essential</a></p>
-        </div>
-    </div>
-</div>
-*/
-?>
+
+
+
         <?php echo $coursecontentfooter; ?>
     </section>
     
@@ -418,6 +403,8 @@ echo $OUTPUT->doctype() ?>
 </div>
 */
 ?>
+
+
 <?php if (is_siteadmin()) { ?>
 <div class="hidden-blocks">
     <div class="row-fluid">
