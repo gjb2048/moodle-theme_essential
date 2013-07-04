@@ -52,7 +52,7 @@ $THEME->layouts = array(
     'frontpage' => array(
         'file' => 'frontpage.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
-        'defaultregion' => 'side-post',
+        'defaultregion' => 'hidden-dock',
         'options' => array('nonavbar'=>true),
     ),
     'course' => array(
