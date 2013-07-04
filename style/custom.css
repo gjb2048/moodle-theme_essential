@@ -576,6 +576,26 @@ table#greyboxleft h2 {
     border-bottom: 1px solid #313131;
 }
 
+#page-footer .eventskey,
+#page-footer .calendar_filters {
+	display: none;
+}
+
+#page-footer img.profilepicture,
+#page-footer .myprofileitem.picture {
+	float: left;
+	width: 90px;
+	height: 90px;
+}
+
+#page-footer .myprofileitem.picture {
+	margin-right: 20px;
+}
+
+#page-footer .myprofileitem.fullname {
+	margin-top: 10px;
+}
+
 .hidden-blocks {
     background: #ffe1e1;
     padding: 10px;
@@ -847,6 +867,7 @@ table#greyboxleft h2 {
 
 .helplink {
     float: right;
+    padding-right: 20px;
 }
 
 .helplink a {
@@ -856,6 +877,10 @@ table#greyboxleft h2 {
 #page-footer .container {
     margin-right: auto;
     margin-left: auto;
+}
+
+#page-footer .copy {
+	padding-left: 20px;
 }
 
 #page-footer .span4 {
@@ -911,6 +936,10 @@ table#greyboxleft h2 {
     padding-left: 5px;
     line-height: 14px;
     border-radius: 250px;
+}
+
+.footerlinks {
+	line-height: 15px;
 }
 
 /* @end */

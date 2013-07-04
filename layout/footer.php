@@ -61,12 +61,12 @@ $hascopyright = (empty($PAGE->theme->settings->copyright)) ? false : $PAGE->them
     	</div>
 	</div>
 
-	<div class="row-fluid">
+	<div class="footerlinks row-fluid">
     	<hr>
     	<p class="helplink"><?php echo page_doc_link(get_string('moodledocslink')); ?></p>
-    	<?php if ($hascopyright) {
-        	echo '    <p class="copy">&copy; '.date("Y").' '.$hascopyright.'</p>';
-    	} ?>
+    <?php if ($hascopyright) {
+        echo '    <p class="copy">&copy; '.date("Y").' '.$hascopyright.'</p>';
+    } ?>
 	</div>
 	
 
