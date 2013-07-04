@@ -60,7 +60,7 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
             <?php
             if (!$haslogo) { ?>
                 <i id="headerlogo" class="icon-<?php echo $PAGE->theme->settings->siteicon ?>"></i>
-                <h1 id="title"><?php echo $PAGE->heading; ?></h1>
+                <h1 id="title"><?php echo $SITE->shortname; ?></h1>
                 <h2 id="subtitle"><?php p(strip_tags(format_text($SITE->summary, FORMAT_HTML))) ?></h2>
                 
             <?php
