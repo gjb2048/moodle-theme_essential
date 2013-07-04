@@ -23,18 +23,24 @@
  * @copyright 2013 Julian Ridden
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+$settings = null;
 
 defined('MOODLE_INTERNAL') || die;
 
 if ($ADMIN->fulltree) {
 
+	$ADMIN->add('themes', new admin_category('theme_essential', 'Essential'));
+
+	// "geneicsettings" settingpage
+	$temp = new admin_settingpage('theme_essential_generic', 'General Settings');
+	
     // Logo file setting.
     $name = 'theme_essential/logo';
     $title = get_string('logo', 'theme_essential');
     $description = get_string('logodesc', 'theme_essential');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'logo');
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $settings->add($setting);
+    $temp->add($setting);
 
     // Main theme background colour setting.
     $name = 'theme_essential/themecolor';
@@ -44,7 +50,7 @@ if ($ADMIN->fulltree) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $settings->add($setting);
+    $temp->add($setting);
 
     // Main theme Hover colour setting.
     $name = 'theme_essential/themehovercolor';
@@ -54,11 +60,38 @@ if ($ADMIN->fulltree) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $settings->add($setting);
+    $temp->add($setting);
 
-    /* Slideshow Widget Settings */
+    // Copyright setting.
+    $name = 'theme_essential/copyright';
+    $title = get_string('copyright', 'theme_essential');
+    $description = get_string('copyrightdesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $temp->add($setting);
     
-    // Hde slideshow on phones.
+    // Footnote setting.
+    $name = 'theme_essential/footnote';
+    $title = get_string('footnote', 'theme_essential');
+    $description = get_string('footnotedesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+
+
+
+ 	$ADMIN->add('theme_essential', $temp);
+ 
+ 
+    /* Slideshow Widget Settings */
+    $temp = new admin_settingpage('theme_essential_slideshow', get_string('slideshowheading', 'theme_essential'));
+    $temp->add(new admin_setting_heading('theme_essential_slideshow', get_string('slideshowheadingsub', 'theme_essential'),
+            format_text(get_string('slideshowdesc' , 'theme_essential'), FORMAT_MARKDOWN)));
+    
+    
+    // Hide slideshow on phones.
     $name = 'theme_essential/hideonphone';
     $title = get_string('hideonphone' , 'theme_essential');
     $description = get_string('hideonphonedesc', 'theme_essential');
@@ -68,7 +101,7 @@ if ($ADMIN->fulltree) {
     $choices = array(''=>$display, 'hidden-phone'=>$dontdisplay);
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $settings->add($setting);
+    $temp->add($setting);
 
     /*
      * Slide 1
@@ -80,7 +113,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('slide1desc', 'theme_essential');
     $setting = new admin_setting_configtext($name, $title, $description, '');
     $default = '';
-    $settings->add($setting);
+    $temp->add($setting);
 
     // Image.
     $name = 'theme_essential/slide1image';
@@ -88,21 +121,21 @@ if ($ADMIN->fulltree) {
     $description = get_string('slide1imagedesc', 'theme_essential');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'slide1image');
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $settings->add($setting);
+    $temp->add($setting);
 
     // Caption.
     $name = 'theme_essential/slide1caption';
     $title = get_string('slide1caption', 'theme_essential');
     $description = get_string('slide1captiondesc', 'theme_essential');
     $setting = new admin_setting_configtextarea($name, $title, $description, '');
-    $settings->add($setting);
+    $temp->add($setting);
 
     // URL.
     $name = 'theme_essential/slide1url';
     $title = get_string('slide1url', 'theme_essential');
     $description = get_string('slide1urldesc', 'theme_essential');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-    $settings->add($setting);
+    $temp->add($setting);
 
     /*
      * Slide 2
@@ -114,7 +147,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('slide2desc', 'theme_essential');
     $setting = new admin_setting_configtext($name, $title, $description, '');
     $default = '';
-    $settings->add($setting);
+    $temp->add($setting);
 
     // Image.
     $name = 'theme_essential/slide2image';
@@ -122,21 +155,21 @@ if ($ADMIN->fulltree) {
     $description = get_string('slide2imagedesc', 'theme_essential');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'slide2image');
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $settings->add($setting);
+    $temp->add($setting);
 
     // Caption.
     $name = 'theme_essential/slide2caption';
     $title = get_string('slide2caption', 'theme_essential');
     $description = get_string('slide2captiondesc', 'theme_essential');
     $setting = new admin_setting_configtextarea($name, $title, $description, '');
-    $settings->add($setting);
+    $temp->add($setting);
 
     // URL.
     $name = 'theme_essential/slide2url';
     $title = get_string('slide2url', 'theme_essential');
     $description = get_string('slide2urldesc', 'theme_essential');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-    $settings->add($setting);
+    $temp->add($setting);
 
     /*
      * Slide 3
@@ -148,7 +181,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('slide3desc', 'theme_essential');
     $setting = new admin_setting_configtext($name, $title, $description, '');
     $default = '';
-    $settings->add($setting);
+    $temp->add($setting);
 
     // Image.
     $name = 'theme_essential/slide3image';
@@ -156,21 +189,21 @@ if ($ADMIN->fulltree) {
     $description = get_string('slide3imagedesc', 'theme_essential');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'slide3image');
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $settings->add($setting);
+    $temp->add($setting);
 
     // Caption.
     $name = 'theme_essential/slide3caption';
     $title = get_string('slide3caption', 'theme_essential');
     $description = get_string('slide3captiondesc', 'theme_essential');
     $setting = new admin_setting_configtextarea($name, $title, $description, '');
-    $settings->add($setting);
+    $temp->add($setting);
 
     // URL.
     $name = 'theme_essential/slide3url';
     $title = get_string('slide3url', 'theme_essential');
     $description = get_string('slide3urldesc', 'theme_essential');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-    $settings->add($setting);
+    $temp->add($setting);
 
     /*
      * Slide 4
@@ -182,7 +215,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('slide4desc', 'theme_essential');
     $setting = new admin_setting_configtext($name, $title, $description, '');
     $default = '';
-    $settings->add($setting);
+    $temp->add($setting);
 
     // Image.
     $name = 'theme_essential/slide4image';
@@ -190,45 +223,167 @@ if ($ADMIN->fulltree) {
     $description = get_string('slide4imagedesc', 'theme_essential');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'slide4image');
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $settings->add($setting);
+    $temp->add($setting);
 
     // Caption.
     $name = 'theme_essential/slide4caption';
     $title = get_string('slide4caption', 'theme_essential');
     $description = get_string('slide4captiondesc', 'theme_essential');
     $setting = new admin_setting_configtextarea($name, $title, $description, '');
-    $settings->add($setting);
+    $temp->add($setting);
 
     // URL.
     $name = 'theme_essential/slide4url';
     $title = get_string('slide4url', 'theme_essential');
     $description = get_string('slide4urldesc', 'theme_essential');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-    $settings->add($setting);
+    $temp->add($setting);
+    
+    
+    $ADMIN->add('theme_essential', $temp);
+    
 
-    // Contact Info setting.
-    $name = 'theme_essential/contactinfo';
-    $title = get_string('contactinfo', 'theme_essential');
-    $description = get_string('contactinfodesc', 'theme_essential');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $settings->add($setting);
-
-    // Copyright setting.
-    $name = 'theme_essential/copyright';
-    $title = get_string('copyright', 'theme_essential');
-    $description = get_string('copyrightdesc', 'theme_essential');
+	/* Marketing Spot Settings */
+	$temp = new admin_settingpage('theme_essential_marketing', get_string('marketingheading', 'theme_essential'));
+	$temp->add(new admin_setting_heading('theme_essential_marketing', get_string('marketingheadingsub', 'theme_essential'),
+            format_text(get_string('marketingdesc' , 'theme_essential'), FORMAT_MARKDOWN)));
+	
+	// Toggle Marketing Spots.
+    $name = 'theme_essential/togglemarketing';
+    $title = get_string('togglemarketing' , 'theme_essential');
+    $description = get_string('togglemarketingdesc', 'theme_essential');
+    $display = get_string('display', 'theme_essential');
+    $dontdisplay = get_string('dontdisplay', 'theme_essential');
+    $default = 'display';
+    $choices = array('1'=>$display, '0'=>$dontdisplay);
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	//Marketing Spot One.
+	$name = 'theme_essential/marketing1';
+    $title = get_string('marketing1', 'theme_essential');
+    $description = get_string('marketing1desc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $settings->add($setting);
+    $temp->add($setting);
+    
+    $name = 'theme_essential/marketing1icon';
+    $title = get_string('marketing1icon', 'theme_essential');
+    $description = get_string('marketing1icondesc', 'theme_essential');
+    $default = 'star';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $temp->add($setting);
+    
+    $name = 'theme_essential/marketing1content';
+    $title = get_string('marketing1content', 'theme_essential');
+    $description = get_string('marketing1contentdesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
+    
+    $name = 'theme_essential/marketing1buttontext';
+    $title = get_string('marketing1buttontext', 'theme_essential');
+    $description = get_string('marketing1buttontextdesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $temp->add($setting);
+    
+    $name = 'theme_essential/marketing1buttonurl';
+    $title = get_string('marketing1buttonurl', 'theme_essential');
+    $description = get_string('marketing1buttonurldesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $temp->add($setting);
+    
+    //Marketing Spot Two.
+	$name = 'theme_essential/marketing2';
+    $title = get_string('marketing2', 'theme_essential');
+    $description = get_string('marketing2desc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $temp->add($setting);
+    
+    $name = 'theme_essential/marketing2icon';
+    $title = get_string('marketing2icon', 'theme_essential');
+    $description = get_string('marketing2icondesc', 'theme_essential');
+    $default = 'star';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $temp->add($setting);
+    
+    $name = 'theme_essential/marketing2content';
+    $title = get_string('marketing2content', 'theme_essential');
+    $description = get_string('marketing2contentdesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
+    
+    $name = 'theme_essential/marketing2buttontext';
+    $title = get_string('marketing2buttontext', 'theme_essential');
+    $description = get_string('marketing2buttontextdesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $temp->add($setting);
+    
+    $name = 'theme_essential/marketing2buttonurl';
+    $title = get_string('marketing2buttonurl', 'theme_essential');
+    $description = get_string('marketing2buttonurldesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $temp->add($setting);
+    
+    //Marketing Spot Three.
+	$name = 'theme_essential/marketing3';
+    $title = get_string('marketing3', 'theme_essential');
+    $description = get_string('marketing3desc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $temp->add($setting);
+    
+    $name = 'theme_essential/marketing3icon';
+    $title = get_string('marketing3icon', 'theme_essential');
+    $description = get_string('marketing3icondesc', 'theme_essential');
+    $default = 'star';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $temp->add($setting);
+    
+    $name = 'theme_essential/marketing3content';
+    $title = get_string('marketing3content', 'theme_essential');
+    $description = get_string('marketing3contentdesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
+    
+    $name = 'theme_essential/marketing3buttontext';
+    $title = get_string('marketing3buttontext', 'theme_essential');
+    $description = get_string('marketing3buttontextdesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $temp->add($setting);
+    
+    $name = 'theme_essential/marketing3buttonurl';
+    $title = get_string('marketing3buttonurl', 'theme_essential');
+    $description = get_string('marketing3buttonurldesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $temp->add($setting);
+    
+    
+    $ADMIN->add('theme_essential', $temp);
 
+	
+	/* Social Network Settings */
+	$temp = new admin_settingpage('theme_essential_social', get_string('socialheading', 'theme_essential'));
+	$temp->add(new admin_setting_heading('theme_essential_social', get_string('socialheadingsub', 'theme_essential'),
+            format_text(get_string('socialdesc' , 'theme_essential'), FORMAT_MARKDOWN)));
+	
     // Facebook url setting.
     $name = 'theme_essential/facebook';
     $title = get_string('facebook', 'theme_essential');
     $description = get_string('facebookdesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $settings->add($setting);
+    $temp->add($setting);
 
     // Twitter url setting.
     $name = 'theme_essential/twitter';
@@ -236,7 +391,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('twitterdesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $settings->add($setting);
+    $temp->add($setting);
 
     // Google+ url setting.
     $name = 'theme_essential/googleplus';
@@ -244,7 +399,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('googleplusdesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $settings->add($setting);
+    $temp->add($setting);
 
     // LinkedIn url setting.
     $name = 'theme_essential/linkedin';
@@ -252,7 +407,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('linkedindesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $settings->add($setting);
+    $temp->add($setting);
     
     // YouTube url setting.
     $name = 'theme_essential/youtube';
@@ -260,7 +415,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('youtubedesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $settings->add($setting);
+    $temp->add($setting);
     
     // Flickr url setting.
     $name = 'theme_essential/flickr';
@@ -268,14 +423,8 @@ if ($ADMIN->fulltree) {
     $description = get_string('flickrdesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $settings->add($setting);
-
-    // Footnote setting.
-    $name = 'theme_essential/footnote';
-    $title = get_string('footnote', 'theme_essential');
-    $description = get_string('footnotedesc', 'theme_essential');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $settings->add($setting);
+    $temp->add($setting);
+    
+    
+    $ADMIN->add('theme_essential', $temp);
 }
