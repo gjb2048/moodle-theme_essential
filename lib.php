@@ -41,6 +41,14 @@ function essential_process_css($css, $theme) {
         $themehovercolor = null;
     }
     $css = essential_set_themehovercolor($css, $themehovercolor);
+    
+    // Set custom CSS.
+    if (!empty($theme->settings->customcss)) {
+        $customcss = $theme->settings->customcss;
+    } else {
+        $customcss = null;
+    }
+    $css = essential_set_customcss($css, $customcss);
 
     // Set the background image for the logo.
     $logo = $theme->setting_file_url('logo', 'logo');
@@ -100,6 +108,18 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
     } else {
         send_file_not_found();
     }
+}
+
+function essential_set_customcss($css, $customcss) {
+    $tag = '[[setting:customcss]]';
+    $replacement = $customcss;
+    if (is_null($replacement)) {
+        $replacement = '';
+    }
+
+    $css = str_replace($tag, $replacement, $css);
+
+    return $css;
 }
 
 function essential_set_themecolor($css, $themecolor) {
