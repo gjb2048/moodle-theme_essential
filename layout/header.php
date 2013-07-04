@@ -54,21 +54,25 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
 } ?>
 
     <div class="container-fluid">
-    <div class="row">
+    <div class="row-fluid">
     <!-- HEADER: LOGO AREA -->
-        <div class="span5 desktop-first-column">
+        <div class="span8">
             <?php
             if (!$haslogo) { ?>
-                <h1><?php echo $PAGE->heading; ?></h1>
+                <i id="headerlogo" class="icon-<?php echo $PAGE->theme->settings->siteicon ?>"></i>
+                <h1 id="title"><?php echo $PAGE->heading; ?></h1>
+                <h2 id="subtitle"><?php p(strip_tags(format_text($SITE->summary, FORMAT_HTML))) ?></h2>
+                
             <?php
             } else { ?>
+                
                 <a class="logo" href="<?php echo $CFG->wwwroot; ?>" title="<?php print_string('home'); ?>"></a>
             <?php
             } ?>
         </div>
-        <div class="span3 pull-right">
+        <div class="span4 pull-right">
+        <p id="socialheading">Social Networks</p>
             <ul class="socials unstyled">
-            <p>Our Social Networks</p>
                 <?php if ($hasgoogleplus) { ?>
                 <li><a href="<?php echo $hasgoogleplus; ?>"><i class="icon-google-plus-sign"></i></a></li>
                 <?php } ?>

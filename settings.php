@@ -34,6 +34,14 @@ if ($ADMIN->fulltree) {
 	// "geneicsettings" settingpage
 	$temp = new admin_settingpage('theme_essential_generic', 'General Settings');
 	
+	// Default Site icon setting.
+    $name = 'theme_essential/siteicon';
+    $title = get_string('siteicon', 'theme_essential');
+    $description = get_string('siteicondesc', 'theme_essential');
+    $default = 'laptop';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $temp->add($setting);
+	
     // Logo file setting.
     $name = 'theme_essential/logo';
     $title = get_string('logo', 'theme_essential');

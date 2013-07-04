@@ -97,6 +97,31 @@ a.logo {
     margin: 0;
     padding: 0;
     width: 100%;
+    background-size: contain;
+}
+
+h1#title {
+	color: [[setting:themecolor]];
+	white-space: nowrap;
+	font-size: 2.1em;
+}
+
+h2#subtitle {
+	font-size: 1em;
+	text-transform: uppercase;
+	margin-top: -24px;
+	letter-spacing: .15em;
+	white-space: nowrap;
+}
+
+#headerlogo {
+	float: left;
+	font-size: 4.5em;
+	padding-right: 10px;
+	position: relative;
+	top: 10px;
+	margin-right: 10px;
+	border-right: 1px dotted [[setting:themecolor]];
 }
 
 .breadcrumb-button input[type="submit"]{
@@ -139,9 +164,17 @@ a.logo {
 }
 
 ul.socials {
-    float: right;
-    margin-top: 10px;
-    text-align: center;
+    text-align: right;
+}
+
+#socialheading {
+	text-align: right;
+	font-family: "Oswald", sans-serif;
+	color: #666;
+	letter-spacing: .2em;
+	padding: 0px;
+	margin: 0px;
+	margin-top: 8px;
 }
 
 /* @end */

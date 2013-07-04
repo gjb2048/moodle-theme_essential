@@ -54,9 +54,7 @@ $string['footnotedesc'] = 'Whatever you add to this textarea will be displayed i
 $string['invert'] = 'Invert navbar';
 $string['invertdesc'] = 'Swaps text and background for the navbar at the top of the page between black and white.';
 $string['logo'] = 'Logo';
-$string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.<br>
-If the height of your logo is more than 75px add the following CSS rule to the Custom CSS box below.<br>
-a.logo {height: 100px;} or whatever height in pixels the logo is.';
+$string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.<br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
 $string['copyright'] = 'Copyright';
 $string['copyrightdesc'] = 'The name of your organisation.';
 $string['profilebarcustomtitle'] = 'Profile Bar Custom Block Title';
@@ -67,6 +65,8 @@ $string['themehovercolor'] = 'Theme Hover Color';
 $string['themehovercolordesc'] = 'What color should your theme hovers be. This is used for links, menus, etc';
 $string['contactinfo'] = 'Contact Information';
 $string['contactinfodesc'] = 'Enter your contact information';
+$string['siteicon'] = 'Site Icon';
+$string['siteicondesc'] = 'Do not have a logo? Enter the name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "icon-". ';
 
 /* Regions */
 $string['region-side-post'] = 'Right';
