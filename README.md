@@ -17,6 +17,16 @@ Cool things to know about the theme.
  - The homepage main area is just a label. The theme will ship with custom classes that you can set for tables and links to modify their formatting. No knowledge of code is needed as you can use the text editor to do this. Documentation will be provided outlining what the additional classes are.
 
 See the theme in Action
+========================
+
+A video showing many of the core features is available for viewing at https://vimeo.com/channels/moodleman
+
 If you would like to see it in action, head to this year's iMoot site at http://2013.imoot.org
 
-A MAJOR reminder - This theme is not finished yet. It is in a very raw, cluttered, messy and un-professional state. I am releasing on Githib for those who want to help in it's development. NOT FOR PRODUCTION
+
+Documentation
+=============
+
+As always, documentation is a work in progress. Availbale documentation is available at http://docs.moodle.org/25/en/Essential_theme
+
+If you have questions you can post them in the official discussion moodle.org forum at https://moodle.org/mod/forum/discuss.php?d=231970
