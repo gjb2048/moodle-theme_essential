@@ -25,6 +25,7 @@
  */
 
 $hascopyright = (empty($PAGE->theme->settings->copyright)) ? false : $PAGE->theme->settings->copyright;
+$hasfootnote = (empty($PAGE->theme->settings->footnote)) ? false : $PAGE->theme->settings->footnote;
 ?>
 	<div class="row-fluid">
     	<!-- Widget 1 -->
@@ -65,7 +66,11 @@ $hascopyright = (empty($PAGE->theme->settings->copyright)) ? false : $PAGE->them
     	<hr>
     	<p class="helplink"><?php echo page_doc_link(get_string('moodledocslink')); ?></p>
     <?php if ($hascopyright) {
-        echo '    <p class="copy">&copy; '.date("Y").' '.$hascopyright.'</p>';
+        echo '<p class="copy">&copy; '.date("Y").' '.$hascopyright.'</p>';
+    } ?>
+    
+    <?php if ($hasfootnote) {
+        echo '<div class="footnote">'.$hasfootnote.'</div>';
     } ?>
 	</div>
 	

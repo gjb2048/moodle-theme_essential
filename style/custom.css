@@ -549,54 +549,93 @@ table#greyboxleft h2 {
     border: 1px solid #E1E1E1;
     margin-bottom: 10px;
 }
-
-#page-footer .block {
-    border: 0px none;
-    background: transparent;
-    width: 100%;
-    padding: 0px;
-}
-
-#page-footer .block .header .title h2:before {
-    background: transparent;
-    padding-left: 0px;
-    font-size: 15px;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    color: #CCC;
-    text-transform: none;
-    font-weight: normal;
-}
-
-#page-footer .block .header .block_action {
-    display: none !important;
-}
-
-#page-footer .block .header .title {
-    border-bottom: 1px solid #313131;
-}
-
-#page-footer .eventskey,
-#page-footer .calendar_filters {
-	display: none;
-}
-
-#page-footer img.profilepicture,
-#page-footer .myprofileitem.picture {
-	float: left;
-	width: 90px;
-	height: 90px;
-}
-
-#page-footer .myprofileitem.picture {
-	margin-right: 20px;
-}
-
-#page-footer .myprofileitem.fullname {
-	margin-top: 10px;
-}
-
-.hidden-blocks {
+	
+	/* @group Foter Block Formatting */
+		
+		#page-footer .block {
+		    border: 0px none;
+		    background: transparent;
+		    width: 100%;
+		    padding: 0px;
+		}
+		
+		#page-footer .block .header .title h2:before {
+		    background: transparent;
+		    padding-left: 0px;
+		    font-size: 15px;
+		    padding-bottom: 0px;
+		    margin-bottom: 0px;
+		    color: #CCC;
+		    text-transform: none;
+		    font-weight: normal;
+		}
+		
+		#page-footer .block .header .block_action {
+		    display: none !important;
+		}
+		
+		#page-footer .block .header .title {
+		    border-bottom: 1px solid #313131;
+		}
+		
+		#page-footer .eventskey,
+		#page-footer .calendar_filters {
+			display: none;
+		}
+		
+		#page-footer img.profilepicture,
+		#page-footer .myprofileitem.picture {
+			float: left;
+			width: 90px;
+			height: 90px;
+		}
+		
+		#page-footer .myprofileitem.picture {
+			margin-right: 20px;
+		}
+		
+		#page-footer .myprofileitem.fullname {
+			margin-top: 10px;
+		}
+		
+		#page-footer input:-webkit-autofill {
+			background-color: #fff !important;
+		}
+		
+		#page-footer .block_login input[type="submit"] {
+			background: [[setting:themecolor]];
+			color: #fff;
+			text-shadow: none;
+			border: 0px none;
+			float: left;
+			margin-top: 3px;
+		}
+		
+		#page-footer .block_login input[type="submit"]:hover {
+			background: [[setting:themehovercolor]];
+		}
+		#page-footer .block_login .footer a,
+		#page-footer .block_login .footer a:visited {
+			background: red;
+			color: #fff;
+			border-radius: 5px;
+			padding: 4px 10px;
+			font-size: 13.5px;
+			line-height: 20px;
+			float: left;
+			font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+			margin-left: 10px;
+		}
+		
+		#page-footer .block_login .footer a:focus,
+		#page-footer .block_login .footer a:hover {
+			text-decoration: none !important;
+			background-color: #666 ;
+		}
+		
+	/* @end */
+	
+	.hidden-blocks {
     background: #ffe1e1;
     padding: 10px;
     border: 1px solid #EEE;
@@ -650,6 +689,11 @@ table#greyboxleft h2 {
 
 .block_quiz_results {
     text-align: left;
+}
+
+.block_login label {
+	font-family: "Oswald", sans-serif;
+	font-weight: normal !important;
 }
 
 /* @group Block Icons */
@@ -865,6 +909,10 @@ table#greyboxleft h2 {
     text-align: left;
 }
 
+#page-footer a {
+    color: #BBB;
+}
+
 .helplink {
     float: right;
     padding-right: 20px;
@@ -874,6 +922,16 @@ table#greyboxleft h2 {
     color: orange !important;
 }
 
+#page-footer .footnote a,
+#page-footer .footnote a:visited {
+    color: [[setting:themecolor]] !important;
+}
+
+#page-footer .footnote a:hover {
+    color: #fff !important;
+    text-decoration: none;
+}
+
 #page-footer .container {
     margin-right: auto;
     margin-left: auto;
@@ -881,6 +939,13 @@ table#greyboxleft h2 {
 
 #page-footer .copy {
 	padding-left: 20px;
+	float: left;
+}
+
+#page-footer .footnote {
+	float: left;
+	color: #fff;
+	margin-left: 20px;
 }
 
 #page-footer .span4 {
@@ -916,10 +981,6 @@ table#greyboxleft h2 {
 #greyboxright ul li {
     padding: 4px 0px;
     padding-left: 0px;
-}
-
-#page-footer a {
-    color: #BBB;
 }
 
 #page-footer ul li:before,
