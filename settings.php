@@ -27,7 +27,6 @@ $settings = null;
 
 defined('MOODLE_INTERNAL') || die;
 
-if ($ADMIN->fulltree) {
 
 	$ADMIN->add('themes', new admin_category('theme_essential', 'Essential'));
 
@@ -474,4 +473,4 @@ if ($ADMIN->fulltree) {
     
     
     $ADMIN->add('theme_essential', $temp);
-}
+
