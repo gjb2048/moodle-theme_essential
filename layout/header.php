@@ -71,7 +71,7 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
             } ?>
         </div>
         <div class="span4 pull-right">
-        <p id="socialheading">Social Networks</p>
+        <p id="socialheading"><?php echo get_string('socialnetworks','theme_essential')?></p>
             <ul class="socials unstyled">
                 <?php if ($hasgoogleplus) { ?>
                 <li><a href="<?php echo $hasgoogleplus; ?>"><i class="icon-google-plus-sign"></i></a></li>
