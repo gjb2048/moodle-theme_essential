@@ -169,6 +169,7 @@ $string['marketing3buttonurldesc'] = 'URL the button will point to.';
 $string['socialheading'] = 'Social Networking';
 $string['socialheadingsub'] = 'Engage your users with Social Networking';
 $string['socialdesc'] = 'Provide direct links to the core social networks that promote your brand. These will appear in the header of every page.';
+$string['socialnetworks'] = 'Social Networks';
 $string['facebook'] = 'Facebook URL';
 $string['facebookdesc'] = 'Enter the URL of your Facebook page. (i.e http://www.facebook.com/mycollege)';
 
