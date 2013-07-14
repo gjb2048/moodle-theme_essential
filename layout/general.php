@@ -199,8 +199,7 @@ if ($hasheader) {
                 </div>
             </div>
         </div>
-    </div>
-</div>      
+    </div>    
 
 <footer id="page-footer" class="container-fluid">
             <?php require('footer.php'); ?>

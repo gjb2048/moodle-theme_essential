@@ -54,6 +54,10 @@ a:hover{
     color: #fff !important;
 }
 
+#page {
+	padding-top: 10px;
+}
+
 /* @group Custom */
 
 .bor {
@@ -198,7 +202,7 @@ ul.socials {
 }
 
 .navbar {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 .navbar-inner{
@@ -901,7 +905,8 @@ table#greyboxleft h2 {
 
 #page-footer {
     background: #222 url([[pix:theme|fback]]) repeat;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
     font-size: 13px;
     padding-top: 10px;
     color: #DDD;
