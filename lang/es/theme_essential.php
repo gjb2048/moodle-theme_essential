@@ -85,6 +85,7 @@ $string['hideonphone'] = 'Oculto para Móviles';
 $string['hideonphonedesc'] = 'Escoja si desea mostrar el carrusel en móviles';
 $string['display'] = 'Mostrar';
 $string['dontdisplay'] = 'No Mostrar';
+$string['readmore'] = 'Read More';
 
 $string['slideshowTitle'] = 'Carrusel de diapositivas';
 $string['slide1'] = 'Diapositiva Uno: Título';

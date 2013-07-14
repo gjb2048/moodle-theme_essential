@@ -85,6 +85,7 @@ $string['hideonphone'] = 'Slideshow on Mobiles';
 $string['hideonphonedesc'] = 'Choose if you wish to have the slideshow shown on mobiles or not';
 $string['display'] = 'Display';
 $string['dontdisplay'] = 'Do not Display';
+$string['readmore'] = 'Read More';
 
 $string['slideshowTitle'] = 'Slideshow';
 $string['slide1'] = 'Slide One: Title';
