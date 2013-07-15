@@ -48,6 +48,12 @@ $THEME->plugins_exclude_sheets = array(
 );
 
 $THEME->layouts = array(
+    // Most backwards compatible layout without the blocks - this is the layout used by default
+    'base' => array(
+        'file' => 'general.php',
+        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
+        'defaultregion' => 'side-post',
+    ),
     // Front page.
     'frontpage' => array(
         'file' => 'frontpage.php',
