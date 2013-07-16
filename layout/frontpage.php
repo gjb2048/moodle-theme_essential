@@ -360,20 +360,17 @@ echo $OUTPUT->doctype() ?>
 
 <?php } ?>
 
- <div class="bor"></div>
+<div id="page-content" class="row-fluid">
+    <div class="bor"></div>
         <?php echo $OUTPUT->main_content() ?>
-        <div class="bor"></div>
+    <div class="bor"></div>
         
-        <div id="page-content" class="row-fluid">
     <?php if ($layout === 'content-only') { ?>
     <section id="region-main" class="span12">
     <?php } else { ?>
     <section id="region-main" class="span9">
     <?php } ?>
         <?php echo $coursecontentheader; ?>
-        
-
-
 
         <?php echo $coursecontentfooter; ?>
     </section>
