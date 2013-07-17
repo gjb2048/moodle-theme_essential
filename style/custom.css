@@ -1152,6 +1152,23 @@ img.profilepicture
     border-radius:250px;
 }
 
+.socials img {
+    border-radius:5px;
+    width: 28px;
+    height: 28px;
+    margin-top: 2px;
+}
+
+.socials img:hover{
+    -webkit-box-shadow: px 0px 10px 0px [[setting:themecolor]];
+    -moz-box-shadow: 0px 0px 10px 0px [[setting:themecolor]];
+    box-shadow: 0px 0px 10px 0px [[setting:themecolor]];
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
 /* @end */
 .label, .badge {
     font-weight: normal;
