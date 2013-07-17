@@ -70,6 +70,8 @@ $string['siteicondesc'] = 'Do not have a logo? Enter the name of the icon you wi
 $string['yourprofile'] = 'You';
 $string['headerprofilepic'] = 'Display user\'s picture';
 $string['headerprofilepicdesc'] = 'If checked, displays the user\'s profile picture in the header of the page.';
+$string['layout'] = 'Use a standard course layout';
+$string['layoutdesc'] = 'This theme is designed to put both block columns on the side. If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
 
 /* Regions */
 $string['region-side-post'] = 'Right';
