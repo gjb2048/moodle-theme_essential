@@ -67,6 +67,9 @@ $string['contactinfo'] = 'Contact Information';
 $string['contactinfodesc'] = 'Enter your contact information';
 $string['siteicon'] = 'Site Icon';
 $string['siteicondesc'] = 'Do not have a logo? Enter the name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "icon-". ';
+$string['yourprofile'] = 'You';
+$string['headerprofilepic'] = 'Display user\'s picture';
+$string['headerprofilepicdesc'] = 'If checked, displays the user\'s profile picture in the header of the page.';
 
 /* Regions */
 $string['region-side-post'] = 'Right';
