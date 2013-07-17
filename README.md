@@ -19,8 +19,8 @@ Cool things to know about the theme.
 New in 2.5.2
 ========================
  - New theme setting to have user image show in the header when logged in.
- - Font Awesome now loaded and cached through lib.php. SHould improve performance
- - Minro CSS fixes
+ - Font Awesome now loaded and cached through lib.php. Should improve performance
+ - Minor CSS fixes
 
 See the theme in Action
 ========================
