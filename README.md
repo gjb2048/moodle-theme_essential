@@ -16,6 +16,12 @@ Cool things to know about the theme.
  - The entire color scheme can be modified with theme settings (like on [Rocket](https://moodle.org/plugins/view.php?plugin=theme_rocket))
  - The homepage main area is just a label. The theme will ship with custom classes that you can set for tables and links to modify their formatting. No knowledge of code is needed as you can use the text editor to do this. Documentation will be provided outlining what the additional classes are.
 
+New in 2.5.2
+========================
+ - New theme setting to have user image show in the header when logged in.
+ - Font Awesome now loaded and cached through lib.php. SHould improve performance
+ - Minro CSS fixes
+
 See the theme in Action
 ========================
 
