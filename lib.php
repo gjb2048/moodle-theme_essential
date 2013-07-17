@@ -24,6 +24,15 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+/**
+ * Parses CSS before it is cached.
+ *
+ * This function can make alterations and replace patterns within the CSS.
+ *
+ * @param string $css The CSS
+ * @param theme_config $theme The theme config object.
+ * @return string The parsed CSS The parsed CSS.
+ */
 function essential_process_css($css, $theme) {
 
     // Set the theme color.
@@ -32,7 +41,7 @@ function essential_process_css($css, $theme) {
     } else {
         $themecolor = null;
     }
-    $css = essential_set_themecolor($css, $themecolor);
+    $css = theme_essential_set_themecolor($css, $themecolor);
 
     // Set the theme hover color.
     if (!empty($theme->settings->themehovercolor)) {
@@ -40,7 +49,7 @@ function essential_process_css($css, $theme) {
     } else {
         $themehovercolor = null;
     }
-    $css = essential_set_themehovercolor($css, $themehovercolor);
+    $css = theme_essential_set_themehovercolor($css, $themehovercolor);
     
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
@@ -52,31 +61,66 @@ function essential_process_css($css, $theme) {
 
     // Set the background image for the logo.
     $logo = $theme->setting_file_url('logo', 'logo');
-    $css = essential_set_logo($css, $logo);
+    $css = theme_essential_set_logo($css, $logo);
 
     // Set Slide Images.
     $setting = 'slide1image';
     // Creates the url for image file which is then served up by 'theme_essential_pluginfile' below.
     $slideimage = $theme->setting_file_url($setting, $setting);
-    $css = essential_set_slideimage($css, $slideimage, $setting);
+    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
 
     $setting = 'slide2image';
     $slideimage = $theme->setting_file_url($setting, $setting);
-    $css = essential_set_slideimage($css, $slideimage, $setting);
+    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
 
     $setting = 'slide3image';
     $slideimage = $theme->setting_file_url($setting, $setting);
-    $css = essential_set_slideimage($css, $slideimage, $setting);
+    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
 
     $setting = 'slide4image';
     $slideimage = $theme->setting_file_url($setting, $setting);
-    $css = essential_set_slideimage($css, $slideimage, $setting);
+    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
 
     return $css;
 }
 
+/**
+ * Include the Awesome Font.
+ */
 
-function essential_set_logo($css, $logo) {
+function essential_include_fonts($css){
+    global $CFG, $PAGE;
+    if(empty($CFG->themewww)){
+        $themewww = $CFG->wwwroot."/theme";
+    } else {
+        $themewww = $CFG->themewww;
+    }
+    $tag ='<a href="http://docs.moodle.org/en/setting:fontface"; title="Moodle Docs - setting:fontface">setting:fontface</a>';
+    $replacement = '
+    @font-face {
+    font-family: \'FontAwesome\';
+    src: url(\''.$themewww.'/'.$PAGE->theme->name.'/fonts/fontawesome-webfont.eot?v=3.2.1\');
+    src: url(\''.$themewww.'/'.$PAGE->theme->name.'/fonts/fontawesome-webfont.eot?#iefix&v=3.2.1\') format(\'embedded-opentype\'),
+         url(\''.$themewww.'/'.$PAGE->theme->name.'/fonts/fontawesome-webfont.woff?v=3.2.1\') format(\'woff\'),
+         url(\''.$themewww.'/'.$PAGE->theme->name.'/fonts/fontawesome-webfont.ttf?v=3.2.1\') format(\'truetype\'),
+         url(\''.$themewww.'/'.$PAGE->theme->name.'/fonts/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1\') format(\'svg\');
+    font-weight: normal;
+    font-style: normal;
+    }    
+          
+    ';
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+/**
+ * Adds the logo to CSS.
+ *
+ * @param string $css The CSS.
+ * @param string $logo The URL of the logo.
+ * @return string The parsed CSS
+ */
+function theme_essential_set_logo($css, $logo) {
     global $OUTPUT;
     $tag = '[[setting:logo]]';
     $replacement = $logo;
@@ -89,6 +133,18 @@ function essential_set_logo($css, $logo) {
     return $css;
 }
 
+/**
+ * Serves any files associated with the theme settings.
+ *
+ * @param stdClass $course
+ * @param stdClass $cm
+ * @param context $context
+ * @param string $filearea
+ * @param array $args
+ * @param bool $forcedownload
+ * @param array $options
+ * @return bool
+ */
 function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
     if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'logo') {
         $theme = theme_config::load('essential');
@@ -110,6 +166,13 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
     }
 }
 
+/**
+ * Adds any custom CSS to the CSS before it is cached.
+ *
+ * @param string $css The original CSS.
+ * @param string $customcss The custom CSS to add.
+ * @return string The CSS which now contains our custom CSS.
+ */
 function essential_set_customcss($css, $customcss) {
     $tag = '[[setting:customcss]]';
     $replacement = $customcss;
@@ -122,7 +185,8 @@ function essential_set_customcss($css, $customcss) {
     return $css;
 }
 
-function essential_set_themecolor($css, $themecolor) {
+
+function theme_essential_set_themecolor($css, $themecolor) {
     $tag = '[[setting:themecolor]]';
     $replacement = $themecolor;
     if (is_null($replacement)) {
@@ -132,7 +196,7 @@ function essential_set_themecolor($css, $themecolor) {
     return $css;
 }
 
-function essential_set_themehovercolor($css, $themehovercolor) {
+function theme_essential_set_themehovercolor($css, $themehovercolor) {
     $tag = '[[setting:themehovercolor]]';
     $replacement = $themehovercolor;
     if (is_null($replacement)) {
@@ -142,7 +206,7 @@ function essential_set_themehovercolor($css, $themehovercolor) {
     return $css;
 }
 
-function essential_set_slideimage($css, $slideimage, $setting) {
+function theme_essential_set_slideimage($css, $slideimage, $setting) {
     global $OUTPUT;
     $tag = '[[setting:'.$setting.']]';
     $replacement = $slideimage;
@@ -159,4 +223,10 @@ function theme_essential_page_init(moodle_page $page) {
     $page->requires->jquery_plugin('modernizr', 'theme_essential');
     $page->requires->jquery_plugin('cslider', 'theme_essential');
     $page->requires->jquery_plugin('custom', 'theme_essential');   
+}
+
+function theme_process_css($css, $theme) {
+    debugging('Please call theme_'.__FUNCTION__.' instead of '.__FUNCTION__, DEBUG_DEVELOPER);
+    $css = bluemoon_include_fonts($css, $theme);
+    return theme_bluemoon_process_css($css, $theme);
 }
