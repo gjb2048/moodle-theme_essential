@@ -19,6 +19,7 @@ Cool things to know about the theme.
 New in 2.5.2
 ========================
  - New theme setting to have user image show in the header when logged in.
+ - Admin can choose to revert courses to a "standard" layout with blocks on the left and right sides
  - Font Awesome now loaded and cached through lib.php. Should improve performance
  - Minor CSS fixes
 
