@@ -51,6 +51,14 @@ function essential_process_css($css, $theme) {
     }
     $css = theme_essential_set_themehovercolor($css, $themehovercolor);
     
+    // Set the navbar seperator.
+    if (!empty($theme->settings->navbarsep)) {
+        $navbarsep = $theme->settings->navbarsep;
+    } else {
+        $navbarsep = '/';
+    }
+    $css = theme_essential_set_navbarsep($css, $navbarsep);
+    
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
         $customcss = $theme->settings->customcss;
@@ -201,6 +209,16 @@ function theme_essential_set_themehovercolor($css, $themehovercolor) {
     $replacement = $themehovercolor;
     if (is_null($replacement)) {
         $replacement = '#29a1c4';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_navbarsep($css, $navbarsep) {
+    $tag = '[[setting:navbarsep]]';
+    $replacement = $navbarsep;
+    if (is_null($replacement)) {
+        $replacement = '';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;

@@ -73,6 +73,15 @@ $string['headerprofilepicdesc'] = 'If checked, displays the user\'s profile pict
 $string['layout'] = 'Use a standard course layout';
 $string['layoutdesc'] = 'This theme is designed to put both block columns on the side. If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
 
+/* Navbar Seperator */
+$string['navbarsep'] = 'Navbar Seperator';
+$string['navbarsepdesc'] = 'Here you can change the type of seperator displayed in the navbar/breadcrumb';
+$string['nav_thinbracket'] = 'Thin bracket';
+$string['nav_doublebracket'] = 'Double thin bracket';
+$string['nav_thickbracket'] = 'Thick Bracket';
+$string['nav_slash'] = 'Forward slash';
+$string['nav_pipe'] = 'Verticle line';
+
 /* Regions */
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';

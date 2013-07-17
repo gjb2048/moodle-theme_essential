@@ -201,6 +201,22 @@ ul.socials {
     margin-top: -4px;
 }
 
+ul.breadcrumb span.divider {
+	display: none;
+}
+
+ul.breadcrumb li:after { 
+	content: "[[setting:navbarsep]]";
+	font-family: FontAwesome;
+	font-size: 1.1em;
+	margin: 0px 6px 0px 3px;
+	color: #bbb;
+}
+
+ul.breadcrumb li:last-child:after { 
+	content: none; 
+}
+
 .navbar {
     margin-bottom: 0px;
 }
