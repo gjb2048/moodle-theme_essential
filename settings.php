@@ -31,7 +31,7 @@ defined('MOODLE_INTERNAL') || die;
 	$ADMIN->add('themes', new admin_category('theme_essential', 'Essential'));
 
 	// "geneicsettings" settingpage
-	$temp = new admin_settingpage('theme_essential_generic', 'General Settings');
+	$temp = new admin_settingpage('theme_essential_generic',  get_string('geneicsettings', 'theme_essential'));
 	
 	// Default Site icon setting.
     $name = 'theme_essential/siteicon';
