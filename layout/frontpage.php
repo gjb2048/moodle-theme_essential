@@ -188,24 +188,12 @@ echo $OUTPUT->doctype() ?>
 <head>
     <title><?php echo $PAGE->title ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->pix_url('favicon', 'theme')?>" />
-    <meta name="author" content="Site by Klevar" /> 
+    <meta name="author" content="Site by Moodleman" /> 
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google web fonts -->
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
-    <style type="text/css">
-        @font-face {
-  		font-family: 'FontAwesome';
-  		src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.eot?v=3.2.1');
-  		src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), 
-  			url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.woff?v=3.2.1') format('woff'), 
-  			url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.ttf?v=3.2.1') format('truetype'), 
-  			url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
-  		font-weight: normal;
-  		font-style: normal;
-		}
-    </style>
 </head>
 
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">
