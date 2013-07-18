@@ -349,31 +349,23 @@ echo $OUTPUT->doctype() ?>
 <?php } ?>
 
 <div id="page-content" class="row-fluid">
-    <div class="bor"></div>
-        <?php echo $OUTPUT->main_content() ?>
-    <div class="bor"></div>
-        
-    <?php if ($layout === 'content-only') { ?>
-    <section id="region-main" class="span12">
-    <?php } else { ?>
-    <section id="region-main" class="span9">
-    <?php } ?>
-        <?php echo $coursecontentheader; ?>
+        <div id="<?php echo $regionbsid ?>" class="span12">
+            <div class="row-fluid">
+                <section id="region-main" class="span8 desktop-first-column">
+                	<?php if ($hasnavbar) { ?>
+            			<nav class="breadcrumb-button"><?php echo $PAGE->button; ?></nav>
+            			<?php echo $OUTPUT->navbar(); ?>
+            		<?php }
 
-        <?php echo $coursecontentfooter; ?>
-    </section>
-    
-    <aside class="span3">
-        <div id="region-pre" class="block-region">
-            <div class="region-content">
-                <?php
-                    echo $OUTPUT->blocks_for_region('side-pre');
-                    echo $OUTPUT->blocks_for_region('side-post');
-                ?>
+                    echo $OUTPUT->course_content_header();
+                    echo $OUTPUT->main_content();
+                    echo $OUTPUT->course_content_footer();
+                    ?>
+                </section>
+                <?php echo $OUTPUT->blocks('side-pre', 'span4 pull-right'); ?>
             </div>
         </div>
-    </aside>
-</div>
+    </div>
 
 <?php
 /* ***** Commented out as the following hard-coded content was displaying in the source code when hidden via CSS
