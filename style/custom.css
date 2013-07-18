@@ -583,7 +583,7 @@ table#greyboxleft h2 {
 
 .block #icon {
 	margin-right: 5px;
-	color: rgb(68, 68, 68);
+	color: #999;
 }
 	
 	.hidden-blocks {
@@ -1218,10 +1218,90 @@ img.profilepicture
 }
 
 /* @end */
+
+/* @group Tabs */
+.tabtree{
+	position:relative; 
+	margin-bottom:10px
+}
+
+.tabtree .tabrow0{
+	text-align:center; 
+	width:100%; 
+	margin:0; 
+	overflow:hidden; 
+	border-bottom:2px solid [[setting:themecolor]]
+}
+
+.tabtree .tabrow0 li{
+	display:inline; 
+	float:left; 
+	font-size:13px
+}
+
+.tabtree .tabrow0 li.here a{
+	position:relative; 
+	z-index:102
+}
+
+.tabtree .tabrow0 li a{
+	display:block; 
+	background:#999; 
+	color:#fff; 
+	padding:5px 5px; 
+	margin-bottom:-1px; 
+	margin-right:4px; 
+	text-shadow:-1px -1px 1px rgba(0,0,0,0.2); 
+	-webkit-border-top-left-radius:6px; 
+	-webkit-border-top-right-radius:6px; 
+	-moz-border-radius-topleft:6px; 
+	-moz-border-radius-topright:6px; 
+	border-top-left-radius:6px; 
+	border-top-right-radius:6px
+}
+
+.tabtree .tabrow0 li.selected a{
+	background: [[setting:themecolor]];
+}
+
+.tabtree .tabrow0 li a:hover{
+	background: [[setting:themehovercolor]]; 
+	text-decoration:none
+}
+
+.tabtree .tabrow0 li a span{
+	padding:0; 
+	margin:0; 
+	color:#fff
+}
+
+.tabtree .tabrow0 ul, .tabtree .tabrow0 div{
+	position:absolute; 
+	width:100%; 
+	border-top:1px solid #aaa; 
+	top:100%; 
+	margin:0; 
+	padding:.25em 0
+}
+
+.tabtree .tabrow0 .empty{
+	height:1px; 
+	overflow:hidden; 
+	position:absolute; 
+	padding:0
+}
+
+.tabtree ul li.here ul{
+	position:relative
+}
+
+/* @end */
+
 .label, .badge {
     font-weight: normal;
     background: transparent;
 }
+
 
 /* Custom CSS Settings
 -------------------------*/

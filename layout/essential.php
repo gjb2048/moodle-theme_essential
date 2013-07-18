@@ -34,7 +34,7 @@
             <div class="span12" id="move">
             <?php } ?>
                 <div id="region-post" class="block-region">
-                    <div class="region-content">This is Essential
+                    <div class="region-content">
                     <?php echo $OUTPUT->blocks_for_region('side-post'); ?>
                     </div>
                 </div>
