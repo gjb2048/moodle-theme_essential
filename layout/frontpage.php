@@ -362,7 +362,11 @@ echo $OUTPUT->doctype() ?>
                     echo $OUTPUT->course_content_footer();
                     ?>
                 </section>
-                <?php echo $OUTPUT->blocks('side-pre', 'span4 pull-right'); ?>
+                <div id="region-pre" class="block-region">
+                    <div class="region-content">
+                        <?php echo $OUTPUT->blocks('side-pre', 'span4 pull-right'); ?>
+                   </div>
+                </div>
             </div>
         </div>
     </div>
