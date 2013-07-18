@@ -31,6 +31,11 @@ $haslinkedin    = (empty($PAGE->theme->settings->linkedin)) ? false : $PAGE->the
 $hasyoutube     = (empty($PAGE->theme->settings->youtube)) ? false : $PAGE->theme->settings->youtube;
 $hasflickr      = (empty($PAGE->theme->settings->flickr)) ? false : $PAGE->theme->settings->flickr;
 
+// If any of the above social networks are true, sets this to true.
+$hassocialnetworks = ($hasfacebook || $hastwitter || $hasgoogleplus || $hasflickr || $haslinkedin || $hasyoutube ) ? true : false;
+$hasheaderprofilepic = (empty($PAGE->theme->settings->headerprofilepic)) ? false : $PAGE->theme->settings->headerprofilepic;
+
+
 /* Modified to check for IE 7/8. Switch headers to remove backgound-size CSS (in Custom CSS) functionality if true */
 $checkuseragent = '';
 if (!empty($_SERVER['HTTP_USER_AGENT'])) {
@@ -70,7 +75,29 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
             <?php
             } ?>
         </div>
+<<<<<<< HEAD
         <div class="span4 pull-right">
+=======
+        <?php if (isloggedin() && $hasheaderprofilepic) { ?>
+        <div class="span1 pull-right" id="profilepic">
+            <p id="socialheading"><?php print_string('yourprofile', 'theme_essential'); ?></p>
+            <ul class="socials unstyled">
+                <li>
+                    <a href="<?php echo $CFG->wwwroot.'/user/profile.php?id='.$USER->id; ?>">
+                        <?php echo $OUTPUT->user_picture($USER); ?>
+                    </a>
+                </li>
+            </ul>            
+
+        </div>
+        <?php
+        }
+
+        // If true, displays the heading and available social links; displays nothing if false.
+        if ($hassocialnetworks) {
+        ?>
+        <div class="span3 pull-right">
+>>>>>>> MOODLE_25
         <p id="socialheading"><?php echo get_string('socialnetworks','theme_essential')?></p>
             <ul class="socials unstyled">
                 <?php if ($hasgoogleplus) { ?>
@@ -93,7 +120,10 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
                 <?php } ?>
             </ul>
         </div>
-        <?php if (!empty($courseheader)) { ?>
+        <?php 
+        }
+        
+        if (!empty($courseheader)) { ?>
         <div id="course-header"><?php echo $courseheader; ?></div>
         <?php } ?>
     </div>
