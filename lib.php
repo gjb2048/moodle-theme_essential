@@ -33,91 +33,20 @@
  * @param theme_config $theme The theme config object.
  * @return string The parsed CSS The parsed CSS.
  */
-function essential_process_css($css, $theme) {
-
-    // Set the theme color.
-    if (!empty($theme->settings->themecolor)) {
-        $themecolor = $theme->settings->themecolor;
-    } else {
-        $themecolor = null;
-    }
-    $css = theme_essential_set_themecolor($css, $themecolor);
-
-    // Set the theme hover color.
-    if (!empty($theme->settings->themehovercolor)) {
-        $themehovercolor = $theme->settings->themehovercolor;
-    } else {
-        $themehovercolor = null;
-    }
-    $css = theme_essential_set_themehovercolor($css, $themehovercolor);
-    
-    // Set the navbar seperator.
-    if (!empty($theme->settings->navbarsep)) {
-        $navbarsep = $theme->settings->navbarsep;
-    } else {
-        $navbarsep = '/';
-    }
-    $css = theme_essential_set_navbarsep($css, $navbarsep);
-    
-    // Set custom CSS.
-    if (!empty($theme->settings->customcss)) {
-        $customcss = $theme->settings->customcss;
-    } else {
-        $customcss = null;
-    }
-    $css = essential_set_customcss($css, $customcss);
-
-    // Set the background image for the logo.
-    $logo = $theme->setting_file_url('logo', 'logo');
-    $css = theme_essential_set_logo($css, $logo);
-
-    // Set Slide Images.
-    $setting = 'slide1image';
-    // Creates the url for image file which is then served up by 'theme_essential_pluginfile' below.
-    $slideimage = $theme->setting_file_url($setting, $setting);
-    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
-
-    $setting = 'slide2image';
-    $slideimage = $theme->setting_file_url($setting, $setting);
-    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
-
-    $setting = 'slide3image';
-    $slideimage = $theme->setting_file_url($setting, $setting);
-    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
-
-    $setting = 'slide4image';
-    $slideimage = $theme->setting_file_url($setting, $setting);
-    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
-
-    return $css;
-}
 
 /**
  * Include the Awesome Font.
  */
 
-function essential_include_fonts($css){
+function theme_essential_set_fontwww($css) {
     global $CFG, $PAGE;
     if(empty($CFG->themewww)){
         $themewww = $CFG->wwwroot."/theme";
     } else {
         $themewww = $CFG->themewww;
     }
-    $tag ='<a href="http://docs.moodle.org/en/setting:fontface"; title="Moodle Docs - setting:fontface">setting:fontface</a>';
-    $replacement = '
-    @font-face {
-    font-family: \'FontAwesome\';
-    src: url(\''.$themewww.'/'.$PAGE->theme->name.'/fonts/fontawesome-webfont.eot?v=3.2.1\');
-    src: url(\''.$themewww.'/'.$PAGE->theme->name.'/fonts/fontawesome-webfont.eot?#iefix&v=3.2.1\') format(\'embedded-opentype\'),
-         url(\''.$themewww.'/'.$PAGE->theme->name.'/fonts/fontawesome-webfont.woff?v=3.2.1\') format(\'woff\'),
-         url(\''.$themewww.'/'.$PAGE->theme->name.'/fonts/fontawesome-webfont.ttf?v=3.2.1\') format(\'truetype\'),
-         url(\''.$themewww.'/'.$PAGE->theme->name.'/fonts/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1\') format(\'svg\');
-    font-weight: normal;
-    font-style: normal;
-    }    
-          
-    ';
-    $css = str_replace($tag, $replacement, $css);
+    $tag = '[[setting:fontwww]]';
+    $css = str_replace($tag, $themewww.'/'.$PAGE->theme->name.'/fonts/', $css);
     return $css;
 }
 
@@ -193,6 +122,68 @@ function essential_set_customcss($css, $customcss) {
     return $css;
 }
 
+function theme_essential_process_css($css, $theme) {
+
+    // Set the theme color.
+    if (!empty($theme->settings->themecolor)) {
+        $themecolor = $theme->settings->themecolor;
+    } else {
+        $themecolor = null;
+    }
+    $css = theme_essential_set_themecolor($css, $themecolor);
+
+    // Set the theme hover color.
+    if (!empty($theme->settings->themehovercolor)) {
+        $themehovercolor = $theme->settings->themehovercolor;
+    } else {
+        $themehovercolor = null;
+    }
+    $css = theme_essential_set_themehovercolor($css, $themehovercolor);
+    
+    // Set the navbar seperator.
+    if (!empty($theme->settings->navbarsep)) {
+        $navbarsep = $theme->settings->navbarsep;
+    } else {
+        $navbarsep = '/';
+    }
+    $css = theme_essential_set_navbarsep($css, $navbarsep);
+    
+    // Set custom CSS.
+    if (!empty($theme->settings->customcss)) {
+        $customcss = $theme->settings->customcss;
+    } else {
+        $customcss = null;
+    }
+    $css = essential_set_customcss($css, $customcss);
+
+    // Set the background image for the logo.
+    $logo = $theme->setting_file_url('logo', 'logo');
+    $css = theme_essential_set_logo($css, $logo);
+
+    // Set Slide Images.
+    $setting = 'slide1image';
+    // Creates the url for image file which is then served up by 'theme_essential_pluginfile' below.
+    $slideimage = $theme->setting_file_url($setting, $setting);
+    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
+
+    $setting = 'slide2image';
+    $slideimage = $theme->setting_file_url($setting, $setting);
+    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
+
+    $setting = 'slide3image';
+    $slideimage = $theme->setting_file_url($setting, $setting);
+    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
+
+    $setting = 'slide4image';
+    $slideimage = $theme->setting_file_url($setting, $setting);
+    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
+    
+    // Set the font path.
+    $css = theme_essential_set_fontwww($css);
+
+    return $css;
+}
+
 
 function theme_essential_set_themecolor($css, $themecolor) {
     $tag = '[[setting:themecolor]]';
@@ -241,10 +232,4 @@ function theme_essential_page_init(moodle_page $page) {
     $page->requires->jquery_plugin('modernizr', 'theme_essential');
     $page->requires->jquery_plugin('cslider', 'theme_essential');
     $page->requires->jquery_plugin('custom', 'theme_essential');   
-}
-
-function theme_process_css($css, $theme) {
-    debugging('Please call theme_'.__FUNCTION__.' instead of '.__FUNCTION__, DEBUG_DEVELOPER);
-    $css = bluemoon_include_fonts($css, $theme);
-    return theme_bluemoon_process_css($css, $theme);
 }
