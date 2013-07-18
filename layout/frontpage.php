@@ -188,24 +188,12 @@ echo $OUTPUT->doctype() ?>
 <head>
     <title><?php echo $PAGE->title ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->pix_url('favicon', 'theme')?>" />
-    <meta name="author" content="Site by Klevar" /> 
+    <meta name="author" content="Site by Moodleman" /> 
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google web fonts -->
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
-    <style type="text/css">
-        @font-face {
-  		font-family: 'FontAwesome';
-  		src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.eot?v=3.2.1');
-  		src: url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), 
-  			url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.woff?v=3.2.1') format('woff'), 
-  			url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.ttf?v=3.2.1') format('truetype'), 
-  			url('<?php echo $CFG->wwwroot ?>/theme/essential/fonts/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
-  		font-weight: normal;
-  		font-style: normal;
-		}
-    </style>
 </head>
 
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">
@@ -254,7 +242,7 @@ echo $OUTPUT->doctype() ?>
                 <p><?php echo $slide1caption ?></p>
             <?php } ?>
             <?php if ($hasslide1url) { ?>
-                <a href="<?php echo $slide1url ?>" class="da-link">Read more</a>
+                <a href="<?php echo $slide1url ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
             <?php } ?>
             <?php if ($hasslide1image) { ?>
             <div class="da-img"><img src="<?php echo $slide1image ?>" alt="<?php echo $slide1 ?>"></div>
@@ -270,7 +258,7 @@ echo $OUTPUT->doctype() ?>
                 <p><?php echo $slide2caption ?></p>
             <?php } ?>
             <?php if ($hasslide2url) { ?>
-                <a href="<?php echo $slide2url ?>" class="da-link">Read more</a>
+                <a href="<?php echo $slide2url ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
             <?php } ?>
             <?php if ($hasslide2image) { ?>
             <div class="da-img"><img src="<?php echo $slide2image ?>" alt="<?php echo $slide2 ?>"></div>
@@ -286,7 +274,7 @@ echo $OUTPUT->doctype() ?>
                 <p><?php echo $slide3caption ?></p>
             <?php } ?>
             <?php if ($hasslide3url) { ?>
-                <a href="<?php echo $slide3url ?>" class="da-link">Read more</a>
+                <a href="<?php echo $slide3url ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
             <?php } ?>
             <?php if ($hasslide3image) { ?>
             <div class="da-img"><img src="<?php echo $slide3image ?>" alt="<?php echo $slide3 ?>"></div>
@@ -302,7 +290,7 @@ echo $OUTPUT->doctype() ?>
                 <p><?php echo $slide4caption ?></p>
             <?php } ?>
             <?php if ($hasslide4url) { ?>
-                <a href="<?php echo $slide4url ?>" class="da-link">Read more</a>
+                <a href="<?php echo $slide4url ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
             <?php } ?>
             <?php if ($hasslide4image) { ?>
             <div class="da-img"><img src="<?php echo $slide4image ?>" alt="<?php echo $slide4 ?>"></div>
@@ -360,35 +348,24 @@ echo $OUTPUT->doctype() ?>
 
 <?php } ?>
 
- <div class="bor"></div>
-        <?php echo $OUTPUT->main_content() ?>
-        <div class="bor"></div>
-        
-        <div id="page-content" class="row-fluid">
-    <?php if ($layout === 'content-only') { ?>
-    <section id="region-main" class="span12">
-    <?php } else { ?>
-    <section id="region-main" class="span9">
-    <?php } ?>
-        <?php echo $coursecontentheader; ?>
-        
+<div id="page-content" class="row-fluid">
+        <div id="<?php echo $regionbsid ?>" class="span12">
+            <div class="row-fluid">
+                <section id="region-main" class="span8 desktop-first-column">
+                	<?php if ($hasnavbar) { ?>
+            			<nav class="breadcrumb-button"><?php echo $PAGE->button; ?></nav>
+            			<?php echo $OUTPUT->navbar(); ?>
+            		<?php }
 
-
-
-        <?php echo $coursecontentfooter; ?>
-    </section>
-    
-    <aside class="span3">
-        <div id="region-pre" class="block-region">
-            <div class="region-content">
-                <?php
-                    echo $OUTPUT->blocks_for_region('side-pre');
-                    echo $OUTPUT->blocks_for_region('side-post');
-                ?>
+                    echo $OUTPUT->course_content_header();
+                    echo $OUTPUT->main_content();
+                    echo $OUTPUT->course_content_footer();
+                    ?>
+                </section>
+                <?php echo $OUTPUT->blocks('side-pre', 'span4 pull-right'); ?>
             </div>
         </div>
-    </aside>
-</div>
+    </div>
 
 <?php
 /* ***** Commented out as the following hard-coded content was displaying in the source code when hidden via CSS

@@ -48,10 +48,16 @@ $THEME->plugins_exclude_sheets = array(
 );
 
 $THEME->layouts = array(
+    // Most backwards compatible layout without the blocks - this is the layout used by default
+    'base' => array(
+        'file' => 'general.php',
+        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
+        'defaultregion' => 'side-post',
+    ),
     // Front page.
     'frontpage' => array(
         'file' => 'frontpage.php',
-        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
+        'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
         'defaultregion' => 'hidden-dock',
         'options' => array('nonavbar'=>true),
     ),
@@ -112,7 +118,7 @@ $THEME->layouts = array(
 
 
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
-$THEME->csspostprocess = 'essential_process_css';
+$THEME->csspostprocess = 'theme_essential_process_css';
 
 $useragent = '';
 if (!empty($_SERVER['HTTP_USER_AGENT'])) {

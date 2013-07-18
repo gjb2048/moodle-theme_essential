@@ -24,51 +24,40 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-function essential_process_css($css, $theme) {
+/**
+ * Parses CSS before it is cached.
+ *
+ * This function can make alterations and replace patterns within the CSS.
+ *
+ * @param string $css The CSS
+ * @param theme_config $theme The theme config object.
+ * @return string The parsed CSS The parsed CSS.
+ */
 
-    // Set the theme color.
-    if (!empty($theme->settings->themecolor)) {
-        $themecolor = $theme->settings->themecolor;
+/**
+ * Include the Awesome Font.
+ */
+
+function theme_essential_set_fontwww($css) {
+    global $CFG, $PAGE;
+    if(empty($CFG->themewww)){
+        $themewww = $CFG->wwwroot."/theme";
     } else {
-        $themecolor = null;
+        $themewww = $CFG->themewww;
     }
-    $css = essential_set_themecolor($css, $themecolor);
-
-    // Set the theme hover color.
-    if (!empty($theme->settings->themehovercolor)) {
-        $themehovercolor = $theme->settings->themehovercolor;
-    } else {
-        $themehovercolor = null;
-    }
-    $css = essential_set_themehovercolor($css, $themehovercolor);
-
-    // Set the background image for the logo.
-    $logo = $theme->setting_file_url('logo', 'logo');
-    $css = essential_set_logo($css, $logo);
-
-    // Set Slide Images.
-    $setting = 'slide1image';
-    // Creates the url for image file which is then served up by 'theme_essential_pluginfile' below.
-    $slideimage = $theme->setting_file_url($setting, $setting);
-    $css = essential_set_slideimage($css, $slideimage, $setting);
-
-    $setting = 'slide2image';
-    $slideimage = $theme->setting_file_url($setting, $setting);
-    $css = essential_set_slideimage($css, $slideimage, $setting);
-
-    $setting = 'slide3image';
-    $slideimage = $theme->setting_file_url($setting, $setting);
-    $css = essential_set_slideimage($css, $slideimage, $setting);
-
-    $setting = 'slide4image';
-    $slideimage = $theme->setting_file_url($setting, $setting);
-    $css = essential_set_slideimage($css, $slideimage, $setting);
-
+    $tag = '[[setting:fontwww]]';
+    $css = str_replace($tag, $themewww.'/'.$PAGE->theme->name.'/fonts/', $css);
     return $css;
 }
 
-
-function essential_set_logo($css, $logo) {
+/**
+ * Adds the logo to CSS.
+ *
+ * @param string $css The CSS.
+ * @param string $logo The URL of the logo.
+ * @return string The parsed CSS
+ */
+function theme_essential_set_logo($css, $logo) {
     global $OUTPUT;
     $tag = '[[setting:logo]]';
     $replacement = $logo;
@@ -81,6 +70,18 @@ function essential_set_logo($css, $logo) {
     return $css;
 }
 
+/**
+ * Serves any files associated with the theme settings.
+ *
+ * @param stdClass $course
+ * @param stdClass $cm
+ * @param context $context
+ * @param string $filearea
+ * @param array $args
+ * @param bool $forcedownload
+ * @param array $options
+ * @return bool
+ */
 function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
     if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'logo') {
         $theme = theme_config::load('essential');
@@ -102,7 +103,89 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
     }
 }
 
-function essential_set_themecolor($css, $themecolor) {
+/**
+ * Adds any custom CSS to the CSS before it is cached.
+ *
+ * @param string $css The original CSS.
+ * @param string $customcss The custom CSS to add.
+ * @return string The CSS which now contains our custom CSS.
+ */
+function essential_set_customcss($css, $customcss) {
+    $tag = '[[setting:customcss]]';
+    $replacement = $customcss;
+    if (is_null($replacement)) {
+        $replacement = '';
+    }
+
+    $css = str_replace($tag, $replacement, $css);
+
+    return $css;
+}
+
+function theme_essential_process_css($css, $theme) {
+
+    // Set the theme color.
+    if (!empty($theme->settings->themecolor)) {
+        $themecolor = $theme->settings->themecolor;
+    } else {
+        $themecolor = null;
+    }
+    $css = theme_essential_set_themecolor($css, $themecolor);
+
+    // Set the theme hover color.
+    if (!empty($theme->settings->themehovercolor)) {
+        $themehovercolor = $theme->settings->themehovercolor;
+    } else {
+        $themehovercolor = null;
+    }
+    $css = theme_essential_set_themehovercolor($css, $themehovercolor);
+    
+    // Set the navbar seperator.
+    if (!empty($theme->settings->navbarsep)) {
+        $navbarsep = $theme->settings->navbarsep;
+    } else {
+        $navbarsep = '/';
+    }
+    $css = theme_essential_set_navbarsep($css, $navbarsep);
+    
+    // Set custom CSS.
+    if (!empty($theme->settings->customcss)) {
+        $customcss = $theme->settings->customcss;
+    } else {
+        $customcss = null;
+    }
+    $css = essential_set_customcss($css, $customcss);
+
+    // Set the background image for the logo.
+    $logo = $theme->setting_file_url('logo', 'logo');
+    $css = theme_essential_set_logo($css, $logo);
+
+    // Set Slide Images.
+    $setting = 'slide1image';
+    // Creates the url for image file which is then served up by 'theme_essential_pluginfile' below.
+    $slideimage = $theme->setting_file_url($setting, $setting);
+    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
+
+    $setting = 'slide2image';
+    $slideimage = $theme->setting_file_url($setting, $setting);
+    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
+
+    $setting = 'slide3image';
+    $slideimage = $theme->setting_file_url($setting, $setting);
+    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
+
+    $setting = 'slide4image';
+    $slideimage = $theme->setting_file_url($setting, $setting);
+    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
+    
+    // Set the font path.
+    $css = theme_essential_set_fontwww($css);
+
+    return $css;
+}
+
+
+function theme_essential_set_themecolor($css, $themecolor) {
     $tag = '[[setting:themecolor]]';
     $replacement = $themecolor;
     if (is_null($replacement)) {
@@ -112,7 +195,7 @@ function essential_set_themecolor($css, $themecolor) {
     return $css;
 }
 
-function essential_set_themehovercolor($css, $themehovercolor) {
+function theme_essential_set_themehovercolor($css, $themehovercolor) {
     $tag = '[[setting:themehovercolor]]';
     $replacement = $themehovercolor;
     if (is_null($replacement)) {
@@ -122,7 +205,17 @@ function essential_set_themehovercolor($css, $themehovercolor) {
     return $css;
 }
 
-function essential_set_slideimage($css, $slideimage, $setting) {
+function theme_essential_set_navbarsep($css, $navbarsep) {
+    $tag = '[[setting:navbarsep]]';
+    $replacement = $navbarsep;
+    if (is_null($replacement)) {
+        $replacement = '';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_slideimage($css, $slideimage, $setting) {
     global $OUTPUT;
     $tag = '[[setting:'.$setting.']]';
     $replacement = $slideimage;

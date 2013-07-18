@@ -27,7 +27,6 @@ $settings = null;
 
 defined('MOODLE_INTERNAL') || die;
 
-if ($ADMIN->fulltree) {
 
 	$ADMIN->add('themes', new admin_category('theme_essential', 'Essential'));
 
@@ -47,6 +46,40 @@ if ($ADMIN->fulltree) {
     $title = get_string('logo', 'theme_essential');
     $description = get_string('logodesc', 'theme_essential');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'logo');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // User picture in header setting.
+    $name = 'theme_essential/headerprofilepic';
+    $title = get_string('headerprofilepic', 'theme_essential');
+    $description = get_string('headerprofilepicdesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // Custom or standard layout.
+    $name = 'theme_essential/layout';
+    $title = get_string('layout', 'theme_essential');
+    $description = get_string('layoutdesc', 'theme_essential');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // Navbar Seperator.
+    $name = 'theme_essential/navbarsep';
+    $title = get_string('navbarsep' , 'theme_essential');
+    $description = get_string('navbarsepdesc', 'theme_essential');
+    $nav_thinbracket = get_string('nav_thinbracket', 'theme_essential');
+    $nav_doublebracket = get_string('nav_doublebracket', 'theme_essential');
+    $nav_thickbracket = get_string('nav_thickbracket', 'theme_essential');
+    $nav_slash = get_string('nav_slash', 'theme_essential');
+    $nav_pipe = get_string('nav_pipe', 'theme_essential');
+    $dontdisplay = get_string('dontdisplay', 'theme_essential');
+    $default = '/';
+    $choices = array('/'=>$nav_slash, '\f105'=>$nav_thinbracket, '\f101'=>$nav_doublebracket, '\f054'=>$nav_thickbracket, '|'=>$nav_pipe);
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -86,9 +119,15 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-
-
-
+    
+    // Custom CSS file.
+    $name = 'theme_essential/customcss';
+    $title = get_string('customcss', 'theme_essential');
+    $description = get_string('customcssdesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
  	$ADMIN->add('theme_essential', $temp);
  
@@ -121,6 +160,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('slide1desc', 'theme_essential');
     $setting = new admin_setting_configtext($name, $title, $description, '');
     $default = '';
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Image.
@@ -136,6 +176,7 @@ if ($ADMIN->fulltree) {
     $title = get_string('slide1caption', 'theme_essential');
     $description = get_string('slide1captiondesc', 'theme_essential');
     $setting = new admin_setting_configtextarea($name, $title, $description, '');
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // URL.
@@ -143,6 +184,7 @@ if ($ADMIN->fulltree) {
     $title = get_string('slide1url', 'theme_essential');
     $description = get_string('slide1urldesc', 'theme_essential');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     /*
@@ -155,6 +197,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('slide2desc', 'theme_essential');
     $setting = new admin_setting_configtext($name, $title, $description, '');
     $default = '';
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Image.
@@ -170,6 +213,7 @@ if ($ADMIN->fulltree) {
     $title = get_string('slide2caption', 'theme_essential');
     $description = get_string('slide2captiondesc', 'theme_essential');
     $setting = new admin_setting_configtextarea($name, $title, $description, '');
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // URL.
@@ -177,6 +221,7 @@ if ($ADMIN->fulltree) {
     $title = get_string('slide2url', 'theme_essential');
     $description = get_string('slide2urldesc', 'theme_essential');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     /*
@@ -189,6 +234,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('slide3desc', 'theme_essential');
     $setting = new admin_setting_configtext($name, $title, $description, '');
     $default = '';
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Image.
@@ -204,6 +250,7 @@ if ($ADMIN->fulltree) {
     $title = get_string('slide3caption', 'theme_essential');
     $description = get_string('slide3captiondesc', 'theme_essential');
     $setting = new admin_setting_configtextarea($name, $title, $description, '');
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // URL.
@@ -211,6 +258,7 @@ if ($ADMIN->fulltree) {
     $title = get_string('slide3url', 'theme_essential');
     $description = get_string('slide3urldesc', 'theme_essential');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     /*
@@ -223,6 +271,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('slide4desc', 'theme_essential');
     $setting = new admin_setting_configtext($name, $title, $description, '');
     $default = '';
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Image.
@@ -238,6 +287,7 @@ if ($ADMIN->fulltree) {
     $title = get_string('slide4caption', 'theme_essential');
     $description = get_string('slide4captiondesc', 'theme_essential');
     $setting = new admin_setting_configtextarea($name, $title, $description, '');
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // URL.
@@ -245,6 +295,7 @@ if ($ADMIN->fulltree) {
     $title = get_string('slide4url', 'theme_essential');
     $description = get_string('slide4urldesc', 'theme_essential');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     
@@ -274,6 +325,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('marketing1desc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     $name = 'theme_essential/marketing1icon';
@@ -281,6 +333,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('marketing1icondesc', 'theme_essential');
     $default = 'star';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     $name = 'theme_essential/marketing1content';
@@ -288,6 +341,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('marketing1contentdesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     $name = 'theme_essential/marketing1buttontext';
@@ -295,6 +349,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('marketing1buttontextdesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     $name = 'theme_essential/marketing1buttonurl';
@@ -302,6 +357,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('marketing1buttonurldesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     //Marketing Spot Two.
@@ -310,6 +366,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('marketing2desc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     $name = 'theme_essential/marketing2icon';
@@ -317,6 +374,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('marketing2icondesc', 'theme_essential');
     $default = 'star';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     $name = 'theme_essential/marketing2content';
@@ -324,6 +382,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('marketing2contentdesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     $name = 'theme_essential/marketing2buttontext';
@@ -331,6 +390,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('marketing2buttontextdesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     $name = 'theme_essential/marketing2buttonurl';
@@ -338,6 +398,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('marketing2buttonurldesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     //Marketing Spot Three.
@@ -346,6 +407,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('marketing3desc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     $name = 'theme_essential/marketing3icon';
@@ -353,6 +415,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('marketing3icondesc', 'theme_essential');
     $default = 'star';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     $name = 'theme_essential/marketing3content';
@@ -360,6 +423,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('marketing3contentdesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     $name = 'theme_essential/marketing3buttontext';
@@ -367,6 +431,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('marketing3buttontextdesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     $name = 'theme_essential/marketing3buttonurl';
@@ -374,6 +439,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('marketing3buttonurldesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     
@@ -391,6 +457,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('facebookdesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Twitter url setting.
@@ -399,6 +466,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('twitterdesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Google+ url setting.
@@ -407,6 +475,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('googleplusdesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // LinkedIn url setting.
@@ -415,6 +484,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('linkedindesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     // YouTube url setting.
@@ -423,6 +493,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('youtubedesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     // Flickr url setting.
@@ -431,8 +502,9 @@ if ($ADMIN->fulltree) {
     $description = get_string('flickrdesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     
     $ADMIN->add('theme_essential', $temp);
-}
+

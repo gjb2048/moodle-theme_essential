@@ -7,16 +7,34 @@ The idea of this theme, as usual with my themes, is to make the site look as lit
 
 Cool things to know about the theme.
  - It only uses 6 images.
- - Most of what you think are "graphics" are actually the Awesome font
+ - Most of what you think are "graphics" are actually the [Awesome font](http://fortawesome.github.io/Font-Awesome/)
  - The slider on the frontpage of the demo site is completely customisable through theme settings
- - I am really trying to push what Bootstrap Grids can do. As such the theme is fully responsive.
+ - I am really trying to push what [Bootstrap](http://twitter.github.io/bootstrap/) Grids can do. As such the theme is fully responsive.
  - The footer is all custom Moodle regions. This means blocks can be added. The footer of the demo site is full of HTML blocks in this instance
- - The Theme uses Google webfonts to give it that extra bit of shazam!
+ - The Theme uses [Google web fonts](http://www.google.com/fonts/) to give it that extra bit of shazam!
  - Social Network icons appear at the top of the page dynamically based on theme settings
- - The entire color scheme can be modified with theme settings (like on Rocket)
+ - The entire color scheme can be modified with theme settings (like on [Rocket](https://moodle.org/plugins/view.php?plugin=theme_rocket))
  - The homepage main area is just a label. The theme will ship with custom classes that you can set for tables and links to modify their formatting. No knowledge of code is needed as you can use the text editor to do this. Documentation will be provided outlining what the additional classes are.
 
+ New in 2.5.2
+ ========================
+ - New theme setting to have user image show in the header when logged in.
+ - Admin can choose to revert courses to a "standard" layout with blocks on the left and right sides
+ - Admin can choose the default Navbar/breadcrumb seperator
+ - Font Awesome now loaded and cached through lib.php. Should improve performance
+ - Minor CSS fixes
+ 
 See the theme in Action
-If you would like to see it in action, head to this year's iMoot site at http://2013.imoot.org
+========================
 
-A MAJOR reminder - This theme is not finished yet. It is in a very raw, cluttered, messy and un-professional state. I am releasing on Githib for those who want to help in it's development. NOT FOR PRODUCTION
+A video showing many of the core features is available for viewing at https://vimeo.com/channels/moodleman
+
+If you would like to see it in action, head to this year's iMoot site at [http://2013.imoot.org](http://2013.imoot.org)
+
+
+Documentation
+=============
+
+As always, documentation is a work in progress. Availbale documentation is available at http://docs.moodle.org/25/en/Essential_theme
+
+If you have questions you can post them in the official discussion moodle.org forum at https://moodle.org/mod/forum/discuss.php?d=231970

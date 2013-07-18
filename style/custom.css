@@ -1,5 +1,16 @@
 /* @group Core */
 
+@font-face {
+    font-family: 'FontAwesome'; 
+    font-weight: normal;
+    font-style: normal;
+    src: url('[[setting:fontwww]]fontawesome-webfont.eot?v=3.2.1');
+    src: url('[[setting:fontwww]]fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), 
+      			url('[[setting:fontwww]]fontawesome-webfont.woff?v=3.2.1') format('woff'), 
+      			url('[[setting:fontwww]]fontawesome-webfont.ttf?v=3.2.1') format('truetype'), 
+      			url('[[setting:fontwww]]fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
+}
+
 body{
     border-top:3px solid [[setting:themecolor]];
     font-family: "PT Sans", Arial, Helvetica, sans-serif;
@@ -52,6 +63,10 @@ a:hover{
 .logininfo,
 .logininfo a {
     color: #fff !important;
+}
+
+#page {
+	padding-top: 10px;
 }
 
 /* @group Custom */
@@ -197,8 +212,24 @@ ul.socials {
     margin-top: -4px;
 }
 
+ul.breadcrumb span.divider {
+	display: none;
+}
+
+ul.breadcrumb li:after { 
+	content: "[[setting:navbarsep]]";
+	font-family: FontAwesome;
+	font-size: 1.1em;
+	margin: 0px 6px 0px 3px;
+	color: #bbb;
+}
+
+ul.breadcrumb li:last-child:after { 
+	content: none; 
+}
+
 .navbar {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 .navbar-inner{
@@ -550,53 +581,12 @@ table#greyboxleft h2 {
     margin-bottom: 10px;
 }
 
-#page-footer .block {
-    border: 0px none;
-    background: transparent;
-    width: 100%;
-    padding: 0px;
+.block #icon {
+	margin-right: 5px;
+	color: rgb(68, 68, 68);
 }
-
-#page-footer .block .header .title h2:before {
-    background: transparent;
-    padding-left: 0px;
-    font-size: 15px;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    color: #CCC;
-    text-transform: none;
-    font-weight: normal;
-}
-
-#page-footer .block .header .block_action {
-    display: none !important;
-}
-
-#page-footer .block .header .title {
-    border-bottom: 1px solid #313131;
-}
-
-#page-footer .eventskey,
-#page-footer .calendar_filters {
-	display: none;
-}
-
-#page-footer img.profilepicture,
-#page-footer .myprofileitem.picture {
-	float: left;
-	width: 90px;
-	height: 90px;
-}
-
-#page-footer .myprofileitem.picture {
-	margin-right: 20px;
-}
-
-#page-footer .myprofileitem.fullname {
-	margin-top: 10px;
-}
-
-.hidden-blocks {
+	
+	.hidden-blocks {
     background: #ffe1e1;
     padding: 10px;
     border: 1px solid #EEE;
@@ -650,6 +640,53 @@ table#greyboxleft h2 {
 
 .block_quiz_results {
     text-align: left;
+}
+
+.block_login label {
+	font-family: "Oswald", sans-serif;
+	font-weight: normal !important;
+}
+
+.block_rss_client .decription {
+	height: auto;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+.block_rss_client .content {
+	padding: 0px;
+}
+
+.block_rss_client .content a:hover{
+	text-decoration: none;
+}
+
+.block_rss_client .content li {
+	border-bottom: 1px dotted #E1E1E1;
+	padding: 5px;
+}
+
+.block_rss_client .content li:hover {
+	background: #f9f9f9;
+}
+
+.block_rss_client .footer {
+	text-align: right;
+	padding-top: 5px;
+}
+
+.block_rss_client .footer a {
+	color: #fff;
+	width: 100px;
+	padding: 4px 12px;
+	font-size: 14px;
+	border-radius: 5px;
+	background:[[setting:themecolor]];
+}
+
+.block_rss_client .footer a:hover {
+	color: #fff;
+	background:[[setting:themehovercolor]];
 }
 
 /* @group Block Icons */
@@ -795,6 +832,22 @@ table#greyboxleft h2 {
 /* @end */
 
 /* @group Frontpage */
+#site-news-forum,
+#frontpage-course-list,
+#frontpage-category-combo,
+#frontpage-category-names {
+	background: url([[pix:theme|dot]]) left top repeat-x;
+	background-size: 4px 20px;
+	padding-top: 25px;
+}
+
+.headingblock.header {
+    padding: 0px;
+    margin: 0px;
+    font-size: 1.8em;
+    line-height: 35px;
+    color: #777;
+}
 
 /* @group Home News Boxes */
 
@@ -857,12 +910,17 @@ table#greyboxleft h2 {
 
 #page-footer {
     background: #222 url([[pix:theme|fback]]) repeat;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
     font-size: 13px;
     padding-top: 10px;
     color: #DDD;
     border-top: 3px solid [[setting:themecolor]];
     text-align: left;
+}
+
+#page-footer a {
+    color: #BBB;
 }
 
 .helplink {
@@ -874,6 +932,16 @@ table#greyboxleft h2 {
     color: orange !important;
 }
 
+#page-footer .footnote a,
+#page-footer .footnote a:visited {
+    color: [[setting:themecolor]] !important;
+}
+
+#page-footer .footnote a:hover {
+    color: #fff !important;
+    text-decoration: none;
+}
+
 #page-footer .container {
     margin-right: auto;
     margin-left: auto;
@@ -881,6 +949,13 @@ table#greyboxleft h2 {
 
 #page-footer .copy {
 	padding-left: 20px;
+	float: left;
+}
+
+#page-footer .footnote {
+	float: left;
+	color: #fff;
+	margin-left: 20px;
 }
 
 #page-footer .span4 {
@@ -918,10 +993,6 @@ table#greyboxleft h2 {
     padding-left: 0px;
 }
 
-#page-footer a {
-    color: #BBB;
-}
-
 #page-footer ul li:before,
 #greyboxright ul li:before {
     content:"\f105";
@@ -941,6 +1012,111 @@ table#greyboxleft h2 {
 .footerlinks {
 	line-height: 15px;
 }
+
+/* @group Footer Block Formatting */
+	
+	#page-footer .block {
+	    border: 0px none;
+	    background: transparent;
+	    width: 100%;
+	    padding: 0px;
+	}
+	
+	#page-footer .block .header .title h2:before {
+	    background: transparent;
+	    padding-left: 0px;
+	    font-size: 15px;
+	    padding-bottom: 0px;
+	    margin-bottom: 0px;
+	    color: #CCC;
+	    text-transform: none;
+	    font-weight: normal;
+	}
+	
+	#page-footer .block .header .block_action {
+	    display: none !important;
+	}
+	
+	#page-footer .block .header .title {
+	    border-bottom: 1px solid #313131;
+	}
+	
+	#page-footer .eventskey,
+	#page-footer .calendar_filters {
+		display: none;
+	}
+	
+	#page-footer img.profilepicture,
+	#page-footer .myprofileitem.picture {
+		float: left;
+		width: 90px;
+		height: 90px;
+	}
+	
+	#page-footer .myprofileitem.picture {
+		margin-right: 20px;
+	}
+	
+	#page-footer .myprofileitem.fullname {
+		margin-top: 10px;
+	}
+	
+	#page-footer input:-webkit-autofill {
+		background-color: #fff !important;
+	}
+	
+	#page-footer .block_login input[type="submit"] {
+		background: [[setting:themecolor]];
+		color: #fff;
+		text-shadow: none;
+		border: 0px none;
+		float: left;
+		margin-top: 3px;
+	}
+	
+	#page-footer .block_login input[type="submit"]:hover {
+		background: [[setting:themehovercolor]];
+	}
+	#page-footer .block_login .footer a,
+	#page-footer .block_login .footer a:visited {
+		background: red;
+		color: #fff;
+		border-radius: 5px;
+		padding: 4px 10px;
+		font-size: 13.5px;
+		line-height: 20px;
+		float: left;
+		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+		margin-left: 10px;
+	}
+	
+	#page-footer .block_login .footer a:focus,
+	#page-footer .block_login .footer a:hover {
+		text-decoration: none !important;
+		background-color: #666 ;
+	}
+	
+	#page-footer .block_rss_client li:before{
+		display: none;
+	}
+	
+	#page-footer .block_rss_client .content {
+		padding-top: 10px;
+	}
+	
+	#page-footer .block_rss_client .content a {
+		color: [[setting:themecolor]];
+	}
+	
+	#page-footer .block_rss_client .content li:hover {
+		background: transparent;
+	}
+	
+	#page-footer .block_rss_client .footer a {
+		color: #fff;
+	}
+	
+/* @end */
 
 /* @end */
 
@@ -1024,8 +1200,29 @@ img.profilepicture
     border-radius:250px;
 }
 
+.socials img {
+    border-radius:5px;
+    width: 28px;
+    height: 28px;
+    margin-top: 2px;
+}
+
+.socials img:hover{
+    -webkit-box-shadow: px 0px 10px 0px [[setting:themecolor]];
+    -moz-box-shadow: 0px 0px 10px 0px [[setting:themecolor]];
+    box-shadow: 0px 0px 10px 0px [[setting:themecolor]];
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
 /* @end */
 .label, .badge {
     font-weight: normal;
     background: transparent;
 }
+
+/* Custom CSS Settings
+-------------------------*/
+[[setting:customcss]]
