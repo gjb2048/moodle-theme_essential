@@ -585,6 +585,24 @@ table#greyboxleft h2 {
 	margin-right: 5px;
 	color: #999;
 }
+
+.tree_item {
+	background-image: none !important;
+}
+
+.tree_item.branch:before { 
+	font-family: FontAwesome;
+	content: "\f07c ";
+	color: #999;
+	margin-right: 5px;
+}
+
+.collapsed .tree_item.branch:before { 
+	font-family: FontAwesome;
+	content: "\f07b ";
+	color: #999;
+	margin-right: 5px;
+}
 	
 	.hidden-blocks {
     background: #ffe1e1;
@@ -690,6 +708,10 @@ table#greyboxleft h2 {
 }
 
 /* @group Block Icons */
+
+.dir-rtl .collapsed .tree_item.branch:before { 
+	content: " \f053";
+}
 
 .block_news_items .header .title h2:before {
     content:"\f0a1";
