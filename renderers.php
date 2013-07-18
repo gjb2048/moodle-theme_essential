@@ -191,6 +191,7 @@
             'i/import' => 'download-alt',
             'i/move_2d' => 'move',
             'i/navigationitem' => 'circle-blank',
+            'i/outcomes' => 'magic',
             'i/publish' => 'globe',
             'i/reload' => 'refresh',
             'i/report' => 'list-alt',
