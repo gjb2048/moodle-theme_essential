@@ -1,7 +1,7 @@
 <div id="page" class="container-fluid">
 
     <div id="page-content" class="row-fluid">
-        <div id="<?php echo $regionbsid ?>" class="span9">
+        <div id="<?php echo $regionbsid ?>" class="span12">
             <div class="row-fluid">
                 <section id="region-main" class="span8 pull-right">
                 	<?php if ($hasnavbar) { ?>
