@@ -580,6 +580,11 @@ table#greyboxleft h2 {
     border: 1px solid #E1E1E1;
     margin-bottom: 10px;
 }
+
+.block #icon {
+	margin-right: 5px;
+	color: rgb(68, 68, 68);
+}
 	
 	.hidden-blocks {
     background: #ffe1e1;
