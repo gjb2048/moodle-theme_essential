@@ -23,7 +23,7 @@ Cool things to know about the theme.
  - Admin can choose the default Navbar/breadcrumb seperator
  - Font Awesome now loaded and cached through lib.php. Should improve performance
  - Minor CSS fixes
-
+ 
 See the theme in Action
 ========================
 
