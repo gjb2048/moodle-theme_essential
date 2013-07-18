@@ -21,6 +21,8 @@ Cool things to know about the theme.
  - New theme setting to have user image show in the header when logged in.
  - Admin can choose to revert courses to a "standard" layout with blocks on the left and right sides
  - Admin can choose the default Navbar/breadcrumb seperator
+ - Frontage now is a 2 column layout by popular demand
+ - Icons in navigation and administration block now rendered with Awesome Font
  - Font Awesome now loaded and cached through lib.php. Should improve performance
  - Minor CSS fixes
  
