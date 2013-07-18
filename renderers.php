@@ -190,21 +190,20 @@
             'i/hide' => 'eye-open',
             'i/import' => 'download-alt',
             'i/move_2d' => 'move',
-            'i/navigationitem' => 'sign-blank',
+            'i/navigationitem' => 'circle-blank',
             'i/publish' => 'globe',
             'i/reload' => 'refresh',
             'i/report' => 'list-alt',
             'i/restore' => 'download-alt',
             'i/return' => 'repeat',
             'i/roles' => 'user',
-            'i/settings' => 'cog',
+            'i/settings' => 'beaker',
             'i/show' => 'eye-close',
             'i/switchrole' => 'random',
             'i/user' => 'user',
             'i/users' => 'user',
             't/right' => 'arrow-right',
             't/left' => 'arrow-left',
-            
         );
         if (isset($icons[$name])) {
             return "<i class=\"icon-$icons[$name]\" id=\"icon\"></i>";
