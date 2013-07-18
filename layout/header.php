@@ -75,7 +75,6 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
             <?php
             } ?>
         </div>
-        <div class="span4 pull-right">
         <?php if (isloggedin() && $hasheaderprofilepic) { ?>
         <div class="span1 pull-right" id="profilepic">
             <p id="socialheading"><?php print_string('yourprofile', 'theme_essential'); ?></p>
