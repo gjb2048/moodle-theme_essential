@@ -24,7 +24,67 @@
  
  class theme_essential_core_renderer extends core_renderer {
  	
- 	protected function render_custom_menu(custom_menu $menu) {
+ 	/*
+     * This renders a notification message.
+     * Uses bootstrap compatible html.
+     */
+    public function notification($message, $classes = 'notifyproblem') {
+        $message = clean_text($message);
+        $type = '';
+
+        if ($classes == 'notifyproblem') {
+            $type = 'alert alert-error';
+        }
+        if ($classes == 'notifysuccess') {
+            $type = 'alert alert-success';
+        }
+        if ($classes == 'notifymessage') {
+            $type = 'alert alert-info';
+        }
+        if ($classes == 'redirectmessage') {
+            $type = 'alert alert-block alert-info';
+        }
+        return "<div class=\"$type\">$message</div>";
+    }
+
+    /*
+     * This renders the navbar.
+     * Uses bootstrap compatible html.
+     */
+    public function navbar() {
+        $items = $this->page->navbar->get_items();
+        foreach ($items as $item) {
+            $item->hideicon = true;
+                $breadcrumbs[] = $this->render($item);
+        }
+        $divider = '<span class="divider">/</span>';
+        $list_items = '<li>'.join(" $divider</li><li>", $breadcrumbs).'</li>';
+        $title = '<span class="accesshide">'.get_string('pagepath').'</span>';
+        return $title . "<ul class=\"breadcrumb\">$list_items</ul>";
+    }
+
+    /*
+     * Overriding the custom_menu function ensures the custom menu is
+     * always shown, even if no menu items are configured in the global
+     * theme settings page.
+     * We use the sitename as the first menu item.
+     */
+    public function custom_menu($custommenuitems = '') {
+        global $CFG;
+
+        if (!empty($CFG->custommenuitems)) {
+            $custommenuitems .= $CFG->custommenuitems;
+        }
+        $custommenu = new custom_menu($custommenuitems, current_language());
+        return $this->render_custom_menu($custommenu);
+    }
+
+    /*
+     * This renders the bootstrap top menu.-
+     *
+     * This renderer is needed to enable the Bootstrap style navigation.
+     */
+    protected function render_custom_menu(custom_menu $menu) {
         // If the menu has no children return an empty string.
         if (!$menu->has_children()) {
             return '';
@@ -102,6 +162,11 @@
         return $content;
     }
  	
+ 	/*
+    * This code replaces the icons in the Admin block with
+    * FontAwesome variants where available.
+    */
+     
  	protected function render_pix_icon(pix_icon $icon) {
         if (self::replace_moodle_icon($icon->pix) !== false && $icon->attributes['alt'] === '' && $icon->attributes['title'] === '') {
             return self::replace_moodle_icon($icon->pix);
@@ -134,8 +199,12 @@
             'i/roles' => 'user',
             'i/settings' => 'cog',
             'i/show' => 'eye-close',
+            'i/switchrole' => 'random',
             'i/user' => 'user',
             'i/users' => 'user',
+            't/right' => 'arrow-right',
+            't/left' => 'arrow-left',
+            
         );
         if (isset($icons[$name])) {
             return "<i class=\"icon-$icons[$name]\" id=\"icon\"></i>";
