@@ -781,9 +781,12 @@ table#greyboxleft h2 {
     content:"\f075";
 }
 
-.block_settings .header .title h2:before,
-.block_admin_bookmarks .header .title h2:before{
+.block_settings .header .title h2:before {
     content:"\f085";
+}
+
+.block_admin_bookmarks .header .title h2:before{
+    content:"\f02e";
 }
 
 .block_blog_tags .header .title h2:before,
