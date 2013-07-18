@@ -75,9 +75,7 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
             <?php
             } ?>
         </div>
-<<<<<<< HEAD
         <div class="span4 pull-right">
-=======
         <?php if (isloggedin() && $hasheaderprofilepic) { ?>
         <div class="span1 pull-right" id="profilepic">
             <p id="socialheading"><?php print_string('yourprofile', 'theme_essential'); ?></p>
@@ -97,7 +95,6 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
         if ($hassocialnetworks) {
         ?>
         <div class="span3 pull-right">
->>>>>>> MOODLE_25
         <p id="socialheading"><?php echo get_string('socialnetworks','theme_essential')?></p>
             <ul class="socials unstyled">
                 <?php if ($hasgoogleplus) { ?>
