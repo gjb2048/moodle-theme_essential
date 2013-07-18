@@ -119,6 +119,13 @@ $THEME->layouts = array(
         'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-pre',
     ),
+    
+    // Report Pages.
+    'maintenance' => array(
+        'file' => 'general.php',
+        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
+        'defaultregion' => 'side-pre',
+    ),
 
 );
 
