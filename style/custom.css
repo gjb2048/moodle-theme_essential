@@ -1,5 +1,16 @@
 /* @group Core */
 
+@font-face {
+    font-family: 'FontAwesome'; 
+    font-weight: normal;
+    font-style: normal;
+    src: url('[[setting:fontwww]]fontawesome-webfont.eot?v=3.2.1');
+    src: url('[[setting:fontwww]]fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), 
+      			url('[[setting:fontwww]]fontawesome-webfont.woff?v=3.2.1') format('woff'), 
+      			url('[[setting:fontwww]]fontawesome-webfont.ttf?v=3.2.1') format('truetype'), 
+      			url('[[setting:fontwww]]fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
+}
+
 body{
     border-top:3px solid [[setting:themecolor]];
     font-family: "PT Sans", Arial, Helvetica, sans-serif;
@@ -816,6 +827,22 @@ table#greyboxleft h2 {
 /* @end */
 
 /* @group Frontpage */
+#site-news-forum,
+#frontpage-course-list,
+#frontpage-category-combo,
+#frontpage-category-names {
+	background: url([[pix:theme|dot]]) left top repeat-x;
+	background-size: 4px 20px;
+	padding-top: 25px;
+}
+
+.headingblock.header {
+    padding: 0px;
+    margin: 0px;
+    font-size: 1.8em;
+    line-height: 35px;
+    color: #777;
+}
 
 /* @group Home News Boxes */
 
