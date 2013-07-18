@@ -71,7 +71,7 @@ $THEME->layouts = array(
     'course' => array(
         'file' => 'course.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-post',
+        'defaultregion' => 'side-pre',
          'options' => array('nonavbar'=>false),
     ),
     // Page content and modules.
@@ -109,8 +109,14 @@ $THEME->layouts = array(
     ),
     // Server administration scripts.
     'admin' => array(
-        'file' => 'general.php',
+        'file' => 'report.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
+        'defaultregion' => 'side-pre',
+    ),
+    // Report Pages.
+    'report' => array(
+        'file' => 'report.php',
+        'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-pre',
     ),
 
