@@ -73,6 +73,7 @@ $string['headerprofilepic'] = 'Display user\'s picture';
 $string['headerprofilepicdesc'] = 'If checked, displays the user\'s profile picture in the header of the page.';
 $string['layout'] = 'Use a standard course layout';
 $string['layoutdesc'] = 'This theme is designed to put both block columns on the side. If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
+$string['visibleadminonly'] = 'Blocks moved into the area below will only be seen by admins';
 
 /* Navbar Seperator */
 $string['navbarsep'] = 'Navbar Seperator';
