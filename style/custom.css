@@ -672,6 +672,13 @@ table#greyboxleft h2 {
     padding-left: 0px;
 }
 
+.block.hidden .header .title h2,
+.block.hidden h3.main,
+.block.hidden .header .title {
+	border-bottom: none;
+	margin-bottom: 0px;
+}
+
 .block_quiz_results {
     text-align: left;
 }
