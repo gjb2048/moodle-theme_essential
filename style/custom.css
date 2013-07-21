@@ -1345,10 +1345,52 @@ img.profilepicture
 
 /* @end */
 
-.label, .badge {
-    font-weight: normal;
-    background: transparent;
+/* @group Performance Information */
+.performanceinfo {
+	bottom:0;
+	background: white;
+	padding: 8px;
+	border-radius: 8px;
+	border: 1px solid #E1E1E1;
 }
+
+.performanceinfo .span3 {
+	text-align: center;
+}
+
+.performanceinfo var{
+	font-size:1.2em;
+	background: [[setting:themecolor]];
+	padding: 5px;
+	border-radius: 5px;
+	color: #fff !important;
+	white-space: nowrap;
+}
+
+.performanceinfo h2 {
+    font-size: 14px;
+    color: #888;
+    line-height: 18px;
+    text-transform: uppercase;
+    font-weight: normal;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.performanceinfo h2:before {
+    font-family: FontAwesome;
+    font-size: 1.65em;
+    margin-right: .3em;
+    color: [[setting:themecolor]];
+    content: "\f0c9";
+}
+
+.performanceinfo span{
+	color:#999;
+	display: block;
+}
+
+/* @end */
 
 
 /* Custom CSS Settings

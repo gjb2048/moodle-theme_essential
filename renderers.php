@@ -46,6 +46,47 @@
         }
         return "<div class=\"$type\">$message</div>";
     }
+    
+    
+    /**
+     * Outputs the page's footer
+     * @return string HTML fragment
+     */
+    public function footer() {
+        global $CFG, $DB, $USER;
+
+        $output = $this->container_end_all(true);
+
+        $footer = $this->opencontainers->pop('header/footer');
+
+        if (debugging() and $DB and $DB->is_transaction_started()) {
+            // TODO: MDL-20625 print warning - transaction will be rolled back
+        }
+
+        // Provide some performance info if required
+        $performanceinfo = '';
+        if (defined('MDL_PERF') || (!empty($CFG->perfdebug) and $CFG->perfdebug > 7)) {
+            $perf = get_performance_info();
+            if (defined('MDL_PERFTOLOG') && !function_exists('register_shutdown_function')) {
+                error_log("PERF: " . $perf['txt']);
+            }
+            if (defined('MDL_PERFTOFOOT') || debugging() || $CFG->perfdebug > 7) {
+                $performanceinfo = essential_performance_output($perf);
+            }
+        }
+
+        $footer = str_replace($this->unique_performance_info_token, $performanceinfo, $footer);
+
+        $footer = str_replace($this->unique_end_html_token, $this->page->requires->get_end_code(), $footer);
+
+        $this->page->set_state(moodle_page::STATE_DONE);
+
+        if(!empty($this->page->theme->settings->persistentedit) && property_exists($USER, 'editing') && $USER->editing && !$this->really_editing) {
+            $USER->editing = false;
+        }
+
+        return $output . $footer;
+    }
 
     /*
      * This renders the navbar.
