@@ -389,7 +389,7 @@ echo $OUTPUT->doctype() ?>
 <?php if (is_siteadmin()) { ?>
 <div class="hidden-blocks">
     <div class="row-fluid">
-        <h4>Blocks moved into the area below will only be seen by admins</h4>
+        <h4><?php echo get_string('visibleadminonly', 'theme_essential') ?></h4>
         <div id="hidden-dock" class="block-region">
             <div class="region-content">
             <?php
