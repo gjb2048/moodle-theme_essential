@@ -89,6 +89,12 @@ if ($showsidepre && !$showsidepost) {
 }
 $bodyclasses[] = $layout;
 
+if (right_to_left()) {
+    $regionbsid = 'region-bs-main-and-post';
+} else {
+    $regionbsid = 'region-bs-main-and-pre';
+}
+
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes() ?>>
 <head>
