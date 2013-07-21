@@ -1352,6 +1352,7 @@ img.profilepicture
 	padding: 8px;
 	border-radius: 8px;
 	border: 1px solid #E1E1E1;
+	font-style: normal;
 }
 
 .performanceinfo .span3 {
@@ -1370,11 +1371,12 @@ img.profilepicture
 .performanceinfo h2 {
     font-size: 14px;
     color: #888;
-    line-height: 18px;
+    line-height: 14px;
     text-transform: uppercase;
     font-weight: normal;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #eee;
+    margin-top: 5px;
 }
 
 .performanceinfo h2:before {
@@ -1386,9 +1388,47 @@ img.profilepicture
 }
 
 .performanceinfo span{
-	color:#999;
+	color:#444;
 	display: block;
 }
+
+.performanceinfo #load:before {
+    font-family: FontAwesome;
+    font-size: 1em;
+    margin-right: .3em;
+    color: #fff;
+    font-style: normal;
+    font-weight: 100;
+    content: "\f017";
+}
+
+.performanceinfo #memory:before {
+    font-family: FontAwesome;
+    font-size: 1em;
+    margin-right: .3em;
+    color: #fff;
+    font-style: normal;
+    content: "\f0e4";
+}
+
+.performanceinfo #included:before {
+    font-family: FontAwesome;
+    font-size: 1em;
+    margin-right: .3em;
+    color: #fff;
+    font-style: normal;
+    content: "\f16c";
+}
+
+.performanceinfo #db:before {
+    font-family: FontAwesome;
+    font-size: 1em;
+    margin-right: .3em;
+    color: #fff;
+    font-style: normal;
+    content: "\f181";
+}
+
 
 /* @end */
 

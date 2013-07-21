@@ -113,10 +113,10 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
 function essential_performance_output($param) {
 	
     $html = '<div class="container-fluid performanceinfo"><div class="row-fluid"><h2>Performance Information</h2></div><div class="row-fluid">';
-	if (isset($param['realtime'])) $html .= '<div class="span3"><a href="#"><var>'.$param['realtime'].' secs</var><span>Load Time</span></a></div>';
-	if (isset($param['memory_total'])) $html .= '<div class="span3"><a href="#"><var>'.display_size($param['memory_total']).'</var><span>Memory Used</span></a></div>';
-    if (isset($param['includecount'])) $html .= '<div class="span3"><a href="#"><var>'.$param['includecount'].' Files </var><span>Included</span></a></div>';
-    if (isset($param['dbqueries'])) $html .= '<div class="span3"><a href="#"><var>'.$param['dbqueries'].' </var><span>DB Read/Write</span></a></div>';
+	if (isset($param['realtime'])) $html .= '<div class="span3"><a href="#"><var id="load">'.$param['realtime'].' secs</var><span>Load Time</span></a></div>';
+	if (isset($param['memory_total'])) $html .= '<div class="span3"><a href="#"><var id="memory">'.display_size($param['memory_total']).'</var><span>Memory Used</span></a></div>';
+    if (isset($param['includecount'])) $html .= '<div class="span3"><a href="#"><var id="included">'.$param['includecount'].' Files </var><span>Included</span></a></div>';
+    if (isset($param['dbqueries'])) $html .= '<div class="span3"><a href="#"><var id="db">'.$param['dbqueries'].' </var><span>DB Read/Write</span></a></div>';
     $html .= '</div></div>';
 
     return $html;
