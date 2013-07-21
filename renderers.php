@@ -212,11 +212,4 @@
             return false;
         }
     }
-
-    public function larrow() {
-        return '<i class="icon-chevron-left"></i>';
-    }
-    public function rarrow() {
-        return '<i class="icon-chevron-right"></i>';
-    }
 }
