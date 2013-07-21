@@ -196,6 +196,22 @@ ul.socials {
 
 /* @end */
 
+/* @group Custom Menu */
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: [[setting:themecolor]];
+  background-image: -moz-linear-gradient(top, [[setting:themecolor]], [[setting:themehovercolor]]);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:themecolor]]), to([[setting:themehovercolor]]));
+  background-image: -webkit-linear-gradient(top, [[setting:themecolor]], [[setting:themehovercolor]]);
+  background-image: -o-linear-gradient(top, [[setting:themecolor]], [[setting:themehovercolor]]);
+  background-image: linear-gradient(to bottom, [[setting:themecolor]], [[setting:themehovercolor]]);
+}
+/* @end */
+
 /* @group Navbar
  */
 
