@@ -377,21 +377,6 @@ echo $OUTPUT->doctype() ?>
         </div>
     </div>
 
-<?php
-/* ***** Commented out as the following hard-coded content was displaying in the source code when hidden via CSS
-<div class="sponsors">
-        <h4>Our Sponsors</h4>
-        <a href="<?php echo $CFG->wwwroot;?>/mod/book/view.php?id=39">
-        <img src="<?php echo $OUTPUT->pix_url('sponsors/pukunui', 'theme'); ?>" alt="Pukunui" a href="">
-        <img src="<?php echo $OUTPUT->pix_url('sponsors/blindside', 'theme'); ?>" alt="Blindside Networks" a href="">
-        <img src="<?php echo $OUTPUT->pix_url('sponsors/packt', 'theme'); ?>" alt="Packt Publishing" a href="">
-        <img src="<?php echo $OUTPUT->pix_url('sponsors/freemoodle', 'theme'); ?>" alt="Free Moodle" a href="">
-        </a>
-</div>
-*/
-?>
-
-
 <?php if (is_siteadmin()) { ?>
 <div class="hidden-blocks">
     <div class="row-fluid">
