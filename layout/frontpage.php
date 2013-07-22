@@ -30,7 +30,6 @@ $hasfooter = (empty($PAGE->layout_options['nofooter']));
 $hasheader = (empty($PAGE->layout_options['noheader']));
 
 $hassidepre = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-pre', $OUTPUT));
-$hassidepost = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-post', $OUTPUT));
 
 $hashiddendock = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('hidden-dock', $OUTPUT));
 $hasfooterleft = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-left', $OUTPUT));
@@ -38,7 +37,6 @@ $hasfootermiddle = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->r
 $hasfooterright = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-right', $OUTPUT));
 
 $showsidepre = ($hassidepre && !$PAGE->blocks->region_completely_docked('side-pre', $OUTPUT));
-$showsidepost = ($hassidepost && !$PAGE->blocks->region_completely_docked('side-post', $OUTPUT));
 
 $showhiddendock = ($hashiddendock && !$PAGE->blocks->region_completely_docked('hidden-dock', $OUTPUT));
 $showfooterleft = ($hasfooterleft && !$PAGE->blocks->region_completely_docked('footer-left', $OUTPUT));
@@ -68,9 +66,6 @@ $hasslideshow = ($hasslide1||$hasslide2||$hasslide3||$hasslide4);
 if ($PAGE->user_is_editing()) {
     if ($PAGE->blocks->is_known_region('side-pre')) {
         $showsidepre = true;
-    }
-    if ($PAGE->blocks->is_known_region('side-post')) {
-        $showsidepost = true;
     }
 }
 
@@ -163,30 +158,6 @@ if (empty($PAGE->layout_options['nocourseheaderfooter'])) {
         $coursecontentfooter = $OUTPUT->course_content_footer();
         $coursefooter = $OUTPUT->course_footer();
     }
-}
-
-$layout = 'pre-and-post';
-if ($showsidepre && !$showsidepost) {
-    if (!right_to_left()) {
-        $layout = 'side-pre-only';
-    } else {
-        $layout = 'side-post-only';
-    }
-} else if ($showsidepost && !$showsidepre) {
-    if (!right_to_left()) {
-        $layout = 'side-post-only';
-    } else {
-        $layout = 'side-pre-only';
-    }
-} else if (!$showsidepost && !$showsidepre) {
-    $layout = 'content-only';
-}
-$bodyclasses[] = $layout;
-
-if (right_to_left()) {
-    $regionbsid = 'region-bs-main-and-post';
-} else {
-    $regionbsid = 'region-bs-main-and-pre';
 }
 
 echo $OUTPUT->doctype() ?>
@@ -368,11 +339,13 @@ echo $OUTPUT->doctype() ?>
                     echo $OUTPUT->course_content_footer();
                     ?>
                 </section>
+                <?php if ($hassidepre) { ?>
                 <div id="region-pre" class="block-region">
                     <div class="region-content">
                         <?php echo $OUTPUT->blocks('side-pre', 'span4 pull-right'); ?>
                    </div>
                 </div>
+                 <?php } ?>
             </div>
         </div>
     </div>
