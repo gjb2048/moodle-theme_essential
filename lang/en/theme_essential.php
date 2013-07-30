@@ -69,6 +69,10 @@ $string['headerprofilepic'] = 'Display user\'s picture';
 $string['headerprofilepicdesc'] = 'If checked, displays the user\'s profile picture in the header of the page.';
 $string['layout'] = 'Use a standard course layout';
 $string['layoutdesc'] = 'This theme is designed to put both block columns on the side. If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
+$string['perfinfo'] = 'Performance Info Mode';
+$string['perfinfodesc'] = 'Many sites don\'t need the fully detailed performance info. Especially when viewed by users. When enabled, this shows a cleaned up miniminal form with basic page load information.';
+$string['perf_max'] = 'Detailed';
+$string['perf_min'] = 'Minimal';
 $string['visibleadminonly'] = 'Blocks moved into the area below will only be seen by admins';
 
 /* Navbar Seperator */

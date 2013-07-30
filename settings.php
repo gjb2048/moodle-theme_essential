@@ -68,6 +68,18 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add($setting);
     
     // Navbar Seperator.
+    $name = 'theme_essential/perfinfo';
+    $title = get_string('perfinfo' , 'theme_essential');
+    $description = get_string('perfinfodesc', 'theme_essential');
+    $perf_max = get_string('perf_max', 'theme_essential');
+    $perf_min = get_string('perf_min', 'theme_essential');
+    $default = 'min';
+    $choices = array('min'=>$perf_min, 'max'=>$perf_max);
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // Navbar Seperator.
     $name = 'theme_essential/navbarsep';
     $title = get_string('navbarsep' , 'theme_essential');
     $description = get_string('navbarsepdesc', 'theme_essential');
