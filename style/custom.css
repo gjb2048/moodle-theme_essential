@@ -14,7 +14,7 @@
 body{
     border-top:3px solid [[setting:themecolor]];
     font-family: "PT Sans", Arial, Helvetica, sans-serif;
-    background: white url([[pix:theme|body-back]]) repeat;
+    background: white url([[pix:theme|bg/body]]) repeat;
     font-size: 13px;
     line-height: 25px;
     text-shadow: none !important;
@@ -75,13 +75,13 @@ a:hover{
     height: 20px;
     margin: 0px;
     margin-bottom: 20px;
-    background: url([[pix:theme|dot]]) repeat-x;
+    background: url([[pix:theme|bg/dot]]) repeat-x;
 }
 
 .topbor {
     height: 20px;
     margin-bottom: 10px;
-    background: url([[pix:theme|dot]]) repeat-x;
+    background: url([[pix:theme|bg/dot]]) repeat-x;
 }
 
 /* @end */
@@ -93,7 +93,7 @@ a:hover{
 #page-header {
     padding: 12px 0px 0px 0px;
     border-bottom: 1px solid #DDD;
-    background: url([[pix:theme|header-back]]) repeat;
+    background: url([[pix:theme|bg/header]]) repeat;
 }
 
 h2.main,
@@ -136,7 +136,7 @@ h2#subtitle {
 	position: relative;
 	top: 10px;
 	margin-right: 10px;
-	border-right: 1px dotted [[setting:themecolor]];
+	border-right: 1px bg/dotted [[setting:themecolor]];
 }
 
 .breadcrumb-button input[type="submit"]{
@@ -307,7 +307,7 @@ ul.breadcrumb li:last-child:after {
 
 .course-content ul li.section.main {
     border-bottom: 0px none;
-    background: url([[pix:theme|dot]]) bottom repeat-x;
+    background: url([[pix:theme|bg/dot]]) bottom repeat-x;
 }
 
 h2.pagetitle {
@@ -316,12 +316,12 @@ h2.pagetitle {
     font-size: 20px;
     line-height: 35px;
     color: #777;
-    background: url([[pix:theme|dot]]) left center repeat-x;
+    background: url([[pix:theme|bg/dot]]) left center repeat-x;
     background-size: 4px 20px;
 }
 
 h2.pagetitle span {
-    background: white url([[pix:theme|body-back]]) repeat;
+    background: white url([[pix:theme|bg/body]]) repeat;
     padding-right: 8px;
 }
 
@@ -390,7 +390,7 @@ h2.pagetitle span {
 }
 
 .forumpost .content .posting {
-    border-top: 1px dotted #ccc;
+    border-top: 1px bg/dotted #ccc;
     padding-top: 10px;
 }
 
@@ -703,7 +703,7 @@ table#greyboxleft h2 {
 }
 
 .block_rss_client .content li {
-	border-bottom: 1px dotted #E1E1E1;
+	border-bottom: 1px bg/dotted #E1E1E1;
 	padding: 5px;
 }
 
@@ -884,7 +884,7 @@ table#greyboxleft h2 {
 #frontpage-course-list,
 #frontpage-category-combo,
 #frontpage-category-names {
-	background: url([[pix:theme|dot]]) left top repeat-x;
+	background: url([[pix:theme|bg/dot]]) left top repeat-x;
 	background-size: 4px 20px;
 	padding-top: 25px;
 }
@@ -957,7 +957,7 @@ table#greyboxleft h2 {
 /* @group Footer */
 
 #page-footer {
-    background: #222 url([[pix:theme|fback]]) repeat;
+    background: #000;
     margin-top: 10px;
     margin-bottom: 15px;
     font-size: 13px;
@@ -1179,7 +1179,7 @@ table#greyboxleft h2 {
     width:190px;
     height:190px;
     margin:10px auto;
-    background:#eee url([[pix:theme|header-back]]) repeat;
+    background:#eee url([[pix:theme|bg/header]]) repeat;
     border-radius:250px;
     border:5px solid #fff;
     box-shadow:0px 0px 3px #aaa;
@@ -1222,7 +1222,7 @@ table#greyboxleft h2 {
     width:100px;
     height:100px;
     margin:10px auto;
-    background:#eee url([[pix:theme|header-back]]) repeat;
+    background:#eee url([[pix:theme|bg/header]]) repeat;
     border-radius:250px;
     border:5px solid #fff;
     box-shadow:0px 0px 3px #aaa;
