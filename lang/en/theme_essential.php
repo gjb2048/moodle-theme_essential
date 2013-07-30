@@ -60,10 +60,6 @@ $string['copyright'] = 'Copyright';
 $string['copyrightdesc'] = 'The name of your organisation.';
 $string['profilebarcustomtitle'] = 'Profile Bar Custom Block Title';
 $string['profilebarcustomtitledesc'] = 'Title for custom Profile Bar block';
-$string['themecolor'] = 'Theme Color';
-$string['themecolordesc'] = 'What color should your theme be. This will change mulitple components to produce the color you wish across the moodle site';
-$string['themehovercolor'] = 'Theme Hover Color';
-$string['themehovercolordesc'] = 'What color should your theme hovers be. This is used for links, menus, etc';
 $string['contactinfo'] = 'Contact Information';
 $string['contactinfodesc'] = 'Enter your contact information';
 $string['siteicon'] = 'Site Icon';
@@ -91,6 +87,20 @@ $string['region-footer-left'] = 'Footer (Left)';
 $string['region-footer-middle'] = 'Footer (Middle)';
 $string['region-footer-right'] = 'Footer (Right)';
 $string['region-hidden-dock'] = 'Hidden from users';
+
+/* Colors */
+$string['colorheading'] = 'Color Settings';
+$string['colorheadingsub'] = 'Set the colors used in your theme';
+$string['colordesc'] = 'Here you can find various settings to change many of the colors found in this theme.';
+
+$string['themecolor'] = 'Theme Color';
+$string['themecolordesc'] = 'What color should your theme be. This will change mulitple components to produce the color you wish across the moodle site';
+$string['themehovercolor'] = 'Theme Hover Color';
+$string['themehovercolordesc'] = 'What color should your theme hovers be. This is used for links, menus, etc';
+$string['footercolor'] = 'Footer Background Color';
+$string['footercolordesc'] = 'Set what color the background of the Footer box should be.';
+$string['pagebackground'] = 'Page Background Image';
+$string['pagebackgrounddesc'] = 'Upload your own background image. This will be tiled in the background on all pages. If noe is uploaded a default image is used.';
 
 /* Slideshow */
 $string['slideshowheading'] = 'Frontpage Slideshow';
