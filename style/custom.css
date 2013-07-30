@@ -962,13 +962,13 @@ table#greyboxleft h2 {
     margin-bottom: 15px;
     font-size: 13px;
     padding-top: 10px;
-    color: #DDD;
+    color: [[setting:footertextcolor]];
     border-top: 3px solid [[setting:themecolor]];
     text-align: left;
 }
 
 #page-footer a {
-    color: #BBB;
+    color: [[setting:footerurlcolor]];
 }
 
 .helplink {
@@ -986,7 +986,7 @@ table#greyboxleft h2 {
 }
 
 #page-footer .footnote a:hover {
-    color: #fff !important;
+    color: [[setting:footerhovercolor]] !important;
     text-decoration: none;
 }
 
@@ -1013,18 +1013,18 @@ table#greyboxleft h2 {
 }
 
 #page-footer hr {
-    border-top: 1px solid #333;
+    border-top: 1px solid [[setting:footersepcolor]];
     padding: 0px;
-    border-bottom: 1px solid #111;
+    border-bottom: 0px none;
     margin-top: -10px;
 }
 
 #page-footer h4 {
     font-size: 15px;
     padding-bottom: 6px;
-    border-bottom: 1px solid #313131;
+    border-bottom: 1px solid [[setting:footersepcolor]];
     margin-bottom: 4px;
-    color: #CCC;
+    color: [[setting:footerheadingcolor]];
 }
 
 #page-footer ul,
@@ -1076,9 +1076,13 @@ table#greyboxleft h2 {
 	    font-size: 15px;
 	    padding-bottom: 0px;
 	    margin-bottom: 0px;
-	    color: #CCC;
+	    color: [[setting:footerheadingcolor]];
 	    text-transform: none;
 	    font-weight: normal;
+	}
+	
+	#page-footer .block .header .title h2 {
+	    color: [[setting:footerheadingcolor]];
 	}
 	
 	#page-footer .block .header .block_action {
@@ -1086,7 +1090,7 @@ table#greyboxleft h2 {
 	}
 	
 	#page-footer .block .header .title {
-	    border-bottom: 1px solid #313131;
+	    border-bottom: 1px solid [[setting:footersepcolor]];
 	}
 	
 	#page-footer .eventskey,

@@ -99,6 +99,16 @@ $string['themehovercolor'] = 'Theme Hover Color';
 $string['themehovercolordesc'] = 'What color should your theme hovers be. This is used for links, menus, etc';
 $string['footercolor'] = 'Footer Background Color';
 $string['footercolordesc'] = 'Set what color the background of the Footer box should be.';
+$string['footersepcolor'] = 'Footer Seperator Color';
+$string['footersepcolordesc'] = 'Seperators are lines used to seperate content. Set their color here.';
+$string['footertextcolor'] = 'Footer Text Color';
+$string['footertextcolordesc'] = 'Set the color you want your text to be in the footer.';
+$string['footerurlcolor'] = 'Footer Link Color';
+$string['footerurlcolordesc'] = 'Set the color for your linked text in the footer.';
+$string['footerhovercolor'] = 'Footer Link Hover Color';
+$string['footerhovercolordesc'] = 'Set the color for your linked text when hovered over in the footer.';
+$string['footerheadingcolor'] = 'Footer Heading Color';
+$string['footerheadingcolordesc'] = 'Set the color for block headings in the footer.';
 $string['pagebackground'] = 'Page Background Image';
 $string['pagebackgrounddesc'] = 'Upload your own background image. This will be tiled in the background on all pages. If noe is uploaded a default image is used.';
 

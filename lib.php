@@ -169,6 +169,48 @@ function theme_essential_process_css($css, $theme) {
     }
     $css = theme_essential_set_footercolor($css, $footercolor);
     
+    // Set the footer seperator color.
+    if (!empty($theme->settings->footersepcolor)) {
+        $footersepcolor = $theme->settings->footersepcolor;
+    } else {
+        $footersepcolor = null;
+    }
+    $css = theme_essential_set_footersepcolor($css, $footersepcolor);
+    
+    // Set the footer text color.
+    if (!empty($theme->settings->footertextcolor)) {
+        $footertextcolor = $theme->settings->footertextcolor;
+    } else {
+        $footertextcolor = null;
+    }
+    $css = theme_essential_set_footertextcolor($css, $footertextcolor);
+    
+    // Set the footer URL color.
+    if (!empty($theme->settings->footerurlcolor)) {
+        $footerurlcolor = $theme->settings->footerurlcolor;
+    } else {
+        $footerurlcolor = null;
+    }
+    $css = theme_essential_set_footerurlcolor($css, $footerurlcolor);
+    
+    // Set the footer hover color.
+    if (!empty($theme->settings->footerhovercolor)) {
+        $footerhovercolor = $theme->settings->footerhovercolor;
+    } else {
+        $footerhovercolor = null;
+    }
+    $css = theme_essential_set_footerhovercolor($css, $footerhovercolor);
+
+
+// Set the footer heading color.
+    if (!empty($theme->settings->footerheadingcolor)) {
+        $footerheadingcolor = $theme->settings->footerheadingcolor;
+    } else {
+        $footerheadingcolor = null;
+    }
+    $css = theme_essential_set_footerheadingcolor($css, $footerheadingcolor);
+
+    
     // Set the navbar seperator.
     if (!empty($theme->settings->navbarsep)) {
         $navbarsep = $theme->settings->navbarsep;
@@ -242,6 +284,56 @@ function theme_essential_set_footercolor($css, $footercolor) {
     $replacement = $footercolor;
     if (is_null($replacement)) {
         $replacement = '#000000';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_footertextcolor($css, $footertextcolor) {
+    $tag = '[[setting:footertextcolor]]';
+    $replacement = $footertextcolor;
+    if (is_null($replacement)) {
+        $replacement = '#DDDDDD';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_footerurlcolor($css, $footerurlcolor) {
+    $tag = '[[setting:footerurlcolor]]';
+    $replacement = $footerurlcolor;
+    if (is_null($replacement)) {
+        $replacement = '#BBBBBB';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_footerhovercolor($css, $footerhovercolor) {
+    $tag = '[[setting:footerhovercolor]]';
+    $replacement = $footerhovercolor;
+    if (is_null($replacement)) {
+        $replacement = '#FFFFFF';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_footerheadingcolor($css, $footerheadingcolor) {
+    $tag = '[[setting:footerheadingcolor]]';
+    $replacement = $footerheadingcolor;
+    if (is_null($replacement)) {
+        $replacement = '#CCCCCC';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_footersepcolor($css, $footersepcolor) {
+    $tag = '[[setting:footersepcolor]]';
+    $replacement = $footersepcolor;
+    if (is_null($replacement)) {
+        $replacement = '#313131';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
