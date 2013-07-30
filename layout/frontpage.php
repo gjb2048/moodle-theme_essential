@@ -171,6 +171,9 @@ echo $OUTPUT->doctype() ?>
     <!-- Google web fonts -->
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+    <noscript>
+			<link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/essential/style/nojs.css" />
+	</noscript>
 </head>
 
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">
@@ -372,17 +375,6 @@ echo $OUTPUT->doctype() ?>
 <?php echo $OUTPUT->standard_footer_html(); ?>
 
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
-
-<script type="text/javascript">
-			$(function() {
-			
-				$('#da-slider').cslider({
-					autoplay	: true,
-					bgincrement	: 450
-				});
-			
-			});
-</script>
 
 </body>
 </html>
