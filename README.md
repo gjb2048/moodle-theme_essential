@@ -22,7 +22,8 @@ Cool things to know about the theme.
  - Can now upload your own background image
  - Can now set colors for footer area
  - Cleanup of required images (Theme now only uses 4 images)
- - Perfomrance info now neatly formatted.
+ - Performance info now neatly formatted.
+ - Can now upload optional images into the marketing spots
  - Minor CSS Fixes
  
 2.5.2
