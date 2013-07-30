@@ -407,6 +407,15 @@ defined('MOODLE_INTERNAL') || die;
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+    
+    // Marketing Spot Image Height
+	$name = 'theme_essential/marketingheight';
+	$title = get_string('marketingheight','theme_essential');
+	$description = get_string('marketingheightdesc', 'theme_essential');
+	$default = 100;
+	$choices = array(50, 100, 150, 200, 250, 300);
+	$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+	$temp->add($setting);
 	
 	//Marketing Spot One.
 	$name = 'theme_essential/marketing1';
@@ -422,6 +431,13 @@ defined('MOODLE_INTERNAL') || die;
     $description = get_string('marketing1icondesc', 'theme_essential');
     $default = 'star';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    $name = 'theme_essential/marketing1image';
+    $title = get_string('marketing1image', 'theme_essential');
+    $description = get_string('marketing1imagedesc', 'theme_essential');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'marketing1image');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
@@ -466,6 +482,13 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
+    $name = 'theme_essential/marketing2image';
+    $title = get_string('marketing2image', 'theme_essential');
+    $description = get_string('marketing2imagedesc', 'theme_essential');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'marketing2image');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
     $name = 'theme_essential/marketing2content';
     $title = get_string('marketing2content', 'theme_essential');
     $description = get_string('marketing2contentdesc', 'theme_essential');
@@ -504,6 +527,13 @@ defined('MOODLE_INTERNAL') || die;
     $description = get_string('marketing3icondesc', 'theme_essential');
     $default = 'star';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    $name = 'theme_essential/marketing3image';
+    $title = get_string('marketing3image', 'theme_essential');
+    $description = get_string('marketing3imagedesc', 'theme_essential');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'marketing3image');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     

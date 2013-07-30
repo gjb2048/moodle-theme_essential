@@ -61,6 +61,10 @@ $hasslide4caption = (!empty($PAGE->theme->settings->slide4caption));
 $hasslide4url = (!empty($PAGE->theme->settings->slide4url));
 $hasslideshow = ($hasslide1||$hasslide2||$hasslide3||$hasslide4);
 
+$hasmarketing1image = (!empty($PAGE->theme->settings->marketing1image));
+$hasmarketing2image = (!empty($PAGE->theme->settings->marketing2image));
+$hasmarketing3image = (!empty($PAGE->theme->settings->marketing3image));
+
 // If there can be a sidepost region on this page and we are editing, always
 // show it so blocks can be dragged into it.
 if ($PAGE->user_is_editing()) {
@@ -79,10 +83,6 @@ if ($hasslide1) {
 }
 if ($hasslide1image) {
     $slide1image = $PAGE->theme->setting_file_url('slide1image', 'slide1image');
-    if (is_null($slide1image)) {
-        // Get default image 'slide1image' from themes 'images' folder.
-        $slide1image = $OUTPUT->pix_url('images/slide1image', 'theme');
-    }
 }
 if ($hasslide1caption) {
     $slide1caption = $PAGE->theme->settings->slide1caption;
@@ -97,10 +97,6 @@ if ($hasslide2) {
 }
 if ($hasslide2image) {
     $slide2image = $PAGE->theme->setting_file_url('slide2image', 'slide2image');
-    if (is_null($slide2image)) {
-        // Get default image 'slide2image' from themes 'images' folder.
-        $slide3image = $OUTPUT->pix_url('images/slide2image', 'theme');
-    }
 }
 if ($hasslide2caption) {
     $slide2caption = $PAGE->theme->settings->slide2caption;
@@ -115,10 +111,6 @@ if ($hasslide3) {
 }
 if ($hasslide3image) {
     $slide3image = $PAGE->theme->setting_file_url('slide3image', 'slide3image');
-    if (is_null($slide3image)) {
-        // Get default image 'slide3image' from themes 'images' folder.
-        $slide3image = $OUTPUT->pix_url('images/slide3image', 'theme');
-    }
 }
 if ($hasslide3caption) {
     $slide3caption = $PAGE->theme->settings->slide3caption;
@@ -133,10 +125,6 @@ if ($hasslide4) {
 }
 if ($hasslide4image) {
     $slide4image = $PAGE->theme->setting_file_url('slide4image', 'slide4image');
-    if (is_null($slide4image)) {
-        // Get default image 'slide4image' from themes 'images' folder.
-        $slide4image = $OUTPUT->pix_url('images/slide4image', 'theme');
-    }
 }
 if ($hasslide4caption) {
     $slide4caption = $PAGE->theme->settings->slide4caption;
@@ -298,6 +286,10 @@ echo $OUTPUT->doctype() ?>
         <div class="service">
             <!-- Icon & title. Font Awesome icon used. -->
             <h5><span><i class="icon-<?php echo $PAGE->theme->settings->marketing1icon ?>"></i> <?php echo $PAGE->theme->settings->marketing1 ?></span></h5>
+            <?php if ($hasmarketing1image) { ?>
+            	<div class="marketing-image1"></div>
+            <?php } ?>
+            
             <?php echo $PAGE->theme->settings->marketing1content ?>
             <p align="right"><a href="<?php echo $PAGE->theme->settings->marketing1buttonurl ?>" id="button"><?php echo $PAGE->theme->settings->marketing1buttontext ?></a></p>
         </div>
@@ -308,6 +300,10 @@ echo $OUTPUT->doctype() ?>
         <div class="service">
             <!-- Icon & title. Font Awesome icon used. -->
             <h5><span><i class="icon-<?php echo $PAGE->theme->settings->marketing2icon ?>"></i> <?php echo $PAGE->theme->settings->marketing2 ?></span></h5>
+            <?php if ($hasmarketing2image) { ?>
+            	<div class="marketing-image2"></div>
+            <?php } ?>
+            
             <?php echo $PAGE->theme->settings->marketing2content ?>
             <p align="right"><a href="<?php echo $PAGE->theme->settings->marketing2buttonurl ?>" id="button"><?php echo $PAGE->theme->settings->marketing2buttontext ?></a></p>
         </div>
@@ -318,6 +314,10 @@ echo $OUTPUT->doctype() ?>
         <div class="service">
             <!-- Icon & title. Font Awesome icon used. -->
             <h5><span><i class="icon-<?php echo $PAGE->theme->settings->marketing3icon ?>"></i> <?php echo $PAGE->theme->settings->marketing3 ?></span></h5>
+            <?php if ($hasmarketing3image) { ?>
+            	<div class="marketing-image3"></div>
+            <?php } ?>
+            
             <?php echo $PAGE->theme->settings->marketing3content ?>
             <p align="right"><a href="<?php echo $PAGE->theme->settings->marketing3buttonurl ?>" id="button"><?php echo $PAGE->theme->settings->marketing3buttontext ?></a></p>
         </div>

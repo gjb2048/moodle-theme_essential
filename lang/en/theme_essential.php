@@ -167,6 +167,8 @@ $string['slide4urldesc'] = 'Enter the target destination of the fourth slide\'s 
 /* Marketing Spots */
 $string['marketingheading'] = 'Marketing Spots';
 $string['marketingheadingsub'] = 'Three locations on the front page to add information and links';
+$string['marketingheight'] = 'Height of Marketing Images';
+$string['marketingheightdesc'] = 'If you want to display images in the Marketing boxes you can specify their hight here.';
 $string['marketingdesc'] = 'This theme provides the option of enabling three "marketing" or "ad" spots just under the slideshow. These allow you to easily identify core information to your users and provide direct links.';
 
 $string['togglemarketing'] = 'Toggle Marketing Spot display';
@@ -177,6 +179,8 @@ $string['marketing1'] = 'Marketing Spot One - Title';
 $string['marketing1desc'] = 'Title to show in this marketing spot';
 $string['marketing1icon'] = 'Marketing Spot One - Icon';
 $string['marketing1icondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "icon-".';
+$string['marketing1image'] = 'Marketing Spot One - Image';
+$string['marketing1imagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot';
 $string['marketing1content'] = 'Marketing Spot One - Content';
 $string['marketing1contentdesc'] = 'Content to display in the marketing box. Keep it short and sweet.';
 $string['marketing1buttontext'] = 'Marketing Spot One - Link Text';
@@ -188,6 +192,8 @@ $string['marketing2'] = 'Marketing Spot Two - Title';
 $string['marketing2desc'] = 'Title to show in this marketing spot';
 $string['marketing2icon'] = 'Marketing Spot Two - Icon';
 $string['marketing2icondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "icon-".';
+$string['marketing2image'] = 'Marketing Spot Two - Image';
+$string['marketing2imagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot';
 $string['marketing2content'] = 'Marketing Spot Two - Content';
 $string['marketing2contentdesc'] = 'Content to display in the marketing box. Keep it short and sweet.';
 $string['marketing2buttontext'] = 'Marketing Spot Two - Link Text';
@@ -199,6 +205,8 @@ $string['marketing3'] = 'Marketing Spot Three - Title';
 $string['marketing3desc'] = 'Title to show in this marketing spot';
 $string['marketing3icon'] = 'Marketing Spot Three - Icon';
 $string['marketing3icondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "icon-".';
+$string['marketing3image'] = 'Marketing Spot Three - Image';
+$string['marketing3imagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot';
 $string['marketing3content'] = 'Marketing Spot Three - Content';
 $string['marketing3contentdesc'] = 'Content to display in the marketing box. Keep it short and sweet.';
 $string['marketing3buttontext'] = 'Marketing Spot Three - Link Text';

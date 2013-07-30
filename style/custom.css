@@ -1172,7 +1172,7 @@ table#greyboxleft h2 {
 
 /* @end */
 
-/* @group Feature Spots */
+/* @group Marketing Spots */
 
 #adspots {
     margin-top: 10px;
@@ -1216,6 +1216,28 @@ table#greyboxleft h2 {
     width:40px;
     margin-bottom:12px;
     color: [[setting:themecolor]];
+}
+
+.marketing-image1 {
+	background: url([[setting:marketing1image]]) no-repeat;
+}
+
+.marketing-image2 {
+	background: url([[setting:marketing2image]]) no-repeat;
+}
+
+.marketing-image3 {
+	background: url([[setting:marketing3image]]) no-repeat;
+}
+
+.marketing-image1,
+.marketing-image2,
+.marketing-image3 {
+	background-size: contain;
+	background-position: center;
+	width: 100%;
+	height: [[setting:marketingheight]];
+	margin-bottom: 5px;
 }
 
 /* @end */

@@ -99,6 +99,15 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
     } else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'slide4image') {
         $theme = theme_config::load('essential');
         return $theme->setting_file_serve('slide4image', $args, $forcedownload, $options);
+    } else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'marketing1image') {
+        $theme = theme_config::load('essential');
+        return $theme->setting_file_serve('marketing1image', $args, $forcedownload, $options);
+    } else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'marketing2image') {
+        $theme = theme_config::load('essential');
+        return $theme->setting_file_serve('marketing2image', $args, $forcedownload, $options);
+    } else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'marketing3image') {
+        $theme = theme_config::load('essential');
+        return $theme->setting_file_serve('marketing3image', $args, $forcedownload, $options);
     } else {
         send_file_not_found();
     }
@@ -238,21 +247,70 @@ function theme_essential_process_css($css, $theme) {
     
     // Set Slide Images.
     $setting = 'slide1image';
-    $slideimage = $theme->setting_file_url($setting, $setting);
+    if (!empty($theme->settings->slide1image)) {
+    	$slideimage = $theme->setting_file_url($setting, $setting);
+    } else {
+        $slideimage = null;
+    }
     $css = theme_essential_set_slideimage($css, $slideimage, $setting);
 
     $setting = 'slide2image';
-    $slideimage = $theme->setting_file_url($setting, $setting);
+    if (!empty($theme->settings->slide2image)) {
+    	$slideimage = $theme->setting_file_url($setting, $setting);
+    } else {
+        $slideimage = null;
+    }
     $css = theme_essential_set_slideimage($css, $slideimage, $setting);
 
     $setting = 'slide3image';
-    $slideimage = $theme->setting_file_url($setting, $setting);
+    if (!empty($theme->settings->slide3image)) {
+    	$slideimage = $theme->setting_file_url($setting, $setting);
+    } else {
+        $slideimage = null;
+    }
     $css = theme_essential_set_slideimage($css, $slideimage, $setting);
 
     $setting = 'slide4image';
-    $slideimage = $theme->setting_file_url($setting, $setting);
+    if (!empty($theme->settings->slide4image)) {
+    	$slideimage = $theme->setting_file_url($setting, $setting);
+    } else {
+        $slideimage = null;
+    }
     $css = theme_essential_set_slideimage($css, $slideimage, $setting);
     
+    // Set Marketing Image Height.
+    if (!empty($theme->settings->marketingheight)) {
+        $marketingheight = $theme->settings->marketingheight;
+    } else {
+        $marketingheight = null;
+    }
+    $css = theme_essential_set_marketingheight($css, $marketingheight);
+    
+    // Set Marketing Images.
+    $setting = 'marketing1image';
+    if (!empty($theme->settings->marketing1image)) {
+    	$marketingimage = $theme->setting_file_url($setting, $setting);
+    } else {
+        $marketingimage = null;
+    }
+    $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
+    
+    $setting = 'marketing2image';
+    if (!empty($theme->settings->marketing2image)) {
+    	$marketingimage = $theme->setting_file_url($setting, $setting);
+    } else {
+        $marketingimage = null;
+    }
+    $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
+    
+    $setting = 'marketing3image';
+    if (!empty($theme->settings->marketing3image)) {
+    	$marketingimage = $theme->setting_file_url($setting, $setting);
+    } else {
+        $marketingimage = null;
+    }
+    $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
+
     // Set the font path.
     $css = theme_essential_set_fontwww($css);
     return $css;
@@ -366,10 +424,24 @@ function theme_essential_set_slideimage($css, $slideimage, $setting) {
     global $OUTPUT;
     $tag = '[[setting:'.$setting.']]';
     $replacement = $slideimage;
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_marketingheight($css, $marketingheight) {
+    $tag = '[[setting:marketingheight]]';
+    $replacement = $marketingheight;
     if (is_null($replacement)) {
-        // Get default image from themes 'images' folder of the name in $setting.
-        $replacement = $OUTPUT->pix_url('images/'.$setting, 'theme');
+        $replacement = 100;
     }
+    $css = str_replace($tag, $replacement.'px', $css);
+    return $css;
+}
+
+function theme_essential_set_marketingimage($css, $marketingimage, $setting) {
+    global $OUTPUT;
+    $tag = '[[setting:'.$setting.']]';
+    $replacement = $marketingimage;
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
