@@ -14,7 +14,7 @@
 body{
     border-top:3px solid [[setting:themecolor]];
     font-family: "PT Sans", Arial, Helvetica, sans-serif;
-    background: white url([[pix:theme|bg/body]]) repeat;
+    background: white url([[setting:pagebackground]]) repeat;
     font-size: 13px;
     line-height: 25px;
     text-shadow: none !important;
@@ -321,7 +321,7 @@ h2.pagetitle {
 }
 
 h2.pagetitle span {
-    background: white url([[pix:theme|bg/body]]) repeat;
+    background: white url([[setting:pagebackground]]) repeat;
     padding-right: 8px;
 }
 
@@ -957,7 +957,7 @@ table#greyboxleft h2 {
 /* @group Footer */
 
 #page-footer {
-    background: #000;
+    background: [[setting:footercolor]];
     margin-top: 10px;
     margin-bottom: 15px;
     font-size: 13px;

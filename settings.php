@@ -82,27 +82,7 @@ defined('MOODLE_INTERNAL') || die;
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-
-    // Main theme background colour setting.
-    $name = 'theme_essential/themecolor';
-    $title = get_string('themecolor', 'theme_essential');
-    $description = get_string('themecolordesc', 'theme_essential');
-    $default = '#30add1';
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Main theme Hover colour setting.
-    $name = 'theme_essential/themehovercolor';
-    $title = get_string('themehovercolor', 'theme_essential');
-    $description = get_string('themehovercolordesc', 'theme_essential');
-    $default = '#29a1c4';
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
+    
     // Copyright setting.
     $name = 'theme_essential/copyright';
     $title = get_string('copyright', 'theme_essential');
@@ -126,6 +106,51 @@ defined('MOODLE_INTERNAL') || die;
     $description = get_string('customcssdesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtextarea($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    $ADMIN->add('theme_essential', $temp);
+    
+	/* Color Settings */
+    $temp = new admin_settingpage('theme_essential_color', get_string('colorheading', 'theme_essential'));
+    $temp->add(new admin_setting_heading('theme_essential_color', get_string('colorheadingsub', 'theme_essential'),
+            format_text(get_string('colordesc' , 'theme_essential'), FORMAT_MARKDOWN)));
+
+    // Background Image.
+    $name = 'theme_essential/pagebackground';
+    $title = get_string('pagebackground', 'theme_essential');
+    $description = get_string('pagebackgrounddesc', 'theme_essential');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'pagebackground');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // Main theme colour setting.
+    $name = 'theme_essential/themecolor';
+    $title = get_string('themecolor', 'theme_essential');
+    $description = get_string('themecolordesc', 'theme_essential');
+    $default = '#30add1';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Main theme Hover colour setting.
+    $name = 'theme_essential/themehovercolor';
+    $title = get_string('themehovercolor', 'theme_essential');
+    $description = get_string('themehovercolordesc', 'theme_essential');
+    $default = '#29a1c4';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // Main Footer colour setting.
+    $name = 'theme_essential/footercolor';
+    $title = get_string('footercolor', 'theme_essential');
+    $description = get_string('footercolordesc', 'theme_essential');
+    $default = '#000000';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 

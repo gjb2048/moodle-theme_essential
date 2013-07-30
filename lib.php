@@ -64,9 +64,7 @@ function theme_essential_set_logo($css, $logo) {
     if (is_null($replacement)) {
         $replacement = '';
     }
-
     $css = str_replace($tag, $replacement, $css);
-
     return $css;
 }
 
@@ -86,6 +84,9 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
     if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'logo') {
         $theme = theme_config::load('essential');
         return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
+    } else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'pagebackground') {
+        $theme = theme_config::load('essential');
+        return $theme->setting_file_serve('pagebackground', $args, $forcedownload, $options);
     } else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'slide1image') {
         $theme = theme_config::load('essential');
         return $theme->setting_file_serve('slide1image', $args, $forcedownload, $options);
@@ -160,6 +161,14 @@ function theme_essential_process_css($css, $theme) {
     }
     $css = theme_essential_set_themehovercolor($css, $themehovercolor);
     
+    // Set the footer color.
+    if (!empty($theme->settings->footercolor)) {
+        $footercolor = $theme->settings->footercolor;
+    } else {
+        $footercolor = null;
+    }
+    $css = theme_essential_set_footercolor($css, $footercolor);
+    
     // Set the navbar seperator.
     if (!empty($theme->settings->navbarsep)) {
         $navbarsep = $theme->settings->navbarsep;
@@ -179,10 +188,14 @@ function theme_essential_process_css($css, $theme) {
     // Set the background image for the logo.
     $logo = $theme->setting_file_url('logo', 'logo');
     $css = theme_essential_set_logo($css, $logo);
-
+    
+    // Set the background image for the page.
+    $setting = 'pagebackground';
+    $pagebackground = $theme->setting_file_url($setting, $setting);
+    $css = theme_essential_set_pagebackground($css, $pagebackground, $setting);
+    
     // Set Slide Images.
     $setting = 'slide1image';
-    // Creates the url for image file which is then served up by 'theme_essential_pluginfile' below.
     $slideimage = $theme->setting_file_url($setting, $setting);
     $css = theme_essential_set_slideimage($css, $slideimage, $setting);
 
@@ -200,7 +213,6 @@ function theme_essential_process_css($css, $theme) {
     
     // Set the font path.
     $css = theme_essential_set_fontwww($css);
-
     return $css;
 }
 
@@ -225,6 +237,16 @@ function theme_essential_set_themehovercolor($css, $themehovercolor) {
     return $css;
 }
 
+function theme_essential_set_footercolor($css, $footercolor) {
+    $tag = '[[setting:footercolor]]';
+    $replacement = $footercolor;
+    if (is_null($replacement)) {
+        $replacement = '#000000';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
 function theme_essential_set_navbarsep($css, $navbarsep) {
     $tag = '[[setting:navbarsep]]';
     $replacement = $navbarsep;
@@ -234,6 +256,19 @@ function theme_essential_set_navbarsep($css, $navbarsep) {
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
+
+function theme_essential_set_pagebackground($css, $pagebackground, $setting) {
+    global $OUTPUT;
+    $tag = '[[setting:pagebackground]]';
+    $replacement = $pagebackground;
+    if (is_null($replacement)) {
+        // Get default image from themes 'bg' folder of the name in $setting.
+        $replacement = $OUTPUT->pix_url('bg/body', 'theme');
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
 
 function theme_essential_set_slideimage($css, $slideimage, $setting) {
     global $OUTPUT;
