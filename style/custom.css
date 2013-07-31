@@ -1234,7 +1234,7 @@ table#greyboxleft h2 {
 .marketing-image2,
 .marketing-image3 {
 	background-size: contain;
-	background-position: center;
+	background-position: center top;
 	width: 100%;
 	height: [[setting:marketingheight]];
 	margin-bottom: 5px;
