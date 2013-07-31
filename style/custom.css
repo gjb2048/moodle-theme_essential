@@ -1458,6 +1458,16 @@ img.profilepicture
 
 /* @end */
 
+/* @group Quiz */
+
+#page-mod-quiz-edit div.quizcontents {
+clear: left;
+display: block;
+float: left;
+width: 68%;
+}
+
+/* @end */
 
 /* Custom CSS Settings
 -------------------------*/
