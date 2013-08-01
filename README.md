@@ -24,7 +24,7 @@ Cool things to know about the theme.
  - Cleanup of required images (Theme now only uses 4 images)
  - Performance info now neatly formatted.
  - Can now upload optional images into the marketing spots
- - Now available in German and Spanish
+ - Now available in English, German, Russian and Spanish
  - Minor CSS Fixes
  
 2.5.2
