@@ -946,6 +946,29 @@ table#greyboxleft h2 {
 	content:"\f07c";
 }
 
+.coursebox .content .courseimage img {
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 3px solid #fff;
+}
+
+.courses .coursebox {
+	background: #fff;
+	border-radius: 10px;
+	border: 1px solid #E1E1E1 !important;
+	padding: 10px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+}
+
+.courses .coursebox.even,
+.courses .coursebox.odd {
+	background: #fff;
+	margin-bottom: 5px;
+}
+
 
 /* @group Home News Boxes */
 
@@ -977,31 +1000,7 @@ table#greyboxleft h2 {
 
 /* @end */
 
-/* @group Sponsors */
 
-.sponsors {
-    padding: 10px;
-    text-align: center;
-    background: #FAFAFA;
-    border: 1px solid #EEE;
-    border-radius: 5px;
-    margin-top: -10px;
-}
-
-.sponsors h4 {
-    text-align: left;
-    padding-bottom: 8px;
-    margin-bottom: 8px;
-    border-bottom: 1px solid #EEE;
-    margin-top: 0px;
-}
-
-.sponsors img {
-    max-width: 120px;
-    margin: 10px 14px;
-}
-
-/* @end */
 /* @end */
 
 /* @group Footer */
