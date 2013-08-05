@@ -98,14 +98,13 @@
 
 .da-slide .da-link{
 	top: 200px; /*depends on p height*/
-	border-radius: 30px;
+	border-radius: 15px;
 	box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
 	color: #fff;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-	padding:3px 15px 3px;
+	padding:3px 15px;
 	font-size: 15px;
 	line-height: 30px;
-	width: 70px;
 	text-align: center;
 }
 .da-slide .da-link:hover{
@@ -716,5 +715,6 @@ color:[[setting:themecolor]];
 
 .da-slide .da-link{
 background:[[setting:themecolor]];
+white-space: nowrap;
 }
 
