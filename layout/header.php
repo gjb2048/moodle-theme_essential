@@ -97,22 +97,22 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
         <p id="socialheading"><?php echo get_string('socialnetworks','theme_essential')?></p>
             <ul class="socials unstyled">
                 <?php if ($hasgoogleplus) { ?>
-                <li><a href="<?php echo $hasgoogleplus; ?>"><i class="icon-google-plus-sign"></i></a></li>
+                <li><a href="<?php echo $hasgoogleplus; ?>" class="googleplus"><i class="icon-google-plus-sign"></i></a></li>
                 <?php } ?>
                 <?php if ($hastwitter) { ?>
-                <li><a href="<?php echo $hastwitter; ?>"><i class="icon-twitter-sign"></i></a></li>
+                <li><a href="<?php echo $hastwitter; ?>" class="twitter"><i class="icon-twitter-sign"></i></a></li>
                 <?php } ?>
                 <?php if ($hasfacebook) { ?>
-                <li><a href="<?php echo $hasfacebook; ?>"><i class="icon-facebook-sign"></i></a></li>
+                <li><a href="<?php echo $hasfacebook; ?>" class="facebook"><i class="icon-facebook-sign"></i></a></li>
                 <?php } ?>
                 <?php if ($haslinkedin) { ?>
-                <li><a href="<?php echo $haslinkedin; ?>"><i class="icon-linkedin-sign"></i></a></li>
+                <li><a href="<?php echo $haslinkedin; ?>" class="linkedin"><i class="icon-linkedin-sign"></i></a></li>
                 <?php } ?>
                 <?php if ($hasyoutube) { ?>
-                <li><a href="<?php echo $hasyoutube; ?>"><i class="icon-youtube-sign"></i></a></li>
+                <li><a href="<?php echo $hasyoutube; ?>" class="youtube"><i class="icon-youtube-sign"></i></a></li>
                 <?php } ?>
                 <?php if ($hasflickr) { ?>
-                <li><a href="<?php echo $hasflickr; ?>"><i class="icon-flickr"></i></a></li>
+                <li><a href="<?php echo $hasflickr; ?>" class="flickr"><i class="icon-flickr"></i></a></li>
                 <?php } ?>
             </ul>
         </div>

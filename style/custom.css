@@ -170,9 +170,31 @@ h2#subtitle {
     text-decoration: none;
 }
 
-.socials a:hover {
-    color: [[setting:themecolor]];
+a.facebook a:hover, a.facebook:focus {
+    color: #4a6ea9;
 }
+a.twitter:hover, a.twitter:focus {
+    color: #00aced;
+}
+a.googleplus:hover, a.googleplus:focus {
+    color: #f42941;
+}
+a.flickr:hover, a.flickr:focus {
+    color: #ff3096;
+}
+a.instagram:hover, a.instagram:focus {
+    color: #b99c6b;
+}
+a.youtube:hover, a.youtube:focus {
+    color: #f42941;
+}
+a.pinterest:hover, a.pinterest:focus {
+    color: #f42941;
+}
+a.linkedin:hover, a.linkedin:focus {
+    color: #4A9CC9;
+}
+
 .socials li {
     text-align: right;
     display: inline-block;
