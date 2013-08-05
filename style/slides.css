@@ -1,4 +1,10 @@
-.da-slider{
+/*
+ * @author    Julian Ridden
+ * @package   theme_essential
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+ 
+ .da-slider{
 	width: 100%;
 	height: 300px;
 	position: relative;

@@ -1,4 +1,10 @@
-/* @group Core */
+/*
+ * @author    Julian Ridden
+ * @package   theme_essential
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+ 
+ /* @group Core */
 
 @font-face {
     font-family: 'FontAwesome'; 
