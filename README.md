@@ -23,6 +23,7 @@ Cool things to know about the theme.
  - Can now set colors for footer area
  - Cleanup of required images (Theme now only uses 4 images)
  - Performance info now neatly formatted.
+ - Fixed Custom Menu color in IE8 and IE9
  - Can now upload optional images into the marketing spots
  - Now available in English, German, Russian, Turkish and Spanish (many thanks to the Moodle Community for translating)
  - Minor CSS Fixes
