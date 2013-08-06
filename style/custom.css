@@ -796,6 +796,57 @@ table#greyboxleft h2 {
 	background:[[setting:themehovercolor]];
 }
 
+.block_login input[type="submit"] {
+	font-family: "PT Sans", Arial, Helvetica, sans-serif;
+	color: #fff;
+	padding: 5px;
+	border-radius: 5px;
+	background: #0cc719;
+	margin-right: 5px;
+	font-size: 13px;
+	text-shadow: none;
+	box-shadow: none;
+	margin-top: 10px;
+	margin-left: 0px;
+}
+
+.block_login input:hover {
+	text-decoration: none;
+	background: #339900;
+	color: #fff;
+}
+
+.block_login .footer a {
+	font-family: "PT Sans", Arial, Helvetica, sans-serif;
+	color: #fff;
+	padding: 3px 5px;
+	border-radius: 5px;
+	background: [[setting:themecolor]];
+	float: left;
+	margin-right: 5px;
+	font-size: 13px;
+	white-space: nowrap;
+}
+
+.block_login input[type="text"],
+.block_login input[type="password"] {
+	width: 95% !important;
+}
+
+.block_login .footer a:hover {
+	text-decoration: none;
+	background: [[setting:themehovercolor]];
+}
+
+.block_login .footer div {
+	margin-top: -45px;
+	margin-left: 33px;
+}
+
+.block_login .footer {
+	height: 0px;
+}
+
 /* @group Block Icons */
 
 .dir-rtl .collapsed .tree_item.branch:before { 
