@@ -283,14 +283,17 @@ ul.breadcrumb li:last-child:after {
 
 .navbar {
     margin-bottom: 0px;
+    background-image: none !important;
 }
 
 .navbar-inner{
-    background: [[setting:themecolor]] !important;
     border-top:1px solid [[setting:themehovercolor]] !important;
     border-bottom:1px solid [[setting:themehovercolor]] !important;
     border-radius: 0px;
     line-height: 0px;
+    background-color: [[setting:themecolor]] !important;
+    background-image: none;
+    filter: none;
 }
 
 .navbar .brand {
