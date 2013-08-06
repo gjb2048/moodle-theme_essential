@@ -176,7 +176,12 @@ h2#subtitle {
     text-decoration: none;
 }
 
-a.vk .icon-stack {
+a.vk .icon-stack,
+a.website .icon-stack,
+a.ios .icon-stack,
+a.android .icon-stack,
+a.skype .icon-stack,
+a.instagram .icon-stack {
 	font-size: .5em;
 	vertical-align: -5px;
 }
@@ -185,6 +190,24 @@ a.facebook a:hover, a.facebook:focus {
     color: #4a6ea9;
 }
 
+a.website .icon-stack:hover, a.icon-sign-blank:focus {
+    color: [[setting:themecolor]];
+}
+a.skype .icon-stack:hover, a.icon-sign-blank:focus {
+    color: #00adf7;
+}
+a.apple .icon-stack:hover, a.icon-sign-blank:focus {
+    color: #4a6ea9;
+}
+a.instagram .icon-stack:hover, a.icon-sign-blank:focus {
+    color: #a5674a;
+}
+a.ios .icon-stack:hover, a.icon-sign-blank:focus {
+    color: #000;
+}
+a.android .icon-stack:hover, a.icon-sign-blank:focus {
+    color: #98cd32;
+}
 a.vk .icon-stack:hover, a.icon-sign-blank:focus {
     color: #4a6ea9;
 }
@@ -196,6 +219,9 @@ a.googleplus:hover, a.googleplus:focus {
 }
 a.flickr:hover, a.flickr:focus {
     color: #ff3096;
+}
+a.pinterest:hover, a.flickr:focus {
+    color: #de0002;
 }
 a.instagram:hover, a.instagram:focus {
     color: #b99c6b;

@@ -240,5 +240,28 @@ $string['flickrdesc'] = 'Enter the URL of your Flickr page. (i.e http://www.flic
 $string['vk'] = 'VKontakte URL';
 $string['vkdesc'] = 'Enter the URL of your Vkontakte page. (i.e http://www.vk.com/mycollege)';
 
+$string['skype'] = 'Skype Account';
+$string['skypedesc'] = 'Enter the Skype username of your organisations Skype account';
+
+$string['pinterest'] = 'Pinterest URL';
+$string['pinterestdesc'] = 'Enter the URL of your Pinterest page. (i.e http://pinterest.com/mycollege)';
+
+$string['instagram'] = 'Instagram URL';
+$string['instagramdesc'] = 'Enter the URL of your Instagram page. (i.e http://instagram.com/mycollege)';
+
+$string['website'] = 'Website URL';
+$string['websitedesc'] = 'Enter the URL of your own website. (i.e http://www.pukunui.com)';
+
+/* Mobile Apps */
+$string['mobileappsheading'] = 'Mobile Apps';
+$string['mobileappsheadingsub'] = 'Link to your App to get your students using Mobiles';
+$string['mobileappsdesc'] = 'Have you got a web app on the App Store or GooglePay Store? Provide a link here so your users can grab the apps online';
+
+$string['android'] = 'Android (Google Play)';
+$string['androiddesc'] = 'Prove a URL to your mobile App on the Google Play Store. If you do not have one of your own maybe consider linking to the free official Moodle Mobile app.';
+
+$string['ios'] = 'iPhone/iPad (App Store)';
+$string['iosdesc'] = 'Prove a URL to your mobile App on the App Store. If you do not have one of your own maybe consider linking to the free official Moodle Mobile app.';
+
 /* Alerts */
 $string['ie7message'] = '<p id="ie7message">Sorry, this site requires <strong>Internet Explorer 8</strong> or higher to display and function correctly. Please update your browser via Windows Update, or <a href="http://windows.microsoft.com/en-au/internet-explorer/download-ie" target="_blank">download the latest version here</a>. Alternatively, you can try installing the <a href="http://www.google.com/chromeframe" target="_blank">ChromeFrame plugin</a> which may solve some of the issues experienced in older browsers. If using IE8 or above you may have Compatibility Mode switched on, turn this off to display this website correctly. If you continue having problems accessing this website or the updates mentioned above, please contact your Helpdesk for further assistance.</p>';

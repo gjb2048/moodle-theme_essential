@@ -31,9 +31,16 @@ $haslinkedin    = (empty($PAGE->theme->settings->linkedin)) ? false : $PAGE->the
 $hasyoutube     = (empty($PAGE->theme->settings->youtube)) ? false : $PAGE->theme->settings->youtube;
 $hasflickr      = (empty($PAGE->theme->settings->flickr)) ? false : $PAGE->theme->settings->flickr;
 $hasvk          = (empty($PAGE->theme->settings->vk)) ? false : $PAGE->theme->settings->vk;
+$haspinterest   = (empty($PAGE->theme->settings->pinterest)) ? false : $PAGE->theme->settings->pinterest;
+$hasinstagram   = (empty($PAGE->theme->settings->instagram)) ? false : $PAGE->theme->settings->instagram;
+$hasskype       = (empty($PAGE->theme->settings->skype)) ? false : $PAGE->theme->settings->skype;
+$hasios         = (empty($PAGE->theme->settings->ios)) ? false : $PAGE->theme->settings->ios;
+$hasandroid     = (empty($PAGE->theme->settings->android)) ? false : $PAGE->theme->settings->android;
+$haswebsite     = (empty($PAGE->theme->settings->website)) ? false : $PAGE->theme->settings->website;
 
 // If any of the above social networks are true, sets this to true.
-$hassocialnetworks = ($hasfacebook || $hastwitter || $hasgoogleplus || $hasflickr || $hasvk || $haslinkedin || $hasyoutube ) ? true : false;
+$hassocialnetworks = ($hasfacebook || $hastwitter || $hasgoogleplus || $hasflickr || $hasinstagram || $hasvk || $haslinkedin || $haspinterest || $hasskype || $haslinkedin || $haswebsite || $hasyoutube ) ? true : false;
+$hasmobileapps = ($hasios || $hasandroid ) ? true : false;
 $hasheaderprofilepic = (empty($PAGE->theme->settings->headerprofilepic)) ? false : $PAGE->theme->settings->headerprofilepic;
 
 
@@ -62,7 +69,15 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
     <div class="container-fluid">
     <div class="row-fluid">
     <!-- HEADER: LOGO AREA -->
-        <div class="span8">
+        <?php if ($hassocialnetworks && $hasmobileapps) { ?>
+        	<div class="span6">
+        <?php } else if (!$hassocialnetworks && $hasmobileapps) { ?>
+        	<div class="span6">
+        <?php } else if ($hassocialnetworks && !$hasmobileapps) { ?>
+        	<div class="span6">
+        <?php } else { ?>
+        	<div class="span11">
+        <?php } ?>
             <?php
             if (!$haslogo) { ?>
                 <i id="headerlogo" class="icon-<?php echo $PAGE->theme->settings->siteicon ?>"></i>
@@ -97,6 +112,9 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
         <div class="span3 pull-right">
         <p id="socialheading"><?php echo get_string('socialnetworks','theme_essential')?></p>
             <ul class="socials unstyled">
+                <?php if ($haswebsite) { ?>
+                <li><a href="<?php echo $haswebsite; ?>" class="website"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-globe icon-light"></i></span></a></li>
+                <?php } ?>
                 <?php if ($hasgoogleplus) { ?>
                 <li><a href="<?php echo $hasgoogleplus; ?>" class="googleplus"><i class="icon-google-plus-sign"></i></a></li>
                 <?php } ?>
@@ -115,8 +133,34 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
                 <?php if ($hasflickr) { ?>
                 <li><a href="<?php echo $hasflickr; ?>" class="flickr"><i class="icon-flickr"></i></a></li>
                 <?php } ?>
+                <?php if ($haspinterest) { ?>
+                <li><a href="<?php echo $haspinterest; ?>" class="pinterest"><i class="icon-pinterest-sign"></i></a></li>
+                <?php } ?>
+                <?php if ($hasinstagram) { ?>
+                <li><a href="<?php echo $hasinstagram; ?>" class="instagram"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-instagram icon-light"></i></span></a></li>
+                <?php } ?>
                 <?php if ($hasvk) { ?>
                 <li><a href="<?php echo $hasvk; ?>" class="vk"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-vk icon-light"></i></span></a></li>
+                <?php } ?>
+                <?php if ($hasskype) { ?>
+                <li><a href="<?php echo $hasskype; ?>" class="skype"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-skype icon-light"></i></span></a></li>
+                <?php } ?>
+	    </ul>
+        </div>
+        <?php 
+        }
+
+        // If true, displays the heading and available social links; displays nothing if false.
+        if ($hasmobileapps) {
+        ?>
+        <div class="span2 pull-right">
+        <p id="socialheading"><?php echo get_string('mobileappsheading','theme_essential')?></p>
+            <ul class="socials unstyled">
+                <?php if ($hasios) { ?>
+                <li><a href="<?php echo $hasios; ?>" class="ios"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-apple icon-light"></i></span></a></li>
+                <?php } ?>
+                <?php if ($hasandroid) { ?>
+                <li><a href="<?php echo $hasandroid; ?>" class="android"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-android icon-light"></i></span></a></li>
                 <?php } ?>
 	    </ul>
         </div>
