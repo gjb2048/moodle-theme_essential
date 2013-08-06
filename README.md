@@ -28,6 +28,7 @@ Cool things to know about the theme.
  - Now available in English, German, Russian, Turkish and Spanish (many thanks to the Moodle Community for translating)
  - New Pinterest, Instagram, Skype and the Russian VK social networks added.
  - Can now add links to Mobile apps on the iOS App Store and Google Play
+ - New formatting on login block
  - Minor CSS Fixes
  
 2.5.2
