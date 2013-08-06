@@ -570,6 +570,15 @@ defined('MOODLE_INTERNAL') || die;
 	$temp->add(new admin_setting_heading('theme_essential_social', get_string('socialheadingsub', 'theme_essential'),
             format_text(get_string('socialdesc' , 'theme_essential'), FORMAT_MARKDOWN)));
 	
+    // Website url setting.
+    $name = 'theme_essential/website';
+    $title = get_string('website', 'theme_essential');
+    $description = get_string('websitedesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
     // Facebook url setting.
     $name = 'theme_essential/facebook';
     $title = get_string('facebook', 'theme_essential');
@@ -606,6 +615,24 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
+    // Pinterest url setting.
+    $name = 'theme_essential/pinterest';
+    $title = get_string('pinterest', 'theme_essential');
+    $description = get_string('pinterestdesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // Instagram url setting.
+    $name = 'theme_essential/instagram';
+    $title = get_string('instagram', 'theme_essential');
+    $description = get_string('instagramdesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
     // YouTube url setting.
     $name = 'theme_essential/youtube';
     $title = get_string('youtube', 'theme_essential');
@@ -615,10 +642,10 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
-    // Flickr url setting.
-    $name = 'theme_essential/flickr';
-    $title = get_string('flickr', 'theme_essential');
-    $description = get_string('flickrdesc', 'theme_essential');
+    // Skype url setting.
+    $name = 'theme_essential/skype';
+    $title = get_string('skype', 'theme_essential');
+    $description = get_string('skypedesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -632,6 +659,29 @@ defined('MOODLE_INTERNAL') || die;
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting); 
+    
+    $ADMIN->add('theme_essential', $temp);
+    
+    $temp = new admin_settingpage('theme_essential_mobileapps', get_string('mobileappsheading', 'theme_essential'));
+	$temp->add(new admin_setting_heading('theme_essential_mobileapps', get_string('mobileappsheadingsub', 'theme_essential'),
+            format_text(get_string('mobileappsdesc' , 'theme_essential'), FORMAT_MARKDOWN)));
+    // Android App url setting.
+    $name = 'theme_essential/android';
+    $title = get_string('android', 'theme_essential');
+    $description = get_string('androiddesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // iOS App url setting.
+    $name = 'theme_essential/ios';
+    $title = get_string('ios', 'theme_essential');
+    $description = get_string('iosdesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
     
     $ADMIN->add('theme_essential', $temp);
 

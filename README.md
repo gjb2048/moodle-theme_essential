@@ -26,10 +26,12 @@ Cool things to know about the theme.
  - Fixed Custom Menu color in IE8 and IE9
  - Can now upload optional images into the marketing spots
  - Now available in English, German, Russian, Turkish and Spanish (many thanks to the Moodle Community for translating)
+ - New Pinterest, Instagram, Skype and the Russian VK social networks added.
+ - Can now add links to Mobile apps on the iOS App Store and Google Play
  - Minor CSS Fixes
  
 2.5.2
- ========================
+========================
  - New theme setting to have user image show in the header when logged in.
  - Admin can choose to revert courses to a "standard" layout with blocks on the left and right sides
  - Admin can choose the default Navbar/breadcrumb seperator
