@@ -30,9 +30,10 @@ $hasgoogleplus  = (empty($PAGE->theme->settings->googleplus)) ? false : $PAGE->t
 $haslinkedin    = (empty($PAGE->theme->settings->linkedin)) ? false : $PAGE->theme->settings->linkedin;
 $hasyoutube     = (empty($PAGE->theme->settings->youtube)) ? false : $PAGE->theme->settings->youtube;
 $hasflickr      = (empty($PAGE->theme->settings->flickr)) ? false : $PAGE->theme->settings->flickr;
+$hasvk          = (empty($PAGE->theme->settings->vk)) ? false : $PAGE->theme->settings->vk;
 
 // If any of the above social networks are true, sets this to true.
-$hassocialnetworks = ($hasfacebook || $hastwitter || $hasgoogleplus || $hasflickr || $haslinkedin || $hasyoutube ) ? true : false;
+$hassocialnetworks = ($hasfacebook || $hastwitter || $hasgoogleplus || $hasflickr || $hasvk || $haslinkedin || $hasyoutube ) ? true : false;
 $hasheaderprofilepic = (empty($PAGE->theme->settings->headerprofilepic)) ? false : $PAGE->theme->settings->headerprofilepic;
 
 
@@ -114,7 +115,10 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
                 <?php if ($hasflickr) { ?>
                 <li><a href="<?php echo $hasflickr; ?>" class="flickr"><i class="icon-flickr"></i></a></li>
                 <?php } ?>
-            </ul>
+                <?php if ($hasvk) { ?>
+                <li><a href="<?php echo $hasvk; ?>"><i class="icon-vk"></i></a></li>
+                <?php } ?>
+	    </ul>
         </div>
         <?php 
         }
