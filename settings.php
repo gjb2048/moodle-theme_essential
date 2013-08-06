@@ -623,7 +623,15 @@ defined('MOODLE_INTERNAL') || die;
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+ 
+    // VKontakte url setting.
+    $name = 'theme_essential/vk';
+    $title = get_string('vk', 'theme_essential');
+    $description = get_string('vkdesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting); 
     
     $ADMIN->add('theme_essential', $temp);
 

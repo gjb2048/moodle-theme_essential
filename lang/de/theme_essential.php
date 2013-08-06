@@ -22,8 +22,8 @@
  * @package   theme_essential
  * @copyright 2013 Julian Ridden
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * german translation by Christian Conradi and Michael Drawe
  */
-
 /* Core */
 $string['configtitle'] = 'Essential';
 $string['pluginname'] = 'Essential';
@@ -47,163 +47,162 @@ Website: <a href="http://www.moodleman.net">www.moodleman.net</a>
 </div></div>';
 
 /* General */
-$string['geneicsettings'] = 'General Settings';
+$string['geneicsettings'] = 'Allgemeine Einstellungen';
 $string['customcss'] = 'Custom CSS';
-$string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
-$string['footnote'] = 'Footnote';
-$string['footnotedesc'] = 'Whatever you add to this textarea will be displayed in the footer throughout your Moodle site.';
-$string['invert'] = 'Invert navbar';
-$string['invertdesc'] = 'Swaps text and background for the navbar at the top of the page between black and white.';
+$string['customcssdesc'] = 'Alle CSS-Anweisungen in diesem Feld werden auf jeder Seite benutzt. Das Design kann so einfach an Ihre Beduerfnisse angepasst werden.';
+$string['footnote'] = 'Fussnote';
+$string['footnotedesc'] = 'Alles, was hier in dem Textfeld eingefuegt wird, erscheint auf jeder Seite im footer.';
+$string['invert'] = 'Invertierte Navigationsleiste';
+$string['invertdesc'] = 'Wechselt den Text und Hintergrund der Navigationsleiste zwischen schwarz und weiss.';
 $string['logo'] = 'Logo';
-$string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.<br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
-$string['copyright'] = 'Copyright';
-$string['copyrightdesc'] = 'The name of your organisation.';
+$string['logodesc'] = 'Hier kannst du dein eigenes Logo in den header hochladen.<br>Wenn du ein Logo hochgeladen hast, ersetzt es das Standard-Logo und den Standard-Text der Moodle Seite.';
+$string['copyright'] = 'Copyright-Text, Name der Organisation';
+$string['copyrightdesc'] = 'Der Name der Organisation.';
 $string['profilebarcustomtitle'] = 'Profile Bar Custom Block Title';
-$string['profilebarcustomtitledesc'] = 'Title for custom Profile Bar block';
-$string['themecolor'] = 'Theme Color';
-$string['themecolordesc'] = 'What color should your theme be. This will change mulitple components to produce the color you wish across the moodle site';
+$string['profilebarcustomtitledesc'] = 'Titel Text zur Anpassung des Profile Bar block';
+$string['themecolor'] = 'Theme Grund-Farbe';
+$string['themecolordesc'] = 'Welche Grund-Farbe soll dein Theme haben? Diese Grundfarbe wird dann überall auf der moodle-Seite verwendet.';
 $string['themehovercolor'] = 'Theme Hover Color';
-$string['themehovercolordesc'] = 'What color should your theme hovers be. This is used for links, menus, etc';
-$string['contactinfo'] = 'Contact Information';
-$string['contactinfodesc'] = 'Enter your contact information';
-$string['siteicon'] = 'Site Icon';
-$string['siteicondesc'] = 'Do not have a logo? Enter the name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "icon-". ';
-$string['yourprofile'] = 'You';
-$string['headerprofilepic'] = 'Display user\'s picture';
-$string['headerprofilepicdesc'] = 'If checked, displays the user\'s profile picture in the header of the page.';
-$string['layout'] = 'Use a standard course layout';
-$string['layoutdesc'] = 'This theme is designed to put both block columns on the side. If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
-$string['visibleadminonly'] = 'Blocks moved into the area below will only be seen by admins';
+$string['themehovercolordesc'] = 'Wenn du mit der Maus ueber Links, Menues schwebst, erscheint diese Farbe.';
+$string['contactinfo'] = 'Kontaktdaten';
+$string['contactinfodesc'] = 'Hier bitte die Kontaktdaten eingeben';
+$string['siteicon'] = 'Anstatt-Logo-Icon';
+$string['siteicondesc'] = 'Kein Logo vorhanden oder zu Hand? Tippe den Namen des Icons z.B. icon-glass (Erstes Beispiel-Icon) in dieses Feld. Die Liste ist <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">hier</a>.';
+$string['yourprofile'] = 'Ich';
+$string['headerprofilepic'] = 'Anzeige des Nutzerbildes';
+$string['headerprofilepicdesc'] = 'Wenn diese Option aktiviert ist, zeigt wird das Nutzerbild im header der Seite angezeigt.';
+$string['layout'] = 'Verwenden Sie ein Standard-Layout des Kurses';
+$string['layoutdesc'] = 'Dieses Theme ist so konzipiert, dass die Bloecke nur auf einer Seite sind. Wenn Sie das Standard Layout des Kurses mit den drei Spalten bevorzugen, koennen sie es hier wieder aktivieren.';
 
 /* Navbar Seperator */
-$string['navbarsep'] = 'Navbar Seperator';
-$string['navbarsepdesc'] = 'Here you can change the type of seperator displayed in the navbar/breadcrumb';
-$string['nav_thinbracket'] = 'Thin bracket';
-$string['nav_doublebracket'] = 'Double thin bracket';
-$string['nav_thickbracket'] = 'Thick Bracket';
-$string['nav_slash'] = 'Forward slash';
-$string['nav_pipe'] = 'Verticle line';
+$string['navbarsep'] = 'Trennzeichen der Navigationsleiste/Breadcrumb';
+$string['navbarsepdesc'] = 'Hier koennen Sie die Art der Trennzeichen der Navigationsleiste/Breadcrumb auswaehlen';
+$string['nav_thinbracket'] = 'Duenne Klammern';
+$string['nav_doublebracket'] = 'Doppelt duenne Klammern';
+$string['nav_thickbracket'] = 'Fette Klammern';
+$string['nav_slash'] = 'Schraegstrich';
+$string['nav_pipe'] = 'Vertikale Line';
 
 /* Regions */
-$string['region-side-post'] = 'Right';
-$string['region-side-pre'] = 'Left';
-$string['region-footer-left'] = 'Footer (Left)';
-$string['region-footer-middle'] = 'Footer (Middle)';
-$string['region-footer-right'] = 'Footer (Right)';
-$string['region-hidden-dock'] = 'Hidden from users';
+$string['region-side-post'] = 'Rechts';
+$string['region-side-pre'] = 'Links';
+$string['region-footer-left'] = 'Footer (Links)';
+$string['region-footer-middle'] = 'Footer (Mitte)';
+$string['region-footer-right'] = 'Footer (Rechts)';
+$string['region-hidden-dock'] = 'Verborgen für Nutzer';
 
 /* Slideshow */
-$string['slideshowheading'] = 'Frontpage Slideshow';
-$string['slideshowheadingsub'] = 'Dynamic Slideshow for the frontpage';
-$string['slideshowdesc'] = 'This creates a dynamic slideshow of up to 4 slides for you to promote important elements of your site.';
+$string['slideshowheading'] = 'Startseite Slideshow';
+$string['slideshowheadingsub'] = 'Dynamische Slideshow auf der Startseite';
+$string['slideshowdesc'] = 'Dies schafft eine dynamische Slideshow von bis zu 4 Bildern um wichtige Elemente hervorzuheben.';
 
-$string['hideonphone'] = 'Slideshow on Mobiles';
-$string['hideonphonedesc'] = 'Choose if you wish to have the slideshow shown on mobiles or not';
-$string['display'] = 'Display';
-$string['dontdisplay'] = 'Do not Display';
-$string['readmore'] = 'Read More';
+$string['hideonphone'] = 'Slideshow auf Mobil-Telefonen';
+$string['hideonphonedesc'] = 'Waehlen Sie, ob die Slideshow auf dem Handy angezeigt werden soll oder nicht';
+$string['display'] = 'Anzeigen';
+$string['dontdisplay'] = 'Nicht anzeigen';
+$string['readmore'] = 'Mehr erfahren...';
 
 $string['slideshowTitle'] = 'Slideshow';
-$string['slide1'] = 'Slide One: Title';
-$string['slide1desc'] = 'Enter a descriptive title for your slide';
-$string['slide1image'] = 'Slide One: Image';
-$string['slide1imagedesc'] = 'Image works best if it is transparent. (Image size should be 256px x 256px)';
-$string['slide1caption'] = 'Slide One: Caption';
-$string['slide1captiondesc'] = 'Enter the caption text to use for the first slide';
-$string['slide1url'] = 'Slide One: Image Link';
-$string['slide1urldesc'] = 'Enter the target destination of the first slide\'s image link';
+$string['slide1'] = 'Ueberschrift für das Slideshow Bild 1';
+$string['slide1desc'] = 'Geben Sie eine aussagekraeftigen Titel für Ihr Bild an';
+$string['slide1image'] = 'Slideshow Bild 1';
+$string['slide1imagedesc'] = 'Bild funktioniert am besten, wenn es transparent ist. (Bildgroeße sollte 256px x 256px sein)';
+$string['slide1caption'] = 'Slideshow Bild 1: Bildunterschrift';
+$string['slide1captiondesc'] = 'Geben Sie die Bildunterschrift (ein erklaerender Zwischentext)';
+$string['slide1url'] = 'Slideshow Bild 1: Link';
+$string['slide1urldesc'] = 'Hier einen Link eingeben für weitere Infos';
 
-$string['slide2'] = 'Slide Two: Title';
-$string['slide2desc'] = 'Enter a descriptive title for your slide';
-$string['slide2image'] = 'Slide Two: Image';
-$string['slide2imagedesc'] = 'Image works best if it is transparent. (Image size should be 256px x 256px)';
-$string['slide2caption'] = 'Slide Two: Caption';
-$string['slide2captiondesc'] = 'Enter the caption text to use for the second slide';
-$string['slide2url'] = 'Slide Two: Image Link';
-$string['slide2urldesc'] = 'Enter the target destination of the second slide\'s image link';
+$string['slide2'] = 'Ueberschrift für das Slideshow Bild 2';
+$string['slide2desc'] = 'Geben Sie eine aussagekraeftigen Titel für Ihr Bild an';
+$string['slide2image'] = 'Slideshow Bild 2';
+$string['slide2imagedesc'] = 'Bild funktioniert am besten, wenn es transparent ist. (Bildgroeße sollte 256px x 256px sein)';
+$string['slide2caption'] = 'Slideshow Bild 2: Bildunterschrift';
+$string['slide2captiondesc'] = 'Geben Sie die Bildunterschrift (ein erklaerender Zwischentext)';
+$string['slide2url'] = 'Slideshow Bild 2: Link';
+$string['slide2urldesc'] = 'Hier einen Link eingeben für weitere Infos';
 
-$string['slide3'] = 'Slide Three: Title';
-$string['slide3desc'] = 'Enter a descriptive title for your slide';
-$string['slide3image'] = 'Slide Three: Image';
-$string['slide3imagedesc'] = 'Image works best if it is transparent. (Image size should be 256px x 256px)';
-$string['slide3caption'] = 'Slide Three: Caption';
-$string['slide3captiondesc'] = 'Enter the caption text to use for the third slide';
-$string['slide3url'] = 'Slide Three: Image Link';
-$string['slide3urldesc'] = 'Enter the target destination of the third slide\'s image link';
+$string['slide3'] = 'Ueberschrift für das Slideshow Bild 3';
+$string['slide3desc'] = 'Geben Sie eine aussagekraeftigen Titel für Ihr Bild an';
+$string['slide3image'] = 'Slideshow Bild 3';
+$string['slide3imagedesc'] = 'Bild funktioniert am besten, wenn es transparent ist. (Bildgroeße sollte 256px x 256px sein)';
+$string['slide3caption'] = 'Slideshow Bild 3: Bildunterschrift';
+$string['slide3captiondesc'] = 'Geben Sie die Bildunterschrift (ein erkärender Zwischentext)';
+$string['slide3url'] = 'Slideshow Bild 3: Link';
+$string['slide3urldesc'] = 'Hier einen Link eingeben für weitere Infos';
 
-$string['slide4'] = 'Slide Four: Title';
-$string['slide4desc'] = 'Enter a descriptive title for your slide';
-$string['slide4image'] = 'Slide Four: Image';
-$string['slide4imagedesc'] = 'Image works best if it is transparent. (Image size should be 256px x 256px)';
-$string['slide4caption'] = 'Slide Four: Caption';
-$string['slide4captiondesc'] = 'Enter the caption text to use for the fourth slide';
-$string['slide4url'] = 'Slide Four: Image Link';
-$string['slide4urldesc'] = 'Enter the target destination of the fourth slide\'s image link';
+$string['slide4'] = 'Ueberschrift für das Slideshow Bild 4';
+$string['slide4desc'] = 'Geben Sie eine aussagekraeftigen Titel für Ihr Bild an';
+$string['slide4image'] = 'Slideshow Bild 4';
+$string['slide4imagedesc'] = 'Bild funktioniert am besten, wenn es transparent ist. (Bildgroeße sollte 256px x 256px sein)';
+$string['slide4caption'] = 'Slideshow Bild 1: Bildunterschrift';
+$string['slide4captiondesc'] = 'Geben Sie die Bildunterschrift (ein erklaerender Zwischentext)';
+$string['slide4url'] = 'Slideshow Bild 4: Link';
+$string['slide4urldesc'] = 'Hier einen Link eingeben für weitere Infos';
 
 /* Marketing Spots */
 $string['marketingheading'] = 'Marketing Spots';
-$string['marketingheadingsub'] = 'Three locations on the front page to add information and links';
+$string['marketingheadingsub'] = 'Drei Bereiche auf der Starteite für zusaetzliche Information und Links';
 $string['marketingdesc'] = 'This theme provides the option of enabling three "marketing" or "ad" spots just under the slideshow. These allow you to easily identify core information to your users and provide direct links.';
 
-$string['togglemarketing'] = 'Toggle Marketing Spot display';
-$string['togglemarketingdesc'] = 'Choose if you wish to hide or show the three Marketing Spots.';
+$string['togglemarketing'] = 'Schalter Marketing Spot';
+$string['togglemarketingdesc'] = 'Waehlen Sie, ob die drei Marketing-Spots angezeigt werden sollen.';
 
 
-$string['marketing1'] = 'Marketing Spot One - Title';
-$string['marketing1desc'] = 'Title to show in this marketing spot';
-$string['marketing1icon'] = 'Marketing Spot One - Icon';
-$string['marketing1icondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "icon-".';
-$string['marketing1content'] = 'Marketing Spot One - Content';
-$string['marketing1contentdesc'] = 'Content to display in the marketing box. Keep it short and sweet.';
-$string['marketing1buttontext'] = 'Marketing Spot One - Link Text';
-$string['marketing1buttontextdesc'] = 'Text to appear on the button.';
-$string['marketing1buttonurl'] = 'Marketing Spot One - Link URL';
-$string['marketing1buttonurldesc'] = 'URL the button will point to.';
+$string['marketing1'] = 'Marketing Spot Eins - Titel/Bezeichnung';
+$string['marketing1desc'] = 'Titel/Bezeichnung, der in diesem Marketing-Spot angezeigt werden soll';
+$string['marketing1icon'] = 'Marketing Spot Eins - Icon';
+$string['marketing1icondesc'] = 'Namen des Icon, welches man verwenden moechte. Die Liste ist <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">hier</a>. Tippe den Namen des Icons z.B. icon-glass (Erstes Beispiel-Icon) in dieses Feld.';
+$string['marketing1content'] = 'Marketing Spot Eins - Inhalt/Text';
+$string['marketing1contentdesc'] = 'Hier werden die Inahlte des Marketing Spot angezeigt. Halten Sie es kurz und buendig.';
+$string['marketing1buttontext'] = 'Marketing Spot Eins - Text fuer den Link';
+$string['marketing1buttontextdesc'] = 'Text, der auf dem Button angezeigt werden soll.';
+$string['marketing1buttonurl'] = 'Marketing Spot Eins - Link URL';
+$string['marketing1buttonurldesc'] = 'gib die URL fuer den Button an.';
 
-$string['marketing2'] = 'Marketing Spot Two - Title';
-$string['marketing2desc'] = 'Title to show in this marketing spot';
-$string['marketing2icon'] = 'Marketing Spot Two - Icon';
-$string['marketing2icondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "icon-".';
-$string['marketing2content'] = 'Marketing Spot Two - Content';
-$string['marketing2contentdesc'] = 'Content to display in the marketing box. Keep it short and sweet.';
-$string['marketing2buttontext'] = 'Marketing Spot Two - Link Text';
-$string['marketing2buttontextdesc'] = 'Text to appear on the button.';
-$string['marketing2buttonurl'] = 'Marketing Spot Two - Link URL';
-$string['marketing2buttonurldesc'] = 'URL the button will point to.';
+$string['marketing2'] = 'Marketing Spot Zwei - Titel/Bezeichnung';
+$string['marketing2desc'] = 'Titel/Bezeichnung, der in diesem Marketing-Spot angezeigt werden soll';
+$string['marketing2icon'] = 'Marketing Spot Zwei - Icon';
+$string['marketing2icondesc'] = 'Namen des Icon, welches man verwenden moechte. Die Liste ist <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">hier</a>. Tippe den Namen des Icons z.B. icon-glass (Erstes Beispiel-Icon) in dieses Feld.';
+$string['marketing2content'] = 'Marketing Spot Zwei - Inhalt/Text';
+$string['marketing2contentdesc'] = 'Hier werden die Inhalte des Marketing Spot angezeigt. Halten Sie sich kurz und knapp.';
+$string['marketing2buttontext'] = 'Marketing Spot Zwei - Text fuer den Link';
+$string['marketing2buttontextdesc'] = 'Text, der auf dem Button angezeigt werden soll.';
+$string['marketing2buttonurl'] = 'Marketing Spot Zwei - Link URL';
+$string['marketing2buttonurldesc'] = 'gib die URL fuer den Button an.';
 
-$string['marketing3'] = 'Marketing Spot Three - Title';
-$string['marketing3desc'] = 'Title to show in this marketing spot';
-$string['marketing3icon'] = 'Marketing Spot Three - Icon';
-$string['marketing3icondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "icon-".';
-$string['marketing3content'] = 'Marketing Spot Three - Content';
-$string['marketing3contentdesc'] = 'Content to display in the marketing box. Keep it short and sweet.';
-$string['marketing3buttontext'] = 'Marketing Spot Three - Link Text';
-$string['marketing3buttontextdesc'] = 'Text to appear on the button.';
-$string['marketing3buttonurl'] = 'Marketing Spot Three - Link URL';
-$string['marketing3buttonurldesc'] = 'URL the button will point to.';
+$string['marketing3'] = 'Marketing Spot Drei - Titel/Bezeichnung';
+$string['marketing3desc'] = 'Titel/Bezeichnung, der in diesem Marketing-Spot angezeigt werden soll';
+$string['marketing3icon'] = 'Marketing Spot Drei - Icon';
+$string['marketing3icondesc'] = 'Namen des Icon, welches man verwenden moechte. Die Liste ist <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">hier</a>. Tippe den Namen des Icons z.B. icon-glass (Erstes Beispiel-Icon) in dieses Feld.';
+$string['marketing3content'] = 'Marketing Spot Drei - Inhalt/Text';
+$string['marketing3contentdesc'] = 'Hier werden die Inahlte des Marketing Spot angezeigt. Halten Sie es kurz und buendig.';
+$string['marketing3buttontext'] = 'Marketing Spot Drei - Text fuer den Link';
+$string['marketing3buttontextdesc'] = 'Text, der auf dem Button angezeigt werden soll.';
+$string['marketing3buttonurl'] = 'Marketing Spot Drei- Link URL';
+$string['marketing3buttonurldesc'] = 'gib die URL fuer den Button an.';
 
 /* Social Networks */
 $string['socialheading'] = 'Social Networking';
-$string['socialheadingsub'] = 'Engage your users with Social Networking';
-$string['socialdesc'] = 'Provide direct links to the core social networks that promote your brand. These will appear in the header of every page.';
+$string['socialheadingsub'] = 'Binden Sie Ihre Nutzer mit Social Networking ein';
+$string['socialdesc'] = 'Geben Sie direkte Links zu den sozialen Netzwerken an, um die Seite zu foerdern. Diese werden im header jeder Seite angezeigt.';
 $string['socialnetworks'] = 'Social Networks';
 $string['facebook'] = 'Facebook URL';
-$string['facebookdesc'] = 'Enter the URL of your Facebook page. (i.e http://www.facebook.com/mycollege)';
+$string['facebookdesc'] = 'Gib die URL der Facebook Seite an. (z.B. http://www.facebook.com/mycollege)';
 
 $string['twitter'] = 'Twitter URL';
-$string['twitterdesc'] = 'Enter the URL of your Twitter feed. (i.e http://www.twitter.com/mycollege)';
+$string['twitterdesc'] = 'Gib die URL von Twitter an. (z.B. http://www.twitter.com/mycollege)';
 
 $string['googleplus'] = 'Google+ URL';
-$string['googleplusdesc'] = 'Enter the URL of your Google+ profile. (i.e http://plus.google.com/107817105228930159735)';
+$string['googleplusdesc'] = 'Gib die URL von Google+ an. (z.B. http://plus.google.com/107817105228930159735)';
 
 $string['linkedin'] = 'LinkedIn URL';
-$string['linkedindesc'] = 'Enter the URL of your LinkedIn profile. (i.e http://www.linkedin.com/company/mycollege)';
+$string['linkedindesc'] = 'Gib die URL von LinkedIn an. (z.B. http://www.linkedin.com/company/mycollege)';
 
 $string['youtube'] = 'YouTube URL';
-$string['youtubedesc'] = 'Enter the URL of your YouTube channel. (i.e http://www.youtube.com/mycollege)';
+$string['youtubedesc'] = 'Gib die URL des YouTube Kanals an. (z.B. http://www.youtube.com/mycollege)';
 
 $string['flickr'] = 'Flickr URL';
-$string['flickrdesc'] = 'Enter the URL of your Flickr page. (i.e http://www.flickr.com/mycollege)';
+$string['flickrdesc'] = 'Gib die URL der Flickr Seite an. (z.B. http://www.flickr.com/mycollege)';
 
 /* Alerts */
-$string['ie7message'] = '<p id="ie7message">Sorry, this site requires <strong>Internet Explorer 8</strong> or higher to display and function correctly. Please update your browser via Windows Update, or <a href="http://windows.microsoft.com/en-au/internet-explorer/download-ie" target="_blank">download the latest version here</a>. Alternatively, you can try installing the <a href="http://www.google.com/chromeframe" target="_blank">ChromeFrame plugin</a> which may solve some of the issues experienced in older browsers. If using IE8 or above you may have Compatibility Mode switched on, turn this off to display this website correctly. If you continue having problems accessing this website or the updates mentioned above, please contact your Helpdesk for further assistance.</p>';
+$string['ie7message'] = '<p id="ie7message">Sorry, this site requires <strong>Internet Explorer 8</strong> or higher to display and function correctly. Please update your browser via Windows Update, or <a href="http://windows.microsoft.com/en-au/internet-explorer/download-ie" target="_blank">download the latest version here</a>. Alternatively, you can try installing the <a href="http://www.google.com/chromeframe" target="_blank">ChromeFrame plugin</a> which may solve some of the issues experienced in older browsers. If you continue having problems accessing this website or the updates mentioned above, please contact your Helpdesk for further assistance.</p>';

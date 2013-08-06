@@ -237,5 +237,8 @@ $string['youtubedesc'] = 'Enter the URL of your YouTube channel. (i.e http://www
 $string['flickr'] = 'Flickr URL';
 $string['flickrdesc'] = 'Enter the URL of your Flickr page. (i.e http://www.flickr.com/mycollege)';
 
+$string['vk'] = 'VKontakte URL';
+$string['vkdesc'] = 'Enter the URL of your Vkontakte page. (i.e http://www.vk.com/mycollege)';
+
 /* Alerts */
 $string['ie7message'] = '<p id="ie7message">Sorry, this site requires <strong>Internet Explorer 8</strong> or higher to display and function correctly. Please update your browser via Windows Update, or <a href="http://windows.microsoft.com/en-au/internet-explorer/download-ie" target="_blank">download the latest version here</a>. Alternatively, you can try installing the <a href="http://www.google.com/chromeframe" target="_blank">ChromeFrame plugin</a> which may solve some of the issues experienced in older browsers. If using IE8 or above you may have Compatibility Mode switched on, turn this off to display this website correctly. If you continue having problems accessing this website or the updates mentioned above, please contact your Helpdesk for further assistance.</p>';

@@ -1,4 +1,10 @@
-/* @group Core */
+/*
+ * @author    Julian Ridden
+ * @package   theme_essential
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+ 
+ /* @group Core */
 
 @font-face {
     font-family: 'FontAwesome'; 
@@ -170,9 +176,40 @@ h2#subtitle {
     text-decoration: none;
 }
 
-.socials a:hover {
-    color: [[setting:themecolor]];
+a.vk .icon-stack {
+	font-size: .5em;
+	vertical-align: -5px;
 }
+
+a.facebook a:hover, a.facebook:focus {
+    color: #4a6ea9;
+}
+
+a.vk .icon-stack:hover, a.icon-sign-blank:focus {
+    color: #4a6ea9;
+}
+a.twitter:hover, a.twitter:focus {
+    color: #00aced;
+}
+a.googleplus:hover, a.googleplus:focus {
+    color: #f42941;
+}
+a.flickr:hover, a.flickr:focus {
+    color: #ff3096;
+}
+a.instagram:hover, a.instagram:focus {
+    color: #b99c6b;
+}
+a.youtube:hover, a.youtube:focus {
+    color: #f42941;
+}
+a.pinterest:hover, a.pinterest:focus {
+    color: #f42941;
+}
+a.linkedin:hover, a.linkedin:focus {
+    color: #4A9CC9;
+}
+
 .socials li {
     text-align: right;
     display: inline-block;
@@ -246,14 +283,17 @@ ul.breadcrumb li:last-child:after {
 
 .navbar {
     margin-bottom: 0px;
+    background-image: none !important;
 }
 
 .navbar-inner{
-    background: [[setting:themecolor]] !important;
     border-top:1px solid [[setting:themehovercolor]] !important;
     border-bottom:1px solid [[setting:themehovercolor]] !important;
     border-radius: 0px;
     line-height: 0px;
+    background-color: [[setting:themecolor]] !important;
+    background-image: none;
+    filter: none;
 }
 
 .navbar .brand {
@@ -897,6 +937,51 @@ table#greyboxleft h2 {
     color: #777;
 }
 
+#page-site-index h2.headingblock:before {
+    color: [[setting:themecolor]];
+    display: block;
+    float: left;
+    font-family: FontAwesome;
+    font-size: 1.2em;
+    height: 1.3em;
+    margin-right: .2em;
+    text-align: center;
+    width: 1.5em;
+	content:"\f0b1";
+}
+
+#page-site-index #site-news-forum h2.headingblock:before {
+	content:"\f0a1";
+}
+
+#frontpage-category-names h2.headingblock:before {
+	content:"\f07c";
+}
+
+.coursebox .content .courseimage img {
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 3px solid #fff;
+}
+
+.courses .coursebox {
+	background: #fff;
+	border-radius: 10px;
+	border: 1px solid #E1E1E1 !important;
+	padding: 10px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+}
+
+.courses .coursebox.even,
+.courses .coursebox.odd {
+	background: #fff;
+	margin-bottom: 5px;
+}
+
+
 /* @group Home News Boxes */
 
 .services{
@@ -927,31 +1012,7 @@ table#greyboxleft h2 {
 
 /* @end */
 
-/* @group Sponsors */
 
-.sponsors {
-    padding: 10px;
-    text-align: center;
-    background: #FAFAFA;
-    border: 1px solid #EEE;
-    border-radius: 5px;
-    margin-top: -10px;
-}
-
-.sponsors h4 {
-    text-align: left;
-    padding-bottom: 8px;
-    margin-bottom: 8px;
-    border-bottom: 1px solid #EEE;
-    margin-top: 0px;
-}
-
-.sponsors img {
-    max-width: 120px;
-    margin: 10px 14px;
-}
-
-/* @end */
 /* @end */
 
 /* @group Footer */
@@ -1234,7 +1295,7 @@ table#greyboxleft h2 {
 .marketing-image2,
 .marketing-image3 {
 	background-size: contain;
-	background-position: center;
+	background-position: center top;
 	width: 100%;
 	height: [[setting:marketingheight]];
 	margin-bottom: 5px;
@@ -1458,6 +1519,38 @@ img.profilepicture
 
 /* @end */
 
+/* @group Quiz */
+
+#page-mod-quiz-edit div.quizcontents {
+clear: left;
+display: block;
+float: left;
+width: 68%;
+}
+
+#page-mod-quiz-edit .questionbankwindow.block div.header {
+	background: [[setting:themecolor]];
+	margin: 0px;
+	border-radius: 6px;
+}
+
+.questionbankwindow.block .header .title h2:before {
+	color: #fff;
+	content: "\f128";
+}
+
+.questionbankwindow.block {
+    background: white;
+    padding: 0px, 12px;
+    border-radius: 8px;
+    border: 1px solid #E1E1E1;
+    margin-bottom: 10px;
+}
+
+.questionbankwindow.block .header .title {
+	border-bottom: 0px none;
+}
+/* @end */
 
 /* Custom CSS Settings
 -------------------------*/

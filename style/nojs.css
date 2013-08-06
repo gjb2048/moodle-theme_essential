@@ -1,4 +1,10 @@
-.da-slide{
+/*
+ * @author    Julian Ridden
+ * @package   theme_essential
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+ 
+ .da-slide{
 	position: relative;
 }
 .da-slide h2,
