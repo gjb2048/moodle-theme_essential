@@ -176,7 +176,16 @@ h2#subtitle {
     text-decoration: none;
 }
 
+a.vk .icon-stack {
+	font-size: .5em;
+	vertical-align: -5px;
+}
+
 a.facebook a:hover, a.facebook:focus {
+    color: #4a6ea9;
+}
+
+a.vk .icon-stack:hover, a.icon-sign-blank:focus {
     color: #4a6ea9;
 }
 a.twitter:hover, a.twitter:focus {

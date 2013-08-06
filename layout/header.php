@@ -116,7 +116,7 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
                 <li><a href="<?php echo $hasflickr; ?>" class="flickr"><i class="icon-flickr"></i></a></li>
                 <?php } ?>
                 <?php if ($hasvk) { ?>
-                <li><a href="<?php echo $hasvk; ?>"><i class="icon-vk"></i></a></li>
+                <li><a href="<?php echo $hasvk; ?>" class="vk"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-vk icon-light"></i></span></a></li>
                 <?php } ?>
 	    </ul>
         </div>
