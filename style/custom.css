@@ -186,10 +186,9 @@ a.instagram .icon-stack {
 	vertical-align: -5px;
 }
 
-a.facebook a:hover, a.facebook:focus {
+a.facebook:hover, a.facebook:focus {
     color: #4a6ea9;
 }
-
 a.website .icon-stack:hover, a.icon-sign-blank:focus {
     color: [[setting:themecolor]];
 }
