@@ -236,5 +236,28 @@ $string['flickrdesc'] = 'Введите URL на Вашу страницу в Fl
 $string['vk'] = 'ВКонтанке URL';
 $string['vkdesc'] = 'Введите URL на Вашу страницу ВКонтанке. (i.e http://www.vk.com/mycollege)';
 
+$string['skype'] = 'Аккаунт Skype';
+$string['skypedesc'] = 'Введите имя пользователя Skype от профиля Skype Вашей организации';
+
+$string['pinterest'] = 'Pinterest URL';
+$string['pinterestdesc'] = 'Введите URL на Вашу страницу в Pinterest. (i.e http://pinterest.com/mycollege)';
+
+$string['instagram'] = 'Instagram URL';
+$string['instagramdesc'] = 'Введите URL на Вашу страницу в Instagram. (i.e http://instagram.com/mycollege)';
+
+$string['website'] = 'URL вебсайта';
+$string['websitedesc'] = 'Введите URL на Ваш вебсайт. (i.e http://www.pukunui.com)';
+
+/* Mobile Apps */
+$string['mobileappsheading'] = 'Мобильные приложения';
+$string['mobileappsheadingsub'] = 'Ссылка на Ваше приложение доступная для студентов использующих мобильные устройства';
+$string['mobileappsdesc'] = 'У вас есть веб-приложение в магазинах App Store или Google Play? Вы можете указать ссылки на эти приложения в этом месте, чтобы пользователи смогли получить к ним доступ онлайн';
+
+$string['android'] = 'Android (Google Play)';
+$string['androiddesc'] = 'Введите URL Вашего мобильного приложения в магазине Google Play. Если у Вас нет Вашего приложения, Вы можете ввести в это поле ссылку на официальное мобильное приложение Moodle.';
+
+$string['ios'] = 'iPhone/iPad (App Store)';
+$string['iosdesc'] = 'Введите URL Вашего мобильного приложения в магазине App Store. Если у Вас нет Вашего приложения, Вы можете ввести в это поле ссылку на официальное мобильное приложение Moodle.';
+
 /* Alerts */
 $string['ie7message'] = '<p id="ie7message">Просим прощения, но этот сайт требует <strong>Internet Explorer 8</strong> или выше для отображения и корректной работы. Пожалуйста, обновите свой браузер с помощью Windows Update, или <a href="http://windows.microsoft.com/en-au/internet-explorer/download-ie" target="_blank">загрузите последнюю версию здесь</a>. Кроме того, вы можете попробовать установить <a href="http://www.google.com/chromeframe" target="_blank">ChromeFrame плагин</a>, который может решить некоторые из проблем, возникающих в старых браузерах. Если Вы продолжите сталкиваться с подобной проблемой, свяжитесь со службой поддержки.</p>';
