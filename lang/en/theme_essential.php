@@ -255,7 +255,7 @@ $string['websitedesc'] = 'Enter the URL of your own website. (i.e http://www.puk
 /* Mobile Apps */
 $string['mobileappsheading'] = 'Mobile Apps';
 $string['mobileappsheadingsub'] = 'Link to your App to get your students using Mobiles';
-$string['mobileappsdesc'] = 'Have you got a web app on the App Store or GooglePay Store? Provide a link here so your users can grab the apps online';
+$string['mobileappsdesc'] = 'Have you got a web app on the App Store or Google Play Store? Provide a link here so your users can grab the apps online';
 
 $string['android'] = 'Android (Google Play)';
 $string['androiddesc'] = 'Prove a URL to your mobile App on the Google Play Store. If you do not have one of your own maybe consider linking to the free official Moodle Mobile app.';
