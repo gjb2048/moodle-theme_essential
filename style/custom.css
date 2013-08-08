@@ -408,6 +408,8 @@ h2.pagetitle span {
     display: inline;
 }
 
+
+
 /* @end */
 
 /* @group Layout */
@@ -1633,6 +1635,24 @@ width: 67%;
 }
 /* @end */
 
-/* Custom CSS Settings
--------------------------*/
+/**
+ * editicons CSS
+ * This adds the special editicons css in editicons.css if the setting is enabled.
+ */
+
+[[setting:editicons]]
+
+/**
+ * autohide CSS
+ * This adds the special autohide css in autohide.css if the setting is enabled.
+ */
+
+[[setting:autohide]]
+
+/**
+ * Custom CSS
+ * This is the very last piece of CSS loaded, so if something looks weird,
+ * try removing your custom CSS from the theme settings page.
+ */
+
 [[setting:customcss]]
