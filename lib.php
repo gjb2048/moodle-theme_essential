@@ -46,7 +46,7 @@ function theme_essential_set_fontwww($css) {
         $themewww = $CFG->themewww;
     }
     $tag = '[[setting:fontwww]]';
-    $css = str_replace($tag, $themewww.'/'.$PAGE->theme->name.'/fonts/', $css);
+    $css = str_replace($tag, $themewww.'/essential/fonts/', $css);
     return $css;
 }
 
@@ -123,9 +123,9 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
 function essential_set_editicons($css, $editicons) {
 	global $CFG;
 	if (!empty($CFG->themedir)) {
-		$editiconsurl = $CFG->themedir . '/' . current_theme() . '/style/editicons.css'; //Pull the full path for autohide css
+		$editiconsurl = $CFG->themedir . '/essential/style/editicons.css'; //Pull the full path for autohide css
 	} else {
-		$editiconsurl = $CFG->dirroot . '/theme/' . current_theme() . '/style/editicons.css'; //MDL-36065
+		$editiconsurl = $CFG->dirroot . '/theme/essential/style/editicons.css'; //MDL-36065
 	}
     $tag = '[[setting:editicons]]';
     if ($editicons) { //Setting is "YES"
@@ -149,9 +149,9 @@ function essential_set_editicons($css, $editicons) {
 function essential_set_autohide($css, $autohide) {
 	global $CFG;
 	if (!empty($CFG->themedir)) {
-		$autohideurl = $CFG->themedir . '/' . current_theme() . '/style/autohide.css'; //Pull the full path for autohide css
+		$autohideurl = $CFG->themedir . '/essential/style/autohide.css'; //Pull the full path for autohide css
 	} else {
-		$autohideurl = $CFG->dirroot . '/theme/' . current_theme() . '/style/autohide.css'; //MDL-36065
+		$autohideurl = $CFG->dirroot . '/theme/essential/style/autohide.css'; //MDL-36065
 	}
     $tag = '[[setting:autohide]]';
     if ($autohide) { //Setting is "YES"
