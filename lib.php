@@ -114,6 +114,58 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
 }
 
 /**
+ * Displays the Font Awesome Edit Icons based on settings value
+ *
+ * @param string $css
+ * @param mixed $autohide
+ * @return string
+ */
+function essential_set_editicons($css, $editicons) {
+	global $CFG;
+	if (!empty($CFG->themedir)) {
+		$editiconsurl = $CFG->themedir . '/' . current_theme() . '/style/editicons.css'; //Pull the full path for autohide css
+	} else {
+		$editiconsurl = $CFG->dirroot . '/theme/' . current_theme() . '/style/editicons.css'; //MDL-36065
+	}
+    $tag = '[[setting:editicons]]';
+    if ($editicons) { //Setting is "YES"
+        $rules = file_get_contents($editiconsurl);
+        $replacement = $rules;
+    } else { //Setting is "NO"
+        $replacement = null; //NULL so we don't actually output anything to the stylesheet
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+/**
+ * Displays the Autohide CSS based on settings value
+ *
+ * @param string $css
+ * @param mixed $autohide
+ * @return string
+ * This code originally written for the Zebra theme by Danny Wahl
+ */
+function essential_set_autohide($css, $autohide) {
+	global $CFG;
+	if (!empty($CFG->themedir)) {
+		$autohideurl = $CFG->themedir . '/' . current_theme() . '/style/autohide.css'; //Pull the full path for autohide css
+	} else {
+		$autohideurl = $CFG->dirroot . '/theme/' . current_theme() . '/style/autohide.css'; //MDL-36065
+	}
+    $tag = '[[setting:autohide]]';
+    if ($autohide) { //Setting is "YES"
+        $rules = file_get_contents($autohideurl);
+        $replacement = $rules;
+    } else { //Setting is "NO"
+        $replacement = null; //NULL so we don't actually output anything to the stylesheet
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+
+/**
  * get_performance_output() override get_peformance_info()
  *  in moodlelib.php. Returns a string
  * values ready for use.
@@ -227,6 +279,22 @@ function theme_essential_process_css($css, $theme) {
         $navbarsep = '/';
     }
     $css = theme_essential_set_navbarsep($css, $navbarsep);
+    
+    //Get the editicons value from settings
+    if (!empty($theme->settings->editicons)) {
+        $editicons = $theme->settings->editicons;
+    } else {
+        $editicons = null;
+    }
+    $css = essential_set_editicons($css, $editicons);
+    
+    //Get the autohide value from settings
+    if (!empty($theme->settings->autohide)) {
+        $autohide = $theme->settings->autohide;
+    } else {
+        $autohide = null;
+    }
+    $css = essential_set_autohide($css, $autohide);
     
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {

@@ -67,7 +67,23 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
-    // Navbar Seperator.
+    //Include the Editicons css rules
+    $name = 'theme_essential/editicons';
+    $visiblename = get_string('editicons', 'theme_essential');
+    $title = get_string('editicons', 'theme_essential');
+    $description = get_string('editiconsdesc', 'theme_essential');
+    $setting = new admin_setting_configcheckbox($name, $visiblename, $description, 1);
+    $temp->add($setting);
+    
+    //Include the Autohide css rules
+    $name = 'theme_essential/autohide';
+    $visiblename = get_string('autohide', 'theme_essential');
+    $title = get_string('autohide', 'theme_essential');
+    $description = get_string('autohidedesc', 'theme_essential');
+    $setting = new admin_setting_configcheckbox($name, $visiblename, $description, 1);
+    $temp->add($setting);
+    
+    // Performance Information Display.
     $name = 'theme_essential/perfinfo';
     $title = get_string('perfinfo' , 'theme_essential');
     $description = get_string('perfinfodesc', 'theme_essential');

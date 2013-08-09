@@ -375,6 +375,11 @@ ul.breadcrumb li:last-child:after {
     background: url([[pix:theme|bg/dot]]) bottom repeat-x;
 }
 
+.course-content ul.topics li.section.main.clearfix.current {
+	box-shadow:0px 0px 10px [[setting:themecolor]];
+	border-radius: 5px;
+}
+
 h2.pagetitle {
     padding: 0px;
     margin: 0px;
@@ -402,6 +407,8 @@ h2.pagetitle span {
 .editing .left.side {
     display: inline;
 }
+
+
 
 /* @end */
 
@@ -1601,7 +1608,7 @@ img.profilepicture
 clear: left;
 display: block;
 float: left;
-width: 68%;
+width: 67%;
 }
 
 #page-mod-quiz-edit .questionbankwindow.block div.header {
@@ -1628,6 +1635,24 @@ width: 68%;
 }
 /* @end */
 
-/* Custom CSS Settings
--------------------------*/
+/**
+ * editicons CSS
+ * This adds the special editicons css in editicons.css if the setting is enabled.
+ */
+
+[[setting:editicons]]
+
+/**
+ * autohide CSS
+ * This adds the special autohide css in autohide.css if the setting is enabled.
+ */
+
+[[setting:autohide]]
+
+/**
+ * Custom CSS
+ * This is the very last piece of CSS loaded, so if something looks weird,
+ * try removing your custom CSS from the theme settings page.
+ */
+
 [[setting:customcss]]
