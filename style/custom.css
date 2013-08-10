@@ -693,6 +693,10 @@ table#greyboxleft h2 {
 	content: "\f07b ";
 }
 
+.block_navigation.block li.depth_2 {
+	margin-left: -20px;
+}
+
 .collapsed .tree_item.branch:before { 
 	font-family: FontAwesome;
 	content: "\f07b ";
