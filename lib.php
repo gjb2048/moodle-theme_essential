@@ -40,13 +40,13 @@
 
 function theme_essential_set_fontwww($css) {
     global $CFG, $PAGE;
-    if(empty($CFG->themewww)){
-        $themewww = $CFG->wwwroot."/theme";
-    } else {
-        $themewww = $CFG->themewww;
-    }
+    if (!empty($CFG->themedir)) {
+    	$themedir = $CFG->themedir;
+	} else {
+    	$themedir = $CFG->dirroot . '/theme';
+	}
     $tag = '[[setting:fontwww]]';
-    $css = str_replace($tag, $themewww.'/'.$PAGE->theme->name.'/fonts/', $css);
+    $css = str_replace($tag, $themedir.'/'.$PAGE->theme->name.'/fonts/', $css);
     return $css;
 }
 
