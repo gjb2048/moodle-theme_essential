@@ -685,6 +685,14 @@ table#greyboxleft h2 {
 	margin-right: 5px;
 }
 
+.block_navigation.block li.depth_1 .tree_item.branch:before {
+	content: "\f015 ";
+}
+
+.block_navigation.block li.depth_2 .tree_item.branch:before {
+	content: "\f07b ";
+}
+
 .collapsed .tree_item.branch:before { 
 	font-family: FontAwesome;
 	content: "\f07b ";
