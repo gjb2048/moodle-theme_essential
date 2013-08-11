@@ -30,8 +30,8 @@ $string['pluginname'] = 'Essential';
 $string['choosereadme'] = '
 <div class="clearfix">
 <div class="well">
-<h2>Clean</h2>
-<p><img class=img-polaroid src="clean/pix/screenshot.jpg" /></p>
+<h2>Essential</h2>
+<p><img class=img-polaroid src="essential/pix/screenshot.jpg" /></p>
 </div>
 <div class="well">
 <h3>About Essential</h3>
@@ -49,9 +49,9 @@ Website: <a href="http://www.moodleman.net">www.moodleman.net</a>
 /* General */
 $string['geneicsettings'] = 'General Settings';
 $string['autohide'] = 'Include Autohide Functionality';
-$string['autohidedesc'] = 'The Autohide functionality is designed to make Moodle less intimidating. When editing is turned on edit icons only appear when the item is hovered over.';
+$string['autohidedesc'] = 'The Autohide functionality is designed to make Moodle less intimidating.  When editing is turned on edit icons only appear when the item is hovered over.';
 $string['editicons'] = 'Edit Icons V2';
-$string['editiconsdesc'] = 'This utilises the Font Awesome to display colored and neater formatted edit icons in course pages and blocks. Please note that currsently this is NOT compatible with Autohide.';
+$string['editiconsdesc'] = 'This utilises the Font Awesome to display coloured and neater formatted edit icons in course pages and blocks.  Please note that currsently this is NOT compatible with Autohide.';
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
 $string['footnote'] = 'Footnote';
@@ -74,16 +74,16 @@ $string['yourprofile'] = 'You';
 $string['headerprofilepic'] = 'Display user\'s picture';
 $string['headerprofilepicdesc'] = 'If checked, displays the user\'s profile picture in the header of the page.';
 $string['layout'] = 'Use a standard course layout';
-$string['layoutdesc'] = 'This theme is designed to put both block columns on the side. If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
+$string['layoutdesc'] = 'This theme is designed to put both block columns on the side.  If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
 $string['perfinfo'] = 'Performance Info Mode';
-$string['perfinfodesc'] = 'Many sites don\'t need the fully detailed performance info. Especially when viewed by users. When enabled, this shows a cleaned up miniminal form with basic page load information.';
+$string['perfinfodesc'] = 'Many sites don\'t need the fully detailed performance info.  Especially when viewed by users.  When enabled, this shows a cleaned up miniminal form with basic page load information.';
 $string['perf_max'] = 'Detailed';
 $string['perf_min'] = 'Minimal';
 $string['visibleadminonly'] = 'Blocks moved into the area below will only be seen by admins';
 
 /* Navbar Seperator */
-$string['navbarsep'] = 'Navbar Seperator';
-$string['navbarsepdesc'] = 'Here you can change the type of seperator displayed in the navbar/breadcrumb';
+$string['navbarsep'] = 'Navbar Separator';
+$string['navbarsepdesc'] = 'Here you can change the type of separator displayed in the navbar/breadcrumb';
 $string['nav_thinbracket'] = 'Thin bracket';
 $string['nav_doublebracket'] = 'Double thin bracket';
 $string['nav_thickbracket'] = 'Thick Bracket';
@@ -98,29 +98,29 @@ $string['region-footer-middle'] = 'Footer (Middle)';
 $string['region-footer-right'] = 'Footer (Right)';
 $string['region-hidden-dock'] = 'Hidden from users';
 
-/* Colors */
-$string['colorheading'] = 'Color Settings';
-$string['colorheadingsub'] = 'Set the colors used in your theme';
-$string['colordesc'] = 'Here you can find various settings to change many of the colors found in this theme.';
+/* Colours */
+$string['colorheading'] = 'Colour Settings';
+$string['colorheadingsub'] = 'Set the colours used in your theme';
+$string['colordesc'] = 'Here you can find various settings to change many of the colours found in this theme.';
 
-$string['themecolor'] = 'Theme Color';
-$string['themecolordesc'] = 'What color should your theme be. This will change mulitple components to produce the color you wish across the moodle site';
-$string['themehovercolor'] = 'Theme Hover Color';
-$string['themehovercolordesc'] = 'What color should your theme hovers be. This is used for links, menus, etc';
-$string['footercolor'] = 'Footer Background Color';
-$string['footercolordesc'] = 'Set what color the background of the Footer box should be.';
-$string['footersepcolor'] = 'Footer Seperator Color';
-$string['footersepcolordesc'] = 'Seperators are lines used to seperate content. Set their color here.';
-$string['footertextcolor'] = 'Footer Text Color';
-$string['footertextcolordesc'] = 'Set the color you want your text to be in the footer.';
-$string['footerurlcolor'] = 'Footer Link Color';
-$string['footerurlcolordesc'] = 'Set the color for your linked text in the footer.';
-$string['footerhovercolor'] = 'Footer Link Hover Color';
-$string['footerhovercolordesc'] = 'Set the color for your linked text when hovered over in the footer.';
-$string['footerheadingcolor'] = 'Footer Heading Color';
-$string['footerheadingcolordesc'] = 'Set the color for block headings in the footer.';
+$string['themecolor'] = 'Theme Colour';
+$string['themecolordesc'] = 'What colour should your theme be.  This will change mulitple components to produce the colour you wish across the moodle site';
+$string['themehovercolor'] = 'Theme Hover Colour';
+$string['themehovercolordesc'] = 'What colour should your theme hovers be. This is used for links, menus, etc';
+$string['footercolor'] = 'Footer Background Colour';
+$string['footercolordesc'] = 'Set what colour the background of the Footer box should be.';
+$string['footersepcolor'] = 'Footer Seperator Colour';
+$string['footersepcolordesc'] = 'Seperators are lines used to seperate content.  Set their colour here.';
+$string['footertextcolor'] = 'Footer Text Colour';
+$string['footertextcolordesc'] = 'Set the colour you want your text to be in the footer.';
+$string['footerurlcolor'] = 'Footer Link Colour';
+$string['footerurlcolordesc'] = 'Set the colour for your linked text in the footer.';
+$string['footerhovercolor'] = 'Footer Link Hover Colour';
+$string['footerhovercolordesc'] = 'Set the colour for your linked text when hovered over in the footer.';
+$string['footerheadingcolor'] = 'Footer Heading Colour';
+$string['footerheadingcolordesc'] = 'Set the colour for block headings in the footer.';
 $string['pagebackground'] = 'Page Background Image';
-$string['pagebackgrounddesc'] = 'Upload your own background image. This will be tiled in the background on all pages. If noe is uploaded a default image is used.';
+$string['pagebackgrounddesc'] = 'Upload your own background image.  This will be tiled in the background on all pages.  If none is uploaded a default image is used.';
 
 /* Slideshow */
 $string['slideshowheading'] = 'Frontpage Slideshow';
@@ -175,7 +175,7 @@ $string['marketingheading'] = 'Marketing Spots';
 $string['marketingheadingsub'] = 'Three locations on the front page to add information and links';
 $string['marketingheight'] = 'Height of Marketing Images';
 $string['marketingheightdesc'] = 'If you want to display images in the Marketing boxes you can specify their hight here.';
-$string['marketingdesc'] = 'This theme provides the option of enabling three "marketing" or "ad" spots just under the slideshow. These allow you to easily identify core information to your users and provide direct links.';
+$string['marketingdesc'] = 'This theme provides the option of enabling three "marketing" or "ad" spots just under the slideshow.  These allow you to easily identify core information to your users and provide direct links.';
 
 $string['togglemarketing'] = 'Toggle Marketing Spot display';
 $string['togglemarketingdesc'] = 'Choose if you wish to hide or show the three Marketing Spots.';
@@ -184,7 +184,7 @@ $string['togglemarketingdesc'] = 'Choose if you wish to hide or show the three M
 $string['marketing1'] = 'Marketing Spot One - Title';
 $string['marketing1desc'] = 'Title to show in this marketing spot';
 $string['marketing1icon'] = 'Marketing Spot One - Icon';
-$string['marketing1icondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "icon-".';
+$string['marketing1icondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "icon-".';
 $string['marketing1image'] = 'Marketing Spot One - Image';
 $string['marketing1imagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot';
 $string['marketing1content'] = 'Marketing Spot One - Content';
@@ -197,7 +197,7 @@ $string['marketing1buttonurldesc'] = 'URL the button will point to.';
 $string['marketing2'] = 'Marketing Spot Two - Title';
 $string['marketing2desc'] = 'Title to show in this marketing spot';
 $string['marketing2icon'] = 'Marketing Spot Two - Icon';
-$string['marketing2icondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "icon-".';
+$string['marketing2icondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. J ust enter what is after the "icon-".';
 $string['marketing2image'] = 'Marketing Spot Two - Image';
 $string['marketing2imagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot';
 $string['marketing2content'] = 'Marketing Spot Two - Content';
@@ -210,7 +210,7 @@ $string['marketing2buttonurldesc'] = 'URL the button will point to.';
 $string['marketing3'] = 'Marketing Spot Three - Title';
 $string['marketing3desc'] = 'Title to show in this marketing spot';
 $string['marketing3icon'] = 'Marketing Spot Three - Icon';
-$string['marketing3icondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "icon-".';
+$string['marketing3icondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "icon-".';
 $string['marketing3image'] = 'Marketing Spot Three - Image';
 $string['marketing3imagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot';
 $string['marketing3content'] = 'Marketing Spot Three - Content';
@@ -223,7 +223,7 @@ $string['marketing3buttonurldesc'] = 'URL the button will point to.';
 /* Social Networks */
 $string['socialheading'] = 'Social Networking';
 $string['socialheadingsub'] = 'Engage your users with Social Networking';
-$string['socialdesc'] = 'Provide direct links to the core social networks that promote your brand. These will appear in the header of every page.';
+$string['socialdesc'] = 'Provide direct links to the core social networks that promote your brand.  These will appear in the header of every page.';
 $string['socialnetworks'] = 'Social Networks';
 $string['facebook'] = 'Facebook URL';
 $string['facebookdesc'] = 'Enter the URL of your Facebook page. (i.e http://www.facebook.com/mycollege)';
@@ -261,13 +261,13 @@ $string['websitedesc'] = 'Enter the URL of your own website. (i.e http://www.puk
 /* Mobile Apps */
 $string['mobileappsheading'] = 'Mobile Apps';
 $string['mobileappsheadingsub'] = 'Link to your App to get your students using Mobiles';
-$string['mobileappsdesc'] = 'Have you got a web app on the App Store or Google Play Store? Provide a link here so your users can grab the apps online';
+$string['mobileappsdesc'] = 'Have you got a web app on the App Store or Google Play Store?  Provide a link here so your users can grab the apps online';
 
 $string['android'] = 'Android (Google Play)';
-$string['androiddesc'] = 'Prove a URL to your mobile App on the Google Play Store. If you do not have one of your own maybe consider linking to the free official Moodle Mobile app.';
+$string['androiddesc'] = 'Prove a URL to your mobile App on the Google Play Store.  If you do not have one of your own maybe consider linking to the free official Moodle Mobile app.';
 
 $string['ios'] = 'iPhone/iPad (App Store)';
-$string['iosdesc'] = 'Prove a URL to your mobile App on the App Store. If you do not have one of your own maybe consider linking to the free official Moodle Mobile app.';
+$string['iosdesc'] = 'Prove a URL to your mobile App on the App Store.  If you do not have one of your own maybe consider linking to the free official Moodle Mobile app.';
 
 /* Alerts */
-$string['ie7message'] = '<p id="ie7message">Sorry, this site requires <strong>Internet Explorer 8</strong> or higher to display and function correctly. Please update your browser via Windows Update, or <a href="http://windows.microsoft.com/en-au/internet-explorer/download-ie" target="_blank">download the latest version here</a>. Alternatively, you can try installing the <a href="http://www.google.com/chromeframe" target="_blank">ChromeFrame plugin</a> which may solve some of the issues experienced in older browsers. If using IE8 or above you may have Compatibility Mode switched on, turn this off to display this website correctly. If you continue having problems accessing this website or the updates mentioned above, please contact your Helpdesk for further assistance.</p>';
+$string['ie7message'] = '<p id="ie7message">Sorry, this site requires <strong>Internet Explorer 8</strong> or higher to display and function correctly.  Please update your browser via Windows Update, or <a href="http://windows.microsoft.com/en-au/internet-explorer/download-ie" target="_blank">download the latest version here</a>.  Alternatively, you can try installing the <a href="http://www.google.com/chromeframe" target="_blank">ChromeFrame plugin</a> which may solve some of the issues experienced in older browsers.  If using IE8 or above you may have Compatibility Mode switched on, turn this off to display this website correctly.  If you continue having problems accessing this website or the updates mentioned above, please contact your Helpdesk for further assistance.</p>';

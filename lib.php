@@ -40,13 +40,13 @@
 
 function theme_essential_set_fontwww($css) {
     global $CFG, $PAGE;
-    if (!empty($CFG->themedir)) {
-    	$themedir = $CFG->themedir;
-	} else {
-    	$themedir = $CFG->dirroot . '/theme';
-	}
+    if(empty($CFG->themewww)){
+        $themewww = $CFG->wwwroot."/theme";
+    } else {
+        $themewww = $CFG->themewww;
+    }
     $tag = '[[setting:fontwww]]';
-    $css = str_replace($tag, $themedir.'/'.$PAGE->theme->name.'/fonts/', $css);
+    $css = str_replace($tag, $themewww.'/essential/fonts/', $css);
     return $css;
 }
 
@@ -81,33 +81,29 @@ function theme_essential_set_logo($css, $logo) {
  * @return bool
  */
 function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
-    if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'logo') {
+    if ($context->contextlevel == CONTEXT_SYSTEM) {
         $theme = theme_config::load('essential');
-        return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
-    } else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'pagebackground') {
-        $theme = theme_config::load('essential');
-        return $theme->setting_file_serve('pagebackground', $args, $forcedownload, $options);
-    } else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'slide1image') {
-        $theme = theme_config::load('essential');
-        return $theme->setting_file_serve('slide1image', $args, $forcedownload, $options);
-    } else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'slide2image') {
-        $theme = theme_config::load('essential');
-        return $theme->setting_file_serve('slide2image', $args, $forcedownload, $options);
-    } else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'slide3image') {
-        $theme = theme_config::load('essential');
-        return $theme->setting_file_serve('slide3image', $args, $forcedownload, $options);
-    } else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'slide4image') {
-        $theme = theme_config::load('essential');
-        return $theme->setting_file_serve('slide4image', $args, $forcedownload, $options);
-    } else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'marketing1image') {
-        $theme = theme_config::load('essential');
-        return $theme->setting_file_serve('marketing1image', $args, $forcedownload, $options);
-    } else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'marketing2image') {
-        $theme = theme_config::load('essential');
-        return $theme->setting_file_serve('marketing2image', $args, $forcedownload, $options);
-    } else if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'marketing3image') {
-        $theme = theme_config::load('essential');
-        return $theme->setting_file_serve('marketing3image', $args, $forcedownload, $options);
+        if ($filearea === 'logo') {
+            return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
+        } else if ($filearea === 'pagebackground') {
+            return $theme->setting_file_serve('pagebackground', $args, $forcedownload, $options);
+        } else if ($filearea === 'slide1image') {
+            return $theme->setting_file_serve('slide1image', $args, $forcedownload, $options);
+        } else if ($filearea === 'slide2image') {
+            return $theme->setting_file_serve('slide2image', $args, $forcedownload, $options);
+        } else if ($filearea === 'slide3image') {
+            return $theme->setting_file_serve('slide3image', $args, $forcedownload, $options);
+        } else if ($filearea === 'slide4image') {
+            return $theme->setting_file_serve('slide4image', $args, $forcedownload, $options);
+        } else if ($filearea === 'marketing1image') {
+            return $theme->setting_file_serve('marketing1image', $args, $forcedownload, $options);
+        } else if ($filearea === 'marketing2image') {
+            return $theme->setting_file_serve('marketing2image', $args, $forcedownload, $options);
+        } else if ($filearea === 'marketing3image') {
+            return $theme->setting_file_serve('marketing3image', $args, $forcedownload, $options);
+        } else {
+            send_file_not_found();
+        }
     } else {
         send_file_not_found();
     }
@@ -123,9 +119,9 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
 function essential_set_editicons($css, $editicons) {
 	global $CFG;
 	if (!empty($CFG->themedir)) {
-		$editiconsurl = $CFG->themedir . '/' . current_theme() . '/style/editicons.css'; //Pull the full path for autohide css
+		$editiconsurl = $CFG->themedir . '/essential/style/editicons.css'; //Pull the full path for autohide css
 	} else {
-		$editiconsurl = $CFG->dirroot . '/theme/' . current_theme() . '/style/editicons.css'; //MDL-36065
+		$editiconsurl = $CFG->dirroot . '/theme/essential/style/editicons.css'; //MDL-36065
 	}
     $tag = '[[setting:editicons]]';
     if ($editicons) { //Setting is "YES"
@@ -149,9 +145,9 @@ function essential_set_editicons($css, $editicons) {
 function essential_set_autohide($css, $autohide) {
 	global $CFG;
 	if (!empty($CFG->themedir)) {
-		$autohideurl = $CFG->themedir . '/' . current_theme() . '/style/autohide.css'; //Pull the full path for autohide css
+		$autohideurl = $CFG->themedir . '/essential/style/autohide.css'; //Pull the full path for autohide css
 	} else {
-		$autohideurl = $CFG->dirroot . '/theme/' . current_theme() . '/style/autohide.css'; //MDL-36065
+		$autohideurl = $CFG->dirroot . '/theme/essential/style/autohide.css'; //MDL-36065
 	}
     $tag = '[[setting:autohide]]';
     if ($autohide) { //Setting is "YES"
