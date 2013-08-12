@@ -126,25 +126,26 @@
      * This renderer is needed to enable the Bootstrap style navigation.
      */
     protected function render_custom_menu(custom_menu $menu) {
-        // If the menu has no children return an empty string.
-        if (!$menu->has_children()) {
-            return '';
-        }
+        global $CFG;
+
+        // TODO: eliminate this duplicated logic, it belongs in core, not
+        // here. See MDL-39565.
         $addlangmenu = true;
         $langs = get_string_manager()->get_list_of_translations();
-            if ($this->page->course != SITEID and !empty($this->page->course->lang)) {
-            // Do not show lang menu if language forced.
+        if (count($langs) < 2
+            or empty($CFG->langmenu)
+            or ($this->page->course != SITEID and !empty($this->page->course->lang))) {
             $addlangmenu = false;
         }
-        if (count($langs) < 2) {
-            $addlangmenu = false;
+
+        if (!$menu->has_children() && $addlangmenu === false) {
+            return '';
         }
 
         if ($addlangmenu) {
             $language = $menu->add(get_string('language'), new moodle_url('#'), get_string('language'), 10000);
             foreach ($langs as $langtype => $langname) {
-                $language->add($langname,
-                new moodle_url($this->page->url, array('lang' => $langtype)), $langname);
+                $language->add($langname, new moodle_url($this->page->url, array('lang' => $langtype)), $langname);
             }
         }
 
