@@ -1647,6 +1647,28 @@ width: 67%;
 }
 /* @end */
 
+/* @group Forms */
+
+.form-item .form-label, .mform .fitem div.fitemtitle { 
+	text-align: left; 
+}
+
+.form-item .form-label, 
+.mform .fitem div.fitemtitle, 
+.userprofile dl.list dt, 
+.form-horizontal .control-label { 
+	width: 90px; 
+}
+
+.form-item .form-setting, 
+.form-item .form-description, 
+.mform .fitem .felement, 
+#page-mod-forum-search .c1 { 
+	margin-left: 10px; 
+}
+
+/* @end */
+
 /**
  * editicons CSS
  * This adds the special editicons css in editicons.css if the setting is enabled.
