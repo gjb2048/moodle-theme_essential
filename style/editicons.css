@@ -27,6 +27,10 @@
 	display: none;
 }
 
+#page-mod-glossary-view .commands img {
+	display: inline;
+}
+
 .commands a {
 	padding-right: 5px;
 }
