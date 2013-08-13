@@ -22,7 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
  
- class theme_essential_core_renderer extends core_renderer {
+ class theme_essential_core_renderer extends theme_bootstrapbase_core_renderer {
  	
  	/*
      * This renders a notification message.
@@ -45,8 +45,7 @@
             $type = 'alert alert-block alert-info';
         }
         return "<div class=\"$type\">$message</div>";
-    }
-    
+    } 
     
     /**
      * Outputs the page's footer
@@ -87,123 +86,7 @@
 
         return $output . $footer;
     }
-
-    /*
-     * This renders the navbar.
-     * Uses bootstrap compatible html.
-     */
-    public function navbar() {
-        $items = $this->page->navbar->get_items();
-        foreach ($items as $item) {
-            $item->hideicon = true;
-                $breadcrumbs[] = $this->render($item);
-        }
-        $divider = '<span class="divider">/</span>';
-        $list_items = '<li>'.join(" $divider</li><li>", $breadcrumbs).'</li>';
-        $title = '<span class="accesshide">'.get_string('pagepath').'</span>';
-        return $title . "<ul class=\"breadcrumb\">$list_items</ul>";
-    }
-
-    /*
-     * Overriding the custom_menu function ensures the custom menu is
-     * always shown, even if no menu items are configured in the global
-     * theme settings page.
-     * We use the sitename as the first menu item.
-     */
-    public function custom_menu($custommenuitems = '') {
-        global $CFG;
-
-        if (!empty($CFG->custommenuitems)) {
-            $custommenuitems .= $CFG->custommenuitems;
-        }
-        $custommenu = new custom_menu($custommenuitems, current_language());
-        return $this->render_custom_menu($custommenu);
-    }
-
-    /*
-     * This renders the bootstrap top menu.-
-     *
-     * This renderer is needed to enable the Bootstrap style navigation.
-     */
-    protected function render_custom_menu(custom_menu $menu) {
-        global $CFG;
-
-        // TODO: eliminate this duplicated logic, it belongs in core, not
-        // here. See MDL-39565.
-        $addlangmenu = true;
-        $langs = get_string_manager()->get_list_of_translations();
-        if (count($langs) < 2
-            or empty($CFG->langmenu)
-            or ($this->page->course != SITEID and !empty($this->page->course->lang))) {
-            $addlangmenu = false;
-        }
-
-        if (!$menu->has_children() && $addlangmenu === false) {
-            return '';
-        }
-
-        if ($addlangmenu) {
-            $language = $menu->add(get_string('language'), new moodle_url('#'), get_string('language'), 10000);
-            foreach ($langs as $langtype => $langname) {
-                $language->add($langname, new moodle_url($this->page->url, array('lang' => $langtype)), $langname);
-            }
-        }
-
-        $content = '<ul class="nav">';
-        foreach ($menu->get_children() as $item) {
-            $content .= $this->render_custom_menu_item($item, 1);
-        }
-
-        return $content.'</ul>';
-    }
-
-    /*
-     * This code renders the custom menu items for the
-     * bootstrap dropdown menu.
-     */
-    protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
-        static $submenucount = 0;
-
-        if ($menunode->has_children()) {
-
-            if ($level == 1) {
-                $dropdowntype = 'dropdown';
-            } else {
-                $dropdowntype = 'dropdown-submenu';
-            }
-
-            $content = html_writer::start_tag('li', array('class'=>$dropdowntype));
-            // If the child has menus render it as a sub menu.
-            $submenucount++;
-            if ($menunode->get_url() !== null) {
-                $url = $menunode->get_url();
-            } else {
-                $url = '#cm_submenu_'.$submenucount;
-            }
-            $content .= html_writer::start_tag('a', array('href'=>$url, 'class'=>'dropdown-toggle', 'data-toggle'=>'dropdown'));
-            $content .= $menunode->get_title();
-            if ($level == 1) {
-                $content .= '<b class="caret"></b>';
-            }
-            $content .= '</a>';
-            $content .= '<ul class="dropdown-menu">';
-            foreach ($menunode->get_children() as $menunode) {
-                $content .= $this->render_custom_menu_item($menunode, 0);
-            }
-            $content .= '</ul>';
-        } else {
-            $content = '<li>';
-            // The node doesn't have children so produce a final menuitem.
-            if ($menunode->get_url() !== null) {
-                $url = $menunode->get_url();
-            } else {
-                $url = '#';
-            }
-            $content .= html_writer::link($url, $menunode->get_text(), array('title'=>$menunode->get_title()));
-        }
-        return $content;
-    }
- 	
+    
  	/*
     * This code replaces the icons in the Admin block with
     * FontAwesome variants where available.
