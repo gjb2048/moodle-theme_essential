@@ -148,5 +148,11 @@ if ($hasheader) {
 
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
 
+<!-- Start Google Analytics -->
+<?php if ($hasanalytics) { ?>
+		<?php require('analytics.php'); ?>
+<?php } ?>
+<!-- End Google Analytics -->
+
 </body>
 </html>

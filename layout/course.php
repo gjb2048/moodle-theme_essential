@@ -43,6 +43,7 @@ $showfooterleft = ($hasfooterleft && !$PAGE->blocks->region_completely_docked('f
 $showfootermiddle = ($hasfootermiddle && !$PAGE->blocks->region_completely_docked('footer-middle', $OUTPUT));
 $showfooterright = ($hasfooterright && !$PAGE->blocks->region_completely_docked('footer-right', $OUTPUT));
 $hasboringlayout = (empty($PAGE->theme->settings->layout)) ? false : $PAGE->theme->settings->layout;
+$hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
 
 // If there can be a sidepost region on this page and we are editing, always
 // show it so blocks can be dragged into it.
@@ -148,6 +149,12 @@ if ($hasheader) {
 <?php echo $OUTPUT->standard_footer_html(); ?>
 
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
+
+<!-- Start Google Analytics -->
+<?php if ($hasanalytics) { ?>
+		<?php require('analytics.php'); ?>
+<?php } ?>
+<!-- End Google Analytics -->
 
 </body>
 </html>

@@ -709,4 +709,37 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add($setting);
     
     $ADMIN->add('theme_essential', $temp);
+    
+    $temp = new admin_settingpage('theme_essential_analytics', get_string('analyticsheading', 'theme_essential'));
+	$temp->add(new admin_setting_heading('theme_essential_analytics', get_string('analyticsheadingsub', 'theme_essential'),
+            format_text(get_string('analyticsdesc' , 'theme_essential'), FORMAT_MARKDOWN)));
+    
+    // Enable Analytics
+    $name = 'theme_essential/useanalytics';
+    $title = get_string('useanalytics', 'theme_essential');
+    $description = get_string('useanalyticsdesc', 'theme_essential');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // Google Analytics ID
+    $name = 'theme_essential/analyticsid';
+    $title = get_string('analyticsid', 'theme_essential');
+    $description = get_string('analyticsiddesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // Clean Analytics URL
+    $name = 'theme_essential/analyticsclean';
+    $title = get_string('analyticsclean', 'theme_essential');
+    $description = get_string('analyticscleandesc', 'theme_essential');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+        
+    $ADMIN->add('theme_essential', $temp);
 

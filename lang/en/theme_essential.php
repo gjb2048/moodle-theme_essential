@@ -269,5 +269,19 @@ $string['androiddesc'] = 'Prove a URL to your mobile App on the Google Play Stor
 $string['ios'] = 'iPhone/iPad (App Store)';
 $string['iosdesc'] = 'Prove a URL to your mobile App on the App Store.  If you do not have one of your own maybe consider linking to the free official Moodle Mobile app.';
 
+/* Google Analytics */
+$string['analyticsheading'] = 'Google Analytics';
+$string['analyticsheadingsub'] = 'Powerful analytics from Google';
+$string['analyticsdesc'] = 'Here you can enable Google Analytics fo your moodle site. You will need to sign up for a free account at the Google Analytics site (<a href="http://analytics.google.com" target="_blank">http://analytics.google.com</a>)';
+
+$string['useanalytics'] = 'Enable Google Analytics';
+$string['useanalyticsdesc'] = 'Enable or disable Google analytics functionaliy.';
+
+$string['analyticsid'] = 'Your Tracking ID';
+$string['analyticsiddesc'] = 'Enter the provided Tracking ID. Typically formatted like UA-XXXXXXXX-X';
+
+$string['analyticsclean'] = 'Send Clean URLs';
+$string['analyticscleandesc'] = 'This fantastic feature was created by <a href="https://moodle.org/user/profile.php?id=281671" target="_blank">Gavin Henrick</a> and <a href="https://moodle.org/user/view.php?id=907814" target="_blank">Bas Brands</a> and is implemented in this theme. Rather than standard Moodle URLs the theme will send out clean URLs making it easier to identify the page and provide advanced reporting. More information on using this feature and its uses can be <b><a href="http://www.somerandomthoughts.com/blog/2012/04/18/ireland-uk-moodlemoot-analytics-to-the-front/" target="_blank">found here</a></b>.';
+
 /* Alerts */
 $string['ie7message'] = '<p id="ie7message">Sorry, this site requires <strong>Internet Explorer 8</strong> or higher to display and function correctly.  Please update your browser via Windows Update, or <a href="http://windows.microsoft.com/en-au/internet-explorer/download-ie" target="_blank">download the latest version here</a>.  Alternatively, you can try installing the <a href="http://www.google.com/chromeframe" target="_blank">ChromeFrame plugin</a> which may solve some of the issues experienced in older browsers.  If using IE8 or above you may have Compatibility Mode switched on, turn this off to display this website correctly.  If you continue having problems accessing this website or the updates mentioned above, please contact your Helpdesk for further assistance.</p>';
