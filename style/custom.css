@@ -75,6 +75,8 @@ a:hover{
 	padding-top: 10px;
 }
 
+
+
 /* @group Custom */
 
 .bor {
@@ -1450,79 +1452,36 @@ img.profilepicture
 /* @end */
 
 /* @group Tabs */
-.tabtree{
-	position:relative; 
-	margin-bottom:10px
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+     zoom:1; /* hasLayout ie7 trigger */
 }
 
-.tabtree .tabrow0{
-	text-align:center; 
-	width:100%; 
-	margin:0; 
-	overflow:hidden; 
-	border-bottom:2px solid [[setting:themecolor]]
+.nav-tabs, .nav-pills {
+    text-align:center;
 }
 
-.tabtree .tabrow0 li{
-	display:inline; 
-	float:left; 
-	font-size:13px
+.nav>.disabled>a {
+	color: #555;
+	background: #fff;
 }
 
-.tabtree .tabrow0 li.here a{
-	position:relative; 
-	z-index:102
+.nav>.disabled>a:hover {
+	border: 1px solid #ddd;
+}
+ 
+.nav-tabs>li>a {
+color: #fff;
+cursor: default;
+background-color: [[setting:themecolor]];
+border: 1px solid #ddd;
+border-bottom-color: transparent;
 }
 
-.tabtree .tabrow0 li a{
-	display:block; 
-	background:#999; 
-	color:#fff; 
-	padding:5px 5px; 
-	margin-bottom:-1px; 
-	margin-right:4px; 
-	text-shadow:-1px -1px 1px rgba(0,0,0,0.2); 
-	-webkit-border-top-left-radius:6px; 
-	-webkit-border-top-right-radius:6px; 
-	-moz-border-radius-topleft:6px; 
-	-moz-border-radius-topright:6px; 
-	border-top-left-radius:6px; 
-	border-top-right-radius:6px
-}
-
-.tabtree .tabrow0 li.selected a{
-	background: [[setting:themecolor]];
-}
-
-.tabtree .tabrow0 li a:hover{
-	background: [[setting:themehovercolor]]; 
-	text-decoration:none
-}
-
-.tabtree .tabrow0 li a span{
-	padding:0; 
-	margin:0; 
-	color:#fff
-}
-
-.tabtree .tabrow0 ul, .tabtree .tabrow0 div{
-	position:absolute; 
-	width:100%; 
-	border-top:1px solid #aaa; 
-	top:100%; 
-	margin:0; 
-	padding:.25em 0
-}
-
-.tabtree .tabrow0 .empty{
-	height:1px; 
-	overflow:hidden; 
-	position:absolute; 
-	padding:0
-}
-
-.tabtree ul li.here ul{
-	position:relative
+.nav-tabs>li>a:hover {
+	background-color: [[setting:themehovercolor]];
 }
 
 /* @end */
@@ -1665,6 +1624,90 @@ width: 67%;
 .mform .fitem .felement, 
 #page-mod-forum-search .c1 { 
 	margin-left: 10px; 
+}
+
+/* @end */
+
+/* @group Gradebook */
+
+#page-grade-report-grader-index #page.container-fluid {
+	max-width: 98%	;
+}
+
+
+
+.gradestable table {
+	border: 1px solid #AAA;
+}
+
+.gradestable tr.category th.cell.rowspan {
+	border-width:0; border-left:1px solid #AAA;
+}
+
+.gradestable tr.category th.cell.rowspan:hover {
+	background-color: #EEE;
+}
+
+.gradestable td.name {
+	border-left: 0px;
+}
+
+.gradestable td.colspan {
+	border-left: 1px solid #AAA;
+	border-bottom: 1px solid #AAA;
+	border-top: 0;
+	background-color: #DDD;
+}
+
+table#user-grades .catlevel1,
+table#user-grades .catlevel2,
+table#user-grades .catlevel3,
+table#user-grades .catlevel4 {
+	padding: 10px;
+}
+
+table#user-grades .catlevel1 {
+	background-color: #FFCCCC !important;
+
+}
+
+table#user-grades .catlevel2 {
+	background-color: #d7ebf1 !important;
+}
+
+table#user-grades .catlevel3 {
+	background-color: #D0F3D6 !important;
+}
+
+table#user-grades .catlevel4 {
+	background-color: #FFFFCC !important;
+}
+
+table#user-grades .catlevel5 {
+	background-color: #EBDEF6 !important;
+}
+
+table#user-grades .userpicture {
+	border-radius: 20px;
+	margin: 3px;
+	margin-right: 10px;
+	border: 1px solid #AAA;
+}
+
+table#user-grades td.fixedcolumn.cell.topleft.cell.c0 {
+	background: transparent !important;
+	border: 0px none !important;
+}
+
+table#user-grades th.header.useremail {
+	text-align: left;
+	padding-left: 10px;
+}
+
+table#user-grades th.userreport.c1 {
+	border: 1px solid #ddd;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 /* @end */
