@@ -55,6 +55,10 @@
 	padding-right: 7px !important;
 }
 
+.editing_move:hover {
+	cursor:move;
+}
+
 .editing_move::before {
 	content: "\f047 ";
 }
