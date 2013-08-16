@@ -1664,27 +1664,29 @@ table#user-grades .catlevel2,
 table#user-grades .catlevel3,
 table#user-grades .catlevel4 {
 	padding: 10px;
+	border-right: 1px solid #ddd;
 }
 
 table#user-grades .catlevel1 {
-	background-color: #FFCCCC !important;
-
+	background-color: #fdd4d5 !important;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 }
 
 table#user-grades .catlevel2 {
-	background-color: #d7ebf1 !important;
+	background-color: #d1e7f8 !important;
 }
 
 table#user-grades .catlevel3 {
-	background-color: #D0F3D6 !important;
+	background-color: #e8ffc7 !important;
 }
 
 table#user-grades .catlevel4 {
-	background-color: #FFFFCC !important;
+	background-color: #fdffc7 !important;
 }
 
 table#user-grades .catlevel5 {
-	background-color: #EBDEF6 !important;
+	background-color: #eed7ea !important;
 }
 
 table#user-grades .userpicture {
