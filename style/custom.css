@@ -1661,26 +1661,56 @@ table#user-grades .catlevel4 {
 	border-right: 1px solid #ddd;
 }
 
-table#user-grades .catlevel1 {
+table#user-grades .catlevel1,
+.user-grade td.oddd1,
+.user-grade td.evend1 {
 	background-color: #fdd4d5 !important;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
 }
 
-table#user-grades .catlevel2 {
+table#user-grades .catlevel2,
+.user-grade td.oddd2,
+.user-grade td.evend2 {
 	background-color: #d1e7f8 !important;
 }
 
-table#user-grades .catlevel3 {
+table#user-grades .catlevel3,
+.user-grade td.oddd3,
+.user-grade td.evend3 {
 	background-color: #e8ffc7 !important;
 }
 
-table#user-grades .catlevel4 {
+table#user-grades .catlevel4,
+.user-grade td.oddd4,
+.user-grade td.evend4 {
 	background-color: #fdffc7 !important;
 }
 
-table#user-grades .catlevel5 {
+table#user-grades .catlevel5,
+.user-grade td.oddd5,
+.user-grade td.evend5 {
 	background-color: #eed7ea !important;
+}
+
+.user-grade td.evend4 {
+	background-color: #ddd;
+}
+
+.user-grade {
+	border-color: #ddd;
+}
+
+.user-grade thead,
+.user-grade td.b2t,
+.user-grade td.b3t,
+.user-grade td.b4t,
+.user-grade td.b1b,
+.user-grade td.b2b,
+.user-grade td.b4b,
+.user-grade td.b5b {
+border-color: #ddd !important;
+
+.user-grade thead {
+	font-size: 1.2em;
 }
 
 table#user-grades .userpicture {
