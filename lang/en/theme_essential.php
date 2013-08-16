@@ -272,7 +272,7 @@ $string['iosdesc'] = 'Prove a URL to your mobile App on the App Store.  If you d
 /* Google Analytics */
 $string['analyticsheading'] = 'Google Analytics';
 $string['analyticsheadingsub'] = 'Powerful analytics from Google';
-$string['analyticsdesc'] = 'Here you can enable Google Analytics fo your moodle site. You will need to sign up for a free account at the Google Analytics site (<a href="http://analytics.google.com" target="_blank">http://analytics.google.com</a>)';
+$string['analyticsdesc'] = 'Here you can enable Google Analytics for your moodle site. You will need to sign up for a free account at the Google Analytics site (<a href="http://analytics.google.com" target="_blank">http://analytics.google.com</a>)';
 
 $string['useanalytics'] = 'Enable Google Analytics';
 $string['useanalyticsdesc'] = 'Enable or disable Google analytics functionaliy.';
