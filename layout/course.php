@@ -155,6 +155,5 @@ if ($hasheader) {
 		<?php require('analytics.php'); ?>
 <?php } ?>
 <!-- End Google Analytics -->
-
 </body>
 </html>

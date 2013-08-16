@@ -24,9 +24,10 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
  
+//Check for theme settings 
 $hascleanurl = (empty($PAGE->theme->settings->analyticsclean)) ? false : $PAGE->theme->settings->analyticsclean;
+
 $trackurl = '';
-$gakey = = (!empty($PAGE->theme->settings->analyticsid));;
 
 global $DB;
 	
@@ -66,12 +67,12 @@ foreach ($navbar as $item) {
 ?>
 <script type="text/javascript">
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', '<?php echo $gakey;?>']);
-  if ($hascleanurl) {
+  _gaq.push(['_setAccount', '<?php echo $PAGE->theme->settings->analyticsid;?>']);
+  <?php if ($hascleanurl) { ?>
   	_gaq.push(['_trackPageview','<?php echo $trackurl;?>']);
-  } else {
+  <?php } else { ?>
   	_gaq.push(['_trackPageview']);
-  }
+  <?php } ?>
 
   (function() {
     var ga = document.createElement('script');
