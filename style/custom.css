@@ -1700,14 +1700,18 @@ table#user-grades .catlevel5,
 }
 
 .user-grade thead,
+.user-grade td.b1t, 
 .user-grade td.b2t,
 .user-grade td.b3t,
 .user-grade td.b4t,
+.user-grade td.b5t,
 .user-grade td.b1b,
 .user-grade td.b2b,
+.user-grade td.b3b,
 .user-grade td.b4b,
 .user-grade td.b5b {
 border-color: #ddd !important;
+}
 
 .user-grade thead {
 	font-size: 1.2em;
