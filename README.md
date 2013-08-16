@@ -23,6 +23,7 @@ Cool things to know about the theme.
  - Significantky improved gradebook formatting
  - New "Frontpage Content" box to add custom content inbetween the slideshow and marketing spots.
  - Minor CSS Fixes
+ - IMPORTANT: Theme requires Moodle 2.5.1 or higher
 
  New in 2.5.3
  ========================
