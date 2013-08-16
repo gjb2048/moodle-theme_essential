@@ -15,6 +15,14 @@ Cool things to know about the theme.
  - Social Network icons appear at the top of the page dynamically based on theme settings
  - The entire color scheme can be modified with theme settings (like on [Rocket](https://moodle.org/plugins/view.php?plugin=theme_rocket))
  - The homepage main area is just a label. The theme will ship with custom classes that you can set for tables and links to modify their formatting. No knowledge of code is needed as you can use the text editor to do this. Documentation will be provided outlining what the additional classes are.
+ 
+ New in 2.5.4
+ ========================
+ - Ability to connect to Google Analytics
+ - Advanced Google Analytics function allowing Clean URL's for better reporting. Contributed by @basbrands and @ghenrick. More info on this feature can be found in [this blog post](http://www.somerandomthoughts.com/blog/2012/04/18/ireland-uk-moodlemoot-analytics-to-the-front/)
+ - Significantky improved gradebook formatting
+ - New "Frontpage Content" box to add custom content inbetween the slideshow and marketing spots.
+ - Minor CSS Fixes
 
  New in 2.5.3
  ========================
