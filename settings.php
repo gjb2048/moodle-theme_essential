@@ -415,6 +415,30 @@ defined('MOODLE_INTERNAL') || die;
     
     $ADMIN->add('theme_essential', $temp);
     
+    $temp = new admin_settingpage('theme_essential_frontcontent', get_string('frontcontentheading', 'theme_essential'));
+	$temp->add(new admin_setting_heading('theme_essential_frontcontent', get_string('frontcontentheadingsub', 'theme_essential'),
+            format_text(get_string('frontcontentdesc' , 'theme_essential'), FORMAT_MARKDOWN)));
+    
+    // Enable Frontpage Content
+    $name = 'theme_essential/usefrontcontent';
+    $title = get_string('usefrontcontent', 'theme_essential');
+    $description = get_string('usefrontcontentdesc', 'theme_essential');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // Frontpage Content
+    $name = 'theme_essential/frontcontentarea';
+    $title = get_string('frontcontentarea', 'theme_essential');
+    $description = get_string('frontcontentareadesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+        
+    $ADMIN->add('theme_essential', $temp);
+    
 
 	/* Marketing Spot Settings */
 	$temp = new admin_settingpage('theme_essential_marketing', get_string('marketingheading', 'theme_essential'));

@@ -122,6 +122,17 @@ $string['footerheadingcolordesc'] = 'Set the colour for block headings in the fo
 $string['pagebackground'] = 'Page Background Image';
 $string['pagebackgrounddesc'] = 'Upload your own background image.  This will be tiled in the background on all pages.  If none is uploaded a default image is used.';
 
+/* Frontpage Content */
+$string['frontcontentheading'] = 'Frontpage Content';
+$string['frontcontentheadingsub'] = 'Add information to your frontpage for users';
+$string['frontcontentdesc'] = 'This adds a custom content area inbetween the Slideshow and the Marketing boxes for your own custom content';
+
+$string['usefrontcontent'] = 'Enable Frontpage content';
+$string['usefrontcontentdesc'] = 'If enabled this will display the content of the box below inbetween the Slideshow and the Marketing spots.';
+
+$string['frontcontentarea'] = 'Frontpage Content';
+$string['frontcontentareadesc'] = 'Whatever is typed into this box will display across the full width of the page inbetween the Slideshow and the Marketing spots ';
+
 /* Slideshow */
 $string['slideshowheading'] = 'Frontpage Slideshow';
 $string['slideshowheadingsub'] = 'Dynamic Slideshow for the frontpage';

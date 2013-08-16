@@ -278,6 +278,15 @@ echo $OUTPUT->doctype() ?>
 <?php } ?>
 <!-- End Slideshow -->
 
+<!-- Start Frontpage Content -->
+<?php if($PAGE->theme->settings->usefrontcontent ==1) { 
+	echo $PAGE->theme->settings->frontcontentarea;
+	?>
+	<div class="bor" style="margin-top: 10px;"></div>	
+<?php }?>
+<!-- End Frontpage Content -->
+
+
 <!-- Start Marketing Spots -->
 <?php if($PAGE->theme->settings->togglemarketing==1) { ?>
 
