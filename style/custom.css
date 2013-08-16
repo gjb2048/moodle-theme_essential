@@ -1630,12 +1630,6 @@ width: 67%;
 
 /* @group Gradebook */
 
-#page-grade-report-grader-index #page.container-fluid {
-	max-width: 98%	;
-}
-
-
-
 .gradestable table {
 	border: 1px solid #AAA;
 }
