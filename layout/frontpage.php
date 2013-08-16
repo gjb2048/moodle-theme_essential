@@ -60,6 +60,7 @@ $hasslide4image = (!empty($PAGE->theme->settings->slide4image));
 $hasslide4caption = (!empty($PAGE->theme->settings->slide4caption));
 $hasslide4url = (!empty($PAGE->theme->settings->slide4url));
 $hasslideshow = ($hasslide1||$hasslide2||$hasslide3||$hasslide4);
+$hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
 
 $hasmarketing1image = (!empty($PAGE->theme->settings->marketing1image));
 $hasmarketing2image = (!empty($PAGE->theme->settings->marketing2image));

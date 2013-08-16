@@ -42,6 +42,7 @@ $showsidepost = ($hassidepost && !$PAGE->blocks->region_completely_docked('side-
 $showfooterleft = ($hasfooterleft && !$PAGE->blocks->region_completely_docked('footer-left', $OUTPUT));
 $showfootermiddle = ($hasfootermiddle && !$PAGE->blocks->region_completely_docked('footer-middle', $OUTPUT));
 $showfooterright = ($hasfooterright && !$PAGE->blocks->region_completely_docked('footer-right', $OUTPUT));
+$hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
 
 // If there can be a sidepost region on this page and we are editing, always
 // show it so blocks can be dragged into it.
