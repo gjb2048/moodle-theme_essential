@@ -1195,7 +1195,7 @@ table#greyboxleft h2 {
     padding-left: 0px;
 }
 
-#page-footer ul li:before,
+#page-footer .block_html ul li:before,
 #greyboxright ul li:before {
     content:"\f105";
     display: inline-block;
@@ -1209,6 +1209,10 @@ table#greyboxleft h2 {
     padding-left: 5px;
     line-height: 14px;
     border-radius: 250px;
+}
+
+#page-footer .tree_item.branch:before {
+	color: [[setting:themecolor]];
 }
 
 .footerlinks {
