@@ -170,7 +170,7 @@ echo $OUTPUT->doctype() ?>
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <?php if ($hasheader) {
-    include('header.php');
+    require_once(dirname(__FILE__).'/header.php');
 }
 ?>
 
@@ -379,7 +379,7 @@ echo $OUTPUT->doctype() ?>
 <?php } ?>
 
 <footer id="page-footer" class="container-fluid">
-            <?php require('footer.php'); ?>
+            <?php require_once(dirname(__FILE__).'/footer.php'); ?>
 </footer>
 
 <?php echo $OUTPUT->standard_footer_html(); ?>
@@ -388,7 +388,7 @@ echo $OUTPUT->doctype() ?>
 
 <!-- Start Google Analytics -->
 <?php if ($hasanalytics) { ?>
-		<?php require('analytics.php'); ?>
+		<?php require_once(dirname(__FILE__).'/analytics.php'); ?>
 <?php } ?>
 <!-- End Google Analytics -->
 

@@ -109,7 +109,7 @@ echo $OUTPUT->doctype() ?>
 
 <?php 
 if ($hasheader) {
-    include('header.php');
+    require_once(dirname(__FILE__).'/header.php');
 }
 ?>
 
@@ -136,13 +136,13 @@ if ($hasheader) {
 </header>
 
 <?php if ($hasboringlayout) { ?>
-		<?php require('standard.php'); ?>
+		<?php require_once(dirname(__FILE__).'/standard.php'); ?>
 	<?php } else { ?>
-		<?php require('essential.php'); ?>
+		<?php require_once(dirname(__FILE__).'/essential.php'); ?>
 	<?php } ?>  
 
 <footer id="page-footer" class="container-fluid">
-            <?php require('footer.php'); ?>
+            <?php require_once(dirname(__FILE__).'/footer.php'); ?>
 </footer>
 
 <?php echo $OUTPUT->standard_footer_html(); ?>
@@ -151,7 +151,7 @@ if ($hasheader) {
 
 <!-- Start Google Analytics -->
 <?php if ($hasanalytics) { ?>
-		<?php require('analytics.php'); ?>
+		<?php require_once(dirname(__FILE__).'/analytics.php'); ?>
 <?php } ?>
 <!-- End Google Analytics -->
 

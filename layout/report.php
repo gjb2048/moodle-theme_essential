@@ -114,7 +114,7 @@ echo $OUTPUT->doctype() ?>
 
 <?php 
 if ($hasheader) {
-    include('header.php');
+    require_once(dirname(__FILE__).'/header.php');
 }
 ?>
 
@@ -168,7 +168,7 @@ if ($hasheader) {
 </div>  
 
 <footer id="page-footer" class="container-fluid">
-            <?php require('footer.php'); ?>
+            <?php require_once(dirname(__FILE__).'/footer.php'); ?>
 </footer>
 
 <?php echo $OUTPUT->standard_footer_html(); ?>
@@ -177,7 +177,7 @@ if ($hasheader) {
 
 <!-- Start Google Analytics -->
 <?php if ($hasanalytics) { ?>
-		<?php require('analytics.php'); ?>
+		<?php require_once(dirname(__FILE__).'/analytics.php'); ?>
 <?php } ?>
 <!-- End Google Analytics -->
 
