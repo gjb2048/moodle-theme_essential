@@ -4,7 +4,7 @@
         <?php if ($layout === 'pre-and-post') { ?>
         <section id="region-main" class="span6 desktop-first-column">
         <?php } else if ($layout === 'side-post-only') { ?>
-        <section id="region-main" class="span8 desktop-first-column">
+        <section id="region-main" class="span9 desktop-first-column">
         <?php } else if ($layout === 'side-pre-only') { ?>
         <section id="region-main" class="span9 desktop-first-column">
         <?php } else if ($layout === 'content-only') { ?>
@@ -31,7 +31,7 @@
             <?php if ($layout === 'pre-and-post') { ?>
             <div class="span6">
             <?php } else { ?>
-            <div class="span12" id="move">
+            <div class="span12">
             <?php } ?>
                 <div id="region-post" class="block-region">
                     <div class="region-content">
