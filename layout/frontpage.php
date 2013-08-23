@@ -205,7 +205,7 @@ echo $OUTPUT->doctype() ?>
     <div id="da-slider" class="da-slider <?php echo $hideonphone ?>" style="background-position: 8650% 0%;">
 
     <?php if ($hasslide1) { ?>
-        <div class="da-slide da-slide-toleft">
+        <div class="da-slide">
             <h2><?php echo $slide1 ?></h2>
             <?php if ($hasslide1caption) { ?>
                 <p><?php echo $slide1caption ?></p>
@@ -221,7 +221,7 @@ echo $OUTPUT->doctype() ?>
     
 
     <?php if ($hasslide2) { ?>
-        <div class="da-slide da-slide-toleft">
+        <div class="da-slide">
             <h2><?php echo $slide2 ?></h2>
             <?php if ($hasslide2caption) { ?>
                 <p><?php echo $slide2caption ?></p>
@@ -237,7 +237,7 @@ echo $OUTPUT->doctype() ?>
     
 
     <?php if ($hasslide3) { ?>
-        <div class="da-slide da-slide-toleft">
+        <div class="da-slide">
             <h2><?php echo $slide3 ?></h2>
             <?php if ($hasslide3caption) { ?>
                 <p><?php echo $slide3caption ?></p>
@@ -253,7 +253,7 @@ echo $OUTPUT->doctype() ?>
     
 
     <?php if ($hasslide4) { ?>
-        <div class="da-slide da-slide-toleft">
+        <div class="da-slide">
             <h2><?php echo $slide4 ?></h2>
             <?php if ($hasslide4caption) { ?>
                 <p><?php echo $slide4caption ?></p>

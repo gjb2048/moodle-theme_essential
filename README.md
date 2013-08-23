@@ -19,6 +19,7 @@ Cool things to know about the theme.
  New in 2.5.4
  ========================
  - Ability to connect to Google Analytics
+ - Fix to frontpage slideshow. First slide now loads properly.
  - Advanced Google Analytics function allowing Clean URL's for better reporting. Contributed by @basbrands and @ghenrick. More info on this feature can be found in [this blog post](http://www.somerandomthoughts.com/blog/2012/04/18/ireland-uk-moodlemoot-analytics-to-the-front/)
  - Significantky improved gradebook formatting
  - New "Frontpage Content" box to add custom content inbetween the slideshow and marketing spots.
