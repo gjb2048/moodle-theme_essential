@@ -1635,7 +1635,8 @@ width: 67%;
 }
 
 .gradestable tr.category th.cell.rowspan {
-	border-width:0; border-left:1px solid #AAA;
+	border-width:0; 
+	border-left:1px solid #AAA;
 }
 
 .gradestable tr.category th.cell.rowspan:hover {
@@ -1710,7 +1711,7 @@ table#user-grades .catlevel5,
 .user-grade td.b3b,
 .user-grade td.b4b,
 .user-grade td.b5b {
-border-color: #ddd !important;
+	border-color: #ddd !important;
 }
 
 .user-grade thead {
@@ -1738,6 +1739,28 @@ table#user-grades th.userreport.c1 {
 	border: 1px solid #ddd;
 	padding-left: 10px;
 	padding-right: 10px;
+}
+
+#grade_edit_tree_table .select,
+#grade_edit_tree_table input{
+	font-size: 10px;
+}
+
+#grade_edit_tree_table input {
+	width: 40px;
+	padding: 1px 5px;
+}
+
+#grade_edit_tree_table .level1,
+#grade_edit_tree_table .level2,
+#grade_edit_tree_table .level3,
+#grade_edit_tree_table .level4,
+#grade_edit_tree_table .level5 {
+	width: 20px;
+}
+
+#grade_edit_tree_table .level2 .lastcol {
+	background: #000;
 }
 
 /* @end */
