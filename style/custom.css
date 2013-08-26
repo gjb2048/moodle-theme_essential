@@ -1741,6 +1741,10 @@ table#user-grades th.userreport.c1 {
 	padding-right: 10px;
 }
 
+#grade_edit_tree_table {
+	background: #fff;
+}
+
 #grade_edit_tree_table .select,
 #grade_edit_tree_table input{
 	font-size: 10px;
@@ -1756,11 +1760,7 @@ table#user-grades th.userreport.c1 {
 #grade_edit_tree_table .level3,
 #grade_edit_tree_table .level4,
 #grade_edit_tree_table .level5 {
-	width: 20px;
-}
-
-#grade_edit_tree_table .level2 .lastcol {
-	background: #000;
+	width: 5px;
 }
 
 /* @end */
