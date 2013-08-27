@@ -219,7 +219,7 @@ echo $OUTPUT->doctype() ?>
    	} else {
    		$alert1icon = $alertsuccess;
    	} 
-   	echo $alert1icon.$PAGE->theme->settings->alert1text; ?> 
+   	echo $alert1icon.'<span class="title">'.$PAGE->theme->settings->alert1title.'</span>'.$PAGE->theme->settings->alert1text; ?> 
 </div>
 <?php } ?>
 
@@ -235,7 +235,7 @@ echo $OUTPUT->doctype() ?>
    	} else {
    		$alert2icon = $alertsuccess;
    	} 
-   	echo $alert2icon.$PAGE->theme->settings->alert2text; ?> 
+   	echo $alert2icon.'<span class="title">'.$PAGE->theme->settings->alert2title.'</span>'.$PAGE->theme->settings->alert2text; ?> 
 </div>
 <?php } ?>
 
@@ -251,7 +251,7 @@ echo $OUTPUT->doctype() ?>
    	} else {
    		$alert3icon = $alertsuccess;
    	} 
-   	echo $alert3icon.$PAGE->theme->settings->alert3text; ?> 
+   	echo $alert3icon.'<span class="title">'.$PAGE->theme->settings->alert3title.'</span>'.$PAGE->theme->settings->alert3text; ?> 
 </div>
 <?php } ?>
 <!-- End Alerts -->

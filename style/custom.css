@@ -1778,8 +1778,9 @@ table#user-grades th.userreport.c1 {
 	margin-right: 10px;
 }
 
-.useralerts h4 {
-	color: #000;
+.useralerts .title {
+	font-weight: bold;
+	margin-right: 10px;
 }
 /**
  * editicons CSS
