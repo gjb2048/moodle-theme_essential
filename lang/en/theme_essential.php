@@ -284,4 +284,28 @@ $string['analyticsclean'] = 'Send Clean URLs';
 $string['analyticscleandesc'] = 'This fantastic feature was created by <a href="https://moodle.org/user/profile.php?id=281671" target="_blank">Gavin Henrick</a> and <a href="https://moodle.org/user/view.php?id=907814" target="_blank">Bas Brands</a> and is implemented in this theme. Rather than standard Moodle URLs the theme will send out clean URLs making it easier to identify the page and provide advanced reporting. More information on using this feature and its uses can be <b><a href="http://www.somerandomthoughts.com/blog/2012/04/18/ireland-uk-moodlemoot-analytics-to-the-front/" target="_blank">found here</a></b>.';
 
 /* Alerts */
+$string['alertsheading'] = 'User Alerts';
+$string['alertsheadingsub'] = 'Display important messages to your users on the frontpage';
+$string['alertsdesc'] = 'This will display an alert (or multiple) in three different styles to your users on the Moodle frontpage. Please remember to disable these when no longer needed.';
+
+$string['enablealert'] = 'Enable Alert';
+$string['enablealertdesc'] = 'Enabe or disable alerts';
+
+$string['alert1'] = 'First Alert';
+$string['alert2'] = 'Second Alert';
+$string['alert3'] = 'Third Alert';
+
+$string['alerttitle'] = 'Title';
+$string['alerttitledesc'] = 'Main title/heading for your alert';
+
+$string['alerttype'] = 'Level';
+$string['alerttypedesc'] = 'Set the appropriate alert level/type to best inform your users';
+
+$string['alerttext'] = 'Alert Text';
+$string['alerttextdesc'] = 'What is the text you wish to display in your alert';
+
+$string['alert_info'] = 'Information';
+$string['alert_warning'] = 'Warning';
+$string['alert_general'] = 'General';
+
 $string['ie7message'] = '<p id="ie7message">Sorry, this site requires <strong>Internet Explorer 8</strong> or higher to display and function correctly.  Please update your browser via Windows Update, or <a href="http://windows.microsoft.com/en-au/internet-explorer/download-ie" target="_blank">download the latest version here</a>.  Alternatively, you can try installing the <a href="http://www.google.com/chromeframe" target="_blank">ChromeFrame plugin</a> which may solve some of the issues experienced in older browsers.  If using IE8 or above you may have Compatibility Mode switched on, turn this off to display this website correctly.  If you continue having problems accessing this website or the updates mentioned above, please contact your Helpdesk for further assistance.</p>';
