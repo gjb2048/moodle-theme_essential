@@ -18,14 +18,14 @@ Cool things to know about the theme.
  
  New in 2.5.4
  ========================
- - Ability to connect to Google Analytics
- - Can now display current enrolled courses in dropdown menu and choose terminology (modules, courses, classes or units)
+ - Display current enrolled courses in dropdown menu and choose terminology (modules, courses, classes or units)
  - New 'My Dashboard" in custommenu provides quick links to student tools. Can be disabled in theme settings.
  - Alerts for users can be added to te frontpage.
- - Fix to frontpage slideshow. First slide now loads properly.
+ - Theme options to connect to Google Analytics
  - Advanced Google Analytics function allowing Clean URL's for better reporting. Contributed by @basbrands and @ghenrick. More info on this feature can be found in [this blog post](http://www.somerandomthoughts.com/blog/2012/04/18/ireland-uk-moodlemoot-analytics-to-the-front/)
  - Significantky improved gradebook formatting
  - New "Frontpage Content" box to add custom content inbetween the slideshow and marketing spots.
+ - Fix to frontpage slideshow. First slide now loads properly.
  - Updated include method to minimse conflicts with 3rd party plugins
  - Minor CSS Fixes
  - IMPORTANT: Theme requires Moodle 2.5.1 or higher
