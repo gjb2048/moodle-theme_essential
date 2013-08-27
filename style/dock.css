@@ -1,0 +1,421 @@
+.dockbutton{
+	display:inline-block;
+	display:list-item;
+	*display:inline;
+	padding:4px 12px;
+	padding:4px 20px;
+	padding:0;
+	margin-bottom:0;
+	*margin-left:.3em;
+	font-size:15px;
+	line-height:20px;
+	color:#7b8a8b;
+	color:#fff;
+	text-align:center;
+	text-decoration:none;
+	text-shadow:0 1px 1px rgba(255,255,255,0.75);
+	text-shadow:none;
+	vertical-align:middle;
+	cursor:pointer;
+	background-color:#bfc6cb;
+	*background-color:#d0d5d9;
+	background-image:-moz-linear-gradient(top,#b4bcc2,#d0d5d9);
+	background-image:-webkit-gradient(linear,0 0,0 100%,from(#b4bcc2),to(#d0d5d9));
+	background-image:-webkit-linear-gradient(top,#b4bcc2,#d0d5d9);
+	background-image:-o-linear-gradient(top,#b4bcc2,#d0d5d9);
+	background-image:linear-gradient(to bottom,#b4bcc2,#d0d5d9);
+	background-image:none;
+	background-repeat:repeat-x;
+	border:1px solid #ddd;
+	border:0;
+	*border:0;
+	border-color:#d0d5d9 #d0d5d9 #a6afb7;
+	border-color:rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+	border-bottom-color:#c4c4c4;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	border-radius:2px;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb4bcc2',endColorstr='#ffd0d5d9',GradientType=0);
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	*zoom:1;
+	-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+	-webkit-box-shadow:none;
+	-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+	-moz-box-shadow:none;
+	box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+	box-shadow:none;
+	-webkit-transition:.25s;
+	-moz-transition:.25s;
+	transition:.25s
+}
+
+.dockbutton:hover,.dockbutton:focus,.dockbutton:active,.dockbutton.active,.dockbutton.disabled,.dockbutton[disabled]{color:#7b8a8b;
+	background-color:#d0d5d9;
+}
+
+.dockbutton:active,.dockbutton.active{
+	background-color:#b4bcc2 \9
+}
+
+.dockbutton:first-child{
+	*margin-left:0
+}
+
+.dockbutton:hover,.dockbutton:focus{
+	color:#7b8a8b;
+	text-decoration:none;
+	background-position:0 -15px;
+	-webkit-transition:background-position .1s linear;
+	-moz-transition:background-position .1s linear;
+	-o-transition:background-position .1s linear;
+	transition:background-position .1s linear
+}
+
+.dockbutton:focus{
+	outline:thin dotted #333;
+	outline:5px auto -webkit-focus-ring-color;
+	outline-offset:-2px
+}
+
+.dockbutton.active,.dockbutton:active{
+	background-image:none;
+	outline:0;
+	-webkit-box-shadow:inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+	-moz-box-shadow:inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+	box-shadow:inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05)}
+
+.dockbutton.disabled,.dockbutton[disabled]{
+	cursor:default;
+	background-image:none;
+	opacity:.65;
+	filter:alpha(opacity=65);
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none
+}
+
+.dockbutton .label,.dockbutton .badge{
+	position:relative;
+	top:-1px
+}
+
+.dockbutton:hover,.dockbutton:focus{
+	color:white;
+	-webkit-transition:.25s;
+	-moz-transition:.25s;
+	transition:.25s
+}
+
+.dockbutton:active,.dockbutton.active{
+	color:rgba(255,255,255,0.75);
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none
+}
+
+.dockbutton.disabled,.dockbutton[disabled]{
+	color:white
+}
+
+.dockbutton-large{
+	padding:18px 36px
+}
+
+.dockbutton-small{
+	padding:2px 12px
+}
+
+.dockbutton-mini{
+	padding:1px 8px
+}
+
+body.has_dock{
+	margin-left:40px
+}
+
+body.has_dock div#dock{
+	display:inline
+}
+
+#dock{
+	position:fixed;
+	top:60px;
+	left:0;
+	z-index:11000;
+	width:36px;
+	height:100%;
+	background-color:transparent;
+	border-right:0 none
+}
+
+#dock .nothingdocked{
+	display:none;
+	visibility:hidden
+}
+
+#dock .dockeditem .firstdockitem{
+	margin-top:1em
+}
+
+#dock .dockedtitle{
+	display:inline-block;
+	display:list-item;
+	*display:inline;
+	padding:4px 12px;
+	padding:4px 20px;
+	padding:0;
+	margin:2px;
+	margin-bottom:0;
+	*margin-left:.3em;
+	font-size:15px;
+	line-height:20px;
+	color:#7b8a8b;
+	color:#fff;
+	text-align:center;
+	text-decoration:none;
+	text-shadow:0 1px 1px rgba(255,255,255,0.75);
+	text-shadow:none;
+	vertical-align:middle;
+	cursor:pointer;
+	background-color: [[setting:themecolor]];
+	background-image:-moz-linear-gradient(top,#b4bcc2,#d0d5d9);
+	background-image:-webkit-gradient(linear,0 0,0 100%,from(#b4bcc2),to(#d0d5d9));
+	background-image:-webkit-linear-gradient(top,#b4bcc2,#d0d5d9);
+	background-image:-o-linear-gradient(top,#b4bcc2,#d0d5d9);
+	background-image:linear-gradient(to bottom,#b4bcc2,#d0d5d9);
+	background-image:none;
+	background-repeat:repeat-x;
+	border:1px solid #ddd;
+	border:0;
+	*border:0;
+	border-color:#d0d5d9 #d0d5d9 #a6afb7;
+	border-color:rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+	border-bottom-color:#c4c4c4;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	border-radius:2px;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb4bcc2',endColorstr='#ffd0d5d9',GradientType=0);
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	*zoom:1;
+	-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+	-webkit-box-shadow:none;
+	-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+	-moz-box-shadow:none;
+	box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+	box-shadow:none;
+	-webkit-transition:.25s;
+	-moz-transition:.25s;
+	transition:.25s
+}
+
+#dock .dockedtitle:hover,#dock .dockedtitle:focus,#dock .dockedtitle:active,#dock .dockedtitle.active,#dock .dockedtitle.disabled,#dock .dockedtitle[disabled]{
+	color:#7b8a8b;
+	background-color: [[setting:themehovercolor]];
+}
+
+#dock .dockedtitle:active,#dock .dockedtitle.active{
+	background-color:#b4bcc2
+}
+
+#dock .dockedtitle:first-child{
+	*margin-left:0
+}
+
+#dock .dockedtitle:hover,#dock .dockedtitle:focus{
+	color:#7b8a8b;
+	text-decoration:none;
+	background-position:0 -15px;
+	-webkit-transition:background-position .1s linear;
+	-moz-transition:background-position .1s linear;
+	-o-transition:background-position .1s linear;
+	transition:background-position .1s linear
+}
+
+#dock .dockedtitle:focus{
+	outline:thin dotted #333;
+	outline:5px auto -webkit-focus-ring-color;
+	outline-offset:-2px
+}
+
+#dock .dockedtitle.active,#dock .dockedtitle:active{
+	background-image:none;
+	outline:0;
+	-webkit-box-shadow:inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+	-moz-box-shadow:inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+	box-shadow:inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05)
+}
+
+#dock .dockedtitle.disabled,#dock .dockedtitle[disabled]{
+	cursor:default;
+	background-image:none;
+	opacity:.65;
+	filter:alpha(opacity=65);
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none
+}
+
+#dock .dockedtitle .label,#dock .dockedtitle .badge{
+	position:relative;
+	top:-1px
+}
+
+#dock .dockedtitle:hover,#dock .dockedtitle:focus{
+	color:white;
+	-webkit-transition:.25s;
+	-moz-transition:.25s;
+	transition:.25s
+}
+
+#dock .dockedtitle:active,#dock .dockedtitle.active{
+	color:rgba(255,255,255,0.75);
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none
+}
+
+#dock .dockedtitle.disabled,#dock .dockedtitle[disabled]{
+	color:white
+}
+
+#dock .dockedtitle-large{
+	padding:18px 36px
+}
+
+#dock .dockedtitle-small{
+	padding:2px 12px
+}
+
+#dock .dockedtitle-mini{
+	padding:1px 8px
+}
+
+#dock .dockedtitle h2{
+	font-size:1em;
+	font-weight:bold;
+	line-height:100%;
+	color:#fff;
+	text-align:center
+}
+
+#dock .dockedtitle .filterrotate{
+	margin-left:8px
+}
+
+#dock .dockeditempanel_hd h2{
+	display:block;
+	padding:3px 15px;
+	font-size:11px;
+	font-size:1.1em;
+	font-weight:bold;
+	line-height:20px;
+	color:#b4bcc2;
+	color:#7b8a8b;
+	text-shadow:0 1px 0 rgba(255,255,255,0.5);
+	text-transform:uppercase
+}
+
+#dock .controls{
+	position:absolute;
+	bottom:1em;
+	width:100%;
+	text-align:center
+}
+
+#dock .controls img{
+	cursor:pointer
+}
+
+#dockeditempanel{
+	position:relative;
+	left:100%;
+	z-index:12000;
+	min-width:200px;
+	padding-left:5px
+}
+
+#dockeditempanel .dockeditempanel_content{
+	z-index:12050;
+	width:220px;
+	background-color:#fff;
+	box-shadow:2px 4px 4px 2px #ccc
+}
+
+#dockeditempanel .dockeditempanel_bd{
+	width:auto;
+	overflow:auto
+}
+
+#dockeditempanel .dockeditempanel_bd .block_navigation .block_tree li{
+	overflow:visible
+}
+
+#dockeditempanel .dockeditempanel_hd h2{
+	padding:12px 10px;
+	margin:0;
+	border-bottom:1px solid #fff
+}
+
+#dockeditempanel .dockeditempanel_hd .commands{
+	position:absolute;
+	top:6px;
+	right:9px;
+	display:block;
+	float:right;
+	width:43px;
+	text-align:right
+}
+
+#dockeditempanel .dockeditempanel_hd .commands>a,#dockeditempanel .dockeditempanel_hd .commands>span{
+	margin-left:3px;
+	cursor:pointer
+}
+
+#dockeditempanel .dockeditempanel_hd a.editing_move,#dockeditempanel .dockeditempanel_hd a.editing_edit,#dockeditempanel .dockeditempanel_hd a.editing_roles,#dockeditempanel .dockeditempanel_hd a.editing_delete,#dockeditempanel .dockeditempanel_hd a.editing_hide{
+	display:none
+}
+
+#dockeditempanel .dockeditempanel_hd .commands img,#dockeditempanel .dockeditempanel_hd .commands input{
+	margin-right:1px;
+	vertical-align:middle
+}
+
+#dockeditempanel .dockeditempanel_hd .commands .hidepanemicon img{
+	cursor:pointer
+}
+
+#dockeditempanel.dockitempanel_hidden{
+	display:none
+}
+
+.dir-rtl #dockeditempanel{
+	right:100%
+}
+
+.dir-rtl #dockeditempanel .dockeditempanel_hd .commands{
+	text-align:left
+}
+
+.dir-rtl #dock{
+	right:0;
+	left:auto;
+	border-left:1px solid #DDD
+}
+
+.dir-rtl #dock .dockedtitle{
+	cursor:pointer;
+	border-top:1px solid #EEE;
+	border-bottom:1px solid #DDD
+}
+
+body.dir-rtl.has_dock{
+	margin-right:40px;
+	margin-left:0
+}
+
+.dockeditempanel_content {
+    width: 300px;
+	
+}
+
+

@@ -32,8 +32,9 @@ $THEME->name = 'essential';
 
 $THEME->doctype = 'html5';
 $THEME->parents = array('bootstrapbase');
-$THEME->sheets = array('custom', 'slides', 'font-awesome');
+$THEME->sheets = array('custom', 'slides', 'dock', 'font-awesome');
 $THEME->supportscssoptimisation = false;
+$THEME->enable_dock = true;
 $THEME->yuicssmodules = array();
 
 $THEME->editor_sheets = array();
@@ -129,8 +130,15 @@ $THEME->layouts = array(
 
 );
 
+$THEME->javascripts = array(
+);
+
+$THEME->javascripts_footer = array(
+    'dockmod',
+);
 
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
+
 $THEME->csspostprocess = 'theme_essential_process_css';
 
 $useragent = '';
