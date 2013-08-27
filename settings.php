@@ -660,6 +660,15 @@ defined('MOODLE_INTERNAL') || die;
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+    
+    // Flickr url setting.
+    $name = 'theme_essential/flickr';
+    $title = get_string('flickr', 'theme_essential');
+    $description = get_string('flickrdesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
     // Twitter url setting.
     $name = 'theme_essential/twitter';
