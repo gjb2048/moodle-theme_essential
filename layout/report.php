@@ -152,7 +152,6 @@ if ($hasheader) {
             		<?php }
                     echo $OUTPUT->course_content_header(); ?>
                     <h2 class="pagetitle"><span><?php echo $PAGE->title ?></span></h2>
-                    <div style="float:right;"><a href="#" onclick="toggle_visibility('region-pre');" class="btn btn-info">Toggle Blocks</a></div>
                     <?php echo $OUTPUT->main_content();
                     echo $OUTPUT->course_content_footer();
                     ?>
@@ -180,16 +179,6 @@ if ($hasheader) {
 		<?php require_once(dirname(__FILE__).'/analytics.php'); ?>
 <?php } ?>
 <!-- End Google Analytics -->
-
-<script type="text/javascript">
-    function toggle_visibility(id) {
-       var e = document.getElementById(id);
-       if(e.style.display == 'none')
-          e.style.display = 'block';
-       else
-          e.style.display = 'none';
-    }
-</script>
 
 </body>
 </html>
