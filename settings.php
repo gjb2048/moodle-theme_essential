@@ -42,13 +42,13 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add($setting);
     
     // Include Awesome Font from Bootstrapcdn
-    $name = 'theme_essential/bootstrapcdn';
-    $title = get_string('bootstrapcdn', 'theme_essential');
-    $description = get_string('bootstrapcdndesc', 'theme_essential');
-    $default = false;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    //$name = 'theme_essential/bootstrapcdn';
+    //$title = get_string('bootstrapcdn', 'theme_essential');
+    //$description = get_string('bootstrapcdndesc', 'theme_essential');
+    //$default = false;
+    //$setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    //$setting->set_updatedcallback('theme_reset_all_caches');
+    //$temp->add($setting);
 	
     // Logo file setting.
     $name = 'theme_essential/logo';
