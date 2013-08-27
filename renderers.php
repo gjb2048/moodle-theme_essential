@@ -86,14 +86,13 @@
 
         return $output . $footer;
     }
-    
-    /*
-    * This code replaces adds the current enrolled
-    * courses to the custommenu.
-    */
-	
 		
     protected function render_custom_menu(custom_menu $menu) {
+    	/*
+    	* This code replaces adds the current enrolled
+    	* courses to the custommenu.
+    	*/
+    
     	$hasdisplaymycourses = (empty($this->page->theme->settings->displaymycourses)) ? false : $this->page->theme->settings->displaymycourses;
         if (isloggedin() && $hasdisplaymycourses) {
         	$mycoursetitle = $this->page->theme->settings->mycoursetitle;
@@ -121,6 +120,25 @@
  				$branch->add('<em>'.get_string('noenrolments', 'theme_essential').'</em>',new moodle_url('/'),get_string('noenrolments', 'theme_essential'));
  			}
             
+        }
+        
+        /*
+    	* This code replaces adds the My Dashboard
+    	* functionality to the custommenu.
+    	*/
+        $hasdisplaymydashboard = (empty($this->page->theme->settings->displaymydashboard)) ? false : $this->page->theme->settings->displaymydashboard;
+        if (isloggedin() && $hasdisplaymydashboard) {
+            $branchlabel = '<i class="icon-dashboard"></i>'.get_string('mydashboard', 'theme_essential');
+            $branchurl   = new moodle_url('/my/index.php');
+            $branchtitle = get_string('mydashboard', 'theme_essential');
+            $branchsort  = 10000;
+ 
+            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+ 			$branch->add('<em><i class="icon-user"></i>'.get_string('profile', 'theme_essential').'</em>',new moodle_url('/user/profile.php'),get_string('profile', 'theme_essential'));
+ 			$branch->add('<em><i class="icon-calendar"></i>'.get_string('calendar', 'theme_essential').'</em>',new moodle_url('/calendar/view.php'),get_string('calendar', 'theme_essential'));
+ 			$branch->add('<em><i class="icon-envelope"></i>'.get_string('messages', 'theme_essential').'</em>',new moodle_url('/message/index.php'),get_string('messages', 'theme_essential'));
+ 			$branch->add('<em><i class="icon-certificate"></i>'.get_string('badges', 'theme_essential').'</em>',new moodle_url('/badges/mybadges.php'),get_string('badges', 'theme_essential'));
+ 			$branch->add('<em><i class="icon-file"></i>'.get_string('privatefiles', 'theme_essential').'</em>',new moodle_url('/user/files.php'),get_string('privatefiles', 'theme_essential'));      
         }
  
         return parent::render_custom_menu($menu);

@@ -20,6 +20,7 @@ Cool things to know about the theme.
  ========================
  - Ability to connect to Google Analytics
  - Can now display current enrolled courses in dropdown menu and choose terminology (modules, courses, classes or units)
+ - New 'My Dashboard" in custommenu provides quick links to student tools. Can be disabled in theme settings.
  - Fix to frontpage slideshow. First slide now loads properly.
  - Advanced Google Analytics function allowing Clean URL's for better reporting. Contributed by @basbrands and @ghenrick. More info on this feature can be found in [this blog post](http://www.somerandomthoughts.com/blog/2012/04/18/ireland-uk-moodlemoot-analytics-to-the-front/)
  - Significantky improved gradebook formatting
