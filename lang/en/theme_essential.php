@@ -81,10 +81,20 @@ $string['perf_max'] = 'Detailed';
 $string['perf_min'] = 'Minimal';
 $string['visibleadminonly'] = 'Blocks moved into the area below will only be seen by admins';
 
-/* My Courses custommenu dropdown */
+/* CustomMenu */
+$string['custommenuheading'] = 'Custom Menu';
+$string['custommenuheadingsub'] = 'Add additional functionality to your custommenu.';
+$string['custommenudesc'] = 'Settings here allow you to add new dynamic functionality to the custommenu (also refered to as Dropdown menu)';
+
+$string['mydashboardinfo'] = 'Custom User Dashboard';
+$string['displaymydashboard'] = 'Display Dashboard';
+$string['displaymydashboarddesc'] = 'Display Dashboard of user links in the Custom Menu';
+
+$string['mycoursesinfo'] = 'Dynamic Enrolled Courses List';
 $string['displaymycourses'] = 'Display enrolled courses';
 $string['displaymycoursesdesc'] = 'Display enrolled courses for users in the Custom Menu';
-$string['mycoursetitle'] = 'Dropdown menu "My Course" Terminology';
+
+$string['mycoursetitle'] = 'Terminology';
 $string['mycoursetitledesc'] = 'Change the terminology for the "My Courses" link in the dropdown menu';
 $string['mycourses'] = 'My Courses';
 $string['myunits'] = 'My Units';
@@ -95,6 +105,14 @@ $string['allunits'] = 'All Units';
 $string['allmodules'] = 'All Modules';
 $string['allclasses'] = 'All Classes';
 $string['noenrolments'] = 'You have no current enrolments';
+
+/* My Dashboard custommenu dropdown */
+$string['mydashboard'] = 'My Dashboard';
+$string['calendar'] = 'Calendar';
+$string['profile'] = 'Profile';
+$string['messages'] = 'Messages';
+$string['badges'] = 'Badges';
+$string['privatefiles'] = 'Private Files';
 
 /* Navbar Seperator */
 $string['navbarsep'] = 'Navbar Separator';
@@ -160,41 +178,19 @@ $string['dontdisplay'] = 'Do not Display';
 $string['readmore'] = 'Read More';
 
 $string['slideshowTitle'] = 'Slideshow';
-$string['slide1'] = 'Slide One: Title';
-$string['slide1desc'] = 'Enter a descriptive title for your slide';
-$string['slide1image'] = 'Slide One: Image';
-$string['slide1imagedesc'] = 'Image works best if it is transparent. (Image size should be 256px x 256px)';
-$string['slide1caption'] = 'Slide One: Caption';
-$string['slide1captiondesc'] = 'Enter the caption text to use for the first slide';
-$string['slide1url'] = 'Slide One: Image Link';
-$string['slide1urldesc'] = 'Enter the target destination of the first slide\'s image link';
+$string['slide1'] = 'Slide One';
+$string['slide2'] = 'Slide Two';
+$string['slide3'] = 'Slide Three';
+$string['slide4'] = 'Slide Four';
 
-$string['slide2'] = 'Slide Two: Title';
-$string['slide2desc'] = 'Enter a descriptive title for your slide';
-$string['slide2image'] = 'Slide Two: Image';
-$string['slide2imagedesc'] = 'Image works best if it is transparent. (Image size should be 256px x 256px)';
-$string['slide2caption'] = 'Slide Two: Caption';
-$string['slide2captiondesc'] = 'Enter the caption text to use for the second slide';
-$string['slide2url'] = 'Slide Two: Image Link';
-$string['slide2urldesc'] = 'Enter the target destination of the second slide\'s image link';
-
-$string['slide3'] = 'Slide Three: Title';
-$string['slide3desc'] = 'Enter a descriptive title for your slide';
-$string['slide3image'] = 'Slide Three: Image';
-$string['slide3imagedesc'] = 'Image works best if it is transparent. (Image size should be 256px x 256px)';
-$string['slide3caption'] = 'Slide Three: Caption';
-$string['slide3captiondesc'] = 'Enter the caption text to use for the third slide';
-$string['slide3url'] = 'Slide Three: Image Link';
-$string['slide3urldesc'] = 'Enter the target destination of the third slide\'s image link';
-
-$string['slide4'] = 'Slide Four: Title';
-$string['slide4desc'] = 'Enter a descriptive title for your slide';
-$string['slide4image'] = 'Slide Four: Image';
-$string['slide4imagedesc'] = 'Image works best if it is transparent. (Image size should be 256px x 256px)';
-$string['slide4caption'] = 'Slide Four: Caption';
-$string['slide4captiondesc'] = 'Enter the caption text to use for the fourth slide';
-$string['slide4url'] = 'Slide Four: Image Link';
-$string['slide4urldesc'] = 'Enter the target destination of the fourth slide\'s image link';
+$string['slidetitle'] = 'Slide Title';
+$string['slidetitledesc'] = 'Enter a descriptive title for your slide';
+$string['slideimage'] = 'Slide Image';
+$string['slideimagedesc'] = 'Image works best if it is transparent. (Image size should be 256px x 256px)';
+$string['slidecaption'] = 'Slide Caption';
+$string['slidecaptiondesc'] = 'Enter the caption text to use for the first slide';
+$string['slideurl'] = 'Slide Link';
+$string['slideurldesc'] = 'Enter the target destination of the first slide\'s image link';
 
 /* Marketing Spots */
 $string['marketingheading'] = 'Marketing Spots';
@@ -207,44 +203,22 @@ $string['togglemarketing'] = 'Toggle Marketing Spot display';
 $string['togglemarketingdesc'] = 'Choose if you wish to hide or show the three Marketing Spots.';
 
 
-$string['marketing1'] = 'Marketing Spot One - Title';
-$string['marketing1desc'] = 'Title to show in this marketing spot';
-$string['marketing1icon'] = 'Marketing Spot One - Icon';
-$string['marketing1icondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "icon-".';
-$string['marketing1image'] = 'Marketing Spot One - Image';
-$string['marketing1imagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot';
-$string['marketing1content'] = 'Marketing Spot One - Content';
-$string['marketing1contentdesc'] = 'Content to display in the marketing box. Keep it short and sweet.';
-$string['marketing1buttontext'] = 'Marketing Spot One - Link Text';
-$string['marketing1buttontextdesc'] = 'Text to appear on the button.';
-$string['marketing1buttonurl'] = 'Marketing Spot One - Link URL';
-$string['marketing1buttonurldesc'] = 'URL the button will point to.';
+$string['marketing1'] = 'Marketing Spot One';
+$string['marketing2'] = 'Marketing Spot Two';
+$string['marketing3'] = 'Marketing Spot Three';
 
-$string['marketing2'] = 'Marketing Spot Two - Title';
-$string['marketing2desc'] = 'Title to show in this marketing spot';
-$string['marketing2icon'] = 'Marketing Spot Two - Icon';
-$string['marketing2icondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. J ust enter what is after the "icon-".';
-$string['marketing2image'] = 'Marketing Spot Two - Image';
-$string['marketing2imagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot';
-$string['marketing2content'] = 'Marketing Spot Two - Content';
-$string['marketing2contentdesc'] = 'Content to display in the marketing box. Keep it short and sweet.';
-$string['marketing2buttontext'] = 'Marketing Spot Two - Link Text';
-$string['marketing2buttontextdesc'] = 'Text to appear on the button.';
-$string['marketing2buttonurl'] = 'Marketing Spot Two - Link URL';
-$string['marketing2buttonurldesc'] = 'URL the button will point to.';
-
-$string['marketing3'] = 'Marketing Spot Three - Title';
-$string['marketing3desc'] = 'Title to show in this marketing spot';
-$string['marketing3icon'] = 'Marketing Spot Three - Icon';
-$string['marketing3icondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "icon-".';
-$string['marketing3image'] = 'Marketing Spot Three - Image';
-$string['marketing3imagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot';
-$string['marketing3content'] = 'Marketing Spot Three - Content';
-$string['marketing3contentdesc'] = 'Content to display in the marketing box. Keep it short and sweet.';
-$string['marketing3buttontext'] = 'Marketing Spot Three - Link Text';
-$string['marketing3buttontextdesc'] = 'Text to appear on the button.';
-$string['marketing3buttonurl'] = 'Marketing Spot Three - Link URL';
-$string['marketing3buttonurldesc'] = 'URL the button will point to.';
+$string['marketingtitle'] = 'Title';
+$string['marketingtitledesc'] = 'Title to show in this marketing spot';
+$string['marketingicon'] = 'Icon';
+$string['marketingicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "icon-".';
+$string['marketingimage'] = 'Image';
+$string['marketingimagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot';
+$string['marketingcontent'] = 'Content';
+$string['marketingcontentdesc'] = 'Content to display in the marketing box. Keep it short and sweet.';
+$string['marketingbuttontext'] = 'Link Text';
+$string['marketingbuttontextdesc'] = 'Text to appear on the button.';
+$string['marketingbuttonurl'] = 'Link URL';
+$string['marketingbuttonurldesc'] = 'URL the button will point to.';
 
 /* Social Networks */
 $string['socialheading'] = 'Social Networking';
