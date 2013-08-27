@@ -154,7 +154,8 @@ defined('MOODLE_INTERNAL') || die;
     //This is the descriptor for the following Moodle color settings
     $name = 'theme_essential/mydashboardinfo';
     $heading = get_string('mydashboardinfo', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading);
+    $information = get_string('mydashboardinfodesc', 'theme_essential');
+    $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
     
     // Toggle dashboard display in custommenu.
@@ -169,7 +170,8 @@ defined('MOODLE_INTERNAL') || die;
     //This is the descriptor for the following Moodle color settings
     $name = 'theme_essential/mycoursesinfo';
     $heading = get_string('mycoursesinfo', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading);
+    $information = get_string('mycoursesinfodesc', 'theme_essential');
+    $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
     
     // Toggle courses display in custommenu.
@@ -321,7 +323,8 @@ defined('MOODLE_INTERNAL') || die;
     //This is the descriptor for Slide One
     $name = 'theme_essential/slide1info';
     $heading = get_string('slide1', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading);
+    $information = get_string('slideinfodesc', 'theme_essential');
+    $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
 
     // Title.
@@ -364,7 +367,8 @@ defined('MOODLE_INTERNAL') || die;
     //This is the descriptor for Slide Two
     $name = 'theme_essential/slide2info';
     $heading = get_string('slide2', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading);
+    $information = get_string('slideinfodesc', 'theme_essential');
+    $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
 
     // Title.
@@ -407,7 +411,8 @@ defined('MOODLE_INTERNAL') || die;
     //This is the descriptor for Slide Three
     $name = 'theme_essential/slide3info';
     $heading = get_string('slide3', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading);
+    $information = get_string('slideinfodesc', 'theme_essential');
+    $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
     
     // Title.
@@ -450,7 +455,8 @@ defined('MOODLE_INTERNAL') || die;
     //This is the descriptor for Slide Four
     $name = 'theme_essential/slide4info';
     $heading = get_string('slide4', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading);
+    $information = get_string('slideinfodesc', 'theme_essential');
+    $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
 
     // Title.
@@ -543,7 +549,8 @@ defined('MOODLE_INTERNAL') || die;
 	//This is the descriptor for Marketing Spot One
     $name = 'theme_essential/marketing1info';
     $heading = get_string('marketing1', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading);
+    $information = get_string('marketinginfodesc', 'theme_essential');
+    $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
 	
 	//Marketing Spot One.
@@ -597,7 +604,8 @@ defined('MOODLE_INTERNAL') || die;
     //This is the descriptor for Marketing Spot Two
     $name = 'theme_essential/marketing2info';
     $heading = get_string('marketing2', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading);
+    $information = get_string('marketinginfodesc', 'theme_essential');
+    $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
     
     //Marketing Spot Two.
@@ -648,10 +656,11 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
-    //This is the descriptor for Marketing Spot Two
+    //This is the descriptor for Marketing Spot Three
     $name = 'theme_essential/marketing3info';
     $heading = get_string('marketing3', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading);
+    $information = get_string('marketinginfodesc', 'theme_essential');
+    $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
     
     //Marketing Spot Three.
@@ -843,7 +852,7 @@ defined('MOODLE_INTERNAL') || die;
     //This is the descriptor for Alert One
     $name = 'theme_essential/alert1info';
     $heading = get_string('alert1', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading);
+    $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
     
     // Enable Alert
@@ -889,7 +898,7 @@ defined('MOODLE_INTERNAL') || die;
     //This is the descriptor for Alert Two
     $name = 'theme_essential/alert2info';
     $heading = get_string('alert2', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading);
+    $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
     
     // Enable Alert
@@ -935,7 +944,7 @@ defined('MOODLE_INTERNAL') || die;
     //This is the descriptor for Alert Three
     $name = 'theme_essential/alert3info';
     $heading = get_string('alert3', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading);
+    $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
     
     // Enable Alert

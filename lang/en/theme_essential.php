@@ -87,10 +87,12 @@ $string['custommenuheadingsub'] = 'Add additional functionality to your customme
 $string['custommenudesc'] = 'Settings here allow you to add new dynamic functionality to the custommenu (also refered to as Dropdown menu)';
 
 $string['mydashboardinfo'] = 'Custom User Dashboard';
+$string['mydashboardinfodesc'] = 'Displays a list of common functions used by users.';
 $string['displaymydashboard'] = 'Display Dashboard';
 $string['displaymydashboarddesc'] = 'Display Dashboard of user links in the Custom Menu';
 
 $string['mycoursesinfo'] = 'Dynamic Enrolled Courses List';
+$string['mycoursesinfodesc'] = 'Displays a dynamic list of enrolled courses to the user.';
 $string['displaymycourses'] = 'Display enrolled courses';
 $string['displaymycoursesdesc'] = 'Display enrolled courses for users in the Custom Menu';
 
@@ -178,6 +180,7 @@ $string['dontdisplay'] = 'Do not Display';
 $string['readmore'] = 'Read More';
 
 $string['slideshowTitle'] = 'Slideshow';
+$string['slideinfodesc'] = 'Enter the settings for your slide.';
 $string['slide1'] = 'Slide One';
 $string['slide2'] = 'Slide Two';
 $string['slide3'] = 'Slide Three';
@@ -194,6 +197,7 @@ $string['slideurldesc'] = 'Enter the target destination of the first slide\'s im
 
 /* Marketing Spots */
 $string['marketingheading'] = 'Marketing Spots';
+$string['marketinginfodesc'] = 'Enter the settings for your marketing spot.';
 $string['marketingheadingsub'] = 'Three locations on the front page to add information and links';
 $string['marketingheight'] = 'Height of Marketing Images';
 $string['marketingheightdesc'] = 'If you want to display images in the Marketing boxes you can specify their hight here.';
