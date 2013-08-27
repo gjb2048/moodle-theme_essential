@@ -274,6 +274,12 @@ ul.socials {
   background-image: -o-linear-gradient(top, [[setting:themecolor]], [[setting:themehovercolor]]);
   background-image: linear-gradient(to bottom, [[setting:themecolor]], [[setting:themehovercolor]]);
 }
+
+.dropdown [class^="icon-"] {
+	font-size: 1.2em;
+	margin-right: 5px;
+	vertical-align: middle;	
+}
 /* @end */
 
 /* @group Navbar

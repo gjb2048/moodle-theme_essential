@@ -76,6 +76,30 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
+    // Custom or standard layout.
+    $name = 'theme_essential/displaymycourses';
+    $title = get_string('displaymycourses', 'theme_essential');
+    $description = get_string('displaymycoursesdesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // Set terminology for dropdown course list
+	$name = 'theme_essential/mycoursetitle';
+	$title = get_string('mycoursetitle','theme_essential');
+	$description = get_string('mycoursetitledesc', 'theme_essential');
+	$default = 'course';
+	$choices = array(
+		'course' => get_string('mycourses', 'theme_essential'),
+		'unit' => get_string('myunits', 'theme_essential'),
+		'class' => get_string('myclasses', 'theme_essential'),
+		'module' => get_string('mymodules', 'theme_essential')
+	);
+	$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+	$setting->set_updatedcallback('theme_reset_all_caches');
+	$temp->add($setting);
+    
     //Include the Editicons css rules
     $name = 'theme_essential/editicons';
     $visiblename = get_string('editicons', 'theme_essential');

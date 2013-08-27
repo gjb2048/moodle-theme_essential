@@ -87,6 +87,45 @@
         return $output . $footer;
     }
     
+    /*
+    * This code replaces adds the current enrolled
+    * courses to the custommenu.
+    */
+	
+		
+    protected function render_custom_menu(custom_menu $menu) {
+    	$hasdisplaymycourses = (empty($this->page->theme->settings->displaymycourses)) ? false : $this->page->theme->settings->displaymycourses;
+        if (isloggedin() && $hasdisplaymycourses) {
+        	$mycoursetitle = $this->page->theme->settings->mycoursetitle;
+            if ($mycoursetitle == 'module') {
+				$branchlabel = '<i class="icon-briefcase"></i>'.get_string('mymodules', 'theme_essential');
+			} else if ($mycoursetitle == 'unit') {
+				$branchlabel = '<i class="icon-briefcase"></i>'.get_string('myunits', 'theme_essential');
+			} else if ($mycoursetitle == 'class') {
+				$branchlabel = '<i class="icon-briefcase"></i>'.get_string('myclasses', 'theme_essential');
+			} else {
+				$branchlabel = '<i class="icon-briefcase"></i>'.get_string('mycourses', 'theme_essential');
+			}
+            $branchurl   = new moodle_url('/my/index.php');
+            $branchtitle = $branchlabel;
+            $branchsort  = 10000;
+ 
+            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+ 			if ($courses = enrol_get_my_courses(NULL, 'fullname ASC')) {
+ 				foreach ($courses as $course) {
+ 					if ($course->visible){
+ 						$branch->add(format_string($course->fullname), new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
+ 					}
+ 				}
+ 			} else {
+ 				$branch->add('<em>'.get_string('noenrolments', 'theme_essential').'</em>',new moodle_url('/'),get_string('noenrolments', 'theme_essential'));
+ 			}
+            
+        }
+ 
+        return parent::render_custom_menu($menu);
+    }
+    
  	/*
     * This code replaces the icons in the Admin block with
     * FontAwesome variants where available.

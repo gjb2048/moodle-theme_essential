@@ -81,6 +81,21 @@ $string['perf_max'] = 'Detailed';
 $string['perf_min'] = 'Minimal';
 $string['visibleadminonly'] = 'Blocks moved into the area below will only be seen by admins';
 
+/* My Courses custommenu dropdown */
+$string['displaymycourses'] = 'Display enrolled courses';
+$string['displaymycoursesdesc'] = 'Display enrolled courses for users in the Custom Menu';
+$string['mycoursetitle'] = 'Dropdown menu "My Course" Terminology';
+$string['mycoursetitledesc'] = 'Change the terminology for the "My Courses" link in the dropdown menu';
+$string['mycourses'] = 'My Courses';
+$string['myunits'] = 'My Units';
+$string['mymodules'] = 'My Modules';
+$string['myclasses'] = 'My Classes';
+$string['allcourses'] = 'All Courses';
+$string['allunits'] = 'All Units';
+$string['allmodules'] = 'All Modules';
+$string['allclasses'] = 'All Classes';
+$string['noenrolments'] = 'You have no current enrolments';
+
 /* Navbar Seperator */
 $string['navbarsep'] = 'Navbar Separator';
 $string['navbarsepdesc'] = 'Here you can change the type of separator displayed in the navbar/breadcrumb';
