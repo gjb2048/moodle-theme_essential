@@ -98,15 +98,18 @@
         	$mycoursetitle = $this->page->theme->settings->mycoursetitle;
             if ($mycoursetitle == 'module') {
 				$branchlabel = '<i class="icon-briefcase"></i>'.get_string('mymodules', 'theme_essential');
+				$branchtitle = get_string('mymodules', 'theme_essential');
 			} else if ($mycoursetitle == 'unit') {
 				$branchlabel = '<i class="icon-briefcase"></i>'.get_string('myunits', 'theme_essential');
+				$branchtitle = get_string('myunits', 'theme_essential');
 			} else if ($mycoursetitle == 'class') {
 				$branchlabel = '<i class="icon-briefcase"></i>'.get_string('myclasses', 'theme_essential');
+				$branchtitle = get_string('myclasses', 'theme_essential');
 			} else {
 				$branchlabel = '<i class="icon-briefcase"></i>'.get_string('mycourses', 'theme_essential');
+				$branchtitle = get_string('mycourses', 'theme_essential');
 			}
             $branchurl   = new moodle_url('/my/index.php');
-            $branchtitle = $branchlabel;
             $branchsort  = 10000;
  
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
