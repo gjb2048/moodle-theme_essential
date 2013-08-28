@@ -1,4 +1,10 @@
-.dockbutton{
+/*
+ * @author    Bas Brands and Julian Ridden
+ * @package   theme_essential
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+ 
+ .dockbutton{
 	display:inline-block;
 	display:list-item;
 	*display:inline;
