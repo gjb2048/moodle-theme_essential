@@ -78,6 +78,41 @@ $string['perf_max'] = 'Детально';
 $string['perf_min'] = 'Минимально';
 $string['visibleadminonly'] = 'Блоки, размещенные в этой области, доступны только администраторам';
 
+/* CustomMenu */
+$string['custommenuheading'] = 'Пользовательское меню';
+$string['custommenuheadingsub'] = 'Включает новые возможности пользовательского меню.';
+$string['custommenudesc'] = 'Эти настройки разрешают добавлять динамическое пользовательское меню (так же может называтся раскрывающийся список)';
+
+$string['mydashboardinfo'] = 'Личный кабинет пользователя';
+$string['mydashboardinfodesc'] = 'Отображает список общих функций, используемых пользователями.';
+$string['displaymydashboard'] = 'Отображать личный кабинет';
+$string['displaymydashboarddesc'] = 'Отображать ссылку на личный кабинет в пользовательском меню';
+
+$string['mycoursesinfo'] = 'Динамический список изучаемых курсов';
+$string['mycoursesinfodesc'] = 'Отображать динамический список изучаемых пользователями курсов.';
+$string['displaymycourses'] = 'Отображать илучаемые курсы';
+$string['displaymycoursesdesc'] = 'Отображать изучаемые курсы в пользовательском меню';
+
+$string['mycoursetitle'] = 'Терминология';
+$string['mycoursetitledesc'] = 'Измените терминологию для ссылки "Мои курсы" в выпадающем меню';
+$string['mycourses'] = 'Мои курсы';
+$string['myunits'] = 'Мои задания';
+$string['mymodules'] = 'Мои модули';
+$string['myclasses'] = 'Мои классы';
+$string['allcourses'] = 'Все курсы';
+$string['allunits'] = 'Все задания';
+$string['allmodules'] = 'Все модули';
+$string['allclasses'] = 'Все классы';
+$string['noenrolments'] = 'Вы не подписаны ни на один курс';
+
+/* My Dashboard custommenu dropdown */
+$string['mydashboard'] = 'Личный кабинет';
+$string['calendar'] = 'Календарь';
+$string['profile'] = 'Профиль';
+$string['messages'] = 'Сообщения';
+$string['badges'] = 'Значки';
+$string['privatefiles'] = 'Мои файлы';
+
 /* Navbar Seperator */
 $string['navbarsep'] = 'Разделитель на панели навигации';
 $string['navbarsepdesc'] = 'Здесь вы можете изменить тип разделителя используемого в панели навигации';
