@@ -165,8 +165,8 @@ echo $OUTPUT->doctype() ?>
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google web fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
     <noscript>
 			<link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/essential/style/nojs.css" />
 	</noscript>
