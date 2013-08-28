@@ -293,7 +293,7 @@ $string['alertsheadingsub'] = 'Display important messages to your users on the f
 $string['alertsdesc'] = 'This will display an alert (or multiple) in three different styles to your users on the Moodle frontpage. Please remember to disable these when no longer needed.';
 
 $string['enablealert'] = 'Enable Alert';
-$string['enablealertdesc'] = 'Enabe or disable alerts';
+$string['enablealertdesc'] = 'Enable or disable alerts';
 
 $string['alert1'] = 'First Alert';
 $string['alert2'] = 'Second Alert';
