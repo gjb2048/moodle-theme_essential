@@ -24,11 +24,6 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$hasheading = ($PAGE->heading);
-$hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
-$hasfooter = (empty($PAGE->layout_options['nofooter']));
-$hasheader = (empty($PAGE->layout_options['noheader']));
-
 $hasfooterleft = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-left', $OUTPUT));
 $hasfootermiddle = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-middle', $OUTPUT));
 $hasfooterright = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-right', $OUTPUT));
@@ -42,8 +37,6 @@ $hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->t
 $haslogo = (!empty($PAGE->theme->settings->logo));
 
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
-$custommenu = $OUTPUT->custom_menu();
-$hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
 
 if (right_to_left()) {
     $regionbsid = 'region-bs-main-and-post';
@@ -67,11 +60,7 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<?php 
-if ($hasheader) {
-    require_once(dirname(__FILE__).'/header.php');
-}
-?>
+<?php require_once(dirname(__FILE__).'/header.php'); ?>
 
 <header role="banner" class="navbar">
     <nav role="navigation" class="navbar-inner">
@@ -83,11 +72,9 @@ if ($hasheader) {
                 <span class="icon-bar"></span>
             </a>
             <div class="nav-collapse collapse">
-            <?php if ($hascustommenu) {
-                echo $custommenu;
-            } ?>
+            <?php echo $OUTPUT->custom_menu(); ?>
             <ul class="nav pull-right">
-            <li><?php echo $PAGE->headingmenu ?></li>
+            <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
             <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
             </ul>
             </div>
@@ -95,12 +82,37 @@ if ($hasheader) {
     </nav>
 </header>
 
-	<?php if ($hasboringlayout) { ?>
-		<?php require_once(dirname(__FILE__).'/standard.php'); ?>
-	<?php } else { ?>
-		<?php require_once(dirname(__FILE__).'/essential.php'); ?>
-	<?php } ?>
-     
+<!-- Start Main Regions -->
+<div id="page" class="container-fluid">
+	<div id="page-content" class="row-fluid">
+        <div id="<?php echo $regionbsid ?>" class="span9">
+            <div class="row-fluid">
+                <?php if ($hasboringlayout) {
+	            	echo '<section id="region-main" class="span8 pull-right">';
+                } else {
+                	echo '<section id="region-main" class="span8">';
+                } ?>
+                	<div id="page-navbar" class="clearfix">
+            			<nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
+            			<div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
+        			</div>
+                    <?php
+                    echo $OUTPUT->course_content_header();
+                    echo $OUTPUT->main_content();
+                    echo $OUTPUT->course_content_footer();
+                    ?>
+                </section>
+                <?php if ($hasboringlayout) {
+	            	echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column');
+                } else {
+                	echo $OUTPUT->blocks('side-pre', 'span4 pull-right');
+                } ?>
+            </div>
+        </div>
+        <?php echo $OUTPUT->blocks('side-post', 'span3'); ?>
+    </div>
+</div>
+<!-- End Main Regions -->  
 
 <footer id="page-footer" class="container-fluid">
             <?php require_once(dirname(__FILE__).'/footer.php'); ?>
@@ -112,8 +124,9 @@ if ($hasheader) {
 
 <!-- Start Google Analytics -->
 <?php if ($hasanalytics) { ?>
-		<?php require_once(dirname(__FILE__).'/analytics.php'); ?>
+	<?php require_once(dirname(__FILE__).'/analytics.php'); ?>
 <?php } ?>
 <!-- End Google Analytics -->
+
 </body>
 </html>
