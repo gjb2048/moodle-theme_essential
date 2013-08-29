@@ -104,9 +104,9 @@ $THEME->layouts = array(
     ),
     // Public Login page.
     'login' => array(
-        'file' => 'general.php',
-        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-post',
+        'file' => 'login.php',
+        'regions' => array('footer-left', 'footer-middle', 'footer-right'),
+        'defaultregion' => 'footer-right',
         'options' => array('langmenu'=>true),
     ),
     // Server administration scripts.
