@@ -23,11 +23,16 @@ Cool things to know about the theme.
  - Alerts for users can be added to te frontpage. (Originally dreamed up by Shaun Daubney and re-coded by me)
  - Theme options to connect to Google Analytics
  - Advanced Google Analytics function allowing Clean URL's for better reporting. Contributed by @basbrands and @ghenrick. More info on this feature can be found in [this blog post](http://www.somerandomthoughts.com/blog/2012/04/18/ireland-uk-moodlemoot-analytics-to-the-front/)
- - Significantky improved gradebook formatting
+ - Significantly improved gradebook formatting
+ - Back to top button for course pages
  - New "Frontpage Content" box to add custom content inbetween the slideshow and marketing spots.
+ 
+ Fixes in 2.5.4
+ =======================
  - Fix to frontpage slideshow. First slide now loads properly.
  - Updated include method to minimse conflicts with 3rd party plugins
- - Minor CSS Fixes
+ - Code significanty optimised. (about 1/5 less lines!)
+ - Many CSS Fixes
  - IMPORTANT: Theme requires Moodle 2.5.1 or higher
 
  New in 2.5.3

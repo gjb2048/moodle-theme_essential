@@ -112,7 +112,9 @@ echo $OUTPUT->doctype() ?>
         <?php echo $OUTPUT->blocks('side-post', 'span3'); ?>
     </div>
 </div>
-<!-- End Main Regions -->  
+<!-- End Main Regions --> 
+ 
+<a href="#top" class="back-to-top"><i class="icon-chevron-sign-up"></i><p><?php print_string('backtotop', 'theme_essential'); ?></p></a>
 
 <footer id="page-footer" class="container-fluid">
             <?php require_once(dirname(__FILE__).'/footer.php'); ?>
@@ -128,5 +130,24 @@ echo $OUTPUT->doctype() ?>
 <?php } ?>
 <!-- End Google Analytics -->
 
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    var offset = 220;
+    var duration = 500;
+    jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() > offset) {
+            jQuery('.back-to-top').fadeIn(duration);
+        } else {
+            jQuery('.back-to-top').fadeOut(duration);
+        }
+    });
+    
+    jQuery('.back-to-top').click(function(event) {
+        event.preventDefault();
+        jQuery('html, body').animate({scrollTop: 0}, duration);
+        return false;
+    })
+});
+</script>
 </body>
 </html>
