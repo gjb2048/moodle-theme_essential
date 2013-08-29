@@ -81,7 +81,7 @@ defined('MOODLE_INTERNAL') || die;
     $visiblename = get_string('editicons', 'theme_essential');
     $title = get_string('editicons', 'theme_essential');
     $description = get_string('editiconsdesc', 'theme_essential');
-    $setting = new admin_setting_configcheckbox($name, $visiblename, $description, 1);
+    $setting = new admin_setting_configcheckbox($name, $visiblename, $description, 0);
     $temp->add($setting);
     
     //Include the Autohide css rules
@@ -89,7 +89,7 @@ defined('MOODLE_INTERNAL') || die;
     $visiblename = get_string('autohide', 'theme_essential');
     $title = get_string('autohide', 'theme_essential');
     $description = get_string('autohidedesc', 'theme_essential');
-    $setting = new admin_setting_configcheckbox($name, $visiblename, $description, 1);
+    $setting = new admin_setting_configcheckbox($name, $visiblename, $description, 0);
     $temp->add($setting);
     
     // Performance Information Display.
