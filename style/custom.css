@@ -1786,8 +1786,30 @@ table#user-grades th.userreport.c1 {
 
 /* @end */
 
-/** Path: theme login **/
+.back-to-top [class^="icon-"] {
+	font-size: 3em;
+}
 
+.back-to-top{
+	position: fixed;
+	bottom: 2em;
+	left: 10px;
+	display: none;
+	text-align:center; 
+	font:11px/100% Oswald; 
+	text-transform:uppercase; 
+	text-decoration:none; 
+	color:[[setting:themecolor]];
+}
+
+.back-to-top p{
+	margin-top: 5px;
+}
+
+.back-to-top:hover{
+	color:[[setting:themehovercolor]];
+	text-decoration: none;
+}
 
 /**
  * editicons CSS
