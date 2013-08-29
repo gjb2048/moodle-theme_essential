@@ -31,6 +31,7 @@ $THEME->name = 'essential';
 // in version.php and lang/en/theme_essential.php as well.
 
 $THEME->doctype = 'html5';
+$THEME->yuicssmodules = array();
 $THEME->parents = array('bootstrapbase');
 $THEME->sheets = array('custom', 'slides', 'dock', 'font-awesome');
 $THEME->supportscssoptimisation = false;
@@ -66,20 +67,20 @@ $THEME->layouts = array(
     'standard' => array(
         'file' => 'general.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
-        'defaultregion' => 'side-pre',
+        'defaultregion' => 'side-post',
     ),
     // Course page.
     'course' => array(
         'file' => 'course.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-pre',
+        'defaultregion' => 'side-post',
          'options' => array('nonavbar'=>false),
     ),
     // Page content and modules.
     'incourse' => array(
         'file' => 'general.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-pre',
+        'defaultregion' => 'side-post',
     ),
     // Category listing page.
     	'coursecategory' => array(
@@ -91,28 +92,28 @@ $THEME->layouts = array(
     'mydashboard' => array(
         'file' => 'general.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-pre',
+        'defaultregion' => 'side-post',
         'options' => array('langmenu'=>true),
     ),
     // My public page.
     'mypublic' => array(
         'file' => 'general.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-pre',
+        'defaultregion' => 'side-post',
         'options' => array('langmenu'=>true),
     ),
     // Public Login page.
     'login' => array(
         'file' => 'general.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-pre',
+        'defaultregion' => 'side-post',
         'options' => array('langmenu'=>true),
     ),
     // Server administration scripts.
     'admin' => array(
         'file' => 'report.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-pre',
+        'defaultregion' => 'side-post',
     ),
     // Report Pages.
     'report' => array(
@@ -125,7 +126,7 @@ $THEME->layouts = array(
     'maintenance' => array(
         'file' => 'general.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-pre',
+        'defaultregion' => 'side-post',
     ),
 
 );
@@ -145,6 +146,12 @@ $useragent = '';
 if (!empty($_SERVER['HTTP_USER_AGENT'])) {
     $useragent = $_SERVER['HTTP_USER_AGENT'];
 }
-if (strpos($useragent, 'MSIE 8') || strpos($useragent, 'MSIE 7')) {
+
+if (check_browser_version('MSIE') && !check_browser_version('MSIE', '9.0')) {
     $THEME->javascripts[] = 'html5shiv';
-};
+}
+
+$THEME->blockrtlmanipulations = array(
+    'side-pre' => 'side-post',
+    'side-post' => 'side-pre'
+);
