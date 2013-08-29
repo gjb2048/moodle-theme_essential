@@ -110,11 +110,6 @@ $string['noenrolments'] = 'You have no current enrolments';
 
 /* My Dashboard custommenu dropdown */
 $string['mydashboard'] = 'My Dashboard';
-$string['calendar'] = 'Calendar';
-$string['profile'] = 'Profile';
-$string['messages'] = 'Messages';
-$string['badges'] = 'Badges';
-$string['privatefiles'] = 'Private Files';
 
 /* Navbar Seperator */
 $string['navbarsep'] = 'Navbar Separator';
