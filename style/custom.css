@@ -1771,6 +1771,7 @@ table#user-grades th.userreport.c1 {
 
 /* @end */
 
+/* @group Alerts */
 
 .useralerts [class^="icon-stack"] {
 	float: left;
@@ -1782,6 +1783,12 @@ table#user-grades th.userreport.c1 {
 	font-weight: bold;
 	margin-right: 10px;
 }
+
+/* @end */
+
+/** Path: theme login **/
+
+
 /**
  * editicons CSS
  * This adds the special editicons css in editicons.css if the setting is enabled.
