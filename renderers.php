@@ -137,11 +137,12 @@
             $branchsort  = 10000;
  
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
- 			$branch->add('<em><i class="icon-user"></i>'.get_string('profile', 'theme_essential').'</em>',new moodle_url('/user/profile.php'),get_string('profile', 'theme_essential'));
- 			$branch->add('<em><i class="icon-calendar"></i>'.get_string('calendar', 'theme_essential').'</em>',new moodle_url('/calendar/view.php'),get_string('calendar', 'theme_essential'));
- 			$branch->add('<em><i class="icon-envelope"></i>'.get_string('messages', 'theme_essential').'</em>',new moodle_url('/message/index.php'),get_string('messages', 'theme_essential'));
- 			$branch->add('<em><i class="icon-certificate"></i>'.get_string('badges', 'theme_essential').'</em>',new moodle_url('/badges/mybadges.php'),get_string('badges', 'theme_essential'));
- 			$branch->add('<em><i class="icon-file"></i>'.get_string('privatefiles', 'theme_essential').'</em>',new moodle_url('/user/files.php'),get_string('privatefiles', 'theme_essential'));      
+ 			$branch->add('<em><i class="icon-user"></i>'.get_string('profile').'</em>',new moodle_url('/user/profile.php'),get_string('profile', 'theme_essential'));
+ 			$branch->add('<em><i class="icon-calendar"></i>'.get_string('pluginname', 'block_calendar_month').'</em>',new moodle_url('/calendar/view.php'),get_string('calendar', 'theme_essential'));
+ 			$branch->add('<em><i class="icon-envelope"></i>'.get_string('pluginname', 'block_messages').'</em>',new moodle_url('/message/index.php'),get_string('messages', 'theme_essential'));
+ 			$branch->add('<em><i class="icon-certificate"></i>'.get_string('badges').'</em>',new moodle_url('/badges/mybadges.php'),get_string('badges', 'theme_essential'));
+ 			$branch->add('<em><i class="icon-file"></i>'.get_string('privatefiles', 'block_private_files').'</em>',new moodle_url('/user/files.php'),get_string('privatefiles', 'theme_essential'));
+ 			$branch->add('<em><i class="icon-signout"></i>'.get_string('logout').'</em>',new moodle_url('/login/logout.php'),get_string('privatefiles', 'theme_essential'));    
         }
  
         return parent::render_custom_menu($menu);
