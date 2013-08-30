@@ -1,7 +1,7 @@
 The "Essential" Moodle Theme
 ======================
 
-With 2.5 now release I thought it time to take the opportunity to build a new theme that would push the new theme engine to it's limits a bit. With that in mind I am happy to introduce the new "Essential" theme.
+With 2.5 now released I thought it time to take the opportunity to build a new theme that would push the new theme engine to it's limits a bit. With that in mind I am happy to introduce the new "Essential" theme.
 
 The idea of this theme, as usual with my themes, is to make the site look as little like Moodle as possible. In this specific instance, it would be used on sites where Moodle would potentially serve as a company homepage rather than just a course list.
 
@@ -18,14 +18,15 @@ Cool things to know about the theme.
  
  New in 2.5.4
  ========================
- - Display current enrolled courses in dropdown menu and choose terminology (modules, courses, classes or units)
+ - Display current enrolled courses in dropdown menu and choose terminology (modules, courses, classes or units).
  - New 'My Dashboard" in custommenu provides quick links to student tools. Can be disabled in theme settings.
- - Alerts for users can be added to te frontpage. (Originally dreamed up by Shaun Daubney and re-coded by me)
- - Theme options to connect to Google Analytics
+ - Alerts for users can be added to te frontpage. (Originally dreamed up by Shaun Daubney and re-coded by me).
+ - Theme options to connect to Google Analytics.
  - Advanced Google Analytics function allowing Clean URL's for better reporting. Contributed by @basbrands and @ghenrick. More info on this feature can be found in [this blog post](http://www.somerandomthoughts.com/blog/2012/04/18/ireland-uk-moodlemoot-analytics-to-the-front/)
- - Significantly improved gradebook formatting
- - Back to top button for course pages
- - New "Frontpage Content" box to add custom content inbetween the slideshow and marketing spots.
+ - Significantly improved gradebook formatting.
+ - Toggle in Theme settings determines if FontAwesome is loaded from the theme or from the netdna.bootstrapcdn.com source.
+ - Back to top button for course pages.
+ - New "Frontpage Content" box to add custom content in between the slideshow and marketing spots.
  
  Fixes in 2.5.4
  =======================
