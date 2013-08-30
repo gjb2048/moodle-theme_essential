@@ -46,7 +46,13 @@ function theme_essential_set_fontwww($css) {
         $themewww = $CFG->themewww;
     }
     $tag = '[[setting:fontwww]]';
-    $css = str_replace($tag, $themewww.'/essential/fonts/', $css);
+    
+    $theme = theme_config::load('essential');
+    if (!empty($theme->settings->bootstrapcdn)) {
+    	$css = str_replace($tag, 'http://netdna.bootstrapcdn.com/font-awesome/3.2.1/font/', $css);
+    } else {
+    	$css = str_replace($tag, $themewww.'/essential/fonts/', $css);
+    }
     return $css;
 }
 
