@@ -1793,7 +1793,7 @@ table#user-grades th.userreport.c1 {
 .back-to-top{
 	position: fixed;
 	bottom: 2em;
-	left: 10px;
+	left: 50%;
 	display: none;
 	text-align:center; 
 	font:11px/100% Oswald; 
