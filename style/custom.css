@@ -1664,7 +1664,7 @@ table#user-grades .catlevel1,
 table#user-grades .catlevel2,
 table#user-grades .catlevel3,
 table#user-grades .catlevel4 {
-	padding: 10px;
+	padding: 0px 10px;
 	border-right: 1px solid #ddd;
 }
 
