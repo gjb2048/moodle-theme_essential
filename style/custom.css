@@ -1622,14 +1622,14 @@ width: 67%;
 .mform .fitem div.fitemtitle, 
 .userprofile dl.list dt, 
 .form-horizontal .control-label { 
-	width: 90px; 
+	width: 150px; 
 }
 
 .form-item .form-setting, 
 .form-item .form-description, 
 .mform .fitem .felement, 
 #page-mod-forum-search .c1 { 
-	margin-left: 10px; 
+	margin-left: 250px; 
 }
 
 /* @end */
