@@ -20,7 +20,8 @@ Cool things to know about the theme.
  ========================
  - Display current enrolled courses in dropdown menu and choose terminology (modules, courses, classes or units).
  - New 'My Dashboard" in custommenu provides quick links to student tools. Can be disabled in theme settings.
- - Alerts for users can be added to te frontpage. (Originally dreamed up by Shaun Daubney and re-coded by me).
+ - iOS home screen icons now built in. Can upload your own via settings.
+ - Alerts for users can be added to the frontpage. (Originally dreamed up by Shaun Daubney and re-coded by me).
  - Theme options to connect to Google Analytics.
  - Advanced Google Analytics function allowing Clean URL's for better reporting. Contributed by @basbrands and @ghenrick. More info on this feature can be found in [this blog post](http://www.somerandomthoughts.com/blog/2012/04/18/ireland-uk-moodlemoot-analytics-to-the-front/)
  - Significantly improved gradebook formatting.
