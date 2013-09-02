@@ -145,6 +145,8 @@ echo $OUTPUT->doctype() ?>
     <!-- Google web fonts -->
     <link href='//fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+    <!-- iOS Homescreen Icons -->
+    <?php require_once(dirname(__FILE__).'/iosicons.php'); ?>
     <noscript>
 			<link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/essential/style/nojs.css" />
 	</noscript>

@@ -840,6 +840,45 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
+    //This is the descriptor for iOS Icons
+    $name = 'theme_essential/iosiconinfo';
+    $heading = get_string('iosicon', 'theme_essential');
+    $information = get_string('iosicondesc', 'theme_essential');
+    $setting = new admin_setting_heading($name, $heading, $information);
+    $temp->add($setting);
+    
+    // iPhone Icon.
+    $name = 'theme_essential/iphoneicon';
+    $title = get_string('iphoneicon', 'theme_essential');
+    $description = get_string('iphoneicondesc', 'theme_essential');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'iphoneicon');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // iPhone Retina Icon.
+    $name = 'theme_essential/iphoneretinaicon';
+    $title = get_string('iphoneretinaicon', 'theme_essential');
+    $description = get_string('iphoneretinaicondesc', 'theme_essential');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'iphoneretinaicon');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // iPad Icon.
+    $name = 'theme_essential/ipadicon';
+    $title = get_string('ipadicon', 'theme_essential');
+    $description = get_string('ipadicondesc', 'theme_essential');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'ipadicon');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // iPad Retina Icon.
+    $name = 'theme_essential/ipadretinaicon';
+    $title = get_string('ipadretinaicon', 'theme_essential');
+    $description = get_string('ipadretinaicondesc', 'theme_essential');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'ipadretinaicon');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
     $ADMIN->add('theme_essential', $temp);
     
     /* User Alerts */

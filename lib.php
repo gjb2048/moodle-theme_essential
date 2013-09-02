@@ -107,6 +107,14 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
             return $theme->setting_file_serve('marketing2image', $args, $forcedownload, $options);
         } else if ($filearea === 'marketing3image') {
             return $theme->setting_file_serve('marketing3image', $args, $forcedownload, $options);
+        } else if ($filearea === 'iphoneicon') {
+            return $theme->setting_file_serve('iphoneicon', $args, $forcedownload, $options);
+        } else if ($filearea === 'iphoneretinaicon') {
+            return $theme->setting_file_serve('iphoneretinaicon', $args, $forcedownload, $options);
+        } else if ($filearea === 'ipadicon') {
+            return $theme->setting_file_serve('ipadicon', $args, $forcedownload, $options);
+        } else if ($filearea === 'ipadretinaicon') {
+            return $theme->setting_file_serve('ipadretinaicon', $args, $forcedownload, $options);
         } else {
             send_file_not_found();
         }
