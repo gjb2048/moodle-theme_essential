@@ -158,6 +158,10 @@ h2#subtitle {
 	background: [[setting:themehovercolor]];
 }
 
+.breadcrumb-button a{
+    color: #fff;
+}
+
 /* @group Social Buttons */
 
 .socials p {
