@@ -24,17 +24,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$pre = 'side-pre';
-$post = 'side-post';
-if (right_to_left()) {
-    $regionbsid = 'region-bs-main-and-post';
-    // In RTL the sides are reversed, so swap the 'essentialblocks' method parameter....
-    $temp = $pre;
-    $pre = $post;
-    $post = $temp;
-} else {
-    $regionbsid = 'region-bs-main-and-pre';
-}
+$ltr = (!right_to_left());  // To know if to add 'pull-right' and 'desktop-first-column' classes in the layout for LTR.
 
 $haslogo = (!empty($PAGE->theme->settings->logo));
 $hasboringlayout = (empty($PAGE->theme->settings->layout)) ? false : $PAGE->theme->settings->layout;
@@ -43,12 +33,6 @@ $hassidepre = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region
 $hassidepost = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-post', $OUTPUT));
 $contentclass = 'span8';
 $blockclass = 'span4';
-
-if (!($hassidepre AND $hassidepost)) {
-    // Two columns.
-    $contentclass = 'span9';
-    $blockclass = 'span3';
-}
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
@@ -91,22 +75,26 @@ echo $OUTPUT->doctype() ?>
 <!-- Start Main Regions -->
 <div id="page" class="container-fluid">
 	<div id="page-content" class="row-fluid">
-		<?php echo $OUTPUT->essentialblocks($pre, 'span3 desktop-first-column'); ?>
-        <div id="<?php echo $regionbsid ?>" class="span9  pull-right">
-            <div class="row-fluid">
-				<section id="region-main" class="row-fluid">
-					<div id="page-navbar" class="clearfix">
-						<nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-						<div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
-					</div>
-					<?php
-					echo $OUTPUT->course_content_header();
-					echo $OUTPUT->main_content();
-					echo $OUTPUT->course_content_footer();
-					?>
-				</section>
-			</div>
+        <div id="region-main" class="span9<?php if ($ltr) { echo ' pull-right'; } ?>">
+            <section id="region-main" class="row-fluid">
+				<div id="page-navbar" class="clearfix">
+					<nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
+					<div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
+				</div>
+                <?php
+                echo $OUTPUT->course_content_header();
+                echo $OUTPUT->main_content();
+                echo $OUTPUT->course_content_footer();
+                ?>
+            </section>
         </div>
+        <?php
+        $classextra = '';
+        if ($ltr) {
+            $classextra = ' desktop-first-column';
+        }
+        echo $OUTPUT->essentialblocks('side-pre', 'span3'.$classextra);
+        ?>
     </div>
 </div>
 <!-- End Main Regions --> 
