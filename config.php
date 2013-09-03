@@ -71,7 +71,7 @@ $THEME->layouts = array(
     ),
     // Course page.
     'course' => array(
-        'file' => 'general.php',
+        'file' => 'course.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-post',
          'options' => array('nonavbar'=>false),
