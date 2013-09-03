@@ -36,17 +36,13 @@ $hasfooterright = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->re
 
 ?>
 	<div class="row-fluid">
-       			<?php if ($hasfooterleft) {
+		<?php
             		echo $OUTPUT->essentialblocks($footerl, 'span4');
-        		} ?>
-        		
-        		<?php if ($hasfootermiddle) {
+
             		echo $OUTPUT->essentialblocks($footerm, 'span4');
-        		} ?>
-        		
-        		<?php if ($hasfooterright) {
+
             		echo $OUTPUT->essentialblocks($footerr, 'span4');
-        		} ?>
+		?>
  	</div>
 
 	<div class="footerlinks row-fluid">
