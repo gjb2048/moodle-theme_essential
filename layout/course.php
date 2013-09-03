@@ -109,6 +109,10 @@ echo $OUTPUT->doctype() ?>
                 	<div id="region-main-essential" class="<?php echo $contentclass; ?>">
                 <?php } ?>
                     <section id="region-main" class="row-fluid">
+                    	<div id="page-navbar" class="clearfix">
+            				<nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
+            				<div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
+        				</div>
                         <?php
                         echo $OUTPUT->course_content_header();
                         echo $OUTPUT->main_content();
