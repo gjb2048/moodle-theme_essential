@@ -26,8 +26,9 @@
 
 $pre = 'side-pre';
 $post = 'side-post';
+$rtl = right_to_left();
 
-if (right_to_left()) {
+if ($rtl) {
     $regionbsid = 'region-bs-main-and-post';
     // In RTL the sides are reversed, so swap the 'essentialblocks' method parameter....
     $temp = $pre;
@@ -42,6 +43,7 @@ $hasboringlayout = (empty($PAGE->theme->settings->layout)) ? false : $PAGE->them
 $hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
 $hassidepre = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-pre', $OUTPUT));
 $hassidepost = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-post', $OUTPUT));
+$regionclass = 'span9';
 $contentclass = 'span8';
 $blockclass = 'span4';
 
@@ -49,6 +51,22 @@ if (!($hassidepre AND $hassidepost)) {
     // Two columns.
     $contentclass = 'span9';
     $blockclass = 'span3';
+    if (!$PAGE->user_is_editing()) {
+        if (((!$hassidepre) && (!$rtl)) ||
+            ((!$hassidepost) && ($rtl))) {
+            // Fill complete area when editing off and LTR and no side-pre content or RTL and no side-post content.
+            $contentclass = 'span12';
+        } else if ((!$hassidepre) && ($rtl)) {
+            // Fill complete area when editing off, RTL and no side pre.
+            $regionclass = 'span12';
+        }
+    } else {
+        if ((!$hassidepre) && ($rtl)) {
+            // Fill complete area when editing on, RTL and no side pre.
+            $contentclass = 'span8';
+            $blockclass = 'span4';
+        }
+    }
 }
 
 echo $OUTPUT->doctype() ?>
@@ -92,7 +110,7 @@ echo $OUTPUT->doctype() ?>
 <!-- Start Main Regions -->
 <div id="page" class="container-fluid">
 	<div id="page-content" class="row-fluid">
-        <div id="<?php echo $regionbsid ?>" class="span9">
+        <div id="<?php echo $regionbsid ?>" class="<?php echo $regionclass; ?>">
             <div class="row-fluid">
                 <?php if ($hasboringlayout) { ?>
                 	<div id="region-main-essential" class="<?php echo $contentclass; ?> pull-right">

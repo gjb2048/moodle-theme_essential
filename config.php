@@ -150,8 +150,3 @@ if (!empty($_SERVER['HTTP_USER_AGENT'])) {
 if (check_browser_version('MSIE') && !check_browser_version('MSIE', '9.0')) {
     $THEME->javascripts[] = 'html5shiv';
 }
-
-$THEME->blockrtlmanipulations = array(
-    'side-pre' => 'side-post',
-    'side-post' => 'side-pre'
-);
