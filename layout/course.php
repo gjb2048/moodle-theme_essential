@@ -24,25 +24,11 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$hasfooterleft = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-left', $OUTPUT));
-$hasfootermiddle = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-middle', $OUTPUT));
-$hasfooterright = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-right', $OUTPUT));
-
-$showfooterleft = ($hasfooterleft && !$PAGE->blocks->region_completely_docked('footer-left', $OUTPUT));
-$showfootermiddle = ($hasfootermiddle && !$PAGE->blocks->region_completely_docked('footer-middle', $OUTPUT));
-$showfooterright = ($hasfooterright && !$PAGE->blocks->region_completely_docked('footer-right', $OUTPUT));
-$hasboringlayout = (empty($PAGE->theme->settings->layout)) ? false : $PAGE->theme->settings->layout;
-$hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
-
-$haslogo = (!empty($PAGE->theme->settings->logo));
-
-$hasfootnote = (!empty($PAGE->theme->settings->footnote));
-
 $pre = 'side-pre';
 $post = 'side-post';
 if (right_to_left()) {
     $regionbsid = 'region-bs-main-and-post';
-    // In RTL the sides are reversed, so swap the 'oucblocks' method parameter....
+    // In RTL the sides are reversed, so swap the 'essentialblocks' method parameter....
     $temp = $pre;
     $pre = $post;
     $post = $temp;
@@ -50,10 +36,14 @@ if (right_to_left()) {
     $regionbsid = 'region-bs-main-and-pre';
 }
 
+$haslogo = (!empty($PAGE->theme->settings->logo));
+$hasboringlayout = (empty($PAGE->theme->settings->layout)) ? false : $PAGE->theme->settings->layout;
+$hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
 $hassidepre = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-pre', $OUTPUT));
 $hassidepost = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-post', $OUTPUT));
 $contentclass = 'span8';
 $blockclass = 'span4';
+
 if (!($hassidepre AND $hassidepost)) {
     // Two columns.
     $contentclass = 'span9';

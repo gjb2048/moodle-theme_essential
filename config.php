@@ -71,7 +71,7 @@ $THEME->layouts = array(
     ),
     // Course page.
     'course' => array(
-        'file' => 'course.php',
+        'file' => 'general.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-post',
          'options' => array('nonavbar'=>false),
@@ -105,15 +105,15 @@ $THEME->layouts = array(
     // Public Login page.
     'login' => array(
         'file' => 'login.php',
-        'regions' => array('footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'footer-right',
+        'regions' => array('footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
+        'defaultregion' => 'hidden-dock',
         'options' => array('langmenu'=>true),
     ),
     // Server administration scripts.
     'admin' => array(
         'file' => 'report.php',
-        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-post',
+        'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),
+        'defaultregion' => 'side-pre',
     ),
     // Report Pages.
     'report' => array(

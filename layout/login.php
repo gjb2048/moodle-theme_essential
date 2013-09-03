@@ -24,26 +24,14 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$hasfooterleft = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-left', $OUTPUT));
-$hasfootermiddle = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-middle', $OUTPUT));
-$hasfooterright = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-right', $OUTPUT));
-
-$showfooterleft = ($hasfooterleft && !$PAGE->blocks->region_completely_docked('footer-left', $OUTPUT));
-$showfootermiddle = ($hasfootermiddle && !$PAGE->blocks->region_completely_docked('footer-middle', $OUTPUT));
-$showfooterright = ($hasfooterright && !$PAGE->blocks->region_completely_docked('footer-right', $OUTPUT));
 $hasboringlayout = (empty($PAGE->theme->settings->layout)) ? false : $PAGE->theme->settings->layout;
 $hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
 
 $haslogo = (!empty($PAGE->theme->settings->logo));
 $hasboringlayout = (empty($PAGE->theme->settings->layout)) ? false : $PAGE->theme->settings->layout;
 
-$hasfootnote = (!empty($PAGE->theme->settings->footnote));
+$regionbsid = 'region-bs-main-and-post';
 
-if (right_to_left()) {
-    $regionbsid = 'region-bs-main-and-post';
-} else {
-    $regionbsid = 'region-bs-main-and-pre';
-}
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
@@ -95,7 +83,18 @@ echo $OUTPUT->doctype() ?>
         </section>
     </div>
 </div>
-<!-- End Main Regions -->  
+<!-- End Main Regions --> 
+
+<?php if (is_siteadmin()) { ?>
+<div class="hidden-blocks">
+    <div class="row-fluid">
+        <h4><?php echo get_string('visibleadminonly', 'theme_essential') ?></h4>
+            <?php
+                echo $OUTPUT->essentialblocks('hidden-dock');
+            ?>
+    </div>
+</div>
+<?php } ?>
 
 <footer id="page-footer" class="container-fluid">
             <?php require_once(dirname(__FILE__).'/footer.php'); ?>

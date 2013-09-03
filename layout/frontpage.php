@@ -26,15 +26,6 @@
 
 $hashiddendock = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('hidden-dock', $OUTPUT));
 
-$hasfooterleft = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-left', $OUTPUT));
-$hasfootermiddle = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-middle', $OUTPUT));
-$hasfooterright = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-right', $OUTPUT));
-
-$showhiddendock = ($hashiddendock && !$PAGE->blocks->region_completely_docked('hidden-dock', $OUTPUT));
-$showfooterleft = ($hasfooterleft && !$PAGE->blocks->region_completely_docked('footer-left', $OUTPUT));
-$showfootermiddle = ($hasfootermiddle && !$PAGE->blocks->region_completely_docked('footer-middle', $OUTPUT));
-$showfooterright = ($hasfooterright && !$PAGE->blocks->region_completely_docked('footer-right', $OUTPUT));
-
 $hasslide1 = (!empty($PAGE->theme->settings->slide1));
 $hasslide1image = (!empty($PAGE->theme->settings->slide1image));
 $hasslide1caption = (!empty($PAGE->theme->settings->slide1caption));
@@ -376,14 +367,16 @@ echo $OUTPUT->doctype() ?>
 <div id="page-content" class="row-fluid">
 	<div id="<?php echo $regionbsid ?>" class="span12">
 		<div class="row-fluid">
-			<section id="region-main" class="span8 desktop-first-column">
+			<div id="region-main-essential" class="<?php echo $contentclass; ?>">
+				<section id="region-main" class="span8 desktop-first-column">
 				<?php
 				echo $OUTPUT->course_content_header();
 				echo $OUTPUT->main_content();
 				echo $OUTPUT->course_content_footer();
 				?>
                 </section>
-			<?php echo $OUTPUT->blocks('side-pre', 'span4 pull-right'); ?>
+            </div>
+			<?php echo $OUTPUT->essentialblocks('side-pre', 'span4 pull-right'); ?>
 		</div>
 	</div>
 </div>
@@ -392,13 +385,9 @@ echo $OUTPUT->doctype() ?>
 <div class="hidden-blocks">
     <div class="row-fluid">
         <h4><?php echo get_string('visibleadminonly', 'theme_essential') ?></h4>
-        <div id="hidden-dock" class="block-region">
-            <div class="region-content">
             <?php
-                echo $OUTPUT->blocks_for_region('hidden-dock');
+                echo $OUTPUT->essentialblocks('hidden-dock');
             ?>
-            </div>
-        </div>
     </div>
 </div>
 <?php } ?>
