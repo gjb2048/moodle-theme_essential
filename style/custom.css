@@ -1779,6 +1779,15 @@ table#user-grades th.userreport.c1 {
 	width: 5px;
 }
 
+
+.path-grade-report-grader .left_scroller #fixed_column th {
+    height: 5em;
+}
+
+.path-grade-report-grader .right_scroller table#user-grades td.grade{
+    height: 5em;
+}
+
 /* @end */
 
 /* @group Alerts */
