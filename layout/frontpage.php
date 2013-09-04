@@ -367,7 +367,7 @@ echo $OUTPUT->doctype() ?>
 <div id="page-content" class="row-fluid">
 	<div id="<?php echo $regionbsid ?>" class="span12">
 		<div class="row-fluid">
-			<div id="region-main-essential" class="<?php echo $contentclass; ?>">
+			<div id="region-main-essential">
 				<section id="region-main" class="span8 desktop-first-column">
 				<?php
 				echo $OUTPUT->course_content_header();
