@@ -37,8 +37,8 @@
  */
 
 $plugins = array(
-    'modernizr'     => array('files' => array('modernizr_2.6.2.js')),
+    'modernizr'     => array('files' => array('modernizr_2.6.2_min.js')),
     'alerts'     => array('files' => array('bootstrap-alert_2.3.2.js')),
-    'cslider'     => array('files' => array('cslider_1.0.js')),
-    'custom'   => array('files' => array('custom_1.0.js'))
+    'cslider'     => array('files' => array('cslider_1.0_min.js')),
+    'custom'   => array('files' => array('custom_1.0_min.js'))
 );
