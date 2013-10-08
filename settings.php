@@ -57,6 +57,16 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
+    // Font Selector.
+    $name = 'theme_essential/fontselect';
+    $title = get_string('fontselect' , 'theme_essential');
+    $description = get_string('fontselectdesc', 'theme_essential');
+    $default = '1';
+    $choices = array('1'=>'Oswald & PT Sans', '2'=>'Lobster & Cabin', '3'=>'Raleway & Goudy', '4'=>'Allerta & Crimson Text', '5'=>'Arvo & PT Sans','6'=>'Dancing Script & Josefin Sans','7'=>'Allan & Cardo','8'=>'Molengo & Lekton','9'=>'Droid Serif & Droid Sans','10'=>'Corbin & Nobile','11'=>'Ubuntu & Vollkorn','12'=>'DISABLE Google Fonts');
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
     // User picture in header setting.
     $name = 'theme_essential/headerprofilepic';
     $title = get_string('headerprofilepic', 'theme_essential');
