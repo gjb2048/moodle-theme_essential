@@ -20,7 +20,8 @@
 body{
     border-top:3px solid [[setting:themecolor]];
     background: white url([[setting:pagebackground]]) repeat;
-    font-size: 13px;
+    font-size: [[setting:bodysize]];
+    font-weight: [[setting:bodyweight]];
     line-height: 25px;
     text-shadow: none !important;
     color: #444;
@@ -33,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h3 {
-    font-size: 20px;
+    font-size: 1.4em;
     color: #888;
     line-height: 20px;
 }
@@ -104,7 +105,7 @@ a:hover{
 
 h2.main,
 #pageheading {
-    font-size: 20px;
+    font-size: 1.4em;
     line-height: 35px;
     color: #777;
     border-bottom: 1px solid #e1e1e1;
@@ -289,7 +290,7 @@ ul.socials {
     padding: 0px;
     color: #555;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: .9em;
     background: transparent;
     margin: 0px;
 }
@@ -391,7 +392,7 @@ ul.breadcrumb li:last-child:after {
 h2.pagetitle {
     padding: 0px;
     margin: 0px;
-    font-size: 20px;
+    font-size: 1.2em;
     line-height: 35px;
     color: #777;
     background: url([[pix:theme|bg/dot]]) left center repeat-x;
@@ -541,7 +542,7 @@ a#button-grey:visited {
     color:#fff;
     width:100px;
     padding:6px 15px;
-    font-size:14px;
+    font-size:1em;
     border-radius:5px;
 }
 
@@ -664,7 +665,7 @@ table#greyboxright h2,
 table#greyboxleft h2 {
     border-bottom: 1px solid #EEE;
     padding-bottom: 8px;
-    font-size: 18px;
+    font-size: 1.2em;
     line-height: 17px;
 }
 
@@ -741,7 +742,7 @@ table#greyboxleft h2 {
 
 .block .header .title h2,
 .block h3.main {
-    font-size: 14px;
+    font-size: 1.15em;
     color: #888;
     line-height: 26px;
     margin-bottom: 5px;
@@ -830,7 +831,7 @@ table#greyboxleft h2 {
 	border-radius: 5px;
 	background: #0cc719;
 	margin-right: 5px;
-	font-size: 13px;
+	font-size: .9em;
 	text-shadow: none;
 	box-shadow: none;
 	margin-top: 10px;
@@ -850,7 +851,7 @@ table#greyboxleft h2 {
 	background: [[setting:themecolor]];
 	float: left;
 	margin-right: 5px;
-	font-size: 13px;
+	font-size: 1em;
 	white-space: nowrap;
 }
 
@@ -1045,7 +1046,7 @@ table#greyboxleft h2 {
     display: block;
     float: left;
     font-family: FontAwesome;
-    font-size: 1.2em;
+    font-size: .85em;
     height: 1.3em;
     margin-right: .2em;
     text-align: center;
@@ -1107,7 +1108,7 @@ table#greyboxleft h2 {
 }
 
 .service i{
-    font-size:20px;
+    font-size:1.2em;
     margin-top:3px;
     margin-right:8px;
     color: [[setting:themecolor]];
@@ -1124,7 +1125,7 @@ table#greyboxleft h2 {
     background: [[setting:footercolor]];
     margin-top: 10px;
     margin-bottom: 15px;
-    font-size: 13px;
+    font-size: 1em;
     padding-top: 10px;
     color: [[setting:footertextcolor]];
     border-top: 3px solid [[setting:themecolor]];
@@ -1184,7 +1185,7 @@ table#greyboxleft h2 {
 }
 
 #page-footer h4 {
-    font-size: 15px;
+    font-size: 1.2em;
     padding-bottom: 6px;
     border-bottom: 1px solid [[setting:footersepcolor]];
     margin-bottom: 4px;
@@ -1241,7 +1242,7 @@ table#greyboxleft h2 {
 	#page-footer .block .header .title h2:before {
 	    background: transparent;
 	    padding-left: 0px;
-	    font-size: 15px;
+	    font-size: 1.2em;
 	    padding-bottom: 0px;
 	    margin-bottom: 0px;
 	    color: [[setting:footerheadingcolor]];
@@ -1303,7 +1304,7 @@ table#greyboxleft h2 {
 		color: #fff;
 		border-radius: 5px;
 		padding: 4px 10px;
-		font-size: 13.5px;
+		font-size: 1.1em;
 		line-height: 20px;
 		float: left;
 		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -1375,7 +1376,7 @@ table#greyboxleft h2 {
     margin:10px auto;
     padding-top:15px;
     line-height:19px;
-    font-size:13px;
+    font-size:1em;
     color:#666;
 }
 
@@ -1639,7 +1640,6 @@ width: 67%;
 /* @end */
 
 /* @group Gradebook */
-
 .gradestable table {
 	border: 1px solid #AAA;
 }
@@ -1757,7 +1757,7 @@ table#user-grades th.userreport.c1 {
 
 #grade_edit_tree_table .select,
 #grade_edit_tree_table input{
-	font-size: 10px;
+	font-size: .9em;
 }
 
 #grade_edit_tree_table input {

@@ -220,43 +220,119 @@ function theme_essential_process_css($css, $theme) {
     if ($theme->settings->fontselect ==1) {
         $headingfont = 'Oswald';
         $bodyfont = 'PT Sans';
+        $bodysize = '13px';
+        $bodyweight = '400';
     } else if ($theme->settings->fontselect ==2) {
         $headingfont = 'Lobster';
         $bodyfont = 'Cabin';
+        $bodysize = '13px';
+        $bodyweight = '400';
     } else if ($theme->settings->fontselect ==3) {
         $headingfont = 'Raelway';
         $bodyfont = 'Goudy Bookletter 1911';
+        $bodysize = '13px';
+        $bodyweight = '400';
     } else if ($theme->settings->fontselect ==4) {
         $headingfont = 'Allerta';
         $bodyfont = 'Crimson Text';
+        $bodysize = '14px';
+        $bodyweight = '400';
     } else if ($theme->settings->fontselect ==5) {
         $headingfont = 'Arvo';
         $bodyfont = 'PT Sans';
+        $bodysize = '14px';
+        $bodyweight = '400';
     } else if ($theme->settings->fontselect ==6) {
         $headingfont = 'Dancing Script';
         $bodyfont = 'Josefin Sans';
+        $bodysize = '13px';
+        $bodyweight = '400';
     } else if ($theme->settings->fontselect ==7) {
         $headingfont = 'Allan';
         $bodyfont = 'Cardo';
+        $bodysize = '14px';
+        $bodyweight = '400';
     } else if ($theme->settings->fontselect ==8) {
         $headingfont = 'Molengo';
         $bodyfont = 'Lekton';
+        $bodysize = '13px';
+        $bodyweight = '400';
     } else if ($theme->settings->fontselect ==9) {
         $headingfont = 'Droid Serif';
         $bodyfont = 'Droid Sans';
+        $bodysize = '13px';
+        $bodyweight = '400';
     } else if ($theme->settings->fontselect ==10) {
         $headingfont = 'Corben';
         $bodyfont = 'Nobile';
+        $bodysize = '12px';
+        $bodyweight = '400';
     } else if ($theme->settings->fontselect ==11) {
         $headingfont = 'Ubuntu';
         $bodyfont = 'Vollkorn';
+        $bodysize = '14px';
+        $bodyweight = '400';
     } else if ($theme->settings->fontselect ==12) {
+        $headingfont = 'Bree Serif';
+        $bodyfont = 'Open Sans';
+        $bodysize = '13px';
+        $bodyweight = '400';
+    } else if ($theme->settings->fontselect ==13) {
+        $headingfont = 'Bevan';
+        $bodyfont = 'Pontano Sans';
+        $bodysize = '13px';
+        $bodyweight = '400';
+    } else if ($theme->settings->fontselect ==14) {
+        $headingfont = 'Abril Fatface';
+        $bodyfont = 'Average';
+        $bodysize = '13px';
+        $bodyweight = '400';
+    } else if ($theme->settings->fontselect ==15) {
+        $headingfont = 'Playfair Display';
+        $bodyfont = 'Multi';
+        $bodysize = '13px';
+        $bodyweight = '400';
+    } else if ($theme->settings->fontselect ==16) {
+        $headingfont = 'Sansita one';
+        $bodyfont = 'Kameron';
+        $bodysize = '13px';
+        $bodyweight = '400';
+    } else if ($theme->settings->fontselect ==17) {
+        $headingfont = 'Istok Web';
+        $bodyfont = 'Lora';
+        $bodysize = '13px';
+        $bodyweight = '400';
+    } else if ($theme->settings->fontselect ==18) {
+        $headingfont = 'Pacifico';
+        $bodyfont = 'Arimo';
+        $bodysize = '13px';
+        $bodyweight = '400';
+    } else if ($theme->settings->fontselect ==19) {
+        $headingfont = 'Nixie One';
+        $bodyfont = 'Ledger';
+        $bodysize = '13px';
+        $bodyweight = '400';
+    } else if ($theme->settings->fontselect ==20) {
+        $headingfont = 'Cantata One';
+        $bodyfont = 'Imprima';
+        $bodysize = '13px';
+        $bodyweight = '400';
+    } else if ($theme->settings->fontselect ==21) {
+        $headingfont = 'Rancho';
+        $bodyfont = 'Gudea';
+        $bodysize = '13px';
+        $bodyweight = '400';
+    } else if ($theme->settings->fontselect ==22) {
         $headingfont = 'Helvetica';
         $bodyfont = 'Georgia';
+        $bodysize = '17px';
+        $bodyweight = '400';
     }
     
     $css = theme_essential_set_headingfont($css, $headingfont);
     $css = theme_essential_set_bodyfont($css, $bodyfont);
+    $css = theme_essential_set_bodysize($css, $bodysize);
+    $css = theme_essential_set_bodyweight($css, $bodyweight);
     
     // Set the theme color.
     if (!empty($theme->settings->themecolor)) {
@@ -451,6 +527,26 @@ function theme_essential_set_bodyfont($css, $bodyfont) {
     $replacement = $bodyfont;
     if (is_null($replacement)) {
         $replacement = 'Arial';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_bodysize($css, $bodysize) {
+    $tag = '[[setting:bodysize]]';
+    $replacement = $bodysize;
+    if (is_null($replacement)) {
+        $replacement = '13';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_bodyweight($css, $bodyweight) {
+    $tag = '[[setting:bodyweight]]';
+    $replacement = $bodyweight;
+    if (is_null($replacement)) {
+        $replacement = '400';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;

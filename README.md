@@ -18,7 +18,7 @@ Cool things to know about the theme.
  
  New in 2.6
  ========================
- - Added ability to select from 11 preset Google Font combinations or disable their use completely.
+ - Added ability to select from 21 preset Google Font combinations or disable their use completely.
  - Now includes additional Bootstrap JS plugins to allow for more dynamic formatting as shown on http://getbootstrap.com/javascript/
  - New Frontpage Slideshow settings to allow to display; all the time, only before login, only after login or never.
  - New Marketing Spots settings to allow to display; all the time, only before login, only after login or never.

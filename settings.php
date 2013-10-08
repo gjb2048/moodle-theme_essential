@@ -62,7 +62,29 @@ defined('MOODLE_INTERNAL') || die;
     $title = get_string('fontselect' , 'theme_essential');
     $description = get_string('fontselectdesc', 'theme_essential');
     $default = '1';
-    $choices = array('1'=>'Oswald & PT Sans', '2'=>'Lobster & Cabin', '3'=>'Raleway & Goudy', '4'=>'Allerta & Crimson Text', '5'=>'Arvo & PT Sans','6'=>'Dancing Script & Josefin Sans','7'=>'Allan & Cardo','8'=>'Molengo & Lekton','9'=>'Droid Serif & Droid Sans','10'=>'Corbin & Nobile','11'=>'Ubuntu & Vollkorn','12'=>'DISABLE Google Fonts');
+    $choices = array(
+    	'1'=>'Oswald & PT Sans', 
+    	'2'=>'Lobster & Cabin', 
+    	'3'=>'Raleway & Goudy', 
+    	'4'=>'Allerta & Crimson Text', 
+    	'5'=>'Arvo & PT Sans',
+    	'6'=>'Dancing Script & Josefin Sans',
+    	'7'=>'Allan & Cardo',
+    	'8'=>'Molengo & Lekton',
+    	'9'=>'Droid Serif & Droid Sans',
+    	'10'=>'Corbin & Nobile',
+    	'11'=>'Ubuntu & Vollkorn',
+    	'12'=>'Bree Serif & Open Sans', 
+    	'13'=>'Bevan & Pontano Sans', 
+    	'14'=>'Abril Fatface & Average', 
+    	'15'=>'Playfair Display and Muli', 
+    	'16'=>'Sansita One & Kameron',
+    	'17'=>'Istok Web & Lora',
+    	'18'=>'Pacifico & Arimo',
+    	'19'=>'Nixie One & Ledger',
+    	'20'=>'Cantata One & Imprima',
+    	'21'=>'Rancho & Gudea',
+    	'22'=>'DISABLE Google Fonts');
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);

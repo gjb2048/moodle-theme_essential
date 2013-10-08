@@ -31,4 +31,34 @@
 <?php } else if($PAGE->theme->settings->fontselect==11) { ?>
 	<link href="http://fonts.googleapis.com/css?family=Ubuntu:bold" rel="stylesheet" type="text/css">
 	<link href="http://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet" type="text/css">
+<?php } else if($PAGE->theme->settings->fontselect==12) { ?>
+	<link href="http://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+<?php } else if($PAGE->theme->settings->fontselect==13) { ?>
+	<link href="http://fonts.googleapis.com/css?family=Bevan" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Pontano+Sans" rel="stylesheet" type="text/css">
+<?php } else if($PAGE->theme->settings->fontselect==14) { ?>
+	<link href="http://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Average" rel="stylesheet" type="text/css">
+<?php } else if($PAGE->theme->settings->fontselect==15) { ?>
+	<link href="http://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Multi" rel="stylesheet" type="text/css">
+<?php } else if($PAGE->theme->settings->fontselect==16) { ?>
+	<link href="http://fonts.googleapis.com/css?family=Sansita+One" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Kameron" rel="stylesheet" type="text/css">
+<?php } else if($PAGE->theme->settings->fontselect==17) { ?>
+	<link href="http://fonts.googleapis.com/css?family=Istok+Web" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Lora" rel="stylesheet" type="text/css">
+<?php } else if($PAGE->theme->settings->fontselect==18) { ?>
+	<link href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Arimo" rel="stylesheet" type="text/css">
+<?php } else if($PAGE->theme->settings->fontselect==19) { ?>
+	<link href="http://fonts.googleapis.com/css?family=Nixie+One" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Ledger" rel="stylesheet" type="text/css">
+<?php } else if($PAGE->theme->settings->fontselect==20) { ?>
+	<link href="http://fonts.googleapis.com/css?family=Cantata+One" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Imprima" rel="stylesheet" type="text/css">
+<?php } else if($PAGE->theme->settings->fontselect==21) { ?>
+	<link href="http://fonts.googleapis.com/css?family=Rancho" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Gudea" rel="stylesheet" type="text/css">
 <?php } ?>
