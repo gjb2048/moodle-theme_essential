@@ -49,7 +49,7 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<?php require_once(dirname(__FILE__).'/header.php'); ?>
+<?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
 
 <header role="banner" class="navbar">
     <nav role="navigation" class="navbar-inner">
@@ -97,7 +97,7 @@ echo $OUTPUT->doctype() ?>
 <?php } ?>
 
 <footer id="page-footer" class="container-fluid">
-            <?php require_once(dirname(__FILE__).'/footer.php'); ?>
+            <?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
 </footer>
 
 <?php echo $OUTPUT->standard_footer_html(); ?>
@@ -106,7 +106,7 @@ echo $OUTPUT->doctype() ?>
 
 <!-- Start Google Analytics -->
 <?php if ($hasanalytics) { ?>
-	<?php require_once(dirname(__FILE__).'/analytics.php'); ?>
+	<?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
 <?php } ?>
 <!-- End Google Analytics -->
 

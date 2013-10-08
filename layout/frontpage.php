@@ -137,7 +137,7 @@ echo $OUTPUT->doctype() ?>
     <link href='//fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
     <!-- iOS Homescreen Icons -->
-    <?php require_once(dirname(__FILE__).'/iosicons.php'); ?>
+    <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
     <noscript>
 			<link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/essential/style/nojs.css" />
 	</noscript>
@@ -147,7 +147,7 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<?php require_once(dirname(__FILE__).'/header.php'); ?>
+<?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
 
 <header role="banner" class="navbar">
     <nav role="navigation" class="navbar-inner">
@@ -226,82 +226,14 @@ echo $OUTPUT->doctype() ?>
 
 <!-- Start Slideshow -->
 <?php 
-    if ($hasslideshow && !strpos($checkuseragent, 'MSIE 7')) { // Hide slideshow for IE7
+	if($PAGE->theme->settings->toggleslideshow==1) {
+		require_once(dirname(__FILE__).'/includes/slideshow.php');
+	} else if($PAGE->theme->settings-> toggleslideshow==2 && !isloggedin()) {
+		require_once(dirname(__FILE__).'/includes/slideshow.php');
+	} else if($PAGE->theme->settings-> toggleslideshow==3 && isloggedin()) {
+		require_once(dirname(__FILE__).'/includes/slideshow.php');
+	} 
 ?>
-    <div id="da-slider" class="da-slider <?php echo $hideonphone ?>" style="background-position: 8650% 0%;">
-
-    <?php if ($hasslide1) { ?>
-        <div class="da-slide">
-            <h2><?php echo $slide1 ?></h2>
-            <?php if ($hasslide1caption) { ?>
-                <p><?php echo $slide1caption ?></p>
-            <?php } ?>
-            <?php if ($hasslide1url) { ?>
-                <a href="<?php echo $slide1url ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
-            <?php } ?>
-            <?php if ($hasslide1image) { ?>
-            <div class="da-img"><img src="<?php echo $slide1image ?>" alt="<?php echo $slide1 ?>"></div>
-            <?php } ?>
-        </div>
-    <?php } ?>
-    
-
-    <?php if ($hasslide2) { ?>
-        <div class="da-slide">
-            <h2><?php echo $slide2 ?></h2>
-            <?php if ($hasslide2caption) { ?>
-                <p><?php echo $slide2caption ?></p>
-            <?php } ?>
-            <?php if ($hasslide2url) { ?>
-                <a href="<?php echo $slide2url ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
-            <?php } ?>
-            <?php if ($hasslide2image) { ?>
-            <div class="da-img"><img src="<?php echo $slide2image ?>" alt="<?php echo $slide2 ?>"></div>
-            <?php } ?>
-        </div>
-    <?php } ?>
-    
-
-    <?php if ($hasslide3) { ?>
-        <div class="da-slide">
-            <h2><?php echo $slide3 ?></h2>
-            <?php if ($hasslide3caption) { ?>
-                <p><?php echo $slide3caption ?></p>
-            <?php } ?>
-            <?php if ($hasslide3url) { ?>
-                <a href="<?php echo $slide3url ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
-            <?php } ?>
-            <?php if ($hasslide3image) { ?>
-            <div class="da-img"><img src="<?php echo $slide3image ?>" alt="<?php echo $slide3 ?>"></div>
-            <?php } ?>
-        </div>
-    <?php } ?>
-    
-
-    <?php if ($hasslide4) { ?>
-        <div class="da-slide">
-            <h2><?php echo $slide4 ?></h2>
-            <?php if ($hasslide4caption) { ?>
-                <p><?php echo $slide4caption ?></p>
-            <?php } ?>
-            <?php if ($hasslide4url) { ?>
-                <a href="<?php echo $slide4url ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
-            <?php } ?>
-            <?php if ($hasslide4image) { ?>
-            <div class="da-img"><img src="<?php echo $slide4image ?>" alt="<?php echo $slide4 ?>"></div>
-            <?php } ?>
-        </div>
-    <?php } ?>
-    
-    
-
-        <nav class="da-arrows">
-            <span class="da-arrows-prev"></span>
-            <span class="da-arrows-next"></span>
-        </nav>
-        
-    </div>
-<?php } ?>
 <!-- End Slideshow -->
 
 <!-- Start Frontpage Content -->
@@ -314,55 +246,16 @@ echo $OUTPUT->doctype() ?>
 
 
 <!-- Start Marketing Spots -->
-<?php if($PAGE->theme->settings->togglemarketing==1) { ?>
-
-<div class="row-fluid" id="middle-blocks">
-    <div class="span4">
-        <!-- Advert #1 -->
-        <div class="service">
-            <!-- Icon & title. Font Awesome icon used. -->
-            <h5><span><i class="icon-<?php echo $PAGE->theme->settings->marketing1icon ?>"></i> <?php echo $PAGE->theme->settings->marketing1 ?></span></h5>
-            <?php if ($hasmarketing1image) { ?>
-            	<div class="marketing-image1"></div>
-            <?php } ?>
-            
-            <?php echo $PAGE->theme->settings->marketing1content ?>
-            <p align="right"><a href="<?php echo $PAGE->theme->settings->marketing1buttonurl ?>" id="button"><?php echo $PAGE->theme->settings->marketing1buttontext ?></a></p>
-        </div>
-    </div>
-    
-    <div class="span4">
-        <!-- Advert #2 -->
-        <div class="service">
-            <!-- Icon & title. Font Awesome icon used. -->
-            <h5><span><i class="icon-<?php echo $PAGE->theme->settings->marketing2icon ?>"></i> <?php echo $PAGE->theme->settings->marketing2 ?></span></h5>
-            <?php if ($hasmarketing2image) { ?>
-            	<div class="marketing-image2"></div>
-            <?php } ?>
-            
-            <?php echo $PAGE->theme->settings->marketing2content ?>
-            <p align="right"><a href="<?php echo $PAGE->theme->settings->marketing2buttonurl ?>" id="button"><?php echo $PAGE->theme->settings->marketing2buttontext ?></a></p>
-        </div>
-    </div>
-    
-    <div class="span4">
-        <!-- Advert #3 -->
-        <div class="service">
-            <!-- Icon & title. Font Awesome icon used. -->
-            <h5><span><i class="icon-<?php echo $PAGE->theme->settings->marketing3icon ?>"></i> <?php echo $PAGE->theme->settings->marketing3 ?></span></h5>
-            <?php if ($hasmarketing3image) { ?>
-            	<div class="marketing-image3"></div>
-            <?php } ?>
-            
-            <?php echo $PAGE->theme->settings->marketing3content ?>
-            <p align="right"><a href="<?php echo $PAGE->theme->settings->marketing3buttonurl ?>" id="button"><?php echo $PAGE->theme->settings->marketing3buttontext ?></a></p>
-        </div>
-    </div>
-</div>
-
+<?php 
+	if($PAGE->theme->settings->togglemarketing==1) {
+		require_once(dirname(__FILE__).'/includes/marketingspots.php');
+	} else if($PAGE->theme->settings->togglemarketing==2 && !isloggedin()) {
+		require_once(dirname(__FILE__).'/includes/marketingspots.php');
+	} else if($PAGE->theme->settings->togglemarketing==3 && isloggedin()) {
+		require_once(dirname(__FILE__).'/includes/marketingspots.php');
+	} 
+?>
 <!-- End Marketing Spots -->
-
-<?php } ?>
 
 <div id="page-content" class="row-fluid">
 	<div id="<?php echo $regionbsid ?>" class="span12">
@@ -393,7 +286,7 @@ echo $OUTPUT->doctype() ?>
 <?php } ?>
 
 <footer id="page-footer" class="container-fluid">
-            <?php require_once(dirname(__FILE__).'/footer.php'); ?>
+            <?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
 </footer>
 
 <?php echo $OUTPUT->standard_footer_html(); ?>
@@ -402,7 +295,7 @@ echo $OUTPUT->doctype() ?>
 
 <!-- Start Google Analytics -->
 <?php if ($hasanalytics) { ?>
-		<?php require_once(dirname(__FILE__).'/analytics.php'); ?>
+		<?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
 <?php } ?>
 <!-- End Google Analytics -->
 
