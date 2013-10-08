@@ -82,6 +82,11 @@ $string['perf_min'] = 'Minimal';
 $string['visibleadminonly'] = 'Blocks moved into the area below will only be seen by admins';
 $string['backtotop'] = 'Back to top';
 
+$string['alwaysdisplay'] = 'Always Show';
+$string['displaybeforelogin'] = 'Show before login only';
+$string['displayafterlogin'] = 'Show after login only';
+$string['dontdisplay'] = 'Never Show';
+
 /* CustomMenu */
 $string['custommenuheading'] = 'Custom Menu';
 $string['custommenuheadingsub'] = 'Add additional functionality to your custommenu.';
@@ -169,10 +174,11 @@ $string['slideshowheading'] = 'Frontpage Slideshow';
 $string['slideshowheadingsub'] = 'Dynamic Slideshow for the frontpage';
 $string['slideshowdesc'] = 'This creates a dynamic slideshow of up to 4 slides for you to promote important elements of your site.';
 
+$string['toggleslideshow'] = 'Toggle Slideshow display';
+$string['toggleslideshowdesc'] = 'Choose if you wish to hide or show the Slideshow.';
+
 $string['hideonphone'] = 'Slideshow on Mobiles';
 $string['hideonphonedesc'] = 'Choose if you wish to have the slideshow shown on mobiles or not';
-$string['display'] = 'Display';
-$string['dontdisplay'] = 'Do not Display';
 $string['readmore'] = 'Read More';
 
 $string['slideshowTitle'] = 'Slideshow';

@@ -301,12 +301,25 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add(new admin_setting_heading('theme_essential_slideshow', get_string('slideshowheadingsub', 'theme_essential'),
             format_text(get_string('slideshowdesc' , 'theme_essential'), FORMAT_MARKDOWN)));
     
+    // Toggle Slideshow.
+    $name = 'theme_essential/toggleslideshow';
+    $title = get_string('toggleslideshow' , 'theme_essential');
+    $description = get_string('toggleslideshowdesc', 'theme_essential');
+    $alwaysdisplay = get_string('alwaysdisplay', 'theme_essential');
+    $displaybeforelogin = get_string('displaybeforelogin', 'theme_essential');
+    $displayafterlogin = get_string('displayafterlogin', 'theme_essential');
+    $dontdisplay = get_string('dontdisplay', 'theme_essential');
+    $default = 'alwaysdisplay';
+    $choices = array('1'=>$alwaysdisplay, '2'=>$displaybeforelogin, '3'=>$displayafterlogin, '0'=>$dontdisplay);
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
     
     // Hide slideshow on phones.
     $name = 'theme_essential/hideonphone';
     $title = get_string('hideonphone' , 'theme_essential');
     $description = get_string('hideonphonedesc', 'theme_essential');
-    $display = get_string('display', 'theme_essential');
+    $display = get_string('alwaysdisplay', 'theme_essential');
     $dontdisplay = get_string('dontdisplay', 'theme_essential');
     $default = 'display';
     $choices = array(''=>$display, 'hidden-phone'=>$dontdisplay);
@@ -527,10 +540,12 @@ defined('MOODLE_INTERNAL') || die;
     $name = 'theme_essential/togglemarketing';
     $title = get_string('togglemarketing' , 'theme_essential');
     $description = get_string('togglemarketingdesc', 'theme_essential');
-    $display = get_string('display', 'theme_essential');
+    $alwaysdisplay = get_string('alwaysdisplay', 'theme_essential');
+    $displaybeforelogin = get_string('displaybeforelogin', 'theme_essential');
+    $displayafterlogin = get_string('displayafterlogin', 'theme_essential');
     $dontdisplay = get_string('dontdisplay', 'theme_essential');
     $default = 'display';
-    $choices = array('1'=>$display, '0'=>$dontdisplay);
+    $choices = array('1'=>$alwaysdisplay, '2'=>$displaybeforelogin, '3'=>$displayafterlogin, '0'=>$dontdisplay);
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
