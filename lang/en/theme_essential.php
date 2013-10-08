@@ -60,6 +60,8 @@ $string['invert'] = 'Invert navbar';
 $string['invertdesc'] = 'Swaps text and background for the navbar at the top of the page between black and white.';
 $string['logo'] = 'Logo';
 $string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.<br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
+$string['fontselect'] = 'Font Selector';
+$string['fontselectdesc'] = 'Choose from the list of availble font combinations. You can choose here to disable Google fonts if needed.';
 $string['bootstrapcdn'] = 'FontAwesome from CDN';
 $string['bootstrapcdndesc'] = 'If enabled this will load FontAwesome from the online Bootstrap CDN source. Enable this if you are having issues getting the Font Awesome icons to display in your site.';
 $string['copyright'] = 'Copyright';
@@ -81,6 +83,11 @@ $string['perf_max'] = 'Detailed';
 $string['perf_min'] = 'Minimal';
 $string['visibleadminonly'] = 'Blocks moved into the area below will only be seen by admins';
 $string['backtotop'] = 'Back to top';
+
+$string['alwaysdisplay'] = 'Always Show';
+$string['displaybeforelogin'] = 'Show before login only';
+$string['displayafterlogin'] = 'Show after login only';
+$string['dontdisplay'] = 'Never Show';
 
 /* CustomMenu */
 $string['custommenuheading'] = 'Custom Menu';
@@ -169,10 +176,11 @@ $string['slideshowheading'] = 'Frontpage Slideshow';
 $string['slideshowheadingsub'] = 'Dynamic Slideshow for the frontpage';
 $string['slideshowdesc'] = 'This creates a dynamic slideshow of up to 4 slides for you to promote important elements of your site.';
 
+$string['toggleslideshow'] = 'Toggle Slideshow display';
+$string['toggleslideshowdesc'] = 'Choose if you wish to hide or show the Slideshow.';
+
 $string['hideonphone'] = 'Slideshow on Mobiles';
 $string['hideonphonedesc'] = 'Choose if you wish to have the slideshow shown on mobiles or not';
-$string['display'] = 'Display';
-$string['dontdisplay'] = 'Do not Display';
 $string['readmore'] = 'Read More';
 
 $string['slideshowTitle'] = 'Slideshow';

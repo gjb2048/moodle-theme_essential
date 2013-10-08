@@ -19,7 +19,6 @@
 
 body{
     border-top:3px solid [[setting:themecolor]];
-    font-family: "PT Sans", Arial, Helvetica, sans-serif;
     background: white url([[setting:pagebackground]]) repeat;
     font-size: 13px;
     line-height: 25px;
@@ -29,7 +28,6 @@ body{
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Oswald", sans-serif;
     font-weight: normal !important;
     color: #666;
 }
@@ -168,7 +166,6 @@ h2#subtitle {
     font-weight: normal;
     color: #666;
     font-size: 1.1em;
-    font-family: "Oswald", sans-serif;
 }
 
 
@@ -252,7 +249,6 @@ ul.socials {
 
 #socialheading {
 	text-align: right;
-	font-family: "Oswald", sans-serif;
 	color: #666;
 	letter-spacing: .2em;
 	padding: 0px;
@@ -420,7 +416,9 @@ h2.pagetitle span {
     display: inline;
 }
 
-
+.label, .badge {
+	font-weight: normal;
+}
 
 /* @end */
 
@@ -482,7 +480,6 @@ h2.pagetitle span {
 
 .forumpost .subject {
     font-weight: normal;
-    font-family: "Oswald", sans-serif;
     color: [[setting:themecolor]];
     font-size: 1.2em;
     margin-bottom: -5px;
@@ -782,7 +779,6 @@ table#greyboxleft h2 {
 }
 
 .block_login label {
-	font-family: "Oswald", sans-serif;
 	font-weight: normal !important;
 }
 
@@ -829,7 +825,6 @@ table#greyboxleft h2 {
 }
 
 .block_login input[type="submit"] {
-	font-family: "PT Sans", Arial, Helvetica, sans-serif;
 	color: #fff;
 	padding: 5px;
 	border-radius: 5px;
@@ -849,7 +844,6 @@ table#greyboxleft h2 {
 }
 
 .block_login .footer a {
-	font-family: "PT Sans", Arial, Helvetica, sans-serif;
 	color: #fff;
 	padding: 3px 5px;
 	border-radius: 5px;
@@ -1815,7 +1809,7 @@ table#user-grades th.userreport.c1 {
 	left: 50%;
 	display: none;
 	text-align:center; 
-	font:11px/100% Oswald; 
+	font:11px/100%; 
 	text-transform:uppercase; 
 	text-decoration:none; 
 	color:[[setting:themecolor]];
@@ -1829,6 +1823,28 @@ table#user-grades th.userreport.c1 {
 	color:[[setting:themehovercolor]];
 	text-decoration: none;
 }
+
+/* @group Font Loading */
+
+/* @group Headings */
+h1, h2, h3, h4, h5, h6,
+.back-to-top,
+.socials p,
+#socialheading,
+.forumpost .subject,
+.block_login label {
+    font-family: "[[setting:headingfont]]", sans-serif;
+}
+/* @end */
+
+/* @group Main Text */
+body,
+.block_login input[type="submit"] {
+    font-family: "[[setting:bodyfont]]", Arial, Helvetica, sans-serif;
+}
+/* @end */
+
+/* @end */
 
 /**
  * editicons CSS

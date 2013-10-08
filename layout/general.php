@@ -77,15 +77,16 @@ echo $OUTPUT->doctype() ?>
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google web fonts -->
-    <link href='//fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+    <?php require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
+    <!-- iOS Homescreen Icons -->
+    <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
 </head>
 
 <body <?php echo $OUTPUT->body_attributes(); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<?php require_once(dirname(__FILE__).'/header.php'); ?>
+<?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
 
 <header role="banner" class="navbar">
     <nav role="navigation" class="navbar-inner">
@@ -146,7 +147,7 @@ echo $OUTPUT->doctype() ?>
 <a href="#top" class="back-to-top"><i class="icon-chevron-sign-up"></i><p><?php print_string('backtotop', 'theme_essential'); ?></p></a>
 
 <footer id="page-footer" class="container-fluid">
-            <?php require_once(dirname(__FILE__).'/footer.php'); ?>
+            <?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
 </footer>
 
 <?php echo $OUTPUT->standard_footer_html(); ?>
@@ -155,7 +156,7 @@ echo $OUTPUT->doctype() ?>
 
 <!-- Start Google Analytics -->
 <?php if ($hasanalytics) { ?>
-	<?php require_once(dirname(__FILE__).'/analytics.php'); ?>
+	<?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
 <?php } ?>
 <!-- End Google Analytics -->
 

@@ -216,6 +216,48 @@ function essential_set_customcss($css, $customcss) {
 
 function theme_essential_process_css($css, $theme) {
 
+    // Set the Fonts.
+    if ($theme->settings->fontselect ==1) {
+        $headingfont = 'Oswald';
+        $bodyfont = 'PT Sans';
+    } else if ($theme->settings->fontselect ==2) {
+        $headingfont = 'Lobster';
+        $bodyfont = 'Cabin';
+    } else if ($theme->settings->fontselect ==3) {
+        $headingfont = 'Raelway';
+        $bodyfont = 'Goudy Bookletter 1911';
+    } else if ($theme->settings->fontselect ==4) {
+        $headingfont = 'Allerta';
+        $bodyfont = 'Crimson Text';
+    } else if ($theme->settings->fontselect ==5) {
+        $headingfont = 'Arvo';
+        $bodyfont = 'PT Sans';
+    } else if ($theme->settings->fontselect ==6) {
+        $headingfont = 'Dancing Script';
+        $bodyfont = 'Josefin Sans';
+    } else if ($theme->settings->fontselect ==7) {
+        $headingfont = 'Allan';
+        $bodyfont = 'Cardo';
+    } else if ($theme->settings->fontselect ==8) {
+        $headingfont = 'Molengo';
+        $bodyfont = 'Lekton';
+    } else if ($theme->settings->fontselect ==9) {
+        $headingfont = 'Droid Serif';
+        $bodyfont = 'Droid Sans';
+    } else if ($theme->settings->fontselect ==10) {
+        $headingfont = 'Corben';
+        $bodyfont = 'Nobile';
+    } else if ($theme->settings->fontselect ==11) {
+        $headingfont = 'Ubuntu';
+        $bodyfont = 'Vollkorn';
+    } else if ($theme->settings->fontselect ==12) {
+        $headingfont = 'Helvetica';
+        $bodyfont = 'Georgia';
+    }
+    
+    $css = theme_essential_set_headingfont($css, $headingfont);
+    $css = theme_essential_set_bodyfont($css, $bodyfont);
+    
     // Set the theme color.
     if (!empty($theme->settings->themecolor)) {
         $themecolor = $theme->settings->themecolor;
@@ -394,6 +436,25 @@ function theme_essential_process_css($css, $theme) {
     return $css;
 }
 
+function theme_essential_set_headingfont($css, $headingfont) {
+    $tag = '[[setting:headingfont]]';
+    $replacement = $headingfont;
+    if (is_null($replacement)) {
+        $replacement = 'Georgia';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_bodyfont($css, $bodyfont) {
+    $tag = '[[setting:bodyfont]]';
+    $replacement = $bodyfont;
+    if (is_null($replacement)) {
+        $replacement = 'Arial';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
 
 function theme_essential_set_themecolor($css, $themecolor) {
     $tag = '[[setting:themecolor]]';
