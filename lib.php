@@ -528,6 +528,13 @@ function theme_essential_page_init(moodle_page $page) {
     $page->requires->jquery();
     $page->requires->jquery_plugin('cslider', 'theme_essential');
     $page->requires->jquery_plugin('custom', 'theme_essential'); 
-    $page->requires->jquery_plugin('alerts', 'theme_essential');
+    $page->requires->jquery_plugin('alert', 'theme_essential');
+    $page->requires->jquery_plugin('carousel', 'theme_essential');
+    $page->requires->jquery_plugin('collapse', 'theme_essential');
+    $page->requires->jquery_plugin('modal', 'theme_essential');
+    $page->requires->jquery_plugin('scrollspy', 'theme_essential');
+    $page->requires->jquery_plugin('tab', 'theme_essential');
+    $page->requires->jquery_plugin('tooltip', 'theme_essential');
+    $page->requires->jquery_plugin('transition', 'theme_essential');
     $page->requires->jquery_plugin('modernizr', 'theme_essential');  
 }
