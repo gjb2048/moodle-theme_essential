@@ -135,7 +135,7 @@ $THEME->javascripts = array(
 );
 
 $THEME->javascripts_footer = array(
-    'dockmod', 'bootstrap.min'
+    'dockmod'
 );
 
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
