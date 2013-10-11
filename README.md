@@ -23,6 +23,7 @@ Cool things to know about the theme.
  - New Frontpage Slideshow settings to allow to display; all the time, only before login, only after login or never.
  - New Marketing Spots settings to allow to display; all the time, only before login, only after login or never.
  - Course Labels are no longer in bold by default
+ - Now has a companion Mahara ePorfolio theme so you can keep them looking alike - https://github.com/moodleman/mahara-theme_essential
  - Further minor bug fixes and tidy up.
    
  New in 2.5.4
