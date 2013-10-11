@@ -38,20 +38,24 @@
  * Include the Awesome Font.
  */
 
-function theme_essential_set_fontwww($css) {
-    global $CFG, $PAGE;
-    if(empty($CFG->themewww)){
-        $themewww = $CFG->wwwroot."/theme";
-    } else {
-        $themewww = $CFG->themewww;
-    }
-    $tag = '[[setting:fontwww]]';
-    
+function theme_essential_set_fontwwwstart($css) {
+    $tag = '[[setting:fontwwwstart]]';
     $theme = theme_config::load('essential');
     if (!empty($theme->settings->bootstrapcdn)) {
     	$css = str_replace($tag, 'http://netdna.bootstrapcdn.com/font-awesome/3.2.1/font/', $css);
     } else {
-    	$css = str_replace($tag, $themewww.'/essential/fonts/', $css);
+    	$css = str_replace($tag, '[[font:theme|', $css);
+    }
+    return $css;
+}
+
+function theme_essential_set_fontwwwend($css) {
+    $tag = '[[setting:fontwwwend]]';
+    $theme = theme_config::load('essential');
+    if (!empty($theme->settings->bootstrapcdn)) {
+    	$css = str_replace($tag, '', $css);
+    } else {
+    	$css = str_replace($tag, ']]', $css);
     }
     return $css;
 }
@@ -508,7 +512,8 @@ function theme_essential_process_css($css, $theme) {
     $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
 
     // Set the font path.
-    $css = theme_essential_set_fontwww($css);
+    $css = theme_essential_set_fontwwwstart($css);
+    $css = theme_essential_set_fontwwwend($css);
     return $css;
 }
 
