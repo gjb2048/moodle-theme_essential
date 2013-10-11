@@ -96,7 +96,7 @@
     	*/
     
     	$hasdisplaymycourses = (empty($this->page->theme->settings->displaymycourses)) ? false : $this->page->theme->settings->displaymycourses;
-        if (isloggedin() && $hasdisplaymycourses) {
+        if (isloggedin() && !isguestuser() && $hasdisplaymycourses) {
         	$mycoursetitle = $this->page->theme->settings->mycoursetitle;
             if ($mycoursetitle == 'module') {
 				$branchlabel = '<i class="icon-briefcase"></i>'.get_string('mymodules', 'theme_essential');
@@ -132,7 +132,7 @@
     	* functionality to the custommenu.
     	*/
         $hasdisplaymydashboard = (empty($this->page->theme->settings->displaymydashboard)) ? false : $this->page->theme->settings->displaymydashboard;
-        if (isloggedin() && $hasdisplaymydashboard) {
+        if (isloggedin() && !isguestuser() && $hasdisplaymydashboard) {
             $branchlabel = '<i class="icon-dashboard"></i>'.get_string('mydashboard', 'theme_essential');
             $branchurl   = new moodle_url('/my/index.php');
             $branchtitle = get_string('mydashboard', 'theme_essential');
