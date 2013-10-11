@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * OUC theme with the underlying Bootstrap theme.
+ * The Essential theme is built upon the Bootstrapbase theme.
  *
  * @package    theme
  * @subpackage Essential
@@ -24,15 +24,15 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$ltr = (!right_to_left());  // To know if to add 'pull-right' and 'desktop-first-column' classes in the layout for LTR.
-
 $haslogo = (!empty($PAGE->theme->settings->logo));
 $hasboringlayout = (empty($PAGE->theme->settings->layout)) ? false : $PAGE->theme->settings->layout;
 $hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
-$hassidepre = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-pre', $OUTPUT));
-$hassidepost = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-post', $OUTPUT));
-$contentclass = 'span8';
-$blockclass = 'span4';
+
+if (right_to_left()) {
+    $regionbsid = 'region-bs-main-and-post';
+} else {
+    $regionbsid = 'region-bs-main-and-pre';
+}
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
@@ -53,21 +53,21 @@ echo $OUTPUT->doctype() ?>
 
 <?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
 
-<header role="banner" class="navbar">
+<header role="banner" class="navbar navbar">
     <nav role="navigation" class="navbar-inner">
         <div class="container-fluid">
-            <a class="brand" href="<?php echo $CFG->wwwroot;?>"><i class="icon-home"></i>&nbsp;<?php print_string('home'); ?></a>
-            <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
+            <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
             <div class="nav-collapse collapse">
-            <?php echo $OUTPUT->custom_menu(); ?>
-            <ul class="nav pull-right">
-            <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-            <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
-            </ul>
+                <?php echo $OUTPUT->custom_menu(); ?>
+                <ul class="nav pull-right">
+                    <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
+                    <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -75,40 +75,45 @@ echo $OUTPUT->doctype() ?>
 
 <!-- Start Main Regions -->
 <div id="page" class="container-fluid">
-	<div id="page-content" class="row-fluid">
-        <div id="region-main" class="span9<?php if ($ltr) { echo ' pull-right'; } ?>">
-            <section id="region-main" class="row-fluid">
-				<div id="page-navbar" class="clearfix">
-					<nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-					<div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
-				</div>
-                <?php
-                echo $OUTPUT->course_content_header();
-                echo $OUTPUT->main_content();
-                echo $OUTPUT->course_content_footer();
-                ?>
-            </section>
+    <div id="page-content" class="row-fluid">
+        <div id="<?php echo $regionbsid ?>" class="span9">
+            <div class="row-fluid">
+            	<?php if ($hasboringlayout) { ?>
+                <section id="region-main" class="span8 pull-right">
+                <?php } else { ?>
+                <section id="region-main" class="span8">
+                <?php } ?>
+                	<div id="page-navbar" class="clearfix">
+            			<nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
+            			<div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
+        			</div>
+                    <?php
+                    echo $OUTPUT->course_content_header();
+                    echo $OUTPUT->main_content();
+                    echo $OUTPUT->course_content_footer();
+                    ?>
+                </section>
+                <?php if ($hasboringlayout) { ?>
+                <?php echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column'); ?>
+                <?php } else { ?>
+                <?php echo $OUTPUT->blocks('side-pre', 'span4 pull-right'); ?>
+                <?php } ?>
+            </div>
         </div>
-        <?php
-        $classextra = '';
-        if ($ltr) {
-            $classextra = ' desktop-first-column';
-        }
-        echo $OUTPUT->essentialblocks('side-pre', 'span3'.$classextra);
-        ?>
+        <?php echo $OUTPUT->blocks('side-post', 'span3'); ?>
     </div>
+    
+    <!-- End Main Regions -->
+
+    <a href="#top" class="back-to-top"><i class="icon-chevron-sign-up"></i><p><?php print_string('backtotop', 'theme_essential'); ?></p></a>
+
+	<footer id="page-footer" class="container-fluid">
+		<?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
+	</footer>
+
+    <?php echo $OUTPUT->standard_end_of_body_html() ?>
+
 </div>
-<!-- End Main Regions --> 
- 
-<a href="#top" class="back-to-top"><i class="icon-chevron-sign-up"></i><p><?php print_string('backtotop', 'theme_essential'); ?></p></a>
-
-<footer id="page-footer" class="container-fluid">
-            <?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
-</footer>
-
-<?php echo $OUTPUT->standard_footer_html(); ?>
-
-<?php echo $OUTPUT->standard_end_of_body_html() ?>
 
 <!-- Start Google Analytics -->
 <?php if ($hasanalytics) { ?>
@@ -135,5 +140,6 @@ jQuery(document).ready(function() {
     })
 });
 </script>
+
 </body>
 </html>

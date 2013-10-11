@@ -15,23 +15,18 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This is built using the Clean template to allow for new theme's using
- * Moodle's new Bootstrap theme engine
+ * The Essential theme is built upon the Bootstrapbase theme.
  *
- *
- * @package   theme_essential
- * @copyright 2013 Julian Ridden
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    theme
+ * @subpackage Essential
+ * @author     Julian (@moodleman) Ridden
+ * @author     Based on code originally written by G J Bernard, Mary Evans, Bas Brands, Stuart Lamour and David Scotson.
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-$hasboringlayout = (empty($PAGE->theme->settings->layout)) ? false : $PAGE->theme->settings->layout;
-$hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
 
 $haslogo = (!empty($PAGE->theme->settings->logo));
 $hasboringlayout = (empty($PAGE->theme->settings->layout)) ? false : $PAGE->theme->settings->layout;
-
-$regionbsid = 'region-bs-main-and-post';
-
+$hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
@@ -55,27 +50,31 @@ echo $OUTPUT->doctype() ?>
 <header role="banner" class="navbar">
     <nav role="navigation" class="navbar-inner">
         <div class="container-fluid">
-            <a class="brand" href="<?php echo $CFG->wwwroot;?>"><i class="icon-home"></i>&nbsp;<?php print_string('home'); ?></a>
-            <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
+            <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
             <div class="nav-collapse collapse">
-            <?php echo $OUTPUT->custom_menu(); ?>
-            <ul class="nav pull-right">
-            <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-            <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
-            </ul>
+                <?php echo $OUTPUT->custom_menu(); ?>
+                <ul class="nav pull-right">
+                    <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
+                    <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
+                </ul>
             </div>
         </div>
     </nav>
 </header>
 
-<!-- Start Main Regions -->
 <div id="page" class="container-fluid">
-	<div id="page-content" class="row-fluid">
+	<!-- Start Main Regions -->
+    <div id="page-content" class="row-fluid">
         <section id="region-main" class="span12">
+        	<div id="page-navbar" class="clearfix">
+        		<nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
+            	<div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
+        	</div>
             <?php
             echo $OUTPUT->course_content_header();
             echo $OUTPUT->main_content();
@@ -83,33 +82,43 @@ echo $OUTPUT->doctype() ?>
             ?>
         </section>
     </div>
+	<!-- End Main Regions -->
+
+    <a href="#top" class="back-to-top"><i class="icon-chevron-sign-up"></i><p><?php print_string('backtotop', 'theme_essential'); ?></p></a>
+
+	<footer id="page-footer" class="container-fluid">
+		<?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
+	</footer>
+
+    <?php echo $OUTPUT->standard_end_of_body_html() ?>
+
 </div>
-<!-- End Main Regions --> 
-
-<?php if (is_siteadmin()) { ?>
-<div class="hidden-blocks">
-    <div class="row-fluid">
-        <h4><?php echo get_string('visibleadminonly', 'theme_essential') ?></h4>
-            <?php
-                echo $OUTPUT->essentialblocks('hidden-dock');
-            ?>
-    </div>
-</div>
-<?php } ?>
-
-<footer id="page-footer" class="container-fluid">
-            <?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
-</footer>
-
-<?php echo $OUTPUT->standard_footer_html(); ?>
-
-<?php echo $OUTPUT->standard_end_of_body_html() ?>
 
 <!-- Start Google Analytics -->
 <?php if ($hasanalytics) { ?>
 	<?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
 <?php } ?>
 <!-- End Google Analytics -->
+
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    var offset = 220;
+    var duration = 500;
+    jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() > offset) {
+            jQuery('.back-to-top').fadeIn(duration);
+        } else {
+            jQuery('.back-to-top').fadeOut(duration);
+        }
+    });
+    
+    jQuery('.back-to-top').click(function(event) {
+        event.preventDefault();
+        jQuery('html, body').animate({scrollTop: 0}, duration);
+        return false;
+    })
+});
+</script>
 
 </body>
 </html>

@@ -15,15 +15,14 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This is built using the Clean template to allow for new theme's using
- * Moodle's new Bootstrap theme engine
+ * The Essential theme is built upon the Bootstrapbase theme.
  *
- *
- * @package   theme_essential
- * @copyright 2013 Julian Ridden
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    theme
+ * @subpackage Essential
+ * @author     Julian (@moodleman) Ridden
+ * @author     Based on code originally written by G J Bernard, Mary Evans, Bas Brands, Stuart Lamour and David Scotson.
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 $hashiddendock = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('hidden-dock', $OUTPUT));
 
 $hasslide1 = (!empty($PAGE->theme->settings->slide1));
@@ -56,8 +55,11 @@ $hasmarketing1image = (!empty($PAGE->theme->settings->marketing1image));
 $hasmarketing2image = (!empty($PAGE->theme->settings->marketing2image));
 $hasmarketing3image = (!empty($PAGE->theme->settings->marketing3image));
 
+$hasfrontpageblocks = (empty($PAGE->theme->settings->frontpageblocks)) ? false : $PAGE->theme->settings->frontpageblocks;
+
 $haslogo = (!empty($PAGE->theme->settings->logo));
 
+$hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
 
 /* Slide1 settings */
 $hideonphone = $PAGE->theme->settings->hideonphone;
@@ -116,16 +118,7 @@ if ($hasslide4url) {
     $slide4url = $PAGE->theme->settings->slide4url;
 }
 
-$hasfootnote = (!empty($PAGE->theme->settings->footnote));
-$custommenu = $OUTPUT->custom_menu();
-$hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
-
-if (right_to_left()) {
-    $regionbsid = 'region-bs-main-and-post';
-} else {
-    $regionbsid = 'region-bs-main-and-pre';
-}
-
+$left = (!right_to_left());  // To know if to add 'pull-right' and 'desktop-first-column' classes in the layout for LTR.
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
@@ -133,16 +126,16 @@ echo $OUTPUT->doctype() ?>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <noscript>
+			<link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/essential/style/nojs.css" />
+	</noscript>
     <!-- Google web fonts -->
     <?php require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
     <!-- iOS Homescreen Icons -->
     <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
-    <noscript>
-			<link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/essential/style/nojs.css" />
-	</noscript>
 </head>
 
-<body <?php echo $OUTPUT->body_attributes(); ?>>
+<body <?php echo $OUTPUT->body_attributes('two-column'); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
@@ -152,24 +145,23 @@ echo $OUTPUT->doctype() ?>
     <nav role="navigation" class="navbar-inner">
         <div class="container-fluid">
             <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
-            <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
             <div class="nav-collapse collapse">
-            <?php if ($hascustommenu) {
-                echo $custommenu;
-            } ?>
-            <ul class="nav pull-right">
-            <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-            <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
-            </ul>
+                <?php echo $OUTPUT->custom_menu(); ?>
+                <ul class="nav pull-right">
+                    <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
+                    <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
+                </ul>
             </div>
         </div>
     </nav>
 </header>
 
+<!-- Start Main Regions -->
 <div id="page" class="container-fluid">
 
 <!-- Start Alerts -->
@@ -256,47 +248,77 @@ echo $OUTPUT->doctype() ?>
 ?>
 <!-- End Marketing Spots -->
 
-<div id="page-content" class="row-fluid">
-	<div id="<?php echo $regionbsid ?>" class="span12">
-		<div class="row-fluid">
-			<div id="region-main-essential">
-				<section id="region-main" class="span8 desktop-first-column">
-				<?php
-				echo $OUTPUT->course_content_header();
-				echo $OUTPUT->main_content();
-				echo $OUTPUT->course_content_footer();
-				?>
-                </section>
-            </div>
-			<?php echo $OUTPUT->essentialblocks('side-pre', 'span4 pull-right'); ?>
-		</div>
-	</div>
-</div>
+    <div id="page-content" class="row-fluid">
+    	<?php if ($hasfrontpageblocks==1) { ?>
+        <section id="region-main" class="span8 pull-right">
+        <?php } else { ?>
+        <section id="region-main" class="span8 desktop-first-column">
+        <?php } ?>
+        	<div id="page-navbar" class="clearfix">
+            	<div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
+            	<nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
+        	</div>
+            <?php
+            echo $OUTPUT->course_content_header();
+            echo $OUTPUT->main_content();
+            echo $OUTPUT->course_content_footer();
+            ?>
+        </section>
+        <?php
+        if ($hasfrontpageblocks==1) {
+        	echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column');
+        } else {
+        	echo $OUTPUT->blocks('side-pre', 'span4 pull-right');
+        }
+        ?>
+    </div>
+    
+    <!-- End Main Regions -->
 
-<?php if (is_siteadmin()) { ?>
-<div class="hidden-blocks">
-    <div class="row-fluid">
-        <h4><?php echo get_string('visibleadminonly', 'theme_essential') ?></h4>
+    <?php if (is_siteadmin()) { ?>
+	<div class="hidden-blocks">
+    	<div class="row-fluid">
+        	<h4><?php echo get_string('visibleadminonly', 'theme_essential') ?></h4>
             <?php
                 echo $OUTPUT->essentialblocks('hidden-dock');
             ?>
-    </div>
+    	</div>
+	</div>
+	<?php } ?>
+
+	<footer id="page-footer" class="container-fluid">
+		<?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
+	</footer>
+
+    <?php echo $OUTPUT->standard_end_of_body_html() ?>
+
 </div>
-<?php } ?>
-
-<footer id="page-footer" class="container-fluid">
-            <?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
-</footer>
-
-<?php echo $OUTPUT->standard_footer_html(); ?>
-
-<?php echo $OUTPUT->standard_end_of_body_html() ?>
 
 <!-- Start Google Analytics -->
 <?php if ($hasanalytics) { ?>
-		<?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
+	<?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
 <?php } ?>
 <!-- End Google Analytics -->
+
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    var offset = 220;
+    var duration = 500;
+    jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() > offset) {
+            jQuery('.back-to-top').fadeIn(duration);
+        } else {
+            jQuery('.back-to-top').fadeOut(duration);
+        }
+    });
+    
+    jQuery('.back-to-top').click(function(event) {
+        event.preventDefault();
+        jQuery('html, body').animate({scrollTop: 0}, duration);
+        return false;
+    })
+});
+</script>
 
 </body>
 </html>
