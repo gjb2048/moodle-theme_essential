@@ -10,11 +10,11 @@
     font-family: 'FontAwesome'; 
     font-weight: normal;
     font-style: normal;
-    src: url('[[setting:fontwww]]fontawesome-webfont.eot?v=3.2.1');
-    src: url('[[setting:fontwww]]fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), 
-      			url('[[setting:fontwww]]fontawesome-webfont.woff?v=3.2.1') format('woff'), 
-      			url('[[setting:fontwww]]fontawesome-webfont.ttf?v=3.2.1') format('truetype'), 
-      			url('[[setting:fontwww]]fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
+    src: url('[[setting:fontwwwstart]]fontawesome-webfont.eot[[setting:fontwwwend]]');
+    src: url('[[setting:fontwwwstart]]fontawesome-webfont.eot[[setting:fontwwwend]]') format('embedded-opentype'), 
+      			url('[[setting:fontwwwstart]]fontawesome-webfont.woff[[setting:fontwwwend]]') format('woff'), 
+      			url('[[setting:fontwwwstart]]fontawesome-webfont.ttf[[setting:fontwwwend]]') format('truetype'), 
+      			url('[[setting:fontwwwstart]]fontawesome-webfont.svg[[setting:fontwwwend]]') format('svg');
 }
 
 body{
@@ -759,10 +759,6 @@ table#greyboxleft h2 {
     content: "\f0c9";
 }
 
-#page-footer .block .header .title h2:before {
-    display: none;
-}
-
 .block .header .title {
     border-bottom: 1px solid #EEE;
     padding-left: 0px;
@@ -831,7 +827,7 @@ table#greyboxleft h2 {
 	border-radius: 5px;
 	background: #0cc719;
 	margin-right: 5px;
-	font-size: .9em;
+	font-size: 1em;
 	text-shadow: none;
 	box-shadow: none;
 	margin-top: 10px;
@@ -850,7 +846,7 @@ table#greyboxleft h2 {
 	border-radius: 5px;
 	background: [[setting:themecolor]];
 	float: left;
-	margin-right: 5px;
+	margin-left: 15px;
 	font-size: 1em;
 	white-space: nowrap;
 }
