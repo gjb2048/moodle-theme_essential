@@ -98,6 +98,18 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
+    // Frontpage Block alignment.
+    $name = 'theme_essential/frontpageblocks';
+    $title = get_string('frontpageblocks' , 'theme_essential');
+    $description = get_string('frontpageblocksdesc', 'theme_essential');
+    $left = get_string('left', 'theme_essential');
+    $right = get_string('right', 'theme_essential');
+    $default = 'left';
+    $choices = array('1'=>$left, '0'=>$right);
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
     // Custom or standard layout.
     $name = 'theme_essential/layout';
     $title = get_string('layout', 'theme_essential');
