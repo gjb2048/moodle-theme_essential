@@ -1,0 +1,451 @@
+/*
+ * @author    Julian Ridden
+ * @package   theme_essential
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+ 
+ /* @group Core */
+
+@font-face {
+    src: url('[[setting:fontwwwstart]]fontawesome-webfont.eot[[setting:fontwwwend]]');
+    src: url('[[setting:fontwwwstart]]fontawesome-webfont.eot[[setting:fontwwwend]]') format('embedded-opentype'), 
+         url('[[setting:fontwwwstart]]fontawesome-webfont.woff[[setting:fontwwwend]]') format('woff'), 
+         url('[[setting:fontwwwstart]]fontawesome-webfont.ttf[[setting:fontwwwend]]') format('truetype'), 
+         url('[[setting:fontwwwstart]]fontawesome-webfont.svg[[setting:fontwwwend]]') format('svg');
+}
+
+body{
+    border-top:3px solid [[setting:themecolor]];
+    background: white url([[setting:pagebackground]]) repeat;
+    font-size: [[setting:bodysize]];
+    font-weight: [[setting:bodyweight]];
+}
+
+a, a:visited{
+    color: [[setting:themecolor]];
+}
+
+a:hover{
+    color:[[setting:themehovercolor]];
+}
+
+.color{
+    color: [[setting:themecolor]];
+}
+
+.dir-rtl a.logo {
+    background: url([[setting:logo]]) no-repeat 100% 0;
+}
+
+/* @group Custom */
+
+.bor {
+    background: url([[pix:theme|bg/dot]]) repeat-x;
+}
+
+.topbor {
+    background: url([[pix:theme|bg/dot]]) repeat-x;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group Header */
+
+#page-header {
+    background: url([[pix:theme|bg/header]]) repeat;
+}
+
+a.logo {
+    background: url([[setting:logo]]) no-repeat 0 0;
+}
+
+h1#title {
+    color: [[setting:themecolor]];
+}
+
+#headerlogo {
+    border-right: 1px bg/dotted [[setting:themecolor]];
+}
+
+.breadcrumb-button input[type="submit"]{
+    background: [[setting:themecolor]];
+}
+
+.breadcrumb-button input[type="submit"]:hover {
+    background: [[setting:themehovercolor]];
+}
+
+/* @group Social Buttons */
+
+a.website .icon-stack:hover, a.icon-sign-blank:focus {
+    color: [[setting:themecolor]];
+}
+
+/* @end */
+
+/* @end */
+
+/* @group Custom Menu */
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+    background-color: [[setting:themecolor]];
+    background-image: -moz-linear-gradient(top, [[setting:themecolor]], [[setting:themehovercolor]]);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:themecolor]]), to([[setting:themehovercolor]]));
+    background-image: -webkit-linear-gradient(top, [[setting:themecolor]], [[setting:themehovercolor]]);
+    background-image: -o-linear-gradient(top, [[setting:themecolor]], [[setting:themehovercolor]]);
+    background-image: linear-gradient(to bottom, [[setting:themecolor]], [[setting:themehovercolor]]);
+}
+
+/* @end */
+
+/* @group Navbar
+ */
+
+ul.breadcrumb li:after { 
+    content: "[[setting:navbarsep]]";
+}
+
+.navbar-inner{
+    border-top:1px solid [[setting:themehovercolor]] !important;
+    border-bottom:1px solid [[setting:themehovercolor]] !important;
+    background-color: [[setting:themecolor]] !important;
+}
+
+.navbar .nav{
+    border-right:1px solid [[setting:themehovercolor]];
+}
+
+.navbar .nav > li > a{
+    border-left:1px solid [[setting:themehovercolor]];
+}
+
+.navbar .nav > li > a:hover{
+    background:[[setting:themehovercolor]] !important;
+}
+
+.navbar .nav .active > a,
+.navbar .nav .active > a:hover,
+.navbar .nav .active > a:focus,
+.navbar .nav li.dropdown.open > .dropdown-toggle,
+.navbar .nav li.dropdown.active > .dropdown-toggle,
+.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+    background: [[setting:themecolor]] !important;
+}
+
+.navbar .nav > li > a {
+    border-left: 1px solid [[setting:themehovercolor]];
+}
+
+/* @end */
+
+/* @group Course
+ */
+
+.course-content ul li.section.main {
+    background: url([[pix:theme|bg/dot]]) bottom repeat-x;
+}
+
+.course-content ul.topics li.section.main.clearfix.current {
+    box-shadow:0px 0px 10px [[setting:themecolor]];
+}
+
+h2.pagetitle {
+    background: url([[pix:theme|bg/dot]]) left center repeat-x;
+}
+
+h2.pagetitle span {
+    background: white url([[setting:pagebackground]]) repeat;
+}
+
+.firstword {
+    color: [[setting:themecolor]] !important;
+}
+
+/* @end */
+
+
+/* @group Forums */
+
+.forumpost .picture img {
+    box-shadow:0px 0px 3px [[setting:themecolor]];
+}
+
+.forumpost .subject {
+    color: [[setting:themecolor]];
+
+}
+
+/* @end */
+
+/* @group Buttons */
+
+.button a, .button a:visited {
+    background: [[setting:themecolor]];
+}
+
+a#button,
+a#button:visited {
+    background:[[setting:themecolor]];
+}
+
+a#button:hover {
+    background:[[setting:themehovercolor]];
+}
+
+/* @end */
+
+/* @group Blocks */
+
+.block .header .title h2:before {
+    color: [[setting:themecolor]];
+}
+
+.block_rss_client .footer a {
+    background:[[setting:themecolor]];
+}
+
+.block_rss_client .footer a:hover {
+    background:[[setting:themehovercolor]];
+}
+
+.block_login .footer a {
+    background: [[setting:themecolor]];
+}
+
+.block_login .footer a:hover {
+    background: [[setting:themehovercolor]];
+}
+
+/* @end */
+
+/* @group Frontpage */
+#site-news-forum,
+#frontpage-course-list,
+#frontpage-category-combo,
+#frontpage-category-names {
+    background: url([[pix:theme|bg/dot]]) left top repeat-x;
+}
+
+#page-site-index h2.headingblock:before {
+    color: [[setting:themecolor]];
+}
+
+/* @group Home News Boxes */
+
+.service i{
+    color: [[setting:themecolor]];
+}
+
+/* @end */
+
+
+/* @end */
+
+/* @group Footer */
+
+#page-footer {
+    background: [[setting:footercolor]];
+    color: [[setting:footertextcolor]];
+    border-top: 3px solid [[setting:themecolor]];
+}
+
+#page-footer a {
+    color: [[setting:footerurlcolor]];
+}
+
+#page-footer .footnote a,
+#page-footer .footnote a:visited {
+    color: [[setting:themecolor]] !important;
+}
+
+#page-footer .footnote a:hover {
+    color: [[setting:footerhovercolor]] !important;
+}
+
+#page-footer hr {
+    border-top: 1px solid [[setting:footersepcolor]];
+}
+
+#page-footer h4 {
+    border-bottom: 1px solid [[setting:footersepcolor]];
+    color: [[setting:footerheadingcolor]];
+}
+
+#page-footer .block_html ul li:before,
+#greyboxright ul li:before {
+    background: [[setting:themecolor]];
+}
+
+#page-footer .tree_item.branch:before {
+    color: [[setting:themecolor]];
+}
+
+/* @group Footer Block Formatting */
+    
+#page-footer .block .header .title h2:before {
+    color: [[setting:footerheadingcolor]];
+}
+    
+#page-footer .block .header .title h2 {
+    color: [[setting:footerheadingcolor]];
+}
+    
+#page-footer .block .header .title {
+    border-bottom: 1px solid [[setting:footersepcolor]];
+}
+    
+#page-footer .block_login input[type="submit"] {
+    background: [[setting:themecolor]];
+}
+    
+#page-footer .block_login input[type="submit"]:hover {
+    background: [[setting:themehovercolor]];
+}
+    
+#page-footer .block_rss_client .content a {
+    color: [[setting:themecolor]];
+}
+    
+/* @end */
+
+/* @end */
+
+/* @group Marketing Spots */
+
+.afeature {
+    background:#eee url([[pix:theme|bg/header]]) repeat;
+}
+
+.afeature:hover{
+    border:5px solid [[setting:themecolor]];
+}
+
+.afmatter i{
+    color: [[setting:themecolor]];
+}
+
+.marketing-image1 {
+    background: url([[setting:marketing1image]]) no-repeat;
+}
+
+.marketing-image2 {
+    background: url([[setting:marketing2image]]) no-repeat;
+}
+
+.marketing-image3 {
+    background: url([[setting:marketing3image]]) no-repeat;
+}
+
+.marketing-image1,
+.marketing-image2,
+.marketing-image3 {
+    height: [[setting:marketingheight]];
+}
+
+/* @end */
+
+/* @group Profile Image */
+
+.myprofileitem.picture {
+    background:#eee url([[pix:theme|bg/header]]) repeat;
+}
+
+.myprofileitem.picture:hover{
+    border:5px solid [[setting:themecolor]];
+}
+
+.socials img:hover{
+    -webkit-box-shadow: px 0px 10px 0px [[setting:themecolor]];
+    -moz-box-shadow: 0px 0px 10px 0px [[setting:themecolor]];
+    box-shadow: 0px 0px 10px 0px [[setting:themecolor]];
+}
+
+/* @end */
+
+/* @group Tabs */
+ 
+.nav-tabs>li>a {
+    background-color: [[setting:themecolor]];
+}
+
+.nav-tabs>li>a:hover {
+    background-color: [[setting:themehovercolor]];
+}
+
+/* @end */
+
+/* @group Performance Information */
+
+.performanceinfo var{
+    background: [[setting:themecolor]];
+}
+
+.performanceinfo h2:before {
+    color: [[setting:themecolor]];
+}
+
+/* @end */
+
+/* @group Quiz */
+
+#page-mod-quiz-edit .questionbankwindow.block div.header {
+    background: [[setting:themecolor]];
+}
+
+/* @end */
+
+.back-to-top{
+    color:[[setting:themecolor]];
+}
+
+.back-to-top:hover{
+    color:[[setting:themehovercolor]];
+}
+
+/* @group Font Loading */
+
+/* @group Headings */
+h1, h2, h3, h4, h5, h6,
+.back-to-top,
+.socials p,
+#socialheading,
+.forumpost .subject,
+.block_login label {
+    font-family: "[[setting:headingfont]]", sans-serif;
+}
+/* @end */
+
+/* @group Main Text */
+body,
+.block_login input[type="submit"] {
+    font-family: "[[setting:bodyfont]]", Arial, Helvetica, sans-serif;
+}
+/* @end */
+
+/* @end */
+
+/**
+ * editicons CSS
+ * This adds the special editicons css in editicons.css if the setting is enabled.
+ */
+
+[[setting:editicons]]
+
+/**
+ * autohide CSS
+ * This adds the special autohide css in autohide.css if the setting is enabled.
+ */
+
+[[setting:autohide]]
+
+/**
+ * Custom CSS
+ * This is the very last piece of CSS loaded, so if something looks weird,
+ * try removing your custom CSS from the theme settings page.
+ */
+
+[[setting:customcss]]
