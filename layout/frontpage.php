@@ -219,9 +219,9 @@ echo $OUTPUT->doctype() ?>
 <?php 
 	if($PAGE->theme->settings->toggleslideshow==1) {
 		require_once(dirname(__FILE__).'/includes/slideshow.php');
-	} else if($PAGE->theme->settings-> toggleslideshow==2 && !isloggedin()) {
+	} else if($PAGE->theme->settings->toggleslideshow==2 && !isloggedin()) {
 		require_once(dirname(__FILE__).'/includes/slideshow.php');
-	} else if($PAGE->theme->settings-> toggleslideshow==3 && isloggedin()) {
+	} else if($PAGE->theme->settings->toggleslideshow==3 && isloggedin()) {
 		require_once(dirname(__FILE__).'/includes/slideshow.php');
 	} 
 ?>
