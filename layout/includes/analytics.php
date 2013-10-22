@@ -40,6 +40,8 @@ if ($COURSE->id != 1 ){
 
     //Add course name
     $trackurl .= '/' . urlencode($COURSE->shortname);
+} else {
+	$trackurl = $SITE->shortname;
 }
 
 //Use navigation bar to get items
@@ -66,20 +68,25 @@ foreach ($navbar as $item) {
 
 ?>
 <script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', '<?php echo $PAGE->theme->settings->analyticsid;?>']);
-  <?php if ($hascleanurl) { ?>
-  	_gaq.push(['_trackPageview','<?php echo $trackurl;?>']);
-  <?php } else { ?>
-  	_gaq.push(['_trackPageview']);
-  <?php } ?>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  (function() {
-    var ga = document.createElement('script');
-    ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
-    '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(ga, s);
-  })();
+
+	ga('create', '<?php echo $PAGE->theme->settings->analyticsid;?>', 
+	{
+		'cookieDomain': '<?php echo preg_replace("(https?://)", "", $CFG->wwwroot);?>',
+		'cookieExpires': '<?php echo $CFG->sessiontimeout;?>'
+	});
+	<?php if ($hascleanurl) { ?>
+		ga('send', 'pageview', 
+		{
+			'page': '<?php echo $trackurl;?>',
+			'title': '<?php echo $PAGE->heading;?>'
+		});
+	<?php } else { ?>
+		ga('send', 'pageview' );
+
+	<?php } ?>
 </script>
