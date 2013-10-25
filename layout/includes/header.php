@@ -80,7 +80,7 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
         <?php } ?>
             <?php
             if (!$haslogo) { ?>
-                <i id="headerlogo" class="icon-<?php echo $PAGE->theme->settings->siteicon ?>"></i>
+                <i id="headerlogo" class="fa fa-<?php echo $PAGE->theme->settings->siteicon ?>"></i>
                 <h1 id="title"><?php echo $SITE->shortname; ?></h1>
                 <h2 id="subtitle"><?php p(strip_tags(format_text($SITE->summary, FORMAT_HTML))) ?></h2>
                 
@@ -112,38 +112,38 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
         <div class="span3 pull-right">
         <p id="socialheading"><?php echo get_string('socialnetworks','theme_essential')?></p>
             <ul class="socials unstyled">
-                <?php if ($haswebsite) { ?>
-                <li><a href="<?php echo $haswebsite; ?>" class="website"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-globe icon-light"></i></span></a></li>
-                <?php } ?>
                 <?php if ($hasgoogleplus) { ?>
-                <li><a href="<?php echo $hasgoogleplus; ?>" class="googleplus"><i class="icon-google-plus-sign"></i></a></li>
+                <li><a href="<?php echo $hasgoogleplus; ?>" class="googleplus"><i class="fa fa-google-plus-square"></i></a></li>
                 <?php } ?>
                 <?php if ($hastwitter) { ?>
-                <li><a href="<?php echo $hastwitter; ?>" class="twitter"><i class="icon-twitter-sign"></i></a></li>
+                <li><a href="<?php echo $hastwitter; ?>" class="twitter"><i class="fa fa-twitter-square"></i></a></li>
                 <?php } ?>
                 <?php if ($hasfacebook) { ?>
-                <li><a href="<?php echo $hasfacebook; ?>" class="facebook"><i class="icon-facebook-sign"></i></a></li>
+                <li><a href="<?php echo $hasfacebook; ?>" class="facebook"><i class="fa fa-facebook-square"></i></a></li>
                 <?php } ?>
                 <?php if ($haslinkedin) { ?>
-                <li><a href="<?php echo $haslinkedin; ?>" class="linkedin"><i class="icon-linkedin-sign"></i></a></li>
+                <li><a href="<?php echo $haslinkedin; ?>" class="linkedin"><i class="fa fa-linkedin-square"></i></a></li>
                 <?php } ?>
                 <?php if ($hasyoutube) { ?>
-                <li><a href="<?php echo $hasyoutube; ?>" class="youtube"><i class="icon-youtube-sign"></i></a></li>
+                <li><a href="<?php echo $hasyoutube; ?>" class="youtube"><i class="fa fa-youtube-square"></i></a></li>
                 <?php } ?>
                 <?php if ($hasflickr) { ?>
-                <li><a href="<?php echo $hasflickr; ?>" class="flickr"><i class="icon-flickr"></i></a></li>
+                <li><a href="<?php echo $hasflickr; ?>" class="flickr"><i class="fa fa-flickr"></i></a></li>
                 <?php } ?>
                 <?php if ($haspinterest) { ?>
-                <li><a href="<?php echo $haspinterest; ?>" class="pinterest"><i class="icon-pinterest-sign"></i></a></li>
+                <li><a href="<?php echo $haspinterest; ?>" class="pinterest"><i class="fa fa-pinterest-square"></i></a></li>
                 <?php } ?>
                 <?php if ($hasinstagram) { ?>
-                <li><a href="<?php echo $hasinstagram; ?>" class="instagram"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-instagram icon-light"></i></span></a></li>
+                <li><a href="<?php echo $hasinstagram; ?>" class="instagram"><span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-instagram fa-stack-1x fa-inverse"></i></span></a></li>
                 <?php } ?>
                 <?php if ($hasvk) { ?>
-                <li><a href="<?php echo $hasvk; ?>" class="vk"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-vk icon-light"></i></span></a></li>
+                <li><a href="<?php echo $hasvk; ?>" class="vk"><span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-vk fa-stack-1x fa-inverse"></i></span></li>
                 <?php } ?>
                 <?php if ($hasskype) { ?>
-                <li><a href="<?php echo $hasskype; ?>" class="skype"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-skype icon-light"></i></span></a></li>
+                <li><a href="<?php echo $hasskype; ?>" class="skype"><span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-skype fa-stack-1x fa-inverse"></i></span></li>
+                <?php } ?>
+                <?php if ($haswebsite) { ?>
+                <li><a href="<?php echo $haswebsite; ?>" class="website"><span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-globe fa-stack-1x fa-inverse"></i></span></li>
                 <?php } ?>
 	    </ul>
         </div>
@@ -157,10 +157,10 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
         <p id="socialheading"><?php echo get_string('mobileappsheading','theme_essential')?></p>
             <ul class="socials unstyled">
                 <?php if ($hasios) { ?>
-                <li><a href="<?php echo $hasios; ?>" class="ios"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-apple icon-light"></i></span></a></li>
+                <li><a href="<?php echo $hasios; ?>" class="ios"><span class="fa-stack fa-lg"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-apple fa-stack-1x fa-inverse"></i></span></a></li>
                 <?php } ?>
                 <?php if ($hasandroid) { ?>
-                <li><a href="<?php echo $hasandroid; ?>" class="android"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-android icon-light"></i></span></a></li>
+                <li><a href="<?php echo $hasandroid; ?>" class="android"><span class="fa-stack fa-lg"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-android fa-stack-1x fa-inverse"></i></span></a></li>
                 <?php } ?>
 	    </ul>
         </div>
