@@ -47,9 +47,9 @@ $hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->t
 $hasalert1 = (empty($PAGE->theme->settings->enable1alert)) ? false : $PAGE->theme->settings->enable1alert;
 $hasalert2 = (empty($PAGE->theme->settings->enable2alert)) ? false : $PAGE->theme->settings->enable2alert;
 $hasalert3 = (empty($PAGE->theme->settings->enable3alert)) ? false : $PAGE->theme->settings->enable3alert;
-$alertinfo = '<span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-info icon-light"></i></span>';
-$alertwarning = '<span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-warning-sign icon-light"></i></span>';
-$alertsuccess = '<span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-bullhorn icon-light"></i></span>';
+$alertinfo = '<span class="fa-stack "><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-info fa-stack-1x fa-inverse"></i></span>';
+$alertwarning = '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-warning fa-stack-1x fa-inverse"></i></span>';
+$alertsuccess = '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-bullhorn fa-stack-1x fa-inverse"></i></span>';
 
 $hasmarketing1image = (!empty($PAGE->theme->settings->marketing1image));
 $hasmarketing2image = (!empty($PAGE->theme->settings->marketing2image));
