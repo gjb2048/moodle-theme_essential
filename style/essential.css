@@ -137,7 +137,8 @@ h2#subtitle {
 }
 
 
-.socials a {
+.socials a,
+.socials a:visited {
     display: block;
     font-family: FontAwesome;
     color: #bbb;
