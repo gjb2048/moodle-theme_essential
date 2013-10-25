@@ -42,7 +42,7 @@ function theme_essential_set_fontwwwstart($css) {
     $tag = '[[setting:fontwwwstart]]';
     $theme = theme_config::load('essential');
     if (!empty($theme->settings->bootstrapcdn)) {
-    	$css = str_replace($tag, 'http://netdna.bootstrapcdn.com/font-awesome/3.2.1/font/', $css);
+    	$css = str_replace($tag, 'http://netdna.bootstrapcdn.com/font-awesome/4.0/font/', $css);
     } else {
     	$css = str_replace($tag, '[[font:theme|', $css);
     }
