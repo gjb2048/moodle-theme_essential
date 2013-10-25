@@ -1686,7 +1686,7 @@ table.calendarmonth.calendartable {
 .useralerts [class^="icon-stack"] {
     float: left;
     vertical-align: middle;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .useralerts .title {
