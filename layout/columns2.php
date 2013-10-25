@@ -94,7 +94,7 @@ echo $OUTPUT->doctype() ?>
     
     <!-- End Main Regions -->
 
-    <a href="#top" class="back-to-top"><i class="icon-chevron-sign-up"></i><p><?php print_string('backtotop', 'theme_essential'); ?></p></a>
+    <a href="#top" class="back-to-top"><i class="fa fa-chevron-circle-up fa-3x"></i><p><?php print_string('backtotop', 'theme_essential'); ?></p></a>
 
 	<footer id="page-footer" class="container-fluid">
 		<?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
