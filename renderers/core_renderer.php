@@ -99,16 +99,16 @@
         if (isloggedin() && !isguestuser() && $hasdisplaymycourses) {
         	$mycoursetitle = $this->page->theme->settings->mycoursetitle;
             if ($mycoursetitle == 'module') {
-				$branchlabel = '<i class="icon-briefcase"></i>'.get_string('mymodules', 'theme_essential');
+				$branchlabel = '<i class="fa fa-briefcase"></i>'.get_string('mymodules', 'theme_essential');
 				$branchtitle = get_string('mymodules', 'theme_essential');
 			} else if ($mycoursetitle == 'unit') {
-				$branchlabel = '<i class="icon-briefcase"></i>'.get_string('myunits', 'theme_essential');
+				$branchlabel = '<i class="fa fa-briefcase"></i>'.get_string('myunits', 'theme_essential');
 				$branchtitle = get_string('myunits', 'theme_essential');
 			} else if ($mycoursetitle == 'class') {
-				$branchlabel = '<i class="icon-briefcase"></i>'.get_string('myclasses', 'theme_essential');
+				$branchlabel = '<i class="fa fa-briefcase"></i>'.get_string('myclasses', 'theme_essential');
 				$branchtitle = get_string('myclasses', 'theme_essential');
 			} else {
-				$branchlabel = '<i class="icon-briefcase"></i>'.get_string('mycourses', 'theme_essential');
+				$branchlabel = '<i class="fa fa-briefcase"></i>'.get_string('mycourses', 'theme_essential');
 				$branchtitle = get_string('mycourses', 'theme_essential');
 			}
             $branchurl   = new moodle_url('/my/index.php');
@@ -133,18 +133,18 @@
     	*/
         $hasdisplaymydashboard = (empty($this->page->theme->settings->displaymydashboard)) ? false : $this->page->theme->settings->displaymydashboard;
         if (isloggedin() && !isguestuser() && $hasdisplaymydashboard) {
-            $branchlabel = '<i class="icon-dashboard"></i>'.get_string('mydashboard', 'theme_essential');
+            $branchlabel = '<i class="fa fa-dashboard"></i>'.get_string('mydashboard', 'theme_essential');
             $branchurl   = new moodle_url('/my/index.php');
             $branchtitle = get_string('mydashboard', 'theme_essential');
             $branchsort  = 10000;
  
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
- 			$branch->add('<em><i class="icon-user"></i>'.get_string('profile').'</em>',new moodle_url('/user/profile.php'),get_string('profile'));
- 			$branch->add('<em><i class="icon-calendar"></i>'.get_string('pluginname', 'block_calendar_month').'</em>',new moodle_url('/calendar/view.php'),get_string('pluginname', 'block_calendar_month'));
- 			$branch->add('<em><i class="icon-envelope"></i>'.get_string('pluginname', 'block_messages').'</em>',new moodle_url('/message/index.php'),get_string('pluginname', 'block_messages'));
- 			$branch->add('<em><i class="icon-certificate"></i>'.get_string('badges').'</em>',new moodle_url('/badges/mybadges.php'),get_string('badges'));
- 			$branch->add('<em><i class="icon-file"></i>'.get_string('privatefiles', 'block_private_files').'</em>',new moodle_url('/user/files.php'),get_string('privatefiles', 'block_private_files'));
- 			$branch->add('<em><i class="icon-signout"></i>'.get_string('logout').'</em>',new moodle_url('/login/logout.php'),get_string('logout'));    
+ 			$branch->add('<em><i class="fa fa-user"></i>'.get_string('profile').'</em>',new moodle_url('/user/profile.php'),get_string('profile'));
+ 			$branch->add('<em><i class="fa fa-calendar"></i>'.get_string('pluginname', 'block_calendar_month').'</em>',new moodle_url('/calendar/view.php'),get_string('pluginname', 'block_calendar_month'));
+ 			$branch->add('<em><i class="fa fa-envelope"></i>'.get_string('pluginname', 'block_messages').'</em>',new moodle_url('/message/index.php'),get_string('pluginname', 'block_messages'));
+ 			$branch->add('<em><i class="fa fa-certificate"></i>'.get_string('badges').'</em>',new moodle_url('/badges/mybadges.php'),get_string('badges'));
+ 			$branch->add('<em><i class="fa fa-file"></i>'.get_string('privatefiles', 'block_private_files').'</em>',new moodle_url('/user/files.php'),get_string('privatefiles', 'block_private_files'));
+ 			$branch->add('<em><i class="fa fa-sign-out"></i>'.get_string('logout').'</em>',new moodle_url('/login/logout.php'),get_string('logout'));    
         }
  
         return parent::render_custom_menu($menu);
@@ -169,24 +169,24 @@
             'chapter' => 'file',
             'docs' => 'question-sign',
             'generate' => 'gift',
-            'i/backup' => 'upload-alt',
+            'i/backup' => 'upload',
             'i/checkpermissions' => 'user',
             'i/edit' => 'pencil',
             'i/filter' => 'filter',
             'i/grades' => 'table',
             'i/group' => 'group',
             'i/hide' => 'eye-open',
-            'i/import' => 'download-alt',
+            'i/import' => 'download',
             'i/move_2d' => 'move',
-            'i/navigationitem' => 'circle-blank',
+            'i/navigationitem' => 'square',
             'i/outcomes' => 'magic',
             'i/publish' => 'globe',
             'i/reload' => 'refresh',
-            'i/report' => 'list-alt',
-            'i/restore' => 'download-alt',
+            'i/report' => 'list',
+            'i/restore' => 'download',
             'i/return' => 'repeat',
             'i/roles' => 'user',
-            'i/settings' => 'beaker',
+            'i/settings' => 'flask',
             'i/show' => 'eye-close',
             'i/switchrole' => 'random',
             'i/user' => 'user',
@@ -195,7 +195,7 @@
             't/left' => 'arrow-left',
         );
         if (isset($icons[$name])) {
-            return "<i class=\"icon-$icons[$name]\" id=\"icon\"></i>";
+            return "<i class=\"fa fa-$icons[$name]\" id=\"icon\"></i>";
         } else {
             return false;
         }
