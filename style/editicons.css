@@ -1,21 +1,6 @@
 /* @group Edit Buttons */
 
-.editing_update {
-	border-left: 2px solid #999;
-	padding-left: 7px !important;
-}
 
-.editing_duplicate {
-	padding-right: 7px !important;
-}
-
-.editing_delete {
-	border-right: 2px solid #999;
-	border-left: 2px solid #999;
-	padding-right: 7px !important;
-	padding-left: 7px;
-	padding-right: 7px;
-}
 
 .commands {
 	font-family: FontAwesome;
@@ -44,15 +29,16 @@
 .editing_delete::before {
 	content: "\f00d ";
 	color: red;
+	padding-right: 5px;
 }
 
 .editing_hide,
-.editing_show {
-	padding-left: 7px;
-}
-
-.editing_move {
-	padding-right: 7px !important;
+.editing_show,
+.editing_move,
+.editing_groupsnone,
+.editing_groupsvisible,
+.editing_groupsseperate {
+	padding-right: 10px !important;
 }
 
 .editing_move:hover {
@@ -65,6 +51,7 @@
 
 .editing_moveright::before {
 	content: "\f061 ";
+	padding-right: 5px;
 }
 
 .editing_moveleft::before {
@@ -74,6 +61,7 @@
 .editing_update::before,
 .editing_edit::before {
 	content: "\f013 ";
+	padding-right: 5px;
 }
 
 .editing_duplicate::before {
@@ -87,6 +75,7 @@
 
 .editing_title::before {
 	content: "\f040 ";
+	padding-right: 5px;
 }
 
 .editing_hide::before {
@@ -100,6 +89,7 @@
 .editing_assign::before,
 .editing_roles::before {
 	content: "\f084 ";
+	padding-right: 5px;
 }
 
 .editing_groupsnone::before {
@@ -112,6 +102,10 @@
 
 .editing_groupsseparate::before {
 	content: "\f0c0 ";
+}
+
+.toggle-display::before {
+	content: "\f085 ";
 }
 
 /* @end */
