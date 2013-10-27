@@ -6,10 +6,8 @@
  
  /* @group Core */
 
-@font-face {
-    font-family: 'FontAwesome'; 
-    font-weight: normal;
-    font-style: normal;
+.fa {
+	font-style: normal !important;
 }
 
 body{
