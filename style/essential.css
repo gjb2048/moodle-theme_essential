@@ -291,7 +291,6 @@ ul.breadcrumb li:last-child:after {
     border-radius: 0px;
     line-height: 0px;
     background-image: none;
-    filter: none;
 }
 
 .navbar .brand {
@@ -419,7 +418,7 @@ h2.pagetitle span {
 }
 
 .forumpost .content .posting {
-    border-top: 1px bg/dotted #ccc;
+    border-top: 1px dotted #ccc;
     padding-top: 10px;
 }
 
@@ -726,7 +725,7 @@ table#greyboxleft h2 {
 }
 
 .block_rss_client .content li {
-    border-bottom: 1px bg/dotted #E1E1E1;
+    border-bottom: 1px dotted #E1E1E1;
     padding: 5px;
 }
 
@@ -986,7 +985,6 @@ table#greyboxleft h2 {
 
 .coursebox .content .courseimage img {
     border-radius: 5px;
-    -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border: 3px solid #fff;
 }
@@ -1328,8 +1326,6 @@ img.profilepicture
 .nav-tabs > li, .nav-pills > li {
     float:none;
     display:inline-block;
-    *display:inline; /* ie7 fix */
-     zoom:1; /* hasLayout ie7 trigger */
 }
 
 .nav-tabs, .nav-pills {
@@ -1460,7 +1456,7 @@ img.profilepicture
 
 .questionbankwindow.block {
     background: white;
-    padding: 0px, 12px;
+    padding: 0px 12px;
     border-radius: 8px;
     border: 1px solid #E1E1E1;
     margin-bottom: 10px;
@@ -1651,7 +1647,6 @@ table#user-grades th.userreport.c1 {
 	background: #fff;
 	border: 1px solid #e1e1e1;
 	border-radius: 5px;
-	moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	padding-bottom: 10px;
 }
