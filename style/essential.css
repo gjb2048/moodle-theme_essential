@@ -985,7 +985,6 @@ table#greyboxleft h2 {
 
 .coursebox .content .courseimage img {
     border-radius: 5px;
-    -webkit-border-radius: 5px;
     border: 3px solid #fff;
 }
 
@@ -994,8 +993,6 @@ table#greyboxleft h2 {
     border-radius: 10px;
     border: 1px solid #E1E1E1 !important;
     padding: 10px;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
-    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
     box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
 }
 
@@ -1237,16 +1234,12 @@ table#greyboxleft h2 {
     border:5px solid #fff;
     box-shadow:0px 0px 3px #aaa;
     text-align:center;
-    -webkit-transition:border 1s ease;
-    -moz-transition:border 1s ease;
-    -o-transition:border 1s ease;
+    -webkit-transition: border 1s ease; /* Safari */
     transition:border 1s ease;
 }
 
 .afeature:hover{
-    -webkit-transition:border 1s ease;
-    -moz-transition:border 1s ease;
-    -o-transition:border 1s ease;
+    -webkit-transition: border 1s ease; /* Safari */
     transition:border 1s ease;
 }
 
@@ -1286,16 +1279,12 @@ table#greyboxleft h2 {
     border:5px solid #fff;
     box-shadow:0px 0px 3px #aaa;
     text-align:center;
-    -webkit-transition:border 1s ease;
-    -moz-transition:border 1s ease;
-    -o-transition:border 1s ease;
+    -webkit-transition: border 1s ease; /* Safari */
     transition:border 1s ease;
 }
 
 .myprofileitem.picture:hover{
-    -webkit-transition:border 1s ease;
-    -moz-transition:border 1s ease;
-    -o-transition:border 1s ease;
+    -webkit-transition: border 1s ease; /* Safari */
     transition:border 1s ease;
 }
 
@@ -1314,9 +1303,7 @@ img.profilepicture
 }
 
 .socials img:hover{
-    -webkit-transition: all .5s ease;
-    -o-transition: all .5s ease;
-    -moz-transition: all .5s ease;
+    -webkit-transition: all .5s ease; /* Safari */
     transition: all .5s ease;
 }
 
@@ -1647,7 +1634,6 @@ table#user-grades th.userreport.c1 {
 	background: #fff;
 	border: 1px solid #e1e1e1;
 	border-radius: 5px;
-	-webkit-border-radius: 5px;
 	padding-bottom: 10px;
 }
 
@@ -1665,8 +1651,6 @@ h2.eventtitle {
 
 table.calendarmonth.calendartable {
 	background: #fff;
-	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
-	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
 	box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
 }
 
