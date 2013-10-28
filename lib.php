@@ -37,7 +37,6 @@
 /**
  * Include the Awesome Font.
  */
-
 function theme_essential_set_fontwww($css) {
     global $CFG, $PAGE;
     if(empty($CFG->themewww)){
@@ -508,6 +507,7 @@ function theme_essential_process_css($css, $theme) {
     $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
 
     // Set the font path.
+
     $css = theme_essential_set_fontwww($css);
     return $css;
 }
