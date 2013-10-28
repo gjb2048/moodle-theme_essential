@@ -38,6 +38,8 @@ $hasios         = (empty($PAGE->theme->settings->ios)) ? false : $PAGE->theme->s
 $hasandroid     = (empty($PAGE->theme->settings->android)) ? false : $PAGE->theme->settings->android;
 $haswebsite     = (empty($PAGE->theme->settings->website)) ? false : $PAGE->theme->settings->website;
 
+$hastagline = ($SITE->summary);
+
 // If any of the above social networks are true, sets this to true.
 $hassocialnetworks = ($hasfacebook || $hastwitter || $hasgoogleplus || $hasflickr || $hasinstagram || $hasvk || $haslinkedin || $haspinterest || $hasskype || $haslinkedin || $haswebsite || $hasyoutube ) ? true : false;
 $hasmobileapps = ($hasios || $hasandroid ) ? true : false;
@@ -78,18 +80,19 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
         <?php } else { ?>
         	<div class="span11">
         <?php } ?>
-            <?php
-            if (!$haslogo) { ?>
+            <?php if (!$haslogo) { ?>
                 <i id="headerlogo" class="fa fa-<?php echo $PAGE->theme->settings->siteicon ?>"></i>
-                <h1 id="title"><?php echo $SITE->shortname; ?></h1>
-                <h2 id="subtitle"><?php p(strip_tags(format_text($SITE->summary, FORMAT_HTML))) ?></h2>
+                <?php if ($hastagline) { ?>
+                	<h1 id="title"><?php echo $SITE->shortname; ?></h1>
+                	<h2 id="subtitle"><?php p(strip_tags(format_text($hastagline, FORMAT_HTML))) ?></h2>
+                <?php } else { ?>
+                	<h1 id="title" style="padding-top: 7px;"><?php echo $SITE->shortname; ?></h1>
+                <?php } ?>
                 
-            <?php
-            } else { ?>
+            <?php } else { ?>
                 
                 <a class="logo" href="<?php echo $CFG->wwwroot; ?>" title="<?php print_string('home'); ?>"></a>
-            <?php
-            } ?>
+            <?php } ?>
         </div>
         <?php if (isloggedin() && $hasheaderprofilepic) { ?>
         <div class="span1 pull-right" id="profilepic">
