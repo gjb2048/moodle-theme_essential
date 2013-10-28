@@ -6,10 +6,6 @@
  
  /* @group Core */
 
-.fa {
-	font-style: normal !important;
-}
-
 body{
     line-height: 25px;
     text-shadow: none !important;
@@ -49,10 +45,22 @@ a {
 #page {
     padding-top: 10px;
 }
-
-
-
-/* @group Custom */
+ 
+ /* @group Font Awesome */
+ 
+ .fa {
+ 	font-style: normal !important;
+ }
+ 
+ @font-face {
+     font-family: 'FontAwesome'; 
+     font-weight: normal;
+     font-style: normal;
+ }
+ 
+ /* @end */
+ 
+ /* @group Custom */
 
 .bor {
     height: 20px;
