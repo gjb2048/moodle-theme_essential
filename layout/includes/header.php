@@ -86,7 +86,7 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
                 	<h1 id="title"><?php echo $SITE->shortname; ?></h1>
                 	<h2 id="subtitle"><?php p(strip_tags(format_text($hastagline, FORMAT_HTML))) ?></h2>
                 <?php } else { ?>
-                	<h1 id="title" style="padding-top: 7px;"><?php echo $SITE->shortname; ?></h1>
+                	<h1 id="title" style="line-height: 2em"><?php echo $SITE->shortname; ?></h1>
                 <?php } ?>
                 
             <?php } else { ?>
