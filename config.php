@@ -118,7 +118,7 @@ $THEME->layouts = array(
         'file' => 'columns1.php',
         'regions' => array('footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
         'defaultregion' => 'footer-right',
-        'options' => array('nofooter'=>true, 'nonavbar'=>true),
+        'options' => array('nofooter'=>true, 'nonavbar'=>true, 'noheader'=>true),
     ),
     // No blocks and minimal footer - used for legacy frame layouts only!
     'frametop' => array(
