@@ -201,6 +201,29 @@ a#button:hover {
 
 /* @end */
 
+<<<<<<< HEAD
+=======
+/* @group Slideshow */
+
+.variant2.slide1 {
+	background: url([[setting:slide1image]]) no-repeat top right  !important;
+}
+
+.variant2.slide2 {
+	background: url([[setting:slide2image]]) no-repeat top right  !important;
+}
+
+.variant2.slide3 {
+	background: url([[setting:slide3image]]) no-repeat top right  !important;
+}
+
+.variant2.slide4 {
+	background: url([[setting:slide4image]]) no-repeat top right  !important;
+}
+
+/* @end */
+
+>>>>>>> ESSENTIAL_26
 /* @group Blocks */
 
 .block .header .title h2:before {

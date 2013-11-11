@@ -53,7 +53,7 @@ $THEME->layouts = array(
     // Front page.
     'frontpage' => array(
         'file' => 'frontpage.php',
-        'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
+        'regions' => array('side-pre', 'home-left', 'home-middle', 'home-right', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
         'defaultregion' => 'hidden-dock',
         'options' => array('nonavbar'=>true),
     ),
@@ -90,7 +90,11 @@ $THEME->layouts = array(
     // Server administration scripts.
     'admin' => array(
         'file' => 'columns2.php',
+<<<<<<< HEAD
         'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
+=======
+        'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),
+>>>>>>> ESSENTIAL_26
         'defaultregion' => 'side-pre',
     ),
     // My dashboard page.

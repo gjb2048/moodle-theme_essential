@@ -99,7 +99,7 @@ a.logo {
     margin: 0;
     padding: 0;
     width: 100%;
-    background-size: contain;
+    background-size: contain !important;
 }
 
 h1#title {
@@ -338,6 +338,15 @@ ul.breadcrumb li:last-child:after {
 
 .course-content ul li.section.main {
     border-bottom: 0px none;
+<<<<<<< HEAD:style/essential.css
+=======
+}
+
+div.mdl-align.title {
+	text-align: left;
+	border-bottom: 1px solid #e1e1e1;
+	margin-bottom: 15px;
+>>>>>>> ESSENTIAL_26:style/essential.css
 }
 
 .course-content ul.topics li.section.main.clearfix.current {
@@ -371,7 +380,81 @@ h2.pagetitle span {
 
 .label, .badge {
     font-weight: normal;
+<<<<<<< HEAD:style/essential.css
+=======
 }
+
+/* @group Course Footer */
+
+#section_footer {
+	padding:2em 0;
+	color: [[setting:themecolor]];
+	line-height:1.5; 
+	clear:both;
+}
+#section_footer a{
+	font-style:normal;
+	text-decoration:none;
+}
+
+#previous_section, #next_section {
+	width:48%;
+	display:block; 
+}
+
+#next_section {
+	text-align:right;
+	float:right;
+}
+
+#previous_section {
+	float:left;
+	text-align:left;
+}
+
+.nav_guide { 
+letter-spacing:0.1em;
+	text-transform:uppercase;
+	font-style:normal;
+	color:#e4a82a;
+}
+.nav_icon {
+	color: [[setting:themecolor]];
+	padding:0.3em;
+	width:8.3%;
+	text-align:center;
+}
+
+.nav_icon:hover {
+	color: [[setting:themehovercolor]];
+}
+
+#next_section .nav_icon {
+	float:right;
+	margin-left:0.3em;
+	border-left:1px solid #eee;
+	font-size:2em;
+}
+
+#next_section .text{
+	width:74.05%;
+	float:right;
+}
+
+#previous_section .nav_icon {
+	float:left;
+	margin-right:0.3em;
+	border-right:1px solid #eee;
+	font-size:2em;
+}
+
+#previous_section .text{
+	width:74.05%;
+	float:left;
+>>>>>>> ESSENTIAL_26:style/essential.css
+}
+
+/* @end */
 
 /* @end */
 
@@ -382,7 +465,7 @@ h2.pagetitle span {
 }
 
 .container-fluid {
-    max-width: 1200px;
+    max-width: [[setting:pagewidth]];
 }
 
 #region-main {

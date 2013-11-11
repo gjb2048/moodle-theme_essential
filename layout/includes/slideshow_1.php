@@ -1,6 +1,7 @@
 <?php 
     if ($hasslideshow && !strpos($checkuseragent, 'MSIE 7')) { // Hide slideshow for IE7
 ?>
+Design One
     <div id="da-slider" class="da-slider <?php echo $hideonphone ?>" style="background-position: 8650% 0%;">
 
     <?php if ($hasslide1) { ?>
