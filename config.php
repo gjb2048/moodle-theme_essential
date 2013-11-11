@@ -90,11 +90,7 @@ $THEME->layouts = array(
     // Server administration scripts.
     'admin' => array(
         'file' => 'columns2.php',
-<<<<<<< HEAD
-        'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
-=======
         'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),
->>>>>>> ESSENTIAL_26
         'defaultregion' => 'side-pre',
     ),
     // My dashboard page.
@@ -186,6 +182,6 @@ if (!empty($_SERVER['HTTP_USER_AGENT'])) {
     $useragent = $_SERVER['HTTP_USER_AGENT'];
 }
 
-if (core_useragent::is_ie() && !core_useragent::check_ie_version('9.0')) {
+if (check_browser_version('MSIE') && !check_browser_version('MSIE', '9.0')) {
     $THEME->javascripts[] = 'html5shiv';
 }

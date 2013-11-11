@@ -98,23 +98,12 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
-<<<<<<< HEAD
-    // Frontpage Block alignment.
-    $name = 'theme_essential/frontpageblocks';
-    $title = get_string('frontpageblocks' , 'theme_essential');
-    $description = get_string('frontpageblocksdesc', 'theme_essential');
-    $left = get_string('left', 'theme_essential');
-    $right = get_string('right', 'theme_essential');
-    $default = 'left';
-    $choices = array('1'=>$left, '0'=>$right);
-=======
     // Fixed or Variable Width.
     $name = 'theme_essential/pagewidth';
     $title = get_string('pagewidth', 'theme_essential');
     $description = get_string('pagewidthdesc', 'theme_essential');
     $default = 1200;
     $choices = array(1900=>get_string('fixedwidthwide','theme_essential'), 1200=>get_string('fixedwidthnarrow','theme_essential'), 100=>get_string('variablewidth','theme_essential'));
->>>>>>> ESSENTIAL_26
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -388,7 +377,7 @@ defined('MOODLE_INTERNAL') || die;
     $slideshow2 = get_string('slideshow2', 'theme_essential');
     $slideshow3 = get_string('slideshow3', 'theme_essential');
     $default = 'slideshow1';
-    $choices = array('1'=>$slideshow1, '2'=>$slideshow2, '3'=>$slideshow3);
+    $choices = array('1'=>$slideshow1, '2'=>$slideshow2);
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);

@@ -96,7 +96,7 @@
     	*/
     
     	$hasdisplaymycourses = (empty($this->page->theme->settings->displaymycourses)) ? false : $this->page->theme->settings->displaymycourses;
-        if (isloggedin() && !isguestuser() && $hasdisplaymycourses) {
+        if (isloggedin() && $hasdisplaymycourses) {
         	$mycoursetitle = $this->page->theme->settings->mycoursetitle;
             if ($mycoursetitle == 'module') {
 				$branchlabel = '<i class="fa fa-briefcase"></i>'.get_string('mymodules', 'theme_essential');
@@ -132,11 +132,7 @@
     	* functionality to the custommenu.
     	*/
         $hasdisplaymydashboard = (empty($this->page->theme->settings->displaymydashboard)) ? false : $this->page->theme->settings->displaymydashboard;
-<<<<<<< HEAD
-        if (isloggedin() && !isguestuser() && $hasdisplaymydashboard) {
-=======
         if (isloggedin() && $hasdisplaymydashboard) {
->>>>>>> ESSENTIAL_26
             $branchlabel = '<i class="fa fa-dashboard"></i>'.get_string('mydashboard', 'theme_essential');
             $branchurl   = new moodle_url('/my/index.php');
             $branchtitle = get_string('mydashboard', 'theme_essential');
@@ -173,40 +169,24 @@
             'chapter' => 'file',
             'docs' => 'question-sign',
             'generate' => 'gift',
-<<<<<<< HEAD
-            'i/backup' => 'upload',
-=======
             'i/backup' => 'cloud-download',
->>>>>>> ESSENTIAL_26
             'i/checkpermissions' => 'user',
             'i/edit' => 'pencil',
             'i/filter' => 'filter',
             'i/grades' => 'table',
             'i/group' => 'group',
             'i/hide' => 'eye-open',
-<<<<<<< HEAD
-            'i/import' => 'download',
-=======
             'i/import' => 'upload',
->>>>>>> ESSENTIAL_26
             'i/move_2d' => 'move',
-            'i/navigationitem' => 'square',
+            'i/navigationitem' => 'circle-blank',
             'i/outcomes' => 'magic',
             'i/publish' => 'globe',
             'i/reload' => 'refresh',
-<<<<<<< HEAD
-            'i/report' => 'list',
-            'i/restore' => 'download',
-            'i/return' => 'repeat',
-            'i/roles' => 'user',
-            'i/settings' => 'flask',
-=======
             'i/report' => 'list-alt',
             'i/restore' => 'cloud-upload',
             'i/return' => 'repeat',
             'i/roles' => 'user',
             'i/settings' => 'cogs',
->>>>>>> ESSENTIAL_26
             'i/show' => 'eye-close',
             'i/switchrole' => 'random',
             'i/user' => 'user',

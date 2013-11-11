@@ -338,15 +338,12 @@ ul.breadcrumb li:last-child:after {
 
 .course-content ul li.section.main {
     border-bottom: 0px none;
-<<<<<<< HEAD:style/essential.css
-=======
 }
 
 div.mdl-align.title {
 	text-align: left;
 	border-bottom: 1px solid #e1e1e1;
 	margin-bottom: 15px;
->>>>>>> ESSENTIAL_26:style/essential.css
 }
 
 .course-content ul.topics li.section.main.clearfix.current {
@@ -380,8 +377,6 @@ h2.pagetitle span {
 
 .label, .badge {
     font-weight: normal;
-<<<<<<< HEAD:style/essential.css
-=======
 }
 
 /* @group Course Footer */
@@ -451,7 +446,6 @@ letter-spacing:0.1em;
 #previous_section .text{
 	width:74.05%;
 	float:left;
->>>>>>> ESSENTIAL_26:style/essential.css
 }
 
 /* @end */

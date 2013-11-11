@@ -218,19 +218,11 @@ echo $OUTPUT->doctype() ?>
 <!-- Start Slideshow -->
 <?php 
 	if($PAGE->theme->settings->toggleslideshow==1) {
-<<<<<<< HEAD
-		require_once(dirname(__FILE__).'/includes/slideshow.php');
-	} else if($PAGE->theme->settings->toggleslideshow==2 && !isloggedin()) {
-		require_once(dirname(__FILE__).'/includes/slideshow.php');
-	} else if($PAGE->theme->settings->toggleslideshow==3 && isloggedin()) {
-		require_once(dirname(__FILE__).'/includes/slideshow.php');
-=======
 		require_once(dirname(__FILE__).'/includes/slideshow_'. ($PAGE->theme->settings->slideshowvariant) .'.php');
 	} else if($PAGE->theme->settings->toggleslideshow==2 && !isloggedin()) {
 		require_once(dirname(__FILE__).'/includes/slideshow_'. ($PAGE->theme->settings->slideshowvariant) .'.php');
 	} else if($PAGE->theme->settings->toggleslideshow==3 && isloggedin()) {
 		require_once(dirname(__FILE__).'/includes/slideshow_'. ($PAGE->theme->settings->slideshowvariant) .'.php');
->>>>>>> ESSENTIAL_26
 	} 
 ?>
 <!-- End Slideshow -->
@@ -256,8 +248,6 @@ echo $OUTPUT->doctype() ?>
 ?>
 <!-- End Marketing Spots -->
 
-<<<<<<< HEAD
-=======
 <!-- Start Middle Blocks -->
 <?php 
 	if($PAGE->theme->settings->frontpagemiddleblocks==1) {
@@ -270,7 +260,6 @@ echo $OUTPUT->doctype() ?>
 ?>
 <!-- End Middle Blocks -->
 
->>>>>>> ESSENTIAL_26
     <div id="page-content" class="row-fluid">
     	<?php if ($hasfrontpageblocks==1) { ?>
         <section id="region-main" class="span8 pull-right">
