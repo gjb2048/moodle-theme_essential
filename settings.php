@@ -375,7 +375,6 @@ defined('MOODLE_INTERNAL') || die;
     $description = get_string('slideshowvariantdesc', 'theme_essential');
     $slideshow1 = get_string('slideshow1', 'theme_essential');
     $slideshow2 = get_string('slideshow2', 'theme_essential');
-    $slideshow3 = get_string('slideshow3', 'theme_essential');
     $default = 'slideshow1';
     $choices = array('1'=>$slideshow1, '2'=>$slideshow2);
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
