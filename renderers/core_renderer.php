@@ -185,7 +185,7 @@
             'i/restore' => 'cloud-upload',
             'i/return' => 'repeat',
             'i/roles' => 'user',
-            'i/settings' => 'cog',
+            'i/settings' => 'cogs',
             'i/show' => 'eye-slash',
             'i/switchrole' => 'random',
             'i/user' => 'user',
