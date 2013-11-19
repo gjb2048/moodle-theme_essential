@@ -154,6 +154,12 @@ $string['colorheading'] = 'Colour Settings';
 $string['colorheadingsub'] = 'Set the colours used in your theme';
 $string['colordesc'] = 'Here you can find various settings to change many of the colours found in this theme.';
 
+$string['slidecolors'] = 'Slideshow Colors';
+$string['slidecolorsdesc'] = 'Change the colors on the slideshow';
+
+$string['footercolors'] = 'Footer Colors';
+$string['footercolorsdesc'] = 'Change the colors on the page footers';
+
 $string['themecolor'] = 'Theme Colour';
 $string['themecolordesc'] = 'What colour should your theme be.  This will change mulitple components to produce the colour you wish across the moodle site';
 $string['themehovercolor'] = 'Theme Hover Colour';
@@ -199,10 +205,17 @@ $string['hideonphone'] = 'Slideshow on Mobiles';
 $string['hideonphonedesc'] = 'Choose if you wish to have the slideshow shown on mobiles or not';
 $string['readmore'] = 'Read More';
 
+$string['slidecolor'] = 'Slide Text Colour';
+$string['slidecolordesc'] = 'What colour should the main side text be.';
+$string['slideheadercolor'] = 'Slide Heading Colour';
+$string['slideheadercolordesc'] = 'What colour should the slide header be';
+$string['slidebuttoncolor'] = 'Slide Button Colour';
+$string['slidebuttoncolordesc'] = 'What colour should the slide "read more" button be';
+
 $string['slideshowvariant'] = 'Slideshow Design';
 $string['slideshowvariantdesc'] = 'Choose the style of slidewhow you would like to display';
-$string['slideshow1'] = 'Design One';
-$string['slideshow2'] = 'Design Two';
+$string['slideshow1'] = 'Small Image on Right';
+$string['slideshow2'] = 'Large Background Image';
 $string['slideshow3'] = 'Design Three';
 
 $string['slideshowTitle'] = 'Slideshow';

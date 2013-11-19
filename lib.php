@@ -413,6 +413,30 @@ function theme_essential_process_css($css, $theme) {
         $footerheadingcolor = null;
     }
     $css = theme_essential_set_footerheadingcolor($css, $footerheadingcolor);
+    
+     // Set the slide header color.
+    if (!empty($theme->settings->slideheadercolor)) {
+        $slideheadercolor = $theme->settings->slideheadercolor;
+    } else {
+        $slideheadercolor = null;
+    }
+    $css = theme_essential_set_slideheadercolor($css, $slideheadercolor);
+    
+     // Set the slide text color.
+    if (!empty($theme->settings->slidecolor)) {
+        $slidecolor = $theme->settings->slidecolor;
+    } else {
+        $slidecolor = null;
+    }
+    $css = theme_essential_set_slidecolor($css, $slidecolor);
+    
+     // Set the slide button color.
+    if (!empty($theme->settings->slidebuttoncolor)) {
+        $slidebuttoncolor = $theme->settings->slidebuttoncolor;
+    } else {
+        $slidebuttoncolor = null;
+    }
+    $css = theme_essential_set_slidebuttoncolor($css, $slidebuttoncolor);
 
     
     // Set the navbar seperator.
@@ -633,6 +657,36 @@ function theme_essential_set_footerheadingcolor($css, $footerheadingcolor) {
     $replacement = $footerheadingcolor;
     if (is_null($replacement)) {
         $replacement = '#CCCCCC';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_slideheadercolor($css, $slideheadercolor) {
+    $tag = '[[setting:slideheadercolor]]';
+    $replacement = $slideheadercolor;
+    if (is_null($replacement)) {
+        $replacement = '#30add1';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_slidecolor($css, $slidecolor) {
+    $tag = '[[setting:slidecolor]]';
+    $replacement = $slidecolor;
+    if (is_null($replacement)) {
+        $replacement = '#888888';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_slidebuttoncolor($css, $slidebuttoncolor) {
+    $tag = '[[setting:slidebuttoncolor]]';
+    $replacement = $slidebuttoncolor;
+    if (is_null($replacement)) {
+        $replacement = '#30add1';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
