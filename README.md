@@ -18,9 +18,11 @@ Cool things to know about the theme.
  
   New in 2.6.1
  ========================
- - MAJOR UPDATES for 2.6 compatability
- - Can now add three columns of blocks to middle of the homepage
- - Two designs for the slideshow available. One with iage to the right, other with a background image
+ - MAJOR UPDATES for 2.6 compatibility
+ - [Font Awesome 4.0.3](http://fontawesome.io/) now supported.
+ - Can now add three columns of blocks to middle of the homepage under marketing spots.
+ - Can now set homepgage blocks column to align left or right
+ - Two designs for the slideshow available. One with image to the right, other with a background image
  
  New in 2.6
  ========================
