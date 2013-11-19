@@ -137,8 +137,7 @@ $THEME->layouts = array(
     // Please be extremely careful if you are modifying this layout.
     'maintenance' => array(
         'file' => 'maintenance.php',
-        'regions' => array('footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
-        'defaultregion' => 'hidden-dock',
+        'regions' => array(),
     ),
     // Should display the content and basic headers only.
     'print' => array(

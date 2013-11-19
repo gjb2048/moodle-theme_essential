@@ -20,7 +20,7 @@
  * @package    theme
  * @subpackage Essential
  * @author     Julian (@moodleman) Ridden
- * @author     Based on code originally written by G J Bernard, Mary Evans, Bas Brands, Stuart Lamour and David Scotson.
+ * @author     Based on code originally written by G J Barnard, Mary Evans, Bas Brands, Stuart Lamour and David Scotson.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
  
@@ -99,18 +99,15 @@
         if (isloggedin() && $hasdisplaymycourses) {
         	$mycoursetitle = $this->page->theme->settings->mycoursetitle;
             if ($mycoursetitle == 'module') {
-				$branchlabel = '<i class="fa fa-briefcase"></i>'.get_string('mymodules', 'theme_essential');
 				$branchtitle = get_string('mymodules', 'theme_essential');
 			} else if ($mycoursetitle == 'unit') {
-				$branchlabel = '<i class="fa fa-briefcase"></i>'.get_string('myunits', 'theme_essential');
 				$branchtitle = get_string('myunits', 'theme_essential');
 			} else if ($mycoursetitle == 'class') {
-				$branchlabel = '<i class="fa fa-briefcase"></i>'.get_string('myclasses', 'theme_essential');
 				$branchtitle = get_string('myclasses', 'theme_essential');
 			} else {
-				$branchlabel = '<i class="fa fa-briefcase"></i>'.get_string('mycourses', 'theme_essential');
 				$branchtitle = get_string('mycourses', 'theme_essential');
 			}
+			$branchlabel = '<i class="fa fa-briefcase"></i>'.$branchtitle;
             $branchurl   = new moodle_url('/my/index.php');
             $branchsort  = 10000;
  
@@ -122,7 +119,8 @@
  					}
  				}
  			} else {
- 				$branch->add('<em>'.get_string('noenrolments', 'theme_essential').'</em>',new moodle_url('/'),get_string('noenrolments', 'theme_essential'));
+                $noenrolments = get_string('noenrolments', 'theme_essential');
+ 				$branch->add('<em>'.$noenrolments.'</em>', new moodle_url('/'), $noenrolments);
  			}
             
         }
@@ -156,8 +154,9 @@
     */
      
  	protected function render_pix_icon(pix_icon $icon) {
-        if (self::replace_moodle_icon($icon->pix) !== false && $icon->attributes['alt'] === '' && $icon->attributes['title'] === '') {
-            return self::replace_moodle_icon($icon->pix);
+        $ouricon = self::replace_moodle_icon($icon->pix);
+        if ($ouricon !== false && $icon->attributes['alt'] === '' && $icon->attributes['title'] === '') {
+            return $ouricon;
         } else {
             return parent::render_pix_icon($icon);
         }
@@ -175,10 +174,10 @@
             'i/filter' => 'filter',
             'i/grades' => 'table',
             'i/group' => 'group',
-            'i/hide' => 'eye-open',
+            'i/hide' => 'eye',
             'i/import' => 'upload',
             'i/move_2d' => 'move',
-            'i/navigationitem' => 'circle-blank',
+            'i/navigationitem' => 'circle',
             'i/outcomes' => 'magic',
             'i/publish' => 'globe',
             'i/reload' => 'refresh',
@@ -187,7 +186,7 @@
             'i/return' => 'repeat',
             'i/roles' => 'user',
             'i/settings' => 'cogs',
-            'i/show' => 'eye-close',
+            'i/show' => 'eye-slash',
             'i/switchrole' => 'random',
             'i/user' => 'user',
             'i/users' => 'user',
@@ -207,7 +206,7 @@
     * @since 2.5.1 2.6
     * @param string $region The region to get HTML for.
     * @return string HTML.
-    * Written by G J Bernard
+    * Written by G J Barnard
     */
     
     public function essentialblocks($region, $classes = array(), $tag = 'aside') {
@@ -227,7 +226,7 @@
     *
     * @param moodle_url $url The URL + params to send through when clicking the button
     * @return string HTML the button
-    * Written by G J Bernard
+    * Written by G J Barnard
     */
     
     public function edit_button(moodle_url $url) {
@@ -236,14 +235,14 @@
             $url->param('edit', 'off');
             $btn = 'btn-danger';
             $title = get_string('turneditingoff');
-            $icon = 'fa fa-off';
+            $icon = 'fa-power-off';
         } else {
             $url->param('edit', 'on');
             $btn = 'btn-success';
             $title = get_string('turneditingon');
-            $icon = 'fa fa-edit';
+            $icon = 'fa-edit';
         }
-        return html_writer::tag('a', html_writer::start_tag('i', array('class' => $icon.' fa-fw')).
+        return html_writer::tag('a', html_writer::start_tag('i', array('class' => $icon.' fa fa-fw')).
                html_writer::end_tag('i'), array('href' => $url, 'class' => 'btn '.$btn, 'title' => $title));
     }
 }
