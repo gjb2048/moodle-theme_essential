@@ -81,6 +81,16 @@ $string['perf_max'] = 'Детально';
 $string['perf_min'] = 'Минимально';
 $string['visibleadminonly'] = 'Блоки, размещенные в этой области, доступны только администраторам';
 $string['backtotop'] = 'К началу';
+
+$string['nextsection'] = 'Следующий раздел';
+$string['previoussection'] = 'Предыдущий раздел';
+
+$string['pagewidth'] = 'Установить ширину страницы';
+$string['pagewidthdesc'] = 'Выберите из списка нужную ширину страницы для Вашего сайта';
+$string['fixedwidthwide'] = 'Фиксированная - Широкая';
+$string['fixedwidthnarrow'] = 'Фиксированная - Узкая';
+$string['variablewidth'] = 'По ширине экрана';
+
 $string['alwaysdisplay'] = 'Показывать всегда';
 $string['displaybeforelogin'] = 'Показывать только перед авторизацией';
 $string['displayafterlogin'] = 'Показывать только после авторизации';
