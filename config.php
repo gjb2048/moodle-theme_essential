@@ -43,9 +43,6 @@ $THEME->plugins_exclude_sheets = array(
     'block' => array(
         'html',
     ),
-    'gradereport' => array(
-        'grader',
-    ),
 );
 
 $THEME->layouts = array(
