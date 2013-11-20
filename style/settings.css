@@ -433,6 +433,10 @@ a#button:hover {
     background-color: [[setting:themehovercolor]];
 }
 
+.nav-collapse{
+	border: 1px solid [[setting:themecolor]];
+}
+
 /* @end */
 
 /* @group Performance Information */
