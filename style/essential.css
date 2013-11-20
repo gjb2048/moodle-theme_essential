@@ -1303,6 +1303,11 @@ table#greyboxleft h2 {
 #page-footer .block_rss_client .footer a {
         color: #fff;
 }
+
+.path-grade-report-grader table {
+	background: transparent;
+}
+
     
 /* @end */
 
