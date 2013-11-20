@@ -137,16 +137,16 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
                 <li><a href="<?php echo $haspinterest; ?>" class="pinterest"><i class="fa fa-pinterest-square"></i></a></li>
                 <?php } ?>
                 <?php if ($hasinstagram) { ?>
-                <li><a href="<?php echo $hasinstagram; ?>" class="instagram"><span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-instagram fa-stack-1x fa-inverse"></i></span></a></li>
+                <li><a href="<?php echo $hasinstagram; ?>" class="instagram"><span class="fa-stack fa-lg"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-instagram fa-stack-1x fa-inverse"></i></span></a></li>
                 <?php } ?>
                 <?php if ($hasvk) { ?>
-                <li><a href="<?php echo $hasvk; ?>" class="vk"><span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-vk fa-stack-1x fa-inverse"></i></span></li>
+                <li><a href="<?php echo $hasvk; ?>" class="vk"><span class="fa-stack fa-lg"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-vk fa-stack-1x fa-inverse"></i></span></a></li>
                 <?php } ?>
                 <?php if ($hasskype) { ?>
-                <li><a href="<?php echo $hasskype; ?>" class="skype"><span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-skype fa-stack-1x fa-inverse"></i></span></li>
+                <li><a href="<?php echo $hasskype; ?>" class="skype"><span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-skype fa-stack-1x fa-inverse"></i></span></a></li>
                 <?php } ?>
                 <?php if ($haswebsite) { ?>
-                <li><a href="<?php echo $haswebsite; ?>" class="website"><span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-globe fa-stack-1x fa-inverse"></i></span></li>
+                <li><a href="<?php echo $haswebsite; ?>" class="website"><span class="fa-stack fa-lg"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-globe fa-stack-1x fa-inverse"></i></span></a></li>
                 <?php } ?>
 	    </ul>
         </div>
