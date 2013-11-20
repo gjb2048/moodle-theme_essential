@@ -116,6 +116,7 @@ ul.breadcrumb li:after {
     border-top:1px solid [[setting:themehovercolor]] !important;
     border-bottom:1px solid [[setting:themehovercolor]] !important;
     background-color: [[setting:themecolor]] !important;
+    filter: none;
 }
 
 .navbar .nav{
