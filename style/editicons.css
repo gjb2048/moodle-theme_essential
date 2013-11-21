@@ -69,6 +69,20 @@
 	content: none;
 }
 
+.section-modchooser-link img {
+	display: none;
+}
+
+.section-modchooser-link .section-modchooser-text::before {
+	font-family: 'FontAwesome';
+	content: "\f067 ";
+	padding-right: 5px;
+}
+
+.section-modchooser-link .section-modchooser-text a:hover {
+	text-decoration: none;
+}
+
 .editing_update::before,
 .editing_edit::before {
 	content: "\f013 ";
@@ -85,6 +99,7 @@
 }
 
 .editing_title::before {
+	font-family: 'FontAwesome';
 	content: "\f040 ";
 	padding-right: 5px;
 }
