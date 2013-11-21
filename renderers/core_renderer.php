@@ -152,8 +152,15 @@
     * This code replaces the icons in the Admin block with
     * FontAwesome variants where available.
     */
+    
+	protected function render_pix_icon(pix_icon $icon) {
+		if (self::replace_moodle_icon($icon->pix) !== false && $icon->attributes['alt'] === '') {
+			return self::replace_moodle_icon($icon->pix);
+		} else {
+			return parent::render_pix_icon($icon);
+		}
+	}
      
- 	
     private static function replace_moodle_icon($name) {
         $icons = array(
             'add' => 'plus',
@@ -169,7 +176,7 @@
             'i/group' => 'group',
             'i/hide' => 'eye',
             'i/import' => 'upload',
-            'i/move_2d' => 'move',
+            'i/move_2d' => 'arrows',
             'i/navigationitem' => 'circle',
             'i/outcomes' => 'magic',
             'i/publish' => 'globe',
