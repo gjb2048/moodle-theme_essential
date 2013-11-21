@@ -153,14 +153,7 @@
     * FontAwesome variants where available.
     */
      
- 	protected function render_pix_icon(pix_icon $icon) {
-        $ouricon = self::replace_moodle_icon($icon->pix);
-        if ($ouricon !== false && $icon->attributes['alt'] === '' && $icon->attributes['title'] === '') {
-            return $ouricon;
-        } else {
-            return parent::render_pix_icon($icon);
-        }
-    }
+ 	
     private static function replace_moodle_icon($name) {
         $icons = array(
             'add' => 'plus',

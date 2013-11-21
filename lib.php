@@ -161,32 +161,6 @@ function essential_set_editicons($css, $editicons) {
     return $css;
 }
 
-/**
- * Displays the Autohide CSS based on settings value
- *
- * @param string $css
- * @param mixed $autohide
- * @return string
- * This code originally written for the Zebra theme by Danny Wahl
- */
-function essential_set_autohide($css, $autohide) {
-	global $CFG;
-	if (!empty($CFG->themedir)) {
-		$autohideurl = $CFG->themedir . '/essential/style/autohide.css'; //Pull the full path for autohide css
-	} else {
-		$autohideurl = $CFG->dirroot . '/theme/essential/style/autohide.css'; //MDL-36065
-	}
-    $tag = '[[setting:autohide]]';
-    if ($autohide) { //Setting is "YES"
-        $rules = file_get_contents($autohideurl);
-        $replacement = $rules;
-    } else { //Setting is "NO"
-        $replacement = null; //NULL so we don't actually output anything to the stylesheet
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
 
 /**
  * get_performance_output() override get_peformance_info()
@@ -454,14 +428,6 @@ function theme_essential_process_css($css, $theme) {
         $editicons = null;
     }
     $css = essential_set_editicons($css, $editicons);
-    
-    //Get the autohide value from settings
-    if (!empty($theme->settings->autohide)) {
-        $autohide = $theme->settings->autohide;
-    } else {
-        $autohide = null;
-    }
-    $css = essential_set_autohide($css, $autohide);
     
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
