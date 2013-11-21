@@ -46,16 +46,27 @@
 }
 
 .editing_move::before {
+	font-family: 'FontAwesome';
 	content: "\f047 ";
+}
+
+.editing_move img {
+	display: none;
 }
 
 .editing_moveright::before {
 	content: "\f061 ";
-	padding-right: 5px;
+	margin-right: 5px;
 }
 
 .editing_moveleft::before {
 	content: "\f060 ";
+	padding-right: 5px;
+}
+
+.moodle-actionmenu ul .editing_moveright::before,
+.moodle-actionmenu ul .editing_moveleft::before {
+	content: none;
 }
 
 .editing_update::before,
