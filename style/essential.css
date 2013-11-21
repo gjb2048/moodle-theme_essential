@@ -130,8 +130,11 @@ h2#subtitle {
     border: 0px none;
 }
 
-.breadcrumb-button a{
-    color: #fff;
+.btn-success,
+.btn-warning,
+.btn-info,
+.btn-danger {
+    color: #fff !important;
 }
 
 /* @group Social Buttons */
