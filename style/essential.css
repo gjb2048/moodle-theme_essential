@@ -161,8 +161,14 @@ a.instagram .fa-stack,
 a.vk .fa-stack,
 a.skype .fa-stack,
 a.website .fa-stack {
-    font-size: .52em;
-    margin-top: 0px;
+    font-size: .51em;
+}
+
+a.instagram .fa-stack,
+a.vk .fa-stack,
+a.skype .fa-stack,
+a.website .fa-stack {
+	margin-top: -4px;
 }
 
 a.facebook:hover, a.facebook:focus {
@@ -1303,6 +1309,11 @@ table#greyboxleft h2 {
 #page-footer .block_rss_client .footer a {
         color: #fff;
 }
+
+.path-grade-report-grader table {
+	background: transparent;
+}
+
     
 /* @end */
 

@@ -36,16 +36,12 @@ $THEME->parents = array('bootstrapbase');
 $THEME->sheets = array('slides', 'lightbox', 'font-awesome.min', 'essential', 'settings');
 $THEME->supportscssoptimisation = false;
 $THEME->enable_dock = false;
-$THEME->yuicssmodules = array();
 
 $THEME->editor_sheets = array();
 
 $THEME->plugins_exclude_sheets = array(
     'block' => array(
         'html',
-    ),
-    'gradereport' => array(
-        'grader',
     ),
 );
 
@@ -153,7 +149,7 @@ $THEME->layouts = array(
     ),
     // The pagelayout used for reports.
     'report' => array(
-        'file' => 'columns2.php',
+        'file' => 'columns1.php',
         'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
         'defaultregion' => 'side-pre',
     ),

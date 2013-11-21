@@ -116,6 +116,7 @@ ul.breadcrumb li:after {
     border-top:1px solid [[setting:themehovercolor]] !important;
     border-bottom:1px solid [[setting:themehovercolor]] !important;
     background-color: [[setting:themecolor]] !important;
+    filter: none;
 }
 
 .navbar .nav{
@@ -203,6 +204,23 @@ a#button:hover {
 
 /* @group Slideshow */
 
+.da-slider{
+	border-top: 4px solid [[setting:themecolor]];
+	border-bottom: 4px solid [[setting:themecolor]];
+}
+
+.da-slide p {
+	color:[[setting:slidecolor]];
+}
+
+.da-slide h2{
+	color:[[setting:slideheadercolor]];
+}
+
+.da-slide .da-link{
+	background:[[setting:slidebuttoncolor]];
+}
+
 .variant2.slide1 {
 	background: url([[setting:slide1image]]) no-repeat top right  !important;
 }
@@ -218,6 +236,23 @@ a#button:hover {
 .variant2.slide4 {
 	background: url([[setting:slide4image]]) no-repeat top right  !important;
 }
+
+.da-slide .da-img1 {
+	background: url([[setting:slide1image]]) no-repeat 0 0;
+}
+
+.da-slide .da-img2 {
+	background: url([[setting:slide2image]]) no-repeat 0 0;
+}
+
+.da-slide .da-img3 {
+	background: url([[setting:slide3image]]) no-repeat 0 0;
+}
+
+.da-slide .da-img4 {
+	background: url([[setting:slide4image]]) no-repeat 0 0;
+}
+
 
 /* @end */
 
@@ -397,6 +432,10 @@ a#button:hover {
 
 .nav-tabs>li>a:hover {
     background-color: [[setting:themehovercolor]];
+}
+
+.nav-collapse{
+	border: 1px solid [[setting:themecolor]];
 }
 
 /* @end */
