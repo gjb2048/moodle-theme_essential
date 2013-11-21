@@ -20,11 +20,12 @@ Cool things to know about the theme.
  ========================
  - NEW: MAJOR UPDATES for 2.6 compatibility.
  - NEW: Moved layouts to a more "moodle standard" 1, 2 and 3 column layout.
- - UPDATE: [Font Awesome 4.0.3](http://fontawesome.io/) now supported.
- - UPDATE: Using new font setting to dynamically load the fonts.
  - NEW: Can now add three columns of blocks to middle of the homepage under marketing spots.
  - NEW: Theme setting added to allow admins to align frontage blocks to the left or right.
  - NEW: Two designs for the slideshow available. One with image to the right, other with a background image.
+ - UPDATE: [Font Awesome 4.0.3](http://fontawesome.io/) now supported.
+ - UPDATE: Using new font setting to dynamically load the fonts.
+ - UPDATE: Removing autohide feature as no longer needed in Moodle 2.6
  - FIX: Guest users no longer get "my courses" or "dashboard" dropdown menus.
  - FIX: Nav Menu generates cleanly on IE.
  - FIX: Gradebook now displays no blocks to maximise available space.
