@@ -144,6 +144,9 @@ $string['nav_pipe'] = 'Verticle line';
 /* Regions */
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
+$string['region-home-left'] = 'Home (Left)';
+$string['region-home-middle'] = 'Home (Middle)';
+$string['region-home-right'] = 'Home (Right)';
 $string['region-footer-left'] = 'Footer (Left)';
 $string['region-footer-middle'] = 'Footer (Middle)';
 $string['region-footer-right'] = 'Footer (Right)';
