@@ -92,20 +92,10 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
             return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
         } else if ($filearea === 'pagebackground') {
             return $theme->setting_file_serve('pagebackground', $args, $forcedownload, $options);
-        } else if ($filearea === 'slide1image') {
-            return $theme->setting_file_serve('slide1image', $args, $forcedownload, $options);
-        } else if ($filearea === 'slide2image') {
-            return $theme->setting_file_serve('slide2image', $args, $forcedownload, $options);
-        } else if ($filearea === 'slide3image') {
-            return $theme->setting_file_serve('slide3image', $args, $forcedownload, $options);
-        } else if ($filearea === 'slide4image') {
-            return $theme->setting_file_serve('slide4image', $args, $forcedownload, $options);
-        } else if ($filearea === 'marketing1image') {
-            return $theme->setting_file_serve('marketing1image', $args, $forcedownload, $options);
-        } else if ($filearea === 'marketing2image') {
-            return $theme->setting_file_serve('marketing2image', $args, $forcedownload, $options);
-        } else if ($filearea === 'marketing3image') {
-            return $theme->setting_file_serve('marketing3image', $args, $forcedownload, $options);
+        } else if ((substr($filearea, 0, 5) === 'slide') && (substr($filearea, 6, 5) === 'image')) {
+            return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
+        } else if ((substr($filearea, 0, 9) === 'marketing') && (substr($filearea, 10, 5) === 'image')) {
+            return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
         } else if ($filearea === 'iphoneicon') {
             return $theme->setting_file_serve('iphoneicon', $args, $forcedownload, $options);
         } else if ($filearea === 'iphoneretinaicon') {
