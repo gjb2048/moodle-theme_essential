@@ -266,6 +266,10 @@ ul.socials {
     margin-right: 5px;
     vertical-align: middle;	
 }
+
+.open > .dropdown-menu {
+	overflow: visible;
+}
 /* @end */
 
 /* @group Navbar
