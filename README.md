@@ -16,6 +16,15 @@ Cool things to know about the theme.
  - The entire color scheme can be modified with theme settings (like on [Rocket](https://moodle.org/plugins/view.php?plugin=theme_rocket))
  - The homepage main area is just a label. The theme will ship with custom classes that you can set for tables and links to modify their formatting. No knowledge of code is needed as you can use the text editor to do this. Documentation will be provided outlining what the additional classes are.
  
+ New in 2.6.1
+ ========================
+ - FIX: Numerous CSS fixes
+ - FIX: Third level dropdown in custom menu now works
+ - FIX: iOS7 custom menu now works when changed to a sing dropdown in portrait view
+ - FIX: Social networking icons now line up properly
+ - FIX: GoogleFonts will now load in HTTPS setups
+ - NEW: Frontpage content now goes full width if all blocks removed.
+ 
   New in 2.6.1
  ========================
  - NEW: MAJOR UPDATES for 2.6 compatibility.
