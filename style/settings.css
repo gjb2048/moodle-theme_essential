@@ -460,6 +460,32 @@ a#button:hover {
 
 /* @end */
 
+/* @group Gradebook */
+
+table#user-grades th.item,
+table#user-grades th.categoryitem,
+table#user-grades th.courseitem {
+    border-bottom-color: [[setting:themecolor]];
+}
+
+table#user-grades td.controls, 
+.path-grade-report-grader table tr.avg .cell, 
+.path-grade-report-grader table tr.range .cell {
+    background-color: [[setting:themecolor]];
+}
+.path-grade-report-grader table#fixed_column th {
+     border-right-color: [[setting:themecolor]];
+}
+
+.path-grade-report-grader .grade_icons img {
+	background: #fff;
+	padding: 3px;
+	border-radius: 3px;
+}
+/* @end */
+
+/* @group Back To Top */
+
 .back-to-top{
     color:[[setting:themecolor]];
 }
@@ -467,6 +493,8 @@ a#button:hover {
 .back-to-top:hover{
     color:[[setting:themehovercolor]];
 }
+
+/* @end */
 
 /* @group Font Loading */
 
