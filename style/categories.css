@@ -1,0 +1,177 @@
+/*
+ * @author    Franc Pombal
+ * @modified  Julian Ridden
+ * @package   theme_essential
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+ 
+ /* @group Core */
+ 
+ * Set the position on the frontpage */ 
+ 
+#frontpage-category-names, 
+#frontpage-category-names .course_category_tree { 
+	clear: both; 
+	padding: 0px; 
+}
+ 
+/* Create box for each category */ 
+.course_category_tree .category { 
+	position: relative; 
+	float: left; 
+	width: 180px; 
+	height: 180px; 
+	margin: 5px;
+	margin-right: 10px;
+	padding: 0px 0px 0px 0px; 
+} 
+ 
+/* Adjust color for disabled categories */ 
+.course_category_tree .category.dimmed_category { 
+	border-color: #AAAAAA;
+} 
+ 
+/* Adjust the position of the name */ 
+.course_category_tree .category .info .name { 
+	padding: 0px 0px 0px 0px; 
+	text-align: center; 
+}
+
+/* Hide icon 'collapsed' because it makes no sense here */ 
+.course_category_tree .category.with_children>.info>.categoryname,
+.course_category_tree .category>.info>.categoryname {
+	background: none;
+	padding-left: 0px;
+}
+
+.course_category_tree .category .numberofcourse {
+	background: #666;
+	color: #fff;
+	padding: 5px 7px;
+	border-radius: 100px;
+	position: relative;
+	top: -180px;
+	left:  60%;
+	font-family: "[[setting:headingfont]]", sans-serif;
+	font-weight: normal;
+	font-size: 1em;
+	-moz-box-shadow:    1px 1px 5px 0px #ccc;
+	  -webkit-box-shadow: 1px 1px 5px 0px #ccc;
+	  box-shadow:         1px 1px 5px 0px #ccc;
+	  border: 2px solid #fff;
+}
+
+.course_category_tree .category>.info,
+.course_category_tree .category>.info>.categoryname {
+	background: transparent;
+	border: 0px none;
+	text-align: center;
+	box-shadow: none;
+}
+
+.course_category_tree .category.with_children>.info>.categoryname a,
+.course_category_tree .category>.info>.categoryname a {
+	color: #000;
+	padding-top: 150px;
+	display: block;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;  
+	width: 170px;
+}
+
+.dir-rtl .course_category_tree .category > .info .name {
+	background: none;
+} 
+
+.course_category_tree .category.with_children > .info .name {
+	background: none;
+} 
+
+.course_category_tree .category.with_children.collapsed > .info .name {
+	background: none;
+} 
+
+.dir-rtl .course_category_tree .category.with_children.collapsed > .info .name {
+	background: none;
+} 
+
+/* Place image in each category */ 
+.course_category_tree .category[data-categoryid] { 
+	background: #fff;
+	padding: 0px !important;
+	border: 1px solid #e7e7e7;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	border-bottom: 3px solid #eee;
+}
+
+.course_category_tree .category[data-categoryid]>.info>.categoryname a:hover {
+	text-decoration: none;
+}
+
+.course_category_tree .category[data-categoryid]>.info>.categoryname a:before {
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: inherit;
+	font-size: 130px;
+	z-index: 1;
+	color: [[setting:themecolor]];
+	position: absolute;
+	top: 75px;
+	left: 30px;
+	height: 85px;
+}
+ 
+/* Upload the image from each category */ 
+
+.course_category_tree .category[data-categoryid="1"]>.info>.categoryname a:before {
+	content: "\f07c"; 
+}
+
+.course_category_tree .category[data-categoryid="2"]>.info>.categoryname a:before {
+	content: "\f087"; 
+}
+
+.course_category_tree .category[data-categoryid="3"]>.info>.categoryname a:before {
+	content: "\f087"; 
+}
+
+.course_category_tree .category[data-categoryid="4"]>.info>.categoryname a:before {
+	content: "\f087"; 
+}
+
+.course_category_tree .category[data-categoryid="5"]>.info>.categoryname a:before {
+	content: "\f087"; 
+}
+
+.course_category_tree .category[data-categoryid="6"]>.info>.categoryname a:before {
+	content: "\f087"; 
+}
+
+.course_category_tree .category[data-categoryid="7"]>.info>.categoryname a:before {
+	content: "\f087"; 
+}
+
+.course_category_tree .category[data-categoryid="8"]>.info>.categoryname a:before {
+	content: "\f087"; 
+}
+
+.course_category_tree .category[data-categoryid="9"]>.info>.categoryname a:before {
+	content: "\f087"; 
+}
+
+.course_category_tree .category[data-categoryid="10"]>.info>.categoryname a:before {
+	content: "\f087"; 
+}
+
+/* Hide subcategories in the GRID model */ 
+.course_category_tree .category .content {
+	display: none;
+} 
+
+/* Hide buttons to expand and collapse */ 
+.jsenabled .course_category_tree .controls {
+	display: none;
+}
