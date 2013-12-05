@@ -72,12 +72,12 @@
 .course_category_tree .category.with_children>.info>.categoryname a,
 .course_category_tree .category>.info>.categoryname a {
 	color: #000;
-	padding-top: 150px;
+	padding-top: 155px;
 	display: block;
 	overflow:hidden;
 	text-overflow:ellipsis;
 	white-space: nowrap;  
-	width: 170px;
+	width: 176px;
 }
 
 .dir-rtl .course_category_tree .category > .info .name {
@@ -106,8 +106,17 @@
 	border-bottom: 3px solid #eee;
 }
 
+.course_category_tree .category[data-categoryid]:hover {
+	background: [[setting:themecolor]];
+	-webkit-transition: all 0.3s ease;
+	-moz-transition:all 0.3s ease;  
+	-o-transition:all 0.3s ease;  
+	transition:all 0.3s ease;
+}
+
 .course_category_tree .category[data-categoryid]>.info>.categoryname a:hover {
 	text-decoration: none;
+	color: #fff;
 }
 
 .course_category_tree .category[data-categoryid]>.info>.categoryname a:before {
@@ -122,48 +131,54 @@
 	top: 75px;
 	left: 30px;
 	height: 85px;
+	content: "\[[setting:defaultcategoryicon]]";
+	
+}
+
+.course_category_tree .category[data-categoryid]>.info>.categoryname a:hover:before {
+	color: #fff;
 }
  
 /* Upload the image from each category */ 
 
 .course_category_tree .category[data-categoryid="1"]>.info>.categoryname a:before {
-	content: "\f07c"; 
+	content: "\[[setting:categoryicon1]]"; 
 }
 
 .course_category_tree .category[data-categoryid="2"]>.info>.categoryname a:before {
-	content: "\f087"; 
+	content: "\[[setting:categoryicon2]]"; 
 }
 
 .course_category_tree .category[data-categoryid="3"]>.info>.categoryname a:before {
-	content: "\f087"; 
+	content: "\[[setting:categoryicon3]]"; 
 }
 
 .course_category_tree .category[data-categoryid="4"]>.info>.categoryname a:before {
-	content: "\f087"; 
+	content: "\[[setting:categoryicon4]]"; 
 }
 
 .course_category_tree .category[data-categoryid="5"]>.info>.categoryname a:before {
-	content: "\f087"; 
+	content: "\[[setting:categoryicon5]]";
 }
 
 .course_category_tree .category[data-categoryid="6"]>.info>.categoryname a:before {
-	content: "\f087"; 
+	content: "\[[setting:categoryicon6]]";
 }
 
 .course_category_tree .category[data-categoryid="7"]>.info>.categoryname a:before {
-	content: "\f087"; 
+	content: "\[[setting:categoryicon7]]";
 }
 
 .course_category_tree .category[data-categoryid="8"]>.info>.categoryname a:before {
-	content: "\f087"; 
+	content: "\[[setting:categoryicon8]]";
 }
 
 .course_category_tree .category[data-categoryid="9"]>.info>.categoryname a:before {
-	content: "\f087"; 
+	content: "\[[setting:categoryicon9]]";
 }
 
 .course_category_tree .category[data-categoryid="10"]>.info>.categoryname a:before {
-	content: "\f087"; 
+	content: "\[[setting:categoryicon10]]";
 }
 
 /* Hide subcategories in the GRID model */ 

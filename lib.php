@@ -436,6 +436,38 @@ function theme_essential_process_css($css, $theme) {
     $pagebackground = $theme->setting_file_url($setting, $setting);
     $css = theme_essential_set_pagebackground($css, $pagebackground, $setting);
     
+    // Set the Defaut Category Icon.
+    if (!empty($theme->settings->defaultcategoryicon)) {
+        $defaultcategoryicon = $theme->settings->defaultcategoryicon;
+    } else {
+        $defaultcategoryicon = null;
+    }
+    $css = theme_essential_set_defaultcategoryicon($css, $defaultcategoryicon);
+    
+    // Set Category Icon 1.
+    if (!empty($theme->settings->categoryicon1)) {
+        $categoryicon1 = $theme->settings->categoryicon1;
+    } else {
+        $categoryicon1 = null;
+    }
+    $css = theme_essential_set_categoryicon1($css, $categoryicon1);
+    
+    // Set Category Icon 2.
+    if (!empty($theme->settings->categoryicon2)) {
+        $categoryicon2 = $theme->settings->categoryicon2;
+    } else {
+        $categoryicon2 = null;
+    }
+    $css = theme_essential_set_categoryicon2($css, $categoryicon2);
+    
+    // Set Category Icon 3.
+    if (!empty($theme->settings->categoryicon3)) {
+        $categoryicon3 = $theme->settings->categoryicon3;
+    } else {
+        $categoryicon3 = null;
+    }
+    $css = theme_essential_set_categoryicon3($css, $categoryicon3);
+    
     // Set Slide Images.
     $setting = 'slide1image';
     if (!empty($theme->settings->slide1image)) {
@@ -706,6 +738,48 @@ function theme_essential_set_marketingimage($css, $marketingimage, $setting) {
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
+
+function theme_essential_set_defaultcategoryicon($css, $defaultcategoryicon) {
+    $tag = '[[setting:defaultcategoryicon]]';
+    $replacement = $defaultcategoryicon;
+    if (is_null($replacement)) {
+        $replacement = 'f07c';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    $defaultcaticon = $replacement;
+    return $css;
+}
+
+function theme_essential_set_categoryicon1($css, $categoryicon1) {
+    $tag = '[[setting:categoryicon1]]';
+    $replacement = $categoryicon1;
+    if (is_null($replacement)) {
+        $replacement = '';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_categoryicon2($css, $categoryicon2) {
+    $tag = '[[setting:categoryicon2]]';
+    $replacement = $categoryicon2;
+    if (is_null($replacement)) {
+        $replacement = '';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_categoryicon3($css, $categoryicon3) {
+    $tag = '[[setting:categoryicon3]]';
+    $replacement = $categoryicon3;
+    if (is_null($replacement)) {
+        $replacement = '';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
 
 function theme_essential_page_init(moodle_page $page) {
     $page->requires->jquery();

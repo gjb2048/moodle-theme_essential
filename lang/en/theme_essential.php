@@ -304,6 +304,23 @@ $string['instagramdesc'] = 'Enter the URL of your Instagram page. (i.e http://in
 $string['website'] = 'Website URL';
 $string['websitedesc'] = 'Enter the URL of your own website. (i.e http://www.pukunui.com)';
 
+/* Category Icons */
+$string['categoryiconheading'] = 'Icon based Category Display';
+$string['categoryiconheadingsub'] = 'Use icons to replresent your categories';
+$string['categoryicondesc'] = 'If enabled this will allow you to set icons for each category of course.';
+
+$string['usecategoryicon'] = 'Enable Category Icons';
+$string['usecategoryicondesc'] = 'Use custom icons for categories';
+
+$string['defaultcategoryicon'] = 'Default Category Icons';
+$string['defaultcategoryicondesc'] = 'Set a default category icon';
+
+$string['categoryiconinfo'] = 'Set Custom Category Icons';
+$string['categoryiconinfodesc'] = 'Each icon is set by "category ID". You get these by looking at the URL or each category.';
+
+$string['categoryicon'] = 'Category';
+$string['categoryicondesc'] = 'categoryid=';
+
 /* Mobile Apps */
 $string['mobileappsheading'] = 'Mobile Apps';
 $string['mobileappsheadingsub'] = 'Link to your App to get your students using Mobiles';
