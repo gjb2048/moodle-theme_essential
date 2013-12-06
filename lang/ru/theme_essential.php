@@ -302,6 +302,23 @@ $string['instagramdesc'] = 'Введите URL на Вашу страницу в
 $string['website'] = 'URL вебсайта';
 $string['websitedesc'] = 'Введите URL на Ваш вебсайт. (i.e http://www.pukunui.com)';
 
+/* Category Icons */
+$string['categoryiconheading'] = 'Показать иконки категорий';
+$string['categoryiconheadingsub'] = 'Измените иконки Ваших категорий';
+$string['categoryicondesc'] = 'Если включено, Вы сможете установить иконки для любых категорий курсов.';
+
+$string['usecategoryicon'] = 'Включить иконки категорий';
+$string['usecategoryicondesc'] = 'Использовать другие иконки для категорий';
+
+$string['defaultcategoryicon'] = 'Иконки категории по-умолчанию';
+$string['defaultcategoryicondesc'] = 'Установите иконку категории по-умолчанию';
+
+$string['categoryiconinfo'] = 'Выберите альтернативную иконку категории';
+$string['categoryiconinfodesc'] = 'Каждая иконка устанавливается через "categoryid=". Найти этот код можно в URL категории.';
+
+$string['categoryicon'] = 'Категория';
+$string['categoryicondesc'] = 'categoryid=';
+
 /* Mobile Apps */
 $string['mobileappsheading'] = 'Мобильные приложения';
 $string['mobileappsheadingsub'] = 'Ссылка на Ваше приложение доступная для студентов использующих мобильные устройства';
