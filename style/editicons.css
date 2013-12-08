@@ -132,6 +132,66 @@
 
 .toggle-display::before {
 	content: "\f085 ";
+	font-family: 'FontAwesome';
+	margin-right: 5px;
+}
+
+.action-moveup::before {
+	content: "\f062 ";
+	font-family: 'FontAwesome';
+	margin-right: 5px;
+}
+
+.action-movedown::before {
+	content: "\f063 ";
+	font-family: 'FontAwesome';
+	margin-right: 5px;
+}
+
+.action-hide::before {
+	content: "\f06e ";
+	font-family: 'FontAwesome';
+	margin-right: 5px;
+}
+
+.action-show::before {
+	content: "\f070 ";
+	font-family: 'FontAwesome';
+	margin-right: 5px;
+}
+
+.action-delete::before {
+	content: "\f00d ";
+	font-family: 'FontAwesome';
+	margin-right: 5px;
+}
+
+.action-edit::before {
+	content: "\f013 ";
+	font-family: 'FontAwesome';
+	margin-right: 5px;
+}
+
+.drag-handle::before {
+	content: "\f047 ";
+	font-family: 'FontAwesome';
+	margin-right: 5px;
+	color: [[setting:themecolor]];
+}
+
+.drag-handle a {
+	color: [[setting:themecolor]];
+}
+
+.toggle-display img,
+.action-moveup img,
+.action-movedown img,
+.action-hide img,
+.action-show img,
+.action-delete img,
+.action-edit img,
+.drag-handle img {
+	display: none;
 }
 
 /* @end */
