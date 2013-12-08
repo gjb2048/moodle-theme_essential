@@ -270,6 +270,10 @@ ul.socials {
 .open > .dropdown-menu {
 	overflow: visible;
 }
+
+.dropdown-menu {
+    z-index: 1001;
+}
 /* @end */
 
 /* @group Navbar
