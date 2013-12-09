@@ -396,6 +396,44 @@ h2.pagetitle span {
     font-weight: normal;
 }
 
+.listitem .fa-circle {
+	margin-right: 10px;
+	font-size: .5em;
+}
+
+#course-category-listings li #icon{
+	margin-left:0
+}
+
+#course-category-listings li li #icon{
+	margin-left:1em
+}
+
+#course-category-listings li li li #icon{
+	margin-left:2em
+}
+
+#course-category-listings li li li li #icon{
+	margin-left:3em
+}
+
+#course-category-listings li li li li li #icon{
+	margin-left:4em
+}
+
+#course-category-listings li li li li li li #icon{
+	margin-left:4.5em
+}
+
+#course-category-listings li li li li li li li #icon{
+	margin-left:5em
+}
+
+#course-category-listings li li li li li li li li #icon{
+	margin-left:5.5em
+}
+
+
 /* @group Course Footer */
 
 #section_footer {
