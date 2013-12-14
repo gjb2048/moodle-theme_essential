@@ -119,12 +119,19 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
  * @param mixed $pagewidth
  * @return string
  */
-    function essential_set_pagewidth($css, $pagewidth) {    $tag = '[[setting:pagewidth]]';    $replacement = $pagewidth;    if (is_null($replacement)) {        $replacement = '1200';    }
+function essential_set_pagewidth($css, $pagewidth) {
+    $tag = '[[setting:pagewidth]]';
+    $replacement = $pagewidth;
+    if (is_null($replacement)) {
+        $replacement = '1200';
+    }
     if ( $replacement == "100" ) {
-		$css = str_replace($tag, $replacement.'%', $css);
-	} else {
-		$css = str_replace($tag, $replacement.'px', $css);
-	}    return $css;    }
+        $css = str_replace($tag, $replacement.'%', $css);
+    } else {
+        $css = str_replace($tag, $replacement.'px', $css);
+    }
+    return $css;
+}
 
 /**
  * Displays the Font Awesome Edit Icons based on settings value
@@ -193,7 +200,12 @@ function essential_set_customcss($css, $customcss) {
 
 function theme_essential_process_css($css, $theme) {
 
-    if (!empty($theme->settings->pagewidth)) {       $pagewidth = $theme->settings->pagewidth;    } else {       $pagewidth = null;    }    $css = essential_set_pagewidth($css,$pagewidth);
+    if (!empty($theme->settings->pagewidth)) {
+       $pagewidth = $theme->settings->pagewidth;
+    } else {
+       $pagewidth = null;
+    }
+    $css = essential_set_pagewidth($css,$pagewidth);
     
     // Set the Fonts.
     if ($theme->settings->fontselect ==1) {
@@ -444,29 +456,18 @@ function theme_essential_process_css($css, $theme) {
     }
     $css = theme_essential_set_defaultcategoryicon($css, $defaultcategoryicon);
     
-    // Set Category Icon 1.
-    if (!empty($theme->settings->categoryicon1)) {
-        $categoryicon1 = $theme->settings->categoryicon1;
-    } else {
-        $categoryicon1 = null;
+    // Set Category Icons.
+    foreach (range(1, 20) as $categorynumber) {
+        $categoryicon = null;
+        if (!empty($theme->settings->usecategoryicon)) {
+            if (!empty($theme->settings->{'categoryicon' . $categorynumber})) {
+                $categoryicon = $theme->settings->{'categoryicon' . $categorynumber};
+            } else if (!empty($theme->settings->defaultcategoryicon)) {
+                $categoryicon = $theme->settings->defaultcategoryicon;
+            }
+        }
+        $css = theme_essential_set_categoryicon($css, $categoryicon, $categorynumber);
     }
-    $css = theme_essential_set_categoryicon1($css, $categoryicon1);
-    
-    // Set Category Icon 2.
-    if (!empty($theme->settings->categoryicon2)) {
-        $categoryicon2 = $theme->settings->categoryicon2;
-    } else {
-        $categoryicon2 = null;
-    }
-    $css = theme_essential_set_categoryicon2($css, $categoryicon2);
-    
-    // Set Category Icon 3.
-    if (!empty($theme->settings->categoryicon3)) {
-        $categoryicon3 = $theme->settings->categoryicon3;
-    } else {
-        $categoryicon3 = null;
-    }
-    $css = theme_essential_set_categoryicon3($css, $categoryicon3);
     
     // Set Slide Images.
     $setting = 'slide1image';
@@ -732,7 +733,6 @@ function theme_essential_set_marketingheight($css, $marketingheight) {
 }
 
 function theme_essential_set_marketingimage($css, $marketingimage, $setting) {
-    global $OUTPUT;
     $tag = '[[setting:'.$setting.']]';
     $replacement = $marketingimage;
     $css = str_replace($tag, $replacement, $css);
@@ -746,40 +746,19 @@ function theme_essential_set_defaultcategoryicon($css, $defaultcategoryicon) {
         $replacement = 'f07c';
     }
     $css = str_replace($tag, $replacement, $css);
-    $defaultcaticon = $replacement;
     return $css;
 }
 
-function theme_essential_set_categoryicon1($css, $categoryicon1) {
-    $tag = '[[setting:categoryicon1]]';
-    $replacement = $categoryicon1;
+function theme_essential_set_categoryicon($css, $categoryicon, $categorynumber) {
+    $tag = '[[setting:categoryicon' . $categorynumber . ']]';
+    $replacement = $categoryicon;
+    
     if (is_null($replacement)) {
         $replacement = '';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
-
-function theme_essential_set_categoryicon2($css, $categoryicon2) {
-    $tag = '[[setting:categoryicon2]]';
-    $replacement = $categoryicon2;
-    if (is_null($replacement)) {
-        $replacement = '';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function theme_essential_set_categoryicon3($css, $categoryicon3) {
-    $tag = '[[setting:categoryicon3]]';
-    $replacement = $categoryicon3;
-    if (is_null($replacement)) {
-        $replacement = '';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
 
 function theme_essential_page_init(moodle_page $page) {
     $page->requires->jquery();
