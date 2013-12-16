@@ -135,50 +135,90 @@
 	
 }
 
-.course_category_tree .category[data-categoryid]>.info>.categoryname a:hover:before {
+.course_category_tree .category[data-categoryid] > .info > .categoryname a:hover:before {
 	color: #fff;
 }
  
 /* Upload the image from each category */ 
 
-.course_category_tree .category[data-categoryid="1"]>.info>.categoryname a:before {
+.course_category_tree .category[data-categoryid="1"] > .info > .categoryname a:before {
 	content: "\[[setting:categoryicon1]]"; 
 }
 
-.course_category_tree .category[data-categoryid="2"]>.info>.categoryname a:before {
+.course_category_tree .category[data-categoryid="2"] > .info > .categoryname a:before {
 	content: "\[[setting:categoryicon2]]"; 
 }
 
-.course_category_tree .category[data-categoryid="3"]>.info>.categoryname a:before {
+.course_category_tree .category[data-categoryid="3"] > .info > .categoryname a:before {
 	content: "\[[setting:categoryicon3]]"; 
 }
 
-.course_category_tree .category[data-categoryid="4"]>.info>.categoryname a:before {
+.course_category_tree .category[data-categoryid="4"] > .info > .categoryname a:before {
 	content: "\[[setting:categoryicon4]]"; 
 }
 
-.course_category_tree .category[data-categoryid="5"]>.info>.categoryname a:before {
+.course_category_tree .category[data-categoryid="5"] > .info > .categoryname a:before {
 	content: "\[[setting:categoryicon5]]";
 }
 
-.course_category_tree .category[data-categoryid="6"]>.info>.categoryname a:before {
+.course_category_tree .category[data-categoryid="6"] > .info > .categoryname a:before {
 	content: "\[[setting:categoryicon6]]";
 }
 
-.course_category_tree .category[data-categoryid="7"]>.info>.categoryname a:before {
+.course_category_tree .category[data-categoryid="7"] > .info > .categoryname a:before {
 	content: "\[[setting:categoryicon7]]";
 }
 
-.course_category_tree .category[data-categoryid="8"]>.info>.categoryname a:before {
+.course_category_tree .category[data-categoryid="8"] > .info > .categoryname a:before {
 	content: "\[[setting:categoryicon8]]";
 }
 
-.course_category_tree .category[data-categoryid="9"]>.info>.categoryname a:before {
+.course_category_tree .category[data-categoryid="9"] > .info > .categoryname a:before {
 	content: "\[[setting:categoryicon9]]";
 }
 
-.course_category_tree .category[data-categoryid="10"]>.info>.categoryname a:before {
+.course_category_tree .category[data-categoryid="10"] > .info > .categoryname a:before {
 	content: "\[[setting:categoryicon10]]";
+}
+
+.course_category_tree .category[data-categoryid="11"] > .info > .categoryname a:before {
+	content: "\[[setting:categoryicon11]]";
+}
+
+.course_category_tree .category[data-categoryid="12"] > .info > .categoryname a:before {
+	content: "\[[setting:categoryicon12]]";
+}
+
+.course_category_tree .category[data-categoryid="13"] > .info > .categoryname a:before {
+	content: "\[[setting:categoryicon13]]";
+}
+
+.course_category_tree .category[data-categoryid="14"] > .info > .categoryname a:before {
+	content: "\[[setting:categoryicon14]]";
+}
+
+.course_category_tree .category[data-categoryid="15"] > .info > .categoryname a:before {
+	content: "\[[setting:categoryicon15]]";
+}
+
+.course_category_tree .category[data-categoryid="16"] > .info > .categoryname a:before {
+	content: "\[[setting:categoryicon16]]";
+}
+
+.course_category_tree .category[data-categoryid="17"] > .info > .categoryname a:before {
+	content: "\[[setting:categoryicon17]]";
+}
+
+.course_category_tree .category[data-categoryid="18"] > .info > .categoryname a:before {
+	content: "\[[setting:categoryicon18]]";
+}
+
+.course_category_tree .category[data-categoryid="19"] > .info > .categoryname a:before {
+	content: "\[[setting:categoryicon19]]";
+}
+
+.course_category_tree .category[data-categoryid="20"] > .info > .categoryname a:before {
+	content: "\[[setting:categoryicon20]]";
 }
 
 /* Hide subcategories in the GRID model */ 

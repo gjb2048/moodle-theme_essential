@@ -306,7 +306,7 @@ $string['websitedesc'] = 'Enter the URL of your own website. (i.e http://www.puk
 
 /* Category Icons */
 $string['categoryiconheading'] = 'Icon based Category Display';
-$string['categoryiconheadingsub'] = 'Use icons to replresent your categories';
+$string['categoryiconheadingsub'] = 'Use icons to represent your categories';
 $string['categoryicondesc'] = 'If enabled this will allow you to set icons for each category of course.';
 
 $string['usecategoryicon'] = 'Enable Category Icons';
@@ -319,7 +319,6 @@ $string['categoryiconinfo'] = 'Set Custom Category Icons';
 $string['categoryiconinfodesc'] = 'Each icon is set by "category ID". You get these by looking at the URL or each category.';
 
 $string['categoryicon'] = 'Category';
-$string['categoryicondesc'] = 'categoryid=';
 
 /* Mobile Apps */
 $string['mobileappsheading'] = 'Mobile Apps';
