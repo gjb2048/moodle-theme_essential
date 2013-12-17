@@ -82,8 +82,8 @@ h1#title {
 
 /* @group Social Buttons */
 
-a.website .icon-stack:hover, a.icon-sign-blank:focus {
-    color: [[setting:themecolor]];
+a.website:hover, a.website:focus {
+    background-color: [[setting:themecolor]];    
 }
 
 /* @end */

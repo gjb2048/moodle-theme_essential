@@ -158,76 +158,71 @@ h2#subtitle {
     text-decoration: none;
 }
 
-a.ios .fa-stack,
-a.android .fa-stack,
-a.instagram .fa-stack,
-a.vk .fa-stack,
-a.skype .fa-stack,
-a.website .fa-stack {
-    font-size: .51em;
-}
-
-a.instagram .fa-stack,
-a.vk .fa-stack,
-a.skype .fa-stack,
-a.website .fa-stack {
-	margin-top: -4px;
+a.socialicon {
+    background-color: #bbbbbb;
+    border-radius: 5px;
+    width: 23px;
+    height: 23px;
+    font-size: 1.8em;
+    padding: 3px;
+    text-align: center;
+    
 }
 
 a.facebook:hover, a.facebook:focus {
-    color: #4a6ea9;
+    background: #4a6ea9;
 }
 
-a.skype .fa-stack:hover, a.fa-square:focus {
-    color: #00adf7;
-}
-
-a.instagram .fa-stack:hover, a.fa-square:focus {
-    color: #a5674a;
-}
-
-a.ios .fa-stack:hover, a.fa-square:focus {
-    color: #000;
-}
-
-a.android .fa-stack:hover, a.fa-square:focus {
-    color: #98cd32;
-}
-
-a.vk .fa-stack:hover, a.fa-square:focus {
-    color: #4a6ea9;
-}
-
-a.twitter:hover, a.twitter:focus {
-    color: #00aced;
-}
-
-a.googleplus:hover, a.googleplus:focus {
-    color: #f42941;
-}
-
-a.flickr:hover, a.flickr:focus {
-    color: #ff3096;
-}
-
-a.pinterest:hover, a.ointerest:focus {
-    color: #de0002;
+a.skype:hover, a.skype:focus {
+    background: #00adf7;
 }
 
 a.instagram:hover, a.instagram:focus {
-    color: #b99c6b;
+    background: #a5674a;
+}
+
+a.ios:hover, a.ios:focus {
+    background: #000;
+}
+
+a.android:hover, a.android:focus {
+    background: #98cd32;
+}
+
+a.vk:hover, a.vk:focus {
+    background: #4a6ea9;
+}
+
+a.twitter:hover, a.twitter:focus {
+    background: #00aced;
+}
+
+a.googleplus:hover, a.googleplus:focus {
+    background: #f42941;
+}
+
+a.flickr:hover, a.flickr:focus {
+    background: #ff3096;
+}
+
+a.pinterest:hover, a.ointerest:focus {
+    background: #de0002;
+}
+
+a.instagram:hover, a.instagram:focus {
+    background: #b99c6b;
 }
 
 a.youtube:hover, a.youtube:focus {
-    color: #f42941;
+    background: #f42941;
 }
 
 a.pinterest:hover, a.pinterest:focus {
-    color: #f42941;
+    background: #f42941;
 }
 
 a.linkedin:hover, a.linkedin:focus {
-    color: #4A9CC9;
+    background: #4A9CC9;
 }
 
 .socials li {

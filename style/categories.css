@@ -29,7 +29,12 @@
 /* Adjust color for disabled categories */ 
 .course_category_tree .category.dimmed_category { 
 	border-color: #AAAAAA;
-} 
+}
+
+.subcategories {
+	width: 100%;
+	display: inline-block;
+}
  
 /* Adjust the position of the name */ 
 .course_category_tree .category .info .name { 
