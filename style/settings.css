@@ -519,6 +519,14 @@ body,
 /* @end */
 
 /**
+ * Custom CSS
+ * This is the very last piece of CSS loaded, so if something looks weird,
+ * try removing your custom CSS from the theme settings page.
+ */
+
+[[setting:customcss]]
+
+/**
  * editicons CSS
  * This adds the special editicons css in editicons.css if the setting is enabled.
  */
@@ -531,11 +539,3 @@ body,
  */
 
 [[setting:autohide]]
-
-/**
- * Custom CSS
- * This is the very last piece of CSS loaded, so if something looks weird,
- * try removing your custom CSS from the theme settings page.
- */
-
-[[setting:customcss]]
