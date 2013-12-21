@@ -1694,3 +1694,29 @@ table.calendarmonth.calendartable {
 .back-to-top:hover{
     text-decoration: none;
 }
+
+@media screen and (min-width: 960px) {
+    .two-column.side-regions-with-max-width #block-region-side-pre {
+        width: 285px;
+    }
+
+    .two-column.side-regions-with-max-width #region-main {
+        width: -moz-calc(97.4359% - 285px);
+        width: -webkit-calc(97.4359% - 285px);
+        width: calc(97.4359% - 285px);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+ 
+    .three-column.side-regions-with-max-width #block-region-side-pre,
+    .three-column.side-regions-with-max-width #block-region-side-post {
+        width: 285px;
+    }
+    .three-column.side-regions-with-max-width #region-bs-main-and-pre,
+    .three-column.side-regions-with-max-width #region-main {
+        width: -moz-calc(100% - 2.5641% - 285px);
+        width: -webkit-calc(100% - 2.5641% - 285px);
+        width: calc(100% - 2.5641% - 285px);
+    }
+}

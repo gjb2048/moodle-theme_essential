@@ -85,6 +85,8 @@ $string['perfinfo'] = 'Performance Info Mode';
 $string['perfinfodesc'] = 'Many sites don\'t need the fully detailed performance info.  Especially when viewed by users.  When enabled, this shows a cleaned up miniminal form with basic page load information.';
 $string['perf_max'] = 'Detailed';
 $string['perf_min'] = 'Minimal';
+$string['sideregionsmaxwidth'] = 'Use max width for side regions';
+$string['sideregionsmaxwidthdesc'] = 'This theme use fluid layout. In wide screens, the side regions containing blocks may become larger than needed. Check this to limit the width of these regions.';
 $string['visibleadminonly'] = 'Blocks moved into the area below will only be seen by admins';
 $string['backtotop'] = 'Back to top';
 $string['nextsection'] = 'Next Section';
@@ -95,7 +97,6 @@ $string['pagewidthdesc'] = 'Choose from the list of availble page widths. for yo
 $string['fixedwidthwide'] = 'Fixed Width - Wide';
 $string['fixedwidthnarrow'] = 'Fixed Width - Narrow';
 $string['variablewidth'] = 'Variable Width';
-
 
 $string['alwaysdisplay'] = 'Always Show';
 $string['displaybeforelogin'] = 'Show before login only';
