@@ -50,3 +50,16 @@ $string['footerhovercolor'] = 'Footer Link Hover Color';
 $string['footerhovercolordesc'] = 'Set the color for your linked text when hovered over in the footer.';
 $string['footerheadingcolor'] = 'Footer Heading Color';
 $string['footerheadingcolordesc'] = 'Set the color for block headings in the footer.';
+
+$string['alternativecolors'] = 'Alternative Colors {$a}';
+$string['alternativethemecolor'] = 'Alternative Theme Color {$a}';
+$string['alternativethemecolordesc'] = 'What color should your theme be for the alternative theme colors {$a}. If enabled and the user choose it, this will replace the default theme color.';
+$string['alternativethemecolors'] = 'Alternative Theme Colors';
+$string['alternativethemecolorsdesc'] = 'Defines theme colors alternative that the user may select.';
+$string['alternativethemehovercolor'] = 'Alternative Theme Hover Color {$a}';
+$string['alternativethemehovercolordesc'] = 'What color should your theme hovers be for the alternative theme colors {$a}. If enabled and the user choose it, this will replace the default theme hover color.';
+$string['defaultcolors'] = 'Default Colors';
+$string['enablealternativethemecolors'] = 'Enable Alternative Theme Colors {$a}';
+$string['enablealternativethemecolorsdesc'] = 'If enabled, the user will be able to choose the alternative theme colors {$a}.';
+$string['themecolors'] = 'Theme Colors';
+
