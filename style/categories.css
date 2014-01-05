@@ -121,7 +121,7 @@
 
 .course_category_tree .category[data-categoryid]>.info>.categoryname a:hover {
 	text-decoration: none;
-	color: #fff;
+	color: #fff !important;
 }
 
 .course_category_tree .category[data-categoryid]>.info>.categoryname a:before {
@@ -141,7 +141,7 @@
 }
 
 .course_category_tree .category[data-categoryid] > .info > .categoryname a:hover:before {
-	color: #fff;
+	color: #fff !important;
 }
  
 /* Upload the image from each category */ 

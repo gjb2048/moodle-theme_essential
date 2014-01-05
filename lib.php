@@ -414,7 +414,17 @@ function theme_essential_process_css($css, $theme) {
     }
     $css = theme_essential_set_slidebuttoncolor($css, $slidebuttoncolor);
 
-    
+    // Set theme alternative colors.
+    $defaultalternativethemecolors = array('#a430d1', '#d15430', '#5dd130');
+    $defaultalternativethemehovercolors = array('#9929c4', '#c44c29', '#53c429');
+
+    foreach (range(1, 3) as $alternativethemenumber) {
+        $default = $defaultalternativethemecolors[$alternativethemenumber - 1];
+        $defaulthover = $defaultalternativethemehovercolors[$alternativethemenumber - 1];
+        $css = theme_essential_set_alternativecolor($css, 'color' . $alternativethemenumber, $theme->settings->{'alternativethemecolor' . $alternativethemenumber}, $default);
+        $css = theme_essential_set_alternativecolor($css, 'hovercolor' . $alternativethemenumber, $theme->settings->{'alternativethemehovercolor' . $alternativethemenumber}, $defaulthover);
+    }
+ 
     // Set the navbar seperator.
     if (!empty($theme->settings->navbarsep)) {
         $navbarsep = $theme->settings->navbarsep;
@@ -539,6 +549,53 @@ function theme_essential_process_css($css, $theme) {
     return $css;
 }
 
+/**
+ * Adds the JavaScript for the colour switcher to the page.
+ *
+ * The colour switcher is a YUI moodle module that is located in
+ *     theme/udemspl/yui/udemspl/udemspl.js
+ *
+ * @param moodle_page $page
+ */
+function theme_essential_initialise_colourswitcher(moodle_page $page) {
+    user_preference_allow_ajax_update('theme_essential_colours', PARAM_ALPHANUM);
+    $page->requires->yui_module(
+        'moodle-theme_essential-coloursswitcher',
+        'M.theme_essential.initColoursSwitcher',
+        array(array('div' => '.dropdown-menu'))
+    );
+}
+
+/**
+ * Gets the theme colors the user has selected if enabled or the default if they have never changed
+ *
+ * @param string $default The default theme colors to use
+ * @return string The theme colors the user has selected
+ */
+function theme_essential_get_colours($default = 'default') {
+    $theme = theme_config::load('essential');
+    $preference = get_user_preferences('theme_essential_colours', $default);
+    foreach (range(1, 3) as $alternativethemenumber) {
+        if ($preference == 'alternative' . $alternativethemenumber && !empty($theme->settings->{'enablealternativethemecolors' . $alternativethemenumber})) {
+            return $preference;
+        }
+    }
+    return $default;
+}
+
+/**
+ * Checks if the user is switching colours with a refresh
+ *
+ * If they are this updates the users preference in the database
+ */
+function theme_essential_check_colours_switch() {
+    $colours= optional_param('essentialcolours', null, PARAM_ALPHANUM);
+    if (in_array($colours, array('default', 'alternative1', 'alternative2', 'alternative3'))) {
+        set_user_preference('theme_essential_colours', $colours);
+    }
+}
+
+ 
 function theme_essential_set_headingfont($css, $headingfont) {
     $tag = '[[setting:headingfont]]';
     $replacement = $headingfont;
@@ -594,6 +651,16 @@ function theme_essential_set_themehovercolor($css, $themehovercolor) {
     $replacement = $themehovercolor;
     if (is_null($replacement)) {
         $replacement = '#29a1c4';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_alternativecolor($css, $type, $customcolor, $defaultcolor) {
+    $tag = '[[setting:alternativetheme' . $type . ']]';
+    $replacement = $customcolor;
+    if (is_null($replacement)) {
+        $replacement = $defaultcolor;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;

@@ -91,7 +91,7 @@
 	top: 200px; /*depends on p height*/
 	border-radius: 15px;
 	box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
-	color: #fff;
+	color: #fff !important;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 	padding:3px 15px;
 	font-size: 15px;

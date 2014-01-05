@@ -1,0 +1,288 @@
+body.essential-colours-alternative1 {
+    border-top-color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 a,
+.essential-colours-alternative1 a:visited {
+    color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 a:hover {
+    color: [[setting:alternativethemehovercolor1]];
+}
+
+.essential-colours-alternative1 .color {
+    color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 h1#title {
+    color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 #headerlogo {
+    border-right-color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .breadcrumb-button input[type="submit"] {
+    background: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .breadcrumb-button input[type="submit"]:hover {
+    background: [[setting:alternativethemehovercolor1]];
+}
+
+.essential-colours-alternative1 a.website:hover,
+.essential-colours-alternative1 a.website:focus {
+    background-color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .dropdown-menu > li > a:hover,
+.essential-colours-alternative1 .dropdown-menu > li > a:focus,
+.essential-colours-alternative1 .dropdown-submenu:hover > a,
+.essential-colours-alternative1 .dropdown-submenu:focus > a {
+    background-color: [[setting:alternativethemecolor1]];
+    background-image: -moz-linear-gradient(top, [[setting:alternativethemecolor1]], [[setting:alternativethemehovercolor1]]);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemecolor1]]), to([[setting:alternativethemehovercolor1]]));
+    background-image: -webkit-linear-gradient(top, [[setting:alternativethemecolor1]], [[setting:alternativethemehovercolor1]]);
+    background-image: -o-linear-gradient(top, [[setting:alternativethemecolor1]], [[setting:alternativethemehovercolor1]]);
+    background-image: linear-gradient(to bottom, [[setting:alternativethemecolor1]], [[setting:alternativethemehovercolor1]]);
+}
+    
+.essential-colours-alternative1 .navbar-inner {
+    border-top-color: [[setting:alternativethemehovercolor1]] !important;
+    border-bottom: 1px solid [[setting:alternativethemehovercolor1]] !important;
+    background-color: [[setting:alternativethemecolor1]] !important;
+}
+
+.essential-colours-alternative1 .navbar .nav {
+    border-right-color: [[setting:alternativethemehovercolor1]];
+}
+
+.essential-colours-alternative1 .navbar .nav > li > a {
+    border-left-color: [[setting:alternativethemehovercolor1]];
+}
+
+.essential-colours-alternative1 .navbar .nav > li > a:hover {
+    background: [[setting:alternativethemehovercolor1]] !important;
+}
+
+.essential-colours-alternative1 .navbar .nav .active > a,
+.essential-colours-alternative1 .navbar .nav .active > a:hover,
+.essential-colours-alternative1 .navbar .nav .active > a:focus,
+.essential-colours-alternative1 .navbar .nav li.dropdown.open > .dropdown-toggle,
+.essential-colours-alternative1 .navbar .nav li.dropdown.active > .dropdown-toggle,
+.essential-colours-alternative1 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+    background: [[setting:alternativethemecolor1]] !important;
+}
+
+.essential-colours-alternative1 .navbar .nav > li > a {
+    border-left-color: [[setting:alternativethemehovercolor1]];
+}
+
+.essential-colours-alternative1 .course-content ul.topics li.section.main.clearfix.current {
+    box-shadow: 0 0 10px [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .firstword {
+    color: [[setting:alternativethemecolor1]] !important;
+}
+    
+.essential-colours-alternative1 .forumpost .picture img {
+    box-shadow: 0 0 3px [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .forumpost .subject {
+    color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .button a,
+.essential-colours-alternative1 .button a:visited {
+    background: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 a#button,
+.essential-colours-alternative1 a#button:visited {
+    background: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 a#button:hover {
+    background: [[setting:alternativethemehovercolor1]];
+}
+
+.essential-colours-alternative1 .da-slider {
+	border-top-color: [[setting:alternativethemecolor1]];
+	border-bottom-color:  [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .block .header .title h2:before {
+    color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .block_rss_client .footer a {
+    background: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .block_rss_client .footer a:hover {
+    background: [[setting:alternativethemehovercolor1]];
+}
+
+.essential-colours-alternative1 .block_login .footer a {
+    background: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .block_login .footer a:hover {
+    background: [[setting:alternativethemehovercolor1]];
+}
+
+.essential-colours-alternative1 #page-site-index h2.headingblock:before {
+    color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .service i {
+    color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 #page-footer {
+    border-top-color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 #page-footer .footnote a,
+.essential-colours-alternative1 #page-footer .footnote a:visited {
+    color: [[setting:alternativethemecolor1]] !important;
+}
+
+.essential-colours-alternative1 #page-footer .block_html ul li:before,
+.essential-colours-alternative1 #greyboxright ul li:before {
+    background: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 #page-footer .tree_item.branch:before {
+    color: [[setting:alternativethemecolor1]];
+}
+    
+.essential-colours-alternative1 #page-footer .block_login input[type="submit"] {
+    background: [[setting:alternativethemecolor1]];
+}
+    
+.essential-colours-alternative1 #page-footer .block_login input[type="submit"]:hover {
+    background: [[setting:alternativethemehovercolor1]];
+}
+    
+.essential-colours-alternative1 #page-footer .block_rss_client .content a {
+    color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .afeature:hover {
+    border-color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .afmatter i {
+    color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .myprofileitem.picture:hover {
+    border-color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .socials img:hover {
+    -webkit-box-shadow: 0 0 10px 0 [[setting:alternativethemecolor1]];
+    -moz-box-shadow: 0 0 10px 0 [[setting:alternativethemecolor1]];
+    box-shadow: 0 0 10px 0 [[setting:alternativethemecolor1]];
+}
+ 
+.essential-colours-alternative1 .nav-tabs > li > a {
+    background-color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .nav-tabs > li > a:hover {
+    background-color: [[setting:alternativethemehovercolor1]];
+}
+
+.essential-colours-alternative1 .nav-collapse {
+    border-color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .performanceinfo var {
+    background: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .performanceinfo h2:before {
+    color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 #page-mod-quiz-edit .questionbankwindow.block div.header {
+    background: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 table#user-grades th.item,
+.essential-colours-alternative1 table#user-grades th.categoryitem,
+.essential-colours-alternative1 table#user-grades th.courseitem {
+    border-bottom-color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 table#user-grades td.controls,
+.essential-colours-alternative1 .path-grade-report-grader table tr.avg .cell,
+.essential-colours-alternative1 .path-grade-report-grader table tr.range .cell {
+    background-color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .path-grade-report-grader table#fixed_column th {
+     border-right-color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .back-to-top {
+    color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .course_category_tree .category[data-categoryid]:hover {
+    background: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .course_category_tree .category[data-categoryid] > .info > .categoryname a:before {
+    color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 #dock {
+    background: [[setting:alternativethemecolor1]];
+}
+
+#dock .dockedtitle {
+    background-color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 #dock .dockedtitle:hover,
+.essential-colours-alternative1 #dock .dockedtitle:focus,
+.essential-colours-alternative1 #dock .dockedtitle:active,
+.essential-colours-alternative1 #dock .dockedtitle.active,
+.essential-colours-alternative1 #dock .dockedtitle.disabled,
+.essential-colours-alternative1 #dock .dockedtitle[disabled] {
+    background-color: [[setting:alternativethemehovercolor1]];
+}
+
+.essential-colours-alternative1 .commands {
+    color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .commands a:hover {
+    color: [[setting:alternativethemehovercolor1]];
+}
+
+.essential-colours-alternative1 .drag-handle::before {
+    color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .drag-handle a {
+    color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 #section_footer {
+    color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .nav_icon {
+    color: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .nav_icon:hover {
+    color: [[setting:alternativethemehovercolor1]];
+}

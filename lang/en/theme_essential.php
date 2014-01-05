@@ -183,6 +183,19 @@ $string['footerheadingcolordesc'] = 'Set the colour for block headings in the fo
 $string['pagebackground'] = 'Page Background Image';
 $string['pagebackgrounddesc'] = 'Upload your own background image.  This will be tiled in the background on all pages.  If none is uploaded a default image is used.';
 
+/* Alternate Color Switcher */
+$string['alternativecolors'] = 'Alternative Colours {$a}';
+$string['alternativethemecolor'] = 'Alternative Theme Colour {$a}';
+$string['alternativethemecolordesc'] = 'What colour should your theme be for the alternative theme colours {$a}. If enabled and the user choose it, this will replace the default theme colour.';
+$string['alternativethemecolors'] = 'Alternative Theme Colours';
+$string['alternativethemecolorsdesc'] = 'Defines theme colours alternative that the user may select.';
+$string['alternativethemehovercolor'] = 'Alternative Theme Hover Colour {$a}';
+$string['alternativethemehovercolordesc'] = 'What colour should your theme hovers be for the alternative theme colours {$a}. If enabled and the user choose it, this will replace the default theme hover colour.';
+$string['defaultcolors'] = 'Default Colours';
+$string['enablealternativethemecolors'] = 'Enable Alternative Theme Colours {$a}';
+$string['enablealternativethemecolorsdesc'] = 'If enabled, the user will be able to choose the alternative theme colours {$a}.';
+$string['themecolors'] = 'Theme Colours';
+
 /* Frontpage Settings */
 $string['frontcontentheading'] = 'Frontpage Settings';
 $string['frontcontentheadingsub'] = 'Change what features you wish enabled on your moodle front page';

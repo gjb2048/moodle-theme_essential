@@ -29,6 +29,16 @@ $hasboringlayout = (empty($PAGE->theme->settings->layout)) ? false : $PAGE->them
 $hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
 $sideregionsmaxwidth = (!empty($PAGE->theme->settings->sideregionsmaxwidth));
 
+theme_essential_check_colours_switch();
+theme_essential_initialise_colourswitcher($PAGE);
+
+$bodyclasses = array();
+$bodyclasses[] = 'two-column';
+$bodyclasses[] = 'essential-colours-' . theme_essential_get_colours();
+if ($sideregionsmaxwidth) {
+    $bodyclasses[] = 'side-regions-with-max-width';
+}
+ 
 $left = (!right_to_left());  // To know if to add 'pull-right' and 'desktop-first-column' classes in the layout for LTR.
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
@@ -43,13 +53,6 @@ echo $OUTPUT->doctype() ?>
     <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
 </head>
 
-<?php 
-$bodyclasses = array();
-$bodyclasses[] = 'two-column';
-if ($sideregionsmaxwidth) {
-    $bodyclasses[] = 'side-regions-with-max-width';
-}
-?>
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>

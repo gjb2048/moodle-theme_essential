@@ -14,6 +14,12 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+theme_essential_check_colours_switch();
+theme_essential_initialise_colourswitcher($PAGE);
+
+$bodyclasses = array();
+$bodyclasses[] = 'essential-colours-' . theme_essential_get_colours();
+ 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
@@ -23,7 +29,7 @@ echo $OUTPUT->doctype() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body <?php echo $OUTPUT->body_attributes(); ?>>
+<body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 <div id="page">
     <div id="page-content" class="clearfix">

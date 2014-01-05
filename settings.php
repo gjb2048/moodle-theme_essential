@@ -378,7 +378,47 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // This is the descriptor for the user theme colors.
+    $name = 'theme_essential/alternativethemecolorsinfo';
+    $heading = get_string('alternativethemecolors', 'theme_essential');
+    $information = get_string('alternativethemecolorsdesc', 'theme_essential');
+    $setting = new admin_setting_heading($name, $heading, $information);
+    $temp->add($setting);
 
+    $defaultalternativethemecolors = array('#a430d1', '#d15430', '#5dd130');
+    $defaultalternativethemehovercolors = array('#9929c4', '#c44c29', '#53c429');
+
+    foreach (range(1, 3) as $alternativethemenumber) {
+
+        // Enables the user to select an alternative colors choice.
+        $name = 'theme_essential/enablealternativethemecolors' . $alternativethemenumber;
+        $title = get_string('enablealternativethemecolors', 'theme_essential', $alternativethemenumber);
+        $description = get_string('enablealternativethemecolorsdesc', 'theme_essential', $alternativethemenumber);
+        $default = false;
+        $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+  
+        // User theme colour setting.
+        $name = 'theme_essential/alternativethemecolor' . $alternativethemenumber;
+        $title = get_string('alternativethemecolor', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemecolordesc', 'theme_essential', $alternativethemenumber);
+        $default = $defaultalternativethemecolors[$alternativethemenumber - 1];
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        // User theme hover colour setting.
+        $name = 'theme_essential/alternativethemehovercolor' . $alternativethemenumber;
+        $title = get_string('alternativethemehovercolor', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemehovercolordesc', 'theme_essential', $alternativethemenumber);
+        $default = $defaultalternativethemehovercolors[$alternativethemenumber - 1];
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+    }
 
  	$ADMIN->add('theme_essential', $temp);
  

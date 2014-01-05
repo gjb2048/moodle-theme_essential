@@ -29,6 +29,16 @@ $hasboringlayout = (empty($PAGE->theme->settings->layout)) ? false : $PAGE->them
 $hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
 $sideregionsmaxwidth = (!empty($PAGE->theme->settings->sideregionsmaxwidth));
 
+theme_essential_check_colours_switch();
+theme_essential_initialise_colourswitcher($PAGE);
+
+$bodyclasses = array();
+$bodyclasses[] = 'two-column';
+$bodyclasses[] = 'essential-colours-' . theme_essential_get_colours();
+if ($sideregionsmaxwidth) {
+    $bodyclasses[] = 'side-regions-with-max-width';
+}
+ 
 if (right_to_left()) {
     $regionbsid = 'region-bs-main-and-post';
 } else {

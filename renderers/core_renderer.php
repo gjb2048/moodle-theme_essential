@@ -144,6 +144,34 @@
  			$branch->add('<em><i class="fa fa-file"></i>'.get_string('privatefiles', 'block_private_files').'</em>',new moodle_url('/user/files.php'),get_string('privatefiles', 'block_private_files'));
  			$branch->add('<em><i class="fa fa-sign-out"></i>'.get_string('logout').'</em>',new moodle_url('/login/logout.php'),get_string('logout'));    
         }
+        
+        /*
+         * This code adds the Theme colors selector to the custommenu.
+         */
+        if (isloggedin() && !isguestuser()) {
+            $alternativethemes = array();
+            foreach (range(1, 3) as $alternativethemenumber) {
+                if (!empty($this->page->theme->settings->{'enablealternativethemecolors' . $alternativethemenumber})) {
+                    $alternativethemes[] = $alternativethemenumber;
+                }
+            }
+            if (!empty($alternativethemes)) {
+                $branchtitle = get_string('themecolors', 'theme_essential');
+                $branchlabel = '<i class="fa fa-th-large"></i>' . $branchtitle;
+                $branchurl   = new moodle_url('/my/index.php');
+                $branchsort  = 10000;
+                $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+                
+                $defaultthemecolorslabel = get_string('defaultcolors', 'theme_essential');
+                $branch->add('<i class="fa fa-square colours-default"></i>' . $defaultthemecolorslabel,
+                        new moodle_url($this->page->url, array('essentialcolours' => 'default')), $defaultthemecolorslabel);
+                foreach ($alternativethemes as $alternativethemenumber) {
+                    $alternativethemeslabel = get_string('alternativecolors', 'theme_essential', $alternativethemenumber);
+                    $branch->add('<i class="fa fa-square colours-alternative' .  $alternativethemenumber . '"></i>' . $alternativethemeslabel,
+                            new moodle_url($this->page->url, array('essentialcolours' => 'alternative' . $alternativethemenumber)), $alternativethemeslabel);
+                }
+            }
+        }
  
         return parent::render_custom_menu($menu);
     }
