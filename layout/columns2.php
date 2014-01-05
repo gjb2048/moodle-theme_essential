@@ -27,6 +27,7 @@
 $haslogo = (!empty($PAGE->theme->settings->logo));
 $hasboringlayout = (empty($PAGE->theme->settings->layout)) ? false : $PAGE->theme->settings->layout;
 $hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
+$sideregionsmaxwidth = (!empty($PAGE->theme->settings->sideregionsmaxwidth));
 
 $left = (!right_to_left());  // To know if to add 'pull-right' and 'desktop-first-column' classes in the layout for LTR.
 echo $OUTPUT->doctype() ?>
@@ -42,7 +43,14 @@ echo $OUTPUT->doctype() ?>
     <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
 </head>
 
-<body <?php echo $OUTPUT->body_attributes('two-column'); ?>>
+<?php 
+$bodyclasses = array();
+$bodyclasses[] = 'two-column';
+if ($sideregionsmaxwidth) {
+    $bodyclasses[] = 'side-regions-with-max-width';
+}
+?>
+<body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 

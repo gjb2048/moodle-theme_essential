@@ -24,6 +24,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 $hashiddendock = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('hidden-dock', $OUTPUT));
+$sideregionsmaxwidth = (!empty($PAGE->theme->settings->sideregionsmaxwidth));
 
 $hasslide1 = (!empty($PAGE->theme->settings->slide1));
 $hasslide1image = (!empty($PAGE->theme->settings->slide1image));
@@ -135,7 +136,14 @@ echo $OUTPUT->doctype() ?>
     <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
 </head>
 
-<body <?php echo $OUTPUT->body_attributes('two-column'); ?>>
+<?php 
+$bodyclasses = array();
+$bodyclasses[] = 'two-column';
+if ($sideregionsmaxwidth) {
+    $bodyclasses[] = 'side-regions-with-max-width';
+}
+?>
+<body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 

@@ -116,6 +116,15 @@ defined('MOODLE_INTERNAL') || die;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+
+    // Use max width for side regions.
+    $name = 'theme_essential/sideregionsmaxwidth';
+    $title = get_string('sideregionsmaxwidth', 'theme_essential');
+    $description = get_string('sideregionsmaxwidthdesc', 'theme_essential');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
     
     //Include the Editicons css rules
     $name = 'theme_essential/editicons';

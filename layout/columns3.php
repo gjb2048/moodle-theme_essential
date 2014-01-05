@@ -27,6 +27,7 @@
 $haslogo = (!empty($PAGE->theme->settings->logo));
 $hasboringlayout = (empty($PAGE->theme->settings->layout)) ? false : $PAGE->theme->settings->layout;
 $hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
+$sideregionsmaxwidth = (!empty($PAGE->theme->settings->sideregionsmaxwidth));
 
 if (right_to_left()) {
     $regionbsid = 'region-bs-main-and-post';
@@ -47,7 +48,14 @@ echo $OUTPUT->doctype() ?>
     <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
 </head>
 
-<body <?php echo $OUTPUT->body_attributes(); ?>>
+<?php 
+$bodyclasses = array();
+$bodyclasses[] = 'three-column';
+if ($sideregionsmaxwidth) {
+    $bodyclasses[] = 'side-regions-with-max-width';
+}
+?>
+<body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
