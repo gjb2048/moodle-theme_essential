@@ -458,12 +458,10 @@ function theme_essential_process_css($css, $theme) {
     
     // Set Category Icons.
     foreach (range(1, 20) as $categorynumber) {
-        $categoryicon = null;
+        $categoryicon = $defaultcategoryicon;
         if (!empty($theme->settings->usecategoryicon)) {
             if (!empty($theme->settings->{'categoryicon' . $categorynumber})) {
                 $categoryicon = $theme->settings->{'categoryicon' . $categorynumber};
-            } else if (!empty($theme->settings->defaultcategoryicon)) {
-                $categoryicon = $theme->settings->defaultcategoryicon;
             }
         }
         $css = theme_essential_set_categoryicon($css, $categoryicon, $categorynumber);
@@ -754,7 +752,7 @@ function theme_essential_set_categoryicon($css, $categoryicon, $categorynumber) 
     $replacement = $categoryicon;
     
     if (is_null($replacement)) {
-        $replacement = '';
+        $replacement = 'f07c';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
