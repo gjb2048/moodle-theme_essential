@@ -44,6 +44,7 @@
 
 /* Hide icon 'collapsed' because it makes no sense here */ 
 .course_category_tree .category.with_children>.info>.categoryname,
+.course_category_tree .category.with_children.collapsed>.info>.categoryname,
 .course_category_tree .category>.info>.categoryname {
 	background: none;
 	padding-left: 0px;
