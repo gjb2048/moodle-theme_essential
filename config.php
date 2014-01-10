@@ -162,7 +162,7 @@ $THEME->layouts = array(
 );
 
 $THEME->javascripts = array(
-	'coloursswitcher'
+    'coloursswitcher'
 );
 
 $THEME->javascripts_footer = array(

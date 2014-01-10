@@ -33,7 +33,7 @@ theme_essential_check_colours_switch();
 theme_essential_initialise_colourswitcher($PAGE);
 
 $bodyclasses = array();
-$bodyclasses[] = 'two-column';
+$bodyclasses[] = 'three-column';
 $bodyclasses[] = 'essential-colours-' . theme_essential_get_colours();
 if ($sideregionsmaxwidth) {
     $bodyclasses[] = 'side-regions-with-max-width';
@@ -58,13 +58,6 @@ echo $OUTPUT->doctype() ?>
     <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
 </head>
 
-<?php 
-$bodyclasses = array();
-$bodyclasses[] = 'three-column';
-if ($sideregionsmaxwidth) {
-    $bodyclasses[] = 'side-regions-with-max-width';
-}
-?>
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
