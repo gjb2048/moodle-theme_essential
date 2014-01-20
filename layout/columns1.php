@@ -90,8 +90,6 @@ echo $OUTPUT->doctype() ?>
     </div>
 	<!-- End Main Regions -->
 
-    <a href="#top" class="back-to-top"><i class="fa fa-chevron-circle-up fa-3x"></i><p><?php print_string('backtotop', 'theme_essential'); ?></p></a>
-
 	<footer id="page-footer" class="container-fluid">
 		<?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
 	</footer>
@@ -125,6 +123,6 @@ jQuery(document).ready(function() {
     })
 });
 </script>
-
+<a href="#top" class="back-to-top" title="<?php print_string('backtotop', 'theme_essential'); ?>"><i class="fa fa-angle-up "></i></a>
 </body>
 </html>

@@ -1688,21 +1688,33 @@ table.calendarmonth.calendartable {
 
 .back-to-top{
     position: fixed;
-    bottom: 2em;
-    left: 50%;
+    top: 85%;
+    right: 15px;
     display: none;
     text-align:center; 
-    font:11px/100%; 
+    font:9px; 
     text-transform:uppercase; 
-    text-decoration:none; 
-}
-
-.back-to-top p{
-    margin-top: 5px;
+    text-decoration:none;
+    -webkit-transition: all .3s ease 0s;
+    -moz-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 1px #fff;
+    -moz-box-shadow: 0 0 1px #fff;
+    box-shadow: 0 0 1px #fff;
+    padding: 5px 12px;
+    color: #fff;
+    
 }
 
 .back-to-top:hover{
     text-decoration: none;
+}
+
+.back-to-top a,
+.back-to-top a:visited {
+	color: #fff !important;
 }
 
 /* @end */
