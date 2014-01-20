@@ -159,7 +159,7 @@
                 $branchtitle = get_string('themecolors', 'theme_essential');
                 $branchlabel = '<i class="fa fa-th-large"></i>' . $branchtitle;
                 $branchurl   = new moodle_url('/my/index.php');
-                $branchsort  = 10000;
+                $branchsort  = 11000;
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
                 
                 $defaultthemecolorslabel = get_string('defaultcolors', 'theme_essential');
