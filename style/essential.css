@@ -1717,10 +1717,12 @@ table.calendarmonth.calendartable {
 
 @media screen and (min-width: 1200px) {
  
+    .three-column.side-regions-with-max-width.empty-region-side-post.used-region-side-pre #block-region-side-pre,
     .three-column.side-regions-with-max-width #block-region-side-pre,
     .three-column.side-regions-with-max-width #block-region-side-post {
         width: 285px;
     }
+    .three-column.side-regions-with-max-width.empty-region-side-post.used-region-side-pre #region-main,
     .three-column.side-regions-with-max-width #region-bs-main-and-pre,
     .three-column.side-regions-with-max-width #region-main {
         width: -moz-calc(100% - 2.5641% - 285px);
