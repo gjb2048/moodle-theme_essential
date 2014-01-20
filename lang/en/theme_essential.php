@@ -189,6 +189,10 @@ $string['alternativethemecolor'] = 'Alternative Theme Colour {$a}';
 $string['alternativethemecolordesc'] = 'What colour should your theme be for the alternative theme colours {$a}. If enabled and the user choose it, this will replace the default theme colour.';
 $string['alternativethemecolors'] = 'Alternative Theme Colours';
 $string['alternativethemecolorsdesc'] = 'Defines theme colours alternative that the user may select.';
+
+$string['alternativethemecolorname'] = 'Name of Alternative Color Set {$a}';
+$string['alternativethemecolornamedesc'] = 'Provide a recognisable name for this set of alternative theme colours';
+
 $string['alternativethemehovercolor'] = 'Alternative Theme Hover Colour {$a}';
 $string['alternativethemehovercolordesc'] = 'What colour should your theme hovers be for the alternative theme colours {$a}. If enabled and the user choose it, this will replace the default theme hover colour.';
 $string['defaultcolors'] = 'Default Colours';
