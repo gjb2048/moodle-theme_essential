@@ -815,11 +815,11 @@ function theme_essential_set_defaultcategoryicon($css, $defaultcategoryicon) {
 }
 
 function theme_essential_set_categoryicon($css, $categoryicon, $categorynumber) {
-    $tag = '[[setting:categoryicon' . $categorynumber . ']]';
+    $tag = '[[setting:categoryicon'. $categorynumber.']]';
     $replacement = $categoryicon;
     
     if (is_null($replacement)) {
-        $replacement = 'f07c';
+        $replacement = $defaultcategoryicon;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
