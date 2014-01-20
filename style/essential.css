@@ -1680,6 +1680,8 @@ table.calendarmonth.calendartable {
 
 /* @end */
 
+/* @group Back to Top */
+
 .back-to-top [class^="icon-"] {
     font-size: 3em;
 }
@@ -1703,6 +1705,31 @@ table.calendarmonth.calendartable {
     text-decoration: none;
 }
 
+/* @end */
+
+/* @group RTL Fixes */
+
+.dir-rtl .block .footer {
+    float: right;
+    text-align: right;
+}
+.dir-rtl .block_login input[type="submit"],
+.dir-rtl .block_login .footer a {
+    float: right;
+}
+.dir-rtl .block .header .title h2:before {
+    margin-left: 0.3em;
+}
+
+.dir-rtl .block #icon {
+    margin-left: 5px;
+}
+/* @navigation */
+.dir-rlt .tree_item.branch:before {
+    margin-left: 5px;
+}
+
+/* @end */
 @media screen and (min-width: 960px) {
     .two-column.side-regions-with-max-width #block-region-side-pre {
         width: 285px;
