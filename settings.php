@@ -1510,7 +1510,7 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add($setting);
     
     // Alert Title.
-    $name = 'theme_essential/alert1title';
+    $name = 'theme_essential/alert1title_'.current_language();
     $title = get_string('alerttitle', 'theme_essential');
     $description = get_string('alerttitledesc', 'theme_essential');
     $default = '';
@@ -1519,7 +1519,7 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add($setting);
     
     // Alert Text.
-    $name = 'theme_essential/alert1text';
+    $name = 'theme_essential/alert1text_'.current_language();
     $title = get_string('alerttext', 'theme_essential');
     $description = get_string('alerttextdesc', 'theme_essential');
     $default = '';
@@ -1556,7 +1556,7 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add($setting);
     
     // Alert Title.
-    $name = 'theme_essential/alert2title';
+    $name = 'theme_essential/alert2title_'.current_language();
     $title = get_string('alerttitle', 'theme_essential');
     $description = get_string('alerttitledesc', 'theme_essential');
     $default = '';
@@ -1565,7 +1565,7 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add($setting);
     
     // Alert Text.
-    $name = 'theme_essential/alert2text';
+    $name = 'theme_essential/alert2text_'.current_language();
     $title = get_string('alerttext', 'theme_essential');
     $description = get_string('alerttextdesc', 'theme_essential');
     $default = '';
@@ -1602,7 +1602,7 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add($setting);
     
     // Alert Title.
-    $name = 'theme_essential/alert3title';
+    $name = 'theme_essential/alert3title_'.current_language();
     $title = get_string('alerttitle', 'theme_essential');
     $description = get_string('alerttitledesc', 'theme_essential');
     $default = '';
@@ -1611,7 +1611,7 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add($setting);
     
     // Alert Text.
-    $name = 'theme_essential/alert3text';
+    $name = 'theme_essential/alert3text_'.current_language();
     $title = get_string('alerttext', 'theme_essential');
     $description = get_string('alerttextdesc', 'theme_essential');
     $default = '';

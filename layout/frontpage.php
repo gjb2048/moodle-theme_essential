@@ -189,7 +189,9 @@ echo $OUTPUT->doctype() ?>
    	} else {
    		$alert1icon = $alertsuccess;
    	} 
-   	echo $alert1icon.'<span class="title">'.$PAGE->theme->settings->alert1title.'</span>'.$PAGE->theme->settings->alert1text; ?> 
+    $alert1title = 'alert1title_'.current_language();
+    $alert1text = 'alert1text_'.current_language();
+   	echo $alert1icon.'<span class="title">'.$PAGE->theme->settings->$alert1title.'</span>'.$PAGE->theme->settings->$alert1text; ?> 
 </div>
 <?php } ?>
 
@@ -205,7 +207,9 @@ echo $OUTPUT->doctype() ?>
    	} else {
    		$alert2icon = $alertsuccess;
    	} 
-   	echo $alert2icon.'<span class="title">'.$PAGE->theme->settings->alert2title.'</span>'.$PAGE->theme->settings->alert2text; ?> 
+    $alert2title = 'alert2title_'.current_language();
+    $alert2text = 'alert2text_'.current_language();
+   	echo $alert2icon.'<span class="title">'.$PAGE->theme->settings->$alert2title.'</span>'.$PAGE->theme->settings->$alert2text; ?> 
 </div>
 <?php } ?>
 
@@ -221,7 +225,9 @@ echo $OUTPUT->doctype() ?>
    	} else {
    		$alert3icon = $alertsuccess;
    	} 
-   	echo $alert3icon.'<span class="title">'.$PAGE->theme->settings->alert3title.'</span>'.$PAGE->theme->settings->alert3text; ?> 
+    $alert3title = 'alert3title_'.current_language();
+    $alert3text = 'alert3text_'.current_language();
+   	echo $alert3icon.'<span class="title">'.$PAGE->theme->settings->$alert3title.'</span>'.$PAGE->theme->settings->$alert3text; ?> 
 </div>
 <?php } ?>
 <!-- End Alerts -->
