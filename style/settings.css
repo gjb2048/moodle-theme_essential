@@ -521,12 +521,12 @@ table#user-grades td.controls,
 
 /* @group Back To Top */
 
-.back-to-top{
-    color:[[setting:themecolor]];
+.back-to-top a{
+    color:[[setting:themecolor]] !important;
 }
 
-.back-to-top:hover{
-    color:[[setting:themehovercolor]];
+.back-to-top a:hover{
+    color:[[setting:themehovercolor]] !important;
 }
 
 /* @end */
