@@ -16,6 +16,17 @@ Cool things to know about the theme.
  - The entire color scheme can be modified with theme settings (like on [Rocket](https://moodle.org/plugins/view.php?plugin=theme_rocket))
  - The homepage main area is just a label. The theme will ship with custom classes that you can set for tables and links to modify their formatting. No knowledge of code is needed as you can use the text editor to do this. Documentation will be provided outlining what the additional classes are.
  
+ New in 2.7
+ ========================
+ - FIX: Numerous CSS fixes
+ - FIX: Due to popular request reports are now 2 column again
+ - FIX: Significantly improved RTL support
+ - FIX: Back To Top link now moved to the right side so does not overlap on content
+ - FIX: Fixed layout of top icons.
+ - NEW: Can create alternative color schemes for users to select.
+ - NEW: Can select icons for categories
+ - NEW: Add support for the max-layout-width feature when empty regions are used.
+ 
  New in 2.6.2
  ========================
  - FIX: Numerous CSS fixes
