@@ -187,6 +187,8 @@ $string['pagebackgrounddesc'] = 'Upload your own background image.  This will be
 $string['alternativecolors'] = 'Alternative Colours {$a}';
 $string['alternativethemecolor'] = 'Alternative Theme Colour {$a}';
 $string['alternativethemecolordesc'] = 'What colour should your theme be for the alternative theme colours {$a}. If enabled and the user choose it, this will replace the default theme colour.';
+$string['alternativethemename'] = 'Color Scheme Name';
+$string['alternativethemenamedesc'] = 'Provide a name for your alternative theme colours';
 $string['alternativethemecolors'] = 'Alternative Theme Colours';
 $string['alternativethemecolorsdesc'] = 'Defines theme colours alternative that the user may select.';
 

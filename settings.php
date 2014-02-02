@@ -398,6 +398,15 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $temp->add($setting);
+        
+        // User theme colour name.
+        $name = 'theme_essential/alternativethemename' . $alternativethemenumber;
+        $title = get_string('alternativethemename', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemenamedesc', 'theme_essential', $alternativethemenumber);
+        $default = get_string('alternativecolors', 'theme_essential', $alternativethemenumber);
+        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
   
         // User theme colour setting.
         $name = 'theme_essential/alternativethemecolor' . $alternativethemenumber;

@@ -166,7 +166,11 @@
                 $branch->add('<i class="fa fa-square colours-default"></i>' . $defaultthemecolorslabel,
                         new moodle_url($this->page->url, array('essentialcolours' => 'default')), $defaultthemecolorslabel);
                 foreach ($alternativethemes as $alternativethemenumber) {
-                    $alternativethemeslabel = get_string('alternativecolors', 'theme_essential', $alternativethemenumber);
+                    if (!empty($this->page->theme->settings->{'alternativethemename' . $alternativethemenumber})) {
+                        $alternativethemeslabel = $this->page->theme->settings->{'alternativethemename' . $alternativethemenumber};
+                    } else {
+                        $alternativethemeslabel = get_string('alternativecolors', 'theme_essential', $alternativethemenumber);
+                    }
                     $branch->add('<i class="fa fa-square colours-alternative' .  $alternativethemenumber . '"></i>' . $alternativethemeslabel,
                             new moodle_url($this->page->url, array('essentialcolours' => 'alternative' . $alternativethemenumber)), $alternativethemeslabel);
                 }
