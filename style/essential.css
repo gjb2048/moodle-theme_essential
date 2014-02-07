@@ -62,6 +62,17 @@ a {
      font-style: normal;
  }
  
+ .sr-only {
+     position: absolute;
+     width: 1px;
+     height: 1px;
+     padding: 0;
+     margin: -1px;
+     overflow: hidden;
+     clip: rect(0,0,0,0);
+     border: 0;
+ }
+ 
  /* @end */
  
  /* @group Custom */
@@ -162,70 +173,66 @@ h2#subtitle {
     text-decoration: none;
 }
 
-a.socialicon {
+button.socialicon {
     background-color: #bbbbbb;
     border-radius: 5px;
-    width: 24px;
+    border: 0px none;
     font-size: 1.6em;
-    padding: 2px;
-    padding-top: 3px;
+    padding: 5px;
     text-align: center;
+    background-image: none;
     
 }
 
-a.facebook:hover, a.facebook:focus {
+button.facebook:hover, button.facebook:focus {
     background: #4a6ea9;
 }
 
-a.skype:hover, a.skype:focus {
+button.skype:hover, button.skype:focus {
     background: #00adf7;
 }
 
-a.instagram:hover, a.instagram:focus {
+button.instagram:hover, button.instagram:focus {
     background: #a5674a;
 }
 
-a.ios:hover, a.ios:focus {
+button.ios:hover, button.ios:focus {
     background: #000;
 }
 
-a.android:hover, a.android:focus {
+button.android:hover, button.android:focus {
     background: #98cd32;
 }
 
-a.vk:hover, a.vk:focus {
+button.vk:hover, button.vk:focus {
     background: #4a6ea9;
 }
 
-a.twitter:hover, a.twitter:focus {
+button.twitter:hover, button.twitter:focus {
     background: #00aced;
 }
 
-a.googleplus:hover, a.googleplus:focus {
+button.googleplus:hover, button.googleplus:focus {
     background: #f42941;
 }
 
-a.flickr:hover, a.flickr:focus {
+button.flickr:hover, button.flickr:focus {
     background: #ff3096;
 }
 
-a.pinterest:hover, a.ointerest:focus {
-    background: #de0002;
-}
-
-a.instagram:hover, a.instagram:focus {
+button.instagram:hover, a.instagram:focus {
     background: #b99c6b;
 }
 
-a.youtube:hover, a.youtube:focus {
+button.youtube:hover, button.youtube:focus {
     background: #f42941;
 }
 
-a.pinterest:hover, a.pinterest:focus {
+button.pinterest:hover, button.pinterest:focus {
     background: #f42941;
 }
 
-a.linkedin:hover, a.linkedin:focus {
+button.linkedin:hover, button.linkedin:focus {
     background: #4A9CC9;
 }
 
