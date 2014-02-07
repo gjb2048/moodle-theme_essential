@@ -82,7 +82,7 @@ h1#title {
 
 /* @group Social Buttons */
 
-a.website:hover, a.website:focus {
+button.website:hover, button.website:focus {
     background-color: [[setting:themecolor]];    
 }
 
