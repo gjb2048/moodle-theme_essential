@@ -545,6 +545,10 @@ letter-spacing:0.1em;
     padding-bottom: 20px;
 }
 
+#region-bs-main-and-pre.span9 .row-fluid aside#block-region-side-pre.span4 {
+    margin-left: 2%;
+}
+
 /* @end */
 
 /* @group Forums */
