@@ -92,7 +92,7 @@ echo $OUTPUT->doctype() ?>
             	<?php if ($hasboringlayout) { ?>
                 <section id="region-main" class="span8 pull-right">
                 <?php } else { ?>
-                <section id="region-main" class="span8">
+                <section id="region-main" class="span8 desktop-first-column">
                 <?php } ?>
                 	<div id="page-navbar" class="clearfix">
             			<nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
