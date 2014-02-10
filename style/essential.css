@@ -1694,6 +1694,10 @@ table.calendarmonth.calendartable {
 .dir-rtl .block #icon {
     margin-left: 5px;
 }
+
+.dir-rtl .course_category_tree .category > .info > .categoryname {
+    background-repeat: no-repeat;
+}
 /* @navigation */
 .dir-rlt .tree_item.branch:before {
     margin-left: 5px;
