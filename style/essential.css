@@ -181,6 +181,7 @@ button.socialicon {
     padding: 5px;
     text-align: center;
     background-image: none;
+    min-width: 29px;
 
 }
 

@@ -117,16 +117,15 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
             <ul class="socials unstyled">
                 <?php if ($hasgoogleplus) { ?>
                 <li>
-                    <button type="button" href="<?php echo $hasgoogleplus; ?>" class="socialicon googleplus">
+                    <button type="button" ONCLICK="window.location.href='<?php echo $hasgoogleplus; ?>'" class="socialicon googleplus">
                         <i class="fa fa-google-plus fa-inverse"></i>
                         <span class="sr-only">Follow us on Google Plus</span>
                     </button>
                 </li>
-                <li><a href="<?php echo $hasgoogleplus; ?>" class="socialicon googleplus"><i class="fa fa-google-plus fa-inverse"></i></a></li>
                 <?php } ?>
                 <?php if ($hastwitter) { ?>
                 <li>
-                    <button type="button" href="<?php echo $hastwitter; ?>" class="socialicon twitter">
+                    <button type="button" ONCLICK="window.location.href='<?php echo $hastwitter; ?>'" class="socialicon twitter">
                         <i class="fa fa-twitter fa-inverse"></i>
                         <span class="sr-only">Follow us on Twitter</span>
                     </button>
@@ -134,7 +133,7 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
                 <?php } ?>
                 <?php if ($hasfacebook) { ?>
                 <li>
-                    <button type="button" href="<?php echo $hasfacebook; ?>" class="socialicon facebook">
+                    <button type="button" ONCLICK="window.location.href='<?php echo $hasfacebook; ?>'" class="socialicon facebook">
                         <i class="fa fa-facebook fa-inverse"></i>
                         <span class="sr-only">Like us on Facebook</span>
                     </button>
@@ -142,7 +141,7 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
                 <?php } ?>
                 <?php if ($haslinkedin) { ?>
                 <li>
-                    <button type="button" href="<?php echo $haslinkedin; ?>" class="socialicon linkedin">
+                    <button type="button" ONCLICK="window.location.href='<?php echo $haslinkedin; ?>'" class="socialicon linkedin">
                         <i class="fa fa-linkedin fa-inverse"></i>
                         <span class="sr-only">Visit us on LinkedIn</span>
                     </button>
@@ -150,7 +149,7 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
                 <?php } ?>
                 <?php if ($hasyoutube) { ?>
                 <li>
-                    <button type="button" href="<?php echo $hasyoutube; ?>" class="socialicon youtube">
+                    <button type="button" ONCLICK="window.location.href='<?php echo $hasyoutube; ?>'" class="socialicon youtube">
                         <i class="fa fa-youtube fa-inverse"></i>
                         <span class="sr-only">Watch us on Youtube</span>
                     </button>
@@ -158,7 +157,7 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
                 <?php } ?>
                 <?php if ($hasflickr) { ?>
                 <li>
-                    <button type="button" href="<?php echo $hasflickr; ?>" class="socialicon flickr">
+                    <button type="button" ONCLICK="window.location.href='<?php echo $hasflickr; ?>'" class="socialicon flickr">
                         <i class="fa fa-flickr fa-inverse"></i>
                         <span class="sr-only">See us on Flickr</span>
                     </button>
@@ -166,7 +165,7 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
                 <?php } ?>
                 <?php if ($haspinterest) { ?>
                 <li>
-                    <button type="button" href="<?php echo $haspinterest; ?>" class="socialicon pinterest">
+                    <button type="button" ONCLICK="window.location.href='<?php echo $haspinterest; ?>'" class="socialicon pinterest">
                         <i class="fa fa-pinterest fa-inverse"></i>
                         <span class="sr-only">Pin us on Pinterest</span>
                     </button>
@@ -174,7 +173,7 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
                 <?php } ?>
                 <?php if ($hasinstagram) { ?>
                 <li>
-                    <button type="button" href="<?php echo $hasinstagram; ?>" class="socialicon instagram">
+                    <button type="button" ONCLICK="window.location.href='<?php echo $hasinstagram; ?>'" class="socialicon instagram">
                         <i class="fa fa-instagram fa-inverse"></i>
                         <span class="sr-only">Follow us on Instagram</span>
                     </button>
@@ -182,7 +181,7 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
                 <?php } ?>
                 <?php if ($hasvk) { ?>
                 <li>
-                    <button type="button" href="<?php echo $hasvk; ?>" class="socialicon vk">
+                    <button type="button" ONCLICK="window.location.href='<?php echo $hasvk; ?>'" class="socialicon vk">
                         <i class="fa fa-vk fa-inverse"></i>
                         <span class="sr-only">Follow us on VK</span>
                     </button>
@@ -190,7 +189,7 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
                 <?php } ?>
                 <?php if ($hasskype) { ?>
                 <li>
-                    <button type="button" href="<?php echo $haskype; ?>" class="socialicon skype">
+                    <button type="button" ONCLICK="window.location.href='<?php echo $haskype; ?>'" class="socialicon skype">
                         <i class="fa fa-skype fa-inverse"></i>
                         <span class="sr-only">Contact us on Skype</span>
                     </button>
@@ -198,7 +197,7 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
                 <?php } ?>
                 <?php if ($haswebsite) { ?>
                 <li>
-                    <button type="button" href="<?php echo $haswebsite; ?>" class="socialicon website">
+                    <button type="button" ONCLICK="window.location.href='<?php echo $haswebsite; ?>'" class="socialicon website">
                         <i class="fa fa-globe fa-inverse"></i>
                         <span class="sr-only">Visit our website</span>
                     </button>
@@ -217,7 +216,7 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
             <ul class="socials unstyled">
                 <?php if ($hasios) { ?>
                 <li>
-                    <button type="button" href="<?php echo $hasios; ?>" class="socialicon ios">
+                    <button type="button" ONCLICK="window.location.href='<?php echo $hasios; ?>'" class="socialicon ios">
                         <i class="fa fa-apple fa-inverse"></i>
                         <span class="sr-only">Download iOS App</span>
                     </button>
@@ -225,7 +224,7 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
                 <?php } ?>
                 <?php if ($hasandroid) { ?>
                 <li>
-                    <button type="button" href="<?php echo $hasandroid; ?>" class="socialicon android">
+                    <button type="button" ONCLICK="window.location.href='<?php echo $hasandroid; ?>'" class="socialicon android">
                         <i class="fa fa-android fa-inverse"></i>
                         <span class="sr-only">Download Android App</span>
                     </button>
