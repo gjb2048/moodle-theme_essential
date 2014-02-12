@@ -907,6 +907,119 @@ table#greyboxleft h2 {
     color: #fff;
 }
 
+/* @group Login Block */
+
+.block_login .header .title h2:before {
+    content:"\f007"  ;
+    font-family: FontAwesome;
+    float: left;
+}
+.block_login .content .footer {
+    height: 60px;
+    width: 100%;
+    padding: 0px;
+}
+.block_login .content .footer div {
+    float: left;
+    clear: left;
+    margin: 0;
+}
+.block_login .content .footer a {
+    color: #fff;
+    padding: 0;
+    float: left;
+    margin: 0;
+    font-size: 1em;
+    white-space: nowrap;
+}
+
+.block_login .content form input[type="submit"],
+.block_login .content .footer a {
+    background-color: [[setting:themecolor]];
+    background-image: none;
+    border-color: #30ADD1;
+    border-image: none;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 4px 12px;
+    text-align: center;
+    text-shadow: none;
+    vertical-align: middle;
+    margin: 10px 0;
+}
+
+.block_login .content form input[type="submit"]:hover,
+.block_login .content .footer a:hover {
+    text-decoration: none;
+}
+
+.block_login .content .footer a {
+    margin: 0 0 10px;
+    padding: 3px 12px;
+    font-family: FontAwesome;
+}
+.block_login input#login_username,
+.block_login input#login_password {
+    width: 95%;
+}
+
+.block_login .content .footer div:nth-child(1) a {
+	background: green;
+}
+
+.block_login .content .footer div:nth-child(2) a {
+	background: red;
+}
+
+.block_login .content .footer div:nth-child(1) a:before {
+	content:"\f090";
+	margin-right: 5px;
+}
+
+.block_login .content .footer div:nth-child(2) a:before {
+	content:"  \f09c";
+	margin-right: 5px;
+}
+
+
+/* @group DIR-RTL */
+
+.dir-rtl .block_login .content {
+    padding-bottom: 125px;
+}
+.dir-rtl .block_login .content .footer {
+    height: 60px;
+    width: 70%;
+    padding: 0 50px 10px 10px;
+}
+.dir-rtl .block_login .content .footer div {
+    float: right;
+    clear: right;
+}
+.dir-rtl .block_login .content .footer a {
+    float: right;
+    margin: 0;
+}
+.dir-rtl .block_login .content .footer a {
+    margin-bottom: 10px;
+}
+.dir-rtl .block_login .header .title h2:before {
+    float: right;
+    clear: right;
+    text-align: right;
+}
+
+/* @end */
+
+/* @end */
+
 /* @group Block Icons */
 
 .dir-rtl .collapsed .tree_item.branch:before {
@@ -1733,117 +1846,118 @@ table.calendarmonth.calendartable {
     }
 }
 
+/* @group Print Styling */
 
-
-/* @group Login Block */
-
-.block_login .header .title h2:before {
-    content:"\f007"  ;
-    font-family: FontAwesome;
-    float: left;
-}
-.block_login .content .footer {
-    height: 60px;
-    width: 100%;
-    padding: 0px;
-}
-.block_login .content .footer div {
-    float: left;
-    clear: left;
-    margin: 0;
-}
-.block_login .content .footer a {
-    color: #fff;
-    padding: 0;
-    float: left;
-    margin: 0;
-    font-size: 1em;
-    white-space: nowrap;
+#printonly {
+	display: none;
 }
 
-.block_login .content form input[type="submit"],
-.block_login .content .footer a {
-    background-color: [[setting:themecolor]];
-    background-image: none;
-    border-color: #30ADD1;
-    border-image: none;
-    border-radius: 4px;
-    border-style: solid;
-    border-width: 1px;
-    box-shadow: none;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 14px;
-    line-height: 20px;
-    padding: 4px 12px;
-    text-align: center;
-    text-shadow: none;
-    vertical-align: middle;
-    margin: 10px 0;
-}
+@media print
+  {
 
-.block_login .content form input[type="submit"]:hover,
-.block_login .content .footer a:hover {
-    text-decoration: none;
-}
+	#printonly {
+		display: block;
+	}
+   
+	html,body {
+		margin: 0;
+		padding: 0;
+		background: transparent;
+		color: #000;
+		text-shadow: none;
+	}
 
-.block_login .content .footer a {
-    margin: 0 0 10px;
-    padding: 3px 12px;
-    font-family: FontAwesome;
-}
-.block_login input#login_username,
-.block_login input#login_password {
-    width: 95%;
-}
+	#dock, 
+	#topstripe, 
+	#page-header, 
+	#custommenu-wrap-outer, 
+	#block-region-side-pre,
+	#block-region-side-post,
+	.navbar, 
+	#graded_users_selector,
+	div.urlselect, 
+	#page-footer,
+	.tabtree, .helplink {
+		display: none;
+	}
 
-.block_login .content .footer div:nth-child(1) a {
-	background: green;
-}
+	#page-report-outline-user .navbar {
+		display: block;
+	}
 
-.block_login .content .footer div:nth-child(2) a {
-	background: red;
-}
+	#page-content-wrapper {
+		width: auto;
+		min-width: auto;
+	}
+  
+	#block-region-side-post,
+	#block-region-side-pre {
+    	width: 0;
+	}  
 
-.block_login .content .footer div:nth-child(1) a:before {
-	content:"\f090";
-	margin-right: 5px;
-}
+	.side-post-only #page-content #region-main-box {
+    	left: 0;
+	}
 
-.block_login .content .footer div:nth-child(2) a:before {
-	content:"  \f09c";
-	margin-right: 5px;
-}
+	.side-post-only #page-content #region-post-box {
+    	margin-left: 0 !important;
+	}
 
+	.side-post-only #page-content #region-main {
+    	padding: 0;
+    	margin-left: 0 !important;
+	}
+	
+	.row-fluid .span9 {
+		width: 100%;
+	}
+	
+	[class*="span"].pull-right, .row-fluid [class*="span"].pull-right {
+		float: left;
+	}
 
-/* @group DIR-RTL */
+	#page #region-main .region-content {
+		border: 0px solid transparent !important;
+		margin: 0 0 !important;
+		padding: 0px 0px !important;
+	}
 
-.dir-rtl .block_login .content {
-    padding-bottom: 125px;
-}
-.dir-rtl .block_login .content .footer {
-    height: 60px;
-    width: 70%;
-    padding: 0 50px 10px 10px;
-}
-.dir-rtl .block_login .content .footer div {
-    float: right;
-    clear: right;
-}
-.dir-rtl .block_login .content .footer a {
-    float: right;
-    margin: 0;
-}
-.dir-rtl .block_login .content .footer a {
-    margin-bottom: 10px;
-}
-.dir-rtl .block_login .header .title h2:before {
-    float: right;
-    clear: right;
-    text-align: right;
-}
+	#page-content #region-main-box .region-content {
+    	padding: 0px 0 0;
+	}
 
-/* @end */
+	#page .navbar {
+		margin: 0 0;
+		padding: 1em 0px;
+		background: #fff;
+		color: #000;
+		text-shadow: none;
+		font-size: 1em;
+	}
+
+	#page .navbar .breadcrumb {
+		padding: 0px 0px;
+	}  
+
+	#page .navbar a {
+		color: #000;
+		text-shadow: none;
+		font-size: 1em;
+	}
+
+	.navbar .sep {
+   		color: #999;
+   		text-shadow: none;
+	}
+
+	.headingwrap h2.headingblock, 
+	.headingwrap h2.main {
+		text-shadow: none;
+	}
+
+}
 
 /* @end */
+
+
+
