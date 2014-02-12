@@ -103,9 +103,8 @@ $THEME->layouts = array(
         'defaultregion' => 'side-post',
     ),
     'login' => array(
-        'file' => 'columns1.php',
-        'regions' => array('footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
-        'defaultregion' => 'footer-right',
+        'file' => 'login.php',
+        'regions' => array(),
         'options' => array('langmenu'=>true),
     ),
 
