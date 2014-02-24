@@ -1637,6 +1637,11 @@ img.profilepicture
     margin-left: 180px; 
 }
 
+.form-item .form-label .form-overridden {
+    font-size: 75%;
+    font-family: monospace;
+}
+
 /* @end */
 
 
