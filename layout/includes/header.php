@@ -189,7 +189,7 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
                 <?php } ?>
                 <?php if ($hasskype) { ?>
                 <li>
-                    <button type="button" ONCLICK="window.location.href='<?php echo $haskype; ?>'" class="socialicon skype">
+                    <button type="button" ONCLICK="window.location.href='<?php echo $hasskype; ?>'" class="socialicon skype">
                         <i class="fa fa-skype fa-inverse"></i>
                         <span class="sr-only">Contact us on Skype</span>
                     </button>
