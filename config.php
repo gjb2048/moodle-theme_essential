@@ -33,7 +33,7 @@ $THEME->name = 'essential';
 $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
 $THEME->parents = array('bootstrapbase');
-$THEME->sheets = array('slides', 'categories', 'font-awesome.min', 'essential', 'alternative1', 'alternative2', 'alternative3', 'settings');
+$THEME->sheets = array('slides', 'categories', 'font-awesome', 'essential', 'alternative1', 'alternative2', 'alternative3', 'settings');
 $THEME->supportscssoptimisation = false;
 $THEME->enable_dock = false;
 

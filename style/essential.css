@@ -1969,7 +1969,10 @@ table.calendarmonth.calendartable {
 
 }
 
+/* G J Barnard additions. */
+.coursebox>.info>.coursename a {
+    background-position: left 0.2em;
+}
+
+
 /* @end */
-
-
-
