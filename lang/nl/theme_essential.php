@@ -48,7 +48,7 @@ David Bezemer<br>
 </div></div>';
 
 /* Algemeen */
-$string['geneicsettings'] = 'Algemene Instellingen';
+$string['genericsettings'] = 'Algemene Instellingen';
 $string['autohide'] = 'Schakel automatisch verbergen in';
 $string['autohidedesc'] = 'Automatisch verbergen is gemaakt om Moodle minder overweldigend te laten zijn. Wanneer Bewerken is ingeschakeld worden de iconen alleen getoond als hier met de muis over heen gegaan wordt.';
 $string['editicons'] = 'Bewerk Iconen V2';

@@ -48,7 +48,7 @@ David Bezemer<br>
 </div></div>';
 
 /* General */
-$string['geneicsettings'] = 'General Settings';
+$string['genericsettings'] = 'General Settings';
 $string['autohide'] = 'Include Autohide Functionality';
 $string['autohidedesc'] = 'The Autohide functionality is designed to make Moodle less intimidating.  When editing is turned on edit icons only appear when the item is hovered over.';
 $string['editicons'] = 'Edit Icons V2';

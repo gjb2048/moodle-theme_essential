@@ -33,7 +33,7 @@ $THEME->name = 'essential';
 $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
 $THEME->parents = array('bootstrapbase');
-$THEME->sheets = array('slides', 'categories', 'font-awesome.min', 'essential', 'alternative1', 'alternative2', 'alternative3', 'settings');
+$THEME->sheets = array('slides', 'categories', 'font-awesome', 'essential', 'alternative1', 'alternative2', 'alternative3', 'settings');
 $THEME->supportscssoptimisation = false;
 $THEME->enable_dock = false;
 
@@ -105,6 +105,7 @@ $THEME->layouts = array(
     'login' => array(
         'file' => 'login.php',
         'regions' => array(),
+		'defaultregion' => '',
         'options' => array('langmenu'=>true),
     ),
 
@@ -125,7 +126,8 @@ $THEME->layouts = array(
     // Embeded pages, like iframe/object embeded in moodleform - it needs as much space as possible.
     'embedded' => array(
         'file' => 'embedded.php',
-        'regions' => array()
+        'regions' => array(),
+		'defaultregion' => '',
     ),
     // Used during upgrade and install, and for the 'This site is undergoing maintenance' message.
     // This must not have any blocks, links, or API calls that would lead to database or cache interaction.
@@ -133,6 +135,7 @@ $THEME->layouts = array(
     'maintenance' => array(
         'file' => 'maintenance.php',
         'regions' => array(),
+		'defaultregion' => '',
     ),
     // Should display the content and basic headers only.
     'print' => array(
@@ -145,6 +148,7 @@ $THEME->layouts = array(
     'redirect' => array(
         'file' => 'embedded.php',
         'regions' => array(),
+		'defaultregion' => '',
     ),
     // The pagelayout used for reports.
     'report' => array(
