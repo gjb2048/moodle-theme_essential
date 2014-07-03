@@ -1,6 +1,21 @@
 /* @group Edit Buttons */
 
+.editing_update {
+	border-left: 2px solid #999;
+	padding-left: 7px !important;
+}
 
+.editing_duplicate {
+	padding-right: 7px !important;
+}
+
+.editing_delete {
+	border-right: 2px solid #999;
+	border-left: 2px solid #999;
+	padding-right: 7px !important;
+	padding-left: 7px;
+	padding-right: 7px;
+}
 
 .commands {
 	font-family: FontAwesome;
@@ -29,16 +44,15 @@
 .editing_delete::before {
 	content: "\f00d ";
 	color: red;
-	padding-right: 5px;
 }
 
 .editing_hide,
-.editing_show,
-.editing_move,
-.editing_groupsnone,
-.editing_groupsvisible,
-.editing_groupsseperate {
-	padding-right: 10px !important;
+.editing_show {
+	padding-left: 7px;
+}
+
+.editing_move {
+	padding-right: 7px !important;
 }
 
 .editing_move:hover {
@@ -46,47 +60,20 @@
 }
 
 .editing_move::before {
-	font-family: 'FontAwesome';
 	content: "\f047 ";
-}
-
-.editing_move img {
-	display: none;
 }
 
 .editing_moveright::before {
 	content: "\f061 ";
-	margin-right: 5px;
 }
 
 .editing_moveleft::before {
 	content: "\f060 ";
-	padding-right: 5px;
-}
-
-.moodle-actionmenu ul .editing_moveright::before,
-.moodle-actionmenu ul .editing_moveleft::before {
-	content: none;
-}
-
-.section-modchooser-link img {
-	display: none;
-}
-
-.section-modchooser-link .section-modchooser-text::before {
-	font-family: 'FontAwesome';
-	content: "\f067 ";
-	padding-right: 5px;
-}
-
-.section-modchooser-link .section-modchooser-text a:hover {
-	text-decoration: none;
 }
 
 .editing_update::before,
 .editing_edit::before {
 	content: "\f013 ";
-	padding-right: 5px;
 }
 
 .editing_duplicate::before {
@@ -99,9 +86,7 @@
 }
 
 .editing_title::before {
-	font-family: 'FontAwesome';
 	content: "\f040 ";
-	padding-right: 5px;
 }
 
 .editing_hide::before {
@@ -115,7 +100,6 @@
 .editing_assign::before,
 .editing_roles::before {
 	content: "\f084 ";
-	padding-right: 5px;
 }
 
 .editing_groupsnone::before {
@@ -128,70 +112,6 @@
 
 .editing_groupsseparate::before {
 	content: "\f0c0 ";
-}
-
-.toggle-display::before {
-	content: "\f085 ";
-	font-family: 'FontAwesome';
-	margin-right: 5px;
-}
-
-.action-moveup::before {
-	content: "\f062 ";
-	font-family: 'FontAwesome';
-	margin-right: 5px;
-}
-
-.action-movedown::before {
-	content: "\f063 ";
-	font-family: 'FontAwesome';
-	margin-right: 5px;
-}
-
-.action-hide::before {
-	content: "\f06e ";
-	font-family: 'FontAwesome';
-	margin-right: 5px;
-}
-
-.action-show::before {
-	content: "\f070 ";
-	font-family: 'FontAwesome';
-	margin-right: 5px;
-}
-
-.action-delete::before {
-	content: "\f00d ";
-	font-family: 'FontAwesome';
-	margin-right: 5px;
-}
-
-.action-edit::before {
-	content: "\f013 ";
-	font-family: 'FontAwesome';
-	margin-right: 5px;
-}
-
-.drag-handle::before {
-	content: "\f047 ";
-	font-family: 'FontAwesome';
-	margin-right: 5px;
-	color: [[setting:themecolor]];
-}
-
-.drag-handle a {
-	color: [[setting:themecolor]];
-}
-
-.toggle-display img,
-.action-moveup img,
-.action-movedown img,
-.action-hide img,
-.action-show img,
-.action-delete img,
-.action-edit img,
-.drag-handle img {
-	display: none;
 }
 
 /* @end */

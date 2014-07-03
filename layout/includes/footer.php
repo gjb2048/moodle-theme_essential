@@ -56,6 +56,5 @@ $hasfooterright = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->re
         echo '<div class="footnote">'.$hasfootnote.'</div>';
     } ?>
 	</div>
-	<?php echo $OUTPUT->standard_footer_html(); ?>
 	
 

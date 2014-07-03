@@ -40,19 +40,18 @@ $string['choosereadme'] = '
 <p>This theme is based upon the Bootstrap theme, which was created for Moodle 2.5, with the help of:<br>
 Stuart Lamour, Mark Aberdour, Paul Hibbitts, Mary Evans.</p>
 <h3>Theme Credits</h3>
-<p>Original Author: Julian Ridden<br>
-Work taken over in July 2014 by:<br>
-Gareth J. Barnard<br>
-David Bezemer<br>
+<p>Authors: Julian Ridden<br>
+Contact: julian@moodleman.net<br>
+Website: <a href="http://www.moodleman.net">www.moodleman.net</a>
 </p>
 </div></div>';
 
 /* General */
-$string['genericsettings'] = 'General Settings';
+$string['geneicsettings'] = 'General Settings';
 $string['autohide'] = 'Include Autohide Functionality';
 $string['autohidedesc'] = 'The Autohide functionality is designed to make Moodle less intimidating.  When editing is turned on edit icons only appear when the item is hovered over.';
 $string['editicons'] = 'Edit Icons V2';
-$string['editiconsdesc'] = 'This utilises the Font Awesome to display coloured and neater formatted edit icons in course pages and blocks.  Please note that currently this is NOT compatible with Autohide.';
+$string['editiconsdesc'] = 'This utilises the Font Awesome to display coloured and neater formatted edit icons in course pages and blocks.  Please note that currsently this is NOT compatible with Autohide.';
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
 $string['footnote'] = 'Footnote';
@@ -62,7 +61,7 @@ $string['invertdesc'] = 'Swaps text and background for the navbar at the top of 
 $string['logo'] = 'Logo';
 $string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.<br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
 $string['fontselect'] = 'Font Selector';
-$string['fontselectdesc'] = 'Choose from the list of available font combinations. You can choose here to disable Google fonts if needed.';
+$string['fontselectdesc'] = 'Choose from the list of availble font combinations. You can choose here to disable Google fonts if needed.';
 $string['bootstrapcdn'] = 'FontAwesome from CDN';
 $string['bootstrapcdndesc'] = 'If enabled this will load FontAwesome from the online Bootstrap CDN source. Enable this if you are having issues getting the Font Awesome icons to display in your site.';
 $string['copyright'] = 'Copyright';
@@ -78,26 +77,12 @@ $string['headerprofilepic'] = 'Display user\'s picture';
 $string['headerprofilepicdesc'] = 'If checked, displays the user\'s profile picture in the header of the page.';
 $string['layout'] = 'Use a standard course layout';
 $string['layoutdesc'] = 'This theme is designed to put both block columns on the side.  If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
-$string['frontpageblocks'] = 'Frontpage blocks alignment';
-$string['frontpageblocksdesc'] = 'Here you can determine if the blocks on the frontpage align to the left or the right.';
-$string['left'] = 'Left';
-$string['right'] = 'Right';
 $string['perfinfo'] = 'Performance Info Mode';
-$string['perfinfodesc'] = 'Many sites don\'t need the fully detailed performance info.  Especially when viewed by users.  When enabled, this shows a cleaned up minimal form with basic page load information.';
+$string['perfinfodesc'] = 'Many sites don\'t need the fully detailed performance info.  Especially when viewed by users.  When enabled, this shows a cleaned up miniminal form with basic page load information.';
 $string['perf_max'] = 'Detailed';
 $string['perf_min'] = 'Minimal';
-$string['sideregionsmaxwidth'] = 'Use max width for side regions';
-$string['sideregionsmaxwidthdesc'] = 'This theme use fluid layout. In wide screens, the side regions containing blocks may become larger than needed. Check this to limit the width of these regions.';
 $string['visibleadminonly'] = 'Blocks moved into the area below will only be seen by admins';
 $string['backtotop'] = 'Back to top';
-$string['nextsection'] = 'Next Section';
-$string['previoussection'] = 'Previous Section';
-
-$string['pagewidth'] = 'Set Page Width';
-$string['pagewidthdesc'] = 'Choose from the list of available page widths. for your site';
-$string['fixedwidthwide'] = 'Fixed Width - Wide';
-$string['fixedwidthnarrow'] = 'Fixed Width - Narrow';
-$string['variablewidth'] = 'Variable Width';
 
 $string['alwaysdisplay'] = 'Always Show';
 $string['displaybeforelogin'] = 'Show before login only';
@@ -141,14 +126,11 @@ $string['nav_thinbracket'] = 'Thin bracket';
 $string['nav_doublebracket'] = 'Double thin bracket';
 $string['nav_thickbracket'] = 'Thick Bracket';
 $string['nav_slash'] = 'Forward slash';
-$string['nav_pipe'] = 'Vertical line';
+$string['nav_pipe'] = 'Verticle line';
 
 /* Regions */
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
-$string['region-home-left'] = 'Home (Left)';
-$string['region-home-middle'] = 'Home (Middle)';
-$string['region-home-right'] = 'Home (Right)';
 $string['region-footer-left'] = 'Footer (Left)';
 $string['region-footer-middle'] = 'Footer (Middle)';
 $string['region-footer-right'] = 'Footer (Right)';
@@ -159,20 +141,14 @@ $string['colorheading'] = 'Colour Settings';
 $string['colorheadingsub'] = 'Set the colours used in your theme';
 $string['colordesc'] = 'Here you can find various settings to change many of the colours found in this theme.';
 
-$string['slidecolors'] = 'Slideshow Colours';
-$string['slidecolorsdesc'] = 'Change the colours on the slideshow';
-
-$string['footercolors'] = 'Footer Colours';
-$string['footercolorsdesc'] = 'Change the colours on the page footers';
-
 $string['themecolor'] = 'Theme Colour';
-$string['themecolordesc'] = 'What colour should your theme be.  This will change multiple components to produce the colour you wish across the moodle site';
+$string['themecolordesc'] = 'What colour should your theme be.  This will change mulitple components to produce the colour you wish across the moodle site';
 $string['themehovercolor'] = 'Theme Hover Colour';
 $string['themehovercolordesc'] = 'What colour should your theme hovers be. This is used for links, menus, etc';
 $string['footercolor'] = 'Footer Background Colour';
 $string['footercolordesc'] = 'Set what colour the background of the Footer box should be.';
-$string['footersepcolor'] = 'Footer Separator Colour';
-$string['footersepcolordesc'] = 'Separators are lines used to separate content.  Set their colour here.';
+$string['footersepcolor'] = 'Footer Seperator Colour';
+$string['footersepcolordesc'] = 'Seperators are lines used to seperate content.  Set their colour here.';
 $string['footertextcolor'] = 'Footer Text Colour';
 $string['footertextcolordesc'] = 'Set the colour you want your text to be in the footer.';
 $string['footerurlcolor'] = 'Footer Link Colour';
@@ -184,38 +160,16 @@ $string['footerheadingcolordesc'] = 'Set the colour for block headings in the fo
 $string['pagebackground'] = 'Page Background Image';
 $string['pagebackgrounddesc'] = 'Upload your own background image.  This will be tiled in the background on all pages.  If none is uploaded a default image is used.';
 
-/* Alternate Color Switcher */
-$string['alternativecolors'] = 'Alternative Colours {$a}';
-$string['alternativethemecolor'] = 'Alternative Theme Colour {$a}';
-$string['alternativethemecolordesc'] = 'What colour should your theme be for the alternative theme colours {$a}. If enabled and the user choose it, this will replace the default theme colour.';
-$string['alternativethemename'] = 'Colour Scheme Name';
-$string['alternativethemenamedesc'] = 'Provide a name for your alternative theme colours';
-$string['alternativethemecolors'] = 'Alternative Theme Colours';
-$string['alternativethemecolorsdesc'] = 'Defines theme colours alternative that the user may select.';
-
-$string['alternativethemecolorname'] = 'Name of Alternative Colour Set {$a}';
-$string['alternativethemecolornamedesc'] = 'Provide a recognisable name for this set of alternative theme colours';
-
-$string['alternativethemehovercolor'] = 'Alternative Theme Hover Colour {$a}';
-$string['alternativethemehovercolordesc'] = 'What colour should your theme hovers be for the alternative theme colours {$a}. If enabled and the user choose it, this will replace the default theme hover colour.';
-$string['defaultcolors'] = 'Default Colours';
-$string['enablealternativethemecolors'] = 'Enable Alternative Theme Colours {$a}';
-$string['enablealternativethemecolorsdesc'] = 'If enabled, the user will be able to choose the alternative theme colours {$a}.';
-$string['themecolors'] = 'Theme Colours';
-
-/* Frontpage Settings */
-$string['frontcontentheading'] = 'Frontpage Settings';
-$string['frontcontentheadingsub'] = 'Change what features you wish enabled on your Moodle front page';
-$string['frontcontentdesc'] = 'This adds a custom content area in between the Slideshow and the Marketing boxes for your own custom content';
+/* Frontpage Content */
+$string['frontcontentheading'] = 'Frontpage Content';
+$string['frontcontentheadingsub'] = 'Add information to your frontpage for users';
+$string['frontcontentdesc'] = 'This adds a custom content area inbetween the Slideshow and the Marketing boxes for your own custom content';
 
 $string['usefrontcontent'] = 'Enable Frontpage content';
-$string['usefrontcontentdesc'] = 'If enabled this will display the content of the box below in between the Slideshow and the Marketing spots.';
+$string['usefrontcontentdesc'] = 'If enabled this will display the content of the box below inbetween the Slideshow and the Marketing spots.';
 
 $string['frontcontentarea'] = 'Frontpage Content';
-$string['frontcontentareadesc'] = 'Whatever is typed into this box will display across the full width of the page in between the Slideshow and the Marketing spots ';
-
-$string['frontpagemiddleblocks'] = 'Enable Frontpage Middle Blocks';
-$string['frontpagemiddleblocksdesc'] = 'If enabled this will display 3 new block locations just under the marketing spots';
+$string['frontcontentareadesc'] = 'Whatever is typed into this box will display across the full width of the page inbetween the Slideshow and the Marketing spots ';
 
 /* Slideshow */
 $string['slideshowheading'] = 'Frontpage Slideshow';
@@ -228,19 +182,6 @@ $string['toggleslideshowdesc'] = 'Choose if you wish to hide or show the Slidesh
 $string['hideonphone'] = 'Slideshow on Mobiles';
 $string['hideonphonedesc'] = 'Choose if you wish to have the slideshow shown on mobiles or not';
 $string['readmore'] = 'Read More';
-
-$string['slidecolor'] = 'Slide Text Colour';
-$string['slidecolordesc'] = 'What colour should the main side text be.';
-$string['slideheadercolor'] = 'Slide Heading Colour';
-$string['slideheadercolordesc'] = 'What colour should the slide header be';
-$string['slidebuttoncolor'] = 'Slide Button Colour';
-$string['slidebuttoncolordesc'] = 'What colour should the slide "read more" button be';
-
-$string['slideshowvariant'] = 'Slideshow Design';
-$string['slideshowvariantdesc'] = 'Choose the style of slideshow you would like to display';
-$string['slideshow1'] = 'Small Image on Right';
-$string['slideshow2'] = 'Large Background Image';
-$string['slideshow3'] = 'Design Three';
 
 $string['slideshowTitle'] = 'Slideshow';
 $string['slideinfodesc'] = 'Enter the settings for your slide.';
@@ -325,22 +266,6 @@ $string['instagramdesc'] = 'Enter the URL of your Instagram page. (i.e http://in
 $string['website'] = 'Website URL';
 $string['websitedesc'] = 'Enter the URL of your own website. (i.e http://www.pukunui.com)';
 
-/* Category Icons */
-$string['categoryiconheading'] = 'Icon based Category Display';
-$string['categoryiconheadingsub'] = 'Use icons to represent your categories';
-$string['categoryicondesc'] = 'If enabled this will allow you to set icons for each category of course.';
-
-$string['usecategoryicon'] = 'Enable Category Icons';
-$string['usecategoryicondesc'] = 'Use custom icons for categories';
-
-$string['defaultcategoryicon'] = 'Default Category Icons';
-$string['defaultcategoryicondesc'] = 'Set a default category icon';
-
-$string['categoryiconinfo'] = 'Set Custom Category Icons';
-$string['categoryiconinfodesc'] = 'Each icon is set by "category ID". You get these by looking at the URL or each category.';
-
-$string['categoryicon'] = 'Category';
-
 /* Mobile Apps */
 $string['mobileappsheading'] = 'Mobile Apps';
 $string['mobileappsheadingsub'] = 'Link to your App to get your students using Mobiles';
@@ -407,4 +332,4 @@ $string['alert_info'] = 'Information';
 $string['alert_warning'] = 'Warning';
 $string['alert_general'] = 'Announcement';
 
-$string['ie7message'] = '<p id="ie7message">Sorry, this site requires <strong>Internet Explorer 8</strong> or higher to display and function correctly.  Please update your browser via Windows Update, or <a href="http://windows.microsoft.com/en-au/internet-explorer/download-ie" target="_blank">download the latest version here</a>.   If using IE8 or above you may have Compatibility Mode switched on, turn this off to display this website correctly.  If you continue having problems accessing this website or the updates mentioned above, please contact your Helpdesk for further assistance.</p>';
+$string['ie7message'] = '<p id="ie7message">Sorry, this site requires <strong>Internet Explorer 8</strong> or higher to display and function correctly.  Please update your browser via Windows Update, or <a href="http://windows.microsoft.com/en-au/internet-explorer/download-ie" target="_blank">download the latest version here</a>.  Alternatively, you can try installing the <a href="http://www.google.com/chromeframe" target="_blank">ChromeFrame plugin</a> which may solve some of the issues experienced in older browsers.  If using IE8 or above you may have Compatibility Mode switched on, turn this off to display this website correctly.  If you continue having problems accessing this website or the updates mentioned above, please contact your Helpdesk for further assistance.</p>';

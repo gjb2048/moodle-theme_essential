@@ -14,21 +14,9 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/**
- * This layout file is designed maintenance related tasks such as upgrade and installation of plugins.
- *
- * It's ultra important that this layout file makes no use of API's unless it absolutely needs to.
- * Under no circumstances should it use API calls that result in database or cache interaction.
- *
- * If you are modifying this file please be extremely careful, one wrong API call and you could end up
- * breaking installation or upgrade unwittingly.
- */
-theme_essential_check_colours_switch();
-theme_essential_initialise_colourswitcher($PAGE);
+// Get the HTML for the settings bits.
+$html = theme_clean_get_html_for_settings($OUTPUT, $PAGE);
 
-$bodyclasses = array();
-$bodyclasses[] = 'essential-colours-' . theme_essential_get_colours();
- 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
@@ -38,14 +26,14 @@ echo $OUTPUT->doctype() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
+<body <?php echo $OUTPUT->body_attributes(); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <div id="page" class="container-fluid">
 
     <header id="page-header" class="clearfix">
-        <?php echo $OUTPUT->page_heading(); ?>
+        <?php echo $html->heading; ?>
     </header>
 
     <div id="page-content" class="row-fluid">
