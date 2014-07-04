@@ -34,185 +34,187 @@ $string['choosereadme'] = '
 <p><img class=img-polaroid src="essential/pix/screenshot.jpg" /></p>
 </div>
 <div class="well">
-<h3>About Essential</h3>
-<p>Essential is a modified Moodle bootstrap theme which inherits styles and renderers from its parent theme.</p>
-<h3>Parents</h3>
-<p>This theme is based upon the Bootstrap theme, which was created for Moodle 2.5, with the help of:<br>
-Stuart Lamour, Mark Aberdour, Paul Hibbitts, Mary Evans.</p>
-<h3>Theme Credits</h3>
-<p>Original Author: Julian Ridden<br>
-Work taken over in July 2014 by:<br>
+<h3>Over Essential</h3>
+<p>Essential is een aangepast Moodle bootstrap thema dat stylen en renderers van haar moeder themas erft.</p>
+<h3>Afhankelijkheden</h3>
+<p>Dit thema is gebaseerd op het Bootstrap thema welke ontwikkeld is door:<br>
+Stuart Lamour, Mark Aberdour, Paul Hibbitts en Mary Evans.</p>
+<h3>Thema Credits</h3>
+<p>Origineel Auteur: Julian Ridden<br>
+Werk in Juli 2014 overgenomen door:<br>
 Gareth J. Barnard<br>
 David Bezemer<br>
 </p>
 </div></div>';
 
-/* General */
-$string['genericsettings'] = 'General Settings';
-$string['autohide'] = 'Include Autohide Functionality';
-$string['autohidedesc'] = 'The Autohide functionality is designed to make Moodle less intimidating.  When editing is turned on edit icons only appear when the item is hovered over.';
-$string['editicons'] = 'Edit Icons V2';
-$string['editiconsdesc'] = 'This utilises the Font Awesome to display coloured and neater formatted edit icons in course pages and blocks.  Please note that currently this is NOT compatible with Autohide.';
-$string['customcss'] = 'Custom CSS';
-$string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
-$string['footnote'] = 'Footnote';
-$string['footnotedesc'] = 'Whatever you add to this textarea will be displayed in the footer throughout your Moodle site.';
-$string['invert'] = 'Invert navbar';
-$string['invertdesc'] = 'Swaps text and background for the navbar at the top of the page between black and white.';
+/* Algemeen */
+$string['genericsettings'] = 'Algemene Instellingen';
+$string['autohide'] = 'Schakel automatisch verbergen in';
+$string['autohidedesc'] = 'Automatisch verbergen is gemaakt om Moodle minder overweldigend te laten zijn. Wanneer Bewerken is ingeschakeld worden de iconen alleen getoond als hier met de muis over heen gegaan wordt.';
+$string['editicons'] = 'Bewerk Iconen V2';
+$string['editiconsdesc'] = 'Deze optie schakelt FontAwesome in om gekleurde en beter vormgegeven bewerk iconen te tonen. Momenteel werkt dit niet correct samen met de Automatisch verbergen optie.';
+$string['customcss'] = 'Aanvullende CSS';
+$string['customcssdesc'] = 'Als er aanvullende CSS vereist is kan dit in het onderstaande tekstvak worden ingevoerd, en zal automatisch op iedere pagina ingevoegd worden.';
+
+$string['footnote'] = 'Voetnoot';
+$string['footnotedesc'] = 'Tekst welke in dit veld wordt ingevoegd zal op iedere pagina in de voetnoot worden weergegeven.';
+$string['invert'] = 'Navigatie in negatief';
+$string['invertdesc'] = 'Wisselt tekst en achtergrond kleur voor de navigatie balk boven in het scherm.';
+
 $string['logo'] = 'Logo';
-$string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.<br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
-$string['fontselect'] = 'Font Selector';
-$string['fontselectdesc'] = 'Choose from the list of available font combinations. You can choose here to disable Google fonts if needed.';
-$string['bootstrapcdn'] = 'FontAwesome from CDN';
-$string['bootstrapcdndesc'] = 'If enabled this will load FontAwesome from the online Bootstrap CDN source. Enable this if you are having issues getting the Font Awesome icons to display in your site.';
+$string['logodesc'] = 'Upload hier je eigen logo. Indien je een logo upload vervangt dit automatisch het standaard logo en het gekozen icoon.';
+
+$string['fontselect'] = 'Font kiezer';
+$string['fontselectdesc'] = 'Kies hier uit de lijst met beschikbare fonts.';
+$string['bootstrapcdn'] = 'FontAwesome laden van CDN';
+$string['bootstrapcdndesc'] = 'Indien ingeschakeld zal FontAwesome van het Bootstrap CDN geladen worden. Deze optie kan ingeschakeld worden als iconen niet correct worden geladen.';
+
 $string['copyright'] = 'Copyright';
-$string['copyrightdesc'] = 'The name of your organisation.';
-$string['profilebarcustomtitle'] = 'Profile Bar Custom Block Title';
-$string['profilebarcustomtitledesc'] = 'Title for custom Profile Bar block.';
-$string['contactinfo'] = 'Contact Information';
-$string['contactinfodesc'] = 'Enter your contact information';
-$string['siteicon'] = 'Site Icon';
-$string['siteicondesc'] = 'Do not have a logo? Enter the name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "icon-". ';
-$string['yourprofile'] = 'You';
-$string['headerprofilepic'] = 'Display user\'s picture';
-$string['headerprofilepicdesc'] = 'If checked, displays the user\'s profile picture in the header of the page.';
-$string['layout'] = 'Use a standard course layout';
-$string['layoutdesc'] = 'This theme is designed to put both block columns on the side.  If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
-$string['frontpageblocks'] = 'Frontpage blocks alignment';
-$string['frontpageblocksdesc'] = 'Here you can determine if the blocks on the frontpage align to the left or the right.';
-$string['left'] = 'Left';
-$string['right'] = 'Right';
-$string['perfinfo'] = 'Performance Info Mode';
-$string['perfinfodesc'] = 'Many sites don\'t need the fully detailed performance info.  Especially when viewed by users.  When enabled, this shows a cleaned up minimal form with basic page load information.';
-$string['perf_max'] = 'Detailed';
-$string['perf_min'] = 'Minimal';
-$string['sideregionsmaxwidth'] = 'Use max width for side regions';
-$string['sideregionsmaxwidthdesc'] = 'This theme use fluid layout. In wide screens, the side regions containing blocks may become larger than needed. Check this to limit the width of these regions.';
-$string['visibleadminonly'] = 'Blocks moved into the area below will only be seen by admins';
-$string['backtotop'] = 'Back to top';
-$string['nextsection'] = 'Next Section';
-$string['previoussection'] = 'Previous Section';
+$string['copyrightdesc'] = 'Naam van je organisatie om als copyright houder te tonen.';
 
-$string['pagewidth'] = 'Set Page Width';
-$string['pagewidthdesc'] = 'Choose from the list of available page widths. for your site';
-$string['fixedwidthwide'] = 'Fixed Width - Wide';
-$string['fixedwidthnarrow'] = 'Fixed Width - Narrow';
-$string['variablewidth'] = 'Variable Width';
+$string['profilebarcustomtitle'] = 'Aangepaste profielbalk titel';
+$string['profilebarcustomtitledesc'] = 'Voer hier indien gewenst een aangepaste title in voor de profielbalk.';
 
-$string['alwaysdisplay'] = 'Always Show';
-$string['displaybeforelogin'] = 'Show before login only';
-$string['displayafterlogin'] = 'Show after login only';
-$string['dontdisplay'] = 'Never Show';
+$string['contactinfo'] = 'Contact informatie';
+$string['contactinfodesc'] = 'Voer hier je contact informatie in.';
+$string['siteicon'] = 'Site afbeelding';
+$string['siteicondesc'] = 'Als je geen logo hebt kun je hier een icoon invullen om op de plaats van het logo te tonen. De volledige lijst staat op <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">hier</a>. Voer het gedeelte achter "fa-" hier in.';
+$string['yourprofile'] = 'Je profiel';
+$string['headerprofilepic'] = 'Toon afbeelding van gebruiker';
+$string['headerprofilepicdesc'] = 'Indien ingeschakeld wordt de afbeelding van de gebruiker getoond.';
+
+$string['layout'] = 'Gebruik standaard cursus layout';
+$string['layoutdesc'] = 'Dit thema is ontwikkeld om beide kolommen met blokken aan één kan te tonen. Als je de Moodle standaard prettiger vind kun je deze optie inschakelen om de oude drie kolommen layout terug te krijgen.';
+$string['frontpageblocks'] = 'Uitlijning van voorpagina blokken';
+$string['frontpageblocksdesc'] = 'Hier kun je de uitlijning van de blokken op de voorpagina kiezen.';
+$string['left'] = 'Links';
+$string['right'] = 'Rechts';
+$string['perfinfo'] = 'Performance informatie';
+$string['perfinfodesc'] = 'Voor veel sites is de volledige performance informatie té veel. Indien ingeschakeld worden minimale gegevens onderaan iedere pagina getoond.';
+$string['perf_max'] = 'Gedetailleerd';
+$string['perf_min'] = 'Minimaal';
+$string['sideregionsmaxwidth'] = 'Beperk maximale breedte voor de blok regio\'s';
+$string['sideregionsmaxwidthdesc'] = 'Dit thema heeft een vloeiende breedte. Op brede schermen kunnen de zij blokken groter worden dan gewenst. Door deze optie in te schakelen wordt de maximale breedte beperkt.';
+$string['visibleadminonly'] = 'Blokken in deze regio worden alleen aan beheerders getoond';
+$string['backtotop'] = 'Naar boven';
+$string['nextsection'] = 'Volgende sectie';
+$string['previoussection'] = 'Vorige sectie';
+$string['pagewidth'] = 'Kies pagina breedte';
+$string['pagewidthdesc'] = 'Kies uit de lijst met beschikbare breedtes om de site breedte in te stellen.';
+$string['fixedwidthwide'] = 'Vaste breedte - breed';
+$string['fixedwidthnarrow'] = 'Vaste breedte - smal';
+$string['variablewidth'] = 'Volledige breedte';
+$string['alwaysdisplay'] = 'Altijd tonen';
+$string['displaybeforelogin'] = 'Alleen voor inloggen tonen';
+$string['displayafterlogin'] = 'Alleen na inloggen tonen';
+$string['dontdisplay'] = 'Nooit tonen';
 
 /* CustomMenu */
-$string['custommenuheading'] = 'Custom Menu';
-$string['custommenuheadingsub'] = 'Add additional functionality to your custommenu.';
-$string['custommenudesc'] = 'Settings here allow you to add new dynamic functionality to the custommenu (also refered to as Dropdown menu)';
+$string['custommenuheading'] = 'Aangepast menu';
+$string['custommenuheadingsub'] = 'Voeg additionele functionaliteit toe aan het aangepaste menu.';
+$string['custommenudesc'] = 'De instellingen maken het mogelijk om dynamische functionaliteit toe te voegen aan het aangepaste menu (ook bekend als het Dropdown menu).';
 
-$string['mydashboardinfo'] = 'Custom User Dashboard';
-$string['mydashboardinfodesc'] = 'Displays a list of common functions used by users.';
-$string['displaymydashboard'] = 'Display Dashboard';
-$string['displaymydashboarddesc'] = 'Display Dashboard of user links in the Custom Menu';
+$string['mydashboardinfo'] = 'Aangepast gebruikers dashboard';
+$string['mydashboardinfodesc'] = 'Toont een lijst met veelgebruikte opties.';
+$string['displaymydashboard'] = 'Toon dashboard';
+$string['displaymydashboarddesc'] = 'Toon een lijst met dashboard links in het aangepaste menu.';
 
-$string['mycoursesinfo'] = 'Dynamic Enrolled Courses List';
-$string['mycoursesinfodesc'] = 'Displays a dynamic list of enrolled courses to the user.';
-$string['displaymycourses'] = 'Display enrolled courses';
-$string['displaymycoursesdesc'] = 'Display enrolled courses for users in the Custom Menu';
+$string['mycoursesinfo'] = 'Automatische cursus lijst';
+$string['mycoursesinfodesc'] = 'Toont een lijst met alle cursussen waar een gebruiker in ingeschreven is.';
+$string['displaymycourses'] = 'Toon ingeschreven cursussen';
+$string['displaymycoursesdesc'] = 'Toon ingeschreven cursussen in het aangepaste menu.';
 
-$string['mycoursetitle'] = 'Terminology';
-$string['mycoursetitledesc'] = 'Change the terminology for the "My Courses" link in the dropdown menu';
-$string['mycourses'] = 'My Courses';
-$string['myunits'] = 'My Units';
-$string['mymodules'] = 'My Modules';
-$string['myclasses'] = 'My Classes';
-$string['allcourses'] = 'All Courses';
-$string['allunits'] = 'All Units';
-$string['allmodules'] = 'All Modules';
-$string['allclasses'] = 'All Classes';
-$string['noenrolments'] = 'You have no current enrolments';
+$string['mycoursetitle'] = 'Naamgeving';
+$string['mycoursetitledesc'] = 'Verander de naamgeving voor het "Mijn cursussen" menu hieronder.';
+$string['mycourses'] = 'Mijn cursussen';
+$string['myunits'] = 'Mijn lessen';
+$string['mymodules'] = 'Mijn modules';
+$string['myclasses'] = 'Mijn klassen';
+$string['allcourses'] = 'Alle cursussen';
+$string['allunits'] = 'Alle lessen';
+$string['allmodules'] = 'Alle modules';
+$string['allclasses'] = 'Alle klassen';
+$string['noenrolments'] = 'Geen cursusinschrijving bekend';
 
 /* My Dashboard custommenu dropdown */
-$string['mydashboard'] = 'My Dashboard';
+$string['mydashboard'] = 'Mijn dashboard';
 
 /* Navbar Seperator */
-$string['navbarsep'] = 'Navbar Separator';
-$string['navbarsepdesc'] = 'Here you can change the type of separator displayed in the navbar/breadcrumb';
-$string['nav_thinbracket'] = 'Thin bracket';
-$string['nav_doublebracket'] = 'Double thin bracket';
-$string['nav_thickbracket'] = 'Thick Bracket';
-$string['nav_slash'] = 'Forward slash';
-$string['nav_pipe'] = 'Vertical line';
+$string['navbarsep'] = 'Kruimelpad scheidingsteken';
+$string['navbarsepdesc'] = 'Hier kun je het symbool dat gebruikt wordt om het kruimelpad te scheiden aanpassen.';
+$string['nav_thinbracket'] = 'Dunne blokhaak';
+$string['nav_doublebracket'] = 'Dubbele dunne blokhaak';
+$string['nav_thickbracket'] = 'Dikke blokhaak';
+$string['nav_slash'] = 'Slash';
+$string['nav_pipe'] = 'Verticaal streepje';
 
 /* Regions */
-$string['region-side-post'] = 'Right';
-$string['region-side-pre'] = 'Left';
-$string['region-home-left'] = 'Home (Left)';
-$string['region-home-middle'] = 'Home (Middle)';
-$string['region-home-right'] = 'Home (Right)';
-$string['region-footer-left'] = 'Footer (Left)';
-$string['region-footer-middle'] = 'Footer (Middle)';
-$string['region-footer-right'] = 'Footer (Right)';
-$string['region-hidden-dock'] = 'Hidden from users';
+$string['region-side-post'] = 'Rechts';
+$string['region-side-pre'] = 'Links';
+$string['region-home-left'] = 'Home (links)';
+$string['region-home-middle'] = 'Home (midden)';
+$string['region-home-right'] = 'Home (rechts)';
+$string['region-footer-left'] = 'Voetnoot (links)';
+$string['region-footer-middle'] = 'Voetnoot (midden)';
+$string['region-footer-right'] = 'Voetnoot (rechts)';
+$string['region-hidden-dock'] = 'Verborgen';
 
 /* Colours */
-$string['colorheading'] = 'Colour Settings';
-$string['colorheadingsub'] = 'Set the colours used in your theme';
-$string['colordesc'] = 'Here you can find various settings to change many of the colours found in this theme.';
+$string['colorheading'] = 'Kleurinstellingen';
+$string['colorheadingsub'] = 'Kies hier de kleuren die je in je thema wil gebruiken.';
+$string['colordesc'] = 'Hieronder staan de verschillende instellingen om veel van de gebruikte kleuren in dit thema aan te passen.';
 
-$string['slidecolors'] = 'Slideshow Colours';
-$string['slidecolorsdesc'] = 'Change the colours on the slideshow';
+$string['slidecolors'] = 'Slideshow kleuren';
+$string['slidecolorsdesc'] = 'Verander de kleuren van de slideshow';
 
-$string['footercolors'] = 'Footer Colours';
-$string['footercolorsdesc'] = 'Change the colours on the page footers';
+$string['footercolors'] = 'Voetnoot kleuren';
+$string['footercolorsdesc'] = 'Verander de kleuren van de voetnoot';
 
-$string['themecolor'] = 'Theme Colour';
-$string['themecolordesc'] = 'What colour should your theme be.  This will change multiple components to produce the colour you wish across the moodle site';
-$string['themehovercolor'] = 'Theme Hover Colour';
-$string['themehovercolordesc'] = 'What colour should your theme hovers be. This is used for links, menus, etc';
-$string['footercolor'] = 'Footer Background Colour';
-$string['footercolordesc'] = 'Set what colour the background of the Footer box should be.';
-$string['footersepcolor'] = 'Footer Separator Colour';
-$string['footersepcolordesc'] = 'Separators are lines used to separate content.  Set their colour here.';
-$string['footertextcolor'] = 'Footer Text Colour';
-$string['footertextcolordesc'] = 'Set the colour you want your text to be in the footer.';
-$string['footerurlcolor'] = 'Footer Link Colour';
-$string['footerurlcolordesc'] = 'Set the colour for your linked text in the footer.';
-$string['footerhovercolor'] = 'Footer Link Hover Colour';
-$string['footerhovercolordesc'] = 'Set the colour for your linked text when hovered over in the footer.';
-$string['footerheadingcolor'] = 'Footer Heading Colour';
-$string['footerheadingcolordesc'] = 'Set the colour for block headings in the footer.';
-$string['pagebackground'] = 'Page Background Image';
-$string['pagebackgrounddesc'] = 'Upload your own background image.  This will be tiled in the background on all pages.  If none is uploaded a default image is used.';
+$string['themecolor'] = 'Thema kleuren';
+$string['themecolordesc'] = 'Welke kleur wil je het thema hebben? Dit heeft invloed op meerdere componenten binnen Moodle en bepaalt de basis kleur voor je thema.';
+$string['themehovercolor'] = 'Thema hover kleuren';
+$string['themehovercolordesc'] = 'Welke kleuren moeten de hovers in het thema hebben? Dit wordt bijvoorbeeld gebruikt voor links.';
+$string['footercolor'] = 'Voetnoot achtergrondkleur';
+$string['footercolordesc'] = 'Stel hier de kleur in voor de achtergrond van de voetnoot regio.';
+$string['footersepcolor'] = 'Voetnoot scheidingskleur';
+$string['footersepcolordesc'] = 'Hier kun je de kleur van de scheidingslijnen instellen.';
+$string['footertextcolor'] = 'Voetnoot tekstkleur';
+$string['footertextcolordesc'] = 'Stel hier de kleur in van de tekst in de voetnoot.';
+$string['footerurlcolor'] = 'Voetnoot link kleur';
+$string['footerurlcolordesc'] = 'Stel hier de kleur van de links in de voetnoot in.';
+$string['footerhovercolor'] = 'Voetnoot link hover kleur';
+$string['footerhovercolordesc'] = 'Stel hier de kleur in voor de links in de voetnoot als je er met de muis op zweeft.';
+$string['footerheadingcolor'] = 'Voetnoot titelkleur';
+$string['footerheadingcolordesc'] = 'Stel hier de kleur in van de titel van de voetnoot.';
+$string['pagebackground'] = 'Pagina achtergrondafbeelding';
+$string['pagebackgrounddesc'] = 'Upload hier je achtergrond afbeelding. Deze achtergrond afbeelding zal op alle pagina\'s getoond worden. Als je geen afbeelding upload wordt hier een vaste kleur voor gebruikt.';
 
 /* Alternate Color Switcher */
-$string['alternativecolors'] = 'Alternative Colours {$a}';
-$string['alternativethemecolor'] = 'Alternative Theme Colour {$a}';
-$string['alternativethemecolordesc'] = 'What colour should your theme be for the alternative theme colours {$a}. If enabled and the user choose it, this will replace the default theme colour.';
-$string['alternativethemename'] = 'Colour Scheme Name';
-$string['alternativethemenamedesc'] = 'Provide a name for your alternative theme colours';
-$string['alternativethemecolors'] = 'Alternative Theme Colours';
-$string['alternativethemecolorsdesc'] = 'Defines theme colours alternative that the user may select.';
+$string['alternativethemecolors'] = 'Alternatieve themakleur {$a}';
+$string['alternativethemecolorsdesc'] = 'Definieer de alternatieve kleurschema\'s.';
 
-$string['alternativethemecolorname'] = 'Name of Alternative Colour Set {$a}';
-$string['alternativethemecolornamedesc'] = 'Provide a recognisable name for this set of alternative theme colours';
-
+$string['enablealternativethemecolors'] = 'Schakel alternatief kleurschema {$a} in';
+$string['enablealternativethemecolorsdesc'] = 'Indien ingeschakeld krijgen gebruikers de keuze om alternatief kleurschema {$a}te kiezen.';
+$string['alternativecolors'] = 'Alternatieve kleurschema {$a}';
+$string['alternativethemecolor'] = 'Alternatieve themakleur {$a}';
+$string['alternativethemecolordesc'] = 'Welke kleur moet het thema in alternatief kleurschema {$a} zijn?';
+$string['alternativethemename'] = 'Naam voor kleurschema {$a}';
+$string['alternativethemenamedesc'] = 'Voer hier de naam van alternatief kleurschema {$a} in.';
+$string['alternativethemecolorname'] = 'Naam van alternatief kleurschema {$a}';
+$string['alternativethemecolornamedesc'] = 'Geef een herkenbare naam op voor dit alternatieve kleurschema.';
 $string['alternativethemehovercolor'] = 'Alternative Theme Hover Colour {$a}';
-$string['alternativethemehovercolordesc'] = 'What colour should your theme hovers be for the alternative theme colours {$a}. If enabled and the user choose it, this will replace the default theme hover colour.';
-$string['defaultcolors'] = 'Default Colours';
-$string['enablealternativethemecolors'] = 'Enable Alternative Theme Colours {$a}';
-$string['enablealternativethemecolorsdesc'] = 'If enabled, the user will be able to choose the alternative theme colours {$a}.';
-$string['themecolors'] = 'Theme Colours';
+$string['alternativethemehovercolordesc'] = 'Welke kleur moet er gebruikt worden voor hovers in alternatief kleurschema {$a}?';
 
 /* Frontpage Settings */
 $string['frontcontentheading'] = 'Frontpage Settings';
-$string['frontcontentheadingsub'] = 'Change what features you wish enabled on your Moodle front page';
-$string['frontcontentdesc'] = 'This adds a custom content area in between the Slideshow and the Marketing boxes for your own custom content';
+$string['frontcontentheadingsub'] = 'Change what features you wish enabled on your moodle front page';
+$string['frontcontentdesc'] = 'This adds a custom content area inbetween the Slideshow and the Marketing boxes for your own custom content';
 
 $string['usefrontcontent'] = 'Enable Frontpage content';
-$string['usefrontcontentdesc'] = 'If enabled this will display the content of the box below in between the Slideshow and the Marketing spots.';
+$string['usefrontcontentdesc'] = 'If enabled this will display the content of the box below inbetween the Slideshow and the Marketing spots.';
 
 $string['frontcontentarea'] = 'Frontpage Content';
-$string['frontcontentareadesc'] = 'Whatever is typed into this box will display across the full width of the page in between the Slideshow and the Marketing spots ';
+$string['frontcontentareadesc'] = 'Whatever is typed into this box will display across the full width of the page inbetween the Slideshow and the Marketing spots ';
 
 $string['frontpagemiddleblocks'] = 'Enable Frontpage Middle Blocks';
 $string['frontpagemiddleblocksdesc'] = 'If enabled this will display 3 new block locations just under the marketing spots';
@@ -237,7 +239,7 @@ $string['slidebuttoncolor'] = 'Slide Button Colour';
 $string['slidebuttoncolordesc'] = 'What colour should the slide "read more" button be';
 
 $string['slideshowvariant'] = 'Slideshow Design';
-$string['slideshowvariantdesc'] = 'Choose the style of slideshow you would like to display';
+$string['slideshowvariantdesc'] = 'Choose the style of slidewhow you would like to display';
 $string['slideshow1'] = 'Small Image on Right';
 $string['slideshow2'] = 'Large Background Image';
 $string['slideshow3'] = 'Design Three';
@@ -407,4 +409,4 @@ $string['alert_info'] = 'Information';
 $string['alert_warning'] = 'Warning';
 $string['alert_general'] = 'Announcement';
 
-$string['ie7message'] = '<p id="ie7message">Sorry, this site requires <strong>Internet Explorer 8</strong> or higher to display and function correctly.  Please update your browser via Windows Update, or <a href="http://windows.microsoft.com/en-au/internet-explorer/download-ie" target="_blank">download the latest version here</a>.   If using IE8 or above you may have Compatibility Mode switched on, turn this off to display this website correctly.  If you continue having problems accessing this website or the updates mentioned above, please contact your Helpdesk for further assistance.</p>';
+$string['ie7message'] = '<p id="ie7message">Sorry, this site requires <strong>Internet Explorer 8</strong> or higher to display and function correctly.  Please update your browser via Windows Update, or <a href="http://windows.microsoft.com/en-au/internet-explorer/download-ie" target="_blank">download the latest version here</a>.  Alternatively, you can try installing the <a href="http://www.google.com/chromeframe" target="_blank">ChromeFrame plugin</a> which may solve some of the issues experienced in older browsers.  If using IE8 or above you may have Compatibility Mode switched on, turn this off to display this website correctly.  If you continue having problems accessing this website or the updates mentioned above, please contact your Helpdesk for further assistance.</p>';

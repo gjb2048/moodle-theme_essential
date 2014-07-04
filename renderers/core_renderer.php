@@ -54,15 +54,11 @@
      * @return string HTML fragment
      */
     public function footer() {
-        global $CFG, $DB, $USER;
+        global $CFG, $USER;
 
         $output = $this->container_end_all(true);
 
         $footer = $this->opencontainers->pop('header/footer');
-
-        if (debugging() and $DB and $DB->is_transaction_started()) {
-            // TODO: MDL-20625 print warning - transaction will be rolled back
-        }
 
         // Provide some performance info if required
         $performanceinfo = '';
@@ -90,6 +86,7 @@
     }
 		
     protected function render_custom_menu(custom_menu $menu) {
+		global $CFG,$USER;
     	/*
     	* This code replaces adds the current enrolled
     	* courses to the custommenu.
@@ -139,9 +136,17 @@
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
  			$branch->add('<em><i class="fa fa-user"></i>'.get_string('profile').'</em>',new moodle_url('/user/profile.php'),get_string('profile'));
  			$branch->add('<em><i class="fa fa-calendar"></i>'.get_string('pluginname', 'block_calendar_month').'</em>',new moodle_url('/calendar/view.php'),get_string('pluginname', 'block_calendar_month'));
- 			$branch->add('<em><i class="fa fa-envelope"></i>'.get_string('pluginname', 'block_messages').'</em>',new moodle_url('/message/index.php'),get_string('pluginname', 'block_messages'));
- 			$branch->add('<em><i class="fa fa-certificate"></i>'.get_string('badges').'</em>',new moodle_url('/badges/mybadges.php'),get_string('badges'));
+			// Check if messaging is enabled.
+			if (!empty($CFG->messaging)) {
+				$branch->add('<em><i class="fa fa-envelope"></i>'.get_string('pluginname', 'block_messages').'</em>',new moodle_url('/message/index.php'),get_string('pluginname', 'block_messages'));
+			}
+			// Check if badges are enabled.
+			if (!empty($CFG->enablebadges)) {
+				$branch->add('<em><i class="fa fa-certificate"></i>'.get_string('badges').'</em>',new moodle_url('/badges/mybadges.php'),get_string('badges'));
+			}
  			$branch->add('<em><i class="fa fa-file"></i>'.get_string('privatefiles', 'block_private_files').'</em>',new moodle_url('/user/files.php'),get_string('privatefiles', 'block_private_files'));
+			$branch->add('<i class="fa fa-list-alt"></i>'.get_string('forumposts', 'mod_forum'),new moodle_url('/mod/forum/user.php?id='.$USER->id));
+            $branch->add('<i class="fa fa-list"></i>'.get_string('discussions', 'mod_forum'),new moodle_url('/mod/forum/user.php?id='.$USER->id.'&mode=discussions'));
  			$branch->add('<em><i class="fa fa-sign-out"></i>'.get_string('logout').'</em>',new moodle_url('/login/logout.php'),get_string('logout'));    
         }
         

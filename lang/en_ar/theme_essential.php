@@ -46,7 +46,7 @@ Website: <a href="http://www.moodleman.net">www.moodleman.net</a>
 </div></div>';
 
 /* General */
-$string['geneicsettings'] = 'Thy General Settings';
+$string['genericsettings'] = 'Thy General Settings';
 $string['autohide'] = 'Include thee Autohide Functionality';
 $string['autohidedesc'] = 'Thee Autohide functionality is designed to make Moodle less intimidating unlike mee cutlass.  When thy editing is turned on edit icons only appear when thee item is hovered over.';
 $string['editicons'] = 'Thy Edit Icons V2';

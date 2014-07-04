@@ -48,9 +48,9 @@ function theme_essential_set_fontwww($css) {
     
     $theme = theme_config::load('essential');
     if (!empty($theme->settings->bootstrapcdn)) {
-    	$css = str_replace($tag, '//netdna.bootstrapcdn.com/font-awesome/4.0.0/fonts/', $css);
+        $css = str_replace($tag, '//netdna.bootstrapcdn.com/font-awesome/4.0.0/fonts/', $css);
     } else {
-    	$css = str_replace($tag, $themewww.'/essential/fonts/', $css);
+        $css = str_replace($tag, $themewww.'/essential/fonts/', $css);
     }
     return $css;
 }
@@ -141,12 +141,12 @@ function essential_set_pagewidth($css, $pagewidth) {
  * @return string
  */
 function essential_set_editicons($css, $editicons) {
-	global $CFG;
-	if (!empty($CFG->themedir)) {
-		$editiconsurl = $CFG->themedir . '/essential/style/editicons.css'; //Pull the full path for autohide css
-	} else {
-		$editiconsurl = $CFG->dirroot . '/theme/essential/style/editicons.css'; //MDL-36065
-	}
+    global $CFG;
+    if (!empty($CFG->themedir)) {
+        $editiconsurl = $CFG->themedir . '/essential/style/editicons.css'; //Pull the full path for autohide css
+    } else {
+        $editiconsurl = $CFG->dirroot . '/theme/essential/style/editicons.css'; //MDL-36065
+    }
     $tag = '[[setting:editicons]]';
     if ($editicons) { //Setting is "YES"
         $rules = file_get_contents($editiconsurl);
@@ -167,12 +167,19 @@ function essential_set_editicons($css, $editicons) {
  * @return string
  */
 function essential_performance_output($param) {
-	
+    
     $html = '<div class="container-fluid performanceinfo"><div class="row-fluid"><h2>Performance Information</h2></div><div class="row-fluid">';
-	if (isset($param['realtime'])) $html .= '<div class="span3"><a href="#"><var id="load">'.$param['realtime'].' secs</var><span>Load Time</span></a></div>';
-	if (isset($param['memory_total'])) $html .= '<div class="span3"><a href="#"><var id="memory">'.display_size($param['memory_total']).'</var><span>Memory Used</span></a></div>';
-    if (isset($param['includecount'])) $html .= '<div class="span3"><a href="#"><var id="included">'.$param['includecount'].' Files </var><span>Included</span></a></div>';
-    if (isset($param['dbqueries'])) $html .= '<div class="span3"><a href="#"><var id="db">'.$param['dbqueries'].' </var><span>DB Read/Write</span></a></div>';
+    if (isset($param['realtime'])) { $html .= '<div class="span3"><var id="load">'.round($param['realtime'], 2).' secs</var><span>Load Time</span></div>'; }
+    if (isset($param['memory_total'])) { $html .= '<div class="span3"><var id="memory">'.display_size($param['memory_total']).'</var><span>Memory Used</span></div>'; }
+    if (isset($param['includecount'])) { $html .= '<div class="span3"><var id="included">'.$param['includecount'].' Files </var><span>Included</span></div>'; }
+    if (isset($param['dbqueries'])) { $html .= '<div class="span3"><var id="db">'.$param['dbqueries'].' </var><span>DB Read/Write</span></div>'; }
+    if ($theme->settings->perfinfo === "max") {
+        $html .= '</div><hr /><div class="row-fluid"><h2>Extended Performance Information</h2></div><div class="row-fluid">';
+        if (isset($param['serverload'])) { $html .= '<div class="span3"><var id="load">'.$param['serverload'].' </var><span>Server Load</span></div>'; }
+        if (isset($param['memory_peak'])) { $html .= '<div class="span3"><var id="memory">'.display_size($param['memory_peak']).' </var><span>Peak Memory</span></div>'; }
+        if (isset($param['cachesused'])) { $html .= '<div class="span3"><var id="cache">'.$param['cachesused'].' </var><span>Caches Used</span></div>'; }
+        if (isset($param['sessionsize'])) { $html .= '<div class="span3"><var id="session">'.$param['sessionsize'].' </var><span>Session Size</span></div>'; }
+    }
     $html .= '</div>';
     $html .= '</div>';
 
@@ -480,7 +487,7 @@ function theme_essential_process_css($css, $theme) {
     // Set Slide Images.
     $setting = 'slide1image';
     if (!empty($theme->settings->slide1image)) {
-    	$slideimage = $theme->setting_file_url($setting, $setting);
+        $slideimage = $theme->setting_file_url($setting, $setting);
     } else {
         $slideimage = null;
     }
@@ -488,7 +495,7 @@ function theme_essential_process_css($css, $theme) {
 
     $setting = 'slide2image';
     if (!empty($theme->settings->slide2image)) {
-    	$slideimage = $theme->setting_file_url($setting, $setting);
+        $slideimage = $theme->setting_file_url($setting, $setting);
     } else {
         $slideimage = null;
     }
@@ -496,7 +503,7 @@ function theme_essential_process_css($css, $theme) {
 
     $setting = 'slide3image';
     if (!empty($theme->settings->slide3image)) {
-    	$slideimage = $theme->setting_file_url($setting, $setting);
+        $slideimage = $theme->setting_file_url($setting, $setting);
     } else {
         $slideimage = null;
     }
@@ -504,7 +511,7 @@ function theme_essential_process_css($css, $theme) {
 
     $setting = 'slide4image';
     if (!empty($theme->settings->slide4image)) {
-    	$slideimage = $theme->setting_file_url($setting, $setting);
+        $slideimage = $theme->setting_file_url($setting, $setting);
     } else {
         $slideimage = null;
     }
@@ -521,7 +528,7 @@ function theme_essential_process_css($css, $theme) {
     // Set Marketing Images.
     $setting = 'marketing1image';
     if (!empty($theme->settings->marketing1image)) {
-    	$marketingimage = $theme->setting_file_url($setting, $setting);
+        $marketingimage = $theme->setting_file_url($setting, $setting);
     } else {
         $marketingimage = null;
     }
@@ -529,7 +536,7 @@ function theme_essential_process_css($css, $theme) {
     
     $setting = 'marketing2image';
     if (!empty($theme->settings->marketing2image)) {
-    	$marketingimage = $theme->setting_file_url($setting, $setting);
+        $marketingimage = $theme->setting_file_url($setting, $setting);
     } else {
         $marketingimage = null;
     }
@@ -537,7 +544,7 @@ function theme_essential_process_css($css, $theme) {
     
     $setting = 'marketing3image';
     if (!empty($theme->settings->marketing3image)) {
-    	$marketingimage = $theme->setting_file_url($setting, $setting);
+        $marketingimage = $theme->setting_file_url($setting, $setting);
     } else {
         $marketingimage = null;
     }

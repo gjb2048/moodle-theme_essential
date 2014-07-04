@@ -48,7 +48,7 @@ Website: <a href="http://www.moodleman.net">www.moodleman.net</a>
 </div></div>';
 
 /* General */
-$string['geneicsettings'] = 'Allgemeine Einstellungen';
+$string['genericsettings'] = 'Allgemeine Einstellungen';
 $string['autohide'] = 'F&uuml;ge Automatisch Ausblenden hinzu';
 $string['autohidedesc'] = 'Die Funktion Automatisch Ausblenden wurde entwickelt, um Moodle weniger einsch&uuml;chternd wirken zu lassen. Wenn der Bearbeitungsmodus eingeschaltet ist, erscheinen die Icons erst dann, wenn man mit dem Zeiger darüber schwebt.';
 $string['editicons'] = 'Bearbeite Icons V2';

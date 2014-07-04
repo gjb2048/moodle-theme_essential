@@ -47,7 +47,7 @@ Web Sayfası: <a href="http://www.moodleman.net">www.moodleman.net</a>
 </div></div>';
 
 /* General */
-$string['geneicsettings'] = 'Genel Ayarlar';
+$string['genericsettings'] = 'Genel Ayarlar';
 $string['customcss'] = 'Özelleştirilmiş CSS';
 $string['customcssdesc'] = 'Hangi CSS kuralını eklerseniz ekleyin özelleştirmeyi kolaşlaştırmak adına bütün sayfaları etkileyecektir.';
 $string['footnote'] = 'Dipnot';
