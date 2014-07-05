@@ -518,6 +518,19 @@ defined('MOODLE_INTERNAL') || die;
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+	
+	// URL target.
+    $name = 'theme_essential/slide1target';
+    $title = get_string('slideurltarget' , 'theme_essential');
+    $description = get_string('slideurltargetdesc', 'theme_essential');
+    $target1 = get_string('slideurltargetself', 'theme_essential');
+    $target2 = get_string('slideurltargetnew', 'theme_essential');
+	$target3 = get_string('slideurltargetparent', 'theme_essential');
+    $default = 'target1';
+    $choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
     /*
      * Slide 2
@@ -560,6 +573,19 @@ defined('MOODLE_INTERNAL') || die;
     $title = get_string('slideurl', 'theme_essential');
     $description = get_string('slideurldesc', 'theme_essential');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+	// URL target.
+    $name = 'theme_essential/slide2target';
+    $title = get_string('slideurltarget' , 'theme_essential');
+    $description = get_string('slideurltargetdesc', 'theme_essential');
+    $target1 = get_string('slideurltargetself', 'theme_essential');
+    $target2 = get_string('slideurltargetnew', 'theme_essential');
+	$target3 = get_string('slideurltargetparent', 'theme_essential');
+    $default = 'target1';
+    $choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -606,6 +632,19 @@ defined('MOODLE_INTERNAL') || die;
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+	
+	// URL target.
+    $name = 'theme_essential/slide3target';
+    $title = get_string('slideurltarget' , 'theme_essential');
+    $description = get_string('slideurltargetdesc', 'theme_essential');
+    $target1 = get_string('slideurltargetself', 'theme_essential');
+    $target2 = get_string('slideurltargetnew', 'theme_essential');
+	$target3 = get_string('slideurltargetparent', 'theme_essential');
+    $default = 'target1';
+    $choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
     /*
      * Slide 4
@@ -648,6 +687,76 @@ defined('MOODLE_INTERNAL') || die;
     $title = get_string('slideurl', 'theme_essential');
     $description = get_string('slideurldesc', 'theme_essential');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	// URL target.
+    $name = 'theme_essential/slide4target';
+    $title = get_string('slideurltarget' , 'theme_essential');
+    $description = get_string('slideurltargetdesc', 'theme_essential');
+    $target1 = get_string('slideurltargetself', 'theme_essential');
+    $target2 = get_string('slideurltargetnew', 'theme_essential');
+	$target3 = get_string('slideurltargetparent', 'theme_essential');
+    $default = 'target1';
+    $choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+    /*
+     * Slide 5
+     */
+     
+    //This is the descriptor for Slide Five
+    $name = 'theme_essential/slide5info';
+    $heading = get_string('slide5', 'theme_essential');
+    $information = get_string('slideinfodesc', 'theme_essential');
+    $setting = new admin_setting_heading($name, $heading, $information);
+    $temp->add($setting);
+
+    // Title.
+    $name = 'theme_essential/slide5';
+    $title = get_string('slidetitle', 'theme_essential');
+    $description = get_string('slidetitledesc', 'theme_essential');
+    $setting = new admin_setting_configtext($name, $title, $description, '');
+    $default = '';
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Image.
+    $name = 'theme_essential/slide5image';
+    $title = get_string('slideimage', 'theme_essential');
+    $description = get_string('slideimagedesc', 'theme_essential');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'slide5image');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Caption.
+    $name = 'theme_essential/slide5caption';
+    $title = get_string('slidecaption', 'theme_essential');
+    $description = get_string('slidecaptiondesc', 'theme_essential');
+    $setting = new admin_setting_configtextarea($name, $title, $description, '');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // URL.
+    $name = 'theme_essential/slide5url';
+    $title = get_string('slideurl', 'theme_essential');
+    $description = get_string('slideurldesc', 'theme_essential');
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	// URL target.
+    $name = 'theme_essential/slide5target';
+    $title = get_string('slideurltarget' , 'theme_essential');
+    $description = get_string('slideurltargetdesc', 'theme_essential');
+    $target1 = get_string('slideurltargetself', 'theme_essential');
+    $target2 = get_string('slideurltargetnew', 'theme_essential');
+	$target3 = get_string('slideurltargetparent', 'theme_essential');
+    $default = 'target1';
+    $choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     

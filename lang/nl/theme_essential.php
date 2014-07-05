@@ -206,81 +206,85 @@ $string['alternativethemehovercolor'] = 'Alternative Theme Hover Colour {$a}';
 $string['alternativethemehovercolordesc'] = 'Welke kleur moet er gebruikt worden voor hovers in alternatief kleurschema {$a}?';
 
 /* Frontpage Settings */
-$string['frontcontentheading'] = 'Frontpage Settings';
-$string['frontcontentheadingsub'] = 'Change what features you wish enabled on your moodle front page';
-$string['frontcontentdesc'] = 'This adds a custom content area inbetween the Slideshow and the Marketing boxes for your own custom content';
+$string['frontcontentheading'] = 'Voorpagina instellingen';
+$string['frontcontentheadingsub'] = 'Stel hier de verschillende onderdelen voor de voorpagina in.';
+$string['frontcontentdesc'] = 'Dit voegt een speciaal blok in tussen de slideshow en de marketing blokken waar je eigen content kan plaatsen.';
 
-$string['usefrontcontent'] = 'Enable Frontpage content';
-$string['usefrontcontentdesc'] = 'If enabled this will display the content of the box below inbetween the Slideshow and the Marketing spots.';
+$string['usefrontcontent'] = 'Voorpagina content inschakelen';
+$string['usefrontcontentdesc'] = 'Indien ingeschakeld wordt de inhoud van dit blok tussen de slidehsow en marketing blokken weergegeven.';
 
-$string['frontcontentarea'] = 'Frontpage Content';
-$string['frontcontentareadesc'] = 'Whatever is typed into this box will display across the full width of the page inbetween the Slideshow and the Marketing spots ';
+$string['frontcontentarea'] = 'Voorpagina content';
+$string['frontcontentareadesc'] = 'De inhoud van dit blik wordt over de gehele breedte van de pagina tussen de slidehsow en marketing blokken weergegeven.';
 
-$string['frontpagemiddleblocks'] = 'Enable Frontpage Middle Blocks';
-$string['frontpagemiddleblocksdesc'] = 'If enabled this will display 3 new block locations just under the marketing spots';
+$string['frontpagemiddleblocks'] = 'Voorpagina midden blokken inschakelen';
+$string['frontpagemiddleblocksdesc'] = 'Indien ingeschakeld worden er drie blokken weergegeven onder de marketing blokken.';
 
 /* Slideshow */
-$string['slideshowheading'] = 'Frontpage Slideshow';
-$string['slideshowheadingsub'] = 'Dynamic Slideshow for the frontpage';
-$string['slideshowdesc'] = 'This creates a dynamic slideshow of up to 4 slides for you to promote important elements of your site.';
+$string['slideshowheading'] = 'Voorpagina slideshow';
+$string['slideshowheadingsub'] = 'Een dynamische slideshow voor de voorpagina';
+$string['slideshowdesc'] = 'Indien ingeschakeld wordt er een dynamische slideshow met maximaal 4 slides getoond om belangrijke informatie aantrekkelijk weer te geven.';
 
-$string['toggleslideshow'] = 'Toggle Slideshow display';
-$string['toggleslideshowdesc'] = 'Choose if you wish to hide or show the Slideshow.';
+$string['toggleslideshow'] = 'Slideshow inschakelen';
+$string['toggleslideshowdesc'] = 'Kies hier of je de slideshow in wil schakelen.';
 
-$string['hideonphone'] = 'Slideshow on Mobiles';
-$string['hideonphonedesc'] = 'Choose if you wish to have the slideshow shown on mobiles or not';
-$string['readmore'] = 'Read More';
+$string['hideonphone'] = 'Toon slideshow op mobiele appraten';
+$string['hideonphonedesc'] = 'Kies hier of je de slideshow ook op mobiele apparaten wil tonen.';
+$string['readmore'] = 'Lees verder';
 
-$string['slidecolor'] = 'Slide Text Colour';
-$string['slidecolordesc'] = 'What colour should the main side text be.';
-$string['slideheadercolor'] = 'Slide Heading Colour';
-$string['slideheadercolordesc'] = 'What colour should the slide header be';
-$string['slidebuttoncolor'] = 'Slide Button Colour';
-$string['slidebuttoncolordesc'] = 'What colour should the slide "read more" button be';
+$string['slidecolor'] = 'Slide tekstkleur';
+$string['slidecolordesc'] = 'Kies hier de kleur van de hoofdtekst op de slide.';
+$string['slideheadercolor'] = 'Slide koptekstkleur';
+$string['slideheadercolordesc'] = 'Kies hier de kleur voor de koptekst.';
+$string['slidebuttoncolor'] = 'Slide buttonkleur';
+$string['slidebuttoncolordesc'] = 'Kies hier de kleur voor de "Lees verder" knop.';
 
-$string['slideshowvariant'] = 'Slideshow Design';
-$string['slideshowvariantdesc'] = 'Choose the style of slidewhow you would like to display';
-$string['slideshow1'] = 'Small Image on Right';
-$string['slideshow2'] = 'Large Background Image';
-$string['slideshow3'] = 'Design Three';
+$string['slideshowvariant'] = 'Slideshow ontwerp';
+$string['slideshowvariantdesc'] = 'Kies de stijl voor de slideshow.';
+$string['slideshow1'] = 'Kleine afbeelding rechts';
+$string['slideshow2'] = 'Grote achtergrond afbeelding';
 
 $string['slideshowTitle'] = 'Slideshow';
-$string['slideinfodesc'] = 'Enter the settings for your slide.';
-$string['slide1'] = 'Slide One';
-$string['slide2'] = 'Slide Two';
-$string['slide3'] = 'Slide Three';
-$string['slide4'] = 'Slide Four';
+$string['slideinfodesc'] = 'Personaliseer hier je slides.';
+$string['slide1'] = 'Slide 1';
+$string['slide2'] = 'Slide 2';
+$string['slide3'] = 'Slide 3';
+$string['slide4'] = 'Slide 4';
+$string['slide5'] = 'Slide 5';
 
-$string['slidetitle'] = 'Slide Title';
-$string['slidetitledesc'] = 'Enter a descriptive title for your slide';
-$string['slideimage'] = 'Slide Image';
-$string['slideimagedesc'] = 'Image works best if it is transparent. (Image size should be 256px x 256px)';
-$string['slidecaption'] = 'Slide Caption';
-$string['slidecaptiondesc'] = 'Enter the caption text to use for the first slide';
-$string['slideurl'] = 'Slide Link';
-$string['slideurldesc'] = 'Enter the target destination of the first slide\'s image link';
+$string['slidetitle'] = 'Slide titel';
+$string['slidetitledesc'] = 'Voer een titel in voor je slide.';
+$string['slideimage'] = 'Slide afbeelding';
+$string['slideimagedesc'] = 'Gebruik hier een transparante png (formaat is 256px x 256px voor de kleine afbeelding, en 300px x 1200px voor de achtergrond afbeelding)';
+$string['slidecaption'] = 'Slide tekst';
+$string['slidecaptiondesc'] = 'Voer hier de tekst in die op de slide getoond zal worden.';
+$string['slideurl'] = 'Slide link';
+$string['slideurldesc'] = 'Voer hier in waar de link achter "Verder lezen" naar moet verwijzen.';
+$string['slideurltarget'] = 'Link doel';
+$string['slideurltargetdesc'] = 'Voer hier in hoe de link geopend moet worden';
+$string['slideurltargetself'] = 'Open in huidige pagina';
+$string['slideurltargetnew'] = 'Open in nieuwe pagina';
+$string['slideurltargetparent'] = 'Open in hoofdframe';
 
 /* Marketing Spots */
-$string['marketingheading'] = 'Marketing Spots';
-$string['marketinginfodesc'] = 'Enter the settings for your marketing spot.';
-$string['marketingheadingsub'] = 'Three locations on the front page to add information and links';
-$string['marketingheight'] = 'Height of Marketing Images';
-$string['marketingheightdesc'] = 'If you want to display images in the Marketing boxes you can specify their hight here.';
-$string['marketingdesc'] = 'This theme provides the option of enabling three "marketing" or "ad" spots just under the slideshow.  These allow you to easily identify core information to your users and provide direct links.';
+$string['marketingheading'] = 'Marketing blokken';
+$string['marketinginfodesc'] = 'Configureer hier de marketing blokken.';
+$string['marketingheadingsub'] = 'De marketing blokken zijn drie blokken op de voorpagina waarin informatie en links getoond worden.';
+$string['marketingheight'] = 'Hoogte van de marketing afbeeldingen';
+$string['marketingheightdesc'] = 'Als je afbeeldingen wil tonen in de marketing blokken kun je hier de hoogte instellen.';
+$string['marketingdesc'] = 'Dit thema bevat de optie om drie marketing blokken te tonen onder de slideshow. Dit geeft je de mogelijkheid om direct informatie te tonen aan gebruikers, ook zonder dat deze ingelogd zijn. Dit is handig voor als je specifieke cursussen wil uitlichten.';
 
-$string['togglemarketing'] = 'Toggle Marketing Spot display';
-$string['togglemarketingdesc'] = 'Choose if you wish to hide or show the three Marketing Spots.';
+$string['togglemarketing'] = 'Marketing blokken inschakelen';
+$string['togglemarketingdesc'] = 'Kies hier of je de marketing blokken wil tonen.';
 
+$string['marketing1'] = 'Marketing blok 1';
+$string['marketing2'] = 'Marketing blok 2';
+$string['marketing3'] = 'Marketing blok 3';
 
-$string['marketing1'] = 'Marketing Spot One';
-$string['marketing2'] = 'Marketing Spot Two';
-$string['marketing3'] = 'Marketing Spot Three';
-
-$string['marketingtitle'] = 'Title';
-$string['marketingtitledesc'] = 'Title to show in this marketing spot';
-$string['marketingicon'] = 'Icon';
-$string['marketingicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "icon-".';
-$string['marketingimage'] = 'Image';
+$string['marketingtitle'] = 'Titel';
+$string['marketingtitledesc'] = 'Marketing blok titel.';
+$string['marketingicon'] = 'Icoon';
+$string['marketingicondesc'] = 'Naam van het iccon dat je wil gebruiken. Kies uit de lijst <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">hier</a>. Voor de naam in achter "fa-", bijvoorbeeld "star".';
+$string['marketingimage'] = 'Afbeelding';
 $string['marketingimagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot';
 $string['marketingcontent'] = 'Content';
 $string['marketingcontentdesc'] = 'Content to display in the marketing box. Keep it short and sweet.';

@@ -240,7 +240,6 @@ $string['slideshowvariant'] = 'Slideshow Design';
 $string['slideshowvariantdesc'] = 'Choose the style of slideshow you would like to display';
 $string['slideshow1'] = 'Small Image on Right';
 $string['slideshow2'] = 'Large Background Image';
-$string['slideshow3'] = 'Design Three';
 
 $string['slideshowTitle'] = 'Slideshow';
 $string['slideinfodesc'] = 'Enter the settings for your slide.';
@@ -248,15 +247,21 @@ $string['slide1'] = 'Slide One';
 $string['slide2'] = 'Slide Two';
 $string['slide3'] = 'Slide Three';
 $string['slide4'] = 'Slide Four';
+$string['slide5'] = 'Slide Five';
 
 $string['slidetitle'] = 'Slide Title';
 $string['slidetitledesc'] = 'Enter a descriptive title for your slide';
 $string['slideimage'] = 'Slide Image';
-$string['slideimagedesc'] = 'Image works best if it is transparent. (Image size should be 256px x 256px)';
+$string['slideimagedesc'] = 'Image works best if it is transparent. (Image size should be 256px x 256px for Small Image, and 300px x 1200px for Background Image)';
 $string['slidecaption'] = 'Slide Caption';
 $string['slidecaptiondesc'] = 'Enter the caption text to use for the first slide';
 $string['slideurl'] = 'Slide Link';
 $string['slideurldesc'] = 'Enter the target destination of the first slide\'s image link';
+$string['slideurltarget'] = 'Link Target';
+$string['slideurltargetdesc'] = 'Choose how the link should be opened';
+$string['slideurltargetself'] = 'Current Page';
+$string['slideurltargetnew'] = 'New Page';
+$string['slideurltargetparent'] = 'Parent Frame';
 
 /* Marketing Spots */
 $string['marketingheading'] = 'Marketing Spots';
@@ -277,7 +282,7 @@ $string['marketing3'] = 'Marketing Spot Three';
 $string['marketingtitle'] = 'Title';
 $string['marketingtitledesc'] = 'Title to show in this marketing spot';
 $string['marketingicon'] = 'Icon';
-$string['marketingicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "icon-".';
+$string['marketingicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after "fa-", e.g. "star".';
 $string['marketingimage'] = 'Image';
 $string['marketingimagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot';
 $string['marketingcontent'] = 'Content';

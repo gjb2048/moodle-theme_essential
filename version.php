@@ -26,7 +26,7 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2014070500;                    // YYYYMMDD.
+$plugin->version   = 2014070501;                    // YYYYMMDD.
 $plugin->maturity = MATURITY_STABLE;                // this version's maturity level.
 $plugin->release = '2.6.3 (Build: 20140705)';
 $plugin->requires  = 2013101800;                    // Requires Moodle 2.6.
