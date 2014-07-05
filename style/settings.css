@@ -154,14 +154,6 @@ ul.breadcrumb li:after {
     filter: none;
 }
 
-.navbar .nav{
-    border-right:1px solid [[setting:themehovercolor]];
-}
-
-.navbar .nav > li > a{
-    border-left:1px solid [[setting:themehovercolor]];
-}
-
 .navbar .nav > li > a:hover{
     background:[[setting:themehovercolor]] !important;
 }
@@ -173,10 +165,6 @@ ul.breadcrumb li:after {
 .navbar .nav li.dropdown.active > .dropdown-toggle,
 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
     background: [[setting:themecolor]] !important;
-}
-
-.navbar .nav > li > a {
-    border-left: 1px solid [[setting:themehovercolor]];
 }
 
 /* @end */

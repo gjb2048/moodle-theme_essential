@@ -58,6 +58,7 @@ $THEME->layouts = array(
         'file' => 'columns1.php',
         'regions' => array('footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'footer-right',
+		'options' => array('noblocks'=>true),
     ),
     // Standard layout with blocks, this is recommended for most pages with general information.
     'standard' => array(

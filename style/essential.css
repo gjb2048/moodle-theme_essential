@@ -817,8 +817,15 @@ table#greyboxleft h2 {
     color: #999;
     margin-right: 5px;
 }
+.block_settings .block_tree .tree_item {
+	padding-left: 0px !important;
+}
 
-    .hidden-blocks {
+.block_settings .block_tree .tree_item img {
+	margin-left: -20px;
+}
+
+.hidden-blocks {
     background: #ffe1e1;
     padding: 10px;
     border: 1px solid #EEE;
@@ -1182,6 +1189,10 @@ table#greyboxleft h2 {
 #frontpage-category-names {
     background-size: 4px 20px;
     padding-top: 25px;
+}
+
+.coursebox>.info>.coursename a {
+	background-position: left;
 }
 
 .headingblock.header {
