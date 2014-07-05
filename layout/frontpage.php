@@ -75,6 +75,18 @@ echo $OUTPUT->doctype() ?>
 
 <?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
 
+<!-- Start Slideshow -->
+<?php 
+    if($PAGE->theme->settings->toggleslideshow==1) {
+        require_once(dirname(__FILE__).'/includes/slideshow.php');
+    } else if($PAGE->theme->settings->toggleslideshow==2 && !isloggedin()) {
+        require_once(dirname(__FILE__).'/includes/slideshow.php');
+    } else if($PAGE->theme->settings->toggleslideshow==3 && isloggedin()) {
+        require_once(dirname(__FILE__).'/includes/slideshow.php');
+    } 
+?>
+<!-- End Slideshow -->
+
 <!-- Start Main Regions -->
 <div id="page" class="container-fluid">
 
@@ -134,18 +146,6 @@ echo $OUTPUT->doctype() ?>
 </div>
 <?php } ?>
 <!-- End Alerts -->
-
-<!-- Start Slideshow -->
-<?php 
-    if($PAGE->theme->settings->toggleslideshow==1) {
-        require_once(dirname(__FILE__).'/includes/slideshow.php');
-    } else if($PAGE->theme->settings->toggleslideshow==2 && !isloggedin()) {
-        require_once(dirname(__FILE__).'/includes/slideshow.php');
-    } else if($PAGE->theme->settings->toggleslideshow==3 && isloggedin()) {
-        require_once(dirname(__FILE__).'/includes/slideshow.php');
-    } 
-?>
-<!-- End Slideshow -->
 
 <!-- Start Marketing Spots -->
 <?php 

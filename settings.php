@@ -274,44 +274,7 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
-    // This is the descriptor for the Slideshow
-    $name = 'theme_essential/slidecolorinfo';
-    $heading = get_string('slidecolors', 'theme_essential');
-    $information = get_string('slidecolorsdesc', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
-    
-    // Slide Header colour setting.
-    $name = 'theme_essential/slideheadercolor';
-    $title = get_string('slideheadercolor', 'theme_essential');
-    $description = get_string('slideheadercolordesc', 'theme_essential');
-    $default = '#30add1';
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
-    // Slide Text colour setting.
-    $name = 'theme_essential/slidecolor';
-    $title = get_string('slidecolor', 'theme_essential');
-    $description = get_string('slidecolordesc', 'theme_essential');
-    $default = '#888';
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
-    // Slide Button colour setting.
-    $name = 'theme_essential/slidebuttoncolor';
-    $title = get_string('slidebuttoncolor', 'theme_essential');
-    $description = get_string('slidebuttoncolordesc', 'theme_essential');
-    $default = '#30add1';
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
-    // This is the descriptor for the Slideshow
+    // This is the descriptor for the Footer
     $name = 'theme_essential/footercolorinfo';
     $heading = get_string('footercolors', 'theme_essential');
     $information = get_string('footercolorsdesc', 'theme_essential');
@@ -472,6 +435,43 @@ defined('MOODLE_INTERNAL') || die;
     $default = 'slideshow1';
     $choices = array('1'=>$slideshow1, '2'=>$slideshow2);
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+    // This is the descriptor for the Slideshow
+    $name = 'theme_essential/slidecolorinfo';
+    $heading = get_string('slidecolors', 'theme_essential');
+    $information = get_string('slidecolorsdesc', 'theme_essential');
+    $setting = new admin_setting_heading($name, $heading, $information);
+    $temp->add($setting);
+    
+    // Slide Header colour setting.
+    $name = 'theme_essential/slideheadercolor';
+    $title = get_string('slideheadercolor', 'theme_essential');
+    $description = get_string('slideheadercolordesc', 'theme_essential');
+    $default = '#30add1';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // Slide Text colour setting.
+    $name = 'theme_essential/slidecolor';
+    $title = get_string('slidecolor', 'theme_essential');
+    $description = get_string('slidecolordesc', 'theme_essential');
+    $default = '#888';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // Slide Button colour setting.
+    $name = 'theme_essential/slidebuttoncolor';
+    $title = get_string('slidebuttoncolor', 'theme_essential');
+    $description = get_string('slidebuttoncolordesc', 'theme_essential');
+    $default = '#30add1';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 

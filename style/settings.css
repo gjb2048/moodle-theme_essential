@@ -240,8 +240,7 @@ a#button:hover {
 /* @group Slideshow */
 
 .da-slider{
-    border-top: 4px solid [[setting:themecolor]];
-    border-bottom: 4px solid [[setting:themecolor]];
+	background-color: [[setting:themecolor]];
 }
 
 .da-slide p {
