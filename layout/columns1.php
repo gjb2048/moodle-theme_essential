@@ -45,6 +45,11 @@ echo $OUTPUT->doctype() ?>
     <?php require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
     <!-- iOS Homescreen Icons -->
     <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
+    <!-- Start Google Analytics -->
+    <?php if ($hasanalytics) { ?>
+        <?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
+    <?php } ?>
+    <!-- End Google Analytics -->
 </head>
 
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
@@ -53,34 +58,14 @@ echo $OUTPUT->doctype() ?>
 
 <?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
 
-<header role="banner" class="navbar">
-    <nav role="navigation" class="navbar-inner">
-        <div class="container-fluid">
-            <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <div class="nav-collapse collapse">
-                <?php echo $OUTPUT->custom_menu(); ?>
-                <ul class="nav pull-right">
-                    <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-                    <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-
 <div id="page" class="container-fluid">
-	<!-- Start Main Regions -->
+    <!-- Start Main Regions -->
     <div id="page-content" class="row-fluid">
         <section id="region-main" class="span12">
-        	<div id="page-navbar" class="clearfix">
-        		<nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-            	<div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
-        	</div>
+            <div id="page-navbar" class="clearfix">
+                <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
+                <div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
+            </div>
             <?php
             echo $OUTPUT->course_content_header();
             echo $OUTPUT->main_content();
@@ -88,21 +73,15 @@ echo $OUTPUT->doctype() ?>
             ?>
         </section>
     </div>
-	<!-- End Main Regions -->
+    <!-- End Main Regions -->
 
-	<footer id="page-footer" class="container-fluid">
-		<?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
-	</footer>
+    <footer id="page-footer" class="container-fluid">
+        <?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
+    </footer>
 
     <?php echo $OUTPUT->standard_end_of_body_html() ?>
 
 </div>
-
-<!-- Start Google Analytics -->
-<?php if ($hasanalytics) { ?>
-	<?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
-<?php } ?>
-<!-- End Google Analytics -->
 
 <script type="text/javascript">
 jQuery(document).ready(function() {

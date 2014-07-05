@@ -1,3 +1,9 @@
+<?php
+$hasmarketing1image = (!empty($PAGE->theme->settings->marketing1image));
+$hasmarketing2image = (!empty($PAGE->theme->settings->marketing2image));
+$hasmarketing3image = (!empty($PAGE->theme->settings->marketing3image));
+?>
+
 <div class="row-fluid" id="middle-blocks">
     <div class="span4">
         <!-- Advert #1 -->
@@ -9,7 +15,11 @@
             <?php } ?>
             
             <?php echo $PAGE->theme->settings->marketing1content ?>
-            <p align="right"><a href="<?php echo $PAGE->theme->settings->marketing1buttonurl ?>" id="button"><?php echo $PAGE->theme->settings->marketing1buttontext ?></a></p>
+            <p align="right">
+				<a href="<?php echo $PAGE->theme->settings->marketing1buttonurl ?>" target="<?php echo $PAGE->theme->settings->marketing1target ?>" id="button">
+					<?php echo $PAGE->theme->settings->marketing1buttontext ?>
+				</a>
+			</p>
         </div>
     </div>
     
@@ -23,7 +33,11 @@
             <?php } ?>
             
             <?php echo $PAGE->theme->settings->marketing2content ?>
-            <p align="right"><a href="<?php echo $PAGE->theme->settings->marketing2buttonurl ?>" id="button"><?php echo $PAGE->theme->settings->marketing2buttontext ?></a></p>
+            <p align="right">
+				<a href="<?php echo $PAGE->theme->settings->marketing2buttonurl ?>" target="<?php echo $PAGE->theme->settings->marketing2target ?>" id="button">
+					<?php echo $PAGE->theme->settings->marketing2buttontext ?>
+				</a>
+			</p>
         </div>
     </div>
     
@@ -37,7 +51,11 @@
             <?php } ?>
             
             <?php echo $PAGE->theme->settings->marketing3content ?>
-            <p align="right"><a href="<?php echo $PAGE->theme->settings->marketing3buttonurl ?>" id="button"><?php echo $PAGE->theme->settings->marketing3buttontext ?></a></p>
+            <p align="right">
+				<a href="<?php echo $PAGE->theme->settings->marketing3buttonurl ?>" target="<?php echo $PAGE->theme->settings->marketing3target ?>" id="button">
+					<?php echo $PAGE->theme->settings->marketing3buttontext ?>
+				</a>
+			</p>
         </div>
     </div>
 </div>

@@ -33,9 +33,6 @@ $alertinfo = '<span class="fa-stack "><i class="fa fa-square fa-stack-2x"></i><i
 $alertwarning = '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-warning fa-stack-1x fa-inverse"></i></span>';
 $alertsuccess = '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-bullhorn fa-stack-1x fa-inverse"></i></span>';
 
-$hasmarketing1image = (!empty($PAGE->theme->settings->marketing1image));
-$hasmarketing2image = (!empty($PAGE->theme->settings->marketing2image));
-$hasmarketing3image = (!empty($PAGE->theme->settings->marketing3image));
 $hasfrontpageblocks = (empty($PAGE->theme->settings->frontpageblocks)) ? false : $PAGE->theme->settings->frontpageblocks;
 $hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
 $haslogo = (!empty($PAGE->theme->settings->logo));
@@ -59,12 +56,17 @@ echo $OUTPUT->doctype() ?>
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <noscript>
-			<link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/essential/style/nojs.css" />
-	</noscript>
+            <link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/essential/style/nojs.css" />
+    </noscript>
     <!-- Google web fonts -->
     <?php require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
     <!-- iOS Homescreen Icons -->
     <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
+    <!-- Start Google Analytics -->
+    <?php if ($hasanalytics) { ?>
+        <?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
+    <?php } ?>
+    <!-- End Google Analytics -->
 </head>
 
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
@@ -73,26 +75,6 @@ echo $OUTPUT->doctype() ?>
 
 <?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
 
-<header role="banner" class="navbar">
-    <nav role="navigation" class="navbar-inner">
-        <div class="container-fluid">
-            <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <div class="nav-collapse collapse">
-                <?php echo $OUTPUT->custom_menu(); ?>
-                <ul class="nav pull-right">
-                    <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-                    <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-
 <!-- Start Main Regions -->
 <div id="page" class="container-fluid">
 
@@ -100,114 +82,114 @@ echo $OUTPUT->doctype() ?>
 
 <!-- Alert #1 -->
 <?php if ($hasalert1) { ?>  
-	<div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert1type ?>">  
-	<a class="close" data-dismiss="alert" href="#">×</a>
-	<?php 
-	if ($PAGE->theme->settings->alert1type == 'info') {
-		$alert1icon = $alertinfo;
+    <div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert1type ?>">  
+    <a class="close" data-dismiss="alert" href="#">×</a>
+    <?php 
+    if ($PAGE->theme->settings->alert1type == 'info') {
+        $alert1icon = $alertinfo;
     } else if ($PAGE->theme->settings->alert1type == 'error') {
-    	$alert1icon = $alertwarning;
-   	} else {
-   		$alert1icon = $alertsuccess;
-   	} 
+        $alert1icon = $alertwarning;
+    } else {
+        $alert1icon = $alertsuccess;
+    } 
     $alert1title = 'alert1title_'.current_language();
     $alert1text = 'alert1text_'.current_language();
-   	echo $alert1icon.'<span class="title">'.$PAGE->theme->settings->$alert1title.'</span>'.$PAGE->theme->settings->$alert1text; ?> 
+    echo $alert1icon.'<span class="title">'.$PAGE->theme->settings->$alert1title.'</span>'.$PAGE->theme->settings->$alert1text; ?> 
 </div>
 <?php } ?>
 
 <!-- Alert #2 -->
 <?php if ($hasalert2) { ?>  
-	<div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert2type ?>">  
-	<a class="close" data-dismiss="alert" href="#">×</a>
-	<?php 
-	if ($PAGE->theme->settings->alert2type == 'info') {
-		$alert2icon = $alertinfo;
+    <div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert2type ?>">  
+    <a class="close" data-dismiss="alert" href="#">×</a>
+    <?php 
+    if ($PAGE->theme->settings->alert2type == 'info') {
+        $alert2icon = $alertinfo;
     } else if ($PAGE->theme->settings->alert2type == 'error') {
-    	$alert2icon = $alertwarning;
-   	} else {
-   		$alert2icon = $alertsuccess;
-   	} 
+        $alert2icon = $alertwarning;
+    } else {
+        $alert2icon = $alertsuccess;
+    } 
     $alert2title = 'alert2title_'.current_language();
     $alert2text = 'alert2text_'.current_language();
-   	echo $alert2icon.'<span class="title">'.$PAGE->theme->settings->$alert2title.'</span>'.$PAGE->theme->settings->$alert2text; ?> 
+    echo $alert2icon.'<span class="title">'.$PAGE->theme->settings->$alert2title.'</span>'.$PAGE->theme->settings->$alert2text; ?> 
 </div>
 <?php } ?>
 
 <!-- Alert #3 -->
 <?php if ($hasalert3) { ?>  
-	<div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert3type ?>">  
-	<a class="close" data-dismiss="alert" href="#">×</a>
-	<?php 
-	if ($PAGE->theme->settings->alert3type == 'info') {
-		$alert3icon = $alertinfo;
+    <div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert3type ?>">  
+    <a class="close" data-dismiss="alert" href="#">×</a>
+    <?php 
+    if ($PAGE->theme->settings->alert3type == 'info') {
+        $alert3icon = $alertinfo;
     } else if ($PAGE->theme->settings->alert3type == 'error') {
-    	$alert3icon = $alertwarning;
-   	} else {
-   		$alert3icon = $alertsuccess;
-   	} 
+        $alert3icon = $alertwarning;
+    } else {
+        $alert3icon = $alertsuccess;
+    } 
     $alert3title = 'alert3title_'.current_language();
     $alert3text = 'alert3text_'.current_language();
-   	echo $alert3icon.'<span class="title">'.$PAGE->theme->settings->$alert3title.'</span>'.$PAGE->theme->settings->$alert3text; ?> 
+    echo $alert3icon.'<span class="title">'.$PAGE->theme->settings->$alert3title.'</span>'.$PAGE->theme->settings->$alert3text; ?> 
 </div>
 <?php } ?>
 <!-- End Alerts -->
 
 <!-- Start Slideshow -->
 <?php 
-	if($PAGE->theme->settings->toggleslideshow==1) {
-		require_once(dirname(__FILE__).'/includes/slideshow.php');
-	} else if($PAGE->theme->settings->toggleslideshow==2 && !isloggedin()) {
-		require_once(dirname(__FILE__).'/includes/slideshow.php');
-	} else if($PAGE->theme->settings->toggleslideshow==3 && isloggedin()) {
-		require_once(dirname(__FILE__).'/includes/slideshow.php');
-	} 
+    if($PAGE->theme->settings->toggleslideshow==1) {
+        require_once(dirname(__FILE__).'/includes/slideshow.php');
+    } else if($PAGE->theme->settings->toggleslideshow==2 && !isloggedin()) {
+        require_once(dirname(__FILE__).'/includes/slideshow.php');
+    } else if($PAGE->theme->settings->toggleslideshow==3 && isloggedin()) {
+        require_once(dirname(__FILE__).'/includes/slideshow.php');
+    } 
 ?>
 <!-- End Slideshow -->
 
 <!-- Start Marketing Spots -->
 <?php 
-	if($PAGE->theme->settings->togglemarketing==1) {
-		require_once(dirname(__FILE__).'/includes/marketingspots.php');
-	} else if($PAGE->theme->settings->togglemarketing==2 && !isloggedin()) {
-		require_once(dirname(__FILE__).'/includes/marketingspots.php');
-	} else if($PAGE->theme->settings->togglemarketing==3 && isloggedin()) {
-		require_once(dirname(__FILE__).'/includes/marketingspots.php');
-	} 
+    if($PAGE->theme->settings->togglemarketing==1) {
+        require_once(dirname(__FILE__).'/includes/marketingspots.php');
+    } else if($PAGE->theme->settings->togglemarketing==2 && !isloggedin()) {
+        require_once(dirname(__FILE__).'/includes/marketingspots.php');
+    } else if($PAGE->theme->settings->togglemarketing==3 && isloggedin()) {
+        require_once(dirname(__FILE__).'/includes/marketingspots.php');
+    } 
 ?>
 <!-- End Marketing Spots -->
 
 <!-- Start Middle Blocks -->
 <?php 
-	if($PAGE->theme->settings->frontpagemiddleblocks==1) {
-		require_once(dirname(__FILE__).'/includes/middleblocks.php');
-	} else if($PAGE->theme->settings->frontpagemiddleblocks==2 && !isloggedin()) {
-		require_once(dirname(__FILE__).'/includes/middleblocks.php');
-	} else if($PAGE->theme->settings->frontpagemiddleblocks==3 && isloggedin()) {
-		require_once(dirname(__FILE__).'/includes/middleblocks.php');
-	} 
+    if($PAGE->theme->settings->frontpagemiddleblocks==1) {
+        require_once(dirname(__FILE__).'/includes/middleblocks.php');
+    } else if($PAGE->theme->settings->frontpagemiddleblocks==2 && !isloggedin()) {
+        require_once(dirname(__FILE__).'/includes/middleblocks.php');
+    } else if($PAGE->theme->settings->frontpagemiddleblocks==3 && isloggedin()) {
+        require_once(dirname(__FILE__).'/includes/middleblocks.php');
+    } 
 ?>
 <!-- End Middle Blocks -->
 
 <!-- Start Frontpage Content -->
 <?php if($PAGE->theme->settings->usefrontcontent ==1) { 
-	echo $PAGE->theme->settings->frontcontentarea;
-	?>
-	<div class="bor" style="margin-top: 10px;"></div>	
+    echo $PAGE->theme->settings->frontcontentarea;
+    ?>
+    <div class="bor" style="margin-top: 10px;"></div>   
 <?php }?>
 <!-- End Frontpage Content -->
 
 
     <div id="page-content" class="row-fluid">
-    	<?php if ($hasfrontpageblocks==1) { ?>
+        <?php if ($hasfrontpageblocks==1) { ?>
         <section id="region-main" class="span8 pull-right">
         <?php } else { ?>
         <section id="region-main" class="span8 desktop-first-column">
         <?php } ?>
-        	<div id="page-navbar" class="clearfix">
-            	<div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
-            	<nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-        	</div>
+            <div id="page-navbar" class="clearfix">
+                <div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
+                <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
+            </div>
             <?php
             echo $OUTPUT->course_content_header();
             echo $OUTPUT->main_content();
@@ -216,9 +198,9 @@ echo $OUTPUT->doctype() ?>
         </section>
         <?php
         if ($hasfrontpageblocks==1) {
-        	echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column');
+            echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column');
         } else {
-        	echo $OUTPUT->blocks('side-pre', 'span4 pull-right');
+            echo $OUTPUT->blocks('side-pre', 'span4 pull-right');
         }
         ?>
     </div>
@@ -226,29 +208,23 @@ echo $OUTPUT->doctype() ?>
     <!-- End Main Regions -->
 
     <?php if (is_siteadmin()) { ?>
-	<div class="hidden-blocks">
-    	<div class="row-fluid">
-        	<h4><?php echo get_string('visibleadminonly', 'theme_essential') ?></h4>
+    <div class="hidden-blocks">
+        <div class="row-fluid">
+            <h4><?php echo get_string('visibleadminonly', 'theme_essential') ?></h4>
             <?php
                 echo $OUTPUT->essentialblocks('hidden-dock');
             ?>
-    	</div>
-	</div>
-	<?php } ?>
+        </div>
+    </div>
+    <?php } ?>
 
-	<footer id="page-footer" class="container-fluid">
-		<?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
-	</footer>
+    <footer id="page-footer" class="container-fluid">
+        <?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
+    </footer>
 
     <?php echo $OUTPUT->standard_end_of_body_html() ?>
 
 </div>
-
-<!-- Start Google Analytics -->
-<?php if ($hasanalytics) { ?>
-	<?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
-<?php } ?>
-<!-- End Google Analytics -->
 
 <script type="text/javascript">
 jQuery(document).ready(function() {

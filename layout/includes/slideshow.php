@@ -28,9 +28,8 @@ $hideonphone = $PAGE->theme->settings->hideonphone;
 if ($hasslide1) {
     $slide1 = $PAGE->theme->settings->slide1;
 }
-var_dump($slideshowvariant);
 
-if ($slideshowvariant === 1) {
+if ($slideshowvariant = 1) {
 	$slideshowvariant = '';
 } else {
 	$slideshowvariant = 'variant2';

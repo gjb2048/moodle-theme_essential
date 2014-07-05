@@ -45,13 +45,32 @@ $hassocialnetworks = ($hasfacebook || $hastwitter || $hasgoogleplus || $hasflick
 $hasmobileapps = ($hasios || $hasandroid ) ? true : false;
 $hasheaderprofilepic = (empty($PAGE->theme->settings->headerprofilepic)) ? false : $PAGE->theme->settings->headerprofilepic;
 
-
 /* Modified to check for IE 7/8. Switch headers to remove backgound-size CSS (in Custom CSS) functionality if true */
 $checkuseragent = '';
 if (!empty($_SERVER['HTTP_USER_AGENT'])) {
     $checkuseragent = $_SERVER['HTTP_USER_AGENT'];
 }
 ?>
+
+<header role="banner" class="navbar">
+    <nav role="navigation" class="navbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <div class="nav-collapse collapse">
+                <?php echo $OUTPUT->custom_menu(); ?>
+                <ul class="nav pull-right">
+                    <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
+                    <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 
 <?php
 // Check if IE7 browser and display message
