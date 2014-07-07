@@ -29,7 +29,7 @@ if ($hasslide1) {
     $slide1 = $PAGE->theme->settings->slide1;
 }
 
-if ($slideshowvariant = 1) {
+if ($slideshowvariant === 1) {
 	$slideshowvariant = '';
 } else {
 	$slideshowvariant = 'variant2';

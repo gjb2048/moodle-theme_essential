@@ -25,7 +25,6 @@ New in 2.7.1
 - FIX: Now also outputs detailed performance info when selected
 - FIX: Various menu features (messaging/badges) only enabled when feature is enabled
 - NEW: Dutch translation
-- NEW: Start Dutch translation
 - NEW: Moved menu bar to top
 - NEW: Now allows setting target on links
 - NEW: New slideshow design (WIP)

@@ -18,6 +18,7 @@
 	-ms-transition: background-position 1.4s ease-in-out 0.3s;
 	transition: background-position 1.4s ease-in-out 0.3s;
 }
+
 .da-slide{
 	position: absolute;
 	width: 80%;
@@ -719,6 +720,11 @@ white-space: nowrap;
 
 /* @group Design 2 */
 
+.variant2 .da-slide {
+	left: 0px;
+	width: 100%;
+}
+
 .variant2 .da-slide .da-img{
 	text-align: left;
 	width: 100%;
@@ -727,6 +733,16 @@ white-space: nowrap;
 	line-height: 320px;
 	left:  0px;
 	z-index: -1;
+}
+
+.variant2 .da-slide .da-img img{
+	line-height: 100%;
+	width: 100%;
+	-moz-opacity:.70;
+	-ms-filter:”alpha(opacity=70)”;
+	filter:alpha(opacity=70);
+	opacity:.70;
+	
 }
 
 .variant2 .da-slider-fb .da-slide .da-img{
