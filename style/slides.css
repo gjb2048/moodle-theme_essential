@@ -734,14 +734,14 @@ white-space: nowrap;
 	text-align: left;
 	width: 100%;
 	top: 0px;
-	height: 230px;
-	line-height: 320px;
+	height: 300px;
 	left:  0px;
 	z-index: -1;
 }
 
 .variant2 .da-slide .da-img img{
-	line-height: 100%;
+	max-height: 100%;
+	margin-top: 0px;
 	width: 100%;
 	-moz-opacity:.70;
 	-ms-filter:”alpha(opacity=70)”;
