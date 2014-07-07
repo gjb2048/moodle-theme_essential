@@ -777,10 +777,6 @@ function theme_essential_set_pagebackground($css, $pagebackground, $setting) {
     global $OUTPUT;
     $tag = '[[setting:pagebackground]]';
     $replacement = $pagebackground;
-    if (is_null($replacement)) {
-        // Get default image from themes 'bg' folder of the name in $setting.
-        $replacement = $OUTPUT->pix_url('bg/body', 'theme');
-    }
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }

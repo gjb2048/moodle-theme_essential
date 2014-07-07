@@ -35,27 +35,24 @@ $hasfootermiddle = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->r
 $hasfooterright = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-right', $OUTPUT));
 
 ?>
-	<div class="row-fluid">
-		<?php
-            		echo $OUTPUT->essentialblocks($footerl, 'span4');
 
-            		echo $OUTPUT->essentialblocks($footerm, 'span4');
+<div class="row-fluid">
+	<?php
+	if ($hasfooterleft) { echo $OUTPUT->essentialblocks($footerl, 'span4'); }
+	if ($hasfootermiddle) { echo $OUTPUT->essentialblocks($footerm, 'span4'); }
+	if ($hasfooterright) { echo $OUTPUT->essentialblocks($footerr, 'span4'); }
+	?>
+</div>
 
-            		echo $OUTPUT->essentialblocks($footerr, 'span4');
-		?>
- 	</div>
+<div class="footerlinks row-fluid">
+	<hr>
+	<p class="helplink"><?php echo page_doc_link(get_string('moodledocslink')); ?></p>
+<?php if ($hascopyright) {
+	echo '<p class="copy">&copy; '.date("Y").' '.$hascopyright.'</p>';
+} ?>
 
-	<div class="footerlinks row-fluid">
-    	<hr>
-    	<p class="helplink"><?php echo page_doc_link(get_string('moodledocslink')); ?></p>
-    <?php if ($hascopyright) {
-        echo '<p class="copy">&copy; '.date("Y").' '.$hascopyright.'</p>';
-    } ?>
-    
-    <?php if ($hasfootnote) {
-        echo '<div class="footnote">'.$hasfootnote.'</div>';
-    } ?>
-	</div>
-	<?php echo $OUTPUT->standard_footer_html(); ?>
-	
-
+<?php if ($hasfootnote) {
+	echo '<div class="footnote">'.$hasfootnote.'</div>';
+} ?>
+</div>
+<?php echo $OUTPUT->standard_footer_html(); ?>

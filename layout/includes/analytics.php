@@ -25,68 +25,75 @@
  */
  
 //Check for theme settings 
-$hascleanurl = (empty($PAGE->theme->settings->analyticsclean)) ? false : $PAGE->theme->settings->analyticsclean;
 
-$trackurl = '';
+function analytics_trackurl() {
+    global $DB, $PAGE, $COURSE;
+    $pageinfo = get_context_info_array($PAGE->context->id);
+    $trackurl = "'/";
 
-global $DB;
-	
-if ($COURSE->id != 1 ){
-
-    //Add course category name
-    if ($category = $DB->get_record('course_categories',array('id'=>$COURSE->category))){
-        $trackurl .= '/' . urlencode($category->name);
+    // Adds course category name.
+    if (isset($pageinfo[1]->category)) {
+        if ($category = $DB->get_record('course_categories', array('id'=>$pageinfo[1]->category))) {
+            $cats=explode("/",$category->path);
+            foreach(array_filter($cats) as $cat) {
+                if ($categorydepth = $DB->get_record("course_categories", array("id" => $cat))) {;
+                    $trackurl .= urlencode($categorydepth->name).'/';
+                }
+            }
+        }
     }
 
-    //Add course name
-    $trackurl .= '/' . urlencode($COURSE->shortname);
-} else {
-	$trackurl = $SITE->shortname;
+    // Adds course full name.
+    if (isset($pageinfo[1]->fullname)) {
+        if (isset($pageinfo[2]->name)) {
+            $trackurl .= urlencode($pageinfo[1]->fullname).'/';
+        } else if ($PAGE->user_is_editing()) {
+            $trackurl .= urlencode($pageinfo[1]->fullname).'/'.get_string('edit');
+        } else {
+            $trackurl .= urlencode($pageinfo[1]->fullname).'/'.get_string('view');
+        }
+    }
+
+    // Adds activity name.
+    if (isset($pageinfo[2]->name)) {
+        $trackurl .= urlencode($pageinfo[2]->modname).'/'.urlencode($pageinfo[2]->name);
+    }
+    
+    $trackurl .= "'";
+    return $trackurl;
+}
+ 
+function insert_analytics_tracking() {
+    global $PAGE;
+    $enabled = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
+    $siteid = (empty($PAGE->theme->settings->analyticsid)) ? false : $PAGE->theme->settings->analyticsid;
+    $cleanurl = (empty($PAGE->theme->settings->analyticsclean)) ? false : $PAGE->theme->settings->analyticsclean;
+    $trackadmin = (empty($PAGE->theme->settings->analyticsadmin)) ? false : $PAGE->theme->settings->analyticsadmin;
+    
+    if ($cleanurl) {
+        $addition = 
+            "{'hitType' : 'pageview',
+            'page' : ".analytics_trackurl().",
+            'title' : '".addslashes($PAGE->heading)."'
+            }";
+    } else {
+        $addition = "'pageview'";
+    }
+    
+    
+    if ($enabled && (!is_siteadmin() || $trackadmin)) {
+        echo "   
+            <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', '".$siteid."', {'siteSpeedSampleRate': 50});
+            ga('send', ".$addition.");
+            
+            </script>
+            ";
+    }
 }
 
-//Use navigation bar to get items
-$navbar = $OUTPUT->page->navbar->get_items();
-
-//remove first item (home)
-$first = array_shift($navbar);
-
-foreach ($navbar as $item) {
-    //get section name
-    if ($item->type == "30") {
-        $trackurl .= '/' . urlencode($item->title) ;
-    }
-    //get activity type
-    if ($item->type == "40") {
-        $trackurl .= '/' . urlencode($item->text) ;
-        $trackurl .= '/' . urlencode($item->title) ;
-    }
-    //get action type
-    if ($item->type == "60") {
-        $trackurl .= '/' . urlencode($item->title) ;
-    }
-}
-
-?>
-<script type="text/javascript">
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-
-	ga('create', '<?php echo $PAGE->theme->settings->analyticsid;?>', 
-	{
-		'cookieDomain': '<?php echo preg_replace("(https?://)", "", $CFG->wwwroot);?>',
-		'cookieExpires': '<?php echo $CFG->sessiontimeout;?>'
-	});
-	<?php if ($hascleanurl) { ?>
-		ga('send', 'pageview', 
-		{
-			'page': '<?php echo $trackurl;?>',
-			'title': '<?php echo $PAGE->heading;?>'
-		});
-	<?php } else { ?>
-		ga('send', 'pageview' );
-
-	<?php } ?>
-</script>
+insert_analytics_tracking();

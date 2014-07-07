@@ -51,45 +51,63 @@ David Bezemer<br>
 $string['genericsettings'] = 'General Settings';
 $string['autohide'] = 'Include Autohide Functionality';
 $string['autohidedesc'] = 'The Autohide functionality is designed to make Moodle less intimidating.  When editing is turned on edit icons only appear when the item is hovered over.';
+
 $string['editicons'] = 'Edit Icons V2';
 $string['editiconsdesc'] = 'This utilises the Font Awesome to display coloured and neater formatted edit icons in course pages and blocks.  Please note that currently this is NOT compatible with Autohide.';
+
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
+
 $string['footnote'] = 'Footnote';
 $string['footnotedesc'] = 'Whatever you add to this textarea will be displayed in the footer throughout your Moodle site.';
+
 $string['invert'] = 'Invert navbar';
 $string['invertdesc'] = 'Swaps text and background for the navbar at the top of the page between black and white.';
+
 $string['logo'] = 'Logo';
 $string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.<br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
+
 $string['fontselect'] = 'Font Selector';
 $string['fontselectdesc'] = 'Choose from the list of available font combinations. You can choose here to disable Google fonts if needed.';
+
 $string['bootstrapcdn'] = 'FontAwesome from CDN';
 $string['bootstrapcdndesc'] = 'If enabled this will load FontAwesome from the online Bootstrap CDN source. Enable this if you are having issues getting the Font Awesome icons to display in your site.';
+
 $string['copyright'] = 'Copyright';
 $string['copyrightdesc'] = 'The name of your organisation.';
+
 $string['profilebarcustomtitle'] = 'Profile Bar Custom Block Title';
 $string['profilebarcustomtitledesc'] = 'Title for custom Profile Bar block.';
+
 $string['contactinfo'] = 'Contact Information';
 $string['contactinfodesc'] = 'Enter your contact information';
+
 $string['siteicon'] = 'Site Icon';
 $string['siteicondesc'] = 'Do not have a logo? Enter the name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "icon-". ';
+
 $string['yourprofile'] = 'You';
 $string['headerprofilepic'] = 'Display user\'s picture';
 $string['headerprofilepicdesc'] = 'If checked, displays the user\'s profile picture in the header of the page.';
+
 $string['layout'] = 'Use a standard course layout';
 $string['layoutdesc'] = 'This theme is designed to put both block columns on the side.  If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
+
 $string['frontpageblocks'] = 'Frontpage blocks alignment';
 $string['frontpageblocksdesc'] = 'Here you can determine if the blocks on the frontpage align to the left or the right.';
+
 $string['left'] = 'Left';
 $string['right'] = 'Right';
+
 $string['perfinfo'] = 'Performance Info Mode';
 $string['perfinfodesc'] = 'Many sites don\'t need the fully detailed performance info.  Especially when viewed by users.  When enabled, this shows a cleaned up minimal form with basic page load information.';
 $string['perf_max'] = 'Detailed';
 $string['perf_min'] = 'Minimal';
+
 $string['sideregionsmaxwidth'] = 'Use max width for side regions';
 $string['sideregionsmaxwidthdesc'] = 'This theme use fluid layout. In wide screens, the side regions containing blocks may become larger than needed. Check this to limit the width of these regions.';
 $string['visibleadminonly'] = 'Blocks moved into the area below will only be seen by admins';
 $string['backtotop'] = 'Back to top';
+
 $string['nextsection'] = 'Next Section';
 $string['previoussection'] = 'Previous Section';
 
@@ -168,6 +186,7 @@ $string['footercolorsdesc'] = 'Change the colours on the page footers';
 $string['themecolor'] = 'Theme Colour';
 $string['themecolordesc'] = 'What colour should your theme be.  This will change multiple components to produce the colour you wish across the moodle site';
 $string['themehovercolor'] = 'Theme Hover Colour';
+
 $string['themehovercolordesc'] = 'What colour should your theme hovers be. This is used for links, menus, etc';
 $string['footercolor'] = 'Footer Background Colour';
 $string['footercolordesc'] = 'Set what colour the background of the Footer box should be.';
@@ -181,6 +200,7 @@ $string['footerhovercolor'] = 'Footer Link Hover Colour';
 $string['footerhovercolordesc'] = 'Set the colour for your linked text when hovered over in the footer.';
 $string['footerheadingcolor'] = 'Footer Heading Colour';
 $string['footerheadingcolordesc'] = 'Set the colour for block headings in the footer.';
+
 $string['pagebackground'] = 'Page Background Image';
 $string['pagebackgrounddesc'] = 'Upload your own background image.  This will be tiled in the background on all pages.  If none is uploaded a default image is used.';
 
@@ -192,10 +212,8 @@ $string['alternativethemename'] = 'Colour Scheme Name';
 $string['alternativethemenamedesc'] = 'Provide a name for your alternative theme colours';
 $string['alternativethemecolors'] = 'Alternative Theme Colours';
 $string['alternativethemecolorsdesc'] = 'Defines theme colours alternative that the user may select.';
-
 $string['alternativethemecolorname'] = 'Name of Alternative Colour Set {$a}';
 $string['alternativethemecolornamedesc'] = 'Provide a recognisable name for this set of alternative theme colours';
-
 $string['alternativethemehovercolor'] = 'Alternative Theme Hover Colour {$a}';
 $string['alternativethemehovercolordesc'] = 'What colour should your theme hovers be for the alternative theme colours {$a}. If enabled and the user choose it, this will replace the default theme hover colour.';
 $string['defaultcolors'] = 'Default Colours';
@@ -240,7 +258,6 @@ $string['slideshowvariant'] = 'Slideshow Design';
 $string['slideshowvariantdesc'] = 'Choose the style of slideshow you would like to display';
 $string['slideshow1'] = 'Small Image on Right';
 $string['slideshow2'] = 'Large Background Image';
-$string['slideshow3'] = 'Design Three';
 
 $string['slideshowTitle'] = 'Slideshow';
 $string['slideinfodesc'] = 'Enter the settings for your slide.';
@@ -248,27 +265,33 @@ $string['slide1'] = 'Slide One';
 $string['slide2'] = 'Slide Two';
 $string['slide3'] = 'Slide Three';
 $string['slide4'] = 'Slide Four';
+$string['slide5'] = 'Slide Five';
 
 $string['slidetitle'] = 'Slide Title';
 $string['slidetitledesc'] = 'Enter a descriptive title for your slide';
 $string['slideimage'] = 'Slide Image';
-$string['slideimagedesc'] = 'Image works best if it is transparent. (Image size should be 256px x 256px)';
+$string['slideimagedesc'] = 'Image works best if it is transparent. (Image size should be 256px x 256px for Small Image, and 300px x 1200px for Background Image)';
 $string['slidecaption'] = 'Slide Caption';
 $string['slidecaptiondesc'] = 'Enter the caption text to use for the first slide';
 $string['slideurl'] = 'Slide Link';
 $string['slideurldesc'] = 'Enter the target destination of the first slide\'s image link';
+$string['slideurltarget'] = 'Link Target';
+$string['slideurltargetdesc'] = 'Choose how the link should be opened';
+$string['slideurltargetself'] = 'Current Page';
+$string['slideurltargetnew'] = 'New Page';
+$string['slideurltargetparent'] = 'Parent Frame';
 
 /* Marketing Spots */
 $string['marketingheading'] = 'Marketing Spots';
 $string['marketinginfodesc'] = 'Enter the settings for your marketing spot.';
 $string['marketingheadingsub'] = 'Three locations on the front page to add information and links';
+
 $string['marketingheight'] = 'Height of Marketing Images';
 $string['marketingheightdesc'] = 'If you want to display images in the Marketing boxes you can specify their hight here.';
 $string['marketingdesc'] = 'This theme provides the option of enabling three "marketing" or "ad" spots just under the slideshow.  These allow you to easily identify core information to your users and provide direct links.';
 
 $string['togglemarketing'] = 'Toggle Marketing Spot display';
 $string['togglemarketingdesc'] = 'Choose if you wish to hide or show the three Marketing Spots.';
-
 
 $string['marketing1'] = 'Marketing Spot One';
 $string['marketing2'] = 'Marketing Spot Two';
@@ -277,7 +300,7 @@ $string['marketing3'] = 'Marketing Spot Three';
 $string['marketingtitle'] = 'Title';
 $string['marketingtitledesc'] = 'Title to show in this marketing spot';
 $string['marketingicon'] = 'Icon';
-$string['marketingicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "icon-".';
+$string['marketingicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after "fa-", e.g. "star".';
 $string['marketingimage'] = 'Image';
 $string['marketingimagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot';
 $string['marketingcontent'] = 'Content';
@@ -286,47 +309,53 @@ $string['marketingbuttontext'] = 'Link Text';
 $string['marketingbuttontextdesc'] = 'Text to appear on the button.';
 $string['marketingbuttonurl'] = 'Link URL';
 $string['marketingbuttonurldesc'] = 'URL the button will point to.';
+$string['marketingurltarget'] = 'Link Target';
+$string['marketingurltargetdesc'] = 'Choose how the link should be opened';
+$string['marketingurltargetself'] = 'Current Page';
+$string['marketingurltargetnew'] = 'New Page';
+$string['marketingurltargetparent'] = 'Parent Frame';
 
 /* Social Networks */
 $string['socialheading'] = 'Social Networking';
 $string['socialheadingsub'] = 'Engage your users with Social Networking';
 $string['socialdesc'] = 'Provide direct links to the core social networks that promote your brand.  These will appear in the header of every page.';
 $string['socialnetworks'] = 'Social Networks';
+
 $string['facebook'] = 'Facebook URL';
-$string['facebookdesc'] = 'Enter the URL of your Facebook page. (i.e http://www.facebook.com/mycollege)';
+$string['facebookdesc'] = 'Enter the URL of your Facebook page. (i.e https://www.facebook.com/mycollege)';
 
 $string['twitter'] = 'Twitter URL';
-$string['twitterdesc'] = 'Enter the URL of your Twitter feed. (i.e http://www.twitter.com/mycollege)';
+$string['twitterdesc'] = 'Enter the URL of your Twitter feed. (i.e https://www.twitter.com/mycollege)';
 
 $string['googleplus'] = 'Google+ URL';
-$string['googleplusdesc'] = 'Enter the URL of your Google+ profile. (i.e http://plus.google.com/107817105228930159735)';
+$string['googleplusdesc'] = 'Enter the URL of your Google+ profile. (i.e https://plus.google.com/+mycollege)';
 
 $string['linkedin'] = 'LinkedIn URL';
-$string['linkedindesc'] = 'Enter the URL of your LinkedIn profile. (i.e http://www.linkedin.com/company/mycollege)';
+$string['linkedindesc'] = 'Enter the URL of your LinkedIn profile. (i.e https://www.linkedin.com/company/mycollege)';
 
 $string['youtube'] = 'YouTube URL';
-$string['youtubedesc'] = 'Enter the URL of your YouTube channel. (i.e http://www.youtube.com/mycollege)';
+$string['youtubedesc'] = 'Enter the URL of your YouTube channel. (i.e https://www.youtube.com/user/mycollege)';
 
 $string['flickr'] = 'Flickr URL';
-$string['flickrdesc'] = 'Enter the URL of your Flickr page. (i.e http://www.flickr.com/mycollege)';
+$string['flickrdesc'] = 'Enter the URL of your Flickr page. (i.e http://www.flickr.com/photos/mycollege)';
 
 $string['vk'] = 'VKontakte URL';
 $string['vkdesc'] = 'Enter the URL of your Vkontakte page. (i.e http://www.vk.com/mycollege)';
 
 $string['skype'] = 'Skype Account';
-$string['skypedesc'] = 'Enter the Skype username of your organisations Skype account';
+$string['skypedesc'] = 'Enter the Skype username of your organisations Skype account (i.e my.college)';
 
 $string['pinterest'] = 'Pinterest URL';
-$string['pinterestdesc'] = 'Enter the URL of your Pinterest page. (i.e http://pinterest.com/mycollege)';
+$string['pinterestdesc'] = 'Enter the URL of your Pinterest page. (i.e http://pinterest.com/mycollege/mypinboard)';
 
 $string['instagram'] = 'Instagram URL';
 $string['instagramdesc'] = 'Enter the URL of your Instagram page. (i.e http://instagram.com/mycollege)';
 
 $string['website'] = 'Website URL';
-$string['websitedesc'] = 'Enter the URL of your own website. (i.e http://www.pukunui.com)';
+$string['websitedesc'] = 'Enter the URL of your own website. (i.e http://www.uplearning.nl)';
 
 /* Category Icons */
-$string['categoryiconheading'] = 'Icon based Category Display';
+$string['categoryiconheading'] = 'Category Icons';
 $string['categoryiconheadingsub'] = 'Use icons to represent your categories';
 $string['categoryicondesc'] = 'If enabled this will allow you to set icons for each category of course.';
 
@@ -339,18 +368,16 @@ $string['defaultcategoryicondesc'] = 'Set a default category icon';
 $string['categoryiconinfo'] = 'Set Custom Category Icons';
 $string['categoryiconinfodesc'] = 'Each icon is set by "category ID". You get these by looking at the URL or each category.';
 
-$string['categoryicon'] = 'Category';
-
 /* Mobile Apps */
 $string['mobileappsheading'] = 'Mobile Apps';
 $string['mobileappsheadingsub'] = 'Link to your App to get your students using Mobiles';
 $string['mobileappsdesc'] = 'Have you got a web app on the App Store or Google Play Store?  Provide a link here so your users can grab the apps online';
 
 $string['android'] = 'Android (Google Play)';
-$string['androiddesc'] = 'Prove a URL to your mobile App on the Google Play Store.  If you do not have one of your own maybe consider linking to the free official Moodle Mobile app.';
+$string['androiddesc'] = 'Provide an URL to your mobile App on the Google Play Store.  If you do not have one of your own maybe consider linking to the free official Moodle Mobile app. (https://play.google.com/store/apps/details?id=com.moodle.moodlemobile)';
 
 $string['ios'] = 'iPhone/iPad (App Store)';
-$string['iosdesc'] = 'Prove a URL to your mobile App on the App Store.  If you do not have one of your own maybe consider linking to the free official Moodle Mobile app.';
+$string['iosdesc'] = 'Provide an URL to your mobile App on the App Store.  If you do not have one of your own maybe consider linking to the free official Moodle Mobile app (https://itunes.apple.com/en/app/moodle-mobile/id633359593).';
 
 /* iOS Icons */
 $string['iosicon'] = 'iOS Homescreen Icons';
@@ -374,13 +401,16 @@ $string['analyticsheadingsub'] = 'Powerful analytics from Google';
 $string['analyticsdesc'] = 'Here you can enable Google Analytics for your moodle site. You will need to sign up for a free account at the Google Analytics site (<a href="http://analytics.google.com" target="_blank">http://analytics.google.com</a>)';
 
 $string['useanalytics'] = 'Enable Google Analytics';
-$string['useanalyticsdesc'] = 'Enable or disable Google analytics functionaliy.';
+$string['useanalyticsdesc'] = 'Enable or disable Google Analytics functionality.';
 
 $string['analyticsid'] = 'Your Tracking ID';
 $string['analyticsiddesc'] = 'Enter the provided Tracking ID. Typically formatted like UA-XXXXXXXX-X';
 
 $string['analyticsclean'] = 'Send Clean URLs';
 $string['analyticscleandesc'] = 'This fantastic feature was created by <a href="https://moodle.org/user/profile.php?id=281671" target="_blank">Gavin Henrick</a> and <a href="https://moodle.org/user/view.php?id=907814" target="_blank">Bas Brands</a> and is implemented in this theme. Rather than standard Moodle URLs the theme will send out clean URLs making it easier to identify the page and provide advanced reporting. More information on using this feature and its uses can be <b><a href="http://www.somerandomthoughts.com/blog/2012/04/18/ireland-uk-moodlemoot-analytics-to-the-front/" target="_blank">found here</a></b>.';
+
+$string['analyticsadmin'] = 'Track Admin Users';
+$string['analyticsadmindesc'] = 'Enable to track Admin users as well.';
 
 /* Alerts */
 $string['alertsheading'] = 'User Alerts';
@@ -407,4 +437,4 @@ $string['alert_info'] = 'Information';
 $string['alert_warning'] = 'Warning';
 $string['alert_general'] = 'Announcement';
 
-$string['ie7message'] = '<p id="ie7message">Sorry, this site requires <strong>Internet Explorer 8</strong> or higher to display and function correctly.  Please update your browser via Windows Update, or <a href="http://windows.microsoft.com/en-au/internet-explorer/download-ie" target="_blank">download the latest version here</a>.   If using IE8 or above you may have Compatibility Mode switched on, turn this off to display this website correctly.  If you continue having problems accessing this website or the updates mentioned above, please contact your Helpdesk for further assistance.</p>';
+$string['ie7message'] = '<p id="ie7message">Sorry, this site requires <strong>Internet Explorer 8</strong> or higher to display and function correctly.  Please update your browser via Windows Update. If using IE8 or above you may have Compatibility Mode switched on, turn this off to display this website correctly.</p>';

@@ -37,7 +37,7 @@ $string['choosereadme'] = '
 <h3>Over Essential</h3>
 <p>Essential is een aangepast Moodle bootstrap thema dat stylen en renderers van haar moeder themas erft.</p>
 <h3>Afhankelijkheden</h3>
-<p>Dit thema is gebaseerd op het Bootstrap thema welke ontwikkeld is door:<br>
+<p>Dit thema is gebaseerd op het Bootstrap thema ontwikkeld door:<br>
 Stuart Lamour, Mark Aberdour, Paul Hibbitts en Mary Evans.</p>
 <h3>Thema Credits</h3>
 <p>Origineel Auteur: Julian Ridden<br>
@@ -51,13 +51,16 @@ David Bezemer<br>
 $string['genericsettings'] = 'Algemene Instellingen';
 $string['autohide'] = 'Schakel automatisch verbergen in';
 $string['autohidedesc'] = 'Automatisch verbergen is gemaakt om Moodle minder overweldigend te laten zijn. Wanneer Bewerken is ingeschakeld worden de iconen alleen getoond als hier met de muis over heen gegaan wordt.';
+
 $string['editicons'] = 'Bewerk Iconen V2';
 $string['editiconsdesc'] = 'Deze optie schakelt FontAwesome in om gekleurde en beter vormgegeven bewerk iconen te tonen. Momenteel werkt dit niet correct samen met de Automatisch verbergen optie.';
+
 $string['customcss'] = 'Aanvullende CSS';
 $string['customcssdesc'] = 'Als er aanvullende CSS vereist is kan dit in het onderstaande tekstvak worden ingevoerd, en zal automatisch op iedere pagina ingevoegd worden.';
 
 $string['footnote'] = 'Voetnoot';
 $string['footnotedesc'] = 'Tekst welke in dit veld wordt ingevoegd zal op iedere pagina in de voetnoot worden weergegeven.';
+
 $string['invert'] = 'Navigatie in negatief';
 $string['invertdesc'] = 'Wisselt tekst en achtergrond kleur voor de navigatie balk boven in het scherm.';
 
@@ -66,6 +69,7 @@ $string['logodesc'] = 'Upload hier je eigen logo. Indien je een logo upload verv
 
 $string['fontselect'] = 'Font kiezer';
 $string['fontselectdesc'] = 'Kies hier uit de lijst met beschikbare fonts.';
+
 $string['bootstrapcdn'] = 'FontAwesome laden van CDN';
 $string['bootstrapcdndesc'] = 'Indien ingeschakeld zal FontAwesome van het Bootstrap CDN geladen worden. Deze optie kan ingeschakeld worden als iconen niet correct worden geladen.';
 
@@ -77,33 +81,42 @@ $string['profilebarcustomtitledesc'] = 'Voer hier indien gewenst een aangepaste 
 
 $string['contactinfo'] = 'Contact informatie';
 $string['contactinfodesc'] = 'Voer hier je contact informatie in.';
+
 $string['siteicon'] = 'Site afbeelding';
 $string['siteicondesc'] = 'Als je geen logo hebt kun je hier een icoon invullen om op de plaats van het logo te tonen. De volledige lijst staat op <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">hier</a>. Voer het gedeelte achter "fa-" hier in.';
+
 $string['yourprofile'] = 'Je profiel';
 $string['headerprofilepic'] = 'Toon afbeelding van gebruiker';
 $string['headerprofilepicdesc'] = 'Indien ingeschakeld wordt de afbeelding van de gebruiker getoond.';
 
 $string['layout'] = 'Gebruik standaard cursus layout';
 $string['layoutdesc'] = 'Dit thema is ontwikkeld om beide kolommen met blokken aan één kan te tonen. Als je de Moodle standaard prettiger vind kun je deze optie inschakelen om de oude drie kolommen layout terug te krijgen.';
+
 $string['frontpageblocks'] = 'Uitlijning van voorpagina blokken';
 $string['frontpageblocksdesc'] = 'Hier kun je de uitlijning van de blokken op de voorpagina kiezen.';
+
 $string['left'] = 'Links';
 $string['right'] = 'Rechts';
+
 $string['perfinfo'] = 'Performance informatie';
 $string['perfinfodesc'] = 'Voor veel sites is de volledige performance informatie té veel. Indien ingeschakeld worden minimale gegevens onderaan iedere pagina getoond.';
 $string['perf_max'] = 'Gedetailleerd';
 $string['perf_min'] = 'Minimaal';
+
 $string['sideregionsmaxwidth'] = 'Beperk maximale breedte voor de blok regio\'s';
 $string['sideregionsmaxwidthdesc'] = 'Dit thema heeft een vloeiende breedte. Op brede schermen kunnen de zij blokken groter worden dan gewenst. Door deze optie in te schakelen wordt de maximale breedte beperkt.';
 $string['visibleadminonly'] = 'Blokken in deze regio worden alleen aan beheerders getoond';
 $string['backtotop'] = 'Naar boven';
+
 $string['nextsection'] = 'Volgende sectie';
 $string['previoussection'] = 'Vorige sectie';
+
 $string['pagewidth'] = 'Kies pagina breedte';
 $string['pagewidthdesc'] = 'Kies uit de lijst met beschikbare breedtes om de site breedte in te stellen.';
 $string['fixedwidthwide'] = 'Vaste breedte - breed';
 $string['fixedwidthnarrow'] = 'Vaste breedte - smal';
 $string['variablewidth'] = 'Volledige breedte';
+
 $string['alwaysdisplay'] = 'Altijd tonen';
 $string['displaybeforelogin'] = 'Alleen voor inloggen tonen';
 $string['displayafterlogin'] = 'Alleen na inloggen tonen';
@@ -174,6 +187,7 @@ $string['themecolor'] = 'Thema kleuren';
 $string['themecolordesc'] = 'Welke kleur wil je het thema hebben? Dit heeft invloed op meerdere componenten binnen Moodle en bepaalt de basis kleur voor je thema.';
 $string['themehovercolor'] = 'Thema hover kleuren';
 $string['themehovercolordesc'] = 'Welke kleuren moeten de hovers in het thema hebben? Dit wordt bijvoorbeeld gebruikt voor links.';
+
 $string['footercolor'] = 'Voetnoot achtergrondkleur';
 $string['footercolordesc'] = 'Stel hier de kleur in voor de achtergrond van de voetnoot regio.';
 $string['footersepcolor'] = 'Voetnoot scheidingskleur';
@@ -186,13 +200,13 @@ $string['footerhovercolor'] = 'Voetnoot link hover kleur';
 $string['footerhovercolordesc'] = 'Stel hier de kleur in voor de links in de voetnoot als je er met de muis op zweeft.';
 $string['footerheadingcolor'] = 'Voetnoot titelkleur';
 $string['footerheadingcolordesc'] = 'Stel hier de kleur in van de titel van de voetnoot.';
+
 $string['pagebackground'] = 'Pagina achtergrondafbeelding';
 $string['pagebackgrounddesc'] = 'Upload hier je achtergrond afbeelding. Deze achtergrond afbeelding zal op alle pagina\'s getoond worden. Als je geen afbeelding upload wordt hier een vaste kleur voor gebruikt.';
 
 /* Alternate Color Switcher */
 $string['alternativethemecolors'] = 'Alternatieve themakleur {$a}';
 $string['alternativethemecolorsdesc'] = 'Definieer de alternatieve kleurschema\'s.';
-
 $string['enablealternativethemecolors'] = 'Schakel alternatief kleurschema {$a} in';
 $string['enablealternativethemecolorsdesc'] = 'Indien ingeschakeld krijgen gebruikers de keuze om alternatief kleurschema {$a}te kiezen.';
 $string['alternativecolors'] = 'Alternatieve kleurschema {$a}';
@@ -206,207 +220,220 @@ $string['alternativethemehovercolor'] = 'Alternative Theme Hover Colour {$a}';
 $string['alternativethemehovercolordesc'] = 'Welke kleur moet er gebruikt worden voor hovers in alternatief kleurschema {$a}?';
 
 /* Frontpage Settings */
-$string['frontcontentheading'] = 'Frontpage Settings';
-$string['frontcontentheadingsub'] = 'Change what features you wish enabled on your moodle front page';
-$string['frontcontentdesc'] = 'This adds a custom content area inbetween the Slideshow and the Marketing boxes for your own custom content';
+$string['frontcontentheading'] = 'Voorpagina instellingen';
+$string['frontcontentheadingsub'] = 'Stel hier de verschillende onderdelen voor de voorpagina in.';
+$string['frontcontentdesc'] = 'Dit voegt een speciaal blok in tussen de slideshow en de marketing blokken waar je eigen content kan plaatsen.';
 
-$string['usefrontcontent'] = 'Enable Frontpage content';
-$string['usefrontcontentdesc'] = 'If enabled this will display the content of the box below inbetween the Slideshow and the Marketing spots.';
+$string['usefrontcontent'] = 'Voorpagina content inschakelen';
+$string['usefrontcontentdesc'] = 'Indien ingeschakeld wordt de inhoud van dit blok tussen de slidehsow en marketing blokken weergegeven.';
 
-$string['frontcontentarea'] = 'Frontpage Content';
-$string['frontcontentareadesc'] = 'Whatever is typed into this box will display across the full width of the page inbetween the Slideshow and the Marketing spots ';
+$string['frontcontentarea'] = 'Voorpagina content';
+$string['frontcontentareadesc'] = 'De inhoud van dit blik wordt over de gehele breedte van de pagina tussen de slidehsow en marketing blokken weergegeven.';
 
-$string['frontpagemiddleblocks'] = 'Enable Frontpage Middle Blocks';
-$string['frontpagemiddleblocksdesc'] = 'If enabled this will display 3 new block locations just under the marketing spots';
+$string['frontpagemiddleblocks'] = 'Voorpagina midden blokken inschakelen';
+$string['frontpagemiddleblocksdesc'] = 'Indien ingeschakeld worden er drie blokken weergegeven onder de marketing blokken.';
 
 /* Slideshow */
-$string['slideshowheading'] = 'Frontpage Slideshow';
-$string['slideshowheadingsub'] = 'Dynamic Slideshow for the frontpage';
-$string['slideshowdesc'] = 'This creates a dynamic slideshow of up to 4 slides for you to promote important elements of your site.';
+$string['slideshowheading'] = 'Voorpagina slideshow';
+$string['slideshowheadingsub'] = 'Een dynamische slideshow voor de voorpagina';
+$string['slideshowdesc'] = 'Indien ingeschakeld wordt er een dynamische slideshow met maximaal 4 slides getoond om belangrijke informatie aantrekkelijk weer te geven.';
 
-$string['toggleslideshow'] = 'Toggle Slideshow display';
-$string['toggleslideshowdesc'] = 'Choose if you wish to hide or show the Slideshow.';
+$string['toggleslideshow'] = 'Slideshow inschakelen';
+$string['toggleslideshowdesc'] = 'Kies hier of je de slideshow in wil schakelen.';
 
-$string['hideonphone'] = 'Slideshow on Mobiles';
-$string['hideonphonedesc'] = 'Choose if you wish to have the slideshow shown on mobiles or not';
-$string['readmore'] = 'Read More';
+$string['hideonphone'] = 'Toon slideshow op telefoons';
+$string['hideonphonedesc'] = 'Kies hier of je de slideshow ook op telefoons wil tonen.';
 
-$string['slidecolor'] = 'Slide Text Colour';
-$string['slidecolordesc'] = 'What colour should the main side text be.';
-$string['slideheadercolor'] = 'Slide Heading Colour';
-$string['slideheadercolordesc'] = 'What colour should the slide header be';
-$string['slidebuttoncolor'] = 'Slide Button Colour';
-$string['slidebuttoncolordesc'] = 'What colour should the slide "read more" button be';
+$string['readmore'] = 'Lees verder';
 
-$string['slideshowvariant'] = 'Slideshow Design';
-$string['slideshowvariantdesc'] = 'Choose the style of slidewhow you would like to display';
-$string['slideshow1'] = 'Small Image on Right';
-$string['slideshow2'] = 'Large Background Image';
-$string['slideshow3'] = 'Design Three';
+$string['slidecolor'] = 'Slide tekstkleur';
+$string['slidecolordesc'] = 'Kies hier de kleur van de hoofdtekst op de slide.';
+$string['slideheadercolor'] = 'Slide koptekstkleur';
+$string['slideheadercolordesc'] = 'Kies hier de kleur voor de koptekst.';
+$string['slidebuttoncolor'] = 'Slide buttonkleur';
+$string['slidebuttoncolordesc'] = 'Kies hier de kleur voor de "Lees verder" knop.';
 
-$string['slideshowTitle'] = 'Slideshow';
-$string['slideinfodesc'] = 'Enter the settings for your slide.';
-$string['slide1'] = 'Slide One';
-$string['slide2'] = 'Slide Two';
-$string['slide3'] = 'Slide Three';
-$string['slide4'] = 'Slide Four';
+$string['slideshowvariant'] = 'Slideshow ontwerp';
+$string['slideshowvariantdesc'] = 'Kies de stijl voor de slideshow.';
+$string['slideshow1'] = 'Kleine afbeelding rechts';
+$string['slideshow2'] = 'Grote achtergrond afbeelding';
 
-$string['slidetitle'] = 'Slide Title';
-$string['slidetitledesc'] = 'Enter a descriptive title for your slide';
-$string['slideimage'] = 'Slide Image';
-$string['slideimagedesc'] = 'Image works best if it is transparent. (Image size should be 256px x 256px)';
-$string['slidecaption'] = 'Slide Caption';
-$string['slidecaptiondesc'] = 'Enter the caption text to use for the first slide';
-$string['slideurl'] = 'Slide Link';
-$string['slideurldesc'] = 'Enter the target destination of the first slide\'s image link';
+$string['slideshowtitle'] = 'Slideshow';
+$string['slideinfodesc'] = 'Personaliseer hier je slides.';
+$string['slide1'] = 'Slide 1';
+$string['slide2'] = 'Slide 2';
+$string['slide3'] = 'Slide 3';
+$string['slide4'] = 'Slide 4';
+$string['slide5'] = 'Slide 5';
+
+$string['slidetitle'] = 'Slide titel';
+$string['slidetitledesc'] = 'Voer een titel in voor je slide.';
+$string['slideimage'] = 'Slide afbeelding';
+$string['slideimagedesc'] = 'Gebruik hier een transparante png (formaat is 256px x 256px voor de kleine afbeelding, en 300px x 1200px voor de achtergrond afbeelding)';
+$string['slidecaption'] = 'Slide tekst';
+$string['slidecaptiondesc'] = 'Voer hier de tekst in die op de slide getoond zal worden.';
+$string['slideurl'] = 'Slide link';
+$string['slideurldesc'] = 'Voer hier in waar de link achter "Verder lezen" naar moet verwijzen.';
+$string['slideurltarget'] = 'Link doel';
+$string['slideurltargetdesc'] = 'Voer hier in hoe de link geopend moet worden';
+$string['slideurltargetself'] = 'Open in huidige pagina';
+$string['slideurltargetnew'] = 'Open in nieuwe pagina';
+$string['slideurltargetparent'] = 'Open in hoofdframe';
 
 /* Marketing Spots */
-$string['marketingheading'] = 'Marketing Spots';
-$string['marketinginfodesc'] = 'Enter the settings for your marketing spot.';
-$string['marketingheadingsub'] = 'Three locations on the front page to add information and links';
-$string['marketingheight'] = 'Height of Marketing Images';
-$string['marketingheightdesc'] = 'If you want to display images in the Marketing boxes you can specify their hight here.';
-$string['marketingdesc'] = 'This theme provides the option of enabling three "marketing" or "ad" spots just under the slideshow.  These allow you to easily identify core information to your users and provide direct links.';
+$string['marketingheading'] = 'Marketing blokken';
+$string['marketinginfodesc'] = 'Configureer hier de marketing blokken.';
+$string['marketingheadingsub'] = 'De marketing blokken zijn drie blokken op de voorpagina waarin informatie en links getoond worden.';
 
-$string['togglemarketing'] = 'Toggle Marketing Spot display';
-$string['togglemarketingdesc'] = 'Choose if you wish to hide or show the three Marketing Spots.';
+$string['marketingheight'] = 'Hoogte van de marketing afbeeldingen';
+$string['marketingheightdesc'] = 'Als je afbeeldingen wil tonen in de marketing blokken kun je hier de hoogte instellen.';
+$string['marketingdesc'] = 'Dit thema bevat de optie om drie marketing blokken te tonen onder de slideshow. Dit geeft je de mogelijkheid om direct informatie te tonen aan gebruikers, ook zonder dat deze ingelogd zijn. Dit is handig voor als je specifieke cursussen wil uitlichten.';
 
+$string['togglemarketing'] = 'Marketing blokken inschakelen';
+$string['togglemarketingdesc'] = 'Kies hier of je de marketing blokken wil tonen.';
 
-$string['marketing1'] = 'Marketing Spot One';
-$string['marketing2'] = 'Marketing Spot Two';
-$string['marketing3'] = 'Marketing Spot Three';
+$string['marketing1'] = 'Marketing blok 1';
+$string['marketing2'] = 'Marketing blok 2';
+$string['marketing3'] = 'Marketing blok 3';
 
-$string['marketingtitle'] = 'Title';
-$string['marketingtitledesc'] = 'Title to show in this marketing spot';
-$string['marketingicon'] = 'Icon';
-$string['marketingicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "icon-".';
-$string['marketingimage'] = 'Image';
-$string['marketingimagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot';
-$string['marketingcontent'] = 'Content';
-$string['marketingcontentdesc'] = 'Content to display in the marketing box. Keep it short and sweet.';
-$string['marketingbuttontext'] = 'Link Text';
-$string['marketingbuttontextdesc'] = 'Text to appear on the button.';
+$string['marketingtitle'] = 'Titel';
+$string['marketingtitledesc'] = 'Marketing blok titel.';
+$string['marketingicon'] = 'Icoon';
+$string['marketingicondesc'] = 'Naam van het iccon dat je wil gebruiken. Kies uit de lijst <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">hier</a>. Voor de naam in achter "fa-", bijvoorbeeld "star".';
+$string['marketingimage'] = 'Afbeelding';
+$string['marketingimagedesc'] = 'Stel hier een afbeelding in om boven de tekst in dit marketing blok te tonen.';
+$string['marketingcontent'] = 'Inhoud';
+$string['marketingcontentdesc'] = 'Stel hier de inhoud van het marketing blok in. Maak het kort maar krachtig.';
+$string['marketingbuttontext'] = 'Link tekst';
+$string['marketingbuttontextdesc'] = 'Tekst om te tonen op de link button.';
 $string['marketingbuttonurl'] = 'Link URL';
 $string['marketingbuttonurldesc'] = 'URL the button will point to.';
+$string['marketingurltarget'] = 'Link doel';
+$string['marketingurltargetdesc'] = 'Voer hier in hoe de link geopend moet worden';
+$string['marketingurltargetself'] = 'Open in huidige pagina';
+$string['marketingurltargetnew'] = 'Open in nieuwe pagina';
+$string['marketingurltargetparent'] = 'Open in hoofdframe';
 
 /* Social Networks */
-$string['socialheading'] = 'Social Networking';
-$string['socialheadingsub'] = 'Engage your users with Social Networking';
-$string['socialdesc'] = 'Provide direct links to the core social networks that promote your brand.  These will appear in the header of every page.';
-$string['socialnetworks'] = 'Social Networks';
+$string['socialheading'] = 'Sociale netwerk sites';
+$string['socialheadingsub'] = 'Bind je gebruikers door gebruik te maken van sociale netwerken.';
+$string['socialdesc'] = 'Geef hier directe links naar de locaties op sociale netwerken waar jouw merk of organisatie voorkomt. Deze links worden overal in de koptekst van de pagina getoond.';
+$string['socialnetworks'] = 'Sociale netwerk sites';
+
 $string['facebook'] = 'Facebook URL';
-$string['facebookdesc'] = 'Enter the URL of your Facebook page. (i.e http://www.facebook.com/mycollege)';
+$string['facebookdesc'] = 'Link naar je Facebook pagina. (bvb. https://www.facebook.com/mijnorganisatie)';
 
 $string['twitter'] = 'Twitter URL';
-$string['twitterdesc'] = 'Enter the URL of your Twitter feed. (i.e http://www.twitter.com/mycollege)';
+$string['twitterdesc'] = 'Link naar je Twitter feed. (bvb. https://twitter.com/mijnorganisatie)';
 
 $string['googleplus'] = 'Google+ URL';
-$string['googleplusdesc'] = 'Enter the URL of your Google+ profile. (i.e http://plus.google.com/107817105228930159735)';
+$string['googleplusdesc'] = 'Link naar je Google+ profiel. (bvb. https://plus.google.com/+mijnorganisatie)';
 
 $string['linkedin'] = 'LinkedIn URL';
-$string['linkedindesc'] = 'Enter the URL of your LinkedIn profile. (i.e http://www.linkedin.com/company/mycollege)';
+$string['linkedindesc'] = 'Link naar je LinkedIn profiel. (bvb. https://www.linkedin.com/company/mijnorganisatie)';
 
 $string['youtube'] = 'YouTube URL';
-$string['youtubedesc'] = 'Enter the URL of your YouTube channel. (i.e http://www.youtube.com/mycollege)';
+$string['youtubedesc'] = 'Link naar je YouTube kanaal. (bvb. https://www.youtube.com/user/mijnorganisatie)';
 
 $string['flickr'] = 'Flickr URL';
-$string['flickrdesc'] = 'Enter the URL of your Flickr page. (i.e http://www.flickr.com/mycollege)';
+$string['flickrdesc'] = 'Link naar je Flickr pagina. (bvb. https://www.flickr.com/photos/mijnorganisatie)';
 
 $string['vk'] = 'VKontakte URL';
-$string['vkdesc'] = 'Enter the URL of your Vkontakte page. (i.e http://www.vk.com/mycollege)';
+$string['vkdesc'] = 'Link naar je VKontakte profiel. (bvb. http://vk.com/mijnorganisatie)';
 
 $string['skype'] = 'Skype Account';
-$string['skypedesc'] = 'Enter the Skype username of your organisations Skype account';
+$string['skypedesc'] = 'Skype gebruikersnaam van je organisatie. (bvb. mijn.organisatie)';
 
 $string['pinterest'] = 'Pinterest URL';
-$string['pinterestdesc'] = 'Enter the URL of your Pinterest page. (i.e http://pinterest.com/mycollege)';
+$string['pinterestdesc'] = 'Link naar je Pinterest prikbord. (bvb. http://www.pinterest.com/mijnorganisatie/mijnprikbord)';
 
 $string['instagram'] = 'Instagram URL';
-$string['instagramdesc'] = 'Enter the URL of your Instagram page. (i.e http://instagram.com/mycollege)';
+$string['instagramdesc'] = 'Link naar je Instagram feed. (bvb. http://instagram.com/mijnorganisatie)';
 
 $string['website'] = 'Website URL';
-$string['websitedesc'] = 'Enter the URL of your own website. (i.e http://www.pukunui.com)';
+$string['websitedesc'] = 'Link naar je website. (bvb. http://www.uplearning.nl)';
 
 /* Category Icons */
-$string['categoryiconheading'] = 'Icon based Category Display';
-$string['categoryiconheadingsub'] = 'Use icons to represent your categories';
-$string['categoryicondesc'] = 'If enabled this will allow you to set icons for each category of course.';
+$string['categoryiconheading'] = 'Categorie Iconen';
+$string['categoryiconheadingsub'] = 'Gebruik iconen om categorieën weer te geven.';
+$string['categoryicondesc'] = 'Indien ingeschakeld kun je hier iconen voor iedere categorie instellen.';
 
-$string['usecategoryicon'] = 'Enable Category Icons';
-$string['usecategoryicondesc'] = 'Use custom icons for categories';
+$string['usecategoryicon'] = 'Categorie iconen inschakelen';
+$string['usecategoryicondesc'] = 'Kies hier of je iconen voor categorieën in wil schakelen.';
 
-$string['defaultcategoryicon'] = 'Default Category Icons';
-$string['defaultcategoryicondesc'] = 'Set a default category icon';
+$string['defaultcategoryicon'] = 'Standaard categorie icoon';
+$string['defaultcategoryicondesc'] = 'Stel hier een standaard categorie icoon in.';
 
-$string['categoryiconinfo'] = 'Set Custom Category Icons';
-$string['categoryiconinfodesc'] = 'Each icon is set by "category ID". You get these by looking at the URL or each category.';
-
-$string['categoryicon'] = 'Category';
+$string['categoryiconinfo'] = 'Aangepaste categorie iconen';
+$string['categoryiconinfodesc'] = 'Stel hier per categorie een icoon in. Je moet deze instellen door het "categorie ID" te gebruiken, welke in de categorieën in de URL te zien is.';
 
 /* Mobile Apps */
-$string['mobileappsheading'] = 'Mobile Apps';
-$string['mobileappsheadingsub'] = 'Link to your App to get your students using Mobiles';
-$string['mobileappsdesc'] = 'Have you got a web app on the App Store or Google Play Store?  Provide a link here so your users can grab the apps online';
+$string['mobileappsheading'] = 'Mobiele applicaties';
+$string['mobileappsheadingsub'] = 'Link naar je apps om te stimuleren dat gebruikers mobiele apparaten gebruiken.';
+$string['mobileappsdesc'] = 'Heb je een app in de App Store of Play Store? Voer hier de links in zodat je apps eenvoudig gevonden kunenn worden.';
 
 $string['android'] = 'Android (Google Play)';
-$string['androiddesc'] = 'Prove a URL to your mobile App on the Google Play Store.  If you do not have one of your own maybe consider linking to the free official Moodle Mobile app.';
+$string['androiddesc'] = 'Voer een URL in naar je app in de Google Play. Als je zelf geen app hebt, kun je hier ook de officiële Moodle app invoeren. (https://play.google.com/store/apps/details?id=com.moodle.moodlemobile)';
 
-$string['ios'] = 'iPhone/iPad (App Store)';
-$string['iosdesc'] = 'Prove a URL to your mobile App on the App Store.  If you do not have one of your own maybe consider linking to the free official Moodle Mobile app.';
+$string['ios'] = 'iPhone/iPad (Apple App Store)';
+$string['iosdesc'] = 'Voer een URL in naar je App in de App Store. Als je zelf geen app hebt, kun je hier ook de officiële Moodle app invoeren. (https://itunes.apple.com/en/app/moodle-mobile/id633359593)';
 
 /* iOS Icons */
-$string['iosicon'] = 'iOS Homescreen Icons';
-$string['iosicondesc'] = 'The them does provide a default icon for iOS and android homescreens. You can upload your custom icons if you wish.';
+$string['iosicon'] = 'iOS thuisscherm iconen';
+$string['iosicondesc'] = 'In dit thema zijn iconen in te stellen die getoond worden op het iOS thuisscherm als je een bladwijzer maakt voor de Moodle omgeving.';
 
-$string['iphoneicon'] = 'iPhone/iPod Touch Icon (Non Retina)';
-$string['iphoneicondesc'] = 'Icon should be a PNG files sized 57px by 57px';
+$string['iphoneicon'] = 'iPhone/iPod Touch icoon (Zonder Retina)';
+$string['iphoneicondesc'] = 'Dit icoon moet een 57px x 57px PNG zijn.';
 
-$string['iphoneretinaicon'] = 'iPhone/iPod Touch Icon (Retina)';
-$string['iphoneretinaicondesc'] = 'Icon should be a PNG files sized 114px by 114px';
+$string['iphoneretinaicon'] = 'iPhone/iPod Touch icoon (Retina)';
+$string['iphoneretinaicondesc'] = 'Dit icoon moet een 114px x 114px PNG zijn.';
 
-$string['ipadicon'] = 'iPad Icon (Non Retina)';
-$string['ipadicondesc'] = 'Icon should be a PNG files sized 72px by 72px';
+$string['ipadicon'] = 'iPad icoon (Zonder Retina)';
+$string['ipadicondesc'] = 'Dit icoon moet een 72px x 72px PNG icoon zijn.';
 
-$string['ipadretinaicon'] = 'iPad Icon (Retina)';
-$string['ipadretinaicondesc'] = 'Icon should be a PNG files sized 144px by 144px';
+$string['ipadretinaicon'] = 'iPad icoon (Retina)';
+$string['ipadretinaicondesc'] = 'Dit icoon moet een 144px x 144px PNG icoon zijn.';
 
 /* Google Analytics */
 $string['analyticsheading'] = 'Google Analytics';
-$string['analyticsheadingsub'] = 'Powerful analytics from Google';
-$string['analyticsdesc'] = 'Here you can enable Google Analytics for your moodle site. You will need to sign up for a free account at the Google Analytics site (<a href="http://analytics.google.com" target="_blank">http://analytics.google.com</a>)';
+$string['analyticsheadingsub'] = 'Krachtige site analytics mogelijk gemaakt door Google Analytics.';
+$string['analyticsdesc'] = 'Stel hier Google Analytics in voor je Moodle omgeving. Om Analytics te kunnen gebruiken moet je gratis een account aanmaken voor Google Analytics op: <a href="http://analytics.google.com" target="_blank">http://analytics.google.com</a>';
 
-$string['useanalytics'] = 'Enable Google Analytics';
-$string['useanalyticsdesc'] = 'Enable or disable Google analytics functionaliy.';
+$string['useanalytics'] = 'Google Analytics inschakelen';
+$string['useanalyticsdesc'] = 'Stel hier in of je Google Analytics functionaliteit in wil schakelen.';
 
-$string['analyticsid'] = 'Your Tracking ID';
-$string['analyticsiddesc'] = 'Enter the provided Tracking ID. Typically formatted like UA-XXXXXXXX-X';
+$string['analyticsid'] = 'Tracking code';
+$string['analyticsiddesc'] = 'Voer hier je tracking ID in. Het formaat van deze code is normaal gesproken UA-XXXXXXXX-X';
 
-$string['analyticsclean'] = 'Send Clean URLs';
-$string['analyticscleandesc'] = 'This fantastic feature was created by <a href="https://moodle.org/user/profile.php?id=281671" target="_blank">Gavin Henrick</a> and <a href="https://moodle.org/user/view.php?id=907814" target="_blank">Bas Brands</a> and is implemented in this theme. Rather than standard Moodle URLs the theme will send out clean URLs making it easier to identify the page and provide advanced reporting. More information on using this feature and its uses can be <b><a href="http://www.somerandomthoughts.com/blog/2012/04/18/ireland-uk-moodlemoot-analytics-to-the-front/" target="_blank">found here</a></b>.';
+$string['analyticsclean'] = 'Gebruik schone titels';
+$string['analyticscleandesc'] = 'Deze schitterende optie is bedacht door <a href="https://moodle.org/user/profile.php?id=281671" target="_blank">Gavin Henrick</a> en <a href="https://moodle.org/user/view.php?id=907814" target="_blank">Bas Brands</a>. In plaats van standaard Moodle pagina links te verzenden worden nette titels verzonden. Meer informatie, en waarom dit handig kan zijn kun je <b><a href="http://www.somerandomthoughts.com/blog/2012/04/18/ireland-uk-moodlemoot-analytics-to-the-front/" target="_blank">hier vinden</a></b>.';
+
+$string['analyticsadmin'] = 'Beheerders volgens';
+$string['analyticsadmindesc'] = 'Kies hier of je ook beheerders wil volgen.';
 
 /* Alerts */
-$string['alertsheading'] = 'User Alerts';
-$string['alertsheadingsub'] = 'Display important messages to your users on the frontpage';
-$string['alertsdesc'] = 'This will display an alert (or multiple) in three different styles to your users on the Moodle frontpage. Please remember to disable these when no longer needed.';
+$string['alertsheading'] = 'Notificaties';
+$string['alertsheadingsub'] = 'Toon belangrijke notificaties op de voorpagina.';
+$string['alertsdesc'] = 'Deze optie maakt het mogelijk om drie notificaties op de voorpagina te tonen. Vergeet ze niet uit te zetten als ze niet meer nodig zijn!';
 
-$string['enablealert'] = 'Enable Alert';
-$string['enablealertdesc'] = 'Enable or disable alerts';
+$string['enablealert'] = 'Notificatie  inschakelen';
+$string['enablealertdesc'] = 'Kies hier of je notificaties wil inschakelen.';
 
-$string['alert1'] = 'First Alert';
-$string['alert2'] = 'Second Alert';
-$string['alert3'] = 'Third Alert';
+$string['alert1'] = 'Notificatie 1';
+$string['alert2'] = 'Notificatie 2';
+$string['alert3'] = 'Notificatie 3';
 
-$string['alerttitle'] = 'Title';
-$string['alerttitledesc'] = 'Main title/heading for your alert';
+$string['alerttitle'] = 'Titel';
+$string['alerttitledesc'] = 'Voer hier de titel van je notificatie in.';
 
-$string['alerttype'] = 'Level';
-$string['alerttypedesc'] = 'Set the appropriate alert level/type to best inform your users';
+$string['alerttype'] = 'Type';
+$string['alerttypedesc'] = 'Stel hier het type notificatie in.';
 
-$string['alerttext'] = 'Alert Text';
-$string['alerttextdesc'] = 'What is the text you wish to display in your alert';
+$string['alerttext'] = 'Notificatie tekst';
+$string['alerttextdesc'] = 'Voer hier de notificatie tekst in.';
 
-$string['alert_info'] = 'Information';
-$string['alert_warning'] = 'Warning';
-$string['alert_general'] = 'Announcement';
+$string['alert_info'] = 'Informatief';
+$string['alert_warning'] = 'Waarschuwing';
+$string['alert_general'] = 'Aankondiging';
 
-$string['ie7message'] = '<p id="ie7message">Sorry, this site requires <strong>Internet Explorer 8</strong> or higher to display and function correctly.  Please update your browser via Windows Update, or <a href="http://windows.microsoft.com/en-au/internet-explorer/download-ie" target="_blank">download the latest version here</a>.  Alternatively, you can try installing the <a href="http://www.google.com/chromeframe" target="_blank">ChromeFrame plugin</a> which may solve some of the issues experienced in older browsers.  If using IE8 or above you may have Compatibility Mode switched on, turn this off to display this website correctly.  If you continue having problems accessing this website or the updates mentioned above, please contact your Helpdesk for further assistance.</p>';
+$string['ie7message'] = '<p id="ie7message">Sorry, deze site vereist minimaal <strong>Internet Explorer 8</strong>. Update je browser via Windows Update.  Als je IE8 of hoger gebruik staat mogelijk Compatibility Modus aan, om deze site correct weer te geven moet dit uitgeschakeld staan.</p>';
