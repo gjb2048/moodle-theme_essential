@@ -92,6 +92,9 @@ $string['headerprofilepicdesc'] = 'Indien ingeschakeld wordt de afbeelding van d
 $string['layout'] = 'Gebruik standaard cursus layout';
 $string['layoutdesc'] = 'Dit thema is ontwikkeld om beide kolommen met blokken aan één kan te tonen. Als je de Moodle standaard prettiger vind kun je deze optie inschakelen om de oude drie kolommen layout terug te krijgen.';
 
+$string['oldnavbar'] = 'Gebruik oude navigatie balk positie';
+$string['oldnavbardesc'] = 'Indien ingeschakeld wordt de navigatie balk op de oude positie getoond.';
+
 $string['frontpageblocks'] = 'Uitlijning van voorpagina blokken';
 $string['frontpageblocksdesc'] = 'Hier kun je de uitlijning van de blokken op de voorpagina kiezen.';
 
@@ -248,6 +251,8 @@ $string['readmore'] = 'Lees verder';
 
 $string['slidecolor'] = 'Slide tekstkleur';
 $string['slidecolordesc'] = 'Kies hier de kleur van de hoofdtekst op de slide.';
+$string['slideshowcolor'] = 'Slide achtergrondkleur';
+$string['slideshowcolordesc'] = 'Kies hier de kleur voor de slideshow achtergrond.';
 $string['slideheadercolor'] = 'Slide koptekstkleur';
 $string['slideheadercolordesc'] = 'Kies hier de kleur voor de koptekst.';
 $string['slidebuttoncolor'] = 'Slide buttonkleur';

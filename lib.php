@@ -396,6 +396,14 @@ function theme_essential_process_css($css, $theme) {
         $footerheadingcolor = null;
     }
     $css = theme_essential_set_footerheadingcolor($css, $footerheadingcolor);
+	
+     // Set the slide header color.
+    if (!empty($theme->settings->slideshowcolor)) {
+        $slideshowcolor = $theme->settings->slideshowcolor;
+    } else {
+        $slideshowcolor = null;
+    }
+    $css = theme_essential_set_slideshowcolor($css, $slideshowcolor);
     
      // Set the slide header color.
     if (!empty($theme->settings->slideheadercolor)) {
@@ -718,6 +726,16 @@ function theme_essential_set_footerheadingcolor($css, $footerheadingcolor) {
     $replacement = $footerheadingcolor;
     if (is_null($replacement)) {
         $replacement = '#CCCCCC';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_slideshowcolor($css, $slideshowcolor) {
+    $tag = '[[setting:slideshowcolor]]';
+    $replacement = $slideshowcolor;
+    if (is_null($replacement)) {
+        $replacement = '#30add1';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;

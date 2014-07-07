@@ -228,7 +228,7 @@ a#button:hover {
 /* @group Slideshow */
 
 .da-slider{
-	background-color: [[setting:themecolor]];
+	background-color: [[setting:slideshowcolor]];
 }
 
 .da-slide p {

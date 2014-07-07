@@ -21,7 +21,7 @@ $hasslide5image = (!empty($PAGE->theme->settings->slide5image));
 $hasslide5caption = (!empty($PAGE->theme->settings->slide5caption));
 $hasslide5url = (!empty($PAGE->theme->settings->slide5url));
 $hasslideshow = ($hasslide1||$hasslide2||$hasslide3||$hasslide4||$hasslide5);
-$slideshowvariant = $PAGE->theme->settings->slideshowvariant;
+$slideshow = $PAGE->theme->settings->slideshowvariant;
 
 /* Slide 1 settings */
 $hideonphone = $PAGE->theme->settings->hideonphone;
@@ -29,10 +29,10 @@ if ($hasslide1) {
     $slide1 = $PAGE->theme->settings->slide1;
 }
 
-if ($slideshowvariant === 1) {
+if ($slideshow === '1') {
 	$slideshowvariant = '';
 } else {
-	$slideshowvariant = 'variant2';
+	$slideshowvariant = ' variant2';
 }
 	
 if ($hasslide1image) {
@@ -108,7 +108,7 @@ if ($hasslide5url) {
 
 if ($hasslideshow && !strpos($checkuseragent, 'MSIE 7')) { // Hide slideshow for IE7
 ?>
-    <div id="da-slider" class="da-slider <?php echo $slideshowvariant.' '.$hideonphone; ?>" style="background-position: 8650% 0%;">
+    <div id="da-slider" class="da-slider<?php echo $slideshowvariant.' '.$hideonphone; ?>" style="background-position: 8650% 0%;">
 
     <?php if ($hasslide1) { ?>
         <div class="da-slide">

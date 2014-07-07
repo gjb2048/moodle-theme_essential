@@ -99,6 +99,10 @@ a {
     margin-top: 41px;
 }
 
+#page-header.oldnavbar {
+	margin-top: 0px;
+}
+
 h2.main,
 #pageheading {
     font-size: 1.4em;
@@ -324,6 +328,10 @@ ul.breadcrumb li:last-child:after {
     width: 100%;
     top: 0px;
     z-index: 4030;
+}
+
+.navbar.oldnavbar {
+	position: relative;
 }
 
 .navbar-inner{

@@ -37,6 +37,7 @@ $hasskype       = (empty($PAGE->theme->settings->skype)) ? false : $PAGE->theme-
 $hasios         = (empty($PAGE->theme->settings->ios)) ? false : $PAGE->theme->settings->ios;
 $hasandroid     = (empty($PAGE->theme->settings->android)) ? false : $PAGE->theme->settings->android;
 $haswebsite     = (empty($PAGE->theme->settings->website)) ? false : $PAGE->theme->settings->website;
+$oldnavbar      = (empty($PAGE->theme->settings->oldnavbar)) ? false : $PAGE->theme->settings->oldnavbar;
 
 $hastagline = ($SITE->summary);
 
@@ -52,26 +53,6 @@ if (!empty($_SERVER['HTTP_USER_AGENT'])) {
 }
 ?>
 
-<header role="banner" class="navbar">
-    <nav role="navigation" class="navbar-inner">
-        <div class="container-fluid">
-            <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <div class="nav-collapse collapse">
-                <?php echo $OUTPUT->custom_menu(); ?>
-                <ul class="nav pull-right">
-                    <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-                    <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-
 <?php
 // Check if IE7 browser and display message
 if (strpos($checkuseragent, 'MSIE 7')) {
@@ -80,10 +61,10 @@ if (strpos($checkuseragent, 'MSIE 7')) {
 
 <?php
 if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
-    <header id="page-header-IE7-8" class="clearfix">
+    <header id="page-header-IE7-8<?php echo ($oldnavbar)? ' oldnavbar': '';?>" class="clearfix">
 <?php
 } else { ?>
-    <header id="page-header" class="clearfix">
+    <header id="page-header<?php echo ($oldnavbar)? ' oldnavbar': '';?>" class="clearfix">
 <?php
 } ?>
 
@@ -258,4 +239,24 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
         <div id="course-header"><?php echo $courseheader; ?></div>
         <?php } ?>
     </div>
+</header>
+
+<header role="banner" class="navbar<?php echo ($oldnavbar)? ' oldnavbar': '';?>">
+    <nav role="navigation" class="navbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <div class="nav-collapse collapse">
+                <?php echo $OUTPUT->custom_menu(); ?>
+                <ul class="nav pull-right">
+                    <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
+                    <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </header>

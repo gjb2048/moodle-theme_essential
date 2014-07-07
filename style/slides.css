@@ -59,12 +59,14 @@
 }
 .da-slide h2{
 	color: #777;
+	background: #fff;
 	font-size: 46px;
-	width: 50%;
-	top: 40px;
+	max-width: 50%;
+	top: 20px;
 	white-space: nowrap;
 	font-family: "PT Sans", Arial, Helvetica, sans-serif;
 	font-weight: 700;
+	padding: 10px;
 }
 .da-slide p{
 	width: 45%;
@@ -73,17 +75,20 @@
 	font-size: 15px;
 	line-height: 26px;
 	height: 80px;
-	overflow: hidden;
+	text-overflow: ellipsis;
 	font-family: "PT Sans", Arial, Helvetica, sans-serif;
-	font-weight: bold;
 }
 .da-slide .da-img{
 	text-align: center;
 	width: 30%;
 	top: 0px;
-	height: 230px;
-	line-height: 320px;
+	max-height: 100%;
 	left: 110%; /*60%*/
+}
+
+.da-slide .da-img img {
+	margin-top: 10px;
+	max-height: 95%;
 }
 
 .da-slide .da-link{
