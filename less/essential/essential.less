@@ -88,8 +88,12 @@ a {
 /* @group Header */
 
 #page-header {
-    padding: 12px 0px 0px 0px;
+    margin-top: 41px;
     border-bottom: 1px solid #DDD;
+}
+
+#page-header.oldnavbar {
+	margin-top: 0px;
 }
 
 h2.main,
@@ -98,6 +102,10 @@ h2.main,
     line-height: 35px;
     color: #777;
     border-bottom: 1px solid #e1e1e1;
+}
+
+#page-header.oldnavbar {
+	margin-top: 0px;
 }
 
 a.logo {
@@ -299,9 +307,15 @@ ul.breadcrumb li:last-child:after {
 }
 
 .navbar {
-    margin-bottom: 0px;
+	margin-bottom: 0px;
     background-image: none !important;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 4030;
 }
+
+
 
 .navbar-inner{
     border-radius: 0px;
