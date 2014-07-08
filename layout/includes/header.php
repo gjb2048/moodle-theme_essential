@@ -61,10 +61,10 @@ if (strpos($checkuseragent, 'MSIE 7')) {
 
 <?php
 if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
-    <header id="page-header-IE7-8<?php echo ($oldnavbar)? ' oldnavbar': '';?>" class="clearfix">
+    <header id="page-header-IE7-8" class="clearfix <?php echo ($oldnavbar)? ' oldnavbar': '';?>">
 <?php
 } else { ?>
-    <header id="page-header<?php echo ($oldnavbar)? ' oldnavbar': '';?>" class="clearfix">
+    <header id="page-header" class="clearfix<?php echo ($oldnavbar)? ' oldnavbar': '';?>">
 <?php
 } ?>
 
