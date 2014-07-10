@@ -116,6 +116,15 @@ defined('MOODLE_INTERNAL') || die;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+	
+	// New or old navbar.
+    $name = 'theme_essential/oldnavbar';
+    $title = get_string('oldnavbar', 'theme_essential');
+    $description = get_string('oldnavbardesc', 'theme_essential');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
     // Use max width for side regions.
     $name = 'theme_essential/sideregionsmaxwidth';
@@ -444,6 +453,16 @@ defined('MOODLE_INTERNAL') || die;
     $information = get_string('slidecolorsdesc', 'theme_essential');
     $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
+	
+	// Slide Show colour setting.
+    $name = 'theme_essential/slideshowcolor';
+    $title = get_string('slideshowcolor', 'theme_essential');
+    $description = get_string('slideshowcolordesc', 'theme_essential');
+    $default = '#30add1';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
     
     // Slide Header colour setting.
     $name = 'theme_essential/slideheadercolor';
@@ -459,7 +478,7 @@ defined('MOODLE_INTERNAL') || die;
     $name = 'theme_essential/slidecolor';
     $title = get_string('slidecolor', 'theme_essential');
     $description = get_string('slidecolordesc', 'theme_essential');
-    $default = '#888';
+    $default = '#ffffff';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');

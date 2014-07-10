@@ -92,6 +92,9 @@ $string['headerprofilepicdesc'] = 'If checked, displays the user\'s profile pict
 $string['layout'] = 'Use a standard course layout';
 $string['layoutdesc'] = 'This theme is designed to put both block columns on the side.  If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
 
+$string['oldnavbar'] = 'Use the old navbar position';
+$string['oldnavbardesc'] = 'Enable this option to use the old navbar position.';
+
 $string['frontpageblocks'] = 'Frontpage blocks alignment';
 $string['frontpageblocksdesc'] = 'Here you can determine if the blocks on the frontpage align to the left or the right.';
 
@@ -249,6 +252,8 @@ $string['readmore'] = 'Read More';
 
 $string['slidecolor'] = 'Slide Text Colour';
 $string['slidecolordesc'] = 'What colour should the main side text be.';
+$string['slideshowcolor'] = 'Slide Background Colour';
+$string['slideshowcolordesc'] = 'What colour should the slideshow background be';
 $string['slideheadercolor'] = 'Slide Heading Colour';
 $string['slideheadercolordesc'] = 'What colour should the slide header be';
 $string['slidebuttoncolor'] = 'Slide Button Colour';

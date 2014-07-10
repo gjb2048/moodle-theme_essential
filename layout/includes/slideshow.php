@@ -21,7 +21,7 @@ $hasslide5image = (!empty($PAGE->theme->settings->slide5image));
 $hasslide5caption = (!empty($PAGE->theme->settings->slide5caption));
 $hasslide5url = (!empty($PAGE->theme->settings->slide5url));
 $hasslideshow = ($hasslide1||$hasslide2||$hasslide3||$hasslide4||$hasslide5);
-$slideshowvariant = $PAGE->theme->settings->slideshowvariant;
+$slideshow = $PAGE->theme->settings->slideshowvariant;
 
 /* Slide 1 settings */
 $hideonphone = $PAGE->theme->settings->hideonphone;
@@ -29,10 +29,10 @@ if ($hasslide1) {
     $slide1 = $PAGE->theme->settings->slide1;
 }
 
-if ($slideshowvariant = 1) {
+if ($slideshow === '1') {
 	$slideshowvariant = '';
 } else {
-	$slideshowvariant = 'variant2';
+	$slideshowvariant = ' variant2';
 }
 	
 if ($hasslide1image) {
@@ -108,83 +108,103 @@ if ($hasslide5url) {
 
 if ($hasslideshow && !strpos($checkuseragent, 'MSIE 7')) { // Hide slideshow for IE7
 ?>
-    <div id="da-slider" class="da-slider <?php echo $slideshowvariant.' '.$hideonphone; ?>" style="background-position: 8650% 0%;">
+    <div id="da-slider" class="da-slider<?php echo $slideshowvariant.' '.$hideonphone; ?>" style="background-position: 8650% 0%;">
 
     <?php if ($hasslide1) { ?>
         <div class="da-slide">
-            <h2><?php echo $slide1 ?></h2>
-            <?php if ($hasslide1caption) { ?>
-                <p><?php echo $slide1caption ?></p>
-            <?php } ?>
-            <?php if ($hasslide1url) { ?>
-                <a href="<?php echo $slide1url ?>" target= "<?php echo $slide1target ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
-            <?php } ?>
-            <?php if ($hasslide1image) { ?>
-            <div class="da-img"><img src="<?php echo $slide1image ?>" alt="<?php echo $slide1 ?>"></div>
-            <?php } ?>
+			<div class="da-slide-text">
+				<h2><?php echo $slide1 ?></h2>
+				<?php if ($hasslide1caption) { ?>
+					<p><?php echo $slide1caption ?></p>
+				<?php } ?>
+				<?php if ($hasslide1url) { ?>
+					<a href="<?php echo $slide1url ?>" target= "<?php echo $slide1target ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
+				<?php } ?>
+			</div>
+            <?php if ($hasslide1image && $slideshow === '1') { ?>
+				<div class="da-img"><img src="<?php echo $slide1image ?>" alt="<?php echo $slide1 ?>"></div>
+            <?php } else { ?>
+				<div class="da-img" style="background-image: url(<?php echo $slide1image ?>);"></div>
+			<?php } ?>
         </div>
     <?php } ?>
     
 
     <?php if ($hasslide2) { ?>
         <div class="da-slide">
-            <h2><?php echo $slide2 ?></h2>
-            <?php if ($hasslide2caption) { ?>
-                <p><?php echo $slide2caption ?></p>
-            <?php } ?>
-            <?php if ($hasslide2url) { ?>
-                <a href="<?php echo $slide2url ?>" target= "<?php echo $slide2target ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
-            <?php } ?>
-            <?php if ($hasslide2image) { ?>
-            <div class="da-img"><img src="<?php echo $slide2image ?>" alt="<?php echo $slide2 ?>"></div>
-            <?php } ?>
+			<div class="da-slide-text">
+				<h2><?php echo $slide2 ?></h2>
+				<?php if ($hasslide2caption) { ?>
+					<p><?php echo $slide2caption ?></p>
+				<?php } ?>
+				<?php if ($hasslide2url) { ?>
+					<a href="<?php echo $slide2url ?>" target= "<?php echo $slide2target ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
+				<?php } ?>
+			</div>
+            <?php if ($hasslide2image && $slideshow === '1') { ?>
+				<div class="da-img"><img src="<?php echo $slide2image ?>" alt="<?php echo $slide2 ?>"></div>
+            <?php } else { ?>
+				<div class="da-img" style="background-image: url(<?php echo $slide2image ?>);"></div>
+			<?php } ?>
         </div>
     <?php } ?>
     
 
     <?php if ($hasslide3) { ?>
         <div class="da-slide">
-            <h2><?php echo $slide3 ?></h2>
-            <?php if ($hasslide3caption) { ?>
-                <p><?php echo $slide3caption ?></p>
-            <?php } ?>
-            <?php if ($hasslide3url) { ?>
-                <a href="<?php echo $slide3url ?>" target= "<?php echo $slide3target ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
-            <?php } ?>
-            <?php if ($hasslide3image) { ?>
-            <div class="da-img"><img src="<?php echo $slide3image ?>" alt="<?php echo $slide3 ?>"></div>
-            <?php } ?>
+			<div class="da-slide-text">
+				<h2><?php echo $slide3 ?></h2>
+				<?php if ($hasslide3caption) { ?>
+					<p><?php echo $slide3caption ?></p>
+				<?php } ?>
+				<?php if ($hasslide3url) { ?>
+					<a href="<?php echo $slide3url ?>" target= "<?php echo $slide3target ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
+				<?php } ?>
+			</div>
+            <?php if ($hasslide3image && $slideshow === '1') { ?>
+				<div class="da-img"><img src="<?php echo $slide3image ?>" alt="<?php echo $slide3 ?>"></div>
+            <?php } else { ?>
+				<div class="da-img" style="background-image: url(<?php echo $slide3image ?>);"></div>
+			<?php } ?>
         </div>
     <?php } ?>
     
 
     <?php if ($hasslide4) { ?>
         <div class="da-slide">
-            <h2><?php echo $slide4 ?></h2>
-            <?php if ($hasslide4caption) { ?>
-                <p><?php echo $slide4caption ?></p>
-            <?php } ?>
-            <?php if ($hasslide4url) { ?>
-                <a href="<?php echo $slide4url ?>" target= "<?php echo $slide4target ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
-            <?php } ?>
-            <?php if ($hasslide4image) { ?>
-            <div class="da-img"><img src="<?php echo $slide4image ?>" alt="<?php echo $slide4 ?>"></div>
-            <?php } ?>
+			<div class="da-slide-text">
+				<h2><?php echo $slide4 ?></h2>
+				<?php if ($hasslide4caption) { ?>
+					<p><?php echo $slide4caption ?></p>
+				<?php } ?>
+				<?php if ($hasslide4url) { ?>
+					<a href="<?php echo $slide4url ?>" target= "<?php echo $slide4target ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
+				<?php } ?>
+			</div>
+            <?php if ($hasslide4image && $slideshow === '1') { ?>
+				<div class="da-img"><img src="<?php echo $slide4image ?>" alt="<?php echo $slide4 ?>"></div>
+            <?php } else { ?>
+				<div class="da-img" style="background-image: url(<?php echo $slide4image ?>);"></div>
+			<?php } ?>
         </div>
     <?php } ?>
 	
     <?php if ($hasslide5) { ?>
         <div class="da-slide">
-            <h2><?php echo $slide5 ?></h2>
-            <?php if ($hasslide5caption) { ?>
-                <p><?php echo $slide5caption ?></p>
-            <?php } ?>
-            <?php if ($hasslide5url) { ?>
-                <a href="<?php echo $slide5url ?>" target= "<?php echo $slide5target ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
-            <?php } ?>
-            <?php if ($hasslide5image) { ?>
-            <div class="da-img"><img src="<?php echo $slide5image ?>" alt="<?php echo $slide5 ?>"></div>
-            <?php } ?>
+			<div class="da-slide-text">
+				<h2><?php echo $slide5 ?></h2>
+				<?php if ($hasslide5caption) { ?>
+					<p><?php echo $slide5caption ?></p>
+				<?php } ?>
+				<?php if ($hasslide5url) { ?>
+					<a href="<?php echo $slide5url ?>" target= "<?php echo $slide5target ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
+				<?php } ?>
+			</div>
+            <?php if ($hasslide5image && $slideshow === '1') { ?>
+				<div class="da-img"><img src="<?php echo $slide5image ?>" alt="<?php echo $slide5 ?>"></div>
+            <?php } else { ?>
+				<div class="da-img" style="background-image: url(<?php echo $slide5image ?>);"></div>
+			<?php } ?>
         </div>
     <?php } ?>
 
