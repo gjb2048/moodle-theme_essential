@@ -9,13 +9,13 @@
 body{
     line-height: 25px;
     text-shadow: none !important;
-    color: ~"[[setting:themecolor]]";
     padding-top: 0px;
+	margin: 0px !important;
+	padding: 0px !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal !important;
-    color: ~"[[setting:themecolor]]";
 }
 
 h3 {
@@ -514,10 +514,6 @@ letter-spacing:0.1em;
 
 .side-pre {
     border: 1px solid #333;
-}
-
-.container-fluid {
-    max-width: [[setting:pagewidth]];
 }
 
 #region-main {
@@ -1849,6 +1845,14 @@ table.calendarmonth.calendartable {
         width: calc(100% - 2.5641% - 285px);
     }
 }
+
+@media (max-width: 767px) {
+	#page {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+
 
 /* @group Print Styling */
 

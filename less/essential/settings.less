@@ -9,8 +9,17 @@
 body{
     border-top:3px solid ~"[[setting:themecolor]]";
     background: white url(~"[[setting:pagebackground]]") repeat;
+	color: ~"[[setting:themecolor]]";
     font-size: ~"[[setting:bodysize]]";
     font-weight: ~"[[setting:bodyweight]]";
+}
+
+.container-fluid {
+    max-width: ~"[[setting:pagewidth]]";
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: ~"[[setting:themecolor]]";
 }
 
 a, a:visited{
@@ -217,7 +226,7 @@ a#button:hover {
 
 /* @group Slideshow */
 
-.da-slider{
+.da-slider {
     background-color: ~"[[setting:slideshowcolor]]";
 }
 
