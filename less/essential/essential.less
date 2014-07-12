@@ -12,6 +12,9 @@ body{
     padding-top: 0px;
 	margin: 0px !important;
 	padding: 0px !important;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -47,6 +50,8 @@ a {
 
 #page {
     padding-top: 10px;
+	width: 100%;
+	flex: 1;
 }
 
 /* @group Font Awesome */
@@ -304,10 +309,10 @@ ul.breadcrumb li:last-child:after {
 
 .navbar {
 	margin-bottom: 0px;
-    background-image: none !important;
     position: fixed;
     width: 100%;
     top: 0px;
+	background-image: none;
     z-index: 4030;
 }
 
@@ -316,9 +321,10 @@ ul.breadcrumb li:last-child:after {
 }
 
 .navbar-inner{
-    border-radius: 0px;
+	border: none;
     line-height: 0px;
     background-image: none;
+	box-shadow: none;
 }
 
 .navbar .brand {
@@ -905,7 +911,7 @@ table#greyboxleft h2 {
 /* @group Login Block */
 
 .block_login .header .title h2:before {
-    content:"\f007"  ;
+    content:"\f007";
     font-family: FontAwesome;
     float: left;
 }
@@ -1253,10 +1259,11 @@ table#greyboxleft h2 {
 
 #page-footer {
     margin-top: 10px;
-    margin-bottom: 15px;
+	padding: 0px;
+	border: 0;
     font-size: 1em;
-    padding-top: 10px;
     text-align: left;
+	width: 100%;
 }
 
 .helplink {
@@ -1318,21 +1325,6 @@ table#greyboxleft h2 {
 #greyboxright ul li {
     padding: 4px 0px;
     padding-left: 0px;
-}
-
-#page-footer .block_html ul li:before,
-#greyboxright ul li:before {
-    content:"\f105";
-    display: inline-block;
-    font-family: FontAwesome;
-    font-size: .8em;
-    margin-right: .5em;
-    color: #fff;
-    width: 8px;
-    height: 13px;
-    padding-left: 5px;
-    line-height: 14px;
-    border-radius: 250px;
 }
 
 .footerlinks {
@@ -1824,9 +1816,7 @@ table.calendarmonth.calendartable {
     }
 
     .two-column.side-regions-with-max-width #region-main {
-        width: -moz-calc(97.4359% - 285px);
-        width: -webkit-calc(97.4359% - 285px);
-        width: calc(97.4359% - 285px);
+        width: ~"calc(97% - 285px)";
     }
 }
 
@@ -1840,9 +1830,7 @@ table.calendarmonth.calendartable {
     .three-column.side-regions-with-max-width.empty-region-side-post.used-region-side-pre #region-main,
     .three-column.side-regions-with-max-width #region-bs-main-and-pre,
     .three-column.side-regions-with-max-width #region-main {
-        width: -moz-calc(100% - 2.5641% - 285px);
-        width: -webkit-calc(100% - 2.5641% - 285px);
-        width: calc(100% - 2.5641% - 285px);
+		width: ~"calc(97% - 285px)";
     }
 }
 

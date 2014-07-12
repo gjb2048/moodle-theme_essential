@@ -205,6 +205,7 @@
             'chapter' => 'file',
             'docs' => 'question-sign',
             'generate' => 'gift',
+			'i/dragdrop' => 'arrows',
             'i/backup' => 'cloud-download',
             'i/checkpermissions' => 'user',
             'i/edit' => 'pencil',

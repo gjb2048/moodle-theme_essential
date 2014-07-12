@@ -46,19 +46,19 @@ $THEME->plugins_exclude_sheets = array(
 );
 
 $THEME->layouts = array(
+    // Most backwards compatible layout without the blocks - this is the layout used by default.
+    'base' => array(
+        'file' => 'columns1.php',
+        'regions' => array(),
+        'defaultregion' => '',
+		'options' => array('noblocks'=>true),
+    ),
     // Front page.
     'frontpage' => array(
         'file' => 'frontpage.php',
         'regions' => array('side-pre', 'home-left', 'home-middle', 'home-right', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
         'defaultregion' => 'hidden-dock',
         'options' => array('nonavbar'=>true),
-    ),
-    // Most backwards compatible layout without the blocks - this is the layout used by default.
-    'base' => array(
-        'file' => 'columns1.php',
-        'regions' => array('footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'footer-right',
-		'options' => array('noblocks'=>true),
     ),
     // Standard layout with blocks, this is recommended for most pages with general information.
     'standard' => array(
