@@ -131,7 +131,6 @@ $string['display'] = 'Mostrar';
 $string['dontdisplay'] = 'No Mostrar';
 $string['readmore'] = 'Read More';
 
-$string['slideshowTitle'] = 'Carrusel de diapositivas';
 $string['slide1'] = 'Diapositiva Uno: Título';
 $string['slide1desc'] = 'Coloque un título descriptivo a su diapositiva';
 $string['slide1image'] = 'Diapositiva Uno: Imagen';

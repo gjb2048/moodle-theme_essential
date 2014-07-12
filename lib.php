@@ -389,14 +389,14 @@ function theme_essential_process_css($css, $theme) {
     $css = theme_essential_set_footerhovercolor($css, $footerhovercolor);
 
 
-// Set the footer heading color.
+    // Set the footer heading color.
     if (!empty($theme->settings->footerheadingcolor)) {
         $footerheadingcolor = $theme->settings->footerheadingcolor;
     } else {
         $footerheadingcolor = null;
     }
     $css = theme_essential_set_footerheadingcolor($css, $footerheadingcolor);
-	
+
      // Set the slide header color.
     if (!empty($theme->settings->slideshowcolor)) {
         $slideshowcolor = $theme->settings->slideshowcolor;
@@ -428,6 +428,14 @@ function theme_essential_process_css($css, $theme) {
         $slidebuttoncolor = null;
     }
     $css = theme_essential_set_slidebuttoncolor($css, $slidebuttoncolor);
+
+     // Set the slide button hover color.
+    if (!empty($theme->settings->slidebuttonhovercolor)) {
+        $slidebuttonhovercolor = $theme->settings->slidebuttonhovercolor;
+    } else {
+        $slidebuttonhovercolor = null;
+    }
+    $css = theme_essential_set_slidebuttonhovercolor($css, $slidebuttonhovercolor);
 
     // Set theme alternative colors.
     $defaultalternativethemecolors = array('#a430d1', '#d15430', '#5dd130');
@@ -752,6 +760,16 @@ function theme_essential_set_slidebuttoncolor($css, $slidebuttoncolor) {
     return $css;
 }
 
+function theme_essential_set_slidebuttonhovercolor($css, $slidebuttonhovercolor) {
+    $tag = '[[setting:slidebuttonhovercolor]]';
+    $replacement = $slidebuttonhovercolor;
+    if (is_null($replacement)) {
+        $replacement = '#45b5d6';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
 function theme_essential_set_footersepcolor($css, $footersepcolor) {
     $tag = '[[setting:footersepcolor]]';
     $replacement = $footersepcolor;
@@ -806,10 +824,29 @@ function theme_essential_set_marketingimage($css, $marketingimage, $setting) {
     return $css;
 }
 
+function theme_essential_showslider($settings) {
+    $noslides = (empty($settings->numberofslides)) ? false : $settings->numberofslides;
+    if ($noslides) {
+        $devicetype = core_useragent::get_device_type(); // In moodlelib.php.
+        if ($devicetype == "mobile") {
+            $mobile = (empty($settings->hideonphone)) ? false : $settings->hideonphone;
+            if ($mobile == 'hidden-phone') {
+                $noslides = false;
+            }
+        } else if ($devicetype == "tablet") {
+            $tablet = (empty($settings->hideontablet)) ? false : $settings->hideontablet;
+            if ($tablet == 'hidden-tablet') {
+                $noslides = false;
+            }
+        }
+    }
+
+    return $noslides;
+}
+
+
 function theme_essential_page_init(moodle_page $page) {
     $page->requires->jquery();
-    $page->requires->jquery_plugin('cslider', 'theme_essential');
-    $page->requires->jquery_plugin('custom', 'theme_essential'); 
     $page->requires->jquery_plugin('alert', 'theme_essential');
     $page->requires->jquery_plugin('carousel', 'theme_essential');
     $page->requires->jquery_plugin('collapse', 'theme_essential');
@@ -819,4 +856,5 @@ function theme_essential_page_init(moodle_page $page) {
     $page->requires->jquery_plugin('tooltip', 'theme_essential');
     $page->requires->jquery_plugin('transition', 'theme_essential');
     $page->requires->jquery_plugin('modernizr', 'theme_essential');  
+    $page->requires->jquery_plugin('custom', 'theme_essential'); 
 }

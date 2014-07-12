@@ -132,7 +132,6 @@ $string['display'] = 'Anzeigen';
 $string['dontdisplay'] = 'Nicht anzeigen';
 $string['readmore'] = 'Mehr erfahren...';
 
-$string['slideshowTitle'] = 'Slideshow';
 $string['slide1'] = '&uuml;berschrift für das Slideshow Bild 1';
 $string['slide1desc'] = 'Geben Sie eine aussagekr&auml;ftigen Titel für Ihr Bild an';
 $string['slide1image'] = 'Slideshow Bild 1';

@@ -219,7 +219,6 @@ $string['slideshow1'] = 'Маленькое изображение справа'
 $string['slideshow2'] = 'Большое фоновое изображение';
 $string['slideshow3'] = 'Третий дизайн';
 
-$string['slideshowTitle'] = 'Слайд-шоу';
 $string['slideinfodesc'] = 'Введите настройки для Ваших слайдов.';
 $string['slide1'] = 'Слайд первый';
 $string['slide2'] = 'Слайд второй';

@@ -111,24 +111,24 @@ $string['sideregionsmaxwidthdesc'] = 'This theme use fluid layout. In wide scree
 $string['visibleadminonly'] = 'Blocks moved into the area below will only be seen by admins';
 $string['backtotop'] = 'Back to top';
 
-$string['nextsection'] = 'Next Section';
-$string['previoussection'] = 'Previous Section';
+$string['nextsection'] = 'Next section';
+$string['previoussection'] = 'Previous section';
 
-$string['pagewidth'] = 'Set Page Width';
+$string['pagewidth'] = 'Set page width';
 $string['pagewidthdesc'] = 'Choose from the list of available page widths. for your site';
-$string['fixedwidthwide'] = 'Fixed Width - Wide';
-$string['fixedwidthnarrow'] = 'Fixed Width - Narrow';
-$string['variablewidth'] = 'Variable Width';
+$string['fixedwidthwide'] = 'Fixed width - wide';
+$string['fixedwidthnarrow'] = 'Fixed width - narrow';
+$string['variablewidth'] = 'Variable width';
 
-$string['alwaysdisplay'] = 'Always Show';
+$string['alwaysdisplay'] = 'Always show';
 $string['displaybeforelogin'] = 'Show before login only';
 $string['displayafterlogin'] = 'Show after login only';
-$string['dontdisplay'] = 'Never Show';
+$string['dontdisplay'] = 'Never show';
 
 /* CustomMenu */
 $string['custommenuheading'] = 'Custom Menu';
-$string['custommenuheadingsub'] = 'Add additional functionality to your custommenu.';
-$string['custommenudesc'] = 'Settings here allow you to add new dynamic functionality to the custommenu (also refered to as Dropdown menu)';
+$string['custommenuheadingsub'] = 'Add additional functionality to your custom menu.';
+$string['custommenudesc'] = 'Settings here allow you to add new dynamic functionality to the custom menu (also refereed to as the Dropdown menu)';
 
 $string['mydashboardinfo'] = 'Custom User Dashboard';
 $string['mydashboardinfodesc'] = 'Displays a list of common functions used by users.';
@@ -179,9 +179,6 @@ $string['region-hidden-dock'] = 'Hidden from users';
 $string['colorheading'] = 'Colour Settings';
 $string['colorheadingsub'] = 'Set the colours used in your theme';
 $string['colordesc'] = 'Here you can find various settings to change many of the colours found in this theme.';
-
-$string['slidecolors'] = 'Slideshow Colours';
-$string['slidecolorsdesc'] = 'Change the colours on the slideshow';
 
 $string['footercolors'] = 'Footer Colours';
 $string['footercolorsdesc'] = 'Change the colours on the page footers';
@@ -244,50 +241,46 @@ $string['frontpagemiddleblocksdesc'] = 'If enabled this will display 3 new block
 /* Slideshow */
 $string['slideshowheading'] = 'Frontpage Slideshow';
 $string['slideshowheadingsub'] = 'Dynamic Slideshow for the frontpage';
-$string['slideshowdesc'] = 'This creates a dynamic slideshow of up to 4 slides for you to promote important elements of your site.';
+$string['slideshowdesc'] = 'This creates a dynamic slideshow of up to sixteen slides for you to promote important elements of your site.';
+
+$string['numberofslides'] = 'Number of slides';
+$string['numberofslides_desc'] = 'Number of slides on the slider.';
 
 $string['toggleslideshow'] = 'Toggle Slideshow display';
-$string['toggleslideshowdesc'] = 'Choose if you wish to hide or show the Slideshow.';
+$string['toggleslideshowdesc'] = 'Choose if you wish to hide or show the slideshow.';
 
-$string['hideonphone'] = 'Slideshow on Mobiles';
+$string['hideonphone'] = 'Slideshow on mobiles';
 $string['hideonphonedesc'] = 'Choose if you wish to have the slideshow shown on mobiles or not';
+$string['hideontablet'] = 'Slideshow on tablets';
+$string['hideontabletdesc'] = 'Choose if you wish to have the slideshow shown on tablets or not';
 $string['readmore'] = 'Read More';
 
+$string['slideinterval'] = 'Slide interval';
+$string['slideintervaldesc'] = 'Slide transition interval in milliseconds.';
 $string['slidecolor'] = 'Slide Text Colour';
-$string['slidecolordesc'] = 'What colour should the main side text be.';
-$string['slideshowcolor'] = 'Slide Background Colour';
-$string['slideshowcolordesc'] = 'What colour should the slideshow background be';
-$string['slideheadercolor'] = 'Slide Heading Colour';
-$string['slideheadercolordesc'] = 'What colour should the slide header be';
-$string['slidebuttoncolor'] = 'Slide Button Colour';
-$string['slidebuttoncolordesc'] = 'What colour should the slide "read more" button be';
+$string['slidecolordesc'] = 'What colour the side caption should be.';
+$string['slidebuttoncolor'] = 'Slide button colour';
+$string['slidebuttoncolordesc'] = 'What colour the slide navigation button should be';
+$string['slidebuttonhovercolor'] = 'Slide button colour';
+$string['slidebuttonhovercolordesc'] = 'What colour the slide navigation button hover should be';
 
-$string['slideshowvariant'] = 'Slideshow Design';
-$string['slideshowvariantdesc'] = 'Choose the style of slideshow you would like to display';
-$string['slideshow1'] = 'Small Image on Right';
-$string['slideshow2'] = 'Large Background Image';
+$string['slideno'] = 'Slide {$a->slide}';
+$string['slidenodesc'] = 'Enter the settings for slide {$a->slide}.';
 
-$string['slideshowTitle'] = 'Slideshow';
-$string['slideinfodesc'] = 'Enter the settings for your slide.';
-$string['slide1'] = 'Slide One';
-$string['slide2'] = 'Slide Two';
-$string['slide3'] = 'Slide Three';
-$string['slide4'] = 'Slide Four';
-$string['slide5'] = 'Slide Five';
-
-$string['slidetitle'] = 'Slide Title';
+$string['slidetitle'] = 'Slide title';
 $string['slidetitledesc'] = 'Enter a descriptive title for your slide';
-$string['slideimage'] = 'Slide Image';
-$string['slideimagedesc'] = 'Image works best if it is transparent. (Image size should be 256px x 256px for Small Image, and 300px x 1200px for Background Image)';
-$string['slidecaption'] = 'Slide Caption';
-$string['slidecaptiondesc'] = 'Enter the caption text to use for the first slide';
-$string['slideurl'] = 'Slide Link';
-$string['slideurldesc'] = 'Enter the target destination of the first slide\'s image link';
-$string['slideurltarget'] = 'Link Target';
+$string['noslidetitle'] = 'No title for slide {$a->slide}';
+$string['slideimage'] = 'Slide image';
+$string['slideimagedesc'] = 'Image works best if it is transparent.';
+$string['slidecaption'] = 'Slide caption';
+$string['slidecaptiondesc'] = 'Enter the caption text to use for the slide';
+$string['slideurl'] = 'Slide link';
+$string['slideurldesc'] = 'Enter the target destination of the slide\'s image link';
+$string['slideurltarget'] = 'Link target';
 $string['slideurltargetdesc'] = 'Choose how the link should be opened';
-$string['slideurltargetself'] = 'Current Page';
-$string['slideurltargetnew'] = 'New Page';
-$string['slideurltargetparent'] = 'Parent Frame';
+$string['slideurltargetself'] = 'Current page';
+$string['slideurltargetnew'] = 'New page';
+$string['slideurltargetparent'] = 'Parent frame';
 
 /* Marketing Spots */
 $string['marketingheading'] = 'Marketing Spots';
