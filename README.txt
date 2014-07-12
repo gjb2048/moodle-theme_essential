@@ -15,7 +15,12 @@ Cool things to know about the theme.
  - The entire colour scheme can be modified with theme settings (like on [Rocket](https://moodle.org/plugins/view.php?plugin=theme_rocket))
  - The homepage main area is just a label. The theme will ship with custom classes that you can set for tables and links to modify their formatting. No knowledge of code is needed as you can use the text editor to do this. Documentation will be provided outlining what the additional classes are.
 
+New in 2.7.3
+========================
+- FIX: Fixed slide show by replacing with Bootstrap 2.3.2 one.  Issue #18.
+
 New in 2.7.2
+========================
 - FIX: Slideshow CSS fixes
 - FIX: Image alignment on slideshow
 - NEW: Select slideshow background color
@@ -137,3 +142,12 @@ Documentation
 =============
 As always, documentation is a work in progress. Available documentation is available at http://docs.moodle.org/25/en/Essential_theme
 If you have questions you can post them in the issue tracker at https://github.com/DBezemer/moodle-theme_essential/issues
+
+Maintained by
+========================
+David Bezemer
+Moodle profile: https://moodle.org/user/profile.php?id=1416592
+
+G J Barnard MSc. BSc(Hons)(Sndw). MBCS. CEng. CITP. PGCE.
+Moodle profile: http://moodle.org/user/profile.php?id=442195
+Web profile   : http://about.me/gjbarnard
