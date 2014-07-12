@@ -130,7 +130,6 @@ $string['display'] = 'Show';
 $string['dontdisplay'] = 'Do not show';
 $string['readmore'] = 'Read More';
 
-$string['slideshowTitle'] = 'Thy Slideshow';
 $string['slide1'] = 'Slide One: Title';
 $string['slide1desc'] = 'Enter a descriptive title for yee slide.';
 $string['slide1image'] = 'Slide One: Map';
