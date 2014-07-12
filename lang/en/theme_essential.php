@@ -188,9 +188,12 @@ $string['footercolorsdesc'] = 'Change the colours on the page footers';
 
 $string['themecolor'] = 'Theme Colour';
 $string['themecolordesc'] = 'What colour should your theme be.  This will change multiple components to produce the colour you wish across the moodle site';
-$string['themehovercolor'] = 'Theme Hover Colour';
 
+$string['themeurlcolor'] = 'Link Colour';
+$string['themeurlcolordesc'] = 'Set the colour for your linked text.';
+$string['themehovercolor'] = 'Theme Hover Colour';
 $string['themehovercolordesc'] = 'What colour should your theme hovers be. This is used for links, menus, etc';
+
 $string['footercolor'] = 'Footer Background Colour';
 $string['footercolordesc'] = 'Set what colour the background of the Footer box should be.';
 $string['footersepcolor'] = 'Footer Separator Colour';
@@ -364,14 +367,21 @@ $string['categoryiconheading'] = 'Category Icons';
 $string['categoryiconheadingsub'] = 'Use icons to represent your categories';
 $string['categoryicondesc'] = 'If enabled this will allow you to set icons for each category of course.';
 
+$string['enablecategoryicon'] = 'Enable Category Icons';
+$string['enablecategoryicondesc'] = 'If enabled you will be able to select category icons after clicking "Save changes".';
+
 $string['usecategoryicon'] = 'Enable Category Icons';
 $string['usecategoryicondesc'] = 'Use custom icons for categories';
 
 $string['defaultcategoryicon'] = 'Default Category Icons';
 $string['defaultcategoryicondesc'] = 'Set a default category icon';
 
+$string['enablecustomcategoryicon'] = 'Enable Custom Category Icons';
+$string['enablecustomcategoryicondesc'] = 'If enabled below this section you will see each category with a customizable option behind each category, please save after enabling and disabling this option.';
+
+
 $string['categoryiconinfo'] = 'Set Custom Category Icons';
-$string['categoryiconinfodesc'] = 'Each icon is set by "category ID". You get these by looking at the URL or each category.';
+$string['categoryiconinfodesc'] = 'Enter the name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "icon-".';
 
 /* Mobile Apps */
 $string['mobileappsheading'] = 'Mobile Apps';

@@ -473,25 +473,6 @@ function theme_essential_process_css($css, $theme) {
     $pagebackground = $theme->setting_file_url($setting, $setting);
     $css = theme_essential_set_pagebackground($css, $pagebackground, $setting);
     
-    // Set the Defaut Category Icon.
-    if (!empty($theme->settings->defaultcategoryicon)) {
-        $defaultcategoryicon = $theme->settings->defaultcategoryicon;
-    } else {
-        $defaultcategoryicon = null;
-    }
-    $css = theme_essential_set_defaultcategoryicon($css, $defaultcategoryicon);
-    
-    // Set Category Icons.
-    foreach (range(1, 20) as $categorynumber) {
-        $categoryicon = $defaultcategoryicon;
-        if (!empty($theme->settings->usecategoryicon)) {
-            if (!empty($theme->settings->{'categoryicon' . $categorynumber})) {
-                $categoryicon = $theme->settings->{'categoryicon' . $categorynumber};
-            }
-        }
-        $css = theme_essential_set_categoryicon($css, $categoryicon, $categorynumber);
-    }
-    
     // Set Slide Images.
     $setting = 'slide1image';
     if (!empty($theme->settings->slide1image)) {
@@ -821,27 +802,6 @@ function theme_essential_set_marketingheight($css, $marketingheight) {
 function theme_essential_set_marketingimage($css, $marketingimage, $setting) {
     $tag = '[[setting:'.$setting.']]';
     $replacement = $marketingimage;
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function theme_essential_set_defaultcategoryicon($css, $defaultcategoryicon) {
-    $tag = '[[setting:defaultcategoryicon]]';
-    $replacement = $defaultcategoryicon;
-    if (is_null($replacement)) {
-        $replacement = 'f07c';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function theme_essential_set_categoryicon($css, $categoryicon, $categorynumber) {
-    $tag = '[[setting:categoryicon'. $categorynumber.']]';
-    $replacement = $categoryicon;
-    
-    if (is_null($replacement)) {
-        $replacement = $defaultcategoryicon;
-    }
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }

@@ -106,112 +106,110 @@ if ($hasslide5url) {
 	$slide5target = $PAGE->theme->settings->slide5target;
 }
 
-if ($hasslideshow && !strpos($checkuseragent, 'MSIE 7')) { // Hide slideshow for IE7
 ?>
-    <div id="da-slider" class="da-slider<?php echo $slideshowvariant.' '.$hideonphone; ?>" style="background-position: 8650% 0%;">
+<div id="da-slider" class="da-slider<?php echo $slideshowvariant.' '.$hideonphone; ?>" style="background-position: 8650% 0%;">
 
-    <?php if ($hasslide1) { ?>
-        <div class="da-slide">
-			<div class="da-slide-text">
-				<h2><?php echo $slide1 ?></h2>
-				<?php if ($hasslide1caption) { ?>
-					<p><?php echo $slide1caption ?></p>
-				<?php } ?>
-				<?php if ($hasslide1url) { ?>
-					<a href="<?php echo $slide1url ?>" target= "<?php echo $slide1target ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
-				<?php } ?>
-			</div>
-            <?php if ($hasslide1image && $slideshow === '1') { ?>
-				<div class="da-img"><img src="<?php echo $slide1image ?>" alt="<?php echo $slide1 ?>"></div>
-            <?php } else { ?>
-				<div class="da-img" style="background-image: url(<?php echo $slide1image ?>);"></div>
+<?php if ($hasslide1) { ?>
+	<div class="da-slide">
+		<div class="da-slide-text">
+			<h2><?php echo $slide1 ?></h2>
+			<?php if ($hasslide1caption) { ?>
+				<p><?php echo $slide1caption ?></p>
 			<?php } ?>
-        </div>
-    <?php } ?>
-    
-
-    <?php if ($hasslide2) { ?>
-        <div class="da-slide">
-			<div class="da-slide-text">
-				<h2><?php echo $slide2 ?></h2>
-				<?php if ($hasslide2caption) { ?>
-					<p><?php echo $slide2caption ?></p>
-				<?php } ?>
-				<?php if ($hasslide2url) { ?>
-					<a href="<?php echo $slide2url ?>" target= "<?php echo $slide2target ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
-				<?php } ?>
-			</div>
-            <?php if ($hasslide2image && $slideshow === '1') { ?>
-				<div class="da-img"><img src="<?php echo $slide2image ?>" alt="<?php echo $slide2 ?>"></div>
-            <?php } else { ?>
-				<div class="da-img" style="background-image: url(<?php echo $slide2image ?>);"></div>
+			<?php if ($hasslide1url) { ?>
+				<a href="<?php echo $slide1url ?>" target= "<?php echo $slide1target ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
 			<?php } ?>
-        </div>
-    <?php } ?>
-    
-
-    <?php if ($hasslide3) { ?>
-        <div class="da-slide">
-			<div class="da-slide-text">
-				<h2><?php echo $slide3 ?></h2>
-				<?php if ($hasslide3caption) { ?>
-					<p><?php echo $slide3caption ?></p>
-				<?php } ?>
-				<?php if ($hasslide3url) { ?>
-					<a href="<?php echo $slide3url ?>" target= "<?php echo $slide3target ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
-				<?php } ?>
-			</div>
-            <?php if ($hasslide3image && $slideshow === '1') { ?>
-				<div class="da-img"><img src="<?php echo $slide3image ?>" alt="<?php echo $slide3 ?>"></div>
-            <?php } else { ?>
-				<div class="da-img" style="background-image: url(<?php echo $slide3image ?>);"></div>
-			<?php } ?>
-        </div>
-    <?php } ?>
-    
-
-    <?php if ($hasslide4) { ?>
-        <div class="da-slide">
-			<div class="da-slide-text">
-				<h2><?php echo $slide4 ?></h2>
-				<?php if ($hasslide4caption) { ?>
-					<p><?php echo $slide4caption ?></p>
-				<?php } ?>
-				<?php if ($hasslide4url) { ?>
-					<a href="<?php echo $slide4url ?>" target= "<?php echo $slide4target ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
-				<?php } ?>
-			</div>
-            <?php if ($hasslide4image && $slideshow === '1') { ?>
-				<div class="da-img"><img src="<?php echo $slide4image ?>" alt="<?php echo $slide4 ?>"></div>
-            <?php } else { ?>
-				<div class="da-img" style="background-image: url(<?php echo $slide4image ?>);"></div>
-			<?php } ?>
-        </div>
-    <?php } ?>
-	
-    <?php if ($hasslide5) { ?>
-        <div class="da-slide">
-			<div class="da-slide-text">
-				<h2><?php echo $slide5 ?></h2>
-				<?php if ($hasslide5caption) { ?>
-					<p><?php echo $slide5caption ?></p>
-				<?php } ?>
-				<?php if ($hasslide5url) { ?>
-					<a href="<?php echo $slide5url ?>" target= "<?php echo $slide5target ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
-				<?php } ?>
-			</div>
-            <?php if ($hasslide5image && $slideshow === '1') { ?>
-				<div class="da-img"><img src="<?php echo $slide5image ?>" alt="<?php echo $slide5 ?>"></div>
-            <?php } else { ?>
-				<div class="da-img" style="background-image: url(<?php echo $slide5image ?>);"></div>
-			<?php } ?>
-        </div>
-    <?php } ?>
-
-        <nav class="da-arrows">
-            <span class="da-arrows-prev"></span>
-            <span class="da-arrows-next"></span>
-        </nav>
-        
-    </div>
+		</div>
+		<?php if ($hasslide1image && $slideshow === '1') { ?>
+			<div class="da-img"><img src="<?php echo $slide1image ?>" alt="<?php echo $slide1 ?>"></div>
+		<?php } else { ?>
+			<div class="da-img" style="background-image: url(<?php echo $slide1image ?>);"></div>
+		<?php } ?>
+	</div>
 <?php } ?>
+
+
+<?php if ($hasslide2) { ?>
+	<div class="da-slide">
+		<div class="da-slide-text">
+			<h2><?php echo $slide2 ?></h2>
+			<?php if ($hasslide2caption) { ?>
+				<p><?php echo $slide2caption ?></p>
+			<?php } ?>
+			<?php if ($hasslide2url) { ?>
+				<a href="<?php echo $slide2url ?>" target= "<?php echo $slide2target ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
+			<?php } ?>
+		</div>
+		<?php if ($hasslide2image && $slideshow === '1') { ?>
+			<div class="da-img"><img src="<?php echo $slide2image ?>" alt="<?php echo $slide2 ?>"></div>
+		<?php } else { ?>
+			<div class="da-img" style="background-image: url(<?php echo $slide2image ?>);"></div>
+		<?php } ?>
+	</div>
+<?php } ?>
+
+
+<?php if ($hasslide3) { ?>
+	<div class="da-slide">
+		<div class="da-slide-text">
+			<h2><?php echo $slide3 ?></h2>
+			<?php if ($hasslide3caption) { ?>
+				<p><?php echo $slide3caption ?></p>
+			<?php } ?>
+			<?php if ($hasslide3url) { ?>
+				<a href="<?php echo $slide3url ?>" target= "<?php echo $slide3target ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
+			<?php } ?>
+		</div>
+		<?php if ($hasslide3image && $slideshow === '1') { ?>
+			<div class="da-img"><img src="<?php echo $slide3image ?>" alt="<?php echo $slide3 ?>"></div>
+		<?php } else { ?>
+			<div class="da-img" style="background-image: url(<?php echo $slide3image ?>);"></div>
+		<?php } ?>
+	</div>
+<?php } ?>
+
+
+<?php if ($hasslide4) { ?>
+	<div class="da-slide">
+		<div class="da-slide-text">
+			<h2><?php echo $slide4 ?></h2>
+			<?php if ($hasslide4caption) { ?>
+				<p><?php echo $slide4caption ?></p>
+			<?php } ?>
+			<?php if ($hasslide4url) { ?>
+				<a href="<?php echo $slide4url ?>" target= "<?php echo $slide4target ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
+			<?php } ?>
+		</div>
+		<?php if ($hasslide4image && $slideshow === '1') { ?>
+			<div class="da-img"><img src="<?php echo $slide4image ?>" alt="<?php echo $slide4 ?>"></div>
+		<?php } else { ?>
+			<div class="da-img" style="background-image: url(<?php echo $slide4image ?>);"></div>
+		<?php } ?>
+	</div>
+<?php } ?>
+
+<?php if ($hasslide5) { ?>
+	<div class="da-slide">
+		<div class="da-slide-text">
+			<h2><?php echo $slide5 ?></h2>
+			<?php if ($hasslide5caption) { ?>
+				<p><?php echo $slide5caption ?></p>
+			<?php } ?>
+			<?php if ($hasslide5url) { ?>
+				<a href="<?php echo $slide5url ?>" target= "<?php echo $slide5target ?>" class="da-link"><?php echo get_string('readmore','theme_essential')?></a>
+			<?php } ?>
+		</div>
+		<?php if ($hasslide5image && $slideshow === '1') { ?>
+			<div class="da-img"><img src="<?php echo $slide5image ?>" alt="<?php echo $slide5 ?>"></div>
+		<?php } else { ?>
+			<div class="da-img" style="background-image: url(<?php echo $slide5image ?>);"></div>
+		<?php } ?>
+	</div>
+<?php } ?>
+
+	<nav class="da-arrows">
+		<span class="da-arrows-prev"></span>
+		<span class="da-arrows-next"></span>
+	</nav>
+	
+</div>

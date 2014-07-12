@@ -38,225 +38,199 @@ $hasios         = (empty($PAGE->theme->settings->ios)) ? false : $PAGE->theme->s
 $hasandroid     = (empty($PAGE->theme->settings->android)) ? false : $PAGE->theme->settings->android;
 $haswebsite     = (empty($PAGE->theme->settings->website)) ? false : $PAGE->theme->settings->website;
 $oldnavbar      = (empty($PAGE->theme->settings->oldnavbar)) ? false : $PAGE->theme->settings->oldnavbar;
-
-$hastagline = ($SITE->summary);
+$haslogo 		= (!empty($PAGE->theme->settings->logo));
 
 // If any of the above social networks are true, sets this to true.
 $hassocialnetworks = ($hasfacebook || $hastwitter || $hasgoogleplus || $hasflickr || $hasinstagram || $hasvk || $haslinkedin || $haspinterest || $hasskype || $haslinkedin || $haswebsite || $hasyoutube ) ? true : false;
 $hasmobileapps = ($hasios || $hasandroid ) ? true : false;
 $hasheaderprofilepic = (empty($PAGE->theme->settings->headerprofilepic)) ? false : $PAGE->theme->settings->headerprofilepic;
 
-/* Modified to check for IE 7/8. Switch headers to remove backgound-size CSS (in Custom CSS) functionality if true */
-$checkuseragent = '';
-if (!empty($_SERVER['HTTP_USER_AGENT'])) {
-    $checkuseragent = $_SERVER['HTTP_USER_AGENT'];
+$logoclass = "span11";
+
+if ($hassocialnetworks || $hasmobileapps) {
+	$logoclass = "span6";
 }
+
 ?>
+<header role="banner">
+	<div id="page-header" class="clearfix<?php echo ($oldnavbar)? ' oldnavbar': '';?>">
+		<div class="container-fluid">
+			<div class="row-fluid">
+			<!-- HEADER: LOGO AREA -->
+					<div class="<?php echo $logoclass;?>">
+					<?php if (!$haslogo) { ?>
+						<i id="headerlogo" class="fa fa-<?php echo $PAGE->theme->settings->siteicon ?>"></i>
+							<h1 id="title"><?php echo $SITE->shortname; ?></h1>
+					<?php } else { ?>
+						
+						<a class="logo" href="<?php echo $CFG->wwwroot; ?>" title="<?php print_string('home'); ?>"></a>
+					<?php } ?>
+				</div>
+				<?php if (isloggedin() && $hasheaderprofilepic) { ?>
+				<div class="span1 pull-right" id="profilepic">
+					<p id="socialheading"><?php echo $USER->firstname; ?></p>
+					<ul class="socials unstyled">
+						<li>
+							<a href="<?php echo $CFG->wwwroot.'/user/profile.php?id='.$USER->id; ?>">
+								<?php echo $OUTPUT->user_picture($USER); ?>
+							</a>
+						</li>
+					</ul>            
 
-<?php
-// Check if IE7 browser and display message
-if (strpos($checkuseragent, 'MSIE 7')) {
-	echo get_string('ie7message', 'theme_essential');
-}?>
+				</div>
+				<?php
+				}
+				// If true, displays the heading and available social links; displays nothing if false.
+				if ($hassocialnetworks) {
+				?>
+				<div class="span3 pull-right">
+				<p id="socialheading"><?php echo get_string('socialnetworks','theme_essential')?></p>
+					<ul class="socials unstyled">
+						<?php if ($hasgoogleplus) { ?>
+						<li>
+							<button type="button" ONCLICK="window.location.href='<?php echo $hasgoogleplus; ?>'" class="socialicon googleplus">
+								<i class="fa fa-google-plus fa-inverse"></i>
+								<span class="sr-only">Follow us on Google Plus</span>
+							</button>
+						</li>
+						<?php } ?>
+						<?php if ($hastwitter) { ?>
+						<li>
+							<button type="button" ONCLICK="window.location.href='<?php echo $hastwitter; ?>'" class="socialicon twitter">
+								<i class="fa fa-twitter fa-inverse"></i>
+								<span class="sr-only">Follow us on Twitter</span>
+							</button>
+						</li>
+						<?php } ?>
+						<?php if ($hasfacebook) { ?>
+						<li>
+							<button type="button" ONCLICK="window.location.href='<?php echo $hasfacebook; ?>'" class="socialicon facebook">
+								<i class="fa fa-facebook fa-inverse"></i>
+								<span class="sr-only">Like us on Facebook</span>
+							</button>
+						</li>
+						<?php } ?>
+						<?php if ($haslinkedin) { ?>
+						<li>
+							<button type="button" ONCLICK="window.location.href='<?php echo $haslinkedin; ?>'" class="socialicon linkedin">
+								<i class="fa fa-linkedin fa-inverse"></i>
+								<span class="sr-only">Visit us on LinkedIn</span>
+							</button>
+						</li>
+						<?php } ?>
+						<?php if ($hasyoutube) { ?>
+						<li>
+							<button type="button" ONCLICK="window.location.href='<?php echo $hasyoutube; ?>'" class="socialicon youtube">
+								<i class="fa fa-youtube fa-inverse"></i>
+								<span class="sr-only">Watch us on Youtube</span>
+							</button>
+						</li>
+						<?php } ?>
+						<?php if ($hasflickr) { ?>
+						<li>
+							<button type="button" ONCLICK="window.location.href='<?php echo $hasflickr; ?>'" class="socialicon flickr">
+								<i class="fa fa-flickr fa-inverse"></i>
+								<span class="sr-only">See us on Flickr</span>
+							</button>
+						</li>
+						<?php } ?>
+						<?php if ($haspinterest) { ?>
+						<li>
+							<button type="button" ONCLICK="window.location.href='<?php echo $haspinterest; ?>'" class="socialicon pinterest">
+								<i class="fa fa-pinterest fa-inverse"></i>
+								<span class="sr-only">Pin us on Pinterest</span>
+							</button>
+						</li>
+						<?php } ?>
+						<?php if ($hasinstagram) { ?>
+						<li>
+							<button type="button" ONCLICK="window.location.href='<?php echo $hasinstagram; ?>'" class="socialicon instagram">
+								<i class="fa fa-instagram fa-inverse"></i>
+								<span class="sr-only">Follow us on Instagram</span>
+							</button>
+						</li>
+						<?php } ?>
+						<?php if ($hasvk) { ?>
+						<li>
+							<button type="button" ONCLICK="window.location.href='<?php echo $hasvk; ?>'" class="socialicon vk">
+								<i class="fa fa-vk fa-inverse"></i>
+								<span class="sr-only">Follow us on VK</span>
+							</button>
+						</li>
+						<?php } ?>
+						<?php if ($hasskype) { ?>
+						<li>
+							<button type="button" ONCLICK="window.location.href='<?php echo $hasskype; ?>'" class="socialicon skype">
+								<i class="fa fa-skype fa-inverse"></i>
+								<span class="sr-only">Contact us on Skype</span>
+							</button>
+						</li>
+						<?php } ?>
+						<?php if ($haswebsite) { ?>
+						<li>
+							<button type="button" ONCLICK="window.location.href='<?php echo $haswebsite; ?>'" class="socialicon website">
+								<i class="fa fa-globe fa-inverse"></i>
+								<span class="sr-only">Visit our website</span>
+							</button>
+						</li>
+						<?php } ?>
+				</ul>
+				</div>
+				<?php 
+				}
 
-<?php
-if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
-    <header id="page-header-IE7-8" class="clearfix <?php echo ($oldnavbar)? ' oldnavbar': '';?>">
-<?php
-} else { ?>
-    <header id="page-header" class="clearfix<?php echo ($oldnavbar)? ' oldnavbar': '';?>">
-<?php
-} ?>
-
-    <div class="container-fluid">
-    <div class="row-fluid">
-    <!-- HEADER: LOGO AREA -->
-        <?php if ($hassocialnetworks && $hasmobileapps) { ?>
-        	<div class="span6">
-        <?php } else if (!$hassocialnetworks && $hasmobileapps) { ?>
-        	<div class="span6">
-        <?php } else if ($hassocialnetworks && !$hasmobileapps) { ?>
-        	<div class="span6">
-        <?php } else { ?>
-        	<div class="span11">
-        <?php } ?>
-            <?php if (!$haslogo) { ?>
-                <i id="headerlogo" class="fa fa-<?php echo $PAGE->theme->settings->siteicon ?>"></i>
-                <?php if ($hastagline) { ?>
-                	<h1 id="title"><?php echo $SITE->shortname; ?></h1>
-                	<h2 id="subtitle"><?php p(strip_tags(format_text($hastagline, FORMAT_HTML))) ?></h2>
-                <?php } else { ?>
-                	<h1 id="title" style="line-height: 2em"><?php echo $SITE->shortname; ?></h1>
-                <?php } ?>
-                
-            <?php } else { ?>
-                
-                <a class="logo" href="<?php echo $CFG->wwwroot; ?>" title="<?php print_string('home'); ?>"></a>
-            <?php } ?>
-        </div>
-        <?php if (isloggedin() && $hasheaderprofilepic) { ?>
-        <div class="span1 pull-right" id="profilepic">
-            <p id="socialheading"><?php echo $USER->firstname; ?></p>
-            <ul class="socials unstyled">
-                <li>
-                    <a href="<?php echo $CFG->wwwroot.'/user/profile.php?id='.$USER->id; ?>">
-                        <?php echo $OUTPUT->user_picture($USER); ?>
-                    </a>
-                </li>
-            </ul>            
-
-        </div>
-        <?php
-        }
-
-        // If true, displays the heading and available social links; displays nothing if false.
-        if ($hassocialnetworks) {
-        ?>
-        <div class="span3 pull-right">
-        <p id="socialheading"><?php echo get_string('socialnetworks','theme_essential')?></p>
-            <ul class="socials unstyled">
-                <?php if ($hasgoogleplus) { ?>
-                <li>
-                    <button type="button" ONCLICK="window.location.href='<?php echo $hasgoogleplus; ?>'" class="socialicon googleplus">
-                        <i class="fa fa-google-plus fa-inverse"></i>
-                        <span class="sr-only">Follow us on Google Plus</span>
-                    </button>
-                </li>
-                <?php } ?>
-                <?php if ($hastwitter) { ?>
-                <li>
-                    <button type="button" ONCLICK="window.location.href='<?php echo $hastwitter; ?>'" class="socialicon twitter">
-                        <i class="fa fa-twitter fa-inverse"></i>
-                        <span class="sr-only">Follow us on Twitter</span>
-                    </button>
-                </li>
-                <?php } ?>
-                <?php if ($hasfacebook) { ?>
-                <li>
-                    <button type="button" ONCLICK="window.location.href='<?php echo $hasfacebook; ?>'" class="socialicon facebook">
-                        <i class="fa fa-facebook fa-inverse"></i>
-                        <span class="sr-only">Like us on Facebook</span>
-                    </button>
-                </li>
-                <?php } ?>
-                <?php if ($haslinkedin) { ?>
-                <li>
-                    <button type="button" ONCLICK="window.location.href='<?php echo $haslinkedin; ?>'" class="socialicon linkedin">
-                        <i class="fa fa-linkedin fa-inverse"></i>
-                        <span class="sr-only">Visit us on LinkedIn</span>
-                    </button>
-                </li>
-                <?php } ?>
-                <?php if ($hasyoutube) { ?>
-                <li>
-                    <button type="button" ONCLICK="window.location.href='<?php echo $hasyoutube; ?>'" class="socialicon youtube">
-                        <i class="fa fa-youtube fa-inverse"></i>
-                        <span class="sr-only">Watch us on Youtube</span>
-                    </button>
-                </li>
-                <?php } ?>
-                <?php if ($hasflickr) { ?>
-                <li>
-                    <button type="button" ONCLICK="window.location.href='<?php echo $hasflickr; ?>'" class="socialicon flickr">
-                        <i class="fa fa-flickr fa-inverse"></i>
-                        <span class="sr-only">See us on Flickr</span>
-                    </button>
-                </li>
-                <?php } ?>
-                <?php if ($haspinterest) { ?>
-                <li>
-                    <button type="button" ONCLICK="window.location.href='<?php echo $haspinterest; ?>'" class="socialicon pinterest">
-                        <i class="fa fa-pinterest fa-inverse"></i>
-                        <span class="sr-only">Pin us on Pinterest</span>
-                    </button>
-                </li>
-                <?php } ?>
-                <?php if ($hasinstagram) { ?>
-                <li>
-                    <button type="button" ONCLICK="window.location.href='<?php echo $hasinstagram; ?>'" class="socialicon instagram">
-                        <i class="fa fa-instagram fa-inverse"></i>
-                        <span class="sr-only">Follow us on Instagram</span>
-                    </button>
-                </li>
-                <?php } ?>
-                <?php if ($hasvk) { ?>
-                <li>
-                    <button type="button" ONCLICK="window.location.href='<?php echo $hasvk; ?>'" class="socialicon vk">
-                        <i class="fa fa-vk fa-inverse"></i>
-                        <span class="sr-only">Follow us on VK</span>
-                    </button>
-                </li>
-                <?php } ?>
-                <?php if ($hasskype) { ?>
-                <li>
-                    <button type="button" ONCLICK="window.location.href='<?php echo $hasskype; ?>'" class="socialicon skype">
-                        <i class="fa fa-skype fa-inverse"></i>
-                        <span class="sr-only">Contact us on Skype</span>
-                    </button>
-                </li>
-                <?php } ?>
-                <?php if ($haswebsite) { ?>
-                <li>
-                    <button type="button" ONCLICK="window.location.href='<?php echo $haswebsite; ?>'" class="socialicon website">
-                        <i class="fa fa-globe fa-inverse"></i>
-                        <span class="sr-only">Visit our website</span>
-                    </button>
-                </li>
-                <?php } ?>
-	    </ul>
-        </div>
-        <?php 
-        }
-
-        // If true, displays the heading and available social links; displays nothing if false.
-        if ($hasmobileapps) {
-        ?>
-        <div class="span2 pull-right">
-        <p id="socialheading"><?php echo get_string('mobileappsheading','theme_essential')?></p>
-            <ul class="socials unstyled">
-                <?php if ($hasios) { ?>
-                <li>
-                    <button type="button" ONCLICK="window.location.href='<?php echo $hasios; ?>'" class="socialicon ios">
-                        <i class="fa fa-apple fa-inverse"></i>
-                        <span class="sr-only">Download iOS App</span>
-                    </button>
-                </li>
-                <?php } ?>
-                <?php if ($hasandroid) { ?>
-                <li>
-                    <button type="button" ONCLICK="window.location.href='<?php echo $hasandroid; ?>'" class="socialicon android">
-                        <i class="fa fa-android fa-inverse"></i>
-                        <span class="sr-only">Download Android App</span>
-                    </button>
-                </li>
-                <?php } ?>
-	    </ul>
-        </div>
-        <?php 
-        }
-        
-        if (!empty($courseheader)) { ?>
-        <div id="course-header"><?php echo $courseheader; ?></div>
-        <?php } ?>
+				// If true, displays the heading and available social links; displays nothing if false.
+				if ($hasmobileapps) {
+				?>
+				<div class="span2 pull-right">
+				<p id="socialheading"><?php echo get_string('mobileappsheading','theme_essential')?></p>
+					<ul class="socials unstyled">
+						<?php if ($hasios) { ?>
+						<li>
+							<button type="button" ONCLICK="window.location.href='<?php echo $hasios; ?>'" class="socialicon ios">
+								<i class="fa fa-apple fa-inverse"></i>
+								<span class="sr-only">Download iOS App</span>
+							</button>
+						</li>
+						<?php } ?>
+						<?php if ($hasandroid) { ?>
+						<li>
+							<button type="button" ONCLICK="window.location.href='<?php echo $hasandroid; ?>'" class="socialicon android">
+								<i class="fa fa-android fa-inverse"></i>
+								<span class="sr-only">Download Android App</span>
+							</button>
+						</li>
+						<?php } ?>
+				</ul>
+				</div>
+				<?php 
+				}
+				
+				if (!empty($courseheader)) { ?>
+				<div id="course-header"><?php echo $courseheader; ?></div>
+				<?php } ?>
+		</div>
     </div>
 </header>
 
-<header role="banner" class="navbar<?php echo ($oldnavbar)? ' oldnavbar': '';?>">
-    <nav role="navigation" class="navbar-inner">
-        <div class="container-fluid">
-            <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <div class="nav-collapse collapse">
-                <?php echo $OUTPUT->custom_menu(); ?>
-                <ul class="nav pull-right">
-                    <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-                    <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<header role="navigation">
+	<div class="navbar<?php echo ($oldnavbar)? ' oldnavbar': '';?>">
+		<nav role="navigation">
+			<div class="container-fluid navbar-inner">
+				<a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<div class="nav-collapse collapse">
+					<?php echo $OUTPUT->custom_menu(); ?>
+					<ul class="nav pull-right">
+						<li><?php echo $OUTPUT->page_heading_menu(); ?></li>
+						<li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
 </header>

@@ -188,6 +188,9 @@ $string['footercolorsdesc'] = 'Verander de kleuren van de voetnoot';
 
 $string['themecolor'] = 'Thema kleuren';
 $string['themecolordesc'] = 'Welke kleur wil je het thema hebben? Dit heeft invloed op meerdere componenten binnen Moodle en bepaalt de basis kleur voor je thema.';
+
+$string['themeurlcolor'] = 'Thema link kleuren';
+$string['themeurlcolordesc'] = 'Stel hier de kleur voor links.';
 $string['themehovercolor'] = 'Thema hover kleuren';
 $string['themehovercolordesc'] = 'Welke kleuren moeten de hovers in het thema hebben? Dit wordt bijvoorbeeld gebruikt voor links.';
 

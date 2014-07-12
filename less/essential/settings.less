@@ -145,12 +145,15 @@ ul.breadcrumb li:after {
     content: ~"\"[[setting:navbarsep]]\"";
 }
 
-.navbar-inner{
+.navbar {
     border-top:1px solid ~"[[setting:themehovercolor]]" !important;
     border-bottom:1px solid ~"[[setting:themehovercolor]]" !important;
-    background-color: ~"[[setting:themecolor]]" !important;
-    filter: none;
 }
+
+.navbar, .navbar-inner{
+    background-color: ~"[[setting:themecolor]]" !important;
+}
+
 
 .navbar .nav > li > a:hover{
     background:~"[[setting:themehovercolor]]" !important;
@@ -327,9 +330,10 @@ a#button:hover {
 /* @group Footer */
 
 #page-footer {
-    background: ~"[[setting:footercolor]]";
+	background: ~"[[setting:footercolor]]";
     color: ~"[[setting:footertextcolor]]";
-    border-top: 3px solid ~"[[setting:themecolor]]";
+	border-top: 2px solid ~"[[setting:themecolor]]";
+	border-bottom: 3px solid ~"[[setting:themecolor]]";
 }
 
 #page-footer a {

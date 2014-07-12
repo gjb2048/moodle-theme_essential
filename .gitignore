@@ -9,3 +9,4 @@ Thumbs.db
 *.psd
 *.bak
 quickpush.sh
+/node_modules
