@@ -15,18 +15,18 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Essential theme with the underlying Bootstrap theme.
+ * This is built using the bootstrapbase template to allow for new theme's using
+ * Moodle's new Bootstrap theme engine
  *
- * @package    theme
- * @subpackage Essential
- * @author     Julian (@moodleman) Ridden
- * @author     Based on code originally written by G J Barnard, Mary Evans, Bas Brands, Stuart Lamour and David Scotson.
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     theme_essential
+ * @copyright   2013 Julian Ridden
+ * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
  
  class theme_essential_core_renderer extends theme_bootstrapbase_core_renderer {
- 	
- 	/*
+    
+    /*
      * This renders a notification message.
      * Uses bootstrap compatible html.
      */
@@ -84,48 +84,48 @@
 
         return $output . $footer;
     }
-		
+        
     protected function render_custom_menu(custom_menu $menu) {
-		global $CFG,$USER;
-    	/*
-    	* This code replaces adds the current enrolled
-    	* courses to the custommenu.
-    	*/
+        global $CFG,$USER;
+        /*
+        * This code replaces adds the current enrolled
+        * courses to the custommenu.
+        */
     
-    	$hasdisplaymycourses = (empty($this->page->theme->settings->displaymycourses)) ? false : $this->page->theme->settings->displaymycourses;
+        $hasdisplaymycourses = (empty($this->page->theme->settings->displaymycourses)) ? false : $this->page->theme->settings->displaymycourses;
         if (isloggedin() && !isguestuser() && $hasdisplaymycourses) {
-        	$mycoursetitle = $this->page->theme->settings->mycoursetitle;
+            $mycoursetitle = $this->page->theme->settings->mycoursetitle;
             if ($mycoursetitle == 'module') {
-				$branchtitle = get_string('mymodules', 'theme_essential');
-			} else if ($mycoursetitle == 'unit') {
-				$branchtitle = get_string('myunits', 'theme_essential');
-			} else if ($mycoursetitle == 'class') {
-				$branchtitle = get_string('myclasses', 'theme_essential');
-			} else {
-				$branchtitle = get_string('mycourses', 'theme_essential');
-			}
-			$branchlabel = '<i class="fa fa-briefcase"></i>'.$branchtitle;
+                $branchtitle = get_string('mymodules', 'theme_essential');
+            } else if ($mycoursetitle == 'unit') {
+                $branchtitle = get_string('myunits', 'theme_essential');
+            } else if ($mycoursetitle == 'class') {
+                $branchtitle = get_string('myclasses', 'theme_essential');
+            } else {
+                $branchtitle = get_string('mycourses', 'theme_essential');
+            }
+            $branchlabel = '<i class="fa fa-briefcase"></i>'.$branchtitle;
             $branchurl   = new moodle_url('/my/index.php');
             $branchsort  = 10000;
  
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
- 			if ($courses = enrol_get_my_courses(NULL, 'fullname ASC')) {
- 				foreach ($courses as $course) {
- 					if ($course->visible){
- 						$branch->add(format_string($course->fullname), new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
- 					}
- 				}
- 			} else {
+            if ($courses = enrol_get_my_courses(NULL, 'fullname ASC')) {
+                foreach ($courses as $course) {
+                    if ($course->visible){
+                        $branch->add(format_string($course->fullname), new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
+                    }
+                }
+            } else {
                 $noenrolments = get_string('noenrolments', 'theme_essential');
- 				$branch->add('<em>'.$noenrolments.'</em>', new moodle_url('/'), $noenrolments);
- 			}
+                $branch->add('<em>'.$noenrolments.'</em>', new moodle_url('/'), $noenrolments);
+            }
             
         }
         
         /*
-    	* This code replaces adds the My Dashboard
-    	* functionality to the custommenu.
-    	*/
+        * This code replaces adds the My Dashboard
+        * functionality to the custommenu.
+        */
         $hasdisplaymydashboard = (empty($this->page->theme->settings->displaymydashboard)) ? false : $this->page->theme->settings->displaymydashboard;
         if (isloggedin() && !isguestuser() && $hasdisplaymydashboard) {
             $branchlabel = '<i class="fa fa-dashboard"></i>'.get_string('mydashboard', 'theme_essential');
@@ -134,20 +134,20 @@
             $branchsort  = 10000;
  
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
- 			$branch->add('<em><i class="fa fa-user"></i>'.get_string('profile').'</em>',new moodle_url('/user/profile.php'),get_string('profile'));
- 			$branch->add('<em><i class="fa fa-calendar"></i>'.get_string('pluginname', 'block_calendar_month').'</em>',new moodle_url('/calendar/view.php'),get_string('pluginname', 'block_calendar_month'));
-			// Check if messaging is enabled.
-			if (!empty($CFG->messaging)) {
-				$branch->add('<em><i class="fa fa-envelope"></i>'.get_string('pluginname', 'block_messages').'</em>',new moodle_url('/message/index.php'),get_string('pluginname', 'block_messages'));
-			}
-			// Check if badges are enabled.
-			if (!empty($CFG->enablebadges)) {
-				$branch->add('<em><i class="fa fa-certificate"></i>'.get_string('badges').'</em>',new moodle_url('/badges/mybadges.php'),get_string('badges'));
-			}
- 			$branch->add('<em><i class="fa fa-file"></i>'.get_string('privatefiles', 'block_private_files').'</em>',new moodle_url('/user/files.php'),get_string('privatefiles', 'block_private_files'));
-			$branch->add('<i class="fa fa-list-alt"></i>'.get_string('forumposts', 'mod_forum'),new moodle_url('/mod/forum/user.php?id='.$USER->id));
+            $branch->add('<em><i class="fa fa-user"></i>'.get_string('profile').'</em>',new moodle_url('/user/profile.php'),get_string('profile'));
+            $branch->add('<em><i class="fa fa-calendar"></i>'.get_string('pluginname', 'block_calendar_month').'</em>',new moodle_url('/calendar/view.php'),get_string('pluginname', 'block_calendar_month'));
+            // Check if messaging is enabled.
+            if (!empty($CFG->messaging)) {
+                $branch->add('<em><i class="fa fa-envelope"></i>'.get_string('pluginname', 'block_messages').'</em>',new moodle_url('/message/index.php'),get_string('pluginname', 'block_messages'));
+            }
+            // Check if badges are enabled.
+            if (!empty($CFG->enablebadges)) {
+                $branch->add('<em><i class="fa fa-certificate"></i>'.get_string('badges').'</em>',new moodle_url('/badges/mybadges.php'),get_string('badges'));
+            }
+            $branch->add('<em><i class="fa fa-file"></i>'.get_string('privatefiles', 'block_private_files').'</em>',new moodle_url('/user/files.php'),get_string('privatefiles', 'block_private_files'));
+            $branch->add('<i class="fa fa-list-alt"></i>'.get_string('forumposts', 'mod_forum'),new moodle_url('/mod/forum/user.php?id='.$USER->id));
             $branch->add('<i class="fa fa-list"></i>'.get_string('discussions', 'mod_forum'),new moodle_url('/mod/forum/user.php?id='.$USER->id.'&mode=discussions'));
- 			$branch->add('<em><i class="fa fa-sign-out"></i>'.get_string('logout').'</em>',new moodle_url('/login/logout.php'),get_string('logout'));    
+            $branch->add('<em><i class="fa fa-sign-out"></i>'.get_string('logout').'</em>',new moodle_url('/login/logout.php'),get_string('logout'));    
         }
         
         /*
@@ -185,18 +185,18 @@
         return parent::render_custom_menu($menu);
     }
     
- 	/*
+    /*
     * This code replaces the icons in the Admin block with
     * FontAwesome variants where available.
     */
     
-	protected function render_pix_icon(pix_icon $icon) {
-		if (self::replace_moodle_icon($icon->pix) !== false && $icon->attributes['alt'] === '') {
-			return self::replace_moodle_icon($icon->pix);
-		} else {
-			return parent::render_pix_icon($icon);
-		}
-	}    
+    protected function render_pix_icon(pix_icon $icon) {
+        if (self::replace_moodle_icon($icon->pix) !== false && $icon->attributes['alt'] === '') {
+            return self::replace_moodle_icon($icon->pix);
+        } else {
+            return parent::render_pix_icon($icon);
+        }
+    }    
    
     private static function replace_moodle_icon($name) {
         $icons = array(
@@ -205,7 +205,7 @@
             'chapter' => 'file',
             'docs' => 'question-sign',
             'generate' => 'gift',
-			'i/dragdrop' => 'arrows',
+            'i/dragdrop' => 'arrows',
             'i/loading_small' => 'spinner',
             'i/backup' => 'cloud-download',
             'i/checkpermissions' => 'user',
@@ -286,34 +286,34 @@
         return html_writer::tag('a', html_writer::start_tag('i', array('class' => $icon.' fa fa-fw')).
                html_writer::end_tag('i'), array('href' => $url, 'class' => 'btn '.$btn, 'title' => $title));
     }
-	
-	public function render_social_network($socialnetwork) {
-		global $PAGE;
-		if (!empty($PAGE->theme->settings->$socialnetwork)) {
-			if ($socialnetwork === 'googleplus') {
-				$icon = 'google-plus';
-			} else if ($socialnetwork === 'website') {
-				$icon = 'globe';
-			} else if ($socialnetwork === 'ios') {
-				$icon = 'apple';
-			} else {
-				$icon = $socialnetwork;
-			}
-			$iconclass = $socialnetwork;
-			$socialhtml  = html_writer::start_tag('li');
-			$socialhtml .= html_writer::start_tag('button', array('class' => 'socialicon '.$socialnetwork, 
-																  'onclick' => "window.open('".$PAGE->theme->settings->$socialnetwork."')"));
-			$socialhtml .= html_writer::start_tag('i', array('class' => 'fa fa-'.$icon.' fa-inverse'));
-			$socialhtml .= html_writer::end_tag('i');
-			$socialhtml .= html_writer::start_span('sr-only').get_string($socialnetwork, 'theme_essential').html_writer::end_span();
-			$socialhtml .= html_writer::end_tag('button');
-			$socialhtml .= html_writer::end_tag('li');
-		
-			return $socialhtml;
-		
-		} else {
-			return false;
-		}
-	}
+    
+    public function render_social_network($socialnetwork) {
+        global $PAGE;
+        if (!empty($PAGE->theme->settings->$socialnetwork)) {
+            if ($socialnetwork === 'googleplus') {
+                $icon = 'google-plus';
+            } else if ($socialnetwork === 'website') {
+                $icon = 'globe';
+            } else if ($socialnetwork === 'ios') {
+                $icon = 'apple';
+            } else {
+                $icon = $socialnetwork;
+            }
+            $iconclass = $socialnetwork;
+            $socialhtml  = html_writer::start_tag('li');
+            $socialhtml .= html_writer::start_tag('button', array('class' => 'socialicon '.$socialnetwork, 
+                                                                  'onclick' => "window.open('".$PAGE->theme->settings->$socialnetwork."')"));
+            $socialhtml .= html_writer::start_tag('i', array('class' => 'fa fa-'.$icon.' fa-inverse'));
+            $socialhtml .= html_writer::end_tag('i');
+            $socialhtml .= html_writer::start_span('sr-only').get_string($socialnetwork, 'theme_essential').html_writer::end_span();
+            $socialhtml .= html_writer::end_tag('button');
+            $socialhtml .= html_writer::end_tag('li');
+        
+            return $socialhtml;
+        
+        } else {
+            return false;
+        }
+    }
 }
 ?>

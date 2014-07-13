@@ -15,24 +15,27 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * This is built using the bootstrapbase template to allow for new theme's using
+ * Moodle's new Bootstrap theme engine
  *
- * @package   theme_essential
- * @copyright 2013 Julian Ridden
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     theme_essential
+ * @copyright   2013 Julian Ridden
+ * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $iphoneicon = (!empty($PAGE->theme->settings->iphoneicon) ? 
-					$PAGE->theme->settings->iphoneicon : 
-					$OUTPUT->pix_url('homeicon/iphone', 'theme'));
+                    $PAGE->theme->settings->iphoneicon : 
+                    $OUTPUT->pix_url('homeicon/iphone', 'theme'));
 $ipadicon = (!empty($PAGE->theme->settings->ipadicon) ? 
-					$PAGE->theme->settings->ipadicon : 
-					$OUTPUT->pix_url('homeicon/ipad', 'theme'));
+                    $PAGE->theme->settings->ipadicon : 
+                    $OUTPUT->pix_url('homeicon/ipad', 'theme'));
 $iphoneretinaicon = (!empty($PAGE->theme->settings->iphoneretinaicon)?
-					$PAGE->theme->settings->iphoneretinaicon :
-					$OUTPUT->pix_url('homeicon/iphone_retina', 'theme'));
+                    $PAGE->theme->settings->iphoneretinaicon :
+                    $OUTPUT->pix_url('homeicon/iphone_retina', 'theme'));
 $ipadretinaicon = (!empty($PAGE->theme->settings->ipadretinaicon)? 
-					$PAGE->theme->settings->ipadretinaicon :
-					$OUTPUT->pix_url('homeicon/ipad_retina', 'theme'));
+                    $PAGE->theme->settings->ipadretinaicon :
+                    $OUTPUT->pix_url('homeicon/ipad_retina', 'theme'));
 ?>
 
 <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo $iphoneicon ?>" />

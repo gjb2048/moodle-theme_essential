@@ -15,23 +15,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This is built using the Clean template to allow for new theme's using
+ * This is built using the bootstrapbase template to allow for new theme's using
  * Moodle's new Bootstrap theme engine
  *
- *
- * @package   theme_essential
- * @copyright 2013 Julian Ridden
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-
-/**
- * Parses CSS before it is cached.
- *
- * This function can make alterations and replace patterns within the CSS.
- *
- * @param string $css The CSS
- * @param theme_config $theme The theme config object.
- * @return string The parsed CSS The parsed CSS.
+ * @package     theme_essential
+ * @copyright   2013 Julian Ridden
+ * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
@@ -293,14 +283,14 @@ function theme_essential_process_css($css, $theme) {
     $css = theme_essential_set_footerhovercolor($css, $footerhovercolor);
 
 
-	// Set the footer heading color.
+    // Set the footer heading color.
     if (!empty($theme->settings->footerheadingcolor)) {
         $footerheadingcolor = $theme->settings->footerheadingcolor;
     } else {
         $footerheadingcolor = null;
     }
     $css = theme_essential_set_footerheadingcolor($css, $footerheadingcolor);
-	
+    
      // Set the slide header color.
     if (!empty($theme->settings->slideshowcolor)) {
         $slideshowcolor = $theme->settings->slideshowcolor;
@@ -744,8 +734,5 @@ function theme_essential_page_init(moodle_page $page) {
     $page->requires->jquery_plugin('tab', 'theme_essential');
     $page->requires->jquery_plugin('tooltip', 'theme_essential');
     $page->requires->jquery_plugin('transition', 'theme_essential');
-    $page->requires->jquery_plugin('modernizr', 'theme_essential');  
-    if (core_useragent::is_ie()) {
-        $page->requires->jquery_plugin('flexie', 'theme_essential');
-    }
+    $page->requires->jquery_plugin('modernizr', 'theme_essential');
 }

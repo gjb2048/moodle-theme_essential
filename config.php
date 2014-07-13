@@ -15,13 +15,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This is built using the Clean template to allow for new theme's using
+ * This is built using the bootstrapbase template to allow for new theme's using
  * Moodle's new Bootstrap theme engine
  *
- *
- * @package   theme_essential
- * @copyright 2013 Julian Ridden
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     theme_essential
+ * @copyright   2013 Julian Ridden
+ * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $THEME->name = 'essential';
@@ -35,7 +35,7 @@ $THEME->yuicssmodules = array();
 $THEME->parents = array('bootstrapbase');
 $THEME->sheets = array('essential', 'custom');
 $THEME->supportscssoptimisation = false;
-$THEME->enable_dock = false;
+$THEME->enable_dock = true;
 
 $THEME->editor_sheets = array();
 
@@ -51,7 +51,7 @@ $THEME->layouts = array(
         'file' => 'columns1.php',
         'regions' => array(),
         'defaultregion' => '',
-		'options' => array('noblocks'=>true),
+        'options' => array('noblocks'=>true),
     ),
     // Front page.
     'frontpage' => array(
@@ -166,11 +166,7 @@ $THEME->layouts = array(
 );
 
 $THEME->javascripts = array(
-    'coloursswitcher'
-);
-
-$THEME->javascripts_footer = array(
-    'dockmod'
+    'coloursswitcher',
 );
 
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';

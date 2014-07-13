@@ -15,6 +15,16 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * This is built using the bootstrapbase template to allow for new theme's using
+ * Moodle's new Bootstrap theme engine
+ *
+ * @package     theme_essential
+ * @copyright   2013 Julian Ridden
+ * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+/**
  * This file describes jQuery plugins available in the moodle
  * core component. These can be included in page using:
  *   $PAGE->requires->jquery();
@@ -30,10 +40,6 @@
  *
  * Themes or other plugin may blacklist any jquery plugin,
  * for example to override default jQueryUI theme.
- *
- * @package    core
- * @copyright  2013 Petr Skoda  {@link http://skodak.org}
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $plugins = array(
@@ -46,5 +52,4 @@ $plugins = array(
     'tab'     => array('files' => array('bootstrap_plugins/tab_2.3.2.js')),
     'tooltip'     => array('files' => array('bootstrap_plugins/tooltip_2.3.2.js')),
     'transition'     => array('files' => array('bootstrap_plugins/transition_2.3.2.js')),
-    'flexie'     => array('files' => array('flexie.js')),
 );

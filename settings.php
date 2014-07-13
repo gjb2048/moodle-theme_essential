@@ -15,18 +15,16 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This is built using the Clean template to allow for new theme's using
+ * This is built using the bootstrapbase template to allow for new theme's using
  * Moodle's new Bootstrap theme engine
  *
- *
- * @package   theme_essential
- * @copyright 2013 Julian Ridden
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     theme_essential
+ * @copyright   2013 Julian Ridden
+ * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-$settings = null;
 
 defined('MOODLE_INTERNAL') || die;
-
 
     $ADMIN->add('themes', new admin_category('theme_essential', 'Essential'));
 
@@ -61,13 +59,13 @@ defined('MOODLE_INTERNAL') || die;
         '4'=>'PT Sans', 
         '5'=>'Ubuntu',
         '6'=>'Arimo',
-		'7'=>'Lobster & Raleway',
+        '7'=>'Lobster & Raleway',
         '8'=>'Arial',
         '9'=>'Georgia',
         '10'=>'Verdana',
         '11'=>'Times New Roman',
         '12'=>'Consolas', 
-		);
+        );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -99,8 +97,8 @@ defined('MOODLE_INTERNAL') || die;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-	
-	// New or old navbar.
+    
+    // New or old navbar.
     $name = 'theme_essential/oldnavbar';
     $title = get_string('oldnavbar', 'theme_essential');
     $description = get_string('oldnavbardesc', 'theme_essential');
@@ -248,8 +246,8 @@ defined('MOODLE_INTERNAL') || die;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-	
-	// Main theme link colour setting.
+    
+    // Main theme link colour setting.
     $name = 'theme_essential/themeurlcolor';
     $title = get_string('themeurlcolor', 'theme_essential');
     $description = get_string('themeurlcolordesc', 'theme_essential');
@@ -956,58 +954,58 @@ defined('MOODLE_INTERNAL') || die;
     if(!empty($PAGE->theme->settings->enablecategoryicon)) {
     
         // Default Icon Selector.
-    	$name = 'theme_essential/defaultcategoryicon';
-    	$title = get_string('defaultcategoryicon', 'theme_essential');
-    	$description = get_string('defaultcategoryicondesc', 'theme_essential');
-    	$default = 'folder-open';
-    	$setting = new admin_setting_configtext($name, $title, $description, $default);
-    	$setting->set_updatedcallback('theme_reset_all_caches');
-    	$temp->add($setting);
+        $name = 'theme_essential/defaultcategoryicon';
+        $title = get_string('defaultcategoryicon', 'theme_essential');
+        $description = get_string('defaultcategoryicondesc', 'theme_essential');
+        $default = 'folder-open';
+        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
     
-		// Category Icons.
-		$name = 'theme_essential/enablecustomcategoryicon';
-		$title = get_string('enablecustomcategoryicon', 'theme_essential');
-		$description = get_string('enablecustomcategoryicondesc', 'theme_essential');
-		$setting = new admin_setting_configcheckbox($name, $title, $description, 0);
-		$setting->set_updatedcallback('theme_reset_all_caches');
-		$temp->add($setting);
-		
-		if(!empty($PAGE->theme->settings->enablecustomcategoryicon)) {
-		
-			// This is the descriptor for Custom Category Icons
-			$name = 'theme_essential/categoryiconinfo';
-			$heading = get_string('categoryiconinfo', 'theme_essential');
-			$information = get_string('categoryiconinfodesc', 'theme_essential');
-			$setting = new admin_setting_heading($name, $heading, $information);
-			$temp->add($setting);
-			
-			// Get the default category icon
-			if(!empty($PAGE->theme->settings->defaultcategoryicon)) {
-				// Same as theme_essential/defaultcategoryicon
-				$defaultcategoryicon = $PAGE->theme->settings->defaultcategoryicon;
-			} else {
-				$defaultcategoryicon = 'folder-open';
-			}
+        // Category Icons.
+        $name = 'theme_essential/enablecustomcategoryicon';
+        $title = get_string('enablecustomcategoryicon', 'theme_essential');
+        $description = get_string('enablecustomcategoryicondesc', 'theme_essential');
+        $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
         
-			// Get all category IDs and their pretty names
-			require_once($CFG->libdir. '/coursecatlib.php');
-			$coursecats = coursecat::make_categories_list();
-			
-			// Go through all categories and create the necessary settings
-			foreach($coursecats as $key => $value) {
-			
-				// Category Icons for each category.
-				$name = 'theme_essential/categoryicon';
-				$title = $value;
-				$description = get_string('categoryicondesc', 'theme_essential') . $value;
-				$default = $defaultcategoryicon;
-				$setting = new admin_setting_configtext($name.$key, $title, $description, $default);
-				$setting->set_updatedcallback('theme_reset_all_caches');
-				$temp->add($setting);
-			}
-			unset($coursecats);
-		}
-	}
+        if(!empty($PAGE->theme->settings->enablecustomcategoryicon)) {
+        
+            // This is the descriptor for Custom Category Icons
+            $name = 'theme_essential/categoryiconinfo';
+            $heading = get_string('categoryiconinfo', 'theme_essential');
+            $information = get_string('categoryiconinfodesc', 'theme_essential');
+            $setting = new admin_setting_heading($name, $heading, $information);
+            $temp->add($setting);
+            
+            // Get the default category icon
+            if(!empty($PAGE->theme->settings->defaultcategoryicon)) {
+                // Same as theme_essential/defaultcategoryicon
+                $defaultcategoryicon = $PAGE->theme->settings->defaultcategoryicon;
+            } else {
+                $defaultcategoryicon = 'folder-open';
+            }
+        
+            // Get all category IDs and their pretty names
+            require_once($CFG->libdir. '/coursecatlib.php');
+            $coursecats = coursecat::make_categories_list();
+            
+            // Go through all categories and create the necessary settings
+            foreach($coursecats as $key => $value) {
+            
+                // Category Icons for each category.
+                $name = 'theme_essential/categoryicon';
+                $title = $value;
+                $description = get_string('categoryicondesc', 'theme_essential') . $value;
+                $default = $defaultcategoryicon;
+                $setting = new admin_setting_configtext($name.$key, $title, $description, $default);
+                $setting->set_updatedcallback('theme_reset_all_caches');
+                $temp->add($setting);
+            }
+            unset($coursecats);
+        }
+    }
 
     $ADMIN->add('theme_essential', $temp);
 

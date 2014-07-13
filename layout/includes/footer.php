@@ -15,51 +15,51 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This is built using the Clean template to allow for new theme's using
+ * This is built using the bootstrapbase template to allow for new theme's using
  * Moodle's new Bootstrap theme engine
  *
- *
- * @package   theme_essential
- * @copyright 2013 Julian Ridden
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     theme_essential
+ * @copyright   2013 Julian Ridden
+ * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
  
 require_once(dirname(__FILE__).'/pagesettings.php');
  
 ?>
 <footer role="contentinfo" id="page-footer">
-	<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="span4 pull-left">
-				<div class="column">
-					<?php echo $OUTPUT->essentialblocks('footer-left'); ?>
-				</div>
-			</div>
-			<div class="span4 center">
-				<div class="column">
-					<?php echo $OUTPUT->essentialblocks('footer-middle'); ?>
-				</div>
-			</div>
-			<div class="span4 pull-right">
-				<div class="column">
-					<?php echo $OUTPUT->essentialblocks('footer-right'); ?>
-				</div>
-			</div>
-		</div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span4 pull-left">
+                <div class="column">
+                    <?php echo $OUTPUT->essentialblocks('footer-left'); ?>
+                </div>
+            </div>
+            <div class="span4 center">
+                <div class="column">
+                    <?php echo $OUTPUT->essentialblocks('footer-middle'); ?>
+                </div>
+            </div>
+            <div class="span4 pull-right">
+                <div class="column">
+                    <?php echo $OUTPUT->essentialblocks('footer-right'); ?>
+                </div>
+            </div>
+        </div>
 
-		<div class="footerlinks row-fluid">
-			<hr>
-			<p class="helplink"><?php echo page_doc_link(get_string('moodledocslink')); ?></p>
-		<?php if ($hascopyright) {
-			echo '<p class="copy">&copy; '.date("Y").' '.$hascopyright.'</p>';
-		} ?>
+        <div class="footerlinks row-fluid">
+            <hr>
+            <p class="helplink"><?php echo page_doc_link(get_string('moodledocslink')); ?></p>
+        <?php if ($hascopyright) {
+            echo '<p class="copy">&copy; '.date("Y").' '.$hascopyright.'</p>';
+        } ?>
 
-		<?php if ($hasfootnote) {
-			echo '<div class="footnote">'.$hasfootnote.'</div>';
-		} ?>
-		</div>
-		<?php echo $OUTPUT->standard_footer_html(); ?>
-	</div>
+        <?php if ($hasfootnote) {
+            echo '<div class="footnote">'.$hasfootnote.'</div>';
+        } ?>
+        </div>
+        <?php echo $OUTPUT->standard_footer_html(); ?>
+    </div>
 </footer>
 
 <script type="text/javascript">

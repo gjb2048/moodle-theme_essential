@@ -15,13 +15,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This is built using the Clean template to allow for new theme's using
+ * This is built using the bootstrapbase template to allow for new theme's using
  * Moodle's new Bootstrap theme engine
  *
- *
- * @package   theme_essential
- * @copyright 2013 Julian Ridden
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     theme_essential
+ * @copyright   2013 Julian Ridden
+ * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
  
 /* Group Body */
@@ -36,31 +36,31 @@ if ($PAGE->theme->settings->sideregionsmaxwidth) {
  
 if (right_to_left()) {
     $regionbsid = 'region-bs-main-and-post';
-	$left = false;
+    $left = false;
 } else {
     $regionbsid = 'region-bs-main-and-pre';
-	$left = true;
+    $left = true;
 }
  
 /* Group Header */
 
 $hasanalytics = $PAGE->theme->settings->useanalytics;
 
-$hassocialnetworks = ( 	empty($PAGE->theme->settings->facebook)		&&
-						empty($PAGE->theme->settings->twitter)		&&
-						empty($PAGE->theme->settings->googleplus)	&&
-						empty($PAGE->theme->settings->linkedin)		&&
-						empty($PAGE->theme->settings->youtube)		&&
-						empty($PAGE->theme->settings->flickr)		&&
-						empty($PAGE->theme->settings->vk)			&&
-						empty($PAGE->theme->settings->pinterest)	&&
-						empty($PAGE->theme->settings->instagram)	&&
-						empty($PAGE->theme->settings->skype)		&&
-						empty($PAGE->theme->settings->website)
-						? false : true );
-$hasmobileapps = 	(	empty($PAGE->theme->settings->ios)			&&
-						empty($PAGE->theme->settings->android)
-						? false : true );
+$hassocialnetworks = (  empty($PAGE->theme->settings->facebook)     &&
+                        empty($PAGE->theme->settings->twitter)      &&
+                        empty($PAGE->theme->settings->googleplus)   &&
+                        empty($PAGE->theme->settings->linkedin)     &&
+                        empty($PAGE->theme->settings->youtube)      &&
+                        empty($PAGE->theme->settings->flickr)       &&
+                        empty($PAGE->theme->settings->vk)           &&
+                        empty($PAGE->theme->settings->pinterest)    &&
+                        empty($PAGE->theme->settings->instagram)    &&
+                        empty($PAGE->theme->settings->skype)        &&
+                        empty($PAGE->theme->settings->website)
+                        ? false : true );
+$hasmobileapps =    (   empty($PAGE->theme->settings->ios)          &&
+                        empty($PAGE->theme->settings->android)
+                        ? false : true );
 
 $logoclass = ($hassocialnetworks || $hasmobileapps) ? 'span6':'span12';
 $oldnavbar = $PAGE->theme->settings->oldnavbar;

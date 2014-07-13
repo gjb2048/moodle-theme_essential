@@ -15,11 +15,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * @package   theme_essential
- * @copyright &copy; 2014-onwards G J Barnard.
- * @author    G J Barnard
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * This is built using the bootstrapbase template to allow for new theme's using
+ * Moodle's new Bootstrap theme engine
+ *
+ * @package     theme_essential
+ * @copyright   2013 Julian Ridden
+ * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 $numberofslides = theme_essential_showslider($PAGE->theme->settings); // In lib.php.
 
 if ($numberofslides) {
@@ -66,6 +70,7 @@ if ($numberofslides) {
                         }
                         ?>
                         <img src="<?php echo $image; ?>" alt="<?php echo $imgalt; ?>" class="carousel-image" />
+
                         <?php
                         $slidecaption = 'slide'.$i.'caption';
                         if ((!empty($PAGE->theme->settings->$slidetitle)) || (!empty($PAGE->theme->settings->$slidecaption))) { ?>

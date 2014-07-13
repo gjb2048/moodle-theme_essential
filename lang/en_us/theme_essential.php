@@ -20,7 +20,7 @@
  *
  *
  * @package   theme_essential
- * @copyright 2013 Julian Ridden
+ * @author 2013 Julian Ridden
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

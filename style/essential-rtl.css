@@ -2057,16 +2057,6 @@ body {
   padding-top: 0px;
   margin: 0px !important;
   padding: 0px !important;
-  min-height: 99.7vh;
-  display: -webkit-box;
-  /* OLD - iOS 6-, Safari 3.1-6 */
-  display: -moz-box;
-  /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -webkit-flex;
-  /* NEW - Chrome */
-  display: flex;
-  /* NEW, Spec - Opera 12.1, Firefox 20+ */
-  flex-direction: column;
 }
 
 h1,
@@ -2085,6 +2075,11 @@ h3 {
 
 a {
   text-decoration: none;
+}
+
+.container-fluid {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #dndupload-status {
@@ -2112,20 +2107,6 @@ a {
 
 #page {
   padding-top: 10px;
-  width: 100%;
-}
-
-section[role="main-content"] {
-  -webkit-box-flex: 1;
-  /* OLD - iOS 6-, Safari 3.1-6 */
-  -moz-box-flex: 1;
-  /* OLD - Firefox 19- */
-  -webkit-flex: 1;
-  /* Chrome */
-  -ms-flex: 0;
-  /* IE 10 */
-  flex: 1;
-  /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 
 #page-admin-upgradesettings #page,
@@ -3905,9 +3886,8 @@ table.calendarmonth.calendartable {
 }
 
 @media (max-width: 767px) {
-  #page {
-    margin-right: 10px;
-    margin-left: 10px;
+  #page.container-fluid {
+    padding: 5px;
   }
 }
 
@@ -4659,6 +4639,7 @@ ul.breadcrumb li {
   float: right;
   line-height: 28px;
   height: 28px;
+  text-shadow: none;
 }
 
 ul.breadcrumb li a {
