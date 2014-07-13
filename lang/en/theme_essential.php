@@ -49,11 +49,6 @@ David Bezemer<br>
 
 /* General */
 $string['genericsettings'] = 'General Settings';
-$string['autohide'] = 'Include Autohide Functionality';
-$string['autohidedesc'] = 'The Autohide functionality is designed to make Moodle less intimidating.  When editing is turned on edit icons only appear when the item is hovered over.';
-
-$string['editicons'] = 'Edit Icons V2';
-$string['editiconsdesc'] = 'This utilises the Font Awesome to display coloured and neater formatted edit icons in course pages and blocks.  Please note that currently this is NOT compatible with Autohide.';
 
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
@@ -111,24 +106,24 @@ $string['sideregionsmaxwidthdesc'] = 'This theme use fluid layout. In wide scree
 $string['visibleadminonly'] = 'Blocks moved into the area below will only be seen by admins';
 $string['backtotop'] = 'Back to top';
 
-$string['nextsection'] = 'Next section';
-$string['previoussection'] = 'Previous section';
+$string['nextsection'] = 'Next Section';
+$string['previoussection'] = 'Previous Section';
 
-$string['pagewidth'] = 'Set page width';
+$string['pagewidth'] = 'Set Page Width';
 $string['pagewidthdesc'] = 'Choose from the list of available page widths. for your site';
-$string['fixedwidthwide'] = 'Fixed width - wide';
-$string['fixedwidthnarrow'] = 'Fixed width - narrow';
-$string['variablewidth'] = 'Variable width';
+$string['fixedwidthwide'] = 'Fixed Width - Wide';
+$string['fixedwidthnarrow'] = 'Fixed Width - Narrow';
+$string['variablewidth'] = 'Variable Width';
 
-$string['alwaysdisplay'] = 'Always show';
+$string['alwaysdisplay'] = 'Always Show';
 $string['displaybeforelogin'] = 'Show before login only';
 $string['displayafterlogin'] = 'Show after login only';
-$string['dontdisplay'] = 'Never show';
+$string['dontdisplay'] = 'Never Show';
 
 /* CustomMenu */
 $string['custommenuheading'] = 'Custom Menu';
-$string['custommenuheadingsub'] = 'Add additional functionality to your custom menu.';
-$string['custommenudesc'] = 'Settings here allow you to add new dynamic functionality to the custom menu (also refereed to as the Dropdown menu)';
+$string['custommenuheadingsub'] = 'Add additional functionality to your custommenu.';
+$string['custommenudesc'] = 'Settings here allow you to add new dynamic functionality to the custommenu (also referred to as Dropdown menu)';
 
 $string['mydashboardinfo'] = 'Custom User Dashboard';
 $string['mydashboardinfodesc'] = 'Displays a list of common functions used by users.';
@@ -208,6 +203,8 @@ $string['pagebackground'] = 'Page Background Image';
 $string['pagebackgrounddesc'] = 'Upload your own background image.  This will be tiled in the background on all pages.  If none is uploaded a default image is used.';
 
 /* Alternate Color Switcher */
+$string['themecolors'] = 'Theme Colours';
+$string['defaultcolors'] = 'Default Colours';
 $string['alternativecolors'] = 'Alternative Colours {$a}';
 $string['alternativethemecolor'] = 'Alternative Theme Colour {$a}';
 $string['alternativethemecolordesc'] = 'What colour should your theme be for the alternative theme colours {$a}. If enabled and the user choose it, this will replace the default theme colour.';
@@ -219,10 +216,8 @@ $string['alternativethemecolorname'] = 'Name of Alternative Colour Set {$a}';
 $string['alternativethemecolornamedesc'] = 'Provide a recognisable name for this set of alternative theme colours';
 $string['alternativethemehovercolor'] = 'Alternative Theme Hover Colour {$a}';
 $string['alternativethemehovercolordesc'] = 'What colour should your theme hovers be for the alternative theme colours {$a}. If enabled and the user choose it, this will replace the default theme hover colour.';
-$string['defaultcolors'] = 'Default Colours';
 $string['enablealternativethemecolors'] = 'Enable Alternative Theme Colours {$a}';
 $string['enablealternativethemecolorsdesc'] = 'If enabled, the user will be able to choose the alternative theme colours {$a}.';
-$string['themecolors'] = 'Theme Colours';
 
 /* Frontpage Settings */
 $string['frontcontentheading'] = 'Frontpage Settings';
@@ -243,30 +238,33 @@ $string['slideshowheading'] = 'Frontpage Slideshow';
 $string['slideshowheadingsub'] = 'Dynamic Slideshow for the frontpage';
 $string['slideshowdesc'] = 'This creates a dynamic slideshow of up to sixteen slides for you to promote important elements of your site.';
 
+$string['toggleslideshow'] = 'Toggle Slideshow display';
+$string['toggleslideshowdesc'] = 'Choose if you wish to hide or show the Slideshow.';
+
 $string['numberofslides'] = 'Number of slides';
 $string['numberofslides_desc'] = 'Number of slides on the slider.';
 
-$string['toggleslideshow'] = 'Toggle Slideshow display';
-$string['toggleslideshowdesc'] = 'Choose if you wish to hide or show the slideshow.';
+$string['hideonphone'] = 'Hide Slideshow on Mobiles';
+$string['hideonphonedesc'] = 'Choose if you wish to disable slideshow on mobiles.';
 
-$string['hideonphone'] = 'Slideshow on mobiles';
-$string['hideonphonedesc'] = 'Choose if you wish to have the slideshow shown on mobiles or not';
-$string['hideontablet'] = 'Slideshow on tablets';
-$string['hideontabletdesc'] = 'Choose if you wish to have the slideshow shown on tablets or not';
+$string['hideontablet'] = 'Hide Slideshow on Tablets';
+$string['hideontabletdesc'] = 'Choose if you wish to disable the slideshow on tablets.';
+
 $string['readmore'] = 'Read More';
 
 $string['slideinterval'] = 'Slide interval';
 $string['slideintervaldesc'] = 'Slide transition interval in milliseconds.';
+
 $string['slidecolor'] = 'Slide Text Colour';
 $string['slidecolordesc'] = 'What colour the side caption should be.';
+
 $string['slidebuttoncolor'] = 'Slide button colour';
-$string['slidebuttoncolordesc'] = 'What colour the slide navigation button should be';
+$string['slidebuttoncolordesc'] = 'What colour the slide navigation button should be.';
 $string['slidebuttonhovercolor'] = 'Slide button colour';
-$string['slidebuttonhovercolordesc'] = 'What colour the slide navigation button hover should be';
+$string['slidebuttonhovercolordesc'] = 'What colour the slide navigation button hover should be.';
 
 $string['slideno'] = 'Slide {$a->slide}';
 $string['slidenodesc'] = 'Enter the settings for slide {$a->slide}.';
-
 $string['slidetitle'] = 'Slide title';
 $string['slidetitledesc'] = 'Enter a descriptive title for your slide';
 $string['noslidetitle'] = 'No title for slide {$a->slide}';
@@ -372,9 +370,8 @@ $string['defaultcategoryicondesc'] = 'Set a default category icon';
 $string['enablecustomcategoryicon'] = 'Enable Custom Category Icons';
 $string['enablecustomcategoryicondesc'] = 'If enabled below this section you will see each category with a customizable option behind each category, please save after enabling and disabling this option.';
 
-
 $string['categoryiconinfo'] = 'Set Custom Category Icons';
-$string['categoryiconinfodesc'] = 'Enter the name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "icon-".';
+$string['categoryiconinfodesc'] = 'Enter the name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after "fa-".';
 
 /* Mobile Apps */
 $string['mobileappsheading'] = 'Mobile Apps';

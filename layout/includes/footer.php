@@ -24,9 +24,8 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
  
-$hascopyright = (empty($PAGE->theme->settings->copyright)) ? false : $PAGE->theme->settings->copyright;
-$hasfootnote = (empty($PAGE->theme->settings->footnote)) ? false : $PAGE->theme->settings->footnote;
-
+require_once(dirname(__FILE__).'/pagesettings.php');
+ 
 ?>
 <footer role="contentinfo" id="page-footer">
 	<div class="container-fluid">
@@ -62,3 +61,25 @@ $hasfootnote = (empty($PAGE->theme->settings->footnote)) ? false : $PAGE->theme-
 		<?php echo $OUTPUT->standard_footer_html(); ?>
 	</div>
 </footer>
+
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    var offset = 220;
+    var duration = 500;
+    jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() > offset) {
+            jQuery('.back-to-top').fadeIn(duration);
+        } else {
+            jQuery('.back-to-top').fadeOut(duration);
+        }
+    });
+    
+    jQuery('.back-to-top').click(function(event) {
+        event.preventDefault();
+        jQuery('html, body').animate({scrollTop: 0}, duration);
+        return false;
+    })
+});
+</script>
+<a href="#top" class="back-to-top" title="<?php print_string('backtotop', 'theme_essential'); ?>"><i class="fa fa-angle-up "></i></a>
+<?php echo $OUTPUT->standard_end_of_body_html() ?>

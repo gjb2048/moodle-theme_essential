@@ -213,18 +213,6 @@ $string['slideheadercolordesc'] = 'Определяет каким цветом 
 $string['slidebuttoncolor'] = 'Цвет кнопки на слайде';
 $string['slidebuttoncolordesc'] = 'Определяет каким цветом должен быть напечатан текст кнопки на слайде';
 
-$string['slideshowvariant'] = 'Дизайн слайд-шоу';
-$string['slideshowvariantdesc'] = 'Выберите стиль слайд-шоу';
-$string['slideshow1'] = 'Маленькое изображение справа';
-$string['slideshow2'] = 'Большое фоновое изображение';
-$string['slideshow3'] = 'Третий дизайн';
-
-$string['slideinfodesc'] = 'Введите настройки для Ваших слайдов.';
-$string['slide1'] = 'Слайд первый';
-$string['slide2'] = 'Слайд второй';
-$string['slide3'] = 'Слайд третий';
-$string['slide4'] = 'Слайд четвертый';
-
 $string['slidetitle'] = 'Заголовок';
 $string['slidetitledesc'] = 'Введите заголовок для Вашего слайда';
 $string['slideimage'] = 'Изображение';

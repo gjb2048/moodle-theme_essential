@@ -81,7 +81,7 @@ $THEME->layouts = array(
     // part of course, typical for modules - default page layout if $cm specified in require_login().
     'incourse' => array(
         'file' => 'columns3.php',
-        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
+        'regions' => array('side-pre','side-post', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-post',
     ),
     // Server administration scripts.
@@ -105,7 +105,7 @@ $THEME->layouts = array(
     ),
     'login' => array(
         'file' => 'login.php',
-        'regions' => array(),
+        'regions' => array('footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => '',
         'options' => array('langmenu'=>true),
     ),

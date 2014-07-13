@@ -12,9 +12,12 @@ body{
     padding-top: 0px;
 	margin: 0px !important;
 	padding: 0px !important;
-	display: flex;
-	min-height: 100vh;
-	flex-direction: column;
+	min-height: 99.7vh;
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -28,6 +31,10 @@ h3 {
 
 a {
     text-decoration: none;
+}
+
+#dndupload-status {
+    z-index: 100;
 }
 
 .dir-rtl a.logo {
@@ -51,7 +58,20 @@ a {
 #page {
     padding-top: 10px;
 	width: 100%;
-	flex: 1;
+}
+
+section[role="main-content"] {
+    -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1;         /* OLD - Firefox 19- */
+    -webkit-flex: 1;          /* Chrome */
+    -ms-flex: 0;              /* IE 10 */
+    flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+
+
+#page-admin-upgradesettings #page, .maintenance#page {
+	padding-top: 0px;
 }
 
 /* @group Font Awesome */
@@ -97,9 +117,11 @@ a {
     border-bottom: 1px solid #DDD;
 }
 
-#page-header.oldnavbar {
+#page-header.oldnavbar, #page-admin-upgradesettings #page-header, .maintenance #page-header  {
 	margin-top: 0px;
 }
+
+
 
 h2.main,
 #pageheading {
@@ -121,15 +143,9 @@ a.logo {
 
 h1#title {
     white-space: nowrap;
-    font-size: 2.1em;
-}
-
-h2#subtitle {
-    font-size: 1em;
-    text-transform: uppercase;
-    margin-top: -24px;
-    letter-spacing: .15em;
-    white-space: nowrap;
+    font-size: 3em;
+    top: 10px;
+    position: relative;
 }
 
 #headerlogo {
@@ -162,15 +178,6 @@ h2#subtitle {
         font-weight: normal;
         color: ~"[[setting:themecolor]]";
         font-size: 1.1em;
-    }
-    a, a:visited {
-        display: block;
-        font-family: FontAwesome;
-        color: ~"[[setting:themecolor]]";
-        font-size: 2.5em;
-        line-height: 25px;
-        padding-left: 5px;
-        text-decoration: none;
     }
 }
 
@@ -278,34 +285,6 @@ ul.socials {
 
 /* @group Navbar
  */
-
-.breadcrumb {
-    padding: 0px;
-    color: #555;
-    text-transform: uppercase;
-    font-size: .9em;
-    background: transparent;
-    margin: 0px;
-}
-
-.breadcrumb>li>.divider {
-    color: ~"[[setting:themecolor]]";
-}
-
-.breadcrumb-button {
-    margin-top: -4px;
-}
-
-ul.breadcrumb li:after {
-    font-family: FontAwesome;
-    font-size: 1.1em;
-    margin: 0px 6px 0px 3px;
-    color: #bbb;
-}
-
-ul.breadcrumb li:last-child:after {
-    content: none;
-}
 
 .navbar {
 	margin-bottom: 0px;
@@ -540,10 +519,6 @@ letter-spacing:0.1em;
     padding-bottom: 20px;
 }
 
-#region-bs-main-and-pre.span9 .row-fluid aside#block-region-side-pre.span4 {
-    margin-left: 2%;
-}
-
 
 /* @end */
 
@@ -637,7 +612,7 @@ a#button-grey:visited {
     color:#fff;
     width:100px;
     padding:6px 15px;
-    font-size:1em;
+    font-size: 1em;
     border-radius:5px;
 }
 
@@ -767,6 +742,14 @@ table#greyboxleft h2 {
     margin-bottom: 10px;
 }
 
+.block .content {
+    padding: 4px 0px;
+}
+
+#middle-blocks p {
+    margin-top: 12px;
+}
+
 .block #icon {
     margin-right: 5px;
     color: ~"[[setting:themecolor]]";
@@ -789,19 +772,15 @@ table#greyboxleft h2 {
     color: #d3d3d3;
     margin-right: 5px;
 }
-/*
-.block_navigation.block li.depth_1 .tree_item.branch:before {
-    content: "\f015 ";
+
+.block_navigation.block li.type_user > .tree_item.branch:before {
+    content: "\f007 ";
 }
 
-.block_navigation.block li.depth_2 .tree_item.branch:before {
-    content: "\f07b ";
+.block_navigation.block li.type_unknown.depth_1 > .tree_item.branch:before { 
+	content: "\f015 ";
 }
 
-.block_navigation.block li.depth_2 {
-    margin-left: -20px;
-}
-*/
 .collapsed .tree_item.branch:before {
     font-family: FontAwesome;
     content: "\f07b ";
@@ -900,7 +879,7 @@ table#greyboxleft h2 {
     color: #fff;
     width: 100px;
     padding: 4px 12px;
-    font-size: 14px;
+    font-size: 1em;
     border-radius: 5px;
 }
 
@@ -947,7 +926,7 @@ table#greyboxleft h2 {
     color: #fff;
     cursor: pointer;
     display: inline-block;
-    font-size: 14px;
+    font-size: 1em;
     line-height: 20px;
     padding: 4px 12px;
     text-align: center;
@@ -1245,7 +1224,7 @@ table#greyboxleft h2 {
 }
 
 .service i{
-    font-size:1.2em;
+    font-size: 1.2em;
     margin-top:3px;
     margin-right:8px;
 }
@@ -1459,7 +1438,7 @@ table#greyboxleft h2 {
     margin:10px auto;
     padding-top:15px;
     line-height:19px;
-    font-size:1em;
+    font-size: 1em;
     color:#666;
 }
 
@@ -1504,18 +1483,6 @@ img.profilepicture
     width:120px;
     height:120px;
     border-radius:250px;
-}
-
-.socials img {
-    border-radius:5px;
-    width: 30px;
-    height: 30px;
-    margin-top: 0px;
-}
-
-.socials img:hover{
-    -webkit-transition: all .5s ease; /* Safari */
-    transition: all .5s ease;
 }
 
 /* @end */
@@ -1563,7 +1530,7 @@ img.profilepicture
 }
 
 .performanceinfo var{
-    font-size:1.2em;
+    font-size: 1.2em;
     padding: 5px;
     border-radius: 5px;
     color: #fff !important;
@@ -1571,9 +1538,9 @@ img.profilepicture
 }
 
 .performanceinfo h2 {
-    font-size: 14px;
+    font-size: 1.4em;
     color: #888;
-    line-height: 14px;
+    line-height: 1.4em;
     text-transform: uppercase;
     font-weight: normal;
     padding-bottom: 10px;
@@ -1686,7 +1653,7 @@ img.profilepicture
 }
 
 .form-item .form-label .form-overridden {
-    font-size: 75%;
+    font-size: 1em;
     font-family: monospace;
 }
 
@@ -1811,26 +1778,30 @@ table.calendarmonth.calendartable {
 
 /* @end */
 @media screen and (min-width: 960px) {
-    .two-column.side-regions-with-max-width #block-region-side-pre {
+    .side-regions-with-max-width #block-region-side-pre {
         width: 285px;
     }
 
-    .two-column.side-regions-with-max-width #region-main {
+    .side-regions-with-max-width #region-main {
         width: ~"calc(97% - 285px)";
     }
 }
 
 @media screen and (min-width: 1200px) {
 
-    .three-column.side-regions-with-max-width.empty-region-side-post.used-region-side-pre #block-region-side-pre,
-    .three-column.side-regions-with-max-width #block-region-side-pre,
-    .three-column.side-regions-with-max-width #block-region-side-post {
+    .side-regions-with-max-width.empty-region-side-post.used-region-side-pre #block-region-side-pre,
+    .side-regions-with-max-width #block-region-side-pre,
+    .side-regions-with-max-width #block-region-side-post {
         width: 285px;
     }
-    .three-column.side-regions-with-max-width.empty-region-side-post.used-region-side-pre #region-main,
-    .three-column.side-regions-with-max-width #region-bs-main-and-pre,
-    .three-column.side-regions-with-max-width #region-main {
+    .side-regions-with-max-width.empty-region-side-post.used-region-side-pre #region-main,
+    .side-regions-with-max-width #region-bs-main-and-pre,
+    .side-regions-with-max-width #region-main {
 		width: ~"calc(97% - 285px)";
+    }
+    
+    .maintenance #region-main, #page-login-index #region-main {
+        width: 100% !important;
     }
 }
 
@@ -1929,10 +1900,6 @@ table.calendarmonth.calendartable {
         text-shadow: none;
         font-size: 1em;
     }
-
-    #page .navbar .breadcrumb {
-        padding: 0px 0px;
-    }  
 
     #page .navbar a {
         color: #000;

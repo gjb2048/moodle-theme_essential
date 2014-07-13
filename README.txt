@@ -5,7 +5,7 @@ With 2.5 now released Julian thought it time to take the opportunity to build a 
 The idea of this theme is to make the site look as little like Moodle as possible. In this specific instance, it would be used on sites where Moodle would potentially serve as a company homepage rather than just a course list.
 
 Cool things to know about the theme.
- - It only uses 4 images.
+ - It only uses 3 images.
  - Most of what you think are "graphics" are actually the [Awesome font](http://fortawesome.github.io/Font-Awesome/)
  - The slider on the frontpage of the demo site is completely customisable through theme settings
  - I am really trying to push what [Bootstrap](http://twitter.github.io/bootstrap/) Grids can do. As such the theme is fully responsive.
@@ -18,6 +18,20 @@ Cool things to know about the theme.
 New in 2.7.3
 ========================
 - FIX: Fixed slide show by replacing with Bootstrap 2.3.2 one.  Issue #18.
+- FIX: Permanently replace edit icons with FontAwesome icons
+- FIX: Massive cleanup in all files, reducing CSS with 50kb
+- FIX: Fixed all custom block regions to stick where they are
+- FIX: Displaying footer and header on login page as well
+- FIX: Further language file cleanup, looking for maintainers of all non-english language files!
+- FIX: Optimize code for much improved processing time
+- FIX: Optimize javascript to reduce browser lag on load
+- FIX: Resolve layout issues on font-rendering
+- FIX: Set layout options for responsive rendering, more mobile support to come soon
+- NEW: Reduced amount of fonts in theme, added legacy themes for websafe support
+- NEW: New slider with up to 16 slides, full responsive
+- NEW: Footer will go all the way to bottom on modern browsers (except IE of course)
+- NEW: Removed output of summary to header due to potential exploits
+- NEW: Breadcrumb styling
 
 New in 2.7.2
 ========================

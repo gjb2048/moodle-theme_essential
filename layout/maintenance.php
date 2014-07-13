@@ -23,12 +23,9 @@
  * If you are modifying this file please be extremely careful, one wrong API call and you could end up
  * breaking installation or upgrade unwittingly.
  */
-theme_essential_check_colours_switch();
-theme_essential_initialise_colourswitcher($PAGE);
 
-$bodyclasses = array();
-$bodyclasses[] = 'essential-colours-' . theme_essential_get_colours();
- 
+require_once(dirname(__FILE__).'/includes/pagesettings.php');
+
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
@@ -42,26 +39,28 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<div id="page" class="container-fluid">
+<section role="main-content">
+    <div id="page" class="container-fluid maintenance">
 
-    <header id="page-header" class="clearfix">
-        <?php echo $OUTPUT->page_heading(); ?>
-    </header>
+        <header id="page-header" class="clearfix">
+            <?php echo $OUTPUT->page_heading(); ?>
+        </header>
 
-    <div id="page-content" class="row-fluid">
-        <section id="region-main" class="span12">
-            <?php echo $OUTPUT->main_content(); ?>
-        </section>
+        <div id="page-content" class="row-fluid">
+            <section id="region-main" class="span12">
+                <?php echo $OUTPUT->main_content(); ?>
+            </section>
+        </div>
+
     </div>
+</section>
 
-    <footer id="page-footer">
-        <?php
-        echo $OUTPUT->standard_footer_html();
-        ?>
-    </footer>
+<footer id="page-footer">
+    <?php
+    echo $OUTPUT->standard_footer_html();
+    ?>
+</footer>
 
-    <?php echo $OUTPUT->standard_end_of_body_html() ?>
-
-</div>
+<?php echo $OUTPUT->standard_end_of_body_html() ?>
 </body>
 </html>

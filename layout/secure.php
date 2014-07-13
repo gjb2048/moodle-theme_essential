@@ -14,9 +14,6 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-$bodyclasses = array();
-$bodyclasses[] = 'essential-colours-' . theme_essential_get_colours();
-
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
@@ -48,26 +45,27 @@ echo $OUTPUT->doctype() ?>
     </nav>
 </header>
 
-<div id="page" class="container-fluid">
+<section role="main-content">
+    <div id="page" class="container-fluid">
 
-    <header id="page-header" class="clearfix">
-        <?php echo $OUTPUT->page_heading(); ?>
-    </header>
+        <header id="page-header" class="clearfix">
+            <?php echo $OUTPUT->page_heading(); ?>
+        </header>
 
-    <div id="page-content" class="row-fluid">
-        <div id="region-bs-main-and-pre" class="span9">
-            <div class="row-fluid">
-                <section id="region-main" class="span8 pull-right">
-                    <?php echo $OUTPUT->main_content(); ?>
-                </section>
-                <?php echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column'); ?>
+        <div id="page-content" class="row-fluid">
+            <div id="region-bs-main-and-pre" class="span9">
+                <div class="row-fluid">
+                    <section id="region-main" class="span8 pull-right">
+                        <?php echo $OUTPUT->main_content(); ?>
+                    </section>
+                    <?php echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column'); ?>
+                </div>
             </div>
+            <?php echo $OUTPUT->blocks('side-post', 'span3'); ?>
         </div>
-        <?php echo $OUTPUT->blocks('side-post', 'span3'); ?>
     </div>
+</section>
 
-    <?php echo $OUTPUT->standard_end_of_body_html() ?>
-
-</div>
+<?php echo $OUTPUT->standard_end_of_body_html() ?>
 </body>
 </html>

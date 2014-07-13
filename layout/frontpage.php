@@ -23,30 +23,9 @@
  * @author     Based on code originally written by G J Bernard, Mary Evans, Bas Brands, Stuart Lamour and David Scotson.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-$hashiddendock = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('hidden-dock', $OUTPUT));
-$sideregionsmaxwidth = (!empty($PAGE->theme->settings->sideregionsmaxwidth));
 
-$hasalert1 = (empty($PAGE->theme->settings->enable1alert)) ? false : $PAGE->theme->settings->enable1alert;
-$hasalert2 = (empty($PAGE->theme->settings->enable2alert)) ? false : $PAGE->theme->settings->enable2alert;
-$hasalert3 = (empty($PAGE->theme->settings->enable3alert)) ? false : $PAGE->theme->settings->enable3alert;
-$alertinfo = '<span class="fa-stack "><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-info fa-stack-1x fa-inverse"></i></span>';
-$alertwarning = '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-warning fa-stack-1x fa-inverse"></i></span>';
-$alertsuccess = '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-bullhorn fa-stack-1x fa-inverse"></i></span>';
+require_once(dirname(__FILE__).'/includes/pagesettings.php');
 
-$hasfrontpageblocks = (empty($PAGE->theme->settings->frontpageblocks)) ? false : $PAGE->theme->settings->frontpageblocks;
-$hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
-
-theme_essential_check_colours_switch();
-theme_essential_initialise_colourswitcher($PAGE);
-
-$bodyclasses = array();
-$bodyclasses[] = 'two-column';
-$bodyclasses[] = 'essential-colours-' . theme_essential_get_colours();
-if ($sideregionsmaxwidth) {
-    $bodyclasses[] = 'side-regions-with-max-width';
-}
-
-$left = (!right_to_left());  // To know if to add 'pull-right' and 'desktop-first-column' classes in the layout for LTR.
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
@@ -66,6 +45,11 @@ echo $OUTPUT->doctype() ?>
         <?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
     <?php } ?>
     <!-- End Google Analytics -->
+    <script type="text/javascript">
+    jQuery(document).ready(function() {
+        $('.carousel').carousel();
+    });
+    </script>
 </head>
 
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
@@ -75,176 +59,154 @@ echo $OUTPUT->doctype() ?>
 <?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
 
 <section class="slideshow">
-<!-- Start Slider --><?php 
-    if($PAGE->theme->settings->toggleslideshow==1) {
-        require_once(dirname(__FILE__).'/includes/slider.php');
-    } else if($PAGE->theme->settings->toggleslideshow==2 && !isloggedin()) {
-        require_once(dirname(__FILE__).'/includes/slider.php');
-    } else if($PAGE->theme->settings->toggleslideshow==3 && isloggedin()) {
-        require_once(dirname(__FILE__).'/includes/slider.php');
-    } 
-?>
-<!-- End Slider -->
+	<!-- Start Slideshow -->
+	<?php 
+		if($PAGE->theme->settings->toggleslideshow==1) {
+			require_once(dirname(__FILE__).'/includes/slideshow.php');
+		} else if($PAGE->theme->settings->toggleslideshow==2 && !isloggedin()) {
+			require_once(dirname(__FILE__).'/includes/slideshow.php');
+		} else if($PAGE->theme->settings->toggleslideshow==3 && isloggedin()) {
+			require_once(dirname(__FILE__).'/includes/slideshow.php');
+		} 
+	?>
+	<!-- End Slideshow -->
 </section>
 
-<section class="page-content">
-<!-- Start Main Regions -->
-<div id="page" class="container-fluid">
+<section role="main-content">
+	<!-- Start Main Regions -->
+	<div id="page" class="container-fluid">
 
-<!-- Start Alerts -->
+	<!-- Start Alerts -->
 
-<!-- Alert #1 -->
-<?php if ($hasalert1) { ?>  
-    <div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert1type ?>">  
-    <a class="close" data-dismiss="alert" href="#">×</a>
-    <?php 
-    if ($PAGE->theme->settings->alert1type == 'info') {
-        $alert1icon = $alertinfo;
-    } else if ($PAGE->theme->settings->alert1type == 'error') {
-        $alert1icon = $alertwarning;
-    } else {
-        $alert1icon = $alertsuccess;
-    } 
-    $alert1title = 'alert1title_'.current_language();
-    $alert1text = 'alert1text_'.current_language();
-    echo $alert1icon.'<span class="title">'.$PAGE->theme->settings->$alert1title.'</span>'.$PAGE->theme->settings->$alert1text; ?> 
-</div>
-<?php } ?>
+	<!-- Alert #1 -->
+	<?php if ($PAGE->theme->settings->enable1alert) { ?>  
+		<div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert1type ?>">  
+		<a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
+		<?php 
+		if ($PAGE->theme->settings->alert1type == 'info') {
+			$alert1icon = $alertinfo;
+		} else if ($PAGE->theme->settings->alert1type == 'error') {
+			$alert1icon = $alertwarning;
+		} else {
+			$alert1icon = $alertsuccess;
+		} 
+		$alert1title = 'alert1title_'.current_language();
+		$alert1text = 'alert1text_'.current_language();
+		echo $alert1icon.'<span class="title">'.$PAGE->theme->settings->$alert1title.'</span>'.$PAGE->theme->settings->$alert1text; ?> 
+	</div>
+	<?php } ?>
 
-<!-- Alert #2 -->
-<?php if ($hasalert2) { ?>  
-    <div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert2type ?>">  
-    <a class="close" data-dismiss="alert" href="#">×</a>
-    <?php 
-    if ($PAGE->theme->settings->alert2type == 'info') {
-        $alert2icon = $alertinfo;
-    } else if ($PAGE->theme->settings->alert2type == 'error') {
-        $alert2icon = $alertwarning;
-    } else {
-        $alert2icon = $alertsuccess;
-    } 
-    $alert2title = 'alert2title_'.current_language();
-    $alert2text = 'alert2text_'.current_language();
-    echo $alert2icon.'<span class="title">'.$PAGE->theme->settings->$alert2title.'</span>'.$PAGE->theme->settings->$alert2text; ?> 
-</div>
-<?php } ?>
+	<!-- Alert #2 -->
+	<?php if ($PAGE->theme->settings->enable2alert) { ?>  
+		<div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert2type ?>">  
+		<a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
+		<?php 
+		if ($PAGE->theme->settings->alert2type == 'info') {
+			$alert2icon = $alertinfo;
+		} else if ($PAGE->theme->settings->alert2type == 'error') {
+			$alert2icon = $alertwarning;
+		} else {
+			$alert2icon = $alertsuccess;
+		} 
+		$alert2title = 'alert2title_'.current_language();
+		$alert2text = 'alert2text_'.current_language();
+		echo $alert2icon.'<span class="title">'.$PAGE->theme->settings->$alert2title.'</span>'.$PAGE->theme->settings->$alert2text; ?> 
+	</div>
+	<?php } ?>
 
-<!-- Alert #3 -->
-<?php if ($hasalert3) { ?>  
-    <div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert3type ?>">  
-    <a class="close" data-dismiss="alert" href="#">×</a>
-    <?php 
-    if ($PAGE->theme->settings->alert3type == 'info') {
-        $alert3icon = $alertinfo;
-    } else if ($PAGE->theme->settings->alert3type == 'error') {
-        $alert3icon = $alertwarning;
-    } else {
-        $alert3icon = $alertsuccess;
-    } 
-    $alert3title = 'alert3title_'.current_language();
-    $alert3text = 'alert3text_'.current_language();
-    echo $alert3icon.'<span class="title">'.$PAGE->theme->settings->$alert3title.'</span>'.$PAGE->theme->settings->$alert3text; ?> 
-</div>
-<?php } ?>
-<!-- End Alerts -->
+	<!-- Alert #3 -->
+	<?php if ($PAGE->theme->settings->enable3alert) { ?>  
+		<div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert3type ?>">  
+		<a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
+		<?php 
+		if ($PAGE->theme->settings->alert3type == 'info') {
+			$alert3icon = $alertinfo;
+		} else if ($PAGE->theme->settings->alert3type == 'error') {
+			$alert3icon = $alertwarning;
+		} else {
+			$alert3icon = $alertsuccess;
+		} 
+		$alert3title = 'alert3title_'.current_language();
+		$alert3text = 'alert3text_'.current_language();
+		echo $alert3icon.'<span class="title">'.$PAGE->theme->settings->$alert3title.'</span>'.$PAGE->theme->settings->$alert3text; ?> 
+	</div>
+	<?php } ?>
+	<!-- End Alerts -->
 
-<!-- Start Marketing Spots -->
-<?php 
-    if($PAGE->theme->settings->togglemarketing==1) {
-        require_once(dirname(__FILE__).'/includes/marketingspots.php');
-    } else if($PAGE->theme->settings->togglemarketing==2 && !isloggedin()) {
-        require_once(dirname(__FILE__).'/includes/marketingspots.php');
-    } else if($PAGE->theme->settings->togglemarketing==3 && isloggedin()) {
-        require_once(dirname(__FILE__).'/includes/marketingspots.php');
-    } 
-?>
-<!-- End Marketing Spots -->
+	<!-- Start Marketing Spots -->
+	<?php 
+		if($PAGE->theme->settings->togglemarketing==1) {
+			require_once(dirname(__FILE__).'/includes/marketingspots.php');
+		} else if($PAGE->theme->settings->togglemarketing==2 && !isloggedin()) {
+			require_once(dirname(__FILE__).'/includes/marketingspots.php');
+		} else if($PAGE->theme->settings->togglemarketing==3 && isloggedin()) {
+			require_once(dirname(__FILE__).'/includes/marketingspots.php');
+		} 
+	?>
+	<!-- End Marketing Spots -->
 
-<!-- Start Middle Blocks -->
-<?php 
-    if($PAGE->theme->settings->frontpagemiddleblocks==1) {
-        require_once(dirname(__FILE__).'/includes/middleblocks.php');
-    } else if($PAGE->theme->settings->frontpagemiddleblocks==2 && !isloggedin()) {
-        require_once(dirname(__FILE__).'/includes/middleblocks.php');
-    } else if($PAGE->theme->settings->frontpagemiddleblocks==3 && isloggedin()) {
-        require_once(dirname(__FILE__).'/includes/middleblocks.php');
-    } 
-?>
-<!-- End Middle Blocks -->
+	<!-- Start Middle Blocks -->
+	<?php 
+		if($PAGE->theme->settings->frontpagemiddleblocks==1) {
+			require_once(dirname(__FILE__).'/includes/middleblocks.php');
+		} else if($PAGE->theme->settings->frontpagemiddleblocks==2 && !isloggedin()) {
+			require_once(dirname(__FILE__).'/includes/middleblocks.php');
+		} else if($PAGE->theme->settings->frontpagemiddleblocks==3 && isloggedin()) {
+			require_once(dirname(__FILE__).'/includes/middleblocks.php');
+		} 
+	?>
+	<!-- End Middle Blocks -->
 
-<!-- Start Frontpage Content -->
-<?php if($PAGE->theme->settings->usefrontcontent ==1) { 
-    echo $PAGE->theme->settings->frontcontentarea;
-    ?>
-    <div class="bor" style="margin-top: 10px;"></div>   
-<?php }?>
-<!-- End Frontpage Content -->
+	<!-- Start Frontpage Content -->
+	<?php if($PAGE->theme->settings->usefrontcontent ==1) { 
+		echo $PAGE->theme->settings->frontcontentarea;
+		?>
+		<div class="bor" style="margin-top: 10px;"></div>   
+	<?php }?>
+	<!-- End Frontpage Content -->
 
 
-    <div id="page-content" class="row-fluid">
-        <?php if ($hasfrontpageblocks==1) { ?>
-        <section id="region-main" class="span8 pull-right">
-        <?php } else { ?>
-        <section id="region-main" class="span8 desktop-first-column">
-        <?php } ?>
-            <div id="page-navbar" class="clearfix">
-                <div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
-                <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-            </div>
-            <?php
-            echo $OUTPUT->course_content_header();
-            echo $OUTPUT->main_content();
-            echo $OUTPUT->course_content_footer();
-            ?>
-        </section>
-        <?php
-        if ($hasfrontpageblocks==1) {
-            echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column');
-        } else {
-            echo $OUTPUT->blocks('side-pre', 'span4 pull-right');
-        }
-        ?>
-    </div>
-    
-    <!-- End Main Regions -->
+		<div id="page-content" class="row-fluid">
+			<?php if ($PAGE->theme->settings->frontpageblocks) { ?>
+			<section id="region-main" class="span8 pull-right">
+			<?php } else { ?>
+			<section id="region-main" class="span8 desktop-first-column">
+			<?php } ?>
+				<div id="page-navbar" class="clearfix">
+					<div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
+					<nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
+				</div>
+				<?php
+				echo $OUTPUT->course_content_header();
+				echo $OUTPUT->main_content();
+				echo $OUTPUT->course_content_footer();
+				?>
+			</section>
+			<?php
+			if ($PAGE->theme->settings->frontpageblocks) {
+				echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column');
+			} else {
+				echo $OUTPUT->blocks('side-pre', 'span4 pull-right');
+			}
+			?>
+		</div>
+		
+		<!-- End Main Regions -->
 
-    <?php if (is_siteadmin()) { ?>
-    <div class="hidden-blocks">
-        <div class="row-fluid">
-            <h4><?php echo get_string('visibleadminonly', 'theme_essential') ?></h4>
-            <?php
-                echo $OUTPUT->essentialblocks('hidden-dock');
-            ?>
-        </div>
-    </div>
-    <?php } ?>
+		<?php if (is_siteadmin()) { ?>
+		<div class="hidden-blocks">
+			<div class="row-fluid">
+				<h4><?php echo get_string('visibleadminonly', 'theme_essential') ?></h4>
+				<?php
+					echo $OUTPUT->essentialblocks('hidden-dock');
+				?>
+			</div>
+		</div>
+		<?php } ?>
 
 	</div>
 </section>
 
-        <?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
-
-    <?php echo $OUTPUT->standard_end_of_body_html() ?>
-
-<script type="text/javascript">
-jQuery(document).ready(function() {
-    var offset = 220;
-    var duration = 500;
-    jQuery(window).scroll(function() {
-        if (jQuery(this).scrollTop() > offset) {
-            jQuery('.back-to-top').fadeIn(duration);
-        } else {
-            jQuery('.back-to-top').fadeOut(duration);
-        }
-    });
-    
-    jQuery('.back-to-top').click(function(event) {
-        event.preventDefault();
-        jQuery('html, body').animate({scrollTop: 0}, duration);
-        return false;
-    })
-});
-</script>
-<a href="#top" class="back-to-top" title="<?php print_string('backtotop', 'theme_essential'); ?>"><i class="fa fa-angle-up "></i></a>
+<?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
 </body>
 </html>

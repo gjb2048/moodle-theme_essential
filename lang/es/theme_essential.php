@@ -131,42 +131,6 @@ $string['display'] = 'Mostrar';
 $string['dontdisplay'] = 'No Mostrar';
 $string['readmore'] = 'Read More';
 
-$string['slide1'] = 'Diapositiva Uno: Título';
-$string['slide1desc'] = 'Coloque un título descriptivo a su diapositiva';
-$string['slide1image'] = 'Diapositiva Uno: Imagen';
-$string['slide1imagedesc'] = 'La imagen funciona mejor si tiene fondo transparente. (El tamaño debe ser 256px x 256px)';
-$string['slide1caption'] = 'Diapositiva Uno: Subtítulo';
-$string['slide1captiondesc'] = 'Coloque el subtítulo para usar con la primera diapositiva';
-$string['slide1url'] = 'Diapositiva Uno: Enlace de la imagen';
-$string['slide1urldesc'] = 'Coloque el destino del enlace asociado a la primera diapositiva';
-
-$string['slide2'] = 'Diapositiva Dos: Título';
-$string['slide2desc'] = 'Coloque un título descriptivo a su diapositiva';
-$string['slide2image'] = 'Diapositiva Dos: Imagen';
-$string['slide2imagedesc'] = 'La imagen funciona mejor si tiene fondo transparente. (El tamaño debe ser 256px x 256px)';
-$string['slide2caption'] = 'Diapositiva Dos: Subtítulo';
-$string['slide2captiondesc'] = 'Coloque el subtítulo para usar con la segunda diapositiva';
-$string['slide2url'] = 'Diapositiva Dos: Enlace de la imagen';
-$string['slide2urldesc'] = 'Coloque el destino del enlace asociado a la segunda diapositiva';
-
-$string['slide3'] = 'Diapositiva Tres: Título';
-$string['slide3desc'] = 'Coloque un título descriptivo a su diapositiva';
-$string['slide3image'] = 'Diapositiva Tres: Imagen';
-$string['slide3imagedesc'] = 'La imagen funciona mejor si tiene fondo transparente. (El tamaño debe ser 256px x 256px)';
-$string['slide3caption'] = 'Diapositiva Tres: Subtítulo';
-$string['slide3captiondesc'] = 'Coloque el subtítulo para usar con la tercera diapositiva';
-$string['slide3url'] = 'Diapositiva Tres: Enlace de la imagen';
-$string['slide3urldesc'] = 'Coloque el destino del enlace asociado a la tercera diapositiva';
-
-$string['slide4'] = 'Diapositiva Cuatro: Título';
-$string['slide4desc'] = 'Coloque un título descriptivo a su diapositiva';
-$string['slide4image'] = 'Diapositiva Cuatro: Imagen';
-$string['slide4imagedesc'] = 'La imagen funciona mejor si tiene fondo transparente. (El tamaño debe ser 256px x 256px)';
-$string['slide4caption'] = 'Diapositiva Cuatro: Subtítulo';
-$string['slide4captiondesc'] = 'Coloque el subtítulo para usar con la cuarta diapositiva';
-$string['slide4url'] = 'Diapositiva Cuatro: Enlace de la imagen';
-$string['slide4urldesc'] = 'Coloque el destino del enlace asociado a la cuarta diapositiva';
-
 /* Marketing Spots */
 $string['marketingheading'] = 'Spots Publicitarios';
 $string['marketingheadingsub'] = 'Bloques en la página principal diseñados para agregar información y enlaces';

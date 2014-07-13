@@ -1,7 +1,5 @@
 <?php
-$hasmarketing1image = (!empty($PAGE->theme->settings->marketing1image));
-$hasmarketing2image = (!empty($PAGE->theme->settings->marketing2image));
-$hasmarketing3image = (!empty($PAGE->theme->settings->marketing3image));
+require_once(dirname(__FILE__).'/pagesettings.php');
 ?>
 
 <div class="row-fluid" id="middle-blocks">

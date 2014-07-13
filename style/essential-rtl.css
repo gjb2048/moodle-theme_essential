@@ -8,8 +8,8 @@
 
 @font-face {
   font-family: 'FontAwesome';
-  src: url('[[setting:fontwww]]fontawesome-webfont.eot?v=4.1.0');
-  src: url('[[setting:fontwww]]fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'), url('[[setting:fontwww]]fontawesome-webfont.woff?v=4.1.0') format('woff'), url('[[setting:fontwww]]fontawesome-webfont.ttf?v=4.1.0') format('truetype'), url('[[setting:fontwww]]fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
+  src: url([[font:theme|fontawesome-webfont.eot]]);
+  src: url([[font:theme|fontawesome-webfont.eot]]) format('embedded-opentype'), url([[font:theme|fontawesome-webfont.woff]]) format('woff'), url([[font:theme|fontawesome-webfont.ttf]]) format('truetype'), url([[font:theme|fontawesome-webfont.svg]]) format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -2043,10 +2043,6 @@
   content: "\f1e2";
 }
 
-.alert .close {
-  top: 0px;
-}
-
 /*
  * @author    Julian Ridden
  * @package   theme_essential
@@ -2061,8 +2057,15 @@ body {
   padding-top: 0px;
   margin: 0px !important;
   padding: 0px !important;
+  min-height: 99.7vh;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -webkit-flex;
+  /* NEW - Chrome */
   display: flex;
-  min-height: 100vh;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
   flex-direction: column;
 }
 
@@ -2082,6 +2085,10 @@ h3 {
 
 a {
   text-decoration: none;
+}
+
+#dndupload-status {
+  z-index: 100;
 }
 
 .dir-rtl a.logo {
@@ -2106,7 +2113,24 @@ a {
 #page {
   padding-top: 10px;
   width: 100%;
+}
+
+section[role="main-content"] {
+  -webkit-box-flex: 1;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 1;
+  /* OLD - Firefox 19- */
+  -webkit-flex: 1;
+  /* Chrome */
+  -ms-flex: 0;
+  /* IE 10 */
   flex: 1;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+#page-admin-upgradesettings #page,
+.maintenance#page {
+  padding-top: 0px;
 }
 
 /* @group Font Awesome */
@@ -2152,7 +2176,9 @@ a {
   border-bottom: 1px solid #DDD;
 }
 
-#page-header.oldnavbar {
+#page-header.oldnavbar,
+#page-admin-upgradesettings #page-header,
+.maintenance #page-header {
   margin-top: 0px;
 }
 
@@ -2176,15 +2202,9 @@ a.logo {
 
 h1#title {
   white-space: nowrap;
-  font-size: 2.1em;
-}
-
-h2#subtitle {
-  font-size: 1em;
-  text-transform: uppercase;
-  margin-top: -24px;
-  letter-spacing: .15em;
-  white-space: nowrap;
+  font-size: 3em;
+  top: 10px;
+  position: relative;
 }
 
 #headerlogo {
@@ -2215,17 +2235,6 @@ h2#subtitle {
   font-weight: normal;
   color: [[setting:themecolor]];
   font-size: 1.1em;
-}
-
-.socials a,
-.socials a:visited {
-  display: block;
-  font-family: FontAwesome;
-  color: [[setting:themecolor]];
-  font-size: 2.5em;
-  line-height: 25px;
-  padding-right: 5px;
-  text-decoration: none;
 }
 
 button.socialicon {
@@ -2358,34 +2367,6 @@ ul.socials {
 
 /* @group Navbar
  */
-
-.breadcrumb {
-  padding: 0px;
-  color: #555;
-  text-transform: uppercase;
-  font-size: .9em;
-  background: transparent;
-  margin: 0px;
-}
-
-.breadcrumb > li > .divider {
-  color: [[setting:themecolor]];
-}
-
-.breadcrumb-button {
-  margin-top: -4px;
-}
-
-ul.breadcrumb li:after {
-  font-family: FontAwesome;
-  font-size: 1.1em;
-  margin: 0px 3px 0px 6px;
-  color: #bbb;
-}
-
-ul.breadcrumb li:last-child:after {
-  content: none;
-}
 
 .navbar {
   margin-bottom: 0px;
@@ -2625,10 +2606,6 @@ h2.pagetitle span {
   padding-bottom: 20px;
 }
 
-#region-bs-main-and-pre.span9 .row-fluid aside#block-region-side-pre.span4 {
-  margin-right: 2%;
-}
-
 /* @end */
 
 /* @group Forums */
@@ -2851,6 +2828,14 @@ table#greyboxleft h2 {
   margin-bottom: 10px;
 }
 
+.block .content {
+  padding: 4px 0px;
+}
+
+#middle-blocks p {
+  margin-top: 12px;
+}
+
 .block #icon {
   margin-left: 5px;
   color: [[setting:themecolor]];
@@ -2874,19 +2859,13 @@ table#greyboxleft h2 {
   margin-left: 5px;
 }
 
-/*
-.block_navigation.block li.depth_1 .tree_item.branch:before {
-    content: "\f015 ";
+.block_navigation.block li.type_user > .tree_item.branch:before {
+  content: "\f007 ";
 }
 
-.block_navigation.block li.depth_2 .tree_item.branch:before {
-    content: "\f07b ";
+.block_navigation.block li.type_unknown.depth_1 > .tree_item.branch:before {
+  content: "\f015 ";
 }
-
-.block_navigation.block li.depth_2 {
-    margin-left: -20px;
-}
-*/
 
 .collapsed .tree_item.branch:before {
   font-family: FontAwesome;
@@ -2984,7 +2963,7 @@ table#greyboxleft h2 {
   color: #fff;
   width: 100px;
   padding: 4px 12px;
-  font-size: 14px;
+  font-size: 1em;
   border-radius: 5px;
 }
 
@@ -3034,7 +3013,7 @@ table#greyboxleft h2 {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-size: 14px;
+  font-size: 1em;
   line-height: 20px;
   padding: 4px 12px;
   text-align: center;
@@ -3596,19 +3575,6 @@ img.profilepicture {
   border-radius: 250px;
 }
 
-.socials img {
-  border-radius: 5px;
-  width: 30px;
-  height: 30px;
-  margin-top: 0px;
-}
-
-.socials img:hover {
-  -webkit-transition: all .5s ease;
-  /* Safari */
-  transition: all .5s ease;
-}
-
 /* @end */
 
 /* @group Tabs */
@@ -3666,9 +3632,9 @@ img.profilepicture {
 }
 
 .performanceinfo h2 {
-  font-size: 14px;
+  font-size: 1.4em;
   color: #888;
-  line-height: 14px;
+  line-height: 1.4em;
   text-transform: uppercase;
   font-weight: normal;
   padding-bottom: 10px;
@@ -3782,7 +3748,7 @@ img.profilepicture {
 }
 
 .form-item .form-label .form-overridden {
-  font-size: 75%;
+  font-size: 1em;
   font-family: monospace;
 }
 
@@ -3910,26 +3876,31 @@ table.calendarmonth.calendartable {
 /* @end */
 
 @media screen and (min-width: 960px) {
-  .two-column.side-regions-with-max-width #block-region-side-pre {
+  .side-regions-with-max-width #block-region-side-pre {
     width: 285px;
   }
 
-  .two-column.side-regions-with-max-width #region-main {
+  .side-regions-with-max-width #region-main {
     width: calc(97% - 285px);
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .three-column.side-regions-with-max-width.empty-region-side-post.used-region-side-pre #block-region-side-pre,
-  .three-column.side-regions-with-max-width #block-region-side-pre,
-  .three-column.side-regions-with-max-width #block-region-side-post {
+  .side-regions-with-max-width.empty-region-side-post.used-region-side-pre #block-region-side-pre,
+  .side-regions-with-max-width #block-region-side-pre,
+  .side-regions-with-max-width #block-region-side-post {
     width: 285px;
   }
 
-  .three-column.side-regions-with-max-width.empty-region-side-post.used-region-side-pre #region-main,
-  .three-column.side-regions-with-max-width #region-bs-main-and-pre,
-  .three-column.side-regions-with-max-width #region-main {
+  .side-regions-with-max-width.empty-region-side-post.used-region-side-pre #region-main,
+  .side-regions-with-max-width #region-bs-main-and-pre,
+  .side-regions-with-max-width #region-main {
     width: calc(97% - 285px);
+  }
+
+  .maintenance #region-main,
+  #page-login-index #region-main {
+    width: 100% !important;
   }
 }
 
@@ -4030,10 +4001,6 @@ table.calendarmonth.calendartable {
     font-size: 1em;
   }
 
-  #page .navbar .breadcrumb {
-    padding: 0px 0px;
-  }
-
   #page .navbar a {
     color: #000;
     text-shadow: none;
@@ -4058,6 +4025,105 @@ table.calendarmonth.calendartable {
 }
 
 /* @end */
+
+#essentialCarousel.carousel {
+  height: 300px;
+  margin-bottom: 10px;
+}
+
+#essentialCarousel.carousel .carousel-inner {
+  height: 300px;
+}
+
+#essentialCarousel.carousel .carousel-inner > .item > .carousel-image {
+  width: auto;
+  margin: 0 auto;
+  max-height: 300px;
+  max-width: [[setting:pagewidth]];
+  height: 100%;
+  padding: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#essentialCarousel.carousel .carousel-inner a {
+  height: 100%;
+}
+
+#essentialCarousel.carousel .carousel-inner .carousel-caption {
+  background: #30add1;
+  background: rgba(48, 173, 209, 0.75);
+}
+
+#essentialCarousel.carousel .carousel-inner .carousel-caption .carousel-caption-inner {
+  max-width: [[setting:pagewidth]];
+  margin: 0 auto;
+}
+
+#essentialCarousel.carousel .carousel-inner .carousel-caption h4,
+#essentialCarousel.carousel .carousel-inner .carousel-caption p {
+  color: [[setting:slidecolor]];
+  padding: 0px 20px;
+}
+
+#essentialCarousel.carousel .carousel-control {
+  color: [[setting:slidebuttoncolor]];
+  background: none;
+  border: none;
+  width: auto;
+  height: auto;
+}
+
+#essentialCarousel.carousel .carousel-control:hover,
+#essentialCarousel.carousel .carousel-control:focus {
+  color: [[setting:slidebuttonhovercolor]];
+}
+
+#essentialCarousel.carousel .carousel-indicators li {
+  background: #30add1;
+  background: rgba(48, 173, 209, 0.75);
+}
+
+#essentialCarousel.carousel .carousel-indicators .active {
+  background-color: #98d6e8;
+}
+
+@media (max-width: 767px) {
+  #essentialCarousel.carousel {
+    height: 165px;
+  }
+
+  .carousel-inner {
+    height: 165px;
+  }
+
+  .carousel-inner > .item > .carousel-image {
+    max-height: 165px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  #essentialCarousel.carousel {
+    height: 225px;
+  }
+
+  .carousel-inner {
+    height: 225px;
+  }
+
+  .carousel-inner > .item > .carousel-image {
+    max-height: 225px;
+  }
+}
+
+.alert .close {
+  top: 0px;
+}
+
+.alert .close .fa {
+  vertical-align: middle;
+}
 
 /*
  * @author    Franc Pombal
@@ -4085,29 +4151,16 @@ table.calendarmonth.calendartable {
   display: none;
 }
 
+/* adjust lineheight for tiles that include course count */
+
+.frontpage-category-names.course_category_tree .category > .info > .categoryname,
+.frontpage-category-names.course_category_tree .category.with_children > .info > .categoryname {
+  line-height: 15px;
+}
+
 .category-browse {
   overflow: auto;
   width: 100%;
-}
-
-/* Create box for each category */
-
-.course_category_tree .category {
-  float: right;
-  margin: 0 5px 10px 5px;
-}
-
-/* Adjust color for disabled categories */
-
-.course_category_tree .category.dimmed_category {
-  border-color: #AAAAAA;
-}
-
-/* Adjust the position of the name */
-
-.course_category_tree .category .info .name {
-  padding: 0px 0px 0px 0px;
-  text-align: center;
 }
 
 /* Hide icon 'collapsed' because it makes no sense here */
@@ -4118,6 +4171,15 @@ table.calendarmonth.calendartable {
   background: none;
   padding: 0;
   margin: 0;
+}
+
+.course_category_tree .category.dimmed_category {
+  border-color: #AAAAAA;
+}
+
+.course_category_tree .category {
+  float: right;
+  margin: 0 5px 10px 5px;
 }
 
 .course_category_tree .category .numberofcourse {
@@ -4136,6 +4198,15 @@ table.calendarmonth.calendartable {
   border: 2px solid #fff;
 }
 
+.course_category_tree .category .content {
+  display: none;
+}
+
+.course_category_tree .category .info .name {
+  padding: 0px;
+  text-align: center;
+}
+
 .course_category_tree .category > .info,
 .course_category_tree .category > .info > .categoryname {
   background: transparent;
@@ -4145,6 +4216,7 @@ table.calendarmonth.calendartable {
   margin: 0;
 }
 
+.course_category_tree .category > .info a,
 .course_category_tree .category > .info > .categoryname a {
   display: block;
   overflow: hidden;
@@ -4157,8 +4229,6 @@ table.calendarmonth.calendartable {
   font-size: 140px;
   width: 100%;
 }
-
-/* Place image in each category */
 
 .course_category_tree .category[data-categoryid] {
   border: 1px solid #e7e7e7;
@@ -4174,15 +4244,13 @@ table.calendarmonth.calendartable {
   transition: all 0.3s ease;
 }
 
+.course_category_tree .category[data-categoryid] > .info > .categoryname a {
+  line-height: 30px;
+}
+
 .course_category_tree .category[data-categoryid] > .info > .categoryname a:hover {
   text-decoration: none;
   color: #fff;
-}
-
-/* Hide subcategories in the GRID model */
-
-.course_category_tree .category .content {
-  display: none;
 }
 
 /* Hide buttons to expand and collapse */
@@ -4195,74 +4263,6 @@ table.calendarmonth.calendartable {
 
 .subcategories + .category-browse {
   clear: both;
-}
-
-/* adjust lineheight for tiles that include course count */
-
-.frontpage-category-names.course_category_tree .category > .info > .categoryname,
-.frontpage-category-names.course_category_tree .category.with_children > .info > .categoryname {
-  line-height: 15px;
-}
-
-.carousel-inner > .item > img {
-  width: auto;
-  margin: 0 auto;
-  max-width: 800px;
-  max-height: 300px;
-  padding: 0;
-}
-
-@media (max-width: 767px) {
-  .carousel-inner > .item > img {
-    max-width: 440px;
-    max-height: 165px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 979px) {
-  .carousel-inner > .item > img {
-    max-width: 600px;
-    max-height: 225px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .carousel-inner > .item > img {
-    max-width: 1124px;
-    max-height: 422px;
-  }
-}
-
-.carousel-control {
-  color: [[setting:slidebuttoncolor]];
-  background: none;
-  border: none;
-  width: auto;
-  height: auto;
-}
-
-.carousel-control:hover,
-.carousel-control:focus {
-  color: [[setting:slidebuttonhovercolor]];
-}
-
-.carousel-indicators li {
-  background: #30add1;
-  background: rgba(48, 173, 209, 0.75);
-}
-
-.carousel-indicators .active {
-  background-color: #98d6e8;
-}
-
-.carousel-caption {
-  background: #30add1;
-  background: rgba(48, 173, 209, 0.75);
-}
-
-.carousel-caption h4,
-.carousel-caption p {
-  color: [[setting:slidecolor]];
 }
 
 /*
@@ -4522,7 +4522,6 @@ body.has_dock div#dock {
 #dock .dockeditempanel_hd h2 {
   display: block;
   padding: 3px 15px;
-  font-size: 11px;
   font-size: 1.1em;
   font-weight: bold;
   line-height: 20px;
@@ -4639,202 +4638,87 @@ body.dir-rtl.has_dock {
   width: 300px;
 }
 
-/* @group Edit Buttons */
+/** Some breadcrumb style **/
 
-.commands {
-  font-family: FontAwesome;
-  color: [[setting:themecolor]];
-  font-size: 1.1em;
+ul.breadcrumb {
+  display: block;
+  padding: 0;
+  float: right;
+  height: 28px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 10px;
 }
 
-.commands img {
-  display: none;
+ul.breadcrumb li {
+  color: white;
+  padding: 0 45px 0 0;
+  background: [[setting:themecolor]];
+  position: relative;
+  display: block;
+  float: right;
+  line-height: 28px;
+  height: 28px;
 }
 
-#page-mod-glossary-view .commands img,
-#page-calendar-view .commands img {
-  display: inline;
-}
-
-.commands a {
-  padding-left: 5px;
-}
-
-.commands a:hover {
-  text-decoration: none;
-  color: [[setting:themehovercolor]];
-}
-
-.editing_delete:before {
-  content: "\f00d";
-  color: red;
-  padding-left: 5px;
-}
-
-.editing_hide,
-.editing_show,
-.editing_move,
-.editing_groupsnone,
-.editing_groupsvisible,
-.editing_groupsseperate {
-  padding-left: 10px !important;
-}
-
-.editing_move:hover {
-  cursor: move;
-}
-
-.editing_move:before {
-  font-family: 'FontAwesome';
-  content: "\f047";
-}
-
-.editing_move img {
-  display: none;
-}
-
-.editing_moveright:before {
-  content: "\f061";
-  margin-left: 5px;
-}
-
-.editing_moveleft:before {
-  content: "\f060";
-  padding-left: 5px;
-}
-
-.moodle-actionmenu ul .editing_moveright:before,
-.moodle-actionmenu ul .editing_moveleft:before {
-  content: none;
-}
-
-.section-modchooser-link img {
-  display: none;
-}
-
-.section-modchooser-link .section-modchooser-text:before {
-  font-family: 'FontAwesome';
-  content: "\f067";
-  padding-left: 5px;
-}
-
-.section-modchooser-link .section-modchooser-text a:hover {
+ul.breadcrumb li a {
+  color: white;
   text-decoration: none;
 }
 
-.editing_update:before,
-.editing_edit:before {
-  content: "\f013";
-  padding-left: 5px;
-}
-
-.editing_duplicate:before {
-  content: "\f0c5";
-  padding-left: 5px;
-}
-
-.editing_title img {
-  display: none !important;
-}
-
-.editing_title:before {
-  font-family: 'FontAwesome';
-  content: "\f040";
-  padding-left: 5px;
-}
-
-.editing_hide:before {
-  content: "\f06e";
-}
-
-.editing_show:before {
-  content: "\f070";
-}
-
-.editing_assign:before,
-.editing_roles:before {
-  content: "\f084";
-  padding-left: 5px;
-}
-
-.editing_groupsnone:before {
-  content: "\f007";
-}
-
-.editing_groupsvisible:before {
-  content: "\f0c0";
-}
-
-.editing_groupsseparate:before {
-  content: "\f0c0";
-}
-
-.toggle-display:before {
-  content: "\f085";
-  font-family: 'FontAwesome';
-  margin-left: 5px;
-}
-
-.action-moveup:before {
-  content: "\f062";
-  font-family: 'FontAwesome';
-  margin-left: 5px;
-}
-
-.action-movedown:before {
-  content: "\f063";
-  font-family: 'FontAwesome';
-  margin-left: 5px;
-}
-
-.action-hide:before {
-  content: "\f06e";
-  font-family: 'FontAwesome';
-  margin-left: 5px;
-}
-
-.action-show:before {
-  content: "\f070";
-  font-family: 'FontAwesome';
-  margin-left: 5px;
-}
-
-.action-delete:before {
-  content: "\f00d";
-  font-family: 'FontAwesome';
-  margin-left: 5px;
-}
-
-.action-edit:before {
-  content: "\f013";
-  font-family: 'FontAwesome';
-  margin-left: 5px;
-}
-
-.moodle-core-dragdrop-draghandle:before {
-  content: "\f047";
-  font-family: 'FontAwesome';
-  margin-left: 5px;
-  color: [[setting:themecolor]];
-  cursor: move;
-}
-
-.moodle-core-dragdrop-draghandle a {
-  color: [[setting:themecolor]];
-}
-
-.toggle-display img,
-.action-moveup img,
-.action-movedown img,
-.action-hide img,
-.action-show img,
-.action-delete img,
-.action-edit img,
-.drag-handle img {
+ul.breadcrumb li .divider {
   display: none;
 }
 
-/* @end */
+ul.breadcrumb li:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  /* Go big on the size, and let overflow hide */
+  border-bottom: 50px solid transparent;
+  border-right: 30px solid [[setting:themecolor]];
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  right: 100%;
+  z-index: 1;
+}
+
+ul.breadcrumb li:before {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-right: 30px solid white;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  margin-right: 1px;
+  right: 100%;
+  z-index: 1;
+}
+
+ul.breadcrumb li:first-child a {
+  margin-right: -25px;
+}
+
+ul.breadcrumb li:last-child {
+  pointer-events: none;
+  cursor: default;
+  padding-left: 15px;
+}
+
+ul.breadcrumb li:hover {
+  background: [[setting:themehovercolor]];
+}
+
+ul.breadcrumb li:hover:after {
+  border-right-color: [[setting:themehovercolor]] !important;
+}
 
 /*
  * @author    Julian Ridden
@@ -4844,16 +4728,26 @@ body.dir-rtl.has_dock {
 
 /* @group Core */
 
+* {
+  font-family: [[setting:bodyfont]];
+}
+
 body {
   border-top: 3px solid [[setting:themecolor]];
   background: #ffffff url([[setting:pagebackground]]) repeat;
   color: [[setting:themecolor]];
   font-size: [[setting:bodysize]];
   font-weight: [[setting:bodyweight]];
+  font-family: [[setting:bodyfont]];
 }
 
 .container-fluid {
   max-width: [[setting:pagewidth]];
+}
+
+h1,
+h2 {
+  font-family: [[setting:headingfont]];
 }
 
 h1,
@@ -5367,8 +5261,6 @@ table#user-grades td.controls,
 
 /* @end */
 
-/* @group Font Loading */
-
 /* @group Headings */
 
 h1,
@@ -5382,19 +5274,256 @@ h6,
 #socialheading,
 .forumpost .subject,
 .block_login label {
-  font-family: \"[[setting:headingfont]]\", sans-serif;
+  font-family: [[setting:headingfont]];
 }
 
 /* @end */
 
-/* @group Main Text */
+/* @group Editicons */
 
-body,
-.block_login input[type="submit"] {
-  font-family: \"[[setting:bodyfont]]\", Arial, Helvetica, sans-serif;
+.commands {
+  color: [[setting:themecolor]] !important;
+}
+
+.commands a:hover {
+  color: [[setting:themehovercolor]] !important;
+}
+
+.actions a {
+  color: [[setting:themecolor]] !important;
+}
+
+.actions a:hover,
+.actions a:focus,
+.actions a:active {
+  color: [[setting:themehovercolor]] !important;
+}
+
+.moodle-core-dragdrop-draghandle:before,
+.moodle-core-dragdrop-draghandle a {
+  color: [[setting:themecolor]] !important;
 }
 
 /* @end */
+
+/* @group Edit Buttons */
+
+.commands {
+  font-family: FontAwesome;
+  font-size: 1.1em;
+}
+
+.commands img {
+  display: none;
+}
+
+#page-mod-glossary-view .commands img,
+#page-calendar-view .commands img {
+  display: inline;
+}
+
+.commands a:hover {
+  text-decoration: none;
+}
+
+.editing_delete:before {
+  font-family: 'FontAwesome';
+  content: "\f00d ";
+  color: red;
+  padding-left: 5px;
+}
+
+.editing_hide,
+.editing_show,
+.editing_move,
+.editing_groupsnone,
+.editing_groupsvisible,
+.editing_groupsseperate {
+  padding-left: 10px !important;
+}
+
+.editing_move:hover {
+  cursor: move;
+}
+
+.editing_move:before {
+  font-family: 'FontAwesome';
+  content: "\f047 ";
+}
+
+.editing_move img {
+  display: none;
+}
+
+.editing_moveright:before {
+  font-family: 'FontAwesome';
+  content: "\f061 ";
+  margin-left: 5px;
+}
+
+.editing_moveleft:before {
+  font-family: 'FontAwesome';
+  content: "\f060 ";
+  padding-left: 5px;
+}
+
+.moodle-actionmenu ul .editing_moveright:before,
+.moodle-actionmenu ul .editing_moveleft:before {
+  content: none;
+}
+
+.section-modchooser-link img {
+  display: none;
+}
+
+.section-modchooser-link .section-modchooser-text:before {
+  font-family: 'FontAwesome';
+  content: "\f067 ";
+  padding-left: 5px;
+}
+
+.section-modchooser-link .section-modchooser-text a:hover {
+  text-decoration: none;
+}
+
+.editing_update:before,
+.editing_edit:before {
+  font-family: 'FontAwesome';
+  content: "\f013 ";
+  padding-left: 5px;
+}
+
+.editing_duplicate:before {
+  font-family: 'FontAwesome';
+  content: "\f0c5 ";
+  padding-left: 5px;
+}
+
+.editing_title img {
+  display: none !important;
+}
+
+.editing_title:before {
+  font-family: 'FontAwesome';
+  content: "\f040 ";
+  padding-left: 5px;
+}
+
+.editing_hide:before {
+  font-family: 'FontAwesome';
+  content: "\f06e ";
+  padding-left: 5px;
+}
+
+.editing_show:before {
+  font-family: 'FontAwesome';
+  content: "\f070 ";
+}
+
+.editing_assign:before,
+.editing_roles:before {
+  font-family: 'FontAwesome';
+  content: "\f084 ";
+  padding-left: 5px;
+}
+
+.editing_groupsnone:before {
+  font-family: 'FontAwesome';
+  content: "\f007 ";
+}
+
+.editing_groupsvisible:before {
+  font-family: 'FontAwesome';
+  content: "\f0c0 ";
+}
+
+.editing_groupsseparate:before {
+  font-family: 'FontAwesome';
+  content: "\f0c0 ";
+}
+
+.toggle-display:before {
+  font-family: 'FontAwesome';
+  content: "\f085 ";
+  margin-left: 5px;
+}
+
+.action-moveup:before {
+  font-family: 'FontAwesome';
+  content: "\f062 ";
+  margin-left: 5px;
+}
+
+.action-movedown:before {
+  font-family: 'FontAwesome';
+  content: "\f063 ";
+  margin-left: 5px;
+}
+
+.action-hide:before {
+  font-family: 'FontAwesome';
+  content: "\f06e ";
+  margin-left: 5px;
+}
+
+.action-show:before {
+  font-family: 'FontAwesome';
+  content: "\f070 ";
+  margin-left: 5px;
+}
+
+.action-delete:before {
+  font-family: 'FontAwesome';
+  content: "\f00d ";
+  margin-left: 5px;
+}
+
+.action-edit:before {
+  font-family: 'FontAwesome';
+  content: "\f013 ";
+  margin-left: 5px;
+}
+
+.moodle-core-dragdrop-draghandle:before {
+  font-family: 'FontAwesome';
+  content: "\f047 ";
+  margin-left: 5px;
+  cursor: move;
+}
+
+.course-content .section .moodle-core-dragdrop-draghandle:before {
+  font-family: 'FontAwesome';
+  content: "\f07d ";
+  margin-left: 5px;
+  cursor: move;
+}
+
+.section .summary a:before {
+  font-family: 'FontAwesome';
+  content: "\f085 ";
+  margin-left: 5px;
+}
+
+.moodle-actionmenu.show[data-enhanced] .menu a {
+  padding: 2px 1em;
+}
+
+.moodle-actionmenu.show[data-enhanced] .menu a i {
+  margin-left: 5px;
+}
+
+.toggle-display img,
+.action-moveup img,
+.action-movedown img,
+.action-hide img,
+.action-show img,
+.action-delete img,
+.action-edit img,
+.drag-handle img,
+.section-handle img,
+.section .summary a .iconsmall {
+  display: none;
+}
 
 /* @end */
 

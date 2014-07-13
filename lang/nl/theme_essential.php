@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Moodle - http://Moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -49,11 +49,6 @@ David Bezemer<br>
 
 /* Algemeen */
 $string['genericsettings'] = 'Algemene Instellingen';
-$string['autohide'] = 'Schakel automatisch verbergen in';
-$string['autohidedesc'] = 'Automatisch verbergen is gemaakt om Moodle minder overweldigend te laten zijn. Wanneer Bewerken is ingeschakeld worden de iconen alleen getoond als hier met de muis over heen gegaan wordt.';
-
-$string['editicons'] = 'Bewerk Iconen V2';
-$string['editiconsdesc'] = 'Deze optie schakelt FontAwesome in om gekleurde en beter vormgegeven bewerk iconen te tonen. Momenteel werkt dit niet correct samen met de Automatisch verbergen optie.';
 
 $string['customcss'] = 'Aanvullende CSS';
 $string['customcssdesc'] = 'Als er aanvullende CSS vereist is kan dit in het onderstaande tekstvak worden ingevoerd, en zal automatisch op iedere pagina ingevoegd worden.';
@@ -180,9 +175,6 @@ $string['colorheading'] = 'Kleurinstellingen';
 $string['colorheadingsub'] = 'Kies hier de kleuren die je in je thema wil gebruiken.';
 $string['colordesc'] = 'Hieronder staan de verschillende instellingen om veel van de gebruikte kleuren in dit thema aan te passen.';
 
-$string['slidecolors'] = 'Slideshow kleuren';
-$string['slidecolorsdesc'] = 'Verander de kleuren van de slideshow';
-
 $string['footercolors'] = 'Voetnoot kleuren';
 $string['footercolorsdesc'] = 'Verander de kleuren van de voetnoot';
 
@@ -211,6 +203,8 @@ $string['pagebackground'] = 'Pagina achtergrondafbeelding';
 $string['pagebackgrounddesc'] = 'Upload hier je achtergrond afbeelding. Deze achtergrond afbeelding zal op alle pagina\'s getoond worden. Als je geen afbeelding upload wordt hier een vaste kleur voor gebruikt.';
 
 /* Alternate Color Switcher */
+$string['themecolors'] = 'Themakleuren';
+$string['defaultcolors'] = 'Standaardkleuren';
 $string['alternativethemecolors'] = 'Alternatieve themakleur {$a}';
 $string['alternativethemecolorsdesc'] = 'Definieer de alternatieve kleurschema\'s.';
 $string['enablealternativethemecolors'] = 'Schakel alternatief kleurschema {$a} in';
@@ -247,35 +241,33 @@ $string['slideshowdesc'] = 'Indien ingeschakeld wordt er een dynamische slidesho
 $string['toggleslideshow'] = 'Slideshow inschakelen';
 $string['toggleslideshowdesc'] = 'Kies hier of je de slideshow in wil schakelen.';
 
-$string['hideonphone'] = 'Toon slideshow op telefoons';
-$string['hideonphonedesc'] = 'Kies hier of je de slideshow ook op telefoons wil tonen.';
+$string['numberofslides'] = 'Aantal slides';
+$string['numberofslides_desc'] = 'Kies hier het aantal slider voor de slideshow.';
+
+$string['hideonphone'] = 'Verberg slideshow op telefoons';
+$string['hideonphonedesc'] = 'Kies hier of je de slideshow wil uitschakelen op telefoons.';
+
+$string['hideontablet'] = 'Verberg slideshow op tablets';
+$string['hideontabletdesc'] = 'Kies hier of je de slideshow wil uitschakelen op tablets.';
 
 $string['readmore'] = 'Lees verder';
 
+$string['slideinterval'] = 'Slide interval';
+$string['slideintervaldesc'] = 'Voer hier de tijd in milliseconden in voor het wisselen tussen slides.';
+
 $string['slidecolor'] = 'Slide tekstkleur';
 $string['slidecolordesc'] = 'Kies hier de kleur van de hoofdtekst op de slide.';
-$string['slideshowcolor'] = 'Slide achtergrondkleur';
-$string['slideshowcolordesc'] = 'Kies hier de kleur voor de slideshow achtergrond.';
-$string['slideheadercolor'] = 'Slide koptekstkleur';
-$string['slideheadercolordesc'] = 'Kies hier de kleur voor de koptekst.';
+
 $string['slidebuttoncolor'] = 'Slide buttonkleur';
-$string['slidebuttoncolordesc'] = 'Kies hier de kleur voor de "Lees verder" knop.';
+$string['slidebuttoncolordesc'] = 'Kies hier de kleur voor de navigatie knoppen.';
+$string['slidebuttonhovercolor'] = 'Slide hover buttonkleur';
+$string['slidebuttonhovercolordesc'] = 'Kies hier de kleur voor de navigatie knoppen wanneer je erover beweegt.';
 
-$string['slideshowvariant'] = 'Slideshow ontwerp';
-$string['slideshowvariantdesc'] = 'Kies de stijl voor de slideshow.';
-$string['slideshow1'] = 'Kleine afbeelding rechts';
-$string['slideshow2'] = 'Grote achtergrond afbeelding';
-
-$string['slideshowtitle'] = 'Slideshow';
-$string['slideinfodesc'] = 'Personaliseer hier je slides.';
-$string['slide1'] = 'Slide 1';
-$string['slide2'] = 'Slide 2';
-$string['slide3'] = 'Slide 3';
-$string['slide4'] = 'Slide 4';
-$string['slide5'] = 'Slide 5';
-
+$string['slideno'] = 'Slide {$a->slide}';
+$string['slidenodesc'] = 'Voer de informatie in voor slide {$a->slide}.';
 $string['slidetitle'] = 'Slide titel';
 $string['slidetitledesc'] = 'Voer een titel in voor je slide.';
+$string['noslidetitle'] = 'No title for slide {$a->slide}';
 $string['slideimage'] = 'Slide afbeelding';
 $string['slideimagedesc'] = 'Gebruik hier een transparante png (formaat is 256px x 256px voor de kleine afbeelding, en 300px x 1200px voor de achtergrond afbeelding)';
 $string['slidecaption'] = 'Slide tekst';
@@ -366,14 +358,20 @@ $string['categoryiconheading'] = 'Categorie Iconen';
 $string['categoryiconheadingsub'] = 'Gebruik iconen om categorieën weer te geven.';
 $string['categoryicondesc'] = 'Indien ingeschakeld kun je hier iconen voor iedere categorie instellen.';
 
-$string['usecategoryicon'] = 'Categorie iconen inschakelen';
-$string['usecategoryicondesc'] = 'Kies hier of je iconen voor categorieën in wil schakelen.';
+$string['enablecategoryicon'] = 'Categorie iconen inschakelen';
+$string['enablecategoryicondesc'] = 'Kies hier of je iconen voor categorieën in wil schakelen. Na inschakelen dien je eerst op "Opslaan" te klikken.';
+
+$string['usecategoryicon'] = 'Enable Category Icons';
+$string['usecategoryicondesc'] = 'Use custom icons for categories';
 
 $string['defaultcategoryicon'] = 'Standaard categorie icoon';
 $string['defaultcategoryicondesc'] = 'Stel hier een standaard categorie icoon in.';
 
+$string['enablecustomcategoryicon'] = 'Aangepaste categorie iconen inschakelen';
+$string['enablecustomcategoryicondesc'] = 'Kies hier of je aangepaste iconen voor categorieën in wil schakelen. Dit zorgt dat je voor iedere categorie een ander icoon kan instellen. Na inschakelen dien je eerst op "Opslaan" te klikken.';
+
 $string['categoryiconinfo'] = 'Aangepaste categorie iconen';
-$string['categoryiconinfodesc'] = 'Stel hier per categorie een icoon in. Je moet deze instellen door het "categorie ID" te gebruiken, welke in de categorieën in de URL te zien is.';
+$string['categoryiconinfodesc'] = 'Stel hier per categorie een icoon in. De mogelijke opties vind je <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">hier</a>, voer het gedeelte na "fa-" in.';
 
 /* Mobile Apps */
 $string['mobileappsheading'] = 'Mobiele applicaties';
@@ -381,10 +379,10 @@ $string['mobileappsheadingsub'] = 'Link naar je apps om te stimuleren dat gebrui
 $string['mobileappsdesc'] = 'Heb je een app in de App Store of Play Store? Voer hier de links in zodat je apps eenvoudig gevonden kunenn worden.';
 
 $string['android'] = 'Android (Google Play)';
-$string['androiddesc'] = 'Voer een URL in naar je app in de Google Play. Als je zelf geen app hebt, kun je hier ook de officiële Moodle app invoeren. (https://play.google.com/store/apps/details?id=com.moodle.moodlemobile)';
+$string['androiddesc'] = 'Voer een URL in naar je app in de Google Play. Als je zelf geen app hebt, kun je hier ook de officiële Moodle app invoeren. (https://play.google.com/store/apps/details?id=com.Moodle.Moodlemobile)';
 
 $string['ios'] = 'iPhone/iPad (Apple App Store)';
-$string['iosdesc'] = 'Voer een URL in naar je App in de App Store. Als je zelf geen app hebt, kun je hier ook de officiële Moodle app invoeren. (https://itunes.apple.com/en/app/moodle-mobile/id633359593)';
+$string['iosdesc'] = 'Voer een URL in naar je App in de App Store. Als je zelf geen app hebt, kun je hier ook de officiële Moodle app invoeren. (https://itunes.apple.com/en/app/Moodle-mobile/id633359593)';
 
 /* iOS Icons */
 $string['iosicon'] = 'iOS thuisscherm iconen';
@@ -414,7 +412,7 @@ $string['analyticsid'] = 'Tracking code';
 $string['analyticsiddesc'] = 'Voer hier je tracking ID in. Het formaat van deze code is normaal gesproken UA-XXXXXXXX-X';
 
 $string['analyticsclean'] = 'Gebruik schone titels';
-$string['analyticscleandesc'] = 'Deze schitterende optie is bedacht door <a href="https://moodle.org/user/profile.php?id=281671" target="_blank">Gavin Henrick</a> en <a href="https://moodle.org/user/view.php?id=907814" target="_blank">Bas Brands</a>. In plaats van standaard Moodle pagina links te verzenden worden nette titels verzonden. Meer informatie, en waarom dit handig kan zijn kun je <b><a href="http://www.somerandomthoughts.com/blog/2012/04/18/ireland-uk-moodlemoot-analytics-to-the-front/" target="_blank">hier vinden</a></b>.';
+$string['analyticscleandesc'] = 'Deze schitterende optie is bedacht door <a href="https://Moodle.org/user/profile.php?id=281671" target="_blank">Gavin Henrick</a> en <a href="https://Moodle.org/user/view.php?id=907814" target="_blank">Bas Brands</a>. In plaats van standaard Moodle pagina links te verzenden worden nette titels verzonden. Meer informatie, en waarom dit handig kan zijn kun je <b><a href="http://www.somerandomthoughts.com/blog/2012/04/18/ireland-uk-Moodlemoot-analytics-to-the-front/" target="_blank">hier vinden</a></b>.';
 
 $string['analyticsadmin'] = 'Beheerders volgens';
 $string['analyticsadmindesc'] = 'Kies hier of je ook beheerders wil volgen.';

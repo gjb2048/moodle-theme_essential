@@ -1,0 +1,70 @@
+/** Some breadcrumb style **/
+ul.breadcrumb {  
+	display: block;  
+	padding: 0;  
+	float: left;
+	height: 28px;
+    width: 100%;
+	overflow: hidden;
+	margin-bottom: 10px;
+    li {
+        color: white;
+        padding: 0 0 0 45px;
+        background: ~"[[setting:themecolor]]";
+        position: relative; 
+        display: block;
+        float: left;
+        line-height: 28px;
+        height: 28px;
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        .divider {
+            display: none;
+        }
+    }
+    li:after  { 
+        content: " "; 
+        display: block; 
+        width: 0; 
+        height: 0;
+        border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
+        border-bottom: 50px solid transparent;
+        border-left: 30px solid ~"[[setting:themecolor]]";;
+        position: absolute;
+        top: 50%;
+        margin-top: -50px; 
+        left: 100%;
+        z-index: 1; 
+    }
+    li:before { 
+        content: " "; 
+        display: block; 
+        width: 0; 
+        height: 0;
+        border-top: 50px solid transparent;       
+        border-bottom: 50px solid transparent;
+        border-left: 30px solid white;
+        position: absolute;
+        top: 50%;
+        margin-top: -50px; 
+        margin-left: 1px;
+        left: 100%;
+        z-index: 1; 
+    }
+    li:first-child {
+        a {	margin-left: -25px;}
+    }
+    li:last-child { 
+        pointer-events: none;
+        cursor: default;
+        padding-right: 15px;
+    }
+    li:hover {
+        background: ~"[[setting:themehovercolor]]";
+    }
+    li:hover:after {
+        border-left-color: ~"[[setting:themehovercolor]]" !important;
+    }
+}

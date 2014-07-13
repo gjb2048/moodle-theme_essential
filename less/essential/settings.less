@@ -5,6 +5,10 @@
  */
  
  /* @group Core */
+ 
+* {
+    font-family:~"[[setting:bodyfont]]"
+}
 
 body{
     border-top:3px solid ~"[[setting:themecolor]]";
@@ -12,10 +16,15 @@ body{
 	color: ~"[[setting:themecolor]]";
     font-size: ~"[[setting:bodysize]]";
     font-weight: ~"[[setting:bodyweight]]";
+    font-family:~"[[setting:bodyfont]]"
 }
 
 .container-fluid {
     max-width: ~"[[setting:pagewidth]]";
+}
+
+h1, h2 {
+    font-family:~"[[setting:headingfont]]";
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -521,8 +530,6 @@ table#user-grades td.controls,
 
 /* @end */
 
-/* @group Font Loading */
-
 /* @group Headings */
 h1, h2, h3, h4, h5, h6,
 .back-to-top,
@@ -530,15 +537,28 @@ h1, h2, h3, h4, h5, h6,
 #socialheading,
 .forumpost .subject,
 .block_login label {
-    font-family: ~"\"[[setting:headingfont]]\"", sans-serif;
+    font-family: ~"[[setting:headingfont]]"
 }
 /* @end */
 
-/* @group Main Text */
-body,
-.block_login input[type="submit"] {
-    font-family: ~"\"[[setting:bodyfont]]\"", Arial, Helvetica, sans-serif;
+/* @group Editicons */
+.commands {
+    color:~"[[setting:themecolor]]" !important;
 }
-/* @end */
+.commands a:hover {
+	color:~"[[setting:themehovercolor]]" !important;
+}
+
+.actions a {
+    color:~"[[setting:themecolor]]" !important;
+}
+
+.actions a:hover, .actions a:focus, .actions a:active {
+	color:~"[[setting:themehovercolor]]" !important;
+}
+
+.moodle-core-dragdrop-draghandle:before, .moodle-core-dragdrop-draghandle a {
+	color:~"[[setting:themecolor]]" !important;
+}
 
 /* @end */
