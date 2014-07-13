@@ -132,6 +132,14 @@ echo $OUTPUT->doctype() ?>
 	</div>
 	<?php } ?>
 	<!-- End Alerts -->
+    
+    <!-- Start Frontpage Content -->
+	<?php if($PAGE->theme->settings->usefrontcontent ==1) { 
+		echo $PAGE->theme->settings->frontcontentarea;
+		?>
+		<div class="bor" style="margin-top: 10px;"></div>   
+	<?php }?>
+	<!-- End Frontpage Content -->
 
 	<!-- Start Marketing Spots -->
 	<?php 
@@ -156,15 +164,6 @@ echo $OUTPUT->doctype() ?>
 		} 
 	?>
 	<!-- End Middle Blocks -->
-
-	<!-- Start Frontpage Content -->
-	<?php if($PAGE->theme->settings->usefrontcontent ==1) { 
-		echo $PAGE->theme->settings->frontcontentarea;
-		?>
-		<div class="bor" style="margin-top: 10px;"></div>   
-	<?php }?>
-	<!-- End Frontpage Content -->
-
 
 		<div id="page-content" class="row-fluid">
 			<?php if ($PAGE->theme->settings->frontpageblocks) { ?>
