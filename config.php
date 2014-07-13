@@ -35,7 +35,10 @@ $THEME->yuicssmodules = array();
 $THEME->parents = array('bootstrapbase');
 $THEME->sheets = array('essential', 'custom');
 $THEME->supportscssoptimisation = false;
-$THEME->enable_dock = true;
+
+if ($CFG->version >= 2014051200.10 ) {
+    $THEME->enable_dock = true;
+}
 
 $THEME->editor_sheets = array();
 
