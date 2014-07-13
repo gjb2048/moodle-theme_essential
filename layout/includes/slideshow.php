@@ -59,21 +59,26 @@ if ($numberofslides) {
                             $image = $OUTPUT->pix_url('default_slide', 'theme');
                         }
                         $slidetitle = 'slide'.$i;
+                        if (!empty($PAGE->theme->settings->$slidetitle)) {
+                            $imgalt = $PAGE->theme->settings->$slidetitle;
+                        } else {
+                            $imgalt = get_string('noslidetitle', 'theme_essential', array('slide' => $i));
+                        }
                         ?>
-                            <div style="background-image: url(<?php echo $image; ?>);" class="carousel-image"></div>
-                            <?php
-                            $slidecaption = 'slide'.$i.'caption';
-                            if ((!empty($PAGE->theme->settings->$slidetitle)) || (!empty($PAGE->theme->settings->$slidecaption))) { ?>
-                                <div class="carousel-caption">
-                                    <div class="carousel-caption-inner">
-                                    <?php
-                                        if (!empty($PAGE->theme->settings->$slidetitle)) { echo '<h4>'.$PAGE->theme->settings->$slidetitle.'</h4>'; }
-                                        if (!empty($PAGE->theme->settings->$slidecaption)) { echo '<p>'.$PAGE->theme->settings->$slidecaption.'</p>'; }
-                                    ?> 
-                                    </div>
-                                </div> 
-                                <?php 
-                                }
+                        <img src="<?php echo $image; ?>" alt="<?php echo $imgalt; ?>" class="carousel-image" />
+                        <?php
+                        $slidecaption = 'slide'.$i.'caption';
+                        if ((!empty($PAGE->theme->settings->$slidetitle)) || (!empty($PAGE->theme->settings->$slidecaption))) { ?>
+                            <div class="carousel-caption">
+                                <div class="carousel-caption-inner">
+                                <?php
+                                if (!empty($PAGE->theme->settings->$slidetitle)) { echo '<h4>'.$PAGE->theme->settings->$slidetitle.'</h4>'; }
+                                if (!empty($PAGE->theme->settings->$slidecaption)) { echo '<p>'.$PAGE->theme->settings->$slidecaption.'</p>'; }
+                                ?> 
+                                </div>
+                            </div> 
+                            <?php 
+                            }
                             echo (!empty($PAGE->theme->settings->$urlsetting)? '</a>' : '</div>');
                     } ?>
                 </div>
