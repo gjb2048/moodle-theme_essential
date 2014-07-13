@@ -4094,11 +4094,11 @@ table.calendarmonth.calendartable {
     height: 165px;
   }
 
-  .carousel-inner {
+  #essentialCarousel.carousel .carousel-inner {
     height: 165px;
   }
 
-  .carousel-inner > .item > .carousel-image {
+  #essentialCarousel.carousel .carousel-inner > .item > .carousel-image {
     max-height: 165px;
   }
 }
@@ -4108,11 +4108,11 @@ table.calendarmonth.calendartable {
     height: 225px;
   }
 
-  .carousel-inner {
+  #essentialCarousel.carousel .carousel-inner {
     height: 225px;
   }
 
-  .carousel-inner > .item > .carousel-image {
+  #essentialCarousel.carousel .carousel-inner > .item > .carousel-image {
     max-height: 225px;
   }
 }
