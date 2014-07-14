@@ -163,9 +163,9 @@ echo $OUTPUT->doctype() ?>
 
         <div id="page-content" class="row-fluid">
             <?php if ($PAGE->theme->settings->frontpageblocks) { ?>
-            <section id="region-main" class="span8 pull-right">
+            <section id="<?php echo $regionbsid;?>" class="span8 pull-right">
             <?php } else { ?>
-            <section id="region-main" class="span8 desktop-first-column">
+            <section id="<?php echo $regionbsid;?>" class="span8 desktop-first-column">
             <?php } ?>
                 <div id="page-navbar" class="clearfix">
                     <div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
@@ -193,7 +193,7 @@ echo $OUTPUT->doctype() ?>
             <div class="row-fluid">
                 <h4><?php echo get_string('visibleadminonly', 'theme_essential') ?></h4>
                 <?php
-                    echo $OUTPUT->essentialblocks('hidden-dock');
+                    echo $OUTPUT->blocks('hidden-dock');
                 ?>
             </div>
         </div>

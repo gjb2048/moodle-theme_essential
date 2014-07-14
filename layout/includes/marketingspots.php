@@ -27,7 +27,7 @@
 require_once(dirname(__FILE__).'/pagesettings.php');
 ?>
 
-<div class="row-fluid" id="middle-blocks">
+<div class="row-fluid" id="marketing-spots">
     <div class="span4">
         <!-- Advert #1 -->
         <div class="service">

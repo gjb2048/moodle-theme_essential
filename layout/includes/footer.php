@@ -32,17 +32,17 @@ require_once(dirname(__FILE__).'/pagesettings.php');
         <div class="row-fluid">
             <div class="span4 pull-left">
                 <div class="column">
-                    <?php echo $OUTPUT->essentialblocks('footer-left'); ?>
+                    <?php echo $OUTPUT->blocks('footer-left'); ?>
                 </div>
             </div>
             <div class="span4 center">
                 <div class="column">
-                    <?php echo $OUTPUT->essentialblocks('footer-middle'); ?>
+                    <?php echo $OUTPUT->blocks('footer-middle'); ?>
                 </div>
             </div>
             <div class="span4 pull-right">
                 <div class="column">
-                    <?php echo $OUTPUT->essentialblocks('footer-right'); ?>
+                    <?php echo $OUTPUT->blocks('footer-right'); ?>
                 </div>
             </div>
         </div>
