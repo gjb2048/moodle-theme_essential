@@ -33,7 +33,7 @@ $THEME->name = 'essential';
 $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
 $THEME->parents = array('bootstrapbase');
-$THEME->sheets = array('essential', 'custom');
+$THEME->sheets = array('fontawesome', 'essential', 'custom');
 $THEME->supportscssoptimisation = false;
 
 if ($CFG->version >= 2014051200.10 ) {

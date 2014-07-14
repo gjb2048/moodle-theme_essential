@@ -31,6 +31,24 @@
  * @param string $logo The URL of the logo.
  * @return string The parsed CSS
  */
+ 
+function theme_essential_set_fontwww($css) {
+    global $CFG, $PAGE;
+    if(empty($CFG->themewww)){
+        $themewww = $CFG->wwwroot."/theme";
+    } else {
+        $themewww = $CFG->themewww;
+    }
+    $tag = '[[setting:fontwww]]';
+    
+    $theme = theme_config::load('essential');
+    if (!empty($theme->settings->bootstrapcdn)) {
+     $css = str_replace($tag, '//netdna.bootstrapcdn.com/font-awesome/4.1.0/fonts/', $css);
+    } else {
+     $css = str_replace($tag, $themewww.'/essential/fonts/', $css);
+    }
+    return $css;
+}
 function theme_essential_set_logo($css, $logo) {
     global $OUTPUT;
     $tag = '[[setting:logo]]';
@@ -110,14 +128,14 @@ function essential_set_pagewidth($css, $pagewidth) {
  *
  * @return string
  */
-function essential_performance_output($param) {
+function essential_performance_output($param, $perfinfo) {
     
     $html = '<div class="container-fluid performanceinfo"><div class="row-fluid"><h2>Performance Information</h2></div><div class="row-fluid">';
     if (isset($param['realtime'])) { $html .= '<div class="span3"><var id="load">'.round($param['realtime'], 2).' secs</var><span>Load Time</span></div>'; }
     if (isset($param['memory_total'])) { $html .= '<div class="span3"><var id="memory">'.display_size($param['memory_total']).'</var><span>Memory Used</span></div>'; }
     if (isset($param['includecount'])) { $html .= '<div class="span3"><var id="included">'.$param['includecount'].' Files </var><span>Included</span></div>'; }
     if (isset($param['dbqueries'])) { $html .= '<div class="span3"><var id="db">'.$param['dbqueries'].' </var><span>DB Read/Write</span></div>'; }
-    if ($theme->settings->perfinfo === "max") {
+    if ($perfinfo === "max") {
         $html .= '</div><hr /><div class="row-fluid"><h2>Extended Performance Information</h2></div><div class="row-fluid">';
         if (isset($param['serverload'])) { $html .= '<div class="span3"><var id="load">'.$param['serverload'].' </var><span>Server Load</span></div>'; }
         if (isset($param['memory_peak'])) { $html .= '<div class="span3"><var id="memory">'.display_size($param['memory_peak']).' </var><span>Peak Memory</span></div>'; }
@@ -433,6 +451,7 @@ function theme_essential_process_css($css, $theme) {
     }
     $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
 
+	$css = theme_essential_set_fontwww($css);
     return $css;
 }
 

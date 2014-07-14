@@ -68,7 +68,7 @@
                 error_log("PERF: " . $perf['txt']);
             }
             if (defined('MDL_PERFTOFOOT') || debugging() || $CFG->perfdebug > 7) {
-                $performanceinfo = essential_performance_output($perf);
+                $performanceinfo = essential_performance_output($perf, $this->page->theme->settings->perfinfo);
             }
         }
 

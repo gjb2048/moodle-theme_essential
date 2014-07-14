@@ -33,9 +33,6 @@ echo $OUTPUT->doctype() ?>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <noscript>
-            <link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/essential/style/nojs.css" />
-    </noscript>
     <!-- Google web fonts -->
     <?php require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
     <!-- iOS Homescreen Icons -->
@@ -56,8 +53,7 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
-
+<?php require_once(dirname(__FILE__).'/includes/header.php');?>
 <section class="slideshow">
     <!-- Start Slideshow -->
     <?php 

@@ -38,7 +38,6 @@ require_once(dirname(__FILE__).'/pagesettings.php');
                         <i id="headerlogo" class="fa fa-<?php echo $PAGE->theme->settings->siteicon ?>"></i>
                             <h1 id="title"><?php echo $SITE->shortname; ?></h1>
                     <?php } else { ?>
-                        
                         <a class="logo" href="<?php echo $CFG->wwwroot; ?>" title="<?php print_string('home'); ?>"></a>
                     <?php } ?>
                 </div>

@@ -131,15 +131,27 @@ module.exports = function(grunt) {
             // Compile essential styles.
             essential: {
                 options: {
-                    compress: false,
+                    compress: true,
                     paths: "./less",
                     report: 'min',
-                    sourceMap: true,
+                    sourceMap: false,
                     sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
                     sourceMapFilename: 'style/essential.treasure.map'
                 },
                 src: 'less/essentialall.less',
                 dest: 'style/essential.css'
+            },
+			FontAwesome: {
+                options: {
+                    compress: true,
+                    paths: "./less",
+                    report: 'min',
+                    sourceMap: false,
+                    sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
+                    sourceMapFilename: 'style/fontawesome.treasure.map'
+                },
+                src: 'less/fontawesome.less',
+                dest: 'style/fontawesome.css'
             }
         },
         exec: {
