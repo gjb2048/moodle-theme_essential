@@ -2043,10 +2043,20 @@ table.calendarmonth.calendartable {
   clear: both;
 }
 
+body.has_dock.dir-ltr header,
+body.has_dock.dir-ltr>section,
+body.has_dock.dir-ltr footer {
+  margin-right: 42px;
+}
+
+body.has_dock.dir-rtl header,
+body.has_dock.dir-rtl>section,
+body.has_dock.dir-rtl footer {
+  margin-left: 42px;
+}
+
 .dockbutton:hover,
 .dockbutton:focus,
-.dockbutton:active,
-.dockbutton.active,
 .dockbutton.disabled,
 .dockbutton[disabled] {
   color: #7b8a8b;
@@ -2151,7 +2161,6 @@ body.has_dock div#dock {
   top: 0;
   right: 0;
   z-index: 11000;
-  width: 36px;
   height: 100%;
   background: [[setting:themecolor]];
   border-left: 0 none;
@@ -2184,12 +2193,11 @@ body.has_dock div#dock {
 }
 
 #dock .dockedtitle h2 {
-  font-size: 1em !important;
   font-weight: normal;
   line-height: 100%;
-  color: #fff;
   text-align: center;
   text-transform: uppercase;
+  color: [[setting:themecolor]];
 }
 
 #dock .dockedtitle:hover,
@@ -2372,6 +2380,10 @@ body.has_dock div#dock {
 #dockeditempanel .dockeditempanel_hd .commands input {
   margin-left: 1px;
   vertical-align: middle;
+}
+
+#dockeditempanel .dockeditempanel_hd .commands img {
+  display: inline;
 }
 
 #dockeditempanel .dockeditempanel_hd .commands .hidepanemicon img {
