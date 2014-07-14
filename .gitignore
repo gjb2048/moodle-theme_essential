@@ -10,3 +10,4 @@ Thumbs.db
 *.bak
 quickpush.sh
 /node_modules
+/style/*.map

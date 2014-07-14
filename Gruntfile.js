@@ -134,7 +134,7 @@ module.exports = function(grunt) {
                     compress: true,
                     paths: "./less",
                     report: 'min',
-                    sourceMap: false,
+                    sourceMap: true,
                     sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
                     sourceMapFilename: 'style/essential.treasure.map'
                 },
@@ -146,7 +146,7 @@ module.exports = function(grunt) {
                     compress: true,
                     paths: "./less",
                     report: 'min',
-                    sourceMap: false,
+                    sourceMap: true,
                     sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
                     sourceMapFilename: 'style/fontawesome.treasure.map'
                 },
