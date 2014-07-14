@@ -38,7 +38,7 @@ defined('MOODLE_INTERNAL') || die;
     $default = 'laptop';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $temp->add($setting);
-	
+
     // Include Awesome Font from Bootstrapcdn
     $name = 'theme_essential/bootstrapcdn';
     $title = get_string('bootstrapcdn', 'theme_essential');

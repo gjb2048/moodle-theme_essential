@@ -116,15 +116,40 @@ body.essential-colours-alternative1 {
     background: ~"[[setting:alternativethemehovercolor1]]";
 }
 
-.essential-colours-alternative1 .da-slider {
-    border-top-color: ~"[[setting:alternativethemecolor1]]";
-    border-bottom-color:  ~"[[setting:alternativethemecolor1]]";
-    background-color: ~"[[setting:alternativethemecolor1]]";
+.essential-colours-alternative1 #essentialCarousel.carousel {
+    .carousel-inner {
+         // Caption for text below images.
+        .carousel-caption {
+            background-color: ~"[[setting:alternativethemecolor1]]";
+            opacity: 0.75;
+            h4, p {
+                color: #eee; // TODO in settings.
+            }
+        }
+    }
+    // Left/right controls for nav.
+    .carousel-control {
+        color: ~"[[setting:alternativethemecolor1]]";
+
+        // Hover/focus state.
+        &:hover,
+        &:focus {
+            color: ~"[[setting:alternativethemehovercolor1]]";
+        }
+    }
+
+    // Carousel indicator pips.
+    .carousel-indicators {
+        li {
+            background: ~"[[setting:alternativethemecolor1]]";
+            opacity: 0.75;
+        }
+        .active {
+            background-color: ~"[[setting:alternativethemehovercolor1]]";
+        }
+    }
 }
 
-.essential-colours-alternative1 .da-slide .da-link {
-    background-color: ~"[[setting:alternativethemecolor1]]";
-}
 
 .essential-colours-alternative1 .block .header .title h2:before {
     color: ~"[[setting:alternativethemecolor1]]";

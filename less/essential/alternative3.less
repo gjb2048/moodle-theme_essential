@@ -116,14 +116,38 @@ body.essential-colours-alternative3 {
     background: ~"[[setting:alternativethemehovercolor3]]";
 }
 
-.essential-colours-alternative3 .da-slider {
-	border-top-color: ~"[[setting:alternativethemecolor3]]";
-	border-bottom-color:  ~"[[setting:alternativethemecolor3]]";
-	background-color: ~"[[setting:alternativethemecolor3]]";
-}
+.essential-colours-alternative3 #essentialCarousel.carousel {
+    .carousel-inner {
+         // Caption for text below images.
+        .carousel-caption {
+            background-color: ~"[[setting:alternativethemecolor3]]";
+            opacity: 0.75;
+            h4, p {
+                color: #eee; // TODO in settings.
+            }
+        }
+    }
+    // Left/right controls for nav.
+    .carousel-control {
+        color: ~"[[setting:alternativethemecolor3]]";
 
-.essential-colours-alternative3 .da-slide .da-link {
-	background-color: ~"[[setting:alternativethemecolor3]]";
+        // Hover/focus state.
+        &:hover,
+        &:focus {
+            color: ~"[[setting:alternativethemehovercolor3]]";
+        }
+    }
+
+    // Carousel indicator pips.
+    .carousel-indicators {
+        li {
+            background: ~"[[setting:alternativethemecolor3]]";
+            opacity: 0.75;
+        }
+        .active {
+            background-color: ~"[[setting:alternativethemehovercolor3]]";
+        }
+    }
 }
 
 .essential-colours-alternative3 .block .header .title h2:before {
@@ -177,7 +201,7 @@ body.essential-colours-alternative3 {
 }
 
 .essential-colours-alternative3 .block #icon {
-	color: ~"[[setting:alternativethemecolor3]]";
+    color: ~"[[setting:alternativethemecolor3]]";
 }
     
 .essential-colours-alternative3 #page-footer .block_login input[type="submit"] {
