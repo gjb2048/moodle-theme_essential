@@ -32,18 +32,18 @@ $output = '';
 
 if ($fontselect == 1) {
     $output .= html_writer::empty_tag('link', array('href' => $fonturl. 'Open+Sans', 'rel' => $rel, 'type' => $type));
-} else if($fontselect == 2) {
+} else if ($fontselect == 2) {
     $output .= html_writer::empty_tag('link', array('href' => $fonturl. 'Oswald', 'rel' => $rel, 'type' => $type));
     $output .= html_writer::empty_tag('link', array('href' => $fonturl. 'PT+Sans', 'rel' => $rel, 'type' => $type));
-} else if($fontselect == 3) {
+} else if ($fontselect == 3) {
     $output .= html_writer::empty_tag('link', array('href' => $fonturl. 'Roboto', 'rel' => $rel, 'type' => $type));
-} else if($fontselect == 4) {
+} else if ($fontselect == 4) {
     $output .= html_writer::empty_tag('link', array('href' => $fonturl. 'PT+Sans', 'rel' => $rel, 'type' => $type));
-} else if($fontselect == 5) {
+} else if ($fontselect == 5) {
     $output .= html_writer::empty_tag('link', array('href' => $fonturl. 'Ubuntu', 'rel' => $rel, 'type' => $type));
-} else if($fontselect == 6) {
-    $output .= html_writer::empty_tag('link', array('href' => $fonturl. 'Arimo, 'rel' => $rel, 'type' => $type));
-} else if($fontselect == 7) {
+} else if ($fontselect == 6) {
+    $output .= html_writer::empty_tag('link', array('href' => $fonturl. 'Arimo', 'rel' => $rel, 'type' => $type));
+} else if ($fontselect == 7) {
     $output .= html_writer::empty_tag('link', array('href' => $fonturl. 'Lobster', 'rel' => $rel, 'type' => $type));
     $output .= html_writer::empty_tag('link', array('href' => $fonturl. 'Raleway', 'rel' => $rel, 'type' => $type));
 }
