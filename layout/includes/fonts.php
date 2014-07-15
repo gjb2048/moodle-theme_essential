@@ -20,26 +20,43 @@
  *
  * @package     theme_essential
  * @copyright   2013 Julian Ridden
- * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @copyright   2014 Mary L Evans, Gareth J Barnard, David Bezemer
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
- ?>
+$fontselect = (!empty($PAGE->theme->settings->fontselect));
+$fonturl = 'fonts.googleapis.com/css?family=';
+$rel = 'stylesheet';
+$type = 'type/css';
+$output = '';
 
-<?php if($PAGE->theme->settings->fontselect ==1) { ?>
-    <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==2) { ?>
-    <link href="//fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==3) { ?>
-    <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==4) { ?>
-    <link href="//fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==5) { ?>
-    <link href="//fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==6) { ?>
-    <link href="//fonts.googleapis.com/css?family=Arimo" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==7) { ?>
-    <link href="//fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
-<?php } ?>
+$fonts = array();
+switch ($fontselect) {
+case 1:
+    $fonts[] = 'Open+Sans';
+    break;
+case 2:
+    $fonts[] = 'Oswald';
+    $fonts[] = 'PT+Sans';
+    break;
+case 3:
+    $fonts[] = 'Roboto';
+    break;
+case 4:
+    $fonts[] = 'PT+Sans';
+    break;
+case 5:
+    $fonts[] = 'Ubuntu';
+    break;
+case 6:
+    $fonts[] = 'Arimo';
+    break;
+case 7:
+    $fonts[] = 'Lobster';
+    $fonts[] = 'Raleway';
+}
+
+foreach($fonts as $font) {
+    $output .= html_writer::empty_tag('link',
+        array('href' => $fonturl.$font, 'rel' => $rel, 'type' => $type));
+}
