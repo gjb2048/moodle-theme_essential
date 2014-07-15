@@ -20,26 +20,30 @@
  *
  * @package     theme_essential
  * @copyright   2013 Julian Ridden
- * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @copyright   2014 Gareth J Barnard, David Bezemer, Mary Evans
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
- ?>
+$fontselect = (!empty($PAGE->theme->settings->fontselect));
+$fonturl = 'fonts.googleapis.com/css?family=';
+$rel = 'stylesheet';
+$type = 'type/css';
+$output = '';
 
-<?php if($PAGE->theme->settings->fontselect ==1) { ?>
-    <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==2) { ?>
-    <link href="//fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==3) { ?>
-    <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==4) { ?>
-    <link href="//fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==5) { ?>
-    <link href="//fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==6) { ?>
-    <link href="//fonts.googleapis.com/css?family=Arimo" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==7) { ?>
-    <link href="//fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
-<?php } ?>
+if ($fontselect == 1) {
+    $output .= html_writer::empty_tag('link', array('href' => $fonturl. 'Open+Sans', 'rel' => $rel, 'type' => $type));
+} else if ($fontselect == 2) {
+    $output .= html_writer::empty_tag('link', array('href' => $fonturl. 'Oswald', 'rel' => $rel, 'type' => $type));
+    $output .= html_writer::empty_tag('link', array('href' => $fonturl. 'PT+Sans', 'rel' => $rel, 'type' => $type));
+} else if ($fontselect == 3) {
+    $output .= html_writer::empty_tag('link', array('href' => $fonturl. 'Roboto', 'rel' => $rel, 'type' => $type));
+} else if ($fontselect == 4) {
+    $output .= html_writer::empty_tag('link', array('href' => $fonturl. 'PT+Sans', 'rel' => $rel, 'type' => $type));
+} else if ($fontselect == 5) {
+    $output .= html_writer::empty_tag('link', array('href' => $fonturl. 'Ubuntu', 'rel' => $rel, 'type' => $type));
+} else if ($fontselect == 6) {
+    $output .= html_writer::empty_tag('link', array('href' => $fonturl. 'Arimo', 'rel' => $rel, 'type' => $type));
+} else if ($fontselect == 7) {
+    $output .= html_writer::empty_tag('link', array('href' => $fonturl. 'Lobster', 'rel' => $rel, 'type' => $type));
+    $output .= html_writer::empty_tag('link', array('href' => $fonturl. 'Raleway', 'rel' => $rel, 'type' => $type));
+}
