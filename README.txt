@@ -18,6 +18,7 @@ Cool things to know about the theme.
 New in 2.7.3
 ========================
 - FIX: Fixed slide show by replacing with Bootstrap 2.3.2 one.  Issue #18.
+- FIX: Make background image fixed and set a background transparent colour
 - FIX: Permanently replace edit icons with FontAwesome icons
 - FIX: Massive cleanup in all files, reducing CSS with 50kb
 - FIX: Fixed all custom block regions to stick where they are
@@ -27,6 +28,7 @@ New in 2.7.3
 - FIX: Optimize javascript to reduce browser lag on load
 - FIX: Resolve layout issues on font-rendering
 - FIX: Set layout options for responsive rendering, more mobile support to come soon
+- FIX: Load fonts through htmlwriter (Thanks Mary :))
 - NEW: Reduced amount of fonts in theme, added legacy themes for websafe support
 - NEW: New slider with up to 16 slides, full responsive
 - NEW: Footer will go all the way to bottom on modern browsers (except IE of course)

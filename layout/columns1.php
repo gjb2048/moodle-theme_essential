@@ -33,8 +33,10 @@ echo $OUTPUT->doctype() ?>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google web fonts -->
-    <?php require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
+    <?php if (!empty($fontselect) && ($fontselect < 7)) {
+        // Google web fonts -->
+        require_once(dirname(__FILE__).'/includes/fonts.php');
+    }?>
     <!-- iOS Homescreen Icons -->
     <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
     <!-- Start Google Analytics -->

@@ -38,7 +38,7 @@ defined('MOODLE_INTERNAL') || die;
     $default = 'laptop';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $temp->add($setting);
-
+	
     // Include Awesome Font from Bootstrapcdn
     $name = 'theme_essential/bootstrapcdn';
     $title = get_string('bootstrapcdn', 'theme_essential');
@@ -136,18 +136,16 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
-    // Navbar Seperator.
-    $name = 'theme_essential/navbarsep';
-    $title = get_string('navbarsep' , 'theme_essential');
-    $description = get_string('navbarsepdesc', 'theme_essential');
-    $nav_thinbracket = get_string('nav_thinbracket', 'theme_essential');
-    $nav_doublebracket = get_string('nav_doublebracket', 'theme_essential');
-    $nav_thickbracket = get_string('nav_thickbracket', 'theme_essential');
-    $nav_slash = get_string('nav_slash', 'theme_essential');
-    $nav_pipe = get_string('nav_pipe', 'theme_essential');
-    $dontdisplay = get_string('dontdisplay', 'theme_essential');
-    $default = '/';
-    $choices = array('/'=>$nav_slash, '\f105'=>$nav_thinbracket, '\f101'=>$nav_doublebracket, '\f054'=>$nav_thickbracket, '|'=>$nav_pipe);
+    // Choose breadcrumbstyle
+    $name = 'theme_essential/breadcrumbstyle';
+    $title = get_string('breadcrumbstyle' , 'theme_essential');
+    $description = get_string('breadcrumbstyledesc', 'theme_essential');
+    $default = '1';
+    $choices = array(1 => get_string('breadcrumbstyled', 'theme_essential'),
+                     2 => get_string('breadcrumbsimple', 'theme_essential'),
+                     3 => get_string('breadcrumbthin', 'theme_essential'),
+                     0 => get_string('nobreadcrumb', 'theme_essential')
+                    );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);

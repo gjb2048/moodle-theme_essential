@@ -25,6 +25,21 @@
  */
  
  class theme_essential_core_renderer extends theme_bootstrapbase_core_renderer {
+ 
+    public function navbar() {
+        $breadcrumbs = '';
+        $breadcrumbstyle = $this->page->theme->settings->breadcrumbstyle;
+        if (!empty($breadcrumbstyle) && ($breadcrumbstyle > 0) ) {
+            foreach ($this->page->navbar->get_items() as $item) {
+                $item->hideicon = true;
+                $breadcrumbs .= html_writer::tag('li',$this->render($item),array());
+            } 
+            if ($breadcrumbstyle === 1) {
+                $breadcrumbs .= html_writer::tag('li','',array());
+            }
+            return html_writer::tag('ul', $breadcrumbs, array('class' => "breadcrumb style$breadcrumbstyle"));
+        }
+    }
     
     /*
      * This renders a notification message.

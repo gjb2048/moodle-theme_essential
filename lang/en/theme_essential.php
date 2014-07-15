@@ -78,7 +78,7 @@ $string['contactinfo'] = 'Contact Information';
 $string['contactinfodesc'] = 'Enter your contact information';
 
 $string['siteicon'] = 'Site Icon';
-$string['siteicondesc'] = 'Do not have a logo? Enter the name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "icon-". ';
+$string['siteicondesc'] = 'Do not have a logo? Enter the name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "fa-". ';
 
 $string['yourprofile'] = 'You';
 $string['headerprofilepic'] = 'Display user\'s picture';
@@ -150,14 +150,13 @@ $string['noenrolments'] = 'You have no current enrolments';
 /* My Dashboard custommenu dropdown */
 $string['mydashboard'] = 'My Dashboard';
 
-/* Navbar Seperator */
-$string['navbarsep'] = 'Navbar Separator';
-$string['navbarsepdesc'] = 'Here you can change the type of separator displayed in the navbar/breadcrumb';
-$string['nav_thinbracket'] = 'Thin bracket';
-$string['nav_doublebracket'] = 'Double thin bracket';
-$string['nav_thickbracket'] = 'Thick Bracket';
-$string['nav_slash'] = 'Forward slash';
-$string['nav_pipe'] = 'Vertical line';
+/* Breadcrumb Style */
+$string['breadcrumbstyle'] = 'Breadcrumb style';
+$string['breadcrumbstyledesc'] = 'Here you can change the style of the breadcrumbs.';
+$string['breadcrumbstyled'] = 'Fancy';
+$string['breadcrumbsimple'] = 'Simple';
+$string['breadcrumbthin'] = 'Thin';
+$string['nobreadcrumb'] = 'Hide';
 
 /* Regions */
 $string['region-side-post'] = 'Right';

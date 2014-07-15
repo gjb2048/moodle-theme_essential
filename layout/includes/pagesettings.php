@@ -41,6 +41,8 @@ if (right_to_left()) {
     $regionbsid = 'region-bs-main-and-pre';
     $left = true;
 }
+
+$fontselect = $PAGE->theme->settings->fontselect;
  
 /* Group Header */
 

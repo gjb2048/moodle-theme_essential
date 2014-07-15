@@ -1,71 +1,157 @@
-/** Some breadcrumb style **/
-ul.breadcrumb {  
-	display: block;  
-	padding: 0;  
-	float: left;
-	height: 28px;
-    width: 100%;
-	overflow: hidden;
-	margin-bottom: 10px;
-    li {
-        color: white;
-        padding: 0 0 0 45px;
-        background: ~"[[setting:themecolor]]";
-        position: relative; 
+.breadcrumb-button {
+    margin-top: 0px;
+}
+
+.breadcrumb-nav {
+    margin: 0px;
+    /** Some breadcrumb style **/
+    ul.breadcrumb.style1 {  
         display: block;
+        padding: 0;  
         float: left;
-        line-height: 28px;
         height: 28px;
-        text-shadow: none;
-        a {
+        width: 100%;
+        overflow: hidden;
+        margin-top: 0px;
+        li {
             color: white;
-            text-decoration: none;
+            padding: 0 0 0 45px;
+            background: ~"[[setting:themecolor]]";
+            position: relative; 
+            display: block;
+            float: left;
+            line-height: 28px;
+            height: 28px;
+            border-radius: 0px;
+            text-shadow: none;
+            a {
+                color: white;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
         }
-        .divider {
-            display: none;
+        li:after  { 
+            content: " "; 
+            display: block; 
+            width: 0; 
+            height: 0;
+            border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
+            border-bottom: 50px solid transparent;
+            border-left: 30px solid ~"[[setting:themecolor]]";;
+            position: absolute;
+            top: 50%;
+            margin-top: -50px; 
+            left: 100%;
+            z-index: 1; 
+        }
+        li:before { 
+            content: " "; 
+            display: block; 
+            width: 0; 
+            height: 0;
+            border-top: 50px solid transparent;       
+            border-bottom: 50px solid transparent;
+            border-left: 30px solid white;
+            position: absolute;
+            top: 50%;
+            margin-top: -50px; 
+            margin-left: 1px;
+            left: 100%;
+            z-index: 1; 
+        }
+        li:first-of-type {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+        li:first-child {
+            a {	
+                margin-left: -25px;
+            }
+            a:before {
+                display: inline-block;
+                font-family: FontAwesome;
+                content: "\f015 ";
+                margin-right: 5px;
+                text-decoration: none;
+            }
+        }
+        li:last-child {
+            padding-left: 10px;
+        }
+        li:last-child:after { 
+            content: "";
+            border: 0px;
+        }
+        li:last-child:before { 
+            border: 0px;
+        }
+        li:hover {
+            background: ~"[[setting:themehovercolor]]";
+        }
+        li:hover:after {
+            border-left-color: ~"[[setting:themehovercolor]]" !important;
         }
     }
-    li:after  { 
-        content: " "; 
-        display: block; 
-        width: 0; 
-        height: 0;
-        border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
-        border-bottom: 50px solid transparent;
-        border-left: 30px solid ~"[[setting:themecolor]]";;
-        position: absolute;
-        top: 50%;
-        margin-top: -50px; 
-        left: 100%;
-        z-index: 1; 
+
+    ul.breadcrumb.style2 {
+        padding: 0px;
+        display: block;
+        background: transparent;
+        li {
+            display: block;
+            float: left;
+            padding: 2px;
+            border-radius: 0px;
+            text-shadow: none;
+            background-color: #F5F5F5;
+            a {
+                margin-right: 3px;
+            }
+        }
+        li:first-of-type {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            a {
+                padding-left: 5px;
+            }
+        }
+        li:after {
+            font-family: FontAwesome;
+            content: "\f138 ";
+            padding: 5px;
+            vertical-align: middle;
+        }
+        li:last-child:after {
+            content: "";
+            padding-right: 5px;
+        }
+        li:last-of-type {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
     }
-    li:before { 
-        content: " "; 
-        display: block; 
-        width: 0; 
-        height: 0;
-        border-top: 50px solid transparent;       
-        border-bottom: 50px solid transparent;
-        border-left: 30px solid white;
-        position: absolute;
-        top: 50%;
-        margin-top: -50px; 
-        margin-left: 1px;
-        left: 100%;
-        z-index: 1; 
-    }
-    li:first-child {
-        a {	margin-left: -25px;}
-    }
-    li:last-child { 
-        pointer-events: none;
-        cursor: default;
-        padding-right: 15px;
-    }
-    li:hover {
-        background: ~"[[setting:themehovercolor]]";
-    }
-    li:hover:after {
-        border-left-color: ~"[[setting:themehovercolor]]" !important;
+
+    ul.breadcrumb.style3 {
+        display: block;
+        background: transparent;
+        padding: 0px;
+        li {
+            display: block;
+            float: left;
+            text-transform: uppercase;
+            font-size: 11px;
+            background: transparent;
+        }
+        li:after {
+            content: " / ";
+            margin-left: 2px;
+            margin-right: 4px;
+            vertical-align: middle;
+        }
+        li:last-child:after {
+            content: "";
+        }
     }
 }

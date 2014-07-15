@@ -164,6 +164,6 @@ class theme_essential_format_topics_renderer extends format_topics_renderer {
         // Close single-section div.
         echo html_writer::end_tag('div');
     }
-
 }
+
 ?>

@@ -12,7 +12,7 @@
 
 body{
     border-top:3px solid ~"[[setting:themecolor]]";
-    background: white url(~"[[setting:pagebackground]]") repeat;
+    background-image: url(~"[[setting:pagebackground]]");
 	color: ~"[[setting:themecolor]]";
     font-size: ~"[[setting:bodysize]]";
     font-weight: ~"[[setting:bodyweight]]";
@@ -150,10 +150,6 @@ a:hover .colours-alternative3 {
 /* @group Navbar
  */
 
-ul.breadcrumb li:after { 
-    content: ~"\"[[setting:navbarsep]]\"";
-}
-
 .navbar {
     border-top:1px solid ~"[[setting:themehovercolor]]" !important;
     border-bottom:1px solid ~"[[setting:themehovercolor]]" !important;
@@ -193,10 +189,6 @@ ul.breadcrumb li:after {
 
 h2.pagetitle {
     background: url(~"[[pix:theme|bg/dot]]") left center repeat-x;
-}
-
-h2.pagetitle span {
-    background: white url(~"[[setting:pagebackground]]") repeat;
 }
 
 .firstword {

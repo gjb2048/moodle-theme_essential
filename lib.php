@@ -359,14 +359,6 @@ function theme_essential_process_css($css, $theme) {
         $css = theme_essential_set_alternativecolor($css, 'color' . $alternativethemenumber, $theme->settings->{'alternativethemecolor' . $alternativethemenumber}, $default);
         $css = theme_essential_set_alternativecolor($css, 'hovercolor' . $alternativethemenumber, $theme->settings->{'alternativethemehovercolor' . $alternativethemenumber}, $defaulthover);
     }
- 
-    // Set the navbar seperator.
-    if (!empty($theme->settings->navbarsep)) {
-        $navbarsep = $theme->settings->navbarsep;
-    } else {
-        $navbarsep = '/';
-    }
-    $css = theme_essential_set_navbarsep($css, $navbarsep);
     
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
@@ -682,16 +674,6 @@ function theme_essential_set_footersepcolor($css, $footersepcolor) {
     return $css;
 }
 
-function theme_essential_set_navbarsep($css, $navbarsep) {
-    $tag = '[[setting:navbarsep]]';
-    $replacement = $navbarsep;
-    if (is_null($replacement)) {
-        $replacement = '';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
 function theme_essential_set_pagebackground($css, $pagebackground, $setting) {
     global $OUTPUT;
     $tag = '[[setting:pagebackground]]';
@@ -745,10 +727,8 @@ function theme_essential_showslider($settings) {
 
 function theme_essential_page_init(moodle_page $page) {
     $page->requires->jquery();
-    if ($page->pagelayout == 'frontpage') {
-        $page->requires->jquery_plugin('alert', 'theme_essential');
-        $page->requires->jquery_plugin('carousel', 'theme_essential');
-    }
+    $page->requires->jquery_plugin('alert', 'theme_essential');
+    $page->requires->jquery_plugin('carousel', 'theme_essential');
     $page->requires->jquery_plugin('collapse', 'theme_essential');
     $page->requires->jquery_plugin('modal', 'theme_essential');
     $page->requires->jquery_plugin('scrollspy', 'theme_essential');

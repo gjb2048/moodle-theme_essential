@@ -150,14 +150,13 @@ $string['noenrolments'] = 'Geen cursusinschrijving bekend';
 /* My Dashboard custommenu dropdown */
 $string['mydashboard'] = 'Mijn dashboard';
 
-/* Navbar Seperator */
-$string['navbarsep'] = 'Kruimelpad scheidingsteken';
-$string['navbarsepdesc'] = 'Hier kun je het symbool dat gebruikt wordt om het kruimelpad te scheiden aanpassen.';
-$string['nav_thinbracket'] = 'Dunne blokhaak';
-$string['nav_doublebracket'] = 'Dubbele dunne blokhaak';
-$string['nav_thickbracket'] = 'Dikke blokhaak';
-$string['nav_slash'] = 'Slash';
-$string['nav_pipe'] = 'Verticaal streepje';
+/* Breadcrumb Style */
+$string['breadcrumbstyle'] = 'Kruimelpad stijl';
+$string['breadcrumbstyledesc'] = 'Kies hier de stijl van het kruimelpad.';
+$string['breadcrumbstyled'] = 'Fancy';
+$string['breadcrumbsimple'] = 'Simpel';
+$string['breadcrumbthin'] = 'Klein';
+$string['nobreadcrumb'] = 'Verberg';
 
 /* Regions */
 $string['region-side-post'] = 'Rechts';
