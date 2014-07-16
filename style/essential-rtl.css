@@ -116,9 +116,8 @@ h2.main,
 a.logo {
   display: block;
   float: right;
-  height: 75px;
-  margin: 0;
-  padding: 0;
+  height: 65px;
+  padding: 5px;
   width: 100%;
   background-size: contain;
   background-position: right center;
@@ -2713,7 +2712,7 @@ a:hover {
 }
 
 a.logo {
-  background-image: url([[setting:logo]]);
+  background-image: url('~"[[setting:logo]]"');
 }
 
 h1#title {
