@@ -34,7 +34,7 @@
                 $item->hideicon = true;
                 $breadcrumbs .= html_writer::tag('li',$this->render($item),array());
             } 
-            if ($breadcrumbstyle === 1) {
+            if ($breadcrumbstyle == 1) {
                 $breadcrumbs .= html_writer::tag('li','',array());
             }
             return html_writer::tag('ul', $breadcrumbs, array('class' => "breadcrumb style$breadcrumbstyle"));
