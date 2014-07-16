@@ -64,9 +64,6 @@ echo $OUTPUT->doctype() ?>
                 
                 <?php
                 echo $OUTPUT->course_content_header();
-                if ($PAGE->theme->layout = 'admin') {
-                    echo '<div id="admin-form-save-button" class="form-buttons"><input class="form-submit" type="submit" value="'.get_string('savechanges','admin').'" /></div>';
-                }
                 echo $OUTPUT->main_content();
                 echo $OUTPUT->course_content_footer();
                 ?>

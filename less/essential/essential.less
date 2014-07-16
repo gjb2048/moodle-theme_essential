@@ -1644,11 +1644,31 @@ img.profilepicture
     font-family: monospace;
 }
 
-.path-admin #page #admin-form-save-button {
-    position: fixed;
-    width: 400px;
-    bottom: 10px;
-    margin: 0px;
+#page-course-edit,
+.path-admin-setting,
+#page-admin-registration-register,
+.path-backup {
+    #page {
+        form {
+            .form-buttons,
+            fieldset:last-of-type.hidden {
+                width: 600px;
+                position: fixed;
+                bottom: 0px;
+                margin: 0px;
+                background-color: #F5F5F5;
+                #fgroup_id_buttonar {
+                    padding: 0px;
+                }
+                #id_previous {
+                    margin-left: -250px;
+                }
+            }
+            .form-buttons {
+                width: 400px;
+            }
+        }
+    }
 }
 
 /* @end */

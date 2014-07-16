@@ -1567,11 +1567,48 @@ img.profilepicture {
   font-family: monospace;
 }
 
-.path-admin #page #admin-form-save-button {
+#page-course-edit #page form .form-buttons,
+.path-admin-setting #page form .form-buttons,
+#page-admin-registration-register #page form .form-buttons,
+.path-backup #page form .form-buttons,
+#page-course-edit #page form fieldset:last-of-type.hidden,
+.path-admin-setting #page form fieldset:last-of-type.hidden,
+#page-admin-registration-register #page form fieldset:last-of-type.hidden,
+.path-backup #page form fieldset:last-of-type.hidden {
+  width: 600px;
   position: fixed;
-  width: 400px;
-  bottom: 10px;
+  bottom: 0px;
   margin: 0px;
+  background-color: #F5F5F5;
+}
+
+#page-course-edit #page form .form-buttons #fgroup_id_buttonar,
+.path-admin-setting #page form .form-buttons #fgroup_id_buttonar,
+#page-admin-registration-register #page form .form-buttons #fgroup_id_buttonar,
+.path-backup #page form .form-buttons #fgroup_id_buttonar,
+#page-course-edit #page form fieldset:last-of-type.hidden #fgroup_id_buttonar,
+.path-admin-setting #page form fieldset:last-of-type.hidden #fgroup_id_buttonar,
+#page-admin-registration-register #page form fieldset:last-of-type.hidden #fgroup_id_buttonar,
+.path-backup #page form fieldset:last-of-type.hidden #fgroup_id_buttonar {
+  padding: 0px;
+}
+
+#page-course-edit #page form .form-buttons #id_previous,
+.path-admin-setting #page form .form-buttons #id_previous,
+#page-admin-registration-register #page form .form-buttons #id_previous,
+.path-backup #page form .form-buttons #id_previous,
+#page-course-edit #page form fieldset:last-of-type.hidden #id_previous,
+.path-admin-setting #page form fieldset:last-of-type.hidden #id_previous,
+#page-admin-registration-register #page form fieldset:last-of-type.hidden #id_previous,
+.path-backup #page form fieldset:last-of-type.hidden #id_previous {
+  margin-right: -250px;
+}
+
+#page-course-edit #page form .form-buttons,
+.path-admin-setting #page form .form-buttons,
+#page-admin-registration-register #page form .form-buttons,
+.path-backup #page form .form-buttons {
+  width: 400px;
 }
 
 .minicalendar .calendar_event_site,
