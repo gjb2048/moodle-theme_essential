@@ -117,7 +117,7 @@ a.logo {
   display: block;
   float: right;
   height: 65px;
-  padding: 5px;
+  margin: 5px;
   width: 100%;
   background-size: contain;
   background-position: right center;
