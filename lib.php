@@ -177,64 +177,82 @@ function theme_essential_process_css($css, $theme) {
     $css = essential_set_pagewidth($css,$pagewidth);
     
     // Set the Fonts.
-    if ($theme->settings->fontselect ==1) {
+	switch($theme->settings->fontselect) {
+	case 1:
         $headingfont = 'Open Sans, Arial, Helvetica, sans-serif';
         $bodyfont = 'Open Sans, Arial, Helvetica, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==2) {
+		break;
+    case 2:
         $headingfont = 'Oswald, Verdana, Geneva, sans-serif';
         $bodyfont = '"PT Sans", Helvetica, Verdana sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==3) {
+		break;
+    case 3:
         $headingfont = 'Roboto, Tahoma, Geneva, sans-serif';
         $bodyfont = 'Roboto, Tahoma, Geneva, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==4) {
+		break;
+    case 4:
         $headingfont = '"PT Sans", Helvetica, Arial, sans-serif';
         $bodyfont = '"PT Sans", Helvetica, Arial, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==5) {
+		break;
+    case 5:
         $headingfont = 'Ubuntu, Arial, Helvetica, sans-serif';
         $bodyfont = 'Ubuntu, Arial, Helvetica, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==6) {
+		break;
+    case 6:
         $headingfont = 'Arimo, Arial, Helvetica, sans-serif';
         $bodyfont = 'Arimo, Arial, Helvetica, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==7) {
+		break;
+    case 7:
         $headingfont = 'Lobster, "Lucida Calligraphy", Mistral, Verdana, sans-serif';
         $bodyfont = 'Raleway, Helvetica, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==8) {
+		break;
+    case 8:
         $headingfont = 'Arial, Helvetica, sans-serif';
         $bodyfont = 'Arial, Helvetica, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==9) {
+		break;
+    case 9:
         $headingfont = 'Georgia, serif';
         $bodyfont = 'Georgia, serif';
         $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==10) {
+		break;
+    case 10:
         $headingfont = 'Verdana, Geneva, sans-serif';
         $bodyfont = 'Verdana, Geneva, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==11) {
+		break;
+    case 11:
         $headingfont = '"Times New Roman", Times, serif';
         $bodyfont = '"Times New Roman", Times, serif';
         $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==12) {
+		break;
+    case 12:
         $headingfont = 'Consolas, Monaco, monospace';
         $bodyfont = 'Consolas, "Courier New", monospace';
+        $bodysize = '14px';
+        $bodyweight = '400';
+		break;
+	default:
+		$headingfont = 'Verdana, Geneva, sans-serif';
+        $bodyfont = 'Verdana, Geneva, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
     }

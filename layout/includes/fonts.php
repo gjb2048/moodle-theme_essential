@@ -47,6 +47,7 @@ case 6:
 case 7:
     $fonts[] = 'Lobster';
     $fonts[] = 'Raleway';
+	break;
 }
 
 foreach($fonts as $font) {

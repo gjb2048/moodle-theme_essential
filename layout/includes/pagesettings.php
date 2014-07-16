@@ -64,7 +64,17 @@ $hasmobileapps =    (   empty($PAGE->theme->settings->ios)          &&
                         empty($PAGE->theme->settings->android)
                         ? false : true );
 
-$logoclass = ($hassocialnetworks || $hasmobileapps) ? 'span6':'span12';
+$hasprofilepic = $PAGE->theme->settings->headerprofilepic;
+
+$logoclass = 'span12';
+if (($hassocialnetworks || $hasmobileapps) && $hasprofilepic) {
+	$logoclass = 'span6';
+} else if (!($hassocialnetworks || $hasmobileapps) && $hasprofilepic) {
+	$logoclass = 'span11';
+} else if (($hassocialnetworks || $hasmobileapps) && !$hasprofilepic) {
+	$logoclass = 'span7';
+}
+
 $oldnavbar = $PAGE->theme->settings->oldnavbar;
 $haslogo = (!empty($PAGE->theme->settings->logo));
 

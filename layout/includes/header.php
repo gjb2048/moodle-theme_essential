@@ -41,7 +41,7 @@ require_once(dirname(__FILE__).'/pagesettings.php');
                         <a class="logo" href="<?php echo $CFG->wwwroot; ?>" title="<?php print_string('home'); ?>"></a>
                     <?php } ?>
                 </div>
-                <?php if (isloggedin() && $PAGE->theme->settings->headerprofilepic) { ?>
+                <?php if (isloggedin() && $hasprofilepic) { ?>
                 <div class="span1 pull-right" id="profilepic">
                     <p id="socialheading"><?php echo $USER->firstname; ?></p>
                     <ul class="socials unstyled">
