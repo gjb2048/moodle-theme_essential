@@ -33,7 +33,7 @@ require_once(dirname(__FILE__).'/pagesettings.php');
         <div class="container-fluid">
             <div class="row-fluid">
             <!-- HEADER: LOGO AREA -->
-                    <div class="<?php echo $logoclass;?>">
+                <div class="<?php echo $logoclass;?>">
                     <?php if (!$haslogo) { ?>
                         <i id="headerlogo" class="fa fa-<?php echo $PAGE->theme->settings->siteicon ?>"></i>
                             <h1 id="title"><?php echo $SITE->shortname; ?></h1>
@@ -49,7 +49,6 @@ require_once(dirname(__FILE__).'/pagesettings.php');
                             <?php echo $OUTPUT->user_picture($USER); ?>
                         </li>
                     </ul>            
-
                 </div>
                 <?php
                 }
@@ -81,13 +80,13 @@ require_once(dirname(__FILE__).'/pagesettings.php');
                 if ($hasmobileapps) {
                 ?>
                 <div class="span2 pull-right">
-                <p id="socialheading"><?php echo get_string('mobileappsheading','theme_essential')?></p>
+					<p id="socialheading"><?php echo get_string('mobileappsheading','theme_essential')?></p>
                     <ul class="socials unstyled">
                         <?php 
                             echo $OUTPUT->render_social_network('ios');
                             echo $OUTPUT->render_social_network('android');
                         ?>
-                </ul>
+					</ul>
                 </div>
                 <?php 
                 }
@@ -95,6 +94,7 @@ require_once(dirname(__FILE__).'/pagesettings.php');
                 if (!empty($courseheader)) { ?>
                 <div id="course-header"><?php echo $courseheader; ?></div>
                 <?php } ?>
+			</div>
         </div>
     </div>
 
