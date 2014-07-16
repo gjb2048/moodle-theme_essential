@@ -2712,7 +2712,7 @@ a:hover {
 }
 
 a.logo {
-  background-image: url('~"[[setting:logo]]"');
+  background-image: url([[setting:logo]]);
 }
 
 h1#title {
