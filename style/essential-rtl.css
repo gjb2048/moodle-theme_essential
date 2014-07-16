@@ -1567,6 +1567,13 @@ img.profilepicture {
   font-family: monospace;
 }
 
+.path-admin #page #admin-form-save-button {
+  position: fixed;
+  width: 400px;
+  bottom: 10px;
+  margin: 0px;
+}
+
 .minicalendar .calendar_event_site,
 .minicalendar .calendar_event_course,
 .minicalendar .calendar_event_group,
