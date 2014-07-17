@@ -297,7 +297,8 @@ ul.socials {
 }
 
 .navbar.oldnavbar,
-.pagelayout-secure .navbar {
+.pagelayout-secure .navbar,
+.pagelayout-popup .navbar {
     position: static;
 }
 
@@ -914,7 +915,6 @@ table#greyboxleft h2 {
 
 .block_login .content form input[type="submit"],
 .block_login .content .footer a {
-    background-color: [[setting:themecolor]];
     background-image: none;
     border-color: #30ADD1;
     border-image: none;
@@ -925,13 +925,14 @@ table#greyboxleft h2 {
     color: #fff;
     cursor: pointer;
     display: inline-block;
-    font-size: 1em;
+    font-size: 13px;
     line-height: 20px;
     padding: 4px 12px;
     text-align: center;
     text-shadow: none;
     vertical-align: middle;
     margin: 10px 0;
+    width: 100%;
 }
 
 .block_login .content form input[type="submit"]:hover,
@@ -939,32 +940,31 @@ table#greyboxleft h2 {
     text-decoration: none;
 }
 
-.block_login .content .footer a {
-    margin: 0 0 10px;
-    padding: 3px 12px;
-    font-family: FontAwesome;
+.block_login .content .footer div {
+    width: 90%;
 }
 .block_login input#login_username,
 .block_login input#login_password {
     width: 95%;
 }
 
-.block_login .content .footer div:nth-child(1) a {
-    background: green;
+.block_login .password label:before {
+    content: "\f084";
+    font-family: FontAwesome;
+    margin-right: 5px;
 }
 
-.block_login .content .footer div:nth-child(2) a {
+.block_login .username label:before {
+    content: "\f007";
+    font-family: FontAwesome;
+    margin-right: 5px;
+}
+
+.block_login .content .footer div a {
+    background: orangered;
+}
+.block_login .content .footer div a:hover {
     background: red;
-}
-
-.block_login .content .footer div:nth-child(1) a:before {
-    content:"\f090";
-    margin-right: 5px;
-}
-
-.block_login .content .footer div:nth-child(2) a:before {
-    content:"  \f09c";
-    margin-right: 5px;
 }
 
 
