@@ -20,7 +20,7 @@
  *
  *
  * @package   theme_essential
- * @copyright 2013 Julian Ridden
+ * @author 2013 Julian Ridden
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -126,48 +126,6 @@ $string['hideonphonedesc'] = 'Slayt gösterisinin mobil cihazlarda gösterilip g
 $string['display'] = 'Göster';
 $string['dontdisplay'] = 'Gösterme';
 $string['readmore'] = 'Devamı';
-
-$string['slideshowTitle'] = 'Slayt Gösterisi';
-$string['slide1'] = 'Sayfa 1: Başlık';
-$string['slide1desc'] = 'Slayt Gösterisindeki bu sayfa için açıklayıcı bir başlık belirleyiniz.';
-$string['slide1image'] = 'Sayfa 1: Resim';
-$string['slide1imagedesc'] = 'En iyi sonuç alabilmek için resmin şeffaf olmasına özen gösteriniz.(Resim boyutu 256px x 256px olmalıdır)';
-$string['slide1caption'] = 'Sayfa 1: Resim açıklaması';
-$string['slide1captiondesc'] = '1. sayfa için Resmi açılkayan metin giriniz.';
-$string['slide1url'] = 'Sayfa 1: Resim Bağlantısı';
-$string['slide1urldesc'] = '1. Sayfa Resim bağlantısının Hedef URL sini belirtiniz.';
-
-$string['slideshowTitle'] = 'Slayt Gösterisi';
-$string['slide1'] = 'Sayfa 2: Başlık';
-$string['slide1desc'] = 'Slayt Gösterisindeki bu sayfa için açıklayıcı bir başlık belirleyiniz.';
-$string['slide1image'] = 'Sayfa 2: Resim';
-$string['slide1imagedesc'] = 'En iyi sonuç alabilmek için resmin şeffaf olmasına özen gösteriniz.(Resim boyutu 256px x 256px olmalıdır)';
-$string['slide1caption'] = 'Sayfa 2: Resim açıklaması';
-$string['slide1captiondesc'] = '2. sayfa için Resmi açılkayan metin giriniz.';
-$string['slide1url'] = 'Sayfa 2: Resim Bağlantısı';
-$string['slide1urldesc'] = '2. Sayfa Resim bağlantısının Hedef URL sini belirtiniz.';
-
-
-$string['slideshowTitle'] = 'Slayt Gösterisi';
-$string['slide1'] = 'Sayfa 3: Başlık';
-$string['slide1desc'] = 'Slayt Gösterisindeki bu sayfa için açıklayıcı bir başlık belirleyiniz.';
-$string['slide1image'] = 'Sayfa 3: Resim';
-$string['slide1imagedesc'] = 'En iyi sonuç alabilmek için resmin şeffaf olmasına özen gösteriniz.(Resim boyutu 256px x 256px olmalıdır)';
-$string['slide1caption'] = 'Sayfa 3: Resim açıklaması';
-$string['slide1captiondesc'] = '3. sayfa için Resmi açılkayan metin giriniz.';
-$string['slide1url'] = 'Sayfa 3: Resim Bağlantısı';
-$string['slide1urldesc'] = '3. Sayfa Resim bağlantısının Hedef URL sini belirtiniz.';
-
-
-$string['slideshowTitle'] = 'Slayt Gösterisi';
-$string['slide1'] = 'Sayfa 4: Başlık';
-$string['slide1desc'] = 'Slayt Gösterisindeki bu sayfa için açıklayıcı bir başlık belirleyiniz.';
-$string['slide1image'] = 'Sayfa 4: Resim';
-$string['slide1imagedesc'] = 'En iyi sonuç alabilmek için resmin şeffaf olmasına özen gösteriniz.(Resim boyutu 256px x 256px olmalıdır)';
-$string['slide1caption'] = 'Sayfa 4: Resim açıklaması';
-$string['slide1captiondesc'] = '4. sayfa için Resmi açılkayan metin giriniz.';
-$string['slide1url'] = 'Sayfa 4: Resim Bağlantısı';
-$string['slide1urldesc'] = '4. Sayfa Resim bağlantısının Hedef URL sini belirtiniz.';
 
 /* Marketing Spots */
 $string['marketingheading'] = 'Pazarlama kutucukları';

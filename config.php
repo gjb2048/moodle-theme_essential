@@ -15,13 +15,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This is built using the Clean template to allow for new theme's using
+ * This is built using the bootstrapbase template to allow for new theme's using
  * Moodle's new Bootstrap theme engine
  *
- *
- * @package   theme_essential
- * @copyright 2013 Julian Ridden
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     theme_essential
+ * @copyright   2013 Julian Ridden
+ * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $THEME->name = 'essential';
@@ -33,9 +33,12 @@ $THEME->name = 'essential';
 $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
 $THEME->parents = array('bootstrapbase');
-$THEME->sheets = array('essential', 'custom');
+$THEME->sheets = array('fontawesome', 'essential', 'custom');
 $THEME->supportscssoptimisation = false;
-$THEME->enable_dock = false;
+
+if ($CFG->version >= 2014051200.10 ) {
+    $THEME->enable_dock = true;
+}
 
 $THEME->editor_sheets = array();
 
@@ -46,19 +49,19 @@ $THEME->plugins_exclude_sheets = array(
 );
 
 $THEME->layouts = array(
+    // Most backwards compatible layout without the blocks - this is the layout used by default.
+    'base' => array(
+        'file' => 'columns1.php',
+        'regions' => array(),
+        'defaultregion' => '',
+        'options' => array('noblocks'=>true),
+    ),
     // Front page.
     'frontpage' => array(
         'file' => 'frontpage.php',
         'regions' => array('side-pre', 'home-left', 'home-middle', 'home-right', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
         'defaultregion' => 'hidden-dock',
         'options' => array('nonavbar'=>true),
-    ),
-    // Most backwards compatible layout without the blocks - this is the layout used by default.
-    'base' => array(
-        'file' => 'columns1.php',
-        'regions' => array('footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'footer-right',
-		'options' => array('noblocks'=>true),
     ),
     // Standard layout with blocks, this is recommended for most pages with general information.
     'standard' => array(
@@ -81,7 +84,7 @@ $THEME->layouts = array(
     // part of course, typical for modules - default page layout if $cm specified in require_login().
     'incourse' => array(
         'file' => 'columns3.php',
-        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
+        'regions' => array('side-pre','side-post', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-post',
     ),
     // Server administration scripts.
@@ -105,17 +108,16 @@ $THEME->layouts = array(
     ),
     'login' => array(
         'file' => 'login.php',
-        'regions' => array(),
+        'regions' => array('footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => '',
         'options' => array('langmenu'=>true),
     ),
 
     // Pages that appear in pop-up windows - no navigation, no blocks, no header.
     'popup' => array(
-        'file' => 'columns1.php',
-        'regions' => array('footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'footer-right',
-        'options' => array('nofooter'=>true, 'nonavbar'=>true, 'noheader'=>true),
+        'file' => 'popup.php',
+        'regions' => array(),
+        'options' => array('nofooter' => true, 'nonavbar' => true),
     ),
     // No blocks and minimal footer - used for legacy frame layouts only!
     'frametop' => array(
@@ -166,11 +168,7 @@ $THEME->layouts = array(
 );
 
 $THEME->javascripts = array(
-    'coloursswitcher'
-);
-
-$THEME->javascripts_footer = array(
-    'dockmod'
+    'coloursswitcher',
 );
 
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';

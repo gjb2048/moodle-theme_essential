@@ -5,17 +5,44 @@ With 2.5 now released Julian thought it time to take the opportunity to build a 
 The idea of this theme is to make the site look as little like Moodle as possible. In this specific instance, it would be used on sites where Moodle would potentially serve as a company homepage rather than just a course list.
 
 Cool things to know about the theme.
- - It only uses 4 images.
+ - It attempts to load as many as possible icons from a font
  - Most of what you think are "graphics" are actually the [Awesome font](http://fortawesome.github.io/Font-Awesome/)
  - The slider on the frontpage of the demo site is completely customisable through theme settings
  - I am really trying to push what [Bootstrap](http://twitter.github.io/bootstrap/) Grids can do. As such the theme is fully responsive.
  - The footer is all custom Moodle regions. This means blocks can be added. The footer of the demo site is full of HTML blocks in this instance
  - The Theme uses [Google web fonts](http://www.google.com/fonts/) to give it that extra bit of shazam!
  - Social Network icons appear at the top of the page dynamically based on theme settings
- - The entire colour scheme can be modified with theme settings (like on [Rocket](https://moodle.org/plugins/view.php?plugin=theme_rocket))
+ - The entire colour scheme can be modified with theme settings
  - The homepage main area is just a label. The theme will ship with custom classes that you can set for tables and links to modify their formatting. No knowledge of code is needed as you can use the text editor to do this. Documentation will be provided outlining what the additional classes are.
 
+New in 2.7.3
+========================
+- FIX: Fixed slide show by replacing with Bootstrap 2.3.2 one.  Issue #18.
+- FIX: Make background image fixed and set a background transparent colour
+- FIX: Permanently replace edit icons with FontAwesome icons
+- FIX: Massive cleanup in all files, reducing CSS with 25%
+- FIX: Fixed all custom block regions to stick where they are
+- FIX: Displaying footer and header on login page as well
+- FIX: Further language file cleanup, looking for maintainers of all non-english language files!
+- FIX: Optimize code for much improved processing time
+- FIX: Optimize javascript to reduce browser lag on load
+- FIX: Resolve layout issues on font-rendering
+- FIX: Set layout options for responsive rendering, more mobile support to come soon
+- FIX: Load fonts through htmlwriter (Thanks Mary :))
+- FIX: Fix various alignment issues
+- FIX: Fix popup/secure header overlay for quizzes
+- FIX: optimize code to make loading much faster
+- NEW: Reduced amount of fonts in theme, added legacy themes for websafe support
+- NEW: New slider with up to 16 slides, full responsive
+- NEW: Footer will go all the way to bottom on modern browsers (except IE of course)
+- NEW: Removed output of summary to header due to potential exploits
+- NEW: Breadcrumb styling
+- NEW: Login Block styling
+- NEW: Full custom category icon settings (Thanks Danny Wahl)
+- NEW: Transparent fixed background when setting a background image
+
 New in 2.7.2
+========================
 - FIX: Slideshow CSS fixes
 - FIX: Image alignment on slideshow
 - NEW: Select slideshow background color
@@ -137,3 +164,12 @@ Documentation
 =============
 As always, documentation is a work in progress. Available documentation is available at http://docs.moodle.org/25/en/Essential_theme
 If you have questions you can post them in the issue tracker at https://github.com/DBezemer/moodle-theme_essential/issues
+
+Maintained by
+========================
+David Bezemer
+Moodle profile: https://moodle.org/user/profile.php?id=1416592
+
+G J Barnard MSc. BSc(Hons)(Sndw). MBCS. CEng. CITP. PGCE.
+Moodle profile: http://moodle.org/user/profile.php?id=442195
+Web profile   : http://about.me/gjbarnard

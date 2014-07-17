@@ -14,28 +14,52 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-theme_essential_check_colours_switch();
-theme_essential_initialise_colourswitcher($PAGE);
+/**
+ * This is built using the bootstrapbase template to allow for new theme's using
+ * Moodle's new Bootstrap theme engine
+ *
+ * @package     theme_essential
+ * @copyright   2013 Julian Ridden
+ * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
-$bodyclasses = array();
-$bodyclasses[] = 'essential-colours-' . theme_essential_get_colours();
- 
+require_once(dirname(__FILE__).'/includes/pagesettings.php');
+
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
+
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php if (!empty($fontselect) && ($fontselect < 7)) {
+        // Google web fonts -->
+        require_once(dirname(__FILE__).'/includes/fonts.php');
+    }?>
+    <!-- iOS Homescreen Icons -->
+    <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
+    <!-- Start Google Analytics -->
+    <?php if ($hasanalytics) { ?>
+        <?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
+    <?php } ?>
+    <!-- End Google Analytics -->
 </head>
 
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
+
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
-<div id="page">
-    <div id="page-content" class="clearfix">
-        <?php echo $OUTPUT->main_content(); ?>
+
+<section role="main-content">
+    <div id="page">
+        <div id="page-content" class="clearfix">
+            <?php echo $OUTPUT->main_content(); ?>
+        </div>
     </div>
-</div>
+</section>
+
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
+
 </body>
 </html>

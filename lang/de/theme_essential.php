@@ -20,7 +20,7 @@
  *
  *
  * @package   theme_essential
- * @copyright 2013 Julian Ridden
+ * @author 2013 Julian Ridden
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * German translation by Christian Conradi and Michael Drawe
  */
@@ -131,43 +131,6 @@ $string['hideonphonedesc'] = 'Wählen Sie, ob die Slideshow auf dem Handy angeze
 $string['display'] = 'Anzeigen';
 $string['dontdisplay'] = 'Nicht anzeigen';
 $string['readmore'] = 'Mehr erfahren...';
-
-$string['slideshowTitle'] = 'Slideshow';
-$string['slide1'] = '&uuml;berschrift für das Slideshow Bild 1';
-$string['slide1desc'] = 'Geben Sie eine aussagekr&auml;ftigen Titel für Ihr Bild an';
-$string['slide1image'] = 'Slideshow Bild 1';
-$string['slide1imagedesc'] = 'Bild funktioniert am besten, wenn es transparent ist. (Bildgroeße sollte 256px x 256px sein)';
-$string['slide1caption'] = 'Slideshow Bild 1: Bildunterschrift';
-$string['slide1captiondesc'] = 'Geben Sie die Bildunterschrift (ein erklaerender Zwischentext)';
-$string['slide1url'] = 'Slideshow Bild 1: Link';
-$string['slide1urldesc'] = 'Hier einen Link eingeben für weitere Infos';
-
-$string['slide2'] = 'Überschrift für das Slideshow Bild 2';
-$string['slide2desc'] = 'Geben Sie eine aussagekräftigen Titel für Ihr Bild an';
-$string['slide2image'] = 'Slideshow Bild 2';
-$string['slide2imagedesc'] = 'Bild funktioniert am besten, wenn es transparent ist. (Bildgroeße sollte 256px x 256px sein)';
-$string['slide2caption'] = 'Slideshow Bild 2: Bildunterschrift';
-$string['slide2captiondesc'] = 'Geben Sie die Bildunterschrift (ein erklaerender Zwischentext)';
-$string['slide2url'] = 'Slideshow Bild 2: Link';
-$string['slide2urldesc'] = 'Hier einen Link eingeben für weitere Infos';
-
-$string['slide3'] = 'Überschrift für das Slideshow Bild 3';
-$string['slide3desc'] = 'Geben Sie eine aussagekräftigen Titel für Ihr Bild an';
-$string['slide3image'] = 'Slideshow Bild 3';
-$string['slide3imagedesc'] = 'Bild funktioniert am besten, wenn es transparent ist. (Bildgröße sollte 256px x 256px sein)';
-$string['slide3caption'] = 'Slideshow Bild 3: Bildunterschrift';
-$string['slide3captiondesc'] = 'Geben Sie die Bildunterschrift (ein erkärender Zwischentext)';
-$string['slide3url'] = 'Slideshow Bild 3: Link';
-$string['slide3urldesc'] = 'Hier einen Link eingeben für weitere Infos';
-
-$string['slide4'] = 'Überschrift für das Slideshow Bild 4';
-$string['slide4desc'] = 'Geben Sie eine aussagekräftigen Titel für Ihr Bild an';
-$string['slide4image'] = 'Slideshow Bild 4';
-$string['slide4imagedesc'] = 'Bild funktioniert am besten, wenn es transparent ist. (Bildgröße sollte 256px x 256px sein)';
-$string['slide4caption'] = 'Slideshow Bild 1: Bildunterschrift';
-$string['slide4captiondesc'] = 'Geben Sie die Bildunterschrift (ein erklärender Zwischentext)';
-$string['slide4url'] = 'Slideshow Bild 4: Link';
-$string['slide4urldesc'] = 'Hier einen Link eingeben für weitere Infos';
 
 /* Marketing Spots */
 $string['marketingheading'] = 'Marketing Spots';

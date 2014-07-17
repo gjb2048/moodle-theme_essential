@@ -14,8 +14,17 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-$bodyclasses = array();
-$bodyclasses[] = 'essential-colours-' . theme_essential_get_colours();
+/**
+ * This is built using the bootstrapbase template to allow for new theme's using
+ * Moodle's new Bootstrap theme engine
+ *
+ * @package     theme_essential
+ * @copyright   2013 Julian Ridden
+ * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+ 
+require_once(dirname(__FILE__).'/includes/pagesettings.php');
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
@@ -48,26 +57,23 @@ echo $OUTPUT->doctype() ?>
     </nav>
 </header>
 
-<div id="page" class="container-fluid">
+<section role="main-content">
+    <div id="page" class="container-fluid">
 
-    <header id="page-header" class="clearfix">
-        <?php echo $OUTPUT->page_heading(); ?>
-    </header>
-
-    <div id="page-content" class="row-fluid">
-        <div id="region-bs-main-and-pre" class="span9">
-            <div class="row-fluid">
-                <section id="region-main" class="span8 pull-right">
-                    <?php echo $OUTPUT->main_content(); ?>
-                </section>
-                <?php echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column'); ?>
+        <div id="page-content" class="row-fluid">
+            <div id="region-bs-main-and-pre" class="span9">
+                <div class="row-fluid">
+                    <section id="region-main" class="span8 pull-right">
+                        <?php echo $OUTPUT->main_content(); ?>
+                    </section>
+                    <?php echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column'); ?>
+                </div>
             </div>
+            <?php echo $OUTPUT->blocks('side-post', 'span3'); ?>
         </div>
-        <?php echo $OUTPUT->blocks('side-post', 'span3'); ?>
     </div>
+</section>
 
-    <?php echo $OUTPUT->standard_end_of_body_html() ?>
-
-</div>
+<?php echo $OUTPUT->standard_end_of_body_html() ?>
 </body>
 </html>

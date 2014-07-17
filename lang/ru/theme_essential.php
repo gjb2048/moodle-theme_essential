@@ -20,7 +20,7 @@
  *
  *
  * @package   theme_essential
- * @copyright 2013 Julian Ridden
+ * @author 2013 Julian Ridden
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -212,19 +212,6 @@ $string['slideheadercolor'] = 'Цвет заголовка слайда';
 $string['slideheadercolordesc'] = 'Определяет каким цветом должен быть напечатан текст заголовка';
 $string['slidebuttoncolor'] = 'Цвет кнопки на слайде';
 $string['slidebuttoncolordesc'] = 'Определяет каким цветом должен быть напечатан текст кнопки на слайде';
-
-$string['slideshowvariant'] = 'Дизайн слайд-шоу';
-$string['slideshowvariantdesc'] = 'Выберите стиль слайд-шоу';
-$string['slideshow1'] = 'Маленькое изображение справа';
-$string['slideshow2'] = 'Большое фоновое изображение';
-$string['slideshow3'] = 'Третий дизайн';
-
-$string['slideshowTitle'] = 'Слайд-шоу';
-$string['slideinfodesc'] = 'Введите настройки для Ваших слайдов.';
-$string['slide1'] = 'Слайд первый';
-$string['slide2'] = 'Слайд второй';
-$string['slide3'] = 'Слайд третий';
-$string['slide4'] = 'Слайд четвертый';
 
 $string['slidetitle'] = 'Заголовок';
 $string['slidetitledesc'] = 'Введите заголовок для Вашего слайда';

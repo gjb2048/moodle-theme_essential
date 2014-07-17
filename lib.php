@@ -15,28 +15,23 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This is built using the Clean template to allow for new theme's using
+ * This is built using the bootstrapbase template to allow for new theme's using
  * Moodle's new Bootstrap theme engine
  *
- *
- * @package   theme_essential
- * @copyright 2013 Julian Ridden
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     theme_essential
+ * @copyright   2013 Julian Ridden
+ * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
- * Parses CSS before it is cached.
+ * Adds the logo to CSS.
  *
- * This function can make alterations and replace patterns within the CSS.
- *
- * @param string $css The CSS
- * @param theme_config $theme The theme config object.
- * @return string The parsed CSS The parsed CSS.
+ * @param string $css The CSS.
+ * @param string $logo The URL of the logo.
+ * @return string The parsed CSS
  */
-
-/**
- * Include the Awesome Font.
- */
+ 
 function theme_essential_set_fontwww($css) {
     global $CFG, $PAGE;
     if(empty($CFG->themewww)){
@@ -48,20 +43,12 @@ function theme_essential_set_fontwww($css) {
     
     $theme = theme_config::load('essential');
     if (!empty($theme->settings->bootstrapcdn)) {
-        $css = str_replace($tag, '//netdna.bootstrapcdn.com/font-awesome/4.0.0/fonts/', $css);
+     $css = str_replace($tag, '//netdna.bootstrapcdn.com/font-awesome/4.1.0/fonts/', $css);
     } else {
-        $css = str_replace($tag, $themewww.'/essential/fonts/', $css);
+     $css = str_replace($tag, $themewww.'/essential/fonts/', $css);
     }
     return $css;
 }
-
-/**
- * Adds the logo to CSS.
- *
- * @param string $css The CSS.
- * @param string $logo The URL of the logo.
- * @return string The parsed CSS
- */
 function theme_essential_set_logo($css, $logo) {
     global $OUTPUT;
     $tag = '[[setting:logo]]';
@@ -133,31 +120,6 @@ function essential_set_pagewidth($css, $pagewidth) {
     return $css;
 }
 
-/**
- * Displays the Font Awesome Edit Icons based on settings value
- *
- * @param string $css
- * @param mixed $autohide
- * @return string
- */
-function essential_set_editicons($css, $editicons) {
-    global $CFG;
-    if (!empty($CFG->themedir)) {
-        $editiconsurl = $CFG->themedir . '/essential/style/editicons.css'; //Pull the full path for autohide css
-    } else {
-        $editiconsurl = $CFG->dirroot . '/theme/essential/style/editicons.css'; //MDL-36065
-    }
-    $tag = '[[setting:editicons]]';
-    if ($editicons) { //Setting is "YES"
-        $rules = file_get_contents($editiconsurl);
-        $replacement = $rules;
-    } else { //Setting is "NO"
-        $replacement = null; //NULL so we don't actually output anything to the stylesheet
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
 
 /**
  * get_performance_output() override get_peformance_info()
@@ -166,14 +128,14 @@ function essential_set_editicons($css, $editicons) {
  *
  * @return string
  */
-function essential_performance_output($param) {
+function essential_performance_output($param, $perfinfo) {
     
     $html = '<div class="container-fluid performanceinfo"><div class="row-fluid"><h2>Performance Information</h2></div><div class="row-fluid">';
     if (isset($param['realtime'])) { $html .= '<div class="span3"><var id="load">'.round($param['realtime'], 2).' secs</var><span>Load Time</span></div>'; }
     if (isset($param['memory_total'])) { $html .= '<div class="span3"><var id="memory">'.display_size($param['memory_total']).'</var><span>Memory Used</span></div>'; }
     if (isset($param['includecount'])) { $html .= '<div class="span3"><var id="included">'.$param['includecount'].' Files </var><span>Included</span></div>'; }
     if (isset($param['dbqueries'])) { $html .= '<div class="span3"><var id="db">'.$param['dbqueries'].' </var><span>DB Read/Write</span></div>'; }
-    if ($theme->settings->perfinfo === "max") {
+    if ($perfinfo === "max") {
         $html .= '</div><hr /><div class="row-fluid"><h2>Extended Performance Information</h2></div><div class="row-fluid">';
         if (isset($param['serverload'])) { $html .= '<div class="span3"><var id="load">'.$param['serverload'].' </var><span>Server Load</span></div>'; }
         if (isset($param['memory_peak'])) { $html .= '<div class="span3"><var id="memory">'.display_size($param['memory_peak']).' </var><span>Peak Memory</span></div>'; }
@@ -215,115 +177,83 @@ function theme_essential_process_css($css, $theme) {
     $css = essential_set_pagewidth($css,$pagewidth);
     
     // Set the Fonts.
-    if ($theme->settings->fontselect ==1) {
-        $headingfont = 'Oswald';
-        $bodyfont = 'PT Sans';
-        $bodysize = '13px';
-        $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==2) {
-        $headingfont = 'Lobster';
-        $bodyfont = 'Cabin';
-        $bodysize = '13px';
-        $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==3) {
-        $headingfont = 'Raelway';
-        $bodyfont = 'Goudy Bookletter 1911';
-        $bodysize = '13px';
-        $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==4) {
-        $headingfont = 'Allerta';
-        $bodyfont = 'Crimson Text';
+	switch($theme->settings->fontselect) {
+	case 1:
+        $headingfont = 'Open Sans, Arial, Helvetica, sans-serif';
+        $bodyfont = 'Open Sans, Arial, Helvetica, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==5) {
-        $headingfont = 'Arvo';
-        $bodyfont = 'PT Sans';
+		break;
+    case 2:
+        $headingfont = 'Oswald, Verdana, Geneva, sans-serif';
+        $bodyfont = '"PT Sans", Helvetica, Verdana sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==6) {
-        $headingfont = 'Dancing Script';
-        $bodyfont = 'Josefin Sans';
-        $bodysize = '13px';
-        $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==7) {
-        $headingfont = 'Allan';
-        $bodyfont = 'Cardo';
+		break;
+    case 3:
+        $headingfont = 'Roboto, Tahoma, Geneva, sans-serif';
+        $bodyfont = 'Roboto, Tahoma, Geneva, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==8) {
-        $headingfont = 'Molengo';
-        $bodyfont = 'Lekton';
-        $bodysize = '13px';
-        $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==9) {
-        $headingfont = 'Droid Serif';
-        $bodyfont = 'Droid Sans';
-        $bodysize = '13px';
-        $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==10) {
-        $headingfont = 'Corben';
-        $bodyfont = 'Nobile';
-        $bodysize = '12px';
-        $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==11) {
-        $headingfont = 'Ubuntu';
-        $bodyfont = 'Vollkorn';
+		break;
+    case 4:
+        $headingfont = '"PT Sans", Helvetica, Arial, sans-serif';
+        $bodyfont = '"PT Sans", Helvetica, Arial, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==12) {
-        $headingfont = 'Bree Serif';
-        $bodyfont = 'Open Sans';
-        $bodysize = '13px';
+		break;
+    case 5:
+        $headingfont = 'Ubuntu, Arial, Helvetica, sans-serif';
+        $bodyfont = 'Ubuntu, Arial, Helvetica, sans-serif';
+        $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==13) {
-        $headingfont = 'Bevan';
-        $bodyfont = 'Pontano Sans';
-        $bodysize = '13px';
+		break;
+    case 6:
+        $headingfont = 'Arimo, Arial, Helvetica, sans-serif';
+        $bodyfont = 'Arimo, Arial, Helvetica, sans-serif';
+        $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==14) {
-        $headingfont = 'Abril Fatface';
-        $bodyfont = 'Average';
-        $bodysize = '13px';
+		break;
+    case 7:
+        $headingfont = 'Lobster, "Lucida Calligraphy", Mistral, Verdana, sans-serif';
+        $bodyfont = 'Raleway, Helvetica, sans-serif';
+        $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==15) {
-        $headingfont = 'Playfair Display';
-        $bodyfont = 'Multi';
-        $bodysize = '13px';
+		break;
+    case 8:
+        $headingfont = 'Arial, Helvetica, sans-serif';
+        $bodyfont = 'Arial, Helvetica, sans-serif';
+        $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==16) {
-        $headingfont = 'Sansita one';
-        $bodyfont = 'Kameron';
-        $bodysize = '13px';
+		break;
+    case 9:
+        $headingfont = 'Georgia, serif';
+        $bodyfont = 'Georgia, serif';
+        $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==17) {
-        $headingfont = 'Istok Web';
-        $bodyfont = 'Lora';
-        $bodysize = '13px';
+		break;
+    case 10:
+        $headingfont = 'Verdana, Geneva, sans-serif';
+        $bodyfont = 'Verdana, Geneva, sans-serif';
+        $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==18) {
-        $headingfont = 'Pacifico';
-        $bodyfont = 'Arimo';
-        $bodysize = '13px';
+		break;
+    case 11:
+        $headingfont = '"Times New Roman", Times, serif';
+        $bodyfont = '"Times New Roman", Times, serif';
+        $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==19) {
-        $headingfont = 'Nixie One';
-        $bodyfont = 'Ledger';
-        $bodysize = '13px';
+		break;
+    case 12:
+        $headingfont = 'Consolas, Monaco, monospace';
+        $bodyfont = 'Consolas, "Courier New", monospace';
+        $bodysize = '14px';
         $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==20) {
-        $headingfont = 'Cantata One';
-        $bodyfont = 'Imprima';
-        $bodysize = '13px';
-        $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==21) {
-        $headingfont = 'Rancho';
-        $bodyfont = 'Gudea';
-        $bodysize = '13px';
-        $bodyweight = '400';
-    } else if ($theme->settings->fontselect ==22) {
-        $headingfont = 'Helvetica';
-        $bodyfont = 'Georgia';
-        $bodysize = '17px';
+		break;
+	default:
+		$headingfont = 'Verdana, Geneva, sans-serif';
+        $bodyfont = 'Verdana, Geneva, sans-serif';
+        $bodysize = '14px';
         $bodyweight = '400';
     }
     
@@ -389,14 +319,14 @@ function theme_essential_process_css($css, $theme) {
     $css = theme_essential_set_footerhovercolor($css, $footerhovercolor);
 
 
-// Set the footer heading color.
+    // Set the footer heading color.
     if (!empty($theme->settings->footerheadingcolor)) {
         $footerheadingcolor = $theme->settings->footerheadingcolor;
     } else {
         $footerheadingcolor = null;
     }
     $css = theme_essential_set_footerheadingcolor($css, $footerheadingcolor);
-	
+    
      // Set the slide header color.
     if (!empty($theme->settings->slideshowcolor)) {
         $slideshowcolor = $theme->settings->slideshowcolor;
@@ -428,6 +358,14 @@ function theme_essential_process_css($css, $theme) {
         $slidebuttoncolor = null;
     }
     $css = theme_essential_set_slidebuttoncolor($css, $slidebuttoncolor);
+    
+     // Set the slide button hover color.
+    if (!empty($theme->settings->slidebuttonhovercolor)) {
+        $slidebuttonhovercolor = $theme->settings->slidebuttonhovercolor;
+    } else {
+        $slidebuttonhovercolor = null;
+    }
+    $css = theme_essential_set_slidebuttonhovercolor($css, $slidebuttonhovercolor);
 
     // Set theme alternative colors.
     $defaultalternativethemecolors = array('#a430d1', '#d15430', '#5dd130');
@@ -439,22 +377,6 @@ function theme_essential_process_css($css, $theme) {
         $css = theme_essential_set_alternativecolor($css, 'color' . $alternativethemenumber, $theme->settings->{'alternativethemecolor' . $alternativethemenumber}, $default);
         $css = theme_essential_set_alternativecolor($css, 'hovercolor' . $alternativethemenumber, $theme->settings->{'alternativethemehovercolor' . $alternativethemenumber}, $defaulthover);
     }
- 
-    // Set the navbar seperator.
-    if (!empty($theme->settings->navbarsep)) {
-        $navbarsep = $theme->settings->navbarsep;
-    } else {
-        $navbarsep = '/';
-    }
-    $css = theme_essential_set_navbarsep($css, $navbarsep);
-    
-    //Get the editicons value from settings
-    if (!empty($theme->settings->editicons)) {
-        $editicons = $theme->settings->editicons;
-    } else {
-        $editicons = null;
-    }
-    $css = essential_set_editicons($css, $editicons);
     
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
@@ -472,25 +394,6 @@ function theme_essential_process_css($css, $theme) {
     $setting = 'pagebackground';
     $pagebackground = $theme->setting_file_url($setting, $setting);
     $css = theme_essential_set_pagebackground($css, $pagebackground, $setting);
-    
-    // Set the Defaut Category Icon.
-    if (!empty($theme->settings->defaultcategoryicon)) {
-        $defaultcategoryicon = $theme->settings->defaultcategoryicon;
-    } else {
-        $defaultcategoryicon = null;
-    }
-    $css = theme_essential_set_defaultcategoryicon($css, $defaultcategoryicon);
-    
-    // Set Category Icons.
-    foreach (range(1, 20) as $categorynumber) {
-        $categoryicon = $defaultcategoryicon;
-        if (!empty($theme->settings->usecategoryicon)) {
-            if (!empty($theme->settings->{'categoryicon' . $categorynumber})) {
-                $categoryicon = $theme->settings->{'categoryicon' . $categorynumber};
-            }
-        }
-        $css = theme_essential_set_categoryicon($css, $categoryicon, $categorynumber);
-    }
     
     // Set Slide Images.
     $setting = 'slide1image';
@@ -558,9 +461,7 @@ function theme_essential_process_css($css, $theme) {
     }
     $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
 
-    // Set the font path.
-
-    $css = theme_essential_set_fontwww($css);
+	$css = theme_essential_set_fontwww($css);
     return $css;
 }
 
@@ -771,21 +672,21 @@ function theme_essential_set_slidebuttoncolor($css, $slidebuttoncolor) {
     return $css;
 }
 
-function theme_essential_set_footersepcolor($css, $footersepcolor) {
-    $tag = '[[setting:footersepcolor]]';
-    $replacement = $footersepcolor;
+function theme_essential_set_slidebuttonhovercolor($css, $slidebuttonhovercolor) {
+    $tag = '[[setting:slidebuttonhovercolor]]';
+    $replacement = $slidebuttonhovercolor;
     if (is_null($replacement)) {
-        $replacement = '#313131';
+        $replacement = '#45b5d6';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
 
-function theme_essential_set_navbarsep($css, $navbarsep) {
-    $tag = '[[setting:navbarsep]]';
-    $replacement = $navbarsep;
+function theme_essential_set_footersepcolor($css, $footersepcolor) {
+    $tag = '[[setting:footersepcolor]]';
+    $replacement = $footersepcolor;
     if (is_null($replacement)) {
-        $replacement = '';
+        $replacement = '#313131';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -825,31 +726,26 @@ function theme_essential_set_marketingimage($css, $marketingimage, $setting) {
     return $css;
 }
 
-function theme_essential_set_defaultcategoryicon($css, $defaultcategoryicon) {
-    $tag = '[[setting:defaultcategoryicon]]';
-    $replacement = $defaultcategoryicon;
-    if (is_null($replacement)) {
-        $replacement = 'f07c';
+function theme_essential_showslider($settings) {
+    $noslides = (empty($settings->numberofslides)) ? false : $settings->numberofslides;
+    if ($noslides) {
+        $devicetype = core_useragent::get_device_type(); // In moodlelib.php.
+        if ($devicetype == "mobile") {
+            if ($settings->hideonphone) {
+                $noslides = false;
+            }
+        } else if ($devicetype == "tablet") {
+            if ($settings->hideontablet) {
+                $noslides = false;
+            }
+        }
     }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function theme_essential_set_categoryicon($css, $categoryicon, $categorynumber) {
-    $tag = '[[setting:categoryicon'. $categorynumber.']]';
-    $replacement = $categoryicon;
-    
-    if (is_null($replacement)) {
-        $replacement = $defaultcategoryicon;
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
+    return $noslides;
 }
 
 function theme_essential_page_init(moodle_page $page) {
     $page->requires->jquery();
-    $page->requires->jquery_plugin('cslider', 'theme_essential');
-    $page->requires->jquery_plugin('custom', 'theme_essential'); 
+	$page->requires->jquery_plugin('affix', 'theme_essential');
     $page->requires->jquery_plugin('alert', 'theme_essential');
     $page->requires->jquery_plugin('carousel', 'theme_essential');
     $page->requires->jquery_plugin('collapse', 'theme_essential');
@@ -858,5 +754,6 @@ function theme_essential_page_init(moodle_page $page) {
     $page->requires->jquery_plugin('tab', 'theme_essential');
     $page->requires->jquery_plugin('tooltip', 'theme_essential');
     $page->requires->jquery_plugin('transition', 'theme_essential');
-    $page->requires->jquery_plugin('modernizr', 'theme_essential');  
+	$page->requires->jquery_plugin('typeahead', 'theme_essential');
+    $page->requires->jquery_plugin('modernizr', 'theme_essential');
 }

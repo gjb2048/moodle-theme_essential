@@ -15,18 +15,18 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This is built using the Clean template to allow for new theme's using
+ * This is built using the bootstrapbase template to allow for new theme's using
  * Moodle's new Bootstrap theme engine
  *
- *
- * @package   theme_essential
- * @copyright 2013 Julian Ridden
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     theme_essential
+ * @copyright   2013 Julian Ridden
+ * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+ 
 $settings = null;
 
 defined('MOODLE_INTERNAL') || die;
-
 
     $ADMIN->add('themes', new admin_category('theme_essential', 'Essential'));
 
@@ -40,7 +40,7 @@ defined('MOODLE_INTERNAL') || die;
     $default = 'laptop';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $temp->add($setting);
-    
+
     // Include Awesome Font from Bootstrapcdn
     $name = 'theme_essential/bootstrapcdn';
     $title = get_string('bootstrapcdn', 'theme_essential');
@@ -63,28 +63,19 @@ defined('MOODLE_INTERNAL') || die;
     $description = get_string('fontselectdesc', 'theme_essential');
     $default = '1';
     $choices = array(
-        '1'=>'Oswald & PT Sans', 
-        '2'=>'Lobster & Cabin', 
-        '3'=>'Raleway & Goudy', 
-        '4'=>'Allerta & Crimson Text', 
-        '5'=>'Arvo & PT Sans',
-        '6'=>'Dancing Script & Josefin Sans',
-        '7'=>'Allan & Cardo',
-        '8'=>'Molengo & Lekton',
-        '9'=>'Droid Serif & Droid Sans',
-        '10'=>'Corbin & Nobile',
-        '11'=>'Ubuntu & Vollkorn',
-        '12'=>'Bree Serif & Open Sans', 
-        '13'=>'Bevan & Pontano Sans', 
-        '14'=>'Abril Fatface & Average', 
-        '15'=>'Playfair Display and Muli', 
-        '16'=>'Sansita One & Kameron',
-        '17'=>'Istok Web & Lora',
-        '18'=>'Pacifico & Arimo',
-        '19'=>'Nixie One & Ledger',
-        '20'=>'Cantata One & Imprima',
-        '21'=>'Rancho & Gudea',
-        '22'=>'DISABLE Google Fonts');
+        '1'=>'Open Sans', 
+        '2'=>'Oswald & PT Sans', 
+        '3'=>'Roboto', 
+        '4'=>'PT Sans', 
+        '5'=>'Ubuntu',
+        '6'=>'Arimo',
+        '7'=>'Lobster & Raleway',
+        '8'=>'Arial',
+        '9'=>'Georgia',
+        '10'=>'Verdana',
+        '11'=>'Times New Roman',
+        '12'=>'Consolas', 
+        );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -116,8 +107,8 @@ defined('MOODLE_INTERNAL') || die;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-	
-	// New or old navbar.
+    
+    // New or old navbar.
     $name = 'theme_essential/oldnavbar';
     $title = get_string('oldnavbar', 'theme_essential');
     $description = get_string('oldnavbardesc', 'theme_essential');
@@ -135,13 +126,6 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
-    // Include the Editicons css rules
-    $name = 'theme_essential/editicons';
-    $title = get_string('editicons', 'theme_essential');
-    $description = get_string('editiconsdesc', 'theme_essential');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
-    $temp->add($setting);
-    
     // Performance Information Display.
     $name = 'theme_essential/perfinfo';
     $title = get_string('perfinfo' , 'theme_essential');
@@ -154,18 +138,16 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
-    // Navbar Seperator.
-    $name = 'theme_essential/navbarsep';
-    $title = get_string('navbarsep' , 'theme_essential');
-    $description = get_string('navbarsepdesc', 'theme_essential');
-    $nav_thinbracket = get_string('nav_thinbracket', 'theme_essential');
-    $nav_doublebracket = get_string('nav_doublebracket', 'theme_essential');
-    $nav_thickbracket = get_string('nav_thickbracket', 'theme_essential');
-    $nav_slash = get_string('nav_slash', 'theme_essential');
-    $nav_pipe = get_string('nav_pipe', 'theme_essential');
-    $dontdisplay = get_string('dontdisplay', 'theme_essential');
-    $default = '/';
-    $choices = array('/'=>$nav_slash, '\f105'=>$nav_thinbracket, '\f101'=>$nav_doublebracket, '\f054'=>$nav_thickbracket, '|'=>$nav_pipe);
+    // Choose breadcrumbstyle
+    $name = 'theme_essential/breadcrumbstyle';
+    $title = get_string('breadcrumbstyle' , 'theme_essential');
+    $description = get_string('breadcrumbstyledesc', 'theme_essential');
+    $default = '1';
+    $choices = array(1 => get_string('breadcrumbstyled', 'theme_essential'),
+                     2 => get_string('breadcrumbsimple', 'theme_essential'),
+                     3 => get_string('breadcrumbthin', 'theme_essential'),
+                     0 => get_string('nobreadcrumb', 'theme_essential')
+                    );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -272,6 +254,16 @@ defined('MOODLE_INTERNAL') || die;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+    
+    // Main theme link colour setting.
+    $name = 'theme_essential/themeurlcolor';
+    $title = get_string('themeurlcolor', 'theme_essential');
+    $description = get_string('themeurlcolordesc', 'theme_essential');
+    $default = '#29a1c4';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
     // Main theme Hover colour setting.
     $name = 'theme_essential/themehovercolor';
@@ -334,7 +326,7 @@ defined('MOODLE_INTERNAL') || die;
     $name = 'theme_essential/footerurlcolor';
     $title = get_string('footerurlcolor', 'theme_essential');
     $description = get_string('footerurlcolordesc', 'theme_essential');
-    $default = '#BBBBBB';
+    $default = '#30add1';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -403,12 +395,11 @@ defined('MOODLE_INTERNAL') || die;
 
     $ADMIN->add('theme_essential', $temp);
  
- 
     /* Slideshow Widget Settings */
     $temp = new admin_settingpage('theme_essential_slideshow', get_string('slideshowheading', 'theme_essential'));
     $temp->add(new admin_setting_heading('theme_essential_slideshow', get_string('slideshowheadingsub', 'theme_essential'),
             format_text(get_string('slideshowdesc' , 'theme_essential'), FORMAT_MARKDOWN)));
-    
+
     // Toggle Slideshow.
     $name = 'theme_essential/toggleslideshow';
     $title = get_string('toggleslideshow' , 'theme_essential');
@@ -417,63 +408,64 @@ defined('MOODLE_INTERNAL') || die;
     $displaybeforelogin = get_string('displaybeforelogin', 'theme_essential');
     $displayafterlogin = get_string('displayafterlogin', 'theme_essential');
     $dontdisplay = get_string('dontdisplay', 'theme_essential');
-    $default = 'alwaysdisplay';
+    $default = '1';
     $choices = array('1'=>$alwaysdisplay, '2'=>$displaybeforelogin, '3'=>$displayafterlogin, '0'=>$dontdisplay);
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
+    // Number of slides.
+    $name = 'theme_essential/numberofslides';
+    $title = get_string('numberofslides', 'theme_essential');
+    $description = get_string('numberofslides_desc', 'theme_essential');
+    $default = 4;
+    $choices = array(
+        1 => '1',
+        2 => '2',
+        3 => '3',
+        4 => '4',
+        5 => '5',
+        6 => '6',
+        7 => '7',
+        8 => '8',
+        9 => '9',
+        10 => '10',
+        11 => '11',
+        12 => '12',
+        13 => '13',
+        14 => '14',
+        15 => '15',
+        16 => '16'
+    );
+    $temp->add(new admin_setting_configselect($name, $title, $description, $default, $choices));
+
     // Hide slideshow on phones.
+    $name = 'theme_essential/hideontablet';
+    $title = get_string('hideontablet' , 'theme_essential');
+    $description = get_string('hideontabletdesc', 'theme_essential');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // Hide slideshow on tablet.
     $name = 'theme_essential/hideonphone';
     $title = get_string('hideonphone' , 'theme_essential');
     $description = get_string('hideonphonedesc', 'theme_essential');
-    $display = get_string('alwaysdisplay', 'theme_essential');
-    $dontdisplay = get_string('dontdisplay', 'theme_essential');
-    $default = 'display';
-    $choices = array(''=>$display, 'hidden-phone'=>$dontdisplay);
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
-    // Slideshow Design Picker.
-    $name = 'theme_essential/slideshowvariant';
-    $title = get_string('slideshowvariant' , 'theme_essential');
-    $description = get_string('slideshowvariantdesc', 'theme_essential');
-    $slideshow1 = get_string('slideshow1', 'theme_essential');
-    $slideshow2 = get_string('slideshow2', 'theme_essential');
-    $default = 'slideshow1';
-    $choices = array('1'=>$slideshow1, '2'=>$slideshow2);
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+
+    // Slide interval.
+    $name = 'theme_essential/slideinterval';
+    $title = get_string('slideinterval', 'theme_essential');
+    $description = get_string('slideintervaldesc', 'theme_essential');
+    $default = '5000';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-	
-    // This is the descriptor for the Slideshow
-    $name = 'theme_essential/slidecolorinfo';
-    $heading = get_string('slidecolors', 'theme_essential');
-    $information = get_string('slidecolorsdesc', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
-	
-	// Slide Show colour setting.
-    $name = 'theme_essential/slideshowcolor';
-    $title = get_string('slideshowcolor', 'theme_essential');
-    $description = get_string('slideshowcolordesc', 'theme_essential');
-    $default = '#30add1';
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
-    // Slide Header colour setting.
-    $name = 'theme_essential/slideheadercolor';
-    $title = get_string('slideheadercolor', 'theme_essential');
-    $description = get_string('slideheadercolordesc', 'theme_essential');
-    $default = '#30add1';
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
+
     // Slide Text colour setting.
     $name = 'theme_essential/slidecolor';
     $title = get_string('slidecolor', 'theme_essential');
@@ -483,8 +475,8 @@ defined('MOODLE_INTERNAL') || die;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
-    // Slide Button colour setting.
+
+    // Slide button colour setting.
     $name = 'theme_essential/slidebuttoncolor';
     $title = get_string('slidebuttoncolor', 'theme_essential');
     $description = get_string('slidebuttoncolordesc', 'theme_essential');
@@ -494,292 +486,73 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    /*
-     * Slide 1
-     */
-     
-    // This is the descriptor for Slide One
-    $name = 'theme_essential/slide1info';
-    $heading = get_string('slide1', 'theme_essential');
-    $information = get_string('slideinfodesc', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
-
-    // Title.
-    $name = 'theme_essential/slide1';
-    $title = get_string('slidetitle', 'theme_essential');
-    $description = get_string('slidetitledesc', 'theme_essential');
-    $setting = new admin_setting_configtext($name, $title, $description, '');
-    $default = '';
+    // Slide button hover colour setting.
+    $name = 'theme_essential/slidebuttonhovercolor';
+    $title = get_string('slidebuttonhovercolor', 'theme_essential');
+    $description = get_string('slidebuttonhovercolordesc', 'theme_essential');
+    $default = '#45b5d6';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Image.
-    $name = 'theme_essential/slide1image';
-    $title = get_string('slideimage', 'theme_essential');
-    $description = get_string('slideimagedesc', 'theme_essential');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'slide1image');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $numberofslides = get_config('theme_essential', 'numberofslides');
+    for ($i = 1; $i <= $numberofslides; $i++) {
+        // This is the descriptor for Slide One
+        $name = 'theme_essential/slide'.$i.'info';
+        $heading = get_string('slideno', 'theme_essential', array('slide' => $i));
+        $information = get_string('slidenodesc', 'theme_essential', array('slide' => $i));
+        $setting = new admin_setting_heading($name, $heading, $information);
+        $temp->add($setting);
 
-    // Caption.
-    $name = 'theme_essential/slide1caption';
-    $title = get_string('slidecaption', 'theme_essential');
-    $description = get_string('slidecaptiondesc', 'theme_essential');
-    $setting = new admin_setting_configtextarea($name, $title, $description, '');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+        // Title.
+        $name = 'theme_essential/slide'.$i;
+        $title = get_string('slidetitle', 'theme_essential');
+        $description = get_string('slidetitledesc', 'theme_essential');
+        $default = '';
+        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
 
-    // URL.
-    $name = 'theme_essential/slide1url';
-    $title = get_string('slideurl', 'theme_essential');
-    $description = get_string('slideurldesc', 'theme_essential');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
-    // URL target.
-    $name = 'theme_essential/slide1target';
-    $title = get_string('slideurltarget' , 'theme_essential');
-    $description = get_string('slideurltargetdesc', 'theme_essential');
-    $target1 = get_string('slideurltargetself', 'theme_essential');
-    $target2 = get_string('slideurltargetnew', 'theme_essential');
-    $target3 = get_string('slideurltargetparent', 'theme_essential');
-    $default = 'target1';
-    $choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+        // Image.
+        $name = 'theme_essential/slide'.$i.'image';
+        $title = get_string('slideimage', 'theme_essential');
+        $description = get_string('slideimagedesc', 'theme_essential');
+        $setting = new admin_setting_configstoredfile($name, $title, $description, 'slide'.$i.'image');
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
 
-    /*
-     * Slide 2
-     */
-     
-    // This is the descriptor for Slide Two
-    $name = 'theme_essential/slide2info';
-    $heading = get_string('slide2', 'theme_essential');
-    $information = get_string('slideinfodesc', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
+        // Caption text.
+        $name = 'theme_essential/slide'.$i.'caption';
+        $title = get_string('slidecaption', 'theme_essential');
+        $description = get_string('slidecaptiondesc', 'theme_essential');
+        $default = '';
+        $setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_TEXT);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
 
-    // Title.
-    $name = 'theme_essential/slide2';
-    $title = get_string('slidetitle', 'theme_essential');
-    $description = get_string('slidetitledesc', 'theme_essential');
-    $setting = new admin_setting_configtext($name, $title, $description, '');
-    $default = '';
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+        // URL.
+        $name = 'theme_essential/slide'.$i.'url';
+        $title = get_string('slideurl', 'theme_essential');
+        $description = get_string('slideurldesc', 'theme_essential');
+        $default = '';
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
 
-    // Image.
-    $name = 'theme_essential/slide2image';
-    $title = get_string('slideimage', 'theme_essential');
-    $description = get_string('slideimagedesc', 'theme_essential');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'slide2image');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Caption.
-    $name = 'theme_essential/slide2caption';
-    $title = get_string('slidecaption', 'theme_essential');
-    $description = get_string('slidecaptiondesc', 'theme_essential');
-    $setting = new admin_setting_configtextarea($name, $title, $description, '');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // URL.
-    $name = 'theme_essential/slide2url';
-    $title = get_string('slideurl', 'theme_essential');
-    $description = get_string('slideurldesc', 'theme_essential');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // URL target.
-    $name = 'theme_essential/slide2target';
-    $title = get_string('slideurltarget' , 'theme_essential');
-    $description = get_string('slideurltargetdesc', 'theme_essential');
-    $target1 = get_string('slideurltargetself', 'theme_essential');
-    $target2 = get_string('slideurltargetnew', 'theme_essential');
-    $target3 = get_string('slideurltargetparent', 'theme_essential');
-    $default = 'target1';
-    $choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    /*
-     * Slide 3
-     */
-
-    // This is the descriptor for Slide Three
-    $name = 'theme_essential/slide3info';
-    $heading = get_string('slide3', 'theme_essential');
-    $information = get_string('slideinfodesc', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
-    
-    // Title.
-    $name = 'theme_essential/slide3';
-    $title = get_string('slidetitle', 'theme_essential');
-    $description = get_string('slidetitledesc', 'theme_essential');
-    $setting = new admin_setting_configtext($name, $title, $description, '');
-    $default = '';
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Image.
-    $name = 'theme_essential/slide3image';
-    $title = get_string('slideimage', 'theme_essential');
-    $description = get_string('slideimagedesc', 'theme_essential');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'slide3image');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Caption.
-    $name = 'theme_essential/slide3caption';
-    $title = get_string('slidecaption', 'theme_essential');
-    $description = get_string('slidecaptiondesc', 'theme_essential');
-    $setting = new admin_setting_configtextarea($name, $title, $description, '');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // URL.
-    $name = 'theme_essential/slide3url';
-    $title = get_string('slideurl', 'theme_essential');
-    $description = get_string('slideurldesc', 'theme_essential');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
-    // URL target.
-    $name = 'theme_essential/slide3target';
-    $title = get_string('slideurltarget' , 'theme_essential');
-    $description = get_string('slideurltargetdesc', 'theme_essential');
-    $target1 = get_string('slideurltargetself', 'theme_essential');
-    $target2 = get_string('slideurltargetnew', 'theme_essential');
-    $target3 = get_string('slideurltargetparent', 'theme_essential');
-    $default = 'target1';
-    $choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    /*
-     * Slide 4
-     */
-     
-    // This is the descriptor for Slide Four
-    $name = 'theme_essential/slide4info';
-    $heading = get_string('slide4', 'theme_essential');
-    $information = get_string('slideinfodesc', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
-
-    // Title.
-    $name = 'theme_essential/slide4';
-    $title = get_string('slidetitle', 'theme_essential');
-    $description = get_string('slidetitledesc', 'theme_essential');
-    $setting = new admin_setting_configtext($name, $title, $description, '');
-    $default = '';
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Image.
-    $name = 'theme_essential/slide4image';
-    $title = get_string('slideimage', 'theme_essential');
-    $description = get_string('slideimagedesc', 'theme_essential');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'slide4image');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Caption.
-    $name = 'theme_essential/slide4caption';
-    $title = get_string('slidecaption', 'theme_essential');
-    $description = get_string('slidecaptiondesc', 'theme_essential');
-    $setting = new admin_setting_configtextarea($name, $title, $description, '');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // URL.
-    $name = 'theme_essential/slide4url';
-    $title = get_string('slideurl', 'theme_essential');
-    $description = get_string('slideurldesc', 'theme_essential');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
-    // URL target.
-    $name = 'theme_essential/slide4target';
-    $title = get_string('slideurltarget' , 'theme_essential');
-    $description = get_string('slideurltargetdesc', 'theme_essential');
-    $target1 = get_string('slideurltargetself', 'theme_essential');
-    $target2 = get_string('slideurltargetnew', 'theme_essential');
-    $target3 = get_string('slideurltargetparent', 'theme_essential');
-    $default = 'target1';
-    $choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
-    /*
-     * Slide 5
-     */
-     
-    // This is the descriptor for Slide Five
-    $name = 'theme_essential/slide5info';
-    $heading = get_string('slide5', 'theme_essential');
-    $information = get_string('slideinfodesc', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
-
-    // Title.
-    $name = 'theme_essential/slide5';
-    $title = get_string('slidetitle', 'theme_essential');
-    $description = get_string('slidetitledesc', 'theme_essential');
-    $setting = new admin_setting_configtext($name, $title, $description, '');
-    $default = '';
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Image.
-    $name = 'theme_essential/slide5image';
-    $title = get_string('slideimage', 'theme_essential');
-    $description = get_string('slideimagedesc', 'theme_essential');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'slide5image');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Caption.
-    $name = 'theme_essential/slide5caption';
-    $title = get_string('slidecaption', 'theme_essential');
-    $description = get_string('slidecaptiondesc', 'theme_essential');
-    $setting = new admin_setting_configtextarea($name, $title, $description, '');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // URL.
-    $name = 'theme_essential/slide5url';
-    $title = get_string('slideurl', 'theme_essential');
-    $description = get_string('slideurldesc', 'theme_essential');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
-    // URL target.
-    $name = 'theme_essential/slide5target';
-    $title = get_string('slideurltarget' , 'theme_essential');
-    $description = get_string('slideurltargetdesc', 'theme_essential');
-    $target1 = get_string('slideurltargetself', 'theme_essential');
-    $target2 = get_string('slideurltargetnew', 'theme_essential');
-    $target3 = get_string('slideurltargetparent', 'theme_essential');
-    $default = 'target1';
-    $choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
-    
+        // URL target.
+        $name = 'theme_essential/slide'.$i.'target';
+        $title = get_string('slideurltarget' , 'theme_essential');
+        $description = get_string('slideurltargetdesc', 'theme_essential');
+        $target1 = get_string('slideurltargetself', 'theme_essential');
+        $target2 = get_string('slideurltargetnew', 'theme_essential');
+        $target3 = get_string('slideurltargetparent', 'theme_essential');
+        $default = 'target1';
+        $choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+        $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+    }
     $ADMIN->add('theme_essential', $temp);
     
     $temp = new admin_settingpage('theme_essential_frontcontent', get_string('frontcontentheading', 'theme_essential'));
@@ -1176,412 +949,67 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add(new admin_setting_heading('theme_essential_categoryicon', get_string('categoryiconheadingsub', 'theme_essential'),
             format_text(get_string('categoryicondesc' , 'theme_essential'), FORMAT_MARKDOWN)));
     
-    // Enable Category Icon Styling
-    $name = 'theme_essential/usecategoryicon';
-    $title = get_string('usecategoryicon', 'theme_essential');
-    $description = get_string('usecategoryicondesc', 'theme_essential');
-    $default = false;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
-    // Default Icon Selector.
-    $name = 'theme_essential/defaultcategoryicon';
-    $title = get_string('defaultcategoryicon' , 'theme_essential');
-    $description = get_string('defaultcategoryicondesc', 'theme_essential');
-    $default = 'f07c';
-    $choices = array(
-        'f000' => 'fa-glass',
-        'f001' => 'fa-music',
-        'f002' => 'fa-search',
-        'f003' => 'fa-envelope-o',
-        'f004' => 'fa-heart',
-        'f005' => 'fa-star',
-        'f006' => 'fa-star-o',
-        'f007' => 'fa-user',
-        'f008' => 'fa-film',
-        'f009' => 'fa-th-large',
-        'f00a' => 'fa-th',
-        'f00b' => 'fa-th-list',
-        'f00c' => 'fa-check',
-        'f00d' => 'fa-times',
-        'f00e' => 'fa-search-plus',
-        'f010' => 'fa-search-minus',
-        'f011' => 'fa-power-off',
-        'f012' => 'fa-signal',
-        'f013' => 'fa-cog',
-        'f014' => 'fa-trash-o',
-        'f015' => 'fa-home',
-        'f016' => 'fa-file-o',
-        'f017' => 'fa-clock-o',
-        'f018' => 'fa-road',
-        'f019' => 'fa-download',
-        'f01a' => 'fa-arrow-circle-o-down',
-        'f01b' => 'fa-arrow-circle-o-up',
-        'f01c' => 'fa-inbox',
-        'f01d' => 'fa-play-circle-o',
-        'f01e' => 'fa-repeat',
-        'f021' => 'fa-refresh',
-        'f022' => 'fa-list-alt',
-        'f023' => 'fa-lock',
-        'f024' => 'fa-flag',
-        'f025' => 'fa-headphones',
-        'f026' => 'fa-volume-off',
-        'f027' => 'fa-volume-down',
-        'f028' => 'fa-volume-up',
-        'f029' => 'fa-qrcode',
-        'f02a' => 'fa-barcode',
-        'f02b' => 'fa-tag',
-        'f02c' => 'fa-tags',
-        'f02d' => 'fa-book',
-        'f02e' => 'fa-bookmark',
-        'f02f' => 'fa-print',
-        'f030' => 'fa-camera',
-        'f031' => 'fa-font',
-        'f032' => 'fa-bold',
-        'f033' => 'fa-italic',
-        'f034' => 'fa-text-height',
-        'f035' => 'fa-text-width',
-        'f036' => 'fa-align-left',
-        'f037' => 'fa-align-center',
-        'f038' => 'fa-align-right',
-        'f039' => 'fa-align-justify',
-        'f03a' => 'fa-list',
-        'f03b' => 'fa-outdent',
-        'f03c' => 'fa-indent',
-        'f03d' => 'fa-video-camera',
-        'f03e' => 'fa-picture-o',
-        'f040' => 'fa-pencil',
-        'f041' => 'fa-map-marker',
-        'f042' => 'fa-adjust',
-        'f043' => 'fa-tint',
-        'f044' => 'fa-pencil-square-o',
-        'f045' => 'fa-share-square-o',
-        'f046' => 'fa-check-square-o',
-        'f047' => 'fa-arrows',
-        'f048' => 'fa-step-backward',
-        'f049' => 'fa-fast-backward',
-        'f04a' => 'fa-backward',
-        'f04b' => 'fa-play',
-        'f04c' => 'fa-pause',
-        'f04d' => 'fa-stop',
-        'f04e' => 'fa-forward',
-        'f050' => 'fa-fast-forward',
-        'f051' => 'fa-step-forward',
-        'f052' => 'fa-eject',
-        'f053' => 'fa-chevron-left',
-        'f054' => 'fa-chevron-right',
-        'f055' => 'fa-plus-circle',
-        'f056' => 'fa-minus-circle',
-        'f057' => 'fa-times-circle',
-        'f058' => 'fa-check-circle',
-        'f059' => 'fa-question-circle',
-        'f05a' => 'fa-info-circle',
-        'f05b' => 'fa-crosshairs',
-        'f05c' => 'fa-times-circle-o',
-        'f05d' => 'fa-check-circle-o',
-        'f05e' => 'fa-ban',
-        'f060' => 'fa-arrow-left',
-        'f061' => 'fa-arrow-right',
-        'f062' => 'fa-arrow-up',
-        'f063' => 'fa-arrow-down',
-        'f064' => 'fa-share',
-        'f065' => 'fa-expand',
-        'f066' => 'fa-compress',
-        'f067' => 'fa-plus',
-        'f068' => 'fa-minus',
-        'f069' => 'fa-asterisk',
-        'f06a' => 'fa-exclamation-circle',
-        'f06b' => 'fa-gift',
-        'f06c' => 'fa-leaf',
-        'f06d' => 'fa-fire',
-        'f06e' => 'fa-eye',
-        'f070' => 'fa-eye-slash',
-        'f071' => 'fa-exclamation-triangle',
-        'f072' => 'fa-plane',
-        'f073' => 'fa-calendar',
-        'f074' => 'fa-random',
-        'f075' => 'fa-comment',
-        'f076' => 'fa-magnet',
-        'f077' => 'fa-chevron-up',
-        'f078' => 'fa-chevron-down',
-        'f079' => 'fa-retweet',
-        'f07a' => 'fa-shopping-cart',
-        'f07b' => 'fa-folder',
-        'f07c' => 'fa-folder-open',
-        'f07d' => 'fa-arrows-v',
-        'f07e' => 'fa-arrows-h',
-        'f080' => 'fa-bar-chart-o',
-        'f081' => 'fa-twitter-square',
-        'f082' => 'fa-facebook-square',
-        'f083' => 'fa-camera-retro',
-        'f084' => 'fa-key',
-        'f085' => 'fa-cogs',
-        'f086' => 'fa-comments',
-        'f087' => 'fa-thumbs-o-up',
-        'f088' => 'fa-thumbs-o-down',
-        'f089' => 'fa-star-half',
-        'f08a' => 'fa-heart-o',
-        'f08b' => 'fa-sign-out',
-        'f08c' => 'fa-linkedin-square',
-        'f08d' => 'fa-thumb-tack',
-        'f08e' => 'fa-external-link',
-        'f090' => 'fa-sign-in',
-        'f091' => 'fa-trophy',
-        'f092' => 'fa-github-square',
-        'f093' => 'fa-upload',
-        'f094' => 'fa-lemon-o',
-        'f095' => 'fa-phone',
-        'f096' => 'fa-square-o',
-        'f097' => 'fa-bookmark-o',
-        'f098' => 'fa-phone-square',
-        'f099' => 'fa-twitter',
-        'f09a' => 'fa-facebook',
-        'f09b' => 'fa-github',
-        'f09c' => 'fa-unlock',
-        'f09d' => 'fa-credit-card',
-        'f09e' => 'fa-rss',
-        'f0a0' => 'fa-hdd-o',
-        'f0a1' => 'fa-bullhorn',
-        'f0f3' => 'fa-bell',
-        'f0a3' => 'fa-certificate',
-        'f0a4' => 'fa-hand-o-right',
-        'f0a5' => 'fa-hand-o-left',
-        'f0a6' => 'fa-hand-o-up',
-        'f0a7' => 'fa-hand-o-down',
-        'f0a8' => 'fa-arrow-circle-left',
-        'f0a9' => 'fa-arrow-circle-right',
-        'f0aa' => 'fa-arrow-circle-up',
-        'f0ab' => 'fa-arrow-circle-down',
-        'f0ac' => 'fa-globe',
-        'f0ad' => 'fa-wrench',
-        'f0ae' => 'fa-tasks',
-        'f0b0' => 'fa-filter',
-        'f0b1' => 'fa-briefcase',
-        'f0b2' => 'fa-arrows-alt',
-        'f0c0' => 'fa-users',
-        'f0c1' => 'fa-link',
-        'f0c2' => 'fa-cloud',
-        'f0c3' => 'fa-flask',
-        'f0c4' => 'fa-scissors',
-        'f0c5' => 'fa-files-o',
-        'f0c6' => 'fa-paperclip',
-        'f0c7' => 'fa-floppy-o',
-        'f0c8' => 'fa-square',
-        'f0c9' => 'fa-bars',
-        'f0ca' => 'fa-list-ul',
-        'f0cb' => 'fa-list-ol',
-        'f0cc' => 'fa-strikethrough',
-        'f0cd' => 'fa-underline',
-        'f0ce' => 'fa-table',
-        'f0d0' => 'fa-magic',
-        'f0d1' => 'fa-truck',
-        'f0d2' => 'fa-pinterest',
-        'f0d3' => 'fa-pinterest-square',
-        'f0d4' => 'fa-google-plus-square',
-        'f0d5' => 'fa-google-plus',
-        'f0d6' => 'fa-money',
-        'f0d7' => 'fa-caret-down',
-        'f0d8' => 'fa-caret-up',
-        'f0d9' => 'fa-caret-left',
-        'f0da' => 'fa-caret-right',
-        'f0db' => 'fa-columns',
-        'f0dc' => 'fa-sort',
-        'f0dd' => 'fa-sort-asc',
-        'f0de' => 'fa-sort-desc',
-        'f0e0' => 'fa-envelope',
-        'f0e1' => 'fa-linkedin',
-        'f0e2' => 'fa-undo',
-        'f0e3' => 'fa-gavel',
-        'f0e4' => 'fa-tachometer',
-        'f0e5' => 'fa-comment-o',
-        'f0e6' => 'fa-comments-o',
-        'f0e7' => 'fa-bolt',
-        'f0e8' => 'fa-sitemap',
-        'f0e9' => 'fa-umbrella',
-        'f0ea' => 'fa-clipboard',
-        'f0eb' => 'fa-lightbulb-o',
-        'f0ec' => 'fa-exchange',
-        'f0ed' => 'fa-cloud-download',
-        'f0ee' => 'fa-cloud-upload',
-        'f0f0' => 'fa-user-md',
-        'f0f1' => 'fa-stethoscope',
-        'f0f2' => 'fa-suitcase',
-        'f0a2' => 'fa-bell-o',
-        'f0f4' => 'fa-coffee',
-        'f0f5' => 'fa-cutlery',
-        'f0f6' => 'fa-file-text-o',
-        'f0f7' => 'fa-building-o',
-        'f0f8' => 'fa-hospital-o',
-        'f0f9' => 'fa-ambulance',
-        'f0fa' => 'fa-medkit',
-        'f0fb' => 'fa-fighter-jet',
-        'f0fc' => 'fa-beer',
-        'f0fd' => 'fa-h-square',
-        'f0fe' => 'fa-plus-square',
-        'f100' => 'fa-angle-double-left',
-        'f101' => 'fa-angle-double-right',
-        'f102' => 'fa-angle-double-up',
-        'f103' => 'fa-angle-double-down',
-        'f104' => 'fa-angle-left',
-        'f105' => 'fa-angle-right',
-        'f106' => 'fa-angle-up',
-        'f107' => 'fa-angle-down',
-        'f108' => 'fa-desktop',
-        'f109' => 'fa-laptop',
-        'f10a' => 'fa-tablet',
-        'f10b' => 'fa-mobile',
-        'f10c' => 'fa-circle-o',
-        'f10d' => 'fa-quote-left',
-        'f10e' => 'fa-quote-right',
-        'f110' => 'fa-spinner',
-        'f111' => 'fa-circle',
-        'f112' => 'fa-reply',
-        'f113' => 'fa-github-alt',
-        'f114' => 'fa-folder-o',
-        'f115' => 'fa-folder-open-o',
-        'f118' => 'fa-smile-o',
-        'f119' => 'fa-frown-o',
-        'f11a' => 'fa-meh-o',
-        'f11b' => 'fa-gamepad',
-        'f11c' => 'fa-keyboard-o',
-        'f11d' => 'fa-flag-o',
-        'f11e' => 'fa-flag-checkered',
-        'f120' => 'fa-terminal',
-        'f121' => 'fa-code',
-        'f122' => 'fa-reply-all',
-        'f122' => 'fa-mail-reply-all',
-        'f123' => 'fa-star-half-o',
-        'f124' => 'fa-location-arrow',
-        'f125' => 'fa-crop',
-        'f126' => 'fa-code-fork',
-        'f127' => 'fa-chain-broken',
-        'f128' => 'fa-question',
-        'f129' => 'fa-info',
-        'f12a' => 'fa-exclamation',
-        'f12b' => 'fa-superscript',
-        'f12c' => 'fa-subscript',
-        'f12d' => 'fa-eraser',
-        'f12e' => 'fa-puzzle-piece',
-        'f130' => 'fa-microphone',
-        'f131' => 'fa-microphone-slash',
-        'f132' => 'fa-shield',
-        'f133' => 'fa-calendar-o',
-        'f134' => 'fa-fire-extinguisher',
-        'f135' => 'fa-rocket',
-        'f136' => 'fa-maxcdn',
-        'f137' => 'fa-chevron-circle-left',
-        'f138' => 'fa-chevron-circle-right',
-        'f139' => 'fa-chevron-circle-up',
-        'f13a' => 'fa-chevron-circle-down',
-        'f13b' => 'fa-html5',
-        'f13c' => 'fa-css3',
-        'f13d' => 'fa-anchor',
-        'f13e' => 'fa-unlock-alt',
-        'f140' => 'fa-bullseye',
-        'f141' => 'fa-ellipsis-h',
-        'f142' => 'fa-ellipsis-v',
-        'f143' => 'fa-rss-square',
-        'f144' => 'fa-play-circle',
-        'f145' => 'fa-ticket',
-        'f146' => 'fa-minus-square',
-        'f147' => 'fa-minus-square-o',
-        'f148' => 'fa-level-up',
-        'f149' => 'fa-level-down',
-        'f14a' => 'fa-check-square',
-        'f14b' => 'fa-pencil-square',
-        'f14c' => 'fa-external-link-square',
-        'f14d' => 'fa-share-square',
-        'f14e' => 'fa-compass',
-        'f150' => 'fa-caret-square-o-down',
-        'f151' => 'fa-caret-square-o-up',
-        'f152' => 'fa-caret-square-o-right',
-        'f153' => 'fa-eur',
-        'f154' => 'fa-gbp',
-        'f155' => 'fa-usd',
-        'f156' => 'fa-inr',
-        'f157' => 'fa-jpy',
-        'f158' => 'fa-rub',
-        'f159' => 'fa-krw',
-        'f15a' => 'fa-btc',
-        'f15b' => 'fa-file',
-        'f15c' => 'fa-file-text',
-        'f15d' => 'fa-sort-alpha-asc',
-        'f15e' => 'fa-sort-alpha-desc',
-        'f160' => 'fa-sort-amount-asc',
-        'f161' => 'fa-sort-amount-desc',
-        'f162' => 'fa-sort-numeric-asc',
-        'f163' => 'fa-sort-numeric-desc',
-        'f164' => 'fa-thumbs-up',
-        'f165' => 'fa-thumbs-down',
-        'f166' => 'fa-youtube-square',
-        'f167' => 'fa-youtube',
-        'f168' => 'fa-xing',
-        'f169' => 'fa-xing-square',
-        'f16a' => 'fa-youtube-play',
-        'f16b' => 'fa-dropbox',
-        'f16c' => 'fa-stack-overflow',
-        'f16d' => 'fa-instagram',
-        'f16e' => 'fa-flickr',
-        'f170' => 'fa-adn',
-        'f171' => 'fa-bitbucket',
-        'f172' => 'fa-bitbucket-square',
-        'f173' => 'fa-tumblr',
-        'f174' => 'fa-tumblr-square',
-        'f175' => 'fa-long-arrow-down',
-        'f176' => 'fa-long-arrow-up',
-        'f177' => 'fa-long-arrow-left',
-        'f178' => 'fa-long-arrow-right',
-        'f179' => 'fa-apple',
-        'f17a' => 'fa-windows',
-        'f17b' => 'fa-android',
-        'f17c' => 'fa-linux',
-        'f17d' => 'fa-dribbble',
-        'f17e' => 'fa-skype',
-        'f180' => 'fa-foursquare',
-        'f181' => 'fa-trello',
-        'f182' => 'fa-female',
-        'f183' => 'fa-male',
-        'f184' => 'fa-gittip',
-        'f185' => 'fa-sun-o',
-        'f186' => 'fa-moon-o',
-        'f187' => 'fa-archive',
-        'f188' => 'fa-bug',
-        'f189' => 'fa-vk',
-        'f18a' => 'fa-weibo',
-        'f18b' => 'fa-renren',
-        'f18c' => 'fa-pagelines',
-        'f18d' => 'fa-stack-exchange',
-        'f18e' => 'fa-arrow-circle-o-right',
-        'f190' => 'fa-arrow-circle-o-left',
-        'f191' => 'fa-caret-square-o-left',
-        'f192' => 'fa-dot-circle-o',
-        'f193' => 'fa-wheelchair',
-        'f194' => 'fa-vimeo-square',
-        'f195' => 'fa-try'
-    );
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
-    // This is the descriptor for Category Icons
-    $name = 'theme_essential/categoryiconinfo';
-    $heading = get_string('categoryiconinfo', 'theme_essential');
-    $information = get_string('categoryiconinfodesc', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
-    
     // Category Icons.
-    $name = 'theme_essential/categoryicon';
-    $title = get_string('category');
-    $description = get_string('categoryicondesc', 'theme_essential');
-    $choices = array_merge(array('' => 'Use Default'), $choices);
+    $name = 'theme_essential/enablecategoryicon';
+    $title = get_string('enablecategoryicon', 'theme_essential');
+    $description = get_string('enablecategoryicondesc', 'theme_essential');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
-    foreach (range(1, 20) as $categorynumber) {
-        $setting = new admin_setting_configselect($name . $categorynumber, $title . ' ' . $categorynumber,
-                $description . $categorynumber, $default, $choices);
+    // We only want to output category icon options if the parent setting is enabled
+    if(!empty(get_config('theme_essential', 'enablecategoryicon'))) {
+    
+        // Default Icon Selector.
+        $name = 'theme_essential/defaultcategoryicon';
+        $title = get_string('defaultcategoryicon', 'theme_essential');
+        $description = get_string('defaultcategoryicondesc', 'theme_essential');
+        $default = 'folder-open';
+        $setting = new admin_setting_configtext($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $temp->add($setting);
+    
+        // Category Icons.
+        $name = 'theme_essential/enablecustomcategoryicon';
+        $title = get_string('enablecustomcategoryicon', 'theme_essential');
+        $description = get_string('enablecustomcategoryicondesc', 'theme_essential');
+        $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+        
+        if(!empty(get_config('theme_essential', 'enablecustomcategoryicon'))) {
+        
+            // This is the descriptor for Custom Category Icons
+            $name = 'theme_essential/categoryiconinfo';
+            $heading = get_string('categoryiconinfo', 'theme_essential');
+            $information = get_string('categoryiconinfodesc', 'theme_essential');
+            $setting = new admin_setting_heading($name, $heading, $information);
+            $temp->add($setting);
+            
+            // Get the default category icon.
+            $defaultcategoryicon = get_config('theme_essential', 'defaultcategoryicon');
+            if(empty($defaultcategoryicon)) {
+                $defaultcategoryicon = 'folder-open';
+            }
+        
+            // Get all category IDs and their pretty names
+            require_once($CFG->libdir. '/coursecatlib.php');
+            $coursecats = coursecat::make_categories_list();
+            
+            // Go through all categories and create the necessary settings
+            foreach($coursecats as $key => $value) {
+            
+                // Category Icons for each category.
+                $name = 'theme_essential/categoryicon';
+                $title = $value;
+                $description = get_string('categoryiconcategory', 'theme_essential', array('category' => $value));
+                $default = $defaultcategoryicon;
+                $setting = new admin_setting_configtext($name.$key, $title, $description, $default);
+                $setting->set_updatedcallback('theme_reset_all_caches');
+                $temp->add($setting);
+            }
+            unset($coursecats);
+        }
     }
 
     $ADMIN->add('theme_essential', $temp);

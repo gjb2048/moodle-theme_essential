@@ -1,64 +1,62 @@
-<?php if($PAGE->theme->settings->fontselect ==1) { ?>
-	<link href="//fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==2) { ?>
-	<link href="//fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==3) { ?>
-	<link href="//fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==4) { ?>
-	<link href="//fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=Allerta" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==5) { ?>
-	<link href="//fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==6) { ?>
-	<link href="//fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==7) { ?>
-	<link href="//fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=Cardo" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==8) { ?>
-	<link href="//fonts.googleapis.com/css?family=Lekton" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=Molengo" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==9) { ?>
-	<link href="//fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==10) { ?>
-	<link href="//fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==11) { ?>
-	<link href="//fonts.googleapis.com/css?family=Ubuntu:bold" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==12) { ?>
-	<link href="//fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==13) { ?>
-	<link href="//fonts.googleapis.com/css?family=Bevan" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=Pontano+Sans" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==14) { ?>
-	<link href="//fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=Average" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==15) { ?>
-	<link href="//fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=Multi" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==16) { ?>
-	<link href="//fonts.googleapis.com/css?family=Sansita+One" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=Kameron" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==17) { ?>
-	<link href="//fonts.googleapis.com/css?family=Istok+Web" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=Lora" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==18) { ?>
-	<link href="//fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=Arimo" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==19) { ?>
-	<link href="//fonts.googleapis.com/css?family=Nixie+One" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=Ledger" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==20) { ?>
-	<link href="//fonts.googleapis.com/css?family=Cantata+One" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=Imprima" rel="stylesheet" type="text/css">
-<?php } else if($PAGE->theme->settings->fontselect==21) { ?>
-	<link href="//fonts.googleapis.com/css?family=Rancho" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=Gudea" rel="stylesheet" type="text/css">
-<?php } ?>
+<?php
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * This is built using the bootstrapbase template to allow for new theme's using
+ * Moodle's new Bootstrap theme engine
+ *
+ * @package     theme_essential
+ * @copyright   2013 Julian Ridden
+ * @copyright   2014 Gareth J Barnard, David Bezemer, Mary L Evans
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+switch ($fontselect) {
+case 1:
+    $fonts[] = 'Open+Sans';
+    break;
+case 2:
+    $fonts[] = 'Oswald';
+    $fonts[] = 'PT+Sans';
+    break;
+case 3:
+    $fonts[] = 'Roboto';
+    break;
+case 4:
+    $fonts[] = 'PT+Sans';
+    break;
+case 5:
+    $fonts[] = 'Ubuntu';
+    break;
+case 6:
+    $fonts[] = 'Arimo';
+    break;
+case 7:
+    $fonts[] = 'Lobster';
+    $fonts[] = 'Raleway';
+	break;
+}
+
+if(!empty($fonts)) {
+	foreach($fonts as $font) {
+		echo html_writer::empty_tag('link',
+			array('href' => '//fonts.googleapis.com/css?family='.$font, 
+				  'rel' => 'stylesheet', 
+				  'type' => 'type/css'
+				  ));
+	}
+}
+?>
