@@ -85,7 +85,8 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         $icon = '';
         // Do a settings check to output our icon for the category
         if(!empty($PAGE->theme->settings->enablecategoryicon)) {
-            if(!empty($PAGE->theme->settings->$categoryiconnum)) {
+            if(!empty($PAGE->theme->settings->$categoryiconnum) && 
+			   !empty($PAGE->theme->settings->enablecustomcategoryicon)) {
                 // User has set a value for the category
                 $val = $PAGE->theme->settings->$categoryiconnum;
             } else {
