@@ -356,6 +356,8 @@ $string['websitedesc'] = 'Link naar je website. (bvb. http://www.uplearning.nl)'
 $string['categoryiconheading'] = 'Categorie Iconen';
 $string['categoryiconheadingsub'] = 'Gebruik iconen om categorieën weer te geven.';
 $string['categoryicondesc'] = 'Indien ingeschakeld kun je hier iconen voor iedere categorie instellen.';
+$string['categoryiconcategory'] = 'Het icoon voor categorie: {$a->category}.';
+
 
 $string['enablecategoryicon'] = 'Categorie iconen inschakelen';
 $string['enablecategoryicondesc'] = 'Kies hier of je iconen voor categorieën in wil schakelen. Na inschakelen dien je eerst op "Opslaan" te klikken.';
