@@ -958,7 +958,7 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add($setting);
 
     // We only want to output category icon options if the parent setting is enabled
-    if(!empty(get_config('theme_essential', 'enablecategoryicon'))) {
+    if(get_config('theme_essential', 'enablecategoryicon')) {
     
         // Default Icon Selector.
         $name = 'theme_essential/defaultcategoryicon';
@@ -977,7 +977,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting->set_updatedcallback('theme_reset_all_caches');
         $temp->add($setting);
         
-        if(!empty(get_config('theme_essential', 'enablecustomcategoryicon'))) {
+        if(get_config('theme_essential', 'enablecustomcategoryicon')) {
         
             // This is the descriptor for Custom Category Icons
             $name = 'theme_essential/categoryiconinfo';
@@ -1112,7 +1112,7 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add($setting);
     
     // Alert Title.
-    $name = 'theme_essential/alert1title_'.current_language();
+    $name = 'theme_essential/alert1title';
     $title = get_string('alerttitle', 'theme_essential');
     $description = get_string('alerttitledesc', 'theme_essential');
     $default = '';
@@ -1121,7 +1121,7 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add($setting);
     
     // Alert Text.
-    $name = 'theme_essential/alert1text_'.current_language();
+    $name = 'theme_essential/alert1text';
     $title = get_string('alerttext', 'theme_essential');
     $description = get_string('alerttextdesc', 'theme_essential');
     $default = '';
@@ -1158,7 +1158,7 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add($setting);
     
     // Alert Title.
-    $name = 'theme_essential/alert2title_'.current_language();
+    $name = 'theme_essential/alert2title';
     $title = get_string('alerttitle', 'theme_essential');
     $description = get_string('alerttitledesc', 'theme_essential');
     $default = '';
@@ -1167,7 +1167,7 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add($setting);
     
     // Alert Text.
-    $name = 'theme_essential/alert2text_'.current_language();
+    $name = 'theme_essential/alert2text';
     $title = get_string('alerttext', 'theme_essential');
     $description = get_string('alerttextdesc', 'theme_essential');
     $default = '';
@@ -1204,7 +1204,7 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add($setting);
     
     // Alert Title.
-    $name = 'theme_essential/alert3title_'.current_language();
+    $name = 'theme_essential/alert3title';
     $title = get_string('alerttitle', 'theme_essential');
     $description = get_string('alerttitledesc', 'theme_essential');
     $default = '';
@@ -1213,7 +1213,7 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add($setting);
     
     // Alert Text.
-    $name = 'theme_essential/alert3text_'.current_language();
+    $name = 'theme_essential/alert3text';
     $title = get_string('alerttext', 'theme_essential');
     $description = get_string('alerttextdesc', 'theme_essential');
     $default = '';
