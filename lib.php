@@ -745,6 +745,7 @@ function theme_essential_showslider($settings) {
 
 function theme_essential_page_init(moodle_page $page) {
     $page->requires->jquery();
+	$page->requires->jquery_plugin('affix', 'theme_essential');
     $page->requires->jquery_plugin('alert', 'theme_essential');
     $page->requires->jquery_plugin('carousel', 'theme_essential');
     $page->requires->jquery_plugin('collapse', 'theme_essential');
@@ -753,5 +754,6 @@ function theme_essential_page_init(moodle_page $page) {
     $page->requires->jquery_plugin('tab', 'theme_essential');
     $page->requires->jquery_plugin('tooltip', 'theme_essential');
     $page->requires->jquery_plugin('transition', 'theme_essential');
+	$page->requires->jquery_plugin('typeahead', 'theme_essential');
     $page->requires->jquery_plugin('modernizr', 'theme_essential');
 }

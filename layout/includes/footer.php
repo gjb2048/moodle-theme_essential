@@ -79,6 +79,11 @@ jQuery(document).ready(function() {
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;
     })
+	$('.navbar-static-top').affix({
+		  offset: {
+			top: $('header').height()
+		  }
+	});	
 });
 </script>
 <a href="#top" class="back-to-top" title="<?php print_string('backtotop', 'theme_essential'); ?>"><i class="fa fa-angle-up "></i></a>

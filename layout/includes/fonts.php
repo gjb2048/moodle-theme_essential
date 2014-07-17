@@ -50,11 +50,13 @@ case 7:
 	break;
 }
 
-foreach($fonts as $font) {
-    echo html_writer::empty_tag('link',
-        array('href' => '//fonts.googleapis.com/css?family='.$font, 
-              'rel' => 'stylesheet', 
-              'type' => 'type/css'
-              ));
+if(!empty($fonts)) {
+	foreach($fonts as $font) {
+		echo html_writer::empty_tag('link',
+			array('href' => '//fonts.googleapis.com/css?family='.$font, 
+				  'rel' => 'stylesheet', 
+				  'type' => 'type/css'
+				  ));
+	}
 }
 ?>

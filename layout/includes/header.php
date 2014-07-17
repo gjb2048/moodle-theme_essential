@@ -99,7 +99,7 @@ require_once(dirname(__FILE__).'/pagesettings.php');
     </div>
 
     <nav role="navigation">
-        <div class="navbar<?php echo ($oldnavbar)? ' oldnavbar': '';?>">
+        <div class="navbar<?php echo ($oldnavbar)? ' oldnavbar': '';?> navbar-static-top">
             <div class="container-fluid navbar-inner">
                 <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
