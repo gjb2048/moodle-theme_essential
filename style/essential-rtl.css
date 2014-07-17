@@ -2,6 +2,7 @@ body {
   line-height: 25px;
   text-shadow: none !important;
   padding-top: 0px;
+  position: relative;
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
@@ -289,9 +290,15 @@ ul.socials {
 }
 
 .navbar.oldnavbar {
-  position: relative;
+  position: static;
 }
 
+.navbar.oldnavbar.affix {
+  position: fixed;
+}
+
+.navbar-fixed-top .navbar-inner,
+.navbar-static-top .navbar-inner,
 .navbar-inner {
   border: none;
   line-height: 0px;
