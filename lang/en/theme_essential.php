@@ -356,6 +356,7 @@ $string['websitedesc'] = 'Enter the URL of your own website. (i.e http://www.upl
 $string['categoryiconheading'] = 'Category Icons';
 $string['categoryiconheadingsub'] = 'Use icons to represent your categories';
 $string['categoryicondesc'] = 'If enabled this will allow you to set icons for each category of course.';
+$string['categoryiconcategory'] = 'The icon for the category: {$a->category}.';
 
 $string['enablecategoryicon'] = 'Enable Category Icons';
 $string['enablecategoryicondesc'] = 'If enabled you will be able to select category icons after clicking "Save changes".';

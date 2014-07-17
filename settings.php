@@ -40,7 +40,7 @@ defined('MOODLE_INTERNAL') || die;
     $default = 'laptop';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $temp->add($setting);
-	
+
     // Include Awesome Font from Bootstrapcdn
     $name = 'theme_essential/bootstrapcdn';
     $title = get_string('bootstrapcdn', 'theme_essential');
@@ -958,8 +958,7 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add($setting);
 
     // We only want to output category icon options if the parent setting is enabled
-
-    if(!empty($PAGE->theme->settings->enablecategoryicon)) {
+    if(!empty(get_config('theme_essential', 'enablecategoryicon'))) {
     
         // Default Icon Selector.
         $name = 'theme_essential/defaultcategoryicon';
@@ -978,7 +977,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting->set_updatedcallback('theme_reset_all_caches');
         $temp->add($setting);
         
-        if(!empty($PAGE->theme->settings->enablecustomcategoryicon)) {
+        if(!empty(get_config('theme_essential', 'enablecustomcategoryicon'))) {
         
             // This is the descriptor for Custom Category Icons
             $name = 'theme_essential/categoryiconinfo';
@@ -987,11 +986,9 @@ defined('MOODLE_INTERNAL') || die;
             $setting = new admin_setting_heading($name, $heading, $information);
             $temp->add($setting);
             
-            // Get the default category icon
-            if(!empty($PAGE->theme->settings->defaultcategoryicon)) {
-                // Same as theme_essential/defaultcategoryicon
-                $defaultcategoryicon = $PAGE->theme->settings->defaultcategoryicon;
-            } else {
+            // Get the default category icon.
+            $defaultcategoryicon = get_config('theme_essential', 'defaultcategoryicon');
+            if(empty($defaultcategoryicon)) {
                 $defaultcategoryicon = 'folder-open';
             }
         
@@ -1005,7 +1002,7 @@ defined('MOODLE_INTERNAL') || die;
                 // Category Icons for each category.
                 $name = 'theme_essential/categoryicon';
                 $title = $value;
-                $description = get_string('categoryicondesc', 'theme_essential') . $value;
+                $description = get_string('categoryiconcategory', 'theme_essential', array('category' => $value));
                 $default = $defaultcategoryicon;
                 $setting = new admin_setting_configtext($name.$key, $title, $description, $default);
                 $setting->set_updatedcallback('theme_reset_all_caches');
