@@ -79,7 +79,7 @@ jQuery(document).ready(function() {
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;
     })
-	$('.navbar-static-top').affix({
+	$('.navbar').affix({
 		  offset: {
 			top: $('header').height()
 		  }
