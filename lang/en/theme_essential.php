@@ -180,6 +180,8 @@ $string['footercolorsdesc'] = 'Change the colours on the page footers';
 $string['themecolor'] = 'Theme Colour';
 $string['themecolordesc'] = 'What colour should your theme be.  This will change multiple components to produce the colour you wish across the moodle site';
 
+$string['themetextcolor'] = 'Text colour';
+$string['themetextcolordesc'] = 'Set the colour for your text.';
 $string['themeurlcolor'] = 'Link Colour';
 $string['themeurlcolordesc'] = 'Set the colour for your linked text.';
 $string['themehovercolor'] = 'Theme Hover Colour';

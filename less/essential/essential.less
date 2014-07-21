@@ -6,18 +6,18 @@
 
  /* @group Core */
 
-body{
+body {
     line-height: 25px;
     text-shadow: none !important;
     padding-top: 0px;
-	position: relative;
+    position: relative;
     background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
     background-color: rgba(255,255,255,0.6);
     background-size: cover;
-	margin: 0px !important;
-	padding: 0px !important;
+    margin: 0px !important;
+    padding: 0px !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -48,7 +48,7 @@ a {
 }
 
 .moodle-actionmenu[data-enhanced].show .menu {
-	box-shadow: none;
+    box-shadow: none;
 }
 
 .sitetopic .section .activity:hover, .course-content .section .activity:hover {
@@ -70,7 +70,7 @@ a {
 }
 
 #page-admin-upgradesettings #page, .maintenance#page {
-	padding-top: 0px;
+    padding-top: 0px;
 }
 
 /* @group Font Awesome */
@@ -112,13 +112,13 @@ a {
 /* @group Header */
 
 #page-header {
-	height: 75px;
+    height: 75px;
     margin-top: 41px;
     border-bottom: 1px solid #DDD;
 }
 
 #page-header.oldnavbar, #page-admin-upgradesettings #page-header, .maintenance #page-header  {
-	margin-top: 0px;
+    margin-top: 0px;
 }
 
 
@@ -136,10 +136,10 @@ a.logo {
     float: left;
     height: 65px;
     margin: 5px;
-	width: 100%;
+    width: 100%;
     background-size: contain;
-	background-position: left center;
-	background-repeat: no-repeat;
+    background-position: left center;
+    background-repeat: no-repeat;
 }
 
 h1#title {
@@ -177,7 +177,7 @@ h1#title {
 .socials {
     p {
         font-weight: normal;
-        color: ~"[[setting:themecolor]]";
+        color: ~"[[setting:themetextcolor]]";
         font-size: 1.1em;
     }
 }
@@ -288,11 +288,11 @@ ul.socials {
  */
 
 .navbar {
-	margin-bottom: 0px;
+    margin-bottom: 0px;
     position: fixed;
     width: 100%;
     top: 0px;
-	background-image: none;
+    background-image: none;
     z-index: 4030;
 }
 
@@ -303,17 +303,17 @@ ul.socials {
 }
 
 .navbar.oldnavbar.affix {
-	position: fixed;
+    position: fixed;
 }
 
 .navbar-fixed-top .navbar-inner,
 .navbar-static-top .navbar-inner,
 .navbar-inner {
-	border: none;
+    border: none;
     line-height: 0px;
     background-image: none;
-	box-shadow: none;
-	filter: none;
+    box-shadow: none;
+    filter: none;
 }
 
 .navbar .brand {
@@ -436,7 +436,7 @@ h2.pagetitle span {
 
 #section_footer {
     padding:2em 0;
-    color: [[setting:themecolor]];
+    color: [[setting:themetextcolor]];
     line-height:1.5;
     clear:both;
 }
@@ -778,7 +778,7 @@ table#greyboxleft h2 {
 }
 
 .block_navigation.block li.type_unknown.depth_1 > .tree_item.branch:before { 
-	content: "\f015 ";
+    content: "\f015 ";
 }
 
 .collapsed .tree_item.branch:before {
@@ -815,7 +815,7 @@ table#greyboxleft h2 {
 .block .header .title h2,
 .block h3.main {
     font-size: 1.15em;
-    color: ~"[[setting:themecolor]]";
+    color: ~"[[setting:themetextcolor]]";
     line-height: 26px;
     margin-bottom: 5px;
     text-transform: uppercase;
@@ -1237,11 +1237,11 @@ table#greyboxleft h2 {
 
 #page-footer {
     margin-top: 10px;
-	padding: 0px;
-	border: 0;
+    padding: 0px;
+    border: 0;
     font-size: 1em;
     text-align: left;
-	width: 100%;
+    width: 100%;
 }
 
 .helplink {
@@ -1636,6 +1636,28 @@ img.profilepicture
 /* @end */
 
 /* @group Forms */
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input,
+.form-item .form-description,
+.form-defaultinfo,
+.form-label .form-shortname {
+    color: ~"[[setting:themetextcolor]]";
+}
 
 .form-item .form-label, .mform .fitem div.fitemtitle {
     text-align: left;
@@ -1815,12 +1837,12 @@ table.calendarmonth.calendartable {
     .side-regions-with-max-width #region-main {
         width: ~"calc(97% - 285px)";
     }
-	.side-regions-with-max-width.has-region-side-pre.empty-region-side-pre,
-	.side-regions-with-max-width.empty-region-side-pre {
-		#region-main, #region-bs-main-and-pre {
-			width: 100%
-		}
-	}
+    .side-regions-with-max-width.has-region-side-pre.empty-region-side-pre,
+    .side-regions-with-max-width.empty-region-side-pre {
+        #region-main, #region-bs-main-and-pre {
+            width: 100%
+        }
+    }
 }
 
 @media screen and (min-width: 1200px) {
@@ -1833,19 +1855,19 @@ table.calendarmonth.calendartable {
     .side-regions-with-max-width.empty-region-side-post.used-region-side-pre #region-main,
     .side-regions-with-max-width #region-bs-main-and-pre,
     .side-regions-with-max-width #region-main {
-		width: ~"calc(97% - 285px)";
+        width: ~"calc(97% - 285px)";
     }
     
     .maintenance #region-main, #page-login-index #region-main {
         width: 100% !important;
     }
-	.side-regions-with-max-width.has-region-side-pre.empty-region-side-pre,
-	.side-regions-with-max-width.empty-region-side-pre	{
-		#region-main,
-	#region-bs-main-and-pre {
-			width: 100%
-		}
-	}
+    .side-regions-with-max-width.has-region-side-pre.empty-region-side-pre,
+    .side-regions-with-max-width.empty-region-side-pre    {
+        #region-main,
+    #region-bs-main-and-pre {
+            width: 100%
+        }
+    }
 }
 
 @media (max-width: 767px) {
@@ -1912,7 +1934,7 @@ table.calendarmonth.calendartable {
     }
 
     .side-post-only #page-content #region-main, 
-	.side-post-only #page-content #region-bs-main-and-pre	{
+    .side-post-only #page-content #region-bs-main-and-pre    {
         padding: 0;
         margin-left: 0 !important;
     }

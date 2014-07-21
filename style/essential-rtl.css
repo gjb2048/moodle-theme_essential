@@ -160,7 +160,7 @@ h1#title {
 
 .socials p {
   font-weight: normal;
-  color: [[setting:themecolor]];
+  color: [[setting:themetextcolor]];
   font-size: 1.1em;
 }
 
@@ -426,7 +426,7 @@ h2.pagetitle span {
 
 #section_footer {
   padding: 2em 0;
-  color: [[setting:themecolor]];
+  color: [[setting:themetextcolor]];
   line-height: 1.5;
   clear: both;
 }
@@ -784,7 +784,7 @@ table#greyboxleft h2 {
 .block .header .title h2,
 .block h3.main {
   font-size: 1.15em;
-  color: [[setting:themecolor]];
+  color: [[setting:themetextcolor]];
   line-height: 26px;
   margin-bottom: 5px;
   text-transform: uppercase;
@@ -1560,6 +1560,29 @@ img.profilepicture {
   border-bottom: 0px none;
 }
 
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input,
+.form-item .form-description,
+.form-defaultinfo,
+.form-label .form-shortname {
+  color: [[setting:themetextcolor]];
+}
+
 .form-item .form-label,
 .mform .fitem div.fitemtitle {
   text-align: right;
@@ -2264,7 +2287,7 @@ body.has_dock div#dock {
   line-height: 100%;
   text-align: center;
   text-transform: uppercase;
-  color: [[setting:themecolor]];
+  color: [[setting:themetextcolor]];
 }
 
 #dock .dockedtitle:hover,
@@ -2614,7 +2637,12 @@ body.dir-rtl.has_dock {
 }
 
 .breadcrumb-nav ul.breadcrumb.style2 li a {
+  color: [[setting:themetextcolor]];
   margin-left: 3px;
+}
+
+.breadcrumb-nav ul.breadcrumb.style2 li a:hover {
+  color: [[setting:themehovercolor]];
 }
 
 .breadcrumb-nav ul.breadcrumb.style2 li:first-of-type {
@@ -2675,7 +2703,7 @@ body.dir-rtl.has_dock {
 body {
   border-top: 3px solid [[setting:themecolor]];
   background-image: url([[setting:pagebackground]]);
-  color: [[setting:themecolor]];
+  color: [[setting:themetextcolor]];
   font-size: [[setting:bodysize]];
   font-weight: [[setting:bodyweight]];
   font-family: [[setting:bodyfont]];
@@ -2695,13 +2723,14 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  color: [[setting:themecolor]];
+h6,
+#adminsettings h3 {
+  color: [[setting:themetextcolor]];
 }
 
 a,
 a:visited {
-  color: [[setting:themecolor]];
+  color: [[setting:themeurlcolor]];
 }
 
 a:hover {
@@ -2733,7 +2762,7 @@ a.logo {
 }
 
 h1#title {
-  color: [[setting:themecolor]];
+  color: [[setting:themetextcolor]];
 }
 
 #headerlogo {
@@ -2766,11 +2795,11 @@ button.website:focus {
 }
 
 a .colours-default {
-  color: [[setting:themecolor]];
+  color: [[setting:themetextcolor]];
 }
 
 a:hover .colours-default {
-  color: [[setting:hovercolor]];
+  color: [[setting:themehovercolor]];
 }
 
 a .colours-alternative1 {
@@ -2833,7 +2862,7 @@ h2.pagetitle {
 }
 
 .firstword {
-  color: [[setting:themecolor]] !important;
+  color: [[setting:themetextcolor]] !important;
 }
 
 .forumpost .picture img {
@@ -2841,7 +2870,7 @@ h2.pagetitle {
 }
 
 .forumpost .subject {
-  color: [[setting:themecolor]];
+  color: [[setting:themetextcolor]];
 }
 
 .button a,
@@ -2906,6 +2935,14 @@ a#button:hover {
   background: url([[setting:slide4image]]) no-repeat 0 0;
 }
 
+.block a {
+  color: [[setting:themetextcolor]];
+}
+
+.block a:hover {
+  color: [[setting:themehovercolor]];
+}
+
 .block .header .title h2:before {
   color: [[setting:themecolor]];
 }
@@ -2940,7 +2977,7 @@ a#button:hover {
 }
 
 #page-site-index h2.headingblock:before {
-  color: [[setting:themecolor]];
+  color: [[setting:themetextcolor]];
 }
 
 .service i {
@@ -2960,7 +2997,7 @@ a#button:hover {
 
 #page-footer .footnote a,
 #page-footer .footnote a:visited {
-  color: [[setting:themecolor]] !important;
+  color: [[setting:themeurlcolor]] !important;
 }
 
 #page-footer .footnote a:hover {
@@ -3006,7 +3043,7 @@ a#button:hover {
 }
 
 #page-footer .block_rss_client .content a {
-  color: [[setting:themecolor]];
+  color: [[setting:themeurlcolor]];
 }
 
 .afeature {
@@ -3130,7 +3167,7 @@ h6,
 }
 
 .actions a {
-  color: [[setting:themecolor]] !important;
+  color: [[setting:themeurlcolor]] !important;
 }
 
 .actions a:hover,
@@ -3141,7 +3178,7 @@ h6,
 
 .moodle-core-dragdrop-draghandle:before,
 .moodle-core-dragdrop-draghandle a {
-  color: [[setting:themecolor]] !important;
+  color: [[setting:themeurlcolor]] !important;
 }
 
 .commands {

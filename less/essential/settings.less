@@ -13,7 +13,7 @@
 body{
     border-top:3px solid ~"[[setting:themecolor]]";
     background-image: url(~"[[setting:pagebackground]]");
-	color: ~"[[setting:themecolor]]";
+    color: ~"[[setting:themetextcolor]]";
     font-size: ~"[[setting:bodysize]]";
     font-weight: ~"[[setting:bodyweight]]";
     font-family:~"[[setting:bodyfont]]"
@@ -27,15 +27,15 @@ h1, h2 {
     font-family:~"[[setting:headingfont]]";
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: ~"[[setting:themecolor]]";
+h1, h2, h3, h4, h5, h6, #adminsettings h3 {
+    color: ~"[[setting:themetextcolor]]";
 }
 
-a, a:visited{
-    color: ~"[[setting:themecolor]]";
+a, a:visited {
+    color: ~"[[setting:themeurlcolor]]";
 }
 
-a:hover{
+a:hover {
     color: ~"[[setting:themehovercolor]]";
 }
 
@@ -72,7 +72,7 @@ a.logo {
 }
 
 h1#title {
-    color: ~"[[setting:themecolor]]";
+    color: ~"[[setting:themetextcolor]]";
 }
 
 #headerlogo {
@@ -114,11 +114,11 @@ button.website:hover, button.website:focus {
 
 /* @group Theme Colors Menu */
 a .colours-default {
-    color: ~"[[setting:themecolor]]";
+    color: ~"[[setting:themetextcolor]]";
 }
 
 a:hover .colours-default {
-    color: ~"[[setting:hovercolor]]";
+    color: ~"[[setting:themehovercolor]]";
 }
 
 a .colours-alternative1 {
@@ -192,7 +192,7 @@ h2.pagetitle {
 }
 
 .firstword {
-    color: ~"[[setting:themecolor]]" !important;
+    color: ~"[[setting:themetextcolor]]" !important;
 }
 
 /* @end */
@@ -205,7 +205,7 @@ h2.pagetitle {
 }
 
 .forumpost .subject {
-    color: ~"[[setting:themecolor]]";
+    color: ~"[[setting:themetextcolor]]";
 
 }
 
@@ -283,6 +283,15 @@ a#button:hover {
 
 /* @group Blocks */
 
+.block {
+    a {
+        color: ~"[[setting:themetextcolor]]";
+    }
+    a:hover {
+        color: ~"[[setting:themehovercolor]]";
+    }
+}
+
 .block .header .title h2:before {
     color: ~"[[setting:themecolor]]";
 }
@@ -319,7 +328,7 @@ a#button:hover {
 }
 
 #page-site-index h2.headingblock:before {
-    color: ~"[[setting:themecolor]]";
+    color: ~"[[setting:themetextcolor]]";
 }
 
 /* @group Home News Boxes */
@@ -348,7 +357,7 @@ a#button:hover {
 
 #page-footer .footnote a,
 #page-footer .footnote a:visited {
-    color: ~"[[setting:themecolor]]" !important;
+    color: ~"[[setting:themeurlcolor]]" !important;
 }
 
 #page-footer .footnote a:hover {
@@ -396,7 +405,7 @@ a#button:hover {
 }
     
 #page-footer .block_rss_client .content a {
-    color: ~"[[setting:themecolor]]";
+    color: ~"[[setting:themeurlcolor]]";
 }
     
 /* @end */
@@ -543,19 +552,19 @@ h1, h2, h3, h4, h5, h6,
     color:~"[[setting:themecolor]]" !important;
 }
 .commands a:hover {
-	color:~"[[setting:themehovercolor]]" !important;
+    color:~"[[setting:themehovercolor]]" !important;
 }
 
 .actions a {
-    color:~"[[setting:themecolor]]" !important;
+    color:~"[[setting:themeurlcolor]]" !important;
 }
 
 .actions a:hover, .actions a:focus, .actions a:active {
-	color:~"[[setting:themehovercolor]]" !important;
+    color:~"[[setting:themehovercolor]]" !important;
 }
 
 .moodle-core-dragdrop-draghandle:before, .moodle-core-dragdrop-draghandle a {
-	color:~"[[setting:themecolor]]" !important;
+    color:~"[[setting:themeurlcolor]]" !important;
 }
 
 /* @end */

@@ -184,81 +184,81 @@ function theme_essential_process_css($css, $theme) {
     $css = essential_set_pagewidth($css,$pagewidth);
     
     // Set the Fonts.
-	switch($theme->settings->fontselect) {
-	case 1:
+    switch($theme->settings->fontselect) {
+    case 1:
         $headingfont = 'Open Sans, Arial, Helvetica, sans-serif';
         $bodyfont = 'Open Sans, Arial, Helvetica, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
+        break;
     case 2:
         $headingfont = 'Oswald, Verdana, Geneva, sans-serif';
         $bodyfont = '"PT Sans", Helvetica, Verdana sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
+        break;
     case 3:
         $headingfont = 'Roboto, Tahoma, Geneva, sans-serif';
         $bodyfont = 'Roboto, Tahoma, Geneva, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
+        break;
     case 4:
         $headingfont = '"PT Sans", Helvetica, Arial, sans-serif';
         $bodyfont = '"PT Sans", Helvetica, Arial, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
+        break;
     case 5:
         $headingfont = 'Ubuntu, Arial, Helvetica, sans-serif';
         $bodyfont = 'Ubuntu, Arial, Helvetica, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
+        break;
     case 6:
         $headingfont = 'Arimo, Arial, Helvetica, sans-serif';
         $bodyfont = 'Arimo, Arial, Helvetica, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
+        break;
     case 7:
         $headingfont = 'Lobster, "Lucida Calligraphy", Mistral, Verdana, sans-serif';
         $bodyfont = 'Raleway, Helvetica, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
+        break;
     case 8:
         $headingfont = 'Arial, Helvetica, sans-serif';
         $bodyfont = 'Arial, Helvetica, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
+        break;
     case 9:
         $headingfont = 'Georgia, serif';
         $bodyfont = 'Georgia, serif';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
+        break;
     case 10:
         $headingfont = 'Verdana, Geneva, sans-serif';
         $bodyfont = 'Verdana, Geneva, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
+        break;
     case 11:
         $headingfont = '"Times New Roman", Times, serif';
         $bodyfont = '"Times New Roman", Times, serif';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
+        break;
     case 12:
         $headingfont = 'Consolas, Monaco, monospace';
         $bodyfont = 'Consolas, "Courier New", monospace';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
-	default:
-		$headingfont = 'Verdana, Geneva, sans-serif';
+        break;
+    default:
+        $headingfont = 'Verdana, Geneva, sans-serif';
         $bodyfont = 'Verdana, Geneva, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
@@ -276,6 +276,23 @@ function theme_essential_process_css($css, $theme) {
         $themecolor = null;
     }
     $css = theme_essential_set_themecolor($css, $themecolor);
+
+    // Set the theme text colour.
+    if (!empty($theme->settings->themetextcolor)) {
+        $themetextcolor = $theme->settings->themetextcolor;
+    } else {
+        $themetextcolor = null;
+    }
+    $css = theme_essential_set_themetextcolor($css, $themetextcolor);
+
+    // Set the theme url colour.
+    if (!empty($theme->settings->themeurlcolor)) {
+        $themeurlcolor = $theme->settings->themeurlcolor;
+    } else {
+        $themeurlcolor = null;
+    }
+    $css = theme_essential_set_themeurlcolor($css, $themeurlcolor);
+
 
     // Set the theme hover color.
     if (!empty($theme->settings->themehovercolor)) {
@@ -531,6 +548,26 @@ function theme_essential_set_themecolor($css, $themecolor) {
     $replacement = $themecolor;
     if (is_null($replacement)) {
         $replacement = '#30add1';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_themetextcolor($css, $themetextcolor) {
+    $tag = '[[setting:themetextcolor]]';
+    $replacement = $themetextcolor;
+    if (is_null($replacement)) {
+        $replacement = '#30add1';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_themeurlcolor($css, $themeurlcolor) {
+    $tag = '[[setting:themeurlcolor]]';
+    $replacement = $themeurlcolor;
+    if (is_null($replacement)) {
+        $replacement = '#29a1c4';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
