@@ -722,7 +722,7 @@ table#greyboxleft h2 {
 
 .block #icon {
   margin-left: 5px;
-  color: [[setting:themecolor]];
+  color: #30add1;
 }
 
 .tree_item {
@@ -732,7 +732,7 @@ table#greyboxleft h2 {
 .tree_item.branch:before {
   font-family: FontAwesome;
   content: "\f07c ";
-  color: [[setting:themecolor]];
+  color: #30add1;
   margin-left: 5px;
 }
 
@@ -754,7 +754,7 @@ table#greyboxleft h2 {
 .collapsed .tree_item.branch:before {
   font-family: FontAwesome;
   content: "\f07b ";
-  color: [[setting:themecolor]];
+  color: #30add1;
   margin-left: 5px;
 }
 
@@ -2944,7 +2944,7 @@ a#button:hover {
 }
 
 .block .header .title h2:before {
-  color: [[setting:themecolor]];
+  color: #30add1;
 }
 
 .block_rss_client .footer a {
@@ -2981,7 +2981,7 @@ a#button:hover {
 }
 
 .service i {
-  color: [[setting:themecolor]];
+  color: #30add1;
 }
 
 #page-footer {
@@ -3019,11 +3019,11 @@ a#button:hover {
 }
 
 #page-footer .tree_item.branch:before {
-  color: [[setting:themecolor]];
+  color: #30add1;
 }
 
 #page-footer .block .header .title h2:before {
-  color: [[setting:footerheadingcolor]];
+  color: #30add1;
 }
 
 #page-footer .block .header .title h2 {
@@ -3107,7 +3107,7 @@ a#button:hover {
 }
 
 .performanceinfo h2:before {
-  color: [[setting:themecolor]];
+  color: #30add1;
 }
 
 #page-mod-quiz-edit .questionbankwindow.block div.header {
@@ -3594,7 +3594,7 @@ body.essential-colours-alternative1 h6 {
 }
 
 .essential-colours-alternative1 .tree_item.branch:before {
-  color: [[setting:alternativethemecolor1]];
+  color: #30add1;
 }
 
 .essential-colours-alternative1 .block #icon {
@@ -3869,7 +3869,7 @@ body.essential-colours-alternative2 {
 }
 
 .essential-colours-alternative2 .block .header .title h2:before {
-  color: [[setting:alternativethemecolor2]];
+  color: #30add1;
 }
 
 .essential-colours-alternative2 .block .header .title h2 {
@@ -3924,11 +3924,11 @@ body.essential-colours-alternative2 h6 {
 }
 
 .essential-colours-alternative2 .tree_item.branch:before {
-  color: [[setting:alternativethemecolor2]];
+  color: #30add1;
 }
 
 .essential-colours-alternative2 .block #icon {
-  color: [[setting:alternativethemecolor2]];
+  color: #30add1;
 }
 
 .essential-colours-alternative2 #page-footer .block_login input[type="submit"] {
@@ -3978,7 +3978,7 @@ body.essential-colours-alternative2 h6 {
 }
 
 .essential-colours-alternative2 .performanceinfo h2:before {
-  color: [[setting:alternativethemecolor2]];
+  color: #30add1;
 }
 
 .essential-colours-alternative2 #page-mod-quiz-edit .questionbankwindow.block div.header {
@@ -4208,7 +4208,7 @@ body.essential-colours-alternative3 h6 {
 }
 
 .essential-colours-alternative3 .block .header .title h2:before {
-  color: [[setting:alternativethemecolor3]];
+  color: #30add1;
 }
 
 .essential-colours-alternative3 .block .header .title h2 {
@@ -4236,7 +4236,7 @@ body.essential-colours-alternative3 h6 {
 }
 
 .essential-colours-alternative3 .service i {
-  color: [[setting:alternativethemecolor3]];
+  color: #30add1;
 }
 
 .essential-colours-alternative3 #page-footer {
@@ -4254,11 +4254,11 @@ body.essential-colours-alternative3 h6 {
 }
 
 .essential-colours-alternative3 .tree_item.branch:before {
-  color: [[setting:alternativethemecolor3]];
+  color: #30add1;
 }
 
 .essential-colours-alternative3 .block #icon {
-  color: [[setting:alternativethemecolor3]];
+  color: #30add1;
 }
 
 .essential-colours-alternative3 #page-footer .block_login input[type="submit"] {
@@ -4308,7 +4308,7 @@ body.essential-colours-alternative3 h6 {
 }
 
 .essential-colours-alternative3 .performanceinfo h2:before {
-  color: [[setting:alternativethemecolor3]];
+  color: #30add1;
 }
 
 .essential-colours-alternative3 #page-mod-quiz-edit .questionbankwindow.block div.header {
