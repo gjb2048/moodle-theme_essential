@@ -74,22 +74,29 @@ function theme_essential_set_logo($css, $logo) {
  */
 function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
     if ($context->contextlevel == CONTEXT_SYSTEM) {
-        $theme = theme_config::load('essential');
         if ($filearea === 'logo') {
+            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
         } else if ($filearea === 'pagebackground') {
+            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('pagebackground', $args, $forcedownload, $options);
-        } else if ((substr($filearea, 0, 5) === 'slide') && (substr($filearea, 6, 5) === 'image')) {
+        } else if (preg_match("/slide[1-9][0-9]*image/", $filearea) !== false) {
+            $theme = theme_config::load('essential');
             return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
         } else if ((substr($filearea, 0, 9) === 'marketing') && (substr($filearea, 10, 5) === 'image')) {
+            $theme = theme_config::load('essential');
             return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
         } else if ($filearea === 'iphoneicon') {
+            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('iphoneicon', $args, $forcedownload, $options);
         } else if ($filearea === 'iphoneretinaicon') {
+            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('iphoneretinaicon', $args, $forcedownload, $options);
         } else if ($filearea === 'ipadicon') {
+            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('ipadicon', $args, $forcedownload, $options);
         } else if ($filearea === 'ipadretinaicon') {
+            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('ipadretinaicon', $args, $forcedownload, $options);
         } else {
             send_file_not_found();
@@ -377,7 +384,7 @@ function theme_essential_process_css($css, $theme) {
         $css = theme_essential_set_alternativecolor($css, 'color' . $alternativethemenumber, $theme->settings->{'alternativethemecolor' . $alternativethemenumber}, $default);
         $css = theme_essential_set_alternativecolor($css, 'hovercolor' . $alternativethemenumber, $theme->settings->{'alternativethemehovercolor' . $alternativethemenumber}, $defaulthover);
     }
-    
+
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
         $customcss = $theme->settings->customcss;
@@ -394,40 +401,7 @@ function theme_essential_process_css($css, $theme) {
     $setting = 'pagebackground';
     $pagebackground = $theme->setting_file_url($setting, $setting);
     $css = theme_essential_set_pagebackground($css, $pagebackground, $setting);
-    
-    // Set Slide Images.
-    $setting = 'slide1image';
-    if (!empty($theme->settings->slide1image)) {
-        $slideimage = $theme->setting_file_url($setting, $setting);
-    } else {
-        $slideimage = null;
-    }
-    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
 
-    $setting = 'slide2image';
-    if (!empty($theme->settings->slide2image)) {
-        $slideimage = $theme->setting_file_url($setting, $setting);
-    } else {
-        $slideimage = null;
-    }
-    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
-
-    $setting = 'slide3image';
-    if (!empty($theme->settings->slide3image)) {
-        $slideimage = $theme->setting_file_url($setting, $setting);
-    } else {
-        $slideimage = null;
-    }
-    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
-
-    $setting = 'slide4image';
-    if (!empty($theme->settings->slide4image)) {
-        $slideimage = $theme->setting_file_url($setting, $setting);
-    } else {
-        $slideimage = null;
-    }
-    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
-    
     // Set Marketing Image Height.
     if (!empty($theme->settings->marketingheight)) {
         $marketingheight = $theme->settings->marketingheight;
@@ -461,7 +435,7 @@ function theme_essential_process_css($css, $theme) {
     }
     $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
 
-	$css = theme_essential_set_fontwww($css);
+    $css = theme_essential_set_fontwww($css);
     return $css;
 }
 
@@ -700,15 +674,6 @@ function theme_essential_set_pagebackground($css, $pagebackground, $setting) {
     return $css;
 }
 
-
-function theme_essential_set_slideimage($css, $slideimage, $setting) {
-    global $OUTPUT;
-    $tag = '[[setting:'.$setting.']]';
-    $replacement = $slideimage;
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
 function theme_essential_set_marketingheight($css, $marketingheight) {
     $tag = '[[setting:marketingheight]]';
     $replacement = $marketingheight;
@@ -745,7 +710,7 @@ function theme_essential_showslider($settings) {
 
 function theme_essential_page_init(moodle_page $page) {
     $page->requires->jquery();
-	$page->requires->jquery_plugin('affix', 'theme_essential');
+    $page->requires->jquery_plugin('affix', 'theme_essential');
     $page->requires->jquery_plugin('alert', 'theme_essential');
     $page->requires->jquery_plugin('carousel', 'theme_essential');
     $page->requires->jquery_plugin('collapse', 'theme_essential');
@@ -754,6 +719,6 @@ function theme_essential_page_init(moodle_page $page) {
     $page->requires->jquery_plugin('tab', 'theme_essential');
     $page->requires->jquery_plugin('tooltip', 'theme_essential');
     $page->requires->jquery_plugin('transition', 'theme_essential');
-	$page->requires->jquery_plugin('typeahead', 'theme_essential');
+    $page->requires->jquery_plugin('typeahead', 'theme_essential');
     $page->requires->jquery_plugin('modernizr', 'theme_essential');
 }
