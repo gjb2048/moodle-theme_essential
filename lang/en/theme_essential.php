@@ -215,9 +215,13 @@ $string['alternativethemecolors'] = 'Alternative Theme Colours';
 $string['alternativethemecolorsdesc'] = 'Defines theme colours alternative that the user may select.';
 $string['alternativethemecolorname'] = 'Name of Alternative Colour Set {$a}';
 $string['alternativethemecolornamedesc'] = 'Provide a recognisable name for this set of alternative theme colours';
-$string['alternativethemehovercolor'] = 'Alternative Theme Hover Colour {$a}';
+$string['alternativethemetextcolor'] = 'Alternative text colour  {$a}';
+$string['alternativethemetextcolordesc'] = 'Set the colour for your alternative text {$a}.';
+$string['alternativethemeurlcolor'] = 'Alternative link colour {$a}';
+$string['alternativethemeurlcolordesc'] = 'Set the colour for your alternative linked text {$a}.';
+$string['alternativethemehovercolor'] = 'Alternative theme hover colour {$a}';
 $string['alternativethemehovercolordesc'] = 'What colour should your theme hovers be for the alternative theme colours {$a}. If enabled and the user choose it, this will replace the default theme hover colour.';
-$string['enablealternativethemecolors'] = 'Enable Alternative Theme Colours {$a}';
+$string['enablealternativethemecolors'] = 'Enable alternative theme colours {$a}';
 $string['enablealternativethemecolorsdesc'] = 'If enabled, the user will be able to choose the alternative theme colours {$a}.';
 
 /* Frontpage Settings */
@@ -240,7 +244,7 @@ $string['slideshowheadingsub'] = 'Dynamic Slideshow for the frontpage';
 $string['slideshowdesc'] = 'This creates a dynamic slideshow of up to sixteen slides for you to promote important elements of your site.';
 
 $string['toggleslideshow'] = 'Toggle Slideshow display';
-$string['toggleslideshowdesc'] = 'Choose if you wish to hide or show the Slideshow.';
+$string['toggleslideshowdesc'] = 'Choose if you wish to hide or show the slideshow.';
 
 $string['numberofslides'] = 'Number of slides';
 $string['numberofslides_desc'] = 'Number of slides on the slider.';
@@ -257,11 +261,11 @@ $string['slideinterval'] = 'Slide interval';
 $string['slideintervaldesc'] = 'Slide transition interval in milliseconds.';
 
 $string['slidecolor'] = 'Slide Text Colour';
-$string['slidecolordesc'] = 'What colour the side caption should be.';
+$string['slidecolordesc'] = 'What colour the slide caption should be.';
 
 $string['slidebuttoncolor'] = 'Slide button colour';
 $string['slidebuttoncolordesc'] = 'What colour the slide navigation button should be.';
-$string['slidebuttonhovercolor'] = 'Slide button colour';
+$string['slidebuttonhovercolor'] = 'Slide button hover colour';
 $string['slidebuttonhovercolordesc'] = 'What colour the slide navigation button hover should be.';
 
 $string['slideno'] = 'Slide {$a->slide}';

@@ -399,6 +399,8 @@ function theme_essential_process_css($css, $theme) {
         $default = $defaultalternativethemecolors[$alternativethemenumber - 1];
         $defaulthover = $defaultalternativethemehovercolors[$alternativethemenumber - 1];
         $css = theme_essential_set_alternativecolor($css, 'color' . $alternativethemenumber, $theme->settings->{'alternativethemecolor' . $alternativethemenumber}, $default);
+        $css = theme_essential_set_alternativecolor($css, 'textcolor' . $alternativethemenumber, $theme->settings->{'alternativethemetextcolor' . $alternativethemenumber}, $default);
+        $css = theme_essential_set_alternativecolor($css, 'urlcolor' . $alternativethemenumber, $theme->settings->{'alternativethemeurlcolor' . $alternativethemenumber}, $default);
         $css = theme_essential_set_alternativecolor($css, 'hovercolor' . $alternativethemenumber, $theme->settings->{'alternativethemehovercolor' . $alternativethemenumber}, $defaulthover);
     }
 
