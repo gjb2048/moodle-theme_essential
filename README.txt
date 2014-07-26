@@ -15,7 +15,7 @@ Cool things to know about the theme.
  - The entire colour scheme can be modified with theme settings
  - The homepage main area is just a label. The theme will ship with custom classes that you can set for tables and links to modify their formatting. No knowledge of code is needed as you can use the text editor to do this. Documentation will be provided outlining what the additional classes are.
 
-New in 2.7.3.1
+New in 2.7.4
 ========================
 - FIX: Issue #68.  Expand all not showing on Edit course settings.
 - FIX: Issue #58.  Add font colour setting.
@@ -26,7 +26,6 @@ New in 2.7.3.1
 - NEW: Alternative colour sets have text and link colour settings.
 - NEW: Optimised svg's to be smaller.
 - NEW: Warning about IE8 as M2.6 does not support it - http://docs.moodle.org/dev/Moodle_2.6_release_notes#Requirements.
-
 
 New in 2.7.3
 ========================
