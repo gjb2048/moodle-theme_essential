@@ -2064,7 +2064,6 @@ table.calendarmonth.calendartable {
 /* @end */
 
 #essentialCarousel.carousel {
-  height: 300px;
   margin-bottom: 10px;
 }
 
@@ -2126,11 +2125,15 @@ table.calendarmonth.calendartable {
   background-color: #98d6e8;
 }
 
-@media (max-width: 767px) {
-  #essentialCarousel.carousel {
-    height: 165px;
-  }
+body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner {
+  height: 400px;
+}
 
+body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner .carousel-caption {
+  position: relative;
+}
+
+@media (max-width: 767px) {
   #essentialCarousel.carousel .carousel-inner {
     height: 165px;
   }
@@ -2138,19 +2141,23 @@ table.calendarmonth.calendartable {
   #essentialCarousel.carousel .carousel-inner > .item > .carousel-image {
     max-height: 165px;
   }
+
+  body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner {
+    height: 265px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-  #essentialCarousel.carousel {
-    height: 225px;
-  }
-
   #essentialCarousel.carousel .carousel-inner {
     height: 225px;
   }
 
   #essentialCarousel.carousel .carousel-inner > .item > .carousel-image {
     max-height: 225px;
+  }
+
+  body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner {
+    height: 325px;
   }
 }
 

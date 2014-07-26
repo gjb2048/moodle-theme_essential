@@ -506,6 +506,15 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Show caption below the image.
+    $name = 'theme_essential/slidecaptionbelow';
+    $title = get_string('slidecaptionbelow' , 'theme_essential');
+    $description = get_string('slidecaptionbelowdesc', 'theme_essential');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     // Slide button colour setting.
     $name = 'theme_essential/slidebuttoncolor';
     $title = get_string('slidebuttoncolor', 'theme_essential');
