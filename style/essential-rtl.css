@@ -1990,7 +1990,7 @@ table.calendarmonth.calendartable {
 }
 
 .collapsible-actions {
-  display: none !important;
+  display: none;
 }
 
 #frontpage-category-names,
