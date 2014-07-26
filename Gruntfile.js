@@ -131,7 +131,7 @@ module.exports = function(grunt) {
             // Compile essential styles.
             essential: {
                 options: {
-                    compress: true,
+                    compress: false,
                     paths: "./less",
                     report: 'min',
                     sourceMap: true,
@@ -141,9 +141,9 @@ module.exports = function(grunt) {
                 src: 'less/essentialall.less',
                 dest: 'style/essential.css'
             },
-			FontAwesome: {
+            FontAwesome: {
                 options: {
-                    compress: true,
+                    compress: false,
                     paths: "./less",
                     report: 'min',
                     sourceMap: true,

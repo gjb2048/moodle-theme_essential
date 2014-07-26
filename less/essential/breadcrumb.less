@@ -107,7 +107,11 @@
             text-shadow: none;
             background-color: #F5F5F5;
             a {
+                color: ~"[[setting:themetextcolor]]";
                 margin-right: 3px;
+            }
+            a:hover {
+                color: ~"[[setting:themehovercolor]]";
             }
         }
         li:first-of-type {

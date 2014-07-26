@@ -255,6 +255,16 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
+    // Main theme text colour setting.
+    $name = 'theme_essential/themetextcolor';
+    $title = get_string('themetextcolor', 'theme_essential');
+    $description = get_string('themetextcolordesc', 'theme_essential');
+    $default = '#30add1';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     // Main theme link colour setting.
     $name = 'theme_essential/themeurlcolor';
     $title = get_string('themeurlcolor', 'theme_essential');
