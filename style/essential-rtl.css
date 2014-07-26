@@ -784,7 +784,7 @@ table#greyboxleft h2 {
 
 .block #icon {
   margin-left: 5px;
-  color: #30add1;
+  color: #888888;
 }
 
 .tree_item {
@@ -794,7 +794,7 @@ table#greyboxleft h2 {
 .tree_item.branch:before {
   font-family: FontAwesome;
   content: "\f07c ";
-  color: #30add1;
+  color: #888888;
   margin-left: 5px;
 }
 
@@ -816,7 +816,7 @@ table#greyboxleft h2 {
 .collapsed .tree_item.branch:before {
   font-family: FontAwesome;
   content: "\f07b ";
-  color: #30add1;
+  color: #888888;
   margin-left: 5px;
 }
 
@@ -3173,7 +3173,7 @@ a#button:hover {
 }
 
 .block .header .title h2:before {
-  color: #30add1;
+  color: [[setting:themecolor]];
 }
 
 .block_rss_client .footer a {
@@ -3216,7 +3216,7 @@ a#button:hover {
 /* @group Home News Boxes */
 
 .service i {
-  color: #30add1;
+  color: [[setting:themecolor]];
 }
 
 /* @end */
@@ -3260,13 +3260,13 @@ a#button:hover {
 }
 
 #page-footer .tree_item.branch:before {
-  color: #30add1;
+  color: [[setting:themecolor]];
 }
 
 /* @group Footer Block Formatting */
 
 #page-footer .block .header .title h2:before {
-  color: #30add1;
+  color: [[setting:themecolor]];
 }
 
 #page-footer .block .header .title h2 {
@@ -3368,7 +3368,7 @@ a#button:hover {
 }
 
 .performanceinfo h2:before {
-  color: #30add1;
+  color: [[setting:themecolor]];
 }
 
 /* @end */
@@ -3881,11 +3881,11 @@ body.essential-colours-alternative1 h6 {
 }
 
 .essential-colours-alternative1 .tree_item.branch:before {
-  color: #30add1;
+  color: #888888;
 }
 
 .essential-colours-alternative1 .block #icon {
-  color: [[setting:alternativethemecolor1]];
+  color: #888888;
 }
 
 .essential-colours-alternative1 #page-footer .block_login input[type="submit"] {
@@ -4017,6 +4017,15 @@ body.essential-colours-alternative1 h6 {
 
 body.essential-colours-alternative2 {
   border-top-color: [[setting:alternativethemecolor2]];
+  color: [[setting:alternativethemecolor2]];
+}
+
+body.essential-colours-alternative2 h1,
+body.essential-colours-alternative2 h2,
+body.essential-colours-alternative2 h3,
+body.essential-colours-alternative2 h4,
+body.essential-colours-alternative2 h5,
+body.essential-colours-alternative2 h6 {
   color: [[setting:alternativethemecolor2]];
 }
 
@@ -4156,7 +4165,7 @@ body.essential-colours-alternative2 {
 }
 
 .essential-colours-alternative2 .block .header .title h2:before {
-  color: #30add1;
+  color: [[setting:alternativethemecolor2]];
 }
 
 .essential-colours-alternative2 .block .header .title h2 {
@@ -4177,15 +4186,6 @@ body.essential-colours-alternative2 {
 
 .essential-colours-alternative2 .block_login .footer a:hover {
   background: [[setting:alternativethemehovercolor2]];
-}
-
-body.essential-colours-alternative2 h1,
-body.essential-colours-alternative2 h2,
-body.essential-colours-alternative2 h3,
-body.essential-colours-alternative2 h4,
-body.essential-colours-alternative2 h5,
-body.essential-colours-alternative2 h6 {
-  color: [[setting:alternativethemecolor2]];
 }
 
 .essential-colours-alternative2 #page-site-index h2.headingblock:before {
@@ -4211,11 +4211,11 @@ body.essential-colours-alternative2 h6 {
 }
 
 .essential-colours-alternative2 .tree_item.branch:before {
-  color: #30add1;
+  color: #888888;
 }
 
 .essential-colours-alternative2 .block #icon {
-  color: #30add1;
+  color: #888888;
 }
 
 .essential-colours-alternative2 #page-footer .block_login input[type="submit"] {
@@ -4265,7 +4265,7 @@ body.essential-colours-alternative2 h6 {
 }
 
 .essential-colours-alternative2 .performanceinfo h2:before {
-  color: #30add1;
+  color: [[setting:alternativethemecolor2]];
 }
 
 .essential-colours-alternative2 #page-mod-quiz-edit .questionbankwindow.block div.header {
@@ -4495,7 +4495,7 @@ body.essential-colours-alternative3 h6 {
 }
 
 .essential-colours-alternative3 .block .header .title h2:before {
-  color: #30add1;
+  color: [[setting:alternativethemecolor3]];
 }
 
 .essential-colours-alternative3 .block .header .title h2 {
@@ -4523,7 +4523,7 @@ body.essential-colours-alternative3 h6 {
 }
 
 .essential-colours-alternative3 .service i {
-  color: #30add1;
+  color: [[setting:alternativethemecolor3]];
 }
 
 .essential-colours-alternative3 #page-footer {
@@ -4541,11 +4541,11 @@ body.essential-colours-alternative3 h6 {
 }
 
 .essential-colours-alternative3 .tree_item.branch:before {
-  color: #30add1;
+  color: #888888;
 }
 
 .essential-colours-alternative3 .block #icon {
-  color: #30add1;
+  color: #888888;
 }
 
 .essential-colours-alternative3 #page-footer .block_login input[type="submit"] {
@@ -4595,7 +4595,7 @@ body.essential-colours-alternative3 h6 {
 }
 
 .essential-colours-alternative3 .performanceinfo h2:before {
-  color: #30add1;
+  color: [[setting:alternativethemecolor3]];
 }
 
 .essential-colours-alternative3 #page-mod-quiz-edit .questionbankwindow.block div.header {
