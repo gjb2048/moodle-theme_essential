@@ -257,7 +257,7 @@ $string['slideinterval'] = 'Slide interval';
 $string['slideintervaldesc'] = 'Slide transition interval in milliseconds.';
 
 $string['slidecolor'] = 'Slide Text Colour';
-$string['slidecolordesc'] = 'What colour the side caption should be.';
+$string['slidecolordesc'] = 'What colour the slide caption should be.';
 
 $string['slidebuttoncolor'] = 'Slide button colour';
 $string['slidebuttoncolordesc'] = 'What colour the slide navigation button should be.';
