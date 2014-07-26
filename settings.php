@@ -255,6 +255,16 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
+    // Main theme text colour setting.
+    $name = 'theme_essential/themetextcolor';
+    $title = get_string('themetextcolor', 'theme_essential');
+    $description = get_string('themetextcolordesc', 'theme_essential');
+    $default = '#30add1';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     // Main theme link colour setting.
     $name = 'theme_essential/themeurlcolor';
     $title = get_string('themeurlcolor', 'theme_essential');
@@ -274,7 +284,7 @@ defined('MOODLE_INTERNAL') || die;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     // This is the descriptor for the Footer
     $name = 'theme_essential/footercolorinfo';
     $heading = get_string('footercolors', 'theme_essential');
@@ -354,7 +364,7 @@ defined('MOODLE_INTERNAL') || die;
 
     foreach (range(1, 3) as $alternativethemenumber) {
 
-        // Enables the user to select an alternative colors choice.
+        // Enables the user to select an alternative colours choice.
         $name = 'theme_essential/enablealternativethemecolors' . $alternativethemenumber;
         $title = get_string('enablealternativethemecolors', 'theme_essential', $alternativethemenumber);
         $description = get_string('enablealternativethemecolorsdesc', 'theme_essential', $alternativethemenumber);
@@ -376,6 +386,26 @@ defined('MOODLE_INTERNAL') || die;
         $name = 'theme_essential/alternativethemecolor' . $alternativethemenumber;
         $title = get_string('alternativethemecolor', 'theme_essential', $alternativethemenumber);
         $description = get_string('alternativethemecolordesc', 'theme_essential', $alternativethemenumber);
+        $default = $defaultalternativethemecolors[$alternativethemenumber - 1];
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        // Alternative theme text colour setting.
+        $name = 'theme_essential/alternativethemetextcolor' . $alternativethemenumber;
+        $title = get_string('alternativethemetextcolor', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemetextcolordesc', 'theme_essential', $alternativethemenumber);
+        $default = $defaultalternativethemecolors[$alternativethemenumber - 1];
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        // Alternative theme link colour setting.
+        $name = 'theme_essential/alternativethemeurlcolor' . $alternativethemenumber;
+        $title = get_string('alternativethemehovercolor', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemehovercolordesc', 'theme_essential', $alternativethemenumber);
         $default = $defaultalternativethemecolors[$alternativethemenumber - 1];
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
@@ -473,6 +503,15 @@ defined('MOODLE_INTERNAL') || die;
     $default = '#ffffff';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Show caption below the image.
+    $name = 'theme_essential/slidecaptionbelow';
+    $title = get_string('slidecaptionbelow' , 'theme_essential');
+    $description = get_string('slidecaptionbelowdesc', 'theme_essential');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 

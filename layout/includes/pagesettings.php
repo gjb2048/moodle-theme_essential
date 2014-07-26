@@ -30,8 +30,11 @@ theme_essential_initialise_colourswitcher($PAGE);
 
 $bodyclasses = array();
 $bodyclasses[] = 'essential-colours-' . theme_essential_get_colours();
-if ($PAGE->theme->settings->sideregionsmaxwidth) {
+if (!empty($PAGE->theme->settings->sideregionsmaxwidth)) {
     $bodyclasses[] = 'side-regions-with-max-width';
+}
+if (!empty($PAGE->theme->settings->slidecaptionbelow)) {
+    $bodyclasses[] = 'frontpageslidercaptionbelow';
 }
  
 if (right_to_left()) {

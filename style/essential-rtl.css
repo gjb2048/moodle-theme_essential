@@ -1,3 +1,11 @@
+/*
+ * @author    Julian Ridden
+ * @package   theme_essential
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+/* @group Core */
+
 body {
   line-height: 25px;
   text-shadow: none !important;
@@ -6,7 +14,7 @@ body {
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
-  background-color: rgba(255,255,255,0.6);
+  background-color: rgba(255, 255, 255, 0.6);
   background-size: cover;
   margin: 0px !important;
   padding: 0px !important;
@@ -64,13 +72,15 @@ a {
 
 #page {
   padding-top: 10px;
-  background-color: rgba(255,255,255,0.6);
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 #page-admin-upgradesettings #page,
 .maintenance#page {
   padding-top: 0px;
 }
+
+/* @group Font Awesome */
 
 .fa {
   font-style: normal !important;
@@ -87,6 +97,10 @@ a {
   border: 0;
 }
 
+/* @end */
+
+/* @group Custom */
+
 .bor {
   height: 20px;
   margin: 0px;
@@ -97,6 +111,12 @@ a {
   height: 20px;
   margin-bottom: 10px;
 }
+
+/* @end */
+
+/* @end */
+
+/* @group Header */
 
 #page-header {
   height: 75px;
@@ -143,6 +163,7 @@ h1#title {
   position: relative;
   top: 10px;
   margin-left: 10px;
+  color: [[setting:themecolor]];
 }
 
 .breadcrumb-button input[type="submit"] {
@@ -158,9 +179,11 @@ h1#title {
   color: #fff !important;
 }
 
+/* @group Social Buttons */
+
 .socials p {
   font-weight: normal;
-  color: [[setting:themecolor]];
+  color: [[setting:themetextcolor]];
   font-size: 1.1em;
 }
 
@@ -258,15 +281,21 @@ ul.socials {
   margin-top: 8px;
 }
 
-.dropdown-menu>li>a,
-.dropdown-menu>li>a:visited {
+/* @end */
+
+/* @end */
+
+.dropdown-menu > li > a,
+.dropdown-menu > li > a:visited {
   color: #333;
 }
 
-.dropdown-menu>li>a:hover,
-.dropdown-menu>li>a:focus,
-.dropdown-submenu:hover>a,
-.dropdown-submenu:focus>a {
+/* @group Custom Menu */
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
   color: #ffffff;
   text-decoration: none;
 }
@@ -276,13 +305,18 @@ ul.socials {
   margin-left: 5px;
 }
 
-.open>.dropdown-menu {
+.open > .dropdown-menu {
   overflow: visible;
 }
 
 .dropdown-menu {
   z-index: 1001;
 }
+
+/* @end */
+
+/* @group Navbar
+ */
 
 .navbar {
   margin-bottom: 0px;
@@ -319,12 +353,12 @@ ul.socials {
   line-height: 20px;
 }
 
-.navbar .nav .active>a,
-.navbar .nav .active>a:hover,
-.navbar .nav .active>a:focus,
-.navbar .nav li.dropdown.open>.dropdown-toggle,
-.navbar .nav li.dropdown.active>.dropdown-toggle,
-.navbar .nav li.dropdown.open.active>.dropdown-toggle {
+.navbar .nav .active > a,
+.navbar .nav .active > a:hover,
+.navbar .nav .active > a:focus,
+.navbar .nav li.dropdown.open > .dropdown-toggle,
+.navbar .nav li.dropdown.active > .dropdown-toggle,
+.navbar .nav li.dropdown.open.active > .dropdown-toggle {
   color: #fff;
 }
 
@@ -334,14 +368,19 @@ ul.socials {
   margin-right: 5px;
 }
 
-.navbar .nav>li>a {
+.navbar .nav > li > a {
   color: #fff;
   text-shadow: none;
 }
 
-.navbar .nav>li>a:hover {
+.navbar .nav > li > a:hover {
   color: #fff;
 }
+
+/* @end */
+
+/* @group Course
+ */
 
 .course-content ul li.section.main {
   border-bottom: 0px none;
@@ -424,9 +463,11 @@ h2.pagetitle span {
   margin-right: 5.5em;
 }
 
+/* @group Course Footer */
+
 #section_footer {
   padding: 2em 0;
-  color: [[setting:themecolor]];
+  color: [[setting:themetextcolor]];
   line-height: 1.5;
   clear: both;
 }
@@ -494,6 +535,12 @@ h2.pagetitle span {
   float: right;
 }
 
+/* @end */
+
+/* @end */
+
+/* @group Layout */
+
 .side-pre {
   border: 1px solid #333;
 }
@@ -505,6 +552,10 @@ h2.pagetitle span {
 .course-content ul.weeks li.section {
   padding-bottom: 20px;
 }
+
+/* @end */
+
+/* @group Forums */
 
 .forumheaderlist .picture img {
   border-radius: 250px;
@@ -550,6 +601,10 @@ h2.pagetitle span {
   font-size: 12px !important;
   line-height: 15px;
 }
+
+/* @end */
+
+/* @group Buttons */
 
 .button {
   margin: 10px 0px;
@@ -659,6 +714,10 @@ a#button-grey:hover {
   background: #000;
 }
 
+/* @end */
+
+/* @group GreyBox */
+
 table#greyboxright {
   background: #F9F9F9;
   border: 1px solid #EEE;
@@ -704,6 +763,10 @@ table#greyboxleft h2 {
   line-height: 17px;
 }
 
+/* @end */
+
+/* @group Blocks */
+
 .block {
   background: white;
   padding: 8px;
@@ -722,7 +785,7 @@ table#greyboxleft h2 {
 
 .block #icon {
   margin-left: 5px;
-  color: [[setting:themecolor]];
+  color: #999999;
 }
 
 .tree_item {
@@ -732,7 +795,7 @@ table#greyboxleft h2 {
 .tree_item.branch:before {
   font-family: FontAwesome;
   content: "\f07c ";
-  color: [[setting:themecolor]];
+  color: #999999;
   margin-left: 5px;
 }
 
@@ -743,18 +806,18 @@ table#greyboxleft h2 {
   margin-left: 5px;
 }
 
-.block_navigation.block li.type_user>.tree_item.branch:before {
+.block_navigation.block li.type_user > .tree_item.branch:before {
   content: "\f007 ";
 }
 
-.block_navigation.block li.type_unknown.depth_1>.tree_item.branch:before {
+.block_navigation.block li.type_unknown.depth_1 > .tree_item.branch:before {
   content: "\f015 ";
 }
 
 .collapsed .tree_item.branch:before {
   font-family: FontAwesome;
   content: "\f07b ";
-  color: [[setting:themecolor]];
+  color: #999999;
   margin-left: 5px;
 }
 
@@ -784,7 +847,7 @@ table#greyboxleft h2 {
 .block .header .title h2,
 .block h3.main {
   font-size: 1.15em;
-  color: [[setting:themecolor]];
+  color: [[setting:themetextcolor]];
   line-height: 26px;
   margin-bottom: 5px;
   text-transform: uppercase;
@@ -854,6 +917,8 @@ table#greyboxleft h2 {
 .block_rss_client .footer a:hover {
   color: #fff;
 }
+
+/* @group Login Block */
 
 .block_login .header .title h2:before {
   content: "\f007";
@@ -938,6 +1003,8 @@ table#greyboxleft h2 {
   background: red;
 }
 
+/* @group DIR-RTL */
+
 .dir-rtl .block_login .content {
   padding-bottom: 125px;
 }
@@ -967,6 +1034,12 @@ table#greyboxleft h2 {
   clear: left;
   text-align: left;
 }
+
+/* @end */
+
+/* @end */
+
+/* @group Block Icons */
 
 .dir-rtl .collapsed .tree_item.branch:before {
   content: " \f053";
@@ -1104,6 +1177,12 @@ table#greyboxleft h2 {
   content: "\f099";
 }
 
+/* @end */
+
+/* @end */
+
+/* @group Frontpage */
+
 #site-news-forum,
 #frontpage-course-list,
 #frontpage-category-combo,
@@ -1150,7 +1229,7 @@ table#greyboxleft h2 {
   border-radius: 10px;
   border: 1px solid #E1E1E1 !important;
   padding: 10px;
-  box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
 .courses .coursebox.even,
@@ -1158,6 +1237,8 @@ table#greyboxleft h2 {
   background: #fff;
   margin-bottom: 5px;
 }
+
+/* @group Home News Boxes */
 
 .services {
   margin: 20px 0px;
@@ -1183,6 +1264,12 @@ table#greyboxleft h2 {
   margin-top: 3px;
   margin-left: 8px;
 }
+
+/* @end */
+
+/* @end */
+
+/* @group Footer */
 
 #page-footer {
   margin-top: 10px;
@@ -1258,6 +1345,8 @@ table#greyboxleft h2 {
   line-height: 15px;
 }
 
+/* @group Footer Block Formatting */
+
 #page-footer .block {
   border: 0px none;
   background: transparent;
@@ -1320,7 +1409,7 @@ table#greyboxleft h2 {
   font-size: 1.1em;
   line-height: 20px;
   float: right;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-right: 10px;
 }
 
@@ -1354,6 +1443,12 @@ table#greyboxleft h2 {
   margin-top: 6px;
 }
 
+/* @end */
+
+/* @end */
+
+/* @group Marketing Spots */
+
 #adspots {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -1368,11 +1463,13 @@ table#greyboxleft h2 {
   box-shadow: 0px 0px 3px #aaa;
   text-align: center;
   -webkit-transition: border 1s ease;
+  /* Safari */
   transition: border 1s ease;
 }
 
 .afeature:hover {
   -webkit-transition: border 1s ease;
+  /* Safari */
   transition: border 1s ease;
 }
 
@@ -1400,6 +1497,10 @@ table#greyboxleft h2 {
   margin-bottom: 5px;
 }
 
+/* @end */
+
+/* @group Profile Image */
+
 .myprofileitem.picture {
   width: 100px;
   height: 100px;
@@ -1409,11 +1510,13 @@ table#greyboxleft h2 {
   box-shadow: 0px 0px 3px #aaa;
   text-align: center;
   -webkit-transition: border 1s ease;
+  /* Safari */
   transition: border 1s ease;
 }
 
 .myprofileitem.picture:hover {
   -webkit-transition: border 1s ease;
+  /* Safari */
   transition: border 1s ease;
 }
 
@@ -1423,8 +1526,12 @@ img.profilepicture {
   border-radius: 250px;
 }
 
-.nav-tabs>li,
-.nav-pills>li {
+/* @end */
+
+/* @group Tabs */
+
+.nav-tabs > li,
+.nav-pills > li {
   float: none;
   display: inline-block;
 }
@@ -1434,21 +1541,25 @@ img.profilepicture {
   text-align: center;
 }
 
-.nav>.disabled>a {
+.nav > .disabled > a {
   color: #555;
   background: #fff;
 }
 
-.nav>.disabled>a:hover {
+.nav > .disabled > a:hover {
   border: 1px solid #ddd;
 }
 
-.nav-tabs>li>a {
+.nav-tabs > li > a {
   color: #fff;
   cursor: default;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
 }
+
+/* @end */
+
+/* @group Performance Information */
 
 .performanceinfo {
   bottom: 0;
@@ -1531,6 +1642,10 @@ img.profilepicture {
   content: "\f181";
 }
 
+/* @end */
+
+/* @group Quiz */
+
 #page-mod-quiz-edit div.quizcontents {
   clear: right;
   display: block;
@@ -1558,6 +1673,33 @@ img.profilepicture {
 
 .questionbankwindow.block .header .title {
   border-bottom: 0px none;
+}
+
+/* @end */
+
+/* @group Forms */
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input,
+.form-item .form-description,
+.form-defaultinfo,
+.form-label .form-shortname {
+  color: [[setting:themetextcolor]];
 }
 
 .form-item .form-label,
@@ -1628,6 +1770,10 @@ img.profilepicture {
   width: 400px;
 }
 
+/* @end */
+
+/* @group Calendar */
+
 .minicalendar .calendar_event_site,
 .minicalendar .calendar_event_course,
 .minicalendar .calendar_event_group,
@@ -1657,8 +1803,12 @@ h2.eventtitle {
 
 table.calendarmonth.calendartable {
   background: #fff;
-  box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
+
+/* @end */
+
+/* @group Alerts */
 
 .useralerts [class^="fa-stack"] {
   float: right;
@@ -1670,6 +1820,10 @@ table.calendarmonth.calendartable {
   font-weight: bold;
   margin-left: 10px;
 }
+
+/* @end */
+
+/* @group Back to Top */
 
 .back-to-top [class^="icon-"] {
   font-size: 3em;
@@ -1688,7 +1842,7 @@ table.calendarmonth.calendartable {
   -moz-transition: all .3s ease 0s;
   -o-transition: all .3s ease 0s;
   background-color: #000;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0 0 1px #fff;
   -moz-box-shadow: 0 0 1px #fff;
   box-shadow: 0 0 1px #fff;
@@ -1704,6 +1858,10 @@ table.calendarmonth.calendartable {
 .back-to-top a:visited {
   color: #fff !important;
 }
+
+/* @end */
+
+/* @group RTL Fixes */
 
 .dir-rtl .block .footer {
   float: left;
@@ -1723,15 +1881,19 @@ table.calendarmonth.calendartable {
   margin-right: 5px;
 }
 
-.dir-rtl .course_category_tree .category>.info>.categoryname {
+.dir-rtl .course_category_tree .category > .info > .categoryname {
   background-repeat: no-repeat;
 }
+
+/* @navigation */
 
 .dir-rlt .tree_item.branch:before {
   margin-right: 5px;
 }
 
-@media screen and (min-width:960px) {
+/* @end */
+
+@media screen and (min-width: 960px) {
   .side-regions-with-max-width #block-region-side-pre {
     width: 285px;
   }
@@ -1748,7 +1910,7 @@ table.calendarmonth.calendartable {
   }
 }
 
-@media screen and (min-width:1200px) {
+@media screen and (min-width: 1200px) {
   .side-regions-with-max-width.empty-region-side-post.used-region-side-pre #block-region-side-pre,
   .side-regions-with-max-width #block-region-side-pre,
   .side-regions-with-max-width #block-region-side-post {
@@ -1774,11 +1936,13 @@ table.calendarmonth.calendartable {
   }
 }
 
-@media (max-width:767px) {
+@media (max-width: 767px) {
   #page.container-fluid {
     padding: 5px;
   }
 }
+
+/* @group Print Styling */
 
 #printonly {
   display: none;
@@ -1886,12 +2050,20 @@ table.calendarmonth.calendartable {
   }
 }
 
-.coursebox>.info>.coursename a {
+/* G J Barnard additions. */
+
+.coursebox > .info > .coursename a {
   background-position: right 0.2em;
 }
 
+#ie8message {
+  font-size: 1.2em;
+  padding-top: 55px;
+}
+
+/* @end */
+
 #essentialCarousel.carousel {
-  height: 300px;
   margin-bottom: 10px;
 }
 
@@ -1899,7 +2071,7 @@ table.calendarmonth.calendartable {
   height: 300px;
 }
 
-#essentialCarousel.carousel .carousel-inner>.item>.carousel-image {
+#essentialCarousel.carousel .carousel-inner > .item > .carousel-image {
   width: auto;
   margin: 0 auto;
   max-height: 300px;
@@ -1917,7 +2089,7 @@ table.calendarmonth.calendartable {
 
 #essentialCarousel.carousel .carousel-inner .carousel-caption {
   background: #30add1;
-  background: rgba(48,173,209,0.75);
+  background: rgba(48, 173, 209, 0.75);
 }
 
 #essentialCarousel.carousel .carousel-inner .carousel-caption .carousel-caption-inner {
@@ -1946,38 +2118,46 @@ table.calendarmonth.calendartable {
 
 #essentialCarousel.carousel .carousel-indicators li {
   background: #30add1;
-  background: rgba(48,173,209,0.75);
+  background: rgba(48, 173, 209, 0.75);
 }
 
 #essentialCarousel.carousel .carousel-indicators .active {
   background-color: #98d6e8;
 }
 
-@media (max-width:767px) {
-  #essentialCarousel.carousel {
-    height: 165px;
-  }
+body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner {
+  height: 400px;
+}
 
+body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner .carousel-caption {
+  position: relative;
+}
+
+@media (max-width: 767px) {
   #essentialCarousel.carousel .carousel-inner {
     height: 165px;
   }
 
-  #essentialCarousel.carousel .carousel-inner>.item>.carousel-image {
+  #essentialCarousel.carousel .carousel-inner > .item > .carousel-image {
     max-height: 165px;
+  }
+
+  body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner {
+    height: 265px;
   }
 }
 
-@media (min-width:768px) and (max-width:979px) {
-  #essentialCarousel.carousel {
-    height: 225px;
-  }
-
+@media (min-width: 768px) and (max-width: 979px) {
   #essentialCarousel.carousel .carousel-inner {
     height: 225px;
   }
 
-  #essentialCarousel.carousel .carousel-inner>.item>.carousel-image {
+  #essentialCarousel.carousel .carousel-inner > .item > .carousel-image {
     max-height: 225px;
+  }
+
+  body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner {
+    height: 325px;
   }
 }
 
@@ -1989,9 +2169,20 @@ table.calendarmonth.calendartable {
   vertical-align: middle;
 }
 
+/*
+ * @author    Franc Pombal
+ * @modified  Julian Ridden
+ * @package   theme_essential
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+/* @group Core */
+
 .collapsible-actions {
-  display: none !important;
+  display: none;
 }
+
+/* Set the position on the frontpage */
 
 #frontpage-category-names,
 #frontpage-category-names .course_category_tree {
@@ -2004,8 +2195,10 @@ table.calendarmonth.calendartable {
   display: none;
 }
 
-.frontpage-category-names.course_category_tree .category>.info>.categoryname,
-.frontpage-category-names.course_category_tree .category.with_children>.info>.categoryname {
+/* adjust lineheight for tiles that include course count */
+
+.frontpage-category-names.course_category_tree .category > .info > .categoryname,
+.frontpage-category-names.course_category_tree .category.with_children > .info > .categoryname {
   line-height: 15px;
 }
 
@@ -2014,9 +2207,11 @@ table.calendarmonth.calendartable {
   width: 100%;
 }
 
-.course_category_tree .category.with_children.collapsed>.info>.categoryname,
-.course_category_tree .category.with_children>.info>.categoryname,
-.course_category_tree .category>.info>.categoryname {
+/* Hide icon 'collapsed' because it makes no sense here */
+
+.course_category_tree .category.with_children.collapsed > .info > .categoryname,
+.course_category_tree .category.with_children > .info > .categoryname,
+.course_category_tree .category > .info > .categoryname {
   background: none;
   padding: 0;
   margin: 0;
@@ -2056,8 +2251,8 @@ table.calendarmonth.calendartable {
   text-align: center;
 }
 
-.course_category_tree .category>.info,
-.course_category_tree .category>.info>.categoryname {
+.course_category_tree .category > .info,
+.course_category_tree .category > .info > .categoryname {
   background: transparent;
   border: 0px none;
   text-align: center;
@@ -2065,8 +2260,8 @@ table.calendarmonth.calendartable {
   margin: 0;
 }
 
-.course_category_tree .category>.info a,
-.course_category_tree .category>.info>.categoryname a {
+.course_category_tree .category > .info a,
+.course_category_tree .category > .info > .categoryname a {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2093,31 +2288,45 @@ table.calendarmonth.calendartable {
   transition: all 0.3s ease;
 }
 
-.course_category_tree .category[data-categoryid]>.info>.categoryname a {
+.course_category_tree .category[data-categoryid] > .info > .categoryname a {
   line-height: 30px;
 }
 
-.course_category_tree .category[data-categoryid]>.info>.categoryname a:hover {
+.course_category_tree .category[data-categoryid] > .info > .categoryname a:hover {
   text-decoration: none;
   color: #fff;
 }
+
+/* Hide buttons to expand and collapse */
 
 .jsenabled .course_category_tree .controls {
   display: none;
 }
 
-.subcategories+.category-browse {
+/* clear course list with subcategory icons above */
+
+.subcategories + .category-browse {
   clear: both;
 }
 
+/**
+ * This is built using the bootstrapbase template to allow for new theme's using
+ * Moodle's new Bootstrap theme engine
+ *
+ * @package     theme_essential
+ * @copyright   2013 Bas Brands and Julian Ridden
+ * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
 body.has_dock.dir-ltr header,
-body.has_dock.dir-ltr>section,
+body.has_dock.dir-ltr > section,
 body.has_dock.dir-ltr footer {
   margin-right: 42px;
 }
 
 body.has_dock.dir-rtl header,
-body.has_dock.dir-rtl>section,
+body.has_dock.dir-rtl > section,
 body.has_dock.dir-rtl footer {
   margin-left: 42px;
 }
@@ -2144,10 +2353,10 @@ body.has_dock.dir-rtl footer {
   color: #7b8a8b;
   text-decoration: none;
   background-position: 100% -15px;
-  -webkit-transition: background-position .1s linear;
-  -moz-transition: background-position .1s linear;
-  -o-transition: background-position .1s linear;
-  transition: background-position .1s linear;
+  -webkit-transition: background-position 0.1s linear;
+  -moz-transition: background-position 0.1s linear;
+  -o-transition: background-position 0.1s linear;
+  transition: background-position 0.1s linear;
 }
 
 .dockbutton:focus {
@@ -2160,9 +2369,9 @@ body.has_dock.dir-rtl footer {
 .dockbutton:active {
   background-image: none;
   outline: 0;
-  -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.05);
-  -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.05);
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.05);
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .dockbutton.disabled,
@@ -2187,12 +2396,12 @@ body.has_dock.dir-rtl footer {
   color: white;
   -webkit-transition: .25s;
   -moz-transition: .25s;
-  transition: .25s;
+  transition: 0.25s;
 }
 
 .dockbutton:active,
 .dockbutton.active {
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -2200,7 +2409,7 @@ body.has_dock.dir-rtl footer {
 
 .dockbutton.disabled,
 .dockbutton[disabled] {
-  color: #fff;
+  color: #ffffff;
 }
 
 .dockbutton-large {
@@ -2264,7 +2473,7 @@ body.has_dock div#dock {
   line-height: 100%;
   text-align: center;
   text-transform: uppercase;
-  color: [[setting:themecolor]];
+  color: [[setting:themetextcolor]];
 }
 
 #dock .dockedtitle:hover,
@@ -2291,10 +2500,10 @@ body.has_dock div#dock {
   color: #7b8a8b;
   text-decoration: none;
   background-position: 100% -15px;
-  -webkit-transition: background-position .1s linear;
-  -moz-transition: background-position .1s linear;
-  -o-transition: background-position .1s linear;
-  transition: background-position .1s linear;
+  -webkit-transition: background-position 0.1s linear;
+  -moz-transition: background-position 0.1s linear;
+  -o-transition: background-position 0.1s linear;
+  transition: background-position 0.1s linear;
 }
 
 #dock .dockedtitle:focus {
@@ -2307,9 +2516,9 @@ body.has_dock div#dock {
 #dock .dockedtitle:active {
   background-image: none;
   outline: 0;
-  -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.05);
-  -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.05);
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.05);
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 #dock .dockedtitle.disabled,
@@ -2334,12 +2543,12 @@ body.has_dock div#dock {
   color: white;
   -webkit-transition: .25s;
   -moz-transition: .25s;
-  transition: .25s;
+  transition: 0.25s;
 }
 
 #dock .dockedtitle:active,
 #dock .dockedtitle.active {
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -2347,7 +2556,7 @@ body.has_dock div#dock {
 
 #dock .dockedtitle.disabled,
 #dock .dockedtitle[disabled] {
-  color: #fff;
+  color: #ffffff;
 }
 
 #dock .dockedtitle-large {
@@ -2372,7 +2581,7 @@ body.has_dock div#dock {
   font-size: 1.1em;
   font-weight: bold;
   line-height: 20px;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
 }
 
@@ -2417,6 +2626,7 @@ body.has_dock div#dock {
 #dockeditempanel .dockeditempanel_hd h2 {
   padding: 5px;
   margin: 0;
+  color: [[setting:themecolor]];
 }
 
 #dockeditempanel .dockeditempanel_hd .commands {
@@ -2429,8 +2639,8 @@ body.has_dock div#dock {
   text-align: left;
 }
 
-#dockeditempanel .dockeditempanel_hd .commands>a,
-#dockeditempanel .dockeditempanel_hd .commands>span {
+#dockeditempanel .dockeditempanel_hd .commands > a,
+#dockeditempanel .dockeditempanel_hd .commands > span {
   margin-right: 3px;
   cursor: pointer;
 }
@@ -2495,6 +2705,7 @@ body.dir-rtl.has_dock {
 
 .breadcrumb-nav {
   margin: 0px;
+  /** Some breadcrumb style **/
 }
 
 .breadcrumb-nav ul.breadcrumb.style1 {
@@ -2535,6 +2746,7 @@ body.dir-rtl.has_dock {
   width: 0;
   height: 0;
   border-top: 50px solid transparent;
+  /* Go big on the size, and let overflow hide */
   border-bottom: 50px solid transparent;
   border-right: 30px solid [[setting:themecolor]];
   position: absolute;
@@ -2614,7 +2826,12 @@ body.dir-rtl.has_dock {
 }
 
 .breadcrumb-nav ul.breadcrumb.style2 li a {
+  color: [[setting:themetextcolor]];
   margin-left: 3px;
+}
+
+.breadcrumb-nav ul.breadcrumb.style2 li a:hover {
+  color: [[setting:themehovercolor]];
 }
 
 .breadcrumb-nav ul.breadcrumb.style2 li:first-of-type {
@@ -2668,6 +2885,14 @@ body.dir-rtl.has_dock {
   content: "";
 }
 
+/*
+ * @author    Julian Ridden
+ * @package   theme_essential
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+/* @group Core */
+
 * {
   font-family: [[setting:bodyfont]];
 }
@@ -2675,7 +2900,7 @@ body.dir-rtl.has_dock {
 body {
   border-top: 3px solid [[setting:themecolor]];
   background-image: url([[setting:pagebackground]]);
-  color: [[setting:themecolor]];
+  color: [[setting:themetextcolor]];
   font-size: [[setting:bodysize]];
   font-weight: [[setting:bodyweight]];
   font-family: [[setting:bodyfont]];
@@ -2695,13 +2920,14 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  color: [[setting:themecolor]];
+h6,
+#adminsettings h3 {
+  color: [[setting:themetextcolor]];
 }
 
 a,
 a:visited {
-  color: [[setting:themecolor]];
+  color: [[setting:themeurlcolor]];
 }
 
 a:hover {
@@ -2716,6 +2942,8 @@ a:hover {
   background: url([[setting:logo]]) no-repeat 100% 0;
 }
 
+/* @group Custom */
+
 .bor {
   background: url([[pix:theme|bg/dot]]) repeat-x;
 }
@@ -2723,6 +2951,12 @@ a:hover {
 .topbor {
   background: url([[pix:theme|bg/dot]]) repeat-x;
 }
+
+/* @end */
+
+/* @end */
+
+/* @group Header */
 
 #page-header {
   background: url([[pix:theme|bg/header]]) repeat;
@@ -2733,7 +2967,7 @@ a.logo {
 }
 
 h1#title {
-  color: [[setting:themecolor]];
+  color: [[setting:themetextcolor]];
 }
 
 #headerlogo {
@@ -2748,15 +2982,23 @@ h1#title {
   background: [[setting:themehovercolor]];
 }
 
+/* @group Social Buttons */
+
 button.website:hover,
 button.website:focus {
   background-color: [[setting:themecolor]];
 }
 
-.dropdown-menu>li>a:hover,
-.dropdown-menu>li>a:focus,
-.dropdown-submenu:hover>a,
-.dropdown-submenu:focus>a {
+/* @end */
+
+/* @end */
+
+/* @group Custom Menu */
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
   background-color: [[setting:themecolor]];
   background-image: -moz-linear-gradient(top, [[setting:themecolor]], [[setting:themehovercolor]]);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:themecolor]]), to([[setting:themehovercolor]]));
@@ -2765,16 +3007,20 @@ button.website:focus {
   background-image: linear-gradient(to bottom, [[setting:themecolor]], [[setting:themehovercolor]]);
 }
 
+/* @end */
+
+/* @group Theme Colours Menu */
+
 a .colours-default {
-  color: [[setting:themecolor]];
+  color: [[setting:themetextcolor]];
 }
 
 a:hover .colours-default {
-  color: [[setting:hovercolor]];
+  color: [[setting:themehovercolor]];
 }
 
 a .colours-alternative1 {
-  color: [[setting:alternativethemecolor1]];
+  color: [[setting:alternativethemeurlcolor1]];
 }
 
 a:hover .colours-alternative1 {
@@ -2782,7 +3028,7 @@ a:hover .colours-alternative1 {
 }
 
 a .colours-alternative2 {
-  color: [[setting:alternativethemecolor2]];
+  color: [[setting:alternativethemeurlcolor2]];
 }
 
 a:hover .colours-alternative2 {
@@ -2790,12 +3036,17 @@ a:hover .colours-alternative2 {
 }
 
 a .colours-alternative3 {
-  color: [[setting:alternativethemecolor3]];
+  color: [[setting:alternativethemeurlcolor3]];
 }
 
 a:hover .colours-alternative3 {
   color: [[setting:alternativethemehovercolor3]];
 }
+
+/* @end */
+
+/* @group Navbar
+ */
 
 .navbar {
   border-top: 1px solid [[setting:themehovercolor]] !important;
@@ -2807,25 +3058,30 @@ a:hover .colours-alternative3 {
   background-color: [[setting:themecolor]] !important;
 }
 
-.navbar .nav>li>a:hover {
+.navbar .nav > li > a:hover {
   background: [[setting:themehovercolor]] !important;
 }
 
-.navbar .nav .active>a,
-.navbar .nav .active>a:hover,
-.navbar .nav .active>a:focus,
-.navbar .nav li.dropdown.open>.dropdown-toggle,
-.navbar .nav li.dropdown.active>.dropdown-toggle,
-.navbar .nav li.dropdown.open.active>.dropdown-toggle {
+.navbar .nav .active > a,
+.navbar .nav .active > a:hover,
+.navbar .nav .active > a:focus,
+.navbar .nav li.dropdown.open > .dropdown-toggle,
+.navbar .nav li.dropdown.active > .dropdown-toggle,
+.navbar .nav li.dropdown.open.active > .dropdown-toggle {
   background: [[setting:themecolor]] !important;
 }
+
+/* @end */
+
+/* @group Course
+ */
 
 .course-content ul li.section.main {
   background: url([[pix:theme|bg/dot]]) bottom repeat-x;
 }
 
 .course-content ul li.section.main.clearfix.current {
-  box-shadow: 0 0 10px [[setting:themecolor]];
+  box-shadow: 0px 0px 10px [[setting:themecolor]];
 }
 
 h2.pagetitle {
@@ -2833,16 +3089,24 @@ h2.pagetitle {
 }
 
 .firstword {
-  color: [[setting:themecolor]] !important;
+  color: [[setting:themetextcolor]] !important;
 }
 
+/* @end */
+
+/* @group Forums */
+
 .forumpost .picture img {
-  box-shadow: 0 0 3px [[setting:themecolor]];
+  box-shadow: 0px 0px 3px [[setting:themecolor]];
 }
 
 .forumpost .subject {
-  color: [[setting:themecolor]];
+  color: [[setting:themetextcolor]];
 }
+
+/* @end */
+
+/* @group Buttons */
 
 .button a,
 .button a:visited {
@@ -2857,6 +3121,10 @@ a#button:visited {
 a#button:hover {
   background: [[setting:themehovercolor]];
 }
+
+/* @end */
+
+/* @group Slideshow */
 
 .da-slider {
   background-color: [[setting:slideshowcolor]];
@@ -2906,6 +3174,18 @@ a#button:hover {
   background: url([[setting:slide4image]]) no-repeat 0 0;
 }
 
+/* @end */
+
+/* @group Blocks */
+
+.block a {
+  color: [[setting:themeurlcolor]];
+}
+
+.block a:hover {
+  color: [[setting:themehovercolor]];
+}
+
 .block .header .title h2:before {
   color: [[setting:themecolor]];
 }
@@ -2932,6 +3212,10 @@ a#button:hover {
   font-family: [[setting:bodyfont]];
 }
 
+/* @end */
+
+/* @group Frontpage */
+
 #site-news-forum,
 #frontpage-course-list,
 #frontpage-category-combo,
@@ -2940,12 +3224,20 @@ a#button:hover {
 }
 
 #page-site-index h2.headingblock:before {
-  color: [[setting:themecolor]];
+  color: [[setting:themetextcolor]];
 }
+
+/* @group Home News Boxes */
 
 .service i {
   color: [[setting:themecolor]];
 }
+
+/* @end */
+
+/* @end */
+
+/* @group Footer */
 
 #page-footer {
   background: [[setting:footercolor]];
@@ -2960,7 +3252,7 @@ a#button:hover {
 
 #page-footer .footnote a,
 #page-footer .footnote a:visited {
-  color: [[setting:themecolor]] !important;
+  color: [[setting:themeurlcolor]] !important;
 }
 
 #page-footer .footnote a:hover {
@@ -2985,8 +3277,10 @@ a#button:hover {
   color: [[setting:themecolor]];
 }
 
+/* @group Footer Block Formatting */
+
 #page-footer .block .header .title h2:before {
-  color: [[setting:footerheadingcolor]];
+  color: [[setting:themecolor]];
 }
 
 #page-footer .block .header .title h2 {
@@ -3006,11 +3300,17 @@ a#button:hover {
 }
 
 #page-footer .block_rss_client .content a {
-  color: [[setting:themecolor]];
+  color: [[setting:themeurlcolor]];
 }
 
+/* @end */
+
+/* @end */
+
+/* @group Marketing Spots */
+
 .afeature {
-  background: #eee url([[pix:theme|bg/header]]) repeat;
+  background: #eeeeee url([[pix:theme|bg/header]]) repeat;
 }
 
 .afeature:hover {
@@ -3039,8 +3339,12 @@ a#button:hover {
   height: [[setting:marketingheight]];
 }
 
+/* @end */
+
+/* @group Profile Image */
+
 .myprofileitem.picture {
-  background: #eee url([[pix:theme|bg/header]]) repeat;
+  background: #eeeeee url([[pix:theme|bg/header]]) repeat;
 }
 
 .myprofileitem.picture:hover {
@@ -3048,22 +3352,30 @@ a#button:hover {
 }
 
 .socials img:hover {
-  -webkit-box-shadow: px 0 10px 0 [[setting:themecolor]];
-  -moz-box-shadow: 0 0 10px 0 [[setting:themecolor]];
-  box-shadow: 0 0 10px 0 [[setting:themecolor]];
+  -webkit-box-shadow: px 0px 10px 0px [[setting:themecolor]];
+  -moz-box-shadow: 0px 0px 10px 0px [[setting:themecolor]];
+  box-shadow: 0px 0px 10px 0px [[setting:themecolor]];
 }
 
-.nav-tabs>li>a {
+/* @end */
+
+/* @group Tabs */
+
+.nav-tabs > li > a {
   background-color: [[setting:themecolor]];
 }
 
-.nav-tabs>li>a:hover {
+.nav-tabs > li > a:hover {
   background-color: [[setting:themehovercolor]];
 }
 
 .nav-collapse {
   border: 1px solid [[setting:themecolor]];
 }
+
+/* @end */
+
+/* @group Performance Information */
 
 .performanceinfo var {
   background: [[setting:themecolor]];
@@ -3073,9 +3385,17 @@ a#button:hover {
   color: [[setting:themecolor]];
 }
 
+/* @end */
+
+/* @group Quiz */
+
 #page-mod-quiz-edit .questionbankwindow.block div.header {
   background: [[setting:themecolor]];
 }
+
+/* @end */
+
+/* @group Gradebook */
 
 table#user-grades th.item,
 table#user-grades th.categoryitem,
@@ -3099,6 +3419,10 @@ table#user-grades td.controls,
   border-radius: 3px;
 }
 
+/* @end */
+
+/* @group Back To Top */
+
 .back-to-top a {
   color: [[setting:themecolor]] !important;
 }
@@ -3106,6 +3430,10 @@ table#user-grades td.controls,
 .back-to-top a:hover {
   color: [[setting:themehovercolor]] !important;
 }
+
+/* @end */
+
+/* @group Headings */
 
 h1,
 h2,
@@ -3121,28 +3449,36 @@ h6,
   font-family: [[setting:headingfont]];
 }
 
+/* @end */
+
+/* @group Editicons */
+
 .commands {
-  color: [[setting:themecolor]] !important;
+  color: [[setting:themecolor]];
 }
 
 .commands a:hover {
-  color: [[setting:themehovercolor]] !important;
+  color: [[setting:themehovercolor]];
 }
 
 .actions a {
-  color: [[setting:themecolor]] !important;
+  color: [[setting:themeurlcolor]];
 }
 
 .actions a:hover,
 .actions a:focus,
 .actions a:active {
-  color: [[setting:themehovercolor]] !important;
+  color: [[setting:themehovercolor]];
 }
 
 .moodle-core-dragdrop-draghandle:before,
 .moodle-core-dragdrop-draghandle a {
-  color: [[setting:themecolor]] !important;
+  color: [[setting:themeurlcolor]];
 }
+
+/* @end */
+
+/* @group Edit Buttons */
 
 .commands {
   font-family: FontAwesome;
@@ -3361,9 +3697,11 @@ h6,
   display: none;
 }
 
+/* @end */
+
 body.essential-colours-alternative1 {
   border-top-color: [[setting:alternativethemecolor1]];
-  color: [[setting:alternativethemecolor1]];
+  color: [[setting:alternativethemetextcolor1]];
 }
 
 body.essential-colours-alternative1 h1,
@@ -3372,12 +3710,12 @@ body.essential-colours-alternative1 h3,
 body.essential-colours-alternative1 h4,
 body.essential-colours-alternative1 h5,
 body.essential-colours-alternative1 h6 {
-  color: [[setting:alternativethemecolor1]];
+  color: [[setting:alternativethemetextcolor1]];
 }
 
 .essential-colours-alternative1 a,
 .essential-colours-alternative1 a:visited {
-  color: [[setting:alternativethemecolor1]];
+  color: [[setting:alternativethemeurlcolor1]];
 }
 
 .essential-colours-alternative1 a:hover {
@@ -3385,15 +3723,16 @@ body.essential-colours-alternative1 h6 {
 }
 
 .essential-colours-alternative1 .color {
-  color: [[setting:alternativethemecolor1]];
+  color: [[setting:alternativethemetextcolor1]];
 }
 
 .essential-colours-alternative1 h1#title {
-  color: [[setting:alternativethemecolor1]];
+  color: [[setting:alternativethemetextcolor1]];
 }
 
 .essential-colours-alternative1 #headerlogo {
   border-left-color: [[setting:alternativethemecolor1]];
+  color: [[setting:alternativethemecolor1]];
 }
 
 .essential-colours-alternative1 .breadcrumb-button input[type="submit"] {
@@ -3404,15 +3743,43 @@ body.essential-colours-alternative1 h6 {
   background: [[setting:alternativethemehovercolor1]];
 }
 
+.essential-colours-alternative1 .breadcrumb-nav {
+  /** Some breadcrumb style **/
+}
+
+.essential-colours-alternative1 .breadcrumb-nav ul.breadcrumb.style1 li {
+  background: [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .breadcrumb-nav ul.breadcrumb.style1 li:after {
+  border-right: 30px solid [[setting:alternativethemecolor1]];
+}
+
+.essential-colours-alternative1 .breadcrumb-nav ul.breadcrumb.style1 li:hover {
+  background: [[setting:alternativethemehovercolor1]];
+}
+
+.essential-colours-alternative1 .breadcrumb-nav ul.breadcrumb.style1 li:hover:after {
+  border-right-color: [[setting:alternativethemehovercolor1]] !important;
+}
+
+.essential-colours-alternative1 .breadcrumb-nav ul.breadcrumb.style2 li a {
+  color: [[setting:alternativethemetextcolor1]];
+}
+
+.essential-colours-alternative1 .breadcrumb-nav ul.breadcrumb.style2 li a:hover {
+  color: [[setting:alternativethemehovercolor1]];
+}
+
 .essential-colours-alternative1 a.website:hover,
 .essential-colours-alternative1 a.website:focus {
   background-color: [[setting:alternativethemecolor1]];
 }
 
-.essential-colours-alternative1 .dropdown-menu>li>a:hover,
-.essential-colours-alternative1 .dropdown-menu>li>a:focus,
-.essential-colours-alternative1 .dropdown-submenu:hover>a,
-.essential-colours-alternative1 .dropdown-submenu:focus>a {
+.essential-colours-alternative1 .dropdown-menu > li > a:hover,
+.essential-colours-alternative1 .dropdown-menu > li > a:focus,
+.essential-colours-alternative1 .dropdown-submenu:hover > a,
+.essential-colours-alternative1 .dropdown-submenu:focus > a {
   background-color: [[setting:alternativethemecolor1]];
   background-image: -moz-linear-gradient(top, [[setting:alternativethemecolor1]], [[setting:alternativethemehovercolor1]]);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemecolor1]]), to([[setting:alternativethemehovercolor1]]));
@@ -3431,24 +3798,24 @@ body.essential-colours-alternative1 h6 {
   border-left-color: [[setting:alternativethemehovercolor1]];
 }
 
-.essential-colours-alternative1 .navbar .nav>li>a {
+.essential-colours-alternative1 .navbar .nav > li > a {
   border-right-color: [[setting:alternativethemehovercolor1]];
 }
 
-.essential-colours-alternative1 .navbar .nav>li>a:hover {
+.essential-colours-alternative1 .navbar .nav > li > a:hover {
   background: [[setting:alternativethemehovercolor1]] !important;
 }
 
-.essential-colours-alternative1 .navbar .nav .active>a,
-.essential-colours-alternative1 .navbar .nav .active>a:hover,
-.essential-colours-alternative1 .navbar .nav .active>a:focus,
-.essential-colours-alternative1 .navbar .nav li.dropdown.open>.dropdown-toggle,
-.essential-colours-alternative1 .navbar .nav li.dropdown.active>.dropdown-toggle,
-.essential-colours-alternative1 .navbar .nav li.dropdown.open.active>.dropdown-toggle {
+.essential-colours-alternative1 .navbar .nav .active > a,
+.essential-colours-alternative1 .navbar .nav .active > a:hover,
+.essential-colours-alternative1 .navbar .nav .active > a:focus,
+.essential-colours-alternative1 .navbar .nav li.dropdown.open > .dropdown-toggle,
+.essential-colours-alternative1 .navbar .nav li.dropdown.active > .dropdown-toggle,
+.essential-colours-alternative1 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
   background: [[setting:alternativethemecolor1]] !important;
 }
 
-.essential-colours-alternative1 .navbar .nav>li>a {
+.essential-colours-alternative1 .navbar .nav > li > a {
   border-right-color: [[setting:alternativethemehovercolor1]];
 }
 
@@ -3457,7 +3824,7 @@ body.essential-colours-alternative1 h6 {
 }
 
 .essential-colours-alternative1 .firstword {
-  color: [[setting:alternativethemecolor1]] !important;
+  color: [[setting:alternativethemetextcolor1]] !important;
 }
 
 .essential-colours-alternative1 .forumpost .picture img {
@@ -3465,7 +3832,7 @@ body.essential-colours-alternative1 h6 {
 }
 
 .essential-colours-alternative1 .forumpost .subject {
-  color: [[setting:alternativethemecolor1]];
+  color: [[setting:alternativethemetextcolor1]];
 }
 
 .essential-colours-alternative1 .button a,
@@ -3510,16 +3877,24 @@ body.essential-colours-alternative1 h6 {
   background-color: [[setting:alternativethemehovercolor1]];
 }
 
+.essential-colours-alternative1 .block a {
+  color: [[setting:alternativethemeurlcolor1]];
+}
+
+.essential-colours-alternative1 .block a:hover {
+  color: [[setting:alternativethemehovercolor1]];
+}
+
 .essential-colours-alternative1 .block .header .title h2:before {
   color: [[setting:alternativethemecolor1]];
 }
 
 .essential-colours-alternative1 .block .header .title h2 {
-  color: [[setting:alternativethemecolor1]];
+  color: [[setting:alternativethemetextcolor1]];
 }
 
 .essential-colours-alternative1 .block_rss_client .footer a {
-  background: [[setting:alternativethemecolor1]];
+  background: [[setting:alternativethemeurlcolor1]];
 }
 
 .essential-colours-alternative1 .block_rss_client .footer a:hover {
@@ -3535,7 +3910,7 @@ body.essential-colours-alternative1 h6 {
 }
 
 .essential-colours-alternative1 #page-site-index h2.headingblock:before {
-  color: [[setting:alternativethemecolor1]];
+  color: [[setting:alternativethemetextcolor1]];
 }
 
 .essential-colours-alternative1 .service i {
@@ -3548,7 +3923,7 @@ body.essential-colours-alternative1 h6 {
 
 .essential-colours-alternative1 #page-footer .footnote a,
 .essential-colours-alternative1 #page-footer .footnote a:visited {
-  color: [[setting:alternativethemecolor1]] !important;
+  color: [[setting:alternativethemeurlcolor1]] !important;
 }
 
 .essential-colours-alternative1 #page-footer .block_html ul li:before,
@@ -3557,11 +3932,11 @@ body.essential-colours-alternative1 h6 {
 }
 
 .essential-colours-alternative1 .tree_item.branch:before {
-  color: [[setting:alternativethemecolor1]];
+  color: #999999;
 }
 
 .essential-colours-alternative1 .block #icon {
-  color: [[setting:alternativethemecolor1]];
+  color: #999999;
 }
 
 .essential-colours-alternative1 #page-footer .block_login input[type="submit"] {
@@ -3573,7 +3948,7 @@ body.essential-colours-alternative1 h6 {
 }
 
 .essential-colours-alternative1 #page-footer .block_rss_client .content a {
-  color: [[setting:alternativethemecolor1]];
+  color: [[setting:alternativethemeurlcolor1]];
 }
 
 .essential-colours-alternative1 .afeature:hover {
@@ -3588,17 +3963,21 @@ body.essential-colours-alternative1 h6 {
   border-color: [[setting:alternativethemecolor1]];
 }
 
+.essential-colours-alternative1.socials p {
+  color: [[setting:alternativethemetextcolor1]];
+}
+
 .essential-colours-alternative1 .socials img:hover {
   -webkit-box-shadow: 0 0 10px 0 [[setting:alternativethemecolor1]];
   -moz-box-shadow: 0 0 10px 0 [[setting:alternativethemecolor1]];
   box-shadow: 0 0 10px 0 [[setting:alternativethemecolor1]];
 }
 
-.essential-colours-alternative1 .nav-tabs>li>a {
+.essential-colours-alternative1 .nav-tabs > li > a {
   background-color: [[setting:alternativethemecolor1]];
 }
 
-.essential-colours-alternative1 .nav-tabs>li>a:hover {
+.essential-colours-alternative1 .nav-tabs > li > a:hover {
   background-color: [[setting:alternativethemehovercolor1]];
 }
 
@@ -3642,7 +4021,7 @@ body.essential-colours-alternative1 h6 {
   background: [[setting:alternativethemecolor1]];
 }
 
-.essential-colours-alternative1 .course_category_tree .category[data-categoryid]>.info>.categoryname a:before {
+.essential-colours-alternative1 .course_category_tree .category[data-categoryid] > .info > .categoryname a:before {
   color: [[setting:alternativethemecolor1]];
 }
 
@@ -3650,7 +4029,11 @@ body.essential-colours-alternative1 h6 {
   background: [[setting:alternativethemecolor1]];
 }
 
-#dock .dockedtitle {
+.essential-colours-alternative1 #dock .dockedtitle h2 {
+  color: [[setting:alternativethemetextcolor1]];
+}
+
+.essential-colours-alternative1 #dock .dockedtitle {
   background-color: [[setting:alternativethemecolor1]];
 }
 
@@ -3661,6 +4044,10 @@ body.essential-colours-alternative1 h6 {
 .essential-colours-alternative1 #dock .dockedtitle.disabled,
 .essential-colours-alternative1 #dock .dockedtitle[disabled] {
   background-color: [[setting:alternativethemehovercolor1]];
+}
+
+.essential-colours-alternative1 #dockeditempanel .dockeditempanel_hd h2 {
+  color: [[setting:alternativethemecolor1]];
 }
 
 .essential-colours-alternative1 .commands {
@@ -3680,7 +4067,7 @@ body.essential-colours-alternative1 h6 {
 }
 
 .essential-colours-alternative1 #section_footer {
-  color: [[setting:alternativethemecolor1]];
+  color: [[setting:alternativethemetextcolor1]];
 }
 
 .essential-colours-alternative1 .nav_icon {
@@ -3691,14 +4078,55 @@ body.essential-colours-alternative1 h6 {
   color: [[setting:alternativethemehovercolor1]];
 }
 
+.essential-colours-alternative1 .actions a {
+  color: [[setting:alternativethemeurlcolor1]];
+}
+
+.essential-colours-alternative1 .moodle-core-dragdrop-draghandle:before,
+.essential-colours-alternative1 .moodle-core-dragdrop-draghandle a {
+  color: [[setting:alternativethemeurlcolor1]];
+}
+
+.essential-colours-alternative1 select,
+.essential-colours-alternative1 textarea,
+.essential-colours-alternative1 input[type="text"],
+.essential-colours-alternative1 input[type="password"],
+.essential-colours-alternative1 input[type="datetime"],
+.essential-colours-alternative1 input[type="datetime-local"],
+.essential-colours-alternative1 input[type="date"],
+.essential-colours-alternative1 input[type="month"],
+.essential-colours-alternative1 input[type="time"],
+.essential-colours-alternative1 input[type="week"],
+.essential-colours-alternative1 input[type="number"],
+.essential-colours-alternative1 input[type="email"],
+.essential-colours-alternative1 input[type="url"],
+.essential-colours-alternative1 input[type="search"],
+.essential-colours-alternative1 input[type="tel"],
+.essential-colours-alternative1 input[type="color"],
+.essential-colours-alternative1 .uneditable-input,
+.essential-colours-alternative1 .form-item .form-description,
+.essential-colours-alternative1 .form-defaultinfo,
+.essential-colours-alternative1 .form-label .form-shortname {
+  color: [[setting:alternativethemetextcolor1]];
+}
+
 body.essential-colours-alternative2 {
   border-top-color: [[setting:alternativethemecolor2]];
-  color: [[setting:alternativethemecolor2]];
+  color: [[setting:alternativethemetextcolor2]];
+}
+
+body.essential-colours-alternative2 h1,
+body.essential-colours-alternative2 h2,
+body.essential-colours-alternative2 h3,
+body.essential-colours-alternative2 h4,
+body.essential-colours-alternative2 h5,
+body.essential-colours-alternative2 h6 {
+  color: [[setting:alternativethemetextcolor2]];
 }
 
 .essential-colours-alternative2 a,
 .essential-colours-alternative2 a:visited {
-  color: [[setting:alternativethemecolor2]];
+  color: [[setting:alternativethemeurlcolor2]];
 }
 
 .essential-colours-alternative2 a:hover {
@@ -3706,15 +4134,16 @@ body.essential-colours-alternative2 {
 }
 
 .essential-colours-alternative2 .color {
-  color: [[setting:alternativethemecolor2]];
+  color: [[setting:alternativethemetextcolor2]];
 }
 
 .essential-colours-alternative2 h1#title {
-  color: [[setting:alternativethemecolor2]];
+  color: [[setting:alternativethemetextcolor2]];
 }
 
 .essential-colours-alternative2 #headerlogo {
   border-left-color: [[setting:alternativethemecolor2]];
+  color: [[setting:alternativethemecolor2]];
 }
 
 .essential-colours-alternative2 .breadcrumb-button input[type="submit"] {
@@ -3725,15 +4154,43 @@ body.essential-colours-alternative2 {
   background: [[setting:alternativethemehovercolor2]];
 }
 
+.essential-colours-alternative2 .breadcrumb-nav {
+  /** Some breadcrumb style **/
+}
+
+.essential-colours-alternative2 .breadcrumb-nav ul.breadcrumb.style1 li {
+  background: [[setting:alternativethemecolor2]];
+}
+
+.essential-colours-alternative2 .breadcrumb-nav ul.breadcrumb.style1 li:after {
+  border-right: 30px solid [[setting:alternativethemecolor2]];
+}
+
+.essential-colours-alternative2 .breadcrumb-nav ul.breadcrumb.style1 li:hover {
+  background: [[setting:alternativethemehovercolor2]];
+}
+
+.essential-colours-alternative2 .breadcrumb-nav ul.breadcrumb.style1 li:hover:after {
+  border-right-color: [[setting:alternativethemehovercolor2]] !important;
+}
+
+.essential-colours-alternative2 .breadcrumb-nav ul.breadcrumb.style2 li a {
+  color: [[setting:alternativethemetextcolor2]];
+}
+
+.essential-colours-alternative2 .breadcrumb-nav ul.breadcrumb.style2 li a:hover {
+  color: [[setting:alternativethemehovercolor2]];
+}
+
 .essential-colours-alternative2 a.website:hover,
 .essential-colours-alternative2 a.website:focus {
   background-color: [[setting:alternativethemecolor2]];
 }
 
-.essential-colours-alternative2 .dropdown-menu>li>a:hover,
-.essential-colours-alternative2 .dropdown-menu>li>a:focus,
-.essential-colours-alternative2 .dropdown-submenu:hover>a,
-.essential-colours-alternative2 .dropdown-submenu:focus>a {
+.essential-colours-alternative2 .dropdown-menu > li > a:hover,
+.essential-colours-alternative2 .dropdown-menu > li > a:focus,
+.essential-colours-alternative2 .dropdown-submenu:hover > a,
+.essential-colours-alternative2 .dropdown-submenu:focus > a {
   background-color: [[setting:alternativethemecolor2]];
   background-image: -moz-linear-gradient(top, [[setting:alternativethemecolor2]], [[setting:alternativethemehovercolor2]]);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemecolor2]]), to([[setting:alternativethemehovercolor2]]));
@@ -3752,24 +4209,24 @@ body.essential-colours-alternative2 {
   border-left-color: [[setting:alternativethemehovercolor2]];
 }
 
-.essential-colours-alternative2 .navbar .nav>li>a {
+.essential-colours-alternative2 .navbar .nav > li > a {
   border-right-color: [[setting:alternativethemehovercolor2]];
 }
 
-.essential-colours-alternative2 .navbar .nav>li>a:hover {
+.essential-colours-alternative2 .navbar .nav > li > a:hover {
   background: [[setting:alternativethemehovercolor2]] !important;
 }
 
-.essential-colours-alternative2 .navbar .nav .active>a,
-.essential-colours-alternative2 .navbar .nav .active>a:hover,
-.essential-colours-alternative2 .navbar .nav .active>a:focus,
-.essential-colours-alternative2 .navbar .nav li.dropdown.open>.dropdown-toggle,
-.essential-colours-alternative2 .navbar .nav li.dropdown.active>.dropdown-toggle,
-.essential-colours-alternative2 .navbar .nav li.dropdown.open.active>.dropdown-toggle {
+.essential-colours-alternative2 .navbar .nav .active > a,
+.essential-colours-alternative2 .navbar .nav .active > a:hover,
+.essential-colours-alternative2 .navbar .nav .active > a:focus,
+.essential-colours-alternative2 .navbar .nav li.dropdown.open > .dropdown-toggle,
+.essential-colours-alternative2 .navbar .nav li.dropdown.active > .dropdown-toggle,
+.essential-colours-alternative2 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
   background: [[setting:alternativethemecolor2]] !important;
 }
 
-.essential-colours-alternative2 .navbar .nav>li>a {
+.essential-colours-alternative2 .navbar .nav > li > a {
   border-right-color: [[setting:alternativethemehovercolor2]];
 }
 
@@ -3778,7 +4235,7 @@ body.essential-colours-alternative2 {
 }
 
 .essential-colours-alternative2 .firstword {
-  color: [[setting:alternativethemecolor2]] !important;
+  color: [[setting:alternativethemetextcolor2]] !important;
 }
 
 .essential-colours-alternative2 .forumpost .picture img {
@@ -3786,7 +4243,7 @@ body.essential-colours-alternative2 {
 }
 
 .essential-colours-alternative2 .forumpost .subject {
-  color: [[setting:alternativethemecolor2]];
+  color: [[setting:alternativethemetextcolor2]];
 }
 
 .essential-colours-alternative2 .button a,
@@ -3831,16 +4288,24 @@ body.essential-colours-alternative2 {
   background-color: [[setting:alternativethemehovercolor2]];
 }
 
+.essential-colours-alternative2 .block a {
+  color: [[setting:alternativethemeurlcolor2]];
+}
+
+.essential-colours-alternative2 .block a:hover {
+  color: [[setting:alternativethemehovercolor2]];
+}
+
 .essential-colours-alternative2 .block .header .title h2:before {
   color: [[setting:alternativethemecolor2]];
 }
 
 .essential-colours-alternative2 .block .header .title h2 {
-  color: [[setting:alternativethemecolor2]];
+  color: [[setting:alternativethemetextcolor2]];
 }
 
 .essential-colours-alternative2 .block_rss_client .footer a {
-  background: [[setting:alternativethemecolor2]];
+  background: [[setting:alternativethemeurlcolor2]];
 }
 
 .essential-colours-alternative2 .block_rss_client .footer a:hover {
@@ -3855,17 +4320,8 @@ body.essential-colours-alternative2 {
   background: [[setting:alternativethemehovercolor2]];
 }
 
-body.essential-colours-alternative2 h1,
-body.essential-colours-alternative2 h2,
-body.essential-colours-alternative2 h3,
-body.essential-colours-alternative2 h4,
-body.essential-colours-alternative2 h5,
-body.essential-colours-alternative2 h6 {
-  color: [[setting:alternativethemecolor2]];
-}
-
 .essential-colours-alternative2 #page-site-index h2.headingblock:before {
-  color: [[setting:alternativethemecolor2]];
+  color: [[setting:alternativethemetextcolor2]];
 }
 
 .essential-colours-alternative2 .service i {
@@ -3878,7 +4334,7 @@ body.essential-colours-alternative2 h6 {
 
 .essential-colours-alternative2 #page-footer .footnote a,
 .essential-colours-alternative2 #page-footer .footnote a:visited {
-  color: [[setting:alternativethemecolor2]] !important;
+  color: [[setting:alternativethemeurlcolor2]] !important;
 }
 
 .essential-colours-alternative2 #page-footer .block_html ul li:before,
@@ -3887,11 +4343,11 @@ body.essential-colours-alternative2 h6 {
 }
 
 .essential-colours-alternative2 .tree_item.branch:before {
-  color: [[setting:alternativethemecolor2]];
+  color: #999999;
 }
 
 .essential-colours-alternative2 .block #icon {
-  color: [[setting:alternativethemecolor2]];
+  color: #999999;
 }
 
 .essential-colours-alternative2 #page-footer .block_login input[type="submit"] {
@@ -3903,7 +4359,7 @@ body.essential-colours-alternative2 h6 {
 }
 
 .essential-colours-alternative2 #page-footer .block_rss_client .content a {
-  color: [[setting:alternativethemecolor2]];
+  color: [[setting:alternativethemeurlcolor2]];
 }
 
 .essential-colours-alternative2 .afeature:hover {
@@ -3918,17 +4374,21 @@ body.essential-colours-alternative2 h6 {
   border-color: [[setting:alternativethemecolor2]];
 }
 
+.essential-colours-alternative2.socials p {
+  color: [[setting:alternativethemetextcolor2]];
+}
+
 .essential-colours-alternative2 .socials img:hover {
   -webkit-box-shadow: 0 0 10px 0 [[setting:alternativethemecolor2]];
   -moz-box-shadow: 0 0 10px 0 [[setting:alternativethemecolor2]];
   box-shadow: 0 0 10px 0 [[setting:alternativethemecolor2]];
 }
 
-.essential-colours-alternative2 .nav-tabs>li>a {
+.essential-colours-alternative2 .nav-tabs > li > a {
   background-color: [[setting:alternativethemecolor2]];
 }
 
-.essential-colours-alternative2 .nav-tabs>li>a:hover {
+.essential-colours-alternative2 .nav-tabs > li > a:hover {
   background-color: [[setting:alternativethemehovercolor2]];
 }
 
@@ -3972,7 +4432,7 @@ body.essential-colours-alternative2 h6 {
   background: [[setting:alternativethemecolor2]];
 }
 
-.essential-colours-alternative2 .course_category_tree .category[data-categoryid]>.info>.categoryname a:before {
+.essential-colours-alternative2 .course_category_tree .category[data-categoryid] > .info > .categoryname a:before {
   color: [[setting:alternativethemecolor2]];
 }
 
@@ -3980,7 +4440,11 @@ body.essential-colours-alternative2 h6 {
   background: [[setting:alternativethemecolor2]];
 }
 
-#dock .dockedtitle {
+.essential-colours-alternative2 #dock .dockedtitle h2 {
+  color: [[setting:alternativethemetextcolor2]];
+}
+
+.essential-colours-alternative2 #dock .dockedtitle {
   background-color: [[setting:alternativethemecolor2]];
 }
 
@@ -3991,6 +4455,10 @@ body.essential-colours-alternative2 h6 {
 .essential-colours-alternative2 #dock .dockedtitle.disabled,
 .essential-colours-alternative2 #dock .dockedtitle[disabled] {
   background-color: [[setting:alternativethemehovercolor2]];
+}
+
+.essential-colours-alternative2 #dockeditempanel .dockeditempanel_hd h2 {
+  color: [[setting:alternativethemecolor2]];
 }
 
 .essential-colours-alternative2 .commands {
@@ -4010,7 +4478,7 @@ body.essential-colours-alternative2 h6 {
 }
 
 .essential-colours-alternative2 #section_footer {
-  color: [[setting:alternativethemecolor2]];
+  color: [[setting:alternativethemetextcolor2]];
 }
 
 .essential-colours-alternative2 .nav_icon {
@@ -4021,9 +4489,41 @@ body.essential-colours-alternative2 h6 {
   color: [[setting:alternativethemehovercolor2]];
 }
 
+.essential-colours-alternative2 .actions a {
+  color: [[setting:alternativethemeurlcolor2]];
+}
+
+.essential-colours-alternative2 .moodle-core-dragdrop-draghandle:before,
+.essential-colours-alternative2 .moodle-core-dragdrop-draghandle a {
+  color: [[setting:alternativethemeurlcolor2]];
+}
+
+.essential-colours-alternative2 select,
+.essential-colours-alternative2 textarea,
+.essential-colours-alternative2 input[type="text"],
+.essential-colours-alternative2 input[type="password"],
+.essential-colours-alternative2 input[type="datetime"],
+.essential-colours-alternative2 input[type="datetime-local"],
+.essential-colours-alternative2 input[type="date"],
+.essential-colours-alternative2 input[type="month"],
+.essential-colours-alternative2 input[type="time"],
+.essential-colours-alternative2 input[type="week"],
+.essential-colours-alternative2 input[type="number"],
+.essential-colours-alternative2 input[type="email"],
+.essential-colours-alternative2 input[type="url"],
+.essential-colours-alternative2 input[type="search"],
+.essential-colours-alternative2 input[type="tel"],
+.essential-colours-alternative2 input[type="color"],
+.essential-colours-alternative2 .uneditable-input,
+.essential-colours-alternative2 .form-item .form-description,
+.essential-colours-alternative2 .form-defaultinfo,
+.essential-colours-alternative2 .form-label .form-shortname {
+  color: [[setting:alternativethemetextcolor2]];
+}
+
 body.essential-colours-alternative3 {
   border-top-color: [[setting:alternativethemecolor3]];
-  color: [[setting:alternativethemecolor3]];
+  color: [[setting:alternativethemetextcolor3]];
 }
 
 body.essential-colours-alternative3 h1,
@@ -4032,12 +4532,12 @@ body.essential-colours-alternative3 h3,
 body.essential-colours-alternative3 h4,
 body.essential-colours-alternative3 h5,
 body.essential-colours-alternative3 h6 {
-  color: [[setting:alternativethemecolor3]];
+  color: [[setting:alternativethemetextcolor3]];
 }
 
 .essential-colours-alternative3 a,
 .essential-colours-alternative3 a:visited {
-  color: [[setting:alternativethemecolor3]];
+  color: [[setting:alternativethemeurlcolor3]];
 }
 
 .essential-colours-alternative3 a:hover {
@@ -4045,15 +4545,16 @@ body.essential-colours-alternative3 h6 {
 }
 
 .essential-colours-alternative3 .color {
-  color: [[setting:alternativethemecolor3]];
+  color: [[setting:alternativethemetextcolor3]];
 }
 
 .essential-colours-alternative3 h1#title {
-  color: [[setting:alternativethemecolor3]];
+  color: [[setting:alternativethemetextcolor3]];
 }
 
 .essential-colours-alternative3 #headerlogo {
   border-left-color: [[setting:alternativethemecolor3]];
+  color: [[setting:alternativethemecolor3]];
 }
 
 .essential-colours-alternative3 .breadcrumb-button input[type="submit"] {
@@ -4064,15 +4565,43 @@ body.essential-colours-alternative3 h6 {
   background: [[setting:alternativethemehovercolor3]];
 }
 
+.essential-colours-alternative3 .breadcrumb-nav {
+  /** Some breadcrumb style **/
+}
+
+.essential-colours-alternative3 .breadcrumb-nav ul.breadcrumb.style1 li {
+  background: [[setting:alternativethemecolor3]];
+}
+
+.essential-colours-alternative3 .breadcrumb-nav ul.breadcrumb.style1 li:after {
+  border-right: 30px solid [[setting:alternativethemecolor3]];
+}
+
+.essential-colours-alternative3 .breadcrumb-nav ul.breadcrumb.style1 li:hover {
+  background: [[setting:alternativethemehovercolor3]];
+}
+
+.essential-colours-alternative3 .breadcrumb-nav ul.breadcrumb.style1 li:hover:after {
+  border-right-color: [[setting:alternativethemehovercolor3]] !important;
+}
+
+.essential-colours-alternative3 .breadcrumb-nav ul.breadcrumb.style2 li a {
+  color: [[setting:alternativethemetextcolor3]];
+}
+
+.essential-colours-alternative3 .breadcrumb-nav ul.breadcrumb.style2 li a:hover {
+  color: [[setting:alternativethemehovercolor3]];
+}
+
 .essential-colours-alternative3 a.website:hover,
 .essential-colours-alternative3 a.website:focus {
   background-color: [[setting:alternativethemecolor3]];
 }
 
-.essential-colours-alternative3 .dropdown-menu>li>a:hover,
-.essential-colours-alternative3 .dropdown-menu>li>a:focus,
-.essential-colours-alternative3 .dropdown-submenu:hover>a,
-.essential-colours-alternative3 .dropdown-submenu:focus>a {
+.essential-colours-alternative3 .dropdown-menu > li > a:hover,
+.essential-colours-alternative3 .dropdown-menu > li > a:focus,
+.essential-colours-alternative3 .dropdown-submenu:hover > a,
+.essential-colours-alternative3 .dropdown-submenu:focus > a {
   background-color: [[setting:alternativethemecolor3]];
   background-image: -moz-linear-gradient(top, [[setting:alternativethemecolor3]], [[setting:alternativethemehovercolor3]]);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemecolor3]]), to([[setting:alternativethemehovercolor3]]));
@@ -4091,24 +4620,24 @@ body.essential-colours-alternative3 h6 {
   border-left-color: [[setting:alternativethemehovercolor3]];
 }
 
-.essential-colours-alternative3 .navbar .nav>li>a {
+.essential-colours-alternative3 .navbar .nav > li > a {
   border-right-color: [[setting:alternativethemehovercolor3]];
 }
 
-.essential-colours-alternative3 .navbar .nav>li>a:hover {
+.essential-colours-alternative3 .navbar .nav > li > a:hover {
   background: [[setting:alternativethemehovercolor3]] !important;
 }
 
-.essential-colours-alternative3 .navbar .nav .active>a,
-.essential-colours-alternative3 .navbar .nav .active>a:hover,
-.essential-colours-alternative3 .navbar .nav .active>a:focus,
-.essential-colours-alternative3 .navbar .nav li.dropdown.open>.dropdown-toggle,
-.essential-colours-alternative3 .navbar .nav li.dropdown.active>.dropdown-toggle,
-.essential-colours-alternative3 .navbar .nav li.dropdown.open.active>.dropdown-toggle {
+.essential-colours-alternative3 .navbar .nav .active > a,
+.essential-colours-alternative3 .navbar .nav .active > a:hover,
+.essential-colours-alternative3 .navbar .nav .active > a:focus,
+.essential-colours-alternative3 .navbar .nav li.dropdown.open > .dropdown-toggle,
+.essential-colours-alternative3 .navbar .nav li.dropdown.active > .dropdown-toggle,
+.essential-colours-alternative3 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
   background: [[setting:alternativethemecolor3]] !important;
 }
 
-.essential-colours-alternative3 .navbar .nav>li>a {
+.essential-colours-alternative3 .navbar .nav > li > a {
   border-right-color: [[setting:alternativethemehovercolor3]];
 }
 
@@ -4117,7 +4646,7 @@ body.essential-colours-alternative3 h6 {
 }
 
 .essential-colours-alternative3 .firstword {
-  color: [[setting:alternativethemecolor3]] !important;
+  color: [[setting:alternativethemetextcolor3]] !important;
 }
 
 .essential-colours-alternative3 .forumpost .picture img {
@@ -4125,7 +4654,7 @@ body.essential-colours-alternative3 h6 {
 }
 
 .essential-colours-alternative3 .forumpost .subject {
-  color: [[setting:alternativethemecolor3]];
+  color: [[setting:alternativethemetextcolor3]];
 }
 
 .essential-colours-alternative3 .button a,
@@ -4170,16 +4699,24 @@ body.essential-colours-alternative3 h6 {
   background-color: [[setting:alternativethemehovercolor3]];
 }
 
+.essential-colours-alternative3 .block a {
+  color: [[setting:alternativethemeurlcolor3]];
+}
+
+.essential-colours-alternative3 .block a:hover {
+  color: [[setting:alternativethemehovercolor3]];
+}
+
 .essential-colours-alternative3 .block .header .title h2:before {
   color: [[setting:alternativethemecolor3]];
 }
 
 .essential-colours-alternative3 .block .header .title h2 {
-  color: [[setting:alternativethemecolor3]];
+  color: [[setting:alternativethemetextcolor3]];
 }
 
 .essential-colours-alternative3 .block_rss_client .footer a {
-  background: [[setting:alternativethemecolor3]];
+  background: [[setting:alternativethemeurlcolor3]];
 }
 
 .essential-colours-alternative3 .block_rss_client .footer a:hover {
@@ -4195,7 +4732,7 @@ body.essential-colours-alternative3 h6 {
 }
 
 .essential-colours-alternative3 #page-site-index h2.headingblock:before {
-  color: [[setting:alternativethemecolor3]];
+  color: [[setting:alternativethemetextcolor3]];
 }
 
 .essential-colours-alternative3 .service i {
@@ -4208,7 +4745,7 @@ body.essential-colours-alternative3 h6 {
 
 .essential-colours-alternative3 #page-footer .footnote a,
 .essential-colours-alternative3 #page-footer .footnote a:visited {
-  color: [[setting:alternativethemecolor3]] !important;
+  color: [[setting:alternativethemeurlcolor3]] !important;
 }
 
 .essential-colours-alternative3 #page-footer .block_html ul li:before,
@@ -4217,11 +4754,11 @@ body.essential-colours-alternative3 h6 {
 }
 
 .essential-colours-alternative3 .tree_item.branch:before {
-  color: [[setting:alternativethemecolor3]];
+  color: #999999;
 }
 
 .essential-colours-alternative3 .block #icon {
-  color: [[setting:alternativethemecolor3]];
+  color: #999999;
 }
 
 .essential-colours-alternative3 #page-footer .block_login input[type="submit"] {
@@ -4233,7 +4770,7 @@ body.essential-colours-alternative3 h6 {
 }
 
 .essential-colours-alternative3 #page-footer .block_rss_client .content a {
-  color: [[setting:alternativethemecolor3]];
+  color: [[setting:alternativethemeurlcolor3]];
 }
 
 .essential-colours-alternative3 .afeature:hover {
@@ -4248,17 +4785,21 @@ body.essential-colours-alternative3 h6 {
   border-color: [[setting:alternativethemecolor3]];
 }
 
+.essential-colours-alternative3.socials p {
+  color: [[setting:alternativethemetextcolor3]];
+}
+
 .essential-colours-alternative3 .socials img:hover {
   -webkit-box-shadow: 0 0 10px 0 [[setting:alternativethemecolor3]];
   -moz-box-shadow: 0 0 10px 0 [[setting:alternativethemecolor3]];
   box-shadow: 0 0 10px 0 [[setting:alternativethemecolor3]];
 }
 
-.essential-colours-alternative3 .nav-tabs>li>a {
+.essential-colours-alternative3 .nav-tabs > li > a {
   background-color: [[setting:alternativethemecolor3]];
 }
 
-.essential-colours-alternative3 .nav-tabs>li>a:hover {
+.essential-colours-alternative3 .nav-tabs > li > a:hover {
   background-color: [[setting:alternativethemehovercolor3]];
 }
 
@@ -4302,7 +4843,7 @@ body.essential-colours-alternative3 h6 {
   background: [[setting:alternativethemecolor3]];
 }
 
-.essential-colours-alternative3 .course_category_tree .category[data-categoryid]>.info>.categoryname a:before {
+.essential-colours-alternative3 .course_category_tree .category[data-categoryid] > .info > .categoryname a:before {
   color: [[setting:alternativethemecolor3]];
 }
 
@@ -4310,7 +4851,11 @@ body.essential-colours-alternative3 h6 {
   background: [[setting:alternativethemecolor3]];
 }
 
-#dock .dockedtitle {
+.essential-colours-alternative3 #dock .dockedtitle h2 {
+  color: [[setting:alternativethemetextcolor3]];
+}
+
+.essential-colours-alternative3 #dock .dockedtitle {
   background-color: [[setting:alternativethemecolor3]];
 }
 
@@ -4321,6 +4866,10 @@ body.essential-colours-alternative3 h6 {
 .essential-colours-alternative3 #dock .dockedtitle.disabled,
 .essential-colours-alternative3 #dock .dockedtitle[disabled] {
   background-color: [[setting:alternativethemehovercolor3]];
+}
+
+.essential-colours-alternative3 #dockeditempanel .dockeditempanel_hd h2 {
+  color: [[setting:alternativethemecolor3]];
 }
 
 .essential-colours-alternative3 .commands {
@@ -4340,7 +4889,7 @@ body.essential-colours-alternative3 h6 {
 }
 
 .essential-colours-alternative3 #section_footer {
-  color: [[setting:alternativethemecolor3]];
+  color: [[setting:alternativethemetextcolor3]];
 }
 
 .essential-colours-alternative3 .nav_icon {
@@ -4349,6 +4898,38 @@ body.essential-colours-alternative3 h6 {
 
 .essential-colours-alternative3 .nav_icon:hover {
   color: [[setting:alternativethemehovercolor3]];
+}
+
+.essential-colours-alternative3 .actions a {
+  color: [[setting:alternativethemeurlcolor3]];
+}
+
+.essential-colours-alternative3 .moodle-core-dragdrop-draghandle:before,
+.essential-colours-alternative3 .moodle-core-dragdrop-draghandle a {
+  color: [[setting:alternativethemeurlcolor3]];
+}
+
+.essential-colours-alternative3 select,
+.essential-colours-alternative3 textarea,
+.essential-colours-alternative3 input[type="text"],
+.essential-colours-alternative3 input[type="password"],
+.essential-colours-alternative3 input[type="datetime"],
+.essential-colours-alternative3 input[type="datetime-local"],
+.essential-colours-alternative3 input[type="date"],
+.essential-colours-alternative3 input[type="month"],
+.essential-colours-alternative3 input[type="time"],
+.essential-colours-alternative3 input[type="week"],
+.essential-colours-alternative3 input[type="number"],
+.essential-colours-alternative3 input[type="email"],
+.essential-colours-alternative3 input[type="url"],
+.essential-colours-alternative3 input[type="search"],
+.essential-colours-alternative3 input[type="tel"],
+.essential-colours-alternative3 input[type="color"],
+.essential-colours-alternative3 .uneditable-input,
+.essential-colours-alternative3 .form-item .form-description,
+.essential-colours-alternative3 .form-defaultinfo,
+.essential-colours-alternative3 .form-label .form-shortname {
+  color: [[setting:alternativethemetextcolor3]];
 }
 
 /*# sourceMappingURL=/theme/essential/style/essential.treasure.map */

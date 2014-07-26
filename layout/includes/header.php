@@ -23,10 +23,11 @@
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-require_once(dirname(__FILE__).'/pagesettings.php');
  
 ?>
+<!--[if lt IE 9]>
+<?php echo get_string('ie8message', 'theme_essential'); ?>
+<![endif]-->
 
 <header role="banner">
     <div id="page-header" class="clearfix<?php echo ($oldnavbar)? ' oldnavbar': '';?>">
@@ -80,13 +81,13 @@ require_once(dirname(__FILE__).'/pagesettings.php');
                 if ($hasmobileapps) {
                 ?>
                 <div class="span2 pull-right">
-					<p id="socialheading"><?php echo get_string('mobileappsheading','theme_essential')?></p>
+                    <p id="socialheading"><?php echo get_string('mobileappsheading','theme_essential')?></p>
                     <ul class="socials unstyled">
                         <?php 
                             echo $OUTPUT->render_social_network('ios');
                             echo $OUTPUT->render_social_network('android');
                         ?>
-					</ul>
+                    </ul>
                 </div>
                 <?php 
                 }
@@ -94,12 +95,12 @@ require_once(dirname(__FILE__).'/pagesettings.php');
                 if (!empty($courseheader)) { ?>
                 <div id="course-header"><?php echo $courseheader; ?></div>
                 <?php } ?>
-			</div>
+            </div>
         </div>
     </div>
 
     <nav role="navigation">
-        <div class="navbar<?php echo ($oldnavbar)? ' oldnavbar': '';?> navbar-static-top">
+        <div class="navbar<?php echo ($oldnavbar)? ' oldnavbar': '';?>">
             <div class="container-fluid navbar-inner">
                 <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">

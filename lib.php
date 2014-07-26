@@ -74,22 +74,29 @@ function theme_essential_set_logo($css, $logo) {
  */
 function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
     if ($context->contextlevel == CONTEXT_SYSTEM) {
-        $theme = theme_config::load('essential');
         if ($filearea === 'logo') {
+            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
         } else if ($filearea === 'pagebackground') {
+            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('pagebackground', $args, $forcedownload, $options);
-        } else if ((substr($filearea, 0, 5) === 'slide') && (substr($filearea, 6, 5) === 'image')) {
+        } else if (preg_match("/slide[1-9][0-9]*image/", $filearea) !== false) {
+            $theme = theme_config::load('essential');
             return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
         } else if ((substr($filearea, 0, 9) === 'marketing') && (substr($filearea, 10, 5) === 'image')) {
+            $theme = theme_config::load('essential');
             return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
         } else if ($filearea === 'iphoneicon') {
+            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('iphoneicon', $args, $forcedownload, $options);
         } else if ($filearea === 'iphoneretinaicon') {
+            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('iphoneretinaicon', $args, $forcedownload, $options);
         } else if ($filearea === 'ipadicon') {
+            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('ipadicon', $args, $forcedownload, $options);
         } else if ($filearea === 'ipadretinaicon') {
+            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('ipadretinaicon', $args, $forcedownload, $options);
         } else {
             send_file_not_found();
@@ -177,81 +184,81 @@ function theme_essential_process_css($css, $theme) {
     $css = essential_set_pagewidth($css,$pagewidth);
     
     // Set the Fonts.
-	switch($theme->settings->fontselect) {
-	case 1:
+    switch($theme->settings->fontselect) {
+    case 1:
         $headingfont = 'Open Sans, Arial, Helvetica, sans-serif';
         $bodyfont = 'Open Sans, Arial, Helvetica, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
+        break;
     case 2:
         $headingfont = 'Oswald, Verdana, Geneva, sans-serif';
         $bodyfont = '"PT Sans", Helvetica, Verdana sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
+        break;
     case 3:
         $headingfont = 'Roboto, Tahoma, Geneva, sans-serif';
         $bodyfont = 'Roboto, Tahoma, Geneva, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
+        break;
     case 4:
         $headingfont = '"PT Sans", Helvetica, Arial, sans-serif';
         $bodyfont = '"PT Sans", Helvetica, Arial, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
+        break;
     case 5:
         $headingfont = 'Ubuntu, Arial, Helvetica, sans-serif';
         $bodyfont = 'Ubuntu, Arial, Helvetica, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
+        break;
     case 6:
         $headingfont = 'Arimo, Arial, Helvetica, sans-serif';
         $bodyfont = 'Arimo, Arial, Helvetica, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
+        break;
     case 7:
         $headingfont = 'Lobster, "Lucida Calligraphy", Mistral, Verdana, sans-serif';
         $bodyfont = 'Raleway, Helvetica, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
+        break;
     case 8:
         $headingfont = 'Arial, Helvetica, sans-serif';
         $bodyfont = 'Arial, Helvetica, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
+        break;
     case 9:
         $headingfont = 'Georgia, serif';
         $bodyfont = 'Georgia, serif';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
+        break;
     case 10:
         $headingfont = 'Verdana, Geneva, sans-serif';
         $bodyfont = 'Verdana, Geneva, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
+        break;
     case 11:
         $headingfont = '"Times New Roman", Times, serif';
         $bodyfont = '"Times New Roman", Times, serif';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
+        break;
     case 12:
         $headingfont = 'Consolas, Monaco, monospace';
         $bodyfont = 'Consolas, "Courier New", monospace';
         $bodysize = '14px';
         $bodyweight = '400';
-		break;
-	default:
-		$headingfont = 'Verdana, Geneva, sans-serif';
+        break;
+    default:
+        $headingfont = 'Verdana, Geneva, sans-serif';
         $bodyfont = 'Verdana, Geneva, sans-serif';
         $bodysize = '14px';
         $bodyweight = '400';
@@ -269,6 +276,23 @@ function theme_essential_process_css($css, $theme) {
         $themecolor = null;
     }
     $css = theme_essential_set_themecolor($css, $themecolor);
+
+    // Set the theme text colour.
+    if (!empty($theme->settings->themetextcolor)) {
+        $themetextcolor = $theme->settings->themetextcolor;
+    } else {
+        $themetextcolor = null;
+    }
+    $css = theme_essential_set_themetextcolor($css, $themetextcolor);
+
+    // Set the theme url colour.
+    if (!empty($theme->settings->themeurlcolor)) {
+        $themeurlcolor = $theme->settings->themeurlcolor;
+    } else {
+        $themeurlcolor = null;
+    }
+    $css = theme_essential_set_themeurlcolor($css, $themeurlcolor);
+
 
     // Set the theme hover color.
     if (!empty($theme->settings->themehovercolor)) {
@@ -375,9 +399,11 @@ function theme_essential_process_css($css, $theme) {
         $default = $defaultalternativethemecolors[$alternativethemenumber - 1];
         $defaulthover = $defaultalternativethemehovercolors[$alternativethemenumber - 1];
         $css = theme_essential_set_alternativecolor($css, 'color' . $alternativethemenumber, $theme->settings->{'alternativethemecolor' . $alternativethemenumber}, $default);
+        $css = theme_essential_set_alternativecolor($css, 'textcolor' . $alternativethemenumber, $theme->settings->{'alternativethemetextcolor' . $alternativethemenumber}, $default);
+        $css = theme_essential_set_alternativecolor($css, 'urlcolor' . $alternativethemenumber, $theme->settings->{'alternativethemeurlcolor' . $alternativethemenumber}, $default);
         $css = theme_essential_set_alternativecolor($css, 'hovercolor' . $alternativethemenumber, $theme->settings->{'alternativethemehovercolor' . $alternativethemenumber}, $defaulthover);
     }
-    
+
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
         $customcss = $theme->settings->customcss;
@@ -394,40 +420,7 @@ function theme_essential_process_css($css, $theme) {
     $setting = 'pagebackground';
     $pagebackground = $theme->setting_file_url($setting, $setting);
     $css = theme_essential_set_pagebackground($css, $pagebackground, $setting);
-    
-    // Set Slide Images.
-    $setting = 'slide1image';
-    if (!empty($theme->settings->slide1image)) {
-        $slideimage = $theme->setting_file_url($setting, $setting);
-    } else {
-        $slideimage = null;
-    }
-    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
 
-    $setting = 'slide2image';
-    if (!empty($theme->settings->slide2image)) {
-        $slideimage = $theme->setting_file_url($setting, $setting);
-    } else {
-        $slideimage = null;
-    }
-    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
-
-    $setting = 'slide3image';
-    if (!empty($theme->settings->slide3image)) {
-        $slideimage = $theme->setting_file_url($setting, $setting);
-    } else {
-        $slideimage = null;
-    }
-    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
-
-    $setting = 'slide4image';
-    if (!empty($theme->settings->slide4image)) {
-        $slideimage = $theme->setting_file_url($setting, $setting);
-    } else {
-        $slideimage = null;
-    }
-    $css = theme_essential_set_slideimage($css, $slideimage, $setting);
-    
     // Set Marketing Image Height.
     if (!empty($theme->settings->marketingheight)) {
         $marketingheight = $theme->settings->marketingheight;
@@ -461,7 +454,7 @@ function theme_essential_process_css($css, $theme) {
     }
     $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
 
-	$css = theme_essential_set_fontwww($css);
+    $css = theme_essential_set_fontwww($css);
     return $css;
 }
 
@@ -557,6 +550,26 @@ function theme_essential_set_themecolor($css, $themecolor) {
     $replacement = $themecolor;
     if (is_null($replacement)) {
         $replacement = '#30add1';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_themetextcolor($css, $themetextcolor) {
+    $tag = '[[setting:themetextcolor]]';
+    $replacement = $themetextcolor;
+    if (is_null($replacement)) {
+        $replacement = '#30add1';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_themeurlcolor($css, $themeurlcolor) {
+    $tag = '[[setting:themeurlcolor]]';
+    $replacement = $themeurlcolor;
+    if (is_null($replacement)) {
+        $replacement = '#29a1c4';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -700,15 +713,6 @@ function theme_essential_set_pagebackground($css, $pagebackground, $setting) {
     return $css;
 }
 
-
-function theme_essential_set_slideimage($css, $slideimage, $setting) {
-    global $OUTPUT;
-    $tag = '[[setting:'.$setting.']]';
-    $replacement = $slideimage;
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
 function theme_essential_set_marketingheight($css, $marketingheight) {
     $tag = '[[setting:marketingheight]]';
     $replacement = $marketingheight;
@@ -745,7 +749,7 @@ function theme_essential_showslider($settings) {
 
 function theme_essential_page_init(moodle_page $page) {
     $page->requires->jquery();
-	$page->requires->jquery_plugin('affix', 'theme_essential');
+    $page->requires->jquery_plugin('affix', 'theme_essential');
     $page->requires->jquery_plugin('alert', 'theme_essential');
     $page->requires->jquery_plugin('carousel', 'theme_essential');
     $page->requires->jquery_plugin('collapse', 'theme_essential');
@@ -754,6 +758,6 @@ function theme_essential_page_init(moodle_page $page) {
     $page->requires->jquery_plugin('tab', 'theme_essential');
     $page->requires->jquery_plugin('tooltip', 'theme_essential');
     $page->requires->jquery_plugin('transition', 'theme_essential');
-	$page->requires->jquery_plugin('typeahead', 'theme_essential');
+    $page->requires->jquery_plugin('typeahead', 'theme_essential');
     $page->requires->jquery_plugin('modernizr', 'theme_essential');
 }
