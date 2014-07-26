@@ -77,7 +77,7 @@
  * grunt replace             Run all text replace tasks.
  *
  * grunt svg                 Change the colour of the SVGs in pix_core by
- *                           text replacing #999999 with a new hex color.
+ *                           text replacing #999999 with a new hex colour.
  *                           Note this requires the SVGs to be #999999 to
  *                           start with or the replace will do nothing
  *                           so should usually be preceded by copying
@@ -85,7 +85,7 @@
  *
  *                           Options:
  *
- *                           --svgcolour=<hexcolor> Hex color to use for SVGs
+ *                           --svgcolour=<hexcolour> Hex colour to use for SVGs
  *
  * grunt cssflip    Create essential-rtl.css by flipping the direction styles
  *                  in essential.css.
@@ -124,7 +124,7 @@ module.exports = function(grunt) {
     decachephp += 'require(\'' + configfile  + '\');';
     decachephp += 'theme_reset_all_caches();';
 
-    var svgcolor = grunt.option('svgcolour') || '#999999';
+    var svgcolour = grunt.option('svgcolour') || '#999999';
 
     grunt.initConfig({
         less: {
@@ -200,7 +200,7 @@ module.exports = function(grunt) {
                     overwrite: true,
                     replacements: [{
                         from: '#999999',
-                        to: svgcolor
+                        to: svgcolour
                     }]
             },
             svg_colours_plugins: {
@@ -208,8 +208,36 @@ module.exports = function(grunt) {
                     overwrite: true,
                     replacements: [{
                         from: '#999999',
-                        to: svgcolor
+                        to: svgcolour
                     }]
+            }
+        },
+        svgmin: {
+            options: {
+                plugins: [{
+                    removeViewBox: false
+                }, {
+                    removeUselessStrokeAndFill: false
+                }, {
+                    convertPathData: { 
+                        straightCurves: false
+                   }
+                }]
+            },
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: 'pix_core',
+                    src: ['**/*.svg'],
+                    dest: 'pix_core/',
+                    ext: '.svg'
+                }, {
+                    expand: true,
+                    cwd: 'pix_plugins',
+                    src: ['**/*.svg'],
+                    dest: 'pix_plugins/',
+                    ext: '.svg'
+                }]
             }
         }
     });
@@ -221,11 +249,14 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-text-replace");
     grunt.loadNpmTasks("grunt-css-flip");
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-svgmin');
 
     // Register tasks.
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
 
     grunt.registerTask("compile", ["less", "cssflip", "decache"]);
-    grunt.registerTask("svg", ["copy:svg_core", "copy:svg_plugins", "replace:svg_colours_core", "replace:svg_colours_plugins"]);
+    grunt.registerTask("copy:svg", ["copy:svg_core", "copy:svg_plugins"]);
+    grunt.registerTask("replace:svg_colours", ["replace:svg_colours_core", "replace:svg_colours_plugins"]);
+    grunt.registerTask("svg", ["copy:svg", "replace:svg_colours", "svgmin"]);
 };
