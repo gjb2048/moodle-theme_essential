@@ -1668,6 +1668,10 @@ table.calendarmonth.calendartable {
 .coursebox > .info > .coursename a {
   background-position: left 0.2em;
 }
+#ie8message {
+  font-size: 1.2em;
+  padding-top: 55px;
+}
 /* @end */
 #essentialCarousel.carousel {
   height: 300px;

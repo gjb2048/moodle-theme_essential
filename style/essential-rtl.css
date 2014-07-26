@@ -2056,6 +2056,11 @@ table.calendarmonth.calendartable {
   background-position: right 0.2em;
 }
 
+#ie8message {
+  font-size: 1.2em;
+  padding-top: 55px;
+}
+
 /* @end */
 
 #essentialCarousel.carousel {

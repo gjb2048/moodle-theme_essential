@@ -448,4 +448,4 @@ $string['alert_info'] = 'Information';
 $string['alert_warning'] = 'Warning';
 $string['alert_general'] = 'Announcement';
 
-$string['ie7message'] = '<p id="ie7message">Sorry, this site requires <strong>Internet Explorer 8</strong> or higher to display and function correctly.  Please update your browser via Windows Update. If using IE8 or above you may have Compatibility Mode switched on, turn this off to display this website correctly.</p>';
+$string['ie8message'] = '<p id="ie8message">Sorry, this site requires <strong>Internet Explorer 9</strong> or higher to display and function correctly.  Please update your browser via Windows Update. If using IE9 or above you may have Compatibility Mode switched on, turn this off to display this website correctly.</p>';

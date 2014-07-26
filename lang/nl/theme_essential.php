@@ -443,4 +443,4 @@ $string['alert_info'] = 'Informatief';
 $string['alert_warning'] = 'Waarschuwing';
 $string['alert_general'] = 'Aankondiging';
 
-$string['ie7message'] = '<p id="ie7message">Sorry, deze site vereist minimaal <strong>Internet Explorer 8</strong>. Update je browser via Windows Update.  Als je IE8 of hoger gebruik staat mogelijk Compatibility Modus aan, om deze site correct weer te geven moet dit uitgeschakeld staan.</p>';
+$string['ie8message'] = '<p id="ie8message">Sorry, deze site vereist minimaal <strong>Internet Explorer 9</strong>. Update je browser via Windows Update.  Als je IE9 of hoger gebruik staat mogelijk Compatibility Modus aan, om deze site correct weer te geven moet dit uitgeschakeld staan.</p>';
