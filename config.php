@@ -33,7 +33,14 @@ $THEME->name = 'essential';
 $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
 $THEME->parents = array('bootstrapbase');
-$THEME->sheets = array('fontawesome', 'essential', 'custom');
+$THEME->sheets = array('fontawesome');
+if ('ltr' === get_string('thisdirection', 'langconfig')) {
+    $THEME->sheets[] = 'essential';
+} else {
+    $THEME->sheets[] = 'essential-rtl';
+    $THEME->sheets[] = 'rtl';
+}
+$THEME->sheets[] = 'custom';
 $THEME->supportscssoptimisation = false;
 
 if ($CFG->version >= 2014051200.10 ) {

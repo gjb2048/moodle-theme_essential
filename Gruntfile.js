@@ -152,6 +152,18 @@ module.exports = function(grunt) {
                 },
                 src: 'less/fontawesome.less',
                 dest: 'style/fontawesome.css'
+            },
+            rtl: {
+                options: {
+                    compress: false,
+                    paths: "./less",
+                    report: 'min',
+                    sourceMap: true,
+                    sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
+                    sourceMapFilename: 'style/rtl.treasure.map'
+                },
+                src: 'less/rtlall.less',
+                dest: 'style/rtl.css'
             }
         },
         exec: {

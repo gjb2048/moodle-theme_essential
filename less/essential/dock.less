@@ -30,11 +30,6 @@ body.has_dock {
             margin-left: 42px;
         }
     }
-    &.dir-rtl {
-        header, > section, footer {
-            margin-right: 42px;
-        }
-    }
 }
 
 .dockbutton:hover, .dockbutton:focus, .dockbutton.disabled, .dockbutton[disabled]{
@@ -347,30 +342,6 @@ body.has_dock div#dock{
 
 #dockeditempanel.dockitempanel_hidden{
     display:none
-}
-
-.dir-rtl #dockeditempanel{
-    right:100%
-}
-
-.dir-rtl #dockeditempanel .dockeditempanel_hd .commands{
-    text-align:left
-}
-
-.dir-rtl #dock{
-    right:0;
-    left:auto;
-}
-
-.dir-rtl #dock .dockedtitle{
-    cursor:pointer;
-    border-top:1px solid #EEE;
-    border-bottom: 1px solid #EEE;
-}
-
-body.dir-rtl.has_dock{
-    margin-right:40px;
-    margin-left:0
 }
 
 .dockeditempanel_content {

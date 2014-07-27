@@ -47,11 +47,6 @@ a {
   z-index: 100;
 }
 
-.dir-rtl a.logo {
-  display: block;
-  float: left;
-}
-
 .moodle-actionmenu[data-enhanced].show .menu {
   box-shadow: none;
 }
@@ -1003,47 +998,9 @@ table#greyboxleft h2 {
   background: red;
 }
 
-/* @group DIR-RTL */
-
-.dir-rtl .block_login .content {
-  padding-bottom: 125px;
-}
-
-.dir-rtl .block_login .content .footer {
-  height: 60px;
-  width: 70%;
-  padding: 0 10px 10px 50px;
-}
-
-.dir-rtl .block_login .content .footer div {
-  float: left;
-  clear: left;
-}
-
-.dir-rtl .block_login .content .footer a {
-  float: left;
-  margin: 0;
-}
-
-.dir-rtl .block_login .content .footer a {
-  margin-bottom: 10px;
-}
-
-.dir-rtl .block_login .header .title h2:before {
-  float: left;
-  clear: left;
-  text-align: left;
-}
-
-/* @end */
-
 /* @end */
 
 /* @group Block Icons */
-
-.dir-rtl .collapsed .tree_item.branch:before {
-  content: " \f053";
-}
 
 .block_news_items .header .title h2:before {
   content: "\f0a1";
@@ -1861,38 +1818,6 @@ table.calendarmonth.calendartable {
 
 /* @end */
 
-/* @group RTL Fixes */
-
-.dir-rtl .block .footer {
-  float: left;
-  text-align: left;
-}
-
-.dir-rtl .block_login input[type="submit"],
-.dir-rtl .block_login .footer a {
-  float: left;
-}
-
-.dir-rtl .block .header .title h2:before {
-  margin-right: 0.3em;
-}
-
-.dir-rtl .block #icon {
-  margin-right: 5px;
-}
-
-.dir-rtl .course_category_tree .category > .info > .categoryname {
-  background-repeat: no-repeat;
-}
-
-/* @navigation */
-
-.dir-rlt .tree_item.branch:before {
-  margin-right: 5px;
-}
-
-/* @end */
-
 @media screen and (min-width: 960px) {
   .side-regions-with-max-width #block-region-side-pre {
     width: 285px;
@@ -2212,7 +2137,7 @@ body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner .ca
 .course_category_tree .category.with_children.collapsed > .info > .categoryname,
 .course_category_tree .category.with_children > .info > .categoryname,
 .course_category_tree .category > .info > .categoryname {
-  background: none;
+  background-image: none;
   padding: 0;
   margin: 0;
 }
@@ -2325,12 +2250,6 @@ body.has_dock.dir-ltr footer {
   margin-right: 42px;
 }
 
-body.has_dock.dir-rtl header,
-body.has_dock.dir-rtl > section,
-body.has_dock.dir-rtl footer {
-  margin-left: 42px;
-}
-
 .dockbutton:hover,
 .dockbutton:focus,
 .dockbutton.disabled,
@@ -2352,7 +2271,7 @@ body.has_dock.dir-rtl footer {
 .dockbutton:focus {
   color: #7b8a8b;
   text-decoration: none;
-  background-position: 100% -15px;
+  background-position: 0 -15px;
   -webkit-transition: background-position 0.1s linear;
   -moz-transition: background-position 0.1s linear;
   -o-transition: background-position 0.1s linear;
@@ -2499,7 +2418,7 @@ body.has_dock div#dock {
 #dock .dockedtitle:focus {
   color: #7b8a8b;
   text-decoration: none;
-  background-position: 100% -15px;
+  background-position: 0 -15px;
   -webkit-transition: background-position 0.1s linear;
   -moz-transition: background-position 0.1s linear;
   -o-transition: background-position 0.1s linear;
@@ -2669,30 +2588,6 @@ body.has_dock div#dock {
 
 #dockeditempanel.dockitempanel_hidden {
   display: none;
-}
-
-.dir-rtl #dockeditempanel {
-  left: 100%;
-}
-
-.dir-rtl #dockeditempanel .dockeditempanel_hd .commands {
-  text-align: right;
-}
-
-.dir-rtl #dock {
-  left: 0;
-  right: auto;
-}
-
-.dir-rtl #dock .dockedtitle {
-  cursor: pointer;
-  border-top: 1px solid #EEE;
-  border-bottom: 1px solid #EEE;
-}
-
-body.dir-rtl.has_dock {
-  margin-left: 40px;
-  margin-right: 0;
 }
 
 .dockeditempanel_content {
@@ -2936,10 +2831,6 @@ a:hover {
 
 .color {
   color: [[setting:themecolor]];
-}
-
-.dir-rtl a.logo {
-  background: url([[setting:logo]]) no-repeat 100% 0;
 }
 
 /* @group Custom */

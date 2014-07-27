@@ -34,7 +34,7 @@
         <div class="container-fluid">
             <div class="row-fluid">
             <!-- HEADER: LOGO AREA -->
-                <div class="<?php echo $logoclass;?>">
+                <div class="<?php echo $logoclass; echo (!$left) ? ' pull-right': '';?>">
                     <?php if (!$haslogo) { ?>
                         <i id="headerlogo" class="fa fa-<?php echo $PAGE->theme->settings->siteicon ?>"></i>
                             <h1 id="title"><?php echo $SITE->shortname; ?></h1>
@@ -43,7 +43,7 @@
                     <?php } ?>
                 </div>
                 <?php if (isloggedin() && $hasprofilepic) { ?>
-                <div class="span1 pull-right" id="profilepic">
+                <div class="span1<?php echo ($left) ? ' pull-right': '';?>" id="profilepic">
                     <p id="socialheading"><?php echo $USER->firstname; ?></p>
                     <ul class="socials unstyled">
                         <li>

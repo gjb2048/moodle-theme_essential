@@ -1,0 +1,80 @@
+/*
+ * @author    Gareth J Barnard
+ * @package   theme_essential
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+.dir-rtl #headerlogo {
+    float: right;
+    margin-left: 0px;
+    margin-right: 10px;
+    padding-left: 0px;
+    padding-right: 10px;
+}
+
+.dir-rtl .block_login {
+    .content {
+        padding-bottom: 125px;
+        .footer {
+            height: 60px;
+            width: 70%;
+            padding: 0 50px 10px 10px;
+            div {
+                float: right;
+                clear: right;
+            }
+            a {
+                float: right;
+                margin: 0;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .header .title h2:before {
+        float: right;
+        clear: right;
+        text-align: right;
+    }
+    input[type="submit"], .footer a {
+        float: right;
+    }
+}
+
+.dir-rtl .collapsed .tree_item.branch:before {
+    content: " \f053";
+}
+
+.dir-rtl a.logo {
+    display: block;
+    float: right;
+}
+
+.dir-rtl .block {
+    .footer {
+        float: right;
+        text-align: right;
+    }
+   .header .title h2:before {
+        margin-left: 0.3em;
+    }
+    #icon {
+        margin-left: 5px;
+    }
+}
+
+/* Hide icon 'collapsed' because it makes no sense here */ 
+.dir-rtl .course_category_tree {
+    .category.with_children.collapsed>.info>.categoryname,
+    .category.with_children>.info>.categoryname,
+    .category>.info>.categoryname {
+        background-image: none;
+        background-repeat: no-repeat;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+/* @navigation */
+.dir-rtl .tree_item.branch:before {
+    margin-left: 5px;
+}
