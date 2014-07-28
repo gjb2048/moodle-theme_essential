@@ -49,11 +49,7 @@ if ($CFG->version >= 2014051200.10 ) {
 
 $THEME->editor_sheets = array();
 
-$THEME->plugins_exclude_sheets = array(
-    'block' => array(
-        'html',
-    ),
-);
+$THEME->plugins_exclude_sheets = array();
 
 $THEME->layouts = array(
     // Most backwards compatible layout without the blocks - this is the layout used by default.
