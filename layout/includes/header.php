@@ -49,14 +49,14 @@
                         <li>
                             <?php echo $OUTPUT->user_picture($USER); ?>
                         </li>
-                    </ul>            
+                    </ul>
                 </div>
                 <?php
                 }
                 // If true, displays the heading and available social links; displays nothing if false.
                 if ($hassocialnetworks) {
                 ?>
-                <div class="span3 pull-right">
+                <div class="span3<?php echo ($left) ? ' pull-right': '';?>">
                 <p id="socialheading"><?php echo get_string('socialnetworks','theme_essential')?></p>
                     <ul class="socials unstyled">
                         <?php

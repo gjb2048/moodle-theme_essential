@@ -21,6 +21,7 @@ New in 2.7.4
 - FIX: Issue #58.  Add font colour setting.
 - FIX: Issue #63.  Slider caption overlap.
 - FIX: Issue #66.  Link Colour Not Working.
+- FIX: Issue #85.  Header logo location in RTL.
 - FIX: Reverted icons back to #999.
 - FIX: Alternative colour sets all now have the same CSS, docking fixed and consistent with settings.
 - FIX: Moved all RTL to separate sheet from main CSS.  Sheet 'essential-rtl' uses 'flipped' technology whilst 'rtl' sheet has manual styles.
