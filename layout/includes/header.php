@@ -34,7 +34,7 @@
         <div class="container-fluid">
             <div class="row-fluid">
             <!-- HEADER: LOGO AREA -->
-                <div class="<?php echo $logoclass;?>">
+                <div class="<?php echo $logoclass; echo (!$left) ? ' pull-right': '';?>">
                     <?php if (!$haslogo) { ?>
                         <i id="headerlogo" class="fa fa-<?php echo $PAGE->theme->settings->siteicon ?>"></i>
                             <h1 id="title"><?php echo $SITE->shortname; ?></h1>
@@ -43,20 +43,20 @@
                     <?php } ?>
                 </div>
                 <?php if (isloggedin() && $hasprofilepic) { ?>
-                <div class="span1 pull-right" id="profilepic">
+                <div class="span1<?php echo ($left) ? ' pull-right': '';?>" id="profilepic">
                     <p id="socialheading"><?php echo $USER->firstname; ?></p>
                     <ul class="socials unstyled">
                         <li>
                             <?php echo $OUTPUT->user_picture($USER); ?>
                         </li>
-                    </ul>            
+                    </ul>
                 </div>
                 <?php
                 }
                 // If true, displays the heading and available social links; displays nothing if false.
                 if ($hassocialnetworks) {
                 ?>
-                <div class="span3 pull-right">
+                <div class="span3<?php echo ($left) ? ' pull-right': '';?>">
                 <p id="socialheading"><?php echo get_string('socialnetworks','theme_essential')?></p>
                     <ul class="socials unstyled">
                         <?php

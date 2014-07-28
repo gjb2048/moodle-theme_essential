@@ -39,10 +39,6 @@ a {
 #dndupload-status {
   z-index: 100;
 }
-.dir-rtl a.logo {
-  display: block;
-  float: right;
-}
 .moodle-actionmenu[data-enhanced].show .menu {
   box-shadow: none;
 }
@@ -815,37 +811,8 @@ table#greyboxleft h2 {
 .block_login .content .footer div a:hover {
   background: red;
 }
-/* @group DIR-RTL */
-.dir-rtl .block_login .content {
-  padding-bottom: 125px;
-}
-.dir-rtl .block_login .content .footer {
-  height: 60px;
-  width: 70%;
-  padding: 0 50px 10px 10px;
-}
-.dir-rtl .block_login .content .footer div {
-  float: right;
-  clear: right;
-}
-.dir-rtl .block_login .content .footer a {
-  float: right;
-  margin: 0;
-}
-.dir-rtl .block_login .content .footer a {
-  margin-bottom: 10px;
-}
-.dir-rtl .block_login .header .title h2:before {
-  float: right;
-  clear: right;
-  text-align: right;
-}
-/* @end */
 /* @end */
 /* @group Block Icons */
-.dir-rtl .collapsed .tree_item.branch:before {
-  content: " \f053";
-}
 .block_news_items .header .title h2:before {
   content: "\f0a1";
 }
@@ -1511,29 +1478,6 @@ table.calendarmonth.calendartable {
   color: #fff !important;
 }
 /* @end */
-/* @group RTL Fixes */
-.dir-rtl .block .footer {
-  float: right;
-  text-align: right;
-}
-.dir-rtl .block_login input[type="submit"],
-.dir-rtl .block_login .footer a {
-  float: right;
-}
-.dir-rtl .block .header .title h2:before {
-  margin-left: 0.3em;
-}
-.dir-rtl .block #icon {
-  margin-left: 5px;
-}
-.dir-rtl .course_category_tree .category > .info > .categoryname {
-  background-repeat: no-repeat;
-}
-/* @navigation */
-.dir-rlt .tree_item.branch:before {
-  margin-left: 5px;
-}
-/* @end */
 @media screen and (min-width: 960px) {
   .side-regions-with-max-width #block-region-side-pre {
     width: 285px;
@@ -1791,7 +1735,7 @@ body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner .ca
 .course_category_tree .category.with_children.collapsed > .info > .categoryname,
 .course_category_tree .category.with_children > .info > .categoryname,
 .course_category_tree .category > .info > .categoryname {
-  background: none;
+  background-image: none;
   padding: 0;
   margin: 0;
 }
@@ -1884,11 +1828,6 @@ body.has_dock.dir-ltr header,
 body.has_dock.dir-ltr > section,
 body.has_dock.dir-ltr footer {
   margin-left: 42px;
-}
-body.has_dock.dir-rtl header,
-body.has_dock.dir-rtl > section,
-body.has_dock.dir-rtl footer {
-  margin-right: 42px;
 }
 .dockbutton:hover,
 .dockbutton:focus,
@@ -2177,25 +2116,6 @@ body.has_dock div#dock {
 #dockeditempanel.dockitempanel_hidden {
   display: none;
 }
-.dir-rtl #dockeditempanel {
-  right: 100%;
-}
-.dir-rtl #dockeditempanel .dockeditempanel_hd .commands {
-  text-align: left;
-}
-.dir-rtl #dock {
-  right: 0;
-  left: auto;
-}
-.dir-rtl #dock .dockedtitle {
-  cursor: pointer;
-  border-top: 1px solid #EEE;
-  border-bottom: 1px solid #EEE;
-}
-body.dir-rtl.has_dock {
-  margin-right: 40px;
-  margin-left: 0;
-}
 .dockeditempanel_content {
   width: 300px;
 }
@@ -2398,9 +2318,6 @@ a:hover {
 }
 .color {
   color: [[setting:themecolor]];
-}
-.dir-rtl a.logo {
-  background: url([[setting:logo]]) no-repeat 100% 0;
 }
 /* @group Custom */
 .bor {
