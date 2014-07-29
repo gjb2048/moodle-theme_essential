@@ -51,15 +51,15 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<section role="main-content">
-    <div id="page">
+<div id="page">
+    <section role="main-content">
         <div id="page-content" class="clearfix">
             <?php echo $OUTPUT->main_content(); ?>
         </div>
-    </div>
-</section>
+    </section>
 
-<?php echo $OUTPUT->standard_end_of_body_html() ?>
+    <?php echo $OUTPUT->standard_end_of_body_html() ?>
 
+</div>
 </body>
 </html>

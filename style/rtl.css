@@ -70,11 +70,6 @@
 .dir-rtl a.logo {
   background: url([[setting:logo]]) no-repeat 100% 0;
 }
-margin-left:0 body.has_dock.dir-rtl header,
-margin-left:0 body.has_dock.dir-rtl > section,
-margin-left:0 body.has_dock.dir-rtl footer {
-  margin-right: 42px;
-}
 body.dir-rtl #dockeditempanel {
   right: 100%;
 }
@@ -89,5 +84,10 @@ body.dir-rtl #dock .dockedtitle {
   cursor: pointer;
   border-top: 1px solid #EEE;
   border-bottom: 1px solid #EEE;
+}
+body.dir-rtl.has_dock #page,
+body.dir-rtl.has_dock .navbar-inner {
+  padding-right: 52px;
+  padding-left: 10px;
 }
 /*# sourceMappingURL=/theme/essential/style/rtl.treasure.map */

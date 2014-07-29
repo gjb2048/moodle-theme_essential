@@ -48,7 +48,7 @@ David Bezemer<br>
 </div></div>';
 
 /* General */
-$string['genericsettings'] = 'General Settings';
+$string['genericsettings'] = 'General settings';
 
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
@@ -62,7 +62,7 @@ $string['invertdesc'] = 'Swaps text and background for the navbar at the top of 
 $string['logo'] = 'Logo';
 $string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.<br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
 
-$string['fontselect'] = 'Font Selector';
+$string['fontselect'] = 'Font selector';
 $string['fontselectdesc'] = 'Choose from the list of available font combinations. You can choose here to disable Google fonts if needed.';
 
 $string['bootstrapcdn'] = 'FontAwesome from CDN';
@@ -71,13 +71,13 @@ $string['bootstrapcdndesc'] = 'If enabled this will load FontAwesome from the on
 $string['copyright'] = 'Copyright';
 $string['copyrightdesc'] = 'The name of your organisation.';
 
-$string['profilebarcustomtitle'] = 'Profile Bar Custom Block Title';
-$string['profilebarcustomtitledesc'] = 'Title for custom Profile Bar block.';
+$string['profilebarcustomtitle'] = 'Profile bar custom block title';
+$string['profilebarcustomtitledesc'] = 'Title for custom profile bar block.';
 
-$string['contactinfo'] = 'Contact Information';
+$string['contactinfo'] = 'Contact information';
 $string['contactinfodesc'] = 'Enter your contact information';
 
-$string['siteicon'] = 'Site Icon';
+$string['siteicon'] = 'Site icon';
 $string['siteicondesc'] = 'Do not have a logo? Enter the name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "fa-". ';
 
 $string['yourprofile'] = 'You';
@@ -96,7 +96,7 @@ $string['frontpageblocksdesc'] = 'Here you can determine if the blocks on the fr
 $string['left'] = 'Left';
 $string['right'] = 'Right';
 
-$string['perfinfo'] = 'Performance Info Mode';
+$string['perfinfo'] = 'Performance information mode';
 $string['perfinfodesc'] = 'Many sites don\'t need the fully detailed performance info.  Especially when viewed by users.  When enabled, this shows a cleaned up minimal form with basic page load information.';
 $string['perf_max'] = 'Detailed';
 $string['perf_min'] = 'Minimal';
@@ -106,49 +106,49 @@ $string['sideregionsmaxwidthdesc'] = 'This theme use fluid layout. In wide scree
 $string['visibleadminonly'] = 'Blocks moved into the area below will only be seen by admins';
 $string['backtotop'] = 'Back to top';
 
-$string['nextsection'] = 'Next Section';
-$string['previoussection'] = 'Previous Section';
+$string['nextsection'] = 'Next section';
+$string['previoussection'] = 'Previous section';
 
-$string['pagewidth'] = 'Set Page Width';
-$string['pagewidthdesc'] = 'Choose from the list of available page widths. for your site';
-$string['fixedwidthwide'] = 'Fixed Width - Wide';
-$string['fixedwidthnarrow'] = 'Fixed Width - Narrow';
-$string['variablewidth'] = 'Variable Width';
+$string['pagewidth'] = 'Set page width';
+$string['pagewidthdesc'] = 'Choose from the list of available page widths for your site.';
+$string['fixedwidthwide'] = 'Fixed width - Wide';
+$string['fixedwidthnarrow'] = 'Fixed width - Narrow';
+$string['variablewidth'] = 'Variable width';
 
-$string['alwaysdisplay'] = 'Always Show';
+$string['alwaysdisplay'] = 'Always show';
 $string['displaybeforelogin'] = 'Show before login only';
 $string['displayafterlogin'] = 'Show after login only';
-$string['dontdisplay'] = 'Never Show';
+$string['dontdisplay'] = 'Never show';
 
 /* CustomMenu */
-$string['custommenuheading'] = 'Custom Menu';
+$string['custommenuheading'] = 'Custom menu';
 $string['custommenuheadingsub'] = 'Add additional functionality to your custommenu.';
 $string['custommenudesc'] = 'Settings here allow you to add new dynamic functionality to the custommenu (also referred to as Dropdown menu)';
 
-$string['mydashboardinfo'] = 'Custom User Dashboard';
+$string['mydashboardinfo'] = 'Custom user dashboard';
 $string['mydashboardinfodesc'] = 'Displays a list of common functions used by users.';
-$string['displaymydashboard'] = 'Display Dashboard';
-$string['displaymydashboarddesc'] = 'Display Dashboard of user links in the Custom Menu';
+$string['displaymydashboard'] = 'Display dashboard';
+$string['displaymydashboarddesc'] = 'Display dashboard of user links in the custom Menu.';
 
-$string['mycoursesinfo'] = 'Dynamic Enrolled Courses List';
+$string['mycoursesinfo'] = 'Dynamic enrolled courses list';
 $string['mycoursesinfodesc'] = 'Displays a dynamic list of enrolled courses to the user.';
 $string['displaymycourses'] = 'Display enrolled courses';
 $string['displaymycoursesdesc'] = 'Display enrolled courses for users in the Custom Menu';
 
 $string['mycoursetitle'] = 'Terminology';
 $string['mycoursetitledesc'] = 'Change the terminology for the "My Courses" link in the dropdown menu';
-$string['mycourses'] = 'My Courses';
-$string['myunits'] = 'My Units';
-$string['mymodules'] = 'My Modules';
-$string['myclasses'] = 'My Classes';
-$string['allcourses'] = 'All Courses';
-$string['allunits'] = 'All Units';
-$string['allmodules'] = 'All Modules';
-$string['allclasses'] = 'All Classes';
+$string['mycourses'] = 'My courses';
+$string['myunits'] = 'My units';
+$string['mymodules'] = 'My modules';
+$string['myclasses'] = 'My classes';
+$string['allcourses'] = 'All courses';
+$string['allunits'] = 'All units';
+$string['allmodules'] = 'All modules';
+$string['allclasses'] = 'All classes';
 $string['noenrolments'] = 'You have no current enrolments';
 
 /* My Dashboard custommenu dropdown */
-$string['mydashboard'] = 'My Dashboard';
+$string['mydashboard'] = 'My dashboard';
 
 /* Breadcrumb Style */
 $string['breadcrumbstyle'] = 'Breadcrumb style';
@@ -170,50 +170,50 @@ $string['region-footer-right'] = 'Footer (Right)';
 $string['region-hidden-dock'] = 'Hidden from users';
 
 /* Colours */
-$string['colorheading'] = 'Colour Settings';
+$string['colorheading'] = 'Colour settings';
 $string['colorheadingsub'] = 'Set the colours used in your theme';
 $string['colordesc'] = 'Here you can find various settings to change many of the colours found in this theme.';
 
-$string['footercolors'] = 'Footer Colours';
+$string['footercolors'] = 'Footer colours';
 $string['footercolorsdesc'] = 'Change the colours on the page footers';
 
-$string['themecolor'] = 'Theme Colour';
-$string['themecolordesc'] = 'What colour should your theme be.  This will change multiple components to produce the colour you wish across the moodle site';
+$string['themecolor'] = 'Theme colour';
+$string['themecolordesc'] = 'What colour should your theme be.  This will change multiple components to produce the colour you wish across the Moodle site';
 
 $string['themetextcolor'] = 'Text colour';
 $string['themetextcolordesc'] = 'Set the colour for your text.';
-$string['themeurlcolor'] = 'Link Colour';
+$string['themeurlcolor'] = 'Link colour';
 $string['themeurlcolordesc'] = 'Set the colour for your linked text.';
-$string['themehovercolor'] = 'Theme Hover Colour';
-$string['themehovercolordesc'] = 'What colour should your theme hovers be. This is used for links, menus, etc';
+$string['themehovercolor'] = 'Theme hover colour';
+$string['themehovercolordesc'] = 'What colour should your theme hovers be. This is used for links, menus, etc.';
 
-$string['footercolor'] = 'Footer Background Colour';
+$string['footercolor'] = 'Footer background colour';
 $string['footercolordesc'] = 'Set what colour the background of the Footer box should be.';
-$string['footersepcolor'] = 'Footer Separator Colour';
+$string['footersepcolor'] = 'Footer separator colour';
 $string['footersepcolordesc'] = 'Separators are lines used to separate content.  Set their colour here.';
-$string['footertextcolor'] = 'Footer Text Colour';
+$string['footertextcolor'] = 'Footer text colour';
 $string['footertextcolordesc'] = 'Set the colour you want your text to be in the footer.';
-$string['footerurlcolor'] = 'Footer Link Colour';
+$string['footerurlcolor'] = 'Footer link colour';
 $string['footerurlcolordesc'] = 'Set the colour for your linked text in the footer.';
-$string['footerhovercolor'] = 'Footer Link Hover Colour';
+$string['footerhovercolor'] = 'Footer link hover colour';
 $string['footerhovercolordesc'] = 'Set the colour for your linked text when hovered over in the footer.';
-$string['footerheadingcolor'] = 'Footer Heading Colour';
+$string['footerheadingcolor'] = 'Footer heading colour';
 $string['footerheadingcolordesc'] = 'Set the colour for block headings in the footer.';
 
-$string['pagebackground'] = 'Page Background Image';
+$string['pagebackground'] = 'Page background image';
 $string['pagebackgrounddesc'] = 'Upload your own background image.  This will be tiled in the background on all pages.  If none is uploaded a default image is used.';
 
 /* Alternate Color Switcher */
-$string['themecolors'] = 'Theme Colours';
-$string['defaultcolors'] = 'Default Colours';
-$string['alternativecolors'] = 'Alternative Colours {$a}';
-$string['alternativethemecolor'] = 'Alternative Theme Colour {$a}';
+$string['themecolors'] = 'Theme colours';
+$string['defaultcolors'] = 'Default colours';
+$string['alternativecolors'] = 'Alternative colours {$a}';
+$string['alternativethemecolor'] = 'Alternative theme colour {$a}';
 $string['alternativethemecolordesc'] = 'What colour should your theme be for the alternative theme colours {$a}. If enabled and the user choose it, this will replace the default theme colour.';
-$string['alternativethemename'] = 'Colour Scheme Name';
+$string['alternativethemename'] = 'Colour scheme name';
 $string['alternativethemenamedesc'] = 'Provide a name for your alternative theme colours';
-$string['alternativethemecolors'] = 'Alternative Theme Colours';
+$string['alternativethemecolors'] = 'Alternative theme colours';
 $string['alternativethemecolorsdesc'] = 'Defines theme colours alternative that the user may select.';
-$string['alternativethemecolorname'] = 'Name of Alternative Colour Set {$a}';
+$string['alternativethemecolorname'] = 'Name of alternative colour set {$a}';
 $string['alternativethemecolornamedesc'] = 'Provide a recognisable name for this set of alternative theme colours';
 $string['alternativethemetextcolor'] = 'Alternative text colour  {$a}';
 $string['alternativethemetextcolordesc'] = 'Set the colour for your alternative text {$a}.';
@@ -225,37 +225,37 @@ $string['enablealternativethemecolors'] = 'Enable alternative theme colours {$a}
 $string['enablealternativethemecolorsdesc'] = 'If enabled, the user will be able to choose the alternative theme colours {$a}.';
 
 /* Frontpage Settings */
-$string['frontcontentheading'] = 'Frontpage Settings';
+$string['frontcontentheading'] = 'Front page settings';
 $string['frontcontentheadingsub'] = 'Change what features you wish enabled on your Moodle front page';
-$string['frontcontentdesc'] = 'This adds a custom content area in between the Slideshow and the Marketing boxes for your own custom content';
+$string['frontcontentdesc'] = 'This adds a custom content area in between the slide show and the Marketing boxes for your own custom content';
 
-$string['usefrontcontent'] = 'Enable Frontpage content';
-$string['usefrontcontentdesc'] = 'If enabled this will display the content of the box below in between the Slideshow and the Marketing spots.';
+$string['usefrontcontent'] = 'Enable front page content';
+$string['usefrontcontentdesc'] = 'If enabled this will display the content of the box below in between the slide show and the Marketing spots.';
 
-$string['frontcontentarea'] = 'Frontpage Content';
-$string['frontcontentareadesc'] = 'Whatever is typed into this box will display across the full width of the page in between the Slideshow and the Marketing spots ';
+$string['frontcontentarea'] = 'Front page content';
+$string['frontcontentareadesc'] = 'Whatever is typed into this box will display across the full width of the page in between the slide show and the Marketing spots ';
 
-$string['frontpagemiddleblocks'] = 'Enable Frontpage Middle Blocks';
+$string['frontpagemiddleblocks'] = 'Enable front page middle blocks';
 $string['frontpagemiddleblocksdesc'] = 'If enabled this will display 3 new block locations just under the marketing spots';
 
 /* Slideshow */
-$string['slideshowheading'] = 'Frontpage Slideshow';
-$string['slideshowheadingsub'] = 'Dynamic Slideshow for the frontpage';
-$string['slideshowdesc'] = 'This creates a dynamic slideshow of up to sixteen slides for you to promote important elements of your site.';
+$string['slideshowheading'] = 'Front page slide show';
+$string['slideshowheadingsub'] = 'Dynamic slide show for the front page';
+$string['slideshowdesc'] = 'This creates a dynamic slide show of up to sixteen slides for you to promote important elements of your site.';
 
-$string['toggleslideshow'] = 'Toggle Slideshow display';
-$string['toggleslideshowdesc'] = 'Choose if you wish to hide or show the slideshow.';
+$string['toggleslideshow'] = 'Toggle slide show display';
+$string['toggleslideshowdesc'] = 'Choose if you wish to hide or show the slide show.';
 
 $string['numberofslides'] = 'Number of slides';
 $string['numberofslides_desc'] = 'Number of slides on the slider.';
 
-$string['hideonphone'] = 'Hide Slideshow on Mobiles';
-$string['hideonphonedesc'] = 'Choose if you wish to disable slideshow on mobiles.';
+$string['hideonphone'] = 'Hide slide show on mobiles';
+$string['hideonphonedesc'] = 'Choose if you wish to disable slide show on mobiles.';
 
-$string['hideontablet'] = 'Hide Slideshow on Tablets';
-$string['hideontabletdesc'] = 'Choose if you wish to disable the slideshow on tablets.';
+$string['hideontablet'] = 'Hide slide show on tablets';
+$string['hideontabletdesc'] = 'Choose if you wish to disable the slide show on tablets.';
 
-$string['readmore'] = 'Read More';
+$string['readmore'] = 'Read more';
 
 $string['slideinterval'] = 'Slide interval';
 $string['slideintervaldesc'] = 'Slide transition interval in milliseconds.';
@@ -289,20 +289,20 @@ $string['slideurltargetnew'] = 'New page';
 $string['slideurltargetparent'] = 'Parent frame';
 
 /* Marketing Spots */
-$string['marketingheading'] = 'Marketing Spots';
+$string['marketingheading'] = 'Marketing spots';
 $string['marketinginfodesc'] = 'Enter the settings for your marketing spot.';
 $string['marketingheadingsub'] = 'Three locations on the front page to add information and links';
 
-$string['marketingheight'] = 'Height of Marketing Images';
+$string['marketingheight'] = 'Height of marketing images';
 $string['marketingheightdesc'] = 'If you want to display images in the Marketing boxes you can specify their hight here.';
-$string['marketingdesc'] = 'This theme provides the option of enabling three "marketing" or "ad" spots just under the slideshow.  These allow you to easily identify core information to your users and provide direct links.';
+$string['marketingdesc'] = 'This theme provides the option of enabling three "marketing" or "ad" spots just under the slide show.  These allow you to easily identify core information to your users and provide direct links.';
 
-$string['togglemarketing'] = 'Toggle Marketing Spot display';
-$string['togglemarketingdesc'] = 'Choose if you wish to hide or show the three Marketing Spots.';
+$string['togglemarketing'] = 'Toggle marketing spot display';
+$string['togglemarketingdesc'] = 'Choose if you wish to hide or show the three marketing spots.';
 
-$string['marketing1'] = 'Marketing Spot One';
-$string['marketing2'] = 'Marketing Spot Two';
-$string['marketing3'] = 'Marketing Spot Three';
+$string['marketing1'] = 'Marketing spot one';
+$string['marketing2'] = 'Marketing spot two';
+$string['marketing3'] = 'Marketing spot three';
 
 $string['marketingtitle'] = 'Title';
 $string['marketingtitledesc'] = 'Title to show in this marketing spot';
@@ -311,22 +311,22 @@ $string['marketingicondesc'] = 'Name of the icon you wish to use. List is <a hre
 $string['marketingimage'] = 'Image';
 $string['marketingimagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot';
 $string['marketingcontent'] = 'Content';
-$string['marketingcontentdesc'] = 'Content to display in the marketing box. Keep it short and sweet.';
-$string['marketingbuttontext'] = 'Link Text';
+$string['marketingcontentdesc'] = 'Content to display in the marketing box.  Keep it short and sweet.';
+$string['marketingbuttontext'] = 'Link text';
 $string['marketingbuttontextdesc'] = 'Text to appear on the button.';
 $string['marketingbuttonurl'] = 'Link URL';
 $string['marketingbuttonurldesc'] = 'URL the button will point to.';
-$string['marketingurltarget'] = 'Link Target';
+$string['marketingurltarget'] = 'Link target';
 $string['marketingurltargetdesc'] = 'Choose how the link should be opened';
-$string['marketingurltargetself'] = 'Current Page';
-$string['marketingurltargetnew'] = 'New Page';
-$string['marketingurltargetparent'] = 'Parent Frame';
+$string['marketingurltargetself'] = 'Current page';
+$string['marketingurltargetnew'] = 'New page';
+$string['marketingurltargetparent'] = 'Parent frame';
 
 /* Social Networks */
-$string['socialheading'] = 'Social Networking';
-$string['socialheadingsub'] = 'Engage your users with Social Networking';
+$string['socialheading'] = 'Social networking';
+$string['socialheadingsub'] = 'Engage your users with social networking';
 $string['socialdesc'] = 'Provide direct links to the core social networks that promote your brand.  These will appear in the header of every page.';
-$string['socialnetworks'] = 'Social Networks';
+$string['socialnetworks'] = 'Social networks';
 
 $string['facebook'] = 'Facebook URL';
 $string['facebookdesc'] = 'Enter the URL of your Facebook page. (i.e https://www.facebook.com/mycollege)';
@@ -350,7 +350,7 @@ $string['vk'] = 'VKontakte URL';
 $string['vkdesc'] = 'Enter the URL of your Vkontakte page. (i.e http://www.vk.com/mycollege)';
 
 $string['skype'] = 'Skype Account';
-$string['skypedesc'] = 'Enter the Skype username of your organisations Skype account (i.e my.college)';
+$string['skypedesc'] = 'Enter the Skype user name of your organisations Skype account (i.e my.college)';
 
 $string['pinterest'] = 'Pinterest URL';
 $string['pinterestdesc'] = 'Enter the URL of your Pinterest page. (i.e http://pinterest.com/mycollege/mypinboard)';
@@ -362,30 +362,30 @@ $string['website'] = 'Website URL';
 $string['websitedesc'] = 'Enter the URL of your own website. (i.e http://www.uplearning.nl)';
 
 /* Category Icons */
-$string['categoryiconheading'] = 'Category Icons';
+$string['categoryiconheading'] = 'Category icons';
 $string['categoryiconheadingsub'] = 'Use icons to represent your categories';
 $string['categoryicondesc'] = 'If enabled this will allow you to set icons for each category of course.';
 $string['categoryiconcategory'] = 'The icon for the category: {$a->category}.';
 
-$string['enablecategoryicon'] = 'Enable Category Icons';
+$string['enablecategoryicon'] = 'Enable category icons';
 $string['enablecategoryicondesc'] = 'If enabled you will be able to select category icons after clicking "Save changes".';
 
-$string['usecategoryicon'] = 'Enable Category Icons';
+$string['usecategoryicon'] = 'Enable category icons';
 $string['usecategoryicondesc'] = 'Use custom icons for categories';
 
-$string['defaultcategoryicon'] = 'Default Category Icons';
+$string['defaultcategoryicon'] = 'Default category icons';
 $string['defaultcategoryicondesc'] = 'Set a default category icon';
 
-$string['enablecustomcategoryicon'] = 'Enable Custom Category Icons';
+$string['enablecustomcategoryicon'] = 'Enable custom category icons';
 $string['enablecustomcategoryicondesc'] = 'If enabled below this section you will see each category with a customizable option behind each category, please save after enabling and disabling this option.';
 
-$string['categoryiconinfo'] = 'Set Custom Category Icons';
-$string['categoryiconinfodesc'] = 'Enter the name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after "fa-".';
+$string['categoryiconinfo'] = 'Set custom category icons';
+$string['categoryiconinfodesc'] = 'Enter the name of the icon you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after "fa-".';
 
 /* Mobile Apps */
-$string['mobileappsheading'] = 'Mobile Apps';
-$string['mobileappsheadingsub'] = 'Link to your App to get your students using Mobiles';
-$string['mobileappsdesc'] = 'Have you got a web app on the App Store or Google Play Store?  Provide a link here so your users can grab the apps online';
+$string['mobileappsheading'] = 'Mobile apps';
+$string['mobileappsheadingsub'] = 'Link to your app to get your students using mobiles';
+$string['mobileappsdesc'] = 'Have you got a web app on the App Store or Google Play Store?  Provide a link here so your users can grab the apps online.';
 
 $string['android'] = 'Android (Google Play)';
 $string['androiddesc'] = 'Provide an URL to your mobile App on the Google Play Store.  If you do not have one of your own maybe consider linking to the free official Moodle Mobile app. (https://play.google.com/store/apps/details?id=com.moodle.moodlemobile)';
@@ -394,25 +394,25 @@ $string['ios'] = 'iPhone/iPad (App Store)';
 $string['iosdesc'] = 'Provide an URL to your mobile App on the App Store.  If you do not have one of your own maybe consider linking to the free official Moodle Mobile app (https://itunes.apple.com/en/app/moodle-mobile/id633359593).';
 
 /* iOS Icons */
-$string['iosicon'] = 'iOS Homescreen Icons';
-$string['iosicondesc'] = 'The them does provide a default icon for iOS and android homescreens. You can upload your custom icons if you wish.';
+$string['iosicon'] = 'iOS home screen ocons';
+$string['iosicondesc'] = 'The them does provide a default icon for iOS and android home screens.  You can upload your custom icons if you wish.';
 
-$string['iphoneicon'] = 'iPhone/iPod Touch Icon (Non Retina)';
-$string['iphoneicondesc'] = 'Icon should be a PNG files sized 57px by 57px';
+$string['iphoneicon'] = 'iPhone/iPod Touch icon (Non Retina)';
+$string['iphoneicondesc'] = 'Icon should be a PNG files sized 57px by 57px.';
 
-$string['iphoneretinaicon'] = 'iPhone/iPod Touch Icon (Retina)';
-$string['iphoneretinaicondesc'] = 'Icon should be a PNG files sized 114px by 114px';
+$string['iphoneretinaicon'] = 'iPhone/iPod Touch icon (Retina)';
+$string['iphoneretinaicondesc'] = 'Icon should be a PNG files sized 114px by 114px.';
 
-$string['ipadicon'] = 'iPad Icon (Non Retina)';
-$string['ipadicondesc'] = 'Icon should be a PNG files sized 72px by 72px';
+$string['ipadicon'] = 'iPad Icon (Non retina)';
+$string['ipadicondesc'] = 'Icon should be a PNG files sized 72px by 72px.';
 
 $string['ipadretinaicon'] = 'iPad Icon (Retina)';
-$string['ipadretinaicondesc'] = 'Icon should be a PNG files sized 144px by 144px';
+$string['ipadretinaicondesc'] = 'Icon should be a PNG files sized 144px by 144px.';
 
 /* Google Analytics */
 $string['analyticsheading'] = 'Google Analytics';
 $string['analyticsheadingsub'] = 'Powerful analytics from Google';
-$string['analyticsdesc'] = 'Here you can enable Google Analytics for your moodle site. You will need to sign up for a free account at the Google Analytics site (<a href="http://analytics.google.com" target="_blank">http://analytics.google.com</a>)';
+$string['analyticsdesc'] = 'Here you can enable Google Analytics for your moodle site.  You will need to sign up for a free account at the Google Analytics site (<a href="http://analytics.google.com" target="_blank">http://analytics.google.com</a>)';
 
 $string['useanalytics'] = 'Enable Google Analytics';
 $string['useanalyticsdesc'] = 'Enable or disable Google Analytics functionality.';
@@ -423,29 +423,29 @@ $string['analyticsiddesc'] = 'Enter the provided Tracking ID. Typically formatte
 $string['analyticsclean'] = 'Send Clean URLs';
 $string['analyticscleandesc'] = 'This fantastic feature was created by <a href="https://moodle.org/user/profile.php?id=281671" target="_blank">Gavin Henrick</a> and <a href="https://moodle.org/user/view.php?id=907814" target="_blank">Bas Brands</a> and is implemented in this theme. Rather than standard Moodle URLs the theme will send out clean URLs making it easier to identify the page and provide advanced reporting. More information on using this feature and its uses can be <b><a href="http://www.somerandomthoughts.com/blog/2012/04/18/ireland-uk-moodlemoot-analytics-to-the-front/" target="_blank">found here</a></b>.';
 
-$string['analyticsadmin'] = 'Track Admin Users';
-$string['analyticsadmindesc'] = 'Enable to track Admin users as well.';
+$string['analyticsadmin'] = 'Track admin users';
+$string['analyticsadmindesc'] = 'Enable to track admin users.';
 
 /* Alerts */
-$string['alertsheading'] = 'User Alerts';
-$string['alertsheadingsub'] = 'Display important messages to your users on the frontpage';
+$string['alertsheading'] = 'User alerts';
+$string['alertsheadingsub'] = 'Display important messages to your users on the front page';
 $string['alertsdesc'] = 'This will display an alert (or multiple) in three different styles to your users on the Moodle frontpage. Please remember to disable these when no longer needed.';
 
-$string['enablealert'] = 'Enable Alert';
+$string['enablealert'] = 'Enable alerts';
 $string['enablealertdesc'] = 'Enable or disable alerts';
 
-$string['alert1'] = 'First Alert';
-$string['alert2'] = 'Second Alert';
-$string['alert3'] = 'Third Alert';
+$string['alert1'] = 'First alert';
+$string['alert2'] = 'Second alert';
+$string['alert3'] = 'Third alert';
 
 $string['alerttitle'] = 'Title';
-$string['alerttitledesc'] = 'Main title/heading for your alert';
+$string['alerttitledesc'] = 'Main title/heading for your alert.';
 
 $string['alerttype'] = 'Level';
-$string['alerttypedesc'] = 'Set the appropriate alert level/type to best inform your users';
+$string['alerttypedesc'] = 'Set the appropriate alert level/type to best inform your users.';
 
-$string['alerttext'] = 'Alert Text';
-$string['alerttextdesc'] = 'What is the text you wish to display in your alert';
+$string['alerttext'] = 'Alert text';
+$string['alerttextdesc'] = 'What is the text you wish to display in your alert.';
 
 $string['alert_info'] = 'Information';
 $string['alert_warning'] = 'Warning';
