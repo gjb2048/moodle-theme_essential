@@ -26,6 +26,8 @@ New in 2.7.4
 - FIX: Alternative colour sets all now have the same CSS, docking fixed and consistent with settings.
 - FIX: Moved all RTL to separate sheet from main CSS.  Sheet 'essential-rtl' uses 'flipped' technology whilst 'rtl' sheet has manual styles.
 - FIX: Issue #78.  Category icon issue in RTL.
+- FIX: Issue #90.  XML Editor last used.
+- FIX: Issue #88.  XML editor contrast issues.
 - NEW: Alternative colour sets have text and link colour settings.
 - NEW: Optimised svg's to be smaller.
 - NEW: Warning about IE8 as M2.6 does not support it - http://docs.moodle.org/dev/Moodle_2.6_release_notes#Requirements.

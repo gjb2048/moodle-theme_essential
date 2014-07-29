@@ -605,12 +605,17 @@ h2.pagetitle span {
   margin: 10px 0px;
 }
 
-.button a,
-.button a:visited {
+.button a {
   border-bottom: 2px solid #29A1C4;
   width: 100px;
-  padding: 6px 15px;
+  padding: 2px 5px;
   border-radius: 5px;
+  color: #eee;
+}
+
+.button a:visited,
+.button a:hover {
+  color: #fff;
 }
 
 a#button,
@@ -1984,6 +1989,10 @@ table.calendarmonth.calendartable {
 #ie8message {
   font-size: 1.2em;
   padding-top: 55px;
+}
+
+a[name="lastused"] {
+  padding-top: 50px;
 }
 
 /* @end */
