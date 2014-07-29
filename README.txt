@@ -28,9 +28,11 @@ New in 2.7.4
 - FIX: Issue #78.  Category icon issue in RTL.
 - FIX: Issue #90.  XML Editor last used.
 - FIX: Issue #88.  XML editor contrast issues.
+- FIX: Issue #89.  Dock causes horizontal scroll bar.
 - NEW: Alternative colour sets have text and link colour settings.
 - NEW: Optimised svg's to be smaller.
 - NEW: Warning about IE8 as M2.6 does not support it - http://docs.moodle.org/dev/Moodle_2.6_release_notes#Requirements.
+- NEW: If the page width setting is narrow and there are custom menu items the navigation bar and page adjusts to cope.
 
 
 New in 2.7.3

@@ -282,6 +282,7 @@ ul.socials {
     position: fixed;
     width: 100%;
     top: 0px;
+    right: 0px;
     background-image: none;
     z-index: 4030;
 }
@@ -1929,6 +1930,22 @@ table.calendarmonth.calendartable {
 // XML DB Editor - Issue #90.
 a[name="lastused"] {
     padding-top: 50px;
+}
+
+// Docking - Issue #87.
+section[role="main-content"] {
+    padding-top: 11px;
+}
+
+// Narrow page width with custom menu items can make the navigation bar big.
+body.pagewidthnarrow.custommenuitems {
+    header .navbar-inner {
+        height: 81px;
+        max-height: 81px;
+    }
+    #page-header {
+        margin-top: 81px;
+    }
 }
 
 /* @end */

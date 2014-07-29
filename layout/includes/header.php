@@ -30,6 +30,26 @@
 <![endif]-->
 
 <header role="banner">
+    <nav role="navigation">
+        <div class="navbar<?php echo ($oldnavbar)? ' oldnavbar': '';?>">
+            <div class="container-fluid navbar-inner">
+                <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <div class="nav-collapse collapse">
+                    <?php echo $OUTPUT->custom_menu(); ?>
+                    <ul class="nav pull-right">
+                        <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
+                        <li class="navbar-text"><?php echo $OUTPUT->login_info(); ?></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
     <div id="page-header" class="clearfix<?php echo ($oldnavbar)? ' oldnavbar': '';?>">
         <div class="container-fluid">
             <div class="row-fluid">
@@ -98,24 +118,4 @@
             </div>
         </div>
     </div>
-
-    <nav role="navigation">
-        <div class="navbar<?php echo ($oldnavbar)? ' oldnavbar': '';?>">
-            <div class="container-fluid navbar-inner">
-                <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <div class="nav-collapse collapse">
-                    <?php echo $OUTPUT->custom_menu(); ?>
-                    <ul class="nav pull-right">
-                        <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-                        <li class="navbar-text"><?php echo $OUTPUT->login_info(); ?></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
 </header>

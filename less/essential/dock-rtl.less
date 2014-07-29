@@ -4,16 +4,6 @@
 // @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
 //
 
-// Make room for the dock, i.e. shift slider to the right by the width of the dock.
-body.has_dock {
-    margin-left:0
-    &.dir-rtl {
-        header, > section, footer {
-            margin-right: 42px;
-        }
-    }
-}
-
 body.dir-rtl {
     #dockeditempanel {
         right: 100%;
@@ -29,5 +19,9 @@ body.dir-rtl {
             border-top:1px solid #EEE;
             border-bottom: 1px solid #EEE;
         }
+    }
+    &.has_dock #page, &.has_dock .navbar-inner {
+        padding-right: 52px;
+        padding-left: 10px;
     }
 }

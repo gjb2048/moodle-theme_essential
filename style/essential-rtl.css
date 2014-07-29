@@ -318,6 +318,7 @@ ul.socials {
   position: fixed;
   width: 100%;
   top: 0px;
+  left: 0px;
   background-image: none;
   z-index: 4030;
 }
@@ -1995,6 +1996,19 @@ a[name="lastused"] {
   padding-top: 50px;
 }
 
+section[role="main-content"] {
+  padding-top: 11px;
+}
+
+body.pagewidthnarrow.custommenuitems header .navbar-inner {
+  height: 81px;
+  max-height: 81px;
+}
+
+body.pagewidthnarrow.custommenuitems #page-header {
+  margin-top: 81px;
+}
+
 /* @end */
 
 #essentialCarousel.carousel {
@@ -2253,12 +2267,6 @@ body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner .ca
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-body.has_dock.dir-ltr header,
-body.has_dock.dir-ltr > section,
-body.has_dock.dir-ltr footer {
-  margin-right: 42px;
-}
-
 .dockbutton:hover,
 .dockbutton:focus,
 .dockbutton.disabled,
@@ -2324,7 +2332,7 @@ body.has_dock.dir-ltr footer {
   color: white;
   -webkit-transition: .25s;
   -moz-transition: .25s;
-  transition: 0.25s;
+  transition: .25s;
 }
 
 .dockbutton:active,
@@ -2337,7 +2345,7 @@ body.has_dock.dir-ltr footer {
 
 .dockbutton.disabled,
 .dockbutton[disabled] {
-  color: #ffffff;
+  color: white;
 }
 
 .dockbutton-large {
@@ -2352,17 +2360,19 @@ body.has_dock.dir-ltr footer {
   padding: 1px 8px;
 }
 
-body.has_dock {
-  margin-right: 40px;
-}
-
 body.has_dock div#dock {
   display: inline;
 }
 
+body.has_dock.dir-ltr #page,
+body.has_dock.dir-ltr .navbar-inner {
+  /*@noflip*/
+  padding-left: 52px;
+}
+
 #dock {
   position: fixed;
-  top: 0;
+  top: 42px;
   right: 0;
   z-index: 11000;
   height: 100%;
@@ -2484,7 +2494,7 @@ body.has_dock div#dock {
 
 #dock .dockedtitle.disabled,
 #dock .dockedtitle[disabled] {
-  color: #ffffff;
+  color: white;
 }
 
 #dock .dockedtitle-large {

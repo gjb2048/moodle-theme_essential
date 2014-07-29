@@ -57,9 +57,8 @@ echo $OUTPUT->doctype() ?>
     </nav>
 </header>
 
-<section role="main-content">
-    <div id="page" class="container-fluid">
-
+<div id="page" class="container-fluid">
+    <section role="main-content">
         <div id="page-content" class="row-fluid">
             <div id="region-bs-main-and-pre" class="span9">
                 <div class="row-fluid">
@@ -71,9 +70,9 @@ echo $OUTPUT->doctype() ?>
             </div>
             <?php echo $OUTPUT->blocks('side-post', 'span3'); ?>
         </div>
-    </div>
-</section>
+    </section>
 
-<?php echo $OUTPUT->standard_end_of_body_html() ?>
+    <?php echo $OUTPUT->standard_end_of_body_html() ?>
+</div>
 </body>
 </html>

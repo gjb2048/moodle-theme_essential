@@ -36,7 +36,24 @@ if (!empty($PAGE->theme->settings->sideregionsmaxwidth)) {
 if (!empty($PAGE->theme->settings->slidecaptionbelow)) {
     $bodyclasses[] = 'frontpageslidercaptionbelow';
 }
- 
+
+if (!empty($PAGE->theme->settings->pagewidth)) {
+    switch ($PAGE->theme->settings->pagewidth) {
+        case 100:
+            $bodyclasses[] = 'pagewidthvariable';
+            break;
+        case 1200:
+            $bodyclasses[] = 'pagewidthnarrow';
+            break;
+        case 1600:
+            $bodyclasses[] = 'pagewidthwide';
+            break;
+    }
+}
+if (!empty($CFG->custommenuitems)) {
+    $bodyclasses[] = 'custommenuitems';
+}
+
 if (right_to_left()) {
     $regionbsid = 'region-bs-main-and-post';
     $left = false;
