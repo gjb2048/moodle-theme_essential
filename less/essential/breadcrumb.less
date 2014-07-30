@@ -1,5 +1,15 @@
 .breadcrumb-button {
     margin-top: 0px;
+    input[type="submit"] {
+        color: ~"[[setting:themenavcolor]]";
+        background: ~"[[setting:themecolor]]";
+        text-shadow: none;
+        border: 0px none;
+        &:hover {
+            color: ~"[[setting:themecolor]]";
+            background: ~"[[setting:themenavcolor]]";
+        }
+    }
 }
 
 .breadcrumb-nav {
@@ -14,7 +24,7 @@
         overflow: hidden;
         margin-top: 0px;
         li {
-            color: white;
+            color: ~"[[setting:themenavcolor]]";
             padding: 0 0 0 45px;
             background: ~"[[setting:themecolor]]";
             position: relative; 
@@ -25,10 +35,12 @@
             border-radius: 0px;
             text-shadow: none;
             a {
-                color: white;
+                color: ~"[[setting:themenavcolor]]";
                 text-decoration: none;
             }
             a:hover {
+                color: ~"[[setting:themecolor]]";
+                background: ~"[[setting:themenavcolor]]";
                 text-decoration: underline;
             }
         }
@@ -88,10 +100,17 @@
             border: 0px;
         }
         li:hover {
-            background: ~"[[setting:themehovercolor]]";
+            color: ~"[[setting:themecolor]]";
+            background: ~"[[setting:themenavcolor]]";
+            a {
+                color: ~"[[setting:themecolor]]";
+            }
         }
         li:hover:after {
-            border-left-color: ~"[[setting:themehovercolor]]" !important;
+            border-left-color: ~"[[setting:themenavcolor]]";
+            a {
+                color: ~"[[setting:themecolor]]";
+            }
         }
     }
 

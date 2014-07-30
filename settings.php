@@ -232,7 +232,7 @@ defined('MOODLE_INTERNAL') || die;
     
     $ADMIN->add('theme_essential', $temp);
     
-    /* Color Settings */
+    /* Colour Settings */
     $temp = new admin_settingpage('theme_essential_color', get_string('colorheading', 'theme_essential'));
     $temp->add(new admin_setting_heading('theme_essential_color', get_string('colorheadingsub', 'theme_essential'),
             format_text(get_string('colordesc' , 'theme_essential'), FORMAT_MARKDOWN)));
@@ -280,6 +280,16 @@ defined('MOODLE_INTERNAL') || die;
     $title = get_string('themehovercolor', 'theme_essential');
     $description = get_string('themehovercolordesc', 'theme_essential');
     $default = '#29a1c4';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Navigation colour setting.
+    $name = 'theme_essential/themenavcolor';
+    $title = get_string('themenavcolor', 'theme_essential');
+    $description = get_string('themenavcolordesc', 'theme_essential');
+    $default = '#ffffff';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');

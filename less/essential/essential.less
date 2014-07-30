@@ -48,9 +48,10 @@ a {
     margin-right: 5px;
 }
 
-.logininfo,
-.logininfo a {
-    color: #fff !important;
+div {
+    &.logininfo, &.logininfo a {
+        color: ~"[[setting:themenavcolor]]";
+    }
 }
 
 #page {
@@ -148,12 +149,6 @@ h1#title {
     color: ~"[[setting:themecolor]]";
 }
 
-.breadcrumb-button input[type="submit"]{
-    color: #fff;
-    text-shadow: none;
-    border: 0px none;
-}
-
 .btn-success,
 .btn-warning,
 .btn-info,
@@ -224,13 +219,12 @@ button {
     }
 }
 
-.socials li {
-    text-align: right;
-    display: inline-block;
-}
-
 ul.socials {
     text-align: right;
+    li {
+        text-align: right;
+        display: inline-block;
+    }
 }
 
 #socialheading {
@@ -285,6 +279,43 @@ ul.socials {
     right: 0px;
     background-image: none;
     z-index: 4030;
+    .brand {
+        color: ~"[[setting:themenavcolor]]";
+        text-shadow: none;
+        line-height: 20px;
+    }
+
+    .active > a,
+    .nav .active > a:hover,
+    .nav .active > a:focus,
+    .nav li.dropdown.open > .dropdown-toggle,
+    .nav li.dropdown.active > .dropdown-toggle,
+    .nav li.dropdown.open.active > .dropdown-toggle {
+        color: ~"[[setting:themenavcolor]]";
+    }
+
+    .nav li.dropdown > a.dropdown-toggle .caret {
+        border-top-color: ~"[[setting:themenavcolor]]";
+        border-bottom-color: ~"[[setting:themenavcolor]]";
+        margin-left: 5px;
+        &:hover, &:focus {
+            border-top-color: ~"[[setting:themecolor]]";
+            border-bottom-color: ~"[[setting:themecolor]]";
+        }
+    }
+
+    .nav > li > a {
+        color: ~"[[setting:themenavcolor]]";
+        text-shadow: none;
+        &:hover, &:focus {
+            background-color: ~"[[setting:themenavcolor]]";
+            color: ~"[[setting:themecolor]]";
+            &.dropdown-toggle .caret {
+                border-top-color: ~"[[setting:themecolor]]";
+                border-bottom-color: ~"[[setting:themecolor]]";
+            }
+        }
+    }
 }
 
 .navbar.oldnavbar,
@@ -305,36 +336,6 @@ ul.socials {
     background-image: none;
     box-shadow: none;
     filter: none;
-}
-
-.navbar .brand {
-    color: #fff !important;
-    text-shadow: none;
-    line-height: 20px;
-}
-
-.navbar .nav .active > a,
-.navbar .nav .active > a:hover,
-.navbar .nav .active > a:focus,
-.navbar .nav li.dropdown.open > .dropdown-toggle,
-.navbar .nav li.dropdown.active > .dropdown-toggle,
-.navbar .nav li.dropdown.open.active > .dropdown-toggle {
-    color: #fff;
-}
-
-.navbar .caret {
-    border-top-color: white !important;
-    border-bottom-color: white !important;
-    margin-left: 5px;
-}
-
-.navbar .nav > li > a {
-    color: #fff;
-    text-shadow: none;
-}
-
-.navbar .nav > li > a:hover {
-    color: #fff;
 }
 
 /* @end */
