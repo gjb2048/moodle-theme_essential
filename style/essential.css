@@ -49,9 +49,9 @@ a {
 .logininfo {
   margin-right: 5px;
 }
-.logininfo,
-.logininfo a {
-  color: #fff !important;
+div.logininfo,
+div.logininfo a {
+  color: [[setting:themenavcolor]];
 }
 #page {
   padding-top: 10px;
@@ -131,11 +131,6 @@ h1#title {
   margin-right: 10px;
   color: [[setting:themecolor]];
 }
-.breadcrumb-button input[type="submit"] {
-  color: #fff;
-  text-shadow: none;
-  border: 0px none;
-}
 .btn-success,
 .btn-warning,
 .btn-info,
@@ -210,12 +205,12 @@ button.linkedin:hover,
 button.linkedin:focus {
   background: #4A9CC9;
 }
-.socials li {
-  text-align: right;
-  display: inline-block;
-}
 ul.socials {
   text-align: right;
+}
+ul.socials li {
+  text-align: right;
+  display: inline-block;
 }
 #socialheading {
   text-align: right;
@@ -261,6 +256,43 @@ ul.socials {
   background-image: none;
   z-index: 4030;
 }
+.navbar .brand {
+  color: [[setting:themenavcolor]];
+  text-shadow: none;
+  line-height: 20px;
+}
+.navbar .active > a,
+.navbar .nav .active > a:hover,
+.navbar .nav .active > a:focus,
+.navbar .nav li.dropdown.open > .dropdown-toggle,
+.navbar .nav li.dropdown.active > .dropdown-toggle,
+.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+  color: [[setting:themenavcolor]];
+}
+.navbar .nav li.dropdown > a.dropdown-toggle .caret {
+  border-top-color: [[setting:themenavcolor]];
+  border-bottom-color: [[setting:themenavcolor]];
+  margin-left: 5px;
+}
+.navbar .nav li.dropdown > a.dropdown-toggle .caret:hover,
+.navbar .nav li.dropdown > a.dropdown-toggle .caret:focus {
+  border-top-color: [[setting:themecolor]];
+  border-bottom-color: [[setting:themecolor]];
+}
+.navbar .nav > li > a {
+  color: [[setting:themenavcolor]];
+  text-shadow: none;
+}
+.navbar .nav > li > a:hover,
+.navbar .nav > li > a:focus {
+  background-color: [[setting:themenavcolor]];
+  color: [[setting:themecolor]];
+}
+.navbar .nav > li > a:hover.dropdown-toggle .caret,
+.navbar .nav > li > a:focus.dropdown-toggle .caret {
+  border-top-color: [[setting:themecolor]];
+  border-bottom-color: [[setting:themecolor]];
+}
 .navbar.oldnavbar,
 .pagelayout-secure .navbar,
 .pagelayout-popup .navbar {
@@ -277,31 +309,6 @@ ul.socials {
   background-image: none;
   box-shadow: none;
   filter: none;
-}
-.navbar .brand {
-  color: #fff !important;
-  text-shadow: none;
-  line-height: 20px;
-}
-.navbar .nav .active > a,
-.navbar .nav .active > a:hover,
-.navbar .nav .active > a:focus,
-.navbar .nav li.dropdown.open > .dropdown-toggle,
-.navbar .nav li.dropdown.active > .dropdown-toggle,
-.navbar .nav li.dropdown.open.active > .dropdown-toggle {
-  color: #fff;
-}
-.navbar .caret {
-  border-top-color: white !important;
-  border-bottom-color: white !important;
-  margin-left: 5px;
-}
-.navbar .nav > li > a {
-  color: #fff;
-  text-shadow: none;
-}
-.navbar .nav > li > a:hover {
-  color: #fff;
 }
 /* @end */
 /* @group Course
@@ -1740,7 +1747,7 @@ body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner .ca
 #frontpage-category-combo .collapsible-actions {
   display: none;
 }
-/* adjust lineheight for tiles that include course count */
+/* adjust line height for tiles that include course count */
 .frontpage-category-names.course_category_tree .category > .info > .categoryname,
 .frontpage-category-names.course_category_tree .category.with_children > .info > .categoryname {
   line-height: 15px;
@@ -1823,7 +1830,7 @@ body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner .ca
 }
 .course_category_tree .category[data-categoryid] > .info > .categoryname a:hover {
   text-decoration: none;
-  color: #fff;
+  color: [[setting:themenavcolor]];
 }
 /* Hide buttons to expand and collapse */
 .jsenabled .course_category_tree .controls {
@@ -2137,6 +2144,16 @@ body.has_dock.dir-ltr .navbar-inner {
 .breadcrumb-button {
   margin-top: 0px;
 }
+.breadcrumb-button input[type="submit"] {
+  color: [[setting:themenavcolor]];
+  background: [[setting:themecolor]];
+  text-shadow: none;
+  border: 0px none;
+}
+.breadcrumb-button input[type="submit"]:hover {
+  color: [[setting:themecolor]];
+  background: [[setting:themenavcolor]];
+}
 .breadcrumb-nav {
   margin: 0px;
   /** Some breadcrumb style **/
@@ -2151,7 +2168,7 @@ body.has_dock.dir-ltr .navbar-inner {
   margin-top: 0px;
 }
 .breadcrumb-nav ul.breadcrumb.style1 li {
-  color: white;
+  color: [[setting:themenavcolor]];
   padding: 0 0 0 45px;
   background: [[setting:themecolor]];
   position: relative;
@@ -2163,10 +2180,12 @@ body.has_dock.dir-ltr .navbar-inner {
   text-shadow: none;
 }
 .breadcrumb-nav ul.breadcrumb.style1 li a {
-  color: white;
+  color: [[setting:themenavcolor]];
   text-decoration: none;
 }
 .breadcrumb-nav ul.breadcrumb.style1 li a:hover {
+  color: [[setting:themecolor]];
+  background: [[setting:themenavcolor]];
   text-decoration: underline;
 }
 .breadcrumb-nav ul.breadcrumb.style1 li:after {
@@ -2224,10 +2243,17 @@ body.has_dock.dir-ltr .navbar-inner {
   border: 0px;
 }
 .breadcrumb-nav ul.breadcrumb.style1 li:hover {
-  background: [[setting:themehovercolor]];
+  color: [[setting:themecolor]];
+  background: [[setting:themenavcolor]];
+}
+.breadcrumb-nav ul.breadcrumb.style1 li:hover a {
+  color: [[setting:themecolor]];
 }
 .breadcrumb-nav ul.breadcrumb.style1 li:hover:after {
-  border-left-color: [[setting:themehovercolor]] !important;
+  border-left-color: [[setting:themenavcolor]];
+}
+.breadcrumb-nav ul.breadcrumb.style1 li:hover:after a {
+  color: [[setting:themecolor]];
 }
 .breadcrumb-nav ul.breadcrumb.style2 {
   padding: 0px;
@@ -2356,12 +2382,6 @@ h1#title {
 #headerlogo {
   border-right: 1px bg / dotted [[setting:themecolor]];
 }
-.breadcrumb-button input[type="submit"] {
-  background: [[setting:themecolor]];
-}
-.breadcrumb-button input[type="submit"]:hover {
-  background: [[setting:themehovercolor]];
-}
 /* @group Social Buttons */
 button.website:hover,
 button.website:focus {
@@ -2375,11 +2395,6 @@ button.website:focus {
 .dropdown-submenu:hover > a,
 .dropdown-submenu:focus > a {
   background-color: [[setting:themecolor]];
-  background-image: -moz-linear-gradient(top, [[setting:themecolor]], [[setting:themehovercolor]]);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:themecolor]]), to([[setting:themehovercolor]]));
-  background-image: -webkit-linear-gradient(top, [[setting:themecolor]], [[setting:themehovercolor]]);
-  background-image: -o-linear-gradient(top, [[setting:themecolor]], [[setting:themehovercolor]]);
-  background-image: linear-gradient(to bottom, [[setting:themecolor]], [[setting:themehovercolor]]);
 }
 /* @end */
 /* @group Theme Colours Menu */
@@ -2417,9 +2432,6 @@ a:hover .colours-alternative3 {
 .navbar,
 .navbar-inner {
   background-color: [[setting:themecolor]] !important;
-}
-.navbar .nav > li > a:hover {
-  background: [[setting:themehovercolor]] !important;
 }
 .navbar .nav .active > a,
 .navbar .nav .active > a:hover,

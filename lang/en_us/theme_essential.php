@@ -30,36 +30,36 @@ $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be 
 $string['copyrightdesc'] = 'The name of your organization.';
 
 /* Colors */
-$string['colorheading'] = 'Color Settings';
+$string['colorheading'] = 'Color settings';
 $string['colorheadingsub'] = 'Set the colors used in your theme';
 $string['colordesc'] = 'Here you can find various settings to change many of the colors found in this theme.';
 
-$string['themecolor'] = 'Theme Color';
+$string['themecolor'] = 'Theme color';
 $string['themecolordesc'] = 'What color should your theme be. This will change mulitple components to produce the color you wish across the moodle site';
-$string['themehovercolor'] = 'Theme Hover Color';
+$string['themehovercolor'] = 'Theme hover color';
 $string['themehovercolordesc'] = 'What color should your theme hovers be. This is used for links, menus, etc';
-$string['footercolor'] = 'Footer Background Color';
+$string['footercolor'] = 'Footer background color';
 $string['footercolordesc'] = 'Set what color the background of the Footer box should be.';
-$string['footersepcolor'] = 'Footer Seperator Color';
-$string['footersepcolordesc'] = 'Seperators are lines used to seperate content. Set their color here.';
-$string['footertextcolor'] = 'Footer Text Color';
+$string['footersepcolor'] = 'Footer separator color';
+$string['footersepcolordesc'] = 'Separators are lines used to separate content. Set their color here.';
+$string['footertextcolor'] = 'Footer text color';
 $string['footertextcolordesc'] = 'Set the color you want your text to be in the footer.';
-$string['footerurlcolor'] = 'Footer Link Color';
+$string['footerurlcolor'] = 'Footer link color';
 $string['footerurlcolordesc'] = 'Set the color for your linked text in the footer.';
-$string['footerhovercolor'] = 'Footer Link Hover Color';
+$string['footerhovercolor'] = 'Footer link hover color';
 $string['footerhovercolordesc'] = 'Set the color for your linked text when hovered over in the footer.';
-$string['footerheadingcolor'] = 'Footer Heading Color';
+$string['footerheadingcolor'] = 'Footer heading color';
 $string['footerheadingcolordesc'] = 'Set the color for block headings in the footer.';
 
-$string['alternativecolors'] = 'Alternative Colors {$a}';
-$string['alternativethemecolor'] = 'Alternative Theme Color {$a}';
+$string['alternativecolors'] = 'Alternative colors {$a}';
+$string['alternativethemecolor'] = 'Alternative theme color {$a}';
 $string['alternativethemecolordesc'] = 'What color should your theme be for the alternative theme colors {$a}. If enabled and the user choose it, this will replace the default theme color.';
-$string['alternativethemecolors'] = 'Alternative Theme Colors';
+$string['alternativethemecolors'] = 'Alternative theme colors';
 $string['alternativethemecolorsdesc'] = 'Defines theme colors alternative that the user may select.';
-$string['alternativethemehovercolor'] = 'Alternative Theme Hover Color {$a}';
+$string['alternativethemehovercolor'] = 'Alternative theme hover color {$a}';
 $string['alternativethemehovercolordesc'] = 'What color should your theme hovers be for the alternative theme colors {$a}. If enabled and the user choose it, this will replace the default theme hover color.';
-$string['defaultcolors'] = 'Default Colors';
-$string['enablealternativethemecolors'] = 'Enable Alternative Theme Colors {$a}';
+$string['defaultcolors'] = 'Default colors';
+$string['enablealternativethemecolors'] = 'Enable alternative theme colors {$a}';
 $string['enablealternativethemecolorsdesc'] = 'If enabled, the user will be able to choose the alternative theme colors {$a}.';
-$string['themecolors'] = 'Theme Colors';
+$string['themecolors'] = 'Theme colors';
 
