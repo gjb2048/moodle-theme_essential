@@ -119,6 +119,16 @@ div.logininfo a {
   border-bottom: 1px solid #DDD;
 }
 
+#page-header .row-fluid [class*="span"] {
+  padding-left: 5px;
+}
+
+@media (max-width: 767px) {
+  #page-header {
+    height: auto;
+  }
+}
+
 #page-header.oldnavbar,
 #page-admin-upgradesettings #page-header,
 .maintenance #page-header {
@@ -169,6 +179,10 @@ h1#title {
 }
 
 /* @group Social Buttons */
+
+#socialnetworks {
+  height: 75px;
+}
 
 .socials p {
   font-weight: normal;
@@ -263,7 +277,6 @@ ul.socials li {
 
 #socialheading {
   text-align: left;
-  color: #666;
   letter-spacing: .2em;
   padding: 0px;
   margin: 0px;
@@ -271,6 +284,20 @@ ul.socials li {
 }
 
 /* @end */
+
+/* @group Profile */
+
+#profilepic {
+  height: 75px;
+}
+
+#profileheading {
+  text-align: left;
+  letter-spacing: .2em;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 4px;
+}
 
 /* @end */
 
@@ -2410,15 +2437,12 @@ body.has_dock.dir-ltr .navbar-inner {
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  background-color: [[setting:themecolor]];
   border-bottom: 1px dashed #fff;
 }
 
 #dock .dockedtitle h2 {
   font-weight: normal;
-  line-height: 100%;
   text-align: center;
-  text-transform: uppercase;
   color: [[setting:themetextcolor]];
 }
 
@@ -2443,9 +2467,8 @@ body.has_dock.dir-ltr .navbar-inner {
 
 #dock .dockedtitle:hover,
 #dock .dockedtitle:focus {
-  color: #7b8a8b;
   text-decoration: none;
-  background-position: 0 -15px;
+  background-position: 0 -10px;
   -webkit-transition: background-position 0.1s linear;
   -moz-transition: background-position 0.1s linear;
   -o-transition: background-position 0.1s linear;
@@ -2533,7 +2556,7 @@ body.has_dock.dir-ltr .navbar-inner {
 
 #dock .controls {
   position: absolute;
-  bottom: 1em;
+  bottom: 42px;
   width: 100%;
   text-align: center;
 }
@@ -2572,7 +2595,6 @@ body.has_dock.dir-ltr .navbar-inner {
 #dockeditempanel .dockeditempanel_hd h2 {
   padding: 5px;
   margin: 0;
-  color: [[setting:themecolor]];
 }
 
 #dockeditempanel .dockeditempanel_hd .commands {
@@ -2843,7 +2865,6 @@ body.has_dock.dir-ltr .navbar-inner {
 }
 
 body {
-  border-top: 3px solid [[setting:themecolor]];
   background-image: url([[setting:pagebackground]]);
   color: [[setting:themetextcolor]];
   font-size: [[setting:bodysize]];
@@ -2976,16 +2997,6 @@ a:hover .colours-alternative3 {
 /* @group Navbar
  */
 
-.navbar {
-  border-top: 1px solid [[setting:themehovercolor]] !important;
-  border-bottom: 1px solid [[setting:themehovercolor]] !important;
-}
-
-.navbar,
-.navbar-inner {
-  background-color: [[setting:themecolor]] !important;
-}
-
 .navbar .nav .active > a,
 .navbar .nav .active > a:hover,
 .navbar .nav .active > a:focus,
@@ -2993,6 +3004,10 @@ a:hover .colours-alternative3 {
 .navbar .nav li.dropdown.active > .dropdown-toggle,
 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
   background: [[setting:themecolor]] !important;
+}
+
+.navbar-inner {
+  background-color: [[setting:themecolor]] !important;
 }
 
 /* @end */
@@ -3044,58 +3059,6 @@ a#button:visited {
 
 a#button:hover {
   background: [[setting:themehovercolor]];
-}
-
-/* @end */
-
-/* @group Slideshow */
-
-.da-slider {
-  background-color: [[setting:slideshowcolor]];
-}
-
-.da-slide p {
-  color: [[setting:slidecolor]];
-}
-
-.da-slide h2 {
-  color: [[setting:slideheadercolor]];
-}
-
-.da-slide .da-link {
-  background: [[setting:slidebuttoncolor]];
-}
-
-.variant2.slide1 {
-  background: url([[setting:slide1image]]) no-repeat top right !important;
-}
-
-.variant2.slide2 {
-  background: url([[setting:slide2image]]) no-repeat top right !important;
-}
-
-.variant2.slide3 {
-  background: url([[setting:slide3image]]) no-repeat top right !important;
-}
-
-.variant2.slide4 {
-  background: url([[setting:slide4image]]) no-repeat top right !important;
-}
-
-.da-slide .da-img1 {
-  background: url([[setting:slide1image]]) no-repeat 0 0;
-}
-
-.da-slide .da-img2 {
-  background: url([[setting:slide2image]]) no-repeat 0 0;
-}
-
-.da-slide .da-img3 {
-  background: url([[setting:slide3image]]) no-repeat 0 0;
-}
-
-.da-slide .da-img4 {
-  background: url([[setting:slide4image]]) no-repeat 0 0;
 }
 
 /* @end */
@@ -3367,6 +3330,7 @@ h5,
 h6,
 .back-to-top,
 .socials p,
+#profileheading,
 #socialheading,
 .forumpost .subject,
 .block_login label {
@@ -3624,7 +3588,6 @@ h6,
 /* @end */
 
 body.essential-colours-alternative1 {
-  border-top-color: [[setting:alternativethemecolor1]];
   color: [[setting:alternativethemetextcolor1]];
 }
 
@@ -4035,7 +3998,6 @@ body.essential-colours-alternative1 h6 {
 }
 
 body.essential-colours-alternative2 {
-  border-top-color: [[setting:alternativethemecolor2]];
   color: [[setting:alternativethemetextcolor2]];
 }
 
@@ -4446,7 +4408,6 @@ body.essential-colours-alternative2 h6 {
 }
 
 body.essential-colours-alternative3 {
-  border-top-color: [[setting:alternativethemecolor3]];
   color: [[setting:alternativethemetextcolor3]];
 }
 

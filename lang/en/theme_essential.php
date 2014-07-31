@@ -120,6 +120,11 @@ $string['displaybeforelogin'] = 'Show before login only';
 $string['displayafterlogin'] = 'Show after login only';
 $string['dontdisplay'] = 'Never show';
 
+// Readme.
+$string['readme_title'] = 'Essential read-me';
+$string['readme_desc'] = 'Please click on \'{$a->url}\' for lots more information about Essential.';
+
+
 /* CustomMenu */
 $string['custommenuheading'] = 'Custom menu';
 $string['custommenuheadingsub'] = 'Add additional functionality to your custommenu.';
@@ -210,7 +215,7 @@ $string['themecolors'] = 'Theme colours';
 $string['defaultcolors'] = 'Default colours';
 $string['alternativecolors'] = 'Alternative colours {$a}';
 $string['alternativethemecolor'] = 'Alternative theme colour {$a}';
-$string['alternativethemecolordesc'] = 'What colour should your theme be for the alternative theme colours {$a}. If enabled and the user choose it, this will replace the default theme colour.';
+$string['alternativethemecolordesc'] = 'What colour should your theme be for the alternative theme colours {$a}.';
 $string['alternativethemename'] = 'Colour scheme name';
 $string['alternativethemenamedesc'] = 'Provide a name for your alternative theme colours';
 $string['alternativethemecolors'] = 'Alternative theme colours';
@@ -222,7 +227,7 @@ $string['alternativethemetextcolordesc'] = 'Set the colour for your alternative 
 $string['alternativethemeurlcolor'] = 'Alternative link colour {$a}';
 $string['alternativethemeurlcolordesc'] = 'Set the colour for your alternative linked text {$a}.';
 $string['alternativethemehovercolor'] = 'Alternative theme hover colour {$a}';
-$string['alternativethemehovercolordesc'] = 'What colour should your theme hovers be for the alternative theme colours {$a}. If enabled and the user choose it, this will replace the default theme hover colour.';
+$string['alternativethemehovercolordesc'] = 'What colour should your theme hovers be for the alternative theme colours {$a}.';
 $string['enablealternativethemecolors'] = 'Enable alternative theme colours {$a}';
 $string['enablealternativethemecolorsdesc'] = 'If enabled, the user will be able to choose the alternative theme colours {$a}.';
 
@@ -243,7 +248,7 @@ $string['frontpagemiddleblocksdesc'] = 'If enabled this will display 3 new block
 /* Slideshow */
 $string['slideshowheading'] = 'Front page slide show';
 $string['slideshowheadingsub'] = 'Dynamic slide show for the front page';
-$string['slideshowdesc'] = 'This creates a dynamic slide show of up to sixteen slides for you to promote important elements of your site.';
+$string['slideshowdesc'] = 'This creates a dynamic slide show of up to sixteen slides for you to promote important elements of your site.  The show is responsive where image height is set according to screen size.  The recommended height is 300px.  The width is set at 100% and therefore the actual height will be smaller if the width is greater than the screen size.  At smaller screen sizes the height is reduced dynamically without the need to provide separate images.  For reference screen width < 767px = height 165px, width between 768px and 979px = height 225px and width > 980px = height 300px.  If no image is selected for a slide, then the default_slide image in the pix folder is used.';
 
 $string['toggleslideshow'] = 'Toggle slide show display';
 $string['toggleslideshowdesc'] = 'Choose if you wish to hide or show the slide show.';
