@@ -11,7 +11,6 @@
 }
 
 body{
-    border-top:3px solid ~"[[setting:themecolor]]";
     background-image: url(~"[[setting:pagebackground]]");
     color: ~"[[setting:themetextcolor]]";
     font-size: ~"[[setting:bodysize]]";
@@ -133,15 +132,6 @@ a:hover .colours-alternative3 {
 /* @group Navbar
  */
 
-.navbar {
-    border-top:1px solid ~"[[setting:themehovercolor]]" !important;
-    border-bottom:1px solid ~"[[setting:themehovercolor]]" !important;
-}
-
-.navbar, .navbar-inner{
-    background-color: ~"[[setting:themecolor]]" !important;
-}
-
 .navbar .nav .active > a,
 .navbar .nav .active > a:hover,
 .navbar .nav .active > a:focus,
@@ -151,6 +141,9 @@ a:hover .colours-alternative3 {
     background: ~"[[setting:themecolor]]" !important;
 }
 
+.navbar-inner{
+    background-color: ~"[[setting:themecolor]]" !important;
+}
 
 /* @end */
 
@@ -203,59 +196,6 @@ a#button:visited {
 a#button:hover {
     background: ~"[[setting:themehovercolor]]";
 }
-
-/* @end */
-
-/* @group Slideshow */
-
-.da-slider {
-    background-color: ~"[[setting:slideshowcolor]]";
-}
-
-.da-slide p {
-    color:~"[[setting:slidecolor]]";
-}
-
-.da-slide h2{
-    color:~"[[setting:slideheadercolor]]";
-}
-
-.da-slide .da-link{
-    background:~"[[setting:slidebuttoncolor]]";
-}
-
-.variant2.slide1 {
-    background: url(~"[[setting:slide1image]]") no-repeat top right  !important;
-}
-
-.variant2.slide2 {
-    background: url(~"[[setting:slide2image]]") no-repeat top right  !important;
-}
-
-.variant2.slide3 {
-    background: url(~"[[setting:slide3image]]") no-repeat top right  !important;
-}
-
-.variant2.slide4 {
-    background: url(~"[[setting:slide4image]]") no-repeat top right  !important;
-}
-
-.da-slide .da-img1 {
-    background: url(~"[[setting:slide1image]]") no-repeat 0 0;
-}
-
-.da-slide .da-img2 {
-    background: url(~"[[setting:slide2image]]") no-repeat 0 0;
-}
-
-.da-slide .da-img3 {
-    background: url(~"[[setting:slide3image]]") no-repeat 0 0;
-}
-
-.da-slide .da-img4 {
-    background: url(~"[[setting:slide4image]]") no-repeat 0 0;
-}
-
 
 /* @end */
 
@@ -518,6 +458,7 @@ table#user-grades td.controls,
 h1, h2, h3, h4, h5, h6,
 .back-to-top,
 .socials p,
+#profileheading,
 #socialheading,
 .forumpost .subject,
 .block_login label {

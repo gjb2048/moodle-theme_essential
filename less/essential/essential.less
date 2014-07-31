@@ -105,13 +105,20 @@ div {
     height: 75px;
     margin-top: 41px;
     border-bottom: 1px solid #DDD;
+    .row-fluid [class*="span"] {
+        padding-right: 5px;
+    }
+}
+
+@media(max-width: 767px) {
+    #page-header {
+        height: auto;
+    }
 }
 
 #page-header.oldnavbar, #page-admin-upgradesettings #page-header, .maintenance #page-header  {
     margin-top: 0px;
 }
-
-
 
 h2.main,
 #pageheading {
@@ -158,6 +165,9 @@ h1#title {
 
 /* @group Social Buttons */
 
+#socialnetworks {
+    height: 75px;
+}
 
 .socials {
     p {
@@ -229,7 +239,6 @@ ul.socials {
 
 #socialheading {
     text-align: right;
-    color: #666;
     letter-spacing: .2em;
     padding: 0px;
     margin: 0px;
@@ -237,6 +246,20 @@ ul.socials {
 }
 
 /* @end */
+
+/* @group Profile */
+
+#profilepic {
+    height: 75px;
+}
+
+#profileheading {
+    text-align: right;
+    letter-spacing: .2em;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 4px;
+}
 
 /* @end */
 

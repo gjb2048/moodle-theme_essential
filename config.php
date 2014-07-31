@@ -34,12 +34,18 @@ $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
 $THEME->parents = array('bootstrapbase');
 $THEME->sheets = array('fontawesome');
-if ('ltr' === get_string('thisdirection', 'langconfig')) {
+/*
+global $PAGE;
+if (strpos($PAGE->bodyclasses, 'dir-rtl') === false) { // TODO - only works with TDM off.
     $THEME->sheets[] = 'essential';
 } else {
     $THEME->sheets[] = 'essential-rtl';
     $THEME->sheets[] = 'rtl';
-}
+} */
+$THEME->sheets[] = 'essential'; // LTR.
+//$THEME->sheets[] = 'essential-rtl'; // RTL.
+//$THEME->sheets[] = 'rtl'; // RTL.
+// Note: Swap above and do a purge all caches if using an RTL language.
 $THEME->sheets[] = 'custom';
 $THEME->supportscssoptimisation = false;
 

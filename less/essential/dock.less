@@ -113,13 +113,13 @@ body.has_dock {
     }
 }
 
-#dock{
+#dock {
     position:fixed;
     top: 42px;
     left: 0;
     z-index: 11000;
     height: 100%;
-    background: [[setting:themecolor]];
+    background: ~"[[setting:themecolor]]";
     border-right:0 none;
 }
 
@@ -139,21 +139,18 @@ body.has_dock {
 }
 
 #dock .dockedtitle{
-    padding:10px 0;
+    padding: 10px 0;
     margin:2px;
     margin-bottom:0;
     text-align:center;
     vertical-align:middle;
     cursor:pointer;
-    background-color: ~"[[setting:themecolor]]";
     border-bottom: 1px dashed #fff;
 }
 
 #dock .dockedtitle h2{
-    font-weight:normal;
-    line-height:100%;
+    font-weight: normal;
     text-align: center;
-    text-transform: uppercase;
     color: ~"[[setting:themetextcolor]]";
 }
 
@@ -164,18 +161,17 @@ body.has_dock {
     }
 }
 
-#dock .dockedtitle:active,#dock .dockedtitle.active{
-    background-color:#b4bcc2;
+#dock .dockedtitle:active, #dock .dockedtitle.active{
+    background-color: #b4bcc2;
 }
 
 #dock .dockedtitle:first-child{
     *margin-left:0;
 }
 
-#dock .dockedtitle:hover,#dock .dockedtitle:focus{
-    color:#7b8a8b;
+#dock .dockedtitle:hover, #dock .dockedtitle:focus{
     text-decoration:none;
-    background-position:0 -15px;
+    background-position:0 -10px;
     -webkit-transition:background-position .1s linear;
     -moz-transition:background-position .1s linear;
     -o-transition:background-position .1s linear;
@@ -256,8 +252,8 @@ body.has_dock {
 }
 
 #dock .controls{
-    position:absolute;
-    bottom:1em;
+    position: absolute;
+    bottom: 42px;
     width:100%;
     text-align:center;
 }
@@ -296,7 +292,6 @@ body.has_dock {
 #dockeditempanel .dockeditempanel_hd h2{
     padding: 5px;
     margin: 0;
-    color: ~"[[setting:themecolor]]";
 }
 
 #dockeditempanel .dockeditempanel_hd .commands{

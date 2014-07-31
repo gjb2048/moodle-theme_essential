@@ -15,6 +15,57 @@ Cool things to know about the theme.
  - The entire colour scheme can be modified with theme settings
  - The homepage main area is just a label. The theme will ship with custom classes that you can set for tables and links to modify their formatting. No knowledge of code is needed as you can use the text editor to do this. Documentation will be provided outlining what the additional classes are.
 
+Required version of Moodle
+==========================
+This version works with Moodle version 2013111800 release 2.6 (Build: 20131118) and above within the 2.6 branch until the
+next release.
+
+Please ensure that your hardware and software complies with 'Requirements' in 'Installing Moodle' on
+'docs.moodle.org/26/en/Installing_Moodle'.
+
+Installation
+============
+ 1. Ensure you have the version of Moodle as stated above in 'Required version of Moodle'.  This is essential as the
+    theme relies on underlying core code that is out of our control.
+ 2. Login as an administrator and put Moodle in 'Maintenance Mode' so that there are no users using it bar you as the administrator.
+ 3. Copy the extracted 'essential' folder to the '/theme/' folder.
+ 4. Go to 'Site administration' -> 'Notifications' and follow standard the 'plugin' update notification.
+ 5. Select as the theme for the site.
+ 6. Put Moodle out of Maintenance Mode.
+
+Upgrading
+=========
+ 1. Ensure you have the version of Moodle as stated above in 'Required version of Moodle'.  This is essential as the
+    theme relies on underlying core code that is out of our control.
+ 2. Login as an administrator and put Moodle in 'Maintenance Mode' so that there are no users using it bar you as the administrator.
+ 3. Make a backup of your old 'essential' folder in '/theme/' and then delete the folder.
+ 4. Copy the replacement extracted 'essential' folder to the '/theme/' folder.
+ 5. Go to 'Site administration' -> 'Notifications' and follow standard the 'plugin' update notification.
+ 6. If automatic 'Purge all caches' appears not to work by lack of display etc. then perform a manual 'Purge all caches'
+    under 'Home -> Site administration -> Development -> Purge all caches'.
+ 7. Put Moodle out of Maintenance Mode.
+
+Uninstallation
+==============
+ 1. Put Moodle in 'Maintenance Mode' so that there are no users using it bar you as the administrator.
+ 2. Change the theme to another theme of your choice.
+ 3. In '/theme/' remove the folder 'essential'.
+ 4. Put Moodle out of Maintenance Mode.
+
+Reporting issues
+================
+Before reporting an issue, please ensure that you are running the latest version for your release of Moodle.  It is essential
+that you are operating the required version of Moodle as stated at the top - this is because the theme relies on core
+functionality that is out of its control.
+
+When reporting an issue you can post in the theme's forum on Moodle.org (currently 'moodle.org/mod/forum/view.php?id=46')
+or check the issue list https://github.com/DBezemer/moodle-theme_essential/issues and if the problem does not exist, create an
+issue.
+
+It is essential that you provide as much information as possible, the critical information being the contents of the theme's 
+'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
+can be really useful in visualising the issue along with any files you consider to be relevant.
+
 New in 2.7.4
 ========================
 - FIX: Issue #68.  Expand all not showing on Edit course settings.
@@ -24,18 +75,23 @@ New in 2.7.4
 - FIX: Issue #85.  Header logo location in RTL.
 - FIX: Reverted icons back to #999.
 - FIX: Alternative colour sets all now have the same CSS, docking fixed and consistent with settings.
-- FIX: Moved all RTL to separate sheet from main CSS.  Sheet 'essential-rtl' uses 'flipped' technology whilst 'rtl' sheet has manual styles.
+- FIX: Moved all RTL to separate sheet from main CSS.  Sheet 'essential-rtl' uses 'flipped' technology ('grunt-css-flip') whilst 'rtl' sheet has manual styles.
 - FIX: Issue #78.  Category icon issue in RTL.
 - FIX: Issue #90.  XML Editor last used.
 - FIX: Issue #88.  XML editor contrast issues.
 - FIX: Issue #89.  Dock causes horizontal scroll bar.
 - FIX: Issue #93.  Navbar / breadcrumb colour setting needed for contrast issues.
+- FIX: Issue #94.  Docking centred text.
+- FIX: Issue #95.  Navbar colour to far.
+- FIX: Height of page header constrained when screen width < 767px and row-fluid spans go 100%.
 - NEW: Alternative colour sets have text and link colour settings.
 - NEW: Optimised svg's to be smaller.
 - NEW: Warning about IE8 as M2.6 does not support it - http://docs.moodle.org/dev/Moodle_2.6_release_notes#Requirements.
 - NEW: If the page width setting is narrow and there are custom menu items the navigation bar and page adjusts to cope.
 - NEW: Optimised colour setting code in lib.php.
-
+- NOTE: If you are using an RTL language then please read the instructions in the config.php file to swap to the RTL styles manually.  As
+        a code solution to swapping files does not work at the moment and combining all possible CSS into one file leads to a big file with
+        lots of redundant CSS.  This presents problems when it comes to portable devices and bandwidth.
 
 New in 2.7.3
 ========================

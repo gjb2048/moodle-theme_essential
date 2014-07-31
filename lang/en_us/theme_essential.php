@@ -25,7 +25,7 @@
  */
 
 /* General */
-$string['editiconsdesc'] = 'This utilises the Font Awesome to display colored and neater formatted edit icons in course pages and blocks. Please note that currsently this is NOT compatible with Autohide.';
+$string['editiconsdesc'] = 'This utilises the Font Awesome to display colored and neater formatted edit icons in course pages and blocks. Please note that currently this is NOT compatible with Autohide.';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
 $string['copyrightdesc'] = 'The name of your organization.';
 
@@ -53,11 +53,11 @@ $string['footerheadingcolordesc'] = 'Set the color for block headings in the foo
 
 $string['alternativecolors'] = 'Alternative colors {$a}';
 $string['alternativethemecolor'] = 'Alternative theme color {$a}';
-$string['alternativethemecolordesc'] = 'What color should your theme be for the alternative theme colors {$a}. If enabled and the user choose it, this will replace the default theme color.';
+$string['alternativethemecolordesc'] = 'What color should your theme be for the alternative theme colors {$a}.';
 $string['alternativethemecolors'] = 'Alternative theme colors';
 $string['alternativethemecolorsdesc'] = 'Defines theme colors alternative that the user may select.';
 $string['alternativethemehovercolor'] = 'Alternative theme hover color {$a}';
-$string['alternativethemehovercolordesc'] = 'What color should your theme hovers be for the alternative theme colors {$a}. If enabled and the user choose it, this will replace the default theme hover color.';
+$string['alternativethemehovercolordesc'] = 'What color should your theme hovers be for the alternative theme colors {$a}.';
 $string['defaultcolors'] = 'Default colors';
 $string['enablealternativethemecolors'] = 'Enable alternative theme colors {$a}';
 $string['enablealternativethemecolorsdesc'] = 'If enabled, the user will be able to choose the alternative theme colors {$a}.';

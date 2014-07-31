@@ -177,7 +177,13 @@ defined('MOODLE_INTERNAL') || die;
     $setting = new admin_setting_configtextarea($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
+    $readme = new moodle_url('/theme/essential/Readme.txt');
+    $readme = html_writer::link($readme, 'Readme.txt', array('target' => '_blank'));
+
+    $temp->add(new admin_setting_heading('theme_essential_generalreadme', get_string('readme_title', 'theme_essential'),
+            get_string('readme_desc', 'theme_essential', array('url' => $readme))));
+
     $ADMIN->add('theme_essential', $temp);
     
     /* Custom Menu Settings */

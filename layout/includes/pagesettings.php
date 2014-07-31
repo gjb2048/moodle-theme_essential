@@ -88,11 +88,11 @@ $hasprofilepic = $PAGE->theme->settings->headerprofilepic;
 
 $logoclass = 'span12';
 if (($hassocialnetworks || $hasmobileapps) && $hasprofilepic) {
-    $logoclass = 'span6';
+    $logoclass = 'span5';
 } else if (!($hassocialnetworks || $hasmobileapps) && $hasprofilepic) {
     $logoclass = 'span11';
 } else if (($hassocialnetworks || $hasmobileapps) && !$hasprofilepic) {
-    $logoclass = 'span7';
+    $logoclass = 'span6';
 }
 
 $oldnavbar = $PAGE->theme->settings->oldnavbar;

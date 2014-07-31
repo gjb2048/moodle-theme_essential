@@ -120,6 +120,11 @@ $string['displaybeforelogin'] = 'Show before login only';
 $string['displayafterlogin'] = 'Show after login only';
 $string['dontdisplay'] = 'Never show';
 
+// Readme.
+$string['readme_title'] = 'Essential read-me';
+$string['readme_desc'] = 'Please click on \'{$a->url}\' for lots more information about Essential.';
+
+
 /* CustomMenu */
 $string['custommenuheading'] = 'Custom menu';
 $string['custommenuheadingsub'] = 'Add additional functionality to your custommenu.';
@@ -210,7 +215,7 @@ $string['themecolors'] = 'Theme colours';
 $string['defaultcolors'] = 'Default colours';
 $string['alternativecolors'] = 'Alternative colours {$a}';
 $string['alternativethemecolor'] = 'Alternative theme colour {$a}';
-$string['alternativethemecolordesc'] = 'What colour should your theme be for the alternative theme colours {$a}. If enabled and the user choose it, this will replace the default theme colour.';
+$string['alternativethemecolordesc'] = 'What colour should your theme be for the alternative theme colours {$a}.';
 $string['alternativethemename'] = 'Colour scheme name';
 $string['alternativethemenamedesc'] = 'Provide a name for your alternative theme colours';
 $string['alternativethemecolors'] = 'Alternative theme colours';
@@ -222,7 +227,7 @@ $string['alternativethemetextcolordesc'] = 'Set the colour for your alternative 
 $string['alternativethemeurlcolor'] = 'Alternative link colour {$a}';
 $string['alternativethemeurlcolordesc'] = 'Set the colour for your alternative linked text {$a}.';
 $string['alternativethemehovercolor'] = 'Alternative theme hover colour {$a}';
-$string['alternativethemehovercolordesc'] = 'What colour should your theme hovers be for the alternative theme colours {$a}. If enabled and the user choose it, this will replace the default theme hover colour.';
+$string['alternativethemehovercolordesc'] = 'What colour should your theme hovers be for the alternative theme colours {$a}.';
 $string['enablealternativethemecolors'] = 'Enable alternative theme colours {$a}';
 $string['enablealternativethemecolorsdesc'] = 'If enabled, the user will be able to choose the alternative theme colours {$a}.';
 
