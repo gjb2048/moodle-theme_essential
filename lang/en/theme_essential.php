@@ -402,7 +402,7 @@ $string['iosdesc'] = 'Provide an URL to your mobile App on the App Store.  If yo
 
 /* iOS Icons */
 $string['iosicon'] = 'iOS home screen ocons';
-$string['iosicondesc'] = 'The them does provide a default icon for iOS and android home screens.  You can upload your custom icons if you wish.';
+$string['iosicondesc'] = 'The theme does provide a default icon for iOS and android home screens.  You can upload your custom icons if you wish.';
 
 $string['iphoneicon'] = 'iPhone/iPod Touch icon (Non Retina)';
 $string['iphoneicondesc'] = 'Icon should be a PNG files sized 57px by 57px.';
