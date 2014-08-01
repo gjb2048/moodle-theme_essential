@@ -66,6 +66,10 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
+New in 2.7.5
+========================
+- FIX: Issue #98.  Lang en/iosicondesc - Change 'them' to 'theme'.  Thanks to Skylar Kelty.
+
 New in 2.7.4
 ========================
 - FIX: Issue #68.  Expand all not showing on Edit course settings.
