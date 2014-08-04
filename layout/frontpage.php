@@ -132,8 +132,14 @@ echo $OUTPUT->doctype() ?>
         <!-- End Alerts -->
 
         <!-- Start Frontpage Content -->
-        <?php if($PAGE->theme->settings->usefrontcontent ==1) { 
-            echo $PAGE->theme->settings->frontcontentarea;
+        <?php 
+            if($PAGE->theme->settings->togglefrontcontent==1) {
+                echo $PAGE->theme->settings->frontcontentarea;
+            } else if($PAGE->theme->settings->togglefrontcontent==2 && !isloggedin()) {
+                echo $PAGE->theme->settings->frontcontentarea;
+            } else if($PAGE->theme->settings->togglefrontcontent==3 && isloggedin()) {
+                echo $PAGE->theme->settings->frontcontentarea;
+            }
         ?>
         <div class="bor" style="margin-top: 10px;"></div>   
         <?php }?>
