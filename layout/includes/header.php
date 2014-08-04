@@ -30,88 +30,83 @@
 <![endif]-->
 
 <header role="banner">
-    <nav role="navigation">
-        <div class="navbar<?php echo ($oldnavbar)? ' oldnavbar': '';?>">
-            <div class="container-fluid navbar-inner">
-                <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <div class="nav-collapse collapse">
-                    <?php echo $OUTPUT->custom_menu(); ?>
-                    <ul class="nav pull-right">
-                        <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-                        <li class="navbar-text"><?php echo $OUTPUT->login_info(); ?></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <?php
+    $nav = html_writer::start_tag('nav', array('role' => 'navigation'));
+    $oldnav = ($oldnavbar) ? ' oldnavbar': '';
+    $nav .= html_writer::start_tag('div', array('class' => 'navbar'.$oldnav));
+    $nav .= html_writer::start_tag('div', array('class' => 'container-fluid navbar-inner'));
+    $nav .= html_writer::link(new moodle_url('/'), $SITE->shortname, array('class' => 'brand'));
+    $nav .= html_writer::tag('a', html_writer::span('', 'icon-bar').html_writer::span('', 'icon-bar').html_writer::span('', 'icon-bar'), array('class' => 'btn btn-navbar', 'data-toggle' => 'collapse', 'data-target' => '.nav-collapse'));
+    $nav .= html_writer::start_tag('div', array('class' => 'nav-collapse collapse'));
+    $nav .= $OUTPUT->custom_menu();
+    $nav .= html_writer::start_tag('ul', array('class' => 'nav pull-right'));
+    $nav .= html_writer::tag('li', $OUTPUT->page_heading_menu());
+    $nav .= html_writer::tag('li', $OUTPUT->login_info(), array('class' => 'navbar-text'));
+    $nav .= html_writer::end_tag('ul');
+    $nav .= html_writer::end_tag('div');
+    $nav .= html_writer::end_tag('div');
+    $nav .= html_writer::end_tag('div');
+    $nav .= html_writer::end_tag('nav');
 
-    <div id="page-header" class="container-fluid clearfix<?php echo ($oldnavbar)? ' oldnavbar': '';?>">
-        <div class="row-fluid">
-        <!-- HEADER: LOGO AREA -->
-            <div class="<?php echo $logoclass; echo (!$left) ? ' pull-right': '';?>">
-                <?php if (!$haslogo) { ?>
-                    <i id="headerlogo" class="fa fa-<?php echo $PAGE->theme->settings->siteicon ?>"></i>
-                        <h1 id="title"><?php echo $SITE->shortname; ?></h1>
-                <?php } else { ?>
-                    <a class="logo" href="<?php echo $CFG->wwwroot; ?>" title="<?php print_string('home'); ?>"></a>
-                <?php } ?>
-            </div>
-            <?php if (isloggedin() && $hasprofilepic) { ?>
-            <div class="span1<?php echo ($left) ? ' pull-right': '';?>" id="profilepic">
-                <p id="profileheading"><?php echo $USER->firstname; ?></p>
-                <ul class="socials unstyled">
-                    <li>
-                        <?php echo $OUTPUT->user_picture($USER); ?>
-                    </li>
-                </ul>
-            </div>
-            <?php
-            }
-            // If true, displays the heading and available social links; displays nothing if false.
-            if ($hassocialnetworks) {
-            ?>
-            <div class="span4<?php echo ($left) ? ' pull-right': '';?>" id="socialnetworks">
-            <p id="socialheading"><?php echo get_string('socialnetworks','theme_essential')?></p>
-                <ul class="socials unstyled">
-                    <?php
-                        echo $OUTPUT->render_social_network('googleplus');
-                        echo $OUTPUT->render_social_network('twitter');
-                        echo $OUTPUT->render_social_network('facebook');
-                        echo $OUTPUT->render_social_network('linkedin');
-                        echo $OUTPUT->render_social_network('youtube');
-                        echo $OUTPUT->render_social_network('flickr');
-                        echo $OUTPUT->render_social_network('pinterest');
-                        echo $OUTPUT->render_social_network('instagram');
-                        echo $OUTPUT->render_social_network('vk');
-                        echo $OUTPUT->render_social_network('skype');
-                        echo $OUTPUT->render_social_network('website');
-                    ?>
-                </ul>
-            </div>
-            <?php 
-            }
-            // If true, displays the heading and available social links; displays nothing if false.
-            if ($hasmobileapps) {
-            ?>
-            <div class="span2<?php echo ($left) ? ' pull-right': '';?>">
-                <p id="socialheading"><?php echo get_string('mobileappsheading','theme_essential')?></p>
-                <ul class="socials unstyled">
-                    <?php 
-                        echo $OUTPUT->render_social_network('ios');
-                        echo $OUTPUT->render_social_network('android');
-                    ?>
-                </ul>
-            </div>
-            <?php 
-            }
-            if (!empty($courseheader)) { ?>
-            <div id="course-header"><?php echo $courseheader; ?></div>
-            <?php } ?>
-        </div>
-    </div>
+    $pageheader = html_writer::start_tag('div', array('id' => 'page-header', 'class' => 'container-fluid clearfix'.$oldnav));
+    $pageheader .= html_writer::start_tag('div', array('class' => "row-fluid"));
+    $notleftclass = (!$left) ? ' pull-right': '';
+    $pageheader .= html_writer::start_tag('div', array('class' => $logoclass.$notleftclass));
+    if (!$haslogo) {
+        $pageheader .= html_writer::empty_tag('i', array('id' => 'headerlogo', 'class' => 'fa fa-'.$PAGE->theme->settings->siteicon));
+        $pageheader .= html_writer::tag('h1', $SITE->shortname, array('id' => 'title'));
+    } else {
+        $pageheader .= html_writer::link(new moodle_url('/'), '', array('class' => 'logo', 'title' => get_string('home')));
+    }
+    $pageheader .= html_writer::end_tag('div');
+    $leftclass = ($left) ? ' pull-right': '';
+    if (isloggedin() && $hasprofilepic) {
+        $pageheader .= html_writer::start_tag('div', array('class' => 'span1'.$leftclass, 'id' => 'profilepic'));
+        $pageheader .= html_writer::tag('p', $USER->firstname, array('id' => 'profileheading'));
+        $pageheader .= html_writer::start_tag('ul', array('class' => 'socials unstyled'));
+        $pageheader .= html_writer::tag('li', $OUTPUT->user_picture($USER));
+        $pageheader .= html_writer::end_tag('ul');
+        $pageheader .= html_writer::end_tag('div');
+    }
+    // If true, displays the heading and available social links; displays nothing if false.
+    if ($hassocialnetworks) {
+        $pageheader .= html_writer::start_tag('div', array('class' => 'span4'.$leftclass, 'id' => 'socialnetworks'));
+        $pageheader .= html_writer::tag('p', get_string('socialnetworks', 'theme_essential'), array('id' => 'socialheading'));
+        $pageheader .= html_writer::start_tag('ul', array('class' => 'socials unstyled'));
+        $pageheader .= $OUTPUT->render_social_network('googleplus');
+        $pageheader .= $OUTPUT->render_social_network('twitter');
+        $pageheader .= $OUTPUT->render_social_network('facebook');
+        $pageheader .= $OUTPUT->render_social_network('linkedin');
+        $pageheader .= $OUTPUT->render_social_network('youtube');
+        $pageheader .= $OUTPUT->render_social_network('flickr');
+        $pageheader .= $OUTPUT->render_social_network('pinterest');
+        $pageheader .= $OUTPUT->render_social_network('instagram');
+        $pageheader .= $OUTPUT->render_social_network('vk');
+        $pageheader .= $OUTPUT->render_social_network('skype');
+        $pageheader .= $OUTPUT->render_social_network('website');
+        $pageheader .= html_writer::end_tag('ul');
+        $pageheader .= html_writer::end_tag('div');
+    }
+    // If true, displays the heading and available social links; displays nothing if false.
+    if ($hasmobileapps) {
+        $pageheader .= html_writer::start_tag('div', array('class' => 'span2'.$leftclass));
+        $pageheader .= html_writer::tag('p', get_string('mobileappsheading', 'theme_essential'), array('id' => 'socialheading'));
+        $pageheader .= html_writer::start_tag('ul', array('class' => 'socials unstyled'));
+        $pageheader .= $OUTPUT->render_social_network('ios');
+        $pageheader .= $OUTPUT->render_social_network('android');
+        $pageheader .= html_writer::end_tag('ul');
+        $pageheader .= html_writer::end_tag('div');
+    }
+    if (!empty($courseheader)) {
+        $pageheader .= html_writer::tag('div', $courseheader, array('id' => 'course-header'));
+    }
+    $pageheader .= html_writer::end_tag('div');
+    $pageheader .= html_writer::end_tag('div');
+
+    if ($oldnavbar) {
+        echo $pageheader.$nav;
+    } else {
+        echo $nav.$pageheader;
+    }
+    ?>
 </header>
