@@ -50,7 +50,7 @@
         </div>
     </nav>
 
-    <div id="page-header" class="clearfix<?php echo ($oldnavbar)? ' oldnavbar': '';?>">
+    <div id="page-header" class="container-fluid clearfix<?php echo ($oldnavbar)? ' oldnavbar': '';?>">
         <div class="row-fluid">
         <!-- HEADER: LOGO AREA -->
             <div class="<?php echo $logoclass; echo (!$left) ? ' pull-right': '';?>">
