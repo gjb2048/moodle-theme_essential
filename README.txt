@@ -69,6 +69,8 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.7.5
 ========================
 - FIX: Issue #98.  Lang en/iosicondesc - Change 'them' to 'theme'.  Thanks to Skylar Kelty.
+- FIX: Issue #107: No fixed width to header on login page.
+- FIX: Issue #101: Navbar not expanding properly on android mobile and tablet.
 
 New in 2.7.4
 ========================

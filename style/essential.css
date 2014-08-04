@@ -243,6 +243,8 @@ ul.socials li {
   margin-top: 4px;
 }
 /* @end */
+/* @group Navbar
+ */
 .dropdown-menu > li > a,
 .dropdown-menu > li > a:visited {
   color: #333;
@@ -265,9 +267,6 @@ ul.socials li {
 .dropdown-menu {
   z-index: 1001;
 }
-/* @end */
-/* @group Navbar
- */
 .navbar {
   margin-bottom: 0px;
   position: fixed;
@@ -290,13 +289,16 @@ ul.socials li {
 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
   color: [[setting:themenavcolor]];
 }
-.navbar .nav li.dropdown > a.dropdown-toggle .caret {
+.navbar .nav li.dropdown > a.dropdown-toggle .caret,
+.navbar .nav li.dropdown.open > a.dropdown-toggle .caret {
   border-top-color: [[setting:themenavcolor]];
   border-bottom-color: [[setting:themenavcolor]];
   margin-left: 5px;
 }
 .navbar .nav li.dropdown > a.dropdown-toggle .caret:hover,
-.navbar .nav li.dropdown > a.dropdown-toggle .caret:focus {
+.navbar .nav li.dropdown.open > a.dropdown-toggle .caret:hover,
+.navbar .nav li.dropdown > a.dropdown-toggle .caret:focus,
+.navbar .nav li.dropdown.open > a.dropdown-toggle .caret:focus {
   border-top-color: [[setting:themecolor]];
   border-bottom-color: [[setting:themecolor]];
 }
@@ -330,6 +332,21 @@ ul.socials li {
   background-image: none;
   box-shadow: none;
   filter: none;
+}
+.nav-collapse {
+  /* @group Custom Menu */
+}
+.nav-collapse .dropdown-menu > li > a,
+.nav-collapse .dropdown-menu > li > a:visited {
+  color: [[setting:themenavcolor]];
+}
+.nav-collapse .dropdown-menu > li > a:hover,
+.nav-collapse .dropdown-menu > li > a:focus,
+.nav-collapse .dropdown-submenu:hover > a,
+.nav-collapse .dropdown-submenu:focus > a {
+  color: [[setting:themecolor]];
+  background-color: [[setting:themenavcolor]];
+  text-decoration: none;
 }
 /* @end */
 /* @group Course
@@ -2630,7 +2647,16 @@ a#button:hover {
   background-color: [[setting:themehovercolor]];
 }
 .nav-collapse {
+  background-color: [[setting:themecolor]];
   border: 1px solid [[setting:themecolor]];
+  margin-left: -10px;
+  margin-right: -10px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.nav-collapse .navbar-text {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 /* @end */
 /* @group Performance Information */

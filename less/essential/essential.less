@@ -263,6 +263,9 @@ ul.socials {
 
 /* @end */
 
+/* @group Navbar
+ */
+
 .dropdown-menu > li > a,
 .dropdown-menu > li > a:visited {
     color: #333;
@@ -289,10 +292,6 @@ ul.socials {
 .dropdown-menu {
     z-index: 1001;
 }
-/* @end */
-
-/* @group Navbar
- */
 
 .navbar {
     margin-bottom: 0px;
@@ -317,7 +316,8 @@ ul.socials {
         color: ~"[[setting:themenavcolor]]";
     }
 
-    .nav li.dropdown > a.dropdown-toggle .caret {
+    .nav li.dropdown > a.dropdown-toggle .caret,
+    .nav li.dropdown.open > a.dropdown-toggle .caret {
         border-top-color: ~"[[setting:themenavcolor]]";
         border-bottom-color: ~"[[setting:themenavcolor]]";
         margin-left: 5px;
@@ -359,6 +359,23 @@ ul.socials {
     background-image: none;
     box-shadow: none;
     filter: none;
+}
+
+.nav-collapse {
+    .dropdown-menu > li > a,
+    .dropdown-menu > li > a:visited {
+        color: ~"[[setting:themenavcolor]]";
+    }
+
+    /* @group Custom Menu */
+    .dropdown-menu > li > a:hover,
+    .dropdown-menu > li > a:focus,
+    .dropdown-submenu:hover > a,
+    .dropdown-submenu:focus > a {
+        color: ~"[[setting:themecolor]]";
+        background-color: ~"[[setting:themenavcolor]]";
+        text-decoration: none;
+    }
 }
 
 /* @end */
