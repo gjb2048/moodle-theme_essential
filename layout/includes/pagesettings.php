@@ -25,14 +25,19 @@
  */
  
 /* Group Body */
-theme_essential_check_colours_switch();
-theme_essential_initialise_colourswitcher($PAGE);
-
 $bodyclasses = array();
-$bodyclasses[] = 'essential-colours-' . theme_essential_get_colours();
-if (!empty($PAGE->theme->settings->sideregionsmaxwidth)) {
-    $bodyclasses[] = 'side-regions-with-max-width';
+
+if ((get_config('theme_essential', 'enablealternativethemecolors1')) || 
+    (get_config('theme_essential', 'enablealternativethemecolors2')) || 
+    (get_config('theme_essential', 'enablealternativethemecolors3'))) {
+        $colourswitcher = true;
+        theme_essential_check_colours_switch();
+        theme_essential_initialise_colourswitcher($PAGE);
+        $bodyclasses[] = 'essential-colours-' . theme_essential_get_colours();
+} else {
+    $colourswitcher = false;
 }
+
 if (!empty($PAGE->theme->settings->slidecaptionbelow)) {
     $bodyclasses[] = 'frontpageslidercaptionbelow';
 }

@@ -27,13 +27,8 @@ a {
     text-decoration: none;
 }
 
-.container-fluid {
-    padding-right: 10px;
-    padding-left: 10px;
-}
-
 #dndupload-status {
-    z-index: 100;
+    display: none;
 }
 
 .moodle-actionmenu[data-enhanced].show .menu {
@@ -108,15 +103,31 @@ div {
     .row-fluid [class*="span"] {
         padding-right: 5px;
     }
-}
-
-@media(max-width: 767px) {
-    #page-header {
-        height: auto;
+    .btn-icon {
+        display: none;
+        float: right;
+        padding: 7px 10px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        .icon-bar {
+            display: block;
+            width: 18px;
+            height: 2px;
+            background-color: #f5f5f5;
+        }
+        .icon-bar + .icon-bar {
+          margin-top: 3px;
+        }
+    }
+    .icon-collapse {
+        overflow: visible;
     }
 }
 
-#page-header.oldnavbar, #page-admin-upgradesettings #page-header, .maintenance #page-header  {
+#page-header.oldnavbar, 
+.maintenance #page-header,
+#page-admin-upgradesettings #page-header, {
     margin-top: 0px;
 }
 
@@ -170,6 +181,7 @@ h1#title {
 }
 
 .socials {
+    margin: 0px;
     p {
         font-weight: normal;
         color: ~"[[setting:themetextcolor]]";
@@ -265,13 +277,18 @@ ul.socials {
 
 /* @group Navbar
  */
-
+ 
 .dropdown-menu > li > a,
 .dropdown-menu > li > a:visited {
     color: #333;
 }
 
 /* @group Custom Menu */
+
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;    
+}
+
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus,
 .dropdown-submenu:hover > a,
@@ -291,6 +308,7 @@ ul.socials {
 
 .dropdown-menu {
     z-index: 1001;
+    margin: 0px;
 }
 
 .navbar {
@@ -303,8 +321,12 @@ ul.socials {
     z-index: 4030;
     .brand {
         color: ~"[[setting:themenavcolor]]";
+        vertical-align: middle;
         text-shadow: none;
-        line-height: 20px;
+        line-height: @navbarHeight;
+        padding: 0;
+        margin-left: 0px;
+        margin-right: 10px;
     }
 
     .active > a,
@@ -344,7 +366,7 @@ ul.socials {
 .navbar.oldnavbar,
 .pagelayout-secure .navbar,
 .pagelayout-popup .navbar {
-    position: static;
+    position: relative;
 }
 
 .navbar.oldnavbar.affix {
@@ -359,26 +381,6 @@ ul.socials {
     background-image: none;
     box-shadow: none;
     filter: none;
-}
-
-@media(max-width: 979px) {
-    .nav-collapse {
-        z-index: 10; /* Get on top of slider. */
-        .dropdown-menu > li > a,
-        .dropdown-menu > li > a:visited {
-            color: ~"[[setting:themenavcolor]]";
-        }
-
-        /* @group Custom Menu */
-        .dropdown-menu > li > a:hover,
-        .dropdown-menu > li > a:focus,
-        .dropdown-submenu:hover > a,
-        .dropdown-submenu:focus > a {
-            color: ~"[[setting:themecolor]]";
-            background-color: ~"[[setting:themenavcolor]]";
-            text-decoration: none;
-        }
-    }
 }
 
 /* @end */
@@ -1807,43 +1809,28 @@ table.calendarmonth.calendartable {
 
 /* @end */
 
-@media screen and (min-width: 960px) {
-    .side-regions-with-max-width #block-region-side-pre {
-        width: 285px;
-    }
-
-    .side-regions-with-max-width #region-main {
-        width: ~"calc(97% - 285px)";
-    }
-    .side-regions-with-max-width.has-region-side-pre.empty-region-side-pre,
-    .side-regions-with-max-width.empty-region-side-pre {
-        #region-main, #region-bs-main-and-pre {
-            width: 100%
-        }
-    }
-}
-
 @media screen and (min-width: 1200px) {
-
-    .side-regions-with-max-width.empty-region-side-post.used-region-side-pre #block-region-side-pre,
-    .side-regions-with-max-width #block-region-side-pre,
-    .side-regions-with-max-width #block-region-side-post {
-        width: 285px;
-    }
-    .side-regions-with-max-width.empty-region-side-post.used-region-side-pre #region-main,
-    .side-regions-with-max-width #region-bs-main-and-pre,
-    .side-regions-with-max-width #region-main {
-        width: ~"calc(97% - 285px)";
-    }
-    
     .maintenance #region-main, #page-login-index #region-main {
         width: 100% !important;
     }
-    .side-regions-with-max-width.has-region-side-pre.empty-region-side-pre,
-    .side-regions-with-max-width.empty-region-side-pre    {
-        #region-main,
-    #region-bs-main-and-pre {
-            width: 100%
+}
+
+@media(max-width: 979px) {
+    .nav-collapse {
+        z-index: 10; /* Get on top of slider. */
+        .dropdown-menu > li > a,
+        .dropdown-menu > li > a:visited {
+            color: ~"[[setting:themenavcolor]]";
+        }
+
+        /* @group Custom Menu */
+        .dropdown-menu > li > a:hover,
+        .dropdown-menu > li > a:focus,
+        .dropdown-submenu:hover > a,
+        .dropdown-submenu:focus > a {
+            color: ~"[[setting:themecolor]]";
+            background-color: ~"[[setting:themenavcolor]]";
+            text-decoration: none;
         }
     }
 }
@@ -1851,6 +1838,19 @@ table.calendarmonth.calendartable {
 @media (max-width: 767px) {
     #page.container-fluid {
         padding: 5px;
+    }
+    #page-header { 
+        height: auto;
+        .icon-collapse {
+            overflow: hidden;
+            margin-right: 25px;
+        }
+        .btn-icon {
+            display: block;
+        }
+    }
+    #headerlogo {
+        top: 0px;
     }
 }
 

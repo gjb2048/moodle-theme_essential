@@ -48,7 +48,7 @@ David Bezemer<br>
 </div></div>';
 
 /* General */
-$string['genericsettings'] = 'General settings';
+$string['genericsettings'] = 'General';
 
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
@@ -101,8 +101,6 @@ $string['perfinfodesc'] = 'Many sites don\'t need the fully detailed performance
 $string['perf_max'] = 'Detailed';
 $string['perf_min'] = 'Minimal';
 
-$string['sideregionsmaxwidth'] = 'Use max width for side regions';
-$string['sideregionsmaxwidthdesc'] = 'This theme use fluid layout. In wide screens, the side regions containing blocks may become larger than needed. Check this to limit the width of these regions.';
 $string['visibleadminonly'] = 'Blocks moved into the area below will only be seen by admins';
 $string['backtotop'] = 'Back to top';
 
@@ -112,6 +110,7 @@ $string['previoussection'] = 'Previous section';
 $string['pagewidth'] = 'Set page width';
 $string['pagewidthdesc'] = 'Choose from the list of available page widths for your site.';
 $string['fixedwidthwide'] = 'Fixed width - Wide';
+$string['fixedwidthnormal'] = 'Fixed width - Normal';
 $string['fixedwidthnarrow'] = 'Fixed width - Narrow';
 $string['variablewidth'] = 'Variable width';
 
@@ -126,16 +125,12 @@ $string['readme_desc'] = 'Please click on \'{$a->url}\' for lots more informatio
 
 
 /* CustomMenu */
-$string['custommenuheading'] = 'Custom menu';
-$string['custommenuheadingsub'] = 'Add additional functionality to your custommenu.';
-$string['custommenudesc'] = 'Settings here allow you to add new dynamic functionality to the custommenu (also referred to as Dropdown menu)';
-
-$string['mydashboardinfo'] = 'Custom user dashboard';
+$string['mydashboardinfo'] = 'Dashboard menu';
 $string['mydashboardinfodesc'] = 'Displays a list of common functions used by users.';
 $string['displaymydashboard'] = 'Display dashboard';
 $string['displaymydashboarddesc'] = 'Display dashboard of user links in the custom Menu.';
 
-$string['mycoursesinfo'] = 'Dynamic enrolled courses list';
+$string['mycoursesinfo'] = 'Enrolled courses menu';
 $string['mycoursesinfodesc'] = 'Displays a dynamic list of enrolled courses to the user.';
 $string['displaymycourses'] = 'Display enrolled courses';
 $string['displaymycoursesdesc'] = 'Display enrolled courses for users in the Custom Menu';
@@ -175,7 +170,7 @@ $string['region-footer-right'] = 'Footer (Right)';
 $string['region-hidden-dock'] = 'Hidden from users';
 
 /* Colours */
-$string['colorheading'] = 'Colour settings';
+$string['colorheading'] = 'Colour';
 $string['colorheadingsub'] = 'Set the colours used in your theme';
 $string['colordesc'] = 'Here you can find various settings to change many of the colours found in this theme.';
 
@@ -208,7 +203,7 @@ $string['footerheadingcolor'] = 'Footer heading colour';
 $string['footerheadingcolordesc'] = 'Set the colour for block headings in the footer.';
 
 $string['pagebackground'] = 'Page background image';
-$string['pagebackgrounddesc'] = 'Upload your own background image.  This will be tiled in the background on all pages.  If none is uploaded a default image is used.';
+$string['pagebackgrounddesc'] = 'Upload your own background image. This will be stretched in the background on all pages.';
 
 /* Alternate Color Switcher */
 $string['themecolors'] = 'Theme colours';
@@ -232,21 +227,21 @@ $string['enablealternativethemecolors'] = 'Enable alternative theme colours {$a}
 $string['enablealternativethemecolorsdesc'] = 'If enabled, the user will be able to choose the alternative theme colours {$a}.';
 
 /* Frontpage Settings */
-$string['frontcontentheading'] = 'Front page settings';
+$string['frontcontentheading'] = 'Front page';
 $string['frontcontentheadingsub'] = 'Change what features you wish enabled on your Moodle front page';
-$string['frontcontentdesc'] = 'This adds a custom content area in between the slide show and the Marketing boxes for your own custom content';
 
-$string['usefrontcontent'] = 'Enable front page content';
-$string['usefrontcontentdesc'] = 'If enabled this will display the content of the box below in between the slide show and the Marketing spots.';
+$string['frontcontentdesc'] = 'This adds a custom content area in between the slide show and the Marketing boxes for your own custom content.';
+$string['togglefrontcontent'] = 'Enable front page content';
+$string['togglefrontcontentdesc'] = 'If enabled this will display the content of the box below in between the slide show and the Marketing spots.';
 
 $string['frontcontentarea'] = 'Front page content';
-$string['frontcontentareadesc'] = 'Whatever is typed into this box will display across the full width of the page in between the slide show and the Marketing spots ';
+$string['frontcontentareadesc'] = 'Whatever is typed into this box will display across the full width of the page in between the slide show and the Marketing spots.';
 
 $string['frontpagemiddleblocks'] = 'Enable front page middle blocks';
-$string['frontpagemiddleblocksdesc'] = 'If enabled this will display 3 new block locations just under the marketing spots';
+$string['frontpagemiddleblocksdesc'] = 'If enabled this will display three new block locations just under the marketing spots.';
 
 /* Slideshow */
-$string['slideshowheading'] = 'Front page slide show';
+$string['slideshowheading'] = 'Slide show';
 $string['slideshowheadingsub'] = 'Dynamic slide show for the front page';
 $string['slideshowdesc'] = 'This creates a dynamic slide show of up to sixteen slides for you to promote important elements of your site.  The show is responsive where image height is set according to screen size.  The recommended height is 300px.  The width is set at 100% and therefore the actual height will be smaller if the width is greater than the screen size.  At smaller screen sizes the height is reduced dynamically without the need to provide separate images.  For reference screen width < 767px = height 165px, width between 768px and 979px = height 225px and width > 980px = height 300px.  If no image is selected for a slide, then the default_slide image in the pix folder is used.';
 
@@ -389,8 +384,12 @@ $string['enablecustomcategoryicondesc'] = 'If enabled below this section you wil
 $string['categoryiconinfo'] = 'Set custom category icons';
 $string['categoryiconinfodesc'] = 'Enter the name of the icon you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after "fa-".';
 
+/* Header Settings */
+$string['headerheading'] = 'Header';
+$string['headerheadingsub'] = 'Configure the various features for the header here';
+
 /* Mobile Apps */
-$string['mobileappsheading'] = 'Mobile apps';
+$string['mobileappsheading'] = 'Apps';
 $string['mobileappsheadingsub'] = 'Link to your app to get your students using mobiles';
 $string['mobileappsdesc'] = 'Have you got a web app on the App Store or Google Play Store?  Provide a link here so your users can grab the apps online.';
 
@@ -401,7 +400,7 @@ $string['ios'] = 'iPhone/iPad (App Store)';
 $string['iosdesc'] = 'Provide an URL to your mobile App on the App Store.  If you do not have one of your own maybe consider linking to the free official Moodle Mobile app (https://itunes.apple.com/en/app/moodle-mobile/id633359593).';
 
 /* iOS Icons */
-$string['iosicon'] = 'iOS home screen ocons';
+$string['iosicon'] = 'iOS home screen icons';
 $string['iosicondesc'] = 'The theme does provide a default icon for iOS and android home screens.  You can upload your custom icons if you wish.';
 
 $string['iphoneicon'] = 'iPhone/iPod Touch icon (Non Retina)';

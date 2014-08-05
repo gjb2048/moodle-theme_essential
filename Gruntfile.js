@@ -128,18 +128,40 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         less: {
+            moodle: {
+                options: {
+                    compress: false,
+                    paths: "./less",
+                    report: 'min',
+                    sourceMap: false,
+                },
+                src: 'less/moodle.less',
+                dest: 'style/moodle.css'
+            },
             // Compile essential styles.
             essential: {
                 options: {
                     compress: false,
                     paths: "./less",
                     report: 'min',
-                    sourceMap: true,
+                    sourceMap: false,
                     sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
                     sourceMapFilename: 'style/essential.treasure.map'
                 },
                 src: 'less/essentialall.less',
                 dest: 'style/essential.css'
+            },
+            alternative: {
+                options: {
+                    compress: true,
+                    paths: "./less",
+                    report: 'min',
+                    sourceMap: false,
+                    sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
+                    sourceMapFilename: 'style/alternative.treasure.map'
+                },
+                src: 'less/alternative.less',
+                dest: 'style/alternative.css'
             },
             FontAwesome: {
                 options: {

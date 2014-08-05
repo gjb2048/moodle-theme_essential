@@ -71,8 +71,8 @@ echo $OUTPUT->doctype() ?>
         <!-- End Main Regions -->
 
     </section>
-
-    <?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
 </div>
+
+<?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
 </body>
 </html>

@@ -35,21 +35,32 @@
     $oldnav = ($oldnavbar) ? ' oldnavbar': '';
     $nav .= html_writer::start_tag('div', array('class' => 'navbar'.$oldnav));
     $nav .= html_writer::start_tag('div', array('class' => 'container-fluid navbar-inner'));
+    $nav .= html_writer::start_tag('div', array('class' => 'row-fluid'));
+    $nav .= html_writer::start_tag('div', array('class' => 'span8'));
     $nav .= html_writer::link(new moodle_url('/'), $SITE->shortname, array('class' => 'brand'));
     $nav .= html_writer::tag('a', html_writer::span('', 'icon-bar').html_writer::span('', 'icon-bar').html_writer::span('', 'icon-bar'), array('class' => 'btn btn-navbar', 'data-toggle' => 'collapse', 'data-target' => '.nav-collapse'));
     $nav .= html_writer::start_tag('div', array('class' => 'nav-collapse collapse'));
+    $nav .= $OUTPUT->custom_menu_language();
+    $nav .= $OUTPUT->custom_menu_courses();
+    $nav .= $OUTPUT->custom_menu_dashboard();
+    if ($colourswitcher) {
+        $nav .= $OUTPUT->custom_menu_themecolours();
+    }
     $nav .= $OUTPUT->custom_menu();
+    $nav .= html_writer::end_tag('div');
+    $nav .= html_writer::end_tag('div');
+    $nav .= html_writer::start_tag('div', array('class' => 'span4 pull-right'));
     $nav .= html_writer::start_tag('ul', array('class' => 'nav pull-right'));
-    $nav .= html_writer::tag('li', $OUTPUT->page_heading_menu());
     $nav .= html_writer::tag('li', $OUTPUT->login_info(), array('class' => 'navbar-text'));
     $nav .= html_writer::end_tag('ul');
     $nav .= html_writer::end_tag('div');
     $nav .= html_writer::end_tag('div');
     $nav .= html_writer::end_tag('div');
+    $nav .= html_writer::end_tag('div');
     $nav .= html_writer::end_tag('nav');
-
-    $pageheader = html_writer::start_tag('div', array('id' => 'page-header', 'class' => 'container-fluid clearfix'.$oldnav));
-    $pageheader .= html_writer::start_tag('div', array('class' => "row-fluid"));
+    
+    $pageheader = html_writer::start_tag('div', array('id' => 'page-header', 'class' => 'clearfix '.$oldnav));
+    $pageheader .= html_writer::start_tag('div', array('class' => "container-fluid"));
     $notleftclass = (!$left) ? ' pull-right': '';
     $pageheader .= html_writer::start_tag('div', array('class' => $logoclass.$notleftclass));
     if (!$haslogo) {
@@ -59,6 +70,8 @@
         $pageheader .= html_writer::link(new moodle_url('/'), '', array('class' => 'logo', 'title' => get_string('home')));
     }
     $pageheader .= html_writer::end_tag('div');
+    $pageheader .= html_writer::tag('a', html_writer::span('', 'icon-bar').html_writer::span('', 'icon-bar').html_writer::span('', 'icon-bar'), array('class' => 'btn btn-icon', 'data-toggle' => 'collapse', 'data-target' => '.icon-collapse'));
+    $pageheader .= html_writer::start_tag('div', array('class' => 'icon-collapse collapse'));
     $leftclass = ($left) ? ' pull-right': '';
     if (isloggedin() && $hasprofilepic) {
         $pageheader .= html_writer::start_tag('div', array('class' => 'span1'.$leftclass, 'id' => 'profilepic'));
@@ -97,6 +110,7 @@
         $pageheader .= html_writer::end_tag('ul');
         $pageheader .= html_writer::end_tag('div');
     }
+        $pageheader .= html_writer::end_tag('div');
     if (!empty($courseheader)) {
         $pageheader .= html_writer::tag('div', $courseheader, array('id' => 'course-header'));
     }

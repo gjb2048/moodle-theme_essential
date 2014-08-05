@@ -68,10 +68,25 @@ can be really useful in visualising the issue along with any files you consider 
 
 New in 2.7.5
 ========================
-- FIX: Issue #96.  2.7.4 breaks oldnavbar setting.
-- FIX: Issue #98.  Lang en/iosicondesc - Change 'them' to 'theme'.  Thanks to Skylar Kelty.
+- FIX: Issue #96:  2.7.4 breaks oldnavbar setting.
+- FIX: Issue #98:  Lang en/iosicondesc - Change 'them' to 'theme'.  Thanks to Skylar Kelty.
 - FIX: Issue #101: Navbar not expanding properly on android mobile and tablet.
 - FIX: Issue #107: No fixed width to header on login page.
+- FIX: Issue #113: Remove FontAwesome from all links in section heading except for the edit icon
+- FIX: Issue #110: Refactor middle blocks wording, thanks @mkpelletier
+- FIX: Issue #109: Re-order middle blocks settings, thanks @mkpelletier
+- FIX: Issue #108: Add similar tggle options to front page content, thanks @mkpelletier
+- FIX: Issue #67:  Refactored so menus are renderer all separately
+- FIX: Issue #60:  Add styling to invisible courses in breadcrumb
+- FIX: Correctly show no enrolments message when all courses are hidden
+- FIX: Reworked header menu and added responsive options to apps/social icons
+- FIX: Removed dnd upload status as it blocks the edit icons
+- FIX: Further work on RTL support
+- NEW: Removed bootstrapbase dependency for further minification
+- NEW: Split out alternative theme colors to reduce CSS loading when this is not enabled
+- NEW: Small tweak to site widths, now available options are 1400px, 1200px and 960px
+- NEW: Switched to bootstrap all in one for massive speed improvement (from 10 to 1 http request)
+- NEW: Removed option for restricting block width as it was not possible tog et this working properly
 
 New in 2.7.4
 ========================

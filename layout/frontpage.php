@@ -133,11 +133,16 @@ echo $OUTPUT->doctype() ?>
         <!-- End Alerts -->
 
         <!-- Start Frontpage Content -->
-        <?php if($PAGE->theme->settings->usefrontcontent ==1) { 
-            echo $PAGE->theme->settings->frontcontentarea;
+        <?php 
+            if($PAGE->theme->settings->togglefrontcontent==1) {
+                echo $PAGE->theme->settings->frontcontentarea;
+            } else if($PAGE->theme->settings->togglefrontcontent==2 && !isloggedin()) {
+                echo $PAGE->theme->settings->frontcontentarea;
+            } else if($PAGE->theme->settings->togglefrontcontent==3 && isloggedin()) {
+                echo $PAGE->theme->settings->frontcontentarea;
+            }
         ?>
-        <div class="bor" style="margin-top: 10px;"></div>   
-        <?php }?>
+        <div class="bor" style="margin-top: 10px;"></div>
         <!-- End Frontpage Content -->
 
         <!-- Start Marketing Spots -->
@@ -203,8 +208,9 @@ echo $OUTPUT->doctype() ?>
         <?php } ?>
 
     </section>
-
-    <?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
 </div>
+
+<?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
+
 </body>
 </html>
