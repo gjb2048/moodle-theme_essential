@@ -55,9 +55,8 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<?php require_once(dirname(__FILE__).'/includes/header.php');?>
-
 <div id="page" class="container-fluid">
+    <?php require_once(dirname(__FILE__).'/includes/header.php');?>
     <section class="slideshow">
         <!-- Start Slideshow -->
         <?php 
@@ -133,8 +132,14 @@ echo $OUTPUT->doctype() ?>
         <!-- End Alerts -->
 
         <!-- Start Frontpage Content -->
-        <?php if($PAGE->theme->settings->usefrontcontent ==1) { 
-            echo $PAGE->theme->settings->frontcontentarea;
+        <?php 
+            if($PAGE->theme->settings->togglefrontcontent==1) {
+                echo $PAGE->theme->settings->frontcontentarea;
+            } else if($PAGE->theme->settings->togglefrontcontent==2 && !isloggedin()) {
+                echo $PAGE->theme->settings->frontcontentarea;
+            } else if($PAGE->theme->settings->togglefrontcontent==3 && isloggedin()) {
+                echo $PAGE->theme->settings->frontcontentarea;
+            }
         ?>
         <div class="bor" style="margin-top: 10px;"></div>   
         <?php }?>

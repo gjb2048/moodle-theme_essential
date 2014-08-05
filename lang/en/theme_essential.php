@@ -234,16 +234,16 @@ $string['enablealternativethemecolorsdesc'] = 'If enabled, the user will be able
 /* Frontpage Settings */
 $string['frontcontentheading'] = 'Front page settings';
 $string['frontcontentheadingsub'] = 'Change what features you wish enabled on your Moodle front page';
-$string['frontcontentdesc'] = 'This adds a custom content area in between the slide show and the Marketing boxes for your own custom content';
+$string['frontcontentdesc'] = 'This adds a custom content area in between the slide show and the Marketing boxes for your own custom content.';
 
-$string['usefrontcontent'] = 'Enable front page content';
-$string['usefrontcontentdesc'] = 'If enabled this will display the content of the box below in between the slide show and the Marketing spots.';
+$string['togglefrontcontent'] = 'Toggle front page content';
+$string['togglefrontcontentdesc'] = 'If enabled this will display the content of the box below in between the slide show and the Marketing spots.';
 
 $string['frontcontentarea'] = 'Front page content';
-$string['frontcontentareadesc'] = 'Whatever is typed into this box will display across the full width of the page in between the slide show and the Marketing spots ';
+$string['frontcontentareadesc'] = 'Whatever is typed into this box will display across the full width of the page in between the slide show and the Marketing spots. ';
 
 $string['frontpagemiddleblocks'] = 'Enable front page middle blocks';
-$string['frontpagemiddleblocksdesc'] = 'If enabled this will display 3 new block locations just under the marketing spots';
+$string['frontpagemiddleblocksdesc'] = 'If enabled this will display three new block locations just under the marketing spots. This will allow you to move moodle blocks into these new locations on the frontpage. If you intend to use the "show before login" option, note that since this hides the blocks on the frontpage, you will need to add content to these blocks first using the "Always show" setting and then change it once your content is established.';
 
 /* Slideshow */
 $string['slideshowheading'] = 'Front page slide show';

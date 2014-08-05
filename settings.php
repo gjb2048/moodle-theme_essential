@@ -610,16 +610,23 @@ defined('MOODLE_INTERNAL') || die;
     }
     $ADMIN->add('theme_essential', $temp);
     
+  /*Frontpage Settings*/
     $temp = new admin_settingpage('theme_essential_frontcontent', get_string('frontcontentheading', 'theme_essential'));
     $temp->add(new admin_setting_heading('theme_essential_frontcontent', get_string('frontcontentheadingsub', 'theme_essential'),
             format_text(get_string('frontcontentdesc' , 'theme_essential'), FORMAT_MARKDOWN)));
     
-    // Enable Frontpage Content
-    $name = 'theme_essential/usefrontcontent';
-    $title = get_string('usefrontcontent', 'theme_essential');
-    $description = get_string('usefrontcontentdesc', 'theme_essential');
-    $default = false;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+  
+    // Toggle Frontpage Content.
+    $name = 'theme_essential/togglefrontcontent';
+    $title = get_string('togglefrontcontent', 'theme_essential');
+    $description = get_string('togglefrontcontentdesc', 'theme_essential');
+    $alwaysdisplay = get_string('alwaysdisplay', 'theme_essential');
+    $displaybeforelogin = get_string('displaybeforelogin', 'theme_essential');
+    $displayafterlogin = get_string('displayafterlogin', 'theme_essential');
+    $dontdisplay = get_string('dontdisplay', 'theme_essential');
+    $default = '1';
+    $choices = array('1'=>$alwaysdisplay, '2'=>$displaybeforelogin, '3'=>$displayafterlogin, '0'=>$dontdisplay);
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
@@ -632,19 +639,7 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
-    // Frontpage Block alignment.
-    $name = 'theme_essential/frontpageblocks';
-    $title = get_string('frontpageblocks' , 'theme_essential');
-    $description = get_string('frontpageblocksdesc', 'theme_essential');
-    $left = get_string('left', 'theme_essential');
-    $right = get_string('right', 'theme_essential');
-    $default = 'left';
-    $choices = array('1'=>$left, '0'=>$right);
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
-    // Toggle Frontpage Middle Blocks
+// Toggle Frontpage Middle Blocks
     $name = 'theme_essential/frontpagemiddleblocks';
     $title = get_string('frontpagemiddleblocks' , 'theme_essential');
     $description = get_string('frontpagemiddleblocksdesc', 'theme_essential');
@@ -659,6 +654,17 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add($setting);
         
     $ADMIN->add('theme_essential', $temp);
+    // Frontpage Block alignment.
+    $name = 'theme_essential/frontpageblocks';
+    $title = get_string('frontpageblocks' , 'theme_essential');
+    $description = get_string('frontpageblocksdesc', 'theme_essential');
+    $left = get_string('left', 'theme_essential');
+    $right = get_string('right', 'theme_essential');
+    $default = 'left';
+    $choices = array('1'=>$left, '0'=>$right);
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
     
 
     /* Marketing Spot Settings */
