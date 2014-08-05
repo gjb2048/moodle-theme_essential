@@ -53,7 +53,7 @@
     $notleftclass = (!$left) ? ' pull-right': '';
     $pageheader .= html_writer::start_tag('div', array('class' => $logoclass.$notleftclass));
     if (!$haslogo) {
-        $pageheader .= html_writer::empty_tag('i', array('id' => 'headerlogo', 'class' => 'fa fa-'.$PAGE->theme->settings->siteicon));
+        $pageheader .= html_writer::start_tag('i', array('id' => 'headerlogo', 'class' => 'fa fa-'.$PAGE->theme->settings->siteicon)).html_writer::end_tag('i');
         $pageheader .= html_writer::tag('h1', $SITE->shortname, array('id' => 'title'));
     } else {
         $pageheader .= html_writer::link(new moodle_url('/'), '', array('class' => 'logo', 'title' => get_string('home')));
