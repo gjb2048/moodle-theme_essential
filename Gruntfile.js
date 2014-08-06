@@ -202,6 +202,9 @@ module.exports = function(grunt) {
             }
         },
         cssflip: {
+            options: {
+            compress: true
+          },
             rtl: {
                 src:  'style/essential.css',
                 dest: 'style/essential-rtl.css'
