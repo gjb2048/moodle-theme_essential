@@ -35,22 +35,23 @@ $THEME->yuicssmodules = array();
 $THEME->parents = array();
 
 $THEME->sheets[] = 'moodle';
-$THEME->sheets[] = 'fontawesome';
 
 if (right_to_left()) {
     $THEME->sheets[] = 'essential-rtl';
     $THEME->sheets[] = 'rtl';
-    $THEME->sheets[] = 'custom';
 } else {
     $THEME->sheets[] = 'essential';
-    $THEME->sheets[] = 'custom';
 }
+
+
 
 if ((get_config('theme_essential', 'enablealternativethemecolors1')) || 
     (get_config('theme_essential', 'enablealternativethemecolors2')) || 
     (get_config('theme_essential', 'enablealternativethemecolors3'))) {
         $THEME->sheets[] = 'alternative';
 }
+
+$THEME->sheets[] = 'custom';
 
 $THEME->supportscssoptimisation = false;
 
