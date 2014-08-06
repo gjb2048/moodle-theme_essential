@@ -94,6 +94,8 @@
  * @package theme
  * @subpackage shoehorn
  * @author G J Barnard - gjbarnard at gmail dot com and {@link http://moodle.org/user/profile.php?id=442195}
+
+
  * @author Based on code originally written by Joby Harding, Bas Brands, David Scotson and many other contributors. * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -131,9 +133,9 @@ module.exports = function(grunt) {
             moodle: {
                 options: {
                     compress: false,
+                    cleancss: true,
                     paths: "./less",
                     report: 'min',
-                    sourceMap: false,
                 },
                 src: 'less/moodle.less',
                 dest: 'style/moodle.css'
@@ -141,6 +143,7 @@ module.exports = function(grunt) {
             // Compile essential styles.
             essential: {
                 options: {
+                    cleancss: true,
                     compress: false,
                     paths: "./less",
                     report: 'min',
@@ -154,6 +157,7 @@ module.exports = function(grunt) {
             alternative: {
                 options: {
                     compress: true,
+                    cleancss: true,
                     paths: "./less",
                     report: 'min',
                     sourceMap: false,
@@ -163,24 +167,13 @@ module.exports = function(grunt) {
                 src: 'less/alternative.less',
                 dest: 'style/alternative.css'
             },
-            FontAwesome: {
-                options: {
-                    compress: false,
-                    paths: "./less",
-                    report: 'min',
-                    sourceMap: true,
-                    sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'style/fontawesome.treasure.map'
-                },
-                src: 'less/fontawesome.less',
-                dest: 'style/fontawesome.css'
-            },
             rtl: {
                 options: {
                     compress: false,
+                    cleancss: true,
                     paths: "./less",
                     report: 'min',
-                    sourceMap: true,
+                    sourceMap: false,
                     sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
                     sourceMapFilename: 'style/rtl.treasure.map'
                 },

@@ -1,23 +1,15 @@
-/*
- * @author    Julian Ridden
- * @package   theme_essential
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-
-/* @group Core */
-
 body {
   line-height: 25px;
-  text-shadow: none !important;
-  padding-top: 0px;
+  text-shadow: none!important;
+  padding-top: 0;
   position: relative;
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255,255,255,.6);
   background-size: cover;
-  margin: 0px !important;
-  padding: 0px !important;
+  margin: 0!important;
+  padding: 0!important;
 }
 
 h1,
@@ -26,7 +18,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: normal !important;
+  font-weight: 400!important;
 }
 
 h3 {
@@ -48,7 +40,7 @@ a {
 
 .sitetopic .section .activity:hover,
 .course-content .section .activity:hover {
-  background: none;
+  background: 0 0;
 }
 
 .logininfo {
@@ -62,18 +54,24 @@ div.logininfo a {
 
 #page {
   padding-top: 10px;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255,255,255,.6);
+}
+
+#page #page-content #region-bs-main-and-pre {
+  padding: 5px;
+  background-color: #FFF;
+  border-radius: 5px;
+  border: 1px solid #E1E1E1;
+  margin-bottom: 20px;
 }
 
 #page-admin-upgradesettings #page,
 .maintenance#page {
-  padding-top: 0px;
+  padding-top: 0;
 }
 
-/* @group Font Awesome */
-
 .fa {
-  font-style: normal !important;
+  font-style: normal!important;
 }
 
 .sr-only {
@@ -83,17 +81,13 @@ div.logininfo a {
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  clip: rect(0,0,0,0);
   border: 0;
 }
 
-/* @end */
-
-/* @group Custom */
-
 .bor {
   height: 20px;
-  margin: 0px;
+  margin: 0;
   margin-bottom: 20px;
 }
 
@@ -102,19 +96,13 @@ div.logininfo a {
   margin-bottom: 10px;
 }
 
-/* @end */
-
-/* @end */
-
-/* @group Header */
-
 #page-header {
   height: 75px;
   margin-top: 41px;
   border-bottom: 1px solid #DDD;
 }
 
-#page-header .row-fluid [class*="span"] {
+#page-header .row-fluid [class*=span] {
   padding-left: 5px;
 }
 
@@ -134,7 +122,7 @@ div.logininfo a {
   background-color: #f5f5f5;
 }
 
-#page-header .btn-icon .icon-bar + .icon-bar {
+#page-header .btn-icon .icon-bar+.icon-bar {
   margin-top: 3px;
 }
 
@@ -145,7 +133,7 @@ div.logininfo a {
 #page-header.oldnavbar,
 .maintenance #page-header,
 #page-admin-upgradesettings #page-header {
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 h2.main,
@@ -188,29 +176,27 @@ h1#title {
 .btn-warning,
 .btn-info,
 .btn-danger {
-  color: #fff !important;
+  color: #fff!important;
 }
-
-/* @group Social Buttons */
 
 #socialnetworks {
   height: 75px;
 }
 
 .socials {
-  margin: 0px;
+  margin: 0;
 }
 
 .socials p {
-  font-weight: normal;
+  font-weight: 400;
   color: [[setting:themetextcolor]];
   font-size: 1.1em;
 }
 
 button.socialicon {
-  background-color: #bbbbbb;
+  background-color: #bbb;
   border-radius: 5px;
-  border: 0px none;
+  border: 0 none;
   font-size: 1.6em;
   padding: 5px;
   text-align: center;
@@ -295,14 +281,10 @@ ul.socials li {
 #socialheading {
   text-align: left;
   letter-spacing: .2em;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   margin-top: 8px;
 }
-
-/* @end */
-
-/* @group Profile */
 
 #profilepic {
   height: 75px;
@@ -311,32 +293,25 @@ ul.socials li {
 #profileheading {
   text-align: left;
   letter-spacing: .2em;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   margin-top: 4px;
 }
 
-/* @end */
-
-/* @group Navbar
- */
-
-.dropdown-menu > li > a,
-.dropdown-menu > li > a:visited {
+.dropdown-menu>li>a,
+.dropdown-menu>li>a:visited {
   color: #333;
 }
 
-/* @group Custom Menu */
-
-ul.nav li.dropdown:hover > ul.dropdown-menu {
+ul.nav li.dropdown:hover>ul.dropdown-menu {
   display: block;
 }
 
-.dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus,
-.dropdown-submenu:hover > a,
-.dropdown-submenu:focus > a {
-  color: #ffffff;
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus,
+.dropdown-submenu:hover>a,
+.dropdown-submenu:focus>a {
+  color: #fff;
   text-decoration: none;
 }
 
@@ -345,21 +320,21 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
   margin-left: 5px;
 }
 
-.open > .dropdown-menu {
+.open>.dropdown-menu {
   overflow: visible;
 }
 
 .dropdown-menu {
   z-index: 1001;
-  margin: 0px;
+  margin: 0;
 }
 
 .navbar {
-  margin-bottom: 0px;
+  margin-bottom: 0;
   position: fixed;
   width: 100%;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   background-image: none;
   z-index: 4030;
 }
@@ -370,47 +345,47 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
   text-shadow: none;
   line-height: 40px;
   padding: 0;
-  margin-right: 0px;
+  margin-right: 0;
   margin-left: 10px;
 }
 
-.navbar .active > a,
-.navbar .nav .active > a:hover,
-.navbar .nav .active > a:focus,
-.navbar .nav li.dropdown.open > .dropdown-toggle,
-.navbar .nav li.dropdown.active > .dropdown-toggle,
-.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+.navbar .active>a,
+.navbar .nav .active>a:hover,
+.navbar .nav .active>a:focus,
+.navbar .nav li.dropdown.open>.dropdown-toggle,
+.navbar .nav li.dropdown.active>.dropdown-toggle,
+.navbar .nav li.dropdown.open.active>.dropdown-toggle {
   color: [[setting:themenavcolor]];
 }
 
-.navbar .nav li.dropdown > a.dropdown-toggle .caret,
-.navbar .nav li.dropdown.open > a.dropdown-toggle .caret {
+.navbar .nav li.dropdown>a.dropdown-toggle .caret,
+.navbar .nav li.dropdown.open>a.dropdown-toggle .caret {
   border-top-color: [[setting:themenavcolor]];
   border-bottom-color: [[setting:themenavcolor]];
   margin-right: 5px;
 }
 
-.navbar .nav li.dropdown > a.dropdown-toggle .caret:hover,
-.navbar .nav li.dropdown.open > a.dropdown-toggle .caret:hover,
-.navbar .nav li.dropdown > a.dropdown-toggle .caret:focus,
-.navbar .nav li.dropdown.open > a.dropdown-toggle .caret:focus {
+.navbar .nav li.dropdown>a.dropdown-toggle .caret:hover,
+.navbar .nav li.dropdown.open>a.dropdown-toggle .caret:hover,
+.navbar .nav li.dropdown>a.dropdown-toggle .caret:focus,
+.navbar .nav li.dropdown.open>a.dropdown-toggle .caret:focus {
   border-top-color: [[setting:themecolor]];
   border-bottom-color: [[setting:themecolor]];
 }
 
-.navbar .nav > li > a {
+.navbar .nav>li>a {
   color: [[setting:themenavcolor]];
   text-shadow: none;
 }
 
-.navbar .nav > li > a:hover,
-.navbar .nav > li > a:focus {
+.navbar .nav>li>a:hover,
+.navbar .nav>li>a:focus {
   background-color: [[setting:themenavcolor]];
   color: [[setting:themecolor]];
 }
 
-.navbar .nav > li > a:hover.dropdown-toggle .caret,
-.navbar .nav > li > a:focus.dropdown-toggle .caret {
+.navbar .nav>li>a:hover.dropdown-toggle .caret,
+.navbar .nav>li>a:focus.dropdown-toggle .caret {
   border-top-color: [[setting:themecolor]];
   border-bottom-color: [[setting:themecolor]];
 }
@@ -429,19 +404,14 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 .navbar-static-top .navbar-inner,
 .navbar-inner {
   border: none;
-  line-height: 0px;
+  line-height: 0;
   background-image: none;
   box-shadow: none;
   filter: none;
 }
 
-/* @end */
-
-/* @group Course
- */
-
 .course-content ul li.section.main {
-  border-bottom: 0px none;
+  border-bottom: 0 none;
 }
 
 div.mdl-align.title {
@@ -455,8 +425,8 @@ div.mdl-align.title {
 }
 
 h2.pagetitle {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   font-size: 1.2em;
   line-height: 35px;
   color: #777;
@@ -481,7 +451,7 @@ h2.pagetitle span {
 
 .label,
 .badge {
-  font-weight: normal;
+  font-weight: 400;
 }
 
 .listitem .fa-circle {
@@ -521,8 +491,6 @@ h2.pagetitle span {
   margin-right: 5.5em;
 }
 
-/* @group Course Footer */
-
 #section_footer {
   padding: 2em 0;
   color: [[setting:themetextcolor]];
@@ -552,7 +520,7 @@ h2.pagetitle span {
 }
 
 .nav_guide {
-  letter-spacing: 0.1em;
+  letter-spacing: .1em;
   text-transform: uppercase;
   font-style: normal;
   color: #e4a82a;
@@ -560,7 +528,7 @@ h2.pagetitle span {
 
 .nav_icon {
   color: [[setting:themecolor]];
-  padding: 0.3em;
+  padding: .3em;
   width: 8.3%;
   text-align: center;
 }
@@ -571,7 +539,7 @@ h2.pagetitle span {
 
 #next_section .nav_icon {
   float: left;
-  margin-right: 0.3em;
+  margin-right: .3em;
   border-right: 1px solid #eee;
   font-size: 2em;
 }
@@ -583,7 +551,7 @@ h2.pagetitle span {
 
 #previous_section .nav_icon {
   float: right;
-  margin-left: 0.3em;
+  margin-left: .3em;
   border-left: 1px solid #eee;
   font-size: 2em;
 }
@@ -592,12 +560,6 @@ h2.pagetitle span {
   width: 74.05%;
   float: right;
 }
-
-/* @end */
-
-/* @end */
-
-/* @group Layout */
 
 .side-pre {
   border: 1px solid #333;
@@ -611,10 +573,6 @@ h2.pagetitle span {
   padding-bottom: 20px;
 }
 
-/* @end */
-
-/* @group Forums */
-
 .forumheaderlist .picture img {
   border-radius: 250px;
   margin-left: 10px;
@@ -624,7 +582,7 @@ h2.pagetitle span {
 .forumheaderlist {
   background: #fff;
   border-radius: 10px;
-  border: 1px solid #E1E1E1 !important;
+  border: 1px solid #E1E1E1!important;
   padding: 10px;
 }
 
@@ -643,29 +601,25 @@ h2.pagetitle span {
 }
 
 .forumpost .subject {
-  font-weight: normal;
+  font-weight: 400;
   font-size: 1.2em;
   margin-bottom: -5px;
 }
 
-.forumsearch input[type="text"] {
-  font-size: 12px !important;
+.forumsearch input[type=text] {
+  font-size: 12px!important;
   height: 15px;
   width: 180px;
   margin-left: 10px;
 }
 
-.forumsearch input[type="submit"] {
-  font-size: 12px !important;
+.forumsearch input[type=submit] {
+  font-size: 12px!important;
   line-height: 15px;
 }
 
-/* @end */
-
-/* @group Buttons */
-
 .button {
-  margin: 10px 0px;
+  margin: 10px 0;
 }
 
 .button a {
@@ -688,7 +642,7 @@ a#button-purple,
 a#button-orange,
 a#button-black,
 a#button-grey {
-  margin: 10px 0px;
+  margin: 10px 0;
 }
 
 a#button,
@@ -725,34 +679,34 @@ a#button-grey:hover {
 
 a#button-red,
 a#button-red:visited {
-  background: #ff3300;
+  background: #f30;
 }
 
 a#button-red:hover {
-  background: #cc3300;
+  background: #c30;
 }
 
 a#button-green,
 a#button-green:visited {
-  background: #33cc00;
+  background: #3c0;
 }
 
 a#button-green:hover {
-  background: #009933;
+  background: #093;
 }
 
 a#button-purple,
 a#button-purple:visited {
-  background: #cc33cc;
+  background: #c3c;
 }
 
 a#button-purple:hover {
-  background: #993399;
+  background: #939;
 }
 
 a#button-orange,
 a#button-orange:visited {
-  background: #ff9900;
+  background: #f90;
 }
 
 a#button-orange:hover {
@@ -777,15 +731,11 @@ a#button-grey:hover {
   background: #000;
 }
 
-/* @end */
-
-/* @group GreyBox */
-
 table#greyboxright {
   background: #F9F9F9;
   border: 1px solid #EEE;
   border-bottom: 3px solid #EEE;
-  border-radius: 10px !important;
+  border-radius: 10px!important;
   margin-right: 20px;
   float: left;
 }
@@ -794,7 +744,7 @@ table#greybox {
   background: #F9F9F9;
   border: 1px solid #EEE;
   border-bottom: 3px solid #EEE;
-  border-radius: 10px !important;
+  border-radius: 10px!important;
   margin-top: 30px;
 }
 
@@ -802,7 +752,7 @@ table#greyboxleft {
   background: #F9F9F9;
   border: 1px solid #EEE;
   border-bottom: 3px solid #EEE;
-  border-radius: 10px !important;
+  border-radius: 10px!important;
   margin-left: 20px;
   float: right;
 }
@@ -810,7 +760,7 @@ table#greyboxleft {
 table#greyboxright td,
 table#greyboxleft td {
   padding: 10px;
-  padding-top: 0px;
+  padding-top: 0;
   max-width: 360px;
 }
 
@@ -826,12 +776,8 @@ table#greyboxleft h2 {
   line-height: 17px;
 }
 
-/* @end */
-
-/* @group Blocks */
-
 .block {
-  background: white;
+  background: #fff;
   padding: 8px;
   border-radius: 8px;
   border: 1px solid #E1E1E1;
@@ -839,7 +785,7 @@ table#greyboxleft h2 {
 }
 
 .block .content {
-  padding: 4px 0px;
+  padding: 4px 0;
 }
 
 #middle-blocks p {
@@ -848,17 +794,17 @@ table#greyboxleft h2 {
 
 .block #icon {
   margin-left: 5px;
-  color: #999999;
+  color: #999;
 }
 
 .tree_item {
-  background-image: none !important;
+  background-image: none!important;
 }
 
 .tree_item.branch:before {
   font-family: FontAwesome;
   content: "\f07c ";
-  color: #999999;
+  color: #999;
   margin-left: 5px;
 }
 
@@ -869,18 +815,18 @@ table#greyboxleft h2 {
   margin-left: 5px;
 }
 
-.block_navigation.block li.type_user > .tree_item.branch:before {
+.block_navigation.block li.type_user>.tree_item.branch:before {
   content: "\f007 ";
 }
 
-.block_navigation.block li.type_unknown.depth_1 > .tree_item.branch:before {
+.block_navigation.block li.type_unknown.depth_1>.tree_item.branch:before {
   content: "\f015 ";
 }
 
 .collapsed .tree_item.branch:before {
   font-family: FontAwesome;
   content: "\f07b ";
-  color: #999999;
+  color: #999;
   margin-left: 5px;
 }
 
@@ -889,7 +835,7 @@ table#greyboxleft h2 {
   padding: 10px;
   border: 1px solid #EEE;
   border-radius: 5px;
-  margin: 10px 0px 10px 0px;
+  margin: 10px 0;
 }
 
 .hidden-blocks h4 {
@@ -897,8 +843,8 @@ table#greyboxleft h2 {
   padding-bottom: 8px;
   margin-bottom: 8px;
   border-bottom: 1px solid #ccc;
-  margin-top: 0px;
-  color: #ff6666;
+  margin-top: 0;
+  color: #f66;
 }
 
 .hidden-blocks .block {
@@ -914,8 +860,8 @@ table#greyboxleft h2 {
   line-height: 26px;
   margin-bottom: 5px;
   text-transform: uppercase;
-  font-weight: normal;
-  padding: 0px;
+  font-weight: 400;
+  padding: 0;
 }
 
 .block .header .title h2:before {
@@ -927,14 +873,14 @@ table#greyboxleft h2 {
 
 .block .header .title {
   border-bottom: 1px solid #EEE;
-  padding-right: 0px;
+  padding-right: 0;
 }
 
 .block.hidden .header .title h2,
 .block.hidden h3.main,
 .block.hidden .header .title {
   border-bottom: none;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .block_quiz_results {
@@ -943,12 +889,12 @@ table#greyboxleft h2 {
 
 .block_rss_client .decription {
   height: auto;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .block_rss_client .content {
-  padding: 0px;
+  padding: 0;
 }
 
 .block_rss_client .content a:hover {
@@ -981,8 +927,6 @@ table#greyboxleft h2 {
   color: #fff;
 }
 
-/* @group Login Block */
-
 .block_login .header .title h2:before {
   content: "\f007";
   font-family: FontAwesome;
@@ -992,7 +936,7 @@ table#greyboxleft h2 {
 .block_login .content .footer {
   height: 60px;
   width: 100%;
-  padding: 0px;
+  padding: 0;
 }
 
 .block_login .content .footer div {
@@ -1010,7 +954,7 @@ table#greyboxleft h2 {
   white-space: nowrap;
 }
 
-.block_login .content form input[type="submit"],
+.block_login .content form input[type=submit],
 .block_login .content .footer a {
   background-image: none;
   border-color: #30ADD1;
@@ -1032,7 +976,7 @@ table#greyboxleft h2 {
   width: 100%;
 }
 
-.block_login .content form input[type="submit"]:hover,
+.block_login .content form input[type=submit]:hover,
 .block_login .content .footer a:hover {
   text-decoration: none;
 }
@@ -1059,16 +1003,12 @@ table#greyboxleft h2 {
 }
 
 .block_login .content .footer div a {
-  background: orangered;
+  background: #ff4500;
 }
 
 .block_login .content .footer div a:hover {
   background: red;
 }
-
-/* @end */
-
-/* @group Block Icons */
 
 .block_news_items .header .title h2:before {
   content: "\f0a1";
@@ -1202,12 +1142,6 @@ table#greyboxleft h2 {
   content: "\f099";
 }
 
-/* @end */
-
-/* @end */
-
-/* @group Frontpage */
-
 #site-news-forum,
 #frontpage-course-list,
 #frontpage-category-combo,
@@ -1217,8 +1151,8 @@ table#greyboxleft h2 {
 }
 
 .headingblock.header {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   font-size: 1.8em;
   line-height: 35px;
   color: #777;
@@ -1252,9 +1186,9 @@ table#greyboxleft h2 {
 .courses .coursebox {
   background: #fff;
   border-radius: 10px;
-  border: 1px solid #E1E1E1 !important;
+  border: 1px solid #E1E1E1!important;
   padding: 10px;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
 }
 
 .courses .coursebox.even,
@@ -1263,10 +1197,8 @@ table#greyboxleft h2 {
   margin-bottom: 5px;
 }
 
-/* @group Home News Boxes */
-
 .services {
-  margin: 20px 0px;
+  margin: 20px 0;
 }
 
 .service {
@@ -1279,8 +1211,8 @@ table#greyboxleft h2 {
 }
 
 .service h5 {
-  padding: 3px 0px 8px 0px;
-  margin: 3px 0px 4px 0px;
+  padding: 3px 0 8px;
+  margin: 3px 0 4px;
   border-bottom: 1px solid #f1f1f1;
 }
 
@@ -1290,15 +1222,9 @@ table#greyboxleft h2 {
   margin-left: 8px;
 }
 
-/* @end */
-
-/* @end */
-
-/* @group Footer */
-
 #page-footer {
-  margin-top: 10px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   border: 0;
   font-size: 1em;
   text-align: right;
@@ -1311,7 +1237,7 @@ table#greyboxleft h2 {
 }
 
 .helplink a {
-  color: orange !important;
+  color: orange!important;
 }
 
 #page-footer .footnote a:hover {
@@ -1336,13 +1262,13 @@ table#greyboxleft h2 {
 
 #page-footer .span4 {
   padding: 30px;
-  padding-top: 0px;
-  padding-bottom: 0px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 #page-footer hr {
-  padding: 0px;
-  border-bottom: 0px none;
+  padding: 0;
+  border-bottom: 0 none;
   margin-top: -10px;
 }
 
@@ -1354,43 +1280,41 @@ table#greyboxleft h2 {
 
 #page-footer ul,
 #greyboxright ul {
-  list-style-type: none !important;
-  margin: 0px;
+  list-style-type: none!important;
+  margin: 0;
   margin-top: -10px;
   margin-bottom: 10px;
 }
 
 #page-footer ul li,
 #greyboxright ul li {
-  padding: 4px 0px;
-  padding-right: 0px;
+  padding: 4px 0;
+  padding-right: 0;
 }
 
 .footerlinks {
   line-height: 15px;
 }
 
-/* @group Footer Block Formatting */
-
 #page-footer .block {
-  border: 0px none;
-  background: transparent;
+  border: 0 none;
+  background: 0 0;
   width: 100%;
-  padding: 0px;
+  padding: 0;
 }
 
 #page-footer .block .header .title h2:before {
-  background: transparent;
-  padding-right: 0px;
+  background: 0 0;
+  padding-right: 0;
   font-size: 1.2em;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
+  padding-bottom: 0;
+  margin-bottom: 0;
   text-transform: none;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 #page-footer .block .header .block_action {
-  display: none !important;
+  display: none!important;
 }
 
 #page-footer .eventskey,
@@ -1414,13 +1338,13 @@ table#greyboxleft h2 {
 }
 
 #page-footer input:-webkit-autofill {
-  background-color: #fff !important;
+  background-color: #fff!important;
 }
 
-#page-footer .block_login input[type="submit"] {
+#page-footer .block_login input[type=submit] {
   color: #fff;
   text-shadow: none;
-  border: 0px none;
+  border: 0 none;
   float: right;
   margin-top: 3px;
 }
@@ -1434,13 +1358,13 @@ table#greyboxleft h2 {
   font-size: 1.1em;
   line-height: 20px;
   float: right;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   margin-right: 10px;
 }
 
 #page-footer .block_login .footer a:focus,
 #page-footer .block_login .footer a:hover {
-  text-decoration: none !important;
+  text-decoration: none!important;
   background-color: #666;
 }
 
@@ -1453,7 +1377,7 @@ table#greyboxleft h2 {
 }
 
 #page-footer .block_rss_client .content li:hover {
-  background: transparent;
+  background: 0 0;
 }
 
 #page-footer .block_rss_client .footer a {
@@ -1461,18 +1385,12 @@ table#greyboxleft h2 {
 }
 
 .path-grade-report-grader table {
-  background: transparent;
+  background: 0 0;
 }
 
 .path-grade-report-grader table#fixed_column {
   margin-top: 6px;
 }
-
-/* @end */
-
-/* @end */
-
-/* @group Marketing Spots */
 
 #adspots {
   margin-top: 10px;
@@ -1485,16 +1403,14 @@ table#greyboxleft h2 {
   margin: 10px auto;
   border-radius: 250px;
   border: 5px solid #fff;
-  box-shadow: 0px 0px 3px #aaa;
+  box-shadow: 0 0 3px #aaa;
   text-align: center;
   -webkit-transition: border 1s ease;
-  /* Safari */
   transition: border 1s ease;
 }
 
 .afeature:hover {
   -webkit-transition: border 1s ease;
-  /* Safari */
   transition: border 1s ease;
 }
 
@@ -1516,15 +1432,11 @@ table#greyboxleft h2 {
 .marketing-image1,
 .marketing-image2,
 .marketing-image3 {
-  background-size: contain !important;
-  background-position: center top !important;
+  background-size: contain!important;
+  background-position: center top!important;
   width: 100%;
   margin-bottom: 5px;
 }
-
-/* @end */
-
-/* @group Profile Image */
 
 .myprofileitem.picture {
   width: 100px;
@@ -1532,16 +1444,14 @@ table#greyboxleft h2 {
   margin: 10px auto;
   border-radius: 250px;
   border: 5px solid #fff;
-  box-shadow: 0px 0px 3px #aaa;
+  box-shadow: 0 0 3px #aaa;
   text-align: center;
   -webkit-transition: border 1s ease;
-  /* Safari */
   transition: border 1s ease;
 }
 
 .myprofileitem.picture:hover {
   -webkit-transition: border 1s ease;
-  /* Safari */
   transition: border 1s ease;
 }
 
@@ -1551,12 +1461,8 @@ img.profilepicture {
   border-radius: 250px;
 }
 
-/* @end */
-
-/* @group Tabs */
-
-.nav-tabs > li,
-.nav-pills > li {
+.nav-tabs>li,
+.nav-pills>li {
   float: none;
   display: inline-block;
 }
@@ -1566,29 +1472,25 @@ img.profilepicture {
   text-align: center;
 }
 
-.nav > .disabled > a {
+.nav>.disabled>a {
   color: #555;
   background: #fff;
 }
 
-.nav > .disabled > a:hover {
+.nav>.disabled>a:hover {
   border: 1px solid #ddd;
 }
 
-.nav-tabs > li > a {
+.nav-tabs>li>a {
   color: #fff;
   cursor: default;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
 }
 
-/* @end */
-
-/* @group Performance Information */
-
 .performanceinfo {
   bottom: 0;
-  background: white;
+  background: #fff;
   padding: 8px;
   border-radius: 8px;
   border: 1px solid #E1E1E1;
@@ -1603,7 +1505,7 @@ img.profilepicture {
   font-size: 1.2em;
   padding: 5px;
   border-radius: 5px;
-  color: #fff !important;
+  color: #fff!important;
   white-space: nowrap;
 }
 
@@ -1612,7 +1514,7 @@ img.profilepicture {
   color: #888;
   line-height: 1.4em;
   text-transform: uppercase;
-  font-weight: normal;
+  font-weight: 400;
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
   margin-top: 5px;
@@ -1667,10 +1569,6 @@ img.profilepicture {
   content: "\f181";
 }
 
-/* @end */
-
-/* @group Quiz */
-
 #page-mod-quiz-edit div.quizcontents {
   clear: right;
   display: block;
@@ -1679,7 +1577,7 @@ img.profilepicture {
 }
 
 #page-mod-quiz-edit .questionbankwindow.block div.header {
-  margin: 0px;
+  margin: 0;
   border-radius: 6px;
 }
 
@@ -1689,37 +1587,33 @@ img.profilepicture {
 }
 
 .questionbankwindow.block {
-  background: white;
-  padding: 0px 12px;
+  background: #fff;
+  padding: 0 12px;
   border-radius: 8px;
   border: 1px solid #E1E1E1;
   margin-bottom: 10px;
 }
 
 .questionbankwindow.block .header .title {
-  border-bottom: 0px none;
+  border-bottom: 0 none;
 }
-
-/* @end */
-
-/* @group Forms */
 
 select,
 textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
+input[type=text],
+input[type=password],
+input[type=datetime],
+input[type=datetime-local],
+input[type=date],
+input[type=month],
+input[type=time],
+input[type=week],
+input[type=number],
+input[type=email],
+input[type=url],
+input[type=search],
+input[type=tel],
+input[type=color],
 .uneditable-input,
 .form-item .form-description,
 .form-defaultinfo,
@@ -1761,8 +1655,8 @@ input[type="color"],
 .path-backup #page form fieldset:last-of-type.hidden {
   width: 600px;
   position: fixed;
-  bottom: 0px;
-  margin: 0px;
+  bottom: 0;
+  margin: 0;
   background-color: #F5F5F5;
 }
 
@@ -1774,7 +1668,7 @@ input[type="color"],
 .path-admin-setting #page form fieldset:last-of-type.hidden #fgroup_id_buttonar,
 #page-admin-registration-register #page form fieldset:last-of-type.hidden #fgroup_id_buttonar,
 .path-backup #page form fieldset:last-of-type.hidden #fgroup_id_buttonar {
-  padding: 0px;
+  padding: 0;
 }
 
 #page-course-edit #page form .form-buttons #id_previous,
@@ -1794,10 +1688,6 @@ input[type="color"],
 .path-backup #page form .form-buttons {
   width: 400px;
 }
-
-/* @end */
-
-/* @group Calendar */
 
 .minicalendar .calendar_event_site,
 .minicalendar .calendar_event_course,
@@ -1822,35 +1712,27 @@ h2.eventtitle {
 
 .minicalendar th,
 .block .minicalendar td {
-  padding: 5px 0px;
+  padding: 5px 0;
   border: 1px dotted #e1e1e1;
 }
 
 table.calendarmonth.calendartable {
   background: #fff;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
 }
 
-/* @end */
-
-/* @group Alerts */
-
-.useralerts [class^="fa-stack"] {
+.useralerts [class^=fa-stack] {
   float: right;
   vertical-align: middle;
   margin-left: 5px;
 }
 
 .useralerts .title {
-  font-weight: bold;
+  font-weight: 700;
   margin-left: 10px;
 }
 
-/* @end */
-
-/* @group Back to Top */
-
-.back-to-top [class^="icon-"] {
+.back-to-top [class^=icon-] {
   font-size: 3em;
 }
 
@@ -1867,7 +1749,7 @@ table.calendarmonth.calendartable {
   -moz-transition: all .3s ease 0s;
   -o-transition: all .3s ease 0s;
   background-color: #000;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0,0,0,.5);
   -webkit-box-shadow: 0 0 1px #fff;
   -moz-box-shadow: 0 0 1px #fff;
   box-shadow: 0 0 1px #fff;
@@ -1881,41 +1763,37 @@ table.calendarmonth.calendartable {
 
 .back-to-top a,
 .back-to-top a:visited {
-  color: #fff !important;
+  color: #fff!important;
 }
 
-/* @end */
-
-@media screen and (min-width: 1200px) {
+@media screen and (min-width:1200px) {
   .maintenance #region-main,
   #page-login-index #region-main {
-    width: 100% !important;
+    width: 100%!important;
   }
 }
 
-@media (max-width: 979px) {
+@media (max-width:979px) {
   .nav-collapse {
     z-index: 10;
-    /* Get on top of slider. */
-    /* @group Custom Menu */
   }
 
-  .nav-collapse .dropdown-menu > li > a,
-  .nav-collapse .dropdown-menu > li > a:visited {
+  .nav-collapse .dropdown-menu>li>a,
+  .nav-collapse .dropdown-menu>li>a:visited {
     color: [[setting:themenavcolor]];
   }
 
-  .nav-collapse .dropdown-menu > li > a:hover,
-  .nav-collapse .dropdown-menu > li > a:focus,
-  .nav-collapse .dropdown-submenu:hover > a,
-  .nav-collapse .dropdown-submenu:focus > a {
+  .nav-collapse .dropdown-menu>li>a:hover,
+  .nav-collapse .dropdown-menu>li>a:focus,
+  .nav-collapse .dropdown-submenu:hover>a,
+  .nav-collapse .dropdown-submenu:focus>a {
     color: [[setting:themecolor]];
     background-color: [[setting:themenavcolor]];
     text-decoration: none;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width:767px) {
   #page.container-fluid {
     padding: 5px;
   }
@@ -1934,11 +1812,9 @@ table.calendarmonth.calendartable {
   }
 
   #headerlogo {
-    top: 0px;
+    top: 0;
   }
 }
-
-/* @group Print Styling */
 
 #printonly {
   display: none;
@@ -1953,7 +1829,7 @@ table.calendarmonth.calendartable {
   body {
     margin: 0;
     padding: 0;
-    background: transparent;
+    background: 0 0;
     color: #000;
     text-shadow: none;
   }
@@ -1992,37 +1868,36 @@ table.calendarmonth.calendartable {
   }
 
   .side-post-only #page-content #region-post-box {
-    margin-right: 0 !important;
+    margin-right: 0!important;
   }
 
   .side-post-only #page-content #region-main,
   .side-post-only #page-content #region-bs-main-and-pre {
-    padding: 0;
-    margin-right: 0 !important;
+    margin-right: 0!important;
   }
 
   .row-fluid .span9 {
     width: 100%;
   }
 
-  [class*="span"].pull-right,
-  .row-fluid [class*="span"].pull-right {
+  [class*=span].pull-right,
+  .row-fluid [class*=span].pull-right {
     float: right;
   }
 
   #page #region-main .region-content {
-    border: 0px solid transparent !important;
-    margin: 0 0 !important;
-    padding: 0px 0px !important;
+    border: 0 solid transparent!important;
+    margin: 0 0!important;
+    padding: 0 0!important;
   }
 
   #page-content #region-main-box .region-content {
-    padding: 0px 0 0;
+    padding: 0;
   }
 
   #page .navbar {
-    margin: 0 0;
-    padding: 1em 0px;
+    margin: 0;
+    padding: 1em 0;
     background: #fff;
     color: #000;
     text-shadow: none;
@@ -2046,10 +1921,8 @@ table.calendarmonth.calendartable {
   }
 }
 
-/* G J Barnard additions. */
-
-.coursebox > .info > .coursename a {
-  background-position: right 0.2em;
+.coursebox>.info>.coursename a {
+  background-position: right .2em;
 }
 
 #ie8message {
@@ -2057,11 +1930,11 @@ table.calendarmonth.calendartable {
   padding-top: 55px;
 }
 
-a[name="lastused"] {
+a[name=lastused] {
   padding-top: 50px;
 }
 
-section[role="main-content"] {
+section[role=main-content] {
   padding-top: 11px;
 }
 
@@ -2075,10 +1948,8 @@ body.pagewidthnarrow.custommenuitems #page-header {
 }
 
 body.pagewidthnarrow.custommenuitems #page-header.oldnavbar {
-  margin-top: 0px;
+  margin-top: 0;
 }
-
-/* @end */
 
 #essentialCarousel.carousel {
   margin-bottom: 10px;
@@ -2088,7 +1959,7 @@ body.pagewidthnarrow.custommenuitems #page-header.oldnavbar {
   height: 300px;
 }
 
-#essentialCarousel.carousel .carousel-inner > .item > .carousel-image {
+#essentialCarousel.carousel .carousel-inner>.item>.carousel-image {
   width: auto;
   margin: 0 auto;
   max-height: 300px;
@@ -2106,7 +1977,7 @@ body.pagewidthnarrow.custommenuitems #page-header.oldnavbar {
 
 #essentialCarousel.carousel .carousel-inner .carousel-caption {
   background: #30add1;
-  background: rgba(48, 173, 209, 0.75);
+  background: rgba(48,173,209,.75);
 }
 
 #essentialCarousel.carousel .carousel-inner .carousel-caption .carousel-caption-inner {
@@ -2117,12 +1988,12 @@ body.pagewidthnarrow.custommenuitems #page-header.oldnavbar {
 #essentialCarousel.carousel .carousel-inner .carousel-caption h4,
 #essentialCarousel.carousel .carousel-inner .carousel-caption p {
   color: [[setting:slidecolor]];
-  padding: 0px 20px;
+  padding: 0 20px;
 }
 
 #essentialCarousel.carousel .carousel-control {
   color: [[setting:slidebuttoncolor]];
-  background: none;
+  background: 0 0;
   border: none;
   width: auto;
   height: auto;
@@ -2135,7 +2006,7 @@ body.pagewidthnarrow.custommenuitems #page-header.oldnavbar {
 
 #essentialCarousel.carousel .carousel-indicators li {
   background: #30add1;
-  background: rgba(48, 173, 209, 0.75);
+  background: rgba(48,173,209,.75);
 }
 
 #essentialCarousel.carousel .carousel-indicators .active {
@@ -2150,12 +2021,12 @@ body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner .ca
   position: relative;
 }
 
-@media (max-width: 767px) {
+@media (max-width:767px) {
   #essentialCarousel.carousel .carousel-inner {
     height: 165px;
   }
 
-  #essentialCarousel.carousel .carousel-inner > .item > .carousel-image {
+  #essentialCarousel.carousel .carousel-inner>.item>.carousel-image {
     max-height: 165px;
   }
 
@@ -2164,12 +2035,12 @@ body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner .ca
   }
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width:768px) and (max-width:979px) {
   #essentialCarousel.carousel .carousel-inner {
     height: 225px;
   }
 
-  #essentialCarousel.carousel .carousel-inner > .item > .carousel-image {
+  #essentialCarousel.carousel .carousel-inner>.item>.carousel-image {
     max-height: 225px;
   }
 
@@ -2179,32 +2050,21 @@ body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner .ca
 }
 
 .alert .close {
-  top: 0px;
+  top: 0;
 }
 
 .alert .close .fa {
   vertical-align: middle;
 }
 
-/*
- * @author    Franc Pombal
- * @modified  Julian Ridden
- * @package   theme_essential
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-
-/* @group Core */
-
 .collapsible-actions {
   display: none;
 }
 
-/* Set the position on the frontpage */
-
 #frontpage-category-names,
 #frontpage-category-names .course_category_tree {
   clear: both;
-  padding: 0px;
+  padding: 0;
 }
 
 .frontpage-category-names .collapsible-actions,
@@ -2212,10 +2072,8 @@ body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner .ca
   display: none;
 }
 
-/* adjust line height for tiles that include course count */
-
-.frontpage-category-names.course_category_tree .category > .info > .categoryname,
-.frontpage-category-names.course_category_tree .category.with_children > .info > .categoryname {
+.frontpage-category-names.course_category_tree .category>.info>.categoryname,
+.frontpage-category-names.course_category_tree .category.with_children>.info>.categoryname {
   line-height: 15px;
 }
 
@@ -2224,23 +2082,21 @@ body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner .ca
   width: 100%;
 }
 
-/* Hide icon 'collapsed' because it makes no sense here */
-
-.course_category_tree .category.with_children.collapsed > .info > .categoryname,
-.course_category_tree .category.with_children > .info > .categoryname,
-.course_category_tree .category > .info > .categoryname {
+.course_category_tree .category.with_children.collapsed>.info>.categoryname,
+.course_category_tree .category.with_children>.info>.categoryname,
+.course_category_tree .category>.info>.categoryname {
   background-image: none;
   padding: 0;
   margin: 0;
 }
 
 .course_category_tree .category.dimmed_category {
-  border-color: #AAAAAA;
+  border-color: #AAA;
 }
 
 .course_category_tree .category {
   float: right;
-  margin: 0 5px 10px 5px;
+  margin: 0 5px 10px;
 }
 
 .course_category_tree .category .numberofcourse {
@@ -2251,11 +2107,11 @@ body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner .ca
   position: relative;
   bottom: 90%;
   right: 45%;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 1em;
-  -moz-box-shadow: -1px 1px 5px 0px #ccc;
-  -webkit-box-shadow: -1px 1px 5px 0px #ccc;
-  box-shadow: -1px 1px 5px 0px #ccc;
+  -moz-box-shadow: -1px 1px 5px 0 #ccc;
+  -webkit-box-shadow: -1px 1px 5px 0 #ccc;
+  box-shadow: -1px 1px 5px 0 #ccc;
   border: 2px solid #fff;
 }
 
@@ -2264,21 +2120,21 @@ body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner .ca
 }
 
 .course_category_tree .category .info .name {
-  padding: 0px;
+  padding: 0;
   text-align: center;
 }
 
-.course_category_tree .category > .info,
-.course_category_tree .category > .info > .categoryname {
-  background: transparent;
-  border: 0px none;
+.course_category_tree .category>.info,
+.course_category_tree .category>.info>.categoryname {
+  background: 0 0;
+  border: 0 none;
   text-align: center;
   box-shadow: none;
   margin: 0;
 }
 
-.course_category_tree .category > .info a,
-.course_category_tree .category > .info > .categoryname a {
+.course_category_tree .category>.info a,
+.course_category_tree .category>.info>.categoryname a {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2299,42 +2155,28 @@ body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner .ca
 
 .course_category_tree .category[data-categoryid]:hover {
   background: [[setting:themecolor]];
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
-.course_category_tree .category[data-categoryid] > .info > .categoryname a {
+.course_category_tree .category[data-categoryid]>.info>.categoryname a {
   line-height: 30px;
 }
 
-.course_category_tree .category[data-categoryid] > .info > .categoryname a:hover {
+.course_category_tree .category[data-categoryid]>.info>.categoryname a:hover {
   text-decoration: none;
   color: [[setting:themenavcolor]];
 }
-
-/* Hide buttons to expand and collapse */
 
 .jsenabled .course_category_tree .controls {
   display: none;
 }
 
-/* clear course list with subcategory icons above */
-
-.subcategories + .category-browse {
+.subcategories+.category-browse {
   clear: both;
 }
-
-/**
- * This is built using the bootstrapbase template to allow for new theme's using
- * Moodle's new Bootstrap theme engine
- *
- * @package     theme_essential
- * @copyright   2013 Bas Brands and Julian Ridden
- * @copyright   2014 Gareth J Barnard, David Bezemer
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
 
 .dockbutton:hover,
 .dockbutton:focus,
@@ -2358,10 +2200,10 @@ body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner .ca
   color: #7b8a8b;
   text-decoration: none;
   background-position: 0 -15px;
-  -webkit-transition: background-position 0.1s linear;
-  -moz-transition: background-position 0.1s linear;
-  -o-transition: background-position 0.1s linear;
-  transition: background-position 0.1s linear;
+  -webkit-transition: background-position .1s linear;
+  -moz-transition: background-position .1s linear;
+  -o-transition: background-position .1s linear;
+  transition: background-position .1s linear;
 }
 
 .dockbutton:focus {
@@ -2374,9 +2216,9 @@ body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner .ca
 .dockbutton:active {
   background-image: none;
   outline: 0;
-  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
 }
 
 .dockbutton.disabled,
@@ -2398,7 +2240,7 @@ body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner .ca
 
 .dockbutton:hover,
 .dockbutton:focus {
-  color: white;
+  color: #fff;
   -webkit-transition: .25s;
   -moz-transition: .25s;
   transition: .25s;
@@ -2406,7 +2248,7 @@ body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner .ca
 
 .dockbutton:active,
 .dockbutton.active {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255,255,255,.75);
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -2414,7 +2256,7 @@ body.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner .ca
 
 .dockbutton.disabled,
 .dockbutton[disabled] {
-  color: white;
+  color: #fff;
 }
 
 .dockbutton-large {
@@ -2435,8 +2277,7 @@ body.has_dock div#dock {
 
 body.has_dock.dir-ltr #page,
 body.has_dock.dir-ltr .navbar-inner {
-  /*@noflip*/
-  padding-left: 52px;
+  padding-right: 52px;
 }
 
 #dock {
@@ -2475,7 +2316,7 @@ body.has_dock.dir-ltr .navbar-inner {
 }
 
 #dock .dockedtitle h2 {
-  font-weight: normal;
+  font-weight: 400;
   text-align: center;
   color: [[setting:themetextcolor]];
 }
@@ -2503,10 +2344,10 @@ body.has_dock.dir-ltr .navbar-inner {
 #dock .dockedtitle:focus {
   text-decoration: none;
   background-position: 0 -10px;
-  -webkit-transition: background-position 0.1s linear;
-  -moz-transition: background-position 0.1s linear;
-  -o-transition: background-position 0.1s linear;
-  transition: background-position 0.1s linear;
+  -webkit-transition: background-position .1s linear;
+  -moz-transition: background-position .1s linear;
+  -o-transition: background-position .1s linear;
+  transition: background-position .1s linear;
 }
 
 #dock .dockedtitle:focus {
@@ -2519,9 +2360,9 @@ body.has_dock.dir-ltr .navbar-inner {
 #dock .dockedtitle:active {
   background-image: none;
   outline: 0;
-  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
 }
 
 #dock .dockedtitle.disabled,
@@ -2543,15 +2384,15 @@ body.has_dock.dir-ltr .navbar-inner {
 
 #dock .dockedtitle:hover,
 #dock .dockedtitle:focus {
-  color: white;
+  color: #fff;
   -webkit-transition: .25s;
   -moz-transition: .25s;
-  transition: 0.25s;
+  transition: .25s;
 }
 
 #dock .dockedtitle:active,
 #dock .dockedtitle.active {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255,255,255,.75);
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -2559,7 +2400,7 @@ body.has_dock.dir-ltr .navbar-inner {
 
 #dock .dockedtitle.disabled,
 #dock .dockedtitle[disabled] {
-  color: white;
+  color: #fff;
 }
 
 #dock .dockedtitle-large {
@@ -2582,9 +2423,9 @@ body.has_dock.dir-ltr .navbar-inner {
   display: block;
   padding: 3px 15px;
   font-size: 1.1em;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 20px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
   text-transform: uppercase;
 }
 
@@ -2641,8 +2482,8 @@ body.has_dock.dir-ltr .navbar-inner {
   text-align: left;
 }
 
-#dockeditempanel .dockeditempanel_hd .commands > a,
-#dockeditempanel .dockeditempanel_hd .commands > span {
+#dockeditempanel .dockeditempanel_hd .commands>a,
+#dockeditempanel .dockeditempanel_hd .commands>span {
   margin-right: 3px;
   cursor: pointer;
 }
@@ -2678,24 +2519,23 @@ body.has_dock.dir-ltr .navbar-inner {
 }
 
 .breadcrumb-button {
-  margin-top: 0px;
+  margin-top: 0;
 }
 
-.breadcrumb-button input[type="submit"] {
+.breadcrumb-button input[type=submit] {
   color: [[setting:themenavcolor]];
   background: [[setting:themecolor]];
   text-shadow: none;
-  border: 0px none;
+  border: 0 none;
 }
 
-.breadcrumb-button input[type="submit"]:hover {
+.breadcrumb-button input[type=submit]:hover {
   color: [[setting:themecolor]];
   background: [[setting:themenavcolor]];
 }
 
 .breadcrumb-nav {
-  margin: 0px;
-  /** Some breadcrumb style **/
+  margin: 0;
 }
 
 .breadcrumb-nav ul.breadcrumb.style1 {
@@ -2705,7 +2545,7 @@ body.has_dock.dir-ltr .navbar-inner {
   height: 28px;
   width: 100%;
   overflow: hidden;
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 .breadcrumb-nav ul.breadcrumb.style1 li {
@@ -2717,7 +2557,7 @@ body.has_dock.dir-ltr .navbar-inner {
   float: right;
   line-height: 28px;
   height: 28px;
-  border-radius: 0px;
+  border-radius: 0;
   text-shadow: none;
 }
 
@@ -2743,7 +2583,6 @@ body.has_dock.dir-ltr .navbar-inner {
   width: 0;
   height: 0;
   border-top: 50px solid transparent;
-  /* Go big on the size, and let overflow hide */
   border-bottom: 50px solid transparent;
   border-right: 30px solid [[setting:themecolor]];
   position: absolute;
@@ -2760,7 +2599,7 @@ body.has_dock.dir-ltr .navbar-inner {
   height: 0;
   border-top: 50px solid transparent;
   border-bottom: 50px solid transparent;
-  border-right: 30px solid white;
+  border-right: 30px solid #fff;
   position: absolute;
   top: 50%;
   margin-top: -50px;
@@ -2792,11 +2631,11 @@ body.has_dock.dir-ltr .navbar-inner {
 
 .breadcrumb-nav ul.breadcrumb.style1 li:last-child:after {
   content: "";
-  border: 0px;
+  border: 0;
 }
 
 .breadcrumb-nav ul.breadcrumb.style1 li:last-child:before {
-  border: 0px;
+  border: 0;
 }
 
 .breadcrumb-nav ul.breadcrumb.style1 li:hover {
@@ -2817,16 +2656,16 @@ body.has_dock.dir-ltr .navbar-inner {
 }
 
 .breadcrumb-nav ul.breadcrumb.style2 {
-  padding: 0px;
+  padding: 0;
   display: block;
-  background: transparent;
+  background: 0 0;
 }
 
 .breadcrumb-nav ul.breadcrumb.style2 li {
   display: block;
   float: right;
   padding: 2px;
-  border-radius: 0px;
+  border-radius: 0;
   text-shadow: none;
   background-color: #F5F5F5;
 }
@@ -2868,8 +2707,8 @@ body.has_dock.dir-ltr .navbar-inner {
 
 .breadcrumb-nav ul.breadcrumb.style3 {
   display: block;
-  background: transparent;
-  padding: 0px;
+  background: 0 0;
+  padding: 0;
 }
 
 .breadcrumb-nav ul.breadcrumb.style3 li {
@@ -2877,7 +2716,7 @@ body.has_dock.dir-ltr .navbar-inner {
   float: right;
   text-transform: uppercase;
   font-size: 11px;
-  background: transparent;
+  background: 0 0;
 }
 
 .breadcrumb-nav ul.breadcrumb.style3 li:after {
@@ -2891,13 +2730,222 @@ body.has_dock.dir-ltr .navbar-inner {
   content: "";
 }
 
-/*
- * @author    Julian Ridden
- * @package   theme_essential
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
+.commands {
+  font-family: FontAwesome;
+  font-size: 1.1em;
+}
 
-/* @group Core */
+.commands img {
+  display: none;
+}
+
+#page-mod-glossary-view .commands img,
+#page-calendar-view .commands img {
+  display: inline;
+}
+
+.commands a:hover {
+  text-decoration: none;
+}
+
+.editing_delete:before {
+  font-family: FontAwesome;
+  content: "\f00d ";
+  color: red;
+  padding-left: 5px;
+}
+
+.editing_hide,
+.editing_show,
+.editing_move,
+.editing_groupsnone,
+.editing_groupsvisible,
+.editing_groupsseperate {
+  padding-left: 10px!important;
+}
+
+.editing_move:hover {
+  cursor: move;
+}
+
+.editing_move:before {
+  font-family: FontAwesome;
+  content: "\f047 ";
+}
+
+.editing_move img {
+  display: none;
+}
+
+.editing_moveright:before {
+  font-family: FontAwesome;
+  content: "\f061 ";
+  margin-left: 5px;
+}
+
+.editing_moveleft:before {
+  font-family: FontAwesome;
+  content: "\f060 ";
+  padding-left: 5px;
+}
+
+.moodle-actionmenu ul .editing_moveright:before,
+.moodle-actionmenu ul .editing_moveleft:before {
+  content: none;
+}
+
+.section-modchooser-link img {
+  display: none;
+}
+
+.section-modchooser-link .section-modchooser-text:before {
+  font-family: FontAwesome;
+  content: "\f067 ";
+  padding-left: 5px;
+}
+
+.section-modchooser-link .section-modchooser-text a:hover {
+  text-decoration: none;
+}
+
+.editing_update:before,
+.editing_edit:before {
+  font-family: FontAwesome;
+  content: "\f013 ";
+  padding-left: 5px;
+}
+
+.editing_duplicate:before {
+  font-family: FontAwesome;
+  content: "\f0c5 ";
+  padding-left: 5px;
+}
+
+.editing_title img {
+  display: none!important;
+}
+
+.editing_title:before {
+  font-family: FontAwesome;
+  content: "\f040 ";
+  padding-left: 5px;
+}
+
+.editing_hide:before {
+  font-family: FontAwesome;
+  content: "\f06e ";
+  padding-left: 5px;
+}
+
+.editing_show:before {
+  font-family: FontAwesome;
+  content: "\f070 ";
+}
+
+.editing_assign:before,
+.editing_roles:before {
+  font-family: FontAwesome;
+  content: "\f084 ";
+  padding-left: 5px;
+}
+
+.editing_groupsnone:before {
+  font-family: FontAwesome;
+  content: "\f007 ";
+}
+
+.editing_groupsvisible:before {
+  font-family: FontAwesome;
+  content: "\f0c0 ";
+}
+
+.editing_groupsseparate:before {
+  font-family: FontAwesome;
+  content: "\f0c0 ";
+}
+
+.toggle-display:before {
+  font-family: FontAwesome;
+  content: "\f085 ";
+  margin-left: 5px;
+}
+
+.action-moveup:before {
+  font-family: FontAwesome;
+  content: "\f062 ";
+  margin-left: 5px;
+}
+
+.action-movedown:before {
+  font-family: FontAwesome;
+  content: "\f063 ";
+  margin-left: 5px;
+}
+
+.action-hide:before {
+  font-family: FontAwesome;
+  content: "\f06e ";
+  margin-left: 5px;
+}
+
+.action-show:before {
+  font-family: FontAwesome;
+  content: "\f070 ";
+  margin-left: 5px;
+}
+
+.action-delete:before {
+  font-family: FontAwesome;
+  content: "\f00d ";
+  margin-left: 5px;
+}
+
+.action-edit:before {
+  font-family: FontAwesome;
+  content: "\f013 ";
+  margin-left: 5px;
+}
+
+.moodle-core-dragdrop-draghandle:before {
+  font-family: FontAwesome;
+  content: "\f047 ";
+  margin-left: 5px;
+  cursor: move;
+}
+
+.course-content .section .moodle-core-dragdrop-draghandle:before {
+  font-family: FontAwesome;
+  content: "\f07d ";
+  margin-left: 5px;
+  cursor: move;
+}
+
+.section .summary a[title="Edit summary"]:before {
+  font-family: FontAwesome;
+  content: "\f085 ";
+  margin-left: 5px;
+}
+
+.moodle-actionmenu.show[data-enhanced] .menu a {
+  padding: 2px 1em;
+}
+
+.moodle-actionmenu.show[data-enhanced] .menu a i {
+  margin-left: 5px;
+}
+
+.toggle-display img,
+.action-moveup img,
+.action-movedown img,
+.action-hide img,
+.action-show img,
+.action-delete img,
+.action-edit img,
+.drag-handle img,
+.section-handle img,
+.section .summary a .iconsmall {
+  display: none;
+}
 
 * {
   font-family: [[setting:bodyfont]];
@@ -2943,8 +2991,6 @@ a:hover {
   color: [[setting:themecolor]];
 }
 
-/* @group Custom */
-
 .bor {
   background: url([[pix:theme|bg/dot]]) repeat-x;
 }
@@ -2952,12 +2998,6 @@ a:hover {
 .topbor {
   background: url([[pix:theme|bg/dot]]) repeat-x;
 }
-
-/* @end */
-
-/* @end */
-
-/* @group Header */
 
 #page-header {
   background: url([[pix:theme|bg/header]]) repeat;
@@ -2975,29 +3015,17 @@ h1#title {
   border-left: 1px bg / dotted [[setting:themecolor]];
 }
 
-/* @group Social Buttons */
-
 button.website:hover,
 button.website:focus {
   background-color: [[setting:themecolor]];
 }
 
-/* @end */
-
-/* @end */
-
-/* @group Custom Menu */
-
-.dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus,
-.dropdown-submenu:hover > a,
-.dropdown-submenu:focus > a {
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus,
+.dropdown-submenu:hover>a,
+.dropdown-submenu:focus>a {
   background-color: [[setting:themecolor]];
 }
-
-/* @end */
-
-/* @group Theme Colours Menu */
 
 a .colours-default {
   color: [[setting:themetextcolor]];
@@ -3031,36 +3059,26 @@ a:hover .colours-alternative3 {
   color: [[setting:alternativethemehovercolor3]];
 }
 
-/* @end */
-
-/* @group Navbar
- */
-
-.navbar .nav .active > a,
-.navbar .nav .active > a:hover,
-.navbar .nav .active > a:focus,
-.navbar .nav li.dropdown.open > .dropdown-toggle,
-.navbar .nav li.dropdown.active > .dropdown-toggle,
-.navbar .nav li.dropdown.open.active > .dropdown-toggle {
-  background: [[setting:themecolor]] !important;
+.navbar .nav .active>a,
+.navbar .nav .active>a:hover,
+.navbar .nav .active>a:focus,
+.navbar .nav li.dropdown.open>.dropdown-toggle,
+.navbar .nav li.dropdown.active>.dropdown-toggle,
+.navbar .nav li.dropdown.open.active>.dropdown-toggle {
+  background: [[setting:themecolor]]!important;
 }
 
 .navbar,
 .navbar-inner {
-  background-color: [[setting:themecolor]] !important;
+  background-color: [[setting:themecolor]]!important;
 }
-
-/* @end */
-
-/* @group Course
- */
 
 .course-content ul li.section.main {
   background: url([[pix:theme|bg/dot]]) bottom repeat-x;
 }
 
 .course-content ul li.section.main.clearfix.current {
-  box-shadow: 0px 0px 10px [[setting:themecolor]];
+  box-shadow: 0 0 10px [[setting:themecolor]];
 }
 
 h2.pagetitle {
@@ -3068,24 +3086,16 @@ h2.pagetitle {
 }
 
 .firstword {
-  color: [[setting:themetextcolor]] !important;
+  color: [[setting:themetextcolor]]!important;
 }
 
-/* @end */
-
-/* @group Forums */
-
 .forumpost .picture img {
-  box-shadow: 0px 0px 3px [[setting:themecolor]];
+  box-shadow: 0 0 3px [[setting:themecolor]];
 }
 
 .forumpost .subject {
   color: [[setting:themetextcolor]];
 }
-
-/* @end */
-
-/* @group Buttons */
 
 .button a,
 .button a:visited {
@@ -3100,10 +3110,6 @@ a#button:visited {
 a#button:hover {
   background: [[setting:themehovercolor]];
 }
-
-/* @end */
-
-/* @group Blocks */
 
 .block a {
   color: [[setting:themeurlcolor]];
@@ -3133,15 +3139,11 @@ a#button:hover {
   background: [[setting:themehovercolor]];
 }
 
-.block_login .content form input[type="submit"],
+.block_login .content form input[type=submit],
 .block_login .content .footer a {
   background-color: [[setting:themecolor]];
   font-family: [[setting:bodyfont]];
 }
-
-/* @end */
-
-/* @group Frontpage */
 
 #site-news-forum,
 #frontpage-course-list,
@@ -3154,17 +3156,9 @@ a#button:hover {
   color: [[setting:themetextcolor]];
 }
 
-/* @group Home News Boxes */
-
 .service i {
   color: [[setting:themecolor]];
 }
-
-/* @end */
-
-/* @end */
-
-/* @group Footer */
 
 #page-footer {
   background: [[setting:footercolor]];
@@ -3179,11 +3173,11 @@ a#button:hover {
 
 #page-footer .footnote a,
 #page-footer .footnote a:visited {
-  color: [[setting:themeurlcolor]] !important;
+  color: [[setting:themeurlcolor]]!important;
 }
 
 #page-footer .footnote a:hover {
-  color: [[setting:footerhovercolor]] !important;
+  color: [[setting:footerhovercolor]]!important;
 }
 
 #page-footer hr {
@@ -3204,8 +3198,6 @@ a#button:hover {
   color: [[setting:themecolor]];
 }
 
-/* @group Footer Block Formatting */
-
 #page-footer .block .header .title h2:before {
   color: [[setting:themecolor]];
 }
@@ -3218,11 +3210,11 @@ a#button:hover {
   border-bottom: 1px solid [[setting:footersepcolor]];
 }
 
-#page-footer .block_login input[type="submit"] {
+#page-footer .block_login input[type=submit] {
   background: [[setting:themecolor]];
 }
 
-#page-footer .block_login input[type="submit"]:hover {
+#page-footer .block_login input[type=submit]:hover {
   background: [[setting:themehovercolor]];
 }
 
@@ -3230,14 +3222,8 @@ a#button:hover {
   color: [[setting:themeurlcolor]];
 }
 
-/* @end */
-
-/* @end */
-
-/* @group Marketing Spots */
-
 .afeature {
-  background: #eeeeee url([[pix:theme|bg/header]]) repeat;
+  background: #eee url([[pix:theme|bg/header]]) repeat;
 }
 
 .afeature:hover {
@@ -3266,12 +3252,8 @@ a#button:hover {
   height: [[setting:marketingheight]];
 }
 
-/* @end */
-
-/* @group Profile Image */
-
 .myprofileitem.picture {
-  background: #eeeeee url([[pix:theme|bg/header]]) repeat;
+  background: #eee url([[pix:theme|bg/header]]) repeat;
 }
 
 .myprofileitem.picture:hover {
@@ -3279,24 +3261,20 @@ a#button:hover {
 }
 
 .socials img:hover {
-  -webkit-box-shadow: px 0px 10px 0px [[setting:themecolor]];
-  -moz-box-shadow: 0px 0px 10px 0px [[setting:themecolor]];
-  box-shadow: 0px 0px 10px 0px [[setting:themecolor]];
+  -webkit-box-shadow: px 0 10px 0 [[setting:themecolor]];
+  -moz-box-shadow: 0 0 10px 0 [[setting:themecolor]];
+  box-shadow: 0 0 10px 0 [[setting:themecolor]];
 }
 
-/* @end */
-
-/* @group Tabs */
-
-.nav-tabs > li > a {
+.nav-tabs>li>a {
   background-color: [[setting:themecolor]];
 }
 
-.nav-tabs > li > a:hover {
+.nav-tabs>li>a:hover {
   background-color: [[setting:themehovercolor]];
 }
 
-@media (max-width: 979px) {
+@media (max-width:979px) {
   .nav-collapse {
     background-color: [[setting:themecolor]];
     border: 1px solid [[setting:themecolor]];
@@ -3312,10 +3290,6 @@ a#button:hover {
   }
 }
 
-/* @end */
-
-/* @group Performance Information */
-
 .performanceinfo var {
   background: [[setting:themecolor]];
 }
@@ -3324,17 +3298,9 @@ a#button:hover {
   color: [[setting:themecolor]];
 }
 
-/* @end */
-
-/* @group Quiz */
-
 #page-mod-quiz-edit .questionbankwindow.block div.header {
   background: [[setting:themecolor]];
 }
-
-/* @end */
-
-/* @group Gradebook */
 
 table#user-grades th.item,
 table#user-grades th.categoryitem,
@@ -3358,21 +3324,13 @@ table#user-grades td.controls,
   border-radius: 3px;
 }
 
-/* @end */
-
-/* @group Back To Top */
-
 .back-to-top a {
-  color: [[setting:themecolor]] !important;
+  color: [[setting:themecolor]]!important;
 }
 
 .back-to-top a:hover {
-  color: [[setting:themehovercolor]] !important;
+  color: [[setting:themehovercolor]]!important;
 }
-
-/* @end */
-
-/* @group Headings */
 
 h1,
 h2,
@@ -3388,10 +3346,6 @@ h6,
 .block_login label {
   font-family: [[setting:headingfont]];
 }
-
-/* @end */
-
-/* @group Editicons */
 
 .commands {
   color: [[setting:themecolor]];
@@ -3415,226 +3369,3 @@ h6,
 .moodle-core-dragdrop-draghandle a {
   color: [[setting:themeurlcolor]];
 }
-
-/* @end */
-
-/* @group Edit Buttons */
-
-.commands {
-  font-family: FontAwesome;
-  font-size: 1.1em;
-}
-
-.commands img {
-  display: none;
-}
-
-#page-mod-glossary-view .commands img,
-#page-calendar-view .commands img {
-  display: inline;
-}
-
-.commands a:hover {
-  text-decoration: none;
-}
-
-.editing_delete:before {
-  font-family: 'FontAwesome';
-  content: "\f00d ";
-  color: red;
-  padding-left: 5px;
-}
-
-.editing_hide,
-.editing_show,
-.editing_move,
-.editing_groupsnone,
-.editing_groupsvisible,
-.editing_groupsseperate {
-  padding-left: 10px !important;
-}
-
-.editing_move:hover {
-  cursor: move;
-}
-
-.editing_move:before {
-  font-family: 'FontAwesome';
-  content: "\f047 ";
-}
-
-.editing_move img {
-  display: none;
-}
-
-.editing_moveright:before {
-  font-family: 'FontAwesome';
-  content: "\f061 ";
-  margin-left: 5px;
-}
-
-.editing_moveleft:before {
-  font-family: 'FontAwesome';
-  content: "\f060 ";
-  padding-left: 5px;
-}
-
-.moodle-actionmenu ul .editing_moveright:before,
-.moodle-actionmenu ul .editing_moveleft:before {
-  content: none;
-}
-
-.section-modchooser-link img {
-  display: none;
-}
-
-.section-modchooser-link .section-modchooser-text:before {
-  font-family: 'FontAwesome';
-  content: "\f067 ";
-  padding-left: 5px;
-}
-
-.section-modchooser-link .section-modchooser-text a:hover {
-  text-decoration: none;
-}
-
-.editing_update:before,
-.editing_edit:before {
-  font-family: 'FontAwesome';
-  content: "\f013 ";
-  padding-left: 5px;
-}
-
-.editing_duplicate:before {
-  font-family: 'FontAwesome';
-  content: "\f0c5 ";
-  padding-left: 5px;
-}
-
-.editing_title img {
-  display: none !important;
-}
-
-.editing_title:before {
-  font-family: 'FontAwesome';
-  content: "\f040 ";
-  padding-left: 5px;
-}
-
-.editing_hide:before {
-  font-family: 'FontAwesome';
-  content: "\f06e ";
-  padding-left: 5px;
-}
-
-.editing_show:before {
-  font-family: 'FontAwesome';
-  content: "\f070 ";
-}
-
-.editing_assign:before,
-.editing_roles:before {
-  font-family: 'FontAwesome';
-  content: "\f084 ";
-  padding-left: 5px;
-}
-
-.editing_groupsnone:before {
-  font-family: 'FontAwesome';
-  content: "\f007 ";
-}
-
-.editing_groupsvisible:before {
-  font-family: 'FontAwesome';
-  content: "\f0c0 ";
-}
-
-.editing_groupsseparate:before {
-  font-family: 'FontAwesome';
-  content: "\f0c0 ";
-}
-
-.toggle-display:before {
-  font-family: 'FontAwesome';
-  content: "\f085 ";
-  margin-left: 5px;
-}
-
-.action-moveup:before {
-  font-family: 'FontAwesome';
-  content: "\f062 ";
-  margin-left: 5px;
-}
-
-.action-movedown:before {
-  font-family: 'FontAwesome';
-  content: "\f063 ";
-  margin-left: 5px;
-}
-
-.action-hide:before {
-  font-family: 'FontAwesome';
-  content: "\f06e ";
-  margin-left: 5px;
-}
-
-.action-show:before {
-  font-family: 'FontAwesome';
-  content: "\f070 ";
-  margin-left: 5px;
-}
-
-.action-delete:before {
-  font-family: 'FontAwesome';
-  content: "\f00d ";
-  margin-left: 5px;
-}
-
-.action-edit:before {
-  font-family: 'FontAwesome';
-  content: "\f013 ";
-  margin-left: 5px;
-}
-
-.moodle-core-dragdrop-draghandle:before {
-  font-family: 'FontAwesome';
-  content: "\f047 ";
-  margin-left: 5px;
-  cursor: move;
-}
-
-.course-content .section .moodle-core-dragdrop-draghandle:before {
-  font-family: 'FontAwesome';
-  content: "\f07d ";
-  margin-left: 5px;
-  cursor: move;
-}
-
-.section .summary a[title="Edit summary"]:before {
-  font-family: 'FontAwesome';
-  content: "\f085 ";
-  margin-left: 5px;
-}
-
-.moodle-actionmenu.show[data-enhanced] .menu a {
-  padding: 2px 1em;
-}
-
-.moodle-actionmenu.show[data-enhanced] .menu a i {
-  margin-left: 5px;
-}
-
-.toggle-display img,
-.action-moveup img,
-.action-movedown img,
-.action-hide img,
-.action-show img,
-.action-delete img,
-.action-edit img,
-.drag-handle img,
-.section-handle img,
-.section .summary a .iconsmall {
-  display: none;
-}
-
-/* @end */
