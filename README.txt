@@ -52,6 +52,26 @@ Uninstallation
  3. In '/theme/' remove the folder 'essential'.
  4. Put Moodle out of Maintenance Mode.
 
+Downgrading
+===========
+If for any reason you wish to downgrade to a previous version of the theme (unsupported) then this procedure will inform you of how to
+do so:
+1.  Ensure that you have a copy of the existing and older replacement theme files.
+2.  Put Moodle into 'Maintenance mode' under 'Home -> Administration -> Site administration -> Server -> Maintenance mode', so that there
+    are no users using it bar you as the administrator.
+3.  Switch to a core theme, 'Clean' for example, under 'Home -> Administration -> Site administration -> Appearance -> Themes ->
+    Theme selector -> Default'.
+4.  In '/theme/' remove the folder 'essential' i.e. ALL of the contents - this is VITAL.
+5.  Put in the replacement 'essential' folder into '/theme/'.
+6.  In the database, remove the row with the 'plugin' of 'theme_essential' and 'name' of 'version' in the 'config_plugins' table, then
+    in the 'config' table find the 'name' with the value 'allversionhash' and clear its 'value' field.  Perform a 'Purge all caches'
+    under 'Home -> Site administration -> Development -> Purge all caches'.
+7.  Go back in as an administrator and follow standard the 'plugin' update notification.  If needed, go to
+    'Site administration' -> 'Notifications' if this does not happen.
+8.  Switch the theme back to 'Essential' under 'Home -> Administration -> Site administration -> Appearance -> Themes -> Theme selector ->
+    Default'.
+9.  Put Moodle out of 'Maintenance mode' under 'Home -> Administration -> Site administration -> Server -> Maintenance mode'.
+
 Reporting issues
 ================
 Before reporting an issue, please ensure that you are running the latest version for your release of Moodle.  It is essential
@@ -68,25 +88,26 @@ can be really useful in visualising the issue along with any files you consider 
 
 New in 2.7.5
 ========================
-- FIX: Issue #96:  2.7.4 breaks oldnavbar setting.
+- FIX: Issue #96:  2.7.4 breaks 'oldnavbar' setting.
 - FIX: Issue #98:  Lang en/iosicondesc - Change 'them' to 'theme'.  Thanks to Skylar Kelty.
 - FIX: Issue #101: Navbar not expanding properly on android mobile and tablet.
 - FIX: Issue #107: No fixed width to header on login page.
-- FIX: Issue #113: Remove FontAwesome from all links in section heading except for the edit icon
-- FIX: Issue #110: Refactor middle blocks wording, thanks @mkpelletier
-- FIX: Issue #109: Re-order middle blocks settings, thanks @mkpelletier
-- FIX: Issue #108: Add similar tggle options to front page content, thanks @mkpelletier
-- FIX: Issue #67:  Refactored so menus are renderer all separately
-- FIX: Issue #60:  Add styling to invisible courses in breadcrumb
-- FIX: Correctly show no enrolments message when all courses are hidden
-- FIX: Reworked header menu and added responsive options to apps/social icons
-- FIX: Removed dnd upload status as it blocks the edit icons
-- FIX: Further work on RTL support
-- NEW: Removed bootstrapbase dependency for further minification
-- NEW: Split out alternative theme colors to reduce CSS loading when this is not enabled
-- NEW: Small tweak to site widths, now available options are 1400px, 1200px and 960px
-- NEW: Switched to bootstrap all in one for massive speed improvement (from 10 to 1 http request)
-- NEW: Removed option for restricting block width as it was not possible tog et this working properly
+- FIX: Issue #113: Remove FontAwesome from all links in section heading except for the edit icon.
+- FIX: Issue #110: Refactor middle blocks wording, thanks @mkpelletier.
+- FIX: Issue #109: Re-order middle blocks settings, thanks @mkpelletier.
+- FIX: Issue #108: Add similar toggle options to front page content, thanks @mkpelletier.
+- FIX: Issue #67:  Refactored so menus are renderer all separately.
+- FIX: Issue #60:  Add styling to invisible courses in breadcrumb.
+- FIX: Correctly show no enrolments message when all courses are hidden.
+- FIX: Reworked header menu and added responsive options to apps/social icons.
+- FIX: Removed dnd upload status as it blocks the edit icons.
+- FIX: Further work on RTL support.
+- NEW: Issue #114: Add downgrade instructions.  See above.
+- NEW: Removed bootstrapbase dependency for further minification.
+- NEW: Split out alternative theme colours to reduce CSS loading when this is not enabled.
+- NEW: Small tweak to site widths, now available options are 1400px, 1200px and 960px.
+- NEW: Switched to bootstrap all in one for massive speed improvement (from 10 to 1 http request).
+- NEW: Removed option for restricting block width as it was not possible to get this working properly.
 
 New in 2.7.4
 ========================
