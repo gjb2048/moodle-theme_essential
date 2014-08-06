@@ -33,10 +33,8 @@ echo $OUTPUT->doctype() ?>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php if (!empty($fontselect)) {
-        // Google web fonts -->
-        require_once(dirname(__FILE__).'/includes/fonts.php');
-    }?>
+	<!-- Google web fonts -->
+    <?php require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
     <!-- iOS Homescreen Icons -->
     <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
     <!-- Start Google Analytics -->
@@ -171,9 +169,9 @@ echo $OUTPUT->doctype() ?>
 
         <div id="page-content" class="row-fluid">
             <?php if ($PAGE->theme->settings->frontpageblocks) { ?>
-            <section id="<?php echo $regionbsid;?>" class="span8 pull-right">
+            <section id="<?php echo $regionbsid;?>" class="span9 pull-right">
             <?php } else { ?>
-            <section id="<?php echo $regionbsid;?>" class="span8 desktop-first-column">
+            <section id="<?php echo $regionbsid;?>" class="span9 desktop-first-column">
             <?php } ?>
                 <div id="page-navbar" class="clearfix">
                     <div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
@@ -187,9 +185,9 @@ echo $OUTPUT->doctype() ?>
             </section>
             <?php
             if ($PAGE->theme->settings->frontpageblocks) {
-                echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column');
+                echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column');
             } else {
-                echo $OUTPUT->blocks('side-pre', 'span4 pull-right');
+                echo $OUTPUT->blocks('side-pre', 'span3 pull-right');
             }
             ?>
         </div>

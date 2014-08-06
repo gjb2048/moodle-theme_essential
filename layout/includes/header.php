@@ -70,7 +70,9 @@
         $pageheader .= html_writer::link(new moodle_url('/'), '', array('class' => 'logo', 'title' => get_string('home')));
     }
     $pageheader .= html_writer::end_tag('div');
-    $pageheader .= html_writer::tag('a', html_writer::span('', 'icon-bar').html_writer::span('', 'icon-bar').html_writer::span('', 'icon-bar'), array('class' => 'btn btn-icon', 'data-toggle' => 'collapse', 'data-target' => '.icon-collapse'));
+	if ($hasmobileapps || $hassocialnetworks || $hasprofilepic) {
+		$pageheader .= html_writer::tag('a', html_writer::span('', 'icon-bar').html_writer::span('', 'icon-bar').html_writer::span('', 'icon-bar'), array('class' => 'btn btn-icon', 'data-toggle' => 'collapse', 'data-target' => '.icon-collapse'));
+	}
     $pageheader .= html_writer::start_tag('div', array('class' => 'icon-collapse collapse'));
     $leftclass = ($left) ? ' pull-right': '';
     if (isloggedin() && $hasprofilepic) {
