@@ -25,9 +25,6 @@
  */
  
 ?>
-<!--[if lt IE 9]>
-<?php echo get_string('ie8message', 'theme_essential'); ?>
-<![endif]-->
 
 <header role="banner">
     <?php
