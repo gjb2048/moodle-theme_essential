@@ -31,16 +31,16 @@
         <div class="container-fluid">
             <div class="row-fluid">
             <!-- HEADER: LOGO AREA -->
-                <a href="<?php echo $CFG->wwwroot;?>">
                     <div class="<?php echo $logoclass; echo (!$left) ? ' pull-right': ' pull-left';?>">
                         <?php if (!$haslogo) { ?>
-                            <i id="headerlogo" class="fa fa-<?php echo $PAGE->theme->settings->siteicon ?>"></i>
-                            <h1 id="title"><?php echo $SITE->shortname; ?></h1>
+                            <a href="<?php echo $CFG->wwwroot;?>">
+                                <i id="headerlogo" class="fa fa-<?php echo $PAGE->theme->settings->siteicon ?>"></i>
+                                <h1 id="title"><?php echo $SITE->shortname; ?></h1>
+                            </a>
                         <?php } else { ?>
                             <a class="logo" href="<?php echo $CFG->wwwroot; ?>" title="<?php print_string('home'); ?>"></a>
                         <?php } ?>
                     </div>
-                </a>
                 <?php if ($hassocialnetworks || $hasmobileapps) { ?>
                     <a class="btn btn-icon" data-toggle="collapse" data-target=".icon-collapse">
                         <span class="icon-bar"></span>
