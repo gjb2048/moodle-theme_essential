@@ -38,7 +38,6 @@ $THEME->sheets[] = 'moodle';
 
 if (right_to_left()) {
     $THEME->sheets[] = 'essential-rtl';
-    $THEME->sheets[] = 'rtl';
 } else {
     $THEME->sheets[] = 'essential';
 }

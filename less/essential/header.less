@@ -107,6 +107,17 @@
         ul.nav li.dropdown:hover > ul.dropdown-menu {
             display: block;    
         }
+        #custom_menu_language,
+        #custom_menu_courses,
+        #custom_menu_themecolours,
+        #custom_menu {
+            display: inline-block;
+        }
+        
+        #custom_menu_courses ul.dropdown-menu {
+            max-height: 500px;
+            overflow-y: auto;
+        }
 
         .dropdown-menu > li > a:hover,
         .dropdown-menu > li > a:focus,
@@ -128,6 +139,9 @@
         .dropdown-menu {
             z-index: 1001;
             margin: 0px;
+        }
+        .dropdown-menu>li>a {
+            padding: 3px 25px 3px 15px;
         }
         .dropdown-menu>li>a:hover {
             background: none;

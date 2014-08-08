@@ -103,14 +103,20 @@
                     <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
                     <div class="pull-left">
                         <div class="nav-collapse collapse">
-                            <?php 
-                                echo $OUTPUT->custom_menu_language();
-                                echo $OUTPUT->custom_menu_courses();
-                                if ($colourswitcher) {
-                                    echo $OUTPUT->custom_menu_themecolours();
-                                }
-                                echo $OUTPUT->custom_menu(); 
-                            ?>
+                            <div id="custom_menu_language">
+                                <?php echo $OUTPUT->custom_menu_language(); ?>
+                            </div>
+                            <div id="custom_menu_courses">
+                            <?php echo $OUTPUT->custom_menu_courses(); ?>
+                            </div>
+                            <?php if ($colourswitcher) { ?>
+                                <div id="custom_menu_themecolours">
+                                <?php echo $OUTPUT->custom_menu_themecolours(); ?>
+                                </div>
+                            <?php } ?>
+                            <div id="custom_menu">
+                            <?php echo $OUTPUT->custom_menu(); ?>
+                            </div>
                         </div>
                     </div>
                     <div class="usermenu pull-right">

@@ -24,6 +24,8 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
  
+require_once(dirname(__FILE__).'/pagesettings.php');
+ 
 ?>
 <footer role="contentinfo" id="page-footer">
     <div class="container-fluid">

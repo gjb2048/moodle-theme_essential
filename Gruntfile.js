@@ -166,19 +166,6 @@ module.exports = function(grunt) {
                 },
                 src: 'less/alternative.less',
                 dest: 'style/alternative.css'
-            },
-            rtl: {
-                options: {
-                    compress: false,
-                    cleancss: true,
-                    paths: "./less",
-                    report: 'min',
-                    sourceMap: false,
-                    sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'style/rtl.treasure.map'
-                },
-                src: 'less/rtl.less',
-                dest: 'style/rtl.css'
             }
         },
         exec: {
