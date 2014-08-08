@@ -33,7 +33,7 @@
             <!-- HEADER: LOGO AREA -->
                     <div class="<?php echo $logoclass; echo (!$left) ? ' pull-right': ' pull-left';?>">
                         <?php if (!$haslogo) { ?>
-                            <a href="<?php echo $CFG->wwwroot;?>">
+                            <a class="textlogo" href="<?php echo $CFG->wwwroot;?>">
                                 <i id="headerlogo" class="fa fa-<?php echo $PAGE->theme->settings->siteicon ?>"></i>
                                 <h1 id="title"><?php echo $SITE->shortname; ?></h1>
                             </a>
