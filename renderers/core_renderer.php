@@ -211,7 +211,7 @@ class theme_essential_core_renderer extends core_renderer {
         * This code replaces adds the current enrolled
         * courses to the custommenu.
         */
-    
+
         $hasdisplaymycourses = (empty($this->page->theme->settings->displaymycourses)) ? false : $this->page->theme->settings->displaymycourses;
         if (isloggedin() && !isguestuser() && $hasdisplaymycourses) {
             $mycoursetitle = $this->page->theme->settings->mycoursetitle;
@@ -290,7 +290,148 @@ class theme_essential_core_renderer extends core_renderer {
         }
         return $this->render_custom_menu($colourmenu);
     }
-    
+
+    public function custom_menu_messages() {
+        global $USER;
+        $messagemenu = new custom_menu();
+
+        $addmessagemenu = true;
+
+        if (!isloggedin() || isguestuser()) {
+            $addmessagemenu = false;
+        }
+
+        if ($addmessagemenu) {
+            $messages = $this->get_user_messages();
+            $messagecount = 0;
+            foreach ($messages as $message) {
+                if (!$message->from) { // Workaround for issue #103 in Elegance.
+                    continue;
+                }
+                $messagecount++;
+            }
+
+            if ($messagecount == 0) {
+                 $messagemenuicon = html_writer::tag('i', '', array('class' => 'fa fa-envelope-o'));
+            } else {
+                 $messagemenuicon = html_writer::tag('i', '', array('class' => 'fa fa-envelope'));
+            }
+            $messagemenucount = $messagecount.' ';
+            $messagemenutext = html_writer::tag('span', $messagemenucount).$messagemenuicon;
+            $messagesubmenu = $messagemenu->add(
+                $messagemenutext,
+                new moodle_url('/message/index.php', array('viewing' => 'recentconversations')),
+                ($messagecount != 1) ? get_string('messages', 'message') : get_string('message', 'message'),
+                9999
+            );
+            foreach ($messages as $message) {
+                if (!$message->from) { // Workaround for issue #103.
+                    continue;
+                }
+                $senderpicture = new user_picture($message->from);
+                $senderpicture->link = false;
+                $senderpicture = $this->render($senderpicture);
+
+                $messagecontent = $senderpicture;
+                $messagecontent .= html_writer::start_span('msg-body');
+                $messagecontent .= html_writer::start_span('msg-title');
+                $messagecontent .= html_writer::span($message->from->firstname . ': ', 'msg-sender');
+                $messagecontent .= $message->text;
+                $messagecontent .= html_writer::end_span();
+                $messagecontent .= html_writer::start_span('msg-time');
+                $messagecontent .= html_writer::tag('i', '', array('class' => 'icon-time'));
+                $messagecontent .= html_writer::span($message->date);
+                $messagecontent .= html_writer::end_span();
+
+                $messageurl = new moodle_url('/message/index.php', array('user1' => $USER->id, 'user2' => $message->from->id));
+                $messagesubmenu->add($messagecontent, $messageurl, $message->text);
+            }
+        }
+
+        return $this->render_custom_menu($messagemenu);
+    }
+
+    protected function process_user_messages() {
+        $messagelist = array();
+
+        foreach ($usermessages as $message) {
+            $cleanmsg = new stdClass();
+            $cleanmsg->from = fullname($message);
+            $cleanmsg->msguserid = $message->id;
+
+            $userpicture = new user_picture($message);
+            $userpicture->link = false;
+            $picture = $this->render($userpicture);
+
+            $cleanmsg->text = $picture . ' ' . $cleanmsg->text;
+
+            $messagelist[] = $cleanmsg;
+        }
+
+        return $messagelist;
+    }
+
+    protected function get_user_messages() {
+        global $USER, $DB;
+        $messagelist = array();
+
+        $newmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
+                            FROM {message}
+                           WHERE useridto = :userid";
+
+        $newmessages = $DB->get_records_sql($newmessagesql, array('userid' => $USER->id));
+
+        foreach ($newmessages as $message) {
+            $messagelist[] = $this->essential_process_message($message);
+        }
+
+        $showoldmessages = (empty($this->page->theme->settings->showoldmessages)) ? false : $this->page->theme->settings->showoldmessages;
+        if ($showoldmessages == 2) {
+            $maxmessages = 5;
+            $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
+                                 FROM {message_read}
+                                WHERE useridto = :userid
+                             ORDER BY timecreated DESC
+                                LIMIT $maxmessages";
+
+            $readmessages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id));
+
+            foreach ($readmessages as $message) {
+                $messagelist[] = $this->essential_process_message($message);
+            }
+        }
+
+        return $messagelist;
+
+    }
+
+    protected function essential_process_message($message) {
+        global $DB;
+        $messagecontent = new stdClass();
+
+        if ($message->notification) {
+            $messagecontent->text = get_string('unreadnewnotification', 'message');
+        } else {
+            if ($message->fullmessageformat == FORMAT_HTML) {
+                $message->smallmessage = html_to_text($message->smallmessage);
+            }
+            if (core_text::strlen($message->smallmessage) > 15) {
+                $messagecontent->text = core_text::substr($message->smallmessage, 0, 15).'...';
+            } else {
+                $messagecontent->text = $message->smallmessage;
+            }
+        }
+
+        if ((time() - $message->timecreated ) <= (3600 * 3)) {
+            $messagecontent->date = format_time(time() - $message->timecreated);
+        } else {
+            $messagecontent->date = userdate($message->timecreated, get_string('strftimetime', 'langconfig'));
+        }
+        $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom));
+
+        return $messagecontent;
+    }
+
     public function theme_essential_menu_user() {
         global $USER, $CFG, $DB, $SESSION;
         $loginurl = get_login_url();
@@ -397,60 +538,6 @@ class theme_essential_core_renderer extends core_renderer {
         $usermenu .= html_writer::end_tag('li');
         
         return $usermenu;
-    }
-    
-    protected function process_user_messages() {
-        $messagelist = array();
-
-        foreach ($usermessages as $message) {
-            $cleanmsg = new stdClass();
-            $cleanmsg->from = fullname($message);
-            $cleanmsg->msguserid = $message->id;
-
-            $userpicture = new user_picture($message);
-            $userpicture->link = false;
-            $picture = $this->render($userpicture);
-
-            $cleanmsg->text = $picture . ' ' . $cleanmsg->text;
-
-            $messagelist[] = $cleanmsg;
-        }
-
-        return $messagelist;
-    }
-    
-    protected function get_user_messages() {
-        global $USER, $DB;
-        $messagelist = array();
-
-        $newmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
-                            FROM {message}
-                           WHERE useridto = :userid";
-
-        $newmessages = $DB->get_records_sql($newmessagesql, array('userid' => $USER->id));
-
-        foreach ($newmessages as $message) {
-            $messagelist[] = $this->theme_essential_process_message($message);
-        }
-
-        $showoldmessages = (empty($this->page->theme->settings->showoldmessages)) ? false : $this->page->theme->settings->showoldmessages;
-        if ($showoldmessages == 2) {
-            $maxmessages = 5;
-            $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
-                                 FROM {message_read}
-                                WHERE useridto = :userid
-                             ORDER BY timecreated DESC
-                                LIMIT $maxmessages";
-
-            $readmessages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id));
-
-            foreach ($readmessages as $message) {
-                $messagelist[] = $this->theme_essential_process_message($message);
-            }
-        }
-
-        return $messagelist;
-
     }
 
     protected function theme_essential_process_message($message) {

@@ -54,6 +54,7 @@ body.essential-colours-alternative3 {
             }
         }
     }
+
     a,
     a:visited {
         color: ~"[[setting:alternativethemeurlcolor3]]";
@@ -80,6 +81,25 @@ body.essential-colours-alternative3 {
     a.website:hover,
     a.website:focus {
         background-color: ~"[[setting:alternativethemecolor3]]";
+    }
+
+    .navbar .messagemenu .nav > li > .dropdown-menu {
+        li {
+            &:hover .msg-title, &:focus .msg-title, &:active .msg-title,
+            &:hover .msg-body, &:focus .msg-body, &:active .msg-body,
+            &:hover .msg-sender, &:focus .msg-sender, &:active .msg-sender {
+                color: ~"[[setting:alternativethemecolor3]]";
+            }
+            &:hover .msg-time, &:focus .msg-time, &:active .msg-time {
+                color: ~"[[setting:alternativethemecolor3]]";
+            }
+        }
+        .msg-sender {
+            color: ~"[[setting:alternativethemetextcolor3]]";
+        }
+        .msg-time {
+            color: ~"[[setting:alternativethemetextcolor3]]";
+        }
     }
 
     .dropdown-menu > li > a:hover,

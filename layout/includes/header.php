@@ -119,8 +119,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="usermenu pull-right">
-                        <?php echo $OUTPUT->theme_essential_menu_user(); ?>
+                    <div class="userarea pull-right">
+                        <div class="messagemenu">
+                            <?php echo $OUTPUT->custom_menu_messages(); ?>
+                        </div>
+                        <div class="usermenu">
+                            <?php echo $OUTPUT->theme_essential_menu_user(); ?>
+                        </div>
                     </div>
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                         <span class="icon-bar"></span>

@@ -108,6 +108,7 @@ New in 2.7.5
 - NEW: Small tweak to site widths, now available options are 1400px, 1200px and 960px.
 - NEW: Switched to bootstrap all in one for massive speed improvement (from 10 to 1 http request).
 - NEW: Removed option for restricting block width as it was not possible to get this working properly.
+- NEW: Issue #123: Add messages menu from Shoehorn.
 
 New in 2.7.4
 ========================

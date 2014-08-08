@@ -82,6 +82,25 @@ body.essential-colours-alternative2 {
         background-color: ~"[[setting:alternativethemecolor2]]";
     }
 
+    .navbar .messagemenu .nav > li > .dropdown-menu {
+        li {
+            &:hover .msg-title, &:focus .msg-title, &:active .msg-title,
+            &:hover .msg-body, &:focus .msg-body, &:active .msg-body,
+            &:hover .msg-sender, &:focus .msg-sender, &:active .msg-sender {
+                color: ~"[[setting:alternativethemecolor2]]";
+            }
+            &:hover .msg-time, &:focus .msg-time, &:active .msg-time {
+                color: ~"[[setting:alternativethemecolor2]]";
+            }
+        }
+        .msg-sender {
+            color: ~"[[setting:alternativethemetextcolor2]]";
+        }
+        .msg-time {
+            color: ~"[[setting:alternativethemetextcolor2]]";
+        }
+    }
+
     .dropdown-menu > li > a:hover,
     .dropdown-menu > li > a:focus,
     .dropdown-submenu:hover > a,
