@@ -231,8 +231,8 @@ class theme_essential_core_renderer extends core_renderer {
             $branch = $coursemenu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
             
             // Retrieve courses and add them to the menu when they are visible
+            $numcourses = 0;
             if($courses = enrol_get_my_courses(NULL , 'fullname ASC')) {
-                $numcourses = 0;
                 foreach ($courses as $course) {
                     if ($course->visible) {
                         $branch->add('<i class="fa fa-graduation-cap"></i>'.format_string($course->fullname), new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
