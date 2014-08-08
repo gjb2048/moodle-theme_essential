@@ -300,6 +300,14 @@ function theme_essential_process_css($css, $theme) {
         $themehovercolor = null;
     }
     $css = theme_essential_set_color($css, $themehovercolor, '[[setting:themehovercolor]]', '#29a1c4');
+    
+    // Set the theme icon colour.
+    if (!empty($theme->settings->themeiconcolor)) {
+        $themeiconcolor = $theme->settings->themeiconcolor;
+    } else {
+        $themeiconcolor = null;
+    }
+    $css = theme_essential_set_color($css, $themeiconcolor, '[[setting:themeiconcolor]]', '#ffffff');
 
     // Set the theme navigation colour.
     if (!empty($theme->settings->themenavcolor)) {
@@ -308,7 +316,7 @@ function theme_essential_process_css($css, $theme) {
         $themenavcolor = null;
     }
     $css = theme_essential_set_color($css, $themenavcolor, '[[setting:themenavcolor]]', '#ffffff');
-
+    
     // Set the footer colour.
     if (!empty($theme->settings->footercolor)) {
         $footercolor = $theme->settings->footercolor;
@@ -616,5 +624,9 @@ function theme_essential_showslider($settings) {
 
 function theme_essential_page_init(moodle_page $page) {
     $page->requires->jquery();
+    if (core_useragent::check_ie_version() && !core_useragent::check_ie_version('9.0')) {
+        $page->requires->jquery_plugin('html5shiv', 'theme_essential');
+    }
     $page->requires->jquery_plugin('bootstrap', 'theme_essential');
+    $page->requires->jquery_plugin('breadcrumb', 'theme_essential');
 }

@@ -44,4 +44,6 @@
 
 $plugins = array(
 	'bootstrap' => array('files' => array('bootstrap_2_3_2.js')),
+	'modernizr' => array('files' => array('html5shiv_3_7_2.js')),
+    'breadcrumb' => array('files' => array('jBreadCrumb_1_1.js')),
 );

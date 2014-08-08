@@ -27,7 +27,7 @@
 require_once(dirname(__FILE__).'/includes/pagesettings.php');
 
 echo $OUTPUT->doctype() ?>
-<html <?php echo $OUTPUT->htmlattributes(); ?>>
+<html <?php echo $OUTPUT->htmlattributes(); ?> class="no-js">
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />

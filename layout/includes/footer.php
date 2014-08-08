@@ -83,7 +83,8 @@ jQuery(document).ready(function() {
 		  offset: {
 			top: $('header').height()
 		  }
-	});	
+	});
+    $('.breadcrumb').jBreadCrumb();
 });
 </script>
 <a href="#top" class="back-to-top" title="<?php print_string('backtotop', 'theme_essential'); ?>"><i class="fa fa-angle-up "></i></a>

@@ -147,6 +147,11 @@ $string['allmodules'] = 'All modules';
 $string['allclasses'] = 'All classes';
 $string['noenrolments'] = 'You have no current enrolments';
 
+$string['loggedinas'] = ' logged in as ';
+$string['loggedinfrom'] = 'Logged in from ';
+
+$string['mygrades'] = 'My grades';
+
 /* My Dashboard custommenu dropdown */
 $string['mydashboard'] = 'My dashboard';
 
@@ -174,7 +179,7 @@ $string['colorheading'] = 'Colour';
 $string['colorheadingsub'] = 'Set the colours used in your theme';
 $string['colordesc'] = 'Here you can find various settings to change many of the colours found in this theme.';
 
-$string['footercolors'] = 'Footer colours';
+$string['footercolors'] = 'Footer colors';
 $string['footercolorsdesc'] = 'Change the colours on the page footers';
 
 $string['themecolor'] = 'Theme colour';
@@ -186,6 +191,8 @@ $string['themeurlcolor'] = 'Link colour';
 $string['themeurlcolordesc'] = 'Set the colour for your linked text.';
 $string['themehovercolor'] = 'Theme hover colour';
 $string['themehovercolordesc'] = 'What colour should your theme hovers be. This is used for links, menus, etc.';
+$string['themeiconcolor'] = 'Icon colour';
+$string['themeiconcolordesc'] = 'Set the colour for all icons.';
 $string['themenavcolor'] = 'Navigation colour';
 $string['themenavcolordesc'] = 'Set the colour for navigation.  Being the navigation bar and the breadcrumb fancy style.';
 
@@ -205,18 +212,18 @@ $string['footerheadingcolordesc'] = 'Set the colour for block headings in the fo
 $string['pagebackground'] = 'Page background image';
 $string['pagebackgrounddesc'] = 'Upload your own background image. This will be stretched in the background on all pages.';
 
-/* Alternate Color Switcher */
-$string['themecolors'] = 'Theme colours';
-$string['defaultcolors'] = 'Default colours';
+/* Alternate Colour Switcher */
+$string['themecolors'] = 'Theme colors';
+$string['defaultcolors'] = 'Default colors';
 $string['alternativecolors'] = 'Alternative colours {$a}';
 $string['alternativethemecolor'] = 'Alternative theme colour {$a}';
 $string['alternativethemecolordesc'] = 'What colour should your theme be for the alternative theme colours {$a}.';
 $string['alternativethemename'] = 'Colour scheme name';
-$string['alternativethemenamedesc'] = 'Provide a name for your alternative theme colours';
-$string['alternativethemecolors'] = 'Alternative theme colours';
+$string['alternativethemenamedesc'] = 'Provide a name for your alternative theme colors';
+$string['alternativethemecolors'] = 'Alternative theme colors';
 $string['alternativethemecolorsdesc'] = 'Defines theme colours alternative that the user may select.';
 $string['alternativethemecolorname'] = 'Name of alternative colour set {$a}';
-$string['alternativethemecolornamedesc'] = 'Provide a recognisable name for this set of alternative theme colours';
+$string['alternativethemecolornamedesc'] = 'Provide a recognisable name for this set of alternative theme colors';
 $string['alternativethemetextcolor'] = 'Alternative text colour  {$a}';
 $string['alternativethemetextcolordesc'] = 'Set the colour for your alternative text {$a}.';
 $string['alternativethemeurlcolor'] = 'Alternative link colour {$a}';

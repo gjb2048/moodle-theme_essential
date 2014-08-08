@@ -36,9 +36,6 @@ class theme_essential_core_renderer extends core_renderer {
             foreach ($this->page->navbar->get_items() as $item) {
                 $item->hideicon = true;
                 $breadcrumbs .= html_writer::tag('li',$this->render($item),array());
-            } 
-            if ($breadcrumbstyle == 1) {
-                $breadcrumbs .= html_writer::tag('li','',array());
             }
             return html_writer::tag('ul', $breadcrumbs, array('class' => "breadcrumb style$breadcrumbstyle"));
         }
@@ -67,6 +64,7 @@ class theme_essential_core_renderer extends core_renderer {
         return "<div class=\"$type\">$message</div>";
     } 
     
+   
     /**
      * Outputs the page's footer
      * @return string HTML fragment
@@ -127,6 +125,56 @@ class theme_essential_core_renderer extends core_renderer {
         return $content.'</ul>';
     }
     
+    /*
+     * This code renders the custom menu items for the
+     * bootstrap dropdown menu.
+     */
+    public function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
+        static $submenucount = 0;
+
+        if ($menunode->has_children()) {
+
+            if ($level == 1) {
+                $class = 'dropdown';
+            } else {
+                $class = 'dropdown-submenu';
+            }
+
+            if ($menunode === $this->language) {
+                $class .= ' langmenu';
+            }
+            $content = html_writer::start_tag('li', array('class' => $class));
+            // If the child has menus render it as a sub menu.
+            $submenucount++;
+            if ($menunode->get_url() !== null) {
+                $url = $menunode->get_url();
+            } else {
+                $url = '#cm_submenu_'.$submenucount;
+            }
+            $content .= html_writer::start_tag('a', array('href'=>$url, 'class'=>'dropdown-toggle', 'data-toggle'=>'dropdown', 'title'=>$menunode->get_title()));
+            $content .= $menunode->get_text();
+            if ($level == 1) {
+                $content .= '<i class="fa fa-caret-right"></i>';
+            }
+            $content .= '</a>';
+            $content .= '<ul class="dropdown-menu">';
+            foreach ($menunode->get_children() as $menunode) {
+                $content .= $this->render_custom_menu_item($menunode, 0);
+            }
+            $content .= '</ul>';
+        } else {
+            $content = '<li>';
+            // The node doesn't have children so produce a final menuitem.
+            if ($menunode->get_url() !== null) {
+                $url = $menunode->get_url();
+            } else {
+                $url = '#';
+            }
+            $content .= html_writer::link($url, $menunode->get_text(), array('title'=>$menunode->get_title()));
+        }
+        return $content;
+    }
+    
     public function custom_menu_language() {
         global $CFG;
         $langmenu = new custom_menu();
@@ -151,7 +199,7 @@ class theme_essential_core_renderer extends core_renderer {
             }
             $this->language = $langmenu->add($currentlang, new moodle_url('#'), $strlang, 100);
             foreach ($langs as $langtype => $langname) {
-                $this->language->add($langname, new moodle_url($this->page->url, array('lang' => $langtype)), $langname);
+                $this->language->add('<i class="fa fa-language"></i>'.$langname, new moodle_url($this->page->url, array('lang' => $langtype)), $langname);
             }
         }
         return $this->render_custom_menu($langmenu);
@@ -187,53 +235,23 @@ class theme_essential_core_renderer extends core_renderer {
                 $numcourses = 0;
                 foreach ($courses as $course) {
                     if ($course->visible) {
-                        $branch->add(format_string($course->fullname), new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
+                        $branch->add('<i class="fa fa-graduation-cap"></i>'.format_string($course->fullname), new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
+                    } else if (has_capability('moodle/course:viewhiddencourses', context_system::instance())) {
+                        $branchtitle = format_string($course->shortname);
+                        $branchlabel = '<span class="dimmed_text"><i class="fa fa-eye-slash"></i>'.format_string($course->fullname).'</span>';
+                        $branchurl   = new moodle_url('/course/view.php?id='.$course->id);
+                        $branch->add($branchlabel, $branchurl , $branchtitle);
                         $numcourses += 1;
                     }
                 }
             }
-            if ($numcourses === 0 || empty($courses)) {
+            if ($numcourses == 0 || empty($courses)) {
                 $noenrolments = get_string('noenrolments', 'theme_essential');
-                $branch->add('<em>'.$noenrolments.'</em>', new moodle_url('/'), $noenrolments);
+                $branch->add('<em>'.$noenrolments.'</em>', new moodle_url('#'), $noenrolments);
             }
             
         }
         return $this->render_custom_menu($coursemenu);
-    }
-    
-        
-    public function custom_menu_dashboard() {
-        GLOBAL $USER;
-        $dashboardmenu = new custom_menu();
-        /*
-        * This code replaces adds the My Dashboard
-        * functionality to the custommenu.
-        */
-        $hasdisplaymydashboard = (empty($this->page->theme->settings->displaymydashboard)) ? false : $this->page->theme->settings->displaymydashboard;
-        if (isloggedin() && !isguestuser() && $hasdisplaymydashboard) {
-            $branchlabel = '<i class="fa fa-dashboard"></i>'.get_string('mydashboard', 'theme_essential');
-            $branchurl   = new moodle_url('/my/index.php');
-            $branchtitle = get_string('mydashboard', 'theme_essential');
-            $branchsort  = 300;
- 
-            $branch = $dashboardmenu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
-            $branch->add('<em><i class="fa fa-user"></i>'.get_string('profile').'</em>',new moodle_url('/user/profile.php'),get_string('profile'));
-            $branch->add('<em><i class="fa fa-calendar"></i>'.get_string('pluginname', 'block_calendar_month').'</em>',new moodle_url('/calendar/view.php'),get_string('pluginname', 'block_calendar_month'));
-            // Check if messaging is enabled.
-            if (!empty($CFG->messaging)) {
-                $branch->add('<em><i class="fa fa-envelope"></i>'.get_string('pluginname', 'block_messages').'</em>',new moodle_url('/message/index.php'),get_string('pluginname', 'block_messages'));
-            }
-            // Check if badges are enabled.
-            if (!empty($CFG->enablebadges)) {
-                $branch->add('<em><i class="fa fa-certificate"></i>'.get_string('badges').'</em>',new moodle_url('/badges/mybadges.php'),get_string('badges'));
-            }
-            $branch->add('<em><i class="fa fa-file"></i>'.get_string('privatefiles', 'block_private_files').'</em>',new moodle_url('/user/files.php'),get_string('privatefiles', 'block_private_files'));
-            $branch->add('<i class="fa fa-list-alt"></i>'.get_string('forumposts', 'mod_forum'),new moodle_url('/mod/forum/user.php?id='.$USER->id));
-            $branch->add('<i class="fa fa-list"></i>'.get_string('discussions', 'mod_forum'),new moodle_url('/mod/forum/user.php?id='.$USER->id.'&mode=discussions'));
-            $branch->add('<em><i class="fa fa-sign-out"></i>'.get_string('logout').'</em>',new moodle_url('/login/logout.php'),get_string('logout'));    
-        }
-        
-        return $this->render_custom_menu($dashboardmenu);
     }
     
     public function custom_menu_themecolours() {
@@ -242,7 +260,7 @@ class theme_essential_core_renderer extends core_renderer {
         /*
          * This code adds the Theme colors selector to the custommenu.
          */
-        if (isloggedin() && !isguestuser()) {
+        if (!isguestuser()) {
             $alternativethemes = array();
             foreach (range(1, 3) as $alternativethemenumber) {
                 if (!empty($this->page->theme->settings->{'enablealternativethemecolors' . $alternativethemenumber})) {
@@ -253,7 +271,7 @@ class theme_essential_core_renderer extends core_renderer {
                 $branchtitle = get_string('themecolors', 'theme_essential');
                 $branchlabel = '<i class="fa fa-th-large"></i>' . $branchtitle;
                 $branchurl   = new moodle_url('#');
-                $branchsort  = 400;
+                $branchsort  = 300;
                 $branch = $colourmenu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
                 
                 $defaultthemecolorslabel = get_string('defaultcolors', 'theme_essential');
@@ -273,54 +291,193 @@ class theme_essential_core_renderer extends core_renderer {
         return $this->render_custom_menu($colourmenu);
     }
     
-    /*
-     * This code renders the custom menu items for the
-     * bootstrap dropdown menu.
-     */
-    public function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
-        static $submenucount = 0;
+    public function theme_essential_menu_user() {
+        global $USER, $CFG, $DB, $SESSION;
+        $loginurl = get_login_url();
+        
+        $usermenu  = html_writer::start_tag('ul', array('class' => 'nav usermenu'));
+        $usermenu .= html_writer::start_tag('li', array('class' => 'dropdown'));
+        
+        if (isloggedin() && !isguestuser()) {
+            $userpic    = parent::user_picture($USER, array('link' => false, 'size' => '36'));
+            $userclass  = array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown');
+            $usermenu  .= html_writer::link(new moodle_url('#'), $userpic, $userclass);
+            
+            $usermenu  .= html_writer::start_tag('ul', array('class' => 'dropdown-menu pull-right'));
 
-        if ($menunode->has_children()) {
-
-            if ($level == 1) {
-                $class = 'dropdown';
+            if (during_initial_install()) {
+                return '';
+            }
+            
+            if (\core\session\manager::is_loggedinas()) {
+                $realuser = \core\session\manager::get_realuser();
+                
+                $branchlabel = '<em><i class="fa fa-key"></i>'.fullname($realuser, true).get_string('loggedinas', 'theme_essential').fullname($USER, true).'</em>';
+                $branchurl   = new moodle_url('/user/profile.php?id='.$USER->id);
+                $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
             } else {
-                $class = 'dropdown-submenu';
+                $branchlabel = '<em><i class="fa fa-user"></i>'.fullname($USER, true).'</em>';
+                $branchurl   = new moodle_url('/user/profile.php?id='.$USER->id);
+                $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+            }
+                
+            if (is_mnet_remote_user($USER) and $idprovider = $DB->get_record('mnet_host', array('id'=>$USER->mnethostid))) {
+                $branchlabel = '<em><i class="fa fa-users"></i>'.get_string('loggedinfrom' , 'theme_essential').$idprovider->name.'</em>';
+                $branchurl   = new moodle_url($idprovider->wwwroot);
+                $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
             }
 
-            if ($menunode === $this->language) {
-                $class .= ' langmenu';
+                $course = $this->page->course;
+                if (is_role_switched($course->id)) { // Has switched roles
+                    $branchlabel = '<em><i class="fa fa-users"></i>'.get_string('switchrolereturn').'</em>';
+                    $branchurl   = new moodle_url('/course/switchrole.php', array('id'=>$course->id,'sesskey'=>sesskey(), 'switchrole'=>0, 'returnurl'=>$this->page->url->out_as_local_url(false)));
+                    $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+                }
+                
+            $usermenu   .= html_writer::empty_tag('hr', array('class' => 'sep'));
+
+            $branchlabel = '<em><i class="fa fa-calendar"></i>'.get_string('pluginname', 'block_calendar_month').'</em>';
+            $branchurl   = new moodle_url('/calendar/view.php');
+            $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+            
+            // Check if messaging is enabled.
+            if (!empty($CFG->messaging)) {
+                $branchlabel = '<em><i class="fa fa-envelope"></i>'.get_string('pluginname', 'block_messages').'</em>';
+                $branchurl   = new moodle_url('/message/index.php');
+                $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
             }
-            $content = html_writer::start_tag('li', array('class' => $class));
-            // If the child has menus render it as a sub menu.
-            $submenucount++;
-            if ($menunode->get_url() !== null) {
-                $url = $menunode->get_url();
-            } else {
-                $url = '#cm_submenu_'.$submenucount;
+            
+            $branchlabel = '<em><i class="fa fa-file"></i>'.get_string('privatefiles', 'block_private_files').'</em>';
+            $branchurl   = new moodle_url('/user/files.php');
+            $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+            
+            $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('forumposts', 'mod_forum').'</em>';
+            $branchurl   = new moodle_url('/mod/forum/user.php?id='.$USER->id);
+            $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+            
+            $branchlabel = '<em><i class="fa fa-list"></i>'.get_string('discussions', 'mod_forum').'</em>';
+            $branchurl   = new moodle_url('/mod/forum/user.php?id='.$USER->id.'&mode=discussions');
+            $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+            
+            $usermenu   .= html_writer::empty_tag('hr', array('class' => 'sep'));
+            
+            $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('mygrades', 'theme_essential').'</em>';
+            $branchurl   = new moodle_url('/course/user.php?mode=grade&id='.$course->id.'&user='.$USER->id);
+            $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+            
+            // Check if badges are enabled.
+            if (!empty($CFG->enablebadges)) {
+                $branchlabel = '<em><i class="fa fa-certificate"></i>'.get_string('badges').'</em>';
+                $branchurl   = new moodle_url('/badges/mybadges.php');
+                $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
             }
-            $content .= html_writer::start_tag('a', array('href'=>$url, 'class'=>'dropdown-toggle', 'data-toggle'=>'dropdown', 'title'=>$menunode->get_title()));
-            $content .= $menunode->get_text();
-            if ($level == 1) {
-                $content .= '<b class="caret"></b>';
+            
+            $branchlabel = '<em><i class="fa fa-cog"></i>'.get_string('preferences').'</em>';
+            $branchurl   = new moodle_url('/user/edit.php?id='.$USER->id);
+            $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+            
+            $usermenu   .= html_writer::empty_tag('hr', array('class' => 'sep'));
+                
+            $branchlabel = '<em><i class="fa fa-sign-out"></i>'.get_string('logout').'</em>';
+            $branchurl   = new moodle_url('/login/logout.php?sesskey='.sesskey());
+            $usermenu .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+            
+            if(!empty($CFG->supportpage)) {
+                $branchlabel = '<em><i class="fa fa-question-circle"></i>'.get_string('help').'</em>';
+                $branchurl   = new moodle_url($CFG->supportpage);
+                $usermenu .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel, array('target' => '_blank')));
             }
-            $content .= '</a>';
-            $content .= '<ul class="dropdown-menu">';
-            foreach ($menunode->get_children() as $menunode) {
-                $content .= $this->render_custom_menu_item($menunode, 0);
-            }
-            $content .= '</ul>';
+
         } else {
-            $content = '<li>';
-            // The node doesn't have children so produce a final menuitem.
-            if ($menunode->get_url() !== null) {
-                $url = $menunode->get_url();
-            } else {
-                $url = '#';
-            }
-            $content .= html_writer::link($url, $menunode->get_text(), array('title'=>$menunode->get_title()));
+            $userpic    = '<em><i class="fa fa-sign-in"></i>'.get_string('login').'</em>';
+            $usermenu  .= html_writer::link($loginurl, $userpic, array('class' => 'loginurl'));
         }
-        return $content;
+        
+        $usermenu .= html_writer::end_tag('ul');
+        $usermenu .= html_writer::end_tag('li');
+        
+        return $usermenu;
+    }
+    
+    protected function process_user_messages() {
+        $messagelist = array();
+
+        foreach ($usermessages as $message) {
+            $cleanmsg = new stdClass();
+            $cleanmsg->from = fullname($message);
+            $cleanmsg->msguserid = $message->id;
+
+            $userpicture = new user_picture($message);
+            $userpicture->link = false;
+            $picture = $this->render($userpicture);
+
+            $cleanmsg->text = $picture . ' ' . $cleanmsg->text;
+
+            $messagelist[] = $cleanmsg;
+        }
+
+        return $messagelist;
+    }
+    
+    protected function get_user_messages() {
+        global $USER, $DB;
+        $messagelist = array();
+
+        $newmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
+                            FROM {message}
+                           WHERE useridto = :userid";
+
+        $newmessages = $DB->get_records_sql($newmessagesql, array('userid' => $USER->id));
+
+        foreach ($newmessages as $message) {
+            $messagelist[] = $this->theme_essential_process_message($message);
+        }
+
+        $showoldmessages = (empty($this->page->theme->settings->showoldmessages)) ? false : $this->page->theme->settings->showoldmessages;
+        if ($showoldmessages == 2) {
+            $maxmessages = 5;
+            $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
+                                 FROM {message_read}
+                                WHERE useridto = :userid
+                             ORDER BY timecreated DESC
+                                LIMIT $maxmessages";
+
+            $readmessages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id));
+
+            foreach ($readmessages as $message) {
+                $messagelist[] = $this->theme_essential_process_message($message);
+            }
+        }
+
+        return $messagelist;
+
+    }
+
+    protected function theme_essential_process_message($message) {
+        global $DB;
+        $messagecontent = new stdClass();
+
+        if ($message->notification) {
+            $messagecontent->text = get_string('unreadnewnotification', 'message');
+        } else {
+            if ($message->fullmessageformat == FORMAT_HTML) {
+                $message->smallmessage = html_to_text($message->smallmessage);
+            }
+            if (core_text::strlen($message->smallmessage) > 15) {
+                $messagecontent->text = core_text::substr($message->smallmessage, 0, 15).'...';
+            } else {
+                $messagecontent->text = $message->smallmessage;
+            }
+        }
+
+        if ((time() - $message->timecreated ) <= (3600 * 3)) {
+            $messagecontent->date = format_time(time() - $message->timecreated);
+        } else {
+            $messagecontent->date = userdate($message->timecreated, get_string('strftimetime', 'langconfig'));
+        }
+        $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom));
+
+        return $messagecontent;
     }
 
     /**
@@ -484,11 +641,14 @@ class theme_essential_core_renderer extends core_renderer {
             }
             $iconclass = $socialnetwork;
             $socialhtml  = html_writer::start_tag('li');
-            $socialhtml .= html_writer::start_tag('button', array('class' => 'socialicon '.$socialnetwork, 
-                                                                  'onclick' => "window.open('".$PAGE->theme->settings->$socialnetwork."')"));
+            $socialhtml .= html_writer::start_tag('button', array('type' => "button",
+                                                                  'class' => 'socialicon '.$socialnetwork, 
+                                                                  'onclick' => "window.open('".$PAGE->theme->settings->$socialnetwork."')",
+                                                                  'title' => get_string($socialnetwork, 'theme_essential'),
+                                                                  ));
             $socialhtml .= html_writer::start_tag('i', array('class' => 'fa fa-'.$icon.' fa-inverse'));
             $socialhtml .= html_writer::end_tag('i');
-            $socialhtml .= html_writer::start_span('sr-only').get_string($socialnetwork, 'theme_essential').html_writer::end_span();
+            $socialhtml .= html_writer::start_span('sr-only').html_writer::end_span();
             $socialhtml .= html_writer::end_tag('button');
             $socialhtml .= html_writer::end_tag('li');
         

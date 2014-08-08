@@ -88,15 +88,6 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
-    // User picture in header setting.
-    $name = 'theme_essential/headerprofilepic';
-    $title = get_string('headerprofilepic', 'theme_essential');
-    $description = get_string('headerprofilepicdesc', 'theme_essential');
-    $default = true;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
     // Fixed or Variable Width.
     $name = 'theme_essential/pagewidth';
     $title = get_string('pagewidth', 'theme_essential');
@@ -230,6 +221,16 @@ defined('MOODLE_INTERNAL') || die;
     $title = get_string('themehovercolor', 'theme_essential');
     $description = get_string('themehovercolordesc', 'theme_essential');
     $default = '#29a1c4';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // Icon colour setting.
+    $name = 'theme_essential/themeiconcolor';
+    $title = get_string('themeiconcolor', 'theme_essential');
+    $description = get_string('themeiconcolordesc', 'theme_essential');
+    $default = '#30add1';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');

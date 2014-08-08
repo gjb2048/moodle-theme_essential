@@ -43,12 +43,11 @@ if (right_to_left()) {
     $THEME->sheets[] = 'essential';
 }
 
-
-
 if ((get_config('theme_essential', 'enablealternativethemecolors1')) || 
     (get_config('theme_essential', 'enablealternativethemecolors2')) || 
-    (get_config('theme_essential', 'enablealternativethemecolors3'))) {
-        $THEME->sheets[] = 'alternative';
+    (get_config('theme_essential', 'enablealternativethemecolors3'))) 
+{
+    $THEME->sheets[] = 'alternative';
 }
 
 $THEME->sheets[] = 'custom';
@@ -185,12 +184,3 @@ $THEME->javascripts_footer[] = 'dock';
 
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->csspostprocess = 'theme_essential_process_css';
-
-$useragent = '';
-if (!empty($_SERVER['HTTP_USER_AGENT'])) {
-    $useragent = $_SERVER['HTTP_USER_AGENT'];
-}
-
-if (core_useragent::is_ie() && !core_useragent::check_ie_version('9.0')) {
-    $THEME->javascripts[] = 'html5shiv';
-}

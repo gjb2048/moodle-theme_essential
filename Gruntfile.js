@@ -151,7 +151,7 @@ module.exports = function(grunt) {
                     sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
                     sourceMapFilename: 'style/essential.treasure.map'
                 },
-                src: 'less/essentialall.less',
+                src: 'less/essential.less',
                 dest: 'style/essential.css'
             },
             alternative: {
@@ -177,7 +177,7 @@ module.exports = function(grunt) {
                     sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
                     sourceMapFilename: 'style/rtl.treasure.map'
                 },
-                src: 'less/rtlall.less',
+                src: 'less/rtl.less',
                 dest: 'style/rtl.css'
             }
         },

@@ -1,0 +1,45 @@
+@media screen and (min-width: 1200px) {
+    .maintenance #region-main, #page-login-index #region-main {
+        width: 100% !important;
+    }
+}
+
+@media(max-width: 979px) {
+    .nav-collapse {
+        z-index: 10; /* Get on top of slider. */
+        .dropdown-menu > li > a,
+        .dropdown-menu > li > a:visited {
+            color: ~"[[setting:themenavcolor]]";
+        }
+
+        /* @group Custom Menu */
+        .dropdown-menu > li > a:hover,
+        .dropdown-menu > li > a:focus,
+        .dropdown-submenu:hover > a,
+        .dropdown-submenu:focus > a {
+            color: ~"[[setting:themecolor]]";
+            background-color: ~"[[setting:themenavcolor]]";
+            text-decoration: none;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    #page.container-fluid {
+        padding: 5px;
+    }
+    #page-header { 
+        height: auto;
+        .icon-collapse {
+            overflow: hidden;
+            margin-right: 10px;
+            float: right;
+        }
+        .btn-icon {
+            display: block;
+        }
+    }
+    #headerlogo {
+        top: 0px;
+    }
+}
