@@ -22,10 +22,9 @@ h2.pagetitle {
     line-height: 35px;
     color: #777;
     background-size: 4px 20px;
-}
-
-h2.pagetitle span {
-    padding-right: 8px;
+    span {
+        padding-right: 8px;
+    }
 }
 
 .firstword {
@@ -49,38 +48,48 @@ h2.pagetitle span {
     font-size: .5em;
 }
 
-#course-category-listings li #icon{
-    margin-left:0
+#course-category-listings {
+    li {
+        #icon {
+            margin-left: 0;
+        }
+        li {
+            #icon {
+                margin-left: 1em;
+            }
+            li {
+                #icon {
+                    margin-left: 2em;
+                }
+                li {
+                    #icon {
+                        margin-left: 3em;
+                    }
+                    li {
+                        #icon {
+                            margin-left: 4em;
+                        }
+                        li {
+                            #icon {
+                                margin-left: 4.5em;
+                            }
+                            li {
+                                #icon {
+                                    margin-left: 5em;
+                                }
+                                li {
+                                    #icon {
+                                        margin-left: 5.5em;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
-
-#course-category-listings li li #icon{
-    margin-left:1em
-}
-
-#course-category-listings li li li #icon{
-    margin-left:2em
-}
-
-#course-category-listings li li li li #icon{
-    margin-left:3em
-}
-
-#course-category-listings li li li li li #icon{
-    margin-left:4em
-}
-
-#course-category-listings li li li li li li #icon{
-    margin-left:4.5em
-}
-
-#course-category-listings li li li li li li li #icon{
-    margin-left:5em
-}
-
-#course-category-listings li li li li li li li li #icon{
-    margin-left:5.5em
-}
-
 
 /* @group Course Footer */
 
@@ -89,10 +98,11 @@ h2.pagetitle span {
     color: ~"[[setting:themetextcolor]]";
     line-height:1.5;
     clear:both;
-}
-#section_footer a{
-    font-style:normal;
-    text-decoration:none;
+
+    a {
+        font-style:normal;
+        text-decoration:none;
+    }
 }
 
 #previous_section, #next_section {
@@ -103,11 +113,34 @@ h2.pagetitle span {
 #next_section {
     text-align:right;
     float:right;
+    .nav_icon {
+        float: right;
+        margin-left:0.3em;
+        border-left:1px solid #eee;
+        font-size:2em;
+    }
+
+    .text {
+        width: 74.05%;
+        float:right;
+    }
 }
 
 #previous_section {
-    float:left;
-    text-align:left;
+    float: left;
+    text-align: left;
+
+    .nav_icon {
+        float: left;
+        margin-right: 0.3em;
+        border-right: 1px solid #eee;
+        font-size: 2em;
+    }
+
+    .text {
+        width: 74.05%;
+        float:left;
+    }
 }
 
 .nav_guide {
@@ -116,39 +149,15 @@ letter-spacing:0.1em;
     font-style:normal;
     color:#e4a82a;
 }
+
 .nav_icon {
     color: ~"[[setting:themecolor]]";
     padding:0.3em;
     width:8.3%;
     text-align:center;
-}
-
-.nav_icon:hover {
-    color: ~"[[setting:themehovercolor]]";
-}
-
-#next_section .nav_icon {
-    float:right;
-    margin-left:0.3em;
-    border-left:1px solid #eee;
-    font-size:2em;
-}
-
-#next_section .text{
-    width:74.05%;
-    float:right;
-}
-
-#previous_section .nav_icon {
-    float:left;
-    margin-right:0.3em;
-    border-right:1px solid #eee;
-    font-size:2em;
-}
-
-#previous_section .text{
-    width:74.05%;
-    float:left;
+    &:hover {
+        color: ~"[[setting:themehovercolor]]";
+    }
 }
 
 /* @end */

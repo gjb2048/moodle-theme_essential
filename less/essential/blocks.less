@@ -7,45 +7,46 @@
     border-radius: 8px;
     border: 1px solid #E1E1E1;
     margin-bottom: 10px;
-}
 
-.block .content {
-    padding: 4px 0px;
+    .content {
+        padding: 4px 0px;
+    }
+
+    #icon {
+        margin-right: 5px;
+        color: @icon-colour;
+    }
 }
 
 #middle-blocks p {
     margin-top: 12px;
 }
 
-.block #icon {
-    margin-right: 5px;
-    color: @icon-colour;
-}
-
 .tree_item {
     background-image: none !important;
+
+    &.branch:before {
+        font-family: FontAwesome;
+        content: "\f07c ";
+        color: @icon-colour;
+        margin-right: 5px;
+    }
+    &.emptybranch:before {
+        font-family: FontAwesome;
+        content: "\f114 ";
+        color: #d3d3d3;
+        margin-right: 5px;
+    }
 }
 
-.tree_item.branch:before {
-    font-family: FontAwesome;
-    content: "\f07c ";
-    color: @icon-colour;
-    margin-right: 5px;
-}
+.block_navigation.block {
+    li.type_user > .tree_item.branch:before {
+        content: "\f007 ";
+    }
 
-.tree_item.emptybranch:before {
-    font-family: FontAwesome;
-    content: "\f114 ";
-    color: #d3d3d3;
-    margin-right: 5px;
-}
-
-.block_navigation.block li.type_user > .tree_item.branch:before {
-    content: "\f007 ";
-}
-
-.block_navigation.block li.type_unknown.depth_1 > .tree_item.branch:before { 
-    content: "\f015 ";
+    li.type_unknown.depth_1 > .tree_item.branch:before { 
+        content: "\f015 ";
+    }
 }
 
 .collapsed .tree_item.branch:before {
@@ -61,23 +62,22 @@
     border: 1px solid #EEE;
     border-radius: 5px;
     margin: 10px 0px 10px 0px;
-}
 
-.hidden-blocks h4 {
-    text-align: left;
-    padding-bottom: 8px;
-    margin-bottom: 8px;
-    border-bottom: 1px solid #ccc;
-    margin-top: 0px;
-    color: #ff6666;
-}
+    h4 {
+        text-align: left;
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+        border-bottom: 1px solid #ccc;
+        margin-top: 0px;
+        color: #ff6666;
+    }
 
-.hidden-blocks .block {
-    float: right;
-    width: 250px;
-    margin-left: 10px;
+    .block {
+        float: right;
+        width: 250px;
+        margin-left: 10px;
+    }
 }
-
 
 .block .header .title h2,
 .block h3.main {
@@ -90,16 +90,16 @@
     padding: 0px;
 }
 
-.block .header .title h2:before {
-    font-family: FontAwesome;
-    font-size: 1.65em;
-    margin-right: .3em;
-    content: "\f0c9";
-}
-
 .block .header .title {
     border-bottom: 1px solid #EEE;
     padding-left: 0px;
+
+    h2:before {
+        font-family: FontAwesome;
+        font-size: 1.65em;
+        margin-right: .3em;
+        content: "\f0c9";
+    }
 }
 
 .block.hidden .header .title h2,
@@ -113,125 +113,118 @@
     text-align: left;
 }
 
-
-.block_rss_client .decription {
-    height: auto;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-}
-
-.block_rss_client .content {
-    padding: 0px;
-}
-
-.block_rss_client .content a:hover{
-    text-decoration: none;
-}
-
-.block_rss_client .content li {
-    border-bottom: 1px dotted #E1E1E1;
-    padding: 5px;
-}
-
-.block_rss_client .content li:hover {
-    background: #f9f9f9;
-}
-
-.block_rss_client .footer {
-    text-align: right;
-    padding-top: 5px;
-}
-
-.block_rss_client .footer a {
-    color: #fff;
-    width: 100px;
-    padding: 4px 12px;
-    font-size: 1em;
-    border-radius: 5px;
-}
-
-.block_rss_client .footer a:hover {
-    color: #fff;
+.block_rss_client {
+    .description {
+        height: auto;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+    .content {
+        padding: 0px;
+        a:hover {
+            text-decoration: none;
+        }
+        li {
+            border-bottom: 1px dotted #E1E1E1;
+            padding: 5px;
+            &:hover {
+                background: #f9f9f9;
+            }
+        }
+    }
+    .header .title h2:before {
+        content:"\f09e";
+    }
+    .footer {
+        text-align: right;
+        padding-top: 5px;
+        a {
+            color: #fff;
+            width: 100px;
+            padding: 4px 12px;
+            font-size: 1em;
+            border-radius: 5px;
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
 }
 
 /* @group Login Block */
 
-.block_login .header .title h2:before {
-    content:"\f007";
-    font-family: FontAwesome;
-    float: left;
-}
-.block_login .content .footer {
-    height: 60px;
-    width: 100%;
-    padding: 0px;
-}
-.block_login .content .footer div {
-    float: left;
-    clear: left;
-    margin: 0;
-}
-.block_login .content .footer a {
-    color: #fff;
-    padding: 0;
-    float: left;
-    margin: 0;
-    font-size: 1em;
-    white-space: nowrap;
-}
-
-.block_login .content form input[type="submit"],
-.block_login .content .footer a {
-    background-image: none;
-    border-color: #30ADD1;
-    border-image: none;
-    border-radius: 4px;
-    border-style: solid;
-    border-width: 1px;
-    box-shadow: none;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 13px;
-    line-height: 20px;
-    padding: 4px 12px;
-    text-align: center;
-    text-shadow: none;
-    vertical-align: middle;
-    margin: 10px 0;
-    width: 100%;
-}
-
-.block_login .content form input[type="submit"]:hover,
-.block_login .content .footer a:hover {
-    text-decoration: none;
-}
-
-.block_login .content .footer div {
-    width: 90%;
-}
-.block_login input#login_username,
-.block_login input#login_password {
-    width: 95%;
-}
-
-.block_login .password label:before {
-    content: "\f084";
-    font-family: FontAwesome;
-    margin-right: 5px;
-}
-
-.block_login .username label:before {
-    content: "\f007";
-    font-family: FontAwesome;
-    margin-right: 5px;
-}
-
-.block_login .content .footer div a {
-    background: orangered;
-}
-.block_login .content .footer div a:hover {
-    background: red;
+.block_login {
+    .header .title h2:before {
+        content:"\f007";
+        font-family: FontAwesome;
+        float: left;
+    }
+    .content {
+        .footer {
+            height: 60px;
+            width: 100%;
+            padding: 0px;
+            div {
+                float: left;
+                clear: left;
+                margin: 0;
+                width: 90%;
+                a {
+                    background: orangered;
+                    &:hover {
+                        background: red;
+                    }
+                }
+            }
+            a {
+                color: #fff;
+                padding: 0;
+                float: left;
+                margin: 0;
+                font-size: 1em;
+                white-space: nowrap;
+            }
+        }
+        form input[type="submit"],
+        .footer a {
+            background-image: none;
+            border-color: #30ADD1;
+            border-image: none;
+            border-radius: 4px;
+            border-style: solid;
+            border-width: 1px;
+            box-shadow: none;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 13px;
+            line-height: 20px;
+            padding: 4px 12px;
+            text-align: center;
+            text-shadow: none;
+            vertical-align: middle;
+            margin: 10px 0;
+            width: 100%;
+        }
+        form input[type="submit"]:hover,
+        .footer a:hover {
+            text-decoration: none;
+        }
+    }
+    input#login_username,
+    input#login_password {
+        width: 95%;
+    }
+    .username label:before {
+        content: "\f007";
+        font-family: FontAwesome;
+        margin-right: 5px;
+    }
+    .password label:before {
+        content: "\f084";
+        font-family: FontAwesome;
+        margin-right: 5px;
+    }
 }
 
 /* @end */
@@ -260,10 +253,6 @@
     content:"\f0e4";
 }
 
-.block_rss_client .header .title h2:before {
-    content:"\f09e";
-}
-
 .block_blog_menu .header .title h2:before {
     content:"\f02d";
 }
@@ -283,7 +272,6 @@
 .block_book_toc .header .title h2:before {
     content:"\f02d";
 }
-
 
 .block_participants .header .title h2:before,
 .block_online_users .header .title h2:before {
@@ -370,8 +358,6 @@
 .block_twitter_search .header .title h2:before {
     content:"\f099";
 }
-
-
 
 /* @end */
 

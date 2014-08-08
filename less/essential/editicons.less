@@ -3,19 +3,17 @@
 .commands {
     font-family: FontAwesome;
     font-size: 1.1em;
-}
-
-.commands img {
-    display: none;
+    img {
+        display: none;
+    }
+    a:hover {
+        text-decoration: none;
+    }
 }
 
 #page-mod-glossary-view .commands img,
 #page-calendar-view .commands img {
     display: inline;
-}
-
-.commands a:hover {
-    text-decoration: none;
 }
 
 .editing_delete:before {
@@ -34,17 +32,19 @@
     padding-right: 10px !important;
 }
 
-.editing_move:hover {
-    cursor:move;
-}
+.editing_move {
+    &:hover {
+        cursor:move;
+    }
 
-.editing_move:before {
-    font-family: 'FontAwesome';
-    content:"\f047 ";
-}
+    &:before {
+        font-family: 'FontAwesome';
+        content:"\f047 ";
+    }
 
-.editing_move img {
-    display: none;
+    img {
+       display: none;
+    }
 }
 
 .editing_moveright:before {
@@ -64,18 +64,20 @@
     content: none;
 }
 
-.section-modchooser-link img {
-    display: none;
-}
+.section-modchooser-link {
+    img {
+        display: none;
+    }
 
-.section-modchooser-link .section-modchooser-text:before {
-    font-family: 'FontAwesome';
-    content:"\f067 ";
-    padding-right: 5px;
-}
+    .section-modchooser-text:before {
+        font-family: 'FontAwesome';
+        content:"\f067 ";
+        padding-right: 5px;
+    }
 
-.section-modchooser-link .section-modchooser-text a:hover {
-    text-decoration: none;
+    .section-modchooser-text a:hover {
+       text-decoration: none;
+    }
 }
 
 .editing_update:before,
@@ -91,14 +93,16 @@
     padding-right: 5px;
 }
 
-.editing_title img {
-    display: none !important;
-}
+.editing_title {
+    img {
+        display: none !important;
+    }
 
-.editing_title:before {
-    font-family: 'FontAwesome';
-    content:"\f040 ";
-    padding-right: 5px;
+    &:before {
+        font-family: 'FontAwesome';
+        content:"\f040 ";
+        padding-right: 5px;
+    }
 }
 
 .editing_hide:before {
@@ -198,10 +202,9 @@
 
 .moodle-actionmenu.show[data-enhanced] .menu a {
     padding: 2px 1em;
-}
-    
-.moodle-actionmenu.show[data-enhanced] .menu a i {
-    margin-right: 5px;
+    i {
+        margin-right: 5px;
+    }
 }
 
 .toggle-display img,
