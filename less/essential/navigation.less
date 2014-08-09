@@ -9,76 +9,82 @@
     display: inline-block;
 }
 
-.navbar .messagemenu .nav > li > .dropdown-menu {
-    background-clip: padding-box;
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    display: none;
-    float: left;
-    list-style: none outside none;
-    margin: 2px 0 0;
-    min-width: 160px;
-    padding: 5px 0;
-    position: absolute;
-    left: inherit;
-    right: 0;
-    top: 100%;
-    z-index: 1000;
-
-    &:before {
-        border-bottom: 7px solid rgba(0, 0, 0, 0.2);
-        border-left: 7px solid transparent;
-        border-right: 7px solid transparent;
-        content: "";
-        display: inline-block;
+.navbar .messagemenu .nav > li {
+    > .dropdown-menu {
+        background-clip: padding-box;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 6px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        display: none;
+        float: left;
+        list-style: none outside none;
+        margin: 2px 0 0;
+        min-width: 160px;
+        padding: 5px 0;
         position: absolute;
         left: inherit;
-        right: 12px;
-        top: -7px;
-    }
+        right: 0;
+        top: 100%;
+        z-index: 1000;
 
-    &:after {
-        border-bottom: 6px solid #fff;
-        border-left: 6px solid transparent;
-        border-right: 6px solid transparent;
-        content: "";
-        display: inline-block;
-        left: inherit;
-        right: 13px;
-        position: absolute;
-        top: -6px;
-    }
-
-    > li > a {
-        padding: 3px 15px 3px 15px;
-        img {
-            padding: 0px 10px 0px 0px;
+        &:before {
+            border-bottom: 7px solid rgba(0, 0, 0, 0.2);
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            content: "";
+            display: inline-block;
+            position: absolute;
+            left: inherit;
+            right: 12px;
+            top: -7px;
         }
-    }
 
-    li {
-        &:hover .msg-title, &:focus .msg-title, &:active .msg-title,
-        &:hover .msg-body, &:focus .msg-body, &:active .msg-body,
-        &:hover .msg-sender, &:focus .msg-sender, &:active .msg-sender {
-            background: transparent;
-            color: ~"[[setting:themecolor]]";
+        &:after {
+            border-bottom: 6px solid #fff;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            content: "";
+            display: inline-block;
+            left: inherit;
+            right: 13px;
+            position: absolute;
+            top: -6px;
         }
-        &:hover .msg-time, &:focus .msg-time, &:active .msg-time {
-            background: transparent;
-            color: ~"[[setting:themecolor]]";
-            span {
-                background: transparent;
+
+        > li > a {
+            padding: 3px 15px 3px 15px;
+            img {
+                padding: 0px 10px 0px 0px;
             }
         }
-    }
 
-    .msg-sender {
-        color: ~"[[setting:themetextcolor]]";
+        li {
+            &:hover .msg-title, &:focus .msg-title, &:active .msg-title,
+            &:hover .msg-body, &:focus .msg-body, &:active .msg-body,
+            &:hover .msg-sender, &:focus .msg-sender, &:active .msg-sender {
+                background: transparent;
+                color: ~"[[setting:themecolor]]";
+            }
+            &:hover .msg-time, &:focus .msg-time, &:active .msg-time {
+                background: transparent;
+                color: ~"[[setting:themecolor]]";
+                span {
+                    background: transparent;
+                }
+            }
+        }
+
+        .msg-sender {
+            color: ~"[[setting:themetextcolor]]";
+        }
+        .msg-time {
+            color: ~"[[setting:themetextcolor]]";
+            padding-left: 3px;
+        }
     }
-    .msg-time {
-        color: ~"[[setting:themetextcolor]]";
-        padding-left: 3px;
+    &.dropdown.open > .dropdown-menu {
+        overflow: visible;
+        display: block;
     }
 }
