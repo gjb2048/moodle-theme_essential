@@ -120,7 +120,14 @@ body.essential-colours-alternative2 {
         background-image: -o-linear-gradient(top, ~"[[setting:alternativethemecolor2]]", ~"[[setting:alternativethemehovercolor2]]");
         background-image: linear-gradient(to bottom, ~"[[setting:alternativethemecolor2]]", ~"[[setting:alternativethemehovercolor2]]");
     }
-    
+
+    .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a {
+        color: ~"[[setting:alternativethemetextcolor2]]";
+        &:hover, &:focus, &.open {
+            color: ~"[[setting:alternativethemecolor2]]";
+        }
+    }
+
     .navbar {
         background-color: ~"[[setting:alternativethemecolor2]]" !important;
     }

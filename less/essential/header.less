@@ -140,13 +140,14 @@
             z-index: 1001;
             margin: 0px;
         }
-        .dropdown-menu>li>a {
+        .dropdown-menu > li > a {
             padding: 3px 25px 3px 15px;
         }
+
         .dropdown-menu>li>a:hover {
             background: none;
         }
-        
+
         .nav > li.dropdown a,
         .nav > li > a {
             color: ~"[[setting:themenavcolor]]";
@@ -167,6 +168,15 @@
                 }
             }
         }
+
+        .nav > li.dropdown ul.dropdown-menu > li > a {
+            color: ~"[[setting:themetextcolor]]";
+            &:hover, &:focus, &.open {
+                color: ~"[[setting:themecolor]]";
+            }
+        }
+
+
         .usermenu {
             .dropdown {
                 a:hover {
