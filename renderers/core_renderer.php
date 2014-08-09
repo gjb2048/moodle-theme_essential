@@ -31,7 +31,7 @@ class theme_essential_core_renderer extends core_renderer {
  
     public function navbar() {
         $breadcrumbs = '';
-        $breadcrumbstyle = $this->page->theme->settings->breadcrumbstyle;
+        $breadcrumbstyle = (!empty($PAGE->theme->settings->breadcrumbstyle)) ? $PAGE->theme->settings->breadcrumbstyle : '1'; // Default in settings.php.
         if (!empty($breadcrumbstyle) && ($breadcrumbstyle > 0) ) {
             foreach ($this->page->navbar->get_items() as $item) {
                 $item->hideicon = true;

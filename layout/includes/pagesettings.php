@@ -67,11 +67,11 @@ if (right_to_left()) {
     $left = true;
 }
 
-$fontselect = $PAGE->theme->settings->fontselect;
- 
+$fontselect = (!empty($PAGE->theme->settings->fontselect)) ? $PAGE->theme->settings->fontselect : '1'; // Default in settings.php.
+
 /* Group Header */
 
-$hasanalytics = $PAGE->theme->settings->useanalytics;
+$hasanalytics = (!empty($PAGE->theme->settings->useanalytics)) ? $PAGE->theme->settings->useanalytics : false; // Default in settings.php.
 
 $hassocialnetworks = (  empty($PAGE->theme->settings->facebook)     &&
                         empty($PAGE->theme->settings->twitter)      &&
@@ -98,7 +98,8 @@ if (!$hassocialnetworks && $hasmobileapps) {
     $logoclass = 'span8';
 }
 
-$oldnavbar = $PAGE->theme->settings->oldnavbar;
+$oldnavbar = (!empty($PAGE->theme->settings->oldnavbar)) ? $PAGE->theme->settings->oldnavbar : false; // Default in settings.php.
+
 $haslogo = (!empty($PAGE->theme->settings->logo));
 
 /* Group Slideshow */
@@ -113,7 +114,7 @@ $hasmarketing2image = (!empty($PAGE->theme->settings->marketing2image));
 $hasmarketing3image = (!empty($PAGE->theme->settings->marketing3image));
 
 /* Group Content */
-$hasboringlayout = $PAGE->theme->settings->layout;
+$hasboringlayout = (!empty($PAGE->theme->settings->layout)) ? $PAGE->theme->settings->layout : false; // Default in settings.php.
 
 /* Group Footer */
 $hashiddendock = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('hidden-dock', $OUTPUT));
