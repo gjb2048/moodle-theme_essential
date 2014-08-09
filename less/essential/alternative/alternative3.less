@@ -124,7 +124,8 @@ body.essential-colours-alternative3 {
     .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a {
         color: ~"[[setting:alternativethemetextcolor3]]";
         &:hover, &:focus, &.open {
-            color: ~"[[setting:alternativethemecolor3]]";
+            color: ~"[[setting:themenavcolor]]";
+            background-color: ~"[[setting:alternativethemecolor3]]";
         }
     }
 
@@ -434,5 +435,40 @@ body.essential-colours-alternative3 {
 
     .moodle-core-dragdrop-draghandle:before, .moodle-core-dragdrop-draghandle a {
         color:~"[[setting:alternativethemeurlcolor3]]";
+    }
+}
+
+@media(max-width: 979px) {
+    body.essential-colours-alternative3 { 
+        .nav-collapse {
+            background-color: ~"[[setting:alternativethemecolor3]]";
+            .dropdown-menu > li > a,
+            .dropdown-menu > li > a:visited {
+                color: ~"[[setting:themenavcolor]]";
+            }
+
+            /* @group Custom Menu */
+            .dropdown-menu > li > a:hover,
+            .dropdown-menu > li > a:focus,
+            .dropdown-submenu:hover > a,
+            .dropdown-submenu:focus > a {
+                color: ~"[[setting:alternativethemecolor3]]";
+                background-color: ~"[[setting:themenavcolor]]";
+            }
+        }
+        .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a {
+            color: ~"[[setting:themenavcolor]]";
+            &:hover, &:focus {
+                background-color: ~"[[setting:themenavcolor]]";
+                color: ~"[[setting:alternativethemecolor3]]";
+            }
+        }
+        .navbar .navbar-inner .nav-collapse .nav > li.dropdown a {
+            &:hover, &:focus, &.open {
+                background-color: ~"[[setting:alternativethemecolor3]]";
+                color: ~"[[setting:themenavcolor]]";
+            }
+        }
+
     }
 }
