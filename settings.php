@@ -584,6 +584,9 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
+    $ADMIN->add('theme_essential', $temp);
+
+    
     $temp = new admin_settingpage('theme_essential_frontcontent', get_string('frontcontentheading', 'theme_essential'));
     $temp->add(new admin_setting_heading('theme_essential_frontcontent', get_string('frontcontentheadingsub', 'theme_essential'),
             format_text(get_string('frontcontentdesc' , 'theme_essential'), FORMAT_MARKDOWN)));
@@ -1035,6 +1038,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting->set_updatedcallback('theme_reset_all_caches');
         $temp->add($setting);
     }
+
     $ADMIN->add('theme_essential', $temp);
 
     /* User Alerts */
