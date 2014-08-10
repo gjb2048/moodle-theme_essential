@@ -80,10 +80,6 @@ $string['contactinfodesc'] = 'Enter your contact information';
 $string['siteicon'] = 'Site icon';
 $string['siteicondesc'] = 'Do not have a logo? Enter the name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "fa-". ';
 
-$string['yourprofile'] = 'You';
-$string['headerprofilepic'] = 'Display user\'s picture';
-$string['headerprofilepicdesc'] = 'If checked, displays the user\'s profile picture in the header of the page.';
-
 $string['layout'] = 'Use a standard course layout';
 $string['layoutdesc'] = 'This theme is designed to put both block columns on the side.  If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
 
@@ -125,11 +121,6 @@ $string['readme_desc'] = 'Please click on \'{$a->url}\' for lots more informatio
 
 
 /* CustomMenu */
-$string['mydashboardinfo'] = 'Dashboard menu';
-$string['mydashboardinfodesc'] = 'Displays a list of common functions used by users.';
-$string['displaymydashboard'] = 'Display dashboard';
-$string['displaymydashboarddesc'] = 'Display dashboard of user links in the custom Menu.';
-
 $string['mycoursesinfo'] = 'Enrolled courses menu';
 $string['mycoursesinfodesc'] = 'Displays a dynamic list of enrolled courses to the user.';
 $string['displaymycourses'] = 'Display enrolled courses';
@@ -151,9 +142,6 @@ $string['loggedinas'] = ' logged in as ';
 $string['loggedinfrom'] = 'Logged in from ';
 
 $string['mygrades'] = 'My grades';
-
-/* My Dashboard custommenu dropdown */
-$string['mydashboard'] = 'My dashboard';
 
 /* Breadcrumb Style */
 $string['breadcrumbstyle'] = 'Breadcrumb style';

@@ -4,87 +4,203 @@
  * @package   theme_essential
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+ 
+/* @group Navbar
+ */
+ 
+/* @group Custom Menu */
 
-.messagemenu, .usermenu {
-    display: inline-block;
-}
-
-.navbar .messagemenu .nav > li {
-    > .dropdown-menu {
-        background-clip: padding-box;
-        background-color: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.2);
-        border-radius: 6px;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-        display: none;
-        float: left;
-        list-style: none outside none;
-        margin: 2px 0 0;
-        min-width: 160px;
-        padding: 5px 0;
-        position: absolute;
-        left: inherit;
-        right: 0;
-        top: 100%;
-        z-index: 1000;
-
-        &:before {
-            border-bottom: 7px solid rgba(0, 0, 0, 0.2);
-            border-left: 7px solid transparent;
-            border-right: 7px solid transparent;
-            content: "";
+.navbar {
+    margin-bottom: 0px;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    right: 0px;
+    background-image: none;
+    z-index: 4030;
+    .navbar-inner {
+        border: none;
+        line-height: 0px;
+        background-image: none;
+        box-shadow: none;
+        filter: none;
+        .brand {
+            color: ~"[[setting:themenavcolor]]";
+            vertical-align: middle;
+            text-shadow: none;
+            line-height: @navbarHeight;
+            padding: 0;
+            margin-left: 0px;
+            margin-right: 10px;
+        }
+        
+        ul.nav {
+            margin: 0px;
+        }
+    
+        ul.nav li.dropdown:hover > ul.dropdown-menu {
+            display: block;    
+        }
+        #custom_menu_language,
+        #custom_menu_courses,
+        #custom_menu_themecolours,
+        #custom_menu {
             display: inline-block;
-            position: absolute;
-            left: inherit;
-            right: 12px;
-            top: -7px;
+        }
+        
+        #custom_menu_courses ul.dropdown-menu {
+            max-height: 500px;
+            overflow-y: auto;
         }
 
-        &:after {
-            border-bottom: 6px solid #fff;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            content: "";
-            display: inline-block;
-            left: inherit;
-            right: 13px;
-            position: absolute;
-            top: -6px;
+        .dropdown-menu > li > a:hover,
+        .dropdown-menu > li > a:focus,
+        .dropdown-submenu:hover > a,
+        .dropdown-submenu:focus > a {
+            color: #ffffff;
+            text-decoration: none;
         }
 
-        > li > a {
-            padding: 3px 15px 3px 15px;
-            img {
-                padding: 0px 10px 0px 0px;
+        .dropdown [class^="fa fa-"] {
+            font-size: 1.1em;
+            margin-right: 5px;
+        }
+
+        .open > .dropdown-menu {
+            overflow: visible;
+        }
+
+        .dropdown-menu {
+            z-index: 1001;
+            margin: 0px;
+        }
+        .dropdown-menu > li > a {
+            padding: 3px 25px 3px 15px;
+        }
+
+        .dropdown-menu>li>a:hover {
+            background: none;
+        }
+
+        .nav > li.dropdown a,
+        .nav > li > a {
+            color: ~"[[setting:themenavcolor]]";
+            text-shadow: none;
+            .fa-caret-right:before {
+                margin-left: 5px;
+                content: "\f0da";
             }
-        }
-
-        li {
-            &:hover .msg-title, &:focus .msg-title, &:active .msg-title,
-            &:hover .msg-body, &:focus .msg-body, &:active .msg-body,
-            &:hover .msg-sender, &:focus .msg-sender, &:active .msg-sender {
-                background: transparent;
+            &:hover, &:focus, &.open {
+                background-color: ~"[[setting:themenavcolor]]";
                 color: ~"[[setting:themecolor]]";
-            }
-            &:hover .msg-time, &:focus .msg-time, &:active .msg-time {
-                background: transparent;
-                color: ~"[[setting:themecolor]]";
-                span {
-                    background: transparent;
+                .fa-caret-right {
+                    margin-right: 1px;
+                }
+                .fa-caret-right:before {
+                    margin-left: 5px;
+                    content: "\f0d7";
                 }
             }
         }
 
-        .msg-sender {
+        .nav > li.dropdown ul.dropdown-menu > li > a {
             color: ~"[[setting:themetextcolor]]";
+            &:hover, &:focus, &.open {
+                color: ~"[[setting:themenavcolor]]";
+                background-color: ~"[[setting:themecolor]]";
+            }
         }
-        .msg-time {
-            color: ~"[[setting:themetextcolor]]";
-            padding-left: 3px;
+
+        .messagemenu,
+        .usermenu {
+            float: right;
+        }
+
+        .usermenu {
+            .dropdown {
+                img.userpicture {
+                    vertical-align: top;
+                    width: auto;
+                    height: auto;
+                    max-width: 20px;
+                    max-height: 20px;
+                    border: 1px solid ~"[[setting:themenavcolor]]";
+                    border-radius: 4px;
+                    margin-right: 2px;
+                }
+                a.dropdown-toggle {
+                    padding: 9px 15px;
+                }
+                .dropdown-menu {
+                    i {
+                        margin-right: 5px;
+                    }
+                    hr.sep {
+                        margin: 0px;
+                        height: 0px;
+                        border: none;
+                        border-bottom: 1px dotted ~"[[setting:themecolor]]";
+                    }
+                }
+            }
+        }
+        
+        .messagemenu {
+            ul.nav {
+                > li.dropdown > a > span,
+                > li.dropdown > a > .fa-envelope {
+                    font-size: 16px;
+                }
+                ul.dropdown-menu {
+                    left: auto;
+                    right: 10px;
+                    li > a {
+                        padding: 4px 25px 0px 15px;
+                        border-top: 1px dotted ~"[[setting:themecolor]]";
+                        i {
+                            margin: 0px 5px;
+                        }
+                        .msg-picture {
+                            float: left;
+                            margin-left: -5px;
+                        }
+                        .msg-body {
+                            display: inline-block;
+                            padding-right: 40px;
+                            padding-left: 10px;
+                            span.msg-sender,
+                            span.msg-text,
+                            span.msg-time {
+                                float: left;
+                                width: 100%;
+                            }
+                        }
+                        .msg-text {
+                            font-weight: bold;
+                        }
+                    }
+                    li:first-of-type {
+                        > a {
+                            border-top: none;
+                        }
+                    }
+                }
+                ul.dropdown-menu:before,
+                ul.dropdown-menu:after {
+                    left: auto;
+                    right: 10px;
+                }
+            }
         }
     }
-    &.dropdown.open > .dropdown-menu {
-        overflow: visible;
-        display: block;
-    }
+}
+
+.navbar.oldnavbar,
+.pagelayout-secure .navbar,
+.pagelayout-popup .navbar {
+    position: relative;
+}
+
+.navbar.oldnavbar.affix {
+    position: fixed;
 }

@@ -116,7 +116,7 @@ class theme_essential_core_renderer extends core_renderer {
         return $this->render_custom_menu($custommenu);
     }
         
-    public function render_custom_menu(custom_menu $menu) {
+    protected function render_custom_menu(custom_menu $menu) {
 
         $content = '<ul class="nav">';
         foreach ($menu->get_children() as $item) {
@@ -129,7 +129,7 @@ class theme_essential_core_renderer extends core_renderer {
      * This code renders the custom menu items for the
      * bootstrap dropdown menu.
      */
-    public function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
+    protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
         static $submenucount = 0;
 
         if ($menunode->has_children()) {
@@ -144,6 +144,7 @@ class theme_essential_core_renderer extends core_renderer {
                 $class .= ' langmenu';
             }
             $content = html_writer::start_tag('li', array('class' => $class));
+            
             // If the child has menus render it as a sub menu.
             $submenucount++;
             if ($menunode->get_url() !== null) {
@@ -175,12 +176,14 @@ class theme_essential_core_renderer extends core_renderer {
         return $content;
     }
     
+    /**
+     * Outputs the language menu
+     * @return custom menu object
+     */
     public function custom_menu_language() {
         global $CFG;
         $langmenu = new custom_menu();
-        
-        // TODO: eliminate this duplicated logic, it belongs in core, not
-        // here. See MDL-39565.
+
         $addlangmenu = true;
         $langs = get_string_manager()->get_list_of_translations();
         if (count($langs) < 2
@@ -205,12 +208,12 @@ class theme_essential_core_renderer extends core_renderer {
         return $this->render_custom_menu($langmenu);
     }
 
+    /**
+     * Outputs the courses menu
+     * @return custom menu object
+     */
     public function custom_menu_courses() {
         $coursemenu = new custom_menu();
-        /*
-        * This code replaces adds the current enrolled
-        * courses to the custommenu.
-        */
 
         $hasdisplaymycourses = (empty($this->page->theme->settings->displaymycourses)) ? false : $this->page->theme->settings->displaymycourses;
         if (isloggedin() && !isguestuser() && $hasdisplaymycourses) {
@@ -236,6 +239,7 @@ class theme_essential_core_renderer extends core_renderer {
                 foreach ($courses as $course) {
                     if ($course->visible) {
                         $branch->add('<i class="fa fa-graduation-cap"></i>'.format_string($course->fullname), new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
+                        $numcourses += 1;
                     } else if (has_capability('moodle/course:viewhiddencourses', context_system::instance())) {
                         $branchtitle = format_string($course->shortname);
                         $branchlabel = '<span class="dimmed_text"><i class="fa fa-eye-slash"></i>'.format_string($course->fullname).'</span>';
@@ -249,17 +253,17 @@ class theme_essential_core_renderer extends core_renderer {
                 $noenrolments = get_string('noenrolments', 'theme_essential');
                 $branch->add('<em>'.$noenrolments.'</em>', new moodle_url('#'), $noenrolments);
             }
-            
         }
         return $this->render_custom_menu($coursemenu);
     }
     
+    /**
+     * Outputs the color menu
+     * @return custom menu object
+     */
     public function custom_menu_themecolours() {
         $colourmenu = new custom_menu();
-        
-        /*
-         * This code adds the Theme colors selector to the custommenu.
-         */
+
         if (!isguestuser()) {
             $alternativethemes = array();
             foreach (range(1, 3) as $alternativethemenumber) {
@@ -291,6 +295,10 @@ class theme_essential_core_renderer extends core_renderer {
         return $this->render_custom_menu($colourmenu);
     }
 
+    /**
+     * Outputs the messages menu
+     * @return custom menu object
+     */
     public function custom_menu_messages() {
         global $USER;
         $messagemenu = new custom_menu();
@@ -330,17 +338,16 @@ class theme_essential_core_renderer extends core_renderer {
                 }
                 $senderpicture = new user_picture($message->from);
                 $senderpicture->link = false;
-                $senderpicture = $this->render($senderpicture);
+                $senderpicture->size = 60;
 
-                $messagecontent = $senderpicture;
+                $messagecontent = html_writer::start_span('msg-picture').$this->render($senderpicture).html_writer::end_span();
                 $messagecontent .= html_writer::start_span('msg-body');
-                $messagecontent .= html_writer::start_span('msg-title');
-                $messagecontent .= html_writer::span($message->from->firstname . ': ', 'msg-sender');
-                $messagecontent .= $message->text;
-                $messagecontent .= html_writer::end_span();
+                $messagecontent .= html_writer::span($message->from->firstname, 'msg-sender');
+                $messagecontent .= html_writer::span($message->text, 'msg-text');
                 $messagecontent .= html_writer::start_span('msg-time');
-                $messagecontent .= html_writer::tag('i', '', array('class' => 'icon-time'));
-                $messagecontent .= html_writer::span($message->date);
+                $messagecontent .= html_writer::tag('i', '', array('class' => 'fa fa-comments'));
+                $messagecontent .= html_writer::span($this->get_time_difference($message->date));
+                $messagecontent .= html_writer::end_span();
                 $messagecontent .= html_writer::end_span();
 
                 $messageurl = new moodle_url('/message/index.php', array('user1' => $USER->id, 'user2' => $message->from->id));
@@ -350,27 +357,7 @@ class theme_essential_core_renderer extends core_renderer {
 
         return $this->render_custom_menu($messagemenu);
     }
-
-    protected function process_user_messages() {
-        $messagelist = array();
-
-        foreach ($usermessages as $message) {
-            $cleanmsg = new stdClass();
-            $cleanmsg->from = fullname($message);
-            $cleanmsg->msguserid = $message->id;
-
-            $userpicture = new user_picture($message);
-            $userpicture->link = false;
-            $picture = $this->render($userpicture);
-
-            $cleanmsg->text = $picture . ' ' . $cleanmsg->text;
-
-            $messagelist[] = $cleanmsg;
-        }
-
-        return $messagelist;
-    }
-
+    
     protected function get_user_messages() {
         global $USER, $DB;
         $messagelist = array();
@@ -382,12 +369,12 @@ class theme_essential_core_renderer extends core_renderer {
         $newmessages = $DB->get_records_sql($newmessagesql, array('userid' => $USER->id));
 
         foreach ($newmessages as $message) {
-            $messagelist[] = $this->essential_process_message($message);
+            $messagelist[] = $this->process_message($message);
         }
 
         $showoldmessages = (empty($this->page->theme->settings->showoldmessages)) ? false : $this->page->theme->settings->showoldmessages;
         if ($showoldmessages == 2) {
-            $maxmessages = 5;
+            $maxmessages = 10;
             $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
                                  FROM {message_read}
                                 WHERE useridto = :userid
@@ -397,7 +384,7 @@ class theme_essential_core_renderer extends core_renderer {
             $readmessages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id));
 
             foreach ($readmessages as $message) {
-                $messagelist[] = $this->essential_process_message($message);
+                $messagelist[] = $this->process_message($message);
             }
         }
 
@@ -405,7 +392,7 @@ class theme_essential_core_renderer extends core_renderer {
 
     }
 
-    protected function essential_process_message($message) {
+    protected function process_message($message) {
         global $DB;
         $messagecontent = new stdClass();
 
@@ -421,28 +408,90 @@ class theme_essential_core_renderer extends core_renderer {
                 $messagecontent->text = $message->smallmessage;
             }
         }
-
-        if ((time() - $message->timecreated ) <= (3600 * 3)) {
-            $messagecontent->date = format_time(time() - $message->timecreated);
-        } else {
-            $messagecontent->date = userdate($message->timecreated, get_string('strftimetime', 'langconfig'));
-        }
+        
+        $messagecontent->date = strtotime(userdate($message->timecreated));
         $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom));
 
         return $messagecontent;
     }
+    
+    protected function get_time_difference($created_time) {
+        $today = usertime(time());
 
-    public function theme_essential_menu_user() {
+        // It returns the time difference in Seconds...
+        $time_difference = $today-$created_time;
+
+        // To Calculate the time difference in Years...
+        $years = 60*60*24*365;
+
+        // To Calculate the time difference in Months...
+        $months = 60*60*24*30;
+
+        // To Calculate the time difference in Days...
+        $days = 60*60*24;
+
+        // To Calculate the time difference in Hours...
+        $hours = 60*60;
+
+        // To Calculate the time difference in Minutes...
+        $minutes = 60;
+
+        if(intval($time_difference/$years) > 1)
+        {
+            return intval($time_difference/$years)." years ago";
+        }else if(intval($time_difference/$years) > 0)
+        {
+            return intval($time_difference/$years)." year ago";
+        }else if(intval($time_difference/$months) > 1)
+        {
+            return intval($time_difference/$months)." months ago";
+        }else if(intval(($time_difference/$months)) > 0)
+        {
+            return intval(($time_difference/$months))." month ago";
+        }else if(intval(($time_difference/$days)) > 1)
+        {
+            return intval(($time_difference/$days))." days ago";
+        }else if (intval(($time_difference/$days)) > 0) 
+        {
+            return intval(($time_difference/$days))." day ago";
+        }else if (intval(($time_difference/$hours)) > 1) 
+        {
+            return intval(($time_difference/$hours))." hours ago";
+        }else if (intval(($time_difference/$hours)) > 0) 
+        {
+            return intval(($time_difference/$hours))." hour ago";
+        }else if (intval(($time_difference/$minutes)) > 1) 
+        {
+            return intval(($time_difference/$minutes))." minutes ago";
+        }else if (intval(($time_difference/$minutes)) > 0) 
+        {
+            return intval(($time_difference/$minutes))." minute ago";
+        }else if (intval(($time_difference)) > 1) 
+        {
+            return intval(($time_difference))." seconds ago";
+        }else
+        {
+            return "few seconds ago";
+        }
+    }
+    
+    /**
+     * Outputs the messages menu
+     * @return custom menu object
+     */
+    public function custom_menu_user() {
         global $USER, $CFG, $DB, $SESSION;
         $loginurl = get_login_url();
         
-        $usermenu  = html_writer::start_tag('ul', array('class' => 'nav usermenu'));
+        $usermenu  = html_writer::start_tag('ul', array('class' => 'nav'));
         $usermenu .= html_writer::start_tag('li', array('class' => 'dropdown'));
         
         if (isloggedin() && !isguestuser()) {
-            $userpic    = parent::user_picture($USER, array('link' => false, 'size' => '36'));
+            $userurl    = new moodle_url('/user/profile.php?id='.$USER->id);
+            $userpic    = parent::user_picture($USER, array('link' => false));
+            $caret      = '<i class="fa fa-caret-right"></i>';
             $userclass  = array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown');
-            $usermenu  .= html_writer::link(new moodle_url('#'), $userpic, $userclass);
+            $usermenu  .= html_writer::link($userurl, $userpic.$USER->firstname.$caret, $userclass);
             
             $usermenu  .= html_writer::start_tag('ul', array('class' => 'dropdown-menu pull-right'));
 
@@ -528,43 +577,18 @@ class theme_essential_core_renderer extends core_renderer {
                 $branchurl   = new moodle_url($CFG->supportpage);
                 $usermenu .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel, array('target' => '_blank')));
             }
+            
+            $usermenu .= html_writer::end_tag('ul');
 
         } else {
             $userpic    = '<em><i class="fa fa-sign-in"></i>'.get_string('login').'</em>';
             $usermenu  .= html_writer::link($loginurl, $userpic, array('class' => 'loginurl'));
         }
         
-        $usermenu .= html_writer::end_tag('ul');
         $usermenu .= html_writer::end_tag('li');
+        $usermenu .= html_writer::end_tag('ul');
         
         return $usermenu;
-    }
-
-    protected function theme_essential_process_message($message) {
-        global $DB;
-        $messagecontent = new stdClass();
-
-        if ($message->notification) {
-            $messagecontent->text = get_string('unreadnewnotification', 'message');
-        } else {
-            if ($message->fullmessageformat == FORMAT_HTML) {
-                $message->smallmessage = html_to_text($message->smallmessage);
-            }
-            if (core_text::strlen($message->smallmessage) > 15) {
-                $messagecontent->text = core_text::substr($message->smallmessage, 0, 15).'...';
-            } else {
-                $messagecontent->text = $message->smallmessage;
-            }
-        }
-
-        if ((time() - $message->timecreated ) <= (3600 * 3)) {
-            $messagecontent->date = format_time(time() - $message->timecreated);
-        } else {
-            $messagecontent->date = userdate($message->timecreated, get_string('strftimetime', 'langconfig'));
-        }
-        $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom));
-
-        return $messagecontent;
     }
 
     /**
@@ -613,7 +637,7 @@ class theme_essential_core_renderer extends core_renderer {
     }
     
     /*
-    * This code replaces the icons in the Admin block with
+    * This code replaces icons in with
     * FontAwesome variants where available.
     */
     
@@ -657,7 +681,7 @@ class theme_essential_core_renderer extends core_renderer {
             'i/user' => 'user',
             'i/users' => 'user',
             't/right' => 'arrow-right',
-            't/left' => 'arrow-left',
+            't/left' => 'arrow-left'
         );
         if (isset($icons[$name])) {
             return "<i class=\"fa fa-$icons[$name]\" id=\"icon\"></i>";
@@ -667,27 +691,6 @@ class theme_essential_core_renderer extends core_renderer {
     }
     
     
-    
-    /**
-    * Get the HTML for blocks in the given region.
-    *
-    * @since 2.5.1 2.6
-    * @param string $region The region to get HTML for.
-    * @return string HTML.
-    * Written by G J Barnard
-    */
-    
-    public function essentialblocks($region, $classes = array(), $tag = 'aside') {
-        $classes = (array)$classes;
-        $classes[] = 'block-region';
-        $attributes = array(
-            'id' => 'block-region-'.preg_replace('#[^a-zA-Z0-9_\-]+#', '-', $region),
-            'class' => join(' ', $classes),
-            'data-blockregion' => $region,
-            'data-droptarget' => '1'
-        );
-        return html_writer::tag($tag, $this->blocks_for_region($region), $attributes);
-    }
     
     /**
     * Returns HTML to display a "Turn editing on/off" button in a form.

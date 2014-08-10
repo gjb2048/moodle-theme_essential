@@ -388,22 +388,6 @@ defined('MOODLE_INTERNAL') || die;
     
     /* Header Settings */
     $temp = new admin_settingpage('theme_essential_header', get_string('headerheading', 'theme_essential'));
-
-    /* Dashboard Menu Settings */
-    $name = 'theme_essential/mydashboardinfo';
-    $heading = get_string('mydashboardinfo', 'theme_essential');
-    $information = get_string('mydashboardinfodesc', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
-    
-    // Toggle dashboard display in custommenu.
-    $name = 'theme_essential/displaymydashboard';
-    $title = get_string('displaymydashboard', 'theme_essential');
-    $description = get_string('displaymydashboarddesc', 'theme_essential');
-    $default = true;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
     
     /* Course Menu Settings */
     $name = 'theme_essential/mycoursesinfo';
@@ -602,175 +586,6 @@ defined('MOODLE_INTERNAL') || die;
     
     $ADMIN->add('theme_essential', $temp);
  
-    /* Slideshow Widget Settings */
-    $temp = new admin_settingpage('theme_essential_slideshow', get_string('slideshowheading', 'theme_essential'));
-    $temp->add(new admin_setting_heading('theme_essential_slideshow', get_string('slideshowheadingsub', 'theme_essential'),
-            format_text(get_string('slideshowdesc' , 'theme_essential'), FORMAT_MARKDOWN)));
-
-    // Toggle Slideshow.
-    $name = 'theme_essential/toggleslideshow';
-    $title = get_string('toggleslideshow' , 'theme_essential');
-    $description = get_string('toggleslideshowdesc', 'theme_essential');
-    $alwaysdisplay = get_string('alwaysdisplay', 'theme_essential');
-    $displaybeforelogin = get_string('displaybeforelogin', 'theme_essential');
-    $displayafterlogin = get_string('displayafterlogin', 'theme_essential');
-    $dontdisplay = get_string('dontdisplay', 'theme_essential');
-    $default = '1';
-    $choices = array('1'=>$alwaysdisplay, '2'=>$displaybeforelogin, '3'=>$displayafterlogin, '0'=>$dontdisplay);
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
-    // Number of slides.
-    $name = 'theme_essential/numberofslides';
-    $title = get_string('numberofslides', 'theme_essential');
-    $description = get_string('numberofslides_desc', 'theme_essential');
-    $default = 4;
-    $choices = array(
-        1 => '1',
-        2 => '2',
-        3 => '3',
-        4 => '4',
-        5 => '5',
-        6 => '6',
-        7 => '7',
-        8 => '8',
-        9 => '9',
-        10 => '10',
-        11 => '11',
-        12 => '12',
-        13 => '13',
-        14 => '14',
-        15 => '15',
-        16 => '16'
-    );
-    $temp->add(new admin_setting_configselect($name, $title, $description, $default, $choices));
-
-    // Hide slideshow on phones.
-    $name = 'theme_essential/hideontablet';
-    $title = get_string('hideontablet' , 'theme_essential');
-    $description = get_string('hideontabletdesc', 'theme_essential');
-    $default = false;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
-    // Hide slideshow on tablet.
-    $name = 'theme_essential/hideonphone';
-    $title = get_string('hideonphone' , 'theme_essential');
-    $description = get_string('hideonphonedesc', 'theme_essential');
-    $default = true;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Slide interval.
-    $name = 'theme_essential/slideinterval';
-    $title = get_string('slideinterval', 'theme_essential');
-    $description = get_string('slideintervaldesc', 'theme_essential');
-    $default = '5000';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Slide Text colour setting.
-    $name = 'theme_essential/slidecolor';
-    $title = get_string('slidecolor', 'theme_essential');
-    $description = get_string('slidecolordesc', 'theme_essential');
-    $default = '#ffffff';
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Show caption below the image.
-    $name = 'theme_essential/slidecaptionbelow';
-    $title = get_string('slidecaptionbelow' , 'theme_essential');
-    $description = get_string('slidecaptionbelowdesc', 'theme_essential');
-    $default = false;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Slide button colour setting.
-    $name = 'theme_essential/slidebuttoncolor';
-    $title = get_string('slidebuttoncolor', 'theme_essential');
-    $description = get_string('slidebuttoncolordesc', 'theme_essential');
-    $default = '#30add1';
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Slide button hover colour setting.
-    $name = 'theme_essential/slidebuttonhovercolor';
-    $title = get_string('slidebuttonhovercolor', 'theme_essential');
-    $description = get_string('slidebuttonhovercolordesc', 'theme_essential');
-    $default = '#45b5d6';
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $numberofslides = get_config('theme_essential', 'numberofslides');
-    for ($i = 1; $i <= $numberofslides; $i++) {
-        // This is the descriptor for Slide One
-        $name = 'theme_essential/slide'.$i.'info';
-        $heading = get_string('slideno', 'theme_essential', array('slide' => $i));
-        $information = get_string('slidenodesc', 'theme_essential', array('slide' => $i));
-        $setting = new admin_setting_heading($name, $heading, $information);
-        $temp->add($setting);
-
-        // Title.
-        $name = 'theme_essential/slide'.$i;
-        $title = get_string('slidetitle', 'theme_essential');
-        $description = get_string('slidetitledesc', 'theme_essential');
-        $default = '';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
-        $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
-
-        // Image.
-        $name = 'theme_essential/slide'.$i.'image';
-        $title = get_string('slideimage', 'theme_essential');
-        $description = get_string('slideimagedesc', 'theme_essential');
-        $setting = new admin_setting_configstoredfile($name, $title, $description, 'slide'.$i.'image');
-        $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
-
-        // Caption text.
-        $name = 'theme_essential/slide'.$i.'caption';
-        $title = get_string('slidecaption', 'theme_essential');
-        $description = get_string('slidecaptiondesc', 'theme_essential');
-        $default = '';
-        $setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_TEXT);
-        $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
-
-        // URL.
-        $name = 'theme_essential/slide'.$i.'url';
-        $title = get_string('slideurl', 'theme_essential');
-        $description = get_string('slideurldesc', 'theme_essential');
-        $default = '';
-        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
-        $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
-
-        // URL target.
-        $name = 'theme_essential/slide'.$i.'target';
-        $title = get_string('slideurltarget' , 'theme_essential');
-        $description = get_string('slideurltargetdesc', 'theme_essential');
-        $target1 = get_string('slideurltargetself', 'theme_essential');
-        $target2 = get_string('slideurltargetnew', 'theme_essential');
-        $target3 = get_string('slideurltargetparent', 'theme_essential');
-        $default = 'target1';
-        $choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
-        $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-        $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
-    }
-    $ADMIN->add('theme_essential', $temp);
-    
     $temp = new admin_settingpage('theme_essential_frontcontent', get_string('frontcontentheading', 'theme_essential'));
     $temp->add(new admin_setting_heading('theme_essential_frontcontent', get_string('frontcontentheadingsub', 'theme_essential'),
             format_text(get_string('frontcontentdesc' , 'theme_essential'), FORMAT_MARKDOWN)));
@@ -1052,7 +867,175 @@ defined('MOODLE_INTERNAL') || die;
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+
+    /* Slideshow Widget Settings */
+    $temp = new admin_settingpage('theme_essential_slideshow', get_string('slideshowheading', 'theme_essential'));
+    $temp->add(new admin_setting_heading('theme_essential_slideshow', get_string('slideshowheadingsub', 'theme_essential'),
+            format_text(get_string('slideshowdesc' , 'theme_essential'), FORMAT_MARKDOWN)));
+
+    // Toggle Slideshow.
+    $name = 'theme_essential/toggleslideshow';
+    $title = get_string('toggleslideshow' , 'theme_essential');
+    $description = get_string('toggleslideshowdesc', 'theme_essential');
+    $alwaysdisplay = get_string('alwaysdisplay', 'theme_essential');
+    $displaybeforelogin = get_string('displaybeforelogin', 'theme_essential');
+    $displayafterlogin = get_string('displayafterlogin', 'theme_essential');
+    $dontdisplay = get_string('dontdisplay', 'theme_essential');
+    $default = '1';
+    $choices = array('1'=>$alwaysdisplay, '2'=>$displaybeforelogin, '3'=>$displayafterlogin, '0'=>$dontdisplay);
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
     
+    // Number of slides.
+    $name = 'theme_essential/numberofslides';
+    $title = get_string('numberofslides', 'theme_essential');
+    $description = get_string('numberofslides_desc', 'theme_essential');
+    $default = 4;
+    $choices = array(
+        1 => '1',
+        2 => '2',
+        3 => '3',
+        4 => '4',
+        5 => '5',
+        6 => '6',
+        7 => '7',
+        8 => '8',
+        9 => '9',
+        10 => '10',
+        11 => '11',
+        12 => '12',
+        13 => '13',
+        14 => '14',
+        15 => '15',
+        16 => '16'
+    );
+    $temp->add(new admin_setting_configselect($name, $title, $description, $default, $choices));
+
+    // Hide slideshow on phones.
+    $name = 'theme_essential/hideontablet';
+    $title = get_string('hideontablet' , 'theme_essential');
+    $description = get_string('hideontabletdesc', 'theme_essential');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // Hide slideshow on tablet.
+    $name = 'theme_essential/hideonphone';
+    $title = get_string('hideonphone' , 'theme_essential');
+    $description = get_string('hideonphonedesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Slide interval.
+    $name = 'theme_essential/slideinterval';
+    $title = get_string('slideinterval', 'theme_essential');
+    $description = get_string('slideintervaldesc', 'theme_essential');
+    $default = '5000';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Slide Text colour setting.
+    $name = 'theme_essential/slidecolor';
+    $title = get_string('slidecolor', 'theme_essential');
+    $description = get_string('slidecolordesc', 'theme_essential');
+    $default = '#ffffff';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Show caption below the image.
+    $name = 'theme_essential/slidecaptionbelow';
+    $title = get_string('slidecaptionbelow' , 'theme_essential');
+    $description = get_string('slidecaptionbelowdesc', 'theme_essential');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Slide button colour setting.
+    $name = 'theme_essential/slidebuttoncolor';
+    $title = get_string('slidebuttoncolor', 'theme_essential');
+    $description = get_string('slidebuttoncolordesc', 'theme_essential');
+    $default = '#30add1';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Slide button hover colour setting.
+    $name = 'theme_essential/slidebuttonhovercolor';
+    $title = get_string('slidebuttonhovercolor', 'theme_essential');
+    $description = get_string('slidebuttonhovercolordesc', 'theme_essential');
+    $default = '#45b5d6';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $numberofslides = get_config('theme_essential', 'numberofslides');
+    for ($i = 1; $i <= $numberofslides; $i++) {
+        // This is the descriptor for Slide One
+        $name = 'theme_essential/slide'.$i.'info';
+        $heading = get_string('slideno', 'theme_essential', array('slide' => $i));
+        $information = get_string('slidenodesc', 'theme_essential', array('slide' => $i));
+        $setting = new admin_setting_heading($name, $heading, $information);
+        $temp->add($setting);
+
+        // Title.
+        $name = 'theme_essential/slide'.$i;
+        $title = get_string('slidetitle', 'theme_essential');
+        $description = get_string('slidetitledesc', 'theme_essential');
+        $default = '';
+        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        // Image.
+        $name = 'theme_essential/slide'.$i.'image';
+        $title = get_string('slideimage', 'theme_essential');
+        $description = get_string('slideimagedesc', 'theme_essential');
+        $setting = new admin_setting_configstoredfile($name, $title, $description, 'slide'.$i.'image');
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        // Caption text.
+        $name = 'theme_essential/slide'.$i.'caption';
+        $title = get_string('slidecaption', 'theme_essential');
+        $description = get_string('slidecaptiondesc', 'theme_essential');
+        $default = '';
+        $setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_TEXT);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        // URL.
+        $name = 'theme_essential/slide'.$i.'url';
+        $title = get_string('slideurl', 'theme_essential');
+        $description = get_string('slideurldesc', 'theme_essential');
+        $default = '';
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        // URL target.
+        $name = 'theme_essential/slide'.$i.'target';
+        $title = get_string('slideurltarget' , 'theme_essential');
+        $description = get_string('slideurltargetdesc', 'theme_essential');
+        $target1 = get_string('slideurltargetself', 'theme_essential');
+        $target2 = get_string('slideurltargetnew', 'theme_essential');
+        $target3 = get_string('slideurltargetparent', 'theme_essential');
+        $default = 'target1';
+        $choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+        $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+    }
+    $ADMIN->add('theme_essential', $temp);
 
     /* User Alerts */
     $temp->add(new admin_setting_heading('theme_essential_alerts', get_string('alertsheadingsub', 'theme_essential'),
