@@ -56,8 +56,8 @@ echo $OUTPUT->doctype() ?>
         <div id="page-content" class="row-fluid">
             <section id="<?php echo $regionbsid;?>" class="span9<?php if ($left) { echo ' pull-right'; } ?>">
                 <div id="page-navbar" class="clearfix">
-                    <div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
-                    <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
+                    <div class="breadcrumb-nav span10 pull-left"><?php echo $OUTPUT->navbar(); ?></div>
+                    <nav class="breadcrumb-button pull-right"><?php echo $OUTPUT->page_heading_button(); ?></nav>
                 </div>
                 
                 <?php

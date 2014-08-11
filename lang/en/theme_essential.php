@@ -86,9 +86,6 @@ $string['layoutdesc'] = 'This theme is designed to put both block columns on the
 $string['oldnavbar'] = 'Use the old navbar position';
 $string['oldnavbardesc'] = 'Enable this option to use the old navbar position.';
 
-$string['frontpageblocks'] = 'Frontpage blocks alignment';
-$string['frontpageblocksdesc'] = 'Here you can determine if the blocks on the frontpage align to the left or the right.';
-
 $string['left'] = 'Left';
 $string['right'] = 'Right';
 
@@ -222,18 +219,20 @@ $string['enablealternativethemecolors'] = 'Enable alternative theme colours {$a}
 $string['enablealternativethemecolorsdesc'] = 'If enabled, the user will be able to choose the alternative theme colours {$a}.';
 
 /* Frontpage Settings */
-$string['frontcontentheading'] = 'Front page';
-$string['frontcontentheadingsub'] = 'Change what features you wish enabled on your Moodle front page';
+$string['frontpageheading'] = 'Front page';
+$string['frontpageheadingdesc'] = 'Configure here what additional items you want to show on the front page.';
 
-$string['frontcontentdesc'] = 'This adds a custom content area in between the slide show and the Marketing boxes for your own custom content.';
-$string['togglefrontcontent'] = 'Enable front page content';
-$string['togglefrontcontentdesc'] = 'If enabled this will display the content of the box below in between the slide show and the Marketing spots.';
-
-$string['frontcontentarea'] = 'Front page content';
+$string['frontcontentheading'] = 'Front page content area';
+$string['frontcontent'] = 'Enable front page content area';
+$string['frontcontentdesc'] = 'If enabled this adds a custom content area between the Slide show and the Marketing boxes for your own custom content.';
+$string['frontcontentarea'] = 'Front page content area contents';
 $string['frontcontentareadesc'] = 'Whatever is typed into this box will display across the full width of the page in between the slide show and the Marketing spots.';
 
-$string['frontpagemiddleblocks'] = 'Enable front page middle blocks';
-$string['frontpagemiddleblocksdesc'] = 'If enabled this will display three new block locations just under the marketing spots.';
+$string['frontpageblocksheading'] = 'Front page blocks';
+$string['frontpageblocks'] = 'Frontpage blocks alignment';
+$string['frontpageblocksdesc'] = 'Here you can determine if the standard Moodle blocks on the frontpage align to the left or the right.';
+$string['frontpagemiddleblocks'] = 'Enable additional front page middle blocks';
+$string['frontpagemiddleblocksdesc'] = 'If enabled this will display three additional block locations just under the marketing spots.';
 
 /* Slideshow */
 $string['slideshowheading'] = 'Slide show';

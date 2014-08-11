@@ -25,7 +25,6 @@
  */
  
 ?>
-
 <header role="banner">
     <div id="page-header" class="clearfix<?php echo ($oldnavbar)? ' oldnavbar': '';?>">
         <div class="container-fluid">
@@ -95,7 +94,6 @@
             </div>
         </div>
     </div>
-
     <nav role="navigation">
         <div class="navbar<?php echo ($oldnavbar)? ' oldnavbar': '';?>">
             <div class="container-fluid navbar-inner">
@@ -119,7 +117,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="userarea pull-right">
+                    <div class="pull-right">
                         <div class="usermenu">
                             <?php echo $OUTPUT->custom_menu_user(); ?>
                         </div>

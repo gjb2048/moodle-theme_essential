@@ -56,8 +56,8 @@ echo $OUTPUT->doctype() ?>
         <div id="page-content" class="row-fluid">
             <section id="region-main" class="span12">
                 <div id="page-navbar" class="clearfix">
-                    <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-                    <div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
+                    <div class="breadcrumb-nav span10 pull-left"><?php echo $OUTPUT->navbar(); ?></div>
+                    <nav class="breadcrumb-button pull-right"><?php echo $OUTPUT->page_heading_button(); ?></nav>
                 </div>
                 <?php
                 echo $OUTPUT->course_content_header();

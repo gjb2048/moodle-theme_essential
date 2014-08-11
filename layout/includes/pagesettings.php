@@ -47,16 +47,22 @@ if (!empty($PAGE->theme->settings->pagewidth)) {
         case 100:
             $bodyclasses[] = 'pagewidthvariable';
             break;
-        case 1200:
+        case 960:
             $bodyclasses[] = 'pagewidthnarrow';
             break;
-        case 1600:
+        case 1200:
+            $bodyclasses[] = 'pagewidthnormal';
+            break;
+        case 1400:
             $bodyclasses[] = 'pagewidthwide';
             break;
     }
 }
 if (!empty($CFG->custommenuitems)) {
     $bodyclasses[] = 'custommenuitems';
+}
+if (!empty($PAGE->theme->settings->enablecategoryicon)) {
+    $bodyclasses[] = 'categoryicons';
 }
 
 if (right_to_left()) {

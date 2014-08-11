@@ -62,6 +62,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
                 $classes[] = 'with_children';
             }
         }
+        $classes[] = 'essentialcats';
 
         // Make sure JS file to expand category content is included.
         $this->coursecat_include_js();
@@ -86,14 +87,12 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         // Do a settings check to output our icon for the category
         if(!empty($PAGE->theme->settings->enablecategoryicon)) {
             if(!empty($PAGE->theme->settings->$categoryiconnum) && 
-			   !empty($PAGE->theme->settings->enablecustomcategoryicon)) {
+               !empty($PAGE->theme->settings->enablecustomcategoryicon)) {
                 // User has set a value for the category
                 $val = $PAGE->theme->settings->$categoryiconnum;
             } else {
                 // User hasn't set a value for the category, get the default
-                if(!empty($PAGE->theme->settings->defaultcategoryicon)) {
-                    $val = $PAGE->theme->settings->defaultcategoryicon;
-                }
+                $val = $PAGE->theme->settings->defaultcategoryicon;
             }
         }
         if(!empty($val)) {
@@ -118,8 +117,6 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         $content .= html_writer::tag('div', $categorycontent, array('class' => 'content'));
 
         $content .= html_writer::end_tag('div'); // .category
-
-        // Return the course category tree HTML
         return $content;
     }
 }

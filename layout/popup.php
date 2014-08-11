@@ -62,10 +62,14 @@ echo $OUTPUT->doctype() ?>
             </a>
             <div class="nav-collapse collapse">
                 <?php echo $OUTPUT->custom_menu(); ?>
-                <ul class="nav pull-right">
-                    <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-                    <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
-                </ul>
+                <div class="pull-right">
+                    <div class="usermenu">
+                        <?php echo $OUTPUT->custom_menu_user(); ?>
+                    </div>
+                    <div class="messagemenu">
+                        <?php echo $OUTPUT->custom_menu_messages(); ?>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -75,8 +79,8 @@ echo $OUTPUT->doctype() ?>
 
     <header id="page-header" class="clearfix">
         <div id="page-navbar" class="clearfix">
-            <nav class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></nav>
-            <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
+            <div class="breadcrumb-nav span10 pull-left"><?php echo $OUTPUT->navbar(); ?></div>
+            <nav class="breadcrumb-button pull-right"><?php echo $OUTPUT->page_heading_button(); ?></nav>
         </div>
         <?php echo $OUTPUT->page_heading(); ?>
         <div id="course-header">

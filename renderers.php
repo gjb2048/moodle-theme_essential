@@ -23,8 +23,10 @@
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
+ 
 require_once('renderers/core_renderer.php');
 require_once('renderers/core_renderer_maintenance.php');
-require_once('renderers/course_renderer.php');
+if(get_config('enablecategoryicon')) {
+    require_once('renderers/course_renderer.php');
+}
 require_once('renderers/format_topics_renderer.php');
