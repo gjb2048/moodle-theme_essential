@@ -15,6 +15,10 @@ Cool things to know about the theme.
  - The entire colour scheme can be modified with theme settings (like on [Rocket](https://moodle.org/plugins/view.php?plugin=theme_rocket))
  - The homepage main area is just a label. The theme will ship with custom classes that you can set for tables and links to modify their formatting. No knowledge of code is needed as you can use the text editor to do this. Documentation will be provided outlining what the additional classes are.
  
+ New in 2.5.6
+========================
+- Added standard 3 different column layout, and applied the one without blocks to base layout to fix issues with overflow
+ 
 New in 2.5.5
 ========================
 - Added ability to select from 21 preset Google Font combinations or disable their use completely.

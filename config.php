@@ -52,9 +52,9 @@ $THEME->plugins_exclude_sheets = array(
 $THEME->layouts = array(
     // Most backwards compatible layout without the blocks - this is the layout used by default
     'base' => array(
-        'file' => 'general.php',
-        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-post',
+        'file' => 'columns1.php',
+        'regions' => array('footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
+        'defaultregion' => 'hidden-dock',
     ),
     // Front page.
     'frontpage' => array(
@@ -65,39 +65,39 @@ $THEME->layouts = array(
     ),
     // Standard layout with blocks, this is recommended for most pages with general information.
     'standard' => array(
-        'file' => 'general.php',
+        'file' => 'columns2.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
         'defaultregion' => 'side-post',
     ),
     // Course page.
     'course' => array(
-        'file' => 'course.php',
+        'file' => 'columns3.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-post',
          'options' => array('nonavbar'=>false),
     ),
     // Page content and modules.
     'incourse' => array(
-        'file' => 'general.php',
+        'file' => 'columns2.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-post',
     ),
     // Category listing page.
     	'coursecategory' => array(
-        'file' => 'general.php',
+        'file' => 'columns2.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-post',
     ),
     // My dashboard page.
     'mydashboard' => array(
-        'file' => 'general.php',
+        'file' => 'columns2.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-post',
         'options' => array('langmenu'=>true),
     ),
     // My public page.
     'mypublic' => array(
-        'file' => 'general.php',
+        'file' => 'columns2.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-post',
         'options' => array('langmenu'=>true),

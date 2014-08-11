@@ -130,16 +130,8 @@ echo $OUTPUT->doctype() ?>
                         ?>
                     </section>
                 </div>
-                <?php 
-                if ($hasboringlayout) {
-					echo $OUTPUT->essentialblocks($pre, $blockclass.' desktop-first-column'); 
-				} else {
-					echo $OUTPUT->essentialblocks($pre, $blockclass.' pull-right');
-				}
-				?>
             </div>
         </div>
-        <?php echo $OUTPUT->essentialblocks($post, 'span3'); ?>
     </div>
 </div>
 <!-- End Main Regions --> 
