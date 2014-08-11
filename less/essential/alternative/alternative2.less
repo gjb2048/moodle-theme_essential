@@ -47,9 +47,9 @@ body.essential-colours-alternative2 {
             li {
                 a {
                     color: ~"[[setting:alternativethemetextcolor2]]";
-                }
-                a:hover {
-                    color: ~"[[setting:alternativethemehovercolor2]]";
+                    &:hover {
+                        color: ~"[[setting:alternativethemehovercolor2]]";
+                    }
                 }
             }
         }
@@ -63,12 +63,8 @@ body.essential-colours-alternative2 {
         color: ~"[[setting:alternativethemehovercolor2]]";
     }
 
-
     #page-header {
-        h1#title {
-            color: ~"[[setting:alternativethemecolor2]]";
-        }
-        #headerlogo {
+        h1#title, #headerlogo {
             color: ~"[[setting:alternativethemecolor2]]";
         }
     }
@@ -77,35 +73,80 @@ body.essential-colours-alternative2 {
         border-right-color: ~"[[setting:alternativethemecolor2]]";
     }
 
-    .breadcrumb-button input[type="submit"] {
-        background: ~"[[setting:alternativethemecolor2]]";
-    }
-
-    .breadcrumb-button input[type="submit"]:hover {
-        background: ~"[[setting:alternativethemehovercolor2]]";
-    }
-
-    a.website:hover,
-    a.website:focus {
-        background-color: ~"[[setting:alternativethemecolor2]]";
-    }
-
-    .navbar .messagemenu .nav > li > .dropdown-menu {
-        li {
-            &:hover .msg-title, &:focus .msg-title, &:active .msg-title,
-            &:hover .msg-body, &:focus .msg-body, &:active .msg-body,
-            &:hover .msg-sender, &:focus .msg-sender, &:active .msg-sender {
-                color: ~"[[setting:alternativethemecolor2]]";
-            }
-            &:hover .msg-time, &:focus .msg-time, &:active .msg-time {
-                color: ~"[[setting:alternativethemecolor2]]";
+    .breadcrumb-button {
+        input[type="submit"] {
+            background: ~"[[setting:alternativethemecolor2]]";
+            &:hover {
+                background: ~"[[setting:alternativethemehovercolor2]]";
             }
         }
-        .msg-sender {
-            color: ~"[[setting:alternativethemetextcolor2]]";
+    }
+
+    a.website {
+        &:hover, &:focus {
+            background-color: ~"[[setting:alternativethemecolor2]]";
         }
-        .msg-time {
-            color: ~"[[setting:alternativethemetextcolor2]]";
+    }
+
+    .navbar {
+        background-color: ~"[[setting:alternativethemecolor2]]" !important;
+
+        .navbar-inner {
+            border-top-color: ~"[[setting:alternativethemehovercolor2]]" !important;
+            border-bottom: 1px solid ~"[[setting:alternativethemehovercolor2]]" !important;
+            background-color: ~"[[setting:alternativethemecolor2]]" !important;
+            .nav {
+                border-right-color: ~"[[setting:alternativethemehovercolor2]]";
+                > li > a {
+                    border-left-color: ~"[[setting:alternativethemehovercolor2]]";
+                    &:hover {
+                        background: ~"[[setting:alternativethemehovercolor2]]" !important;
+                    }
+                }
+                > li.dropdown ul.dropdown-menu > li > a {
+                    color: ~"[[setting:alternativethemetextcolor2]]";
+                    &:hover, &:focus, &.open {
+                        color: ~"[[setting:themenavcolor]]";
+                        background-color: ~"[[setting:alternativethemecolor2]]";
+                    }
+                }
+            }
+        }
+
+        .nav-collapse {
+            border-color: ~"[[setting:alternativethemecolor2]]";
+        }
+
+        .nav .active > a,
+        .nav .active > a:hover,
+        .nav .active > a:focus,
+        .nav li.dropdown.open > .dropdown-toggle,
+        .nav li.dropdown.active > .dropdown-toggle,
+        .nav li.dropdown.open.active > .dropdown-toggle {
+            background: ~"[[setting:alternativethemecolor2]]" !important;
+        }
+
+        .nav > li > a {
+            border-left-color: ~"[[setting:alternativethemehovercolor2]]";
+        }
+        
+        .messagemenu .nav > li > .dropdown-menu {
+            li {
+                &:hover .msg-title, &:focus .msg-title, &:active .msg-title,
+                &:hover .msg-body, &:focus .msg-body, &:active .msg-body,
+                &:hover .msg-sender, &:focus .msg-sender, &:active .msg-sender {
+                    color: ~"[[setting:alternativethemecolor2]]";
+                }
+                &:hover .msg-time, &:focus .msg-time, &:active .msg-time {
+                    color: ~"[[setting:alternativethemecolor2]]";
+                }
+            }
+            .msg-sender {
+                color: ~"[[setting:alternativethemetextcolor2]]";
+            }
+            .msg-time {
+                color: ~"[[setting:alternativethemetextcolor2]]";
+            }
         }
     }
 
@@ -121,49 +162,6 @@ body.essential-colours-alternative2 {
         background-image: linear-gradient(to bottom, ~"[[setting:alternativethemecolor2]]", ~"[[setting:alternativethemehovercolor2]]");
     }
 
-    .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a {
-        color: ~"[[setting:alternativethemetextcolor2]]";
-        &:hover, &:focus, &.open {
-            color: ~"[[setting:themenavcolor]]";
-            background-color: ~"[[setting:alternativethemecolor2]]";
-        }
-    }
-
-    .navbar {
-        background-color: ~"[[setting:alternativethemecolor2]]" !important;
-    }
-
-    .navbar-inner {
-        border-top-color: ~"[[setting:alternativethemehovercolor2]]" !important;
-        border-bottom: 1px solid ~"[[setting:alternativethemehovercolor2]]" !important;
-        background-color: ~"[[setting:alternativethemecolor2]]" !important;
-    }
-
-    .navbar .nav {
-        border-right-color: ~"[[setting:alternativethemehovercolor2]]";
-    }
-
-    .navbar .nav > li > a {
-        border-left-color: ~"[[setting:alternativethemehovercolor2]]";
-    }
-
-    .navbar .nav > li > a:hover {
-        background: ~"[[setting:alternativethemehovercolor2]]" !important;
-    }
-
-    .navbar .nav .active > a,
-    .navbar .nav .active > a:hover,
-    .navbar .nav .active > a:focus,
-    .navbar .nav li.dropdown.open > .dropdown-toggle,
-    .navbar .nav li.dropdown.active > .dropdown-toggle,
-    .navbar .nav li.dropdown.open.active > .dropdown-toggle {
-        background: ~"[[setting:alternativethemecolor2]]" !important;
-    }
-
-    .navbar .nav > li > a {
-        border-left-color: ~"[[setting:alternativethemehovercolor2]]";
-    }
-
     .course-content ul.topics li.section.main.clearfix.current {
         box-shadow: 0 0 10px ~"[[setting:alternativethemecolor2]]";
     }
@@ -172,17 +170,20 @@ body.essential-colours-alternative2 {
         color: ~"[[setting:alternativethemetextcolor2]]" !important;
     }
 
-    .forumpost .picture img {
-        box-shadow: 0 0 3px ~"[[setting:alternativethemecolor2]]";
+    .forumpost {
+        .picture img {
+            box-shadow: 0 0 3px ~"[[setting:alternativethemecolor2]]";
+        }
+
+        .subject {
+            color: ~"[[setting:alternativethemetextcolor2]]";
+        }
     }
 
-    .forumpost .subject {
-        color: ~"[[setting:alternativethemetextcolor2]]";
-    }
-
-    .button a,
-    .button a:visited {
-        background: ~"[[setting:alternativethemecolor2]]";
+    .button {
+        a, a:visited {
+            background: ~"[[setting:alternativethemecolor2]]";
+        }
     }
 
     a#button,
@@ -235,30 +236,33 @@ body.essential-colours-alternative2 {
         a:hover {
             color: ~"[[setting:alternativethemehovercolor2]]";
         }
+        .header .title h2 {
+            color: ~"[[setting:alternativethemetextcolor2]]";
+            &:before {
+                color: ~"[[setting:alternativethemecolor2]]";
+            }
+        }
+        #icon {
+            color: @icon-colour;
+        }
     }
 
-    .block .header .title h2:before {
-        color: ~"[[setting:alternativethemecolor2]]";
+    .block_rss_client {
+        .footer a {
+            background: ~"[[setting:alternativethemeurlcolor2]]";
+            &:hover {
+                background: ~"[[setting:alternativethemehovercolor2]]";
+            }
+        }
     }
 
-    .block .header .title h2 {
-        color: ~"[[setting:alternativethemetextcolor2]]";
-    }
-
-    .block_rss_client .footer a {
-        background: ~"[[setting:alternativethemeurlcolor2]]";
-    }
-
-    .block_rss_client .footer a:hover {
-        background: ~"[[setting:alternativethemehovercolor2]]";
-    }
-
-    .block_login .footer a {
-        background: ~"[[setting:alternativethemecolor2]]";
-    }
-
-    .block_login .footer a:hover {
-        background: ~"[[setting:alternativethemehovercolor2]]";
+    .block_login {
+        .footer a {
+            background: ~"[[setting:alternativethemecolor2]]";
+            &:hover {
+                background: ~"[[setting:alternativethemehovercolor2]]";
+            }
+        }
     }
 
     #page-site-index h2.headingblock:before {
@@ -271,11 +275,20 @@ body.essential-colours-alternative2 {
 
     #page-footer {
         border-top-color: ~"[[setting:alternativethemecolor2]]";
-    }
-
-    #page-footer .footnote a,
-    #page-footer .footnote a:visited {
-        color: ~"[[setting:alternativethemeurlcolor2]]" !important;
+        .footnote {
+            a, a:visited {
+                color: ~"[[setting:alternativethemeurlcolor2]]" !important;
+            }
+        }
+        .block_login input[type="submit"] {
+            background: ~"[[setting:alternativethemecolor2]]";
+            &:hover {
+                background: ~"[[setting:alternativethemehovercolor2]]";
+            }
+        }
+        .block_rss_client .content a {
+            color: ~"[[setting:alternativethemeurlcolor2]]";
+        }
     }
 
     #page-footer .block_html ul li:before,
@@ -285,22 +298,6 @@ body.essential-colours-alternative2 {
 
     .tree_item.branch:before {
         color: @icon-colour;
-    }
-
-    .block #icon {
-        color: @icon-colour;
-    }
-
-    #page-footer .block_login input[type="submit"] {
-        background: ~"[[setting:alternativethemecolor2]]";
-    }
-
-    #page-footer .block_login input[type="submit"]:hover {
-        background: ~"[[setting:alternativethemehovercolor2]]";
-    }
-
-    #page-footer .block_rss_client .content a {
-        color: ~"[[setting:alternativethemeurlcolor2]]";
     }
 
     .afeature:hover {
@@ -319,40 +316,36 @@ body.essential-colours-alternative2 {
         p {
             color: ~"[[setting:alternativethemetextcolor2]]";
         }
-    }
-
-    .socials img:hover {
-        box-shadow: 0 0 10px 0 ~"[[setting:alternativethemecolor2]]";
+        img:hover {
+            box-shadow: 0 0 10px 0 ~"[[setting:alternativethemecolor2]]";
+        }
     }
 
     .nav-tabs > li > a {
         background-color: ~"[[setting:alternativethemecolor2]]";
+        &:hover {
+            background-color: ~"[[setting:alternativethemehovercolor2]]";
+        }
     }
 
-    .nav-tabs > li > a:hover {
-        background-color: ~"[[setting:alternativethemehovercolor2]]";
-    }
+    .performanceinfo {
+        var {
+            background: ~"[[setting:alternativethemecolor2]]";
+        }
 
-    .nav-collapse {
-        border-color: ~"[[setting:alternativethemecolor2]]";
-    }
-
-    .performanceinfo var {
-        background: ~"[[setting:alternativethemecolor2]]";
-    }
-
-    .performanceinfo h2:before {
-        color: ~"[[setting:alternativethemecolor2]]";
+        h2:before {
+            color: ~"[[setting:alternativethemecolor2]]";
+        }
     }
 
     #page-mod-quiz-edit .questionbankwindow.block div.header {
         background: ~"[[setting:alternativethemecolor2]]";
     }
 
-    table#user-grades th.item,
-    table#user-grades th.categoryitem,
-    table#user-grades th.courseitem {
-        border-bottom-color: ~"[[setting:alternativethemecolor2]]";
+    table#user-grades {
+        th.item, th.categoryitem, th.courseitem {
+            border-bottom-color: ~"[[setting:alternativethemecolor2]]";
+        }
     }
 
     table#user-grades td.controls,
@@ -369,12 +362,13 @@ body.essential-colours-alternative2 {
         color: ~"[[setting:alternativethemecolor2]]";
     }
 
-    .course_category_tree .category[data-categoryid]:hover {
-        background: ~"[[setting:alternativethemecolor2]]";
-    }
-
-    .course_category_tree .category[data-categoryid] > .info > .categoryname a:before {
-        color: ~"[[setting:alternativethemecolor2]]";
+    .course_category_tree .category[data-categoryid] {
+        &:hover {
+            background: ~"[[setting:alternativethemecolor2]]";
+        }
+        > .info > .categoryname a:before {
+            color: ~"[[setting:alternativethemecolor2]]";
+        }
     }
 
     #dock {
@@ -423,10 +417,9 @@ body.essential-colours-alternative2 {
 
     .nav_icon {
         color: ~"[[setting:alternativethemecolor2]]";
-    }
-
-    .nav_icon:hover {
-        color: ~"[[setting:alternativethemehovercolor2]]";
+        &:hover {
+            color: ~"[[setting:alternativethemehovercolor2]]";
+        }
     }
 
     .actions a {
@@ -438,7 +431,7 @@ body.essential-colours-alternative2 {
     }
 }
 
-@media(max-width: 979px) {
+@media (max-width: 979px) {
     body.essential-colours-alternative2 { 
         .nav-collapse {
             background-color: ~"[[setting:alternativethemecolor2]]";
