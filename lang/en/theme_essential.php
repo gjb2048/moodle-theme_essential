@@ -31,24 +31,29 @@ $string['choosereadme'] = '
 <div class="clearfix">
 <div class="well">
 <h2>Essential</h2>
-<p><img class=img-polaroid src="essential/pix/screenshot.jpg" /></p>
+<p><img class="img-polaroid" src="essential/pix/screenshot.jpg" /></p>
 </div>
 <div class="well">
 <h3>About Essential</h3>
-<p>Essential is a modified Moodle bootstrap theme which inherits styles and renderers from its parent theme.</p>
-<h3>Parents</h3>
-<p>This theme is based upon the Bootstrap theme, which was created for Moodle 2.5, with the help of:<br>
-Stuart Lamour, Mark Aberdour, Paul Hibbitts, Mary Evans.</p>
+<p>Essential is based upon the Bootstrap theme, which was created for Moodle 2.5, with the help of:<br>
+Bas Brands, Stuart Lamour, Mark Aberdour, Paul Hibbitts, Mary Evans.</p>
 <h3>Theme Credits</h3>
 <p>Original Author: Julian Ridden<br>
 Work taken over in July 2014 by:<br>
 Gareth J. Barnard<br>
 David Bezemer<br>
 </p>
+<h3>Donations</h3>
+<p>This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider donating by
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=themmai%40gmail%2ecom&lc=GB&item_name=Essential%20Theme%20Fund&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted" target="_blank">
+     clicking here to donate.
+</a><br>Donations may allow us to provide you with more or better features in less time.</p>
 </div></div>';
 
 /* General */
 $string['genericsettings'] = 'General';
+$string['generalheadingsub'] = 'General settings';
+$string['generalheadingdesc'] = 'Configure the global settings for the theme here. You will find both layout and visual options here.';
 
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
@@ -123,9 +128,15 @@ $string['displaybeforelogin'] = 'Show before login only';
 $string['displayafterlogin'] = 'Show after login only';
 $string['dontdisplay'] = 'Never show';
 
-// Readme.
+// Donate
+$string['donate_title'] = 'Essential donations';
+$string['donate_desc'] = 'Please {$a->url} to keep the Essential development going, or simply expressing your gratitude.';
+$string['donate_click'] = 'click to donate';
+
+// Readme
 $string['readme_title'] = 'Essential read-me';
-$string['readme_desc'] = 'Please click on \'{$a->url}\' for lots more information about Essential.';
+$string['readme_desc'] = 'Please {$a->url} containing more information about the Essential theme.';
+$string['readme_click'] = 'click for README.txt';
 
 
 /* CustomMenu */

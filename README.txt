@@ -105,13 +105,20 @@ New in 2.7.5
 - FIX: Reworked header menu and added responsive options to apps/social icons.
 - FIX: Removed dnd upload status as it blocks the edit icons.
 - FIX: Further work on RTL support.
+- FIX: Theme Cleanup milestone completely finished!
+- FIX: Further performance optimalizations using own CSS
+- FIX: Provide fixes for IE8, Essential now largely works with IE8 as expected, but no support is given
 - NEW: Issue #114: Add downgrade instructions.  See above.
 - NEW: Removed bootstrapbase dependency for further minification.
 - NEW: Split out alternative theme colours to reduce CSS loading when this is not enabled.
 - NEW: Small tweak to site widths, now available options are 1400px, 1200px and 960px.
 - NEW: Switched to bootstrap all in one for massive speed improvement (from 10 to 1 http request).
 - NEW: Removed option for restricting block width as it was not possible to get this working properly.
-- NEW: Issue #123: Add messages menu from Shoehorn.
+- NEW: Issue #123: Add messages menu from Shoehorn and give it a FaceBook restyle
+- NEW: Issue #14: Add a brand new user menu replacing the Dashboard menu
+- NEW: Automatically collapsing breadcrumb
+- NEW: Updated HTMLshiv
+- NEW: Persistent link to your own grade report, available as long as you are enrolled in one visible course
 
 New in 2.7.4
 ========================

@@ -381,7 +381,7 @@ class theme_essential_core_renderer extends core_renderer {
 
         $showoldmessages = (empty($this->page->theme->settings->showoldmessages)) ? false : $this->page->theme->settings->showoldmessages;
         if ($showoldmessages == 2) {
-            $maxmessages = 10;
+            $maxmessages = 5;
             $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
                                  FROM {message_read}
                                 WHERE useridto = :userid
@@ -409,7 +409,7 @@ class theme_essential_core_renderer extends core_renderer {
             if ($message->fullmessageformat == FORMAT_HTML) {
                 $message->smallmessage = html_to_text($message->smallmessage);
             }
-            if (core_text::strlen($message->smallmessage) > 15) {
+            if (core_text::strlen($message->smallmessage) > 18) {
                 $messagecontent->text = core_text::substr($message->smallmessage, 0, 15).'...';
             } else {
                 $messagecontent->text = $message->smallmessage;

@@ -33,6 +33,15 @@ defined('MOODLE_INTERNAL') || die;
     /* Generic Settings */
     $temp = new admin_settingpage('theme_essential_generic',  get_string('genericsettings', 'theme_essential'));
     
+    $donate = new moodle_url('https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=themmai%40gmail%2ecom&lc=GB&item_name=Essential%20Theme%20Fund&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted');
+    $donate = html_writer::link($donate, get_string('donate_click', 'theme_essential'), array('target' => '_blank'));
+    
+    $temp->add(new admin_setting_heading('theme_essential_generaldonate', get_string('donate_title', 'theme_essential'),
+            get_string('donate_desc', 'theme_essential', array('url' => $donate))));
+            
+    $temp->add(new admin_setting_heading('theme_essential_generalheading', get_string('generalheadingsub', 'theme_essential'),
+        format_text(get_string('generalheadingdesc' , 'theme_essential'), FORMAT_MARKDOWN)));
+    
     // Default Site icon setting.
     $name = 'theme_essential/siteicon';
     $title = get_string('siteicon', 'theme_essential');
@@ -170,9 +179,9 @@ defined('MOODLE_INTERNAL') || die;
     $setting = new admin_setting_configtextarea($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-
-    $readme = new moodle_url('/theme/essential/Readme.txt');
-    $readme = html_writer::link($readme, 'Readme.txt', array('target' => '_blank'));
+    
+    $readme = new moodle_url('/theme/essential/README.txt');
+    $readme = html_writer::link($readme, get_string('readme_click', 'theme_essential'), array('target' => '_blank'));
 
     $temp->add(new admin_setting_heading('theme_essential_generalreadme', get_string('readme_title', 'theme_essential'),
             get_string('readme_desc', 'theme_essential', array('url' => $readme))));
