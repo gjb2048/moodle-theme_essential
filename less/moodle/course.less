@@ -84,8 +84,7 @@
 
             .dimmed {
                 img.activityicon {
-                  opacity: 0.5;
-                  filter: alpha(opacity=50);
+                  .opacity(.5);
                 }
             }
         }
@@ -317,7 +316,7 @@
     margin-top: 0;
 }
 .course-content ul li.section.hidden {
-    opacity: 0.5;
+    .opacity(.5);
 }
 .course-content ul.topics li.section .content,
 .course-content ul.weeks li.section .content {
