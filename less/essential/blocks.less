@@ -3,10 +3,9 @@
 
 .block {
     background: white;
-    padding: 8px;
-    border-radius: 8px;
-    border: 1px solid #E1E1E1;
-    margin-bottom: 10px;
+    padding: @borderRadiusLarge;
+    border: 1px solid darken(@wellBackground, 7%);
+    .border-radius(@borderRadiusLarge);
 
     .content {
         padding: 4px 0px;
