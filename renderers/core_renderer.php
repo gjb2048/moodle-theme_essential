@@ -319,17 +319,24 @@ class theme_essential_core_renderer extends core_renderer {
                 $messagecount++;
             }
 
+            $messagetitle =  $messagecount.' ';
             if ($messagecount == 0) {
-                 $messagemenuicon = html_writer::tag('i', '', array('class' => 'fa fa-envelope-o'));
+                $messagemenuicon = html_writer::tag('i', '', array('class' => 'fa fa-envelope-o'));
+                $messagetitle .= get_string('messages', 'message');
             } else {
-                 $messagemenuicon = html_writer::tag('i', '', array('class' => 'fa fa-envelope'));
+                $messagemenuicon = html_writer::tag('i', '', array('class' => 'fa fa-envelope'));
+                if ($messagecount == 1) {
+                    $messagetitle .= get_string('message', 'message');
+                } else {
+                    $messagetitle .= get_string('messages', 'message');
+                }
             }
             $messagemenucount = $messagecount.' ';
             $messagemenutext = html_writer::tag('span', $messagemenucount).$messagemenuicon;
             $messagesubmenu = $messagemenu->add(
                 $messagemenutext,
                 new moodle_url('/message/index.php', array('viewing' => 'recentconversations')),
-                ($messagecount != 1) ? get_string('messages', 'message') : get_string('message', 'message'),
+                $messagetitle,
                 9999
             );
             foreach ($messages as $message) {
