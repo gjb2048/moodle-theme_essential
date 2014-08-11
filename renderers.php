@@ -27,6 +27,6 @@
 require_once('renderers/core_renderer.php');
 require_once('renderers/core_renderer_maintenance.php');
 if(get_config('enablecategoryicon')) {
-    require_once('renderers/course_renderer.php');
+    require_once('renderers/core_course_renderer.php');
 }
 require_once('renderers/format_topics_renderer.php');
