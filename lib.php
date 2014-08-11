@@ -138,16 +138,32 @@ function essential_set_pagewidth($css, $pagewidth) {
 function essential_performance_output($param, $perfinfo) {
     
     $html = '<div class="container-fluid performanceinfo"><div class="row-fluid"><h2>Performance Information</h2></div><div class="row-fluid">';
-    if (isset($param['realtime'])) { $html .= '<div class="span3"><var id="load">'.round($param['realtime'], 2).' secs</var><span>Load Time</span></div>'; }
-    if (isset($param['memory_total'])) { $html .= '<div class="span3"><var id="memory">'.display_size($param['memory_total']).'</var><span>Memory Used</span></div>'; }
-    if (isset($param['includecount'])) { $html .= '<div class="span3"><var id="included">'.$param['includecount'].' Files </var><span>Included</span></div>'; }
-    if (isset($param['dbqueries'])) { $html .= '<div class="span3"><var id="db">'.$param['dbqueries'].' </var><span>DB Read/Write</span></div>'; }
+    if (isset($param['realtime'])) { 
+        $html .= '<div class="span3"><var id="load">'.round($param['realtime'], 2).' secs</var><span>Load Time</span></div>'; 
+    }
+    if (isset($param['memory_total'])) { 
+        $html .= '<div class="span3"><var id="memory">'.display_size($param['memory_total']).'</var><span>Memory Used</span></div>'; 
+    }
+    if (isset($param['includecount'])) { 
+        $html .= '<div class="span3"><var id="included">'.$param['includecount'].' Files </var><span>Included</span></div>'; 
+    }
+    if (isset($param['dbqueries'])) { 
+        $html .= '<div class="span3"><var id="db">'.$param['dbqueries'].' </var><span>DB Read/Write</span></div>'; 
+    }
     if ($perfinfo === "max") {
         $html .= '</div><hr /><div class="row-fluid"><h2>Extended Performance Information</h2></div><div class="row-fluid">';
-        if (isset($param['serverload'])) { $html .= '<div class="span3"><var id="load">'.$param['serverload'].' </var><span>Server Load</span></div>'; }
-        if (isset($param['memory_peak'])) { $html .= '<div class="span3"><var id="memory">'.display_size($param['memory_peak']).' </var><span>Peak Memory</span></div>'; }
-        if (isset($param['cachesused'])) { $html .= '<div class="span3"><var id="cache">'.$param['cachesused'].' </var><span>Caches Used</span></div>'; }
-        if (isset($param['sessionsize'])) { $html .= '<div class="span3"><var id="session">'.$param['sessionsize'].' </var><span>Session Size</span></div>'; }
+        if (isset($param['serverload'])) { 
+            $html .= '<div class="span3"><var id="load">'.$param['serverload'].' </var><span>Server Load</span></div>'; 
+         }
+        if (isset($param['memory_peak'])) { 
+            $html .= '<div class="span3"><var id="memory">'.display_size($param['memory_peak']).' </var><span>Peak Memory</span></div>'; 
+         }
+        if (isset($param['cachesused'])) { 
+            $html .= '<div class="span3"><var id="cache">'.$param['cachesused'].' </var><span>Caches Used</span></div>'; 
+         }
+        if (isset($param['sessionsize'])) { 
+            $html .= '<div class="span3"><var id="session">'.$param['sessionsize'].' </var><span>Session Size</span></div>'; 
+         }
     }
     $html .= '</div>';
     $html .= '</div>';
@@ -275,7 +291,7 @@ function theme_essential_process_css($css, $theme) {
     } else {
         $themecolor = null;
     }
-    $css = theme_essential_set_color($css, $themecolor, '[[setting:themecolor]]', '#30add1');
+    $css = theme_essential_set_color($css, $themecolor, '[[setting:themecolor]]', '#30ADD1');
 
     // Set the theme text colour.
     if (!empty($theme->settings->themetextcolor)) {
@@ -283,7 +299,7 @@ function theme_essential_process_css($css, $theme) {
     } else {
         $themetextcolor = null;
     }
-    $css = theme_essential_set_color($css, $themetextcolor, '[[setting:themetextcolor]]', '#30add1');
+    $css = theme_essential_set_color($css, $themetextcolor, '[[setting:themetextcolor]]', '#047797');
 
     // Set the theme url colour.
     if (!empty($theme->settings->themeurlcolor)) {
@@ -291,7 +307,7 @@ function theme_essential_process_css($css, $theme) {
     } else {
         $themeurlcolor = null;
     }
-    $css = theme_essential_set_color($css, $themeurlcolor, '[[setting:themeurlcolor]]', '#29a1c4');
+    $css = theme_essential_set_color($css, $themeurlcolor, '[[setting:themeurlcolor]]', '#FF5034');
 
     // Set the theme hover colour.
     if (!empty($theme->settings->themehovercolor)) {
@@ -299,7 +315,7 @@ function theme_essential_process_css($css, $theme) {
     } else {
         $themehovercolor = null;
     }
-    $css = theme_essential_set_color($css, $themehovercolor, '[[setting:themehovercolor]]', '#29a1c4');
+    $css = theme_essential_set_color($css, $themehovercolor, '[[setting:themehovercolor]]', '#F32100');
     
     // Set the theme icon colour.
     if (!empty($theme->settings->themeiconcolor)) {
@@ -307,7 +323,7 @@ function theme_essential_process_css($css, $theme) {
     } else {
         $themeiconcolor = null;
     }
-    $css = theme_essential_set_color($css, $themeiconcolor, '[[setting:themeiconcolor]]', '#ffffff');
+    $css = theme_essential_set_color($css, $themeiconcolor, '[[setting:themeiconcolor]]', '#30ADD1');
 
     // Set the theme navigation colour.
     if (!empty($theme->settings->themenavcolor)) {
@@ -323,7 +339,7 @@ function theme_essential_process_css($css, $theme) {
     } else {
         $footercolor = null;
     }
-    $css = theme_essential_set_color($css, $footercolor, '[[setting:footercolor]]', '#000000');
+    $css = theme_essential_set_color($css, $footercolor, '[[setting:footercolor]]', '#1a1a1a');
 
     // Set the footer separator colour.
     if (!empty($theme->settings->footersepcolor)) {
@@ -339,7 +355,7 @@ function theme_essential_process_css($css, $theme) {
     } else {
         $footertextcolor = null;
     }
-    $css = theme_essential_set_color($css, $footertextcolor, '[[setting:footertextcolor]]', '#DDDDDD');
+    $css = theme_essential_set_color($css, $footertextcolor, '[[setting:footertextcolor]]', '#585858');
 
     // Set the footer URL color.
     if (!empty($theme->settings->footerurlcolor)) {
@@ -347,7 +363,7 @@ function theme_essential_process_css($css, $theme) {
     } else {
         $footerurlcolor = null;
     }
-    $css = theme_essential_set_color($css, $footerurlcolor, '[[setting:footerurlcolor]]', '#BBBBBB');
+    $css = theme_essential_set_color($css, $footerurlcolor, '[[setting:footerurlcolor]]', '#808080');
 
     // Set the footer hover colour.
     if (!empty($theme->settings->footerhovercolor)) {
@@ -355,7 +371,7 @@ function theme_essential_process_css($css, $theme) {
     } else {
         $footerhovercolor = null;
     }
-    $css = theme_essential_set_color($css, $footerhovercolor, '[[setting:footerhovercolor]]', '#FFFFFF');
+    $css = theme_essential_set_color($css, $footerhovercolor, '[[setting:footerhovercolor]]', '#999966');
 
     // Set the footer heading colour.
     if (!empty($theme->settings->footerheadingcolor)) {
@@ -371,7 +387,7 @@ function theme_essential_process_css($css, $theme) {
     } else {
         $slideshowcolor = null;
     }
-    $css = theme_essential_set_color($css, $slideshowcolor, '[[setting:slideshowcolor]]', '#30add1');
+    $css = theme_essential_set_color($css, $slideshowcolor, '[[setting:slideshowcolor]]', '#30ADD1');
 
      // Set the slide header colour.
     if (!empty($theme->settings->slideheadercolor)) {
@@ -379,7 +395,7 @@ function theme_essential_process_css($css, $theme) {
     } else {
         $slideheadercolor = null;
     }
-    $css = theme_essential_set_color($css, $slideheadercolor, '[[setting:slideheadercolor]]', '#30add1');
+    $css = theme_essential_set_color($css, $slideheadercolor, '[[setting:slideheadercolor]]', '#30ADD1');
 
      // Set the slide text colour.
     if (!empty($theme->settings->slidecolor)) {
@@ -395,7 +411,7 @@ function theme_essential_process_css($css, $theme) {
     } else {
         $slidebuttoncolor = null;
     }
-    $css = theme_essential_set_color($css, $slidebuttoncolor, '[[setting:slidebuttoncolor]]', '#30add1');
+    $css = theme_essential_set_color($css, $slidebuttoncolor, '[[setting:slidebuttoncolor]]', '#30ADD1');
 
      // Set the slide button hover colour.
     if (!empty($theme->settings->slidebuttonhovercolor)) {
@@ -403,7 +419,7 @@ function theme_essential_process_css($css, $theme) {
     } else {
         $slidebuttonhovercolor = null;
     }
-    $css = theme_essential_set_color($css, $slidebuttonhovercolor, '[[setting:slidebuttonhovercolor]]', '#45b5d6');
+    $css = theme_essential_set_color($css, $slidebuttonhovercolor, '[[setting:slidebuttonhovercolor]]', '#F32100');
 
     // Set theme alternative colours.
     $defaultalternativethemecolors = array('#a430d1', '#d15430', '#5dd130');
