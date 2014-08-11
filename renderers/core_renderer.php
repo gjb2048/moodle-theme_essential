@@ -539,32 +539,32 @@ class theme_essential_core_renderer extends core_renderer {
             
             $usermenu   .= html_writer::empty_tag('hr', array('class' => 'sep'));
             
-			if ($course->id == 1) {
-				if ($hascourses = enrol_get_my_courses(NULL , 'visible DESC,id ASC', 1)) {
-					foreach ($hascourses as $hascourse) {
-						if ($hascourse->visible) {
-						$context = context_course::instance($hascourse->id);
-							if (has_capability ('gradereport/user:view', $context)) {
-								$branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('mygrades', 'theme_essential').'</em>';
-								$branchurl   = new moodle_url('/grade/report/overview/index.php?id='.$hascourse->id.'&userid='.$USER->id);
-								$usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
-							}
-						}
-					}
-				}
-			} else {
-				$context = context_course::instance($course->id);
-				if (has_capability ('gradereport/user:view', $context)) {
-					$branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('mygrades', 'theme_essential').'</em>';
-					$branchurl   = new moodle_url('/grade/report/overview/index.php?id='.$course->id.'&userid='.$USER->id);
-					$usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
-				}
-				if (has_capability ('gradereport/user:view', $context)) {
-					$branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('coursegrades', 'theme_essential').'</em>';
-					$branchurl   = new moodle_url('/grade/report/user/index.php?id='.$course->id.'&user='.$USER->id);
-					$usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
-				}
-			}
+            if ($course->id == 1) {
+                if ($hascourses = enrol_get_my_courses(NULL , 'visible DESC,id ASC', 1)) {
+                    foreach ($hascourses as $hascourse) {
+                        if ($hascourse->visible) {
+                            $context = context_course::instance($hascourse->id);
+                            if (has_capability ('gradereport/user:view', $context)) {
+                                $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('mygrades', 'theme_essential').'</em>';
+                                $branchurl   = new moodle_url('/grade/report/overview/index.php?id='.$hascourse->id.'&userid='.$USER->id);
+                                $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+                            }
+                        }
+                    }
+                }
+            } else {
+                $context = context_course::instance($course->id);
+                if (has_capability ('gradereport/user:view', $context)) {
+                    $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('mygrades', 'theme_essential').'</em>';
+                    $branchurl   = new moodle_url('/grade/report/overview/index.php?id='.$course->id.'&userid='.$USER->id);
+                    $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+                }
+                if (has_capability ('gradereport/user:view', $context)) {
+                    $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('coursegrades', 'theme_essential').'</em>';
+                    $branchurl   = new moodle_url('/grade/report/user/index.php?id='.$course->id.'&user='.$USER->id);
+                    $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+                }
+            }
             
             // Check if badges are enabled.
             if (!empty($CFG->enablebadges)) {
