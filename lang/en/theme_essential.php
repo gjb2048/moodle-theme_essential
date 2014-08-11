@@ -135,6 +135,7 @@ $string['allmodules'] = 'All modules';
 $string['allclasses'] = 'All classes';
 $string['noenrolments'] = 'You have no current enrolments';
 
+$string[ 'few'] = 'A few ';
 $string['loggedinas'] = ' logged in as ';
 $string['loggedinfrom'] = 'Logged in from ';
 
@@ -450,5 +451,3 @@ $string['alerttextdesc'] = 'What is the text you wish to display in your alert.'
 $string['alert_info'] = 'Information';
 $string['alert_warning'] = 'Warning';
 $string['alert_general'] = 'Announcement';
-
-$string['ie8message'] = '<p id="ie8message">Sorry, this site requires <strong>Internet Explorer 9</strong> or higher to display and function correctly.  Please update your browser via Windows Update. If using IE9 or above you may have Compatibility Mode switched on, turn this off to display this website correctly.</p>';

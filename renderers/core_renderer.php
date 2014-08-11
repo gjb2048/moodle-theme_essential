@@ -436,42 +436,30 @@ class theme_essential_core_renderer extends core_renderer {
         // To Calculate the time difference in Minutes...
         $minutes = 60;
 
-        if(intval($time_difference/$years) > 1)
-        {
-            return intval($time_difference/$years)." years ago";
-        }else if(intval($time_difference/$years) > 0)
-        {
-            return intval($time_difference/$years)." year ago";
-        }else if(intval($time_difference/$months) > 1)
-        {
-            return intval($time_difference/$months)." months ago";
-        }else if(intval(($time_difference/$months)) > 0)
-        {
-            return intval(($time_difference/$months))." month ago";
-        }else if(intval(($time_difference/$days)) > 1)
-        {
-            return intval(($time_difference/$days))." days ago";
-        }else if (intval(($time_difference/$days)) > 0) 
-        {
-            return intval(($time_difference/$days))." day ago";
-        }else if (intval(($time_difference/$hours)) > 1) 
-        {
-            return intval(($time_difference/$hours))." hours ago";
-        }else if (intval(($time_difference/$hours)) > 0) 
-        {
-            return intval(($time_difference/$hours))." hour ago";
-        }else if (intval(($time_difference/$minutes)) > 1) 
-        {
-            return intval(($time_difference/$minutes))." minutes ago";
-        }else if (intval(($time_difference/$minutes)) > 0) 
-        {
-            return intval(($time_difference/$minutes))." minute ago";
-        }else if (intval(($time_difference)) > 1) 
-        {
-            return intval(($time_difference))." seconds ago";
-        }else
-        {
-            return "few seconds ago";
+        if(intval($time_difference/$years) > 1) {
+            return get_string('ago', 'core_message', intval($time_difference/$years).' '.get_string('years'));
+        } else if(intval($time_difference/$years) > 0) {
+            return get_string('ago', 'core_message', intval($time_difference/$years).' '.get_string('year'));
+        } else if(intval($time_difference/$months) > 1) {
+            return get_string('ago', 'core_message', intval($time_difference/$months).' '.get_string('months'));
+        } else if(intval(($time_difference/$months)) > 0) {
+            return get_string('ago', 'core_message', intval($time_difference/$months).' '.get_string('month'));
+        } else if(intval(($time_difference/$days)) > 1) {
+            return get_string('ago', 'core_message', intval($time_difference/$days).' '.get_string('days'));
+        } else if (intval(($time_difference/$days)) > 0) {
+            return get_string('ago', 'core_message', intval($time_difference/$days).' '.get_string('day'));
+        } else if (intval(($time_difference/$hours)) > 1) {
+            return get_string('ago', 'core_message', intval($time_difference/$hours).' '.get_string('hours'));
+        } else if (intval(($time_difference/$hours)) > 0) {
+            return get_string('ago', 'core_message', intval($time_difference/$hours).' '.get_string('hour'));
+        } else if (intval(($time_difference/$minutes)) > 1)  {
+            return get_string('ago', 'core_message', intval($time_difference/$minutes).' '.get_string('minutes'));
+        } else if (intval(($time_difference/$minutes)) > 0) {
+            return get_string('ago', 'core_message', intval($time_difference/$minutes).' '.get_string('minute'));
+        } else if (intval(($time_difference)) > 20) {
+            return get_string('ago', 'core_message', intval($time_difference).' '.get_string('seconds'));
+        } else {
+            return get_string('ago', 'core_message', get_string('few', 'theme_essential').get_string('seconds'));
         }
     }
     
