@@ -94,6 +94,17 @@ $string['perfinfodesc'] = 'Many sites don\'t need the fully detailed performance
 $string['perf_max'] = 'Detailed';
 $string['perf_min'] = 'Minimal';
 
+$string['perfinfoheading'] = 'Performance Information';
+$string['extperfinfoheading'] = 'Extended Performance Information';
+$string['loadtime'] = 'Load Time';
+$string['memused'] = 'Memory Used';
+$string['peakmem'] = 'Peak Memory';
+$string['included'] = 'Files Included';
+$string['dbqueries'] = 'DB Read/Write';
+$string['serverload'] = 'Server Load';
+$string['cachesused'] = 'Cached Used';
+$string['sessionsize'] = 'Session Size';
+
 $string['visibleadminonly'] = 'Blocks moved into the area below will only be seen by admins';
 $string['backtotop'] = 'Back to top';
 
