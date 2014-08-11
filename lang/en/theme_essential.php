@@ -140,6 +140,7 @@ $string['loggedinas'] = ' logged in as ';
 $string['loggedinfrom'] = 'Logged in from ';
 
 $string['mygrades'] = 'My grades';
+$string['coursegrades'] = 'Course grades';
 
 /* Breadcrumb Style */
 $string['breadcrumbstyle'] = 'Breadcrumb style';
