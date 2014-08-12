@@ -36,10 +36,10 @@ body.essential-colours-alternative3 {
                 border-left: 30px solid ~"[[setting:alternativethemecolor3]]";;
             }
             li:hover {
-                background: ~"[[setting:alternativethemehovercolor3]]";
+                background: ~"[[setting:themenavcolor]]";
             }
             li:hover:after {
-                border-left-color: ~"[[setting:alternativethemehovercolor3]]" !important;
+                border-left-color: ~"[[setting:themenavcolor]]" !important;
             }
         }
 
@@ -100,7 +100,8 @@ body.essential-colours-alternative3 {
                 > li > a {
                     border-left-color: ~"[[setting:alternativethemehovercolor3]]";
                     &:hover {
-                        background: ~"[[setting:alternativethemehovercolor3]]" !important;
+                        color: ~"[[setting:alternativethemecolor3]]";
+                        background: ~"[[setting:themenavcolor]]";
                     }
                 }
                 > li.dropdown ul.dropdown-menu > li > a {
@@ -110,6 +111,18 @@ body.essential-colours-alternative3 {
                         background-color: ~"[[setting:alternativethemecolor3]]";
                     }
                 }
+            }
+            .dropdown-menu > li > a:hover,
+            .dropdown-menu > li > a:focus,
+            .dropdown-submenu:hover > a,
+            .dropdown-submenu:focus > a {
+                color: ~"[[setting:themenavcolor]]" !important;
+                background-color: ~"[[setting:alternativethemecolor3]]";
+                background-image: -moz-linear-gradient(top, ~"[[setting:alternativethemehovercolor3]]", ~"[[setting:alternativethemecolor3]]");
+                background-image: -webkit-gradient(linear, 0 0, 0 100%, from(~"[[setting:alternativethemehovercolor3]]"), to(~"[[setting:alternativethemecolor3]]"));
+                background-image: -webkit-linear-gradient(top, ~"[[setting:alternativethemehovercolor3]]", ~"[[setting:alternativethemecolor3]]");
+                background-image: -o-linear-gradient(top, ~"[[setting:alternativethemehovercolor3]]", ~"[[setting:alternativethemecolor3]]");
+                background-image: linear-gradient(to bottom, ~"[[setting:alternativethemehovercolor3]]", ~"[[setting:alternativethemecolor3]]");
             }
         }
 
@@ -148,18 +161,6 @@ body.essential-colours-alternative3 {
                 color: ~"[[setting:alternativethemetextcolor3]]";
             }
         }
-    }
-
-    .dropdown-menu > li > a:hover,
-    .dropdown-menu > li > a:focus,
-    .dropdown-submenu:hover > a,
-    .dropdown-submenu:focus > a {
-        background-color: ~"[[setting:alternativethemecolor3]]";
-        background-image: -moz-linear-gradient(top, ~"[[setting:alternativethemecolor3]]", ~"[[setting:alternativethemehovercolor3]]");
-        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(~"[[setting:alternativethemecolor3]]"), to(~"[[setting:alternativethemehovercolor3]]"));
-        background-image: -webkit-linear-gradient(top, ~"[[setting:alternativethemecolor3]]", ~"[[setting:alternativethemehovercolor3]]");
-        background-image: -o-linear-gradient(top, ~"[[setting:alternativethemecolor3]]", ~"[[setting:alternativethemehovercolor3]]");
-        background-image: linear-gradient(to bottom, ~"[[setting:alternativethemecolor3]]", ~"[[setting:alternativethemehovercolor3]]");
     }
 
     .course-content ul.topics li.section.main.clearfix.current {
@@ -438,6 +439,14 @@ body.essential-colours-alternative3 {
             .dropdown-menu > li > a,
             .dropdown-menu > li > a:visited {
                 color: ~"[[setting:themenavcolor]]";
+                i {
+                    color: ~"[[setting:alternativethemecolor3]]";
+                    background-color: ~"[[setting:themenavcolor]]";
+                    border: 1px solid ~"[[setting:themenavcolor]]";
+                    border-radius: 3px;
+                    margin-top: 2px;
+                    vertical-align: middle;
+                }
             }
 
             /* @group Custom Menu */
@@ -462,6 +471,15 @@ body.essential-colours-alternative3 {
                 color: ~"[[setting:themenavcolor]]";
             }
         }
-
+        .navbar .navbar-inner {
+            .dropdown-menu > li > a:hover,
+            .dropdown-menu > li > a:focus,
+            .dropdown-submenu:hover > a,
+            .dropdown-submenu:focus > a {
+                color: ~"[[setting:alternativethemecolor3]]" !important;
+                background-color: ~"[[setting:themenavcolor]]";
+                background-image: none;
+            }
+        }
     }
 }

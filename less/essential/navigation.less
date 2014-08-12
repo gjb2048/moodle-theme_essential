@@ -57,7 +57,13 @@
         .dropdown-menu > li > a:focus,
         .dropdown-submenu:hover > a,
         .dropdown-submenu:focus > a {
-            color: #ffffff;
+            color: ~"[[setting:themenavcolor]]" !important;
+            background-color: ~"[[setting:themecolor]]";
+            background-image: -moz-linear-gradient(top, ~"[[setting:themehovercolor]]", ~"[[setting:themecolor]]");
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(~"[[setting:themehovercolor]]"), to(~"[[setting:themecolor]]"));
+            background-image: -webkit-linear-gradient(top, ~"[[setting:themehovercolor]]", ~"[[setting:themecolor]]");
+            background-image: -o-linear-gradient(top, ~"[[setting:themehovercolor]]", ~"[[setting:themecolor]]");
+            background-image: linear-gradient(to bottom, ~"[[setting:themehovercolor]]", ~"[[setting:themecolor]]");
             text-decoration: none;
         }
 

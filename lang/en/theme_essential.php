@@ -188,7 +188,7 @@ $string['colorheading'] = 'Colour';
 $string['colorheadingsub'] = 'Set the colours used in your theme';
 $string['colordesc'] = 'Here you can find various settings to change many of the colours found in this theme.';
 
-$string['footercolors'] = 'Footer colors';
+$string['footercolors'] = 'Footer colours';
 $string['footercolorsdesc'] = 'Change the colours on the page footers';
 
 $string['themecolor'] = 'Theme colour';
@@ -222,17 +222,17 @@ $string['pagebackground'] = 'Page background image';
 $string['pagebackgrounddesc'] = 'Upload your own background image. This will be stretched in the background on all pages.';
 
 /* Alternate Colour Switcher */
-$string['themecolors'] = 'Theme colors';
-$string['defaultcolors'] = 'Default colors';
+$string['themecolors'] = 'Theme colours';
+$string['defaultcolors'] = 'Default colours';
 $string['alternativecolors'] = 'Alternative colours {$a}';
 $string['alternativethemecolor'] = 'Alternative theme colour {$a}';
 $string['alternativethemecolordesc'] = 'What colour should your theme be for the alternative theme colours {$a}.';
 $string['alternativethemename'] = 'Colour scheme name';
-$string['alternativethemenamedesc'] = 'Provide a name for your alternative theme colors';
-$string['alternativethemecolors'] = 'Alternative theme colors';
+$string['alternativethemenamedesc'] = 'Provide a name for your alternative theme colours';
+$string['alternativethemecolors'] = 'Alternative theme colours';
 $string['alternativethemecolorsdesc'] = 'Defines theme colours alternative that the user may select.';
 $string['alternativethemecolorname'] = 'Name of alternative colour set {$a}';
-$string['alternativethemecolornamedesc'] = 'Provide a recognisable name for this set of alternative theme colors';
+$string['alternativethemecolornamedesc'] = 'Provide a recognisable name for this set of alternative theme colours';
 $string['alternativethemetextcolor'] = 'Alternative text colour  {$a}';
 $string['alternativethemetextcolordesc'] = 'Set the colour for your alternative text {$a}.';
 $string['alternativethemeurlcolor'] = 'Alternative link colour {$a}';
