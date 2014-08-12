@@ -102,6 +102,7 @@ New in 2.7.5
 - FIX: Issue #127: Need to guard against uninitialised settings.
 - FIX: Issue #128: Dropdown menu items are invisible when navigation bar text is white.
 - FIX: Issue #134: Marketing height broken.
+- FIX: Issue #135: Cannot edit topic summary.
 - FIX: Correctly show no enrolments message when all courses are hidden.
 - FIX: Reworked header menu and added responsive options to apps/social icons.
 - FIX: Removed dnd upload status as it blocks the edit icons.
