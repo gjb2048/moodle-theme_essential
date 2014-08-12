@@ -674,23 +674,23 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
-    // Marketing Spot Image Height
+    // Marketing Spot Image Height.
     $name = 'theme_essential/marketingheight';
     $title = get_string('marketingheight','theme_essential');
     $description = get_string('marketingheightdesc', 'theme_essential');
     $default = 100;
-    $choices = array(50, 100, 150, 200, 250, 300);
+    $choices = array(50 => '50', 100 => '100', 150 => '150', 200 => '200', 250 => '250', 300 => '300');
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $temp->add($setting);
     
-    // This is the descriptor for Marketing Spot One
+    // This is the descriptor for Marketing Spot One.
     $name = 'theme_essential/marketing1info';
     $heading = get_string('marketing1', 'theme_essential');
     $information = get_string('marketinginfodesc', 'theme_essential');
     $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
     
-    // Marketing Spot One
+    // Marketing Spot One.
     $name = 'theme_essential/marketing1';
     $title = get_string('marketingtitle', 'theme_essential');
     $description = get_string('marketingtitledesc', 'theme_essential');
@@ -750,7 +750,7 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
-    // This is the descriptor for Marketing Spot Two
+    // This is the descriptor for Marketing Spot Two.
     $name = 'theme_essential/marketing2info';
     $heading = get_string('marketing2', 'theme_essential');
     $information = get_string('marketinginfodesc', 'theme_essential');
