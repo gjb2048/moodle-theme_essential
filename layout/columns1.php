@@ -25,7 +25,7 @@
  */
 
 require_once(dirname(__FILE__).'/includes/pagesettings.php');
- 
+
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
@@ -33,14 +33,14 @@ echo $OUTPUT->doctype() ?>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Google web fonts -->
+    <!-- Google web fonts -->
     <?php require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
     <!-- iOS Homescreen Icons -->
     <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
     <!-- Start Google Analytics -->
     <?php if ($hasanalytics) {
         require_once(dirname(__FILE__).'/includes/analytics.php');
-	} ?>
+    } ?>
     <!-- End Google Analytics -->
 </head>
 
@@ -55,9 +55,9 @@ echo $OUTPUT->doctype() ?>
         <!-- Start Main Regions -->
         <div id="page-content" class="row-fluid">
             <section id="region-main" class="span12">
-                <div id="page-navbar" class="clearfix">
-                    <div class="breadcrumb-nav span10 pull-left"><?php echo $OUTPUT->navbar(); ?></div>
-                    <nav class="breadcrumb-button pull-right"><?php echo $OUTPUT->page_heading_button(); ?></nav>
+                <div id="page-navbar" class="clearfix row-fluid">
+                    <div class="breadcrumb-nav span10 pull-<?php echo ($left) ? 'left' : 'right'; ?>"><?php echo $OUTPUT->navbar(); ?></div>
+                    <nav class="breadcrumb-button span2 pull-<?php echo ($left) ? 'right' : 'left'; ?>"><?php echo $OUTPUT->page_heading_button(); ?></nav>
                 </div>
                 <?php
                 echo $OUTPUT->course_content_header();
