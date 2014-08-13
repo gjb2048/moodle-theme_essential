@@ -2988,7 +2988,10 @@ table.calendarmonth.calendartable {
   background-position: center;
 }
 
-#essentialCarousel.carousel .carousel-inner a {
+#essentialCarousel.carousel .carousel-inner a,
+#essentialCarousel.carousel .carousel-inner a:hover,
+#essentialCarousel.carousel .carousel-inner a:active {
+  text-decoration: none;
   height: 100%;
 }
 
@@ -5950,10 +5953,6 @@ body.dir-rtl #dockeditempanel .dockeditempanel_hd .commands {
 
 a[name="lastused"] {
   padding-top: 50px;
-}
-
-section[role="main-content"] {
-  padding-top: 11px;
 }
 
 .yui3-overlay,
