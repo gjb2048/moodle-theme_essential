@@ -51,15 +51,14 @@ echo $OUTPUT->doctype() ?>
 <?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
 
 <div id="page" class="container-fluid">
+    <div id="page-navbar" class="clearfix row-fluid">
+        <div class="breadcrumb-nav pull-<?php echo ($left) ? 'left' : 'right'; ?>"><?php echo $OUTPUT->navbar(); ?></div>
+        <nav class="breadcrumb-button pull-<?php echo ($left) ? 'right' : 'left'; ?>"><?php echo $OUTPUT->page_heading_button(); ?></nav>
+    </div>
     <section role="main-content">
         <!-- Start Main Regions -->
         <div id="page-content" class="row-fluid">
-            <section id="<?php echo $regionbsid;?>" class="span9<?php if ($left) { echo ' pull-right'; } ?>">
-                <div id="page-navbar" class="clearfix row-fluid">
-                    <div class="breadcrumb-nav span10 pull-<?php echo ($left) ? 'left' : 'right'; ?>"><?php echo $OUTPUT->navbar(); ?></div>
-                    <nav class="breadcrumb-button span2 pull-<?php echo ($left) ? 'right' : 'left'; ?>"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-                </div>
-                
+            <section id="<?php echo $regionbsid;?>" class="span9<?php if ($left) { echo ' pull-right'; } ?>">                
                 <?php
                 echo $OUTPUT->course_content_header();
                 echo $OUTPUT->main_content();

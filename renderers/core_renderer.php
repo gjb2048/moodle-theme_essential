@@ -31,11 +31,13 @@ class theme_essential_core_renderer extends core_renderer {
  
     public function navbar() {
         $breadcrumbs = '';
-        $breadcrumbstyle = (!empty($PAGE->theme->settings->breadcrumbstyle)) ? $PAGE->theme->settings->breadcrumbstyle : '1'; // Default in settings.php.
+        $breadcrumbstyle = (!empty($this->page->theme->settings->breadcrumbstyle)) ? $this->page->theme->settings->breadcrumbstyle : 1; // Default in settings.php.
         if (!empty($breadcrumbstyle) && ($breadcrumbstyle > 0) ) {
+            $index = 1;
             foreach ($this->page->navbar->get_items() as $item) {
                 $item->hideicon = true;
-                $breadcrumbs .= html_writer::tag('li',$this->render($item),array());
+                $breadcrumbs .= html_writer::tag('li',$this->render($item),array('style' => 'z-index:'.(100-$index).';'));
+                $index += 1;
             }
             return html_writer::tag('ul', $breadcrumbs, array('class' => "breadcrumb style$breadcrumbstyle"));
         }
@@ -736,8 +738,7 @@ class theme_essential_core_renderer extends core_renderer {
     }
     
     public function render_social_network($socialnetwork) {
-        global $PAGE;
-        if (!empty($PAGE->theme->settings->$socialnetwork)) {
+        if (!empty($this->page->theme->settings->$socialnetwork)) {
             if ($socialnetwork === 'googleplus') {
                 $icon = 'google-plus';
             } else if ($socialnetwork === 'website') {
@@ -751,7 +752,7 @@ class theme_essential_core_renderer extends core_renderer {
             $socialhtml  = html_writer::start_tag('li');
             $socialhtml .= html_writer::start_tag('button', array('type' => "button",
                                                                   'class' => 'socialicon '.$socialnetwork, 
-                                                                  'onclick' => "window.open('".$PAGE->theme->settings->$socialnetwork."')",
+                                                                  'onclick' => "window.open('".$this->page->theme->settings->$socialnetwork."')",
                                                                   'title' => get_string($socialnetwork, 'theme_essential'),
                                                                   ));
             $socialhtml .= html_writer::start_tag('i', array('class' => 'fa fa-'.$icon.' fa-inverse'));

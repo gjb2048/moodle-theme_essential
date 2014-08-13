@@ -173,10 +173,6 @@ echo $OUTPUT->doctype() ?>
             <?php } else { ?>
             <section id="<?php echo $regionbsid;?>" class="span9 desktop-first-column">
             <?php } ?>
-                <div id="page-navbar" class="clearfix row-fluid">
-                    <div class="breadcrumb-nav span10 pull-<?php echo ($left) ? 'left' : 'right'; ?>"><?php echo $OUTPUT->navbar(); ?></div>
-                    <nav class="breadcrumb-button span2 pull-<?php echo ($left) ? 'right' : 'left'; ?>"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-                </div>
                 <?php
                 echo $OUTPUT->course_content_header();
                 echo $OUTPUT->main_content();

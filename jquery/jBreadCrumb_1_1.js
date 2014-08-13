@@ -171,16 +171,16 @@
     
     jQuery.fn.jBreadCrumb.defaults = 
     {
-        maxFinalElementLength: 80,
-        minFinalElementLength: 30,
-        minimumCompressionElements: 4,
-        endElementsToLeaveOpen: 1,
-        beginingElementsToLeaveOpen: 1,
+        maxFinalElementLength: Math.round($(window).width() * .08),
+        minFinalElementLength: Math.round($(window).width() *.03),
+        minimumCompressionElements: 1,
+        endElementsToLeaveOpen: 0,
+        beginingElementsToLeaveOpen: 0,
         timeExpansionAnimation: 800,
         timeCompressionAnimation: 500,
         timeInitialCollapse: 600,
         easing: 'swing',
-        previewWidth: 20
+        previewWidth: Math.round($(window).width() * .01)
     };
     
 })(jQuery);
