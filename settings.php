@@ -429,6 +429,28 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
+    // Helplink type
+    $name = 'theme_essential/helplinktype';
+    $title = get_string('helplinktype' , 'theme_essential');
+    $description = get_string('helplinktypedesc', 'theme_essential');
+    $default = 1;
+    $choices = array(1 => get_string('email'),
+                     2 => get_string('url'),
+                     0 => get_string('none')
+                    );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // Helplink
+    $name = 'theme_essential/helplink';
+    $title = get_string('helplink', 'theme_essential');
+    $description = get_string('helplinkdesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
     /* Social Network Settings */
     $temp->add(new admin_setting_heading('theme_essential_social', get_string('socialheadingsub', 'theme_essential'),
             format_text(get_string('socialdesc' , 'theme_essential'), FORMAT_MARKDOWN)));
