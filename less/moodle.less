@@ -51,13 +51,14 @@
 @import "moodle/grade";
 @import "moodle/dock";
 
+// The following responsive imports are copied in
+// from "bootstrap/responsive".
+@import "bootstrap/responsive";
+@import "moodle/responsive";
+
 // Anything below this line is considered expendable,
 // so it doesn't matter if it doesn't show up in ie < 9
 // though at current time (2013-03-13) the whole file is
 // picked up in IE8, and IE9 fails at some point during the
 // responsive section, cutting off the last 400 selectors.
-
-// The following responsive imports are copied in
-// from "bootstrap/responsive".
-@import "bootstrap/responsive";
-@import "moodle/responsive";
+@import "moodle/expendable";
