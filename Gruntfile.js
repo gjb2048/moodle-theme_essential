@@ -43,7 +43,12 @@
  *               RTL version of the output, then run decache so that
  *               the results can be seen on the next page load.
  *
- *               Options:
+ *     compile_d Run the .less files through the compiler and produce a 
+ *               source map, create the
+ *               RTL version of the output, then run decache so that
+ *               the results can be seen on the next page load.
+ *
+ * Options:
  *
  *               --dirroot=<path>  Optional. Explicitly define the
  *                                 path to your Moodle root directory
@@ -130,37 +135,74 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         less: {
-            moodle: {
+            moodle_p: {
                 options: {
                     compress: false,
                     cleancss: true,
                     paths: "./less",
                     report: 'min',
+                    sourceMap: false
                 },
                 src: 'less/moodle.less',
                 dest: 'style/moodle.css'
             },
             // Compile essential styles.
-            essential: {
+            essential_p: {
                 options: {
-                    cleancss: true,
                     compress: false,
+                    cleancss: true,
                     paths: "./less",
                     report: 'min',
-                    sourceMap: false,
+                    sourceMap: false
+                },
+                src: 'less/essential.less',
+                dest: 'style/essential.css'
+            },
+            alternative_p: {
+                options: {
+                    compress: true,
+                    cleancss: true,
+                    paths: "./less",
+                    report: 'min',
+                    sourceMap: false
+                },
+                src: 'less/alternative.less',
+                dest: 'style/alternative.css'
+            },
+            moodle_d: {
+                options: {
+                    compress: false,
+                    cleancss: true,
+                    paths: "./less",
+                    report: 'min',
+                    sourceMap: true,
+                    sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
+                    sourceMapFilename: 'style/moodle.treasure.map'
+                },
+                src: 'less/moodle.less',
+                dest: 'style/moodle.css'
+            },
+            // Compile essential styles.
+            essential_d: {
+                options: {
+                    compress: false,
+                    cleancss: false,
+                    paths: "./less",
+                    report: 'min',
+                    sourceMap: true,
                     sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
                     sourceMapFilename: 'style/essential.treasure.map'
                 },
                 src: 'less/essential.less',
                 dest: 'style/essential.css'
             },
-            alternative: {
+            alternative_d: {
                 options: {
-                    compress: true,
-                    cleancss: true,
+                    compress: false,
+                    cleancss: false,
                     paths: "./less",
                     report: 'min',
-                    sourceMap: false,
+                    sourceMap: true,
                     sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
                     sourceMapFilename: 'style/alternative.treasure.map'
                 },
@@ -189,10 +231,17 @@ module.exports = function(grunt) {
             }
         },
         cssflip: {
-            options: {
-            compress: true
-          },
-            rtl: {
+            rtl_p: {
+                options: {
+                    compress: true
+                },
+                src:  'style/essential.css',
+                dest: 'style/essential-rtl.css'
+            },
+            rtl_d: {
+                options: {
+                    compress: false
+                },
                 src:  'style/essential.css',
                 dest: 'style/essential-rtl.css'
             }
@@ -272,7 +321,10 @@ module.exports = function(grunt) {
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
 
-    grunt.registerTask("compile", ["less", "cssflip", "decache"]);
+    grunt.registerTask("production", ["less:moodle_p", "less:essential_p", "less:alternative_p"]);
+    grunt.registerTask("development", ["less:moodle_d", "less:essential_d", "less:alternative_d"]);
+    grunt.registerTask("compile", ["production", "cssflip:rtl_p", "decache"]);
+    grunt.registerTask("compile_d", ["development", "cssflip:rtl_d", "decache"]);
     grunt.registerTask("copy:svg", ["copy:svg_core", "copy:svg_plugins"]);
     grunt.registerTask("replace:svg_colours", ["replace:svg_colours_core", "replace:svg_colours_plugins"]);
     grunt.registerTask("svg", ["copy:svg", "replace:svg_colours", "svgmin"]);
