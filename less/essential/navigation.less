@@ -24,6 +24,10 @@
         background-image: none;
         box-shadow: none;
         filter: none;
+        .btn-navbar {
+            float: left;
+            margin: 5px 10px 0px;
+        }
         .brand {
             color: ~"[[setting:themenavcolor]]";
             vertical-align: middle;
@@ -39,13 +43,14 @@
         }
     
         ul.nav li.dropdown:hover > ul.dropdown-menu {
-            display: block;    
+            display: block;
         }
         #custom_menu_language,
         #custom_menu_courses,
         #custom_menu_themecolours,
         #custom_menu {
             display: inline-block;
+            vertical-align: top;
         }
         
         #custom_menu_courses ul.dropdown-menu {
@@ -59,11 +64,6 @@
         .dropdown-submenu:focus > a {
             color: ~"[[setting:themenavcolor]]" !important;
             background-color: ~"[[setting:themecolor]]";
-            background-image: -moz-linear-gradient(top, ~"[[setting:themehovercolor]]", ~"[[setting:themecolor]]");
-            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(~"[[setting:themehovercolor]]"), to(~"[[setting:themecolor]]"));
-            background-image: -webkit-linear-gradient(top, ~"[[setting:themehovercolor]]", ~"[[setting:themecolor]]");
-            background-image: -o-linear-gradient(top, ~"[[setting:themehovercolor]]", ~"[[setting:themecolor]]");
-            background-image: linear-gradient(to bottom, ~"[[setting:themehovercolor]]", ~"[[setting:themecolor]]");
             text-decoration: none;
         }
 

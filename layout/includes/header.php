@@ -98,9 +98,14 @@
         <div class="navbar<?php echo ($oldnavbar)? ' oldnavbar': '';?>">
             <div class="container-fluid navbar-inner">
                 <div class="row-fluid">
-                    <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
-                    <div class="pull-left">
-                        <div class="nav-collapse collapse">
+                    <div class="custommenus pull-left">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
+                        <div class="nav-collapse collapse pull-left">
                             <div id="custom_menu_language">
                                 <?php echo $OUTPUT->custom_menu_language(); ?>
                             </div>
@@ -125,11 +130,6 @@
                             <?php echo $OUTPUT->custom_menu_messages(); ?>
                         </div>
                     </div>
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
                  </div>
             </div>
         </div>

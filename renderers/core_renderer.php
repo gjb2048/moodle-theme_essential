@@ -200,7 +200,7 @@ class theme_essential_core_renderer extends core_renderer {
             } else {
                 $currentlang = $strlang;
             }
-            $this->language = $langmenu->add($currentlang, new moodle_url('#'), $strlang, 100);
+            $this->language = $langmenu->add('<i class="fa fa-flag"></i>'.$currentlang, new moodle_url('#'), $strlang, 100);
             foreach ($langs as $langtype => $langname) {
                 $this->language->add('<i class="fa fa-language"></i>'.$langname, new moodle_url($this->page->url, array('lang' => $langtype)), $langname);
             }
