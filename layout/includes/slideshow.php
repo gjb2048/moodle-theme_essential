@@ -87,8 +87,8 @@ if ($numberofslides) {
                             echo (!empty($PAGE->theme->settings->$urlsetting)? '</a>' : '</div>');
                     } ?>
                 </div>
-                <a class="left carousel-control" href="#essentialCarousel" data-slide="prev"></span><i class="fa fa-chevron-circle-left"></i></a>
-                <a class="right carousel-control" href="#essentialCarousel" data-slide="next"></span><i class="fa fa-chevron-circle-right"></i></a>
+                <a class="left carousel-control" href="#essentialCarousel" data-slide="prev"><i class="fa fa-chevron-circle-left"></i></a>
+                <a class="right carousel-control" href="#essentialCarousel" data-slide="next"><i class="fa fa-chevron-circle-right"></i></a>
             </div>
         </div>
     </div>
