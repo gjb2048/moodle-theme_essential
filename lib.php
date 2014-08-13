@@ -373,8 +373,24 @@ function theme_essential_process_css($css, $theme) {
     } else {
         $footercolor = null;
     }
-    $css = theme_essential_set_color($css, $footercolor, '[[setting:footercolor]]', '#1a1a1a');
+    $css = theme_essential_set_color($css, $footercolor, '[[setting:footercolor]]', '#555555');
+    
+    // Set the footer text color.
+    if (!empty($theme->settings->footertextcolor)) {
+        $footertextcolor = $theme->settings->footertextcolor;
+    } else {
+        $footertextcolor = null;
+    }
+    $css = theme_essential_set_color($css, $footertextcolor, '[[setting:footertextcolor]]', '#bbbbbb');
 
+    // Set the footer heading colour.
+    if (!empty($theme->settings->footerheadingcolor)) {
+        $footerheadingcolor = $theme->settings->footerheadingcolor;
+    } else {
+        $footerheadingcolor = null;
+    }
+    $css = theme_essential_set_color($css, $footerheadingcolor, '[[setting:footerheadingcolor]]', '#cccccc');
+    
     // Set the footer separator colour.
     if (!empty($theme->settings->footersepcolor)) {
         $footersepcolor = $theme->settings->footersepcolor;
@@ -383,21 +399,13 @@ function theme_essential_process_css($css, $theme) {
     }
     $css = theme_essential_set_color($css, $footersepcolor, '[[setting:footersepcolor]]', '#313131');
 
-    // Set the footer text color.
-    if (!empty($theme->settings->footertextcolor)) {
-        $footertextcolor = $theme->settings->footertextcolor;
-    } else {
-        $footertextcolor = null;
-    }
-    $css = theme_essential_set_color($css, $footertextcolor, '[[setting:footertextcolor]]', '#585858');
-
     // Set the footer URL color.
     if (!empty($theme->settings->footerurlcolor)) {
         $footerurlcolor = $theme->settings->footerurlcolor;
     } else {
         $footerurlcolor = null;
     }
-    $css = theme_essential_set_color($css, $footerurlcolor, '[[setting:footerurlcolor]]', '#808080');
+    $css = theme_essential_set_color($css, $footerurlcolor, '[[setting:footerurlcolor]]', '#217a94');
 
     // Set the footer hover colour.
     if (!empty($theme->settings->footerhovercolor)) {
@@ -405,15 +413,7 @@ function theme_essential_process_css($css, $theme) {
     } else {
         $footerhovercolor = null;
     }
-    $css = theme_essential_set_color($css, $footerhovercolor, '[[setting:footerhovercolor]]', '#999966');
-
-    // Set the footer heading colour.
-    if (!empty($theme->settings->footerheadingcolor)) {
-        $footerheadingcolor = $theme->settings->footerheadingcolor;
-    } else {
-        $footerheadingcolor = null;
-    }
-    $css = theme_essential_set_color($css, $footerheadingcolor, '[[setting:footerheadingcolor]]', '#CCCCCC');
+    $css = theme_essential_set_color($css, $footerhovercolor, '[[setting:footerhovercolor]]', '#30add1');
 
      // Set the slide header colour.
     if (!empty($theme->settings->slideshowcolor)) {
@@ -421,7 +421,7 @@ function theme_essential_process_css($css, $theme) {
     } else {
         $slideshowcolor = null;
     }
-    $css = theme_essential_set_color($css, $slideshowcolor, '[[setting:slideshowcolor]]', '#30ADD1');
+    $css = theme_essential_set_color($css, $slideshowcolor, '[[setting:slideshowcolor]]', '#30add1');
 
      // Set the slide header colour.
     if (!empty($theme->settings->slideheadercolor)) {
@@ -429,7 +429,7 @@ function theme_essential_process_css($css, $theme) {
     } else {
         $slideheadercolor = null;
     }
-    $css = theme_essential_set_color($css, $slideheadercolor, '[[setting:slideheadercolor]]', '#30ADD1');
+    $css = theme_essential_set_color($css, $slideheadercolor, '[[setting:slideheadercolor]]', '#30add1');
 
      // Set the slide text colour.
     if (!empty($theme->settings->slidecolor)) {
@@ -437,7 +437,7 @@ function theme_essential_process_css($css, $theme) {
     } else {
         $slidecolor = null;
     }
-    $css = theme_essential_set_color($css, $slidecolor, '[[setting:slidecolor]]', '#888888');
+    $css = theme_essential_set_color($css, $slidecolor, '[[setting:slidecolor]]', '#ffffff');
 
     // Set the slide button colour.
     if (!empty($theme->settings->slidebuttoncolor)) {
@@ -445,7 +445,7 @@ function theme_essential_process_css($css, $theme) {
     } else {
         $slidebuttoncolor = null;
     }
-    $css = theme_essential_set_color($css, $slidebuttoncolor, '[[setting:slidebuttoncolor]]', '#30ADD1');
+    $css = theme_essential_set_color($css, $slidebuttoncolor, '[[setting:slidebuttoncolor]]', '#30add1');
 
      // Set the slide button hover colour.
     if (!empty($theme->settings->slidebuttonhovercolor)) {
@@ -453,7 +453,7 @@ function theme_essential_process_css($css, $theme) {
     } else {
         $slidebuttonhovercolor = null;
     }
-    $css = theme_essential_set_color($css, $slidebuttonhovercolor, '[[setting:slidebuttonhovercolor]]', '#F32100');
+    $css = theme_essential_set_color($css, $slidebuttonhovercolor, '[[setting:slidebuttonhovercolor]]', '#217a94');
 
     // Set theme alternative colours.
     $defaultalternativethemecolors = array('#a430d1', '#d15430', '#5dd130');
