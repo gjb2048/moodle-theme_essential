@@ -43,17 +43,17 @@
  *               RTL version of the output, then run decache so that
  *               the results can be seen on the next page load.
  *
- *     compile_d Run the .less files through the compiler and produce a 
- *               source map, create the
- *               RTL version of the output, then run decache so that
- *               the results can be seen on the next page load.
- *
  * Options:
  *
  *               --dirroot=<path>  Optional. Explicitly define the
  *                                 path to your Moodle root directory
  *                                 when your theme is not in the
  *                                 standard location.
+ *
+ *               --build=<type>    Optional. 'p'(default) or 'd'. If 'p'
+ *                                 then 'production' CSS files.  If 'd'
+ *                                 then 'development' CSS files unminified
+ *                                 and with source map to less files.
  *
  *               --urlprefix=<path> Optional. Explicitly define
  *                                  the path between the domain
@@ -67,8 +67,6 @@
  * but usually only useful when called in combination with another.
  *
  * grunt less         Compile all less files.
- *
- * grunt less:essential Compile Essential less files.
  *
  * grunt decache      Clears the Moodle theme cache.
  *
@@ -99,8 +97,6 @@
  * @package theme
  * @subpackage shoehorn
  * @author G J Barnard - gjbarnard at gmail dot com and {@link http://moodle.org/user/profile.php?id=442195}
-
-
  * @author Based on code originally written by Joby Harding, Bas Brands, David Scotson and many other contributors. * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -123,6 +119,15 @@ module.exports = function(grunt) {
     // Allow user to explicitly define Moodle root dir.
     if ('' !== dirrootopt) {
         moodleroot = path.resolve(dirrootopt);
+    }
+
+    // Production / development.
+    var build = grunt.option('build') || 'p';
+
+    if ((build != 'p') && (build != 'd')) {
+        build = 'p';
+        console.log('-build switch only accepts \'p\' for production or \'d\' for development,');
+        console.log('e.g. -build=p or -build=d.  Defaulting to production.');
     }
 
     configfile = path.join(moodleroot, 'config.php');
@@ -321,10 +326,8 @@ module.exports = function(grunt) {
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
 
-    grunt.registerTask("production", ["less:moodle_p", "less:essential_p", "less:alternative_p"]);
-    grunt.registerTask("development", ["less:moodle_d", "less:essential_d", "less:alternative_d"]);
-    grunt.registerTask("compile", ["production", "cssflip:rtl_p", "decache"]);
-    grunt.registerTask("compile_d", ["development", "cssflip:rtl_d", "decache"]);
+    grunt.registerTask("css", ["less:moodle_"+build, "less:essential_"+build, "less:alternative_"+build]);
+    grunt.registerTask("compile", ["css", "cssflip:rtl_"+build, "decache"]);
     grunt.registerTask("copy:svg", ["copy:svg_core", "copy:svg_plugins"]);
     grunt.registerTask("replace:svg_colours", ["replace:svg_colours_core", "replace:svg_colours_plugins"]);
     grunt.registerTask("svg", ["copy:svg", "replace:svg_colours", "svgmin"]);
