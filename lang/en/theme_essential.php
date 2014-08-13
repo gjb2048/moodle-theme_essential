@@ -157,6 +157,11 @@ $string['allmodules'] = 'All modules';
 $string['allclasses'] = 'All classes';
 $string['noenrolments'] = 'You have no current enrolments';
 
+$string['helplinktype'] = 'Enable help link in menu';
+$string['helplinktypedesc'] = 'Choose whether you want to enable a help option in the user menu, you can choose to either provide an URL that will be opened in a new window or an email address.';
+$string['helplink'] = 'Help link';
+$string['helplinkdesc'] = 'If you chose URL above fill in the complete URL to your help site (must include http:// or https://). If you chose Email address fill in your email address.';
+
 $string[ 'few'] = 'A few ';
 $string['loggedinas'] = ' logged in as ';
 $string['loggedinfrom'] = 'Logged in from ';
