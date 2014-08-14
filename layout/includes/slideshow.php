@@ -24,10 +24,10 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$numberofslides = theme_essential_showslider($PAGE->theme->settings); // In lib.php.
+$numberofslides = theme_essential_showslider('numberofslides'); // In lib.php.
 
 if ($numberofslides) {
-    $slideinterval = (empty($PAGE->theme->settings->slideinterval)) ? 5000 : $PAGE->theme->settings->slideinterval;
+    $slideinterval = theme_essential_get_setting('slideinterval');
 ?>
     <div class="row-fluid">
         <div class="span12">
@@ -45,8 +45,8 @@ if ($numberofslides) {
                     for ($i = 1; $i <= $numberofslides; $i++) {
                         $urlsetting = 'slide'.$i.'url';
                         $urltarget = 'slide'.$i.'target';
-                        if (!empty($PAGE->theme->settings->$urlsetting)) {
-                            echo '<a href="'.$PAGE->theme->settings->$urlsetting.'" target="'.$PAGE->theme->settings->$urltarget.'"';
+                        if (theme_essential_get_setting($urlsetting)) {
+                            echo '<a href="'.theme_essential_get_setting($urlsetting).'" target="'.theme_essential_get_setting($urltarget).'"';
                         } else {
                             echo '<div';
                         }
@@ -57,14 +57,14 @@ if ($numberofslides) {
                         }
                         echo 'item">';
                         $imagesetting = 'slide'.$i.'image';
-                        if (!empty($PAGE->theme->settings->$imagesetting)) {
+                        if (theme_essential_get_setting($imagesetting)) {
                             $image = $PAGE->theme->setting_file_url($imagesetting, $imagesetting);
                         } else {
                             $image = $OUTPUT->pix_url('default_slide', 'theme');
                         }
                         $slidetitle = 'slide'.$i;
-                        if (!empty($PAGE->theme->settings->$slidetitle)) {
-                            $imgalt = $PAGE->theme->settings->$slidetitle;
+                        if (theme_essential_get_setting($slidetitle)) {
+                            $imgalt = theme_essential_get_setting($slidetitle);
                         } else {
                             $imgalt = get_string('noslidetitle', 'theme_essential', array('slide' => $i));
                         }
@@ -73,22 +73,22 @@ if ($numberofslides) {
 
                         <?php
                         $slidecaption = 'slide'.$i.'caption';
-                        if ((!empty($PAGE->theme->settings->$slidetitle)) || (!empty($PAGE->theme->settings->$slidecaption))) { ?>
+                        if ((theme_essential_get_setting($slidetitle)) || (theme_essential_get_setting($slidecaption))) { ?>
                             <div class="carousel-caption">
                                 <div class="carousel-caption-inner">
                                 <?php
-                                if (!empty($PAGE->theme->settings->$slidetitle)) { echo '<h4>'.$PAGE->theme->settings->$slidetitle.'</h4>'; }
-                                if (!empty($PAGE->theme->settings->$slidecaption)) { echo '<p>'.$PAGE->theme->settings->$slidecaption.'</p>'; }
+                                if (theme_essential_get_setting($slidetitle)) { echo '<h4>'.theme_essential_get_setting($slidetitle).'</h4>'; }
+                                if (theme_essential_get_setting($slidecaption)) { echo '<p>'.theme_essential_get_setting($slidecaption).'</p>'; }
                                 ?> 
                                 </div>
                             </div> 
                             <?php 
                             }
-                            echo (!empty($PAGE->theme->settings->$urlsetting)? '</a>' : '</div>');
+                            echo (theme_essential_get_setting($urlsetting)? '</a>' : '</div>');
                     } ?>
                 </div>
-                <a class="left carousel-control" href="#essentialCarousel" data-slide="prev"><span class="sr-only"><?php echo get_string('previous'); ?></span><i class="fa fa-chevron-circle-left"></i></a>
-                <a class="right carousel-control" href="#essentialCarousel" data-slide="next"><span class="sr-only"><?php echo get_string('next'); ?></span><i class="fa fa-chevron-circle-right"></i></a>
+                <a class="left carousel-control" href="#essentialCarousel" data-slide="prev"><i class="fa fa-chevron-circle-left"></i></a>
+                <a class="right carousel-control" href="#essentialCarousel" data-slide="next"><i class="fa fa-chevron-circle-right"></i></a>
             </div>
         </div>
     </div>

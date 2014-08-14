@@ -1,0 +1,76 @@
+/* @group Forms */
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input,
+.form-item .form-description,
+.form-defaultinfo,
+.form-label .form-shortname {
+    color: ~"[[setting:themetextcolor]]";
+}
+
+.form-item .form-label, .mform .fitem div.fitemtitle {
+    text-align: left;
+}
+
+.form-item .form-label,
+.mform .fitem div.fitemtitle,
+.userprofile dl.list dt,
+.form-horizontal .control-label {
+    width: 140px;
+}
+
+.form-item .form-setting,
+.form-item .form-description,
+.mform .fitem .felement,
+#page-mod-forum-search .c1 {
+    margin-left: 180px;
+}
+
+.form-item .form-label .form-overridden {
+    font-size: 1em;
+    font-family: monospace;
+}
+
+#page-course-edit,
+.path-admin-setting,
+#page-admin-registration-register,
+.path-backup {
+    #page {
+        form {
+            .form-buttons,
+            fieldset:last-of-type.hidden {
+                width: 600px;
+                position: fixed;
+                bottom: 0px;
+                margin: 0px;
+                background-color: #F5F5F5;
+                #fgroup_id_buttonar {
+                    padding: 0px;
+                }
+                #id_previous {
+                    margin-left: -250px;
+                }
+            }
+            .form-buttons {
+                width: 400px;
+            }
+        }
+    }
+}
+
+/* @end */

@@ -24,35 +24,13 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
  
-require_once(dirname(__FILE__).'/includes/pagesettings.php');
-
-echo $OUTPUT->doctype() ?>
-<html <?php echo $OUTPUT->htmlattributes(); ?>>
-<head>
-    <title><?php echo $OUTPUT->page_title(); ?></title>
-    <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
-    <?php echo $OUTPUT->standard_head_html() ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php if (!empty($fontselect) && ($fontselect < 7)) {
-        // Google web fonts -->
-        require_once(dirname(__FILE__).'/includes/fonts.php');
-    }?>
-    <!-- iOS Homescreen Icons -->
-    <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
-    <!-- Start Google Analytics -->
-    <?php if ($hasanalytics) { ?>
-        <?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
-    <?php } ?>
-    <!-- End Google Analytics -->
-</head>
-
-<body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
-
-<?php echo $OUTPUT->standard_top_of_body_html() ?>
+require_once(dirname(__FILE__).'/includes/header.php'); ?>
 
 <div id="page" class="container-fluid">
-    <?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
-
+    <div id="page-navbar" class="clearfix row-fluid">
+        <div class="breadcrumb-nav pull-<?php echo ($left) ? 'left' : 'right'; ?>"><?php echo $OUTPUT->navbar(); ?></div>
+        <nav class="breadcrumb-button pull-<?php echo ($left) ? 'right' : 'left'; ?>"><?php echo $OUTPUT->page_heading_button(); ?></nav>
+    </div>
     <section role="main-content">
         <!-- Start Main Regions -->
         <div id="page-content" class="row-fluid">
@@ -63,10 +41,6 @@ echo $OUTPUT->doctype() ?>
                     <?php } else { ?>
                     <section id="region-main" class="span8 desktop-first-column">
                     <?php } ?>
-                        <div id="page-navbar" class="clearfix">
-                            <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-                            <div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
-                        </div>
                         <?php
                         echo $OUTPUT->course_content_header();
                         echo $OUTPUT->main_content();
@@ -84,9 +58,9 @@ echo $OUTPUT->doctype() ?>
         </div>
         <!-- End Main Regions -->
     </section>
-
-    <?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
 </div>
+
+<?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
 
 </body>
 </html>

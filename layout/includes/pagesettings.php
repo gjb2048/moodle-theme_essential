@@ -25,33 +25,42 @@
  */
  
 /* Group Body */
-theme_essential_check_colours_switch();
-theme_essential_initialise_colourswitcher($PAGE);
-
 $bodyclasses = array();
-$bodyclasses[] = 'essential-colours-' . theme_essential_get_colours();
-if (!empty($PAGE->theme->settings->sideregionsmaxwidth)) {
-    $bodyclasses[] = 'side-regions-with-max-width';
+
+if (theme_essential_get_setting('enablealternativethemecolors1') || 
+    theme_essential_get_setting('enablealternativethemecolors2') || 
+    theme_essential_get_setting('enablealternativethemecolors3')) {
+        $colourswitcher = true;
+        theme_essential_check_colours_switch();
+        theme_essential_initialise_colourswitcher($PAGE);
+        $bodyclasses[] = 'essential-colours-' . theme_essential_get_colours();
+} else {
+    $colourswitcher = false;
 }
-if (!empty($PAGE->theme->settings->slidecaptionbelow)) {
+
+if (theme_essential_get_setting('slidecaptionbelow')) {
     $bodyclasses[] = 'frontpageslidercaptionbelow';
 }
 
-if (!empty($PAGE->theme->settings->pagewidth)) {
-    switch ($PAGE->theme->settings->pagewidth) {
-        case 100:
-            $bodyclasses[] = 'pagewidthvariable';
-            break;
-        case 1200:
-            $bodyclasses[] = 'pagewidthnarrow';
-            break;
-        case 1600:
-            $bodyclasses[] = 'pagewidthwide';
-            break;
-    }
+switch (theme_essential_get_setting('pagewidth')) {
+    case 100:
+        $bodyclasses[] = 'pagewidthvariable';
+        break;
+    case 960:
+        $bodyclasses[] = 'pagewidthnarrow';
+        break;
+    case 1200:
+        $bodyclasses[] = 'pagewidthnormal';
+        break;
+    case 1400:
+        $bodyclasses[] = 'pagewidthwide';
+        break;
 }
 if (!empty($CFG->custommenuitems)) {
     $bodyclasses[] = 'custommenuitems';
+}
+if (theme_essential_get_setting('enablecategoryicon')) {
+    $bodyclasses[] = 'categoryicons';
 }
 
 if (right_to_left()) {
@@ -62,41 +71,40 @@ if (right_to_left()) {
     $left = true;
 }
 
-$fontselect = $PAGE->theme->settings->fontselect;
- 
+$fontselect = theme_essential_get_setting('fontselect');
+
 /* Group Header */
 
-$hasanalytics = $PAGE->theme->settings->useanalytics;
+$hasanalytics = theme_essential_get_setting('useanalytics');
 
-$hassocialnetworks = (  empty($PAGE->theme->settings->facebook)     &&
-                        empty($PAGE->theme->settings->twitter)      &&
-                        empty($PAGE->theme->settings->googleplus)   &&
-                        empty($PAGE->theme->settings->linkedin)     &&
-                        empty($PAGE->theme->settings->youtube)      &&
-                        empty($PAGE->theme->settings->flickr)       &&
-                        empty($PAGE->theme->settings->vk)           &&
-                        empty($PAGE->theme->settings->pinterest)    &&
-                        empty($PAGE->theme->settings->instagram)    &&
-                        empty($PAGE->theme->settings->skype)        &&
-                        empty($PAGE->theme->settings->website)
-                        ? false : true );
-$hasmobileapps =    (   empty($PAGE->theme->settings->ios)          &&
-                        empty($PAGE->theme->settings->android)
-                        ? false : true );
-
-$hasprofilepic = $PAGE->theme->settings->headerprofilepic;
+$hassocialnetworks = (  theme_essential_get_setting('facebook')     &&
+                        theme_essential_get_setting('twitter')      &&
+                        theme_essential_get_setting('googleplus')   &&
+                        theme_essential_get_setting('linkedin')     &&
+                        theme_essential_get_setting('youtube')      &&
+                        theme_essential_get_setting('flickr')       &&
+                        theme_essential_get_setting('vk')           &&
+                        theme_essential_get_setting('pinterest')    &&
+                        theme_essential_get_setting('instagram')    &&
+                        theme_essential_get_setting('skype')        &&
+                        theme_essential_get_setting('website')
+                    );
+$hasmobileapps =    (   theme_essential_get_setting('ios')          &&
+                        theme_essential_get_setting('android')
+                    );
 
 $logoclass = 'span12';
-if (($hassocialnetworks || $hasmobileapps) && $hasprofilepic) {
+if ($hassocialnetworks && !($hasmobileapps)) {
+    $logoclass = 'span7';
+} else if (($hassocialnetworks) && !($hasmobileapps)) {
+    $logoclass = 'span10';
+} else if ($hassocialnetworks && $hasmobileapps) {
     $logoclass = 'span5';
-} else if (!($hassocialnetworks || $hasmobileapps) && $hasprofilepic) {
-    $logoclass = 'span11';
-} else if (($hassocialnetworks || $hasmobileapps) && !$hasprofilepic) {
-    $logoclass = 'span6';
 }
 
-$oldnavbar = $PAGE->theme->settings->oldnavbar;
-$haslogo = (!empty($PAGE->theme->settings->logo));
+$oldnavbar = theme_essential_get_setting('oldnavbar');
+
+$haslogo = theme_essential_get_setting('logo');
 
 /* Group Slideshow */
 
@@ -105,14 +113,14 @@ $alertinfo = '<span class="fa-stack "><i class="fa fa-square fa-stack-2x"></i><i
 $alertwarning = '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-warning fa-stack-1x fa-inverse"></i></span>';
 $alertsuccess = '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-bullhorn fa-stack-1x fa-inverse"></i></span>';
 
-$hasmarketing1image = (!empty($PAGE->theme->settings->marketing1image));
-$hasmarketing2image = (!empty($PAGE->theme->settings->marketing2image));
-$hasmarketing3image = (!empty($PAGE->theme->settings->marketing3image));
+$hasmarketing1image = theme_essential_get_setting('marketing1image');
+$hasmarketing2image = theme_essential_get_setting('marketing2image');
+$hasmarketing3image = theme_essential_get_setting('marketing3image');
 
 /* Group Content */
-$hasboringlayout = $PAGE->theme->settings->layout;
+$hasboringlayout = theme_essential_get_setting('layout');
 
 /* Group Footer */
 $hashiddendock = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('hidden-dock', $OUTPUT));
-$hascopyright = (empty($PAGE->theme->settings->copyright)) ? false : $PAGE->theme->settings->copyright;
-$hasfootnote = (empty($PAGE->theme->settings->footnote)) ? false : $PAGE->theme->settings->footnote;
+$hascopyright = theme_essential_get_setting('copyright');
+$hasfootnote = theme_essential_get_setting('footnote');

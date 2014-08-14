@@ -29,6 +29,12 @@ echo $OUTPUT->doctype() ?>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Google web fonts -->
+	<?php require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
+    <!-- Start Google Analytics -->
+    <?php if ($hasanalytics) {
+        require_once(dirname(__FILE__).'/includes/analytics.php');
+	} ?>
 </head>
 
 <body <?php echo $OUTPUT->body_attributes(); ?>>
@@ -56,22 +62,25 @@ echo $OUTPUT->doctype() ?>
             </a>
             <div class="nav-collapse collapse">
                 <?php echo $OUTPUT->custom_menu(); ?>
-                <ul class="nav pull-right">
-                    <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-                    <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
-                </ul>
+                <div class="pull-right">
+                    <div class="usermenu">
+                        <?php echo $OUTPUT->custom_menu_user(); ?>
+                    </div>
+                    <div class="messagemenu">
+                        <?php echo $OUTPUT->custom_menu_messages(); ?>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 </header>
 
 <div id="page" class="container-fluid">
-
+    <div id="page-navbar" class="clearfix row-fluid">
+        <div class="breadcrumb-nav pull-<?php echo ($left) ? 'left' : 'right'; ?>"><?php echo $OUTPUT->navbar(); ?></div>
+        <nav class="breadcrumb-button pull-<?php echo ($left) ? 'right' : 'left'; ?>"><?php echo $OUTPUT->page_heading_button(); ?></nav>
+    </div>
     <header id="page-header" class="clearfix">
-        <div id="page-navbar" class="clearfix">
-            <nav class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></nav>
-            <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
-        </div>
         <?php echo $OUTPUT->page_heading(); ?>
         <div id="course-header">
             <?php echo $OUTPUT->course_header(); ?>

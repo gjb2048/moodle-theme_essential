@@ -52,6 +52,26 @@ Uninstallation
  3. In '/theme/' remove the folder 'essential'.
  4. Put Moodle out of Maintenance Mode.
 
+Downgrading
+===========
+If for any reason you wish to downgrade to a previous version of the theme (unsupported) then this procedure will inform you of how to
+do so:
+1.  Ensure that you have a copy of the existing and older replacement theme files.
+2.  Put Moodle into 'Maintenance mode' under 'Home -> Administration -> Site administration -> Server -> Maintenance mode', so that there
+    are no users using it bar you as the administrator.
+3.  Switch to a core theme, 'Clean' for example, under 'Home -> Administration -> Site administration -> Appearance -> Themes ->
+    Theme selector -> Default'.
+4.  In '/theme/' remove the folder 'essential' i.e. ALL of the contents - this is VITAL.
+5.  Put in the replacement 'essential' folder into '/theme/'.
+6.  In the database, remove the row with the 'plugin' of 'theme_essential' and 'name' of 'version' in the 'config_plugins' table, then
+    in the 'config' table find the 'name' with the value 'allversionhash' and clear its 'value' field.  Perform a 'Purge all caches'
+    under 'Home -> Site administration -> Development -> Purge all caches'.
+7.  Go back in as an administrator and follow standard the 'plugin' update notification.  If needed, go to
+    'Site administration' -> 'Notifications' if this does not happen.
+8.  Switch the theme back to 'Essential' under 'Home -> Administration -> Site administration -> Appearance -> Themes -> Theme selector ->
+    Default'.
+9.  Put Moodle out of 'Maintenance mode' under 'Home -> Administration -> Site administration -> Server -> Maintenance mode'.
+
 Reporting issues
 ================
 Before reporting an issue, please ensure that you are running the latest version for your release of Moodle.  It is essential
@@ -66,7 +86,49 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
-New in 2.7.4
+New in 2.6.8
+========================
+- FIX: Issue #96:  2.6.7 breaks 'oldnavbar' setting.
+- FIX: Issue #98:  Lang en/iosicondesc - Change 'them' to 'theme'.  Thanks to Skylar Kelty.
+- FIX: Issue #101: Navbar not expanding properly on android mobile and tablet.
+- FIX: Issue #107: No fixed width to header on login page.
+- FIX: Issue #113: Remove FontAwesome from all links in section heading except for the edit icon.
+- FIX: Issue #110: Refactor middle blocks wording, thanks @mkpelletier.
+- FIX: Issue #109: Re-order middle blocks settings, thanks @mkpelletier.
+- FIX: Issue #108: Add similar toggle options to front page content, thanks @mkpelletier.
+- FIX: Issue #67:  Refactored so menus are renderer all separately.
+- FIX: Issue #60:  Add styling to invisible courses in breadcrumb.
+- FIX: Issue #126: Header logo right border syntax.
+- FIX: Issue #127: Need to guard against uninitialised settings.
+- FIX: Issue #128: Dropdown menu items are invisible when navigation bar text is white.
+- FIX: Issue #134: Marketing height broken.
+- FIX: Issue #135: Cannot edit topic summary.
+- FIX: Issue #136: Too many docked icons.
+- FIX: Issue #138: Breadcrumb above content / blocks.
+- FIX: Issue #141: Check slider caption underneath in 2.7.5g.
+- FIX: Issue #142: Check slider speed.
+- FIX: Issue #144: Unmatched end tags in carousel.
+- FIX: Issue #145: Language dropdown cut short when open.
+- FIX: Correctly show no enrolments message when all courses are hidden.
+- FIX: Reworked header menu and added responsive options to apps/social icons.
+- FIX: Removed dnd upload status as it blocks the edit icons.
+- FIX: Further work on RTL support.
+- FIX: Theme Cleanup milestone completely finished!
+- FIX: Further performance optimalizations using own CSS
+- FIX: Provide fixes for IE8, Essential now largely works with IE8 as expected, but no support is given
+- NEW: Issue #114: Add downgrade instructions.  See above.
+- NEW: Removed bootstrapbase dependency for further minification.
+- NEW: Split out alternative theme colours to reduce CSS loading when this is not enabled.
+- NEW: Small tweak to site widths, now available options are 1400px, 1200px and 960px.
+- NEW: Switched to bootstrap all in one for massive speed improvement (from 10 to 1 http request).
+- NEW: Removed option for restricting block width as it was not possible to get this working properly.
+- NEW: Issue #123: Add messages menu from Shoehorn and give it a FaceBook restyle
+- NEW: Issue #14: Add a brand new user menu replacing the Dashboard menu
+- NEW: Automatically collapsing breadcrumb
+- NEW: Updated HTMLshiv
+- NEW: Persistent link to your own grade report, available as long as you are enrolled in one visible course
+
+New in 2.6.7
 ========================
 - FIX: Issue #68.  Expand all not showing on Edit course settings.
 - FIX: Issue #58.  Add font colour setting.
@@ -93,7 +155,7 @@ New in 2.7.4
         a code solution to swapping files does not work at the moment and combining all possible CSS into one file leads to a big file with
         lots of redundant CSS.  This presents problems when it comes to portable devices and bandwidth.
 
-New in 2.7.3
+New in 2.6.6
 ========================
 - FIX: Fixed slide show by replacing with Bootstrap 2.3.2 one.  Issue #18.
 - FIX: Make background image fixed and set a background transparent colour
@@ -119,14 +181,14 @@ New in 2.7.3
 - NEW: Full custom category icon settings (Thanks Danny Wahl)
 - NEW: Transparent fixed background when setting a background image
 
-New in 2.7.2
+New in 2.6.5
 ========================
 - FIX: Slideshow CSS fixes
 - FIX: Image alignment on slideshow
 - NEW: Select slideshow background color
 - NEW: Option to bring back the old navbar location
  
-New in 2.7.1
+New in 2.6.4
 ========================
 - FIX: Numerous CSS fixes
 - FIX: Translation fixes

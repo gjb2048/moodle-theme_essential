@@ -32,30 +32,28 @@ $THEME->name = 'essential';
 
 $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
-$THEME->parents = array('bootstrapbase');
-$THEME->sheets = array('fontawesome');
-/*
-global $PAGE;
-if (strpos($PAGE->bodyclasses, 'dir-rtl') === false) { // TODO - only works with TDM off.
-    $THEME->sheets[] = 'essential';
-} else {
-    $THEME->sheets[] = 'essential-rtl';
-    $THEME->sheets[] = 'rtl';
-} */
-$THEME->sheets[] = 'essential'; // LTR.
-//$THEME->sheets[] = 'essential-rtl'; // RTL.
-//$THEME->sheets[] = 'rtl'; // RTL.
-// Note: Swap above and do a purge all caches if using an RTL language.
-$THEME->sheets[] = 'custom';
-$THEME->supportscssoptimisation = false;
+$THEME->parents = array();
 
-if ($CFG->version >= 2014051200.10 ) {
-    $THEME->enable_dock = true;
+$THEME->sheets[] = 'moodle';
+
+if (right_to_left()) {
+    $THEME->sheets[] = 'essential-rtl';
+} else {
+    $THEME->sheets[] = 'essential';
 }
 
-$THEME->editor_sheets = array();
+if ((get_config('theme_essential', 'enablealternativethemecolors1')) || 
+    (get_config('theme_essential', 'enablealternativethemecolors2')) || 
+    (get_config('theme_essential', 'enablealternativethemecolors3'))) 
+{
+    $THEME->sheets[] = 'alternative';
+}
 
-$THEME->plugins_exclude_sheets = array();
+$THEME->sheets[] = 'custom';
+
+$THEME->supportscssoptimisation = false;
+
+$THEME->editor_sheets = array('editor');
 
 $THEME->layouts = array(
     // Most backwards compatible layout without the blocks - this is the layout used by default.
@@ -176,19 +174,7 @@ $THEME->layouts = array(
     ),
 );
 
-$THEME->javascripts = array(
-    'coloursswitcher',
-);
+$THEME->javascripts_footer[] = 'coloursswitcher';
 
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
-
 $THEME->csspostprocess = 'theme_essential_process_css';
-
-$useragent = '';
-if (!empty($_SERVER['HTTP_USER_AGENT'])) {
-    $useragent = $_SERVER['HTTP_USER_AGENT'];
-}
-
-if (core_useragent::is_ie() && !core_useragent::check_ie_version('9.0')) {
-    $THEME->javascripts[] = 'html5shiv';
-}

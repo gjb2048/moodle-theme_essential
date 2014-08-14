@@ -43,18 +43,7 @@
  */
 
 $plugins = array(
-	'affix'     => array('files' => array('bootstrap/affix_2_3_2.js')),
-    'alert'     => array('files' => array('bootstrap/alert_2_3_2.js')),
-	'button'    => array('files' => array('bootstrap/button_2_3_2.js')),
-    'carousel'  => array('files' => array('bootstrap/carousel_2_3_2.js')),
-    'collapse'  => array('files' => array('bootstrap/collapse_2_3_2.js')),
-	'dropdown'  => array('files' => array('bootstrap/dropdown_2_3_2.js')),
-    'modal'     => array('files' => array('bootstrap/modal_2_3_2.js')),
-	'popover'   => array('files' => array('bootstrap/popover_2_3_2.js')),
-    'scrollspy' => array('files' => array('bootstrap/scrollspy_2_3_2.js')),
-    'tab'       => array('files' => array('bootstrap/tab_2_3_2.js')),
-    'tooltip'   => array('files' => array('bootstrap/tooltip_2_3_2.js')),
-    'transition'=> array('files' => array('bootstrap/transition_2_3_2.js')),
-	'typeahead' => array('files' => array('bootstrap/typeahead_2_3_2.js')),
-	'modernizr'	=> array('files' => array('modernizr_2_6_2.js')),
+	'bootstrap' => array('files' => array('bootstrap_2_3_2.js')),
+	'html5shiv' => array('files' => array('html5shiv_3_7_2.js')),
+    'breadcrumb' => array('files' => array('jBreadCrumb_1_1.js')),
 );

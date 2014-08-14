@@ -26,37 +26,35 @@
 
 switch ($fontselect) {
 case 1:
-    $fonts[] = 'Open+Sans';
+    $fonts[] = "'Open+Sans'";
     break;
 case 2:
-    $fonts[] = 'Oswald';
-    $fonts[] = 'PT+Sans';
+    $fonts[] = "'Oswald'";
+    $fonts[] = "'PT+Sans'";
     break;
 case 3:
-    $fonts[] = 'Roboto';
+    $fonts[] = "'Roboto'";
     break;
 case 4:
-    $fonts[] = 'PT+Sans';
+    $fonts[] = "'PT+Sans'";
     break;
 case 5:
-    $fonts[] = 'Ubuntu';
+    $fonts[] = "'Ubuntu'";
     break;
 case 6:
-    $fonts[] = 'Arimo';
+    $fonts[] = "'Arimo'";
     break;
 case 7:
-    $fonts[] = 'Lobster';
-    $fonts[] = 'Raleway';
+    $fonts[] = "'Lobster'";
+    $fonts[] = "'Raleway'";
 	break;
 }
 
-if(!empty($fonts)) {
-	foreach($fonts as $font) {
-		echo html_writer::empty_tag('link',
-			array('href' => '//fonts.googleapis.com/css?family='.$font, 
-				  'rel' => 'stylesheet', 
-				  'type' => 'type/css'
-				  ));
-	}
-}
-?>
+if (!empty($fonts)) {?>
+	<script type="text/javascript">
+	  WebFontConfig = {
+		google: { families: [ <?php echo implode("," , $fonts); ?> ] }
+	  };
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+<?php } ?>
