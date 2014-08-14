@@ -24,46 +24,17 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(__FILE__).'/includes/pagesettings.php');
-
-echo $OUTPUT->doctype() ?>
-<html <?php echo $OUTPUT->htmlattributes(); ?> class="no-js">
-<head>
-    <title><?php echo $OUTPUT->page_title(); ?></title>
-    <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
-    <?php echo $OUTPUT->standard_head_html() ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google web fonts -->
-    <?php require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
-    <!-- iOS Homescreen Icons -->
-    <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
-    <!-- Start Google Analytics -->
-    <?php if ($hasanalytics) { ?>
-        <?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
-    <?php } ?>
-    <!-- End Google Analytics -->
-    <script type="text/javascript">
-    jQuery(document).ready(function() {
-        $('.carousel').carousel();
-    });
-    </script>
-</head>
-
-<body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
-
-<?php echo $OUTPUT->standard_top_of_body_html() ?>
-
-<?php require_once(dirname(__FILE__).'/includes/header.php');?>
+require_once(dirname(__FILE__).'/includes/header.php');?>
 
 <div id="page" class="container-fluid">
     <section class="slideshow">
         <!-- Start Slideshow -->
         <?php 
-            if($PAGE->theme->settings->toggleslideshow==1) {
+            if(theme_essential_get_setting('toggleslideshow')==1) {
                 require_once(dirname(__FILE__).'/includes/slideshow.php');
-            } else if($PAGE->theme->settings->toggleslideshow==2 && !isloggedin()) {
+            } else if(theme_essential_get_setting('toggleslideshow')==2 && !isloggedin()) {
                 require_once(dirname(__FILE__).'/includes/slideshow.php');
-            } else if($PAGE->theme->settings->toggleslideshow==3 && isloggedin()) {
+            } else if(theme_essential_get_setting('toggleslideshow')==3 && isloggedin()) {
                 require_once(dirname(__FILE__).'/includes/slideshow.php');
             } 
         ?>
@@ -76,68 +47,66 @@ echo $OUTPUT->doctype() ?>
     <!-- Start Alerts -->
 
         <!-- Alert #1 -->
-        <?php if ($PAGE->theme->settings->enable1alert) { ?>  
-            <div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert1type ?>">  
+        <?php if (theme_essential_get_setting('enable1alert')) { ?>  
+            <div class="useralerts alert alert-<?php echo theme_essential_get_setting('alert1type') ?>">  
             <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
             <?php 
-            if ($PAGE->theme->settings->alert1type == 'info') {
+            if (theme_essential_get_setting('alert1type') == 'info') {
                 $alert1icon = $alertinfo;
-            } else if ($PAGE->theme->settings->alert1type == 'error') {
+            } else if (theme_essential_get_setting('alert1type') == 'error') {
                 $alert1icon = $alertwarning;
             } else {
                 $alert1icon = $alertsuccess;
             } 
-            $alert1title = 'alert1title';
-            $alert1text = 'alert1text';
-            echo $alert1icon.'<span class="title">'.$PAGE->theme->settings->$alert1title.'</span>'.$PAGE->theme->settings->$alert1text; ?> 
+            echo $alert1icon.'<span class="title">'.theme_essential_get_setting('alert1title').'</span>'.theme_essential_get_setting('alert1text'); ?> 
         </div>
         <?php } ?>
 
         <!-- Alert #2 -->
-        <?php if ($PAGE->theme->settings->enable2alert) { ?>  
-            <div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert2type ?>">  
+        <?php if (theme_essential_get_setting('enable2alert')) { ?>  
+            <div class="useralerts alert alert-<?php echo theme_essential_get_setting('alert2type') ?>">  
             <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
             <?php 
-            if ($PAGE->theme->settings->alert2type == 'info') {
+            if (theme_essential_get_setting('alert2type') == 'info') {
                 $alert2icon = $alertinfo;
-            } else if ($PAGE->theme->settings->alert2type == 'error') {
+            } else if (theme_essential_get_setting('alert2type') == 'error') {
                 $alert2icon = $alertwarning;
             } else {
                 $alert2icon = $alertsuccess;
             } 
             $alert2title = 'alert2title';
             $alert2text = 'alert2text';
-            echo $alert2icon.'<span class="title">'.$PAGE->theme->settings->$alert2title.'</span>'.$PAGE->theme->settings->$alert2text; ?> 
+            echo $alert2icon.'<span class="title">'.theme_essential_get_setting('alert2title').'</span>'.theme_essential_get_setting('alert2text'); ?> 
         </div>
         <?php } ?>
 
         <!-- Alert #3 -->
-        <?php if ($PAGE->theme->settings->enable3alert) { ?>  
-            <div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert3type ?>">  
+        <?php if (theme_essential_get_setting('enable3alert')) { ?>  
+            <div class="useralerts alert alert-<?php echo theme_essential_get_setting('alert3type') ?>">  
             <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
             <?php 
-            if ($PAGE->theme->settings->alert3type == 'info') {
+            if (theme_essential_get_setting('alert3type') == 'info') {
                 $alert3icon = $alertinfo;
-            } else if ($PAGE->theme->settings->alert3type == 'error') {
+            } else if (theme_essential_get_setting('alert3type') == 'error') {
                 $alert3icon = $alertwarning;
             } else {
                 $alert3icon = $alertsuccess;
             } 
             $alert3title = 'alert3title';
             $alert3text = 'alert3text';
-            echo $alert3icon.'<span class="title">'.$PAGE->theme->settings->$alert3title.'</span>'.$PAGE->theme->settings->$alert3text; ?> 
+            echo $alert3icon.'<span class="title">'.theme_essential_get_setting('alert3title').'</span>'.theme_essential_get_setting('alert3text'); ?> 
         </div>
         <?php } ?>
         <!-- End Alerts -->
 
         <!-- Start Frontpage Content -->
         <?php 
-            if($PAGE->theme->settings->togglefrontcontent==1) {
-                echo $PAGE->theme->settings->frontcontentarea;
-            } else if($PAGE->theme->settings->togglefrontcontent==2 && !isloggedin()) {
-                echo $PAGE->theme->settings->frontcontentarea;
-            } else if($PAGE->theme->settings->togglefrontcontent==3 && isloggedin()) {
-                echo $PAGE->theme->settings->frontcontentarea;
+            if(theme_essential_get_setting('togglefrontcontent')==1) {
+                echo theme_essential_get_setting('frontcontentarea');
+            } else if(theme_essential_get_setting('togglefrontcontent')==2 && !isloggedin()) {
+                echo theme_essential_get_setting('frontcontentarea');
+            } else if(theme_essential_get_setting('togglefrontcontent')==3 && isloggedin()) {
+                echo theme_essential_get_setting('frontcontentarea');
             }
         ?>
         <div class="bor" style="margin-top: 10px;"></div>
@@ -145,11 +114,11 @@ echo $OUTPUT->doctype() ?>
 
         <!-- Start Marketing Spots -->
         <?php 
-            if($PAGE->theme->settings->togglemarketing==1) {
+            if(theme_essential_get_setting('togglemarketing')==1) {
                 require_once(dirname(__FILE__).'/includes/marketingspots.php');
-            } else if($PAGE->theme->settings->togglemarketing==2 && !isloggedin()) {
+            } else if(theme_essential_get_setting('togglemarketing')==2 && !isloggedin()) {
                 require_once(dirname(__FILE__).'/includes/marketingspots.php');
-            } else if($PAGE->theme->settings->togglemarketing==3 && isloggedin()) {
+            } else if(theme_essential_get_setting('togglemarketing')==3 && isloggedin()) {
                 require_once(dirname(__FILE__).'/includes/marketingspots.php');
             }
         ?>
@@ -157,18 +126,18 @@ echo $OUTPUT->doctype() ?>
 
         <!-- Start Middle Blocks -->
         <?php 
-            if($PAGE->theme->settings->frontpagemiddleblocks==1) {
+            if(theme_essential_get_setting('frontpagemiddleblocks')==1) {
                 require_once(dirname(__FILE__).'/includes/middleblocks.php');
-            } else if($PAGE->theme->settings->frontpagemiddleblocks==2 && !isloggedin()) {
+            } else if(theme_essential_get_setting('frontpagemiddleblocks')==2 && !isloggedin()) {
                 require_once(dirname(__FILE__).'/includes/middleblocks.php');
-            } else if($PAGE->theme->settings->frontpagemiddleblocks==3 && isloggedin()) {
+            } else if(theme_essential_get_setting('frontpagemiddleblocks')==3 && isloggedin()) {
                 require_once(dirname(__FILE__).'/includes/middleblocks.php');
             }
         ?>
         <!-- End Middle Blocks -->
 
         <div id="page-content" class="row-fluid">
-            <?php if ($PAGE->theme->settings->frontpageblocks) { ?>
+            <?php if (theme_essential_get_setting('frontpageblocks')) { ?>
             <section id="<?php echo $regionbsid;?>" class="span9 pull-right">
             <?php } else { ?>
             <section id="<?php echo $regionbsid;?>" class="span9 desktop-first-column">
@@ -180,7 +149,7 @@ echo $OUTPUT->doctype() ?>
                 ?>
             </section>
             <?php
-            if ($PAGE->theme->settings->frontpageblocks) {
+            if (theme_essential_get_setting('frontpageblocks')) {
                 echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column');
             } else {
                 echo $OUTPUT->blocks('side-pre', 'span3 pull-right');
@@ -206,5 +175,11 @@ echo $OUTPUT->doctype() ?>
 
 <?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
 
+<!-- Initialize slideshow -->
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    $('.carousel').carousel();
+});
+</script>
 </body>
 </html>

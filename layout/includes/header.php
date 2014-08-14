@@ -24,7 +24,30 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
  
-?>
+require_once(dirname(__FILE__).'/pagesettings.php');
+
+echo $OUTPUT->doctype() ?>
+<html <?php echo $OUTPUT->htmlattributes(); ?> class="no-js">
+<head>
+    <title><?php echo $OUTPUT->page_title(); ?></title>
+    <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
+    <?php echo $OUTPUT->standard_head_html() ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google web fonts -->
+    <?php require_once(dirname(__FILE__).'/fonts.php'); ?>
+    <!-- iOS Homescreen Icons -->
+    <?php require_once(dirname(__FILE__).'/iosicons.php'); ?>
+    <!-- Start Google Analytics -->
+    <?php if ($hasanalytics) { ?>
+        <?php require_once(dirname(__FILE__).'/analytics.php'); ?>
+    <?php } ?>
+    <!-- End Google Analytics -->
+</head>
+
+<body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
+
+<?php echo $OUTPUT->standard_top_of_body_html() ?>
+
 <header role="banner">
     <div id="page-header" class="clearfix<?php echo ($oldnavbar)? ' oldnavbar': '';?>">
         <div class="container-fluid">
