@@ -52,12 +52,9 @@ if ((get_config('theme_essential', 'enablealternativethemecolors1')) ||
 $THEME->sheets[] = 'custom';
 
 $THEME->supportscssoptimisation = false;
+$THEME->enable_dock = true;
 
-if ($CFG->version >= 2014051200.10 ) {
-    $THEME->enable_dock = true;
-}
-
-$THEME->editor_sheets = array();
+$THEME->editor_sheets = array('editor');
 
 $THEME->layouts = array(
     // Most backwards compatible layout without the blocks - this is the layout used by default.

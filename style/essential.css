@@ -1602,6 +1602,7 @@ body {
   line-height: 25px;
   text-shadow: none !important;
   position: relative;
+  background-image: url([[setting:pagebackground]]);
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
@@ -1626,6 +1627,15 @@ a:focus {
 .sitetopic .section .activity:hover,
 .course-content .section .activity:hover {
   background: none;
+}
+.mform fieldset.collapsible legend a.fheader {
+  margin-left: 0px;
+}
+del {
+  color: red !important;
+}
+ins {
+  color: green !important;
 }
 #page {
   padding-top: 10px;
@@ -4252,10 +4262,17 @@ ul.socials li {
   }
   .navbar-inner .nav-collapse {
     float: left;
-    margin-left: 5px;
     display: block;
     z-index: 10;
     /* Get on top of slider. */
+    margin-left: -10px;
+    margin-right: -10px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  .navbar-inner .nav-collapse .navbar-text {
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .navbar-inner .nav-collapse .dropdown-menu > li > a,
   .navbar-inner .nav-collapse .dropdown-menu > li > a:visited {
@@ -4348,7 +4365,6 @@ ul.socials li {
   font-family: [[setting:bodyfont]];
 }
 body {
-  background-image: url([[setting:pagebackground]]);
   color: [[setting:themetextcolor]];
   font-size: [[setting:bodysize]];
   font-weight: [[setting:bodyweight]];
@@ -4617,14 +4633,6 @@ a#button:hover {
   .nav-collapse {
     background-color: [[setting:themecolor]];
     border: 1px solid [[setting:themecolor]];
-    margin-left: -10px;
-    margin-right: -10px;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-  }
-  .nav-collapse .navbar-text {
-    padding-left: 15px;
-    padding-right: 15px;
   }
 }
 /* @end */
@@ -4823,6 +4831,9 @@ a[name="lastused"] {
 }
 body.path-admin-setting .block_settings .type_siteadmin.contains_branch .item_with_icon {
   margin-left: 0px;
+}
+label {
+  display: inline;
 }
 /* @end */
 /*# sourceMappingURL=/theme/essential/style/essential.treasure.map */
