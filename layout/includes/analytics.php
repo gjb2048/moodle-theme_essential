@@ -65,10 +65,10 @@ function analytics_trackurl() {
  
 function insert_analytics_tracking() {
     global $PAGE;
-    $enabled = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
-    $siteid = (empty($PAGE->theme->settings->analyticsid)) ? false : $PAGE->theme->settings->analyticsid;
-    $cleanurl = (empty($PAGE->theme->settings->analyticsclean)) ? false : $PAGE->theme->settings->analyticsclean;
-    $trackadmin = (empty($PAGE->theme->settings->analyticsadmin)) ? false : $PAGE->theme->settings->analyticsadmin;
+    $enabled = theme_essential_get_setting('useanalytics');
+    $siteid = theme_essential_get_setting('analyticsid');
+    $cleanurl = theme_essential_get_setting('analyticsclean');
+    $trackadmin = theme_essential_get_setting('analyticsadmin');
     
     if ($cleanurl) {
         $addition = 

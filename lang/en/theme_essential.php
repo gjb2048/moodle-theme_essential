@@ -65,7 +65,7 @@ $string['invert'] = 'Invert navbar';
 $string['invertdesc'] = 'Swaps text and background for the navbar at the top of the page between black and white.';
 
 $string['logo'] = 'Logo';
-$string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.<br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
+$string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.<br>The image should be 65px high and any reasonable width that suits.<br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
 
 $string['fontselect'] = 'Font selector';
 $string['fontselectdesc'] = 'Choose from the list of available font combinations. You can choose here to disable Google fonts if needed.';

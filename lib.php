@@ -33,7 +33,7 @@
  */
  
 function theme_essential_set_fontwww($css) {
-    global $CFG, $PAGE;
+    global $CFG;
     if(empty($CFG->themewww)){
         $themewww = $CFG->wwwroot."/theme";
     } else {
@@ -41,19 +41,31 @@ function theme_essential_set_fontwww($css) {
     }
     $tag = '[[setting:fontwww]]';
     
-    $theme = theme_config::load('essential');
-    if (!empty($theme->settings->bootstrapcdn)) {
+
+    if (theme_essential_get_setting('bootstrapcdn')) {
      $css = str_replace($tag, '//netdna.bootstrapcdn.com/font-awesome/4.1.0/fonts/', $css);
     } else {
      $css = str_replace($tag, $themewww.'/essential/fonts/', $css);
     }
     return $css;
 }
+
+function theme_essential_get_setting($setting) {
+    static $theme = '';
+    if (empty($theme)) {
+        $theme = theme_config::load('essential');
+    }
+    if (empty($theme->settings->$setting)) {
+        return false;
+    } else {
+        return $theme->settings->$setting;
+    }
+}
+
 function theme_essential_set_logo($css, $logo) {
-    global $OUTPUT;
     $tag = '[[setting:logo]]';
     $replacement = $logo;
-    if (is_null($replacement)) {
+    if (!($replacement)) {
         $replacement = '';
     }
     $css = str_replace($tag, $replacement, $css);
@@ -73,30 +85,26 @@ function theme_essential_set_logo($css, $logo) {
  * @return bool
  */
 function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
+    static $theme = '';
+    if (empty($theme)) {
+        $theme = theme_config::load('essential');
+    }
     if ($context->contextlevel == CONTEXT_SYSTEM) {
         if ($filearea === 'logo') {
-            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
         } else if ($filearea === 'pagebackground') {
-            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('pagebackground', $args, $forcedownload, $options);
         } else if (preg_match("/slide[1-9][0-9]*image/", $filearea) !== false) {
-            $theme = theme_config::load('essential');
             return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
         } else if ((substr($filearea, 0, 9) === 'marketing') && (substr($filearea, 10, 5) === 'image')) {
-            $theme = theme_config::load('essential');
             return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
         } else if ($filearea === 'iphoneicon') {
-            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('iphoneicon', $args, $forcedownload, $options);
         } else if ($filearea === 'iphoneretinaicon') {
-            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('iphoneretinaicon', $args, $forcedownload, $options);
         } else if ($filearea === 'ipadicon') {
-            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('ipadicon', $args, $forcedownload, $options);
         } else if ($filearea === 'ipadretinaicon') {
-            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('ipadretinaicon', $args, $forcedownload, $options);
         } else {
             send_file_not_found();
@@ -113,10 +121,10 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
  * @param mixed $pagewidth
  * @return string
  */
-function essential_set_pagewidth($css, $pagewidth) {
+function theme_essential_set_pagewidth($css, $pagewidth) {
     $tag = '[[setting:pagewidth]]';
     $replacement = $pagewidth;
-    if (is_null($replacement)) {
+    if (!($replacement)) {
         $replacement = '1200';
     }
     if ( $replacement == "100" ) {
@@ -135,7 +143,7 @@ function essential_set_pagewidth($css, $pagewidth) {
  *
  * @return string
  */
-function essential_performance_output($param, $perfinfo) {
+function theme_essential_performance_output($param, $perfinfo) {
     
     $html  = html_writer::start_tag('div', array('class' => 'container-fluid performanceinfo'));
     $html .= html_writer::start_tag('div', array('class' => 'row-fluid'));
@@ -212,10 +220,10 @@ function essential_performance_output($param, $perfinfo) {
  * @param string $customcss The custom CSS to add.
  * @return string The CSS which now contains our custom CSS.
  */
-function essential_set_customcss($css, $customcss) {
+function theme_essential_set_customcss($css, $customcss) {
     $tag = '[[setting:customcss]]';
     $replacement = $customcss;
-    if (is_null($replacement)) {
+    if (!($replacement)) {
         $replacement = '';
     }
 
@@ -226,15 +234,11 @@ function essential_set_customcss($css, $customcss) {
 
 function theme_essential_process_css($css, $theme) {
 
-    if (!empty($theme->settings->pagewidth)) {
-       $pagewidth = $theme->settings->pagewidth;
-    } else {
-       $pagewidth = null;
-    }
-    $css = essential_set_pagewidth($css,$pagewidth);
+    $pagewidth = theme_essential_get_setting('pagewidth');
+    $css = theme_essential_set_pagewidth($css,$pagewidth);
     
     // Set the Fonts.
-    switch($theme->settings->fontselect) {
+    switch(theme_essential_get_setting('fontselect')) {
     case 1:
         $headingfont = 'Open Sans, Arial, Helvetica, sans-serif';
         $bodyfont = 'Open Sans, Arial, Helvetica, sans-serif';
@@ -320,139 +324,71 @@ function theme_essential_process_css($css, $theme) {
     $css = theme_essential_set_bodyweight($css, $bodyweight);
     
     // Set the theme colour.
-    if (!empty($theme->settings->themecolor)) {
-        $themecolor = $theme->settings->themecolor;
-    } else {
-        $themecolor = null;
-    }
+    $themecolor = theme_essential_get_setting('themecolor');
     $css = theme_essential_set_color($css, $themecolor, '[[setting:themecolor]]', '#30ADD1');
 
     // Set the theme text colour.
-    if (!empty($theme->settings->themetextcolor)) {
-        $themetextcolor = $theme->settings->themetextcolor;
-    } else {
-        $themetextcolor = null;
-    }
+    $themetextcolor = theme_essential_get_setting('themetextcolor');
     $css = theme_essential_set_color($css, $themetextcolor, '[[setting:themetextcolor]]', '#047797');
 
     // Set the theme url colour.
-    if (!empty($theme->settings->themeurlcolor)) {
-        $themeurlcolor = $theme->settings->themeurlcolor;
-    } else {
-        $themeurlcolor = null;
-    }
+    $themeurlcolor = theme_essential_get_setting('themeurlcolor');
     $css = theme_essential_set_color($css, $themeurlcolor, '[[setting:themeurlcolor]]', '#FF5034');
 
     // Set the theme hover colour.
-    if (!empty($theme->settings->themehovercolor)) {
-        $themehovercolor = $theme->settings->themehovercolor;
-    } else {
-        $themehovercolor = null;
-    }
+    $themehovercolor = theme_essential_get_setting('themehovercolor');
     $css = theme_essential_set_color($css, $themehovercolor, '[[setting:themehovercolor]]', '#F32100');
     
     // Set the theme icon colour.
-    if (!empty($theme->settings->themeiconcolor)) {
-        $themeiconcolor = $theme->settings->themeiconcolor;
-    } else {
-        $themeiconcolor = null;
-    }
+    $themeiconcolor = theme_essential_get_setting('themeiconcolor');
     $css = theme_essential_set_color($css, $themeiconcolor, '[[setting:themeiconcolor]]', '#30ADD1');
 
     // Set the theme navigation colour.
-    if (!empty($theme->settings->themenavcolor)) {
-        $themenavcolor = $theme->settings->themenavcolor;
-    } else {
-        $themenavcolor = null;
-    }
+    $themenavcolor = theme_essential_get_setting('themenavcolor');
     $css = theme_essential_set_color($css, $themenavcolor, '[[setting:themenavcolor]]', '#ffffff');
     
     // Set the footer colour.
-    if (!empty($theme->settings->footercolor)) {
-        $footercolor = $theme->settings->footercolor;
-    } else {
-        $footercolor = null;
-    }
+    $footercolor = theme_essential_get_setting('footercolor');
     $css = theme_essential_set_color($css, $footercolor, '[[setting:footercolor]]', '#555555');
     
     // Set the footer text color.
-    if (!empty($theme->settings->footertextcolor)) {
-        $footertextcolor = $theme->settings->footertextcolor;
-    } else {
-        $footertextcolor = null;
-    }
+    $footertextcolor = theme_essential_get_setting('footertextcolor');
     $css = theme_essential_set_color($css, $footertextcolor, '[[setting:footertextcolor]]', '#bbbbbb');
 
     // Set the footer heading colour.
-    if (!empty($theme->settings->footerheadingcolor)) {
-        $footerheadingcolor = $theme->settings->footerheadingcolor;
-    } else {
-        $footerheadingcolor = null;
-    }
+    $footerheadingcolor = theme_essential_get_setting('footerheadingcolor');
     $css = theme_essential_set_color($css, $footerheadingcolor, '[[setting:footerheadingcolor]]', '#cccccc');
     
     // Set the footer separator colour.
-    if (!empty($theme->settings->footersepcolor)) {
-        $footersepcolor = $theme->settings->footersepcolor;
-    } else {
-        $footersepcolor = null;
-    }
+    $footersepcolor = theme_essential_get_setting('footersepcolor');
     $css = theme_essential_set_color($css, $footersepcolor, '[[setting:footersepcolor]]', '#313131');
 
     // Set the footer URL color.
-    if (!empty($theme->settings->footerurlcolor)) {
-        $footerurlcolor = $theme->settings->footerurlcolor;
-    } else {
-        $footerurlcolor = null;
-    }
+    $footerurlcolor = theme_essential_get_setting('footerurlcolor');
     $css = theme_essential_set_color($css, $footerurlcolor, '[[setting:footerurlcolor]]', '#217a94');
 
     // Set the footer hover colour.
-    if (!empty($theme->settings->footerhovercolor)) {
-        $footerhovercolor = $theme->settings->footerhovercolor;
-    } else {
-        $footerhovercolor = null;
-    }
+    $footerhovercolor = theme_essential_get_setting('footerhovercolor');
     $css = theme_essential_set_color($css, $footerhovercolor, '[[setting:footerhovercolor]]', '#30add1');
 
      // Set the slide header colour.
-    if (!empty($theme->settings->slideshowcolor)) {
-        $slideshowcolor = $theme->settings->slideshowcolor;
-    } else {
-        $slideshowcolor = null;
-    }
+     $slideshowcolor = theme_essential_get_setting('slideshowcolor');
     $css = theme_essential_set_color($css, $slideshowcolor, '[[setting:slideshowcolor]]', '#30add1');
 
      // Set the slide header colour.
-    if (!empty($theme->settings->slideheadercolor)) {
-        $slideheadercolor = $theme->settings->slideheadercolor;
-    } else {
-        $slideheadercolor = null;
-    }
+     $slideheadercolor = theme_essential_get_setting('slideheadercolor');
     $css = theme_essential_set_color($css, $slideheadercolor, '[[setting:slideheadercolor]]', '#30add1');
 
      // Set the slide text colour.
-    if (!empty($theme->settings->slidecolor)) {
-        $slidecolor = $theme->settings->slidecolor;
-    } else {
-        $slidecolor = null;
-    }
+     $slidecolor = theme_essential_get_setting('slidecolor');
     $css = theme_essential_set_color($css, $slidecolor, '[[setting:slidecolor]]', '#ffffff');
 
     // Set the slide button colour.
-    if (!empty($theme->settings->slidebuttoncolor)) {
-        $slidebuttoncolor = $theme->settings->slidebuttoncolor;
-    } else {
-        $slidebuttoncolor = null;
-    }
+    $slidebuttoncolor = theme_essential_get_setting('slidebuttoncolor');
     $css = theme_essential_set_color($css, $slidebuttoncolor, '[[setting:slidebuttoncolor]]', '#30add1');
 
      // Set the slide button hover colour.
-    if (!empty($theme->settings->slidebuttonhovercolor)) {
-        $slidebuttonhovercolor = $theme->settings->slidebuttonhovercolor;
-    } else {
-        $slidebuttonhovercolor = null;
-    }
+     $slidebuttonhovercolor = theme_essential_get_setting('slidebuttonhovercolor');
     $css = theme_essential_set_color($css, $slidebuttonhovercolor, '[[setting:slidebuttonhovercolor]]', '#217a94');
 
     // Set theme alternative colours.
@@ -462,19 +398,15 @@ function theme_essential_process_css($css, $theme) {
     foreach (range(1, 3) as $alternativethemenumber) {
         $default = $defaultalternativethemecolors[$alternativethemenumber - 1];
         $defaulthover = $defaultalternativethemehovercolors[$alternativethemenumber - 1];
-        $css = theme_essential_set_alternativecolor($css, 'color' . $alternativethemenumber, $theme->settings->{'alternativethemecolor' . $alternativethemenumber}, $default);
-        $css = theme_essential_set_alternativecolor($css, 'textcolor' . $alternativethemenumber, $theme->settings->{'alternativethemetextcolor' . $alternativethemenumber}, $default);
-        $css = theme_essential_set_alternativecolor($css, 'urlcolor' . $alternativethemenumber, $theme->settings->{'alternativethemeurlcolor' . $alternativethemenumber}, $default);
-        $css = theme_essential_set_alternativecolor($css, 'hovercolor' . $alternativethemenumber, $theme->settings->{'alternativethemehovercolor' . $alternativethemenumber}, $defaulthover);
+        $css = theme_essential_set_alternativecolor($css, 'color' . $alternativethemenumber, theme_essential_get_setting('alternativethemehovercolor'.$alternativethemenumber), $default);
+        $css = theme_essential_set_alternativecolor($css, 'textcolor' . $alternativethemenumber, theme_essential_get_setting('alternativethemetextcolor'.$alternativethemenumber), $default);
+        $css = theme_essential_set_alternativecolor($css, 'urlcolor' . $alternativethemenumber, theme_essential_get_setting('alternativethemeurlcolor'.$alternativethemenumber), $default);
+        $css = theme_essential_set_alternativecolor($css, 'hovercolor' . $alternativethemenumber, theme_essential_get_setting('alternativethemehovercolor'.$alternativethemenumber), $defaulthover);
     }
 
     // Set custom CSS.
-    if (!empty($theme->settings->customcss)) {
-        $customcss = $theme->settings->customcss;
-    } else {
-        $customcss = null;
-    }
-    $css = essential_set_customcss($css, $customcss);
+    $customcss = theme_essential_get_setting('customcss');
+    $css = theme_essential_set_customcss($css, $customcss);
 
     // Set the background image for the logo.
     $logo = $theme->setting_file_url('logo', 'logo');
@@ -486,38 +418,29 @@ function theme_essential_process_css($css, $theme) {
     $css = theme_essential_set_pagebackground($css, $pagebackground, $setting);
 
     // Set Marketing Image Height.
-    if (!empty($theme->settings->marketingheight)) {
-        $marketingheight = $theme->settings->marketingheight;
-    } else {
-        $marketingheight = null;
-    }
+    $marketingheight = theme_essential_get_setting('marketingheight');
     $css = theme_essential_set_marketingheight($css, $marketingheight);
     
     // Set Marketing Images.
-    $setting = 'marketing1image';
-    if (!empty($theme->settings->marketing1image)) {
+    if (theme_essential_get_setting('marketing1image')) {
+        $setting = 'marketing1image';
         $marketingimage = $theme->setting_file_url($setting, $setting);
-    } else {
-        $marketingimage = null;
+        $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
     }
-    $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
     
-    $setting = 'marketing2image';
-    if (!empty($theme->settings->marketing2image)) {
+    if (theme_essential_get_setting('marketing2image')) {
+        $setting = 'marketing2image';
         $marketingimage = $theme->setting_file_url($setting, $setting);
-    } else {
-        $marketingimage = null;
+        $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
     }
-    $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
     
-    $setting = 'marketing3image';
-    if (!empty($theme->settings->marketing3image)) {
+    if (theme_essential_get_setting('marketing3image')) {
+        $setting = 'marketing3image';
         $marketingimage = $theme->setting_file_url($setting, $setting);
-    } else {
-        $marketingimage = null;
+        $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
     }
-    $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
-
+    
+    // Set FontAwesome font loading path
     $css = theme_essential_set_fontwww($css);
     return $css;
 }
@@ -546,10 +469,9 @@ function theme_essential_initialise_colourswitcher(moodle_page $page) {
  * @return string The theme colours the user has selected
  */
 function theme_essential_get_colours($default = 'default') {
-    $theme = theme_config::load('essential');
     $preference = get_user_preferences('theme_essential_colours', $default);
     foreach (range(1, 3) as $alternativethemenumber) {
-        if ($preference == 'alternative' . $alternativethemenumber && !empty($theme->settings->{'enablealternativethemecolors' . $alternativethemenumber})) {
+        if ($preference == 'alternative' . $alternativethemenumber && theme_essential_get_setting('enablealternativethemecolors' . $alternativethemenumber)) {
             return $preference;
         }
     }
@@ -572,7 +494,7 @@ function theme_essential_check_colours_switch() {
 function theme_essential_set_headingfont($css, $headingfont) {
     $tag = '[[setting:headingfont]]';
     $replacement = $headingfont;
-    if (is_null($replacement)) {
+    if (!($replacement)) {
         $replacement = 'Georgia';
     }
     $css = str_replace($tag, $replacement, $css);
@@ -582,7 +504,7 @@ function theme_essential_set_headingfont($css, $headingfont) {
 function theme_essential_set_bodyfont($css, $bodyfont) {
     $tag = '[[setting:bodyfont]]';
     $replacement = $bodyfont;
-    if (is_null($replacement)) {
+    if (!($replacement)) {
         $replacement = 'Arial';
     }
     $css = str_replace($tag, $replacement, $css);
@@ -591,26 +513,18 @@ function theme_essential_set_bodyfont($css, $bodyfont) {
 
 function theme_essential_set_bodysize($css, $bodysize) {
     $tag = '[[setting:bodysize]]';
-    $replacement = $bodysize;
-    if (is_null($replacement)) {
-        $replacement = '13';
-    }
-    $css = str_replace($tag, $replacement, $css);
+    $css = str_replace($tag, $bodysize, $css);
     return $css;
 }
 
 function theme_essential_set_bodyweight($css, $bodyweight) {
     $tag = '[[setting:bodyweight]]';
-    $replacement = $bodyweight;
-    if (is_null($replacement)) {
-        $replacement = '400';
-    }
-    $css = str_replace($tag, $replacement, $css);
+    $css = str_replace($tag, $bodyweight, $css);
     return $css;
 }
 
 function theme_essential_set_color($css, $themecolor, $tag, $default) {
-    if (is_null($themecolor)) {
+    if (!($themecolor)) {
         $replacement = $default;
     } else {
         $replacement = $themecolor;
@@ -621,7 +535,7 @@ function theme_essential_set_color($css, $themecolor, $tag, $default) {
 
 function theme_essential_set_alternativecolor($css, $type, $customcolor, $defaultcolor) {
     $tag = '[[setting:alternativetheme' . $type . ']]';
-    if (is_null($customcolor)) {
+    if (!($customcolor)) {
         $replacement = $defaultcolor;
     } else {
         $replacement = $customcolor;
@@ -631,7 +545,6 @@ function theme_essential_set_alternativecolor($css, $type, $customcolor, $defaul
 }
 
 function theme_essential_set_pagebackground($css, $pagebackground, $setting) {
-    global $OUTPUT;
     $tag = '[[setting:pagebackground]]';
     $replacement = $pagebackground;
     $css = str_replace($tag, $replacement, $css);
@@ -641,7 +554,7 @@ function theme_essential_set_pagebackground($css, $pagebackground, $setting) {
 function theme_essential_set_marketingheight($css, $marketingheight) {
     $tag = '[[setting:marketingheight]]';
     $replacement = $marketingheight;
-    if (is_null($replacement)) {
+    if (!($replacement)) {
         $replacement = 100;
     }
     $css = str_replace($tag, $replacement.'px', $css);
@@ -656,7 +569,7 @@ function theme_essential_set_marketingimage($css, $marketingimage, $setting) {
 }
 
 function theme_essential_showslider($settings) {
-    $noslides = (empty($settings->numberofslides)) ? false : $settings->numberofslides;
+    $noslides = theme_essential_get_setting('numberofslides');
     if ($noslides) {
         $devicetype = core_useragent::get_device_type(); // In moodlelib.php.
         if ($devicetype == "mobile") {

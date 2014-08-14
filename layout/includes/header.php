@@ -24,7 +24,30 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
  
-?>
+require_once(dirname(__FILE__).'/pagesettings.php');
+
+echo $OUTPUT->doctype() ?>
+<html <?php echo $OUTPUT->htmlattributes(); ?> class="no-js">
+<head>
+    <title><?php echo $OUTPUT->page_title(); ?></title>
+    <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
+    <?php echo $OUTPUT->standard_head_html() ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google web fonts -->
+    <?php require_once(dirname(__FILE__).'/fonts.php'); ?>
+    <!-- iOS Homescreen Icons -->
+    <?php require_once(dirname(__FILE__).'/iosicons.php'); ?>
+    <!-- Start Google Analytics -->
+    <?php if ($hasanalytics) { ?>
+        <?php require_once(dirname(__FILE__).'/analytics.php'); ?>
+    <?php } ?>
+    <!-- End Google Analytics -->
+</head>
+
+<body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
+
+<?php echo $OUTPUT->standard_top_of_body_html() ?>
+
 <header role="banner">
     <div id="page-header" class="clearfix<?php echo ($oldnavbar)? ' oldnavbar': '';?>">
         <div class="container-fluid">
@@ -33,7 +56,7 @@
                     <div class="<?php echo $logoclass; echo (!$left) ? ' pull-right': ' pull-left';?>">
                         <?php if (!$haslogo) { ?>
                             <a class="textlogo" href="<?php echo $CFG->wwwroot;?>">
-                                <i id="headerlogo" class="fa fa-<?php echo $PAGE->theme->settings->siteicon ?>"></i>
+                                <i id="headerlogo" class="fa fa-<?php echo theme_essential_get_setting('siteicon'); ?>"></i>
                                 <h1 id="title"><?php echo $SITE->shortname; ?></h1>
                             </a>
                         <?php } else { ?>
@@ -51,7 +74,7 @@
                 // If true, displays the heading and available social links; displays nothing if false.
                 if ($hassocialnetworks) {
                 ?>
-                <div class="span4 pull-<?php echo ($left) ? 'right': 'left';?>" id="socialnetworks">
+                <div class="span5 pull-<?php echo ($left) ? 'right': 'left';?>" id="socialnetworks">
                 <p id="socialheading"><?php echo get_string('socialnetworks','theme_essential')?></p>
                     <ul class="socials unstyled">
                         <?php
@@ -74,7 +97,7 @@
                 // If true, displays the heading and available social links; displays nothing if false.
                 if ($hasmobileapps) {
                 ?>
-                <div class="span1 pull-<?php echo ($left) ? 'right': 'left';?>">
+                <div class="span2 pull-<?php echo ($left) ? 'right': 'left';?>">
                     <p id="socialheading"><?php echo get_string('mobileappsheading','theme_essential')?></p>
                     <ul class="socials unstyled">
                         <?php 

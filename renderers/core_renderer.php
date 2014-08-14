@@ -31,8 +31,8 @@ class theme_essential_core_renderer extends core_renderer {
  
     public function navbar() {
         $breadcrumbs = '';
-        $breadcrumbstyle = (!empty($this->page->theme->settings->breadcrumbstyle)) ? $this->page->theme->settings->breadcrumbstyle : 1; // Default in settings.php.
-        if (!empty($breadcrumbstyle) && ($breadcrumbstyle > 0) ) {
+        $breadcrumbstyle = theme_essential_get_setting('breadcrumbstyle');
+        if ($breadcrumbstyle) {
             $index = 1;
             foreach ($this->page->navbar->get_items() as $item) {
                 $item->hideicon = true;
@@ -86,7 +86,7 @@ class theme_essential_core_renderer extends core_renderer {
                 error_log("PERF: " . $perf['txt']);
             }
             if (defined('MDL_PERFTOFOOT') || debugging() || $CFG->perfdebug > 7) {
-                $performanceinfo = essential_performance_output($perf, $this->page->theme->settings->perfinfo);
+                $performanceinfo = theme_essential_performance_output($perf, theme_essential_get_setting('perfinfo'));
             }
         }
 
@@ -96,7 +96,7 @@ class theme_essential_core_renderer extends core_renderer {
 
         $this->page->set_state(moodle_page::STATE_DONE);
 
-        if(!empty($this->page->theme->settings->persistentedit) && property_exists($USER, 'editing') && $USER->editing && !$this->really_editing) {
+        if(theme_essential_get_setting('persistentedit') && property_exists($USER, 'editing') && $USER->editing && !$this->really_editing) {
             $USER->editing = false;
         }
 
@@ -217,9 +217,9 @@ class theme_essential_core_renderer extends core_renderer {
     public function custom_menu_courses() {
         $coursemenu = new custom_menu();
 
-        $hasdisplaymycourses = (empty($this->page->theme->settings->displaymycourses)) ? false : $this->page->theme->settings->displaymycourses;
+        $hasdisplaymycourses = theme_essential_get_setting('displaymycourses');
         if (isloggedin() && !isguestuser() && $hasdisplaymycourses) {
-            $mycoursetitle = $this->page->theme->settings->mycoursetitle;
+            $mycoursetitle = theme_essential_get_setting('mycoursetitle');
             if ($mycoursetitle == 'module') {
                 $branchtitle = get_string('mymodules', 'theme_essential');
             } else if ($mycoursetitle == 'unit') {
@@ -269,7 +269,7 @@ class theme_essential_core_renderer extends core_renderer {
         if (!isguestuser()) {
             $alternativethemes = array();
             foreach (range(1, 3) as $alternativethemenumber) {
-                if (!empty($this->page->theme->settings->{'enablealternativethemecolors' . $alternativethemenumber})) {
+                if (theme_essential_get_setting('enablealternativethemecolors' . $alternativethemenumber)) {
                     $alternativethemes[] = $alternativethemenumber;
                 }
             }
@@ -284,8 +284,8 @@ class theme_essential_core_renderer extends core_renderer {
                 $branch->add('<i class="fa fa-square colours-default"></i>' . $defaultthemecolorslabel,
                         new moodle_url($this->page->url, array('essentialcolours' => 'default')), $defaultthemecolorslabel);
                 foreach ($alternativethemes as $alternativethemenumber) {
-                    if (!empty($this->page->theme->settings->{'alternativethemename' . $alternativethemenumber})) {
-                        $alternativethemeslabel = $this->page->theme->settings->{'alternativethemename' . $alternativethemenumber};
+                    if (theme_essential_get_setting('alternativethemename' . $alternativethemenumber)) {
+                        $alternativethemeslabel = theme_essential_get_setting('alternativethemename' . $alternativethemenumber);
                     } else {
                         $alternativethemeslabel = get_string('alternativecolors', 'theme_essential', $alternativethemenumber);
                     }
@@ -381,7 +381,7 @@ class theme_essential_core_renderer extends core_renderer {
             $messagelist[] = $this->process_message($message);
         }
 
-        $showoldmessages = (empty($this->page->theme->settings->showoldmessages)) ? false : $this->page->theme->settings->showoldmessages;
+        $showoldmessages = theme_essential_get_setting('showoldmessages');
         if ($showoldmessages == 2) {
             $maxmessages = 5;
             $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
@@ -592,21 +592,21 @@ class theme_essential_core_renderer extends core_renderer {
             $branchurl   = new moodle_url('/login/logout.php?sesskey='.sesskey());
             $usermenu .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
             
-            if (!empty($this->page->theme->settings->helplinktype)) {
+            if (theme_essential_get_setting('helplinktype')) {
                 $branchlabel = '<em><i class="fa fa-question-circle"></i>'.get_string('help').'</em>';
                 $branchurl   = new moodle_url('#');
                 $target      = '';
-                switch($this->page->theme->settings->helplinktype) {
+                switch(theme_essential_get_setting('helplinktype')) {
                     case 1:
-                    if (filter_var($this->page->theme->settings->helplink, FILTER_VALIDATE_EMAIL)) {
-                        $branchurl = 'mailto:'.$this->page->theme->settings->helplink.'?cc='.$USER->email;
+                    if (filter_var(theme_essential_get_setting('helplink'), FILTER_VALIDATE_EMAIL)) {
+                        $branchurl = 'mailto:'.theme_essential_get_setting('helplink').'?cc='.$USER->email;
                     } else {
                         $branchlabel = '<em><i class="fa fa-exclamation-triangle red"></i>'.get_string('invalidemail').'</em>';
                     }
                     break;
                     case 2:
-                    if(filter_var($this->page->theme->settings->helplink, FILTER_VALIDATE_URL,FILTER_FLAG_SCHEME_REQUIRED)) {
-                        $branchurl = $this->page->theme->settings->helplink;
+                    if(filter_var(theme_essential_get_setting('helplink'), FILTER_VALIDATE_URL,FILTER_FLAG_SCHEME_REQUIRED)) {
+                        $branchurl = theme_essential_get_setting('helplink');
                         $target    = '_blank';
                     } else {
                         $branchlabel = '<em><i class="fa fa-exclamation-triangle red"></i>'.get_string('invalidurl', 'error').'</em>';
@@ -630,21 +630,21 @@ class theme_essential_core_renderer extends core_renderer {
             $branchurl   = new moodle_url('/login/logout.php?sesskey='.sesskey());
             $usermenu .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
             
-            if (!empty($this->page->theme->settings->helplinktype)) {
+            if (theme_essential_get_setting('helplinktype')) {
                 $branchlabel = '<em><i class="fa fa-question-circle"></i>'.get_string('help').'</em>';
                 $branchurl   = new moodle_url('#');
                 $target      = '';
-                switch($this->page->theme->settings->helplinktype) {
+                switch(theme_essential_get_setting('helplinktype')) {
                     case 1:
-                    if (filter_var($this->page->theme->settings->helplink, FILTER_VALIDATE_EMAIL)) {
-                        $branchurl = 'mailto:'.$this->page->theme->settings->helplink.'?cc='.$USER->email;
+                    if (filter_var(theme_essential_get_setting('helplink'), FILTER_VALIDATE_EMAIL)) {
+                        $branchurl = 'mailto:'.theme_essential_get_setting('helplink').'?cc='.$USER->email;
                     } else {
                         $branchlabel = '<em><i class="fa fa-exclamation-triangle red"></i>'.get_string('invalidemail').'</em>';
                     }
                     break;
                     case 2:
-                    if(filter_var($this->page->theme->settings->helplink, FILTER_VALIDATE_URL,FILTER_FLAG_SCHEME_REQUIRED)) {
-                        $branchurl = $this->page->theme->settings->helplink;
+                    if(filter_var(theme_essential_get_setting('helplink'), FILTER_VALIDATE_URL,FILTER_FLAG_SCHEME_REQUIRED)) {
+                        $branchurl = theme_essential_get_setting('helplink');
                         $target    = '_blank';
                     } else {
                         $branchlabel = '<em><i class="fa fa-exclamation-triangle red"></i>'.get_string('invalidurl', 'error').'</em>';
@@ -792,7 +792,7 @@ class theme_essential_core_renderer extends core_renderer {
     }
     
     public function render_social_network($socialnetwork) {
-        if (!empty($this->page->theme->settings->$socialnetwork)) {
+        if (theme_essential_get_setting($socialnetwork)) {
             if ($socialnetwork === 'googleplus') {
                 $icon = 'google-plus';
             } else if ($socialnetwork === 'website') {
@@ -806,7 +806,7 @@ class theme_essential_core_renderer extends core_renderer {
             $socialhtml  = html_writer::start_tag('li');
             $socialhtml .= html_writer::start_tag('button', array('type' => "button",
                                                                   'class' => 'socialicon '.$socialnetwork, 
-                                                                  'onclick' => "window.open('".$this->page->theme->settings->$socialnetwork."')",
+                                                                  'onclick' => "window.open('".theme_essential_get_setting($socialnetwork)."')",
                                                                   'title' => get_string($socialnetwork, 'theme_essential'),
                                                                   ));
             $socialhtml .= html_writer::start_tag('i', array('class' => 'fa fa-'.$icon.' fa-inverse'));
