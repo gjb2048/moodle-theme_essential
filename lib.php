@@ -33,7 +33,7 @@
  */
  
 function theme_essential_set_fontwww($css) {
-    global $CFG, $PAGE;
+    global $CFG;
     if(empty($CFG->themewww)){
         $themewww = $CFG->wwwroot."/theme";
     } else {
@@ -55,17 +55,17 @@ function theme_essential_get_setting($setting) {
     if (empty($theme)) {
         $theme = theme_config::load('essential');
     }
-    if (!empty($theme->settings->$setting)) {
+    if (empty($theme->settings->$setting)) {
+        return false;
+    } else {
         return $theme->settings->$setting;
     }
-    return false;
 }
 
 function theme_essential_set_logo($css, $logo) {
-    global $OUTPUT;
     $tag = '[[setting:logo]]';
     $replacement = $logo;
-    if (is_null($replacement)) {
+    if (!($replacement)) {
         $replacement = '';
     }
     $css = str_replace($tag, $replacement, $css);
@@ -85,30 +85,26 @@ function theme_essential_set_logo($css, $logo) {
  * @return bool
  */
 function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
+    static $theme = '';
+    if (empty($theme)) {
+        $theme = theme_config::load('essential');
+    }
     if ($context->contextlevel == CONTEXT_SYSTEM) {
         if ($filearea === 'logo') {
-            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
         } else if ($filearea === 'pagebackground') {
-            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('pagebackground', $args, $forcedownload, $options);
         } else if (preg_match("/slide[1-9][0-9]*image/", $filearea) !== false) {
-            $theme = theme_config::load('essential');
             return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
         } else if ((substr($filearea, 0, 9) === 'marketing') && (substr($filearea, 10, 5) === 'image')) {
-            $theme = theme_config::load('essential');
             return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
         } else if ($filearea === 'iphoneicon') {
-            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('iphoneicon', $args, $forcedownload, $options);
         } else if ($filearea === 'iphoneretinaicon') {
-            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('iphoneretinaicon', $args, $forcedownload, $options);
         } else if ($filearea === 'ipadicon') {
-            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('ipadicon', $args, $forcedownload, $options);
         } else if ($filearea === 'ipadretinaicon') {
-            $theme = theme_config::load('essential');
             return $theme->setting_file_serve('ipadretinaicon', $args, $forcedownload, $options);
         } else {
             send_file_not_found();
@@ -128,7 +124,7 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
 function theme_essential_set_pagewidth($css, $pagewidth) {
     $tag = '[[setting:pagewidth]]';
     $replacement = $pagewidth;
-    if (is_null($replacement)) {
+    if (!($replacement)) {
         $replacement = '1200';
     }
     if ( $replacement == "100" ) {
@@ -227,7 +223,7 @@ function theme_essential_performance_output($param, $perfinfo) {
 function theme_essential_set_customcss($css, $customcss) {
     $tag = '[[setting:customcss]]';
     $replacement = $customcss;
-    if (is_null($replacement)) {
+    if (!($replacement)) {
         $replacement = '';
     }
 
@@ -498,7 +494,7 @@ function theme_essential_check_colours_switch() {
 function theme_essential_set_headingfont($css, $headingfont) {
     $tag = '[[setting:headingfont]]';
     $replacement = $headingfont;
-    if (is_null($replacement)) {
+    if (!($replacement)) {
         $replacement = 'Georgia';
     }
     $css = str_replace($tag, $replacement, $css);
@@ -508,7 +504,7 @@ function theme_essential_set_headingfont($css, $headingfont) {
 function theme_essential_set_bodyfont($css, $bodyfont) {
     $tag = '[[setting:bodyfont]]';
     $replacement = $bodyfont;
-    if (is_null($replacement)) {
+    if (!($replacement)) {
         $replacement = 'Arial';
     }
     $css = str_replace($tag, $replacement, $css);
@@ -517,26 +513,18 @@ function theme_essential_set_bodyfont($css, $bodyfont) {
 
 function theme_essential_set_bodysize($css, $bodysize) {
     $tag = '[[setting:bodysize]]';
-    $replacement = $bodysize;
-    if (is_null($replacement)) {
-        $replacement = '13';
-    }
-    $css = str_replace($tag, $replacement, $css);
+    $css = str_replace($tag, $bodysize, $css);
     return $css;
 }
 
 function theme_essential_set_bodyweight($css, $bodyweight) {
     $tag = '[[setting:bodyweight]]';
-    $replacement = $bodyweight;
-    if (is_null($replacement)) {
-        $replacement = '400';
-    }
-    $css = str_replace($tag, $replacement, $css);
+    $css = str_replace($tag, $bodyweight, $css);
     return $css;
 }
 
 function theme_essential_set_color($css, $themecolor, $tag, $default) {
-    if (is_null($themecolor)) {
+    if (!($themecolor)) {
         $replacement = $default;
     } else {
         $replacement = $themecolor;
@@ -547,7 +535,7 @@ function theme_essential_set_color($css, $themecolor, $tag, $default) {
 
 function theme_essential_set_alternativecolor($css, $type, $customcolor, $defaultcolor) {
     $tag = '[[setting:alternativetheme' . $type . ']]';
-    if (is_null($customcolor)) {
+    if (!($customcolor)) {
         $replacement = $defaultcolor;
     } else {
         $replacement = $customcolor;
@@ -566,7 +554,7 @@ function theme_essential_set_pagebackground($css, $pagebackground, $setting) {
 function theme_essential_set_marketingheight($css, $marketingheight) {
     $tag = '[[setting:marketingheight]]';
     $replacement = $marketingheight;
-    if (is_null($replacement)) {
+    if (!($replacement)) {
         $replacement = 100;
     }
     $css = str_replace($tag, $replacement.'px', $css);
@@ -581,7 +569,7 @@ function theme_essential_set_marketingimage($css, $marketingimage, $setting) {
 }
 
 function theme_essential_showslider($settings) {
-    $noslides = (empty($settings->numberofslides)) ? false : $settings->numberofslides;
+    $noslides = theme_essential_get_setting('numberofslides');
     if ($noslides) {
         $devicetype = core_useragent::get_device_type(); // In moodlelib.php.
         if ($devicetype == "mobile") {

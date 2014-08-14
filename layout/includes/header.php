@@ -56,7 +56,7 @@ echo $OUTPUT->doctype() ?>
                     <div class="<?php echo $logoclass; echo (!$left) ? ' pull-right': ' pull-left';?>">
                         <?php if (!$haslogo) { ?>
                             <a class="textlogo" href="<?php echo $CFG->wwwroot;?>">
-                                <i id="headerlogo" class="fa fa-<?php echo $PAGE->theme->settings->siteicon ?>"></i>
+                                <i id="headerlogo" class="fa fa-<?php echo theme_essential_get_setting('siteicon'); ?>"></i>
                                 <h1 id="title"><?php echo $SITE->shortname; ?></h1>
                             </a>
                         <?php } else { ?>

@@ -85,14 +85,14 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         $val = '';
         $icon = '';
         // Do a settings check to output our icon for the category
-        if(!empty($PAGE->theme->settings->enablecategoryicon)) {
-            if(!empty($PAGE->theme->settings->$categoryiconnum) && 
-               !empty($PAGE->theme->settings->enablecustomcategoryicon)) {
+        if(theme_essential_get_setting('enablecategoryicon')) {
+            if(theme_essential_get_setting('$categoryiconnum') && 
+               theme_essential_get_setting('enablecustomcategoryicon')) {
                 // User has set a value for the category
-                $val = $PAGE->theme->settings->$categoryiconnum;
+                $val = theme_essential_get_setting($categoryiconnum);
             } else {
                 // User hasn't set a value for the category, get the default
-                $val = $PAGE->theme->settings->defaultcategoryicon;
+                $val = theme_essential_get_setting('defaultcategoryicon');
             }
         }
         if(!empty($val)) {
