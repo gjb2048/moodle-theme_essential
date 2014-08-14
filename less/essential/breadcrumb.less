@@ -68,7 +68,7 @@
             height: 0;
             border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
             border-bottom: 50px solid transparent;
-            border-left: 30px solid ~"[[setting:themecolor]]";;
+            border-left: 30px solid ~"[[setting:themecolor]]";
             position: absolute;
             top: 50%;
             margin-top: -50px; 
@@ -102,6 +102,10 @@
                 content: "\f015 ";
                 margin-right: 5px;
                 text-decoration: none;
+                color: #fff;
+            }
+            a:hover:before {
+                color: ~"[[setting:themecolor]]";
             }
         }
         .last:before,

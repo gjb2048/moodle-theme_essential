@@ -48,15 +48,17 @@
         <div class="footerlinks row-fluid">
             <hr />
             <p class="helplink"><?php echo page_doc_link(get_string('moodledocslink')); ?></p>
-        <?php if ($hascopyright) {
-            echo '<p class="copy">&copy; '.date("Y").' '.$hascopyright.'</p>';
-        } ?>
+            <?php if ($hascopyright) {
+                echo '<p class="copy">&copy; '.date("Y").' '.$hascopyright.'</p>';
+            } ?>
 
-        <?php if ($hasfootnote) {
-            echo '<div class="footnote">'.$hasfootnote.'</div>';
-        } ?>
+            <?php if ($hasfootnote) {
+                echo '<div class="footnote span12">'.$hasfootnote.'</div>';
+            } ?>
         </div>
-        <?php echo $OUTPUT->standard_footer_html(); ?>
+        <div class="footerperformance row-fluid">
+            <?php echo $OUTPUT->standard_footer_html(); ?>
+        </div>
     </div>
 </footer>
 

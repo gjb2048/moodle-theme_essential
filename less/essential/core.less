@@ -16,6 +16,10 @@ body {
 a {
     text-decoration: none;
 }
+a:hover,
+a:focus {
+    text-decoration: none;
+}
 
 #dndupload-status {
     display: none;
@@ -33,6 +37,7 @@ a {
     padding-top: 10px;
     background-color: rgba(255,255,255,0.6);
     #page-content {
+        margin-top: 10px;
         div[role="main"] {
             border: 1px solid darken(@wellBackground, 7%);
             .border-radius(@borderRadiusLarge);

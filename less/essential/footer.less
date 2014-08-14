@@ -1,13 +1,5 @@
 /* @group Footer */
 
-.helplink {
-    float: right;
-    padding-right: 20px;
-    a {
-        color: orange !important;
-    }
-}
-
 #page-footer {
     margin: 0px;
     padding: 0px;
@@ -16,22 +8,25 @@
     text-align: left;
     width: 100%;
 
-    .container {
-        margin-right: auto;
-        margin-left: auto;
-    }
-
     .copy {
         padding-left: 20px;
         float: left;
     }
-
-    .footnote {
-        float: left;
-        color: #fff;
-        margin-left: 20px;
-        a:hover {
-            text-decoration: none;
+    .footerlinks {
+        .footnote {
+            float: left;
+            color: #fff;
+            margin-left: 0px;
+            a:hover {
+                text-decoration: none;
+            }
+        }
+        .helplink {
+            float: right;
+            padding-right: 20px;
+            a {
+                color: orange !important;
+            }
         }
     }
 
@@ -94,9 +89,6 @@
             }
         }
     }
-    input:-webkit-autofill {
-        background-color: #fff !important;
-    }
 }
 
 #page-footer .eventskey,
@@ -122,31 +114,9 @@
 }
 
 #page-footer .block_login {
-    input[type="submit"] {
-        color: #fff;
-        text-shadow: none;
-        border: 0px none;
-        float: left;
-        margin-top: 3px;
-    }
-
     .footer a,
     .footer a:visited {
-        background: red;
         color: #fff;
-        border-radius: 5px;
-        padding: 4px 10px;
-        font-size: 1.1em;
-        line-height: 20px;
-        float: left;
-        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-        margin-left: 10px;
-    }
-
-    .footer a:focus,
-    .footer a:hover {
-        text-decoration: none !important;
-        background-color: #666 ;
     }
 }
 
@@ -161,10 +131,6 @@
 
     .content li:hover {
         background: transparent;
-    }
-
-    .footer a {
-           color: #fff;
     }
 }
 

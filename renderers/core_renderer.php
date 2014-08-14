@@ -618,6 +618,42 @@ class theme_essential_core_renderer extends core_renderer {
             
             $usermenu .= html_writer::end_tag('ul');
 
+        } else if (isloggedin() && isguestuser()) {
+            $userurl    = new moodle_url('#');
+            $userpic    = parent::user_picture($USER, array('link' => false));
+            $caret      = '<i class="fa fa-caret-right"></i>';
+            $userclass  = array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown');
+            $usermenu  .= html_writer::link($userurl, $userpic.get_string('guest').$caret, $userclass);
+            
+            $usermenu  .= html_writer::start_tag('ul', array('class' => 'dropdown-menu pull-right'));
+            $branchlabel = '<em><i class="fa fa-sign-out"></i>'.get_string('logout').'</em>';
+            $branchurl   = new moodle_url('/login/logout.php?sesskey='.sesskey());
+            $usermenu .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+            
+            if (!empty($this->page->theme->settings->helplinktype)) {
+                $branchlabel = '<em><i class="fa fa-question-circle"></i>'.get_string('help').'</em>';
+                $branchurl   = new moodle_url('#');
+                $target      = '';
+                switch($this->page->theme->settings->helplinktype) {
+                    case 1:
+                    if (filter_var($this->page->theme->settings->helplink, FILTER_VALIDATE_EMAIL)) {
+                        $branchurl = 'mailto:'.$this->page->theme->settings->helplink.'?cc='.$USER->email;
+                    } else {
+                        $branchlabel = '<em><i class="fa fa-exclamation-triangle red"></i>'.get_string('invalidemail').'</em>';
+                    }
+                    break;
+                    case 2:
+                    if(filter_var($this->page->theme->settings->helplink, FILTER_VALIDATE_URL,FILTER_FLAG_SCHEME_REQUIRED)) {
+                        $branchurl = $this->page->theme->settings->helplink;
+                        $target    = '_blank';
+                    } else {
+                        $branchlabel = '<em><i class="fa fa-exclamation-triangle red"></i>'.get_string('invalidurl', 'error').'</em>';
+                    }
+                    break;
+                }
+                $usermenu .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel, array('target' => $target)));
+            }
+            $usermenu .= html_writer::end_tag('ul');
         } else {
             $userpic    = '<em><i class="fa fa-sign-in"></i>'.get_string('login').'</em>';
             $usermenu  .= html_writer::link($loginurl, $userpic, array('class' => 'loginurl'));
@@ -680,19 +716,19 @@ class theme_essential_core_renderer extends core_renderer {
     */
     
     public function render_pix_icon(pix_icon $icon) {
-        if (self::replace_moodle_icon($icon->pix) !== false && $icon->attributes['alt'] === '') {
+        if (self::replace_moodle_icon($icon->pix)) {
             return self::replace_moodle_icon($icon->pix);
         } else {
             return parent::render_pix_icon($icon);
         }
-    }    
+    }
    
     private static function replace_moodle_icon($name) {
         $icons = array(
             'add' => 'plus',
             'book' => 'book',
             'chapter' => 'file',
-            'docs' => 'question-sign',
+            'docs' => 'question-circle',
             'generate' => 'gift',
             'i/dragdrop' => 'arrows',
             'i/loading_small' => 'spinner',
@@ -721,7 +757,7 @@ class theme_essential_core_renderer extends core_renderer {
             't/right' => 'arrow-right',
             't/left' => 'arrow-left'
         );
-        if (isset($icons[$name])) {
+        if (array_key_exists($name, $icons)) {
             return "<i class=\"fa fa-$icons[$name]\" id=\"icon\"></i>";
         } else {
             return false;

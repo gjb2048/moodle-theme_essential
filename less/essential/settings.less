@@ -3,7 +3,7 @@
 /* @group Core */
  
 * {
-    font-family:~"[[setting:bodyfont]]"
+    font-family: ~"[[setting:bodyfont]]"
 }
 
 body{
@@ -11,7 +11,7 @@ body{
     color: ~"[[setting:themetextcolor]]";
     font-size: ~"[[setting:bodysize]]";
     font-weight: ~"[[setting:bodyweight]]";
-    font-family:~"[[setting:bodyfont]]";
+    font-family: ~"[[setting:bodyfont]]";
 }
 
 .container-fluid {
@@ -19,7 +19,7 @@ body{
 }
 
 h1, h2 {
-    font-family:~"[[setting:headingfont]]";
+    font-family: ~"[[setting:headingfont]]";
 }
 
 h1, h2, h3, h4, h5, h6, #adminsettings h3 {
@@ -32,9 +32,17 @@ a, a:visited {
 
 a:hover {
     color: ~"[[setting:themehovercolor]]";
+    &:before {
+        color: ~"[[setting:themehovercolor]]";
+    }
+}
+a:before {
+    color: @icon-colour;
+    display: inline-block;
+    text-decoration: none;
 }
 
-.color{
+.color {
     color: ~"[[setting:themecolor]]";
 }
 
@@ -177,7 +185,7 @@ a#button:hover {
 .block_rss_client .footer a {
     background: ~"[[setting:themecolor]]";
     &:hover {
-        background:~"[[setting:themehovercolor]]";
+        background: ~"[[setting:themehovercolor]]";
     }
 }
 
@@ -252,7 +260,7 @@ a#button:hover {
         color: ~"[[setting:footerheadingcolor]]";
     }
     .tree_item.branch:before {
-        color: ~"[[setting:themecolor]]";
+        color: @icon-colour;
     }
 }
 
@@ -406,9 +414,9 @@ table#user-grades td.controls,
 /* @group Back To Top */
 
 .back-to-top a{
-    color:~"[[setting:themecolor]]" !important;
+    color: ~"[[setting:themecolor]]" !important;
     &:hover{
-        color:~"[[setting:themehovercolor]]" !important;
+        color: ~"[[setting:themehovercolor]]" !important;
     }
 }
 
@@ -427,22 +435,26 @@ h1, h2, h3, h4, h5, h6,
 /* @end */
 
 /* @group Editicons */
-.commands {
-    color:~"[[setting:themecolor]]";
-    &:hover {
-        color:~"[[setting:themehovercolor]]";
+.actions {
+    a {
+        color: ~"[[setting:themeurlcolor]]";
+        &:hover, &:focus, &:active {
+            color: ~"[[setting:themehovercolor]]";
+        }
     }
-}
-
-.actions a {
-    color:~"[[setting:themeurlcolor]]";
-    &:hover, &:focus, &:active {
-        color:~"[[setting:themehovercolor]]";
+    .moodle-actionmenu[data-enhanced].show .menu a {
+        color: ~"[[setting:themeurlcolor]]";
+        &:hover, &:focus, &:active {
+            color: ~"[[setting:themehovercolor]]";
+        }
     }
-}
-
-.moodle-core-dragdrop-draghandle:before, .moodle-core-dragdrop-draghandle a {
-    color:~"[[setting:themeurlcolor]]";
+    .moodle-actionmenu[data-enhanced].show .menu a:hover {
+        background-color: ~"[[setting:themecolor]]";
+        color: #fff;
+        &:before {
+            color: #fff;
+        }
+    }
 }
 
 /* @end */

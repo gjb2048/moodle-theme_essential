@@ -6,9 +6,10 @@
     img {
         display: none;
     }
-    a:hover {
-        text-decoration: none;
-    }
+}
+
+.actions .moodle-actionmenu[data-enhanced].show .menu a {
+    text-decoration: none !important;
 }
 
 #page-mod-glossary-view .commands img,
@@ -20,7 +21,7 @@
     font-family: 'FontAwesome';
     content:"\f00d ";
     color: red;
-    padding-right: 5px;
+    margin-right: 5px;
 }
 
 .editing_hide,
@@ -40,6 +41,7 @@
     &:before {
         font-family: 'FontAwesome';
         content:"\f047 ";
+        margin-right: 5px;
     }
 
     img {
@@ -47,21 +49,14 @@
     }
 }
 
-.editing_moveright:before {
-    font-family: 'FontAwesome';
-    content:"\f061 ";
-    margin-right: 5px;
+a.editing_moveright i,
+a.editing_moveleft i {
+    color: @icon-colour;
 }
 
-.editing_moveleft:before {
-    font-family: 'FontAwesome';
-    content:"\f060 ";
-    padding-right: 5px;
-}
-
-.moodle-actionmenu ul .editing_moveright:before,
-.moodle-actionmenu ul .editing_moveleft:before {
-    content: none;
+a.editing_moveright:hover i,
+a.editing_moveleft:hover i {
+    color: #fff;
 }
 
 .section-modchooser-link {
@@ -69,13 +64,14 @@
         display: none;
     }
 
-    .section-modchooser-text:before {
+    > a:before {
         font-family: 'FontAwesome';
         content:"\f067 ";
-        padding-right: 5px;
+        margin-right: 5px;
+        color: @icon-colour;
     }
 
-    .section-modchooser-text a:hover {
+    > a:hover:before {
        text-decoration: none;
     }
 }
@@ -84,13 +80,17 @@
 .editing_edit:before {
     font-family: 'FontAwesome';
     content:"\f013 ";
-    padding-right: 5px;
+    margin-right: 5px;
+    &:hover {
+        text-decoration: none;
+        color: #fff;
+    }
 }
 
 .editing_duplicate:before {
     font-family: 'FontAwesome';
     content:"\f0c5 ";
-    padding-right: 5px;
+    margin-right: 5px;
 }
 
 .editing_title {
@@ -101,41 +101,45 @@
     &:before {
         font-family: 'FontAwesome';
         content:"\f040 ";
-        padding-right: 5px;
+        margin-right: 5px;
     }
 }
 
 .editing_hide:before {
     font-family: 'FontAwesome';
     content:"\f06e ";
-    padding-right: 5px;
+    margin-right: 5px;
 }
 
 .editing_show:before {
     font-family: 'FontAwesome';
     content:"\f070 ";
+    margin-right: 5px;
 }
 
 .editing_assign:before,
 .editing_roles:before {
     font-family: 'FontAwesome';
     content:"\f084 ";
-    padding-right: 5px;
+    margin-right: 5px;
 }
 
 .editing_groupsnone:before {
     font-family: 'FontAwesome';
     content:"\f007 ";
+    margin-right: 5px;
 }
 
 .editing_groupsvisible:before {
     font-family: 'FontAwesome';
     content:"\f0c0 ";
+    margin-right: 5px;
 }
 
 .editing_groupsseparate:before {
     font-family: 'FontAwesome';
     content:"\f0c0 ";
+    margin-right: 5px;
 }
 
 .actions .toggle-display:before {
@@ -196,7 +200,7 @@
 
 .section .summary > a:before {
     font-family: 'FontAwesome';
-    content:"\f085 ";
+    content: "\f013 ";
     margin-right: 5px;
 }
 

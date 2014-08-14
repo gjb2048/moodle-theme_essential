@@ -10,16 +10,19 @@
     right: 0px;
     background-image: none;
     z-index: 200;
+    
     .navbar-inner {
         border: none;
         line-height: 0px;
         background-image: none;
         box-shadow: none;
         filter: none;
+        
         .btn-navbar {
             float: left;
             margin: 5px 10px 0px;
         }
+        
         .brand {
             color: ~"[[setting:themenavcolor]]";
             vertical-align: middle;
@@ -33,10 +36,13 @@
         ul.nav {
             margin: 0px;
         }
-    
-        ul.nav li.dropdown:hover > ul.dropdown-menu {
-            display: block;
+        
+        ul.nav li.dropdown:hover {
+            > ul.dropdown-menu {
+                display: block;
+            }
         }
+        
         #custom_menu_language,
         #custom_menu_courses,
         #custom_menu_themecolours,
@@ -45,9 +51,12 @@
             vertical-align: top;
         }
         
-        #custom_menu_courses ul.dropdown-menu {
-            max-height: 500px;
-            overflow-y: auto;
+        #custom_menu_courses,
+        #custom_menu_language {
+            ul.dropdown-menu {
+                max-height: 384px;
+                overflow-y: auto;
+            }
         }
 
         .dropdown-menu > li > a:hover,
@@ -64,16 +73,18 @@
             margin-right: 5px;
         }
 
-        // TODO: Extend to other menus if they are too long on portable devices?
-        .langmenu > .dropdown-menu {
-            max-height: 150px;
-            overflow-y: auto;
+        .open {
+            > .dropdown-menu {
+                overflow: visible;
+                display: block;
+            }
         }
-
+        
         .dropdown-menu {
             z-index: 200;
             margin: 0px;
         }
+        
         .dropdown-menu > li > a {
             padding: 3px 25px 3px 15px;
         }
@@ -81,7 +92,7 @@
         .dropdown-menu>li>a:hover {
             background: none;
         }
-
+        
         .nav > li.dropdown a,
         .nav > li > a {
             color: ~"[[setting:themenavcolor]]";
@@ -90,12 +101,14 @@
                 margin-left: 5px;
                 content: "\f0da";
             }
+            
             &:hover, &:focus, &.open {
                 background-color: ~"[[setting:themenavcolor]]";
                 color: ~"[[setting:themecolor]]";
                 .fa-caret-right {
                     margin-right: 1px;
                 }
+                
                 .fa-caret-right:before {
                     margin-left: 5px;
                     content: "\f0d7";
