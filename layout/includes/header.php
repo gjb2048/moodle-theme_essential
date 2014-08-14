@@ -74,7 +74,7 @@ echo $OUTPUT->doctype() ?>
                 // If true, displays the heading and available social links; displays nothing if false.
                 if ($hassocialnetworks) {
                 ?>
-                <div class="span4 pull-<?php echo ($left) ? 'right': 'left';?>" id="socialnetworks">
+                <div class="span5 pull-<?php echo ($left) ? 'right': 'left';?>" id="socialnetworks">
                 <p id="socialheading"><?php echo get_string('socialnetworks','theme_essential')?></p>
                     <ul class="socials unstyled">
                         <?php
@@ -97,7 +97,7 @@ echo $OUTPUT->doctype() ?>
                 // If true, displays the heading and available social links; displays nothing if false.
                 if ($hasmobileapps) {
                 ?>
-                <div class="span1 pull-<?php echo ($left) ? 'right': 'left';?>">
+                <div class="span2 pull-<?php echo ($left) ? 'right': 'left';?>">
                     <p id="socialheading"><?php echo get_string('mobileappsheading','theme_essential')?></p>
                     <ul class="socials unstyled">
                         <?php 
