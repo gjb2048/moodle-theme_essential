@@ -100,23 +100,20 @@ require_once(dirname(__FILE__).'/includes/header.php');?>
         <!-- End Alerts -->
 
         <!-- Start Frontpage Content -->
-        <div class="frontpagecontent">
-        <?php 
-            if(theme_essential_get_setting('togglefrontcontent')==1) {?>
-            <div class="bor" style="margin-top: 10px;"></div>
-                <?php echo theme_essential_get_setting('frontcontentarea'); ?>
+        <?php if(theme_essential_get_setting('togglefrontcontent')) {?>
+            <div class="frontpagecontent">
                 <div class="bor" style="margin-top: 10px;"></div>
-            <?php } else if(theme_essential_get_setting('togglefrontcontent')==2 && !isloggedin()) {?>
+                    <?php if(theme_essential_get_setting('togglefrontcontent')==1) {
+                        echo theme_essential_get_setting('frontcontentarea'); 
+                    } else if(theme_essential_get_setting('togglefrontcontent')==2 && !isloggedin()) {
+                        echo theme_essential_get_setting('frontcontentarea');
+                    } else if(theme_essential_get_setting('togglefrontcontent')==3 && isloggedin()) {
+                        echo theme_essential_get_setting('frontcontentarea');
+                    } ?>
                 <div class="bor" style="margin-top: 10px;"></div>
-                <?php echo theme_essential_get_setting('frontcontentarea');?>
-                <div class="bor" style="margin-top: 10px;"></div>
-            <?php } else if(theme_essential_get_setting('togglefrontcontent')==3 && isloggedin()) {?>
-                <div class="bor" style="margin-top: 10px;"></div>
-                <?php echo theme_essential_get_setting('frontcontentarea');?>
-                <div class="bor" style="margin-top: 10px;"></div>
-            <?php } ?>
-        
-        </div>
+            </div>
+        <?php } ?>
+
         <!-- End Frontpage Content -->
 
         <!-- Start Marketing Spots -->
