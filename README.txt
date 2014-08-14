@@ -104,6 +104,11 @@ New in 2.7.5
 - FIX: Issue #134: Marketing height broken.
 - FIX: Issue #135: Cannot edit topic summary.
 - FIX: Issue #136: Too many docked icons.
+- FIX: Issue #138: Breadcrumb above content / blocks.
+- FIX: Issue #141: Check slider caption underneath in 2.7.5g.
+- FIX: Issue #142: Check slider speed.
+- FIX: Issue #144: Unmatched end tags in carousel.
+- FIX: Issue #145: Language dropdown cut short when open.
 - FIX: Correctly show no enrolments message when all courses are hidden.
 - FIX: Reworked header menu and added responsive options to apps/social icons.
 - FIX: Removed dnd upload status as it blocks the edit icons.

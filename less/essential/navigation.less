@@ -64,8 +64,10 @@
             margin-right: 5px;
         }
 
-        .open > .dropdown-menu {
-            overflow: visible;
+        // TODO: Extend to other menus if they are too long on portable devices?
+        .langmenu > .dropdown-menu {
+            max-height: 150px;
+            overflow-y: auto;
         }
 
         .dropdown-menu {
