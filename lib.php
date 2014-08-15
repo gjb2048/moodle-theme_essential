@@ -568,18 +568,13 @@ function theme_essential_set_marketingimage($css, $marketingimage, $setting) {
     return $css;
 }
 
-function theme_essential_showslider($settings) {
-    $noslides = theme_essential_get_setting('numberofslides');
-    if ($noslides) {
+function theme_essential_showslider($setting) {
+    if (theme_essential_get_setting($setting)) {
         $devicetype = core_useragent::get_device_type(); // In moodlelib.php.
-        if ($devicetype == "mobile") {
-            if ($settings->hideonphone) {
-                $noslides = false;
-            }
-        } else if ($devicetype == "tablet") {
-            if ($settings->hideontablet) {
-                $noslides = false;
-            }
+        if (($devicetype == "mobile") && theme_essential_get_setting('hideonphone')) {
+            $noslides = false;
+        } else if (($devicetype == "tablet") && theme_essential_get_setting('hideontablet')) {
+            $noslides = false;
         }
     }
     return $noslides;
