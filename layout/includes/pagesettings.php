@@ -77,19 +77,19 @@ $fontselect = theme_essential_get_setting('fontselect');
 
 $hasanalytics = theme_essential_get_setting('useanalytics');
 
-$hassocialnetworks = (  theme_essential_get_setting('facebook')     &&
-                        theme_essential_get_setting('twitter')      &&
-                        theme_essential_get_setting('googleplus')   &&
-                        theme_essential_get_setting('linkedin')     &&
-                        theme_essential_get_setting('youtube')      &&
-                        theme_essential_get_setting('flickr')       &&
-                        theme_essential_get_setting('vk')           &&
-                        theme_essential_get_setting('pinterest')    &&
-                        theme_essential_get_setting('instagram')    &&
-                        theme_essential_get_setting('skype')        &&
+$hassocialnetworks = (  theme_essential_get_setting('facebook')     ||
+                        theme_essential_get_setting('twitter')      ||
+                        theme_essential_get_setting('googleplus')   ||
+                        theme_essential_get_setting('linkedin')     ||
+                        theme_essential_get_setting('youtube')      ||
+                        theme_essential_get_setting('flickr')       ||
+                        theme_essential_get_setting('vk')           ||
+                        theme_essential_get_setting('pinterest')    ||
+                        theme_essential_get_setting('instagram')    ||
+                        theme_essential_get_setting('skype')        ||
                         theme_essential_get_setting('website')
                     );
-$hasmobileapps =    (   theme_essential_get_setting('ios')          &&
+$hasmobileapps =    (   theme_essential_get_setting('ios')          ||
                         theme_essential_get_setting('android')
                     );
 
