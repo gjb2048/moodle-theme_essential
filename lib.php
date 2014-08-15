@@ -569,7 +569,8 @@ function theme_essential_set_marketingimage($css, $marketingimage, $setting) {
 }
 
 function theme_essential_showslider($setting) {
-    if (theme_essential_get_setting($setting)) {
+    $noslides = theme_essential_get_setting($setting);
+    if ($noslides) {
         $devicetype = core_useragent::get_device_type(); // In moodlelib.php.
         if (($devicetype == "mobile") && theme_essential_get_setting('hideonphone')) {
             $noslides = false;
