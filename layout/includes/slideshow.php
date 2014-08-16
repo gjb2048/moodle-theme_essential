@@ -28,6 +28,7 @@ $numberofslides = theme_essential_showslider('numberofslides'); // In lib.php.
 
 if ($numberofslides) {
     $slideinterval = theme_essential_get_setting('slideinterval');
+    $slidecaptionbelow = theme_essential_get_setting('slidecaptionbelow');
 ?>
     <div class="row-fluid">
         <div class="span12">
@@ -72,6 +73,9 @@ if ($numberofslides) {
                         <img src="<?php echo $image; ?>" alt="<?php echo $imgalt; ?>" class="carousel-image" />
 
                         <?php
+                        if ($slidecaptionbelow) {
+                            echo '<div class="row-fluid"><div class="span12">';
+                        }
                         $slidecaption = 'slide'.$i.'caption';
                         if ((theme_essential_get_setting($slidetitle)) || (theme_essential_get_setting($slidecaption))) { ?>
                             <div class="carousel-caption">
@@ -83,8 +87,11 @@ if ($numberofslides) {
                                 </div>
                             </div> 
                             <?php 
-                            }
-                            echo (theme_essential_get_setting($urlsetting)? '</a>' : '</div>');
+                        }
+                        if ($slidecaptionbelow) {
+                            echo '</div></div>';
+                        }
+                        echo (theme_essential_get_setting($urlsetting)? '</a>' : '</div>');
                     } ?>
                 </div>
                 <a class="left carousel-control" href="#essentialCarousel" data-slide="prev"><i class="fa fa-chevron-circle-left"></i></a>
