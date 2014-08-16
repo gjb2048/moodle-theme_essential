@@ -34,18 +34,14 @@
  
 function theme_essential_set_fontwww($css) {
     global $CFG;
-    if(empty($CFG->themewww)){
-        $themewww = $CFG->wwwroot."/theme";
-    } else {
-        $themewww = $CFG->themewww;
-    }
+    $themewww = $CFG->httpsthemewww .'/'. current_theme();
+
     $tag = '[[setting:fontwww]]';
-    
 
     if (theme_essential_get_setting('bootstrapcdn')) {
-     $css = str_replace($tag, '//netdna.bootstrapcdn.com/font-awesome/4.1.0/fonts/', $css);
+     $css = str_replace($tag, '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/fonts/', $css);
     } else {
-     $css = str_replace($tag, $themewww.'/essential/fonts/', $css);
+     $css = str_replace($tag, $themewww.'/fonts/', $css);
     }
     return $css;
 }
