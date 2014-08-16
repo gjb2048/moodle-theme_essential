@@ -86,6 +86,10 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
+New in 2.7.6
+========================
+- FIX: Issue #159: Custom Category Icons not displaying in 2.7.5h (Build: 2014081404).
+
 New in 2.7.5
 ========================
 - FIX: Issue #96:  2.7.4 breaks 'oldnavbar' setting.
