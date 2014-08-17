@@ -165,7 +165,7 @@ module.exports = function(grunt) {
             },
             alternative_p: {
                 options: {
-                    compress: true,
+                    compress: false,
                     cleancss: true,
                     paths: "./less",
                     report: 'min',
@@ -177,7 +177,7 @@ module.exports = function(grunt) {
             moodle_d: {
                 options: {
                     compress: false,
-                    cleancss: true,
+                    cleancss: false,
                     paths: "./less",
                     report: 'min',
                     sourceMap: true,
