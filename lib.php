@@ -53,14 +53,13 @@ function theme_essential_get_setting($setting, $format = false) {
     }
     if (empty($theme->settings->$setting)) {
         return false;
-    } else if ($format) {
-        if ($format === 'format_text') {
-            return format_text($theme->settings->$setting);
-        } else {
-            return format_string($theme->settings->$setting);
-        }
-    } else {
+    }
+    if (!$format) {
         return $theme->settings->$setting;
+    } else if ($format === 'format_text') {
+            return format_text($theme->settings->$setting);
+    } else {
+        return format_string($theme->settings->$setting);
     }
 }
 
