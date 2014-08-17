@@ -119,24 +119,26 @@ require_once(dirname(__FILE__).'/includes/header.php');?>
         <!-- End Middle Blocks -->
 
         <div id="page-content" class="row-fluid">
-            <?php if (theme_essential_get_setting('frontpageblocks')) { ?>
-                <section id="<?php echo $regionbsid;?>" class="span9 pull-right">
-            <?php } else { ?>
-                <section id="<?php echo $regionbsid;?>" class="span9 desktop-first-column">
-            <?php } ?>
+            <section id="<?php echo $regionbsid;?>">
+                <?php if (theme_essential_get_setting('frontpageblocks')) { ?>
+                    <section id="region-main" class="span9 pull-right">
+                <?php } else { ?>
+                    <section id="region-main" class="span9 desktop-first-column">
+                <?php } ?>
+                    <?php
+                        echo $OUTPUT->course_content_header();
+                        echo $OUTPUT->main_content(); 
+                        echo $OUTPUT->course_content_footer();
+                    ?>
+                    </section>
                 <?php
-                    echo $OUTPUT->course_content_header();
-                    echo $OUTPUT->main_content(); 
-                    echo $OUTPUT->course_content_footer();
+                if (theme_essential_get_setting('frontpageblocks')) {
+                    echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column');
+                } else {
+                    echo $OUTPUT->blocks('side-pre', 'span3 pull-right');
+                }
                 ?>
             </section>
-            <?php
-            if (theme_essential_get_setting('frontpageblocks')) {
-                echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column');
-            } else {
-                echo $OUTPUT->blocks('side-pre', 'span3 pull-right');
-            }
-            ?>
         </div>
         
         <!-- End Main Regions -->
