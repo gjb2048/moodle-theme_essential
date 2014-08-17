@@ -27,7 +27,7 @@
 ?>
 <footer role="contentinfo" id="page-footer">
     <div class="container-fluid">
-        <div class="row-fluid">
+        <div class="row-fluid footerblocks">
             <div class="span4 pull-left">
                 <div class="column">
                     <?php echo $OUTPUT->blocks('footer-left'); ?>
