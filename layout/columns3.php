@@ -41,11 +41,13 @@ require_once(dirname(__FILE__).'/includes/header.php'); ?>
                     <?php } else { ?>
                     <section id="region-main" class="span8 desktop-first-column">
                     <?php } ?>
-                        <?php
-                        echo $OUTPUT->course_content_header();
-                        echo $OUTPUT->main_content();
-                        echo $OUTPUT->course_content_footer();
-                        ?>
+                        <?php if ($COURSE->id > 1) {
+                            echo $OUTPUT->heading($COURSE->fullname, 1, 'coursetitle');
+                            echo '<div class="bor" style="margin-top: 10px;"></div>';
+                        } ?>
+                        <?php echo $OUTPUT->course_content_header(); ?>
+                        <?php echo $OUTPUT->main_content(); ?>
+                        <?php echo $OUTPUT->course_content_footer(); ?>
                     </section>
                     <?php if ($hasboringlayout) { ?>
                     <?php echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column'); ?>

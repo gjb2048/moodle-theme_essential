@@ -1648,6 +1648,7 @@ ins {
 #page #page-content {
   margin-top: 10px;
 }
+#page #page-content #region-main,
 #page #page-content div[role="main"] {
   border: 1px solid #e3e3e3;
   -webkit-border-radius: 6px;
@@ -1656,7 +1657,14 @@ ins {
   background-color: #FFF;
   padding: 2px 10px;
   margin-bottom: 20px;
-  overflow: auto;
+}
+#page #page-content #region-main > div[role="main"] {
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  padding: 0;
+  margin-bottom: 0px;
 }
 .bor {
   height: 20px;
@@ -2645,17 +2653,6 @@ div.mdl-align.title {
 }
 .course-content ul.topics li.section.main.clearfix.current {
   border-radius: 5px;
-}
-h2.pagetitle {
-  padding: 0px;
-  margin: 0px;
-  font-size: 1.2em;
-  line-height: 35px;
-  color: #777;
-  background-size: 4px 20px;
-}
-h2.pagetitle span {
-  padding-right: 8px;
 }
 .firstword {
   margin-right: -5px;
