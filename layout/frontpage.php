@@ -51,14 +51,8 @@ require_once(dirname(__FILE__).'/includes/header.php');?>
             <div class="useralerts alert alert-<?php echo theme_essential_get_setting('alert1type') ?>">  
             <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
             <?php 
-            if (theme_essential_get_setting('alert1type') == 'info') {
-                $alert1icon = $alertinfo;
-            } else if (theme_essential_get_setting('alert1type') == 'error') {
-                $alert1icon = $alertwarning;
-            } else {
-                $alert1icon = $alertsuccess;
-            } 
-            echo $alert1icon.'<span class="title">'.theme_essential_get_setting('alert1title').'</span>'.theme_essential_get_setting('alert1text'); ?> 
+            $alert1icon = 'alert'.theme_essential_get_setting('alert1type');
+            echo $$alert1icon.'<span class="title">'.theme_essential_get_setting('alert1title', true).'</span>'.theme_essential_get_setting('alert1text', true); ?> 
         </div>
         <?php } ?>
 
@@ -67,16 +61,8 @@ require_once(dirname(__FILE__).'/includes/header.php');?>
             <div class="useralerts alert alert-<?php echo theme_essential_get_setting('alert2type') ?>">  
             <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
             <?php 
-            if (theme_essential_get_setting('alert2type') == 'info') {
-                $alert2icon = $alertinfo;
-            } else if (theme_essential_get_setting('alert2type') == 'error') {
-                $alert2icon = $alertwarning;
-            } else {
-                $alert2icon = $alertsuccess;
-            } 
-            $alert2title = 'alert2title';
-            $alert2text = 'alert2text';
-            echo $alert2icon.'<span class="title">'.theme_essential_get_setting('alert2title').'</span>'.theme_essential_get_setting('alert2text'); ?> 
+            $alert2icon = 'alert'.theme_essential_get_setting('alert2type');
+            echo $$alert2icon.'<span class="title">'.theme_essential_get_setting('alert2title', true).'</span>'.theme_essential_get_setting('alert2text', true); ?> 
         </div>
         <?php } ?>
 
@@ -85,16 +71,8 @@ require_once(dirname(__FILE__).'/includes/header.php');?>
             <div class="useralerts alert alert-<?php echo theme_essential_get_setting('alert3type') ?>">  
             <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
             <?php 
-            if (theme_essential_get_setting('alert3type') == 'info') {
-                $alert3icon = $alertinfo;
-            } else if (theme_essential_get_setting('alert3type') == 'error') {
-                $alert3icon = $alertwarning;
-            } else {
-                $alert3icon = $alertsuccess;
-            } 
-            $alert3title = 'alert3title';
-            $alert3text = 'alert3text';
-            echo $alert3icon.'<span class="title">'.theme_essential_get_setting('alert3title').'</span>'.theme_essential_get_setting('alert3text'); ?> 
+            $alert3icon = 'alert'.theme_essential_get_setting('alert3type');
+            echo $$alert3icon.'<span class="title">'.theme_essential_get_setting('alert3title', true).'</span>'.theme_essential_get_setting('alert3text', true); ?> 
         </div>
         <?php } ?>
         <!-- End Alerts -->
@@ -104,11 +82,11 @@ require_once(dirname(__FILE__).'/includes/header.php');?>
             <div class="frontpagecontent">
                 <div class="bor" style="margin-top: 10px;"></div>
                     <?php if(theme_essential_get_setting('togglefrontcontent')==1) {
-                        echo theme_essential_get_setting('frontcontentarea'); 
+                        echo theme_essential_get_setting('frontcontentarea', 'format_text'); 
                     } else if(theme_essential_get_setting('togglefrontcontent')==2 && !isloggedin()) {
-                        echo theme_essential_get_setting('frontcontentarea');
+                        echo theme_essential_get_setting('frontcontentarea', 'format_text');
                     } else if(theme_essential_get_setting('togglefrontcontent')==3 && isloggedin()) {
-                        echo theme_essential_get_setting('frontcontentarea');
+                        echo theme_essential_get_setting('frontcontentarea', 'format_text');
                     } ?>
                 <div class="bor" style="margin-top: 10px;"></div>
             </div>
@@ -142,14 +120,14 @@ require_once(dirname(__FILE__).'/includes/header.php');?>
 
         <div id="page-content" class="row-fluid">
             <?php if (theme_essential_get_setting('frontpageblocks')) { ?>
-            <section id="<?php echo $regionbsid;?>" class="span9 pull-right">
+                <section id="<?php echo $regionbsid;?>" class="span9 pull-right">
             <?php } else { ?>
-            <section id="<?php echo $regionbsid;?>" class="span9 desktop-first-column">
+                <section id="<?php echo $regionbsid;?>" class="span9 desktop-first-column">
             <?php } ?>
                 <?php
-                echo $OUTPUT->course_content_header();
-                echo $OUTPUT->main_content();
-                echo $OUTPUT->course_content_footer();
+                    echo $OUTPUT->course_content_header();
+                    echo $OUTPUT->main_content(); 
+                    echo $OUTPUT->course_content_footer();
                 ?>
             </section>
             <?php

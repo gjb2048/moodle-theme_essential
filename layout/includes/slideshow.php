@@ -81,8 +81,8 @@ if ($numberofslides) {
                             <div class="carousel-caption">
                                 <div class="carousel-caption-inner">
                                 <?php
-                                if (theme_essential_get_setting($slidetitle)) { echo '<h4>'.theme_essential_get_setting($slidetitle).'</h4>'; }
-                                if (theme_essential_get_setting($slidecaption)) { echo '<p>'.theme_essential_get_setting($slidecaption).'</p>'; }
+                                if (theme_essential_get_setting($slidetitle)) { echo '<h4>'.theme_essential_get_setting($slidetitle, true).'</h4>'; }
+                                if (theme_essential_get_setting($slidecaption)) { echo '<p>'.theme_essential_get_setting($slidecaption, true).'</p>'; }
                                 ?> 
                                 </div>
                             </div> 

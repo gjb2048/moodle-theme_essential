@@ -46,13 +46,19 @@ function theme_essential_set_fontwww($css) {
     return $css;
 }
 
-function theme_essential_get_setting($setting) {
+function theme_essential_get_setting($setting, $format = false) {
     static $theme = '';
     if (empty($theme)) {
         $theme = theme_config::load('essential');
     }
     if (empty($theme->settings->$setting)) {
         return false;
+    } else if ($format) {
+        if ($format === 'format_text') {
+            return format_text($theme->settings->$setting);
+        } else {
+            return format_string($theme->settings->$setting);
+        }
     } else {
         return $theme->settings->$setting;
     }
