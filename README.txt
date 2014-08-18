@@ -86,9 +86,22 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
-New in 2.7.6
+New in 2.5.7
 ========================
 - FIX: Issue #159: Custom Category Icons not displaying in 2.7.5h (Build: 2014081404).
+- FIX: Issue #155: Social Icons Missing 2.7.5h
+- FIX: Issue #156, #70, #56: Caption background colour frontpage slider & active slide colours
+- FIX: Issue #164: When side pre is empty, then content area does not fill space when editing is off.
+- FIX: Issue #165: Menu options has transparent background for a hidden block
+- FIX: Issue #166: invalid email and white page for main administrator
+- FIX: Issue #166: invalid email and white page for main administrator
+- NEW: Full filter support in all custom areas (frontcontent, slider, alerts, footer), this includes the multilang filter
+- NEW: Also show read messages, but distinct from unread ones
+- NEW: Add courses titles to course pages
+- NEW: Add styling to block regions for easier drag/drop regions, especially for footer
+- NEW: Create github page for Essential theme
+- NEW: Backported to Moodle 2.5!!!
+- HELP WANTED: All language strings are now in AMOS (Moodle Language packs) please update your own language!
 
 New in 2.7.5
 ========================
