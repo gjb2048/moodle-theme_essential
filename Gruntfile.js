@@ -151,6 +151,17 @@ module.exports = function(grunt) {
                 src: 'less/moodle.less',
                 dest: 'style/moodle.css'
             },
+            editor_p: {
+                options: {
+                    compress: false,
+                    cleancss: true,
+                    paths: "./less",
+                    report: 'min',
+                    sourceMap: false
+                },
+                src: 'less/editor.less',
+                dest: 'style/editor.css'
+            },
             // Compile essential styles.
             essential_p: {
                 options: {
@@ -186,6 +197,19 @@ module.exports = function(grunt) {
                 },
                 src: 'less/moodle.less',
                 dest: 'style/moodle.css'
+            },
+            editor_d: {
+                options: {
+                    compress: false,
+                    cleancss: false,
+                    paths: "./less",
+                    report: 'min',
+                    sourceMap: true,
+                    sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
+                    sourceMapFilename: 'style/editor.treasure.map'
+                },
+                src: 'less/editor.less',
+                dest: 'style/editor.css'
             },
             // Compile essential styles.
             essential_d: {
@@ -326,7 +350,7 @@ module.exports = function(grunt) {
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
 
-    grunt.registerTask("css", ["less:moodle_"+build, "less:essential_"+build, "less:alternative_"+build]);
+    grunt.registerTask("css", ["less:moodle_"+build,"less:editor_"+build, "less:essential_"+build, "less:alternative_"+build]);
     grunt.registerTask("compile", ["css", "cssflip:rtl_"+build, "decache"]);
     grunt.registerTask("copy:svg", ["copy:svg_core", "copy:svg_plugins"]);
     grunt.registerTask("replace:svg_colours", ["replace:svg_colours_core", "replace:svg_colours_plugins"]);
