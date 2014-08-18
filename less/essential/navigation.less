@@ -160,36 +160,49 @@
         
         .messagemenu {
             ul.nav {
-                > li.dropdown > a > span,
-                > li.dropdown > a > .fa-envelope {
-                    font-size: 16px;
+                > li > a > .fa {
+                    margin-left: 5px;
                 }
                 ul.dropdown-menu {
                     left: auto;
                     right: 10px;
                     li > a {
-                        padding: 4px 25px 0px 15px;
+                        padding: 0px;
                         border-top: 1px dotted ~"[[setting:themecolor]]";
-                        i {
-                            margin: 0px 5px;
-                        }
-                        .msg-picture {
-                            float: left;
-                            margin-left: -5px;
-                        }
-                        .msg-body {
-                            display: inline-block;
-                            padding-right: 40px;
-                            padding-left: 10px;
-                            span.msg-sender,
-                            span.msg-text,
-                            span.msg-time {
+                        background: #fff;
+                        > .message {
+                            padding: 5px 10px;
+                            i {
+                                margin: 0px 5px;
+                            }
+                            .msg-picture {
                                 float: left;
-                                width: 100%;
+                            }
+                            .msg-body {
+                                display: inline-block;
+                                padding-right: 80px;
+                                span.msg-sender,
+                                span.msg-text,
+                                span.msg-time {
+                                    float: left;
+                                    width: 100%;
+                                }
+                            }
+                            &.unread {
+                                background: @grayLighter;
+                                .msg-text {
+                                    font-weight: 700;
+                                }
+                            }
+                            &.read {
+                                .opacity(75);
                             }
                         }
-                        .msg-text {
-                            font-weight: bold;
+                        &:hover {
+                            .message {
+                                background: transparent;
+                                .opacity(100);
+                            }
                         }
                     }
                     li:first-of-type {
