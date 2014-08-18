@@ -30,37 +30,353 @@
 
       </header>
       <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+        <h1>
+<a name="the-essential-moodle-theme" class="anchor" href="#the-essential-moodle-theme"><span class="octicon octicon-link"></span></a>The "Essential" Moodle Theme</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>With 2.5 now released Julian thought it time to take the opportunity to build a new theme that would push the new theme engine to it's limits a bit. With that in mind he introduced the new "Essential" theme. Now Julian has left us for Canvassian adventures, Gareth and David have taken over development and maintenance of this theme.
+The idea of this theme is to make the site look as little like Moodle as possible. In this specific instance, it would be used on sites where Moodle would potentially serve as a company homepage rather than just a course list.</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<p>Cool things to know about the theme.</p>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<ul>
+<li>It attempts to load as many as possible icons from a font</li>
+<li>Most of what you think are "graphics" are actually the <a href="http://fortawesome.github.io/Font-Awesome/">Awesome font</a>
+</li>
+<li>The slider on the frontpage of the demo site is completely customisable through theme settings</li>
+<li>I am really trying to push what <a href="http://twitter.github.io/bootstrap/">Bootstrap</a> Grids can do. As such the theme is fully responsive.</li>
+<li>The footer is all custom Moodle regions. This means blocks can be added. The footer of the demo site is full of HTML blocks in this instance</li>
+<li>The Theme uses <a href="http://www.google.com/fonts/">Google web fonts</a> to give it that extra bit of shazam!</li>
+<li>Social Network icons appear at the top of the page dynamically based on theme settings</li>
+<li>The entire colour scheme can be modified with theme settings</li>
+<li>The homepage main area is just a label. The theme will ship with custom classes that you can set for tables and links to modify their formatting. No knowledge of code is needed as you can use the text editor to do this. Documentation will be provided outlining what the additional classes are.</li>
+</ul><h1>
+<a name="required-version-of-moodle" class="anchor" href="#required-version-of-moodle"><span class="octicon octicon-link"></span></a>Required version of Moodle</h1>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<p>This version works with Moodle version 2013111800 release 2.6 (Build: 20131118) and above within the 2.6 branch until the
+next release.</p>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>Please ensure that your hardware and software complies with 'Requirements' in 'Installing Moodle' on
+'docs.moodle.org/26/en/Installing_Moodle'.</p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<h1>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h1>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<ol>
+<li>Ensure you have the version of Moodle as stated above in 'Required version of Moodle'.  This is essential as the
+theme relies on underlying core code that is out of our control.</li>
+<li>Login as an administrator and put Moodle in 'Maintenance Mode' so that there are no users using it bar you as the administrator.</li>
+<li>Copy the extracted 'essential' folder to the '/theme/' folder.</li>
+<li>Go to 'Site administration' -&gt; 'Notifications' and follow standard the 'plugin' update notification.</li>
+<li>Select as the theme for the site.</li>
+<li>Put Moodle out of Maintenance Mode.</li>
+</ol><h1>
+<a name="upgrading" class="anchor" href="#upgrading"><span class="octicon octicon-link"></span></a>Upgrading</h1>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<ol>
+<li>Ensure you have the version of Moodle as stated above in 'Required version of Moodle'.  This is essential as the
+theme relies on underlying core code that is out of our control.</li>
+<li>Login as an administrator and put Moodle in 'Maintenance Mode' so that there are no users using it bar you as the administrator.</li>
+<li>Make a backup of your old 'essential' folder in '/theme/' and then delete the folder.</li>
+<li>Copy the replacement extracted 'essential' folder to the '/theme/' folder.</li>
+<li>Go to 'Site administration' -&gt; 'Notifications' and follow standard the 'plugin' update notification.</li>
+<li>If automatic 'Purge all caches' appears not to work by lack of display etc. then perform a manual 'Purge all caches'
+under 'Home -&gt; Site administration -&gt; Development -&gt; Purge all caches'.</li>
+<li>Put Moodle out of Maintenance Mode.</li>
+</ol><h1>
+<a name="uninstallation" class="anchor" href="#uninstallation"><span class="octicon octicon-link"></span></a>Uninstallation</h1>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<ol>
+<li>Put Moodle in 'Maintenance Mode' so that there are no users using it bar you as the administrator.</li>
+<li>Change the theme to another theme of your choice.</li>
+<li>In '/theme/' remove the folder 'essential'.</li>
+<li>Put Moodle out of Maintenance Mode.</li>
+</ol><h1>
+<a name="downgrading" class="anchor" href="#downgrading"><span class="octicon octicon-link"></span></a>Downgrading</h1>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<p>If for any reason you wish to downgrade to a previous version of the theme (unsupported) then this procedure will inform you of how to
+do so:
+1.  Ensure that you have a copy of the existing and older replacement theme files.
+2.  Put Moodle into 'Maintenance mode' under 'Home -&gt; Administration -&gt; Site administration -&gt; Server -&gt; Maintenance mode', so that there
+    are no users using it bar you as the administrator.
+3.  Switch to a core theme, 'Clean' for example, under 'Home -&gt; Administration -&gt; Site administration -&gt; Appearance -&gt; Themes -&gt;
+    Theme selector -&gt; Default'.
+4.  In '/theme/' remove the folder 'essential' i.e. ALL of the contents - this is VITAL.
+5.  Put in the replacement 'essential' folder into '/theme/'.
+6.  In the database, remove the row with the 'plugin' of 'theme_essential' and 'name' of 'version' in the 'config_plugins' table, then
+    in the 'config' table find the 'name' with the value 'allversionhash' and clear its 'value' field.  Perform a 'Purge all caches'
+    under 'Home -&gt; Site administration -&gt; Development -&gt; Purge all caches'.
+7.  Go back in as an administrator and follow standard the 'plugin' update notification.  If needed, go to
+    'Site administration' -&gt; 'Notifications' if this does not happen.
+8.  Switch the theme back to 'Essential' under 'Home -&gt; Administration -&gt; Site administration -&gt; Appearance -&gt; Themes -&gt; Theme selector -&gt;
+    Default'.
+9.  Put Moodle out of 'Maintenance mode' under 'Home -&gt; Administration -&gt; Site administration -&gt; Server -&gt; Maintenance mode'.</p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<h1>
+<a name="reporting-issues" class="anchor" href="#reporting-issues"><span class="octicon octicon-link"></span></a>Reporting issues</h1>
+
+<p>Before reporting an issue, please ensure that you are running the latest version for your release of Moodle.  It is essential
+that you are operating the required version of Moodle as stated at the top - this is because the theme relies on core
+functionality that is out of its control.</p>
+
+<p>When reporting an issue you can post in the theme's forum on Moodle.org (currently 'moodle.org/mod/forum/view.php?id=46')
+or check the issue list <a href="https://github.com/DBezemer/moodle-theme_essential/issues">https://github.com/DBezemer/moodle-theme_essential/issues</a> and if the problem does not exist, create an
+issue.</p>
+
+<p>It is essential that you provide as much information as possible, the critical information being the contents of the theme's 
+'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
+can be really useful in visualising the issue along with any files you consider to be relevant.</p>
+
+<h1>
+<a name="new-in-276" class="anchor" href="#new-in-276"><span class="octicon octicon-link"></span></a>New in 2.7.6</h1>
+
+<ul>
+<li>FIX: Issue #159: Custom Category Icons not displaying in 2.7.5h (Build: 2014081404).</li>
+</ul><h1>
+<a name="new-in-275" class="anchor" href="#new-in-275"><span class="octicon octicon-link"></span></a>New in 2.7.5</h1>
+
+<ul>
+<li>FIX: Issue #96:  2.7.4 breaks 'oldnavbar' setting.</li>
+<li>FIX: Issue #98:  Lang en/iosicondesc - Change 'them' to 'theme'.  Thanks to Skylar Kelty.</li>
+<li>FIX: Issue #101: Navbar not expanding properly on android mobile and tablet.</li>
+<li>FIX: Issue #107: No fixed width to header on login page.</li>
+<li>FIX: Issue #113: Remove FontAwesome from all links in section heading except for the edit icon.</li>
+<li>FIX: Issue #110: Refactor middle blocks wording, thanks <a href="https://github.com/mkpelletier" class="user-mention">@mkpelletier</a>.</li>
+<li>FIX: Issue #109: Re-order middle blocks settings, thanks <a href="https://github.com/mkpelletier" class="user-mention">@mkpelletier</a>.</li>
+<li>FIX: Issue #108: Add similar toggle options to front page content, thanks <a href="https://github.com/mkpelletier" class="user-mention">@mkpelletier</a>.</li>
+<li>FIX: Issue #67:  Refactored so menus are renderer all separately.</li>
+<li>FIX: Issue #60:  Add styling to invisible courses in breadcrumb.</li>
+<li>FIX: Issue #126: Header logo right border syntax.</li>
+<li>FIX: Issue #127: Need to guard against uninitialised settings.</li>
+<li>FIX: Issue #128: Dropdown menu items are invisible when navigation bar text is white.</li>
+<li>FIX: Issue #134: Marketing height broken.</li>
+<li>FIX: Issue #135: Cannot edit topic summary.</li>
+<li>FIX: Issue #136: Too many docked icons.</li>
+<li>FIX: Issue #138: Breadcrumb above content / blocks.</li>
+<li>FIX: Issue #141: Check slider caption underneath in 2.7.5g.</li>
+<li>FIX: Issue #142: Check slider speed.</li>
+<li>FIX: Issue #144: Unmatched end tags in carousel.</li>
+<li>FIX: Issue #145: Language dropdown cut short when open.</li>
+<li>FIX: Correctly show no enrolments message when all courses are hidden.</li>
+<li>FIX: Reworked header menu and added responsive options to apps/social icons.</li>
+<li>FIX: Removed dnd upload status as it blocks the edit icons.</li>
+<li>FIX: Further work on RTL support.</li>
+<li>FIX: Theme Cleanup milestone completely finished!</li>
+<li>FIX: Further performance optimalizations using own CSS</li>
+<li>FIX: Provide fixes for IE8, Essential now largely works with IE8 as expected, but no support is given</li>
+<li>NEW: Issue #114: Add downgrade instructions.  See above.</li>
+<li>NEW: Removed bootstrapbase dependency for further minification.</li>
+<li>NEW: Split out alternative theme colours to reduce CSS loading when this is not enabled.</li>
+<li>NEW: Small tweak to site widths, now available options are 1400px, 1200px and 960px.</li>
+<li>NEW: Switched to bootstrap all in one for massive speed improvement (from 10 to 1 http request).</li>
+<li>NEW: Removed option for restricting block width as it was not possible to get this working properly.</li>
+<li>NEW: Issue #123: Add messages menu from Shoehorn and give it a FaceBook restyle</li>
+<li>NEW: Issue #14: Add a brand new user menu replacing the Dashboard menu</li>
+<li>NEW: Automatically collapsing breadcrumb</li>
+<li>NEW: Updated HTMLshiv</li>
+<li>NEW: Persistent link to your own grade report, available as long as you are enrolled in one visible course</li>
+</ul><h1>
+<a name="new-in-274" class="anchor" href="#new-in-274"><span class="octicon octicon-link"></span></a>New in 2.7.4</h1>
+
+<ul>
+<li>FIX: Issue #68.  Expand all not showing on Edit course settings.</li>
+<li>FIX: Issue #58.  Add font colour setting.</li>
+<li>FIX: Issue #63.  Slider caption overlap.</li>
+<li>FIX: Issue #66.  Link Colour Not Working.</li>
+<li>FIX: Issue #85.  Header logo location in RTL.</li>
+<li>FIX: Reverted icons back to #999.</li>
+<li>FIX: Alternative colour sets all now have the same CSS, docking fixed and consistent with settings.</li>
+<li>FIX: Moved all RTL to separate sheet from main CSS.  Sheet 'essential-rtl' uses 'flipped' technology ('grunt-css-flip') whilst 'rtl' sheet has manual styles.</li>
+<li>FIX: Issue #78.  Category icon issue in RTL.</li>
+<li>FIX: Issue #90.  XML Editor last used.</li>
+<li>FIX: Issue #88.  XML editor contrast issues.</li>
+<li>FIX: Issue #89.  Dock causes horizontal scroll bar.</li>
+<li>FIX: Issue #93.  Navbar / breadcrumb colour setting needed for contrast issues.</li>
+<li>FIX: Issue #94.  Docking centred text.</li>
+<li>FIX: Issue #95.  Navbar colour to far.</li>
+<li>FIX: Height of page header constrained when screen width &lt; 767px and row-fluid spans go 100%.</li>
+<li>NEW: Alternative colour sets have text and link colour settings.</li>
+<li>NEW: Optimised svg's to be smaller.</li>
+<li>NEW: Warning about IE8 as M2.6 does not support it - <a href="http://docs.moodle.org/dev/Moodle_2.6_release_notes#Requirements">http://docs.moodle.org/dev/Moodle_2.6_release_notes#Requirements</a>.</li>
+<li>NEW: If the page width setting is narrow and there are custom menu items the navigation bar and page adjusts to cope.</li>
+<li>NEW: Optimised colour setting code in lib.php.</li>
+<li>NOTE: If you are using an RTL language then please read the instructions in the config.php file to swap to the RTL styles manually.  As
+    a code solution to swapping files does not work at the moment and combining all possible CSS into one file leads to a big file with
+    lots of redundant CSS.  This presents problems when it comes to portable devices and bandwidth.</li>
+</ul><h1>
+<a name="new-in-273" class="anchor" href="#new-in-273"><span class="octicon octicon-link"></span></a>New in 2.7.3</h1>
+
+<ul>
+<li>FIX: Fixed slide show by replacing with Bootstrap 2.3.2 one.  Issue #18.</li>
+<li>FIX: Make background image fixed and set a background transparent colour</li>
+<li>FIX: Permanently replace edit icons with FontAwesome icons</li>
+<li>FIX: Massive cleanup in all files, reducing CSS with 25%</li>
+<li>FIX: Fixed all custom block regions to stick where they are</li>
+<li>FIX: Displaying footer and header on login page as well</li>
+<li>FIX: Further language file cleanup, looking for maintainers of all non-english language files!</li>
+<li>FIX: Optimize code for much improved processing time</li>
+<li>FIX: Optimize javascript to reduce browser lag on load</li>
+<li>FIX: Resolve layout issues on font-rendering</li>
+<li>FIX: Set layout options for responsive rendering, more mobile support to come soon</li>
+<li>FIX: Load fonts through htmlwriter (Thanks Mary :))</li>
+<li>FIX: Fix various alignment issues</li>
+<li>FIX: Fix popup/secure header overlay for quizzes</li>
+<li>FIX: optimize code to make loading much faster</li>
+<li>NEW: Reduced amount of fonts in theme, added legacy themes for websafe support</li>
+<li>NEW: New slider with up to 16 slides, full responsive</li>
+<li>NEW: Footer will go all the way to bottom on modern browsers (except IE of course)</li>
+<li>NEW: Removed output of summary to header due to potential exploits</li>
+<li>NEW: Breadcrumb styling</li>
+<li>NEW: Login Block styling</li>
+<li>NEW: Full custom category icon settings (Thanks Danny Wahl)</li>
+<li>NEW: Transparent fixed background when setting a background image</li>
+</ul><h1>
+<a name="new-in-272" class="anchor" href="#new-in-272"><span class="octicon octicon-link"></span></a>New in 2.7.2</h1>
+
+<ul>
+<li>FIX: Slideshow CSS fixes</li>
+<li>FIX: Image alignment on slideshow</li>
+<li>NEW: Select slideshow background color</li>
+<li>NEW: Option to bring back the old navbar location</li>
+</ul><h1>
+<a name="new-in-271" class="anchor" href="#new-in-271"><span class="octicon octicon-link"></span></a>New in 2.7.1</h1>
+
+<ul>
+<li>FIX: Numerous CSS fixes</li>
+<li>FIX: Translation fixes</li>
+<li>FIX: Updated Google Analytics code</li>
+<li>FIX: Cleanup of code in files</li>
+<li>FIX: Fixed logout page blocks in footer</li>
+<li>FIX: Now also outputs detailed performance info when selected</li>
+<li>FIX: Various menu features (messaging/badges) only enabled when feature is enabled</li>
+<li>NEW: Dutch translation</li>
+<li>NEW: Moved menu bar to top</li>
+<li>NEW: Now allows setting target on links</li>
+<li>NEW: New slideshow design (WIP)</li>
+</ul><h1>
+<a name="new-in-263" class="anchor" href="#new-in-263"><span class="octicon octicon-link"></span></a>New in 2.6.3</h1>
+
+<ul>
+<li>FIX: Numerous CSS fixes</li>
+<li>FIX: Due to popular request reports are now 2 column again</li>
+<li>FIX: Significantly improved RTL support</li>
+<li>FIX: Back To Top link now moved to the right side so does not overlap on content</li>
+<li>FIX: Fixed layout of top icons.</li>
+<li>NEW: Can create alternative colour schemes for users to select.</li>
+<li>NEW: Can select icons for categories</li>
+<li>NEW: Add support for the max-layout-width feature when empty regions are used.</li>
+<li>NEW: Start Dutch translation</li>
+</ul><h1>
+<a name="new-in-262" class="anchor" href="#new-in-262"><span class="octicon octicon-link"></span></a>New in 2.6.2</h1>
+
+<ul>
+<li>FIX: Numerous CSS fixes</li>
+<li>FIX: Third level dropdown in custom menu now works</li>
+<li>FIX: iOS7 custom menu now works when changed to a sing dropdown in portrait view</li>
+<li>FIX: Social networking icons now line up properly</li>
+<li>FIX: GoogleFonts will now load in HTTPS setups</li>
+<li>NEW: Frontpage content now goes full width if all blocks removed.</li>
+</ul><h1>
+<a name="new-in-261" class="anchor" href="#new-in-261"><span class="octicon octicon-link"></span></a>New in 2.6.1</h1>
+
+<ul>
+<li>NEW: MAJOR UPDATES for 2.6 compatibility.</li>
+<li>NEW: Moved layouts to a more "Moodle standard" 1, 2 and 3 column layout.</li>
+<li>NEW: Can now add three columns of blocks to middle of the homepage under marketing spots.</li>
+<li>NEW: Theme setting added to allow admins to align frontage blocks to the left or right.</li>
+<li>NEW: Two designs for the slideshow available. One with image to the right, other with a background image.</li>
+<li>UPDATE: <a href="http://fontawesome.io/">Font Awesome 4.0.3</a> now supported.</li>
+<li>UPDATE: Using new font setting to dynamically load the fonts.</li>
+<li>UPDATE: Removing autohide feature as no longer needed in Moodle 2.6</li>
+<li>FIX: Guest users no longer get "my courses" or "dashboard" dropdown menus.</li>
+<li>FIX: Nav Menu generates cleanly on IE.</li>
+<li>FIX: Gradebook now displays no blocks to maximise available space.</li>
+<li>FIX: Numerous CSS fixes and cleanup</li>
+</ul><h1>
+<a name="new-in-26" class="anchor" href="#new-in-26"><span class="octicon octicon-link"></span></a>New in 2.6</h1>
+
+<ul>
+<li>Added ability to select from 21 preset Google Font combinations or disable their use completely.</li>
+<li>Now includes additional Bootstrap JS plugins to allow for more dynamic formatting as shown on <a href="http://getbootstrap.com/javascript/">http://getbootstrap.com/javascript/</a>
+</li>
+<li>New Frontpage Slideshow settings to allow to display; all the time, only before login, only after login or never.</li>
+<li>New Marketing Spots settings to allow to display; all the time, only before login, only after login or never.</li>
+<li>Course Labels are no longer in bold by default</li>
+<li>Now has a companion Mahara ePorfolio theme so you can keep them looking alike - <a href="https://github.com/moodleman/mahara-theme_essential">https://github.com/moodleman/mahara-theme_essential</a>
+</li>
+<li>Further minor bug fixes and tidy up.</li>
+</ul><h1>
+<a name="new-in-254" class="anchor" href="#new-in-254"><span class="octicon octicon-link"></span></a>New in 2.5.4</h1>
+
+<ul>
+<li>Display current enrolled courses in dropdown menu and choose terminology (modules, courses, classes or units).</li>
+<li>New 'My Dashboard" in custommenu provides quick links to student tools. Can be disabled in theme settings.</li>
+<li>iOS home screen icons now built in. Can upload your own via settings.</li>
+<li>Alerts for users can be added to the frontpage. (Originally dreamed up by Shaun Daubney and re-coded by me).</li>
+<li>Theme options to connect to Google Analytics.</li>
+<li>Advanced Google Analytics function allowing Clean URL's for better reporting. Contributed by @basbrands and <a href="https://github.com/ghenrick" class="user-mention">@ghenrick</a>. More info on this feature can be found in <a href="http://www.somerandomthoughts.com/blog/2012/04/18/ireland-uk-moodlemoot-analytics-to-the-front/">this blog post</a>
+</li>
+<li>Significantly improved gradebook formatting.</li>
+<li>Toggle in Theme settings determines if FontAwesome is loaded from the theme or from the netdna.bootstrapcdn.com source.</li>
+<li>Back to top button for course pages.</li>
+<li>New "Frontpage Content" box to add custom content in between the slideshow and marketing spots.</li>
+</ul><h1>
+<a name="fixes-in-254" class="anchor" href="#fixes-in-254"><span class="octicon octicon-link"></span></a>Fixes in 2.5.4</h1>
+
+<ul>
+<li>Fix to frontpage slideshow. First slide now loads properly.</li>
+<li>Updated include method to minimise conflicts with 3rd party plugins</li>
+<li>Code significantly optimised. (about 1/5 less lines!)</li>
+<li>Many CSS Fixes</li>
+<li>IMPORTANT: Theme requires Moodle 2.5.1 or higher</li>
+</ul><h1>
+<a name="new-in-253" class="anchor" href="#new-in-253"><span class="octicon octicon-link"></span></a>New in 2.5.3</h1>
+
+<ul>
+<li>New Settings screen just for colour selection</li>
+<li>Admin can now toggle to use "autohide" functionality in courses.</li>
+<li>Admin now upload their own background image</li>
+<li>Can now set colours for footer area</li>
+<li>Cleanup of required images (Theme now only uses 4 images)</li>
+<li>Performance info now neatly formatted.</li>
+<li>Fixed Custom Menu colour in IE8 and IE9</li>
+<li>Can now upload optional images into the marketing spots</li>
+<li>Now available in English, German, Russian, Turkish and Spanish (many thanks to the Moodle Community for translating)</li>
+<li>New Pinterest, Instagram, Skype and the Russian VK social networks added.</li>
+<li>Can now add links to Mobile apps on the iOS App Store and Google Play</li>
+<li>New formatting on login block</li>
+<li>Minor CSS Fixes</li>
+<li>EXPERIMENTAL: New course editing icons formatted and built with Font Awesome can now be used.</li>
+</ul><h1>
+<a name="new-in--252" class="anchor" href="#new-in--252"><span class="octicon octicon-link"></span></a>New in  2.5.2</h1>
+
+<ul>
+<li>New theme setting to have user image show in the header when logged in.</li>
+<li>Admin can choose to revert courses to a "standard" layout with blocks on the left and right sides</li>
+<li>Admin can choose the default Navbar/breadcrumb separator</li>
+<li>Frontage now is a 2 column layout by popular demand</li>
+<li>Icons in navigation and administration block now rendered with Awesome Font</li>
+<li>Font Awesome now loaded and cached through lib.php. Should improve performance</li>
+<li>Minor CSS fixes</li>
+</ul><h1>
+<a name="see-the-theme-in-action" class="anchor" href="#see-the-theme-in-action"><span class="octicon octicon-link"></span></a>See the theme in Action</h1>
+
+<p>A video showing many of the core features is available for viewing at <a href="http://vimeo.com/69683774">http://vimeo.com/69683774</a></p>
+
+<h1>
+<a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h1>
+
+<p>As always, documentation is a work in progress. Available documentation is available at <a href="http://docs.moodle.org/25/en/Essential_theme">http://docs.moodle.org/25/en/Essential_theme</a>
+If you have questions you can post them in the issue tracker at <a href="https://github.com/DBezemer/moodle-theme_essential/issues">https://github.com/DBezemer/moodle-theme_essential/issues</a></p>
+
+<h1>
+<a name="maintained-by" class="anchor" href="#maintained-by"><span class="octicon octicon-link"></span></a>Maintained by</h1>
+
+<p>David Bezemer
+Moodle profile: <a href="https://moodle.org/user/profile.php?id=1416592">https://moodle.org/user/profile.php?id=1416592</a></p>
+
+<p>G J Barnard MSc. BSc(Hons)(Sndw). MBCS. CEng. CITP. PGCE.
+Moodle profile: <a href="http://moodle.org/user/profile.php?id=442195">http://moodle.org/user/profile.php?id=442195</a>
+Web profile   : <a href="http://about.me/gjbarnard">http://about.me/gjbarnard</a></p>
       </section>
       <footer>
         <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
