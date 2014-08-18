@@ -3149,8 +3149,7 @@ table.calendarmonth.calendartable {
 }
 
 #essentialCarousel.carousel .carousel-inner .carousel-caption {
-  background: #30add1;
-  background: rgba(48, 173, 209, 0.75);
+  background: [[setting:carouselcolor]];
 }
 
 #essentialCarousel.carousel .carousel-inner .carousel-caption .carousel-caption-inner {
@@ -3178,12 +3177,11 @@ table.calendarmonth.calendartable {
 }
 
 #essentialCarousel.carousel .carousel-indicators li {
-  background: #30add1;
-  background: rgba(48, 173, 209, 0.75);
+  background: [[setting:carouselcolor]];
 }
 
 #essentialCarousel.carousel .carousel-indicators .active {
-  background-color: #98d6e8;
+  background: [[setting:carouselactivecolor]];
 }
 
 .frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner {
