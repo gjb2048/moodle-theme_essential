@@ -34,31 +34,32 @@
  
 function theme_essential_set_fontwww($css) {
     global $CFG;
-    if(empty($CFG->themewww)){
-        $themewww = $CFG->wwwroot."/theme";
-    } else {
-        $themewww = $CFG->themewww;
-    }
+    $fontwww = preg_replace("(https?:)", "", $CFG->wwwroot .'/theme/essential/fonts/');
+
     $tag = '[[setting:fontwww]]';
-    
 
     if (theme_essential_get_setting('bootstrapcdn')) {
-     $css = str_replace($tag, '//netdna.bootstrapcdn.com/font-awesome/4.1.0/fonts/', $css);
+     $css = str_replace($tag, '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/fonts/', $css);
     } else {
-     $css = str_replace($tag, $themewww.'/essential/fonts/', $css);
+     $css = str_replace($tag, $fontwww, $css);
     }
     return $css;
 }
 
-function theme_essential_get_setting($setting) {
+function theme_essential_get_setting($setting, $format = false) {
     static $theme = '';
     if (empty($theme)) {
         $theme = theme_config::load('essential');
     }
     if (empty($theme->settings->$setting)) {
         return false;
-    } else {
+    }
+    if (!$format) {
         return $theme->settings->$setting;
+    } else if ($format === 'format_text') {
+            return format_text($theme->settings->$setting);
+    } else {
+        return format_string($theme->settings->$setting);
     }
 }
 
@@ -211,6 +212,21 @@ function theme_essential_performance_output($param, $perfinfo) {
     $html .= html_writer::end_tag('div');
 
     return $html;
+}
+
+function theme_essential_hex2rgba($hex, $opacity) {
+    $hex = str_replace("#", "", $hex);
+
+    if(strlen($hex) == 3) {
+      $r = hexdec(substr($hex,0,1).substr($hex,0,1));
+      $g = hexdec(substr($hex,1,1).substr($hex,1,1));
+      $b = hexdec(substr($hex,2,1).substr($hex,2,1));
+    } else {
+      $r = hexdec(substr($hex,0,2));
+      $g = hexdec(substr($hex,2,2));
+      $b = hexdec(substr($hex,4,2));
+    }
+    return "rgba($r, $g, $b, $opacity)";
 }
 
 /**
@@ -370,25 +386,33 @@ function theme_essential_process_css($css, $theme) {
     // Set the footer hover colour.
     $footerhovercolor = theme_essential_get_setting('footerhovercolor');
     $css = theme_essential_set_color($css, $footerhovercolor, '[[setting:footerhovercolor]]', '#30add1');
+     
+    // Set the slide background colour.
+    $slidebackgroundcolor = theme_essential_hex2rgba(theme_essential_get_setting('themecolor'), '.75');
+    $css = theme_essential_set_color($css, $slidebackgroundcolor, '[[setting:carouselcolor]]', '#30add1');
+    
+    // Set the slide active pip colour.
+    $slidebackgroundcolor = theme_essential_hex2rgba(theme_essential_get_setting('themecolor'), '.25');
+    $css = theme_essential_set_color($css, $slidebackgroundcolor, '[[setting:carouselactivecolor]]', '#30add1');
 
-     // Set the slide header colour.
-     $slideshowcolor = theme_essential_get_setting('slideshowcolor');
+    // Set the slide header colour.
+    $slideshowcolor = theme_essential_get_setting('slideshowcolor');
     $css = theme_essential_set_color($css, $slideshowcolor, '[[setting:slideshowcolor]]', '#30add1');
 
-     // Set the slide header colour.
-     $slideheadercolor = theme_essential_get_setting('slideheadercolor');
+    // Set the slide header colour.
+    $slideheadercolor = theme_essential_get_setting('slideheadercolor');
     $css = theme_essential_set_color($css, $slideheadercolor, '[[setting:slideheadercolor]]', '#30add1');
 
-     // Set the slide text colour.
-     $slidecolor = theme_essential_get_setting('slidecolor');
+    // Set the slide text colour.
+    $slidecolor = theme_essential_get_setting('slidecolor');
     $css = theme_essential_set_color($css, $slidecolor, '[[setting:slidecolor]]', '#ffffff');
 
     // Set the slide button colour.
     $slidebuttoncolor = theme_essential_get_setting('slidebuttoncolor');
     $css = theme_essential_set_color($css, $slidebuttoncolor, '[[setting:slidebuttoncolor]]', '#30add1');
 
-     // Set the slide button hover colour.
-     $slidebuttonhovercolor = theme_essential_get_setting('slidebuttonhovercolor');
+    // Set the slide button hover colour.
+    $slidebuttonhovercolor = theme_essential_get_setting('slidebuttonhovercolor');
     $css = theme_essential_set_color($css, $slidebuttonhovercolor, '[[setting:slidebuttonhovercolor]]', '#217a94');
 
     // Set theme alternative colours.
@@ -568,18 +592,14 @@ function theme_essential_set_marketingimage($css, $marketingimage, $setting) {
     return $css;
 }
 
-function theme_essential_showslider($settings) {
-    $noslides = theme_essential_get_setting('numberofslides');
+function theme_essential_showslider($setting) {
+    $noslides = theme_essential_get_setting($setting);
     if ($noslides) {
         $devicetype = core_useragent::get_device_type(); // In moodlelib.php.
-        if ($devicetype == "mobile") {
-            if ($settings->hideonphone) {
-                $noslides = false;
-            }
-        } else if ($devicetype == "tablet") {
-            if ($settings->hideontablet) {
-                $noslides = false;
-            }
+        if (($devicetype == "mobile") && theme_essential_get_setting('hideonphone')) {
+            $noslides = false;
+        } else if (($devicetype == "tablet") && theme_essential_get_setting('hideontablet')) {
+            $noslides = false;
         }
     }
     return $noslides;

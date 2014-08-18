@@ -55,6 +55,17 @@ $THEME->supportscssoptimisation = false;
 
 $THEME->editor_sheets = array('editor');
 
+if (get_config('theme_essential','frontpagemiddleblocks') == 1 || 
+   (get_config('theme_essential','frontpagemiddleblocks') == 2 && is_loggedin())) {
+    if(is_siteadmin()) {
+        $addregions = array('hidden-dock', 'home-left', 'home-middle', 'home-right');
+    } else {
+        $addregions = array('hidden-dock', 'home-left', 'home-middle');
+    }
+} else {
+    $addregions = array();
+}
+
 $THEME->layouts = array(
     // Most backwards compatible layout without the blocks - this is the layout used by default.
     'base' => array(
@@ -66,9 +77,8 @@ $THEME->layouts = array(
     // Front page.
     'frontpage' => array(
         'file' => 'frontpage.php',
-        'regions' => array('side-pre', 'home-left', 'home-middle', 'home-right', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
+        'regions' => array_merge(array('side-pre', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'), $addregions),
         'defaultregion' => 'hidden-dock',
-        'options' => array('nonavbar'=>true),
     ),
     // Standard layout with blocks, this is recommended for most pages with general information.
     'standard' => array(
@@ -105,7 +115,6 @@ $THEME->layouts = array(
         'file' => 'columns3.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-post',
-        'options' => array('langmenu'=>true),
     ),
     // My public page.
     'mypublic' => array(
@@ -117,7 +126,6 @@ $THEME->layouts = array(
         'file' => 'login.php',
         'regions' => array('footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => '',
-        'options' => array('langmenu'=>true),
     ),
 
     // Pages that appear in pop-up windows - no navigation, no blocks, no header.
@@ -152,7 +160,7 @@ $THEME->layouts = array(
         'file' => 'columns1.php',
         'regions' => array('footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'footer-right',
-        'options' => array('nofooter'=>true, 'nonavbar'=>false),
+        'options' => array('nofooter'=>true),
     ),
     // The pagelayout used when a redirection is occuring.
     'redirect' => array(

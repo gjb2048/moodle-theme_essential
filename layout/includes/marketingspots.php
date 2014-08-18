@@ -32,15 +32,15 @@ require_once(dirname(__FILE__).'/pagesettings.php');
         <!-- Advert #1 -->
         <div class="service">
             <!-- Icon & title. Font Awesome icon used. -->
-            <h5><span><i class="fa fa-<?php echo theme_essential_get_setting('marketing1icon'); ?>"></i> <?php echo theme_essential_get_setting('marketing1'); ?></span></h5>
+            <h5><span><i class="fa fa-<?php echo theme_essential_get_setting('marketing1icon'); ?>"></i> <?php echo theme_essential_get_setting('marketing1', true); ?></span></h5>
             <?php if ($hasmarketing1image) { ?>
                 <div class="marketing-image1"></div>
             <?php } ?>
             
-            <?php echo theme_essential_get_setting('marketing1content'); ?>
+            <?php echo theme_essential_get_setting('marketing1content', 'format_text'); ?>
             <p align="right">
                 <a href="<?php echo theme_essential_get_setting('marketing1buttonurl'); ?>" target="<?php echo theme_essential_get_setting('marketing1target'); ?>" id="button">
-                    <?php echo theme_essential_get_setting('marketing1buttontext'); ?>
+                    <?php echo theme_essential_get_setting('marketing1buttontext', true); ?>
                 </a>
             </p>
         </div>
@@ -50,15 +50,15 @@ require_once(dirname(__FILE__).'/pagesettings.php');
         <!-- Advert #2 -->
         <div class="service">
             <!-- Icon & title. Font Awesome icon used. -->
-            <h5><span><i class="fa fa-<?php echo theme_essential_get_setting('marketing2icon'); ?>"></i> <?php echo theme_essential_get_setting('marketing2'); ?></span></h5>
+            <h5><span><i class="fa fa-<?php echo theme_essential_get_setting('marketing2icon'); ?>"></i> <?php echo theme_essential_get_setting('marketing2', true); ?></span></h5>
             <?php if ($hasmarketing2image) { ?>
                 <div class="marketing-image2"></div>
             <?php } ?>
             
-            <?php echo theme_essential_get_setting('marketing2content'); ?>
+            <?php echo theme_essential_get_setting('marketing2content', 'format_text'); ?>
             <p align="right">
                 <a href="<?php echo theme_essential_get_setting('marketing2buttonurl'); ?>" target="<?php echo theme_essential_get_setting('marketing2target'); ?>" id="button">
-                    <?php echo theme_essential_get_setting('marketing2buttontext'); ?>
+                    <?php echo theme_essential_get_setting('marketing2buttontext', true); ?>
                 </a>
             </p>
         </div>
@@ -68,15 +68,15 @@ require_once(dirname(__FILE__).'/pagesettings.php');
         <!-- Advert #3 -->
         <div class="service">
             <!-- Icon & title. Font Awesome icon used. -->
-            <h5><span><i class="fa fa-<?php echo theme_essential_get_setting('marketing3icon'); ?>"></i> <?php echo theme_essential_get_setting('marketing3'); ?></span></h5>
+            <h5><span><i class="fa fa-<?php echo theme_essential_get_setting('marketing3icon'); ?>"></i> <?php echo theme_essential_get_setting('marketing3', true); ?></span></h5>
             <?php if ($hasmarketing3image) { ?>
                 <div class="marketing-image3"></div>
             <?php } ?>
             
-            <?php echo theme_essential_get_setting('marketing3content'); ?>
+            <?php echo theme_essential_get_setting('marketing3content', 'format_text'); ?>
             <p align="right">
                 <a href="<?php echo theme_essential_get_setting('marketing3buttonurl'); ?>" target="<?php echo theme_essential_get_setting('marketing3target'); ?>" id="button">
-                    <?php echo theme_essential_get_setting('marketing3buttontext'); ?>
+                    <?php echo theme_essential_get_setting('marketing3buttontext', true); ?>
                 </a>
             </p>
         </div>

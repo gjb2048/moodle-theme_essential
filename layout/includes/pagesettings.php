@@ -77,19 +77,19 @@ $fontselect = theme_essential_get_setting('fontselect');
 
 $hasanalytics = theme_essential_get_setting('useanalytics');
 
-$hassocialnetworks = (  theme_essential_get_setting('facebook')     &&
-                        theme_essential_get_setting('twitter')      &&
-                        theme_essential_get_setting('googleplus')   &&
-                        theme_essential_get_setting('linkedin')     &&
-                        theme_essential_get_setting('youtube')      &&
-                        theme_essential_get_setting('flickr')       &&
-                        theme_essential_get_setting('vk')           &&
-                        theme_essential_get_setting('pinterest')    &&
-                        theme_essential_get_setting('instagram')    &&
-                        theme_essential_get_setting('skype')        &&
+$hassocialnetworks = (  theme_essential_get_setting('facebook')     ||
+                        theme_essential_get_setting('twitter')      ||
+                        theme_essential_get_setting('googleplus')   ||
+                        theme_essential_get_setting('linkedin')     ||
+                        theme_essential_get_setting('youtube')      ||
+                        theme_essential_get_setting('flickr')       ||
+                        theme_essential_get_setting('vk')           ||
+                        theme_essential_get_setting('pinterest')    ||
+                        theme_essential_get_setting('instagram')    ||
+                        theme_essential_get_setting('skype')        ||
                         theme_essential_get_setting('website')
                     );
-$hasmobileapps =    (   theme_essential_get_setting('ios')          &&
+$hasmobileapps =    (   theme_essential_get_setting('ios')          ||
                         theme_essential_get_setting('android')
                     );
 
@@ -110,7 +110,7 @@ $haslogo = theme_essential_get_setting('logo');
 
 /* Group Frontpage */
 $alertinfo = '<span class="fa-stack "><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-info fa-stack-1x fa-inverse"></i></span>';
-$alertwarning = '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-warning fa-stack-1x fa-inverse"></i></span>';
+$alerterror = '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-warning fa-stack-1x fa-inverse"></i></span>';
 $alertsuccess = '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-bullhorn fa-stack-1x fa-inverse"></i></span>';
 
 $hasmarketing1image = theme_essential_get_setting('marketing1image');
@@ -122,5 +122,5 @@ $hasboringlayout = theme_essential_get_setting('layout');
 
 /* Group Footer */
 $hashiddendock = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('hidden-dock', $OUTPUT));
-$hascopyright = theme_essential_get_setting('copyright');
-$hasfootnote = theme_essential_get_setting('footnote');
+$hascopyright = theme_essential_get_setting('copyright', true);
+$hasfootnote = theme_essential_get_setting('footnote', 'format_text');
