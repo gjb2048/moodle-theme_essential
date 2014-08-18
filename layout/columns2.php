@@ -34,20 +34,28 @@ require_once(dirname(__FILE__).'/includes/header.php'); ?>
     <section role="main-content">
         <!-- Start Main Regions -->
         <div id="page-content" class="row-fluid">
-            <section id="<?php echo $regionbsid;?>" class="span9<?php if ($left) { echo ' pull-right'; } ?>">                
-                <?php
-                echo $OUTPUT->course_content_header();
-                echo $OUTPUT->main_content();
-                echo $OUTPUT->course_content_footer();
-                ?>
-            </section>
-            <?php
-            $classextra = '';
-            if ($left) {
-                $classextra = ' desktop-first-column';
-            }
-            echo $OUTPUT->blocks('side-pre', 'span3'.$classextra);
-            ?>
+            <div id="<?php echo $regionbsid ?>" class="span12">
+                <div class="row-fluid">
+                    <?php if ($hasboringlayout && $left) { ?>
+                    <section id="region-main" class="span9 pull-right">
+                    <?php } else { ?>
+                    <section id="region-main" class="span9 desktop-first-column">
+                    <?php } ?>
+                        <?php if ($COURSE->id > 1) {
+                            echo $OUTPUT->heading($COURSE->fullname, 1, 'coursetitle');
+                            echo '<div class="bor" style="margin-top: 10px;"></div>';
+                        } ?>
+                        <?php echo $OUTPUT->course_content_header(); ?>
+                        <?php echo $OUTPUT->main_content(); ?>
+                        <?php echo $OUTPUT->course_content_footer(); ?>
+                    </section>
+                    <?php if ($hasboringlayout && $left) { ?>
+                    <?php echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column'); ?>
+                    <?php } else { ?>
+                    <?php echo $OUTPUT->blocks('side-pre', 'span3 pull-right'); ?>
+                    <?php } ?>
+                </div>
+            </div>
         </div>
         <!-- End Main Regions -->
     </section>

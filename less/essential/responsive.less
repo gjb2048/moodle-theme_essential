@@ -1,7 +1,8 @@
 /* @group Responsive */
 
-@media screen and (min-width: 1200px) {
-    .maintenance #region-main, #page-login-index #region-main {
+@media (min-width: 1200px) {
+    .maintenance #region-main, 
+    #page-login-index #region-main {
         width: 100% !important;
     }
 }
@@ -98,8 +99,17 @@
     }
 }
 
+@media (min-width : 768px) {
+  .row-fluid .desktop-first-column {
+      margin-left: 0;
+  }
+}
+
 @media (max-width: 767px) {
     font-size: 12px !important;
+    .row-fluid .desktop-first-column {
+      clear: right;
+    }
     #page.container-fluid {
         padding: 5px;
     }

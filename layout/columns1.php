@@ -35,11 +35,13 @@ require_once(dirname(__FILE__).'/includes/header.php'); ?>
         <!-- Start Main Regions -->
         <div id="page-content" class="row-fluid">
             <section id="region-main" class="span12">
-                <?php
-                echo $OUTPUT->course_content_header();
-                echo $OUTPUT->main_content();
-                echo $OUTPUT->course_content_footer();
-                ?>
+                <?php if ($COURSE->id > 1) {
+                    echo $OUTPUT->heading($COURSE->fullname, 1, 'coursetitle');
+                    echo '<div class="bor" style="margin-top: 10px;"></div>';
+                } ?>
+                <?php echo $OUTPUT->course_content_header(); ?>
+                <?php echo $OUTPUT->main_content(); ?>
+                <?php echo $OUTPUT->course_content_footer(); ?>
             </section>
         </div>
         <!-- End Main Regions -->

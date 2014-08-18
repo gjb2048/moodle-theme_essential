@@ -302,98 +302,108 @@ class theme_essential_core_renderer extends core_renderer {
      * @return custom menu object
      */
     public function custom_menu_messages() {
-        global $USER;
+        global $USER, $CFG;
         $messagemenu = new custom_menu();
 
-        $addmessagemenu = true;
-
-        if (!isloggedin() || isguestuser()) {
-            $addmessagemenu = false;
+        if (!isloggedin() || isguestuser() || empty($CFG->messaging)) {
+            return false;
         }
 
-        if ($addmessagemenu) {
-            $messages = $this->get_user_messages();
-            $messagecount = 0;
-            foreach ($messages as $message) {
-                if (!$message->from) { // Workaround for issue #103 in Elegance.
-                    continue;
-                }
-                $messagecount++;
-            }
+        $messages = $this->get_user_messages();
+        $totalmessages = count($messages['messages']);
 
-            $messagetitle =  $messagecount.' ';
-            if ($messagecount == 0) {
-                $messagemenuicon = html_writer::tag('i', '', array('class' => 'fa fa-envelope-o'));
-                $messagetitle .= get_string('messages', 'message');
-            } else {
-                $messagemenuicon = html_writer::tag('i', '', array('class' => 'fa fa-envelope'));
-                if ($messagecount == 1) {
-                    $messagetitle .= get_string('message', 'message');
-                } else {
-                    $messagetitle .= get_string('messages', 'message');
-                }
-            }
-            $messagemenucount = $messagecount.' ';
-            $messagemenutext = html_writer::tag('span', $messagemenucount).$messagemenuicon;
+        if (empty($totalmessages)) {
+            $messagemenuicon = html_writer::tag('i', '', array('class' => 'fa fa-envelope-o'));
+            $messagetitle    = get_string('nomessagesfound', 'message');
+            $messagemenutext = html_writer::span($messagemenuicon);
             $messagesubmenu = $messagemenu->add(
                 $messagemenutext,
                 new moodle_url('/message/index.php', array('viewing' => 'recentconversations')),
                 $messagetitle,
                 9999
             );
-            foreach ($messages as $message) {
-                if (!$message->from) { // Workaround for issue #103.
-                    continue;
-                }
+        } else {
+        
+            if (empty($messages['newmessages'])) {
+                $messagemenuicon = html_writer::tag('i', '', array('class' => 'fa fa-envelope-o'));
+            } else {
+                $messagemenuicon = html_writer::tag('i', '', array('class' => 'fa fa-envelope'));
+            }
+            $messagetitle    = get_string('unreadmessages', 'message', $messages['newmessages']);
+            
+            $messagemenutext = html_writer::tag('span', $messages['newmessages']).$messagemenuicon;
+            $messagesubmenu = $messagemenu->add(
+                $messagemenutext,
+                new moodle_url('/message/index.php', array('viewing' => 'recentconversations')),
+                $messagetitle,
+                9999
+            );
+            
+            foreach ($messages['messages'] as $message) {
                 $senderpicture = new user_picture($message->from);
                 $senderpicture->link = false;
                 $senderpicture->size = 60;
+                
+                if($message->unread) {
+                    $addclass = 'unread';
+                    $iconadd = '';
+                } else {
+                    $addclass = 'read';
+                    $iconadd = '-o';
+                }
 
-                $messagecontent = html_writer::start_span('msg-picture').$this->render($senderpicture).html_writer::end_span();
+                $messagecontent  = html_writer::start_div('message '.$addclass);
+                $messagecontent .= html_writer::start_span('msg-picture').$this->render($senderpicture).html_writer::end_span();
                 $messagecontent .= html_writer::start_span('msg-body');
                 $messagecontent .= html_writer::span($message->from->firstname, 'msg-sender');
                 $messagecontent .= html_writer::span($message->text, 'msg-text');
                 $messagecontent .= html_writer::start_span('msg-time');
-                $messagecontent .= html_writer::tag('i', '', array('class' => 'fa fa-comments'));
+                $messagecontent .= html_writer::tag('i', '', array('class' => 'fa fa-comments'.$iconadd));
                 $messagecontent .= html_writer::span($this->get_time_difference($message->date));
                 $messagecontent .= html_writer::end_span();
                 $messagecontent .= html_writer::end_span();
+                $messagecontent .= html_writer::end_div();
 
                 $messageurl = new moodle_url('/message/index.php', array('user1' => $USER->id, 'user2' => $message->from->id));
                 $messagesubmenu->add($messagecontent, $messageurl, $message->text);
             }
         }
-
         return $this->render_custom_menu($messagemenu);
     }
     
     protected function get_user_messages() {
         global $USER, $DB;
-        $messagelist = array();
+        $messagelist['messages'] = array();
+        $maxmessages = 5;
 
         $newmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
-                            FROM {message}
-                           WHERE useridto = :userid";
+                          FROM {message}
+                          WHERE useridto = :userid
+                           AND useridfrom IS NOT NULL
+                          ORDER BY timecreated DESC
+                          LIMIT $maxmessages;";
 
-        $newmessages = $DB->get_records_sql($newmessagesql, array('userid' => $USER->id));
+        $messages = $DB->get_records_sql($newmessagesql, array('userid' => $USER->id));
+        $messagelist['newmessages'] = count($messages);
 
-        foreach ($newmessages as $message) {
-            $messagelist[] = $this->process_message($message);
+        foreach ($messages as $message) {
+            $messagelist['messages'][] = $this->process_message($message);
         }
 
-        $showoldmessages = theme_essential_get_setting('showoldmessages');
-        if ($showoldmessages == 2) {
-            $maxmessages = 5;
-            $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
-                                 FROM {message_read}
-                                WHERE useridto = :userid
-                             ORDER BY timecreated DESC
-                                LIMIT $maxmessages";
+        if ($messagelist['newmessages'] < $maxmessages) {
+            $maxmessages = 5 - $messagelist['newmessages'];
+            
+            $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated,timeread, fullmessageformat, notification
+                               FROM {message_read}
+                               WHERE useridto = :userid
+                                AND useridfrom IS NOT NULL
+                               ORDER BY timecreated DESC
+                               LIMIT $maxmessages;";
 
-            $readmessages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id));
+            $messages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id));
 
-            foreach ($readmessages as $message) {
-                $messagelist[] = $this->process_message($message);
+            foreach ($messages as $message) {
+                $messagelist['messages'][] = $this->process_message($message);
             }
         }
 
@@ -419,8 +429,8 @@ class theme_essential_core_renderer extends core_renderer {
         }
         
         $messagecontent->date = strtotime(userdate($message->timecreated));
-        $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom));
-
+        $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom), 'id,picture,firstname,lastname,firstnamephonetic,lastnamephonetic,middlename,alternatename,imagealt,email');
+        $messagecontent->unread = empty($message->timeread);
         return $messagecontent;
     }
     

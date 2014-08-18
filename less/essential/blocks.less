@@ -36,6 +36,20 @@
     }
 }
 
+.editing  {
+    .block-region.yui3-dd-drop-active-valid {
+        border: 1px dashed darken(@wellBackground, 7%);
+        .border-radius(@borderRadiusLarge);
+    }
+    
+    #page-footer {
+        .footerblocks > .span4,
+        .block-region.yui3-dd-drop-active-valid {
+            min-height: 300px;
+        }
+    }        
+}
+
 #middle-blocks p {
     margin-top: 12px;
 }
