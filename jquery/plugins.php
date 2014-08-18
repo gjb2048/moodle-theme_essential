@@ -15,6 +15,16 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * This is built using the bootstrapbase template to allow for new theme's using
+ * Moodle's new Bootstrap theme engine
+ *
+ * @package     theme_essential
+ * @copyright   2013 Julian Ridden
+ * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+/**
  * This file describes jQuery plugins available in the moodle
  * core component. These can be included in page using:
  *   $PAGE->requires->jquery();
@@ -30,22 +40,10 @@
  *
  * Themes or other plugin may blacklist any jquery plugin,
  * for example to override default jQueryUI theme.
- *
- * @package    core
- * @copyright  2013 Petr Skoda  {@link http://skodak.org}
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $plugins = array(
-    'modernizr'     => array('files' => array('modernizr_2.6.2.js')),
-    'alert'     => array('files' => array('bootstrap_plugins/alert_2.3.2.js')),
-    'carousel'     => array('files' => array('bootstrap_plugins/carousel_2.3.2.js')),
-    'collapse'     => array('files' => array('bootstrap_plugins/collapse_2.3.2.js')),
-    'modal'     => array('files' => array('bootstrap_plugins/modal_2.3.2.js')),
-    'scrollspy'     => array('files' => array('bootstrap_plugins/scrollspy_2.3.2.js')),
-    'tab'     => array('files' => array('bootstrap_plugins/tab_2.3.2.js')),
-    'tooltip'     => array('files' => array('bootstrap_plugins/tooltip_2.3.2.js')),
-    'transition'     => array('files' => array('bootstrap_plugins/transition_2.3.2.js')),
-    'cslider'     => array('files' => array('cslider_1.0.js')),
-    'custom'   => array('files' => array('custom_1.0.js'))
+	'bootstrap' => array('files' => array('bootstrap_2_3_2.js')),
+	'html5shiv' => array('files' => array('html5shiv_3_7_2.js')),
+    'breadcrumb' => array('files' => array('jBreadCrumb_1_1.js')),
 );

@@ -15,46 +15,76 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This is built using the Clean template to allow for new theme's using
+ * This is built using the bootstrapbase template to allow for new theme's using
  * Moodle's new Bootstrap theme engine
  *
- *
- * @package   theme_essential
- * @copyright 2013 Julian Ridden
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     theme_essential
+ * @copyright   2013 Julian Ridden
+ * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
  
-$footerl = 'footer-left';
-$footerm = 'footer-middle';
-$footerr = 'footer-right';
-
-$hascopyright = (empty($PAGE->theme->settings->copyright)) ? false : $PAGE->theme->settings->copyright;
-$hasfootnote = (empty($PAGE->theme->settings->footnote)) ? false : $PAGE->theme->settings->footnote;
-$hasfooterleft = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-left', $OUTPUT));
-$hasfootermiddle = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-middle', $OUTPUT));
-$hasfooterright = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-right', $OUTPUT));
-
 ?>
-	<div class="row-fluid">
-		<?php
-            		echo $OUTPUT->essentialblocks($footerl, 'span4');
+<footer role="contentinfo" id="page-footer">
+    <div class="container-fluid">
+        <div class="row-fluid footerblocks">
+            <div class="span4 pull-left">
+                <div class="column">
+                    <?php echo $OUTPUT->blocks('footer-left'); ?>
+                </div>
+            </div>
+            <div class="span4 center">
+                <div class="column">
+                    <?php echo $OUTPUT->blocks('footer-middle'); ?>
+                </div>
+            </div>
+            <div class="span4 pull-right">
+                <div class="column">
+                    <?php echo $OUTPUT->blocks('footer-right'); ?>
+                </div>
+            </div>
+        </div>
 
-            		echo $OUTPUT->essentialblocks($footerm, 'span4');
+        <div class="footerlinks row-fluid">
+            <hr />
+            <span class="helplink"><?php echo page_doc_link(get_string('moodledocslink')); ?></span>
+            <?php if ($hascopyright) { ?>
+                <span class="copy">&copy;<?php echo date("Y").' '.$hascopyright; ?></span>
+            <?php } ?>
+            <?php if ($hasfootnote) {
+                echo '<div class="footnote span12">'.$hasfootnote.'</div>';
+            } ?>
+        </div>
+        <div class="footerperformance row-fluid">
+            <?php echo $OUTPUT->standard_footer_html(); ?>
+        </div>
+    </div>
+</footer>
 
-            		echo $OUTPUT->essentialblocks($footerr, 'span4');
-		?>
- 	</div>
-
-	<div class="footerlinks row-fluid">
-    	<hr>
-    	<p class="helplink"><?php echo page_doc_link(get_string('moodledocslink')); ?></p>
-    <?php if ($hascopyright) {
-        echo '<p class="copy">&copy; '.date("Y").' '.$hascopyright.'</p>';
-    } ?>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    var offset = 220;
+    var duration = 500;
+    jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() > offset) {
+            jQuery('.back-to-top').fadeIn(duration);
+        } else {
+            jQuery('.back-to-top').fadeOut(duration);
+        }
+    });
     
-    <?php if ($hasfootnote) {
-        echo '<div class="footnote">'.$hasfootnote.'</div>';
-    } ?>
-	</div>
-	
-
+    jQuery('.back-to-top').click(function(event) {
+        event.preventDefault();
+        jQuery('html, body').animate({scrollTop: 0}, duration);
+        return false;
+    })
+	$('.navbar').affix({
+		  offset: {
+			top: $('header').height()
+		  }
+	});
+    $('.breadcrumb').jBreadCrumb();
+});
+</script>
+<a href="#top" class="back-to-top" title="<?php print_string('backtotop', 'theme_essential'); ?>"><i class="fa fa-angle-up "></i></a>
+<?php echo $OUTPUT->standard_end_of_body_html() ?>

@@ -15,40 +15,23 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * This is built using the bootstrapbase template to allow for new theme's using
+ * Moodle's new Bootstrap theme engine
  *
- * @package   theme_essential
- * @copyright 2013 Julian Ridden
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     theme_essential
+ * @copyright   2013 Julian Ridden
+ * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$hasiphoneicon = (!empty($PAGE->theme->settings->iphoneicon));
-$hasipadicon = (!empty($PAGE->theme->settings->ipadicon));
-$hasiphoneretinaicon = (!empty($PAGE->theme->settings->iphoneretinaicon));
-$hasipadretinaicon = (!empty($PAGE->theme->settings->ipadretinaicon));
-
-if ($hasiphoneicon) {
-    $iphoneicon = $PAGE->theme->settings->iphoneicon;
-} else {
-	$iphoneicon = $OUTPUT->pix_url('homeicon/iphone', 'theme');
-}
-
-if ($hasipadicon) {
-    $ipadicon = $PAGE->theme->settings->ipadicon;
-} else {
-	$ipadicon = $OUTPUT->pix_url('homeicon/ipad', 'theme');
-}
-
-if ($hasiphoneretinaicon) {
-    $iphoneretinaicon = $PAGE->theme->settings->iphoneretinaicon;
-} else {
-	$iphoneretinaicon = $OUTPUT->pix_url('homeicon/iphone_retina', 'theme');
-}
-
-if ($hasipadretinaicon) {
-    $ipadretinaicon = $PAGE->theme->settings->ipadretinaicon;
-} else {
-	$ipadretinaicon = $OUTPUT->pix_url('homeicon/ipad_retina', 'theme');
-}
+if(theme_essential_get_setting('iphoneicon')) { $iphoneicon = theme_essential_get_setting('iphoneicon'); }
+    else { $iphoneicon = $OUTPUT->pix_url('homeicon/iphone', 'theme'); }
+if(theme_essential_get_setting('ipadicon')) { $ipadicon = theme_essential_get_setting('ipadicon'); }
+    else { $ipadicon = $OUTPUT->pix_url('homeicon/ipad', 'theme'); }
+if(theme_essential_get_setting('iphoneretinaicon')) { $iphoneretinaicon = theme_essential_get_setting('iphoneretinaicon'); }
+    else { $iphoneretinaicon = $OUTPUT->pix_url('homeicon/iphone_retina', 'theme'); }
+if(theme_essential_get_setting('ipadretinaicon')) { $ipadretinaicon = theme_essential_get_setting('ipadretinaicon'); }
+    else { $ipadretinaicon = $OUTPUT->pix_url('homeicon/ipad_retina', 'theme'); }
 ?>
 
 <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo $iphoneicon ?>" />

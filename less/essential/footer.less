@@ -1,0 +1,223 @@
+/* @group Footer */
+
+#page-footer {
+    margin: 0px;
+    padding: 0px;
+    border: 0;
+    font-size: 1em;
+    text-align: left;
+    width: 100%;
+    padding-top: 10px;
+
+    .copy {
+        padding: 10px;
+        float: left;
+    }
+    .footerlinks {
+        .footnote {
+            float: left;
+            color: #fff;
+            margin-left: 0px;
+            a:hover {
+                text-decoration: none;
+            }
+        }
+        .helplink {
+            float: right;
+            padding-right: 20px;
+            a {
+                color: orange !important;
+            }
+        }
+    }
+
+    .span4 {
+        padding: 30px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    hr {
+        padding: 0px;
+        border-bottom: 0px none;
+        margin-top: -10px;
+    }
+
+    h4 {
+        font-size: 1.2em;
+        padding-bottom: 6px;
+        margin-bottom: 4px;
+    }
+}
+
+#page-footer ul,
+#greyboxright ul {
+    list-style-type: none !important;
+    margin: 0px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    li {
+        padding: 4px 0px;
+        padding-left: 0px;
+    }
+}
+
+.footerlinks {
+    line-height: 15px;
+}
+
+/* @group Footer Block Formatting */
+
+#page-footer {
+    .block {
+        border: 0px none;
+        background: transparent;
+        width: 100%;
+        padding: 0px;
+
+        .header {
+            .title h2:before {
+                background: transparent;
+                padding-left: 0px;
+                font-size: 1.2em;
+                padding-bottom: 0px;
+                margin-bottom: 0px;
+                text-transform: none;
+                font-weight: normal;
+            }
+            .block_action {
+                display: none !important;
+            }
+        }
+    }
+}
+
+#page-footer .eventskey,
+#page-footer .calendar_filters {
+    display: none;
+}
+
+#page-footer img.profilepicture,
+#page-footer .myprofileitem.picture {
+    float: left;
+    width: 90px;
+    height: 90px;
+}
+
+#page-footer .myprofileitem {
+    &.picture {
+        margin-right: 20px;
+    }
+
+    &.fullname {
+        margin-top: 10px;
+    }
+}
+
+#page-footer .block_login {
+    .footer a,
+    .footer a:visited {
+        color: #fff;
+    }
+}
+
+#page-footer .block_rss_client {
+    li:before{
+        display: none;
+    }
+
+    .content {
+        padding-top: 10px;
+    }
+
+    .content li:hover {
+        background: transparent;
+    }
+}
+
+/* @end */
+
+/* @group Performance Information */
+.performanceinfo {
+    bottom:0;
+    background: white;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #E1E1E1;
+    font-style: normal;
+
+    .span3 {
+       text-align: center;
+    }
+
+    var {
+        font-size: 1.2em;
+        padding: 5px;
+        border-radius: 5px;
+        color: #fff !important;
+        white-space: nowrap;
+    }
+
+    h2 {
+        font-size: 1.4em;
+        color: #888;
+        line-height: 1.4em;
+        text-transform: uppercase;
+        font-weight: normal;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+        margin-top: 5px;
+        &:before {
+            font-family: FontAwesome;
+            font-size: 1.65em;
+            margin-right: .3em;
+            content: "\f05a";
+        }
+    }
+
+    span {
+        color:#444;
+        display: block;
+    }
+
+    #load:before {
+        font-family: FontAwesome;
+        font-size: 1em;
+        margin-right: .3em;
+        color: #fff;
+        font-style: normal;
+        font-weight: 100;
+        content: "\f017";
+    }
+
+    #memory:before {
+        font-family: FontAwesome;
+        font-size: 1em;
+        margin-right: .3em;
+        color: #fff;
+        font-style: normal;
+        content: "\f0e4";
+    }
+
+    #included:before {
+        font-family: FontAwesome;
+        font-size: 1em;
+        margin-right: .3em;
+        color: #fff;
+        font-style: normal;
+        content: "\f16c";
+    }
+
+    #db:before {
+        font-family: FontAwesome;
+        font-size: 1em;
+        margin-right: .3em;
+        color: #fff;
+        font-style: normal;
+        content: "\f181";
+    }
+}
+
+/* @end */
+
+/* @end */

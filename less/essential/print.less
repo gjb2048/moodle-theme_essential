@@ -1,0 +1,106 @@
+/* @group Print Styling */
+
+#printonly {
+    display: none;
+}
+
+@media print {
+
+    #printonly {
+        display: block;
+    }
+   
+    html,body {
+        margin: 0;
+        padding: 0;
+        background: transparent;
+        color: #000;
+        text-shadow: none;
+    }
+
+    #dock, 
+    #topstripe, 
+    #page-header, 
+    #custommenu-wrap-outer, 
+    #block-region-side-pre,
+    #block-region-side-post,
+    .navbar, 
+    #graded_users_selector,
+    div.urlselect, 
+    #page-footer,
+    .tabtree, .helplink {
+        display: none;
+    }
+
+    #page-report-outline-user .navbar {
+        display: block;
+    }
+
+    #page-content-wrapper {
+        width: auto;
+        min-width: auto;
+    }
+  
+    #block-region-side-post,
+    #block-region-side-pre {
+        width: 0;
+    }  
+
+    .side-post-only #page-content #region-main-box {
+        left: 0;
+    }
+
+    .side-post-only #page-content #region-post-box {
+        margin-left: 0 !important;
+    }
+
+    .side-post-only #page-content #region-main, 
+    .side-post-only #page-content #region-bs-main-and-pre    {
+        margin-left: 0 !important;
+    }
+    
+    .row-fluid .span9 {
+        width: 100%;
+    }
+    
+    [class*="span"].pull-right, .row-fluid [class*="span"].pull-right {
+        float: left;
+    }
+
+    #page #region-main .region-content {
+        border: 0px solid transparent !important;
+        margin: 0 0 !important;
+        padding: 0px 0px !important;
+    }
+
+    #page-content #region-main-box .region-content {
+        padding: 0px 0 0;
+    }
+
+    #page .navbar {
+        margin: 0 0;
+        padding: 1em 0px;
+        background: #fff;
+        color: #000;
+        text-shadow: none;
+        font-size: 1em;
+    }
+
+    #page .navbar a {
+        color: #000;
+        text-shadow: none;
+        font-size: 1em;
+    }
+
+    .navbar .sep {
+        color: ~"[[setting:themecolor]]";
+        text-shadow: none;
+    }
+
+    .headingwrap h2.headingblock, 
+    .headingwrap h2.main {
+        text-shadow: none;
+    }
+}
+
+/* @end */

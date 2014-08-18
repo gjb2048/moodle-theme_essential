@@ -1,0 +1,36 @@
+/* @group Fixes */
+
+// XML DB Editor - Issue #90.
+a[name="lastused"] {
+    padding-top: 50px;
+}
+
+// Overlays - Issue #131
+.yui3-overlay,
+.user-enroller-panel {
+    z-index: 100 !important;
+}
+
+.block_settings .type_siteadmin.contains_branch .item_with_icon {
+    margin-left: 21px;
+}
+.path-admin-setting .block_settings .type_siteadmin.contains_branch .item_with_icon {
+    margin-left: 0px;
+}
+
+// Reset Bootstrap global label override
+label {
+  display: inline;
+}
+/* @end */
+
+// Correctly span the main element when no blocks are present in side-pre on frontpage
+.empty-region-side-pre #region-bs-main-and-pre #region-main.span9 {
+    width: 100%;
+}
+
+// Fix opacity for hidden block menu - MDL-42634
+.editing .block.invisible {
+    .opacity(100);
+    background: rgba(255, 255, 255, 0.4);
+}

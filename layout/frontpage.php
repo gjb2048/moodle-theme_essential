@@ -15,288 +15,155 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This is built using the Clean template to allow for new theme's using
+ * This is built using the bootstrapbase template to allow for new theme's using
  * Moodle's new Bootstrap theme engine
  *
- *
- * @package   theme_essential
- * @copyright 2013 Julian Ridden
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     theme_essential
+ * @copyright   2013 Julian Ridden
+ * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$hashiddendock = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('hidden-dock', $OUTPUT));
-
-$hasslide1 = (!empty($PAGE->theme->settings->slide1));
-$hasslide1image = (!empty($PAGE->theme->settings->slide1image));
-$hasslide1caption = (!empty($PAGE->theme->settings->slide1caption));
-$hasslide1url = (!empty($PAGE->theme->settings->slide1url));
-$hasslide2 = (!empty($PAGE->theme->settings->slide2));
-$hasslide2image = (!empty($PAGE->theme->settings->slide2image));
-$hasslide2caption = (!empty($PAGE->theme->settings->slide2caption));
-$hasslide2url = (!empty($PAGE->theme->settings->slide2url));
-$hasslide3 = (!empty($PAGE->theme->settings->slide3));
-$hasslide3image = (!empty($PAGE->theme->settings->slide3image));
-$hasslide3caption = (!empty($PAGE->theme->settings->slide3caption));
-$hasslide3url = (!empty($PAGE->theme->settings->slide3url));
-$hasslide4 = (!empty($PAGE->theme->settings->slide4));
-$hasslide4image = (!empty($PAGE->theme->settings->slide4image));
-$hasslide4caption = (!empty($PAGE->theme->settings->slide4caption));
-$hasslide4url = (!empty($PAGE->theme->settings->slide4url));
-$hasslideshow = ($hasslide1||$hasslide2||$hasslide3||$hasslide4);
-$hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
-
-$hasalert1 = (empty($PAGE->theme->settings->enable1alert)) ? false : $PAGE->theme->settings->enable1alert;
-$hasalert2 = (empty($PAGE->theme->settings->enable2alert)) ? false : $PAGE->theme->settings->enable2alert;
-$hasalert3 = (empty($PAGE->theme->settings->enable3alert)) ? false : $PAGE->theme->settings->enable3alert;
-$alertinfo = '<span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-info icon-light"></i></span>';
-$alertwarning = '<span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-warning-sign icon-light"></i></span>';
-$alertsuccess = '<span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-bullhorn icon-light"></i></span>';
-
-$hasmarketing1image = (!empty($PAGE->theme->settings->marketing1image));
-$hasmarketing2image = (!empty($PAGE->theme->settings->marketing2image));
-$hasmarketing3image = (!empty($PAGE->theme->settings->marketing3image));
-
-$haslogo = (!empty($PAGE->theme->settings->logo));
-
-
-/* Slide1 settings */
-$hideonphone = $PAGE->theme->settings->hideonphone;
-if ($hasslide1) {
-    $slide1 = $PAGE->theme->settings->slide1;
-}
-if ($hasslide1image) {
-    $slide1image = $PAGE->theme->setting_file_url('slide1image', 'slide1image');
-}
-if ($hasslide1caption) {
-    $slide1caption = $PAGE->theme->settings->slide1caption;
-}
-if ($hasslide1url) {
-    $slide1url = $PAGE->theme->settings->slide1url;
-}
-
-/* slide2 settings */
-if ($hasslide2) {
-    $slide2 = $PAGE->theme->settings->slide2;
-}
-if ($hasslide2image) {
-    $slide2image = $PAGE->theme->setting_file_url('slide2image', 'slide2image');
-}
-if ($hasslide2caption) {
-    $slide2caption = $PAGE->theme->settings->slide2caption;
-}
-if ($hasslide2url) {
-    $slide2url = $PAGE->theme->settings->slide2url;
-}
-
-/* slide3 settings */
-if ($hasslide3) {
-    $slide3 = $PAGE->theme->settings->slide3;
-}
-if ($hasslide3image) {
-    $slide3image = $PAGE->theme->setting_file_url('slide3image', 'slide3image');
-}
-if ($hasslide3caption) {
-    $slide3caption = $PAGE->theme->settings->slide3caption;
-}
-if ($hasslide3url) {
-    $slide3url = $PAGE->theme->settings->slide3url;
-}
-
-/* slide4 settings */
-if ($hasslide4) {
-    $slide4 = $PAGE->theme->settings->slide4;
-}
-if ($hasslide4image) {
-    $slide4image = $PAGE->theme->setting_file_url('slide4image', 'slide4image');
-}
-if ($hasslide4caption) {
-    $slide4caption = $PAGE->theme->settings->slide4caption;
-}
-if ($hasslide4url) {
-    $slide4url = $PAGE->theme->settings->slide4url;
-}
-
-$hasfootnote = (!empty($PAGE->theme->settings->footnote));
-$custommenu = $OUTPUT->custom_menu();
-$hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
-
-if (right_to_left()) {
-    $regionbsid = 'region-bs-main-and-post';
-} else {
-    $regionbsid = 'region-bs-main-and-pre';
-}
-
-echo $OUTPUT->doctype() ?>
-<html <?php echo $OUTPUT->htmlattributes(); ?>>
-<head>
-    <title><?php echo $OUTPUT->page_title(); ?></title>
-    <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
-    <?php echo $OUTPUT->standard_head_html() ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google web fonts -->
-    <?php require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
-    <!-- iOS Homescreen Icons -->
-    <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
-    <noscript>
-			<link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/essential/style/nojs.css" />
-	</noscript>
-</head>
-
-<body <?php echo $OUTPUT->body_attributes(); ?>>
-
-<?php echo $OUTPUT->standard_top_of_body_html() ?>
-
-<?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
-
-<header role="banner" class="navbar">
-    <nav role="navigation" class="navbar-inner">
-        <div class="container-fluid">
-            <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
-            <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <div class="nav-collapse collapse">
-            <?php if ($hascustommenu) {
-                echo $custommenu;
-            } ?>
-            <ul class="nav pull-right">
-            <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-            <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
-            </ul>
-            </div>
-        </div>
-    </nav>
-</header>
+require_once(dirname(__FILE__).'/includes/header.php');?>
 
 <div id="page" class="container-fluid">
+    <section class="slideshow">
+        <!-- Start Slideshow -->
+        <?php 
+            if(theme_essential_get_setting('toggleslideshow')==1) {
+                require_once(dirname(__FILE__).'/includes/slideshow.php');
+            } else if(theme_essential_get_setting('toggleslideshow')==2 && !isloggedin()) {
+                require_once(dirname(__FILE__).'/includes/slideshow.php');
+            } else if(theme_essential_get_setting('toggleslideshow')==3 && isloggedin()) {
+                require_once(dirname(__FILE__).'/includes/slideshow.php');
+            } 
+        ?>
+        <!-- End Slideshow -->
+    </section>
 
-<!-- Start Alerts -->
+    <section role="main-content">
+    <!-- Start Main Regions -->
 
-<!-- Alert #1 -->
-<?php if ($hasalert1) { ?>  
-	<div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert1type ?>">  
-	<a class="close" data-dismiss="alert" href="#">×</a>
-	<?php 
-	if ($PAGE->theme->settings->alert1type == 'info') {
-		$alert1icon = $alertinfo;
-    } else if ($PAGE->theme->settings->alert1type == 'error') {
-    	$alert1icon = $alertwarning;
-   	} else {
-   		$alert1icon = $alertsuccess;
-   	} 
-   	echo $alert1icon.'<span class="title">'.$PAGE->theme->settings->alert1title.'</span>'.$PAGE->theme->settings->alert1text; ?> 
-</div>
-<?php } ?>
+    <!-- Start Alerts -->
 
-<!-- Alert #2 -->
-<?php if ($hasalert2) { ?>  
-	<div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert2type ?>">  
-	<a class="close" data-dismiss="alert" href="#">×</a>
-	<?php 
-	if ($PAGE->theme->settings->alert2type == 'info') {
-		$alert2icon = $alertinfo;
-    } else if ($PAGE->theme->settings->alert2type == 'error') {
-    	$alert2icon = $alertwarning;
-   	} else {
-   		$alert2icon = $alertsuccess;
-   	} 
-   	echo $alert2icon.'<span class="title">'.$PAGE->theme->settings->alert2title.'</span>'.$PAGE->theme->settings->alert2text; ?> 
-</div>
-<?php } ?>
+        <!-- Alert #1 -->
+        <?php if (theme_essential_get_setting('enable1alert')) { ?>  
+            <div class="useralerts alert alert-<?php echo theme_essential_get_setting('alert1type') ?>">  
+            <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
+            <?php 
+            $alert1icon = 'alert'.theme_essential_get_setting('alert1type');
+            echo $$alert1icon.'<span class="title">'.theme_essential_get_setting('alert1title', true).'</span>'.theme_essential_get_setting('alert1text', true); ?> 
+        </div>
+        <?php } ?>
 
-<!-- Alert #3 -->
-<?php if ($hasalert3) { ?>  
-	<div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert3type ?>">  
-	<a class="close" data-dismiss="alert" href="#">×</a>
-	<?php 
-	if ($PAGE->theme->settings->alert3type == 'info') {
-		$alert3icon = $alertinfo;
-    } else if ($PAGE->theme->settings->alert3type == 'error') {
-    	$alert3icon = $alertwarning;
-   	} else {
-   		$alert3icon = $alertsuccess;
-   	} 
-   	echo $alert3icon.'<span class="title">'.$PAGE->theme->settings->alert3title.'</span>'.$PAGE->theme->settings->alert3text; ?> 
-</div>
-<?php } ?>
-<!-- End Alerts -->
+        <!-- Alert #2 -->
+        <?php if (theme_essential_get_setting('enable2alert')) { ?>  
+            <div class="useralerts alert alert-<?php echo theme_essential_get_setting('alert2type') ?>">  
+            <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
+            <?php 
+            $alert2icon = 'alert'.theme_essential_get_setting('alert2type');
+            echo $$alert2icon.'<span class="title">'.theme_essential_get_setting('alert2title', true).'</span>'.theme_essential_get_setting('alert2text', true); ?> 
+        </div>
+        <?php } ?>
 
-<!-- Start Slideshow -->
-<?php 
-	if($PAGE->theme->settings->toggleslideshow==1) {
-		require_once(dirname(__FILE__).'/includes/slideshow.php');
-	} else if($PAGE->theme->settings-> toggleslideshow==2 && !isloggedin()) {
-		require_once(dirname(__FILE__).'/includes/slideshow.php');
-	} else if($PAGE->theme->settings-> toggleslideshow==3 && isloggedin()) {
-		require_once(dirname(__FILE__).'/includes/slideshow.php');
-	} 
-?>
-<!-- End Slideshow -->
+        <!-- Alert #3 -->
+        <?php if (theme_essential_get_setting('enable3alert')) { ?>  
+            <div class="useralerts alert alert-<?php echo theme_essential_get_setting('alert3type') ?>">  
+            <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
+            <?php 
+            $alert3icon = 'alert'.theme_essential_get_setting('alert3type');
+            echo $$alert3icon.'<span class="title">'.theme_essential_get_setting('alert3title', true).'</span>'.theme_essential_get_setting('alert3text', true); ?> 
+        </div>
+        <?php } ?>
+        <!-- End Alerts -->
 
-<!-- Start Frontpage Content -->
-<?php if($PAGE->theme->settings->usefrontcontent ==1) { 
-	echo $PAGE->theme->settings->frontcontentarea;
-	?>
-	<div class="bor" style="margin-top: 10px;"></div>	
-<?php }?>
-<!-- End Frontpage Content -->
-
-
-<!-- Start Marketing Spots -->
-<?php 
-	if($PAGE->theme->settings->togglemarketing==1) {
-		require_once(dirname(__FILE__).'/includes/marketingspots.php');
-	} else if($PAGE->theme->settings->togglemarketing==2 && !isloggedin()) {
-		require_once(dirname(__FILE__).'/includes/marketingspots.php');
-	} else if($PAGE->theme->settings->togglemarketing==3 && isloggedin()) {
-		require_once(dirname(__FILE__).'/includes/marketingspots.php');
-	} 
-?>
-<!-- End Marketing Spots -->
-
-<div id="page-content" class="row-fluid">
-	<div id="<?php echo $regionbsid ?>" class="span12">
-		<div class="row-fluid">
-			<div id="region-main-essential">
-				<section id="region-main" class="span8 desktop-first-column">
-				<?php
-				echo $OUTPUT->course_content_header();
-				echo $OUTPUT->main_content();
-				echo $OUTPUT->course_content_footer();
-				?>
-                </section>
+        <!-- Start Frontpage Content -->
+        <?php if(theme_essential_get_setting('togglefrontcontent')) {?>
+            <div class="frontpagecontent">
+                <div class="bor" style="margin-top: 10px;"></div>
+                    <?php if(theme_essential_get_setting('togglefrontcontent')==1) {
+                        echo theme_essential_get_setting('frontcontentarea', 'format_text'); 
+                    } else if(theme_essential_get_setting('togglefrontcontent')==2 && !isloggedin()) {
+                        echo theme_essential_get_setting('frontcontentarea', 'format_text');
+                    } else if(theme_essential_get_setting('togglefrontcontent')==3 && isloggedin()) {
+                        echo theme_essential_get_setting('frontcontentarea', 'format_text');
+                    } ?>
+                <div class="bor" style="margin-top: 10px;"></div>
             </div>
-			<?php echo $OUTPUT->essentialblocks('side-pre', 'span4 pull-right'); ?>
-		</div>
-	</div>
+        <?php } ?>
+
+        <!-- End Frontpage Content -->
+
+        <!-- Start Marketing Spots -->
+        <?php 
+            if(theme_essential_get_setting('togglemarketing')==1) {
+                require_once(dirname(__FILE__).'/includes/marketingspots.php');
+            } else if(theme_essential_get_setting('togglemarketing')==2 && !isloggedin()) {
+                require_once(dirname(__FILE__).'/includes/marketingspots.php');
+            } else if(theme_essential_get_setting('togglemarketing')==3 && isloggedin()) {
+                require_once(dirname(__FILE__).'/includes/marketingspots.php');
+            }
+        ?>
+        <!-- End Marketing Spots -->
+
+        <!-- Start Middle Blocks -->
+        <?php 
+            if(theme_essential_get_setting('frontpagemiddleblocks')==1) {
+                require_once(dirname(__FILE__).'/includes/middleblocks.php');
+            } else if(theme_essential_get_setting('frontpagemiddleblocks')==2 && !isloggedin()) {
+                require_once(dirname(__FILE__).'/includes/middleblocks.php');
+            } else if(theme_essential_get_setting('frontpagemiddleblocks')==3 && isloggedin()) {
+                require_once(dirname(__FILE__).'/includes/middleblocks.php');
+            }
+        ?>
+        <!-- End Middle Blocks -->
+
+        <div id="page-content" class="row-fluid">
+            <section id="<?php echo $regionbsid;?>">
+                <?php if (theme_essential_get_setting('frontpageblocks')) { ?>
+                    <section id="region-main" class="span9 pull-right">
+                <?php } else { ?>
+                    <section id="region-main" class="span9 desktop-first-column">
+                <?php } ?>
+                    <?php
+                        echo $OUTPUT->course_content_header();
+                        echo $OUTPUT->main_content(); 
+                        echo $OUTPUT->course_content_footer();
+                    ?>
+                    </section>
+                <?php
+                if (theme_essential_get_setting('frontpageblocks')) {
+                    echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column');
+                } else {
+                    echo $OUTPUT->blocks('side-pre', 'span3 pull-right');
+                }
+                ?>
+            </section>
+        </div>
+        
+        <!-- End Main Regions -->
+
+        <?php if (is_siteadmin()) { ?>
+        <div class="hidden-blocks">
+            <div class="row-fluid">
+                <h4><?php echo get_string('visibleadminonly', 'theme_essential') ?></h4>
+                <?php
+                    echo $OUTPUT->blocks('hidden-dock');
+                ?>
+            </div>
+        </div>
+        <?php } ?>
+
+    </section>
 </div>
 
-<?php if (is_siteadmin()) { ?>
-<div class="hidden-blocks">
-    <div class="row-fluid">
-        <h4><?php echo get_string('visibleadminonly', 'theme_essential') ?></h4>
-            <?php
-                echo $OUTPUT->essentialblocks('hidden-dock');
-            ?>
-    </div>
-</div>
-<?php } ?>
+<?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
 
-<footer id="page-footer" class="container-fluid">
-            <?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
-</footer>
-
-<?php echo $OUTPUT->standard_footer_html(); ?>
-
-<?php echo $OUTPUT->standard_end_of_body_html() ?>
-
-<!-- Start Google Analytics -->
-<?php if ($hasanalytics) { ?>
-		<?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
-<?php } ?>
-<!-- End Google Analytics -->
-
+<!-- Initialize slideshow -->
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    $('.carousel').carousel();
+});
+</script>
 </body>
 </html>
