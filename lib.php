@@ -214,6 +214,21 @@ function theme_essential_performance_output($param, $perfinfo) {
     return $html;
 }
 
+function theme_essential_hex2rgba($hex, $opacity) {
+    $hex = str_replace("#", "", $hex);
+
+    if(strlen($hex) == 3) {
+      $r = hexdec(substr($hex,0,1).substr($hex,0,1));
+      $g = hexdec(substr($hex,1,1).substr($hex,1,1));
+      $b = hexdec(substr($hex,2,1).substr($hex,2,1));
+    } else {
+      $r = hexdec(substr($hex,0,2));
+      $g = hexdec(substr($hex,2,2));
+      $b = hexdec(substr($hex,4,2));
+    }
+    return "rgba($r, $g, $b, $opacity)";
+}
+
 /**
  * Adds any custom CSS to the CSS before it is cached.
  *
@@ -371,25 +386,33 @@ function theme_essential_process_css($css, $theme) {
     // Set the footer hover colour.
     $footerhovercolor = theme_essential_get_setting('footerhovercolor');
     $css = theme_essential_set_color($css, $footerhovercolor, '[[setting:footerhovercolor]]', '#30add1');
+     
+    // Set the slide background colour.
+    $slidebackgroundcolor = theme_essential_hex2rgba(theme_essential_get_setting('themecolor'), '.75');
+    $css = theme_essential_set_color($css, $slidebackgroundcolor, '[[setting:carouselcolor]]', '#30add1');
+    
+    // Set the slide active pip colour.
+    $slidebackgroundcolor = theme_essential_hex2rgba(theme_essential_get_setting('themecolor'), '.25');
+    $css = theme_essential_set_color($css, $slidebackgroundcolor, '[[setting:carouselactivecolor]]', '#30add1');
 
-     // Set the slide header colour.
-     $slideshowcolor = theme_essential_get_setting('slideshowcolor');
+    // Set the slide header colour.
+    $slideshowcolor = theme_essential_get_setting('slideshowcolor');
     $css = theme_essential_set_color($css, $slideshowcolor, '[[setting:slideshowcolor]]', '#30add1');
 
-     // Set the slide header colour.
-     $slideheadercolor = theme_essential_get_setting('slideheadercolor');
+    // Set the slide header colour.
+    $slideheadercolor = theme_essential_get_setting('slideheadercolor');
     $css = theme_essential_set_color($css, $slideheadercolor, '[[setting:slideheadercolor]]', '#30add1');
 
-     // Set the slide text colour.
-     $slidecolor = theme_essential_get_setting('slidecolor');
+    // Set the slide text colour.
+    $slidecolor = theme_essential_get_setting('slidecolor');
     $css = theme_essential_set_color($css, $slidecolor, '[[setting:slidecolor]]', '#ffffff');
 
     // Set the slide button colour.
     $slidebuttoncolor = theme_essential_get_setting('slidebuttoncolor');
     $css = theme_essential_set_color($css, $slidebuttoncolor, '[[setting:slidebuttoncolor]]', '#30add1');
 
-     // Set the slide button hover colour.
-     $slidebuttonhovercolor = theme_essential_get_setting('slidebuttonhovercolor');
+    // Set the slide button hover colour.
+    $slidebuttonhovercolor = theme_essential_get_setting('slidebuttonhovercolor');
     $css = theme_essential_set_color($css, $slidebuttonhovercolor, '[[setting:slidebuttonhovercolor]]', '#217a94');
 
     // Set theme alternative colours.
