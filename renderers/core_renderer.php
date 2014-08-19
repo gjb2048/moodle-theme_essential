@@ -398,7 +398,7 @@ class theme_essential_core_renderer extends core_renderer {
                                 AND useridfrom IS NOT NULL
                                ORDER BY timecreated DESC";
 
-            $messages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id), 0, $maxmessages);
+            $messages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id),0, $maxmessages);
 
             foreach ($messages as $message) {
                 $messagelist['messages'][] = $this->process_message($message);
@@ -426,7 +426,7 @@ class theme_essential_core_renderer extends core_renderer {
             }
         }
         
-        $messagecontent->date = strtotime(userdate($message->timecreated));
+        $messagecontent->date = $message->timecreated;
         $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom), 'id,picture,firstname,lastname,firstnamephonetic,lastnamephonetic,middlename,alternatename,imagealt,email');
         $messagecontent->unread = empty($message->timeread);
         return $messagecontent;
