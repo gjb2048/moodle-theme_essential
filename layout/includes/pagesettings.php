@@ -73,6 +73,8 @@ if (right_to_left()) {
 
 $fontselect = theme_essential_get_setting('fontselect');
 
+$fontcharacterset = theme_essential_get_setting('fontcharacterset');
+
 /* Group Header */
 
 $hasanalytics = theme_essential_get_setting('useanalytics');

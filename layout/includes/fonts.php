@@ -24,30 +24,35 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+$charset = '::latin';
+if(!empty($fontcharacterset)) {
+    $charset .= "," . $fontcharacterset;
+}
+
 switch ($fontselect) {
 case 1:
-    $fonts[] = "'Open+Sans'";
+    $fonts[] = "'Open+Sans" . $charset . "'";
     break;
 case 2:
-    $fonts[] = "'Oswald'";
-    $fonts[] = "'PT+Sans'";
+    $fonts[] = "'Oswald" . $charset . "'";
+    $fonts[] = "'PT+Sans" . $charset . "'";
     break;
 case 3:
-    $fonts[] = "'Roboto'";
+    $fonts[] = "'Roboto" . $charset . "'";
     break;
 case 4:
-    $fonts[] = "'PT+Sans'";
+    $fonts[] = "'PT+Sans" . $charset . "'";
     break;
 case 5:
-    $fonts[] = "'Ubuntu'";
+    $fonts[] = "'Ubuntu" . $charset . "'";
     break;
 case 6:
-    $fonts[] = "'Arimo'";
+    $fonts[] = "'Arimo" . $charset . "'";
     break;
 case 7:
-    $fonts[] = "'Lobster'";
-    $fonts[] = "'Raleway'";
-	break;
+    $fonts[] = "'Lobster" . $charset . "'";
+    $fonts[] = "'Raleway" . $charset . "'";
+    break;
 }
 
 if (!empty($fonts)) {?>
