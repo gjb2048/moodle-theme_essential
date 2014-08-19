@@ -380,10 +380,9 @@ class theme_essential_core_renderer extends core_renderer {
                           FROM {message}
                           WHERE useridto = :userid
                            AND useridfrom IS NOT NULL
-                          ORDER BY timecreated DESC
-                          LIMIT $maxmessages;";
+                          ORDER BY timecreated DESC";
 
-        $messages = $DB->get_records_sql($newmessagesql, array('userid' => $USER->id));
+        $messages = $DB->get_records_sql($newmessagesql, array('userid' => $USER->id),0, $maxmessages);
         $messagelist['newmessages'] = count($messages);
 
         foreach ($messages as $message) {
@@ -397,10 +396,9 @@ class theme_essential_core_renderer extends core_renderer {
                                FROM {message_read}
                                WHERE useridto = :userid
                                 AND useridfrom IS NOT NULL
-                               ORDER BY timecreated DESC
-                               LIMIT $maxmessages;";
+                               ORDER BY timecreated DESC";
 
-            $messages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id));
+            $messages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id),0, $maxmessages);
 
             foreach ($messages as $message) {
                 $messagelist['messages'][] = $this->process_message($message);
