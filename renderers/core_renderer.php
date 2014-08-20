@@ -340,6 +340,10 @@ class theme_essential_core_renderer extends core_renderer {
             );
             
             foreach ($messages['messages'] as $message) {
+				if (!is_object($message->from) || !empty($message->from->deleted)) {
+					continue;
+				}
+				
                 $senderpicture = new user_picture($message->from);
                 $senderpicture->link = false;
                 $senderpicture->size = 60;
@@ -427,7 +431,7 @@ class theme_essential_core_renderer extends core_renderer {
         }
         
         $messagecontent->date = $message->timecreated;
-        $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom), 'id,picture,firstname,lastname,firstnamephonetic,lastnamephonetic,middlename,alternatename,imagealt,email');
+        $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom));
         $messagecontent->unread = empty($message->timeread);
         return $messagecontent;
     }
