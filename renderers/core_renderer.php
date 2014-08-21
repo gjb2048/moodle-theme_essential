@@ -604,43 +604,44 @@ class theme_essential_core_renderer extends core_renderer {
             $branchurl   = new moodle_url('/login/logout.php?sesskey='.sesskey());
             $usermenu .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
             
-            if (theme_essential_get_setting('helplinktype')) {
-                $branchlabel = '<em><i class="fa fa-question-circle"></i>'.get_string('help').'</em>';
-                $branchurl   = new moodle_url('#');
-                $target      = '';
-                switch(theme_essential_get_setting('helplinktype')) {
-                    case 1:
-					if (!theme_essential_get_setting('helplink')) {
-						if (filter_var(get_config('supportemail'), FILTER_VALIDATE_EMAIL)) {
-							$branchurl = 'mailto:'.get_config('supportemail').'?cc='.$USER->email;
-						} else {
-							$branchurl = '';
-						}
-					} else if (filter_var(theme_essential_get_setting('helplink'), FILTER_VALIDATE_EMAIL)) {
-                        $branchurl = 'mailto:'.theme_essential_get_setting('helplink').'?cc='.$USER->email;
-                    } else {
-                        $branchlabel = '<em><i class="fa fa-exclamation-triangle red"></i>'.get_string('invalidemail').'</em>';
-                    }
-                    break;
-                    case 2:
-					if (!theme_essential_get_setting('helplink')) {
-						if (filter_var(get_config('supportpage'), FILTER_VALIDATE_URL)) {
-							$branchurl = get_config('supportpage');
-						} else {
-							$branchurl = '';
-						}
-					} else if(filter_var(theme_essential_get_setting('helplink'), FILTER_VALIDATE_URL,FILTER_FLAG_SCHEME_REQUIRED)) {
-                        $branchurl = theme_essential_get_setting('helplink');
-                        $target    = '_blank';
-                    } else {
-                        $branchlabel = '<em><i class="fa fa-exclamation-triangle red"></i>'.get_string('invalidurl', 'error').'</em>';
-                    }
-                    break;
-                }
-				if (!empty($branchurl)) {
-					$usermenu .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel, array('target' => $target)));
+			$branchlabel = '<em><i class="fa fa-question-circle"></i>'.get_string('help').'</em>';
+			$branchurl   = new moodle_url('#');
+			$target      = '';
+			switch(theme_essential_get_setting('helplinktype')) {
+				case 1:
+				if (!theme_essential_get_setting('helplink')) {
+					if (filter_var(get_config('supportemail'), FILTER_VALIDATE_EMAIL)) {
+						$branchurl = 'mailto:'.get_config('supportemail').'?cc='.$USER->email;
+					} else {
+						$branchurl = '';
+					}
+				} else if (filter_var(theme_essential_get_setting('helplink'), FILTER_VALIDATE_EMAIL)) {
+					$branchurl = 'mailto:'.theme_essential_get_setting('helplink').'?cc='.$USER->email;
+				} else {
+					$branchlabel = '<em><i class="fa fa-exclamation-triangle red"></i>'.get_string('invalidemail').'</em>';
 				}
-            }
+				break;
+				case 2:
+				if (!theme_essential_get_setting('helplink')) {
+					if (filter_var(get_config('supportpage'), FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED)) {
+						$branchurl = get_config('supportpage');
+					} else {
+						$branchurl = '';
+					}
+				} else if(filter_var(theme_essential_get_setting('helplink'), FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED)) {
+					$branchurl = theme_essential_get_setting('helplink');
+					$target    = '_blank';
+				} else {
+					$branchlabel = '<em><i class="fa fa-exclamation-triangle red"></i>'.get_string('invalidurl', 'error').'</em>';
+				}
+				break;
+				default:
+					$branchurl = '';
+				break;
+			}
+			if (!empty($branchurl)) {
+				$usermenu .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel, array('target' => $target)));
+			}
             
             $usermenu .= html_writer::end_tag('ul');
 
