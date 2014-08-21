@@ -35,16 +35,20 @@ label {
     background: rgba(255, 255, 255, 0.4);
 }
 
-/* Align left and right parts of grade book */ 
-.path-grade-report-grader table#fixed_column {
-   margin-top: 0px;
-}
+// Fix for faulty global scope in Moodle gradebook styles.css
+.path-grade-report-grader {
+	h1#title { 
+		clear: none; 
+	}
 
-/* Improve wrapping around user picture */ 
-.path-grade-report-grader th.user img.userpicture {
-   float: left;
-}
-
-.path-grade-report-grader h1#title { 
-	clear: none; 
+	.gradeparent {
+		.left_scroller {
+			padding-top: 26px;
+		}
+		div:nth-of-type(2):not(.topscroll) {
+			&.right_scroller {
+				padding-top: 22px;
+			}
+		}
+	}
 }

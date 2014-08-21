@@ -49,12 +49,16 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
+<header id="page-header" class="clearfix">
+	<div class="container-fluid maintenance">
+		<div class="row-fluid">
+			<?php echo $OUTPUT->page_heading(); ?>
+		</div>
+	</div>
+</header>
+
 <section role="main-content">
     <div id="page" class="container-fluid maintenance">
-
-        <header id="page-header" class="clearfix">
-            <?php echo $OUTPUT->page_heading(); ?>
-        </header>
 
         <div id="page-content" class="row-fluid">
             <section id="region-main" class="span12">
@@ -66,9 +70,11 @@ echo $OUTPUT->doctype() ?>
 </section>
 
 <footer id="page-footer">
-    <?php
-    echo $OUTPUT->standard_footer_html();
-    ?>
+	<div class="container-fluid maintenance">
+		<div class="row-fluid">
+			<?php echo $OUTPUT->standard_footer_html(); ?>
+		</div>
+	</div>
 </footer>
 
 <?php echo $OUTPUT->standard_end_of_body_html() ?>

@@ -776,6 +776,7 @@ class theme_essential_core_renderer extends core_renderer {
             'i/restore' => 'cloud-upload',
             'i/return' => 'repeat',
             'i/roles' => 'user',
+			'i/scales' => 'signal',
             'i/settings' => 'cogs',
             'i/show' => 'eye-slash',
             'i/switchrole' => 'random',
