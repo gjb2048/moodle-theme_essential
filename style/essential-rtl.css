@@ -2172,11 +2172,6 @@ ins {
   margin-bottom: 10px;
 }
 
-.topbor {
-  height: 20px;
-  margin-bottom: 10px;
-}
-
 #page-admin-upgradesettings #page,
 .maintenance#page {
   padding-top: 0px;
@@ -2184,10 +2179,6 @@ ins {
 
 .path-grade-report-grader table {
   background: transparent;
-}
-
-.path-grade-report-grader table#fixed_column {
-  margin-top: 6px;
 }
 
 .side-pre {
@@ -4787,8 +4778,9 @@ table#greyboxleft h2 {
 }
 
 #page-header.oldnavbar,
-.maintenance #page-header,
-#page-admin-upgradesettings #page-header {
+.pagelayout-maintenance #page-header,
+#page-admin-upgradesettings #page-header,
+.pagelayout-redirect #page-header {
   margin-top: 0px;
 }
 
@@ -5562,10 +5554,6 @@ a:before {
   background: url([[pix:theme|bg/dot]]) repeat-x;
 }
 
-.topbor {
-  background: url([[pix:theme|bg/dot]]) repeat-x;
-}
-
 img.userpicture,
 img.profilepicture {
   box-shadow: 0px 0px 3px [[setting:themecolor]];
@@ -6149,6 +6137,18 @@ label {
   opacity: 1;
   filter: alpha(opacity=100);
   background: rgba(255, 255, 255, 0.4);
+}
+
+.path-grade-report-grader h1#title {
+  clear: none;
+}
+
+.path-grade-report-grader .gradeparent .left_scroller {
+  padding-top: 26px;
+}
+
+.path-grade-report-grader .gradeparent div:nth-of-type(2):not(.topscroll).right_scroller {
+  padding-top: 22px;
 }
 
 /*# sourceMappingURL=/theme/essential/style/essential.treasure.map */
