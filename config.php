@@ -63,8 +63,10 @@ if (get_config('theme_essential','frontpagemiddleblocks') == 1 ||
     } else {
         $addregions = array('home-left', 'home-middle', 'home-right');
     }
+} else if (is_siteadmin()){
+    $addregions = array('hidden-dock');
 } else {
-    $addregions = array();
+	$addregions = array();
 }
 
 $THEME->layouts = array(
@@ -78,8 +80,8 @@ $THEME->layouts = array(
     // Front page.
     'frontpage' => array(
         'file' => 'frontpage.php',
-        'regions' => array_merge(array('side-pre', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'), $addregions),
-        'defaultregion' => 'hidden-dock',
+        'regions' => array_merge(array('side-pre', 'footer-left', 'footer-middle', 'footer-right'), $addregions),
+        'defaultregion' => 'side-pre',
     ),
     // Standard layout with blocks, this is recommended for most pages with general information.
     'standard' => array(
