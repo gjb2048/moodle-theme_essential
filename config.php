@@ -61,7 +61,7 @@ if (get_config('theme_essential','frontpagemiddleblocks') == 1 ||
     if(is_siteadmin()) {
         $addregions = array('hidden-dock', 'home-left', 'home-middle', 'home-right');
     } else {
-        $addregions = array('hidden-dock', 'home-left', 'home-middle');
+        $addregions = array('home-left', 'home-middle', 'home-right');
     }
 } else {
     $addregions = array();
