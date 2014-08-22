@@ -58,17 +58,13 @@ $THEME->editor_sheets = array('editor');
 
 if (get_config('theme_essential','frontpagemiddleblocks') == 1 || 
    (get_config('theme_essential','frontpagemiddleblocks') == 2 && is_loggedin())) {
-    if(is_siteadmin()) {
-        $addregions = array('hidden-dock', 'home-left', 'home-middle', 'home-right');
-    } else {
-        $addregions = array('home-left', 'home-middle', 'home-right');
-    }
-} else if (is_siteadmin()){
-    $addregions = array('hidden-dock');
+    $addregions = array('home-left', 'home-middle', 'home-right');
 } else {
-	$addregions = array();
+    $addregions = array();
 }
-
+if (is_siteadmin()){
+    $addregions[] = 'hidden-dock';
+}
 $THEME->layouts = array(
     // Most backwards compatible layout without the blocks - this is the layout used by default.
     'base' => array(
