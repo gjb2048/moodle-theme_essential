@@ -489,8 +489,9 @@ class theme_essential_core_renderer extends core_renderer {
      * @return custom menu object
      */
     public function custom_menu_user() {
-        global $USER, $CFG, $DB, $SESSION;
+        global $USER, $CFG, $DB;
         $loginurl = get_login_url();
+		$context = context_system::instance();
         
         $usermenu  = html_writer::start_tag('ul', array('class' => 'nav'));
         $usermenu .= html_writer::start_tag('li', array('class' => 'dropdown'));
@@ -534,10 +535,12 @@ class theme_essential_core_renderer extends core_renderer {
                 }
                 
             $usermenu   .= html_writer::empty_tag('hr', array('class' => 'sep'));
-
-            $branchlabel = '<em><i class="fa fa-calendar"></i>'.get_string('pluginname', 'block_calendar_month').'</em>';
-            $branchurl   = new moodle_url('/calendar/view.php');
-            $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+			
+			if (has_capability('moodle/calendar:manageownentries', $context)) {
+				$branchlabel = '<em><i class="fa fa-calendar"></i>'.get_string('pluginname', 'block_calendar_month').'</em>';
+				$branchurl   = new moodle_url('/calendar/view.php');
+				$usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+			}
             
             // Check if messaging is enabled.
             if (!empty($CFG->messaging)) {
@@ -545,20 +548,22 @@ class theme_essential_core_renderer extends core_renderer {
                 $branchurl   = new moodle_url('/message/index.php');
                 $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
             }
-            
-            $branchlabel = '<em><i class="fa fa-file"></i>'.get_string('privatefiles', 'block_private_files').'</em>';
-            $branchurl   = new moodle_url('/user/files.php');
-            $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
-            
-            $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('forumposts', 'mod_forum').'</em>';
-            $branchurl   = new moodle_url('/mod/forum/user.php?id='.$USER->id);
-            $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
-            
-            $branchlabel = '<em><i class="fa fa-list"></i>'.get_string('discussions', 'mod_forum').'</em>';
-            $branchurl   = new moodle_url('/mod/forum/user.php?id='.$USER->id.'&mode=discussions');
-            $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
-            
-            $usermenu   .= html_writer::empty_tag('hr', array('class' => 'sep'));
+			if (has_capability('moodle/user:manageownfiles', $context)) {
+				$branchlabel = '<em><i class="fa fa-file"></i>'.get_string('privatefiles', 'block_private_files').'</em>';
+				$branchurl   = new moodle_url('/user/files.php');
+				$usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+			}
+            if (has_capability('mod/forum:viewdiscussion', $context)) {
+				$branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('forumposts', 'mod_forum').'</em>';
+				$branchurl   = new moodle_url('/mod/forum/user.php?id='.$USER->id);
+				$usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+				
+				$branchlabel = '<em><i class="fa fa-list"></i>'.get_string('discussions', 'mod_forum').'</em>';
+				$branchurl   = new moodle_url('/mod/forum/user.php?id='.$USER->id.'&mode=discussions');
+				$usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+				
+				$usermenu   .= html_writer::empty_tag('hr', array('class' => 'sep'));
+			}
             
             if ($course->id == 1) {
                 if ($hascourses = enrol_get_my_courses(NULL , 'visible DESC,id ASC', 1)) {
@@ -594,9 +599,11 @@ class theme_essential_core_renderer extends core_renderer {
                 $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
             }
             
-            $branchlabel = '<em><i class="fa fa-cog"></i>'.get_string('preferences').'</em>';
-            $branchurl   = new moodle_url('/user/edit.php?id='.$USER->id);
-            $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+			if (has_capability('moodle/user:editownprofile', $context)) {
+				$branchlabel = '<em><i class="fa fa-cog"></i>'.get_string('preferences').'</em>';
+				$branchurl   = new moodle_url('/user/edit.php?id='.$USER->id);
+				$usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+			}
             
             $usermenu   .= html_writer::empty_tag('hr', array('class' => 'sep'));
                 
@@ -607,6 +614,7 @@ class theme_essential_core_renderer extends core_renderer {
 			$branchlabel = '<em><i class="fa fa-question-circle"></i>'.get_string('help').'</em>';
 			$branchurl   = new moodle_url('#');
 			$target      = '';
+			
 			switch(theme_essential_get_setting('helplinktype')) {
 				case 1:
 				if (!theme_essential_get_setting('helplink')) {
