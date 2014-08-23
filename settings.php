@@ -93,12 +93,13 @@ defined('MOODLE_INTERNAL') || die;
     $name = 'theme_essential/fontcharacterset';
     $title = get_string('fontcharacterset', 'theme_essential');
     $description = get_string('fontcharactersetdesc', 'theme_essential');
-    $setting = new admin_setting_configmulticheckbox($name, $title, $description, array(), array(
+    $setting = new admin_setting_configmulticheckbox($name, $title, $description, array(' latin'), array(
+        'latin' => get_string('fontcharactersetlatin', 'theme_essential'),
+        'latin-ext' => get_string('fontcharactersetlatinext', 'theme_essential'),
         'cyrillic' => get_string('fontcharactersetcyrillic', 'theme_essential'),
         'cyrillic-ext' => get_string('fontcharactersetcyrillicext', 'theme_essential'),
         'greek' => get_string('fontcharactersetgreek', 'theme_essential'),
         'greek-ext' => get_string('fontcharactersetgreekext', 'theme_essential'),
-        'latin-ext' => get_string('fontcharactersetlatinext', 'theme_essential'),
         'vietnamese' => get_string('fontcharactersetvietnamese', 'theme_essential'),
     ));
     $setting->set_updatedcallback('theme_reset_all_caches');

@@ -72,11 +72,12 @@ $string['fontselectdesc'] = 'Choose from the list of available font combinations
 
 $string['fontcharacterset'] = 'Google font additional character set';
 $string['fontcharactersetdesc'] = 'If a Google font is chosen, you can pick additional character sets for different languages. Using many character sets can slow down your webpage, so only select the character sets that you actually need on your webpage.';
+$string['fontcharactersetlatin'] = 'Latin';
+$string['fontcharactersetlatinext'] = 'Latin Extended';
 $string['fontcharactersetcyrillic'] = 'Cyrillic';
 $string['fontcharactersetcyrillicext'] = 'Cyrillic Extended';
 $string['fontcharactersetgreek'] = 'Greek';
 $string['fontcharactersetgreekext'] = 'Greek Extended';
-$string['fontcharactersetlatinext'] = 'Latin Extended';
 $string['fontcharactersetvietnamese'] = 'Vietnamese';
 
 $string['bootstrapcdn'] = 'FontAwesome from CDN';
