@@ -4900,7 +4900,9 @@ label {
 .path-grade-report-grader .gradeparent div:nth-of-type(2):not(.topscroll).right_scroller {
   padding-top: 22px;
 }
-.path-grade-report-grader #user-grades .heading.r1 > th {
+.path-grade-report-grader #user-grades .heading.r1 > th,
+.path-grade-report-grader #user-grades .heading_name_row.r1 > th {
   padding-right: 35px;
+  vertical-align: middle;
 }
 /*# sourceMappingURL=/theme/essential/style/essential.treasure.map */

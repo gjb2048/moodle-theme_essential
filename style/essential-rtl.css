@@ -6159,8 +6159,10 @@ label {
   padding-top: 22px;
 }
 
-.path-grade-report-grader #user-grades .heading.r1 > th {
+.path-grade-report-grader #user-grades .heading.r1 > th,
+.path-grade-report-grader #user-grades .heading_name_row.r1 > th {
   padding-left: 35px;
+  vertical-align: middle;
 }
 
 /*# sourceMappingURL=/theme/essential/style/essential.treasure.map */
