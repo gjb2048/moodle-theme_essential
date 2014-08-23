@@ -496,14 +496,6 @@ a.skip:active {
   float: left;
   text-align: right;
   width: 49%;
-  direction: rtl;
-  white-space: nowrap;
-}
-.dir-rtl .loginbox .loginform .form-label {
-  float: left;
-  text-align: right;
-  width: 49%;
-  direction: ltr;
   white-space: nowrap;
 }
 .loginbox .loginform .form-input {
@@ -14103,12 +14095,6 @@ input.fp-btn-choose {
 .gradetreebox input[type=text],
 .gradetreebox select {
   margin-bottom: 0;
-}
-#page-grade-report-grader-index .topscrollcontent {
-  height: 1px;
-}
-#page-grade-report-grader-index #user-grades {
-  margin-top: 4px;
 }
 #page-grade-grading-manage #activemethodselector label {
   display: inline-block;
