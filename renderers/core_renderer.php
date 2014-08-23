@@ -671,6 +671,7 @@ class theme_essential_core_renderer extends core_renderer {
      */
 
     private function theme_essential_render_helplink() {
+        global $USER;
         $helplink = '';
 
         $branchlabel = '<em><i class="fa fa-question-circle"></i>'.get_string('help').'</em>';
