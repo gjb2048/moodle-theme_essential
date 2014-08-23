@@ -371,7 +371,7 @@ class theme_essential_core_renderer extends core_renderer {
         return $this->render_custom_menu($messagemenu);
     }
     
-    protected function get_user_messages() {
+    private function get_user_messages() {
         global $USER, $DB;
         $messagelist['messages'] = array();
         $maxmessages = 5;
@@ -409,7 +409,7 @@ class theme_essential_core_renderer extends core_renderer {
 
     }
 
-    protected function process_message($message) {
+    private function process_message($message) {
         global $DB;
         $messagecontent = new stdClass();
 
@@ -431,8 +431,8 @@ class theme_essential_core_renderer extends core_renderer {
         $messagecontent->unread = empty($message->timeread);
         return $messagecontent;
     }
-    
-    protected function get_time_difference($created_time) {
+
+    private function get_time_difference($created_time) {
         $today = usertime(time());
 
         // It returns the time difference in Seconds...
