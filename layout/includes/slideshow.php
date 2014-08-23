@@ -65,7 +65,7 @@ if ($numberofslides) {
                         }
                         $slidetitle = 'slide'.$i;
                         if (theme_essential_get_setting($slidetitle)) {
-                            $imgalt = theme_essential_get_setting($slidetitle, true);
+                            $imgalt = theme_essential_get_setting($slidetitle);
                         } else {
                             $imgalt = get_string('noslidetitle', 'theme_essential', array('slide' => $i));
                         }

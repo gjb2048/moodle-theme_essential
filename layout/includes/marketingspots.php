@@ -37,7 +37,7 @@ require_once(dirname(__FILE__).'/pagesettings.php');
                 <div class="marketing-image1"></div>
             <?php } ?>
 
-            <?php echo theme_essential_get_setting('marketing1content'); ?>
+            <?php echo theme_essential_get_setting('marketing1content', 'format_text'); ?>
             <p align="right">
                 <a href="<?php echo theme_essential_get_setting('marketing1buttonurl'); ?>" target="<?php echo theme_essential_get_setting('marketing1target'); ?>" id="button">
                     <?php echo theme_essential_get_setting('marketing1buttontext', true); ?>
@@ -55,7 +55,7 @@ require_once(dirname(__FILE__).'/pagesettings.php');
                 <div class="marketing-image2"></div>
             <?php } ?>
 
-            <?php echo theme_essential_get_setting('marketing2content'); ?>
+            <?php echo theme_essential_get_setting('marketing2content', 'format_text'); ?>
             <p align="right">
                 <a href="<?php echo theme_essential_get_setting('marketing2buttonurl'); ?>" target="<?php echo theme_essential_get_setting('marketing2target'); ?>" id="button">
                     <?php echo theme_essential_get_setting('marketing2buttontext', true); ?>
@@ -73,7 +73,7 @@ require_once(dirname(__FILE__).'/pagesettings.php');
                 <div class="marketing-image3"></div>
             <?php } ?>
 
-            <?php echo theme_essential_get_setting('marketing3content'); ?>
+            <?php echo theme_essential_get_setting('marketing3content', 'format_text'); ?>
             <p align="right">
                 <a href="<?php echo theme_essential_get_setting('marketing3buttonurl'); ?>" target="<?php echo theme_essential_get_setting('marketing3target'); ?>" id="button">
                     <?php echo theme_essential_get_setting('marketing3buttontext', true); ?>
