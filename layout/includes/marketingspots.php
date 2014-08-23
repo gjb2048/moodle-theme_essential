@@ -36,8 +36,8 @@ require_once(dirname(__FILE__).'/pagesettings.php');
             <?php if ($hasmarketing1image) { ?>
                 <div class="marketing-image1"></div>
             <?php } ?>
-            
-            <?php echo theme_essential_get_setting('marketing1content', 'format_text'); ?>
+
+            <?php echo theme_essential_get_setting('marketing1content'); ?>
             <p align="right">
                 <a href="<?php echo theme_essential_get_setting('marketing1buttonurl'); ?>" target="<?php echo theme_essential_get_setting('marketing1target'); ?>" id="button">
                     <?php echo theme_essential_get_setting('marketing1buttontext', true); ?>
@@ -45,7 +45,7 @@ require_once(dirname(__FILE__).'/pagesettings.php');
             </p>
         </div>
     </div>
-    
+
     <div class="span4">
         <!-- Advert #2 -->
         <div class="service">
@@ -54,8 +54,8 @@ require_once(dirname(__FILE__).'/pagesettings.php');
             <?php if ($hasmarketing2image) { ?>
                 <div class="marketing-image2"></div>
             <?php } ?>
-            
-            <?php echo theme_essential_get_setting('marketing2content', 'format_text'); ?>
+
+            <?php echo theme_essential_get_setting('marketing2content'); ?>
             <p align="right">
                 <a href="<?php echo theme_essential_get_setting('marketing2buttonurl'); ?>" target="<?php echo theme_essential_get_setting('marketing2target'); ?>" id="button">
                     <?php echo theme_essential_get_setting('marketing2buttontext', true); ?>
@@ -63,7 +63,7 @@ require_once(dirname(__FILE__).'/pagesettings.php');
             </p>
         </div>
     </div>
-    
+
     <div class="span4">
         <!-- Advert #3 -->
         <div class="service">
@@ -72,8 +72,8 @@ require_once(dirname(__FILE__).'/pagesettings.php');
             <?php if ($hasmarketing3image) { ?>
                 <div class="marketing-image3"></div>
             <?php } ?>
-            
-            <?php echo theme_essential_get_setting('marketing3content', 'format_text'); ?>
+
+            <?php echo theme_essential_get_setting('marketing3content'); ?>
             <p align="right">
                 <a href="<?php echo theme_essential_get_setting('marketing3buttonurl'); ?>" target="<?php echo theme_essential_get_setting('marketing3target'); ?>" id="button">
                     <?php echo theme_essential_get_setting('marketing3buttontext', true); ?>

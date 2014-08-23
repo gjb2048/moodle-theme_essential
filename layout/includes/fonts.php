@@ -26,27 +26,27 @@
 
 switch ($fontselect) {
 case 1:
-    $fonts[] = "'Open+Sans'";
+    $fonts[] = "'Open+Sans".$fontcharacterset."'";
     break;
 case 2:
-    $fonts[] = "'Oswald'";
-    $fonts[] = "'PT+Sans'";
+    $fonts[] = "'Oswald".$fontcharacterset."'";
+    $fonts[] = "'PT+Sans".$fontcharacterset."'";
     break;
 case 3:
-    $fonts[] = "'Roboto'";
+    $fonts[] = "'Roboto".$fontcharacterset."'";
     break;
 case 4:
-    $fonts[] = "'PT+Sans'";
+    $fonts[] = "'PT+Sans".$fontcharacterset."'";
     break;
 case 5:
-    $fonts[] = "'Ubuntu'";
+    $fonts[] = "'Ubuntu".$fontcharacterset."'";
     break;
 case 6:
-    $fonts[] = "'Arimo'";
+    $fonts[] = "'Arimo".$fontcharacterset."'";
     break;
 case 7:
-    $fonts[] = "'Lobster'";
-    $fonts[] = "'Raleway'";
+    $fonts[] = "'Lobster".$fontcharacterset."'";
+    $fonts[] = "'Raleway".$fontcharacterset."'";
 	break;
 }
 

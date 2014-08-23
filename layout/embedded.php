@@ -48,16 +48,25 @@ echo $OUTPUT->doctype() ?>
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
+<header id="page-header" class="clearfix">
+	<div class="container-fluid maintenance">
+		<div class="row-fluid">
+			<?php echo $OUTPUT->heading($PAGE->title); ?>
+		</div>
+	</div>
+</header>
 
-<div id="page">
-    <section role="main-content">
-        <div id="page-content" class="clearfix">
-            <?php echo $OUTPUT->main_content(); ?>
+<section role="main-content">
+    <div id="page" class="container-fluid maintenance">
+
+        <div id="page-content" class="row-fluid">
+            <section id="region-main" class="span12">
+                <?php echo $OUTPUT->main_content(); ?>
+				<center><i class="fa fa-refresh fa-spin fa-2x"></i></center>
+            </section>
         </div>
-    </section>
 
-    <?php echo $OUTPUT->standard_end_of_body_html() ?>
-
-</div>
+    </div>
+</section>
 </body>
 </html>

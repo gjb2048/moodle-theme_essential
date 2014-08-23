@@ -38,6 +38,11 @@ if (theme_essential_get_setting('enablealternativethemecolors1') ||
     $colourswitcher = false;
 }
 
+
+if (theme_essential_get_setting('slidecaptioncentred')) {
+    $bodyclasses[] = 'frontpageslidecaptioncentred';
+}
+
 if (theme_essential_get_setting('slidecaptionbelow')) {
     $bodyclasses[] = 'frontpageslidercaptionbelow';
 }
@@ -72,6 +77,8 @@ if (right_to_left()) {
 }
 
 $fontselect = theme_essential_get_setting('fontselect');
+$fontcharacterset = '&subset='.theme_essential_get_setting('fontcharacterset');
+
 
 /* Group Header */
 
