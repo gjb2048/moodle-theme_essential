@@ -89,6 +89,22 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
+    // Font Character Sets
+    $name = 'theme_essential/fontcharacterset';
+    $title = get_string('fontcharacterset', 'theme_essential');
+    $description = get_string('fontcharactersetdesc', 'theme_essential');
+    $setting = new admin_setting_configmulticheckbox($name, $title, $description, array(' latin'), array(
+        'latin' => get_string('fontcharactersetlatin', 'theme_essential'),
+        'latin-ext' => get_string('fontcharactersetlatinext', 'theme_essential'),
+        'cyrillic' => get_string('fontcharactersetcyrillic', 'theme_essential'),
+        'cyrillic-ext' => get_string('fontcharactersetcyrillicext', 'theme_essential'),
+        'greek' => get_string('fontcharactersetgreek', 'theme_essential'),
+        'greek-ext' => get_string('fontcharactersetgreekext', 'theme_essential'),
+        'vietnamese' => get_string('fontcharactersetvietnamese', 'theme_essential'),
+    ));
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
     // Background Image.
     $name = 'theme_essential/pagebackground';
     $title = get_string('pagebackground', 'theme_essential');
@@ -1117,6 +1133,15 @@ defined('MOODLE_INTERNAL') || die;
     $name = 'theme_essential/slidecaptionbelow';
     $title = get_string('slidecaptionbelow' , 'theme_essential');
     $description = get_string('slidecaptionbelowdesc', 'theme_essential');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Show caption centred.
+    $name = 'theme_essential/slidecaptioncentred';
+    $title = get_string('slidecaptioncentred' , 'theme_essential');
+    $description = get_string('slidecaptioncentreddesc', 'theme_essential');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');

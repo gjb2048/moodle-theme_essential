@@ -86,6 +86,12 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
+New in 2.5.7a
+- FIX: Issue #159: Custom Category Icons not displaying in 2.7.5h (Build: 2014081404).
+- FIX: Various code optimizations
+- NEW: Issue #172: Google font character sets.  Implemented in #174 - thanks @vgango
+- NEW: Issue #194: Centred slide show caption.
+
 New in 2.5.7
 ========================
 - FIX: Issue #159: Custom Category Icons not displaying in 2.7.5h (Build: 2014081404).
