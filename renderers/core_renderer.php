@@ -496,7 +496,6 @@ class theme_essential_core_renderer extends core_renderer {
 
         global $USER, $CFG, $DB;
         $loginurl = get_login_url();
-		$context = context_system::instance();
 
         $usermenu  = html_writer::start_tag('ul', array('class' => 'nav'));
         $usermenu .= html_writer::start_tag('li', array('class' => 'dropdown'));
@@ -535,12 +534,17 @@ class theme_essential_core_renderer extends core_renderer {
         }
 
         $context = context_system::instance();
+        $course = $this->page->course;
+
+        // Ouput Profile link
         $userurl    = new moodle_url('/user/profile.php?id='.$USER->id);
         $userpic    = parent::user_picture($USER, array('link' => false));
         $caret      = '<i class="fa fa-caret-right"></i>';
         $userclass  = array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown');
+
         $usermenu  .= html_writer::link($userurl, $userpic.$USER->firstname.$caret, $userclass);
 
+        // Start dropdown menu items
         $usermenu  .= html_writer::start_tag('ul', array('class' => 'dropdown-menu pull-right'));
 
         if (\core\session\manager::is_loggedinas()) {
@@ -561,7 +565,6 @@ class theme_essential_core_renderer extends core_renderer {
             $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
         }
 
-        $course = $this->page->course;
         if (is_role_switched($course->id)) { // Has switched roles
             $branchlabel = '<em><i class="fa fa-users"></i>'.get_string('switchrolereturn').'</em>';
             $branchurl   = new moodle_url('/course/switchrole.php', array('id'=>$course->id,'sesskey'=>sesskey(), 'switchrole'=>0, 'returnurl'=>$this->page->url->out_as_local_url(false)));
@@ -605,30 +608,24 @@ class theme_essential_core_renderer extends core_renderer {
 
         // Output user grade links course sensitive, workaround for frontpage, selecting first enrolled course
         if ($course->id == 1) {
-            if ($hascourses = enrol_get_my_courses(NULL , 'visible DESC,id ASC', 1)) {
-                foreach ($hascourses as $hascourse) {
-                    if ($hascourse->visible) {
-                        $context = context_course::instance($hascourse->id);
-                        if (has_capability ('gradereport/user:view', $context)) {
-                            $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('mygrades', 'theme_essential').'</em>';
-                            $branchurl   = new moodle_url('/grade/report/overview/index.php?id='.$hascourse->id.'&userid='.$USER->id);
-                            $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
-                        }
-                    }
+            $hascourses = enrol_get_my_courses(NULL , 'visible DESC,id ASC', 1);
+            foreach ($hascourses as $hascourse) {
+                $reportcontext = context_course::instance($hascourse->id);
+                if (has_capability ('gradereport/user:view', $reportcontext) && $hascourse->visible) {
+                    $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('mygrades', 'theme_essential').'</em>';
+                    $branchurl   = new moodle_url('/grade/report/overview/index.php?id='.$hascourse->id.'&userid='.$USER->id);
+                    $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
                 }
             }
-        } else {
-            $context = context_course::instance($course->id);
-            if (has_capability ('gradereport/user:view', $context)) {
-                $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('mygrades', 'theme_essential').'</em>';
-                $branchurl   = new moodle_url('/grade/report/overview/index.php?id='.$course->id.'&userid='.$USER->id);
-                $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
-            }
-            if (has_capability ('gradereport/user:view', $context)) {
-                $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('coursegrades', 'theme_essential').'</em>';
-                $branchurl   = new moodle_url('/grade/report/user/index.php?id='.$course->id.'&user='.$USER->id);
-                $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
-            }
+        } else if (has_capability ('gradereport/user:view', context_course::instance($course->id))) {
+            $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('mygrades', 'theme_essential').'</em>';
+            $branchurl   = new moodle_url('/grade/report/overview/index.php?id='.$course->id.'&userid='.$USER->id);
+            $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+
+            // In Course also output Course grade links
+            $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('coursegrades', 'theme_essential').'</em>';
+            $branchurl   = new moodle_url('/grade/report/user/index.php?id='.$course->id.'&user='.$USER->id);
+            $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
         }
 
         // Check if badges are enabled.
@@ -724,7 +721,7 @@ class theme_essential_core_renderer extends core_renderer {
      */
     public function render_tabtree(tabtree $tabtree) {
         if (empty($tabtree->subtree)) {
-            return '';
+            return false;
         }
         $firstrow = $secondrow = '';
         foreach ($tabtree->subtree as $tab) {
