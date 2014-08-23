@@ -38,6 +38,11 @@ if (theme_essential_get_setting('enablealternativethemecolors1') ||
     $colourswitcher = false;
 }
 
+
+if (theme_essential_get_setting('slidecaptioncentred')) {
+    $bodyclasses[] = 'frontpageslidecaptioncentred';
+}
+
 if (theme_essential_get_setting('slidecaptionbelow')) {
     $bodyclasses[] = 'frontpageslidercaptionbelow';
 }

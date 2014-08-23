@@ -5707,6 +5707,14 @@ a#button:hover {
 
 /* @end */
 
+/* @group Carousel */
+
+.frontpageslidecaptioncentred #essentialCarousel.carousel .carousel-inner .carousel-caption .carousel-caption-inner {
+  text-align: center;
+}
+
+/* @end */
+
 /* @group Frontpage */
 
 #site-news-forum,
@@ -5720,13 +5728,13 @@ a#button:hover {
   color: [[setting:themetextcolor]];
 }
 
+/* @end */
+
 /* @group Home News Boxes */
 
 .service i {
   color: [[setting:themecolor]];
 }
-
-/* @end */
 
 /* @end */
 

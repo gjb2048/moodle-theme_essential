@@ -90,6 +90,7 @@ New in 2.7.6
 ========================
 - FIX: Issue #159: Custom Category Icons not displaying in 2.7.5h (Build: 2014081404).
 - NEW: Issue #172: Google font character sets.  Implemented in #174 - thanks @vgango
+- NEW: Issue #194: Centred slide show caption.
 
 New in 2.7.5
 ========================

@@ -300,6 +300,9 @@ $string['slidecolordesc'] = 'What colour the slide caption text should be.';
 $string['slidecaptionbelow'] = 'Slide caption below image';
 $string['slidecaptionbelowdesc'] = 'If the slide caption should be below the image.';
 
+$string['slidecaptioncentred'] = 'Slide caption centred';
+$string['slidecaptioncentreddesc'] = 'If the slide caption should be centred.';
+
 $string['slidebuttoncolor'] = 'Slide button colour';
 $string['slidebuttoncolordesc'] = 'What colour the slide navigation button should be.';
 $string['slidebuttonhovercolor'] = 'Slide button hover colour';

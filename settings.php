@@ -1155,6 +1155,15 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Show caption centred.
+    $name = 'theme_essential/slidecaptioncentred';
+    $title = get_string('slidecaptioncentred' , 'theme_essential');
+    $description = get_string('slidecaptioncentreddesc', 'theme_essential');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     // Slide button colour setting.
     $name = 'theme_essential/slidebuttoncolor';
     $title = get_string('slidebuttoncolor', 'theme_essential');
