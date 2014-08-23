@@ -143,6 +143,8 @@ img.iconsmall {
 #page-admin-course-category .buttons,
 #page-admin-index .copyright,
 #page-admin-index .copyrightnotice,
+#page-admin-index .adminerror,
+#page-admin-index .availableupdatesinfo,
 #page-admin-index .adminerror .singlebutton,
 #page-admin-index .adminwarning .singlebutton,
 #page-admin-index #layout-table .singlebutton {
@@ -161,8 +163,8 @@ img.iconsmall {
 }
 
 #page-admin-roles-define .capdefault {
-    background-color: @tableBackgroundHover;
-    border: 1px solid @tableBorder;
+    background-color: #eee;
+    border: 1px solid #cecece;
 }
 
 #page-filter-manage .backlink,
@@ -206,16 +208,21 @@ img.iconsmall {
 
 #page-admin-index .releasenoteslink,
 #page-admin-index .adminwarning,
-#page-admin-index .adminerror {
-    margin: auto;
+#page-admin-index .maturitywarning,
+#page-admin-index .testsitewarning,
+#page-admin-index .maturityinfo {
     .alert;
     width: 60%;
     min-width: 220px;
+    margin: auto;
 }
-#page-admin-index .adminerror {
+#page-admin-index .maturitywarning,
+#page-admin-index .testsitewarning,
+#page-admin-index .adminwarning.maturityinfo.maturity50 {
     .alert-error;
 }
 
+#page-admin-index .adminwarning.availableupdatesinfo,
 #page-admin-index .releasenoteslink {
     .alert-info;
 }
@@ -474,12 +481,12 @@ img.iconsmall {
 }
 
 #adminthemeselector .selectedtheme td.c0 {
-    border: 1px solid @black;
+    border: 1px solid;
     border-right-width: 0;
 }
 
 #adminthemeselector .selectedtheme td.c1 {
-    border: 1px solid @black;
+    border: 1px solid;
     border-left-width: 0;
 }
 
@@ -506,16 +513,16 @@ img.iconsmall {
 
 .admin_colourpicker .colourdialogue {
     float: left;
-    border: 1px solid @black;
+    border: 1px solid #000;
 }
 
 .admin_colourpicker .previewcolour {
-    border: 1px solid @black;
+    border: 1px solid #000;
     margin-left: 301px;
 }
 
 .admin_colourpicker .currentcolour {
-    border: 1px solid @black;
+    border: 1px solid #000;
     margin-left: 301px;
     border-top-width: 0;
 }
@@ -648,7 +655,7 @@ img.iconsmall {
 #page-admin-index .adminwarning.availableupdatesinfo .moodleupdateinfo .separator,
 #plugins-check .status .pluginupdateinfo .separator,
 #page-admin-plugins .separator {
-    border-left: 1px dotted @grayLight;
+    border-left: 1px dotted #999;
 }
 
 #plugins-control-panel .msg td {
@@ -713,6 +720,10 @@ img.iconsmall {
     font-size: @fontSizeSmall;
 }
 
+#page-admin-mnet-peers .mform .certdetails {
+    background-color: white;
+}
+
 #page-admin-mnet-peers .mform .deletedhostinfo {
     background-color: @errorBackground;
     border: 2px solid @errorBorder;
@@ -732,6 +743,7 @@ img.iconsmall {
 }
 
 #core-cache-store-summaries .default-store td {
+    color: #333;
     font-style: italic;
 }
 
@@ -747,28 +759,8 @@ img.iconsmall {
     padding-bottom: 0;
 }
 
-.maintenancewarning {
-    padding: 3px 1em;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    overflow: hidden;
-    z-index: 1;
-    &.error {
-        color: @errorText;
-        background-color: @errorBackground;
-        border: 2px solid @errorBorder;
-        font-weight: bold;
-    }
-    &.warning {
-        color: @warningText;
-        background-color: @warningBackground;
-        border: 2px solid @warningBorder;
-    }
-}
-
 #adminsettings .form-overridden {
     color: @infoText;
     background-color: @infoBackground;
 }
+

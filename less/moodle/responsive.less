@@ -99,18 +99,9 @@
         }
     }
 
-    .fp-formset div {
-        height: auto;
-    }
 }
 
 @media (min-width: 1200px) {
-    // Editor on question page
-    .path-question {
-        #id_answerhdr div.fitem_feditor {
-            padding-right: 6px;
-        }
-    }
     // Login page.
     .loginbox.twocolumns .loginpanel {
         margin-left: 0;
@@ -563,7 +554,7 @@
     }
     // CSS for the course management pages.
     #course-category-listings.columns-3 {
-        background-color: @tableBackground;
+        background-color:transparent;
         border:0;
 
         #category-listing,
@@ -584,17 +575,9 @@
 
 // All widths up to 1199px.
 @media (max-width: 1199px) {
-
-    // Editor on question pages
-    .path-question {
-        #id_answerhdr div.fitem {
-            padding-right: 6px;
-            padding-left: 4px;
-        }
-    }
     // CSS for the course management pages.
     #course-category-listings.columns-3 {
-        background-color: @tableBackground;
+        background-color:transparent;
         border:0;
         #category-listing,
         #course-listing,
@@ -625,27 +608,4 @@
    #page-mod-forum-discuss.dir-rtl .discussioncontrols {
        text-align: left;
    }
-}
-
-
-// File Picker.
-@media (max-width: 768px) {
-    .fp-forminset .control-group .controls {
-        margin-left: 0;
-    }
-    .dir-rtl .fp-formset .control-group {
-        label.control-label {
-            text-align: right;
-            float: none;
-        }
-    }
-    .dir-rtl .fp-forminset .control-group {
-        label.control-label {
-            text-align: right;
-            float: none;
-        }
-        .controls {
-            margin-right: 0;
-        }
-    }
 }

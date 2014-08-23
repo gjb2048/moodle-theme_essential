@@ -16,7 +16,6 @@
     display:none;
 }
 
-.content-only #region-main.span9, // Two column layout with no block or all blocks docked.
 .empty-region-side-post #region-bs-main-and-pre.span9, // LTR with no post area.
 .empty-region-side-pre #region-bs-main-and-post.span9, // RTL with no pre area.
 .empty-region-side-post #region-bs-main-and-post.span9 #region-main.span8, // RTL with no post area.
@@ -312,6 +311,9 @@ img.uihint {
 #addmembersform table {
     margin-left: auto;
     margin-right: auto;
+}
+.flexible th {
+    white-space: nowrap;
 }
 table.flexible .emptyrow {
     display: none;
@@ -654,6 +656,16 @@ table.mod_index {
     right: auto;
     margin: .3em;
 }
+.comment-delete-confirm {
+    background: #eee;
+    padding: 2px;
+    width: 5em;
+    text-align: center;
+}
+.comment-container {
+    float: left;
+    margin: 4px;
+}
 .comment-report-selectall{
     display: none
 }
@@ -817,8 +829,8 @@ table#tag-management-list th {
     position: absolute;
     width: 420px;
     left: 20%;
-    border: 1px solid @dropdownBorder;
-    background: @dropdownBackground;
+    border: 1px solid #404040;
+    background: #fff;
     overflow: hidden;
     z-index: 9050;
 }
@@ -847,8 +859,7 @@ table#tag-management-list th {
     white-space: nowrap;
 }
 #relatedtags-autocomplete li.yui-ac-highlight{
-    background: @dropdownLinkBackgroundHover;
-    color: @dropdownLinkColorHover;
+    background: #FFFFCC;
 }
 h2.tag-heading,
 div#tag-description,
@@ -1017,9 +1028,6 @@ body.tag .managelink {
     width: 100%;
     border-collapse: collapse;
 }
-.userenrolment tr {
-    vertical-align:top;
-}
 .userenrolment td {
     padding: 0;
     height: 41px;
@@ -1036,44 +1044,59 @@ body.tag .managelink {
 .userenrolment .col_role {
     width: 262px;
 }
-.userenrolment .col_role .roles,
+.userenrolment .col_role .roles {
+    margin-right: 30px;
+}
+.userenrolment .col_role .role {
+    float: left;
+    padding: 3px;
+    margin: 3px;
+}
+.dir-rtl .userenrolment .col_role .role {
+    float: right;
+}
+.userenrolment .col_role .role a {
+    margin-left: 3px;
+    cursor: pointer;
+}
+.userenrolment .col_role .addrole {
+    float: right;
+    width: 18px;
+    height: 18px;
+    margin: 3px;
+    text-align: center;
+    background-color: @successBackground;
+    border: 1px solid @successBorder;
+}
+.userenrolment .col_role .addrole img {
+    vertical-align: baseline;
+}
+.userenrolment .hasAllRoles .col_role .addrole {
+    display: none;
+}
 .userenrolment .col_group .groups {
     margin-right: 30px;
 }
-.userenrolment .col_role .role,
 .userenrolment .col_group .group {
     float: left;
     padding: 3px;
     margin: 3px;
     white-space: nowrap;
 }
-.userenrolment .col_role .role a,
 .userenrolment .col_group .group a {
     margin-left: 3px;
     cursor: pointer;
 }
-.userenrolment .col_role .addrole,
 .userenrolment .col_group .addgroup {
     float: right;
-    padding: 3px;
+    width: 18px;
     margin: 3px;
-    > *:hover {
-        border-bottom:1px solid #666;
-    }
+    height: 18px;
+    text-align: center;
 }
-.userenrolment .col_role .addrole img,
-.userenrolment .col_group .addgroup img {
-    vertical-align: baseline;
+.userenrolment .col_group .addgroup a img {
+    vertical-align: bottom;
 }
-
-.dir-rtl .userenrolment .col_role .role {
-    float: right;
-}
-
-.userenrolment .hasAllRoles .col_role .addrole {
-    display: none;
-}
-
 .userenrolment .col_enrol .enrolment {
     float: left;
     padding: 3px;
@@ -1606,11 +1629,11 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     left: 6px;
 }
 /**
- * Chooser Dialogues (moodle-core-chooserdialogue)
- *
- * This CSS belong to the chooser dialogue which should work both with, and
- * without javascript enabled
- */
+* Chooser Dialogues (moodle-core-chooserdialogue)
+*
+* This CSS belong to the chooser dialogue which should work both with, and
+* without javascript enabled
+*/
 /* Hide the dialog and it's title */
 .chooserdialoguebody,
 .choosertitle {
@@ -1645,13 +1668,13 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     border-bottom: 1px solid #BBBBBB;
 }
 /* Only set these options if we're showing the js container */
-.jschooser .choosercontainer #chooseform .alloptions {
+.jsenabled .choosercontainer #chooseform .alloptions {
     overflow-x: hidden;
     overflow-y: auto;
     max-width: 20.3em;
     .box-shadow(inset 0 0 30px 0px #ccc);
 }
-.dir-rtl.jschooser .choosercontainer #chooseform .alloptions {
+.dir-rtl.jsenabled .choosercontainer #chooseform .alloptions {
     max-width: 18.3em;
 }
 /* Settings for option rows and option subtypes */
@@ -1678,9 +1701,8 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 .dir-rtl .choosercontainer #chooseform .nonoption span.modicon img.icon {
     padding: 0 0.5em 0 0;
 }
-
-.chooserdialogue-course-modchooser .choosercontainer #chooseform .option span.modicon img.icon,
-.chooserdialogue-course-modchooser .choosercontainer #chooseform .nonoption span.modicon img.icon {
+.choosercontainer #chooseform .option span.modicon img.icon,
+.choosercontainer #chooseform .nonoption span.modicon img.icon {
     height: 24px;
     width: 24px;
 }
@@ -1717,8 +1739,8 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     margin: 0 0.2em 0 0;
 }
 /* The instruction/help area */
-.jschooser .choosercontainer #chooseform .instruction,
-.jschooser .choosercontainer #chooseform .typesummary {
+.jsenabled .choosercontainer #chooseform .instruction,
+.jsenabled .choosercontainer #chooseform .typesummary {
    display: none;
     position: absolute;
     top: 0;
@@ -1732,14 +1754,14 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     overflow-y: auto;
     line-height: 2em;
 }
-.dir-rtl.jschooser .choosercontainer #chooseform .instruction,
-.dir-rtl.jschooser .choosercontainer #chooseform .typesummary {
+.dir-rtl.jsenabled .choosercontainer #chooseform .instruction,
+.dir-rtl.jsenabled .choosercontainer #chooseform .typesummary {
     left: 0;
     right: 18.5em;
     border-right: 1px solid grey;
 }
 /* Selected option settings */
-.jschooser .choosercontainer #chooseform .instruction,
+.jsenabled .choosercontainer #chooseform .instruction,
 .choosercontainer #chooseform .selected .typesummary {
     display: block;
 }
@@ -1851,7 +1873,7 @@ a.criteria-action {
 }
 table.issuedbadgebox {
     width: 750px;
-    background-color: @wellBackground;
+    background-color: #FFFFFF;
 }
 table.badgeissuedimage {
     width: 150px;
@@ -2074,8 +2096,8 @@ img#persona_signin {
         display:block;
         position: absolute;
         text-align: left;
-        background-color: @dropdownBackground;
-        border: 1px solid @dropdownBorder;
+        background-color: #fff;
+        border: 1px solid #ccc;
         z-index:1000;
         .border-radius(5px);
         .box-shadow(5px 5px 20px 0 #666);
@@ -2193,12 +2215,8 @@ body.lockscroll {
   height: 100%;
   overflow: hidden;
 }
-
 .dir-rtl {
-    // Bootstrap sets right margin to 0. Fail.
-    // They set left margin to 25px so we will copy that.
     ul, ol {
-        margin-left: 0;
         margin-right: 25px;
     }
 }

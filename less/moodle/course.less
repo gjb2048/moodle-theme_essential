@@ -84,7 +84,8 @@
 
             .dimmed {
                 img.activityicon {
-                  .opacity(50);
+                  opacity: 0.5;
+                  filter: alpha(opacity=50);
                 }
             }
         }
@@ -253,7 +254,7 @@
     background-color: @infoBackground;
 }
 .course-content .section-summary {
-    border: 1px solid @tableBorder;
+    border: 1px solid #DDD;
     margin-top: 5px;
     list-style: none;
 }
@@ -312,11 +313,11 @@
     margin-top: 0;
 }
 .course-content ul li.section.main {
-    border-bottom: 2px solid @tableBorder;
+    border-bottom: 2px solid #eee;
     margin-top: 0;
 }
 .course-content ul li.section.hidden {
-    .opacity(50);
+    opacity: 0.5;
 }
 .course-content ul.topics li.section .content,
 .course-content ul.weeks li.section .content {
@@ -652,16 +653,16 @@ span.editinstructions {
     display:none;
 }
 .courses .coursebox.collapsed {
-    border: 1px solid @tableBorder;
-    padding: 5px;
+    border:1px solid #eeeeee;
+    padding:5px;
 }
 
 .courses .coursebox.even {
-    background-color: @tableBackgroundAccent;
+    background-color:#f6f6f6;
 }
 .courses .coursebox:hover,
 .course_category_tree .courses > .paging.paging-morelink:hover {
-    background-color: @tableBackgroundHover;
+    background-color:#eeeeee;
 }
 
 .course_category_tree .category .numberofcourse {
@@ -822,7 +823,7 @@ span.editinstructions {
  * Borders                  #e1e1e8
  */
 #course-category-listings {
-    background-color: @tableBackground;
+    background-color:#fff;
     margin-bottom:200px;
 
     /** Two column layout */
@@ -839,6 +840,7 @@ span.editinstructions {
 
     > div > div {
         min-height:300px;
+        border:1px solid #e1e1e8;
         > ul.ml > li:first-child > div {
             border-top:0;
         }
@@ -846,6 +848,8 @@ span.editinstructions {
     h3 {
         margin:0;
         padding:0.4rem 0.6rem 0.3rem;
+        background-color:#F5F5F5;
+        border-bottom:1px solid #e1e1e8;
     }
     h4 {
         margin:1rem 0 0;
@@ -908,7 +912,7 @@ span.editinstructions {
         line-height:2.2em;
         > div {
             &:hover {
-                background-color: @tableBackgroundHover;
+                background-color:#fafafa;
             }
         }
         .tree-icon {
@@ -918,10 +922,16 @@ span.editinstructions {
         }
         &[data-selected='1'] {
             > div {
-                background-color: @tableBackgroundAccent;
+                background-color:#FFFFD8;
+                border-top-color: #e1e1e8;
+                border-bottom-color:#F5F5F5;
             }
-            > div:hover {
-                background-color: @tableBackgroundHover;
+            li:first-of-type > div,
+            &[data-expandable='0']+li > div {
+                border-top-color:#e1e1e8;
+            }
+            &:last-of-type > div {
+                border-bottom-color:#e1e1e8;
             }
         }
 
@@ -934,6 +944,11 @@ span.editinstructions {
         li li li li li .tree-icon {margin-left:4.5em;}
         li li li li li li .tree-icon {margin-left:5em;}
         li li li li li li li .tree-icon {margin-left:5.5em;}
+
+        &+li > div,
+        &:first-child > div {
+            border-top-color:#F5F5F5;
+        }
     }
 
     .item-actions {
@@ -1003,11 +1018,11 @@ span.editinstructions {
             }
         }
         &.highlight {
-            background-color: @tableBackground;
+            background-color:transparent;
             > div,
             > div:hover,
             &[data-selected='1'] > div {
-                background-color: @tableBackgroundHover;
+                background-color:#ddffaa;
             }
         }
     }
@@ -1048,7 +1063,7 @@ span.editinstructions {
                 }
             }
             &.highlight > div > .ba-checkbox {
-                background-color: @tableBackgroundHover;
+                background-color:#ddffaa;
             }
             &[data-selected='1'] > div > .ba-checkbox {
                 margin:0 0.5em 0 0;
@@ -1084,7 +1099,7 @@ span.editinstructions {
     }
 
     .detail-pair {
-        border-bottom:1px solid @tableBorder;
+        border-bottom:1px solid #e1e1e8;
         margin:0 1rem;
         > * {
             display:inline-block;
@@ -1113,12 +1128,12 @@ span.editinstructions {
     .listing-pagination {
         text-align:center;
         .yui3-button {
-            background-color: @btnBackground;
+            background-color:#FFF;
             border:0;
             margin:0.4rem 0.2rem 0.45rem;
             font-size:10.4px;
             &.active-page {
-                background-color: @btnBackgroundHighlight;
+                background-color:#E5EFFD;
             }
         }
     }
@@ -1304,7 +1319,7 @@ span.editinstructions {
  */
 @media (min-width: 1200px) and (max-width: 1600px) {
     #course-category-listings.columns-3 {
-        background-color: @tableBackground;
+        background-color:transparent;
         border:0;
 
         #category-listing,
@@ -1314,7 +1329,8 @@ span.editinstructions {
         #category-listing > div,
         #course-listing > div,
         #course-detail > div {
-            background-color: @tableBackground;
+            border:1px solid #e1e1e8;
+            background-color:#FFF;
         }
         #course-detail {
             width:100%;
@@ -1327,7 +1343,7 @@ span.editinstructions {
 @media (max-width: 1199px) {
     #course-category-listings.columns-2,
     #course-category-listings.columns-3 {
-        background-color: @tableBackground;
+        background-color:transparent;
         border:0;
         #category-listing,
         #course-listing,
@@ -1338,7 +1354,8 @@ span.editinstructions {
         #category-listing > div,
         #course-listing > div,
         #course-detail > div {
-            background-color: @tableBackground;
+            border:1px solid #e1e1e8;
+            background-color:#FFF;
         }
     }
 }

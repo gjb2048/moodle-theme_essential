@@ -123,11 +123,11 @@ select {
 #page-footer {
     margin-top: 1em;
     padding: 1em 0;
-    border-top: 2px solid @tableBorder;
+    border-top: 2px solid #eee;
 }
 
 .maincalendar .calendarmonth td,.maincalendar .calendarmonth th {
-    border: 1px dotted @tableBorder;
+    border: 1px dotted #ddd;
 }
 
 .path-grade-report-grader h1 {
@@ -153,11 +153,6 @@ select {
 .breadcrumb-button {
     float: right;
     margin-top: 4px;
-}
-
-.breadcrumb-button .singlebutton {
-    float: left;
-    margin-left: 4px;
 }
 
 .dir-rtl {
@@ -186,11 +181,6 @@ select {
 .dir-rtl .breadcrumb-button,
 .dir-rtl .navbar .btn-navbar {
     float: left;
-}
-
-.dir-rtl .breadcrumb-button .singlebutton {
-    float: right;
-    margin-right: 4px;
 }
 
 .ie .row-fluid .desktop-first-column {
@@ -266,8 +256,8 @@ div#dock {
 
 .path-mod-survey {
     .surveytable {
-      > tbody > tr:nth-of-type(odd) {background-color: @tableBackground;}
-      > tbody > tr:nth-of-type(even) {background-color: @tableBackgroundAccent;}
+        .r0 {background-color: #eee;}
+        .r1 {background-color: #ddd;}
         .rblock label {text-align: center;}
     }
     .resultgraph, .reportsummary, .studentreport, .reportbuttons, .centerpara {
