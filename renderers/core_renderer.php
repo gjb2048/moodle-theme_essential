@@ -785,7 +785,8 @@ class theme_essential_core_renderer extends core_renderer {
             'i/user' => 'user',
             'i/users' => 'user',
             't/right' => 'arrow-right',
-            't/left' => 'arrow-left'
+            't/left' => 'arrow-left',
+			't/edit_menu' => 'cog'
         );
         if (array_key_exists($name, $icons)) {
             return "<i class=\"fa fa-$icons[$name]\" id=\"icon\"></i>";
