@@ -746,31 +746,32 @@ class theme_essential_core_renderer extends core_renderer {
     
     public function render_pix_icon(pix_icon $icon) {
         if (self::replace_moodle_icon($icon->pix)) {
-            return self::replace_moodle_icon($icon->pix);
+            return self::replace_moodle_icon($icon->pix, $icon->attributes['alt']);
         } else {
             return parent::render_pix_icon($icon);
         }
     }
    
-    private static function replace_moodle_icon($name) {
+    private static function replace_moodle_icon($name, $alt=false) {
         $icons = array(
             'add' => 'plus',
             'book' => 'book',
             'chapter' => 'file',
             'docs' => 'question-circle',
             'generate' => 'gift',
+            'i/marker' => 'lightbulb-o',
             'i/dragdrop' => 'arrows',
-            'i/loading_small' => 'spinner',
+            'i/loading_small' => 'refresh fa-spin ',
             'i/backup' => 'cloud-download',
             'i/checkpermissions' => 'user',
             'i/edit' => 'pencil',
             'i/filter' => 'filter',
             'i/grades' => 'table',
             'i/group' => 'group',
-            'i/hide' => 'eye',
+            'i/hide' => 'eye-slash',
             'i/import' => 'upload',
             'i/move_2d' => 'arrows',
-            'i/navigationitem' => 'circle',
+            'i/navigationitem' => 'file',
             'i/outcomes' => 'magic',
             'i/publish' => 'globe',
             'i/reload' => 'refresh',
@@ -778,17 +779,39 @@ class theme_essential_core_renderer extends core_renderer {
             'i/restore' => 'cloud-upload',
             'i/return' => 'repeat',
             'i/roles' => 'user',
+            'i/cohort' => 'users',
 			'i/scales' => 'signal',
             'i/settings' => 'cogs',
-            'i/show' => 'eye-slash',
+            'i/show' => 'eye',
             'i/switchrole' => 'random',
             'i/user' => 'user',
             'i/users' => 'user',
             't/right' => 'arrow-right',
-            't/left' => 'arrow-left'
+            't/left' => 'arrow-left',
+			't/edit_menu' => 'cogs',
+			'i/withsubcat' => 'indent',
+			'i/permissions' => 'key',
+			't/cohort' => 'users',
+            'i/assignroles' => 'lock',
+			't/assignroles' => 'lock',
+			't/delete' => 'times-circle',
+			't/edit' => 'cog',
+			't/hide' => 'eye-slash',
+			't/show' => 'eye',
+			't/up' => 'arrow-up',
+			't/down' => 'arrow-down',
+            't/copy' => 'copy',
+            't/switch_minus' => 'minus-square',
+            't/switch_plus' => 'plus-square',
+            't/block_to_dock' => 'caret-square-o-left',
+            't/sort' => 'sort',
+            't/sort_asc' => 'sort-asc',
+            't/sort_desc' => 'sort-desc',
+            't/grades' => 'th-list',
+            't/preview' => 'search',
         );
         if (array_key_exists($name, $icons)) {
-            return "<i class=\"fa fa-$icons[$name]\" id=\"icon\"></i>";
+            return "<i class=\"fa fa-$icons[$name] icon\" title=\"$alt\"></i>";
         } else {
             return false;
         }
