@@ -11,15 +11,21 @@
 
 .menu a.menu-action,
 p.tree_item.leaf a,
-.course-item-actions a{
+.course-item-actions a,
+.actions a {
   > i {
     color: @icon-colour;
     width: ~"[[setting:bodysize]]";
-    margin: 0px 3px 0px 0px;
+    margin: 0px 3px;
   }
   &.action-delete {
     > i {
       color: red;
+    }
+  }
+  &:hover {
+    > i {
+      color: ~"[[setting:themehovercolor]]";
     }
   }
 }
@@ -28,17 +34,12 @@ a.action-icon,
 .heading_name_row a{
   > i {
     width: ~"[[setting:bodysize]]";
-    margin: 0px 0px 0px 3px;
+    margin: 0px 3px;
   }
 }
 
 .menu a.menu-action:hover > i {
   color: #FFF;
-}
-
-a.editing_moveright:hover i,
-a.editing_moveleft:hover i {
-    color: #fff;
 }
 
 .section-modchooser-link {
@@ -49,7 +50,7 @@ a.editing_moveleft:hover i {
     > a:before {
         font-family: 'FontAwesome';
         content:"\f067 ";
-        margin-right: 5px;
+        margin-right: 3px;
         color: @icon-colour;
     }
 
@@ -68,24 +69,6 @@ a.editing_moveleft:hover i {
         content:"\f040 ";
         margin-right: 5px;
     }
-}
-
-.editing_groupsnone:before {
-    font-family: 'FontAwesome';
-    content:"\f007 ";
-    margin-right: 5px;
-}
-
-.editing_groupsvisible:before {
-    font-family: 'FontAwesome';
-    content:"\f0c0 ";
-    margin-right: 5px;
-}
-
-.editing_groupsseparate:before {
-    font-family: 'FontAwesome';
-    content:"\f0c0 ";
-    margin-right: 5px;
 }
 
 .moodle-core-dragdrop-draghandle:before {
