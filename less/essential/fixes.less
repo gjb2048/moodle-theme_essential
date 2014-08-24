@@ -11,13 +11,6 @@ a[name="lastused"] {
     z-index: 100 !important;
 }
 
-.block_settings .type_siteadmin.contains_branch .item_with_icon {
-    margin-left: 21px;
-}
-.path-admin-setting .block_settings .type_siteadmin.contains_branch .item_with_icon {
-    margin-left: 0px;
-}
-
 // Reset Bootstrap global label override
 label {
   display: inline;
@@ -33,31 +26,4 @@ label {
 .editing .block.invisible {
     .opacity(100);
     background: rgba(255, 255, 255, 0.4);
-}
-
-// Fix for faulty global scope in Moodle gradebook styles.css
-.path-grade-report-grader {
-	h1#title { 
-		clear: none; 
-	}
-
-	.gradeparent {
-		.left_scroller {
-			padding-top: 26px;
-		}
-		div:nth-of-type(2):not(.topscroll) {
-			&.right_scroller {
-				padding-top: 22px;
-			}
-		}
-	}
-    #user-grades {
-      .heading.r1,
-      .heading_name_row.r1 {
-          > th {
-              padding-right: 35px;
-              vertical-align: middle;
-          }
-      }
-    }
 }
