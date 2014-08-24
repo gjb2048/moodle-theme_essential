@@ -11,13 +11,27 @@
 
 .menu a.menu-action,
 p.tree_item.leaf a,
-.course-item-actions a {
+.course-item-actions a{
   > i {
     color: @icon-colour;
     width: ~"[[setting:bodysize]]";
     margin: 0px 3px 0px 0px;
   }
+  &.action-delete {
+    > i {
+      color: red;
+    }
+  }
 }
+a.action-icon,
+#studentheader,
+.heading_name_row a{
+  > i {
+    width: ~"[[setting:bodysize]]";
+    margin: 0px 0px 0px 3px;
+  }
+}
+
 .menu a.menu-action:hover > i {
   color: #FFF;
 }

@@ -746,19 +746,20 @@ class theme_essential_core_renderer extends core_renderer {
     
     public function render_pix_icon(pix_icon $icon) {
         if (self::replace_moodle_icon($icon->pix)) {
-            return self::replace_moodle_icon($icon->pix);
+            return self::replace_moodle_icon($icon->pix, $icon->attributes['alt']);
         } else {
             return parent::render_pix_icon($icon);
         }
     }
    
-    private static function replace_moodle_icon($name) {
+    private static function replace_moodle_icon($name, $alt=false) {
         $icons = array(
             'add' => 'plus',
             'book' => 'book',
             'chapter' => 'file',
             'docs' => 'question-circle',
             'generate' => 'gift',
+            'i/marker' => 'lightbulb-o',
             'i/dragdrop' => 'arrows',
             'i/loading_small' => 'refresh fa-spin ',
             'i/backup' => 'cloud-download',
@@ -778,6 +779,7 @@ class theme_essential_core_renderer extends core_renderer {
             'i/restore' => 'cloud-upload',
             'i/return' => 'repeat',
             'i/roles' => 'user',
+            'i/cohort' => 'users',
 			'i/scales' => 'signal',
             'i/settings' => 'cogs',
             'i/show' => 'eye',
@@ -803,9 +805,13 @@ class theme_essential_core_renderer extends core_renderer {
             't/switch_plus' => 'plus-square',
             't/block_to_dock' => 'caret-square-o-left',
             't/sort' => 'sort',
+            't/sort_asc' => 'sort-asc',
+            't/sort_desc' => 'sort-desc',
+            't/grades' => 'th-list',
+            't/preview' => 'search',
         );
         if (array_key_exists($name, $icons)) {
-            return "<i class=\"fa fa-$icons[$name] icon\"></i>";
+            return "<i class=\"fa fa-$icons[$name] icon\" title=\"$alt\"></i>";
         } else {
             return false;
         }
