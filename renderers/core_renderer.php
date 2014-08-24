@@ -770,7 +770,7 @@ class theme_essential_core_renderer extends core_renderer {
             'i/hide' => 'eye-slash',
             'i/import' => 'upload',
             'i/move_2d' => 'arrows',
-            'i/navigationitem' => 'circle-o',
+            'i/navigationitem' => 'file',
             'i/outcomes' => 'magic',
             'i/publish' => 'globe',
             'i/reload' => 'refresh',
@@ -790,6 +790,7 @@ class theme_essential_core_renderer extends core_renderer {
 			'i/withsubcat' => 'indent',
 			'i/permissions' => 'key',
 			't/cohort' => 'users',
+            'i/assignroles' => 'lock',
 			't/assignroles' => 'lock',
 			't/delete' => 'times-circle',
 			't/edit' => 'cog',
@@ -804,7 +805,7 @@ class theme_essential_core_renderer extends core_renderer {
             't/sort' => 'sort',
         );
         if (array_key_exists($name, $icons)) {
-            return "<i class=\"fa fa-$icons[$name]\" id=\"icon\"></i>";
+            return "<i class=\"fa fa-$icons[$name] icon\"></i>";
         } else {
             return false;
         }
