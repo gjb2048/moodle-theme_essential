@@ -12,14 +12,6 @@
         margin-right: 5px;
         color: @icon-colour;
     }
-    a.toggle-display:before {
-        content: '\f085';
-        font-family: FontAwesome;
-        color: @icon-colour;
-    }
-    a.toggle-display:hover:before {
-        color: ~"[[setting:themehovercolor]]";
-    }
     .menu {
         a.menu-action {
             color: ~"[[setting:themeurlcolor]]";
@@ -34,6 +26,28 @@
             color: #fff;
         }
     }
+  .moodle-core-dragdrop-draghandle {
+    &:before {
+      font-family: 'FontAwesome';
+      content:"\f047 ";
+      margin-right: 5px;
+      cursor: move;
+    }
+    img {
+      display: none;
+    }
+  }
+}
+.course-content .section .moodle-core-dragdrop-draghandle {
+  &:before {
+    font-family: 'FontAwesome';
+    content:"\f07d ";
+    margin-right: 5px;
+    cursor: move;
+  }
+  img {
+    display: none;
+  }
 }
 
 .editing  {
