@@ -8,17 +8,9 @@
     .content {
         padding: 4px 0px;
     }
-    #icon {
+    .icon {
         margin-right: 5px;
         color: @icon-colour;
-    }
-    a.toggle-display:before {
-        content: '\f085';
-        font-family: FontAwesome;
-        color: @icon-colour;
-    }
-    a.toggle-display:hover:before {
-        color: ~"[[setting:themehovercolor]]";
     }
     .menu {
         a.menu-action {
@@ -34,6 +26,18 @@
             color: #fff;
         }
     }
+  .moodle-core-dragdrop-draghandle {
+    &:before {
+      font-family: 'FontAwesome';
+      content:"\f047 ";
+      color: @icon-colour;
+      margin-right: 5px;
+      cursor: move;
+    }
+    img {
+      display: none;
+    }
+  }
 }
 
 .editing  {

@@ -1,13 +1,5 @@
 /* @group Edit Buttons */
 
-.commands {
-    font-family: FontAwesome;
-    font-size: 1.1em;
-    img {
-        display: none;
-    }
-}
-
 .actions .moodle-actionmenu[data-enhanced].show .menu a {
     text-decoration: none !important;
 }
@@ -17,41 +9,31 @@
     display: inline;
 }
 
-.editing_delete:before {
-    font-family: 'FontAwesome';
-    content:"\f00d ";
-    color: red;
-    margin-right: 5px;
-}
-
-.editing_hide,
-.editing_show,
-.editing_move,
-.editing_groupsnone,
-.editing_groupsvisible,
-.editing_groupsseperate {
-    padding-right: 10px !important;
-}
-
-.editing_move {
-    &:hover {
-        cursor:move;
-    }
-
-    &:before {
-        font-family: 'FontAwesome';
-        content:"\f047 ";
-        margin-right: 5px;
-    }
-
-    img {
-       display: none;
-    }
-}
-
-a.editing_moveright i,
-a.editing_moveleft i {
+.menu a.menu-action,
+p.tree_item.leaf a,
+.course-item-actions a{
+  > i {
     color: @icon-colour;
+    width: ~"[[setting:bodysize]]";
+    margin: 0px 3px 0px 0px;
+  }
+  &.action-delete {
+    > i {
+      color: red;
+    }
+  }
+}
+a.action-icon,
+#studentheader,
+.heading_name_row a{
+  > i {
+    width: ~"[[setting:bodysize]]";
+    margin: 0px 0px 0px 3px;
+  }
+}
+
+.menu a.menu-action:hover > i {
+  color: #FFF;
 }
 
 a.editing_moveright:hover i,
@@ -76,23 +58,6 @@ a.editing_moveleft:hover i {
     }
 }
 
-.editing_update:before,
-.editing_edit:before {
-    font-family: 'FontAwesome';
-    content:"\f013 ";
-    margin-right: 5px;
-    &:hover {
-        text-decoration: none;
-        color: #fff;
-    }
-}
-
-.editing_duplicate:before {
-    font-family: 'FontAwesome';
-    content:"\f0c5 ";
-    margin-right: 5px;
-}
-
 .editing_title {
     img {
         display: none !important;
@@ -103,25 +68,6 @@ a.editing_moveleft:hover i {
         content:"\f040 ";
         margin-right: 5px;
     }
-}
-
-.editing_hide:before {
-    font-family: 'FontAwesome';
-    content:"\f06e ";
-    margin-right: 5px;
-}
-
-.editing_show:before {
-    font-family: 'FontAwesome';
-    content:"\f070 ";
-    margin-right: 5px;
-}
-
-.editing_assign:before,
-.editing_roles:before {
-    font-family: 'FontAwesome';
-    content:"\f084 ";
-    margin-right: 5px;
 }
 
 .editing_groupsnone:before {
@@ -142,48 +88,6 @@ a.editing_moveleft:hover i {
     margin-right: 5px;
 }
 
-.actions .toggle-display:before {
-    font-family: 'FontAwesome';
-    content:"\f085 ";
-    margin-right: 5px;
-}
-
-.action-moveup:before {
-    font-family: 'FontAwesome';
-    content:"\f062 ";
-    margin-right: 5px;
-}
-
-.action-movedown:before {
-    font-family: 'FontAwesome';
-    content:"\f063 ";
-    margin-right: 5px;
-}
-
-.action-hide:before {
-    font-family: 'FontAwesome';
-    content:"\f06e ";
-    margin-right: 5px;
-}
-
-.action-show:before {
-    font-family: 'FontAwesome';
-    content:"\f070 ";
-    margin-right: 5px;
-}
-
-.action-delete:before {
-    font-family: 'FontAwesome';
-    content:"\f00d ";
-    margin-right: 5px;
-}
-
-.action-edit:before {
-    font-family: 'FontAwesome';
-    content:"\f013 ";
-    margin-right: 5px;
-}
-
 .moodle-core-dragdrop-draghandle:before {
     font-family: 'FontAwesome';
     content:"\f047 ";
@@ -191,37 +95,34 @@ a.editing_moveleft:hover i {
     cursor: move;
 }
 
-.course-content .section .moodle-core-dragdrop-draghandle:before {
+.course-content .section .moodle-core-dragdrop-draghandle {
+  &:before {
     font-family: 'FontAwesome';
     content:"\f07d ";
     margin-right: 5px;
     cursor: move;
+  }
+  img {
+      display: none;
+  }
 }
 
-.section .summary > a:before {
+.section .summary {
+  > a:before {
     font-family: 'FontAwesome';
     content: "\f013 ";
     margin-right: 5px;
+  }
+  .iconsmall.edit {
+    display: none;
+  }
 }
 
 .moodle-actionmenu.show[data-enhanced] .menu a {
-    padding: 2px 1em;
+    padding: 0.2em;
     i {
         margin-right: 5px;
     }
-}
-
-.toggle-display img,
-.action-moveup img,
-.action-movedown img,
-.action-hide img,
-.action-show img,
-.action-delete img,
-.action-edit img,
-.drag-handle img,
-.section-handle img,
-.section .summary a .iconsmall {
-    display: none;
 }
 
 /* @end */
