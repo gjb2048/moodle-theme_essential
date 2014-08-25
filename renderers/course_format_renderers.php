@@ -161,6 +161,8 @@ function essential_print_single_section_page(&$that, &$courserenderer, $course, 
     echo html_writer::end_tag('div');
 }
 
+/* Now the really clever bit to expose parts of the renderer interface such that they can be accessed by a global function if
+   they are passed a reference to the $this object. */
 include_once($CFG->dirroot . "/course/format/topics/renderer.php");
 class theme_essential_format_topics_renderer extends format_topics_renderer {
     public function start_section_list() {
@@ -252,6 +254,207 @@ class theme_essential_format_weeks_renderer extends format_weeks_renderer {
 
     public function print_single_section_page($course, $sections, $mods, $modnames, $modnamesused, $displaysection) {
         return essential_print_single_section_page($this, $this->courserenderer, $course, $sections, $mods, $modnames, $modnamesused, $displaysection);
+    }
+}
+
+// Requires V2.6.1.3+ of the Collapsed Topics format.
+if (file_exists("$CFG->dirroot/course/format/topcoll/renderer.php")) {
+    include_once($CFG->dirroot . "/course/format/topcoll/renderer.php");
+    class theme_essential_format_topcoll_renderer extends format_topcoll_renderer {
+        public function start_section_list() {
+            return parent::start_section_list();
+        }
+
+        public function end_section_list() {
+            return parent::end_section_list();
+        }
+
+        public function get_nav_links($course, $sections, $sectionno) {
+            return essential_get_nav_links($course, $sections, $sectionno);
+        }
+
+        public function section_left_content($section, $course, $onsectionpage) {
+            return parent::section_left_content($section, $course, $onsectionpage);
+        }
+
+        public function section_right_content($section, $course, $onsectionpage) {
+            return parent::section_right_content($section, $course, $onsectionpage);
+        }
+
+        public function section_header($section, $course, $onsectionpage, $sectionreturn=null) {
+            return parent::section_header($section, $course, $onsectionpage, $sectionreturn);
+        }
+
+        public function section_footer() {
+            return parent::section_footer();
+        }
+
+        public function section_availability_message($section, $canviewhidden) {
+            return parent::section_availability_message($section, $canviewhidden);
+        }
+
+        public function course_activity_clipboard($course, $sectionno = null) {
+            return parent::course_activity_clipboard($course, $sectionno);
+        }
+
+        public function format_summary_text($section) {
+            return parent::format_summary_text($section);
+        }
+
+        public function print_single_section_page($course, $sections, $mods, $modnames, $modnamesused, $displaysection) {
+            return essential_print_single_section_page($this, $this->courserenderer, $course, $sections, $mods, $modnames, $modnamesused, $displaysection);
+        }
+    }
+}
+
+if (file_exists("$CFG->dirroot/course/format/grid/renderer.php")) {
+    include_once($CFG->dirroot . "/course/format/grid/renderer.php");
+
+    class theme_essential_format_grid_renderer extends format_grid_renderer {
+        public function start_section_list() {
+            return parent::start_section_list();
+        }
+
+        public function end_section_list() {
+            return parent::end_section_list();
+        }
+
+        public function get_nav_links($course, $sections, $sectionno) {
+            return essential_get_nav_links($course, $sections, $sectionno);
+        }
+
+        public function section_left_content($section, $course, $onsectionpage) {
+            return parent::section_left_content($section, $course, $onsectionpage);
+        }
+
+        public function section_right_content($section, $course, $onsectionpage) {
+            return parent::section_right_content($section, $course, $onsectionpage);
+        }
+
+        public function section_header($section, $course, $onsectionpage, $sectionreturn=null) {
+            return parent::section_header($section, $course, $onsectionpage, $sectionreturn);
+        }
+
+        public function section_footer() {
+            return parent::section_footer();
+        }
+
+        public function section_availability_message($section, $canviewhidden) {
+            return parent::section_availability_message($section, $canviewhidden);
+        }
+
+        public function course_activity_clipboard($course, $sectionno = null) {
+            return parent::course_activity_clipboard($course, $sectionno);
+        }
+
+        public function format_summary_text($section) {
+            return parent::format_summary_text($section);
+        }
+
+        public function print_single_section_page($course, $sections, $mods, $modnames, $modnamesused, $displaysection) {
+            return essential_print_single_section_page($this, $this->courserenderer, $course, $sections, $mods, $modnames, $modnamesused, $displaysection);
+        }
+    }
+}
+
+if (file_exists("$CFG->dirroot/course/format/noticebd/renderer.php")) {
+    include_once($CFG->dirroot . "/course/format/noticebd/renderer.php");
+
+    class theme_essential_format_noticebd_renderer extends format_noticebd_renderer {
+        public function start_section_list() {
+            return parent::start_section_list();
+        }
+
+        public function end_section_list() {
+            return parent::end_section_list();
+        }
+
+        public function get_nav_links($course, $sections, $sectionno) {
+            return essential_get_nav_links($course, $sections, $sectionno);
+        }
+
+        public function section_left_content($section, $course, $onsectionpage) {
+            return parent::section_left_content($section, $course, $onsectionpage);
+        }
+
+        public function section_right_content($section, $course, $onsectionpage) {
+            return parent::section_right_content($section, $course, $onsectionpage);
+        }
+
+        public function section_header($section, $course, $onsectionpage, $sectionreturn=null) {
+            return parent::section_header($section, $course, $onsectionpage, $sectionreturn);
+        }
+
+        public function section_footer() {
+            return parent::section_footer();
+        }
+
+        public function section_availability_message($section, $canviewhidden) {
+            return parent::section_availability_message($section, $canviewhidden);
+        }
+
+        public function course_activity_clipboard($course, $sectionno = null) {
+            return parent::course_activity_clipboard($course, $sectionno);
+        }
+
+        public function format_summary_text($section) {
+            return parent::format_summary_text($section);
+        }
+
+        public function print_single_section_page($course, $sections, $mods, $modnames, $modnamesused, $displaysection) {
+            return essential_print_single_section_page($this, $this->courserenderer, $course, $sections, $mods, $modnames, $modnamesused, $displaysection);
+        }
+    }
+}
+
+// Requires V2.6.1.1+ of Columns format.
+if (file_exists("$CFG->dirroot/course/format/columns/renderer.php")) {
+    include_once($CFG->dirroot . "/course/format/columns/renderer.php");
+
+    class theme_essential_format_columns_renderer extends format_columns_renderer {
+        public function start_section_list() {
+            return parent::start_section_list();
+        }
+
+        public function end_section_list() {
+            return parent::end_section_list();
+        }
+
+        public function get_nav_links($course, $sections, $sectionno) {
+            return essential_get_nav_links($course, $sections, $sectionno);
+        }
+
+        public function section_left_content($section, $course, $onsectionpage) {
+            return parent::section_left_content($section, $course, $onsectionpage);
+        }
+
+        public function section_right_content($section, $course, $onsectionpage) {
+            return parent::section_right_content($section, $course, $onsectionpage);
+        }
+
+        public function section_header($section, $course, $onsectionpage, $sectionreturn=null) {
+            return parent::section_header($section, $course, $onsectionpage, $sectionreturn);
+        }
+
+        public function section_footer() {
+            return parent::section_footer();
+        }
+
+        public function section_availability_message($section, $canviewhidden) {
+            return parent::section_availability_message($section, $canviewhidden);
+        }
+
+        public function course_activity_clipboard($course, $sectionno = null) {
+            return parent::course_activity_clipboard($course, $sectionno);
+        }
+
+        public function format_summary_text($section) {
+            return parent::format_summary_text($section);
+        }
+
+        public function print_single_section_page($course, $sections, $mods, $modnames, $modnamesused, $displaysection) {
+            return essential_print_single_section_page($this, $this->courserenderer, $course, $sections, $mods, $modnames, $modnamesused, $displaysection);
+        }
     }
 }
 ?>

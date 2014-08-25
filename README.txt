@@ -93,7 +93,12 @@ New in 2.7.6b
 - FIX: huge code rewrite for menu items.
 - FIX: optimized more icons to be loaded from font.
 - NEW: New loading gif, reducing size by 500%.
-- NEW: Issue #194: Option to center slide show text.
+- NEW: Issue #194: Option to centre slide show text.
+- NEW: Issue #198: Collapsed Topics and other course formats (like core weeks) need print single page the same.
+       Course formats catered for: Topics, Weeks, Collapsed Topics, Columns, Grid and Noticeboard.  If you require others,
+       please let us know.
+       NOTE: If you are using the Collapsed Topics course format then you MUST have version 2.6.1.3 or above installed.
+             If you are using the Columns course format then you MUST have version 2.6.1.1 or above installed.
 
 New in 2.7.6a
 =============
