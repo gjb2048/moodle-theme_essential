@@ -88,11 +88,12 @@ can be really useful in visualising the issue along with any files you consider 
 
 New in 2.7.6b
 =============
-- FIX: main site regions cleanup to prevent issues with blocks
-- FIX: huge code rewrite for menu items
-- FIX: optimized more icons to be loaded from font
-- NEW: New loading gif, reducing size by 500%
-- NEW: Option to center slideshow text
+- FIX: Issue #205: Has the eye icon used to Enable/Disable an element been reversed in functionality?
+- FIX: main site regions clean-up to prevent issues with blocks.
+- FIX: huge code rewrite for menu items.
+- FIX: optimized more icons to be loaded from font.
+- NEW: New loading gif, reducing size by 500%.
+- NEW: Issue #194: Option to center slide show text.
 
 New in 2.7.6a
 =============
