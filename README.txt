@@ -86,15 +86,23 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
+New in 2.7.6b
+=============
+- FIX: main site regions cleanup to prevent issues with blocks
+- FIX: huge code rewrite for menu items
+- FIX: optimized more icons to be loaded from font
+- NEW: New loading gif, reducing size by 500%
+- NEW: Option to center slideshow text
+
 New in 2.7.6a
-========================
+=============
 - FIX: Issue #159: Custom Category Icons not displaying in 2.7.5h (Build: 2014081404).
 - FIX: Various code optimizations
 - NEW: Issue #172: Google font character sets.  Implemented in #174 - thanks @vgango
 - NEW: Issue #194: Centred slide show caption.
 
 New in 2.7.6
-========================
+============
 - FIX: Issue #159: Custom Category Icons not displaying in 2.7.5h (Build: 2014081404).
 - FIX: Issue #155: Social Icons Missing 2.7.5h
 - FIX: Issue #156, #70, #56: Caption background colour frontpage slider & active slide colours
@@ -111,7 +119,7 @@ New in 2.7.6
 - HELP WANTED: All language strings are now in AMOS (Moodle Language packs) please update your own language!
 
 New in 2.7.5
-========================
+============
 - FIX: Issue #96:  2.7.4 breaks 'oldnavbar' setting.
 - FIX: Issue #98:  Lang en/iosicondesc - Change 'them' to 'theme'.  Thanks to Skylar Kelty.
 - FIX: Issue #101: Navbar not expanding properly on android mobile and tablet.
@@ -153,7 +161,7 @@ New in 2.7.5
 - NEW: Persistent link to your own grade report, available as long as you are enrolled in one visible course
 
 New in 2.7.4
-========================
+============
 - FIX: Issue #68.  Expand all not showing on Edit course settings.
 - FIX: Issue #58.  Add font colour setting.
 - FIX: Issue #63.  Slider caption overlap.
@@ -180,7 +188,7 @@ New in 2.7.4
         lots of redundant CSS.  This presents problems when it comes to portable devices and bandwidth.
 
 New in 2.7.3
-========================
+============
 - FIX: Fixed slide show by replacing with Bootstrap 2.3.2 one.  Issue #18.
 - FIX: Make background image fixed and set a background transparent colour
 - FIX: Permanently replace edit icons with FontAwesome icons
@@ -206,14 +214,14 @@ New in 2.7.3
 - NEW: Transparent fixed background when setting a background image
 
 New in 2.7.2
-========================
+============
 - FIX: Slideshow CSS fixes
 - FIX: Image alignment on slideshow
 - NEW: Select slideshow background color
 - NEW: Option to bring back the old navbar location
  
 New in 2.7.1
-========================
+============
 - FIX: Numerous CSS fixes
 - FIX: Translation fixes
 - FIX: Updated Google Analytics code
@@ -227,7 +235,7 @@ New in 2.7.1
 - NEW: New slideshow design (WIP)
  
 New in 2.6.3
-========================
+============
 - FIX: Numerous CSS fixes
 - FIX: Due to popular request reports are now 2 column again
 - FIX: Significantly improved RTL support
@@ -239,7 +247,7 @@ New in 2.6.3
 - NEW: Start Dutch translation
 
 New in 2.6.2
-========================
+============
 - FIX: Numerous CSS fixes
 - FIX: Third level dropdown in custom menu now works
 - FIX: iOS7 custom menu now works when changed to a sing dropdown in portrait view
@@ -248,7 +256,7 @@ New in 2.6.2
 - NEW: Frontpage content now goes full width if all blocks removed.
 
 New in 2.6.1
-========================
+============
 - NEW: MAJOR UPDATES for 2.6 compatibility.
 - NEW: Moved layouts to a more "Moodle standard" 1, 2 and 3 column layout.
 - NEW: Can now add three columns of blocks to middle of the homepage under marketing spots.
@@ -263,7 +271,7 @@ New in 2.6.1
 - FIX: Numerous CSS fixes and cleanup
 
 New in 2.6
-========================
+==========
 - Added ability to select from 21 preset Google Font combinations or disable their use completely.
 - Now includes additional Bootstrap JS plugins to allow for more dynamic formatting as shown on http://getbootstrap.com/javascript/
 - New Frontpage Slideshow settings to allow to display; all the time, only before login, only after login or never.
@@ -273,7 +281,7 @@ New in 2.6
 - Further minor bug fixes and tidy up.
 
 New in 2.5.4
-========================
+============
 - Display current enrolled courses in dropdown menu and choose terminology (modules, courses, classes or units).
 - New 'My Dashboard" in custommenu provides quick links to student tools. Can be disabled in theme settings.
 - iOS home screen icons now built in. Can upload your own via settings.
@@ -286,7 +294,7 @@ New in 2.5.4
 - New "Frontpage Content" box to add custom content in between the slideshow and marketing spots.
 
 Fixes in 2.5.4
-=======================
+==============
 - Fix to frontpage slideshow. First slide now loads properly.
 - Updated include method to minimise conflicts with 3rd party plugins
 - Code significantly optimised. (about 1/5 less lines!)
@@ -294,7 +302,7 @@ Fixes in 2.5.4
 - IMPORTANT: Theme requires Moodle 2.5.1 or higher
 
 New in 2.5.3
-========================
+============
 - New Settings screen just for colour selection
 - Admin can now toggle to use "autohide" functionality in courses.
 - Admin now upload their own background image
@@ -311,7 +319,7 @@ New in 2.5.3
 - EXPERIMENTAL: New course editing icons formatted and built with Font Awesome can now be used.
  
 New in  2.5.2
-========================
+=============
  - New theme setting to have user image show in the header when logged in.
  - Admin can choose to revert courses to a "standard" layout with blocks on the left and right sides
  - Admin can choose the default Navbar/breadcrumb separator
@@ -321,7 +329,7 @@ New in  2.5.2
  - Minor CSS fixes
  
 See the theme in Action
-========================
+=======================
 A video showing many of the core features is available for viewing at http://vimeo.com/69683774
 
 Documentation
@@ -329,10 +337,17 @@ Documentation
 As always, documentation is a work in progress. Available documentation is available at http://docs.moodle.org/25/en/Essential_theme
 If you have questions you can post them in the issue tracker at https://github.com/DBezemer/moodle-theme_essential/issues
 
+Original Author
+===============
+Julian Ridden
+Moodle profile: https://moodle.org/user/profile.php?id=39680
+Web profile:    http://au.linkedin.com/in/eduridden/
+
 Maintained by
-========================
+=============
 David Bezemer
 Moodle profile: https://moodle.org/user/profile.php?id=1416592
+Web profile:    http://www.davidbezemer.nl
 
 G J Barnard MSc. BSc(Hons)(Sndw). MBCS. CEng. CITP. PGCE.
 Moodle profile: http://moodle.org/user/profile.php?id=442195
