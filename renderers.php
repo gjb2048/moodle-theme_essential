@@ -29,4 +29,4 @@ require_once('renderers/core_renderer_maintenance.php');
 if(theme_essential_get_setting('enablecategoryicon')) {
     require_once('renderers/core_course_renderer.php');
 }
-require_once('renderers/format_topics_renderer.php');
+require_once('renderers/course_format_renderers.php');
