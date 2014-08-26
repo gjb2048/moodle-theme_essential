@@ -77,8 +77,9 @@ jQuery(document).ready(function() {
         event.preventDefault();
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;
-    })
-	$('.navbar').affix({
+    });
+
+    jQuery('.navbar').affix({
 		  offset: {
 			top: $('header').height()
 		  }
