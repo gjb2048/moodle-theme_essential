@@ -90,6 +90,8 @@ New in 2.7.6b
 =============
 - FIX: Issue #205: Has the eye icon used to Enable/Disable an element been reversed in functionality?
 - FIX: Issue #207: Fixed solution for #175 #196 - thanks @ppv1979.
+- FIX: Issue #211: Image size in message menu.
+- FIX: Use correct loading gif when regenerating svg files.
 - FIX: main site regions clean-up to prevent issues with blocks.
 - FIX: huge code rewrite for menu items.
 - FIX: optimized more icons to be loaded from font.
