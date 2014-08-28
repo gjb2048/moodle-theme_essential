@@ -64,8 +64,10 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         }
         $classes[] = 'essentialcats';
 
-        // Make sure JS file to expand category content is included.
-        $this->coursecat_include_js();
+        if(intval($CFG->version) >= 2013111800) {
+            // Make sure JS file to expand category content is included.
+            $this->coursecat_include_js();
+        }
 
         $content = html_writer::start_tag('div', array(
             'class' => join(' ', $classes),
