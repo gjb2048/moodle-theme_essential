@@ -41,16 +41,6 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<?php
-    // If on desktop, then hide the header/footer.
-    $hideclass = '';
-    $devicetype = core_useragent::get_device_type();
-    if($devicetype !== 'mobile' and $devicetype !== 'tablet') {
-        // We can not use the Bootstrap responsive css classes because popups are phone sized on desktop.
-        $hideclass = 'hide';
-    }
-?>
-
 <header role="banner" class="navbar navbar-fixed-top moodle-has-zindex <?php echo $hideclass; ?>">
     <nav role="navigation" class="navbar-inner">
         <div class="container-fluid">
