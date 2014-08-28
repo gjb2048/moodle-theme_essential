@@ -2430,101 +2430,6 @@ img.profilepicture {
 .btn-danger {
   color: #fff !important;
 }
-.button {
-  margin: 10px 0px;
-}
-.button a {
-  border-bottom: 2px solid #29A1C4;
-  width: 100px;
-  padding: 2px 5px;
-  border-radius: 5px;
-  color: #eee;
-}
-.button a:visited,
-.button a:hover {
-  color: #fff;
-}
-a#button,
-a#button-green,
-a#button-red,
-a#button-purple,
-a#button-orange,
-a#button-black,
-a#button-grey {
-  margin: 10px 0px;
-}
-a#button,
-a#button:visited,
-a#button-green,
-a#button-green:visited,
-a#button-red,
-a#button-red:visited,
-a#button-orange,
-a#button-orange:visited,
-a#button-purple,
-a#button-purple:visited,
-a#button-black,
-a#button-black:visited,
-a#button-grey,
-a#button-grey:visited {
-  color: #fff;
-  width: 100px;
-  padding: 6px 15px;
-  font-size: 1em;
-  border-radius: 5px;
-}
-a#button:hover,
-a#button-red:hover,
-a#button-green:hover,
-a#button-purple:hover,
-a#button-orange:hover,
-a#button-black:hover,
-a#button-grey:hover {
-  color: #fff;
-  text-decoration: none;
-}
-a#button-red,
-a#button-red:visited {
-  background: #ff3300;
-}
-a#button-red:hover {
-  background: #cc3300;
-}
-a#button-green,
-a#button-green:visited {
-  background: #33cc00;
-}
-a#button-green:hover {
-  background: #009933;
-}
-a#button-purple,
-a#button-purple:visited {
-  background: #cc33cc;
-}
-a#button-purple:hover {
-  background: #993399;
-}
-a#button-orange,
-a#button-orange:visited {
-  background: #ff9900;
-}
-a#button-orange:hover {
-  background: #eb6909;
-}
-a#button-black,
-a#button-black:visited {
-  background: #000;
-}
-a#button-black:hover {
-  background: #666;
-}
-a#button-grey,
-a#button-grey:visited {
-  background: #666;
-}
-a#button-grey:hover {
-  background: #000;
-}
 /* @end */
 /* @group Calendar */
 .minicalendar .calendar_event_site,
@@ -3628,71 +3533,63 @@ input[type="color"],
   color: #fff !important;
 }
 /* @end */
-/* @group Home News Boxes */
-.services {
-  margin: 20px 0px;
+/* @group Marketing Spots */
+#marketing-spots {
+  overflow: hidden;
 }
-.service {
+#marketing-spots .marketing-spot {
   background: #fff;
   padding: 3px 10px;
   border: 1px solid #e7e7e7;
-  margin-bottom: 10px;
   border-radius: 5px;
-  border-bottom: 3px solid #eee;
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
 }
-.service h5 {
+#marketing-spots .marketing-spot h5 {
   padding: 3px 0px 8px 0px;
   margin: 3px 0px 4px 0px;
   border-bottom: 1px solid #f1f1f1;
 }
-.service i {
+#marketing-spots .marketing-spot i {
   font-size: 1.2em;
   margin-top: 3px;
   margin-right: 8px;
 }
-/* @end */
-/* @group Marketing Spots */
-#adspots {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.afeature {
-  width: 190px;
-  height: 190px;
-  margin: 10px auto;
-  border-radius: 250px;
-  border: 5px solid #fff;
-  box-shadow: 0px 0px 3px #aaa;
-  text-align: center;
-  -webkit-transition: border 1s ease;
-  /* Safari */
-  transition: border 1s ease;
-}
-.afeature:hover {
-  -webkit-transition: border 1s ease;
-  /* Safari */
-  transition: border 1s ease;
-}
-.afmatter {
-  width: 80%;
-  margin: 10px auto;
-  padding-top: 15px;
-  line-height: 19px;
-  font-size: 1em;
-  color: #666;
-}
-.afmatter i {
-  font-size: 40px;
-  width: 40px;
-  margin-bottom: 12px;
-}
-.marketing-image1,
-.marketing-image2,
-.marketing-image3 {
+#marketing-spots .marketing-spot .marketing-image {
   background-size: contain !important;
   background-position: center top !important;
   width: 100%;
   margin-bottom: 5px;
+}
+#marketing-spots .marketing-spot .marketing-button.responsive {
+  display: none;
+}
+a.marketing-button {
+  color: #fff !important;
+  display: inline-block;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid #d3d3d3;
+}
+a.marketing-button:hover {
+  color: #fff !important;
+}
+#marketing-buttons {
+  text-align: right;
+}
+#marketing-buttons .span4 {
+  padding: 10px;
+  border-left: 1px solid #e7e7e7;
+  border-right: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 /* @end */
 /* @end */
@@ -4299,7 +4196,7 @@ ul.socials li {
     display: none;
   }
   .navbar-inner * {
-    font-weight: 700;
+    font-weight: 500;
   }
   .navbar-inner .custommenus {
     max-width: 60%;
@@ -4408,6 +4305,19 @@ ul.socials li {
   }
   #page-header #headerlogo {
     top: 0px;
+  }
+  #marketing-spots .marketing-spot {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+  #marketing-spots .marketing-spot .button {
+    text-align: right;
+  }
+  #marketing-spots .marketing-spot .button .marketing-button.responsive {
+    display: inline !important;
+  }
+  #marketing-buttons {
+    display: none;
   }
 }
 /* @end */
@@ -4532,11 +4442,11 @@ h2.pagetitle {
 .button a:visited {
   background: [[setting:themecolor]];
 }
-a#button,
-a#button:visited {
+a.marketing-button,
+a.marketing-button:visited {
   background: [[setting:themecolor]];
 }
-a#button:hover {
+a.marketing-button:hover {
   background: [[setting:themehovercolor]];
 }
 /* @end */
@@ -4648,27 +4558,16 @@ a#button:hover {
 /* @end */
 /* @end */
 /* @group Marketing Spots */
-.afeature {
-  background: #eeeeee url([[pix:theme|bg/header]]) repeat;
-}
-.afeature:hover {
-  border: 5px solid [[setting:themecolor]];
-}
-.afmatter i {
-  color: [[setting:themecolor]];
-}
-.marketing-image1 {
+#marketing-image1 {
   background: url([[setting:marketing1image]]) no-repeat;
 }
-.marketing-image2 {
+#marketing-image2 {
   background: url([[setting:marketing2image]]) no-repeat;
 }
-.marketing-image3 {
+#marketing-image3 {
   background: url([[setting:marketing3image]]) no-repeat;
 }
-.marketing-image1,
-.marketing-image2,
-.marketing-image3 {
+.marketing-image {
   height: [[setting:marketingheight]];
 }
 /* @end */
@@ -4887,5 +4786,8 @@ label {
   opacity: 1;
   filter: alpha(opacity=100);
   background: rgba(255, 255, 255, 0.4);
+}
+.path-mod-feedback .generalbox div table tbody img {
+  height: 35px;
 }
 /*# sourceMappingURL=/theme/essential/style/essential.treasure.map */

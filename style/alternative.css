@@ -201,11 +201,11 @@
 .essential-colours-alternative1 .button a:visited {
   background: [[setting:alternativethemecolor1]];
 }
-.essential-colours-alternative1 a#button,
-.essential-colours-alternative1 a#button:visited {
+.essential-colours-alternative1 a.marketing-button,
+.essential-colours-alternative1 a.marketing-button:visited {
   background: [[setting:alternativethemecolor1]];
 }
-.essential-colours-alternative1 a#button:hover {
+.essential-colours-alternative1 a.marketing-button:hover {
   background: [[setting:alternativethemehovercolor1]];
 }
 .essential-colours-alternative1 #essentialCarousel.carousel .carousel-inner .carousel-caption {
@@ -607,11 +607,11 @@
 .essential-colours-alternative2 .button a:visited {
   background: [[setting:alternativethemecolor2]];
 }
-.essential-colours-alternative2 a#button,
-.essential-colours-alternative2 a#button:visited {
+.essential-colours-alternative2 a.marketing-button,
+.essential-colours-alternative2 a.marketing-button:visited {
   background: [[setting:alternativethemecolor2]];
 }
-.essential-colours-alternative2 a#button:hover {
+.essential-colours-alternative2 a.marketing-button:hover {
   background: [[setting:alternativethemehovercolor2]];
 }
 .essential-colours-alternative2 #essentialCarousel.carousel .carousel-inner .carousel-caption {
@@ -1013,11 +1013,11 @@
 .essential-colours-alternative3 .button a:visited {
   background: [[setting:alternativethemecolor3]];
 }
-.essential-colours-alternative3 a#button,
-.essential-colours-alternative3 a#button:visited {
+.essential-colours-alternative3 a.marketing-button,
+.essential-colours-alternative3 a.marketing-button:visited {
   background: [[setting:alternativethemecolor3]];
 }
-.essential-colours-alternative3 a#button:hover {
+.essential-colours-alternative3 a.marketing-button:hover {
   background: [[setting:alternativethemehovercolor3]];
 }
 .essential-colours-alternative3 #essentialCarousel.carousel .carousel-inner .carousel-caption {

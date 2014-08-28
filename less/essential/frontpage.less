@@ -118,81 +118,65 @@
 /* @end */
 
 
-/* @group Home News Boxes */
+/* @group Marketing Spots */
 
-.services{
-    margin:20px 0px;
-}
-
-.service{
+#marketing-spots {
+  overflow: hidden;
+  .marketing-spot{
     background:#fff;
     padding:3px 10px;
     border:1px solid #e7e7e7;
-    margin-bottom:10px;
     border-radius:5px;
-    border-bottom:3px solid #eee;
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+    h5 {
+      padding:3px 0px 8px 0px;
+      margin:3px 0px 4px 0px;
+      border-bottom:1px solid #f1f1f1;
+    }
+    i {
+      font-size: 1.2em;
+      margin-top:3px;
+      margin-right:8px;
+    }
+    .marketing-image {
+      background-size: contain !important;
+      background-position: center top !important;
+      width: 100%;
+      margin-bottom: 5px;
+    }
+    .marketing-button.responsive {
+      display: none;
+    }
+  }
+}
+a.marketing-button {
+  color: #fff !important;
+  display: inline-block;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid #d3d3d3;
+  &:hover {
+    color: #fff !important;
+  }
 }
 
-.service h5{
-    padding:3px 0px 8px 0px;
-    margin:3px 0px 4px 0px;
-    border-bottom:1px solid #f1f1f1;
-}
-
-.service i{
-    font-size: 1.2em;
-    margin-top:3px;
-    margin-right:8px;
-}
-
-/* @end */
-
-/* @group Marketing Spots */
-
-#adspots {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.afeature {
-    width:190px;
-    height:190px;
-    margin:10px auto;
-    border-radius:250px;
-    border:5px solid #fff;
-    box-shadow:0px 0px 3px #aaa;
-    text-align:center;
-    -webkit-transition: border 1s ease; /* Safari */
-    transition:border 1s ease;
-}
-
-.afeature:hover{
-    -webkit-transition: border 1s ease; /* Safari */
-    transition:border 1s ease;
-}
-
-.afmatter{
-    width:80%;
-    margin:10px auto;
-    padding-top:15px;
-    line-height:19px;
-    font-size: 1em;
-    color:#666;
-}
-
-.afmatter i{
-    font-size:40px;
-    width:40px;
-    margin-bottom:12px;
-}
-
-.marketing-image1,
-.marketing-image2,
-.marketing-image3 {
-    background-size: contain !important;
-    background-position: center top !important;
-    width: 100%;
-    margin-bottom: 5px;
+#marketing-buttons {
+  text-align: right;
+  .span4 {
+    padding: 10px;
+    border-left: 1px solid #e7e7e7;
+    border-right: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
 }
 
 /* @end */

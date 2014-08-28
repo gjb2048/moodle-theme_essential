@@ -110,17 +110,6 @@ module.exports = function(grunt) {
         MOODLEURLPREFIX = grunt.option('urlprefix') || '',
         THEMEDIR        = path.basename(path.resolve('.'));
 
-    // PHP strings for exec task.
-    var moodleroot = path.dirname(path.dirname(__dirname)),
-        configfile = '',
-        decachephp = '',
-        dirrootopt = grunt.option('dirroot') || process.env.MOODLE_DIR || '';
-
-    // Allow user to explicitly define Moodle root dir.
-    if ('' !== dirrootopt) {
-        moodleroot = path.resolve(dirrootopt);
-    }
-
     // Production / development.
     var build = grunt.option('build') || 'p';
 
@@ -130,11 +119,7 @@ module.exports = function(grunt) {
         console.log('e.g. -build=p or -build=d.  Defaulting to production.');
     }
 
-    configfile = path.join(moodleroot, 'config.php');
-
-    decachephp += 'define(\'CLI_SCRIPT\', true);';
-    decachephp += 'require(\'' + configfile  + '\');';
-    decachephp += 'theme_reset_all_caches();';
+    decachephp = '../../admin/cli/purge_caches.php';
 
     var svgcolour = grunt.option('svgcolour') || '#999999';
 
@@ -241,7 +226,7 @@ module.exports = function(grunt) {
         },
         exec: {
             decache: {
-                cmd: 'php -r "' + decachephp + '"',
+                cmd: '/usr/bin/php "' + decachephp + '"',
                 callback: function(error, stdout, stderror) {
                     // exec will output error messages
                     // just add one to confirm success.

@@ -421,10 +421,14 @@ function theme_essential_process_css($css, $theme) {
     foreach (range(1, 3) as $alternativethemenumber) {
         $default = $defaultalternativethemecolors[$alternativethemenumber - 1];
         $defaulthover = $defaultalternativethemehovercolors[$alternativethemenumber - 1];
-        $css = theme_essential_set_alternativecolor($css, 'color' . $alternativethemenumber, theme_essential_get_setting('alternativethemehovercolor'.$alternativethemenumber), $default);
-        $css = theme_essential_set_alternativecolor($css, 'textcolor' . $alternativethemenumber, theme_essential_get_setting('alternativethemetextcolor'.$alternativethemenumber), $default);
-        $css = theme_essential_set_alternativecolor($css, 'urlcolor' . $alternativethemenumber, theme_essential_get_setting('alternativethemeurlcolor'.$alternativethemenumber), $default);
-        $css = theme_essential_set_alternativecolor($css, 'hovercolor' . $alternativethemenumber, theme_essential_get_setting('alternativethemehovercolor'.$alternativethemenumber), $defaulthover);
+        $css = theme_essential_set_alternativecolor($css, 'color' . $alternativethemenumber,
+                theme_essential_get_setting('alternativethemehovercolor'.$alternativethemenumber), $default);
+        $css = theme_essential_set_alternativecolor($css, 'textcolor' . $alternativethemenumber,
+                theme_essential_get_setting('alternativethemetextcolor'.$alternativethemenumber), $default);
+        $css = theme_essential_set_alternativecolor($css, 'urlcolor' . $alternativethemenumber,
+                theme_essential_get_setting('alternativethemeurlcolor'.$alternativethemenumber), $default);
+        $css = theme_essential_set_alternativecolor($css, 'hovercolor' . $alternativethemenumber,
+                theme_essential_get_setting('alternativethemehovercolor'.$alternativethemenumber), $defaulthover);
     }
 
     // Set custom CSS.

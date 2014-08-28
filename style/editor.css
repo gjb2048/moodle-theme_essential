@@ -1982,11 +1982,11 @@ h2.pagetitle {
 .button a:visited {
   background: [[setting:themecolor]];
 }
-a#button,
-a#button:visited {
+a.marketing-button,
+a.marketing-button:visited {
   background: [[setting:themecolor]];
 }
-a#button:hover {
+a.marketing-button:hover {
   background: [[setting:themehovercolor]];
 }
 /* @end */
@@ -2098,27 +2098,16 @@ a#button:hover {
 /* @end */
 /* @end */
 /* @group Marketing Spots */
-.afeature {
-  background: #eeeeee url([[pix:theme|bg/header]]) repeat;
-}
-.afeature:hover {
-  border: 5px solid [[setting:themecolor]];
-}
-.afmatter i {
-  color: [[setting:themecolor]];
-}
-.marketing-image1 {
+#marketing-image1 {
   background: url([[setting:marketing1image]]) no-repeat;
 }
-.marketing-image2 {
+#marketing-image2 {
   background: url([[setting:marketing2image]]) no-repeat;
 }
-.marketing-image3 {
+#marketing-image3 {
   background: url([[setting:marketing3image]]) no-repeat;
 }
-.marketing-image1,
-.marketing-image2,
-.marketing-image3 {
+.marketing-image {
   height: [[setting:marketingheight]];
 }
 /* @end */
