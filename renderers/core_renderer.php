@@ -846,7 +846,7 @@ class theme_essential_core_renderer extends core_renderer {
             $icon = 'fa-edit';
         }
         return html_writer::tag('a', html_writer::start_tag('i', array('class' => $icon.' fa fa-fw')).
-               html_writer::end_tag('i'), array('href' => $url, 'class' => 'btn '.$btn, 'title' => $title));
+               html_writer::end_tag('i').$title, array('href' => $url, 'class' => 'btn '.$btn, 'title' => $title));
     }
     
     public function render_social_network($socialnetwork) {
