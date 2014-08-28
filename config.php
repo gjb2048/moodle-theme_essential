@@ -57,14 +57,12 @@ $THEME->enable_dock = true;
 $THEME->editor_sheets = array('editor');
 
 if (get_config('theme_essential','frontpagemiddleblocks') == 1 || 
-   (get_config('theme_essential','frontpagemiddleblocks') == 2 && is_loggedin())) {
+   (get_config('theme_essential','frontpagemiddleblocks') == 2 && isloggedin())) {
     $addregions = array('home-left', 'home-middle', 'home-right');
 } else {
     $addregions = array();
 }
-if (is_siteadmin()){
-    $addregions[] = 'hidden-dock';
-}
+
 $THEME->layouts = array(
     // Most backwards compatible layout without the blocks - this is the layout used by default.
     'base' => array(
@@ -76,7 +74,7 @@ $THEME->layouts = array(
     // Front page.
     'frontpage' => array(
         'file' => 'frontpage.php',
-        'regions' => array_merge(array('side-pre', 'footer-left', 'footer-middle', 'footer-right'), $addregions),
+        'regions' => array_merge(array('side-pre', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'), $addregions),
         'defaultregion' => 'side-pre',
     ),
     // Standard layout with blocks, this is recommended for most pages with general information.
