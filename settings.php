@@ -585,8 +585,27 @@ defined('MOODLE_INTERNAL') || die;
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
-    // iOS App url setting.
+
+    // Windows App url setting.
+    $name = 'theme_essential/windows';
+    $title = get_string('windows', 'theme_essential');
+    $description = get_string('windowsdesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Windows PhoneApp url setting.
+    $name = 'theme_essential/winphone';
+    $title = get_string('winphone', 'theme_essential');
+    $description = get_string('winphonedesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+
+// iOS App url setting.
     $name = 'theme_essential/ios';
     $title = get_string('ios', 'theme_essential');
     $description = get_string('iosdesc', 'theme_essential');

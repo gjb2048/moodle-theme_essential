@@ -441,10 +441,16 @@ $string['mobileappsheadingsub'] = 'Link to your app to get your students using m
 $string['mobileappsdesc'] = 'Have you got a web app on the App Store or Google Play Store?  Provide a link here so your users can grab the apps online.';
 
 $string['android'] = 'Android (Google Play)';
-$string['androiddesc'] = 'Provide an URL to your mobile App on the Google Play Store.  If you do not have one of your own maybe consider linking to the free official Moodle Mobile app. (https://play.google.com/store/apps/details?id=com.moodle.moodlemobile)';
+$string['androiddesc'] = 'Provide an URL to your mobile App on the Google Play Store.  If you do not have one of your own maybe consider linking to the official Moodle Mobile app. (https://play.google.com/store/apps/details?id=com.moodle.moodlemobile)';
+
+$string['windows'] = 'Windows Desktop';
+$string['windowsdesc'] = 'Provide an URL to your mobile App on the Windows Store.  If you do not have one of your own maybe consider linking to the official Moodle Mobile app. (http://apps.microsoft.com/windows/en-us/app/9df51338-015c-41b7-8a85-db2fdfb870bc)';
+
+$string['winphone'] = 'Windows Mobile';
+$string['winphonedesc'] = 'Provide an URL to your mobile App on the Google Play Store.  If you do not have one of your own maybe consider linking to the official Moodle Mobile app. (http://www.windowsphone.com/en-us/store/app/moodlemobile/d0732b88-3c6d-4127-8f24-3fca2452a4dc)';
 
 $string['ios'] = 'iPhone/iPad (App Store)';
-$string['iosdesc'] = 'Provide an URL to your mobile App on the App Store.  If you do not have one of your own maybe consider linking to the free official Moodle Mobile app (https://itunes.apple.com/en/app/moodle-mobile/id633359593).';
+$string['iosdesc'] = 'Provide an URL to your mobile App on the App Store.  If you do not have one of your own maybe consider linking to the official Moodle Mobile app (https://itunes.apple.com/en/app/moodle-mobile/id633359593).';
 
 /* iOS Icons */
 $string['iosicon'] = 'iOS home screen icons';

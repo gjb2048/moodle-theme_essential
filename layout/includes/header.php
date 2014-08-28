@@ -101,6 +101,8 @@ echo $OUTPUT->doctype() ?>
                         <?php 
                             echo $OUTPUT->render_social_network('ios');
                             echo $OUTPUT->render_social_network('android');
+                            echo $OUTPUT->render_social_network('winphone');
+                            echo $OUTPUT->render_social_network('windows');
                         ?>
                     </ul>
                 </div>

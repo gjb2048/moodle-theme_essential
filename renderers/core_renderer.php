@@ -851,16 +851,16 @@ class theme_essential_core_renderer extends core_renderer {
     
     public function render_social_network($socialnetwork) {
         if (theme_essential_get_setting($socialnetwork)) {
+            $icon = $socialnetwork;
             if ($socialnetwork === 'googleplus') {
                 $icon = 'google-plus';
             } else if ($socialnetwork === 'website') {
                 $icon = 'globe';
             } else if ($socialnetwork === 'ios') {
                 $icon = 'apple';
-            } else {
-                $icon = $socialnetwork;
+            } else if ($socialnetwork === 'winphone'){
+                $icon = 'windows';
             }
-            $iconclass = $socialnetwork;
             $socialhtml  = html_writer::start_tag('li');
             $socialhtml .= html_writer::start_tag('button', array('type' => "button",
                                                                   'class' => 'socialicon '.$socialnetwork, 
