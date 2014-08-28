@@ -64,7 +64,6 @@ function analytics_trackurl() {
 }
  
 function insert_analytics_tracking() {
-    $enabled = theme_essential_get_setting('analyticsenabled');
     $imagetrack = theme_essential_get_setting('analyticsimagetrack');
     $siteurl = theme_essential_get_setting('analyticssiteurl');
     $siteid = theme_essential_get_setting('analyticssiteid');
@@ -85,7 +84,7 @@ function insert_analytics_tracking() {
 			$doctitle = "";
 		}
 		
-		if ($enabled && (!is_siteadmin() || $trackadmin)) {
+		if (!is_siteadmin() || $trackadmin) {
 			$tracking =  "
 				<script type='text/javascript'>
 					var _paq = _paq || [];
@@ -100,8 +99,8 @@ function insert_analytics_tracking() {
 				</script>
 				".$addition;
 		}
-        return $tracking;
 	}
+    return $tracking;
 }
 
 echo insert_analytics_tracking();

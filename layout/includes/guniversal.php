@@ -65,7 +65,6 @@ function analytics_trackurl() {
  
 function insert_analytics_tracking() {
     global $PAGE;
-    $enabled = theme_essential_get_setting('analyticsenabled');
     $trackingid = theme_essential_get_setting('analyticstrackingid');
     $trackadmin = theme_essential_get_setting('analyticstrackadmin');
     $cleanurl = theme_essential_get_setting('analyticscleanurl');
@@ -82,7 +81,7 @@ function insert_analytics_tracking() {
     }
     
     
-    if ($enabled && (!is_siteadmin() || $trackadmin)) {
+    if (!is_siteadmin() || $trackadmin) {
         $tracking = "
             <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -94,8 +93,8 @@ function insert_analytics_tracking() {
 			
             </script>
 			";
-        return $tracking;
     }
+    return $tracking;
 }
 
 echo insert_analytics_tracking();
