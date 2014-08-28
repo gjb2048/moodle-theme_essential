@@ -37,7 +37,7 @@ require_once(dirname(__FILE__).'/includes/header.php'); ?>
             <section id="region-main" class="span12">
                 <?php if ($COURSE->id > 1) {
                     echo $OUTPUT->heading($COURSE->fullname, 1, 'coursetitle');
-                    echo '<div class="bor" style="margin-top: 10px;"></div>';
+                    echo '<div class="bor"></div>';
                 } ?>
                 <?php echo $OUTPUT->course_content_header(); ?>
                 <?php echo $OUTPUT->main_content(); ?>

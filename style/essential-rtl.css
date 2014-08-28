@@ -2306,7 +2306,6 @@ ins {
   -moz-border-radius: 0;
   border-radius: 0;
   padding: 0;
-  margin-bottom: 0px;
 }
 
 .bor {
@@ -3420,21 +3419,21 @@ div.mdl-align.title {
 
 /* @group Course Footer */
 
-#section_footer {
+.section-navigation {
   padding: 2em 0;
   color: [[setting:themetextcolor]];
   line-height: 1.5;
   clear: both;
 }
 
-#section_footer a {
+.section-navigation a {
   font-style: normal;
   text-decoration: none;
 }
 
 #previous_section,
 #next_section {
-  width: 48%;
+  width: 50%;
   display: block;
 }
 
@@ -3869,7 +3868,6 @@ p.tree_item.leaf a > i,
 .actions a > i {
   color: [[setting:themeiconcolor]];
   width: [[setting:bodysize]];
-  margin: 0px 3px;
 }
 
 .menu a.menu-action.action-delete > i,
@@ -3884,6 +3882,12 @@ p.tree_item.leaf a:hover > i,
 .course-item-actions a:hover > i,
 .actions a:hover > i {
   color: [[setting:themehovercolor]];
+}
+
+.menu a.menu-action,
+.course-item-actions a,
+.actions a {
+  margin: 0px 3px;
 }
 
 a.action-icon > i,
