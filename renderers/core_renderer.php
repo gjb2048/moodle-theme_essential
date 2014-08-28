@@ -25,13 +25,16 @@
  */
  
 class theme_essential_core_renderer extends core_renderer {
- 
-/** @var custom_menu_item language The language menu if created */
+
     public $language = null;
- 
+
+    /**
+     * This renders the breadcrumbs
+     * @return string $breadcrumbs
+     */
     public function navbar() {
-        $breadcrumbs = '';
         $breadcrumbstyle = theme_essential_get_setting('breadcrumbstyle');
+        $breadcrumbs = html_writer::start_tag('ul', array('class' => "breadcrumb style$breadcrumbstyle"));
         if ($breadcrumbstyle) {
             $index = 1;
             foreach ($this->page->navbar->get_items() as $item) {
@@ -39,31 +42,33 @@ class theme_essential_core_renderer extends core_renderer {
                 $breadcrumbs .= html_writer::tag('li',$this->render($item),array('style' => 'z-index:'.(100-$index).';'));
                 $index += 1;
             }
-            return html_writer::tag('ul', $breadcrumbs, array('class' => "breadcrumb style$breadcrumbstyle"));
+            $breadcrumbs .= html_writer::end_tag('ul');
         }
+        return $breadcrumbs;
     }
     
-    /*
+    /**
      * This renders a notification message.
      * Uses bootstrap compatible html.
+     * @param string $message
+     * @param string $classes
+     * @return string $notification
      */
-    public function notification($message, $classes = 'notifyproblem') {
+    public function notification($message, $class = 'notifyproblem') {
         $message = clean_text($message);
         $type = '';
 
-        if ($classes == 'notifyproblem') {
+        if ($class == 'notifyproblem') {
             $type = 'alert alert-error';
-        }
-        if ($classes == 'notifysuccess') {
+        } else if ($class == 'notifysuccess') {
             $type = 'alert alert-success';
-        }
-        if ($classes == 'notifymessage') {
+        } else if ($class == 'notifymessage') {
             $type = 'alert alert-info';
-        }
-        if ($classes == 'redirectmessage') {
+        } else if ($class == 'redirectmessage') {
             $type = 'alert alert-block alert-info';
         }
-        return "<div class=\"$type\">$message</div>";
+        $notification = "<div class=\"$type\">$message</div>";
+        return $notification;
     } 
     
    
@@ -72,7 +77,7 @@ class theme_essential_core_renderer extends core_renderer {
      * @return string HTML fragment
      */
     public function footer() {
-        global $CFG, $USER;
+        global $CFG;
 
         $output = $this->container_end_all(true);
 
@@ -98,11 +103,11 @@ class theme_essential_core_renderer extends core_renderer {
 
         return $output . $footer;
     }
-    
-    /*
-     * Overriding the custom_menu function ensures the custom menu is
-     * always shown, even if no menu items are configured in the global
-     * theme settings page.
+
+    /**
+     * Defines the Moodle custom_menu
+     * @param string $custommenuitems
+     * @return render_custom_menu for $custommenu
      */
     public function custom_menu($custommenuitems = '') {
         global $CFG;
@@ -113,19 +118,27 @@ class theme_essential_core_renderer extends core_renderer {
         $custommenu = new custom_menu($custommenuitems, current_language());
         return $this->render_custom_menu($custommenu);
     }
-        
+
+    /**
+     * Renders the custom_menu
+     * @param custom_menu $menu
+     * @return string $content
+     */
     protected function render_custom_menu(custom_menu $menu) {
 
         $content = '<ul class="nav">';
         foreach ($menu->get_children() as $item) {
             $content .= $this->render_custom_menu_item($item, 1);
         }
-        return $content.'</ul>';
+        $content .= '</ul>';
+        return $content;
     }
-    
-    /*
-     * This code renders the custom menu items for the
-     * bootstrap dropdown menu.
+
+    /**
+     * Renders menu items for the custom_menu
+     * @param custom_menu_item $menunode
+     * @param int $level
+     * @return string $content
      */
     protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
         static $submenucount = 0;
@@ -176,7 +189,7 @@ class theme_essential_core_renderer extends core_renderer {
     
     /**
      * Outputs the language menu
-     * @return custom menu object
+     * @return custom_menu object
      */
     public function custom_menu_language() {
         global $CFG;
@@ -208,7 +221,7 @@ class theme_essential_core_renderer extends core_renderer {
 
     /**
      * Outputs the courses menu
-     * @return custom menu object
+     * @return custom_menu object
      */
     public function custom_menu_courses() {
         $coursemenu = new custom_menu();
@@ -254,10 +267,10 @@ class theme_essential_core_renderer extends core_renderer {
         }
         return $this->render_custom_menu($coursemenu);
     }
-    
+
     /**
-     * Outputs the color menu
-     * @return custom menu object
+     * Outputs the alternative colours menu
+     * @return custom_menu object
      */
     public function custom_menu_themecolours() {
         $colourmenu = new custom_menu();
@@ -295,7 +308,7 @@ class theme_essential_core_renderer extends core_renderer {
 
     /**
      * Outputs the messages menu
-     * @return custom menu object
+     * @return custom_menu object
      */
     public function custom_menu_messages() {
         global $USER, $CFG;
@@ -370,7 +383,11 @@ class theme_essential_core_renderer extends core_renderer {
         }
         return $this->render_custom_menu($messagemenu);
     }
-    
+
+    /**
+     * Retrieves messages from the database
+     * @return array $messagelist
+     */
     private function get_user_messages() {
         global $USER, $DB;
         $messagelist['messages'] = array();
@@ -409,6 +426,11 @@ class theme_essential_core_renderer extends core_renderer {
 
     }
 
+    /**
+     * Takes the content of messages from database and makes it usable
+     * @param $message object
+     * @return object $messagecontent
+     */
     private function process_message($message) {
         global $DB;
         $messagecontent = new stdClass();
@@ -432,6 +454,11 @@ class theme_essential_core_renderer extends core_renderer {
         return $messagecontent;
     }
 
+    /**
+     * Calculates time difference between now and a timestamp
+     * @param $created_time int
+     * @return string
+     */
     private function get_time_difference($created_time) {
         $today = usertime(time());
 
@@ -482,7 +509,7 @@ class theme_essential_core_renderer extends core_renderer {
     
     /**
      * Outputs the messages menu
-     * @return custom menu object
+     * @return custom_menu object
      */
     public function custom_menu_user() {
         // die if executed during install
@@ -650,10 +677,8 @@ class theme_essential_core_renderer extends core_renderer {
     /**
      * Renders helplink
      *
-     * @param tabtree $tabtree
      * @return string
      */
-
     private function theme_essential_render_helplink() {
         if(!theme_essential_get_setting('helplinktype')) {
                 return false;
@@ -720,7 +745,7 @@ class theme_essential_core_renderer extends core_renderer {
      * This function is called from {@link core_renderer::render_tabtree()}
      * and also it calls itself when printing the $tabobject subtree recursively.
      *
-     * @param tabobject $tabobject
+     * @param tabobject $tab
      * @return string HTML fragment
      */
     public function render_tabobject(tabobject $tab) {
