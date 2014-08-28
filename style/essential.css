@@ -3717,6 +3717,19 @@ table#greyboxleft h2 {
   position: relative;
   color: [[setting:themecolor]];
 }
+#page-header h1#smalltitle {
+  white-space: nowrap;
+  font-size: 2em;
+  position: relative;
+  color: [[setting:themecolor]];
+}
+#page-header h2#subtitle {
+  white-space: nowrap;
+  font-size: 1em;
+  top: -20px;
+  position: relative;
+  color: [[setting:themetextcolor]];
+}
 #page-header a.textlogo {
   text-decoration: none;
 }
@@ -3783,6 +3796,14 @@ button.instagram:focus {
 button.ios:hover,
 button.ios:focus {
   background: #000;
+}
+button.windows:hover,
+button.ios:focus {
+  background: #008A00;
+}
+button.winphone:hover,
+button.ios:focus {
+  background: #9B4F96;
 }
 button.android:hover,
 button.android:focus {
@@ -4198,9 +4219,6 @@ ul.socials li {
   .navbar-inner .brand {
     display: none;
   }
-  .navbar-inner * {
-    font-weight: 500;
-  }
   .navbar-inner .custommenus {
     max-width: 60%;
   }
@@ -4288,6 +4306,7 @@ ul.socials li {
 }
 @media (max-width: 767px) {
   font-size: 12px !important;
+  font-weight: 500;
   
   .row-fluid .desktop-first-column {
     clear: right;
