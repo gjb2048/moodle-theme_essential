@@ -82,9 +82,7 @@
         <a href="<?php echo theme_essential_get_setting('marketing1buttonurl'); ?>" target="<?php echo theme_essential_get_setting('marketing1target'); ?>" class="marketing-button">
             <?php echo theme_essential_get_setting('marketing1buttontext', true); ?>
         </a>
-        <?php if($PAGE->user_is_editing() && is_siteadmin()) {?>
-            <a class="btn btn-success" href="<?php echo $CFG->wwwroot;?>/admin/settings.php?section=theme_essential_frontpage"><?php echo get_string('edit'); ?></a>
-        <?php }?>
+        <?php echo theme_essential_edit_button('theme_essential_frontpage'); ?>
     </div>
 
     <!-- Advert Button #2 -->
@@ -92,9 +90,7 @@
         <a href="<?php echo theme_essential_get_setting('marketing2buttonurl'); ?>" target="<?php echo theme_essential_get_setting('marketing2target'); ?>" class="marketing-button">
             <?php echo theme_essential_get_setting('marketing2buttontext', true); ?>
         </a>
-        <?php if($PAGE->user_is_editing() && is_siteadmin()) {?>
-            <a class="btn btn-success" href="<?php echo $CFG->wwwroot;?>/admin/settings.php?section=theme_essential_frontpage"><?php echo get_string('edit'); ?></a>
-        <?php }?>
+        <?php echo theme_essential_edit_button('theme_essential_frontpage'); ?>
     </div>
 
     <!-- Advert Button #3 -->
@@ -102,8 +98,6 @@
         <a href="<?php echo theme_essential_get_setting('marketing3buttonurl'); ?>" target="<?php echo theme_essential_get_setting('marketing3target'); ?>" class="marketing-button">
             <?php echo theme_essential_get_setting('marketing3buttontext', true); ?>
         </a>
-        <?php if($PAGE->user_is_editing() && is_siteadmin()) {?>
-            <a class="btn btn-success" href="<?php echo $CFG->wwwroot;?>/admin/settings.php?section=theme_essential_frontpage"><?php echo get_string('edit'); ?></a>
-        <?php }?>
+        <?php echo theme_essential_edit_button('theme_essential_frontpage'); ?>
     </div>
 </div>

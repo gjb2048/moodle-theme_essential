@@ -32,9 +32,7 @@ if ($numberofslides) {
 ?>
     <div class="row-fluid">
         <div class="span12">
-            <?php if($PAGE->user_is_editing() && is_siteadmin()) {?>
-                <a class="btn btn-success" href="<?php echo $CFG->wwwroot;?>/admin/settings.php?section=theme_essential_slideshow"><?php echo get_string('edit'); ?></a>
-            <?php }?>
+            <?php echo theme_essential_edit_button('theme_essential_slideshow'); ?>
             <div id="essentialCarousel" class="carousel slide" data-interval="<?php echo $slideinterval;?>">
                 <ol class="carousel-indicators">
                     <?php

@@ -88,9 +88,7 @@ require_once(dirname(__FILE__).'/includes/header.php');?>
                     } else if(theme_essential_get_setting('togglefrontcontent')==3 && isloggedin()) {
                         echo theme_essential_get_setting('frontcontentarea', 'format_text');
                     } ?>
-                <?php if($PAGE->user_is_editing() && is_siteadmin()) {?>
-                    <a class="btn btn-success" href="<?php echo $CFG->wwwroot;?>/admin/settings.php?section=theme_essential_frontpage"><?php echo get_string('edit'); ?></a>
-                <?php }?>
+                <?php echo theme_essential_edit_button('theme_essential_frontpage'); ?>
                 <div class="bor"></div>
             </div>
         <?php } ?>

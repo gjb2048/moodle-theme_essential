@@ -25,7 +25,7 @@
  */
 
 /* Default globals */
-global $CFG,$PAGE,$USER;
+global $CFG, $PAGE, $USER, $SITE;
  
 /* Group Body */
 $bodyclasses = array();

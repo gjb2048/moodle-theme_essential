@@ -72,6 +72,57 @@ function theme_essential_set_logo($css, $logo) {
     return $css;
 }
 
+function theme_essential_get_title($location) {
+    global $CFG, $SITE;
+    $title = '';
+    if($location === 'navbar') {
+        switch(theme_essential_get_setting('navbartitle')){
+            case 0:
+            return false;
+            break;
+            case 1:
+                $title = '<a class="brand" href="'.$CFG->wwwroot.'">'.$SITE->fullname.'</a>';
+            break;
+            case 2:
+                $title = '<a class="brand" href="'.$CFG->wwwroot.'">'.$SITE->shortname.'</a>';
+            break;
+            default:
+                $title = '<a class="brand" href="'.$CFG->wwwroot.'">'.$SITE->shortname.'</a>';
+            break;
+        }
+    } else if ($location === 'header') {
+        switch(theme_essential_get_setting('headertitle')){
+            case 0:
+                return false;
+                break;
+            case 1:
+            $title  = '<h1 id="title">'.$SITE->fullname.'</h1>';
+                break;
+            case 2:
+                $title  = '<h1 id="title">'.$SITE->shortname.'</h1>';
+                break;
+            case 3:
+                $title  = '<h1 id="smalltitle">'.$SITE->fullname.'</h2>';
+                $title .= '<h2 id="subtitle">'.strip_tags($SITE->summary).'</h3>';
+                break;
+            case 4:
+                $title  = '<h1 id="smalltitle">'.$SITE->shortname.'</h2>';
+                $title .= '<h2 id="subtitle">'.strip_tags($SITE->summary).'</h3>';
+                break;
+            default:
+                break;
+        }
+    }
+    return $title;
+}
+
+function theme_essential_edit_button($section) {
+    global $PAGE, $CFG;
+    if($PAGE->user_is_editing() && is_siteadmin()) {
+        return  '<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section='.$section.'">'.get_string('edit').'</a>';
+    }
+}
+
 /**
  * Serves any files associated with the theme settings.
  *
