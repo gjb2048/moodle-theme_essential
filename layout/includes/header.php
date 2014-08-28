@@ -55,7 +55,7 @@ echo $OUTPUT->doctype() ?>
                         <?php if (!$haslogo) { ?>
                             <a class="textlogo" href="<?php echo $CFG->wwwroot;?>">
                                 <i id="headerlogo" class="fa fa-<?php echo theme_essential_get_setting('siteicon'); ?>"></i>
-                                <h1 id="title"><?php echo $SITE->shortname; ?></h1>
+                                <?php echo theme_essential_get_title('header'); ?>
                             </a>
                         <?php } else { ?>
                             <a class="logo" href="<?php echo $CFG->wwwroot; ?>" title="<?php print_string('home'); ?>"></a>
@@ -125,7 +125,7 @@ echo $OUTPUT->doctype() ?>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
+                        <?php echo theme_essential_get_title('navbar'); ?>
                         <div class="nav-collapse collapse pull-left">
                             <div id="custom_menu_language">
                                 <?php echo $OUTPUT->custom_menu_language(); ?>

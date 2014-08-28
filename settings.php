@@ -387,6 +387,36 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Header title setting.
+    $name = 'theme_essential/headertitle';
+    $title = get_string('headertitle','theme_essential');
+    $description = get_string('headertitledesc', 'theme_essential');
+    $default = '1';
+    $choices = array(
+        0 => get_string('notitle', 'theme_essential'),
+        1 => get_string('fullname', 'theme_essential'),
+        2 => get_string('shortname', 'theme_essential'),
+        3 => get_string('fullnamesummary', 'theme_essential'),
+        4 => get_string('shortnamesummary', 'theme_essential')
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Navbar title setting.
+    $name = 'theme_essential/navbartitle';
+    $title = get_string('navbartitle','theme_essential');
+    $description = get_string('navbartitledesc', 'theme_essential');
+    $default = '2';
+    $choices = array(
+        0 => get_string('notitle', 'theme_essential'),
+        1 => get_string('fullname', 'theme_essential'),
+        2 => get_string('shortname', 'theme_essential'),
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     /* Course Menu Settings */
     $name = 'theme_essential/mycoursesinfo';
     $heading = get_string('mycoursesinfo', 'theme_essential');

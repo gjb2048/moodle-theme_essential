@@ -33,10 +33,9 @@ echo $OUTPUT->doctype() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Google web fonts -->
 	<?php require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
-    <!-- Start Google Analytics -->
-    <?php if ($hasanalytics) {
-        require_once(dirname(__FILE__).'/includes/analytics.php');
-	} ?>
+    <!-- Start Analytics -->
+    <?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
+    <!-- End Analytics -->
 </head>
 
 <body <?php echo $OUTPUT->body_attributes(); ?>>

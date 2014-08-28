@@ -422,6 +422,15 @@ $string['categoryiconinfodesc'] = 'Enter the name of the icon you wish to use.  
 
 /* Header Settings */
 $string['headerheading'] = 'Header';
+$string['headertitle'] = 'Header title';
+$string['headertitledesc'] = 'Configure here what title to output in the header.';
+$string['navbartitle'] = 'Navigation bar title';
+$string['navbartitledesc'] = 'Configure here what title to output in the navigation bar.';
+$string['notitle'] = 'No Title';
+$string['fullname'] = 'Site full name';
+$string['shortname'] = 'Site short name';
+$string['fullnamesummary'] = 'Full name and summary';
+$string['shortnamesummary'] = 'Short name and summary';
 
 /* Footer Settings */
 $string['footerheading'] = 'Footer';
