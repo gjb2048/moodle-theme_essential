@@ -27,6 +27,9 @@
 ?>
 <footer role="contentinfo" id="page-footer">
     <div class="container-fluid">
+        <?php if($PAGE->user_is_editing() && is_siteadmin()) {?>
+            <a class="btn btn-success" href="<?php echo $CFG->wwwroot;?>/admin/settings.php?section=theme_essential_slideshow"><?php echo get_string('edit'); ?></a>
+        <?php }?>
         <div class="row-fluid footerblocks">
             <div class="span4 pull-left">
                 <div class="column">
