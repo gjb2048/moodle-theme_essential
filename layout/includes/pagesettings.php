@@ -23,6 +23,9 @@
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
+/* Default globals */
+global $CFG,$PAGE,$USER;
  
 /* Group Body */
 $bodyclasses = array();
@@ -81,8 +84,6 @@ $fontcharacterset = theme_essential_get_setting('fontcharacterset');
 
 
 /* Group Header */
-
-$hasanalytics = theme_essential_get_setting('useanalytics');
 
 $hassocialnetworks = (  theme_essential_get_setting('facebook')     ||
                         theme_essential_get_setting('twitter')      ||

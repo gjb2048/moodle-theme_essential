@@ -37,11 +37,9 @@ echo $OUTPUT->doctype() ?>
     <?php require_once(dirname(__FILE__).'/fonts.php'); ?>
     <!-- iOS Homescreen Icons -->
     <?php require_once(dirname(__FILE__).'/iosicons.php'); ?>
-    <!-- Start Google Analytics -->
-    <?php if ($hasanalytics) { ?>
-        <?php require_once(dirname(__FILE__).'/analytics.php'); ?>
-    <?php } ?>
-    <!-- End Google Analytics -->
+    <!-- Start Analytics -->
+    <?php require_once(dirname(__FILE__).'/analytics.php'); ?>
+    <!-- End Analytics -->
 </head>
 
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>

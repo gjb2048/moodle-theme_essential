@@ -422,7 +422,9 @@ $string['categoryiconinfodesc'] = 'Enter the name of the icon you wish to use.  
 
 /* Header Settings */
 $string['headerheading'] = 'Header';
-$string['headerheadingsub'] = 'Configure the various features for the header here';
+
+/* Footer Settings */
+$string['footerheading'] = 'Footer';
 
 /* Mobile Apps */
 $string['mobileappsheading'] = 'Apps';
@@ -451,22 +453,26 @@ $string['ipadicondesc'] = 'Icon should be a PNG files sized 72px by 72px.';
 $string['ipadretinaicon'] = 'iPad Icon (Retina)';
 $string['ipadretinaicondesc'] = 'Icon should be a PNG files sized 144px by 144px.';
 
-/* Google Analytics */
-$string['analyticsheading'] = 'Google Analytics';
-$string['analyticsheadingsub'] = 'Powerful analytics from Google';
-$string['analyticsdesc'] = 'Here you can enable Google Analytics for your moodle site.  You will need to sign up for a free account at the Google Analytics site (<a href="http://analytics.google.com" target="_blank">http://analytics.google.com</a>)';
-
-$string['useanalytics'] = 'Enable Google Analytics';
-$string['useanalyticsdesc'] = 'Enable or disable Google Analytics functionality.';
-
-$string['analyticsid'] = 'Your Tracking ID';
-$string['analyticsiddesc'] = 'Enter the provided Tracking ID. Typically formatted like UA-XXXXXXXX-X';
-
-$string['analyticsclean'] = 'Send Clean URLs';
-$string['analyticscleandesc'] = 'This fantastic feature was created by <a href="https://moodle.org/user/profile.php?id=281671" target="_blank">Gavin Henrick</a> and <a href="https://moodle.org/user/view.php?id=907814" target="_blank">Bas Brands</a> and is implemented in this theme. Rather than standard Moodle URLs the theme will send out clean URLs making it easier to identify the page and provide advanced reporting. More information on using this feature and its uses can be <b><a href="http://www.somerandomthoughts.com/blog/2012/04/18/ireland-uk-moodlemoot-analytics-to-the-front/" target="_blank">found here</a></b>.';
-
-$string['analyticsadmin'] = 'Track admin users';
-$string['analyticsadmindesc'] = 'Enable to track admin users.';
+/* Analytics */
+$string['analytics'] = 'Analytics';
+$string['analyticsheadingsub'] = 'Powerful analytics for Moodle';
+$string['analyticsdesc'] = 'Choose the type of Analytics you want to insert and save to enable the other options.';
+$string['analyticssiteid'] = 'Site ID';
+$string['analyticssiteiddesc'] = 'Enter your Site ID';
+$string['analyticstrackingid'] = 'Site ID';
+$string['analyticstrackingiddesc'] = 'Enter your Tracking ID';
+$string['analyticssiteurl'] = 'Analytics URL';
+$string['analyticssiteurldesc'] = 'Enter your Piwik Analytics URL without http(s) or a trailing slash';
+$string['analyticsenabled'] = 'Enabled';
+$string['analyticsenableddesc'] = 'Enable Analytics for Moodle';
+$string['analyticsimagetrack'] = 'Image Tracking';
+$string['analyticscleanurl'] = 'Clean URLs';
+$string['analyticscleanurldesc'] = 'Generate clean URL for in advanced tracking';
+$string['analyticsimagetrackdesc'] = 'Enable Image Tracking for browsers with JavaScript disabled.';
+$string['analyticstrackadmin'] = 'Tracking Admins';
+$string['analyticstrackadmindesc'] = 'Enable tracking of Admin users (not recommended)';
+$string['analyticspiwik'] = 'Piwik';
+$string['analyticsguniversal'] = 'Google Universal Analytics';
 
 /* Alerts */
 $string['alertsheading'] = 'User alerts';
