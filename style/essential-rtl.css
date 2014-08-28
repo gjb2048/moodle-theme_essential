@@ -3962,6 +3962,11 @@ div.mdl-align.title {
 
 /* @group Edit Buttons */
 
+i > img {
+  display: none;
+  visibility: hidden;
+}
+
 .actions .moodle-actionmenu[data-enhanced].show .menu a {
   text-decoration: none !important;
 }

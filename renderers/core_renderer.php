@@ -746,13 +746,14 @@ class theme_essential_core_renderer extends core_renderer {
     
     public function render_pix_icon(pix_icon $icon) {
         if (self::replace_moodle_icon($icon->pix)) {
-            return self::replace_moodle_icon($icon->pix, $icon->attributes['alt']);
+            $newicon = self::replace_moodle_icon($icon->pix, $icon->attributes['alt']).parent::render_pix_icon($icon)."</i>";
+            return $newicon;
         } else {
             return parent::render_pix_icon($icon);
         }
     }
    
-    private static function replace_moodle_icon($name, $alt=false) {
+    private static function replace_moodle_icon($icon, $alt=false) {
         $icons = array(
             'add' => 'plus',
             'book' => 'book',
@@ -814,8 +815,8 @@ class theme_essential_core_renderer extends core_renderer {
             't/grades' => 'th-list',
             't/preview' => 'search',
         );
-        if (array_key_exists($name, $icons)) {
-            return "<i class=\"fa fa-$icons[$name] icon\" title=\"$alt\"></i>";
+        if (array_key_exists($icon, $icons)) {
+            return "<i class=\"fa fa-$icons[$icon] icon\" title=\"$alt\">";
         } else {
             return false;
         }
