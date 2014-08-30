@@ -513,3 +513,7 @@ $string['alerttextdesc'] = 'What is the text you wish to display in your alert.'
 $string['alert_info'] = 'Information';
 $string['alert_warning'] = 'Warning';
 $string['alert_general'] = 'Announcement';
+
+/* Message Menu */
+$string['unreadnewnotification'] = 'New notification';
+$string['nomessagesfound'] = 'No messages were found';

@@ -69,7 +69,6 @@ $THEME->layouts = array(
         'file' => 'columns1.php',
         'regions' => array(),
         'defaultregion' => '',
-        'options' => array('noblocks'=>true),
     ),
     // Front page.
     'frontpage' => array(
@@ -79,27 +78,26 @@ $THEME->layouts = array(
     ),
     // Standard layout with blocks, this is recommended for most pages with general information.
     'standard' => array(
-        'file' => 'columns3.php',
-        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-post',
+        'file' => 'columns2.php',
+        'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),
+        'defaultregion' => 'side-pre',
     ),
     // Main course page.
     'course' => array(
         'file' => 'columns3.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-post',
-        'options' => array('langmenu'=>true),
     ),
     'coursecategory' => array(
-        'file' => 'columns3.php',
-        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-post',
+        'file' => 'columns2.php',
+        'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),
+        'defaultregion' => 'side-pre',
     ),
     // part of course, typical for modules - default page layout if $cm specified in require_login().
     'incourse' => array(
-        'file' => 'columns3.php',
-        'regions' => array('side-pre','side-post', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-post',
+        'file' => 'columns2.php',
+        'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),
+        'defaultregion' => 'side-pre',
     ),
     // Server administration scripts.
     'admin' => array(
@@ -167,7 +165,7 @@ $THEME->layouts = array(
     ),
     // The pagelayout used for reports.
     'report' => array(
-        'file' => 'columns2.php',
+        'file' => 'report.php',
         'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-pre',
     ),

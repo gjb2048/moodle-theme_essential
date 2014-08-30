@@ -51,7 +51,7 @@ class theme_essential_core_renderer extends core_renderer {
      * This renders a notification message.
      * Uses bootstrap compatible html.
      * @param string $message
-     * @param string $classes
+     * @param string $class
      * @return string $notification
      */
     public function notification($message, $class = 'notifyproblem') {
@@ -311,7 +311,7 @@ class theme_essential_core_renderer extends core_renderer {
      * @return custom_menu object
      */
     public function custom_menu_messages() {
-        global $USER, $CFG;
+        global $CFG;
         $messagemenu = new custom_menu();
 
         if (!isloggedin() || isguestuser() || empty($CFG->messaging)) {
@@ -323,11 +323,11 @@ class theme_essential_core_renderer extends core_renderer {
 
         if (empty($totalmessages)) {
             $messagemenuicon = html_writer::tag('i', '', array('class' => 'fa fa-envelope-o'));
-            $messagetitle    = get_string('nomessagesfound', 'message');
+            $messagetitle    = get_string('nomessagesfound', 'theme_essential');
             $messagemenutext = html_writer::span($messagemenuicon);
-            $messagesubmenu = $messagemenu->add(
+            $messagemenu->add(
                 $messagemenutext,
-                new moodle_url('#'),
+                new moodle_url('/message/index.php', array('viewing' => 'recentconversations')),
                 $messagetitle,
                 9999
             );
@@ -349,36 +349,41 @@ class theme_essential_core_renderer extends core_renderer {
             );
             
             foreach ($messages['messages'] as $message) {
-				if (!is_object($message->from) || !empty($message->from->deleted)) {
-					continue;
-				}
-				
-                $senderpicture = new user_picture($message->from);
-                $senderpicture->link = false;
-                $senderpicture->size = 60;
-                
+                $addclass = 'read';
+                $iconadd = '-o';
+
                 if($message->unread) {
                     $addclass = 'unread';
                     $iconadd = '';
+                }
+                if($message->type === 'notification') {
+                    $messagecontent  = html_writer::start_div('notification '.$addclass);
+                    $messagecontent .= html_writer::tag('i', '', array('class' => 'fa fa-info-circle icon'));
+                    $messagecontent .= html_writer::start_span('msg-time');
+                    $messagecontent .= html_writer::tag('i', '', array('class' => 'fa fa-comment'.$iconadd));
+                    $messagecontent .= $this->get_time_difference($message->date);
+                    $messagecontent .= html_writer::end_span();
+                    $messagecontent .= html_writer::span($message->text, 'notification-text');
+                    $messagecontent .= html_writer::end_div();
                 } else {
-                    $addclass = 'read';
-                    $iconadd = '-o';
+                    $senderpicture = new user_picture($message->from);
+                    $senderpicture->link = false;
+                    $senderpicture->size = 60;
+
+                    $messagecontent  = html_writer::start_div('message '.$addclass);
+                    $messagecontent .= html_writer::start_span('msg-picture').$this->render($senderpicture).html_writer::end_span();
+                    $messagecontent .= html_writer::start_span('msg-body');
+                    $messagecontent .= html_writer::start_span('msg-time');
+                    $messagecontent .= html_writer::tag('i', '', array('class' => 'fa fa-comments'.$iconadd));
+                    $messagecontent .= $this->get_time_difference($message->date);
+                    $messagecontent .= html_writer::end_span();
+                    $messagecontent .= html_writer::span($message->from->firstname, 'msg-sender');
+                    $messagecontent .= html_writer::span($message->text, 'msg-text');
+                    $messagecontent .= html_writer::end_span();
+                    $messagecontent .= html_writer::end_div();
                 }
 
-                $messagecontent  = html_writer::start_div('message '.$addclass);
-                $messagecontent .= html_writer::start_span('msg-picture').$this->render($senderpicture).html_writer::end_span();
-                $messagecontent .= html_writer::start_span('msg-body');
-                $messagecontent .= html_writer::span($message->from->firstname, 'msg-sender');
-                $messagecontent .= html_writer::span($message->text, 'msg-text');
-                $messagecontent .= html_writer::start_span('msg-time');
-                $messagecontent .= html_writer::tag('i', '', array('class' => 'fa fa-comments'.$iconadd));
-                $messagecontent .= html_writer::span($this->get_time_difference($message->date));
-                $messagecontent .= html_writer::end_span();
-                $messagecontent .= html_writer::end_span();
-                $messagecontent .= html_writer::end_div();
-
-                $messageurl = new moodle_url('/message/index.php', array('user1' => $USER->id, 'user2' => $message->from->id));
-                $messagesubmenu->add($messagecontent, $messageurl, $message->text);
+                $messagesubmenu->add($messagecontent, $message->url, $message->text);
             }
         }
         return $this->render_custom_menu($messagemenu);
@@ -393,10 +398,9 @@ class theme_essential_core_renderer extends core_renderer {
         $messagelist['messages'] = array();
         $maxmessages = 5;
 
-        $newmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
+        $newmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification, contexturl
                           FROM {message}
                           WHERE useridto = :userid
-                           AND useridfrom IS NOT NULL
                           ORDER BY timecreated DESC";
 
         $messages = $DB->get_records_sql($newmessagesql, array('userid' => $USER->id),0, $maxmessages);
@@ -409,10 +413,9 @@ class theme_essential_core_renderer extends core_renderer {
         if ($messagelist['newmessages'] < $maxmessages) {
             $maxmessages = 5 - $messagelist['newmessages'];
             
-            $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated,timeread, fullmessageformat, notification
+            $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated,timeread, fullmessageformat, notification, contexturl
                                FROM {message_read}
                                WHERE useridto = :userid
-                                AND useridfrom IS NOT NULL
                                ORDER BY timecreated DESC";
 
             $messages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id),0, $maxmessages);
@@ -432,24 +435,28 @@ class theme_essential_core_renderer extends core_renderer {
      * @return object $messagecontent
      */
     private function process_message($message) {
-        global $DB;
+        global $DB,$USER;
         $messagecontent = new stdClass();
 
-        if ($message->notification) {
-            $messagecontent->text = get_string('unreadnewnotification', 'message');
+        if ($message->notification || $message->useridfrom < 1) {
+            $messagecontent->text = $message->smallmessage;
+            $messagecontent->type = 'notification';
+            $messagecontent->url = new moodle_url($message->contexturl);
         } else {
+            $messagecontent->type = 'message';
             if ($message->fullmessageformat == FORMAT_HTML) {
                 $message->smallmessage = html_to_text($message->smallmessage);
             }
-            if (core_text::strlen($message->smallmessage) > 18) {
-                $messagecontent->text = core_text::substr($message->smallmessage, 0, 15).'...';
+            if (strlen($message->smallmessage) > 18) {
+                $messagecontent->text = substr($message->smallmessage, 0, 15).'...';
             } else {
                 $messagecontent->text = $message->smallmessage;
             }
+            $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom));
+            $messagecontent->url = new moodle_url('/message/index.php', array('user1' => $USER->id, 'user2' => $message->useridfrom));
         }
         
         $messagecontent->date = $message->timecreated;
-        $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom));
         $messagecontent->unread = empty($message->timeread);
         return $messagecontent;
     }

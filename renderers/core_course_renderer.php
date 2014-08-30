@@ -40,6 +40,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
      * @return string
      */
     protected function coursecat_category(coursecat_helper $chelper, $coursecat, $depth) {
+        global $CFG;
         // open category tag
         $classes = array('category');
         if (empty($coursecat->visible)) {
@@ -83,7 +84,6 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         
         $categoryiconnum = 'categoryicon' . $coursecat->id;
         
-        global $PAGE;
         $val = '';
         $icon = '';
         // Do a settings check to output our icon for the category

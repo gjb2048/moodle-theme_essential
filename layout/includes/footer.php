@@ -23,11 +23,11 @@
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
- 
+
+if (empty($PAGE->layout_options['nofooter'])) {
 ?>
 <footer role="contentinfo" id="page-footer">
     <div class="container-fluid">
-        <?php echo theme_essential_edit_button('theme_essential_footer');?>
         <div class="row-fluid footerblocks">
             <div class="span4 pull-left">
                 <div class="column">
@@ -48,6 +48,7 @@
 
         <div class="footerlinks row-fluid">
             <hr />
+            <?php echo theme_essential_edit_button('theme_essential_footer');?>
             <span class="helplink"><?php echo page_doc_link(get_string('moodledocslink')); ?></span>
             <?php if ($hascopyright) { ?>
                 <span class="copy">&copy;<?php echo date("Y").' '.$hascopyright; ?></span>
@@ -61,6 +62,7 @@
         </div>
     </div>
 </footer>
+<?php }?>
 
 <script type="text/javascript">
 jQuery(document).ready(function() {

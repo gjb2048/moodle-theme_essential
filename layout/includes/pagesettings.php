@@ -25,7 +25,7 @@
  */
 
 /* Default globals */
-global $CFG, $PAGE, $USER, $SITE;
+global $CFG, $PAGE, $USER, $SITE, $COURSE;
  
 /* Group Body */
 $bodyclasses = array();
@@ -111,10 +111,8 @@ if ($hassocialnetworks && !($hasmobileapps)) {
 }
 
 $oldnavbar = theme_essential_get_setting('oldnavbar');
-
 $haslogo = theme_essential_get_setting('logo');
 
-/* Group Slideshow */
 
 /* Group Frontpage */
 $alertinfo = '<span class="fa-stack "><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-info fa-stack-1x fa-inverse"></i></span>';
@@ -125,6 +123,5 @@ $alertsuccess = '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i>
 $hasboringlayout = theme_essential_get_setting('layout');
 
 /* Group Footer */
-$hashiddendock = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('hidden-dock', $OUTPUT));
 $hascopyright = theme_essential_get_setting('copyright', true);
 $hasfootnote = theme_essential_get_setting('footnote', 'format_text');
