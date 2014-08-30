@@ -71,12 +71,11 @@ if (theme_essential_get_setting('enablecategoryicon')) {
     $bodyclasses[] = 'categoryicons';
 }
 
+$regionbsid = 'region-bs-main-and-pre';
+$left = true;
 if (right_to_left()) {
-    $regionbsid = 'region-bs-main-and-post';
-    $left = false;
-} else {
     $regionbsid = 'region-bs-main-and-pre';
-    $left = true;
+    $left = false;
 }
 
 $fontselect = theme_essential_get_setting('fontselect');

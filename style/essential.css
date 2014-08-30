@@ -1706,16 +1706,12 @@
 /* @group Core */
 body {
   line-height: 25px;
-  text-shadow: none !important;
+  text-shadow: none;
   position: relative;
-  background-image: url([[setting:pagebackground]]);
-  background-attachment: fixed;
-  background-position: center center;
-  background-repeat: no-repeat;
   background-color: rgba(255, 255, 255, 0.6);
   background-size: cover;
-  margin: 0px !important;
-  padding: 0px !important;
+  margin: 0px;
+  padding: 0px;
 }
 a {
   text-decoration: none;
@@ -2768,7 +2764,6 @@ div.mdl-align.title {
   transition: background-position 0.1s linear;
 }
 .dockbutton:focus {
-  outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2822,39 +2817,38 @@ div.mdl-align.title {
 .dockbutton-mini {
   padding: 1px 8px;
 }
-.has_dock {
-  padding-left: 40px !important;
+.has_dock:not(.dir-rtl) {
+  padding-left: 40px;
 }
-.has_dock div#dock {
+.has_dock:not(.dir-rtl) div#dock {
   display: inline;
 }
-.has_dock.dir-ltr #page,
-.has_dock.dir-ltr .navbar-inner {
+.has_dock:not(.dir-rtl).dir-ltr #page,
+.has_dock:not(.dir-rtl).dir-ltr .navbar-inner {
   /*@noflip*/
   padding-left: 52px;
 }
-.has_dock #dock {
+.has_dock:not(.dir-rtl) #dock {
   position: fixed;
-  top: 0px;
   left: 0;
   z-index: 12000;
   height: 100%;
   background: [[setting:themecolor]];
   border-right: 0 none;
 }
-.has_dock #dock .controls img {
+.has_dock:not(.dir-rtl) #dock .controls img {
   background: #fff;
   padding: 3px;
   border-radius: 5px;
 }
-.has_dock #dock .nothingdocked {
+.has_dock:not(.dir-rtl) #dock .nothingdocked {
   display: none;
   visibility: hidden;
 }
-.has_dock #dock .dockeditem .firstdockitem {
+.has_dock:not(.dir-rtl) #dock .dockeditem .firstdockitem {
   margin-top: 1em;
 }
-.has_dock #dock .dockedtitle {
+.has_dock:not(.dir-rtl) #dock .dockedtitle {
   padding: 10px 0;
   margin: 2px;
   margin-bottom: 0;
@@ -2863,29 +2857,29 @@ div.mdl-align.title {
   cursor: pointer;
   border-bottom: 1px dashed #fff;
 }
-.has_dock #dock .dockedtitle h2 {
+.has_dock:not(.dir-rtl) #dock .dockedtitle h2 {
   font-weight: normal;
   text-align: center;
   color: [[setting:themetextcolor]];
 }
-.has_dock #dock .dockedtitle:hover,
-.has_dock #dock .dockedtitle:focus,
-.has_dock #dock .dockedtitle:active,
-.has_dock #dock .dockedtitle.active,
-.has_dock #dock .dockedtitle.disabled,
-.has_dock #dock .dockedtitle[disabled] {
+.has_dock:not(.dir-rtl) #dock .dockedtitle:hover,
+.has_dock:not(.dir-rtl) #dock .dockedtitle:focus,
+.has_dock:not(.dir-rtl) #dock .dockedtitle:active,
+.has_dock:not(.dir-rtl) #dock .dockedtitle.active,
+.has_dock:not(.dir-rtl) #dock .dockedtitle.disabled,
+.has_dock:not(.dir-rtl) #dock .dockedtitle[disabled] {
   color: #7b8a8b;
   background-color: [[setting:themehovercolor]];
 }
-.has_dock #dock .dockedtitle:active,
-.has_dock #dock .dockedtitle.active {
+.has_dock:not(.dir-rtl) #dock .dockedtitle:active,
+.has_dock:not(.dir-rtl) #dock .dockedtitle.active {
   background-color: #b4bcc2;
 }
-.has_dock #dock .dockedtitle:first-child {
+.has_dock:not(.dir-rtl) #dock .dockedtitle:first-child {
   *margin-left: 0;
 }
-.has_dock #dock .dockedtitle:hover,
-.has_dock #dock .dockedtitle:focus {
+.has_dock:not(.dir-rtl) #dock .dockedtitle:hover,
+.has_dock:not(.dir-rtl) #dock .dockedtitle:focus {
   text-decoration: none;
   background-position: 0 -10px;
   -webkit-transition: background-position 0.1s linear;
@@ -2893,21 +2887,21 @@ div.mdl-align.title {
   -o-transition: background-position 0.1s linear;
   transition: background-position 0.1s linear;
 }
-.has_dock #dock .dockedtitle:focus {
+.has_dock:not(.dir-rtl) #dock .dockedtitle:focus {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.has_dock #dock .dockedtitle.active,
-.has_dock #dock .dockedtitle:active {
+.has_dock:not(.dir-rtl) #dock .dockedtitle.active,
+.has_dock:not(.dir-rtl) #dock .dockedtitle:active {
   background-image: none;
   outline: 0;
   -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
-.has_dock #dock .dockedtitle.disabled,
-.has_dock #dock .dockedtitle[disabled] {
+.has_dock:not(.dir-rtl) #dock .dockedtitle.disabled,
+.has_dock:not(.dir-rtl) #dock .dockedtitle[disabled] {
   cursor: default;
   background-image: none;
   opacity: .65;
@@ -2916,42 +2910,42 @@ div.mdl-align.title {
   -moz-box-shadow: none;
   box-shadow: none;
 }
-.has_dock #dock .dockedtitle .label,
-.has_dock #dock .dockedtitle .badge {
+.has_dock:not(.dir-rtl) #dock .dockedtitle .label,
+.has_dock:not(.dir-rtl) #dock .dockedtitle .badge {
   position: relative;
   top: -1px;
 }
-.has_dock #dock .dockedtitle:hover,
-.has_dock #dock .dockedtitle:focus {
+.has_dock:not(.dir-rtl) #dock .dockedtitle:hover,
+.has_dock:not(.dir-rtl) #dock .dockedtitle:focus {
   color: white;
   -webkit-transition: .25s;
   -moz-transition: .25s;
   transition: 0.25s;
 }
-.has_dock #dock .dockedtitle:active,
-.has_dock #dock .dockedtitle.active {
+.has_dock:not(.dir-rtl) #dock .dockedtitle:active,
+.has_dock:not(.dir-rtl) #dock .dockedtitle.active {
   color: rgba(255, 255, 255, 0.75);
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
-.has_dock #dock .dockedtitle.disabled,
-.has_dock #dock .dockedtitle[disabled] {
+.has_dock:not(.dir-rtl) #dock .dockedtitle.disabled,
+.has_dock:not(.dir-rtl) #dock .dockedtitle[disabled] {
   color: white;
 }
-.has_dock #dock .dockedtitle-large {
+.has_dock:not(.dir-rtl) #dock .dockedtitle-large {
   padding: 18px 36px;
 }
-.has_dock #dock .dockedtitle-small {
+.has_dock:not(.dir-rtl) #dock .dockedtitle-small {
   padding: 2px 12px;
 }
-.has_dock #dock .dockedtitle-mini {
+.has_dock:not(.dir-rtl) #dock .dockedtitle-mini {
   padding: 1px 8px;
 }
-.has_dock #dock .dockedtitle .filterrotate {
+.has_dock:not(.dir-rtl) #dock .dockedtitle .filterrotate {
   margin-left: 8px;
 }
-.has_dock #dock .dockeditempanel_hd h2 {
+.has_dock:not(.dir-rtl) #dock .dockeditempanel_hd h2 {
   display: block;
   padding: 3px 15px;
   font-size: 1.1em;
@@ -2960,79 +2954,79 @@ div.mdl-align.title {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
 }
-.has_dock #dock .controls {
+.has_dock:not(.dir-rtl) #dock .controls {
   position: absolute;
   bottom: 42px;
   width: 100%;
   text-align: center;
 }
-.has_dock #dock .controls img {
+.has_dock:not(.dir-rtl) #dock .controls img {
   cursor: pointer;
 }
-.has_dock #dockeditempanel {
+.has_dock:not(.dir-rtl) #dockeditempanel {
   position: relative;
   left: 100%;
   z-index: 12000;
   min-width: 200px;
   padding-left: 5px;
 }
-.has_dock #dockeditempanel .dockeditempanel_content {
+.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_content {
   z-index: 12050;
   width: 200px;
   background-color: #fff;
 }
-.has_dock #dockeditempanel .dockeditempanel_bd {
+.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_bd {
   width: auto;
   overflow: auto;
 }
-.has_dock #dockeditempanel .dockeditempanel_bd .block_navigation .block_tree li {
+.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_bd .block_navigation .block_tree li {
   overflow: visible;
 }
-.has_dock #dockeditempanel .dockeditempanel_hd {
+.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd {
   border-bottom: 1px solid #EEE;
 }
-.has_dock #dockeditempanel .dockeditempanel_hd h2 {
+.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd h2 {
   padding: 5px;
   margin: 0;
 }
-.has_dock #dockeditempanel .dockeditempanel_hd .commands {
+.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd .commands {
   position: absolute;
   top: 16px;
   right: 4px;
 }
-.has_dock #dockeditempanel .dockeditempanel_hd .commands > a,
-.has_dock #dockeditempanel .dockeditempanel_hd .commands > span {
+.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd .commands > a,
+.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd .commands > span {
   margin-left: 3px;
   cursor: pointer;
 }
-.has_dock #dockeditempanel .dockeditempanel_hd a.editing_move,
-.has_dock #dockeditempanel .dockeditempanel_hd a.editing_edit,
-.has_dock #dockeditempanel .dockeditempanel_hd a.editing_roles,
-.has_dock #dockeditempanel .dockeditempanel_hd a.editing_delete,
-.has_dock #dockeditempanel .dockeditempanel_hd a.editing_hide {
+.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd a.editing_move,
+.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd a.editing_edit,
+.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd a.editing_roles,
+.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd a.editing_delete,
+.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd a.editing_hide {
   display: none;
 }
-.has_dock #dockeditempanel .dockeditempanel_hd .commands img,
-.has_dock #dockeditempanel .dockeditempanel_hd .commands input {
+.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd .commands img,
+.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd .commands input {
   margin-right: 1px;
   vertical-align: middle;
 }
-.has_dock #dockeditempanel .dockeditempanel_hd .commands img {
+.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd .commands img {
   display: inline;
 }
-.has_dock #dockeditempanel .dockeditempanel_hd .commands .hidepanemicon img {
+.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd .commands .hidepanemicon img {
   cursor: pointer;
 }
-.has_dock #dockeditempanel.dockitempanel_hidden {
+.has_dock:not(.dir-rtl) #dockeditempanel.dockitempanel_hidden {
   display: none;
 }
-.has_dock .dockeditempanel_content {
+.has_dock:not(.dir-rtl) .dockeditempanel_content {
   width: 300px;
 }
-.has_dock.empty-region-side-pre:not(.has-region-side-post) #region-bs-main-and-pre {
+.has_dock:not(.dir-rtl).empty-region-side-pre:not(.has-region-side-post) #region-bs-main-and-pre {
   width: 100%;
 }
-.has_dock.empty-region-side-pre.empty-region-side-post #region-bs-main-and-pre {
+.has_dock:not(.dir-rtl).empty-region-side-pre.empty-region-side-post #region-bs-main-and-pre {
   width: 100%;
 }
 /* @end */
@@ -3588,6 +3582,7 @@ a.marketing-button:hover {
   text-align: right;
 }
 #marketing-buttons .span4 {
+  background: #fff;
   padding: 10px;
   border-left: 1px solid #e7e7e7;
   border-right: 1px solid #e7e7e7;
@@ -4413,6 +4408,10 @@ body {
   font-size: [[setting:bodysize]];
   font-weight: [[setting:bodyweight]];
   font-family: [[setting:bodyfont]];
+  background-image: url([[setting:pagebackground]]);
+  background-attachment: [[setting:backgroundattach]];
+  background-repeat: [[setting:backgroundrepeat]];
+  background-size: [[setting:backgroundsize]];
 }
 .container-fluid {
   max-width: [[setting:pagewidth]];
@@ -4751,102 +4750,126 @@ h6,
 /* @end */
 /* @end */
 /* @group RTL */
-.dir-rtl {
+body.dir-rtl {
   /* @settings */
   /* @general */
   /* @block */
   /* Hide icon 'collapsed' because it makes no sense here */
   /* @navigation */
   /* @dock */
+  /* Navbar */
+  /* Message */
 }
-.dir-rtl a.logo {
+body.dir-rtl a.logo {
   background: url([[setting:logo]]) no-repeat 100% 0;
 }
-.dir-rtl #headerlogo {
+body.dir-rtl #headerlogo {
   float: right;
   margin-left: 0px;
   margin-right: 10px;
   padding-left: 0px;
   padding-right: 10px;
 }
-.dir-rtl .block .footer {
+body.dir-rtl .block .footer {
   float: right;
   text-align: right;
 }
-.dir-rtl .block .header .title h2:before {
+body.dir-rtl .block .header .title h2:before {
   margin-left: 0.3em;
 }
-.dir-rtl .block .icon {
+body.dir-rtl .block .icon {
   margin-left: 5px;
 }
-.dir-rtl .block_login .content {
+body.dir-rtl .block_login .content {
   padding-bottom: 125px;
 }
-.dir-rtl .block_login .content .footer {
+body.dir-rtl .block_login .content .footer {
   height: 60px;
   width: 70%;
   padding: 0 50px 10px 10px;
 }
-.dir-rtl .block_login .content .footer div {
+body.dir-rtl .block_login .content .footer div {
   float: right;
   clear: right;
 }
-.dir-rtl .block_login .content .footer a {
+body.dir-rtl .block_login .content .footer a {
   float: right;
   margin: 0;
   margin-bottom: 10px;
 }
-.dir-rtl .block_login .header .title h2:before {
+body.dir-rtl .block_login .header .title h2:before {
   float: right;
   clear: right;
   text-align: right;
 }
-.dir-rtl .block_login input[type="submit"],
-.dir-rtl .block_login .footer a {
+body.dir-rtl .block_login input[type="submit"],
+body.dir-rtl .block_login .footer a {
   float: right;
 }
-.dir-rtl .collapsed .tree_item.branch:before {
+body.dir-rtl .collapsed .tree_item.branch:before {
   content: " \f053";
 }
-.dir-rtl a.logo {
+body.dir-rtl a.logo {
   display: block;
   float: right;
   background-position: right center;
 }
-.dir-rtl .course_category_tree .category.with_children.collapsed > .info > .categoryname,
-.dir-rtl .course_category_tree .category.with_children > .info > .categoryname,
-.dir-rtl .course_category_tree .category > .info > .categoryname {
+body.dir-rtl .course_category_tree .category.with_children.collapsed > .info > .categoryname,
+body.dir-rtl .course_category_tree .category.with_children > .info > .categoryname,
+body.dir-rtl .course_category_tree .category > .info > .categoryname {
   background-image: none;
   background-repeat: no-repeat;
   padding: 0;
   margin: 0;
 }
-.dir-rtl .tree_item.branch:before {
+body.dir-rtl .tree_item.branch:before {
   margin-left: 5px;
 }
-.dir-rtl #page-navbar .breadcrumb-button a {
+body.dir-rtl #page-navbar .breadcrumb-button a {
   clear: both;
   float: left;
 }
-.dir-rtl #dock {
+body.dir-rtl #dock {
   right: 0;
   left: auto;
 }
-.dir-rtl #dock .dockedtitle {
+body.dir-rtl #dock .dockedtitle {
   cursor: pointer;
   border-top: 1px solid #EEE;
   border-bottom: 1px solid #EEE;
 }
-.dir-rtl.has_dock #page,
-.dir-rtl.has_dock .navbar-inner {
-  padding-right: 52px;
-  padding-left: 10px;
+body.dir-rtl.has_dock {
+  padding-right: 42px;
+  padding-left: 0px;
 }
-.dir-rtl #dockeditempanel {
+body.dir-rtl #dockeditempanel {
   right: 100%;
 }
-.dir-rtl #dockeditempanel .dockeditempanel_hd .commands {
+body.dir-rtl #dockeditempanel .dockeditempanel_hd .commands {
   text-align: left;
+}
+body.dir-rtl .navbar .navbar-inner .nav > li.dropdown a .fa-caret-right:before,
+body.dir-rtl .navbar .navbar-inner .nav > li > a .fa-caret-right:before {
+  content: "\f0d9";
+}
+body.dir-rtl .back-to-top {
+  left: 15px;
+  right: auto;
+}
+body.dir-rtl .message .messagearea .messagerecent {
+  text-align: right;
+}
+body.dir-rtl .message .messagearea .messagerecent .singlemessage .messagedate {
+  float: left;
+}
+body.dir-rtl.empty-region-side-post .row-fluid .span9 {
+  width: 100%;
+}
+body.dir-rtl.empty-region-side-post #region-bs-main-and-post.span9 #region-main.span8 {
+  float: left;
+}
+body.dir-rtl.empty-region-side-post.used-region-side-pre #block-region-side-pre.span4 {
+  float: right;
 }
 /* @end */
 /* @group Fixes */

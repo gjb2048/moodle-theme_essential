@@ -24,7 +24,6 @@
 }
 
 .dockbutton:focus {
-    outline:thin dotted #333;
     outline:5px auto -webkit-focus-ring-color;
     outline-offset:-2px;
 }
@@ -81,8 +80,8 @@
     padding: 1px 8px;
 }
 
-.has_dock {
-    padding-left: 40px !important;
+.has_dock:not(.dir-rtl) {
+    padding-left: 40px;
     div#dock {
         display: inline;
     }
@@ -92,7 +91,6 @@
 
     #dock {
         position:fixed;
-        top: 0px;
         left: 0;
         z-index: 12000;
         height: 100%;

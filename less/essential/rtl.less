@@ -1,6 +1,6 @@
 /* @group RTL */
 
-.dir-rtl {
+body.dir-rtl {
     /* @settings */
     a.logo {
         background: url(~"[[setting:logo]]") no-repeat 100% 0;
@@ -96,9 +96,9 @@
             border-bottom: 1px solid #EEE;
         }
     }
-    &.has_dock #page, &.has_dock .navbar-inner {
-        padding-right: 52px;
-        padding-left: 10px;
+    &.has_dock {
+        padding-right: 42px;
+        padding-left: 0px;
     }
     #dockeditempanel {
         right: 100%;
@@ -106,6 +106,37 @@
             text-align:left
         }
     }
+    /* Navbar */
+    .navbar .navbar-inner {
+      .nav > li.dropdown a,
+      .nav > li > a {
+          .fa-caret-right:before {
+              content: "\f0d9";
+          }
+      }
+    }
+    .back-to-top {
+      left: 15px;
+      right: auto;
+    }
+  /* Message */
+  .message .messagearea .messagerecent {
+    text-align: right;
+    .singlemessage .messagedate {
+      float: left;
+    }
+  }
+  &.empty-region-side-post {
+    .row-fluid .span9 {
+      width: 100%;
+    }
+    #region-bs-main-and-post.span9 #region-main.span8 {
+      float: left;
+    }
+    &.used-region-side-pre #block-region-side-pre.span4 {
+      float: right;
+    }
+  }
 }
 
 /* @end */
