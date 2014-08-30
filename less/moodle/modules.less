@@ -6,291 +6,305 @@
 // Plus some misc. odds and ends
 
 select {
-    width: auto;
+  width: auto;
 }
 
 // Forum
 
 .path-mod-forum .forumsearch {
-    input,
-    .helptooltip {
-        margin: 0 3px;
-    }
+  input,
+  .helptooltip {
+    margin: 0 3px;
+  }
 }
 
 .path-mod-forum .forumheaderlist,
 .path-mod-forum .forumheaderlist td {
-    border: none;
+  border: none;
 }
 
 .path-mod-forum .forumheaderlist {
-    thead .header {
-        white-space: normal;
-        vertical-align: top;
+  thead .header {
+    white-space: normal;
+    vertical-align: top;
+  }
+  thead .header.replies {
+    text-align: center;
+  }
+  thead .header.lastpost {
+    text-align: right;
+  }
+  .discussion {
+    .author, .replies, .lastpost {
+      white-space: normal;
     }
-    thead .header.replies {
-        text-align: center;
+    .replies {
+      text-align: center;
     }
-    thead .header.lastpost {
-        text-align: right;
+    .topic, .topic.starter, .picture, .author, .replies, .lastpost {
+      vertical-align: top;
     }
-    .discussion {
-        .author, .replies, .lastpost {
-            white-space: normal;
-        }
-        .replies {
-            text-align: center;
-        }
-        .topic, .topic.starter, .picture, .author, .replies, .lastpost {
-            vertical-align: top;
-        }
-    }
+  }
 }
 
 .path-mod-feedback .feedback_bar_image {
-    height: 5px; // we should remove the bar height specification in core
+  height: 5px; // we should remove the bar height specification in core
 }
 
 .forumpost {
-    .well;
-    padding: 6px;
-    .header {
-        margin-bottom: 3px;
+  .well;
+  padding: 6px;
+  .header {
+    margin-bottom: 3px;
+  }
+  .picture img {
+    margin: 3px;
+    &.userpicture {
+      margin-left: 3px;
+      margin-right: 10px;
     }
-    .picture img {
-        margin: 3px;
-        &.userpicture {
-            margin-left: 3px;
-            margin-right: 10px;
-        }
+  }
+  .content {
+    .posting.fullpost {
+      margin-top: 8px;
     }
-    .content {
-        .posting.fullpost {
-            margin-top: 8px;
-        }
+  }
+  .row {
+    .topic,
+    .content-mask,
+    .options {
+      margin-left: 48px;
     }
-    .row {
-        .topic,
-        .content-mask,
-        .options {
-            margin-left: 48px;
-        }
-        &.side {
-            clear: both;
-        }
+    &.side {
+      clear: both;
     }
+  }
 }
 
 .dir-rtl .forumpost {
-    .picture img {
-        &.userpicture {
-            margin-left: 10px;
-            margin-right: 3px;
-        }
+  .picture img {
+    &.userpicture {
+      margin-left: 10px;
+      margin-right: 3px;
     }
-    .row {
-        .topic,
-        .content-mask,
-        .options {
-            margin-left: 0;
-            margin-right: 48px;
-        }
+  }
+  .row {
+    .topic,
+    .content-mask,
+    .options {
+      margin-left: 0;
+      margin-right: 48px;
     }
+  }
 }
 
 .forumpost .row .left {
-    width: 48px;
+  width: 48px;
 }
 
 .forumpost .options .commands {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 .forumpost .subject {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 // Override hardcoded forum modules styling
 .forumsearch input[type=text] {
-     margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 #page-mod-forum-discuss .discussioncontrols {
-    width: auto;
-    margin: 0;
+  width: auto;
+  margin: 0;
 }
 
 #page-footer {
-    margin-top: 1em;
-    padding: 1em 0;
-    border-top: 2px solid @tableBorder;
+  margin-top: 1em;
+  padding: 1em 0;
+  border-top: 2px solid @tableBorder;
 }
 
-.maincalendar .calendarmonth td,.maincalendar .calendarmonth th {
-    border: 1px dotted @tableBorder;
+.maincalendar .calendarmonth td, .maincalendar .calendarmonth th {
+  border: 1px dotted @tableBorder;
 }
 
 .path-grade-report-grader h1 {
-    text-align: inherit;
+  text-align: inherit;
 }
 
 #page-mod-chat-gui_basic input#message {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 #page-mod-data-view #singleimage {
-    width: auto;
+  width: auto;
 }
 
 .path-mod-data form {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .template_heading {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .breadcrumb-button {
-    float: right;
-    margin-top: 4px;
+  float: right;
+  margin-top: 4px;
 }
 
 .breadcrumb-button .singlebutton {
-    float: left;
-    margin-left: 4px;
+  float: left;
+  margin-left: 4px;
 }
 
 .dir-rtl {
-    .nav-tabs > li,
-    .nav-pills > li {
-        float: right;
-    }
-}
-.dir-rtl .navbar .brand {
+  .nav-tabs > li,
+  .nav-pills > li {
     float: right;
+  }
+}
+
+.dir-rtl .navbar .brand {
+  float: right;
 }
 
 .navbar-inverse .logininfo a {
-    color: @navbarInverseLinkColor;
+  color: @navbarInverseLinkColor;
 }
+
 .navbar-inverse .logininfo a:hover {
-    background-color: @navbarInverseLinkBackgroundHover; // "transparent" is default to differentiate :hover/:focus from .active
-    color: @navbarInverseLinkColorHover;
+  background-color: @navbarInverseLinkBackgroundHover; // "transparent" is default to differentiate :hover/:focus from .active
+  color: @navbarInverseLinkColorHover;
 }
 
 .navbar-fixed-top,
 .navbar-fixed-bottom {
-    z-index: 4030;
+  z-index: 4030;
 }
 
 .dir-rtl .breadcrumb-button,
 .dir-rtl .navbar .btn-navbar {
-    float: left;
+  float: left;
 }
 
 .dir-rtl .breadcrumb-button .singlebutton {
-    float: right;
-    margin-right: 4px;
+  float: right;
+  margin-right: 4px;
 }
 
 .ie .row-fluid .desktop-first-column {
-    margin-left: 0;
+  margin-left: 0;
 }
+
 .langmenu form {
-    margin: 0;
+  margin: 0;
 }
+
 .container-fluid {
-    max-width: 1680px;
-    margin: 0 auto;
+  max-width: 1680px;
+  margin: 0 auto;
 }
+
 // contributed by Paul Hibbitts, see http://msdn.microsoft.com/en-us/library/ie/jj583807(v=vs.85).aspx
 canvas {
-    -ms-touch-action: auto;
+  -ms-touch-action: auto;
 }
 
 div#dock {
-    display: none;
+  display: none;
 }
 
 .path-mod-choice {
-    .horizontal  .choices {
-        margin: 0;
-        .option {
-            display: inline-block;
-            padding: 10px;
-        }
+  .horizontal .choices {
+    margin: 0;
+    .option {
+      display: inline-block;
+      padding: 10px;
     }
-    .results .data {
-        white-space: normal;
-    }
+  }
+  .results .data {
+    white-space: normal;
+  }
 }
 
 .path-mod-lesson .firstpageoptions {
-    margin: auto;
-    min-width: 280px;
-    width: 60%;
+  margin: auto;
+  min-width: 280px;
+  width: 60%;
 }
 
 .path-mod-lesson .centerpadded {
-    padding: 5px;
-    text-align: center;
+  padding: 5px;
+  text-align: center;
 }
 
 .path-mod-wiki .wiki_headingtitle,
 .path-mod-wiki .midpad,
 .path-mod-wiki .wiki_headingtime {
-    text-align: inherit;
+  text-align: inherit;
 }
 
 .path-mod-wiki .wiki_contentbox {
-    width: 100%;
+  width: 100%;
 }
 
 // Dropdown styling.
 .dropdown-menu {
-    > li > a {
-        padding: 3px 20px 3px 8px;
-    }
+  > li > a {
+    padding: 3px 20px 3px 8px;
+  }
 }
+
 .dir-rtl .dropdown-menu {
-    > li > a {
-        padding: 3px 8px 3px 20px;
-    }
+  > li > a {
+    padding: 3px 8px 3px 20px;
+  }
 }
+
 .dir-rtl .dropdown-submenu > .dropdown-menu {
   .border-radius(6px 0px 6px 6px);
 }
 
-
 // Survey module
 
 .path-mod-survey {
-    .surveytable {
-      > tbody > tr:nth-of-type(odd) {background-color: @tableBackground;}
-      > tbody > tr:nth-of-type(even) {background-color: @tableBackgroundAccent;}
-        .rblock label {text-align: center;}
+  .surveytable {
+    > tbody > tr:nth-of-type(odd) {
+      background-color: @tableBackground;
     }
-    .resultgraph, .reportsummary, .studentreport, .reportbuttons, .centerpara {
-        text-align:center;
+    > tbody > tr:nth-of-type(even) {
+      background-color: @tableBackgroundAccent;
     }
+    .rblock label {
+      text-align: center;
+    }
+  }
+  .resultgraph, .reportsummary, .studentreport, .reportbuttons, .centerpara {
+    text-align: center;
+  }
 }
+
 // rtl overrides
 .dir-rtl {
-    &.path-mod-forum .forumheaderlist {
-        thead .header.lastpost {
-            text-align: left;
-        }
-        .discussion {
-            .lastpost {
-                text-align: left;
-            }
-        }
+  &.path-mod-forum .forumheaderlist {
+    thead .header.lastpost {
+      text-align: left;
     }
+    .discussion {
+      .lastpost {
+        text-align: left;
+      }
+    }
+  }
 }
 
 .nav .caret {
-    margin-left: 4px;
+  margin-left: 4px;
 }
+
 .dir-rtl .nav .caret {
-    margin-right: 4px;
+  margin-right: 4px;
 }

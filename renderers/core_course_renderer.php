@@ -23,10 +23,11 @@
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
- 
+
 require_once($CFG->dirroot . "/course/renderer.php");
 
-class theme_essential_core_course_renderer extends core_course_renderer {
+class theme_essential_core_course_renderer extends core_course_renderer
+{
 
     /**
      * Returns HTML to display a course category as a part of a tree
@@ -39,7 +40,8 @@ class theme_essential_core_course_renderer extends core_course_renderer {
      * @param int $depth depth of this category in the current tree
      * @return string
      */
-    protected function coursecat_category(coursecat_helper $chelper, $coursecat, $depth) {
+    protected function coursecat_category(coursecat_helper $chelper, $coursecat, $depth)
+    {
         global $CFG;
         // open category tag
         $classes = array('category');
@@ -51,7 +53,8 @@ class theme_essential_core_course_renderer extends core_course_renderer {
             $categorycontent = '';
             $classes[] = 'notloaded';
             if ($coursecat->get_children_count() ||
-                    ($chelper->get_show_courses() >= self::COURSECAT_SHOW_COURSES_COLLAPSED && $coursecat->get_courses_count())) {
+                ($chelper->get_show_courses() >= self::COURSECAT_SHOW_COURSES_COLLAPSED && $coursecat->get_courses_count())
+            ) {
                 $classes[] = 'with_children';
                 $classes[] = 'collapsed';
             }
@@ -65,7 +68,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         }
         $classes[] = 'essentialcats';
 
-        if(intval($CFG->version) >= 2013111800) {
+        if (intval($CFG->version) >= 2013111800) {
             // Make sure JS file to expand category content is included.
             $this->coursecat_include_js();
         }
@@ -81,15 +84,16 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         // category name
         $categoryname = $coursecat->get_formatted_name();
         $categoryname = html_writer::tag('span', $categoryname);
-        
+
         $categoryiconnum = 'categoryicon' . $coursecat->id;
-        
+
         $val = '';
         $icon = '';
         // Do a settings check to output our icon for the category
-        if(theme_essential_get_setting('enablecategoryicon')) {
-            if(theme_essential_get_setting($categoryiconnum) && 
-               theme_essential_get_setting('enablecustomcategoryicon')) {
+        if (theme_essential_get_setting('enablecategoryicon')) {
+            if (theme_essential_get_setting($categoryiconnum) &&
+                theme_essential_get_setting('enablecustomcategoryicon')
+            ) {
                 // User has set a value for the category
                 $val = theme_essential_get_setting($categoryiconnum);
             } else {
@@ -97,18 +101,19 @@ class theme_essential_core_course_renderer extends core_course_renderer {
                 $val = theme_essential_get_setting('defaultcategoryicon');
             }
         }
-        if(!empty($val)) {
+        if (!empty($val)) {
             $icon = html_writer::tag('i', '', array('class' => 'fa fa-' . $val));
         }
 
-        
+
         $categoryname = html_writer::link(new moodle_url('/course/index.php',
                 array('categoryid' => $coursecat->id)),
-                $icon . $categoryname);
+            $icon . $categoryname);
         if ($chelper->get_show_courses() == self::COURSECAT_SHOW_COURSES_COUNT
-                && ($coursescount = $coursecat->get_courses_count())) {
-            $categoryname .= html_writer::tag('span', ' ('. $coursescount.')',
-                    array('title' => get_string('numberofcourses'), 'class' => 'numberofcourse'));
+            && ($coursescount = $coursecat->get_courses_count())
+        ) {
+            $categoryname .= html_writer::tag('span', ' (' . $coursescount . ')',
+                array('title' => get_string('numberofcourses'), 'class' => 'numberofcourse'));
         }
         $content .= html_writer::start_tag('div', array('class' => 'info'));
 

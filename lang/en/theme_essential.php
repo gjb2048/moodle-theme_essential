@@ -169,7 +169,7 @@ $string['helplinktypedesc'] = 'Choose whether you want to enable a help option i
 $string['helplink'] = 'Help link';
 $string['helplinkdesc'] = 'If you chose URL above fill in the complete URL to your help site (must include http:// or https://). If you chose Email address fill in your email address.';
 
-$string[ 'few'] = 'A few ';
+$string['few'] = 'A few ';
 $string['loggedinas'] = ' logged in as ';
 $string['loggedinfrom'] = 'Logged in from ';
 

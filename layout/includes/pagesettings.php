@@ -26,17 +26,18 @@
 
 /* Default globals */
 global $CFG, $PAGE, $USER, $SITE, $COURSE;
- 
+
 /* Group Body */
 $bodyclasses = array();
 
-if (theme_essential_get_setting('enablealternativethemecolors1') || 
-    theme_essential_get_setting('enablealternativethemecolors2') || 
-    theme_essential_get_setting('enablealternativethemecolors3')) {
-        $colourswitcher = true;
-        theme_essential_check_colours_switch();
-        theme_essential_initialise_colourswitcher($PAGE);
-        $bodyclasses[] = 'essential-colours-' . theme_essential_get_colours();
+if (theme_essential_get_setting('enablealternativethemecolors1') ||
+    theme_essential_get_setting('enablealternativethemecolors2') ||
+    theme_essential_get_setting('enablealternativethemecolors3')
+) {
+    $colourswitcher = true;
+    theme_essential_check_colours_switch();
+    theme_essential_initialise_colourswitcher($PAGE);
+    $bodyclasses[] = 'essential-colours-' . theme_essential_get_colours();
 } else {
     $colourswitcher = false;
 }
@@ -84,21 +85,22 @@ $fontcharacterset = theme_essential_get_setting('fontcharacterset');
 
 /* Group Header */
 
-$hassocialnetworks = (  theme_essential_get_setting('facebook')     ||
-                        theme_essential_get_setting('twitter')      ||
-                        theme_essential_get_setting('googleplus')   ||
-                        theme_essential_get_setting('linkedin')     ||
-                        theme_essential_get_setting('youtube')      ||
-                        theme_essential_get_setting('flickr')       ||
-                        theme_essential_get_setting('vk')           ||
-                        theme_essential_get_setting('pinterest')    ||
-                        theme_essential_get_setting('instagram')    ||
-                        theme_essential_get_setting('skype')        ||
-                        theme_essential_get_setting('website')
-                    );
-$hasmobileapps =    (   theme_essential_get_setting('ios')          ||
-                        theme_essential_get_setting('android')
-                    );
+$hassocialnetworks = (
+    theme_essential_get_setting('facebook') ||
+    theme_essential_get_setting('twitter') ||
+    theme_essential_get_setting('googleplus') ||
+    theme_essential_get_setting('linkedin') ||
+    theme_essential_get_setting('youtube') ||
+    theme_essential_get_setting('flickr') ||
+    theme_essential_get_setting('vk') ||
+    theme_essential_get_setting('pinterest') ||
+    theme_essential_get_setting('instagram') ||
+    theme_essential_get_setting('skype') ||
+    theme_essential_get_setting('website')
+);
+$hasmobileapps = (theme_essential_get_setting('ios') ||
+    theme_essential_get_setting('android')
+);
 
 $logoclass = 'span12';
 if ($hassocialnetworks || $hasmobileapps) {

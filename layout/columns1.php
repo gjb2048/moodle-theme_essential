@@ -24,12 +24,14 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(__FILE__).'/includes/header.php'); ?>
+require_once(dirname(__FILE__) . '/includes/header.php'); ?>
 
 <div id="page" class="container-fluid">
     <div id="page-navbar" class="clearfix row-fluid">
-        <div class="breadcrumb-nav pull-<?php echo ($left) ? 'left' : 'right'; ?>"><?php echo $OUTPUT->navbar(); ?></div>
-        <nav class="breadcrumb-button pull-<?php echo ($left) ? 'right' : 'left'; ?>"><?php echo $OUTPUT->page_heading_button(); ?></nav>
+        <div
+            class="breadcrumb-nav pull-<?php echo ($left) ? 'left' : 'right'; ?>"><?php echo $OUTPUT->navbar(); ?></div>
+        <nav
+            class="breadcrumb-button pull-<?php echo ($left) ? 'right' : 'left'; ?>"><?php echo $OUTPUT->page_heading_button(); ?></nav>
     </div>
     <section role="main-content">
         <!-- Start Main Regions -->
@@ -51,6 +53,6 @@ require_once(dirname(__FILE__).'/includes/header.php'); ?>
     </section>
 </div>
 
-<?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
+<?php require_once(dirname(__FILE__) . '/includes/footer.php'); ?>
 </body>
 </html>

@@ -31,22 +31,24 @@
  * @param string $logo The URL of the logo.
  * @return string The parsed CSS
  */
- 
-function theme_essential_set_fontwww($css) {
+
+function theme_essential_set_fontwww($css)
+{
     global $CFG;
-    $fontwww = preg_replace("(https?:)", "", $CFG->wwwroot .'/theme/essential/fonts/');
+    $fontwww = preg_replace("(https?:)", "", $CFG->wwwroot . '/theme/essential/fonts/');
 
     $tag = '[[setting:fontwww]]';
 
     if (theme_essential_get_setting('bootstrapcdn')) {
-     $css = str_replace($tag, '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/fonts/', $css);
+        $css = str_replace($tag, '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/fonts/', $css);
     } else {
-     $css = str_replace($tag, $fontwww, $css);
+        $css = str_replace($tag, $fontwww, $css);
     }
     return $css;
 }
 
-function theme_essential_get_setting($setting, $format = false) {
+function theme_essential_get_setting($setting, $format = false)
+{
     static $theme;
     if (empty($theme)) {
         $theme = theme_config::load('essential');
@@ -62,7 +64,8 @@ function theme_essential_get_setting($setting, $format = false) {
     }
 }
 
-function theme_essential_set_logo($css, $logo) {
+function theme_essential_set_logo($css, $logo)
+{
     $tag = '[[setting:logo]]';
     $replacement = $logo;
     if (!($replacement)) {
@@ -72,42 +75,43 @@ function theme_essential_set_logo($css, $logo) {
     return $css;
 }
 
-function theme_essential_get_title($location) {
+function theme_essential_get_title($location)
+{
     global $CFG, $SITE;
     $title = '';
-    if($location === 'navbar') {
-        switch(theme_essential_get_setting('navbartitle')){
-            case 0:
-            return false;
-            break;
-            case 1:
-                $title = '<a class="brand" href="'.$CFG->wwwroot.'">'.$SITE->fullname.'</a>';
-            break;
-            case 2:
-                $title = '<a class="brand" href="'.$CFG->wwwroot.'">'.$SITE->shortname.'</a>';
-            break;
-            default:
-                $title = '<a class="brand" href="'.$CFG->wwwroot.'">'.$SITE->shortname.'</a>';
-            break;
-        }
-    } else if ($location === 'header') {
-        switch(theme_essential_get_setting('headertitle')){
+    if ($location === 'navbar') {
+        switch (theme_essential_get_setting('navbartitle')) {
             case 0:
                 return false;
                 break;
             case 1:
-            $title  = '<h1 id="title">'.$SITE->fullname.'</h1>';
+                $title = '<a class="brand" href="' . $CFG->wwwroot . '">' . $SITE->fullname . '</a>';
                 break;
             case 2:
-                $title  = '<h1 id="title">'.$SITE->shortname.'</h1>';
+                $title = '<a class="brand" href="' . $CFG->wwwroot . '">' . $SITE->shortname . '</a>';
+                break;
+            default:
+                $title = '<a class="brand" href="' . $CFG->wwwroot . '">' . $SITE->shortname . '</a>';
+                break;
+        }
+    } else if ($location === 'header') {
+        switch (theme_essential_get_setting('headertitle')) {
+            case 0:
+                return false;
+                break;
+            case 1:
+                $title = '<h1 id="title">' . $SITE->fullname . '</h1>';
+                break;
+            case 2:
+                $title = '<h1 id="title">' . $SITE->shortname . '</h1>';
                 break;
             case 3:
-                $title  = '<h1 id="smalltitle">'.$SITE->fullname.'</h2>';
-                $title .= '<h2 id="subtitle">'.strip_tags($SITE->summary).'</h3>';
+                $title = '<h1 id="smalltitle">' . $SITE->fullname . '</h2>';
+                $title .= '<h2 id="subtitle">' . strip_tags($SITE->summary) . '</h3>';
                 break;
             case 4:
-                $title  = '<h1 id="smalltitle">'.$SITE->shortname.'</h2>';
-                $title .= '<h2 id="subtitle">'.strip_tags($SITE->summary).'</h3>';
+                $title = '<h1 id="smalltitle">' . $SITE->shortname . '</h2>';
+                $title .= '<h2 id="subtitle">' . strip_tags($SITE->summary) . '</h3>';
                 break;
             default:
                 break;
@@ -116,10 +120,11 @@ function theme_essential_get_title($location) {
     return $title;
 }
 
-function theme_essential_edit_button($section) {
+function theme_essential_edit_button($section)
+{
     global $PAGE, $CFG;
-    if($PAGE->user_is_editing() && is_siteadmin()) {
-        return  '<a class="btn btn-success" href="'.$CFG->wwwroot.'/admin/settings.php?section='.$section.'">'.get_string('edit').'</a>';
+    if ($PAGE->user_is_editing() && is_siteadmin()) {
+        return '<a class="btn btn-success" href="' . $CFG->wwwroot . '/admin/settings.php?section=' . $section . '">' . get_string('edit') . '</a>';
     }
 }
 
@@ -135,7 +140,8 @@ function theme_essential_edit_button($section) {
  * @param array $options
  * @return bool
  */
-function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
+function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array())
+{
     static $theme;
     if (empty($theme)) {
         $theme = theme_config::load('essential');
@@ -172,16 +178,17 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
  * @param mixed $pagewidth
  * @return string
  */
-function theme_essential_set_pagewidth($css, $pagewidth) {
+function theme_essential_set_pagewidth($css, $pagewidth)
+{
     $tag = '[[setting:pagewidth]]';
     $replacement = $pagewidth;
     if (!($replacement)) {
         $replacement = '1200';
     }
-    if ( $replacement == "100" ) {
-        $css = str_replace($tag, $replacement.'%', $css);
+    if ($replacement == "100") {
+        $css = str_replace($tag, $replacement . '%', $css);
     } else {
-        $css = str_replace($tag, $replacement.'px', $css);
+        $css = str_replace($tag, $replacement . 'px', $css);
     }
     return $css;
 }
@@ -195,33 +202,34 @@ function theme_essential_set_pagewidth($css, $pagewidth) {
  * @param string $perfinfo
  * @return string $html
  */
-function theme_essential_performance_output($param, $perfinfo) {
-    $html  = html_writer::start_tag('div', array('class' => 'container-fluid performanceinfo'));
+function theme_essential_performance_output($param, $perfinfo)
+{
+    $html = html_writer::start_tag('div', array('class' => 'container-fluid performanceinfo'));
     $html .= html_writer::start_tag('div', array('class' => 'row-fluid'));
     $html .= html_writer::tag('h2', get_string('perfinfoheading', 'theme_essential'));
     $html .= html_writer::end_tag('div');
     $html .= html_writer::start_tag('div', array('class' => 'row-fluid'));
     if (isset($param['realtime'])) {
         $html .= html_writer::start_tag('div', array('class' => 'span3'));
-        $html .= html_writer::tag('var',round($param['realtime'], 2).' '.get_string('seconds'), array('id' => 'load'));
+        $html .= html_writer::tag('var', round($param['realtime'], 2) . ' ' . get_string('seconds'), array('id' => 'load'));
         $html .= html_writer::span(get_string('loadtime', 'theme_essential'));
         $html .= html_writer::end_tag('div');
     }
     if (isset($param['memory_total'])) {
         $html .= html_writer::start_tag('div', array('class' => 'span3'));
-        $html .= html_writer::tag('var',display_size($param['memory_total']), array('id' => 'memory'));
+        $html .= html_writer::tag('var', display_size($param['memory_total']), array('id' => 'memory'));
         $html .= html_writer::span(get_string('memused', 'theme_essential'));
         $html .= html_writer::end_tag('div');
     }
     if (isset($param['includecount'])) {
         $html .= html_writer::start_tag('div', array('class' => 'span3'));
-        $html .= html_writer::tag('var',$param['includecount'], array('id' => 'included'));
+        $html .= html_writer::tag('var', $param['includecount'], array('id' => 'included'));
         $html .= html_writer::span(get_string('included', 'theme_essential'));
         $html .= html_writer::end_tag('div');
     }
-    if (isset($param['dbqueries'])) { 
+    if (isset($param['dbqueries'])) {
         $html .= html_writer::start_tag('div', array('class' => 'span3'));
-        $html .= html_writer::tag('var',$param['dbqueries'], array('id' => 'db'));
+        $html .= html_writer::tag('var', $param['dbqueries'], array('id' => 'db'));
         $html .= html_writer::span(get_string('dbqueries', 'theme_essential'));
         $html .= html_writer::end_tag('div');
     }
@@ -232,31 +240,31 @@ function theme_essential_performance_output($param, $perfinfo) {
         $html .= html_writer::tag('h2', get_string('extperfinfoheading', 'theme_essential'));
         $html .= html_writer::end_tag('div');
         $html .= html_writer::start_tag('div', array('class' => 'row-fluid'));
-        if (isset($param['serverload'])) { 
+        if (isset($param['serverload'])) {
             $html .= html_writer::start_tag('div', array('class' => 'span3'));
-            $html .= html_writer::tag('var',$param['serverload'], array('id' => 'load'));
+            $html .= html_writer::tag('var', $param['serverload'], array('id' => 'load'));
             $html .= html_writer::span(get_string('serverload', 'theme_essential'));
             $html .= html_writer::end_tag('div');
-         }
+        }
         if (isset($param['memory_peak'])) {
             $html .= html_writer::start_tag('div', array('class' => 'span3'));
-            $html .= html_writer::tag('var',display_size($param['memory_peak']), array('id' => 'load'));
+            $html .= html_writer::tag('var', display_size($param['memory_peak']), array('id' => 'load'));
             $html .= html_writer::span(get_string('peakmem', 'theme_essential'));
             $html .= html_writer::end_tag('div');
-         }
-        if (isset($param['cachesused'])) { 
+        }
+        if (isset($param['cachesused'])) {
             $html .= html_writer::start_tag('div', array('class' => 'span3'));
-            $html .= html_writer::tag('var',$param['cachesused'], array('id' => 'cache'));
+            $html .= html_writer::tag('var', $param['cachesused'], array('id' => 'cache'));
             $html .= html_writer::span(get_string('peakmem', 'theme_essential'));
             $html .= html_writer::end_tag('div');
-         }
-        if (isset($param['sessionsize'])) { 
+        }
+        if (isset($param['sessionsize'])) {
             $html .= html_writer::start_tag('div', array('class' => 'span3'));
-            $html .= html_writer::tag('var',$param['sessionsize'], array('id' => 'session'));
+            $html .= html_writer::tag('var', $param['sessionsize'], array('id' => 'session'));
             $html .= html_writer::span(get_string('sessionsize', 'theme_essential'));
             $html .= html_writer::end_tag('div');
-         }
-         $html .= html_writer::end_tag('div');
+        }
+        $html .= html_writer::end_tag('div');
     }
     $html .= html_writer::end_tag('div');
     $html .= html_writer::end_tag('div');
@@ -264,17 +272,18 @@ function theme_essential_performance_output($param, $perfinfo) {
     return $html;
 }
 
-function theme_essential_hex2rgba($hex, $opacity) {
+function theme_essential_hex2rgba($hex, $opacity)
+{
     $hex = str_replace("#", "", $hex);
 
-    if(strlen($hex) == 3) {
-      $r = hexdec(substr($hex,0,1).substr($hex,0,1));
-      $g = hexdec(substr($hex,1,1).substr($hex,1,1));
-      $b = hexdec(substr($hex,2,1).substr($hex,2,1));
+    if (strlen($hex) == 3) {
+        $r = hexdec(substr($hex, 0, 1) . substr($hex, 0, 1));
+        $g = hexdec(substr($hex, 1, 1) . substr($hex, 1, 1));
+        $b = hexdec(substr($hex, 2, 1) . substr($hex, 2, 1));
     } else {
-      $r = hexdec(substr($hex,0,2));
-      $g = hexdec(substr($hex,2,2));
-      $b = hexdec(substr($hex,4,2));
+        $r = hexdec(substr($hex, 0, 2));
+        $g = hexdec(substr($hex, 2, 2));
+        $b = hexdec(substr($hex, 4, 2));
     }
     return "rgba($r, $g, $b, $opacity)";
 }
@@ -286,7 +295,8 @@ function theme_essential_hex2rgba($hex, $opacity) {
  * @param string $customcss The custom CSS to add.
  * @return string The CSS which now contains our custom CSS.
  */
-function theme_essential_set_customcss($css, $customcss) {
+function theme_essential_set_customcss($css, $customcss)
+{
     $tag = '[[setting:customcss]]';
     $replacement = $customcss;
     if (!($replacement)) {
@@ -298,97 +308,98 @@ function theme_essential_set_customcss($css, $customcss) {
     return $css;
 }
 
-function theme_essential_process_css($css, $theme) {
+function theme_essential_process_css($css, $theme)
+{
 
     $pagewidth = theme_essential_get_setting('pagewidth');
-    $css = theme_essential_set_pagewidth($css,$pagewidth);
-    
+    $css = theme_essential_set_pagewidth($css, $pagewidth);
+
     // Set the Fonts.
-    switch(theme_essential_get_setting('fontselect')) {
-    case 1:
-        $headingfont = 'Open Sans, Arial, Helvetica, sans-serif';
-        $bodyfont = 'Open Sans, Arial, Helvetica, sans-serif';
-        $bodysize = '14px';
-        $bodyweight = '400';
-        break;
-    case 2:
-        $headingfont = 'Oswald, Verdana, Geneva, sans-serif';
-        $bodyfont = '"PT Sans", Helvetica, Verdana sans-serif';
-        $bodysize = '14px';
-        $bodyweight = '400';
-        break;
-    case 3:
-        $headingfont = 'Roboto, Tahoma, Geneva, sans-serif';
-        $bodyfont = 'Roboto, Tahoma, Geneva, sans-serif';
-        $bodysize = '14px';
-        $bodyweight = '400';
-        break;
-    case 4:
-        $headingfont = '"PT Sans", Helvetica, Arial, sans-serif';
-        $bodyfont = '"PT Sans", Helvetica, Arial, sans-serif';
-        $bodysize = '14px';
-        $bodyweight = '400';
-        break;
-    case 5:
-        $headingfont = 'Ubuntu, Arial, Helvetica, sans-serif';
-        $bodyfont = 'Ubuntu, Arial, Helvetica, sans-serif';
-        $bodysize = '14px';
-        $bodyweight = '400';
-        break;
-    case 6:
-        $headingfont = 'Arimo, Arial, Helvetica, sans-serif';
-        $bodyfont = 'Arimo, Arial, Helvetica, sans-serif';
-        $bodysize = '14px';
-        $bodyweight = '400';
-        break;
-    case 7:
-        $headingfont = 'Lobster, "Lucida Calligraphy", Mistral, Verdana, sans-serif';
-        $bodyfont = 'Raleway, Helvetica, sans-serif';
-        $bodysize = '14px';
-        $bodyweight = '400';
-        break;
-    case 8:
-        $headingfont = 'Arial, Helvetica, sans-serif';
-        $bodyfont = 'Arial, Helvetica, sans-serif';
-        $bodysize = '14px';
-        $bodyweight = '400';
-        break;
-    case 9:
-        $headingfont = 'Georgia, serif';
-        $bodyfont = 'Georgia, serif';
-        $bodysize = '14px';
-        $bodyweight = '400';
-        break;
-    case 10:
-        $headingfont = 'Verdana, Geneva, sans-serif';
-        $bodyfont = 'Verdana, Geneva, sans-serif';
-        $bodysize = '14px';
-        $bodyweight = '400';
-        break;
-    case 11:
-        $headingfont = '"Times New Roman", Times, serif';
-        $bodyfont = '"Times New Roman", Times, serif';
-        $bodysize = '14px';
-        $bodyweight = '400';
-        break;
-    case 12:
-        $headingfont = 'Consolas, Monaco, monospace';
-        $bodyfont = 'Consolas, "Courier New", monospace';
-        $bodysize = '14px';
-        $bodyweight = '400';
-        break;
-    default:
-        $headingfont = 'Verdana, Geneva, sans-serif';
-        $bodyfont = 'Verdana, Geneva, sans-serif';
-        $bodysize = '14px';
-        $bodyweight = '400';
+    switch (theme_essential_get_setting('fontselect')) {
+        case 1:
+            $headingfont = 'Open Sans, Arial, Helvetica, sans-serif';
+            $bodyfont = 'Open Sans, Arial, Helvetica, sans-serif';
+            $bodysize = '14px';
+            $bodyweight = '400';
+            break;
+        case 2:
+            $headingfont = 'Oswald, Verdana, Geneva, sans-serif';
+            $bodyfont = '"PT Sans", Helvetica, Verdana sans-serif';
+            $bodysize = '14px';
+            $bodyweight = '400';
+            break;
+        case 3:
+            $headingfont = 'Roboto, Tahoma, Geneva, sans-serif';
+            $bodyfont = 'Roboto, Tahoma, Geneva, sans-serif';
+            $bodysize = '14px';
+            $bodyweight = '400';
+            break;
+        case 4:
+            $headingfont = '"PT Sans", Helvetica, Arial, sans-serif';
+            $bodyfont = '"PT Sans", Helvetica, Arial, sans-serif';
+            $bodysize = '14px';
+            $bodyweight = '400';
+            break;
+        case 5:
+            $headingfont = 'Ubuntu, Arial, Helvetica, sans-serif';
+            $bodyfont = 'Ubuntu, Arial, Helvetica, sans-serif';
+            $bodysize = '14px';
+            $bodyweight = '400';
+            break;
+        case 6:
+            $headingfont = 'Arimo, Arial, Helvetica, sans-serif';
+            $bodyfont = 'Arimo, Arial, Helvetica, sans-serif';
+            $bodysize = '14px';
+            $bodyweight = '400';
+            break;
+        case 7:
+            $headingfont = 'Lobster, "Lucida Calligraphy", Mistral, Verdana, sans-serif';
+            $bodyfont = 'Raleway, Helvetica, sans-serif';
+            $bodysize = '14px';
+            $bodyweight = '400';
+            break;
+        case 8:
+            $headingfont = 'Arial, Helvetica, sans-serif';
+            $bodyfont = 'Arial, Helvetica, sans-serif';
+            $bodysize = '14px';
+            $bodyweight = '400';
+            break;
+        case 9:
+            $headingfont = 'Georgia, serif';
+            $bodyfont = 'Georgia, serif';
+            $bodysize = '14px';
+            $bodyweight = '400';
+            break;
+        case 10:
+            $headingfont = 'Verdana, Geneva, sans-serif';
+            $bodyfont = 'Verdana, Geneva, sans-serif';
+            $bodysize = '14px';
+            $bodyweight = '400';
+            break;
+        case 11:
+            $headingfont = '"Times New Roman", Times, serif';
+            $bodyfont = '"Times New Roman", Times, serif';
+            $bodysize = '14px';
+            $bodyweight = '400';
+            break;
+        case 12:
+            $headingfont = 'Consolas, Monaco, monospace';
+            $bodyfont = 'Consolas, "Courier New", monospace';
+            $bodysize = '14px';
+            $bodyweight = '400';
+            break;
+        default:
+            $headingfont = 'Verdana, Geneva, sans-serif';
+            $bodyfont = 'Verdana, Geneva, sans-serif';
+            $bodysize = '14px';
+            $bodyweight = '400';
     }
-    
+
     $css = theme_essential_set_headingfont($css, $headingfont);
     $css = theme_essential_set_bodyfont($css, $bodyfont);
     $css = theme_essential_set_bodysize($css, $bodysize);
     $css = theme_essential_set_bodyweight($css, $bodyweight);
-    
+
     // Set the theme colour.
     $themecolor = theme_essential_get_setting('themecolor');
     $css = theme_essential_set_color($css, $themecolor, '[[setting:themecolor]]', '#30ADD1');
@@ -404,7 +415,7 @@ function theme_essential_process_css($css, $theme) {
     // Set the theme hover colour.
     $themehovercolor = theme_essential_get_setting('themehovercolor');
     $css = theme_essential_set_color($css, $themehovercolor, '[[setting:themehovercolor]]', '#F32100');
-    
+
     // Set the theme icon colour.
     $themeiconcolor = theme_essential_get_setting('themeiconcolor');
     $css = theme_essential_set_color($css, $themeiconcolor, '[[setting:themeiconcolor]]', '#30ADD1');
@@ -412,11 +423,11 @@ function theme_essential_process_css($css, $theme) {
     // Set the theme navigation colour.
     $themenavcolor = theme_essential_get_setting('themenavcolor');
     $css = theme_essential_set_color($css, $themenavcolor, '[[setting:themenavcolor]]', '#ffffff');
-    
+
     // Set the footer colour.
     $footercolor = theme_essential_get_setting('footercolor');
     $css = theme_essential_set_color($css, $footercolor, '[[setting:footercolor]]', '#555555');
-    
+
     // Set the footer text color.
     $footertextcolor = theme_essential_get_setting('footertextcolor');
     $css = theme_essential_set_color($css, $footertextcolor, '[[setting:footertextcolor]]', '#bbbbbb');
@@ -424,7 +435,7 @@ function theme_essential_process_css($css, $theme) {
     // Set the footer heading colour.
     $footerheadingcolor = theme_essential_get_setting('footerheadingcolor');
     $css = theme_essential_set_color($css, $footerheadingcolor, '[[setting:footerheadingcolor]]', '#cccccc');
-    
+
     // Set the footer separator colour.
     $footersepcolor = theme_essential_get_setting('footersepcolor');
     $css = theme_essential_set_color($css, $footersepcolor, '[[setting:footersepcolor]]', '#313131');
@@ -436,11 +447,11 @@ function theme_essential_process_css($css, $theme) {
     // Set the footer hover colour.
     $footerhovercolor = theme_essential_get_setting('footerhovercolor');
     $css = theme_essential_set_color($css, $footerhovercolor, '[[setting:footerhovercolor]]', '#30add1');
-     
+
     // Set the slide background colour.
     $slidebackgroundcolor = theme_essential_hex2rgba(theme_essential_get_setting('themecolor'), '.75');
     $css = theme_essential_set_color($css, $slidebackgroundcolor, '[[setting:carouselcolor]]', '#30add1');
-    
+
     // Set the slide active pip colour.
     $slidebackgroundcolor = theme_essential_hex2rgba(theme_essential_get_setting('themecolor'), '.25');
     $css = theme_essential_set_color($css, $slidebackgroundcolor, '[[setting:carouselactivecolor]]', '#30add1');
@@ -473,13 +484,13 @@ function theme_essential_process_css($css, $theme) {
         $default = $defaultalternativethemecolors[$alternativethemenumber - 1];
         $defaulthover = $defaultalternativethemehovercolors[$alternativethemenumber - 1];
         $css = theme_essential_set_alternativecolor($css, 'color' . $alternativethemenumber,
-                theme_essential_get_setting('alternativethemehovercolor'.$alternativethemenumber), $default);
+            theme_essential_get_setting('alternativethemehovercolor' . $alternativethemenumber), $default);
         $css = theme_essential_set_alternativecolor($css, 'textcolor' . $alternativethemenumber,
-                theme_essential_get_setting('alternativethemetextcolor'.$alternativethemenumber), $default);
+            theme_essential_get_setting('alternativethemetextcolor' . $alternativethemenumber), $default);
         $css = theme_essential_set_alternativecolor($css, 'urlcolor' . $alternativethemenumber,
-                theme_essential_get_setting('alternativethemeurlcolor'.$alternativethemenumber), $default);
+            theme_essential_get_setting('alternativethemeurlcolor' . $alternativethemenumber), $default);
         $css = theme_essential_set_alternativecolor($css, 'hovercolor' . $alternativethemenumber,
-                theme_essential_get_setting('alternativethemehovercolor'.$alternativethemenumber), $defaulthover);
+            theme_essential_get_setting('alternativethemehovercolor' . $alternativethemenumber), $defaulthover);
     }
 
     // Set custom CSS.
@@ -489,7 +500,7 @@ function theme_essential_process_css($css, $theme) {
     // Set the background image for the logo.
     $logo = $theme->setting_file_url('logo', 'logo');
     $css = theme_essential_set_logo($css, $logo);
-    
+
     // Set the background image for the page.
     $pagebackground = $theme->setting_file_url('pagebackground', 'pagebackground');
     $css = theme_essential_set_pagebackground($css, $pagebackground);
@@ -501,26 +512,26 @@ function theme_essential_process_css($css, $theme) {
     // Set Marketing Image Height.
     $marketingheight = theme_essential_get_setting('marketingheight');
     $css = theme_essential_set_marketingheight($css, $marketingheight);
-    
+
     // Set Marketing Images.
     if (theme_essential_get_setting('marketing1image')) {
         $setting = 'marketing1image';
         $marketingimage = $theme->setting_file_url($setting, $setting);
         $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
     }
-    
+
     if (theme_essential_get_setting('marketing2image')) {
         $setting = 'marketing2image';
         $marketingimage = $theme->setting_file_url($setting, $setting);
         $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
     }
-    
+
     if (theme_essential_get_setting('marketing3image')) {
         $setting = 'marketing3image';
         $marketingimage = $theme->setting_file_url($setting, $setting);
         $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
     }
-    
+
     // Set FontAwesome font loading path
     $css = theme_essential_set_fontwww($css);
     return $css;
@@ -534,7 +545,8 @@ function theme_essential_process_css($css, $theme) {
  *
  * @param moodle_page $page
  */
-function theme_essential_initialise_colourswitcher(moodle_page $page) {
+function theme_essential_initialise_colourswitcher(moodle_page $page)
+{
     user_preference_allow_ajax_update('theme_essential_colours', PARAM_ALPHANUM);
     $page->requires->yui_module(
         'moodle-theme_essential-coloursswitcher',
@@ -549,7 +561,8 @@ function theme_essential_initialise_colourswitcher(moodle_page $page) {
  * @param string $default The default theme colors to use
  * @return string The theme colours the user has selected
  */
-function theme_essential_get_colours($default = 'default') {
+function theme_essential_get_colours($default = 'default')
+{
     $preference = get_user_preferences('theme_essential_colours', $default);
     foreach (range(1, 3) as $alternativethemenumber) {
         if ($preference == 'alternative' . $alternativethemenumber && theme_essential_get_setting('enablealternativethemecolors' . $alternativethemenumber)) {
@@ -564,15 +577,17 @@ function theme_essential_get_colours($default = 'default') {
  *
  * If they are this updates the users preference in the database
  */
-function theme_essential_check_colours_switch() {
-    $colours= optional_param('essentialcolours', null, PARAM_ALPHANUM);
+function theme_essential_check_colours_switch()
+{
+    $colours = optional_param('essentialcolours', null, PARAM_ALPHANUM);
     if (in_array($colours, array('default', 'alternative1', 'alternative2', 'alternative3'))) {
         set_user_preference('theme_essential_colours', $colours);
     }
 }
 
- 
-function theme_essential_set_headingfont($css, $headingfont) {
+
+function theme_essential_set_headingfont($css, $headingfont)
+{
     $tag = '[[setting:headingfont]]';
     $replacement = $headingfont;
     if (!($replacement)) {
@@ -582,7 +597,8 @@ function theme_essential_set_headingfont($css, $headingfont) {
     return $css;
 }
 
-function theme_essential_set_bodyfont($css, $bodyfont) {
+function theme_essential_set_bodyfont($css, $bodyfont)
+{
     $tag = '[[setting:bodyfont]]';
     $replacement = $bodyfont;
     if (!($replacement)) {
@@ -592,19 +608,22 @@ function theme_essential_set_bodyfont($css, $bodyfont) {
     return $css;
 }
 
-function theme_essential_set_bodysize($css, $bodysize) {
+function theme_essential_set_bodysize($css, $bodysize)
+{
     $tag = '[[setting:bodysize]]';
     $css = str_replace($tag, $bodysize, $css);
     return $css;
 }
 
-function theme_essential_set_bodyweight($css, $bodyweight) {
+function theme_essential_set_bodyweight($css, $bodyweight)
+{
     $tag = '[[setting:bodyweight]]';
     $css = str_replace($tag, $bodyweight, $css);
     return $css;
 }
 
-function theme_essential_set_color($css, $themecolor, $tag, $default) {
+function theme_essential_set_color($css, $themecolor, $tag, $default)
+{
     if (!($themecolor)) {
         $replacement = $default;
     } else {
@@ -614,7 +633,8 @@ function theme_essential_set_color($css, $themecolor, $tag, $default) {
     return $css;
 }
 
-function theme_essential_set_alternativecolor($css, $type, $customcolor, $defaultcolor) {
+function theme_essential_set_alternativecolor($css, $type, $customcolor, $defaultcolor)
+{
     $tag = '[[setting:alternativetheme' . $type . ']]';
     if (!($customcolor)) {
         $replacement = $defaultcolor;
@@ -625,24 +645,26 @@ function theme_essential_set_alternativecolor($css, $type, $customcolor, $defaul
     return $css;
 }
 
-function theme_essential_set_pagebackground($css, $pagebackground) {
+function theme_essential_set_pagebackground($css, $pagebackground)
+{
     $tag = '[[setting:pagebackground]]';
     $replacement = $pagebackground;
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
 
-function theme_essential_set_pagebackgroundstyle($css, $style) {
+function theme_essential_set_pagebackgroundstyle($css, $style)
+{
     $tagattach = '[[setting:backgroundattach]]';
     $tagrepeat = '[[setting:backgroundrepeat]]';
     $tagsize = '[[setting:backgroundsize]]';
     $replacementattach = 'fixed';
     $replacementrepeat = 'no-repeat';
     $replacementsize = 'cover';
-    if($style === 'tiled') {
+    if ($style === 'tiled') {
         $replacementrepeat = 'repeat';
         $replacementsize = 'initial';
-    }else if ($style === 'stretch') {
+    } else if ($style === 'stretch') {
         $replacementattach = 'scroll';
     }
 
@@ -652,24 +674,27 @@ function theme_essential_set_pagebackgroundstyle($css, $style) {
     return $css;
 }
 
-function theme_essential_set_marketingheight($css, $marketingheight) {
+function theme_essential_set_marketingheight($css, $marketingheight)
+{
     $tag = '[[setting:marketingheight]]';
     $replacement = $marketingheight;
     if (!($replacement)) {
         $replacement = 100;
     }
-    $css = str_replace($tag, $replacement.'px', $css);
+    $css = str_replace($tag, $replacement . 'px', $css);
     return $css;
 }
 
-function theme_essential_set_marketingimage($css, $marketingimage, $setting) {
-    $tag = '[[setting:'.$setting.']]';
+function theme_essential_set_marketingimage($css, $marketingimage, $setting)
+{
+    $tag = '[[setting:' . $setting . ']]';
     $replacement = $marketingimage;
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
 
-function theme_essential_showslider($setting) {
+function theme_essential_showslider($setting)
+{
     global $CFG;
     $noslides = theme_essential_get_setting($setting);
     if ($noslides && (intval($CFG->version) >= 2013111800)) {
@@ -683,11 +708,12 @@ function theme_essential_showslider($setting) {
     return $noslides;
 }
 
-function theme_essential_get_nav_links($course, $sections, $sectionno) {
+function theme_essential_get_nav_links($course, $sections, $sectionno)
+{
     // FIXME: This is really evil and should by using the navigation API.
     $course = course_get_format($course)->get_course();
-    $previousarrow= '<i class="fa fa-chevron-circle-left"></i>';
-    $nextarrow= '<i class="fa fa-chevron-circle-right"></i>';
+    $previousarrow = '<i class="fa fa-chevron-circle-left"></i>';
+    $nextarrow = '<i class="fa fa-chevron-circle-right"></i>';
     $canviewhidden = has_capability('moodle/course:viewhiddensections', context_course::instance($course->id))
     or !$course->hiddensections;
 
@@ -739,7 +765,8 @@ function theme_essential_get_nav_links($course, $sections, $sectionno) {
     return $links;
 }
 
-function theme_essential_print_single_section_page(&$that, &$courserenderer, $course, $sections, $mods, $modnames, $modnamesused, $displaysection) {
+function theme_essential_print_single_section_page(&$that, &$courserenderer, $course, $sections, $mods, $modnames, $modnamesused, $displaysection)
+{
     global $PAGE;
 
     $modinfo = get_fast_modinfo($course);
@@ -787,7 +814,7 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
     $sectionnav = html_writer::start_tag('nav', array('class' => 'section-navigation'));
     $sectionnav .= $sectionnavlinks['previous'];
     $sectionnav .= $sectionnavlinks['next'];
-    $sectionnav .= html_writer::empty_tag('br', array('style'=>'clear:both'));
+    $sectionnav .= html_writer::empty_tag('br', array('style' => 'clear:both'));
     $sectionnav .= html_writer::end_tag('nav');
     $sectionnav .= html_writer::tag('div', '', array('class' => 'bor'));
 
@@ -830,14 +857,15 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
     echo html_writer::end_tag('div');
 }
 
-function theme_essential_page_init(moodle_page $page) {
+function theme_essential_page_init(moodle_page $page)
+{
     global $CFG;
     $page->requires->jquery();
-    if(intval($CFG->version) >= 2013111800) {
+    if (intval($CFG->version) >= 2013111800) {
         if (core_useragent::check_ie_version() && !core_useragent::check_ie_version('9.0')) {
             $page->requires->jquery_plugin('html5shiv', 'theme_essential');
         }
-    } else if (check_browser_version('MSIE') && !check_browser_version('MSIE', '9.0')){
+    } else if (check_browser_version('MSIE') && !check_browser_version('MSIE', '9.0')) {
         $page->requires->jquery_plugin('html5shiv', 'theme_essential');
     }
     $page->requires->jquery_plugin('bootstrap', 'theme_essential');
