@@ -553,8 +553,8 @@ class theme_essential_core_renderer extends core_renderer {
             $usermenu .= html_writer::end_tag('ul');
 
         } else {
-            $context = context_system::instance();
             $course = $this->page->course;
+            $context = context_course::instance($course->id);
 
             // Ouput Profile link
             $userurl    = new moodle_url('#');
@@ -589,6 +589,9 @@ class theme_essential_core_renderer extends core_renderer {
                 $branchurl   = new moodle_url('/course/switchrole.php', array('id'=>$course->id,'sesskey'=>sesskey(), 'switchrole'=>0, 'returnurl'=>$this->page->url->out_as_local_url(false)));
                 $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
             }
+
+            // Add preferences submenu
+            $usermenu .= $this->theme_essential_render_preferences($context);
 
             $usermenu   .= html_writer::empty_tag('hr', array('class' => 'sep'));
 
@@ -637,7 +640,7 @@ class theme_essential_core_renderer extends core_renderer {
                         $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
                     }
                 }
-            } else if (has_capability ('gradereport/user:view', context_course::instance($course->id))) {
+            } else if (has_capability ('gradereport/user:view', $context)) {
                 $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('mygrades', 'theme_essential').'</em>';
                 $branchurl   = new moodle_url('/grade/report/overview/index.php?id='.$course->id.'&userid='.$USER->id);
                 $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
@@ -649,19 +652,11 @@ class theme_essential_core_renderer extends core_renderer {
             }
 
             // Check if badges are enabled.
-            if (!empty($CFG->enablebadges)) {
+            if (!empty($CFG->enablebadges) && has_capability('moodle/badges:manageownbadges', $context)) {
                 $branchlabel = '<em><i class="fa fa-certificate"></i>'.get_string('badges').'</em>';
                 $branchurl   = new moodle_url('/badges/mybadges.php');
                 $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
             }
-
-            // Check if user is allowed to edit profile
-            if (has_capability('moodle/user:editownprofile', $context)) {
-                $branchlabel = '<em><i class="fa fa-cog"></i>'.get_string('preferences').'</em>';
-                $branchurl   = new moodle_url('/user/edit.php?id='.$USER->id);
-                $usermenu   .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
-            }
-
             $usermenu   .= html_writer::empty_tag('hr', array('class' => 'sep'));
 
             // Render direct logout link
@@ -677,7 +672,7 @@ class theme_essential_core_renderer extends core_renderer {
 
         $usermenu .= html_writer::end_tag('li');
         $usermenu .= html_writer::end_tag('ul');
-        
+
         return $usermenu;
     }
 
@@ -687,13 +682,10 @@ class theme_essential_core_renderer extends core_renderer {
      * @return string
      */
     private function theme_essential_render_helplink() {
+        global $USER;
         if(!theme_essential_get_setting('helplinktype')) {
                 return false;
         }
-
-        global $USER;
-        $helplink = '';
-
         $branchlabel = '<em><i class="fa fa-question-circle"></i>'.get_string('help').'</em>';
         $branchurl   = '';
         $target      = '';
@@ -723,6 +715,51 @@ class theme_essential_core_renderer extends core_renderer {
 
             return html_writer::tag('li',html_writer::link($branchurl, $branchlabel, array('target' => $target)));
         }
+
+    }
+
+    /**
+     * Renders preferences submenu
+     *
+     * @param integer $context
+     * @return string $preferences
+     */
+    private function theme_essential_render_preferences($context) {
+        global $USER, $CFG;
+        $label = '<em><i class="fa fa-cog"></i>'.get_string('preferences').'</em>';
+        $preferences  = html_writer::start_tag('li',array('class' => 'dropdown-submenu preferences'));
+        $preferences .= html_writer::link(new moodle_url('#'), $label, array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown'));
+        $preferences .= html_writer::start_tag('ul', array('class' => 'dropdown-menu'));
+        // Check if user is allowed to edit profile
+        if (has_capability('moodle/user:editownprofile', $context)) {
+            $branchlabel = '<em><i class="fa fa-user"></i>'.get_string('editmyprofile').'</em>';
+            $branchurl   = new moodle_url('/user/edit.php?id='.$USER->id);
+            $preferences .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+        }
+        if (has_capability('moodle/user:changeownpassword', $context)) {
+            $branchlabel = '<em><i class="fa fa-key"></i>'.get_string('changepassword').'</em>';
+            $branchurl   = new moodle_url('/login/change_password.php?id='.$USER->id);
+            $preferences .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+        }
+        if (has_capability('moodle/user:editownmessageprofile', $context)) {
+            $branchlabel = '<em><i class="fa fa-comments"></i>'.get_string('messagepreferences', 'theme_essential').'</em>';
+            $branchurl   = new moodle_url('/message/edit.php?id='.$USER->id);
+            $preferences .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+        }
+        if($CFG->enableblogs) {
+            $branchlabel = '<em><i class="fa fa-rss-square"></i>'.get_string('blogpreferences', 'theme_essential').'</em>';
+            $branchurl   = new moodle_url('/blog/preferences.php');
+            $preferences .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+        }
+        if($CFG->enablebadges && has_capability('moodle/badges:manageownbadges', $context)) {
+            $branchlabel = '<em><i class="fa fa-certificate"></i>'.get_string('badgepreferences', 'theme_essential').'</em>';
+            $branchurl   = new moodle_url('/badges/preferences.php');
+            $preferences .= html_writer::tag('li',html_writer::link($branchurl, $branchlabel));
+        }
+        $preferences .= html_writer::end_tag('ul');
+        $preferences .= html_writer::end_tag('li');
+    return $preferences;
+
 
     }
 

@@ -15,7 +15,7 @@
         border: none;
         line-height: 0px;
         background-image: none;
-        box-shadow: none;
+        border: #808080
         filter: none;
         
         .btn-navbar {
@@ -64,7 +64,8 @@
         .dropdown-submenu:hover > a,
         .dropdown-submenu:focus > a {
             color: ~"[[setting:themenavcolor]]" !important;
-            background-color: ~"[[setting:themecolor]]";
+            background: ~"[[setting:themecolor]]";
+            background-image: none;
             text-decoration: none;
         }
 
@@ -82,9 +83,11 @@
         .dropdown-menu {
             z-index: 200;
             margin: 0px;
+            border: #808080;
         }
         
-        .dropdown-menu > li > a {
+        .dropdown-menu > li > a,
+        .dropdown-submenu > a {
             padding: 3px 25px 3px 15px;
         }
 
@@ -101,8 +104,9 @@
                 content: "\f0da";
             }
             
-            &:hover, &:focus, &.open {
-                background-color: ~"[[setting:themenavcolor]]";
+            &:hover, &.open {
+                background: ~"[[setting:themenavcolor]]";
+                background-image: none;
                 color: ~"[[setting:themecolor]]";
                 .fa-caret-right {
                     margin-right: 1px;
@@ -117,9 +121,10 @@
 
         .nav > li.dropdown ul.dropdown-menu > li > a {
             color: ~"[[setting:themetextcolor]]";
-            &:hover, &:focus, &.open {
+            &:hover, &.open {
                 color: ~"[[setting:themenavcolor]]";
-                background-color: ~"[[setting:themecolor]]";
+                background: ~"[[setting:themecolor]]";
+                background-image: none;
             }
         }
 
@@ -143,9 +148,16 @@
                 a.dropdown-toggle {
                     padding: 9px 15px;
                 }
-                .dropdown-menu {
+                .dropdown-submenu.preferences {
+                    a.dropdown-toggle {
+                        padding: 3px 25px 3px 15px;
+                    }
+                }
+                ul.dropdown-menu {
+                    border: #808080;
                     i {
                         margin-right: 5px;
+                        width: 15px;
                     }
                     hr.sep {
                         margin: 0px;
@@ -165,6 +177,7 @@
                 ul.dropdown-menu {
                     left: auto;
                     right: 10px;
+                    border: #808080;
                     li > a {
                         padding: 0px;
                         border-top: 1px dotted ~"[[setting:themecolor]]";

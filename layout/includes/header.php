@@ -67,12 +67,12 @@ echo $OUTPUT->doctype() ?>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <div class="icon-collapse collapse">
+                    <div class="icon-collapse collapse pull-<?php echo ($left) ? 'right': 'left';?>">
                 <?php }
                 // If true, displays the heading and available social links; displays nothing if false.
                 if ($hassocialnetworks) {
                 ?>
-                <div class="span5 pull-<?php echo ($left) ? 'right': 'left';?>" id="socialnetworks">
+                <div class="pull-<?php echo ($left) ? 'right': 'left';?>" id="socialnetworks">
                 <p id="socialheading"><?php echo get_string('socialnetworks','theme_essential')?></p>
                     <ul class="socials unstyled">
                         <?php
@@ -95,7 +95,7 @@ echo $OUTPUT->doctype() ?>
                 // If true, displays the heading and available social links; displays nothing if false.
                 if ($hasmobileapps) {
                 ?>
-                <div class="span2 pull-<?php echo ($left) ? 'right': 'left';?>">
+                <div class="pull-<?php echo ($left) ? 'right': 'left';?>" id="mobileapps">
                     <p id="socialheading"><?php echo get_string('mobileappsheading','theme_essential')?></p>
                     <ul class="socials unstyled">
                         <?php 
@@ -108,10 +108,7 @@ echo $OUTPUT->doctype() ?>
                 </div>
                 <?php 
                 }
-                if (!empty($courseheader)) { ?>
-                    <div id="course-header"><?php echo $courseheader; ?></div>
-                <?php }
-                    if ($hassocialnetworks || $hasmobileapps) { ?>
+                if ($hassocialnetworks || $hasmobileapps) { ?>
                     </div>
                 <?php } ?>
             </div>

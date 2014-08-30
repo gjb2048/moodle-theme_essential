@@ -3335,6 +3335,7 @@ input[type="color"],
 .form-defaultinfo,
 .form-label .form-shortname {
   color: [[setting:themetextcolor]];
+  height: 25px;
 }
 .form-item .form-label,
 .mform .fitem div.fitemtitle {
@@ -3608,11 +3609,14 @@ a.marketing-button:hover {
   padding-right: 35px;
   vertical-align: middle;
 }
-.path-grade-report-grader h1#title {
+.path-grade-report-grader h1 {
   clear: none;
 }
 .path-grade-report-grader .gradeparent div:nth-of-type(2):not(.topscroll).right_scroller {
   padding-top: 22px;
+}
+.path-grade-report-grader .gradeparent .left_scroller {
+  padding-top: 25px;
 }
 .path-grade-report-grader .gradeparent .right_scroller .topscroll {
   min-height: 22px;
@@ -3760,8 +3764,10 @@ table#greyboxleft h2 {
 }
 /* @end */
 /* @group Social Buttons */
-#socialnetworks {
+#socialnetworks,
+#mobileapps {
   height: 75px;
+  margin-right: 10px;
 }
 .socials {
   margin: 0px;
@@ -3857,6 +3863,20 @@ ul.socials li {
 }
 /* @end */
 /* @end */
+/* @group Gradebook */
+.messagearea #fitem_id_message .fitemtitle {
+  width: auto;
+  max-width: 20%;
+}
+.messagearea #fitem_id_message .felement.ftextarea {
+  float: left;
+  margin-left: 25px;
+  width: 70%;
+}
+.messagearea #fitem_id_submitbutton .felement.fsubmit {
+  margin-left: 0px;
+}
+/* @end */
 /* @group Navbar */
 /* @group Custom Menu */
 .navbar {
@@ -3872,8 +3892,8 @@ ul.socials li {
   border: none;
   line-height: 0px;
   background-image: none;
-  box-shadow: none;
-  filter: none;
+  border: #808080
+        filter: none;
 }
 .navbar .navbar-inner .btn-navbar {
   float: left;
@@ -3911,11 +3931,11 @@ ul.socials li {
 .navbar .navbar-inner .dropdown-submenu:hover > a,
 .navbar .navbar-inner .dropdown-submenu:focus > a {
   color: [[setting:themenavcolor]] !important;
-  background-color: [[setting:themecolor]];
+  background: [[setting:themecolor]];
+  background-image: none;
   text-decoration: none;
 }
-.navbar .navbar-inner .dropdown [class^="fa fa-"] {
-  font-size: 1.1em;
+.navbar .navbar-inner .dropdown .fa {
   margin-right: 5px;
 }
 .navbar .navbar-inner .open > .dropdown-menu {
@@ -3925,8 +3945,10 @@ ul.socials li {
 .navbar .navbar-inner .dropdown-menu {
   z-index: 200;
   margin: 0px;
+  border: #808080;
 }
-.navbar .navbar-inner .dropdown-menu > li > a {
+.navbar .navbar-inner .dropdown-menu > li > a,
+.navbar .navbar-inner .dropdown-submenu > a {
   padding: 3px 25px 3px 15px;
 }
 .navbar .navbar-inner .dropdown-menu > li > a:hover {
@@ -3944,25 +3966,20 @@ ul.socials li {
 }
 .navbar .navbar-inner .nav > li.dropdown a:hover,
 .navbar .navbar-inner .nav > li > a:hover,
-.navbar .navbar-inner .nav > li.dropdown a:focus,
-.navbar .navbar-inner .nav > li > a:focus,
 .navbar .navbar-inner .nav > li.dropdown a.open,
 .navbar .navbar-inner .nav > li > a.open {
-  background-color: [[setting:themenavcolor]];
+  background: [[setting:themenavcolor]];
+  background-image: none;
   color: [[setting:themecolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown a:hover .fa-caret-right,
 .navbar .navbar-inner .nav > li > a:hover .fa-caret-right,
-.navbar .navbar-inner .nav > li.dropdown a:focus .fa-caret-right,
-.navbar .navbar-inner .nav > li > a:focus .fa-caret-right,
 .navbar .navbar-inner .nav > li.dropdown a.open .fa-caret-right,
 .navbar .navbar-inner .nav > li > a.open .fa-caret-right {
   margin-right: 1px;
 }
 .navbar .navbar-inner .nav > li.dropdown a:hover .fa-caret-right:before,
 .navbar .navbar-inner .nav > li > a:hover .fa-caret-right:before,
-.navbar .navbar-inner .nav > li.dropdown a:focus .fa-caret-right:before,
-.navbar .navbar-inner .nav > li > a:focus .fa-caret-right:before,
 .navbar .navbar-inner .nav > li.dropdown a.open .fa-caret-right:before,
 .navbar .navbar-inner .nav > li > a.open .fa-caret-right:before {
   margin-left: 5px;
@@ -3972,10 +3989,10 @@ ul.socials li {
   color: [[setting:themetextcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:hover,
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:focus,
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a.open {
   color: [[setting:themenavcolor]];
-  background-color: [[setting:themecolor]];
+  background: [[setting:themecolor]];
+  background-image: none;
 }
 .navbar .navbar-inner .messagemenu,
 .navbar .navbar-inner .usermenu {
@@ -3994,10 +4011,17 @@ ul.socials li {
 .navbar .navbar-inner .usermenu .dropdown a.dropdown-toggle {
   padding: 9px 15px;
 }
-.navbar .navbar-inner .usermenu .dropdown .dropdown-menu i {
-  margin-right: 5px;
+.navbar .navbar-inner .usermenu .dropdown .dropdown-submenu.preferences a.dropdown-toggle {
+  padding: 3px 25px 3px 15px;
 }
-.navbar .navbar-inner .usermenu .dropdown .dropdown-menu hr.sep {
+.navbar .navbar-inner .usermenu .dropdown ul.dropdown-menu {
+  border: #808080;
+}
+.navbar .navbar-inner .usermenu .dropdown ul.dropdown-menu i {
+  margin-right: 5px;
+  width: 15px;
+}
+.navbar .navbar-inner .usermenu .dropdown ul.dropdown-menu hr.sep {
   margin: 0px;
   height: 0px;
   border: none;
@@ -4009,11 +4033,13 @@ ul.socials li {
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu {
   left: auto;
   right: 10px;
+  border: #808080;
 }
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a {
   padding: 0px;
   border-top: 1px dotted [[setting:themecolor]];
   background: #fff;
+  overflow: hidden;
 }
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a > .message {
   padding: 5px 10px;
@@ -4043,6 +4069,37 @@ ul.socials li {
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a > .message.read {
   opacity: 0.75;
   filter: alpha(opacity=75);
+}
+.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a > .notification {
+  width: 255px;
+  padding: 5px 10px;
+  overflow: hidden;
+}
+.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a > .notification .icon {
+  float: left;
+  font-size: 5em;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a > .notification .notification-text {
+  width: 185px;
+  white-space: initial;
+  float: right;
+  font-size: 12px;
+}
+.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a > .notification .msg-time {
+  float: left;
+  clear: right;
+}
+.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a > .notification.read {
+  opacity: 0.75;
+  filter: alpha(opacity=75);
+}
+.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a > .notification.unread {
+  background: #eeeeee;
+}
+.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a > .notification.unread .msg-text {
+  font-weight: 700;
 }
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message {
   background: transparent;
@@ -4263,7 +4320,6 @@ ul.socials li {
     display: inline-block;
     border-left: 7px solid transparent;
     border-right: 7px solid transparent;
-    border-bottom: 7px solid #ccc;
     border-bottom-color: rgba(0, 0, 0, 0.2);
     position: absolute;
     top: -7px;
@@ -4316,6 +4372,10 @@ ul.socials li {
   }
   #page-header {
     height: auto;
+  }
+  #page-header h2#subtitle {
+    top: 0px;
+    line-height: 10px;
   }
   #page-header .icon-collapse {
     overflow: hidden;

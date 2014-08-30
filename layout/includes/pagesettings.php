@@ -102,12 +102,8 @@ $hasmobileapps =    (   theme_essential_get_setting('ios')          ||
                     );
 
 $logoclass = 'span12';
-if ($hassocialnetworks && !($hasmobileapps)) {
-    $logoclass = 'span7';
-} else if (($hassocialnetworks) && !($hasmobileapps)) {
-    $logoclass = 'span10';
-} else if ($hassocialnetworks && $hasmobileapps) {
-    $logoclass = 'span5';
+if ($hassocialnetworks || $hasmobileapps) {
+    $logoclass = 'span6';
 }
 
 $oldnavbar = theme_essential_get_setting('oldnavbar');
