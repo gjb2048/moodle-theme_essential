@@ -226,7 +226,7 @@ module.exports = function(grunt) {
         },
         exec: {
             decache: {
-                cmd: '/usr/bin/php "' + decachephp + '"',
+                cmd: 'php "' + decachephp + '"',
                 callback: function(error, stdout, stderror) {
                     // exec will output error messages
                     // just add one to confirm success.
