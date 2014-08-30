@@ -61,9 +61,6 @@ $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be 
 $string['footnote'] = 'Footnote';
 $string['footnotedesc'] = 'Whatever you add to this textarea will be displayed in the footer throughout your Moodle site.';
 
-$string['invert'] = 'Invert navbar';
-$string['invertdesc'] = 'Swaps text and background for the navbar at the top of the page between black and white.';
-
 $string['logo'] = 'Logo';
 $string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.<br>The image should be 65px high and any reasonable width that suits.<br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
 
@@ -234,7 +231,12 @@ $string['footerheadingcolor'] = 'Footer heading colour';
 $string['footerheadingcolordesc'] = 'Set the colour for block headings in the footer.';
 
 $string['pagebackground'] = 'Page background image';
-$string['pagebackgrounddesc'] = 'Upload your own background image. This will be stretched in the background on all pages.';
+$string['pagebackgrounddesc'] = 'Upload your own background image. Select the style of the image below.';
+$string['pagebackgroundstyle'] = 'Page background style';
+$string['pagebackgroundstyledesc'] = 'Select teh style for the uploaded image.';
+$string['backgroundstylefixed'] = 'Fixed';
+$string['backgroundstyletiled'] = 'Tiled';
+$string['backgroundstylestretch'] = 'Stretch';
 
 /* Alternate Colour Switcher */
 $string['themecolors'] = 'Theme colours';

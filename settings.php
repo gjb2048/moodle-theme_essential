@@ -77,7 +77,8 @@ defined('MOODLE_INTERNAL') || die;
     $name = 'theme_essential/fontcharacterset';
     $title = get_string('fontcharacterset', 'theme_essential');
     $description = get_string('fontcharactersetdesc', 'theme_essential');
-    $setting = new admin_setting_configmulticheckbox($name, $title, $description, array(' latin'), array(
+    $default = 'latin';
+    $setting = new admin_setting_configmulticheckbox($name, $title, $description, $default, array(
         'latin' => get_string('fontcharactersetlatin', 'theme_essential'),
         'latin-ext' => get_string('fontcharactersetlatinext', 'theme_essential'),
         'cyrillic' => get_string('fontcharactersetcyrillic', 'theme_essential'),
@@ -94,6 +95,19 @@ defined('MOODLE_INTERNAL') || die;
     $title = get_string('pagebackground', 'theme_essential');
     $description = get_string('pagebackgrounddesc', 'theme_essential');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'pagebackground');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Background Image.
+    $name = 'theme_essential/pagebackgroundstyle';
+    $title = get_string('pagebackgroundstyle', 'theme_essential');
+    $description = get_string('pagebackgroundstyledesc', 'theme_essential');
+    $default = 'fixed';
+    $setting = new admin_setting_configselect($name, $title, $description, $default, array(
+        'fixed' => get_string('backgroundstylefixed', 'theme_essential'),
+        'tiled' => get_string('backgroundstyletiled', 'theme_essential'),
+        'stretch' => get_string('backgroundstylestretch', 'theme_essential'),
+    ));
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     

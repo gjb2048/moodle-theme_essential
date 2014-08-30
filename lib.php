@@ -491,9 +491,12 @@ function theme_essential_process_css($css, $theme) {
     $css = theme_essential_set_logo($css, $logo);
     
     // Set the background image for the page.
-    $setting = 'pagebackground';
-    $pagebackground = $theme->setting_file_url($setting, $setting);
-    $css = theme_essential_set_pagebackground($css, $pagebackground, $setting);
+    $pagebackground = $theme->setting_file_url('pagebackground', 'pagebackground');
+    $css = theme_essential_set_pagebackground($css, $pagebackground);
+
+    // Set the background style for the page.
+    $pagebackgroundstyle = theme_essential_get_setting('pagebackgroundstyle');
+    $css = theme_essential_set_pagebackgroundstyle($css, $pagebackgroundstyle);
 
     // Set Marketing Image Height.
     $marketingheight = theme_essential_get_setting('marketingheight');
@@ -622,10 +625,30 @@ function theme_essential_set_alternativecolor($css, $type, $customcolor, $defaul
     return $css;
 }
 
-function theme_essential_set_pagebackground($css, $pagebackground, $setting) {
+function theme_essential_set_pagebackground($css, $pagebackground) {
     $tag = '[[setting:pagebackground]]';
     $replacement = $pagebackground;
     $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_pagebackgroundstyle($css, $style) {
+    $tagattach = '[[setting:backgroundattach]]';
+    $tagrepeat = '[[setting:backgroundrepeat]]';
+    $tagsize = '[[setting:backgroundsize]]';
+    $replacementattach = 'fixed';
+    $replacementrepeat = 'no-repeat';
+    $replacementsize = 'cover';
+    if($style === 'tiled') {
+        $replacementrepeat = 'repeat';
+        $replacementsize = 'initial';
+    }else if ($style === 'stretch') {
+        $replacementattach = 'scroll';
+    }
+
+    $css = str_replace($tagattach, $replacementattach, $css);
+    $css = str_replace($tagrepeat, $replacementrepeat, $css);
+    $css = str_replace($tagsize, $replacementsize, $css);
     return $css;
 }
 
