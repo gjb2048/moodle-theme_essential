@@ -47,7 +47,7 @@ function theme_essential_set_fontwww($css) {
 }
 
 function theme_essential_get_setting($setting, $format = false) {
-    static $theme = '';
+    static $theme;
     if (empty($theme)) {
         $theme = theme_config::load('essential');
     }
@@ -136,7 +136,7 @@ function theme_essential_edit_button($section) {
  * @return bool
  */
 function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
-    static $theme = '';
+    static $theme;
     if (empty($theme)) {
         $theme = theme_config::load('essential');
     }
@@ -191,11 +191,11 @@ function theme_essential_set_pagewidth($css, $pagewidth) {
  * get_performance_output() override get_peformance_info()
  *  in moodlelib.php. Returns a string
  * values ready for use.
- *
- * @return string
+ * @param array $param
+ * @param string $perfinfo
+ * @return string $html
  */
 function theme_essential_performance_output($param, $perfinfo) {
-    
     $html  = html_writer::start_tag('div', array('class' => 'container-fluid performanceinfo'));
     $html .= html_writer::start_tag('div', array('class' => 'row-fluid'));
     $html .= html_writer::tag('h2', get_string('perfinfoheading', 'theme_essential'));
