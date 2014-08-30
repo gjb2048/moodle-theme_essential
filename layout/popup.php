@@ -44,6 +44,7 @@ echo $OUTPUT->doctype() ?>
 
 <div id="page" class="container-fluid">
     <div id="page-content" class="row-fluid">
+        <?php echo $OUTPUT->page_heading(); ?>
         <section id="region-main" class="span12">
             <?php
             echo $OUTPUT->course_content_header();
