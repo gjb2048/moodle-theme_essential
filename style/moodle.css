@@ -3623,9 +3623,9 @@ img.iconsmall {
 }
 .section .activity .mod-indent-outer {
   /**
-             * Add appropriate padding such that nothing overlaps the
-             * absolute positioned move icon.
-             */
+       * Add appropriate padding such that nothing overlaps the
+       * absolute positioned move icon.
+       */
   padding-left: 32px;
 }
 .section .activity .actions {
@@ -3683,9 +3683,9 @@ img.iconsmall {
 }
 .dir-rtl .section .activity .mod-indent-outer {
   /**
-             * Add appropriate padding such that nothing overlaps the
-             * absolute positioned move icon.
-             */
+       * Add appropriate padding such that nothing overlaps the
+       * absolute positioned move icon.
+       */
   padding-left: initial;
   padding-right: 32px;
 }
@@ -5758,17 +5758,17 @@ a.ygtvspacer:hover {
   width: 100%;
 }
 .filemanager .yui3-datatable-header {
-  background: #FFFFFF!important;
-  border-bottom: 1px solid #CCCCCC!important;
-  border-left: 0 solid #FFFFFF!important;
-  color: #555555!important;
+  background: #FFFFFF !important;
+  border-bottom: 1px solid #CCCCCC !important;
+  border-left: 0 solid #FFFFFF !important;
+  color: #555555 !important;
 }
 .filemanager .yui3-datatable-odd .yui3-datatable-cell {
-  background-color: #F6F6F6!important;
+  background-color: #F6F6F6 !important;
   border-left: 0 solid #F6F6F6;
 }
 .filemanager .yui3-datatable-even .yui3-datatable-cell {
-  background-color: #FFFFFF!important;
+  background-color: #FFFFFF !important;
   border-left: 0 solid #FFFFFF;
 }
 .filemanager .fp-filename-icon.fp-hasreferences .fp-reficons1 {
@@ -6417,8 +6417,8 @@ table.message .searchresults td {
   max-height: 400px;
   max-height: calc(85vh);
   /* The next line is a workaround because recess is crap. Delete ththe following line once
-  * https://github.com/twitter/recess/issues/59 / https://github.com/twitter/recess/issues/75
-  * is fixed. The previous line is the right one. */
+   * https://github.com/twitter/recess/issues/59 / https://github.com/twitter/recess/issues/75
+   * is fixed. The previous line is the right one. */
   max-height: 60vh;
   width: 60%;
 }
@@ -14812,7 +14812,7 @@ body.has_dock div#dock {
     display: inherit !important;
   }
   .visible-desktop {
-    display: none !important ;
+    display: none !important;
   }
   .visible-tablet {
     display: inherit !important;

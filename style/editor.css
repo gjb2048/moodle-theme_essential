@@ -806,7 +806,7 @@ table th[class*="span"],
   background-image: url("[[pix:theme|glyphicons-halflings-white]]");
 }
 .icon-glass {
-  background-position: 0      0;
+  background-position: 0 0;
 }
 .icon-music {
   background-position: -24px 0;

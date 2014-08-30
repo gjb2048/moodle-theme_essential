@@ -86,6 +86,18 @@
   font-size: 5em;
 }
 
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
 .fa-fw {
   width: 1.28571429em;
   text-align: center;
@@ -3666,12 +3678,6 @@ div.mdl-align.title {
   transition: background-position 0.1s linear;
 }
 
-.has_dock:not(.dir-rtl) #dock .dockedtitle:focus {
-  outline: thin dotted #333;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-
 .has_dock:not(.dir-rtl) #dock .dockedtitle.active,
 .has_dock:not(.dir-rtl) #dock .dockedtitle:active {
   background-image: none;
@@ -3685,7 +3691,7 @@ div.mdl-align.title {
 .has_dock:not(.dir-rtl) #dock .dockedtitle[disabled] {
   cursor: default;
   background-image: none;
-  opacity: .65;
+  opacity: 0.65;
   filter: alpha(opacity=65);
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -4883,8 +4889,8 @@ ul.socials li {
   border: none;
   line-height: 0px;
   background-image: none;
-  border: #808080
-        filter: none;
+  border: #808080;
+  filter: none;
 }
 
 .navbar .navbar-inner .btn-navbar {
