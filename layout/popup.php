@@ -43,16 +43,6 @@ echo $OUTPUT->doctype() ?>
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <div id="page" class="container-fluid">
-    <div id="page-navbar" class="clearfix row-fluid">
-        <div
-            class="breadcrumb-nav pull-<?php echo ($left) ? 'left' : 'right'; ?>"><?php echo $OUTPUT->navbar(); ?></div>
-        <nav
-            class="breadcrumb-button pull-<?php echo ($left) ? 'right' : 'left'; ?>"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-    </div>
-    <div id="course-header">
-        <?php echo $OUTPUT->course_header(); ?>
-    </div>
-
     <div id="page-content" class="row-fluid">
         <section id="region-main" class="span12">
             <?php
