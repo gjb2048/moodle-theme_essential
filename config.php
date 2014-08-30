@@ -52,7 +52,11 @@ if ((get_config('theme_essential', 'enablealternativethemecolors1')) ||
 $THEME->sheets[] = 'custom';
 
 $THEME->supportscssoptimisation = false;
-$THEME->enable_dock = true;
+
+if(intval($CFG->version) >= 2013111800) {
+    $THEME->enable_dock = true;
+    $THEME->javascripts_footer[] = 'dock';
+}
 
 $THEME->editor_sheets = array('editor');
 
@@ -67,7 +71,7 @@ $THEME->layouts = array(
     // Most backwards compatible layout without the blocks - this is the layout used by default.
     'base' => array(
         'file' => 'columns1.php',
-        'regions' => array(),
+        'regions' => array('footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => '',
     ),
     // Front page.
@@ -154,7 +158,7 @@ $THEME->layouts = array(
     'print' => array(
         'file' => 'columns1.php',
         'regions' => array('footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'footer-right',
+        'defaultregion' => '',
         'options' => array('nofooter'=>true),
     ),
     // The pagelayout used when a redirection is occuring.
@@ -178,7 +182,6 @@ $THEME->layouts = array(
 );
 
 $THEME->javascripts_footer[] = 'coloursswitcher';
-$THEME->javascripts_footer[] = 'dock';
 
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->csspostprocess = 'theme_essential_process_css';

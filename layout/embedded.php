@@ -57,10 +57,12 @@ echo $OUTPUT->doctype() ?>
 <section role="main-content">
     <div id="page" class="container-fluid maintenance">
 
-        <div id="page-content" class="row-fluid">
+        <div id="page-content" class="row-fluid text-center">
             <section id="region-main" class="span12">
                 <?php echo $OUTPUT->main_content(); ?>
-				<center><i class="fa fa-refresh fa-spin fa-2x"></i></center>
+                <?php if($PAGE = 'redirect') {?>
+                    <i class="fa fa-refresh fa-spin fa-2x"></i>
+                <?php }?>
             </section>
         </div>
 
