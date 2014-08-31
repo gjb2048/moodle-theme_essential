@@ -571,7 +571,7 @@ class theme_essential_core_renderer extends core_renderer
             $course = $this->page->course;
             $context = context_course::instance($course->id);
 
-            // Ouput Profile link
+            // Output Profile link
             $userurl = new moodle_url('#');
             $userpic = parent::user_picture($USER, array('link' => false));
             $caret = '<i class="fa fa-caret-right"></i>';
