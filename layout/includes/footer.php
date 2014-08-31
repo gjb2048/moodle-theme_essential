@@ -88,6 +88,7 @@ if (empty($PAGE->layout_options['nofooter'])) {
                 }
             });
             $('.breadcrumb').jBreadCrumb();
+            $('body').fitVids();
         });
     </script>
     <a href="#top" class="back-to-top" title="<?php print_string('backtotop', 'theme_essential'); ?>"><i

@@ -425,7 +425,7 @@ function theme_essential_process_css($css, $theme)
     $css = theme_essential_set_color($css, $themenavcolor, '[[setting:themenavcolor]]', '#ffffff');
 
     // Set the footer colour.
-    $footercolor = theme_essential_get_setting('footercolor');
+    $footercolor = theme_essential_hex2rgba(theme_essential_get_setting('footercolor'), '0.95');
     $css = theme_essential_set_color($css, $footercolor, '[[setting:footercolor]]', '#555555');
 
     // Set the footer text color.
@@ -870,4 +870,5 @@ function theme_essential_page_init(moodle_page $page)
     }
     $page->requires->jquery_plugin('bootstrap', 'theme_essential');
     $page->requires->jquery_plugin('breadcrumb', 'theme_essential');
+    $page->requires->jquery_plugin('fitvids', 'theme_essential');
 }
