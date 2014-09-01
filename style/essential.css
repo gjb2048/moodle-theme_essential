@@ -3481,8 +3481,6 @@ input[type="color"],
 }
 /* @group Alerts */
 .useralerts [class^="fa-stack"] {
-  float: left;
-  vertical-align: middle;
   margin-right: 5px;
 }
 .useralerts .title {
@@ -3538,6 +3536,7 @@ input[type="color"],
   padding: 3px 0px 8px 0px;
   margin: 3px 0px 4px 0px;
   border-bottom: 1px solid #f1f1f1;
+  color: [[setting:themecolor]];
 }
 #marketing-spots .marketing-spot i {
   font-size: 1.2em;

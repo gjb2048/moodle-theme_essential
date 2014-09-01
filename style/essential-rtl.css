@@ -4383,8 +4383,6 @@ input[type="color"],
 /* @group Alerts */
 
 .useralerts [class^="fa-stack"] {
-  float: right;
-  vertical-align: middle;
   margin-left: 5px;
 }
 
@@ -4452,6 +4450,7 @@ input[type="color"],
   padding: 3px 0px 8px 0px;
   margin: 3px 0px 4px 0px;
   border-bottom: 1px solid #f1f1f1;
+  color: [[setting:themecolor]];
 }
 
 #marketing-spots .marketing-spot i {
