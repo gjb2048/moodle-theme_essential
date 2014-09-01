@@ -3399,6 +3399,13 @@ input[type="color"],
 #page-admin-registration-register #page form .form-buttons,
 .path-backup #page form .form-buttons {
   width: 400px;
+  border-radius: 4px;
+}
+#page-course-edit #page form .form-buttons input,
+.path-admin-setting #page form .form-buttons input,
+#page-admin-registration-register #page form .form-buttons input,
+.path-backup #page form .form-buttons input {
+  margin: 0px;
 }
 /* @end */
 /* @group Forums */
