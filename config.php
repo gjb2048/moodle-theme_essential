@@ -60,13 +60,11 @@ if (intval($CFG->version) >= 2013111800) {
 
 $THEME->editor_sheets = array('editor');
 
-if (get_config('theme_essential', 'frontpagemiddleblocks') == 1 ||
-    (get_config('theme_essential', 'frontpagemiddleblocks') == 2 && isloggedin())
-) {
+$addregions = array();
+if (get_config('theme_essential', 'frontpagemiddleblocks') > 1) {
     $addregions = array('home-left', 'home-middle', 'home-right');
-} else {
-    $addregions = array();
 }
+
 
 $THEME->layouts = array(
     // Most backwards compatible layout without the blocks - this is the layout used by default.

@@ -2423,8 +2423,8 @@ img.profilepicture {
   min-height: 300px;
 }
 
-#middle-blocks p {
-  margin-top: 12px;
+#middle-blocks {
+  margin: 15px 0px;
 }
 
 .tree_item {
@@ -2869,7 +2869,7 @@ img.profilepicture {
 /* @group Breadcrumb */
 
 .breadcrumb-nav {
-  width: 85%;
+  width: 65%;
   margin: 0px;
   /* @group Breadcrumb Style Fancy */
   /* @end */
@@ -3387,6 +3387,14 @@ table.calendarmonth.calendartable {
 
 .categoryicons .subcategories + .category-browse {
   clear: both;
+}
+
+/* @end */
+
+/* @group Chat */
+
+.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-input-area table.generaltable td.cell {
+  padding: 0px;
 }
 
 /* @end */
@@ -4208,7 +4216,6 @@ input[type="color"],
 .form-defaultinfo,
 .form-label .form-shortname {
   color: [[setting:themetextcolor]];
-  height: 25px;
 }
 
 .form-item .form-label,
@@ -4889,7 +4896,7 @@ ul.socials li {
   border: none;
   line-height: 0px;
   background-image: none;
-  border: #808080;
+  box-shadow: none;
   filter: none;
 }
 
@@ -5990,6 +5997,14 @@ h6,
 
 .actions .moodle-actionmenu[data-enhanced].show .menu a:hover:before {
   color: #fff;
+}
+
+/* @end */
+
+/* @group Chat */
+
+#chat-input-area table.generaltable td.cell {
+  background: [[setting:themecolor]] !important;
 }
 
 /* @end */
