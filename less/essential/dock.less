@@ -83,14 +83,13 @@
   padding: 1px 8px;
 }
 
-.has_dock:not(.dir-rtl) {
+body.has_dock {
   padding-left: 40px;
   div#dock {
     display: inline;
   }
-  &.dir-ltr #page, &.dir-ltr .navbar-inner {
-    /*@noflip*/
-    padding-left: 52px;
+  #page {
+    padding-left: 20px;
   }
 
   #dock {
