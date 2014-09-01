@@ -1717,6 +1717,8 @@ body {
   line-height: 25px;
   text-shadow: none;
   position: relative;
+  font-size: 14px;
+  font-weight: 400;
   background-color: rgba(255, 255, 255, 0.6);
   background-size: cover;
   margin: 0px;
@@ -1991,7 +1993,7 @@ img.profilepicture {
   width: 90%;
 }
 .block_login .content .footer div a {
-  background: orangered;
+  background: darkslategray;
 }
 .block_login .content .footer div a:hover {
   background: red;
@@ -2028,6 +2030,7 @@ img.profilepicture {
 .block_login .content form input[type="submit"]:hover,
 .block_login .content .footer a:hover {
   text-decoration: none;
+  background: green;
 }
 .block_login input#login_username,
 .block_login input#login_password {
@@ -2831,18 +2834,16 @@ div.mdl-align.title {
 .dockbutton-mini {
   padding: 1px 8px;
 }
-.has_dock:not(.dir-rtl) {
+body.has_dock {
   padding-left: 40px;
 }
-.has_dock:not(.dir-rtl) div#dock {
+body.has_dock div#dock {
   display: inline;
 }
-.has_dock:not(.dir-rtl).dir-ltr #page,
-.has_dock:not(.dir-rtl).dir-ltr .navbar-inner {
-  /*@noflip*/
-  padding-left: 52px;
+body.has_dock #page {
+  padding-left: 20px;
 }
-.has_dock:not(.dir-rtl) #dock {
+body.has_dock #dock {
   position: fixed;
   left: 0;
   z-index: 12000;
@@ -2850,19 +2851,19 @@ div.mdl-align.title {
   background: [[setting:themecolor]];
   border-right: 0 none;
 }
-.has_dock:not(.dir-rtl) #dock .controls img {
+body.has_dock #dock .controls img {
   background: #fff;
   padding: 3px;
   border-radius: 5px;
 }
-.has_dock:not(.dir-rtl) #dock .nothingdocked {
+body.has_dock #dock .nothingdocked {
   display: none;
   visibility: hidden;
 }
-.has_dock:not(.dir-rtl) #dock .dockeditem .firstdockitem {
+body.has_dock #dock .dockeditem .firstdockitem {
   margin-top: 1em;
 }
-.has_dock:not(.dir-rtl) #dock .dockedtitle {
+body.has_dock #dock .dockedtitle {
   padding: 10px 0;
   margin: 2px;
   margin-bottom: 0;
@@ -2871,29 +2872,29 @@ div.mdl-align.title {
   cursor: pointer;
   border-bottom: 1px dashed #fff;
 }
-.has_dock:not(.dir-rtl) #dock .dockedtitle h2 {
+body.has_dock #dock .dockedtitle h2 {
   font-weight: normal;
   text-align: center;
   color: [[setting:themetextcolor]];
 }
-.has_dock:not(.dir-rtl) #dock .dockedtitle:hover,
-.has_dock:not(.dir-rtl) #dock .dockedtitle:focus,
-.has_dock:not(.dir-rtl) #dock .dockedtitle:active,
-.has_dock:not(.dir-rtl) #dock .dockedtitle.active,
-.has_dock:not(.dir-rtl) #dock .dockedtitle.disabled,
-.has_dock:not(.dir-rtl) #dock .dockedtitle[disabled] {
+body.has_dock #dock .dockedtitle:hover,
+body.has_dock #dock .dockedtitle:focus,
+body.has_dock #dock .dockedtitle:active,
+body.has_dock #dock .dockedtitle.active,
+body.has_dock #dock .dockedtitle.disabled,
+body.has_dock #dock .dockedtitle[disabled] {
   color: #7b8a8b;
   background-color: [[setting:themehovercolor]];
 }
-.has_dock:not(.dir-rtl) #dock .dockedtitle:active,
-.has_dock:not(.dir-rtl) #dock .dockedtitle.active {
+body.has_dock #dock .dockedtitle:active,
+body.has_dock #dock .dockedtitle.active {
   background-color: #b4bcc2;
 }
-.has_dock:not(.dir-rtl) #dock .dockedtitle:first-child {
+body.has_dock #dock .dockedtitle:first-child {
   *margin-left: 0;
 }
-.has_dock:not(.dir-rtl) #dock .dockedtitle:hover,
-.has_dock:not(.dir-rtl) #dock .dockedtitle:focus {
+body.has_dock #dock .dockedtitle:hover,
+body.has_dock #dock .dockedtitle:focus {
   text-decoration: none;
   background-position: 0 -10px;
   -webkit-transition: background-position 0.1s linear;
@@ -2901,16 +2902,16 @@ div.mdl-align.title {
   -o-transition: background-position 0.1s linear;
   transition: background-position 0.1s linear;
 }
-.has_dock:not(.dir-rtl) #dock .dockedtitle.active,
-.has_dock:not(.dir-rtl) #dock .dockedtitle:active {
+body.has_dock #dock .dockedtitle.active,
+body.has_dock #dock .dockedtitle:active {
   background-image: none;
   outline: 0;
   -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
-.has_dock:not(.dir-rtl) #dock .dockedtitle.disabled,
-.has_dock:not(.dir-rtl) #dock .dockedtitle[disabled] {
+body.has_dock #dock .dockedtitle.disabled,
+body.has_dock #dock .dockedtitle[disabled] {
   cursor: default;
   background-image: none;
   opacity: 0.65;
@@ -2919,42 +2920,42 @@ div.mdl-align.title {
   -moz-box-shadow: none;
   box-shadow: none;
 }
-.has_dock:not(.dir-rtl) #dock .dockedtitle .label,
-.has_dock:not(.dir-rtl) #dock .dockedtitle .badge {
+body.has_dock #dock .dockedtitle .label,
+body.has_dock #dock .dockedtitle .badge {
   position: relative;
   top: -1px;
 }
-.has_dock:not(.dir-rtl) #dock .dockedtitle:hover,
-.has_dock:not(.dir-rtl) #dock .dockedtitle:focus {
+body.has_dock #dock .dockedtitle:hover,
+body.has_dock #dock .dockedtitle:focus {
   color: white;
   -webkit-transition: .25s;
   -moz-transition: .25s;
   transition: 0.25s;
 }
-.has_dock:not(.dir-rtl) #dock .dockedtitle:active,
-.has_dock:not(.dir-rtl) #dock .dockedtitle.active {
+body.has_dock #dock .dockedtitle:active,
+body.has_dock #dock .dockedtitle.active {
   color: rgba(255, 255, 255, 0.75);
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
-.has_dock:not(.dir-rtl) #dock .dockedtitle.disabled,
-.has_dock:not(.dir-rtl) #dock .dockedtitle[disabled] {
+body.has_dock #dock .dockedtitle.disabled,
+body.has_dock #dock .dockedtitle[disabled] {
   color: white;
 }
-.has_dock:not(.dir-rtl) #dock .dockedtitle-large {
+body.has_dock #dock .dockedtitle-large {
   padding: 18px 36px;
 }
-.has_dock:not(.dir-rtl) #dock .dockedtitle-small {
+body.has_dock #dock .dockedtitle-small {
   padding: 2px 12px;
 }
-.has_dock:not(.dir-rtl) #dock .dockedtitle-mini {
+body.has_dock #dock .dockedtitle-mini {
   padding: 1px 8px;
 }
-.has_dock:not(.dir-rtl) #dock .dockedtitle .filterrotate {
+body.has_dock #dock .dockedtitle .filterrotate {
   margin-left: 8px;
 }
-.has_dock:not(.dir-rtl) #dock .dockeditempanel_hd h2 {
+body.has_dock #dock .dockeditempanel_hd h2 {
   display: block;
   padding: 3px 15px;
   font-size: 1.1em;
@@ -2963,79 +2964,79 @@ div.mdl-align.title {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
 }
-.has_dock:not(.dir-rtl) #dock .controls {
+body.has_dock #dock .controls {
   position: absolute;
   bottom: 42px;
   width: 100%;
   text-align: center;
 }
-.has_dock:not(.dir-rtl) #dock .controls img {
+body.has_dock #dock .controls img {
   cursor: pointer;
 }
-.has_dock:not(.dir-rtl) #dockeditempanel {
+body.has_dock #dockeditempanel {
   position: relative;
   left: 100%;
   z-index: 12000;
   min-width: 200px;
   padding-left: 5px;
 }
-.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_content {
+body.has_dock #dockeditempanel .dockeditempanel_content {
   z-index: 12050;
   width: 200px;
   background-color: #fff;
 }
-.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_bd {
+body.has_dock #dockeditempanel .dockeditempanel_bd {
   width: auto;
   overflow: auto;
 }
-.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_bd .block_navigation .block_tree li {
+body.has_dock #dockeditempanel .dockeditempanel_bd .block_navigation .block_tree li {
   overflow: visible;
 }
-.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd {
+body.has_dock #dockeditempanel .dockeditempanel_hd {
   border-bottom: 1px solid #EEE;
 }
-.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd h2 {
+body.has_dock #dockeditempanel .dockeditempanel_hd h2 {
   padding: 5px;
   margin: 0;
 }
-.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd .commands {
+body.has_dock #dockeditempanel .dockeditempanel_hd .commands {
   position: absolute;
   top: 16px;
   right: 4px;
 }
-.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd .commands > a,
-.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd .commands > span {
+body.has_dock #dockeditempanel .dockeditempanel_hd .commands > a,
+body.has_dock #dockeditempanel .dockeditempanel_hd .commands > span {
   margin-left: 3px;
   cursor: pointer;
 }
-.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd a.editing_move,
-.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd a.editing_edit,
-.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd a.editing_roles,
-.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd a.editing_delete,
-.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd a.editing_hide {
+body.has_dock #dockeditempanel .dockeditempanel_hd a.editing_move,
+body.has_dock #dockeditempanel .dockeditempanel_hd a.editing_edit,
+body.has_dock #dockeditempanel .dockeditempanel_hd a.editing_roles,
+body.has_dock #dockeditempanel .dockeditempanel_hd a.editing_delete,
+body.has_dock #dockeditempanel .dockeditempanel_hd a.editing_hide {
   display: none;
 }
-.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd .commands img,
-.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd .commands input {
+body.has_dock #dockeditempanel .dockeditempanel_hd .commands img,
+body.has_dock #dockeditempanel .dockeditempanel_hd .commands input {
   margin-right: 1px;
   vertical-align: middle;
 }
-.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd .commands img {
+body.has_dock #dockeditempanel .dockeditempanel_hd .commands img {
   display: inline;
 }
-.has_dock:not(.dir-rtl) #dockeditempanel .dockeditempanel_hd .commands .hidepanemicon img {
+body.has_dock #dockeditempanel .dockeditempanel_hd .commands .hidepanemicon img {
   cursor: pointer;
 }
-.has_dock:not(.dir-rtl) #dockeditempanel.dockitempanel_hidden {
+body.has_dock #dockeditempanel.dockitempanel_hidden {
   display: none;
 }
-.has_dock:not(.dir-rtl) .dockeditempanel_content {
+body.has_dock .dockeditempanel_content {
   width: 300px;
 }
-.has_dock:not(.dir-rtl).empty-region-side-pre:not(.has-region-side-post) #region-bs-main-and-pre {
+body.has_dock.empty-region-side-pre:not(.has-region-side-post) #region-bs-main-and-pre {
   width: 100%;
 }
-.has_dock:not(.dir-rtl).empty-region-side-pre.empty-region-side-post #region-bs-main-and-pre {
+body.has_dock.empty-region-side-pre.empty-region-side-post #region-bs-main-and-pre {
   width: 100%;
 }
 /* @end */
@@ -3369,7 +3370,7 @@ input[type="color"],
 .path-backup #page form fieldset:last-of-type.hidden {
   width: 600px;
   position: fixed;
-  bottom: 0px;
+  bottom: 30px;
   margin: 0px;
   background-color: #F5F5F5;
 }
@@ -3948,7 +3949,7 @@ ul.socials li {
 .navbar .navbar-inner .dropdown-menu {
   z-index: 200;
   margin: 0px;
-  border: #808080;
+  border: 1px solid [[setting:themecolor]];
 }
 .navbar .navbar-inner .dropdown-menu > li > a,
 .navbar .navbar-inner .dropdown-submenu > a {
@@ -3965,28 +3966,23 @@ ul.socials li {
 .navbar .navbar-inner .nav > li.dropdown a .fa-caret-right:before,
 .navbar .navbar-inner .nav > li > a .fa-caret-right:before {
   margin-left: 5px;
+  margin-right: 3px;
   content: "\f0da";
 }
 .navbar .navbar-inner .nav > li.dropdown a:hover,
-.navbar .navbar-inner .nav > li > a:hover,
-.navbar .navbar-inner .nav > li.dropdown a.open,
-.navbar .navbar-inner .nav > li > a.open {
+.navbar .navbar-inner .nav > li > a:hover {
   background: [[setting:themenavcolor]];
   background-image: none;
   color: [[setting:themecolor]];
 }
-.navbar .navbar-inner .nav > li.dropdown a:hover .fa-caret-right,
-.navbar .navbar-inner .nav > li > a:hover .fa-caret-right,
-.navbar .navbar-inner .nav > li.dropdown a.open .fa-caret-right,
-.navbar .navbar-inner .nav > li > a.open .fa-caret-right {
-  margin-right: 1px;
-}
 .navbar .navbar-inner .nav > li.dropdown a:hover .fa-caret-right:before,
-.navbar .navbar-inner .nav > li > a:hover .fa-caret-right:before,
-.navbar .navbar-inner .nav > li.dropdown a.open .fa-caret-right:before,
-.navbar .navbar-inner .nav > li > a.open .fa-caret-right:before {
-  margin-left: 5px;
+.navbar .navbar-inner .nav > li > a:hover .fa-caret-right:before {
   content: "\f0d7";
+  margin-right: 0px;
+}
+.navbar .navbar-inner .nav > li.dropdown.open a .fa-caret-right:before {
+  content: "\f0d7";
+  margin-right: 0px;
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a {
   color: [[setting:themetextcolor]];
@@ -4018,7 +4014,8 @@ ul.socials li {
   padding: 3px 25px 3px 15px;
 }
 .navbar .navbar-inner .usermenu .dropdown ul.dropdown-menu {
-  border: #808080;
+  border: 1px solid [[setting:themecolor]];
+  margin: 0px;
 }
 .navbar .navbar-inner .usermenu .dropdown ul.dropdown-menu i {
   margin-right: 5px;
@@ -4036,7 +4033,8 @@ ul.socials li {
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu {
   left: auto;
   right: 10px;
-  border: #808080;
+  margin: 0px;
+  border: 1px solid [[setting:themecolor]];
 }
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a {
   padding: 0px;
@@ -4408,13 +4406,12 @@ ul.socials li {
 /* @end */
 /* @group Settings */
 /* @group Core */
-* {
+*,
+p {
   font-family: [[setting:bodyfont]];
 }
 body {
   color: [[setting:themetextcolor]];
-  font-size: [[setting:bodysize]];
-  font-weight: [[setting:bodyweight]];
   font-family: [[setting:bodyfont]];
   background-image: url([[setting:pagebackground]]);
   background-attachment: [[setting:backgroundattach]];
@@ -4783,6 +4780,10 @@ body.dir-rtl #headerlogo {
   padding-left: 0px;
   padding-right: 10px;
 }
+body.dir-rtl.has_dock #page {
+  padding-right: 20px;
+  padding-left: 20px;
+}
 body.dir-rtl .block .footer {
   float: right;
   text-align: right;
@@ -4907,5 +4908,8 @@ label {
 }
 .path-mod-feedback .generalbox div table tbody img {
   height: 35px;
+}
+.course-content #completionprogressid {
+  z-index: 10;
 }
 /*# sourceMappingURL=/theme/essential/style/essential.treasure.map */

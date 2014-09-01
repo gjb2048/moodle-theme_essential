@@ -62,14 +62,33 @@ $string['footnote'] = 'Footnote';
 $string['footnotedesc'] = 'Whatever you add to this textarea will be displayed in the footer throughout your Moodle site.';
 
 $string['logo'] = 'Logo';
-$string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.<br>The image should be 65px high and any reasonable width that suits.<br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
+$string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.
+                       <br>The image should be 65px high and any reasonable width that suits.
+                       <br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
 
-$string['fontselect'] = 'Font selector';
-$string['fontselectdesc'] = 'Choose from the list of available font combinations. You can choose here to disable Google fonts if needed.';
+/* Font settings */
+$string['fontheading'] = 'Font settings';
+$string['fontheadingdesc'] = 'Select and enter the fonts that you want to use in your Moodle environment.';
+$string['fontselect'] = 'Font type selector';
+$string['fontselectdesc'] = 'Choose from the list of available font types. Please save to show the options for your choice.';
+$string['fonttypestandard'] = 'Standard fonts';
+$string['fonttypegoogle'] = 'Google web fonts';
+$string['fonttypecustom'] = 'Custom font';
+$string['fontnameheading'] = 'Heading font';
+$string['fontnameheadingdesc'] = 'Enter the exact name of the font to use for headings.';
+$string['fontnamebody'] = 'Text font';
+$string['fontnamebodydesc'] = 'Enter the exact name of the font to use for all other text.';
+
+/* Font files */
+$string['fontfiles'] = 'Font files';
+$string['fontfilesdesc'] = 'Upload your font files here, only TTF files are supported.';
+$string['fontfilettfheading'] = 'Heading TTF font file';
+$string['fontfilettfbody'] = 'Body TTF font file';
+
 
 $string['fontcharacterset'] = 'Google font additional character set';
-$string['fontcharactersetdesc'] = 'If a Google font is chosen, you can pick additional character sets for different languages. Using many character sets can slow down your webpage, so only select the character sets that you actually need on your webpage.';
-$string['fontcharactersetlatin'] = 'Latin';
+$string['fontcharactersetdesc'] = 'Pick additional character sets for different languages.
+                                   Using many character sets can slow down your Moodle, so only select the character sets that you actually need.';
 $string['fontcharactersetlatinext'] = 'Latin Extended';
 $string['fontcharactersetcyrillic'] = 'Cyrillic';
 $string['fontcharactersetcyrillicext'] = 'Cyrillic Extended';
@@ -78,7 +97,8 @@ $string['fontcharactersetgreekext'] = 'Greek Extended';
 $string['fontcharactersetvietnamese'] = 'Vietnamese';
 
 $string['bootstrapcdn'] = 'FontAwesome from CDN';
-$string['bootstrapcdndesc'] = 'If enabled this will load FontAwesome from the online Bootstrap CDN source. Enable this if you are having issues getting the Font Awesome icons to display in your site.';
+$string['bootstrapcdndesc'] = 'If enabled this will load FontAwesome from the online Bootstrap CDN source.
+                               Enable this if you are having issues getting the Font Awesome icons to display in your site.';
 
 $string['copyright'] = 'Copyright';
 $string['copyrightdesc'] = 'The name of your organisation.';

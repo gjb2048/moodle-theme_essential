@@ -24,14 +24,6 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-/**
- * Adds the logo to CSS.
- *
- * @param string $css The CSS.
- * @param string $logo The URL of the logo.
- * @return string The parsed CSS
- */
-
 function theme_essential_set_fontwww($css)
 {
     global $CFG;
@@ -40,7 +32,7 @@ function theme_essential_set_fontwww($css)
     $tag = '[[setting:fontwww]]';
 
     if (theme_essential_get_setting('bootstrapcdn')) {
-        $css = str_replace($tag, '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/fonts/', $css);
+        $css = str_replace($tag, '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/fonts/', $css);
     } else {
         $css = str_replace($tag, $fontwww, $css);
     }
@@ -163,6 +155,10 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
             return $theme->setting_file_serve('ipadicon', $args, $forcedownload, $options);
         } else if ($filearea === 'ipadretinaicon') {
             return $theme->setting_file_serve('ipadretinaicon', $args, $forcedownload, $options);
+        } else if ($filearea === 'fontfilettfheading') {
+            return $theme->setting_file_serve('fontfilettfheading', $args, $forcedownload, $options);
+        } else if ($filearea === 'fontfilettfbody') {
+            return $theme->setting_file_serve('fontfilettfbody', $args, $forcedownload, $options);
         } else {
             send_file_not_found();
         }
@@ -299,241 +295,166 @@ function theme_essential_set_customcss($css, $customcss)
 {
     $tag = '[[setting:customcss]]';
     $replacement = $customcss;
-    if (!($replacement)) {
-        $replacement = '';
-    }
-
     $css = str_replace($tag, $replacement, $css);
-
     return $css;
 }
 
 function theme_essential_process_css($css, $theme)
 {
+    // Set the theme width
+    $pagewidth          = theme_essential_get_setting('pagewidth');
+    $css                = theme_essential_set_pagewidth($css, $pagewidth);
 
-    $pagewidth = theme_essential_get_setting('pagewidth');
-    $css = theme_essential_set_pagewidth($css, $pagewidth);
+    // Set the theme font
+    $headingfont        = theme_essential_get_setting('fontnameheading');
+    $bodyfont           = theme_essential_get_setting('fontnamebody');
 
-    // Set the Fonts.
-    switch (theme_essential_get_setting('fontselect')) {
-        case 1:
-            $headingfont = 'Open Sans, Arial, Helvetica, sans-serif';
-            $bodyfont = 'Open Sans, Arial, Helvetica, sans-serif';
-            $bodysize = '14px';
-            $bodyweight = '400';
-            break;
-        case 2:
-            $headingfont = 'Oswald, Verdana, Geneva, sans-serif';
-            $bodyfont = '"PT Sans", Helvetica, Verdana sans-serif';
-            $bodysize = '14px';
-            $bodyweight = '400';
-            break;
-        case 3:
-            $headingfont = 'Roboto, Tahoma, Geneva, sans-serif';
-            $bodyfont = 'Roboto, Tahoma, Geneva, sans-serif';
-            $bodysize = '14px';
-            $bodyweight = '400';
-            break;
-        case 4:
-            $headingfont = '"PT Sans", Helvetica, Arial, sans-serif';
-            $bodyfont = '"PT Sans", Helvetica, Arial, sans-serif';
-            $bodysize = '14px';
-            $bodyweight = '400';
-            break;
-        case 5:
-            $headingfont = 'Ubuntu, Arial, Helvetica, sans-serif';
-            $bodyfont = 'Ubuntu, Arial, Helvetica, sans-serif';
-            $bodysize = '14px';
-            $bodyweight = '400';
-            break;
-        case 6:
-            $headingfont = 'Arimo, Arial, Helvetica, sans-serif';
-            $bodyfont = 'Arimo, Arial, Helvetica, sans-serif';
-            $bodysize = '14px';
-            $bodyweight = '400';
-            break;
-        case 7:
-            $headingfont = 'Lobster, "Lucida Calligraphy", Mistral, Verdana, sans-serif';
-            $bodyfont = 'Raleway, Helvetica, sans-serif';
-            $bodysize = '14px';
-            $bodyweight = '400';
-            break;
-        case 8:
-            $headingfont = 'Arial, Helvetica, sans-serif';
-            $bodyfont = 'Arial, Helvetica, sans-serif';
-            $bodysize = '14px';
-            $bodyweight = '400';
-            break;
-        case 9:
-            $headingfont = 'Georgia, serif';
-            $bodyfont = 'Georgia, serif';
-            $bodysize = '14px';
-            $bodyweight = '400';
-            break;
-        case 10:
-            $headingfont = 'Verdana, Geneva, sans-serif';
-            $bodyfont = 'Verdana, Geneva, sans-serif';
-            $bodysize = '14px';
-            $bodyweight = '400';
-            break;
-        case 11:
-            $headingfont = '"Times New Roman", Times, serif';
-            $bodyfont = '"Times New Roman", Times, serif';
-            $bodysize = '14px';
-            $bodyweight = '400';
-            break;
-        case 12:
-            $headingfont = 'Consolas, Monaco, monospace';
-            $bodyfont = 'Consolas, "Courier New", monospace';
-            $bodysize = '14px';
-            $bodyweight = '400';
-            break;
-        default:
-            $headingfont = 'Verdana, Geneva, sans-serif';
-            $bodyfont = 'Verdana, Geneva, sans-serif';
-            $bodysize = '14px';
-            $bodyweight = '400';
-    }
-
-    $css = theme_essential_set_headingfont($css, $headingfont);
-    $css = theme_essential_set_bodyfont($css, $bodyfont);
-    $css = theme_essential_set_bodysize($css, $bodysize);
-    $css = theme_essential_set_bodyweight($css, $bodyweight);
+    $css                = theme_essential_set_headingfont($css, $headingfont);
+    $css                = theme_essential_set_bodyfont($css, $bodyfont);
+    $css                = theme_essential_set_fontfiles($css, 'heading', $headingfont, $theme);
+    $css                = theme_essential_set_fontfiles($css, 'body', $bodyfont, $theme);
 
     // Set the theme colour.
-    $themecolor = theme_essential_get_setting('themecolor');
-    $css = theme_essential_set_color($css, $themecolor, '[[setting:themecolor]]', '#30ADD1');
+    $themecolor         = theme_essential_get_setting('themecolor');
+    $css                = theme_essential_set_color($css, $themecolor, '[[setting:themecolor]]', '#30ADD1');
 
     // Set the theme text colour.
-    $themetextcolor = theme_essential_get_setting('themetextcolor');
-    $css = theme_essential_set_color($css, $themetextcolor, '[[setting:themetextcolor]]', '#047797');
+    $themetextcolor     = theme_essential_get_setting('themetextcolor');
+    $css                = theme_essential_set_color($css, $themetextcolor, '[[setting:themetextcolor]]', '#047797');
 
     // Set the theme url colour.
-    $themeurlcolor = theme_essential_get_setting('themeurlcolor');
-    $css = theme_essential_set_color($css, $themeurlcolor, '[[setting:themeurlcolor]]', '#FF5034');
+    $themeurlcolor      = theme_essential_get_setting('themeurlcolor');
+    $css                = theme_essential_set_color($css, $themeurlcolor, '[[setting:themeurlcolor]]', '#FF5034');
 
     // Set the theme hover colour.
-    $themehovercolor = theme_essential_get_setting('themehovercolor');
-    $css = theme_essential_set_color($css, $themehovercolor, '[[setting:themehovercolor]]', '#F32100');
+    $themehovercolor    = theme_essential_get_setting('themehovercolor');
+    $css                = theme_essential_set_color($css, $themehovercolor, '[[setting:themehovercolor]]', '#F32100');
 
     // Set the theme icon colour.
-    $themeiconcolor = theme_essential_get_setting('themeiconcolor');
-    $css = theme_essential_set_color($css, $themeiconcolor, '[[setting:themeiconcolor]]', '#30ADD1');
+    $themeiconcolor     = theme_essential_get_setting('themeiconcolor');
+    $css                = theme_essential_set_color($css, $themeiconcolor, '[[setting:themeiconcolor]]', '#30ADD1');
 
     // Set the theme navigation colour.
-    $themenavcolor = theme_essential_get_setting('themenavcolor');
-    $css = theme_essential_set_color($css, $themenavcolor, '[[setting:themenavcolor]]', '#ffffff');
+    $themenavcolor      = theme_essential_get_setting('themenavcolor');
+    $css                = theme_essential_set_color($css, $themenavcolor, '[[setting:themenavcolor]]', '#ffffff');
 
     // Set the footer colour.
-    $footercolor = theme_essential_hex2rgba(theme_essential_get_setting('footercolor'), '0.95');
-    $css = theme_essential_set_color($css, $footercolor, '[[setting:footercolor]]', '#555555');
+    $footercolor        = theme_essential_hex2rgba(theme_essential_get_setting('footercolor'), '0.95');
+    $css                = theme_essential_set_color($css, $footercolor, '[[setting:footercolor]]', '#555555');
 
     // Set the footer text color.
-    $footertextcolor = theme_essential_get_setting('footertextcolor');
-    $css = theme_essential_set_color($css, $footertextcolor, '[[setting:footertextcolor]]', '#bbbbbb');
+    $footertextcolor    = theme_essential_get_setting('footertextcolor');
+    $css                = theme_essential_set_color($css, $footertextcolor, '[[setting:footertextcolor]]', '#bbbbbb');
 
     // Set the footer heading colour.
     $footerheadingcolor = theme_essential_get_setting('footerheadingcolor');
-    $css = theme_essential_set_color($css, $footerheadingcolor, '[[setting:footerheadingcolor]]', '#cccccc');
+    $css                = theme_essential_set_color($css, $footerheadingcolor, '[[setting:footerheadingcolor]]', '#cccccc');
 
     // Set the footer separator colour.
-    $footersepcolor = theme_essential_get_setting('footersepcolor');
-    $css = theme_essential_set_color($css, $footersepcolor, '[[setting:footersepcolor]]', '#313131');
+    $footersepcolor     = theme_essential_get_setting('footersepcolor');
+    $css                = theme_essential_set_color($css, $footersepcolor, '[[setting:footersepcolor]]', '#313131');
 
     // Set the footer URL color.
-    $footerurlcolor = theme_essential_get_setting('footerurlcolor');
-    $css = theme_essential_set_color($css, $footerurlcolor, '[[setting:footerurlcolor]]', '#217a94');
+    $footerurlcolor     = theme_essential_get_setting('footerurlcolor');
+    $css                = theme_essential_set_color($css, $footerurlcolor, '[[setting:footerurlcolor]]', '#217a94');
 
     // Set the footer hover colour.
-    $footerhovercolor = theme_essential_get_setting('footerhovercolor');
-    $css = theme_essential_set_color($css, $footerhovercolor, '[[setting:footerhovercolor]]', '#30add1');
+    $footerhovercolor   = theme_essential_get_setting('footerhovercolor');
+    $css                = theme_essential_set_color($css, $footerhovercolor, '[[setting:footerhovercolor]]', '#30add1');
 
     // Set the slide background colour.
-    $slidebackgroundcolor = theme_essential_hex2rgba(theme_essential_get_setting('themecolor'), '.75');
-    $css = theme_essential_set_color($css, $slidebackgroundcolor, '[[setting:carouselcolor]]', '#30add1');
+    $slidebgcolor       = theme_essential_hex2rgba(theme_essential_get_setting('themecolor'), '.75');
+    $css                = theme_essential_set_color($css, $slidebgcolor, '[[setting:carouselcolor]]', '#30add1');
 
     // Set the slide active pip colour.
-    $slidebackgroundcolor = theme_essential_hex2rgba(theme_essential_get_setting('themecolor'), '.25');
-    $css = theme_essential_set_color($css, $slidebackgroundcolor, '[[setting:carouselactivecolor]]', '#30add1');
+    $slidebgcolor       = theme_essential_hex2rgba(theme_essential_get_setting('themecolor'), '.25');
+    $css                = theme_essential_set_color($css, $slidebgcolor, '[[setting:carouselactivecolor]]', '#30add1');
 
     // Set the slide header colour.
-    $slideshowcolor = theme_essential_get_setting('slideshowcolor');
-    $css = theme_essential_set_color($css, $slideshowcolor, '[[setting:slideshowcolor]]', '#30add1');
+    $slideshowcolor     = theme_essential_get_setting('slideshowcolor');
+    $css                = theme_essential_set_color($css, $slideshowcolor, '[[setting:slideshowcolor]]', '#30add1');
 
     // Set the slide header colour.
-    $slideheadercolor = theme_essential_get_setting('slideheadercolor');
-    $css = theme_essential_set_color($css, $slideheadercolor, '[[setting:slideheadercolor]]', '#30add1');
+    $slideheadercolor   = theme_essential_get_setting('slideheadercolor');
+    $css                = theme_essential_set_color($css, $slideheadercolor, '[[setting:slideheadercolor]]', '#30add1');
 
     // Set the slide text colour.
-    $slidecolor = theme_essential_get_setting('slidecolor');
-    $css = theme_essential_set_color($css, $slidecolor, '[[setting:slidecolor]]', '#ffffff');
+    $slidecolor         = theme_essential_get_setting('slidecolor');
+    $css                = theme_essential_set_color($css, $slidecolor, '[[setting:slidecolor]]', '#ffffff');
 
     // Set the slide button colour.
-    $slidebuttoncolor = theme_essential_get_setting('slidebuttoncolor');
-    $css = theme_essential_set_color($css, $slidebuttoncolor, '[[setting:slidebuttoncolor]]', '#30add1');
+    $slidebuttoncolor   = theme_essential_get_setting('slidebuttoncolor');
+    $css                = theme_essential_set_color($css, $slidebuttoncolor, '[[setting:slidebuttoncolor]]', '#30add1');
 
     // Set the slide button hover colour.
-    $slidebuttonhovercolor = theme_essential_get_setting('slidebuttonhovercolor');
-    $css = theme_essential_set_color($css, $slidebuttonhovercolor, '[[setting:slidebuttonhovercolor]]', '#217a94');
+    $slidebuttonhcolor  = theme_essential_get_setting('slidebuttonhovercolor');
+    $css                = theme_essential_set_color($css, $slidebuttonhcolor, '[[setting:slidebuttonhovercolor]]', '#217a94');
 
-    // Set theme alternative colours.
-    $defaultalternativethemecolors = array('#a430d1', '#d15430', '#5dd130');
-    $defaultalternativethemehovercolors = array('#9929c4', '#c44c29', '#53c429');
+    if ((get_config('theme_essential', 'enablealternativethemecolors1')) ||
+        (get_config('theme_essential', 'enablealternativethemecolors2')) ||
+        (get_config('theme_essential', 'enablealternativethemecolors3'))
+    ) {
+        // Set theme alternative colours.
+        $defaultcolors      = array('#a430d1', '#d15430', '#5dd130');
+        $defaulthovercolors = array('#9929c4', '#c44c29', '#53c429');
 
-    foreach (range(1, 3) as $alternativethemenumber) {
-        $default = $defaultalternativethemecolors[$alternativethemenumber - 1];
-        $defaulthover = $defaultalternativethemehovercolors[$alternativethemenumber - 1];
-        $css = theme_essential_set_alternativecolor($css, 'color' . $alternativethemenumber,
-            theme_essential_get_setting('alternativethemehovercolor' . $alternativethemenumber), $default);
-        $css = theme_essential_set_alternativecolor($css, 'textcolor' . $alternativethemenumber,
-            theme_essential_get_setting('alternativethemetextcolor' . $alternativethemenumber), $default);
-        $css = theme_essential_set_alternativecolor($css, 'urlcolor' . $alternativethemenumber,
-            theme_essential_get_setting('alternativethemeurlcolor' . $alternativethemenumber), $default);
-        $css = theme_essential_set_alternativecolor($css, 'hovercolor' . $alternativethemenumber,
-            theme_essential_get_setting('alternativethemehovercolor' . $alternativethemenumber), $defaulthover);
+        foreach (range(1, 3) as $alternative) {
+            $default        = $defaultcolors[$alternative - 1];
+            $defaulthover   = $defaulthovercolors[$alternative - 1];
+            $css            = theme_essential_set_alternativecolor($css, 'color' . $alternative,
+                                theme_essential_get_setting('alternativethemehovercolor' . $alternative), $default);
+            $css            = theme_essential_set_alternativecolor($css, 'textcolor' . $alternative,
+                                theme_essential_get_setting('alternativethemetextcolor' . $alternative), $default);
+            $css            = theme_essential_set_alternativecolor($css, 'urlcolor' . $alternative,
+                                theme_essential_get_setting('alternativethemeurlcolor' . $alternative), $default);
+            $css            = theme_essential_set_alternativecolor($css, 'hovercolor' . $alternative,
+                                theme_essential_get_setting('alternativethemehovercolor' . $alternative), $defaulthover);
+        }
     }
 
     // Set custom CSS.
-    $customcss = theme_essential_get_setting('customcss');
-    $css = theme_essential_set_customcss($css, $customcss);
+    $customcss          = theme_essential_get_setting('customcss');
+    $css                = theme_essential_set_customcss($css, $customcss);
 
     // Set the background image for the logo.
-    $logo = $theme->setting_file_url('logo', 'logo');
-    $css = theme_essential_set_logo($css, $logo);
+    $logo               = $theme->setting_file_url('logo', 'logo');
+    $css                = theme_essential_set_logo($css, $logo);
 
     // Set the background image for the page.
-    $pagebackground = $theme->setting_file_url('pagebackground', 'pagebackground');
-    $css = theme_essential_set_pagebackground($css, $pagebackground);
+    $pagebackground     = $theme->setting_file_url('pagebackground', 'pagebackground');
+    $css                = theme_essential_set_pagebackground($css, $pagebackground);
 
     // Set the background style for the page.
-    $pagebackgroundstyle = theme_essential_get_setting('pagebackgroundstyle');
-    $css = theme_essential_set_pagebackgroundstyle($css, $pagebackgroundstyle);
+    $pagebgstyle        = theme_essential_get_setting('pagebackgroundstyle');
+    $css                = theme_essential_set_pagebackgroundstyle($css, $pagebgstyle);
 
     // Set Marketing Image Height.
-    $marketingheight = theme_essential_get_setting('marketingheight');
-    $css = theme_essential_set_marketingheight($css, $marketingheight);
+    $marketingheight    = theme_essential_get_setting('marketingheight');
+    $css                = theme_essential_set_marketingheight($css, $marketingheight);
 
     // Set Marketing Images.
     if (theme_essential_get_setting('marketing1image')) {
-        $setting = 'marketing1image';
+        $setting        = 'marketing1image';
         $marketingimage = $theme->setting_file_url($setting, $setting);
-        $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
+        $css            = theme_essential_set_marketingimage($css, $marketingimage, $setting);
     }
 
     if (theme_essential_get_setting('marketing2image')) {
-        $setting = 'marketing2image';
+        $setting        = 'marketing2image';
         $marketingimage = $theme->setting_file_url($setting, $setting);
-        $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
+        $css            = theme_essential_set_marketingimage($css, $marketingimage, $setting);
     }
 
     if (theme_essential_get_setting('marketing3image')) {
-        $setting = 'marketing3image';
+        $setting        = 'marketing3image';
         $marketingimage = $theme->setting_file_url($setting, $setting);
-        $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
+        $css            = theme_essential_set_marketingimage($css, $marketingimage, $setting);
     }
 
     // Set FontAwesome font loading path
-    $css = theme_essential_set_fontwww($css);
+    $css                = theme_essential_set_fontwww($css);
+
+    // Finally return processed CSS
     return $css;
 }
 
@@ -590,9 +511,6 @@ function theme_essential_set_headingfont($css, $headingfont)
 {
     $tag = '[[setting:headingfont]]';
     $replacement = $headingfont;
-    if (!($replacement)) {
-        $replacement = 'Georgia';
-    }
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
@@ -601,24 +519,22 @@ function theme_essential_set_bodyfont($css, $bodyfont)
 {
     $tag = '[[setting:bodyfont]]';
     $replacement = $bodyfont;
-    if (!($replacement)) {
-        $replacement = 'Arial';
-    }
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
 
-function theme_essential_set_bodysize($css, $bodysize)
+function theme_essential_set_fontfiles($css, $type, $fontname, $theme)
 {
-    $tag = '[[setting:bodysize]]';
-    $css = str_replace($tag, $bodysize, $css);
-    return $css;
-}
+    $tag = '[[setting:fontfiles'.$type.']]';
+    $replacement = '';
+    if(theme_essential_get_setting('fontselect') === '3') {
+        $fontfilettf  = $theme->setting_file_url('fontfilettf'.$type, 'fontfilettf'.$type);
+        $replacement  = '@font-face {font-family: "'.$fontname.'";';
+        $replacement .= !empty($fontfilettf)? "src: url('".$fontfilettf."');" : '';
+        $replacement .= "}";
+    }
 
-function theme_essential_set_bodyweight($css, $bodyweight)
-{
-    $tag = '[[setting:bodyweight]]';
-    $css = str_replace($tag, $bodyweight, $css);
+    $css = str_replace($tag, $replacement, $css);
     return $css;
 }
 

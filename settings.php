@@ -43,12 +43,11 @@ if (is_siteadmin()) {
     $temp->add(new admin_setting_heading('theme_essential_generalheading', get_string('generalheadingsub', 'theme_essential'),
         format_text(get_string('generalheadingdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
-    // Include Awesome Font from Bootstrapcdn
-    $name = 'theme_essential/bootstrapcdn';
-    $title = get_string('bootstrapcdn', 'theme_essential');
-    $description = get_string('bootstrapcdndesc', 'theme_essential');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
-    $setting->set_updatedcallback('theme_reset_all_caches');
+    // This is the descriptor for the font settings
+    $name = 'theme_essential/fontheading';
+    $heading = get_string('fontheading', 'theme_essential');
+    $information = get_string('fontheadingdesc', 'theme_essential');
+    $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
 
     // Font Selector.
@@ -57,37 +56,80 @@ if (is_siteadmin()) {
     $description = get_string('fontselectdesc', 'theme_essential');
     $default = 1;
     $choices = array(
-        1 => 'Open Sans',
-        2 => 'Oswald & PT Sans',
-        3 => 'Roboto',
-        4 => 'PT Sans',
-        5 => 'Ubuntu',
-        6 => 'Arimo',
-        7 => 'Lobster & Raleway',
-        8 => 'Arial',
-        9 => 'Georgia',
-        10 => 'Verdana',
-        11 => 'Times New Roman',
-        12 => 'Consolas',
+        1 => get_string('fonttypestandard', 'theme_essential'),
+        2 => get_string('fonttypegoogle', 'theme_essential'),
+        3 => get_string('fonttypecustom', 'theme_essential'),
     );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Font Character Sets
-    $name = 'theme_essential/fontcharacterset';
-    $title = get_string('fontcharacterset', 'theme_essential');
-    $description = get_string('fontcharactersetdesc', 'theme_essential');
-    $default = 'latin';
-    $setting = new admin_setting_configmulticheckbox($name, $title, $description, $default, array(
-        'latin' => get_string('fontcharactersetlatin', 'theme_essential'),
-        'latin-ext' => get_string('fontcharactersetlatinext', 'theme_essential'),
-        'cyrillic' => get_string('fontcharactersetcyrillic', 'theme_essential'),
-        'cyrillic-ext' => get_string('fontcharactersetcyrillicext', 'theme_essential'),
-        'greek' => get_string('fontcharactersetgreek', 'theme_essential'),
-        'greek-ext' => get_string('fontcharactersetgreekext', 'theme_essential'),
-        'vietnamese' => get_string('fontcharactersetvietnamese', 'theme_essential'),
-    ));
+    // Heading font name
+    $name = 'theme_essential/fontnameheading';
+    $title = get_string('fontnameheading', 'theme_essential');
+    $description = get_string('fontnameheadingdesc', 'theme_essential');
+    $default = 'Verdana';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Text font name
+    $name = 'theme_essential/fontnamebody';
+    $title = get_string('fontnamebody', 'theme_essential');
+    $description = get_string('fontnamebodydesc', 'theme_essential');
+    $default = 'Verdana';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    if(get_config('theme_essential', 'fontselect') === "2") {
+        // Google Font Character Sets
+        $name = 'theme_essential/fontcharacterset';
+        $title = get_string('fontcharacterset', 'theme_essential');
+        $description = get_string('fontcharactersetdesc', 'theme_essential');
+        $default = 'latin-ext';
+        $setting = new admin_setting_configmulticheckbox($name, $title, $description, $default, array(
+            'latin-ext' => get_string('fontcharactersetlatinext', 'theme_essential'),
+            'cyrillic' => get_string('fontcharactersetcyrillic', 'theme_essential'),
+            'cyrillic-ext' => get_string('fontcharactersetcyrillicext', 'theme_essential'),
+            'greek' => get_string('fontcharactersetgreek', 'theme_essential'),
+            'greek-ext' => get_string('fontcharactersetgreekext', 'theme_essential'),
+            'vietnamese' => get_string('fontcharactersetvietnamese', 'theme_essential'),
+        ));
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+    } else if(get_config('theme_essential', 'fontselect') === "3") {
+
+        // This is the descriptor for the font files
+        $name = 'theme_essential/fontfiles';
+        $heading = get_string('fontfiles', 'theme_essential');
+        $information = get_string('fontfilesdesc', 'theme_essential');
+        $setting = new admin_setting_heading($name, $heading, $information);
+        $temp->add($setting);
+
+        // TTF Font
+        $name = 'theme_essential/fontfilettfheading';
+        $title = get_string('fontfilettfheading', 'theme_essential');
+        $description = '';
+        $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfilettfheading');
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        // TTF Font
+        $name = 'theme_essential/fontfilettfbody';
+        $title = get_string('fontfilettfbody', 'theme_essential');
+        $description = '';
+        $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfilettfbody');
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+    }
+
+    // Include Awesome Font from Bootstrapcdn
+    $name = 'theme_essential/bootstrapcdn';
+    $title = get_string('bootstrapcdn', 'theme_essential');
+    $description = get_string('bootstrapcdndesc', 'theme_essential');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
