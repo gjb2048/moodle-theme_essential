@@ -37,19 +37,15 @@ if (theme_essential_get_setting('enablealternativethemecolors1') ||
     $colourswitcher = true;
     theme_essential_check_colours_switch();
     theme_essential_initialise_colourswitcher($PAGE);
-    $bodyclasses[] = 'essential-colours-' . theme_essential_get_colours();
+    $bodyclasses[]  = 'essential-colours-' . theme_essential_get_colours();
 } else {
     $colourswitcher = false;
 }
 
-
-if (theme_essential_get_setting('slidecaptioncentred')) {
-    $bodyclasses[] = 'frontpageslidecaptioncentred';
-}
-
-if (theme_essential_get_setting('slidecaptionbelow')) {
-    $bodyclasses[] = 'frontpageslidercaptionbelow';
-}
+$numberofslides = theme_essential_showslider('numberofslides');
+$slideinterval  = theme_essential_get_setting('slideinterval');
+$captionscenter = (theme_essential_get_setting('slidecaptioncentred'))? ' centred' : '';
+$captionsbelow  = (theme_essential_get_setting('slidecaptionbelow'))? ' below' : '';
 
 switch (theme_essential_get_setting('pagewidth')) {
     case 100:

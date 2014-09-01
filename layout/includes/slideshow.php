@@ -24,8 +24,24 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$numberofslides = theme_essential_showslider('numberofslides'); // In lib.php.
-
-if ($numberofslides) {
-    echo theme_essential_render_slides($numberofslides);
-}
+if ($numberofslides) { ?>
+    <div class="row-fluid">
+        <div class="span12">
+            <div id="essentialCarousel" class="carousel slide" data-interval="<?php echo $slideinterval;?>">
+                <?php echo theme_essential_edit_button('theme_essential_slideshow');?>
+                <ol class="carousel-indicators">
+                    <?php for ($p = 1; $p <= $numberofslides; $p++) {
+                        echo '<li data-target="#essentialCarousel" data-slide-to="'.$p.'" class=""></li>';
+                    } ?>
+                </ol>
+                <div class="carousel-inner<?php echo $captionscenter.$captionsbelow;?>">
+                    <?php for ($i = 1; $i <= $numberofslides; $i++) {
+                        echo theme_essential_render_slide($i);
+                    } ?>
+                </div>
+                <a class="left carousel-control" href="#essentialCarousel" data-slide="prev"><i class="fa fa-chevron-circle-left"></i></a>
+                <a class="right carousel-control" href="#essentialCarousel" data-slide="next"><i class="fa fa-chevron-circle-right"></i></a>
+            </div>
+        </div>
+    </div>
+<?php } ?>

@@ -773,84 +773,43 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
     echo html_writer::end_tag('div');
 }
 
-function theme_essential_render_slides($numberofslides)
+function theme_essential_render_slide($i)
 {
     global $PAGE, $OUTPUT;
 
-    $slideinterval = theme_essential_get_setting('slideinterval');
-    $slidecaptionbelow = theme_essential_get_setting('slidecaptionbelow');
-    $o = '<div class="row-fluid"><div class="span12">';
-    $o .= theme_essential_edit_button('theme_essential_slideshow');
-    $o .= '<div id="essentialCarousel" class="carousel slide" data-interval="'.$slideinterval.'">';
-    $o .= '<ol class="carousel-indicators">';
-    $first = true;
-    for ($i = 1; $i <= $numberofslides; $i++) {
-        $o .= '<li data-target="#essentialCarousel" data-slide-to="'.($i - 1).'"';
-        if ($first) {
-            $o .= ' class="active"';
-            $first = false;
-        }
-        $o .= '</li>';
-    }
-    $o .= '</ol>';
-    $o .= '<div class="carousel-inner">';
-    $first = true;
-    for ($i = 1; $i <= $numberofslides; $i++) {
-        $urlsetting = 'slide' . $i . 'url';
-        $urltarget = 'slide' . $i . 'target';
-        if (theme_essential_get_setting($urlsetting)) {
-            $o .= '<a href="' . theme_essential_get_setting($urlsetting) . '" target="' . theme_essential_get_setting($urltarget) . '"';
-        } else {
-            $o .=  '<div';
-        }
-        $o .= ' class="';
-        if ($first) {
-            $o .=  'active ';
-            $first = false;
-        }
-        $o .= 'item">';
-        $imagesetting = 'slide' . $i . 'image';
-        if (theme_essential_get_setting($imagesetting)) {
-            $image = $PAGE->theme->setting_file_url($imagesetting, $imagesetting);
-        } else {
-            $image = $OUTPUT->pix_url('default_slide', 'theme');
-        }
-        $slidetitle = 'slide' . $i;
-        if (theme_essential_get_setting($slidetitle)) {
-            $imgalt = theme_essential_get_setting($slidetitle);
-        } else {
-            $imgalt = get_string('noslidetitle', 'theme_essential', array('slide' => $i));
-        }
-        $o .= '<img src="'.$image.'" alt="'.$imgalt.'" class="carousel-image"/>';
+    $slideurl           = theme_essential_get_setting('slide'.$i.'url');
+    $slideurltarget     = theme_essential_get_setting('slide'.$i.'target');
+    $slidetitle         = theme_essential_get_setting('slide'.$i, true);
+    $slidecaption       = theme_essential_get_setting('slide'.$i.'caption', true);
+    $slideextraclass    = ($i === 1)? 'active' : '';
+    $slideimagealt      = theme_essential_get_setting('slide'.$i);
+    $slideimage         = $OUTPUT->pix_url('default_slide', 'theme');
 
-        if ($slidecaptionbelow) {
-            $o .= '<div class="row-fluid"><div class="span12">';
-        }
-        $slidecaption = 'slide' . $i . 'caption';
-        if ((theme_essential_get_setting($slidetitle)) || (theme_essential_get_setting($slidecaption))) {
-            $o .= '<div class="carousel-caption">';
-            $o .= '<div class="carousel-caption-inner">';
-            if (theme_essential_get_setting($slidetitle)) {
-                $o .= '<h4>' . theme_essential_get_setting($slidetitle, true) . '</h4>';
-            }
-            if (theme_essential_get_setting($slidecaption)) {
-                $o .= '<p>' . theme_essential_get_setting($slidecaption, true) . '</p>';
-            }
-            $o .= '</div>';
-            $o .= '</div>';
-        }
-        if ($slidecaptionbelow) {
-            $o .= '</div></div>';
-        }
-        $o .= (theme_essential_get_setting($urlsetting) ? '</a>' : '</div>');
+    // Get slide image or fallback to default
+    if (theme_essential_get_setting('slide'.$i.'image')) {
+        $slideimage     = $PAGE->theme->setting_file_url('slide'.$i.'image', 'slide'.$i.'image');
     }
-    $o .= '</div>'; // carousel-inner.
-    $o .= '<a class="left carousel-control" href="#essentialCarousel" data-slide="prev"><i class="fa fa-chevron-circle-left"></i></a>';
-    $o .= '<a class="right carousel-control" href="#essentialCarousel" data-slide="next"><i class="fa fa-chevron-circle-right"></i></a>';
-    $o .= '</div>'; // essentialCarousel.
-    $o .= '</div></div>'; // row-fluid span12.
 
-    return $o;
+    if($slideurl) {
+        $slide = '<a href="'.$slideurl.'" target="'.$slideurltarget.'" class="item '.$slideextraclass.'">';
+    } else {
+        $slide = '<div class="item '.$slideextraclass.'">';
+    }
+    $slide .= '<img src="'.$slideimage.'" alt="'.$slideimagealt.'" class="carousel-image"/>';
+
+    // Output title and caption if either is present
+    if ($slidetitle || $slidecaption) {
+        $slide .= '<div class="carousel-caption">';
+        $slide .= '<div class="carousel-caption-inner">';
+        $slide .= '<h4>'.$slidetitle.'</h4>';
+        $slide .= '<p>'.$slidecaption.'</p>';
+        $slide .= '</div>';
+        $slide .= '</div>';
+    }
+
+    $slide .= ($slideurl)? '</a>' : '</div>';
+
+    return $slide;
 }
 
 function theme_essential_page_init(moodle_page $page)

@@ -95,15 +95,39 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 979px) {
+  body{
+    font-size: 13px !important;
+    line-height: 18px;
+  }
   .row-fluid .desktop-first-column {
     margin-left: 0;
+  }
+  #essentialCarousel.carousel {
+    .carousel-inner {
+      > .item {
+        > .carousel-image {
+          max-height: 225px;
+        }
+        .carousel-caption {
+          h4 {
+              font-size: 1.2em;
+          }
+          p {
+          line-height: 1;
+          }
+        }
+      }
+    }
   }
 }
 
 @media (max-width: 767px) {
-  font-size: 12px !important;
-  font-weight: 500;
+  body{
+    font-size: 12px !important;
+    font-weight: 500;
+    line-height: 16px;
+  }
   .row-fluid .desktop-first-column {
     clear: right;
   }
@@ -146,6 +170,23 @@
 
   #marketing-buttons {
     display: none;
+  }
+  #essentialCarousel.carousel {
+    .carousel-inner {
+      > .item {
+        > .carousel-image {
+          max-height: 165px;
+        }
+        .carousel-caption {
+          h4 {
+            font-size: 1.2em;
+          }
+          p {
+            line-height: 1;
+          }
+        }
+      }
+    }
   }
 }
 

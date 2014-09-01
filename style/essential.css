@@ -1714,7 +1714,7 @@
 }
 /* @group Core */
 body {
-  line-height: 25px;
+  line-height: 20px;
   text-shadow: none;
   position: relative;
   font-size: 14px;
@@ -2471,19 +2471,12 @@ table.calendarmonth.calendartable {
 #essentialCarousel.carousel {
   margin-bottom: 10px;
 }
-#essentialCarousel.carousel .carousel-inner {
-  height: 300px;
-}
 #essentialCarousel.carousel .carousel-inner > .item > .carousel-image {
   width: auto;
   margin: 0 auto;
-  max-height: 300px;
+  height: 300px;
   max-width: [[setting:pagewidth]];
-  height: 100%;
   padding: 0;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 #essentialCarousel.carousel .carousel-inner a,
 #essentialCarousel.carousel .carousel-inner a:hover,
@@ -2503,16 +2496,23 @@ table.calendarmonth.calendartable {
   color: [[setting:slidecolor]];
   padding: 0px 20px;
 }
+#essentialCarousel.carousel .carousel-inner.below .carousel-caption {
+  position: initial;
+  height: 65px;
+}
+#essentialCarousel.carousel .carousel-inner.centred .carousel-caption {
+  text-align: center;
+}
 #essentialCarousel.carousel .carousel-control {
   color: [[setting:slidebuttoncolor]];
   background: none;
-  border: none;
-  width: auto;
-  height: auto;
+  border: 0px;
 }
 #essentialCarousel.carousel .carousel-control:hover,
 #essentialCarousel.carousel .carousel-control:focus {
   color: [[setting:slidebuttonhovercolor]];
+  background: none;
+  border: 0px;
 }
 #essentialCarousel.carousel .carousel-indicators li {
   background: [[setting:carouselcolor]];
@@ -2520,36 +2520,6 @@ table.calendarmonth.calendartable {
 #essentialCarousel.carousel .carousel-indicators .active {
   background: [[setting:carouselactivecolor]];
 }
-.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner {
-  height: 400px;
-}
-.frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner .carousel-caption {
-  position: relative;
-}
-/* @group Carousel Responsive */
-@media (max-width: 767px) {
-  #essentialCarousel.carousel .carousel-inner {
-    height: 165px;
-  }
-  #essentialCarousel.carousel .carousel-inner > .item > .carousel-image {
-    max-height: 165px;
-  }
-  .frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner {
-    height: 265px;
-  }
-}
-@media (min-width: 768px) and (max-width: 979px) {
-  #essentialCarousel.carousel .carousel-inner {
-    height: 225px;
-  }
-  #essentialCarousel.carousel .carousel-inner > .item > .carousel-image {
-    max-height: 225px;
-  }
-  .frontpageslidercaptionbelow #essentialCarousel.carousel .carousel-inner {
-    height: 325px;
-  }
-}
-/* @end */
 /* @end */
 /*
  * @package   theme_essential
@@ -4363,15 +4333,30 @@ ul.socials li {
     border-radius: 6px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 979px) {
+  body {
+    font-size: 13px !important;
+    line-height: 18px;
+  }
   .row-fluid .desktop-first-column {
     margin-left: 0;
   }
+  #essentialCarousel.carousel .carousel-inner > .item > .carousel-image {
+    max-height: 225px;
+  }
+  #essentialCarousel.carousel .carousel-inner > .item .carousel-caption h4 {
+    font-size: 1.2em;
+  }
+  #essentialCarousel.carousel .carousel-inner > .item .carousel-caption p {
+    line-height: 1;
+  }
 }
 @media (max-width: 767px) {
-  font-size: 12px !important;
-  font-weight: 500;
-  
+  body {
+    font-size: 12px !important;
+    font-weight: 500;
+    line-height: 16px;
+  }
   .row-fluid .desktop-first-column {
     clear: right;
   }
@@ -4408,6 +4393,15 @@ ul.socials li {
   }
   #marketing-buttons {
     display: none;
+  }
+  #essentialCarousel.carousel .carousel-inner > .item > .carousel-image {
+    max-height: 165px;
+  }
+  #essentialCarousel.carousel .carousel-inner > .item .carousel-caption h4 {
+    font-size: 1.2em;
+  }
+  #essentialCarousel.carousel .carousel-inner > .item .carousel-caption p {
+    line-height: 1;
   }
 }
 /* @end */
@@ -4569,11 +4563,6 @@ a.marketing-button:hover {
 .block_login .content form input[type="submit"] {
   background-color: [[setting:themecolor]];
   font-family: [[setting:bodyfont]];
-}
-/* @end */
-/* @group Carousel */
-.frontpageslidecaptioncentred #essentialCarousel.carousel .carousel-inner .carousel-caption .carousel-caption-inner {
-  text-align: center;
 }
 /* @end */
 /* @group Frontpage */
