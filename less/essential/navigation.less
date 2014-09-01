@@ -83,7 +83,7 @@
     .dropdown-menu {
       z-index: 200;
       margin: 0px;
-      border: #808080;
+      border: 1px solid ~"[[setting:themecolor]]";
     }
 
     .dropdown-menu > li > a,
@@ -101,21 +101,23 @@
       text-shadow: none;
       .fa-caret-right:before {
         margin-left: 5px;
+        margin-right: 3px;
         content: "\f0da";
       }
-
-      &:hover, &.open {
+      &:hover {
         background: ~"[[setting:themenavcolor]]";
         background-image: none;
         color: ~"[[setting:themecolor]]";
-        .fa-caret-right {
-          margin-right: 1px;
-        }
-
         .fa-caret-right:before {
-          margin-left: 5px;
           content: "\f0d7";
+          margin-right: 0px;
         }
+      }
+    }
+    .nav > li.dropdown.open a {
+      .fa-caret-right:before {
+        content: "\f0d7";
+        margin-right: 0px;
       }
     }
 
@@ -154,7 +156,8 @@
           }
         }
         ul.dropdown-menu {
-          border: #808080;
+          border: 1px solid ~"[[setting:themecolor]]";
+          margin: 0px;
           i {
             margin-right: 5px;
             width: 15px;
@@ -177,7 +180,8 @@
         ul.dropdown-menu {
           left: auto;
           right: 10px;
-          border: #808080;
+          margin: 0px;
+          border: 1px solid ~"[[setting:themecolor]]";
           li > a {
             padding: 0px;
             border-top: 1px dotted ~"[[setting:themecolor]]";
