@@ -3220,12 +3220,11 @@ a.action-icon > i,
 /* @end */
 /* @group Performance Information */
 .performanceinfo {
-  bottom: 0;
   background: white;
   padding: 8px;
-  border-radius: 8px;
+  border-radius: 6px;
   border: 1px solid #E1E1E1;
-  font-style: normal;
+  margin-top: 5px;
 }
 .performanceinfo .span3 {
   text-align: center;
@@ -3256,6 +3255,7 @@ a.action-icon > i,
 .performanceinfo span {
   color: #444;
   display: block;
+  margin-top: 5px;
 }
 .performanceinfo #load:before {
   font-family: FontAwesome;
