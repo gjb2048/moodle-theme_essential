@@ -1113,13 +1113,13 @@ body.tag .managelink {
 }
 #page-enrol-users #filterform .fitem {
   display: inline-block;
-  line-height: 40px;
+  line-height: 50px;
   margin-right: .3em;
   white-space: nowrap;
 }
 #page-enrol-users #filterform .fitem label {
   display: inline;
-  line-height: 20px;
+  line-height: 25px;
   padding-right: .3em;
 }
 #page-enrol-users #filterform .fitem :before,
@@ -1871,7 +1871,7 @@ body.jsenabled .formlisting {
 /* Badges styles */
 table.collection {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   border: 1px solid #dddddd;
   border-collapse: separate;
   *border-collapse: collapse;
@@ -1883,7 +1883,7 @@ table.collection {
 table.collection th,
 table.collection td {
   padding: 8px;
-  line-height: 20px;
+  line-height: 25px;
   text-align: left;
   vertical-align: top;
   border-top: 1px solid #dddddd;
@@ -2774,7 +2774,7 @@ img.iconsmall {
 #page-admin-index .adminerror {
   margin: auto;
   padding: 8px 35px 8px 14px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   background-color: #fcf8e3;
   border: 1px solid #fbeed5;
@@ -4000,8 +4000,8 @@ span.editinstructions {
 }
 .dndupload-progress-outer {
   overflow: hidden;
-  height: 20px;
-  margin-bottom: 20px;
+  height: 25px;
+  margin-bottom: 25px;
   background-color: #f7f7f7;
   background-image: -moz-linear-gradient(top, #f5f5f5, #f9f9f9);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#f9f9f9));
@@ -6564,7 +6564,7 @@ body.path-question-type .fitem_fgroup .accesshide {
 .que .outcome,
 .que .comment {
   padding: 8px 35px 8px 14px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   background-color: #fcf8e3;
   border: 1px solid #fbeed5;
@@ -7232,7 +7232,7 @@ body.path-question-type .mform fieldset.hidden {
 .input-block-level {
   display: block;
   width: 100%;
-  min-height: 30px;
+  min-height: 35px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -7406,7 +7406,7 @@ body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 25px;
   color: #333333;
   background-color: #ffffff;
 }
@@ -7550,7 +7550,7 @@ a:focus {
 .row-fluid [class*="span"] {
   display: block;
   width: 100%;
-  min-height: 30px;
+  min-height: 35px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -7745,13 +7745,13 @@ a:focus {
   clear: both;
 }
 p {
-  margin: 0 0 10px;
+  margin: 0 0 12.5px;
 }
 .lead {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-size: 21px;
   font-weight: 200;
-  line-height: 30px;
+  line-height: 37.5px;
 }
 small {
   font-size: 85%;
@@ -7815,10 +7815,10 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 10px 0;
+  margin: 12.5px 0;
   font-family: inherit;
   font-weight: bold;
-  line-height: 20px;
+  line-height: 25px;
   color: inherit;
   text-rendering: optimizelegibility;
 }
@@ -7835,7 +7835,7 @@ h6 small {
 h1,
 h2,
 h3 {
-  line-height: 40px;
+  line-height: 50px;
 }
 h1 {
   font-size: 38.5px;
@@ -7868,14 +7868,14 @@ h4 small {
   font-size: 14px;
 }
 .page-header {
-  padding-bottom: 9px;
-  margin: 20px 0 30px;
+  padding-bottom: 11.5px;
+  margin: 25px 0 37.5px;
   border-bottom: 1px solid #eeeeee;
 }
 ul,
 ol {
   padding: 0;
-  margin: 0 0 10px 25px;
+  margin: 0 0 12.5px 25px;
 }
 ul ul,
 ul ol,
@@ -7884,7 +7884,7 @@ ol ul {
   margin-bottom: 0;
 }
 li {
-  line-height: 20px;
+  line-height: 25px;
 }
 ul.unstyled,
 ol.unstyled {
@@ -7906,17 +7906,17 @@ ol.inline > li {
   padding-right: 5px;
 }
 dl {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 dt,
 dd {
-  line-height: 20px;
+  line-height: 25px;
 }
 dt {
   font-weight: bold;
 }
 dd {
-  margin-left: 10px;
+  margin-left: 12.5px;
 }
 .dl-horizontal {
   *zoom: 1;
@@ -7943,7 +7943,7 @@ dd {
   margin-left: 200px;
 }
 hr {
-  margin: 20px 0;
+  margin: 25px 0;
   border: 0;
   border-top: 1px solid #eeeeee;
   border-bottom: 1px solid #ffffff;
@@ -7959,7 +7959,7 @@ abbr.initialism {
 }
 blockquote {
   padding: 0 0 0 15px;
-  margin: 0 0 20px;
+  margin: 0 0 25px;
   border-left: 5px solid #eeeeee;
 }
 blockquote p {
@@ -7970,7 +7970,7 @@ blockquote p {
 }
 blockquote small {
   display: block;
-  line-height: 20px;
+  line-height: 25px;
   color: #999999;
 }
 blockquote small:before {
@@ -8001,9 +8001,9 @@ blockquote:after {
 }
 address {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-style: normal;
-  line-height: 20px;
+  line-height: 25px;
 }
 code,
 pre {
@@ -8024,10 +8024,10 @@ code {
 }
 pre {
   display: block;
-  padding: 9.5px;
-  margin: 0 0 10px;
+  padding: 12px;
+  margin: 0 0 12.5px;
   font-size: 13px;
-  line-height: 20px;
+  line-height: 25px;
   word-break: break-all;
   word-wrap: break-word;
   white-space: pre;
@@ -8040,7 +8040,7 @@ pre {
   border-radius: 4px;
 }
 pre.prettyprint {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 pre code {
   padding: 0;
@@ -8055,7 +8055,7 @@ pre code {
   overflow-y: scroll;
 }
 form {
-  margin: 0 0 20px;
+  margin: 0 0 25px;
 }
 fieldset {
   padding: 0;
@@ -8066,15 +8066,15 @@ legend {
   display: block;
   width: 100%;
   padding: 0;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-size: 21px;
-  line-height: 40px;
+  line-height: 50px;
   color: #333333;
   border: 0;
   border-bottom: 1px solid #e5e5e5;
 }
 legend small {
-  font-size: 15px;
+  font-size: 18.75px;
   color: #999999;
 }
 label,
@@ -8084,7 +8084,7 @@ select,
 textarea {
   font-size: 14px;
   font-weight: normal;
-  line-height: 20px;
+  line-height: 25px;
 }
 input,
 button,
@@ -8114,11 +8114,11 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
   display: inline-block;
-  height: 20px;
+  height: 25px;
   padding: 4px 6px;
-  margin-bottom: 10px;
+  margin-bottom: 12.5px;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 25px;
   color: #555555;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -8203,11 +8203,11 @@ input[type="checkbox"] {
 }
 select,
 input[type="file"] {
-  height: 30px;
+  height: 35px;
   /* In IE7, the height of the select element cannot be changed by height, only font-size */
   *margin-top: 4px;
   /* For IE7, add top margin to align select with labels */
-  line-height: 30px;
+  line-height: 35px;
 }
 select {
   width: 220px;
@@ -8258,7 +8258,7 @@ textarea::-webkit-input-placeholder {
 }
 .radio,
 .checkbox {
-  min-height: 20px;
+  min-height: 25px;
   padding-left: 20px;
 }
 .radio input[type="radio"],
@@ -8576,9 +8576,9 @@ select:focus:invalid:focus {
   box-shadow: 0 0 6px #f8b9b7;
 }
 .form-actions {
-  padding: 19px 20px 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding: 24px 20px 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   background-color: #f5f5f5;
   border-top: 1px solid #e5e5e5;
   *zoom: 1;
@@ -8598,7 +8598,7 @@ select:focus:invalid:focus {
 }
 .help-block {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 12.5px;
 }
 .help-inline {
   display: inline-block;
@@ -8611,7 +8611,7 @@ select:focus:invalid:focus {
 .input-append,
 .input-prepend {
   display: inline-block;
-  margin-bottom: 10px;
+  margin-bottom: 12.5px;
   vertical-align: middle;
   font-size: 0;
   white-space: nowrap;
@@ -8654,12 +8654,12 @@ select:focus:invalid:focus {
 .input-prepend .add-on {
   display: inline-block;
   width: auto;
-  height: 20px;
+  height: 25px;
   min-width: 16px;
   padding: 4px 5px;
   font-size: 14px;
   font-weight: normal;
-  line-height: 20px;
+  line-height: 25px;
   text-align: center;
   text-shadow: 0 1px 0 #ffffff;
   background-color: #eeeeee;
@@ -8848,14 +8848,14 @@ input.search-query {
   margin-left: 0;
 }
 .control-group {
-  margin-bottom: 10px;
+  margin-bottom: 12.5px;
 }
 legend + .control-group {
-  margin-top: 20px;
+  margin-top: 25px;
   -webkit-margin-top-collapse: separate;
 }
 .form-horizontal .control-group {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   *zoom: 1;
 }
 .form-horizontal .control-group:before,
@@ -8891,7 +8891,7 @@ legend + .control-group {
 .form-horizontal .uneditable-input + .help-block,
 .form-horizontal .input-prepend + .help-block,
 .form-horizontal .input-append + .help-block {
-  margin-top: 10px;
+  margin-top: 12.5px;
 }
 .form-horizontal .form-actions {
   padding-left: 200px;
@@ -8904,12 +8904,12 @@ table {
 }
 .table {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 .table th,
 .table td {
   padding: 8px;
-  line-height: 20px;
+  line-height: 25px;
   text-align: left;
   vertical-align: top;
   border-top: 1px solid #dddddd;
@@ -9190,7 +9190,7 @@ table th[class*="span"],
 .dropdown-menu .divider {
   *width: 100%;
   height: 1px;
-  margin: 9px 1px;
+  margin: 11.5px 1px;
   *margin: -5px 0 5px;
   overflow: hidden;
   background-color: #e5e5e5;
@@ -9201,7 +9201,7 @@ table th[class*="span"],
   padding: 3px 20px;
   clear: both;
   font-weight: normal;
-  line-height: 20px;
+  line-height: 25px;
   color: #333333;
   white-space: nowrap;
 }
@@ -9394,7 +9394,7 @@ table th[class*="span"],
   float: right;
   font-size: 20px;
   font-weight: bold;
-  line-height: 20px;
+  line-height: 25px;
   color: #000000;
   text-shadow: 0 1px 0 #ffffff;
   opacity: 0.2;
@@ -9423,7 +9423,7 @@ button.close {
   padding: 4px 12px;
   margin-bottom: 0;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 25px;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
@@ -9819,8 +9819,8 @@ input[type="submit"].btn.btn-mini {
 }
 .btn-toolbar {
   font-size: 0;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 12.5px;
+  margin-bottom: 12.5px;
 }
 .btn-toolbar > .btn + .btn,
 .btn-toolbar > .btn-group + .btn,
@@ -10016,7 +10016,7 @@ input[type="submit"].btn.btn-mini {
 }
 .alert {
   padding: 8px 35px 8px 14px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   background-color: #fcf8e3;
   border: 1px solid #fbeed5;
@@ -10035,7 +10035,7 @@ input[type="submit"].btn.btn-mini {
   position: relative;
   top: -2px;
   right: -21px;
-  line-height: 20px;
+  line-height: 25px;
 }
 .alert-success {
   background-color: #dff0d8;
@@ -10076,7 +10076,7 @@ input[type="submit"].btn.btn-mini {
 }
 .nav {
   margin-left: 0;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   list-style: none;
 }
 .nav > li > a {
@@ -10098,7 +10098,7 @@ input[type="submit"].btn.btn-mini {
   padding: 3px 15px;
   font-size: 11px;
   font-weight: bold;
-  line-height: 20px;
+  line-height: 25px;
   color: #999999;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
@@ -10134,7 +10134,7 @@ input[type="submit"].btn.btn-mini {
 .nav-list .divider {
   *width: 100%;
   height: 1px;
-  margin: 9px 1px;
+  margin: 11.5px 1px;
   *margin: -5px 0 5px;
   overflow: hidden;
   background-color: #e5e5e5;
@@ -10176,7 +10176,7 @@ input[type="submit"].btn.btn-mini {
 .nav-tabs > li > a {
   padding-top: 8px;
   padding-bottom: 8px;
-  line-height: 20px;
+  line-height: 25px;
   border: 1px solid transparent;
   -webkit-border-radius: 4px 4px 0 0;
   -moz-border-radius: 4px 4px 0 0;
@@ -10422,7 +10422,7 @@ input[type="submit"].btn.btn-mini {
 }
 .navbar {
   overflow: visible;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   *position: relative;
   *z-index: 2;
 }
@@ -10466,7 +10466,7 @@ input[type="submit"].btn.btn-mini {
 .navbar .brand {
   float: left;
   display: block;
-  padding: 10px 20px 10px;
+  padding: 7.5px 20px 7.5px;
   margin-left: -20px;
   font-size: 20px;
   font-weight: 200;
@@ -10632,7 +10632,7 @@ input[type="submit"].btn.btn-mini {
 }
 .navbar .nav > li > a {
   float: none;
-  padding: 10px 15px 10px;
+  padding: 7.5px 15px 7.5px;
   color: #777777;
   text-decoration: none;
   text-shadow: 0 1px 0 #ffffff;
@@ -10927,7 +10927,7 @@ input[type="submit"].btn.btn-mini {
 }
 .breadcrumb {
   padding: 8px 15px;
-  margin: 0 0 20px;
+  margin: 0 0 25px;
   list-style: none;
   background-color: #f5f5f5;
   -webkit-border-radius: 4px;
@@ -10949,7 +10949,7 @@ input[type="submit"].btn.btn-mini {
   color: #999999;
 }
 .pagination {
-  margin: 20px 0;
+  margin: 25px 0;
 }
 .pagination ul {
   display: inline-block;
@@ -10972,7 +10972,7 @@ input[type="submit"].btn.btn-mini {
 .pagination ul > li > span {
   float: left;
   padding: 4px 12px;
-  line-height: 20px;
+  line-height: 25px;
   text-decoration: none;
   background-color: #ffffff;
   border: 1px solid #dddddd;
@@ -11078,7 +11078,7 @@ input[type="submit"].btn.btn-mini {
   font-size: 10.5px;
 }
 .pager {
-  margin: 20px 0;
+  margin: 25px 0;
   list-style: none;
   text-align: center;
   *zoom: 1;
@@ -11449,13 +11449,13 @@ input[type="submit"].btn.btn-mini {
 }
 .thumbnails > li {
   float: left;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   margin-left: 20px;
 }
 .thumbnail {
   display: block;
   padding: 4px;
-  line-height: 20px;
+  line-height: 25px;
   border: 1px solid #ddd;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -11642,8 +11642,8 @@ a.badge:focus {
 }
 .progress {
   overflow: hidden;
-  height: 20px;
-  margin-bottom: 20px;
+  height: 25px;
+  margin-bottom: 25px;
   background-color: #f7f7f7;
   background-image: -moz-linear-gradient(top, #f5f5f5, #f9f9f9);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#f9f9f9));
@@ -11791,7 +11791,7 @@ a.badge:focus {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .accordion {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 .accordion-group {
   margin-bottom: 2px;
@@ -11816,7 +11816,7 @@ a.badge:focus {
 }
 .carousel {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   line-height: 1;
 }
 .carousel-inner {
@@ -11932,7 +11932,7 @@ a.badge:focus {
 .carousel-caption h4,
 .carousel-caption p {
   color: #ffffff;
-  line-height: 20px;
+  line-height: 25px;
 }
 .carousel-caption h4 {
   margin: 0 0 5px;
@@ -11945,7 +11945,7 @@ a.badge:focus {
   margin-bottom: 30px;
   font-size: 18px;
   font-weight: 200;
-  line-height: 30px;
+  line-height: 37.5px;
   color: inherit;
   background-color: #eeeeee;
   -webkit-border-radius: 6px;
@@ -11960,7 +11960,7 @@ a.badge:focus {
   letter-spacing: -1px;
 }
 .hero-unit li {
-  line-height: 30px;
+  line-height: 37.5px;
 }
 .pull-right {
   float: right;
@@ -12225,7 +12225,7 @@ body:not(.jsenabled) .langmenu:hover > .dropdown-menu,
   padding: 3px 15px;
   font-size: 11px;
   font-weight: bold;
-  line-height: 20px;
+  line-height: 25px;
   color: #999999;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
@@ -12272,7 +12272,7 @@ body:not(.jsenabled) .langmenu:hover > .dropdown-menu,
   padding: 3px 15px;
   font-size: 11px;
   font-weight: bold;
-  line-height: 20px;
+  line-height: 25px;
   color: #999999;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
@@ -12573,7 +12573,7 @@ input#id_externalurl {
 }
 .form-item,
 .mform .fitem {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   *zoom: 1;
   margin-bottom: 10px;
 }
@@ -12634,7 +12634,7 @@ input#id_externalurl {
 .felement.fstatic {
   color: #595959;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 12.5px;
   padding-top: 5px;
 }
 .form-item .form-description {
@@ -12647,9 +12647,9 @@ table#form td.submit,
 .fp-content-center form + div,
 div.backup-section + form,
 #fgroup_id_buttonar {
-  padding: 19px 20px 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding: 24px 20px 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   background-color: #f5f5f5;
   border-top: 1px solid #e5e5e5;
   *zoom: 1;
@@ -12693,9 +12693,9 @@ div.backup-section + form:after,
 .dir-rtl .fp-content-center form + div,
 .dir-rtl div.backup-section + form,
 .dir-rtl #fgroup_id_buttonar {
-  padding: 19px 20px 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding: 24px 20px 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   background-color: #f5f5f5;
   border-top: 1px solid #e5e5e5;
   *zoom: 1;
@@ -12740,9 +12740,9 @@ div.backup-section + form:after,
   display: block;
   width: 100%;
   padding: 0;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-size: 21px;
-  line-height: 40px;
+  line-height: 50px;
   color: #333333;
   border: 0;
   border-bottom: 1px solid #e5e5e5;
@@ -13608,9 +13608,9 @@ div#dock {
   display: block;
   width: 100%;
   padding: 0;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-size: 21px;
-  line-height: 40px;
+  line-height: 50px;
   color: #333333;
   border: 0;
   border-bottom: 1px solid #e5e5e5;
@@ -13786,14 +13786,14 @@ div#dock {
 table.flexible,
 .generaltable {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 table.flexible th,
 .generaltable th,
 table.flexible td,
 .generaltable td {
   padding: 8px;
-  line-height: 20px;
+  line-height: 25px;
   text-align: left;
   vertical-align: top;
   border-top: 1px solid #dddddd;
@@ -13868,7 +13868,7 @@ p.arrow_button input {
   box-sizing: border-box;
 }
 #addcontrols {
-  margin-top: 30px;
+  margin-top: 37.5px;
   text-align: center;
   margin-bottom: 3em;
 }
@@ -13899,7 +13899,7 @@ input[type="reset"] {
   padding: 4px 12px;
   margin-bottom: 0;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 25px;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
@@ -14114,7 +14114,7 @@ input.fp-btn-choose {
   padding: 4px 12px;
   margin-bottom: 0;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 25px;
   vertical-align: middle;
   cursor: pointer;
   color: #333333;
@@ -14326,7 +14326,7 @@ input.fp-btn-choose {
   padding: 4px 12px;
   margin-bottom: 0;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 25px;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
@@ -14423,7 +14423,7 @@ input.fp-btn-choose {
   padding: 4px 12px;
   margin-bottom: 0;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 25px;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
@@ -14582,7 +14582,7 @@ body.has_dock div#dock {
   padding: 4px 12px;
   margin-bottom: 0;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 25px;
   text-align: center;
   vertical-align: middle;
   color: #333333;
@@ -14737,7 +14737,7 @@ body.has_dock div#dock {
   padding: 3px 15px;
   font-size: 11px;
   font-weight: bold;
-  line-height: 20px;
+  line-height: 25px;
   color: #999999;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
@@ -14959,7 +14959,7 @@ body.has_dock div#dock {
   .row-fluid [class*="span"] {
     display: block;
     width: 100%;
-    min-height: 30px;
+    min-height: 35px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -15308,7 +15308,7 @@ body.has_dock div#dock {
   .row-fluid [class*="span"] {
     display: block;
     width: 100%;
-    min-height: 30px;
+    min-height: 35px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -15602,7 +15602,7 @@ body.has_dock div#dock {
   .uneditable-input {
     display: block;
     width: 100%;
-    min-height: 30px;
+    min-height: 35px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -15638,7 +15638,7 @@ body.has_dock div#dock {
   }
   .page-header h1 small {
     display: block;
-    line-height: 20px;
+    line-height: 25px;
   }
   input[type="checkbox"],
   input[type="radio"] {
@@ -15692,10 +15692,10 @@ body.has_dock div#dock {
     position: static;
   }
   .navbar-fixed-top {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
   .navbar-fixed-bottom {
-    margin-top: 20px;
+    margin-top: 25px;
   }
   .navbar-fixed-top .navbar-inner,
   .navbar-fixed-bottom .navbar-inner {
@@ -15715,7 +15715,7 @@ body.has_dock div#dock {
   }
   .nav-collapse .nav {
     float: none;
-    margin: 0 0 10px;
+    margin: 0 0 12.5px;
   }
   .nav-collapse .nav > li {
     float: none;
@@ -15804,8 +15804,8 @@ body.has_dock div#dock {
   .nav-collapse .navbar-form,
   .nav-collapse .navbar-search {
     float: none;
-    padding: 10px 15px;
-    margin: 10px 0;
+    padding: 12.5px 15px;
+    margin: 12.5px 0;
     border-top: 1px solid #f2f2f2;
     border-bottom: 1px solid #f2f2f2;
     -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
@@ -16498,8 +16498,8 @@ table#permissions tbody tr:hover > th {
 }
 div[id^="bar_pbar_"] {
   overflow: hidden !important;
-  height: 20px !important;
-  margin-bottom: 20px !important;
+  height: 25px !important;
+  margin-bottom: 25px !important;
   background-color: #f7f7f7 !important;
   background-image: -moz-linear-gradient(top, #f5f5f5, #f9f9f9) !important;
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#f9f9f9)) !important;
@@ -16628,7 +16628,7 @@ td.submit input .caret {
   padding: 4px 12px;
   margin-bottom: 0;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 25px;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
