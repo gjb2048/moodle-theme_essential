@@ -2635,7 +2635,11 @@ table.calendarmonth.calendartable {
 /* @end */
 /* @group Chat */
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-input-area table.generaltable td.cell {
-  padding: 0px;
+  padding: 4px;
+}
+.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-userlist #users-list img {
+  border-radius: 250px;
+  height: 35px;
 }
 /* @end */
 /* @group Course */
@@ -3342,7 +3346,7 @@ input[type="color"],
   position: fixed;
   bottom: 30px;
   margin: 0px;
-  background-color: #F5F5F5;
+  background-color: #CCC;
 }
 #page-course-edit #page form .form-buttons #fgroup_id_buttonar,
 .path-admin-setting #page form .form-buttons #fgroup_id_buttonar,
@@ -3369,7 +3373,8 @@ input[type="color"],
 #page-admin-registration-register #page form .form-buttons,
 .path-backup #page form .form-buttons {
   width: 400px;
-  border-radius: 4px;
+  border-radius: 8px;
+  border: 2px solid #d6e9c6;
 }
 #page-course-edit #page form .form-buttons input,
 .path-admin-setting #page form .form-buttons input,
