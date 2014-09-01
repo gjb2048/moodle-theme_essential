@@ -2485,6 +2485,7 @@ table.calendarmonth.calendartable {
   height: 100%;
 }
 #essentialCarousel.carousel .carousel-inner .carousel-caption {
+  border-radius: 6px;
   background: [[setting:carouselcolor]];
 }
 #essentialCarousel.carousel .carousel-inner .carousel-caption .carousel-caption-inner {
@@ -3346,7 +3347,7 @@ input[type="color"],
   position: fixed;
   bottom: 30px;
   margin: 0px;
-  background-color: #CCC;
+  background-color: [[setting:themecolor]];
 }
 #page-course-edit #page form .form-buttons #fgroup_id_buttonar,
 .path-admin-setting #page form .form-buttons #fgroup_id_buttonar,
@@ -3374,7 +3375,6 @@ input[type="color"],
 .path-backup #page form .form-buttons {
   width: 400px;
   border-radius: 8px;
-  border: 2px solid #d6e9c6;
 }
 #page-course-edit #page form .form-buttons input,
 .path-admin-setting #page form .form-buttons input,

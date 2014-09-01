@@ -24,6 +24,11 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+$numberofslides = theme_essential_showslider('numberofslides');
+$slideinterval  = theme_essential_get_setting('slideinterval');
+$captionscenter = (theme_essential_get_setting('slidecaptioncentred'))? ' centred' : '';
+$captionsbelow  = (theme_essential_get_setting('slidecaptionbelow'))? ' below' : '';
+
 if ($numberofslides) { ?>
     <div class="row-fluid">
         <div class="span12">

@@ -42,11 +42,6 @@ if (theme_essential_get_setting('enablealternativethemecolors1') ||
     $colourswitcher = false;
 }
 
-$numberofslides = theme_essential_showslider('numberofslides');
-$slideinterval  = theme_essential_get_setting('slideinterval');
-$captionscenter = (theme_essential_get_setting('slidecaptioncentred'))? ' centred' : '';
-$captionsbelow  = (theme_essential_get_setting('slidecaptionbelow'))? ' below' : '';
-
 switch (theme_essential_get_setting('pagewidth')) {
     case 100:
         $bodyclasses[] = 'pagewidthvariable';

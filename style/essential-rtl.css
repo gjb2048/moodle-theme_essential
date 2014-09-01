@@ -3174,6 +3174,7 @@ table.calendarmonth.calendartable {
 }
 
 #essentialCarousel.carousel .carousel-inner .carousel-caption {
+  border-radius: 6px;
   background: [[setting:carouselcolor]];
 }
 
@@ -4221,7 +4222,7 @@ input[type="color"],
   position: fixed;
   bottom: 30px;
   margin: 0px;
-  background-color: #CCC;
+  background-color: [[setting:themecolor]];
 }
 
 #page-course-edit #page form .form-buttons #fgroup_id_buttonar,
@@ -4252,7 +4253,6 @@ input[type="color"],
 .path-backup #page form .form-buttons {
   width: 400px;
   border-radius: 8px;
-  border: 2px solid #d6e9c6;
 }
 
 #page-course-edit #page form .form-buttons input,
