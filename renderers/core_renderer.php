@@ -263,7 +263,7 @@ class theme_essential_core_renderer extends core_renderer
                     } else if (has_capability('moodle/course:viewhiddencourses', context_system::instance())) {
                         $branchtitle = format_string($course->shortname);
                         $branchlabel = '<span class="dimmed_text"><i class="fa fa-eye-slash"></i>' . format_string($course->fullname) . '</span>';
-                        $branchurl = new moodle_url('/course/view.php?id=' . $course->id);
+                        $branchurl = new moodle_url('/course/view.php', array('id' =>$course->id));
                         $branch->add($branchlabel, $branchurl, $branchtitle);
                         $numcourses += 1;
                     }
@@ -585,11 +585,11 @@ class theme_essential_core_renderer extends core_renderer
             if (\core\session\manager::is_loggedinas()) {
                 $realuser = \core\session\manager::get_realuser();
                 $branchlabel = '<em><i class="fa fa-key"></i>' . fullname($realuser, true) . get_string('loggedinas', 'theme_essential') . fullname($USER, true) . '</em>';
-                $branchurl = new moodle_url('/user/profile.php?id=' . $USER->id);
+                $branchurl = new moodle_url('/user/profile.php', array('id' => $USER->id));
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             } else {
                 $branchlabel = '<em><i class="fa fa-user"></i>' . fullname($USER, true) . '</em>';
-                $branchurl = new moodle_url('/user/profile.php?id=' . $USER->id);
+                $branchurl = new moodle_url('/user/profile.php', array('id' => $USER->id));
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
 
@@ -634,11 +634,11 @@ class theme_essential_core_renderer extends core_renderer
             // Check if user is allowed to view discussions
             if (has_capability('mod/forum:viewdiscussion', $context)) {
                 $branchlabel = '<em><i class="fa fa-list-alt"></i>' . get_string('forumposts', 'mod_forum') . '</em>';
-                $branchurl = new moodle_url('/mod/forum/user.php?id=' . $USER->id);
+                $branchurl = new moodle_url('/mod/forum/user.php', array('id' => $USER->id));
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
 
                 $branchlabel = '<em><i class="fa fa-list"></i>' . get_string('discussions', 'mod_forum') . '</em>';
-                $branchurl = new moodle_url('/mod/forum/user.php?id=' . $USER->id . '&mode=discussions');
+                $branchurl = new moodle_url('/mod/forum/user.php', array('id' => $USER->id, 'mode' => 'discussions'));
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
 
                 $usermenu .= html_writer::empty_tag('hr', array('class' => 'sep'));
@@ -651,18 +651,18 @@ class theme_essential_core_renderer extends core_renderer
                     $reportcontext = context_course::instance($hascourse->id);
                     if (has_capability('gradereport/user:view', $reportcontext) && $hascourse->visible) {
                         $branchlabel = '<em><i class="fa fa-list-alt"></i>' . get_string('mygrades', 'theme_essential') . '</em>';
-                        $branchurl = new moodle_url('/grade/report/overview/index.php?id=' . $hascourse->id . '&userid=' . $USER->id);
+                        $branchurl = new moodle_url('/grade/report/overview/index.php' , array('id' => $hascourse->id, 'userid' => $USER->id));
                         $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
                     }
                 }
             } else if (has_capability('gradereport/user:view', $context)) {
                 $branchlabel = '<em><i class="fa fa-list-alt"></i>' . get_string('mygrades', 'theme_essential') . '</em>';
-                $branchurl = new moodle_url('/grade/report/overview/index.php?id=' . $course->id . '&userid=' . $USER->id);
+                $branchurl = new moodle_url('/grade/report/overview/index.php' , array('id' => $course->id, 'userid' => $USER->id));
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
 
                 // In Course also output Course grade links
                 $branchlabel = '<em><i class="fa fa-list-alt"></i>' . get_string('coursegrades', 'theme_essential') . '</em>';
-                $branchurl = new moodle_url('/grade/report/user/index.php?id=' . $course->id . '&user=' . $USER->id);
+                $branchurl = new moodle_url('/grade/report/user/index.php' , array('id' => $course->id, 'userid' => $USER->id));
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
 
@@ -750,17 +750,17 @@ class theme_essential_core_renderer extends core_renderer
         // Check if user is allowed to edit profile
         if (has_capability('moodle/user:editownprofile', $context)) {
             $branchlabel = '<em><i class="fa fa-user"></i>' . get_string('editmyprofile') . '</em>';
-            $branchurl = new moodle_url('/user/edit.php?id=' . $USER->id);
+            $branchurl = new moodle_url('/user/edit.php', array('id' => $USER->id));
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
         if (has_capability('moodle/user:changeownpassword', $context)) {
             $branchlabel = '<em><i class="fa fa-key"></i>' . get_string('changepassword') . '</em>';
-            $branchurl = new moodle_url('/login/change_password.php?id=' . $USER->id);
+            $branchurl = new moodle_url('/login/change_password.php', array('id' => $USER->id));
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
         if (has_capability('moodle/user:editownmessageprofile', $context)) {
             $branchlabel = '<em><i class="fa fa-comments"></i>' . get_string('messagepreferences', 'theme_essential') . '</em>';
-            $branchurl = new moodle_url('/message/edit.php?id=' . $USER->id);
+            $branchurl = new moodle_url('/message/edit.php', array('id' => $USER->id));
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
         if ($CFG->enableblogs) {
