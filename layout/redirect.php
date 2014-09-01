@@ -23,36 +23,32 @@
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+echo $OUTPUT->doctype() ?>
 
-require_once(dirname(__FILE__) . '/includes/header.php'); ?>
+<html <?php echo $OUTPUT->htmlattributes(); ?>>
 
-<div id="page" class="container-fluid">
-    <div id="page-navbar" class="clearfix row-fluid">
-        <div
-            class="breadcrumb-nav pull-<?php echo ($left) ? 'left' : 'right'; ?>"><?php echo $OUTPUT->navbar(); ?></div>
-        <nav
-            class="breadcrumb-button pull-<?php echo ($left) ? 'right' : 'left'; ?>"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-    </div>
-    <section role="main-content">
-        <!-- Start Main Regions -->
-        <div id="page-content" class="row-fluid">
+<head>
+    <title><?php echo $OUTPUT->page_title(); ?></title>
+    <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>"/>
+    <?php echo $OUTPUT->standard_head_html() ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body <?php echo $OUTPUT->body_attributes(); ?>>
+
+<?php echo $OUTPUT->standard_top_of_body_html() ?>
+<section role="main-content">
+    <div id="page" class="container-fluid maintenance">
+
+        <div id="page-content" class="row-fluid text-center">
             <section id="region-main" class="span12">
-                <?php if ($COURSE->id > 1) {
-                    echo $OUTPUT->heading($COURSE->fullname, 1, 'coursetitle');
-                    echo '<div class="bor"></div>';
-                } ?>
-                <?php echo $OUTPUT->course_content_header(); ?>
                 <?php echo $OUTPUT->main_content(); ?>
-                <?php if (empty($PAGE->layout_options['nocoursefooter'])) {
-                    echo $OUTPUT->course_content_footer();
-                }?>
+                <i class="fa fa-refresh fa-spin fa-2x"></i>
             </section>
         </div>
-        <!-- End Main Regions -->
 
-    </section>
-</div>
-
-<?php require_once(dirname(__FILE__) . '/includes/footer.php'); ?>
+    </div>
+</section>
+<?php echo $OUTPUT->standard_end_of_body_html() ?>
 </body>
 </html>

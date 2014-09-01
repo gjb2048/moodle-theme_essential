@@ -24,37 +24,6 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-switch ($fontselect) {
-case 1:
-    $fonts[] = "'Open+Sans::".$fontcharacterset."'";
-    break;
-case 2:
-    $fonts[] = "'Oswald::".$fontcharacterset."'";
-    $fonts[] = "'PT+Sans::".$fontcharacterset."'";
-    break;
-case 3:
-    $fonts[] = "'Roboto::".$fontcharacterset."'";
-    break;
-case 4:
-    $fonts[] = "'PT+Sans::".$fontcharacterset."'";
-    break;
-case 5:
-    $fonts[] = "'Ubuntu::".$fontcharacterset."'";
-    break;
-case 6:
-    $fonts[] = "'Arimo::".$fontcharacterset."'";
-    break;
-case 7:
-    $fonts[] = "'Lobster::".$fontcharacterset."'";
-    $fonts[] = "'Raleway::".$fontcharacterset."'";
-	break;
-}
-
-if (!empty($fonts)) {?>
-	<script type="text/javascript">
-	  WebFontConfig = {
-		google: { families: [ <?php echo implode("," , $fonts); ?> ] }
-	  };
-    </script>
-    <script src="//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+if ($fontselect === '2') { ?>
+    <link href='http://fonts.googleapis.com/css?family=<?php echo $headingfont.'|'.$bodyfont.$fontcharacterset;?>' rel='stylesheet' type='text/css'>
 <?php } ?>
