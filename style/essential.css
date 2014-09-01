@@ -3057,7 +3057,7 @@ p.tree_item.leaf a > i,
 .course-item-actions a > i,
 .actions a > i {
   color: [[setting:themeiconcolor]];
-  width: [[setting:bodysize]];
+  width: 14px;
 }
 .menu a.menu-action.action-delete > i,
 p.tree_item.leaf a.action-delete > i,
@@ -3079,7 +3079,7 @@ p.tree_item.leaf a:hover > i,
 a.action-icon > i,
 #studentheader > i,
 .heading_name_row a > i {
-  width: [[setting:bodysize]];
+  width: 14px;
   margin: 0px 3px;
 }
 .menu a.menu-action:hover > i {
