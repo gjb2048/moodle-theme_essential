@@ -104,6 +104,7 @@ New in 2.7.7
 - FIX: Issue #228: Incorrect z-index in menu.
 - FIX: Issue #233: User image wrong in IE.
 - FIX: Issue #237: Homepage main content block layout issues.
+- FIX: Issue #238: Logged in user block styling.
 - FIX: Issue #241: Background image appears as text box background.
 - NEW: Issue #74 : Fonts are CDN only.
 - NEW: Issue #139: Enter own CDN font names.
