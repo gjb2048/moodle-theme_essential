@@ -896,8 +896,6 @@ class theme_essential_core_renderer extends core_renderer
             't/up' => 'arrow-up',
             't/down' => 'arrow-down',
             't/copy' => 'copy',
-            't/switch_minus' => 'minus-square',
-            't/switch_plus' => 'plus-square',
             't/block_to_dock' => 'caret-square-o-left',
             't/sort' => 'sort',
             't/sort_asc' => 'sort-asc',
