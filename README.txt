@@ -104,6 +104,7 @@ New in 2.7.7
 - FIX: Issue #228: Incorrect z-index in menu.
 - FIX: Issue #233: User image wrong in IE.
 - FIX: Issue #237: Homepage main content block layout issues.
+- FIX: Issue #241: Background image appears as text box background.
 - NEW: Issue #74 : Fonts are CDN only.
 - NEW: Issue #139: Enter own CDN font names.
 - NEW: Issue #149: Add setting to not show the site shortname.
@@ -120,7 +121,7 @@ New in 2.7.7
 - NEW: Issue #223: How to make a sub menu from custom menu.
 - NEW: Issue #226: Move slideshow slides loading to function in lib.php.
 - NEW: Issue #235: Color of course navigation block.
-
+- NEW: Issue #240: Header title not wrapping in mobile view.
 
 New in 2.7.6b
 =============
