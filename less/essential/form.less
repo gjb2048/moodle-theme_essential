@@ -58,9 +58,12 @@ input[type="color"],
         position: fixed;
         bottom: 30px;
         margin: 0px;
+        border-radius: @baseBorderRadius * 2;
         background-color: ~"[[setting:themecolor]]";
         #fgroup_id_buttonar {
           padding: 0px;
+          background-color: ~"[[setting:themecolor]]";
+          border: none;
         }
         #id_previous {
           margin-left: -250px;
@@ -72,6 +75,9 @@ input[type="color"],
         input {
           margin: 0px;
         }
+      }
+      .fdescription.required {
+        color: orangered;
       }
     }
   }

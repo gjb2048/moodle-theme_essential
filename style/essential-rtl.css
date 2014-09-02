@@ -4222,6 +4222,7 @@ input[type="color"],
   position: fixed;
   bottom: 30px;
   margin: 0px;
+  border-radius: 8px;
   background-color: [[setting:themecolor]];
 }
 
@@ -4234,6 +4235,8 @@ input[type="color"],
 #page-admin-registration-register #page form fieldset:last-of-type.hidden #fgroup_id_buttonar,
 .path-backup #page form fieldset:last-of-type.hidden #fgroup_id_buttonar {
   padding: 0px;
+  background-color: [[setting:themecolor]];
+  border: none;
 }
 
 #page-course-edit #page form .form-buttons #id_previous,
@@ -4260,6 +4263,13 @@ input[type="color"],
 #page-admin-registration-register #page form .form-buttons input,
 .path-backup #page form .form-buttons input {
   margin: 0px;
+}
+
+#page-course-edit #page form .fdescription.required,
+.path-admin-setting #page form .fdescription.required,
+#page-admin-registration-register #page form .fdescription.required,
+.path-backup #page form .fdescription.required {
+  color: orangered;
 }
 
 /* @end */
@@ -5337,6 +5347,16 @@ ul.socials li {
 @media (max-width: 979px) {
   font-size: 13px !important;
   
+  h1#title {
+    font-size: 2.5em;
+    line-height: 35px;
+  }
+
+  h1#smalltitle {
+    font-size: 1.8em;
+    line-height: 30px;
+  }
+
   .navbar-inner .brand {
     display: none;
   }
@@ -5438,6 +5458,16 @@ ul.socials li {
     line-height: 18px;
   }
 
+  h1#title {
+    font-size: 2em;
+    line-height: 30px;
+  }
+
+  h1#smalltitle {
+    font-size: 1.5em;
+    line-height: 30px;
+  }
+
   .row-fluid .desktop-first-column {
     margin-right: 0;
   }
@@ -5460,6 +5490,15 @@ ul.socials li {
     font-size: 12px !important;
     font-weight: 500;
     line-height: 16px;
+  }
+
+  h1#title {
+    font-size: 1.8em;
+    line-height: 30px;
+  }
+
+  h1#smalltitle {
+    font-size: 1.2em;
   }
 
   .row-fluid .desktop-first-column {
