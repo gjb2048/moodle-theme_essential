@@ -734,9 +734,6 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
     $sectionnav .= html_writer::end_tag('nav');
     $sectionnav .= html_writer::tag('div', '', array('class' => 'bor'));
 
-    // Output Section Navigation
-    echo $sectionnav;
-
     // Define the Section Title
     $sectiontitle = '';
     $sectiontitle .= html_writer::start_tag('div', array('class' => 'section-title'));
