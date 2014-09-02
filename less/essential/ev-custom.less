@@ -1,0 +1,266 @@
+// admin.less.
+#page-admin-index .releasenoteslink, #page-admin-index .adminwarning, #page-admin-index .adminerror {
+    background-color: @white;
+    border: 2px solid @black;
+    border-radius: @baseBorderRadius;
+    color: @black;
+}
+
+// blocks.less.
+.block {
+    border: 3px solid @black; // darken(@wellBackground, 7%);
+    a {
+        color: @black;
+        &:hover, &:focus {
+            font-weight: bold;
+        }
+    }
+}
+
+#region-main .block {
+    border: none;
+    //a {
+    //    color: ~"[[setting:themeurlcolor]]";
+    //}
+}
+
+// breadcrumb.less
+.breadcrumb-nav {
+    width: 85%;
+    ul.breadcrumb li {
+        border-top: 2px solid @black;
+        border-bottom: 2px solid @black;
+        &.first, &:first-of-type {
+            border-left: 2px solid @black;
+        }
+        &.last, &:last-of-type {
+            border-right: 2px solid @black;
+        }
+        &:after {
+            line-height: 22px !important;
+        }
+    }
+}
+
+.breadcrumb-button .singlebutton input[type="submit"] {
+    border: 2px solid @black;
+}
+
+/*
+.breadcrumb-nav ul.breadcrumb {
+    .first, .first:hover, .first:focus {
+        a:before {
+            color: #000 !important;
+        }
+    }
+}
+*/
+
+// buttons.less.
+a.btn {
+    color: @black;
+    &:hover, &:focus {
+        font-weight: bold;
+    }
+    &.btn-inverse, &.btn-primary, &.btn-danger, &.btn-warning, &.btn-success, &.btn-info {
+        color: @white;
+    }
+}
+
+// course.less.
+.nav_icon {
+    color: initial;
+}
+
+#next_section, #previous_section { 
+    .nav_icon {
+        font-size: 48px;
+    }
+}
+
+.coursebox > .info > .coursename a {
+    background-image: url(~"[[pix:theme|course_list]]");
+    background-position: left 0px;
+    background-size: 20px;
+    color: @black;
+}
+
+.section .activity .activityinstance > a {
+    color: @black;
+}
+
+.course-content .section-summary {
+    .section-title a, .section-summary-activities .activity-count {
+        color: @black;
+    }
+}
+
+.course_category_tree .category.with_children.collapsed > .info > .categoryname a {
+    color: @black;
+}
+
+// core.less.
+#page #page-content #region-main, #page #page-content div[role="main"] {
+    border: 3px solid @black; //darken(@wellBackground, 7%);
+}
+
+.moodle-dialogue-base {
+    .moodle-dialogue-wrap .moodle-dialogue-hd h1,
+    .moodle-dialogue-wrap .moodle-dialogue-hd,
+    .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd,
+    .moodle-dialogue .moodle-dialogue-bd {
+        color: @black;
+        font-size: 16px;
+    }
+}
+
+// filemanager.less.
+.filemanager.fp-dlg .fp-dlg-text {
+    font-size: 16px;
+}
+
+// forms.less.
+select {
+  border: 2px solid @inputBorder;
+  min-height: 35px;
+}
+
+.mform legend a, .mform legend a:hover {
+    color: @black;
+}
+
+#page-course-edit,
+.path-admin-setting,
+#page-admin-registration-register,
+.path-backup {
+  #page {
+    form {
+      .form-buttons {
+        background-color: @white;
+      }
+      .form-buttons, .hidden {
+        background-color: @white;
+        border: 2px solid @black;
+      }
+    }
+  }
+}
+
+// header.less.
+#page-header, .navbar {
+  border-bottom: 2px solid @black;
+}
+
+#page-header {
+    #headerlogo {
+        top: 0px;
+        color: @black;
+    }
+    h1#smalltitle {
+        color: @black;
+    }
+}
+
+// navigation.less.
+.navbar .navbar-inner {
+    #custom_menu_home, #custom_menu_online_courses, #custom_menu_hands_on_courses, #custom_menu_help, #custom_menu_activities {
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+
+// navs.less.
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover,
+.nav-tabs > .active > a:focus {
+    color: @black;
+    border-left: 2px solid @black;
+    border-top: 2px solid @black;
+    border-right: 2px solid @black;
+    border-bottom: 0px solid @black;
+}
+
+.nav-tabs > li > a {
+    border-left: 2px solid @black;
+    border-top: 2px solid @black;
+    border-right: 2px solid @black;
+    border-bottom: 0px solid @black;
+}
+
+// Give the tabs something to sit on.
+.nav-tabs {
+    border-bottom: 2px solid @black;
+    > li {
+        margin-bottom: -2px;
+    }
+}
+
+// question.less.
+.que {
+    h3.no, .info > div {
+      font-size: 18px;
+    }
+    .info {
+        border: 2px solid @black;
+    }
+    .outcome, .comment {
+        background-color: transparent;
+        color: @black;
+        border: 2px solid @black;
+    }
+    .formulation {
+        background-color: @lightGreen;
+        font-weight: bold;
+        border: 2px solid @black;
+    }
+}
+
+#page-mod-quiz-review .submitbtns a {
+    border: 2px solid @black;
+    border-radius: @baseBorderRadius;
+    color: @black;
+    padding: 4px;
+    min-width: 260px;
+    max-width: 260px;
+    float: left;
+    text-align: center;
+    &:hover, &:focus {
+        font-weight: bold;
+    }
+}
+
+// settings.less.
+.nav-tabs > li > a {
+    color: @black;
+    &:hover {
+        color: @white;
+        background-color: @darkGreen;
+    }
+}
+
+// tabs.less.
+.nav-tabs > li > a {
+    border: 2px solid @black;
+}
+
+// undo.less.
+.choosercontainer #chooseform .option label {
+    font-size: 14px;
+}
+
+// Module css.
+.path-mod-book .navtop img.icon, .path-mod-book .navbottom img.icon {
+    width: 48px;
+    height: 48px;
+}
+
+#page-mod-quiz-edit .questionbankwindow {
+    &.block div.header div.title h2, a#showbankcmd, a#hidebankcmd {
+        color: @black;
+    }
+    a {
+        &:hover, &:focus {
+            font-weight: normal;
+        }
+    }
+}

@@ -40,7 +40,14 @@
       }
       .dropdown-menu > li > a,
       .dropdown-menu > li > a:visited {
-        color: ~"[[setting:themenavcolor]]";
+        color: ~"[[setting:themecolor]]" !important;
+      }
+      .nav > li.dropdown ul.dropdown-menu > li > a {
+        color: ~"[[setting:themetextcolor]]";
+        &:hover, &.open {
+           color: ~"[[setting:themetextcolor]]" !important;
+           background: ~"[[setting:themecolor]]";
+        }
       }
       .nav > li {
         float: left;
