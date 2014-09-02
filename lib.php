@@ -734,9 +734,6 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
     $sectionnav .= html_writer::end_tag('nav');
     $sectionnav .= html_writer::tag('div', '', array('class' => 'bor'));
 
-    // Output Section Navigation
-    echo $sectionnav;
-
     // Define the Section Title
     $sectiontitle = '';
     $sectiontitle .= html_writer::start_tag('div', array('class' => 'section-title'));
@@ -782,7 +779,7 @@ function theme_essential_render_slide($i)
     $slidetitle         = theme_essential_get_setting('slide'.$i, true);
     $slidecaption       = theme_essential_get_setting('slide'.$i.'caption', true);
     $slideextraclass    = ($i === 1)? 'active' : '';
-    $slideimagealt      = theme_essential_get_setting('slide'.$i);
+    $slideimagealt      = strip_tags(theme_essential_get_setting('slide'.$i, true));
     $slideimage         = $OUTPUT->pix_url('default_slide', 'theme');
 
     // Get slide image or fallback to default

@@ -2717,7 +2717,7 @@ div.mdl-align.title {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-style: normal;
-  color: #e4a82a;
+  color: [[setting:themetextcolor]];
 }
 .nav_icon {
   color: [[setting:themecolor]];
