@@ -396,3 +396,9 @@ Web profile:    http://www.davidbezemer.nl
 G J Barnard MSc. BSc(Hons)(Sndw). MBCS. CEng. CITP. PGCE.
 Moodle profile: http://moodle.org/user/profile.php?id=442195
 Web profile   : http://about.me/gjbarnard
+
+Credit
+======
+This version for Albert Schäffer of Simedis - simedis.com - contains a replacement icon for the quiz activity that is licensed under a
+creative commons attribution license: https://www.iconfinder.com/icons/43201/questionaire_quiz_survey_icon#size=48 - Creative Commons
+license: http://creativecommons.org/licenses/by/2.5/dk/deed.en

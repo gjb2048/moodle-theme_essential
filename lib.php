@@ -316,23 +316,23 @@ function theme_essential_process_css($css, $theme)
 
     // Set the theme colour.
     $themecolor         = theme_essential_get_setting('themecolor');
-    $css                = theme_essential_set_color($css, $themecolor, '[[setting:themecolor]]', '#30ADD1');
+    $css                = theme_essential_set_color($css, $themecolor, '[[setting:themecolor]]', '#ffffff');
 
     // Set the theme text colour.
     $themetextcolor     = theme_essential_get_setting('themetextcolor');
-    $css                = theme_essential_set_color($css, $themetextcolor, '[[setting:themetextcolor]]', '#047797');
+    $css                = theme_essential_set_color($css, $themetextcolor, '[[setting:themetextcolor]]', '#000000');
 
     // Set the theme url colour.
     $themeurlcolor      = theme_essential_get_setting('themeurlcolor');
-    $css                = theme_essential_set_color($css, $themeurlcolor, '[[setting:themeurlcolor]]', '#FF5034');
+    $css                = theme_essential_set_color($css, $themeurlcolor, '[[setting:themeurlcolor]]', '#208700');
 
     // Set the theme hover colour.
     $themehovercolor    = theme_essential_get_setting('themehovercolor');
-    $css                = theme_essential_set_color($css, $themehovercolor, '[[setting:themehovercolor]]', '#F32100');
+    $css                = theme_essential_set_color($css, $themehovercolor, '[[setting:themehovercolor]]', '#000000');
 
     // Set the theme icon colour.
     $themeiconcolor     = theme_essential_get_setting('themeiconcolor');
-    $css                = theme_essential_set_color($css, $themeiconcolor, '[[setting:themeiconcolor]]', '#30ADD1');
+    $css                = theme_essential_set_color($css, $themeiconcolor, '[[setting:themeiconcolor]]', '#000000');
 
     // Set the theme navigation colour.
     $themenavcolor      = theme_essential_get_setting('themenavcolor');
@@ -340,7 +340,7 @@ function theme_essential_process_css($css, $theme)
 
     // Set the footer colour.
     $footercolor        = theme_essential_hex2rgba(theme_essential_get_setting('footercolor'), '0.95');
-    $css                = theme_essential_set_color($css, $footercolor, '[[setting:footercolor]]', '#555555');
+    $css                = theme_essential_set_color($css, $footercolor, '[[setting:footercolor]]', '#000000');
 
     // Set the footer text color.
     $footertextcolor    = theme_essential_get_setting('footertextcolor');
@@ -356,11 +356,11 @@ function theme_essential_process_css($css, $theme)
 
     // Set the footer URL color.
     $footerurlcolor     = theme_essential_get_setting('footerurlcolor');
-    $css                = theme_essential_set_color($css, $footerurlcolor, '[[setting:footerurlcolor]]', '#217a94');
+    $css                = theme_essential_set_color($css, $footerurlcolor, '[[setting:footerurlcolor]]', '#bbbbbb');
 
     // Set the footer hover colour.
     $footerhovercolor   = theme_essential_get_setting('footerhovercolor');
-    $css                = theme_essential_set_color($css, $footerhovercolor, '[[setting:footerhovercolor]]', '#30add1');
+    $css                = theme_essential_set_color($css, $footerhovercolor, '[[setting:footerhovercolor]]', '#ffffff');
 
     // Set the slide background colour.
     $slidebgcolor       = theme_essential_hex2rgba(theme_essential_get_setting('themecolor'), '.75');
@@ -707,15 +707,6 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
 
     // Copy activity clipboard..
     echo $that->course_activity_clipboard($course, $displaysection);
-    $thissection = $modinfo->get_section_info(0);
-    if ($thissection->summary or !empty($modinfo->sections[0]) or $PAGE->user_is_editing()) {
-        echo $that->start_section_list();
-        echo $that->section_header($thissection, $course, true, $displaysection);
-        echo $courserenderer->course_section_cm_list($course, $thissection, $displaysection);
-        echo $courserenderer->course_section_add_cm_control($course, 0, $displaysection);
-        echo $that->section_footer();
-        echo $that->end_section_list();
-    }
 
     // Start single-section div
     echo html_writer::start_tag('div', array('class' => 'single-section'));

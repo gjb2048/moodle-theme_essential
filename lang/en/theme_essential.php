@@ -544,3 +544,14 @@ $string['blogpreferences'] = 'Blog preferences';
 $string['badgepreferences'] = 'Badge preferences';
 $string['messagepreferences'] = 'Message preferences';
 
+/* Evolution additions */
+$string['activities'] = 'Activities';
+$string['shutdown'] = 'Shutdown';
+$string['onlinecourses'] = 'Online courses';
+$string['handsoncourses'] = 'Hands-on courses';
+$string['trainingcentres'] = 'Training centres';
+$string['booktraining'] = 'Book training';
+$string['help'] = 'Help';
+$string['useevolution'] = 'How to use eVolution?';
+$string['faq'] = 'FAQ';
+$string['contactus'] = 'Contact us';

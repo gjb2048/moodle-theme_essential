@@ -119,3 +119,5 @@ $hasboringlayout = theme_essential_get_setting('layout');
 /* Group Footer */
 $hascopyright = theme_essential_get_setting('copyright', true);
 $hasfootnote = theme_essential_get_setting('footnote', 'format_text');
+
+// $PAGE->requires->yui_module('yui2-tabview', null); - needs work to solve, see http://yui.github.io/yui2/docs/yui_2.9.0_full/tabview/ - id of the tag is 'tabcoursecontent'.

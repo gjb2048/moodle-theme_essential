@@ -1,0 +1,57 @@
+ 1. Book icon.
+ 2. Block border to 3px.
+ 3. Layout 'incourse' (showing modules like book) block area on right.  Must ensure that 'layout' setting is 'true' and configure navigation / administration blocks to be on the left globally.  So, implemented as a flip flop such that side-pre is on the right and side-post the left with the fake blocks in 'side-post'.  This is so that course navigation is on the right here but on the left globally.
+ 4. Border around breadcrumb.
+ 5. Font size to 18px - bootstrap/variables.less.
+ 6. Added activities menu to course and incourse layouts on the navbar.
+ 7. Replacement quiz icon from https://www.iconfinder.com/icons/43201/questionaire_quiz_survey_icon#size=48 - Creative Commons license: http://creativecommons.org/licenses/by/2.5/dk/deed.en
+ 8. Replace 'i/course' icon in course category list with suitable red right arrow.
+ 9. Change colour of 'Next section' / 'Previous section' to black via 'themetextcolor' setting.
+10. Change text size in quiz.
+11. Change colour of quiz background.
+12. Change border of quiz content and question information.
+13. Add border to 'Finish review' link in quiz and centre.
+14. Change colour of text, background and border in feedback of quiz review.
+15. Change 'Preferences' to 'Profile' in user menu.
+16. Remove messages menu.
+17. Changed 'admin/index.php' being the notifications page to not have the light brown background / brown text.
+18. Four custom menu's as specified.
+19. Increased dialog text size.
+20. All icons set to black.  Default 'themeiconcolor' setting set to '#000000' (black), if already installed then need to set manually.
+21. Font character set setting 'fontcharacterset' default to 'Latin', if already installed then need to set manually.
+22. Layout setting 'layout' default set to 'true', if already installed then need to set manually.
+23. Page width setting 'pagewidth' set to '100' for variable width, if already installed then need to set manually to 'Variable width'.
+24. Theme colour setting 'themecolor' set to '#ffffff' (white), if already installed then need to set manually.
+25. Theme text colour setting 'themetextcolor' set to '#000000' (black), if already installed then need to set manually.
+26. Link colour setting 'themeurlcolor' set to '#208700' (New green as below), if already installed then need to set manually.
+27. Link hover colour setting 'themehovercolor' set to '#000000' (black), if already installed then need to set manually.
+28. Footer background colour setting 'footercolor' set to '#000000' (black), if already installed then need to set manually.
+29. Footer link colour setting 'footerurlcolor' set to '#bbbbbb' (light grey), if already installed then need to set manually.
+30. Footer link hover colour setting 'footerhovercolor' set to '#ffffff' (white), if already installed then need to set manually.
+31. Change quiz dialog font size to 16px.
+32. Input (select tag) border set to 2px and black.
+33. @dropdownLinkBackgroundActive in varibles.less set to black for drop down menu background when hovering.
+34. Form section headings set to black.
+35. Essential 2.7.7 allows setting of local font names so not relying on internet connection to Google fonts.  Heading font selected as 'DejaVu Sans' and body font as 'Century Schoolbook' as serif fonts are easier to read at a distance and both come with Ubuntu 14.04.
+36. Prevent alternative colours from functioning.
+37. Apply 2px black border to button area in forms.
+38. Breadcrumb style 'breadcrumbstyle' set to '2' ('Simple'), if already installed then need to set manually.
+39. Course list course name colour set to black.
+40. Activity / resource name colour set to black.
+41. Course section title colour set to black.
+42. Course category name colour set to black.
+43. Course activity count when the layout is one section per page and the main course page is shown colour set to black.
+44. Changed editing on / off button to be black / white and inverse for the opposite state.
+
+Notes:
+
+Colours:
+Original green: #20A000
+New green     : #208700
+Light green   : #5AD83A
+
+Icon green : #39B54A
+New        : #208700
+
+Testing:
+Tested on Firefox 31.0 and Chrome  37.0.2062.102 m on Windows 7 and Firefox 31.0 on Ubuntu 14.04 on a 17" monitor at a distance of 70cm.  Unable to test with a big enough touch screen.
