@@ -68,7 +68,7 @@ if (is_siteadmin()) {
     $name = 'theme_essential/fontnameheading';
     $title = get_string('fontnameheading', 'theme_essential');
     $description = get_string('fontnameheadingdesc', 'theme_essential');
-    $default = 'Verdana';
+    $default = 'DejaVu Sans';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -77,7 +77,7 @@ if (is_siteadmin()) {
     $name = 'theme_essential/fontnamebody';
     $title = get_string('fontnamebody', 'theme_essential');
     $description = get_string('fontnamebodydesc', 'theme_essential');
-    $default = 'Verdana';
+    $default = 'Century Schoolbook';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -171,7 +171,7 @@ if (is_siteadmin()) {
     $name = 'theme_essential/layout';
     $title = get_string('layout', 'theme_essential');
     $description = get_string('layoutdesc', 'theme_essential');
-    $default = false;
+    $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -189,7 +189,7 @@ if (is_siteadmin()) {
     $name = 'theme_essential/breadcrumbstyle';
     $title = get_string('breadcrumbstyle', 'theme_essential');
     $description = get_string('breadcrumbstyledesc', 'theme_essential');
-    $default = 1;
+    $default = 2;
     $choices = array(1 => get_string('breadcrumbstyled', 'theme_essential'),
         2 => get_string('breadcrumbsimple', 'theme_essential'),
         3 => get_string('breadcrumbthin', 'theme_essential'),
@@ -227,7 +227,7 @@ if (is_siteadmin()) {
     $name = 'theme_essential/themecolor';
     $title = get_string('themecolor', 'theme_essential');
     $description = get_string('themecolordesc', 'theme_essential');
-    $default = '#30add1';
+    $default = '#ffffff';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -237,7 +237,7 @@ if (is_siteadmin()) {
     $name = 'theme_essential/themetextcolor';
     $title = get_string('themetextcolor', 'theme_essential');
     $description = get_string('themetextcolordesc', 'theme_essential');
-    $default = '#217a94';
+    $default = '#000000';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -247,7 +247,7 @@ if (is_siteadmin()) {
     $name = 'theme_essential/themeurlcolor';
     $title = get_string('themeurlcolor', 'theme_essential');
     $description = get_string('themeurlcolordesc', 'theme_essential');
-    $default = '#943b21';
+    $default = '#208700';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -257,7 +257,7 @@ if (is_siteadmin()) {
     $name = 'theme_essential/themehovercolor';
     $title = get_string('themehovercolor', 'theme_essential');
     $description = get_string('themehovercolordesc', 'theme_essential');
-    $default = '#6a2a18';
+    $default = '#000000';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -267,7 +267,7 @@ if (is_siteadmin()) {
     $name = 'theme_essential/themeiconcolor';
     $title = get_string('themeiconcolor', 'theme_essential');
     $description = get_string('themeiconcolordesc', 'theme_essential');
-    $default = '#30add1';
+    $default = '#000000';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -294,7 +294,7 @@ if (is_siteadmin()) {
     $name = 'theme_essential/footercolor';
     $title = get_string('footercolor', 'theme_essential');
     $description = get_string('footercolordesc', 'theme_essential');
-    $default = '#555555';
+    $default = '#000000';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -334,7 +334,7 @@ if (is_siteadmin()) {
     $name = 'theme_essential/footerurlcolor';
     $title = get_string('footerurlcolor', 'theme_essential');
     $description = get_string('footerurlcolordesc', 'theme_essential');
-    $default = '#217a94';
+    $default = '#bbbbbb';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -344,7 +344,7 @@ if (is_siteadmin()) {
     $name = 'theme_essential/footerhovercolor';
     $title = get_string('footerhovercolor', 'theme_essential');
     $description = get_string('footerhovercolordesc', 'theme_essential');
-    $default = '#30add1';
+    $default = '#ffffff';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');

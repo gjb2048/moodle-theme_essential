@@ -42,19 +42,12 @@ if (right_to_left()) {
     $THEME->sheets[] = 'essential';
 }
 
-if ((get_config('theme_essential', 'enablealternativethemecolors1')) ||
-    (get_config('theme_essential', 'enablealternativethemecolors2')) ||
-    (get_config('theme_essential', 'enablealternativethemecolors3'))
-) {
-    $THEME->sheets[] = 'alternative';
-}
-
 $THEME->sheets[] = 'custom';
 
 $THEME->supportscssoptimisation = false;
 
 if (intval($CFG->version) >= 2013111800) {
-    $THEME->enable_dock = true;
+$THEME->enable_dock = true;
     $THEME->javascripts_footer[] = 'dock';
 }
 
@@ -104,9 +97,9 @@ $THEME->layouts = array(
     ),
     // part of course, typical for modules - default page layout if $cm specified in require_login().
     'incourse' => array(
-        'file' => 'columns2.php',
-        'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-pre',
+        'file' => 'incourse.php',  // Flip flop such that side-pre is on the right and side-post the left with the fake blocks in 'side-post'.  This is so that course navigation is on the right here but on the left globally.
+        'regions' => array('side-post', 'side-pre', 'footer-left', 'footer-middle', 'footer-right'),
+        'defaultregion' => 'side-post',
     ),
     // Server administration scripts.
     'admin' => array(
@@ -143,7 +136,7 @@ $THEME->layouts = array(
         'file' => 'columns1.php',
         'regions' => array('footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'footer-right',
-        'options' => array('nofooter' => true, 'nocoursefooter' => true),
+        'options' => array('nofooter'=>true, 'nocoursefooter'=>true),
     ),
     // Embeded pages, like iframe/object embeded in moodleform - it needs as much space as possible.
     'embedded' => array(
@@ -164,7 +157,7 @@ $THEME->layouts = array(
         'file' => 'columns1.php',
         'regions' => array('footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => '',
-        'options' => array('nofooter' => true),
+        'options' => array('nofooter'=>true),
     ),
     // The pagelayout used when a redirection is occuring.
     'redirect' => array(

@@ -25,7 +25,6 @@
  */
 class theme_essential_core_renderer extends core_renderer
 {
-
     public $language = null;
 
     /**
@@ -625,13 +624,16 @@ class theme_essential_core_renderer extends core_renderer
             }
 
             // Check if user is allowed to manage files
+            /*
             if (has_capability('moodle/user:manageownfiles', $context)) {
                 $branchlabel = '<em><i class="fa fa-file"></i>' . get_string('privatefiles', 'block_private_files') . '</em>';
                 $branchurl = new moodle_url('/user/files.php');
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
+            */
 
             // Check if user is allowed to view discussions
+            /*
             if (has_capability('mod/forum:viewdiscussion', $context)) {
                 $branchlabel = '<em><i class="fa fa-list-alt"></i>' . get_string('forumposts', 'mod_forum') . '</em>';
                 $branchurl = new moodle_url('/mod/forum/user.php', array('id' => $USER->id));
@@ -643,8 +645,10 @@ class theme_essential_core_renderer extends core_renderer
 
                 $usermenu .= html_writer::empty_tag('hr', array('class' => 'sep'));
             }
+            */
 
             // Output user grade links course sensitive, workaround for frontpage, selecting first enrolled course
+            /*
             if ($course->id == 1) {
                 $hascourses = enrol_get_my_courses(NULL, 'visible DESC,id ASC', 1);
                 foreach ($hascourses as $hascourse) {
@@ -665,14 +669,17 @@ class theme_essential_core_renderer extends core_renderer
                 $branchurl = new moodle_url('/grade/report/user/index.php' , array('id' => $course->id, 'userid' => $USER->id));
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
+            */
 
             // Check if badges are enabled.
+            /*
             if (!empty($CFG->enablebadges) && has_capability('moodle/badges:manageownbadges', $context)) {
                 $branchlabel = '<em><i class="fa fa-certificate"></i>' . get_string('badges') . '</em>';
                 $branchurl = new moodle_url('/badges/mybadges.php');
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
             $usermenu .= html_writer::empty_tag('hr', array('class' => 'sep'));
+            */
 
             // Render direct logout link
             $branchlabel = '<em><i class="fa fa-sign-out"></i>' . get_string('logout') . '</em>';
@@ -743,7 +750,7 @@ class theme_essential_core_renderer extends core_renderer
     private function theme_essential_render_preferences($context)
     {
         global $USER, $CFG;
-        $label = '<em><i class="fa fa-cog"></i>' . get_string('preferences') . '</em>';
+        $label = '<em><i class="fa fa-cog"></i>' . get_string('profile') . '</em>';
         $preferences = html_writer::start_tag('li', array('class' => 'dropdown-submenu preferences'));
         $preferences .= html_writer::link(new moodle_url('#'), $label, array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown'));
         $preferences .= html_writer::start_tag('ul', array('class' => 'dropdown-menu'));
@@ -763,16 +770,20 @@ class theme_essential_core_renderer extends core_renderer
             $branchurl = new moodle_url('/message/edit.php', array('id' => $USER->id));
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
+        /*
         if ($CFG->enableblogs) {
             $branchlabel = '<em><i class="fa fa-rss-square"></i>' . get_string('blogpreferences', 'theme_essential') . '</em>';
             $branchurl = new moodle_url('/blog/preferences.php');
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
+        */
+        /*
         if ($CFG->enablebadges && has_capability('moodle/badges:manageownbadges', $context)) {
             $branchlabel = '<em><i class="fa fa-certificate"></i>' . get_string('badgepreferences', 'theme_essential') . '</em>';
             $branchurl = new moodle_url('/badges/preferences.php');
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
+        */
         $preferences .= html_writer::end_tag('ul');
         $preferences .= html_writer::end_tag('li');
         return $preferences;
@@ -924,12 +935,12 @@ class theme_essential_core_renderer extends core_renderer
         $url->param('sesskey', sesskey());
         if ($this->page->user_is_editing()) {
             $url->param('edit', 'off');
-            $btn = 'btn-danger';
+            $btn = 'btn-inverse';
             $title = get_string('turneditingoff');
             $icon = 'fa-power-off';
         } else {
             $url->param('edit', 'on');
-            $btn = 'btn-success';
+            $btn = 'btn';
             $title = get_string('turneditingon');
             $icon = 'fa-edit';
         }
@@ -967,6 +978,196 @@ class theme_essential_core_renderer extends core_renderer
         } else {
             return false;
         }
+    }
+
+    // Evolution additions.
+    private $activitiesmenu = null;
+
+    public function render_activities_menu() {
+        if ((strcmp($this->page->pagelayout, 'course') != 0) and (strcmp($this->page->pagelayout, 'incourse') != 0)) {
+            return '';
+        }
+        global $CFG;
+
+        if($this->activitiesmenu !== NULL) {
+             return $this->render_custom_menu($this->activitiesmenu);
+        }
+
+        $this->activitiesmenu = new custom_menu();
+
+        $course = $this->page->course;
+
+        require_once($CFG->dirroot.'/course/lib.php');
+
+        $modinfo = get_fast_modinfo($course);
+        $modfullnames = array();
+
+        $archetypes = array();
+
+        foreach($modinfo->cms as $cm) {
+            // Exclude activities which are not visible or have no link (=label)
+            if (!$cm->uservisible or !$cm->has_view()) {
+                continue;
+            }
+            if (array_key_exists($cm->modname, $modfullnames)) {
+                continue;
+            }
+            if (!array_key_exists($cm->modname, $archetypes)) {
+                $archetypes[$cm->modname] = plugin_supports('mod', $cm->modname, FEATURE_MOD_ARCHETYPE, MOD_ARCHETYPE_OTHER);
+            }
+            if ($archetypes[$cm->modname] == MOD_ARCHETYPE_RESOURCE) {
+                if (!array_key_exists('resources', $modfullnames)) {
+                    $modfullnames['resources'] = get_string('resources');
+                }
+            } else {
+                $modfullnames[$cm->modname] = $cm->modplural;
+            }
+        }
+
+        core_collator::asort($modfullnames);
+
+        $acttitle = get_string('activities', 'theme_essential');
+        $actlabel = '<i class="fa fa-tasks"></i>'.$acttitle;
+        $acturl   = new moodle_url('/course/view.php');
+        $acturl->param('id', $course->id);
+        $actsort  = 400;
+        $activities = $this->activitiesmenu->add($actlabel, $acturl, $acttitle, $actsort);
+
+        foreach ($modfullnames as $modname => $modfullname) {
+            if ($modname === 'resources') {
+                $icon = $this->pix_icon('icon', '', 'mod_page', array('class' => 'icon'));
+                //$activities->add('<a href="'.$CFG->wwwroot.'/course/resources.php?id='.$course->id.'">'.$icon.$modfullname.'</a>');
+                $acturl = new moodle_url('/course/resources.php');
+            } else {
+                $icon = '<img src="'.$this->pix_url('icon', $modname) . '" class="icon" alt="" />';
+                //$activities->add('<a href="'.$CFG->wwwroot.'/mod/'.$modname.'/index.php?id='.$course->id.'">'.$icon.$modfullname.'</a>');
+                $acturl = new moodle_url('/mod/'.$modname.'/index.php');
+            }
+            $acturl->param('id', $course->id);
+            $activities->add($icon.$modfullname, $acturl, $modfullname);
+        }
+
+         return $this->render_custom_menu($this->activitiesmenu);
+    }
+
+    // Home menu.
+    private $homemenu = null;
+    public function render_home_menu() {
+        if($this->homemenu !== NULL) {
+             return $this->render_custom_menu($this->homemenu);
+        }
+        $this->homemenu = new custom_menu();
+
+        $title = get_string('home');
+        $label = '<i class="fa fa-home"></i>'.$title;
+        $url   = new moodle_url('/');
+        $sort  = 500;
+        $themenu = $this->homemenu->add($label, $url, $title, $sort);
+
+        $title = get_string('myhome');
+        $label = '<i class="fa fa-university"></i>'.$title;
+        $url = new moodle_url('/my');
+        $themenu->add($label, $url, $title);
+
+        $title = get_string('logout');
+        $label = '<i class="fa fa-sign-out"></i>'.$title;
+        $url = new moodle_url('/login/logout.php');
+        $url->param('sesskey', sesskey());
+        $themenu->add($label, $url, $title);
+
+        $title = get_string('shutdown', 'theme_essential');
+        $label = '<i class="fa fa-power-off"></i>'.$title;
+        $url = new moodle_url('/');
+        $themenu->add($label, $url, $title);
+
+        return $this->render_custom_menu($this->homemenu);
+    }
+
+    // Online courses menu.
+    private $ocmenu = null;
+    public function render_oc_menu() {
+        if($this->ocmenu !== NULL) {
+             return $this->render_custom_menu($this->ocmenu);
+        }
+        $this->ocmenu = new custom_menu();
+
+        $title = get_string('onlinecourses', 'theme_essential');
+        $label = '<i class="fa fa-list"></i>'.$title;
+        $url   = new moodle_url('/');
+        $sort  = 500;
+        $themenu = $this->ocmenu->add($label, $url, $title, $sort);
+
+        return $this->render_custom_menu($this->ocmenu);
+    }
+
+    // Hands-on courses menu.
+    private $hocmenu = null;
+    public function render_hoc_menu() {
+        if($this->hocmenu !== NULL) {
+             return $this->render_custom_menu($this->hocmenu);
+        }
+        $this->hocmenu = new custom_menu();
+
+        $title = get_string('handsoncourses', 'theme_essential');
+        $label = '<i class="fa fa-hand-o-right"></i>'.$title;
+        $url   = new moodle_url('/');
+        $sort  = 500;
+        $themenu = $this->hocmenu->add($label, $url, $title, $sort);
+
+        $title = get_string('trainingcentres', 'theme_essential');
+        $label = '<i class="fa fa-map-marker"></i>'.$title;
+        $url = new moodle_url('/');
+        $themenu->add($label, $url, $title);
+
+        $title = get_string('booktraining', 'theme_essential');
+        $label = '<i class="fa fa-book"></i>'.$title;
+        $url = new moodle_url('/');
+        $themenu->add($label, $url, $title);
+
+        return $this->render_custom_menu($this->hocmenu);
+    }
+
+    // Help courses menu.
+    private $helpmenu = null;
+    public function render_help_menu() {
+        if($this->helpmenu !== NULL) {
+             return $this->render_custom_menu($this->helpmenu);
+        }
+        $this->helpmenu = new custom_menu();
+
+        $title = get_string('help', 'theme_essential');
+        $label = '<i class="fa fa-question-circle"></i>'.$title;
+        $url   = new moodle_url('/');
+        $sort  = 500;
+        $themenu = $this->helpmenu->add($label, $url, $title, $sort);
+
+        $title = get_string('useevolution', 'theme_essential');
+        $label = '<i class="fa fa-book"></i>'.$title;
+        $url = new moodle_url('/');
+        $themenu->add($label, $url, $title);
+
+        $title = get_string('faq', 'theme_essential');
+        $label = '<i class="fa fa-life-ring"></i>'.$title;
+        $url = new moodle_url('/');
+        $themenu->add($label, $url, $title);
+
+        $title = get_string('contactus', 'theme_essential');
+        $label = '<i class="fa fa-comment-o"></i>'.$title;
+        $url = new moodle_url('/');
+        $themenu->add($label, $url, $title);
+
+        return $this->render_custom_menu($this->helpmenu);
+    }
+
+    // Remove course title on single section page of a course.
+    public function heading($text, $level = 2, $classes = null, $id = null) {
+        if ($selectedsection = optional_param('section', null, PARAM_INT)) {
+            // Single section page on a course.
+            $o = '';
+        } else {
+            $o = parent::heading($text, $level, $classes, $id);
+        }
+        return $o;
     }
 }
 
