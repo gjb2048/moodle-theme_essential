@@ -782,7 +782,7 @@ function theme_essential_render_slide($i)
     $slidetitle         = theme_essential_get_setting('slide'.$i, true);
     $slidecaption       = theme_essential_get_setting('slide'.$i.'caption', true);
     $slideextraclass    = ($i === 1)? 'active' : '';
-    $slideimagealt      = theme_essential_get_setting('slide'.$i);
+    $slideimagealt      = strip_tags(theme_essential_get_setting('slide'.$i, true));
     $slideimage         = $OUTPUT->pix_url('default_slide', 'theme');
 
     // Get slide image or fallback to default
