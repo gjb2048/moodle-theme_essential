@@ -2348,7 +2348,7 @@ ins {
 img.userpicture,
 img.profilepicture {
   border-radius: 250px;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 /* @end */
@@ -2562,6 +2562,24 @@ img.profilepicture {
 .block_rss_client .footer a:hover {
   color: #fff;
 }
+
+/* @group Logged in User Block */
+
+.block_myprofile .content {
+  padding: 5px;
+  text-align: center;
+  min-height: 80px;
+}
+
+.block_myprofile .content img.profilepicture {
+  width: 70px;
+  height: 70px;
+  padding: 3px;
+  margin-bottom: 5px;
+  float: right;
+}
+
+/* @end */
 
 /* @group Login Block */
 

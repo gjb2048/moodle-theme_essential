@@ -1802,7 +1802,7 @@ ins {
 img.userpicture,
 img.profilepicture {
   border-radius: 250px;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 /* @end */
 /* @group Alerts */
@@ -1975,6 +1975,20 @@ img.profilepicture {
 .block_rss_client .footer a:hover {
   color: #fff;
 }
+/* @group Logged in User Block */
+.block_myprofile .content {
+  padding: 5px;
+  text-align: center;
+  min-height: 80px;
+}
+.block_myprofile .content img.profilepicture {
+  width: 70px;
+  height: 70px;
+  padding: 3px;
+  margin-bottom: 5px;
+  float: left;
+}
+/* @end */
 /* @group Login Block */
 .block_login .header .title h2:before {
   content: "\f007";
