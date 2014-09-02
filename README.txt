@@ -103,6 +103,7 @@ New in 2.7.7
 - FIX: Issue #225: Blank pages after some times.
 - FIX: Issue #228: Incorrect z-index in menu.
 - FIX: Issue #233: User image wrong in IE.
+- FIX: Issue #237: Homepage main content block layout issues.
 - NEW: Issue #74 : Fonts are CDN only.
 - NEW: Issue #139: Enter own CDN font names.
 - NEW: Issue #149: Add setting to not show the site shortname.
