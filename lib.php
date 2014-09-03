@@ -734,6 +734,9 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
     $sectionnav .= html_writer::end_tag('nav');
     $sectionnav .= html_writer::tag('div', '', array('class' => 'bor'));
 
+    // Output Section Navigation
+    echo $sectionnav;
+
     // Define the Section Title
     $sectiontitle = '';
     $sectiontitle .= html_writer::start_tag('div', array('class' => 'section-title'));
@@ -754,6 +757,7 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
     echo $that->start_section_list();
 
     echo $that->section_header($thissection, $course, true, $displaysection);
+
     // Show completion help icon.
     $completioninfo = new completion_info($course);
     echo $completioninfo->display_help_icon();
@@ -762,9 +766,6 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
     echo $courserenderer->course_section_add_cm_control($course, $displaysection, $displaysection);
     echo $that->section_footer();
     echo $that->end_section_list();
-
-    // Output Section Navigation
-    echo $sectionnav;
 
     // Close single-section div.
     echo html_writer::end_tag('div');

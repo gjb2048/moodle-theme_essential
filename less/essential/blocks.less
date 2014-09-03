@@ -38,6 +38,9 @@
       display: none;
     }
   }
+  li.item_with_icon > p img {
+    position: initial !important;
+  }
 }
 
 .editing {
@@ -58,7 +61,7 @@
   margin: 15px 0px;
 }
 
-.tree_item {
+.tree_item.branch {
   background-image: none !important;
 
   &.branch:before {
@@ -72,6 +75,9 @@
     content: "\f114 ";
     color: #d3d3d3;
     margin-right: 5px;
+  }
+  img.smallicon.navicon {
+    display: none;
   }
 }
 

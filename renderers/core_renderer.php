@@ -539,7 +539,7 @@ class theme_essential_core_renderer extends core_renderer
             return false;
         }
 
-        global $USER, $CFG, $DB;
+        global $USER, $CFG, $DB, $SESSION;
         $loginurl = get_login_url();
 
         $usermenu = html_writer::start_tag('ul', array('class' => 'nav'));
