@@ -15,6 +15,22 @@ Cool things to know about the theme.
  - The entire colour scheme can be modified with theme settings
  - The homepage main area is just a label. The theme will ship with custom classes that you can set for tables and links to modify their formatting. No knowledge of code is needed as you can use the text editor to do this. Documentation will be provided outlining what the additional classes are.
 
+Original Author
+===============
+Julian Ridden
+Moodle profile: https://moodle.org/user/profile.php?id=39680
+Web profile:    http://au.linkedin.com/in/eduridden/
+
+Maintained by
+=============
+David Bezemer
+Moodle profile | https://moodle.org/user/profile.php?id=1416592
+Web profile | http://www.davidbezemer.nl
+
+G J Barnard MSc. BSc(Hons)(Sndw). MBCS. CEng. CITP. PGCE.
+Moodle profile | http://moodle.org/user/profile.php?id=442195
+Web profile | http://about.me/gjbarnard
+
 Required version of Moodle
 ==========================
 This version works with Moodle version 2013111800 release 2.6 (Build: 20131118) and above within the 2.6 branch until the
@@ -382,19 +398,3 @@ Documentation
 =============
 As always, documentation is a work in progress. Available documentation is available at http://docs.moodle.org/25/en/Essential_theme
 If you have questions you can post them in the issue tracker at https://github.com/DBezemer/moodle-theme_essential/issues
-
-Original Author
-===============
-Julian Ridden
-Moodle profile: https://moodle.org/user/profile.php?id=39680
-Web profile:    http://au.linkedin.com/in/eduridden/
-
-Maintained by
-=============
-David Bezemer
-Moodle profile: https://moodle.org/user/profile.php?id=1416592
-Web profile:    http://www.davidbezemer.nl
-
-G J Barnard MSc. BSc(Hons)(Sndw). MBCS. CEng. CITP. PGCE.
-Moodle profile: http://moodle.org/user/profile.php?id=442195
-Web profile   : http://about.me/gjbarnard
