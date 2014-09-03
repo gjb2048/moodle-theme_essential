@@ -106,6 +106,7 @@ New in 2.7.7
 - FIX: Issue #237: Homepage main content block layout issues.
 - FIX: Issue #238: Logged in user block styling.
 - FIX: Issue #241: Background image appears as text box background.
+- FIX: Issue #243: View Full toggle button not functional 2.6.9b.
 - NEW: Issue #74 : Fonts are CDN only.
 - NEW: Issue #139: Enter own CDN font names.
 - NEW: Issue #149: Add setting to not show the site shortname.
