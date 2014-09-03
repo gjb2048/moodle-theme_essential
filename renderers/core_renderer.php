@@ -713,6 +713,7 @@ class theme_essential_core_renderer extends core_renderer
         $branchurl = '';
         $target = '';
 
+        /*
         if (theme_essential_get_setting('helplinktype') == 1) {
             if (filter_var(theme_essential_get_setting('helplink'), FILTER_VALIDATE_EMAIL)) {
                 $branchurl = 'mailto:' . theme_essential_get_setting('helplink') . '?cc=' . $USER->email;
@@ -724,6 +725,7 @@ class theme_essential_core_renderer extends core_renderer
 
             return html_writer::tag('li', html_writer::link($branchurl, $branchlabel, array('target' => $target)));
         }
+        */
 
         if (theme_essential_get_setting('helplinktype') == 2) {
             if (filter_var(theme_essential_get_setting('helplink'), FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED)) {

@@ -43,12 +43,27 @@
 43. Course activity count when the layout is one section per page and the main course page is shown colour set to black.
 44. Changed editing on / off button to be black / white and inverse for the opposite state.
 
+45. Block border to logo green.
+46. Block icons to dark green.
+47. Remove support email.
+48. Logo to be inline and upload and use simedis_web.png in pix folder.
+49. Content area border to logo green.
+50. Form buttons border to logo green.
+51. Breadcrumb border to logo green.  Styling border of expandable fancy style is not currently possible.  Also thought that the fancy style would not work well on touch screen - happy to change back if desired.
+52. Icons to dark green.  Done in svg files and need to set in settings.
+
+Fixes:
+1. Border 3px to 2px.
+2. Menu no bold on hover.
+3. Current day in calendar to logo green and light green on hover.
+
 Notes:
 
 Colours:
 Original green: #20A000
-New green     : #208700
 Light green   : #5AD83A
+Dark green    : #208700
+Logo green    : #3EC650
 
 Icon green : #39B54A
 New        : #208700

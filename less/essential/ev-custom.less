@@ -1,14 +1,14 @@
 // admin.less.
 #page-admin-index .releasenoteslink, #page-admin-index .adminwarning, #page-admin-index .adminerror {
     background-color: @white;
-    border: 2px solid @black;
+    border: 1px solid @black;
     border-radius: @baseBorderRadius;
     color: @black;
 }
 
 // blocks.less.
 .block {
-    border: 3px solid @black; // darken(@wellBackground, 7%);
+    border: 2px solid @logoGreen; // darken(@wellBackground, 7%);
     a {
         color: @black;
         &:hover, &:focus {
@@ -24,17 +24,21 @@
     //}
 }
 
+.block .header .title h2:before {
+    color: @darkGreen;
+}
+
 // breadcrumb.less
 .breadcrumb-nav {
     width: 85%;
     ul.breadcrumb li {
-        border-top: 2px solid @black;
-        border-bottom: 2px solid @black;
+        border-top: 1px solid @logoGreen;
+        border-bottom: 1px solid @logoGreen;
         &.first, &:first-of-type {
-            border-left: 2px solid @black;
+            border-left: 1px solid @logoGreen;
         }
         &.last, &:last-of-type {
-            border-right: 2px solid @black;
+            border-right: 1px solid @logoGreen;
         }
         &:after {
             line-height: 22px !important;
@@ -50,7 +54,7 @@
 .breadcrumb-nav ul.breadcrumb {
     .first, .first:hover, .first:focus {
         a:before {
-            color: #000 !important;
+            color: @black !important;
         }
     }
 }
@@ -67,6 +71,13 @@ a.btn {
     }
 }
 
+// calendar.less.
+.minicalendar th, .block .minicalendar td.today a {
+    color: @logoGreen;
+    &:hover, &:focus {
+        color: @lightGreen;
+    }
+}
 // course.less.
 .nav_icon {
     color: initial;
@@ -80,7 +91,7 @@ a.btn {
 
 .coursebox > .info > .coursename a {
     background-image: url(~"[[pix:theme|course_list]]");
-    background-position: left 0px;
+    background-position: left center;
     background-size: 20px;
     color: @black;
 }
@@ -101,7 +112,7 @@ a.btn {
 
 // core.less.
 #page #page-content #region-main, #page #page-content div[role="main"] {
-    border: 3px solid @black; //darken(@wellBackground, 7%);
+    border: 2px solid @logoGreen;
 }
 
 .moodle-dialogue-base {
@@ -140,7 +151,7 @@ select {
       }
       .form-buttons, .hidden {
         background-color: @white;
-        border: 2px solid @black;
+        border: 1px solid @logoGreen;
       }
     }
   }
@@ -159,6 +170,9 @@ select {
     h1#smalltitle {
         color: @black;
     }
+    a.logo {
+        margin-left: 0px;
+    }
 }
 
 // navigation.less.
@@ -174,16 +188,17 @@ select {
 .nav-tabs > .active > a:hover,
 .nav-tabs > .active > a:focus {
     color: @black;
-    border-left: 2px solid @black;
-    border-top: 2px solid @black;
-    border-right: 2px solid @black;
+    border-left: 1px solid @black;
+    border-top: 1px solid @black;
+    border-right: 1px solid @black;
     border-bottom: 0px solid @black;
+    font-weight: normal;
 }
 
 .nav-tabs > li > a {
-    border-left: 2px solid @black;
-    border-top: 2px solid @black;
-    border-right: 2px solid @black;
+    border-left: 1px solid @black;
+    border-top: 1px solid @black;
+    border-right: 1px solid @black;
     border-bottom: 0px solid @black;
 }
 
@@ -201,22 +216,22 @@ select {
       font-size: 18px;
     }
     .info {
-        border: 2px solid @black;
+        border: 1px solid @black;
     }
     .outcome, .comment {
         background-color: transparent;
         color: @black;
-        border: 2px solid @black;
+        border: 1px solid @black;
     }
     .formulation {
         background-color: @lightGreen;
         font-weight: bold;
-        border: 2px solid @black;
+        border: 1px solid @black;
     }
 }
 
 #page-mod-quiz-review .submitbtns a {
-    border: 2px solid @black;
+    border: 1px solid @black;
     border-radius: @baseBorderRadius;
     color: @black;
     padding: 4px;
@@ -240,7 +255,7 @@ select {
 
 // tabs.less.
 .nav-tabs > li > a {
-    border: 2px solid @black;
+    border: 1px solid @black;
 }
 
 // undo.less.
