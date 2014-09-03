@@ -2,28 +2,39 @@
 
 // XML DB Editor - Issue #90.
 a[name="lastused"] {
-    padding-top: 50px;
+  padding-top: 50px;
 }
 
 // Overlays - Issue #131
 .yui3-overlay,
 .user-enroller-panel {
-    z-index: 100 !important;
+  z-index: 100 !important;
 }
 
 // Reset Bootstrap global label override
 label {
   display: inline;
 }
+
 /* @end */
 
 // Correctly span the main element when no blocks are present in side-pre on frontpage
 .empty-region-side-pre #region-bs-main-and-pre #region-main.span9 {
-    width: 100%;
+  width: 100%;
 }
 
 // Fix opacity for hidden block menu - MDL-42634
 .editing .block.invisible {
-    .opacity(100);
-    background: rgba(255, 255, 255, 0.4);
+  .opacity(100);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+// Fix for image height in Moodle 2.5
+.path-mod-feedback .generalbox div table tbody img {
+  height: 35px;
+}
+
+// Fix for over enthusiastic z-index on progress label
+.course-content #completionprogressid {
+  z-index: 10;
 }

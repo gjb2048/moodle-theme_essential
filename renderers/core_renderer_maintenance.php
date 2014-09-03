@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Overridden core maintenance renderer.
  *
@@ -11,7 +12,8 @@
  * @copyright  2014 Sam Hemelryk
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class theme_essential_core_renderer_maintenance extends core_renderer_maintenance {
+class theme_essential_core_renderer_maintenance extends core_renderer_maintenance
+{
     /**
      * Renders notifications for maintenance scripts.
      *
@@ -24,7 +26,8 @@ class theme_essential_core_renderer_maintenance extends core_renderer_maintenanc
      * @param string $classes
      * @return string
      */
-    public function notification($message, $classes = 'notifyproblem') {
+    public function notification($message, $classes = 'notifyproblem')
+    {
         $message = clean_text($message);
         $type = '';
 
@@ -43,4 +46,5 @@ class theme_essential_core_renderer_maintenance extends core_renderer_maintenanc
         return "<div class=\"$type\">$message</div>";
     }
 }
+
 ?>

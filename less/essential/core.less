@@ -1,109 +1,108 @@
 /* @group Core */
 
 body {
-    line-height: 25px;
-    text-shadow: none !important;
-    position: relative;
-    background-image: url(~"[[setting:pagebackground]]");
-    background-attachment: fixed;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-color: rgba(255,255,255,0.6);
-    background-size: cover;
-    margin: 0px !important;
-    padding: 0px !important;
+  line-height: 20px;
+  text-shadow: none;
+  position: relative;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: rgba(255, 255, 255, 0.6);
+  background-size: cover;
+  margin: 0px;
+  padding: 0px;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
+
 a:hover,
 a:focus {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .text_to_html {
-    display: inline;
-    clear: none;
+  display: inline;
+  clear: none;
 }
 
 #dndupload-status {
-    display: none;
+  display: none;
 }
 
 .moodle-actionmenu[data-enhanced].show .menu {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .sitetopic .section .activity:hover, .course-content .section .activity:hover {
-    background: none;
+  background: none;
 }
 
 .mform fieldset.collapsible legend a.fheader {
-    margin-left: 0px;
+  margin-left: 0px;
 }
 
 del {
-    color: red !important;
+  color: red !important;
 }
 
 ins {
-    color:green !important;
+  color: green !important;
 }
 
 #page {
-    padding-top: 10px;
-    background-color: rgba(255,255,255,0.6);
-    #page-content {
-        margin-top: 10px;
-        #region-main,
-        div[role="main"] {
-            border: 1px solid darken(@wellBackground, 7%);
-            .border-radius(@borderRadiusLarge);
-            background-color: #FFF;
-            padding: @paddingSmall;
-            margin-bottom: 20px;
-        }
-        
-        #region-main > div[role="main"] {
-            border: none;
-            .border-radius(0);
-            padding: 0;
-            margin-bottom: 0px;
-        }
+  padding-top: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+
+  #page-content {
+    margin-top: 10px;
+    #region-main,
+    div[role="main"] {
+      border: 1px solid darken(@wellBackground, 7%);
+      .border-radius(@borderRadiusLarge);
+      background-color: #FFF;
+      padding: @paddingSmall;
+      margin-bottom: 20px;
     }
+
+    #region-main > div[role="main"] {
+      border: none;
+      .border-radius(0);
+      padding: 0;
+    }
+  }
 }
 
 .bor {
-    height: 20px;
-    margin: 0px;
-    margin-bottom: 10px;
+  height: 20px;
+  margin: 0px;
+  margin-bottom: 10px;
 }
 
 #page-admin-upgradesettings #page, .maintenance#page {
-    padding-top: 0px;
+  padding-top: 0px;
 }
 
 .path-grade-report-grader table {
-    background: transparent;
+  background: transparent;
 }
 
 .side-pre {
-    border: 1px solid #333;
+  border: 1px solid #333;
 }
 
 .span12#move {
-    margin-top: -30px;
+  margin-top: -30px;
 }
 
 .course-content ul.weeks li.section {
-    padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 img.userpicture,
 img.profilepicture {
-    border-radius:250px;
-    margin-right: 10px;
+  border-radius: 250px;
+  margin-right: 5px;
 }
 
 /* @end */

@@ -1,34 +1,56 @@
 /* @group Edit Buttons */
 
+i > img {
+  display: none;
+  visibility: hidden;
+}
+
 .actions .moodle-actionmenu[data-enhanced].show .menu a {
-    text-decoration: none !important;
+  text-decoration: none !important;
 }
 
 #page-mod-glossary-view .commands img,
 #page-calendar-view .commands img {
-    display: inline;
+  display: inline;
+}
+
+.commands i {
+  margin-left: 3px;
+  margin-right: 3px;
 }
 
 .menu a.menu-action,
 p.tree_item.leaf a,
-.course-item-actions a{
+.course-item-actions a,
+.actions a {
   > i {
     color: @icon-colour;
-    width: ~"[[setting:bodysize]]";
-    margin: 0px 3px 0px 0px;
+    width: 14px;
   }
   &.action-delete {
     > i {
       color: red;
     }
   }
+  &:hover {
+    > i {
+      color: ~"[[setting:themehovercolor]]";
+    }
+  }
 }
+
+.menu a.menu-action,
+.course-item-actions a,
+.actions a {
+  margin: 0px 3px;
+}
+
 a.action-icon,
 #studentheader,
-.heading_name_row a{
+.heading_name_row a {
   > i {
-    width: ~"[[setting:bodysize]]";
-    margin: 0px 0px 0px 3px;
+    width: 14px;
+    margin: 0px 3px;
   }
 }
 
@@ -36,74 +58,51 @@ a.action-icon,
   color: #FFF;
 }
 
-a.editing_moveright:hover i,
-a.editing_moveleft:hover i {
-    color: #fff;
-}
-
 .section-modchooser-link {
-    img {
-        display: none;
-    }
+  img {
+    display: none;
+  }
 
-    > a:before {
-        font-family: 'FontAwesome';
-        content:"\f067 ";
-        margin-right: 5px;
-        color: @icon-colour;
-    }
+  > a:before {
+    font-family: 'FontAwesome';
+    content: "\f067 ";
+    margin-right: 3px;
+    color: @icon-colour;
+  }
 
-    > a:hover:before {
-       text-decoration: none;
-    }
+  > a:hover:before {
+    text-decoration: none;
+  }
 }
 
 .editing_title {
-    img {
-        display: none !important;
-    }
+  img {
+    display: none !important;
+  }
 
-    &:before {
-        font-family: 'FontAwesome';
-        content:"\f040 ";
-        margin-right: 5px;
-    }
-}
-
-.editing_groupsnone:before {
+  &:before {
     font-family: 'FontAwesome';
-    content:"\f007 ";
+    content: "\f040 ";
     margin-right: 5px;
-}
-
-.editing_groupsvisible:before {
-    font-family: 'FontAwesome';
-    content:"\f0c0 ";
-    margin-right: 5px;
-}
-
-.editing_groupsseparate:before {
-    font-family: 'FontAwesome';
-    content:"\f0c0 ";
-    margin-right: 5px;
+  }
 }
 
 .moodle-core-dragdrop-draghandle:before {
-    font-family: 'FontAwesome';
-    content:"\f047 ";
-    margin-right: 5px;
-    cursor: move;
+  font-family: 'FontAwesome';
+  content: "\f047 ";
+  margin-right: 5px;
+  cursor: move;
 }
 
 .course-content .section .moodle-core-dragdrop-draghandle {
   &:before {
     font-family: 'FontAwesome';
-    content:"\f07d ";
+    content: "\f07d ";
     margin-right: 5px;
     cursor: move;
   }
   img {
-      display: none;
+    display: none;
   }
 }
 
@@ -119,10 +118,10 @@ a.editing_moveleft:hover i {
 }
 
 .moodle-actionmenu.show[data-enhanced] .menu a {
-    padding: 0.2em;
-    i {
-        margin-right: 5px;
-    }
+  padding: 0.2em;
+  i {
+    margin-right: 5px;
+  }
 }
 
 /* @end */

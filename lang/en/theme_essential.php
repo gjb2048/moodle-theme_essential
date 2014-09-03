@@ -61,18 +61,34 @@ $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be 
 $string['footnote'] = 'Footnote';
 $string['footnotedesc'] = 'Whatever you add to this textarea will be displayed in the footer throughout your Moodle site.';
 
-$string['invert'] = 'Invert navbar';
-$string['invertdesc'] = 'Swaps text and background for the navbar at the top of the page between black and white.';
-
 $string['logo'] = 'Logo';
-$string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.<br>The image should be 65px high and any reasonable width that suits.<br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
+$string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.
+                       <br>The image should be 65px high and any reasonable width that suits.
+                       <br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
 
-$string['fontselect'] = 'Font selector';
-$string['fontselectdesc'] = 'Choose from the list of available font combinations. You can choose here to disable Google fonts if needed.';
+/* Font settings */
+$string['fontheading'] = 'Font settings';
+$string['fontheadingdesc'] = 'Select and enter the fonts that you want to use in your Moodle environment.';
+$string['fontselect'] = 'Font type selector';
+$string['fontselectdesc'] = 'Choose from the list of available font types. Please save to show the options for your choice.';
+$string['fonttypestandard'] = 'Standard fonts';
+$string['fonttypegoogle'] = 'Google web fonts';
+$string['fonttypecustom'] = 'Custom font';
+$string['fontnameheading'] = 'Heading font';
+$string['fontnameheadingdesc'] = 'Enter the exact name of the font to use for headings.';
+$string['fontnamebody'] = 'Text font';
+$string['fontnamebodydesc'] = 'Enter the exact name of the font to use for all other text.';
+
+/* Font files */
+$string['fontfiles'] = 'Font files';
+$string['fontfilesdesc'] = 'Upload your font files here, only TTF files are supported.';
+$string['fontfilettfheading'] = 'Heading TTF font file';
+$string['fontfilettfbody'] = 'Body TTF font file';
+
 
 $string['fontcharacterset'] = 'Google font additional character set';
-$string['fontcharactersetdesc'] = 'If a Google font is chosen, you can pick additional character sets for different languages. Using many character sets can slow down your webpage, so only select the character sets that you actually need on your webpage.';
-$string['fontcharactersetlatin'] = 'Latin';
+$string['fontcharactersetdesc'] = 'Pick additional character sets for different languages.
+                                   Using many character sets can slow down your Moodle, so only select the character sets that you actually need.';
 $string['fontcharactersetlatinext'] = 'Latin Extended';
 $string['fontcharactersetcyrillic'] = 'Cyrillic';
 $string['fontcharactersetcyrillicext'] = 'Cyrillic Extended';
@@ -81,7 +97,8 @@ $string['fontcharactersetgreekext'] = 'Greek Extended';
 $string['fontcharactersetvietnamese'] = 'Vietnamese';
 
 $string['bootstrapcdn'] = 'FontAwesome from CDN';
-$string['bootstrapcdndesc'] = 'If enabled this will load FontAwesome from the online Bootstrap CDN source. Enable this if you are having issues getting the Font Awesome icons to display in your site.';
+$string['bootstrapcdndesc'] = 'If enabled this will load FontAwesome from the online Bootstrap CDN source.
+                               Enable this if you are having issues getting the Font Awesome icons to display in your site.';
 
 $string['copyright'] = 'Copyright';
 $string['copyrightdesc'] = 'The name of your organisation.';
@@ -172,7 +189,7 @@ $string['helplinktypedesc'] = 'Choose whether you want to enable a help option i
 $string['helplink'] = 'Help link';
 $string['helplinkdesc'] = 'If you chose URL above fill in the complete URL to your help site (must include http:// or https://). If you chose Email address fill in your email address.';
 
-$string[ 'few'] = 'A few ';
+$string['few'] = 'A few ';
 $string['loggedinas'] = ' logged in as ';
 $string['loggedinfrom'] = 'Logged in from ';
 
@@ -234,7 +251,12 @@ $string['footerheadingcolor'] = 'Footer heading colour';
 $string['footerheadingcolordesc'] = 'Set the colour for block headings in the footer.';
 
 $string['pagebackground'] = 'Page background image';
-$string['pagebackgrounddesc'] = 'Upload your own background image. This will be stretched in the background on all pages.';
+$string['pagebackgrounddesc'] = 'Upload your own background image. Select the style of the image below.';
+$string['pagebackgroundstyle'] = 'Page background style';
+$string['pagebackgroundstyledesc'] = 'Select the style for the uploaded image.';
+$string['backgroundstylefixed'] = 'Fixed';
+$string['backgroundstyletiled'] = 'Tiled';
+$string['backgroundstylestretch'] = 'Stretch';
 
 /* Alternate Colour Switcher */
 $string['themecolors'] = 'Theme colours';
@@ -422,7 +444,18 @@ $string['categoryiconinfodesc'] = 'Enter the name of the icon you wish to use.  
 
 /* Header Settings */
 $string['headerheading'] = 'Header';
-$string['headerheadingsub'] = 'Configure the various features for the header here';
+$string['headertitle'] = 'Header title';
+$string['headertitledesc'] = 'Configure here what title to output in the header.';
+$string['navbartitle'] = 'Navigation bar title';
+$string['navbartitledesc'] = 'Configure here what title to output in the navigation bar.';
+$string['notitle'] = 'No Title';
+$string['fullname'] = 'Site full name';
+$string['shortname'] = 'Site short name';
+$string['fullnamesummary'] = 'Full name and summary';
+$string['shortnamesummary'] = 'Short name and summary';
+
+/* Footer Settings */
+$string['footerheading'] = 'Footer';
 
 /* Mobile Apps */
 $string['mobileappsheading'] = 'Apps';
@@ -430,10 +463,16 @@ $string['mobileappsheadingsub'] = 'Link to your app to get your students using m
 $string['mobileappsdesc'] = 'Have you got a web app on the App Store or Google Play Store?  Provide a link here so your users can grab the apps online.';
 
 $string['android'] = 'Android (Google Play)';
-$string['androiddesc'] = 'Provide an URL to your mobile App on the Google Play Store.  If you do not have one of your own maybe consider linking to the free official Moodle Mobile app. (https://play.google.com/store/apps/details?id=com.moodle.moodlemobile)';
+$string['androiddesc'] = 'Provide an URL to your mobile App on the Google Play Store.  If you do not have one of your own maybe consider linking to the official Moodle Mobile app. (https://play.google.com/store/apps/details?id=com.moodle.moodlemobile)';
+
+$string['windows'] = 'Windows Desktop';
+$string['windowsdesc'] = 'Provide an URL to your mobile App on the Windows Store.  If you do not have one of your own maybe consider linking to the official Moodle Mobile app. (http://apps.microsoft.com/windows/en-us/app/9df51338-015c-41b7-8a85-db2fdfb870bc)';
+
+$string['winphone'] = 'Windows Mobile';
+$string['winphonedesc'] = 'Provide an URL to your mobile App on the Google Play Store.  If you do not have one of your own maybe consider linking to the official Moodle Mobile app. (http://www.windowsphone.com/en-us/store/app/moodlemobile/d0732b88-3c6d-4127-8f24-3fca2452a4dc)';
 
 $string['ios'] = 'iPhone/iPad (App Store)';
-$string['iosdesc'] = 'Provide an URL to your mobile App on the App Store.  If you do not have one of your own maybe consider linking to the free official Moodle Mobile app (https://itunes.apple.com/en/app/moodle-mobile/id633359593).';
+$string['iosdesc'] = 'Provide an URL to your mobile App on the App Store.  If you do not have one of your own maybe consider linking to the official Moodle Mobile app (https://itunes.apple.com/en/app/moodle-mobile/id633359593).';
 
 /* iOS Icons */
 $string['iosicon'] = 'iOS home screen icons';
@@ -451,22 +490,26 @@ $string['ipadicondesc'] = 'Icon should be a PNG files sized 72px by 72px.';
 $string['ipadretinaicon'] = 'iPad Icon (Retina)';
 $string['ipadretinaicondesc'] = 'Icon should be a PNG files sized 144px by 144px.';
 
-/* Google Analytics */
-$string['analyticsheading'] = 'Google Analytics';
-$string['analyticsheadingsub'] = 'Powerful analytics from Google';
-$string['analyticsdesc'] = 'Here you can enable Google Analytics for your moodle site.  You will need to sign up for a free account at the Google Analytics site (<a href="http://analytics.google.com" target="_blank">http://analytics.google.com</a>)';
-
-$string['useanalytics'] = 'Enable Google Analytics';
-$string['useanalyticsdesc'] = 'Enable or disable Google Analytics functionality.';
-
-$string['analyticsid'] = 'Your Tracking ID';
-$string['analyticsiddesc'] = 'Enter the provided Tracking ID. Typically formatted like UA-XXXXXXXX-X';
-
-$string['analyticsclean'] = 'Send Clean URLs';
-$string['analyticscleandesc'] = 'This fantastic feature was created by <a href="https://moodle.org/user/profile.php?id=281671" target="_blank">Gavin Henrick</a> and <a href="https://moodle.org/user/view.php?id=907814" target="_blank">Bas Brands</a> and is implemented in this theme. Rather than standard Moodle URLs the theme will send out clean URLs making it easier to identify the page and provide advanced reporting. More information on using this feature and its uses can be <b><a href="http://www.somerandomthoughts.com/blog/2012/04/18/ireland-uk-moodlemoot-analytics-to-the-front/" target="_blank">found here</a></b>.';
-
-$string['analyticsadmin'] = 'Track admin users';
-$string['analyticsadmindesc'] = 'Enable to track admin users.';
+/* Analytics */
+$string['analytics'] = 'Analytics';
+$string['analyticsheadingsub'] = 'Powerful analytics for Moodle';
+$string['analyticsdesc'] = 'Choose the type of Analytics you want to insert and save to enable the other options.';
+$string['analyticssiteid'] = 'Site ID';
+$string['analyticssiteiddesc'] = 'Enter your Site ID';
+$string['analyticstrackingid'] = 'Site ID';
+$string['analyticstrackingiddesc'] = 'Enter your Tracking ID';
+$string['analyticssiteurl'] = 'Analytics URL';
+$string['analyticssiteurldesc'] = 'Enter your Piwik Analytics URL without http(s) or a trailing slash';
+$string['analyticsenabled'] = 'Enabled';
+$string['analyticsenableddesc'] = 'Enable Analytics for Moodle';
+$string['analyticsimagetrack'] = 'Image Tracking';
+$string['analyticscleanurl'] = 'Clean URLs';
+$string['analyticscleanurldesc'] = 'Generate clean URL for in advanced tracking';
+$string['analyticsimagetrackdesc'] = 'Enable Image Tracking for browsers with JavaScript disabled.';
+$string['analyticstrackadmin'] = 'Tracking Admins';
+$string['analyticstrackadmindesc'] = 'Enable tracking of Admin users (not recommended)';
+$string['analyticspiwik'] = 'Piwik';
+$string['analyticsguniversal'] = 'Google Universal Analytics';
 
 /* Alerts */
 $string['alertsheading'] = 'User alerts';
@@ -492,3 +535,12 @@ $string['alerttextdesc'] = 'What is the text you wish to display in your alert.'
 $string['alert_info'] = 'Information';
 $string['alert_warning'] = 'Warning';
 $string['alert_general'] = 'Announcement';
+
+/* Message Menu */
+$string['unreadnewnotification'] = 'New notification';
+$string['nomessagesfound'] = 'No messages were found';
+
+$string['blogpreferences'] = 'Blog preferences';
+$string['badgepreferences'] = 'Badge preferences';
+$string['messagepreferences'] = 'Message preferences';
+

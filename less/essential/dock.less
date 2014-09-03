@@ -1,322 +1,316 @@
 /* @group Dock */
 
-.dockbutton:hover, .dockbutton:focus, .dockbutton.disabled, .dockbutton[disabled]{
-    color:#7b8a8b;
-    background-color: #d0d5d9;
+.dockbutton:hover, .dockbutton:focus, .dockbutton.disabled, .dockbutton[disabled] {
+  color: #7b8a8b;
+  background-color: #d0d5d9;
 }
 
-.dockbutton:active,.dockbutton.active{
-    background-color: #b4bcc2;
+.dockbutton:active, .dockbutton.active {
+  background-color: #b4bcc2;
 }
 
-.dockbutton:first-child{
-    *margin-left:0;
+.dockbutton:first-child {
+  *margin-left: 0;
 }
 
-.dockbutton:hover, .dockbutton:focus{
-    color:#7b8a8b;
-    text-decoration:none;
-    background-position:0 -15px;
-    -webkit-transition:background-position .1s linear;
-    -moz-transition:background-position .1s linear;
-    -o-transition:background-position .1s linear;
-    transition:background-position .1s linear;
+.dockbutton:hover, .dockbutton:focus {
+  color: #7b8a8b;
+  text-decoration: none;
+  background-position: 0 -15px;
+  -webkit-transition: background-position .1s linear;
+  -moz-transition: background-position .1s linear;
+  -o-transition: background-position .1s linear;
+  transition: background-position .1s linear;
 }
 
 .dockbutton:focus {
-    outline:thin dotted #333;
-    outline:5px auto -webkit-focus-ring-color;
-    outline-offset:-2px;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
 }
 
-.dockbutton.active,.dockbutton:active{
-    background-image:none;
-    outline:0;
-    -webkit-box-shadow:inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
-    -moz-box-shadow:inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
-    box-shadow:inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05)};
-
-.dockbutton.disabled,.dockbutton[disabled]{
-    cursor:default;
-    background-image:none;
-    opacity:.65;
-    filter:alpha(opacity=65);
-    -webkit-box-shadow:none;
-    -moz-box-shadow:none;
-    box-shadow:none;
+.dockbutton.active, .dockbutton:active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05)
 }
 
-.dockbutton .label,.dockbutton .badge{
-    position:relative;
-    top:-1px;
+;
+
+.dockbutton.disabled, .dockbutton[disabled] {
+  cursor: default;
+  background-image: none;
+  opacity: .65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
-.dockbutton:hover,.dockbutton:focus{
-    color:white;
-    -webkit-transition:.25s;
-    -moz-transition:.25s;
-    transition:.25s;
+.dockbutton .label, .dockbutton .badge {
+  position: relative;
+  top: -1px;
 }
 
-.dockbutton:active,.dockbutton.active{
-    color:rgba(255,255,255,0.75);
-    -webkit-box-shadow:none;
-    -moz-box-shadow:none;
-    box-shadow:none;
+.dockbutton:hover, .dockbutton:focus {
+  color: white;
+  -webkit-transition: .25s;
+  -moz-transition: .25s;
+  transition: .25s;
 }
 
-.dockbutton.disabled,.dockbutton[disabled]{
-    color:white;
+.dockbutton:active, .dockbutton.active {
+  color: rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
-.dockbutton-large{
-    padding:18px 36px;
+.dockbutton.disabled, .dockbutton[disabled] {
+  color: white;
 }
 
-.dockbutton-small{
-    padding:2px 12px;
+.dockbutton-large {
+  padding: 18px 36px;
 }
 
-.dockbutton-mini{
+.dockbutton-small {
+  padding: 2px 12px;
+}
+
+.dockbutton-mini {
+  padding: 1px 8px;
+}
+
+body.has_dock {
+  padding-left: 40px;
+  div#dock {
+    display: inline;
+  }
+  #page {
+    padding-left: 20px;
+  }
+
+  #dock {
+    position: fixed;
+    left: 0;
+    z-index: 12000;
+    height: 100%;
+    background: ~"[[setting:themecolor]]";
+    border-right: 0 none;
+  }
+
+  #dock .controls img {
+    background: #fff;
+    padding: 3px;
+    border-radius: 5px;
+  }
+
+  #dock .nothingdocked {
+    display: none;
+    visibility: hidden;
+  }
+
+  #dock .dockeditem .firstdockitem {
+    margin-top: 1em;
+  }
+
+  #dock .dockedtitle {
+    padding: 10px 0;
+    margin: 2px;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border-bottom: 1px dashed #fff;
+  }
+
+  #dock .dockedtitle h2 {
+    font-weight: normal;
+    text-align: center;
+    color: ~"[[setting:themetextcolor]]";
+  }
+
+  #dock {
+    .dockedtitle:hover, .dockedtitle:focus, .dockedtitle:active, .dockedtitle.active, .dockedtitle.disabled, .dockedtitle[disabled] {
+      color: #7b8a8b;
+      background-color: ~"[[setting:themehovercolor]]";
+    }
+  }
+
+  #dock .dockedtitle:active, #dock .dockedtitle.active {
+    background-color: #b4bcc2;
+  }
+
+  #dock .dockedtitle:first-child {
+    *margin-left: 0;
+  }
+
+  #dock .dockedtitle:hover, #dock .dockedtitle:focus {
+    text-decoration: none;
+    background-position: 0 -10px;
+    -webkit-transition: background-position .1s linear;
+    -moz-transition: background-position .1s linear;
+    -o-transition: background-position .1s linear;
+    transition: background-position .1s linear;
+  }
+
+  #dock .dockedtitle.active, #dock .dockedtitle:active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+
+  #dock .dockedtitle.disabled, #dock .dockedtitle[disabled] {
+    cursor: default;
+    background-image: none;
+    .opacity(65);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+
+  #dock .dockedtitle .label, #dock .dockedtitle .badge {
+    position: relative;
+    top: -1px;
+  }
+
+  #dock .dockedtitle:hover, #dock .dockedtitle:focus {
+    color: white;
+    -webkit-transition: .25s;
+    -moz-transition: .25s;
+    transition: .25s
+  }
+
+  #dock .dockedtitle:active, #dock .dockedtitle.active {
+    color: rgba(255, 255, 255, 0.75);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+
+  #dock .dockedtitle.disabled, #dock .dockedtitle[disabled] {
+    color: white;
+  }
+
+  #dock .dockedtitle-large {
+    padding: 18px 36px;
+  }
+
+  #dock .dockedtitle-small {
+    padding: 2px 12px;
+  }
+
+  #dock .dockedtitle-mini {
     padding: 1px 8px;
-}
+  }
 
-.has_dock {
-    padding-left: 40px !important;
-    div#dock {
-        display: inline;
-    }
-    &.dir-ltr #page, &.dir-ltr .navbar-inner {
-        /*@noflip*/ padding-left: 52px;
-    }
+  #dock .dockedtitle .filterrotate {
+    margin-left: 8px;
+  }
 
-    #dock {
-        position:fixed;
-        top: 0px;
-        left: 0;
-        z-index: 12000;
-        height: 100%;
-        background: ~"[[setting:themecolor]]";
-        border-right:0 none;
-    }
+  #dock .dockeditempanel_hd h2 {
+    display: block;
+    padding: 3px 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    line-height: 20px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+  }
 
-    #dock .controls img {
-        background: #fff;
-        padding: 3px;
-        border-radius: 5px;
-    }
+  #dock .controls {
+    position: absolute;
+    bottom: 42px;
+    width: 100%;
+    text-align: center;
+  }
 
-    #dock .nothingdocked{
-        display:none;
-        visibility:hidden;
-    }
+  #dock .controls img {
+    cursor: pointer;
+  }
 
-    #dock .dockeditem .firstdockitem{
-        margin-top:1em;
-    }
+  #dockeditempanel {
+    position: relative;
+    left: 100%;
+    z-index: 12000;
+    min-width: 200px;
+    padding-left: 5px;
+  }
 
-    #dock .dockedtitle{
-        padding: 10px 0;
-        margin:2px;
-        margin-bottom:0;
-        text-align:center;
-        vertical-align:middle;
-        cursor:pointer;
-        border-bottom: 1px dashed #fff;
-    }
+  #dockeditempanel .dockeditempanel_content {
+    z-index: 12050;
+    width: 200px;
+    background-color: #fff;
+  }
 
-    #dock .dockedtitle h2{
-        font-weight: normal;
-        text-align: center;
-        color: ~"[[setting:themetextcolor]]";
-    }
+  #dockeditempanel .dockeditempanel_bd {
+    width: auto;
+    overflow: auto;
+  }
 
-    #dock {
-        .dockedtitle:hover, .dockedtitle:focus, .dockedtitle:active, .dockedtitle.active, .dockedtitle.disabled, .dockedtitle[disabled] {
-            color: #7b8a8b;
-            background-color: ~"[[setting:themehovercolor]]";
-        }
-    }
+  #dockeditempanel .dockeditempanel_bd .block_navigation .block_tree li {
+    overflow: visible;
+  }
 
-    #dock .dockedtitle:active, #dock .dockedtitle.active{
-        background-color: #b4bcc2;
-    }
+  #dockeditempanel .dockeditempanel_hd {
+    border-bottom: 1px solid #EEE;
+  }
 
-    #dock .dockedtitle:first-child{
-        *margin-left:0;
-    }
+  #dockeditempanel .dockeditempanel_hd h2 {
+    padding: 5px;
+    margin: 0;
+  }
 
-    #dock .dockedtitle:hover, #dock .dockedtitle:focus{
-        text-decoration:none;
-        background-position:0 -10px;
-        -webkit-transition:background-position .1s linear;
-        -moz-transition:background-position .1s linear;
-        -o-transition:background-position .1s linear;
-        transition:background-position .1s linear;
-    }
+  #dockeditempanel .dockeditempanel_hd .commands {
+    position: absolute;
+    top: 16px;
+    right: 4px;
+  }
 
-    #dock .dockedtitle:focus{
-        outline:thin dotted #333;
-        outline:5px auto -webkit-focus-ring-color;
-        outline-offset:-2px;
-    }
+  #dockeditempanel .dockeditempanel_hd .commands > a, #dockeditempanel .dockeditempanel_hd .commands > span {
+    margin-left: 3px;
+    cursor: pointer;
+  }
 
-    #dock .dockedtitle.active,#dock .dockedtitle:active{
-        background-image:none;
-        outline:0;
-        -webkit-box-shadow:inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
-        -moz-box-shadow:inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
-        box-shadow:inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
-    }
+  #dockeditempanel .dockeditempanel_hd a.editing_move, #dockeditempanel .dockeditempanel_hd a.editing_edit, #dockeditempanel .dockeditempanel_hd a.editing_roles, #dockeditempanel .dockeditempanel_hd a.editing_delete, #dockeditempanel .dockeditempanel_hd a.editing_hide {
+    display: none;
+  }
 
-    #dock .dockedtitle.disabled,#dock .dockedtitle[disabled]{
-        cursor:default;
-        background-image:none;
-        opacity:.65;
-        filter:alpha(opacity=65);
-        -webkit-box-shadow:none;
-        -moz-box-shadow:none;
-        box-shadow:none;
+  #dockeditempanel .dockeditempanel_hd .commands {
+    img, input {
+      margin-right: 1px;
+      vertical-align: middle
     }
+    img {
+      display: inline;
+    }
+  }
 
-    #dock .dockedtitle .label,#dock .dockedtitle .badge{
-        position:relative;
-        top:-1px;
-    }
+  #dockeditempanel .dockeditempanel_hd .commands .hidepanemicon img {
+    cursor: pointer;
+  }
 
-    #dock .dockedtitle:hover,#dock .dockedtitle:focus{
-        color:white;
-        -webkit-transition:.25s;
-        -moz-transition:.25s;
-        transition:.25s
-    }
+  #dockeditempanel.dockitempanel_hidden {
+    display: none;
+  }
 
-    #dock .dockedtitle:active,#dock .dockedtitle.active{
-        color:rgba(255,255,255,0.75);
-        -webkit-box-shadow:none;
-        -moz-box-shadow:none;
-        box-shadow:none;
+  .dockeditempanel_content {
+    width: 300px;
+  }
+  &.empty-region-side-pre:not(.has-region-side-post) {
+    #region-bs-main-and-pre {
+      width: 100%;
     }
-
-    #dock .dockedtitle.disabled,#dock .dockedtitle[disabled]{
-        color:white;
+  }
+  &.empty-region-side-pre.empty-region-side-post {
+    #region-bs-main-and-pre {
+      width: 100%;
     }
-
-    #dock .dockedtitle-large{
-        padding:18px 36px;
-    }
-
-    #dock .dockedtitle-small{
-        padding:2px 12px;
-    }
-
-    #dock .dockedtitle-mini{
-        padding:1px 8px;
-    }
-
-    #dock .dockedtitle .filterrotate{
-        margin-left:8px;
-    }
-
-    #dock .dockeditempanel_hd h2{
-        display:block;
-        padding:3px 15px;
-        font-size:1.1em;
-        font-weight:bold;
-        line-height:20px;
-        text-shadow:0 1px 0 rgba(255,255,255,0.5);
-        text-transform:uppercase;
-    }
-
-    #dock .controls{
-        position: absolute;
-        bottom: 42px;
-        width:100%;
-        text-align:center;
-    }
-
-    #dock .controls img{
-        cursor:pointer;
-    }
-
-    #dockeditempanel{
-        position:relative;
-        left:100%;
-        z-index:12000;
-        min-width:200px;
-        padding-left:5px;
-    }
-
-    #dockeditempanel .dockeditempanel_content{
-        z-index:12050;
-        width:200px;
-        background-color:#fff;
-    }
-
-    #dockeditempanel .dockeditempanel_bd{
-        width:auto;
-        overflow:auto;
-    }
-
-    #dockeditempanel .dockeditempanel_bd .block_navigation .block_tree li{
-        overflow:visible;
-    }
-
-    #dockeditempanel .dockeditempanel_hd {
-        border-bottom: 1px solid #EEE;
-    }
-
-    #dockeditempanel .dockeditempanel_hd h2{
-        padding: 5px;
-        margin: 0;
-    }
-
-    #dockeditempanel .dockeditempanel_hd .commands {
-        position: absolute;
-        top: 16px;
-        right: 4px;
-    }
-
-    #dockeditempanel .dockeditempanel_hd .commands>a,#dockeditempanel .dockeditempanel_hd .commands>span{
-        margin-left:3px;
-        cursor:pointer;
-    }
-
-    #dockeditempanel .dockeditempanel_hd a.editing_move,#dockeditempanel .dockeditempanel_hd a.editing_edit,#dockeditempanel .dockeditempanel_hd a.editing_roles,#dockeditempanel .dockeditempanel_hd a.editing_delete,#dockeditempanel .dockeditempanel_hd a.editing_hide{
-        display:none;
-    }
-
-    #dockeditempanel .dockeditempanel_hd .commands {
-        img, input {
-            margin-right:1px;
-            vertical-align:middle
-        }
-        img {
-            display: inline;
-        }
-    }
-
-    #dockeditempanel .dockeditempanel_hd .commands .hidepanemicon img{
-        cursor:pointer;
-    }
-
-    #dockeditempanel.dockitempanel_hidden{
-        display:none;
-    }
-
-    .dockeditempanel_content {
-        width: 300px;
-    }
-    &.empty-region-side-pre:not(.has-region-side-post) {
-        #region-bs-main-and-pre {
-            width: 100%;
-        }
-    }
-    &.empty-region-side-pre.empty-region-side-post {
-         #region-bs-main-and-pre {
-            width: 100%;
-        }
-    }
+  }
 }
 
 /* @end */

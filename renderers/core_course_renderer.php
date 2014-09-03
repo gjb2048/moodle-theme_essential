@@ -23,10 +23,11 @@
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
- 
+
 require_once($CFG->dirroot . "/course/renderer.php");
 
-class theme_essential_core_course_renderer extends core_course_renderer {
+class theme_essential_core_course_renderer extends core_course_renderer
+{
 
     /**
      * Returns HTML to display a course category as a part of a tree
@@ -39,7 +40,9 @@ class theme_essential_core_course_renderer extends core_course_renderer {
      * @param int $depth depth of this category in the current tree
      * @return string
      */
-    protected function coursecat_category(coursecat_helper $chelper, $coursecat, $depth) {
+    protected function coursecat_category(coursecat_helper $chelper, $coursecat, $depth)
+    {
+        global $CFG;
         // open category tag
         $classes = array('category');
         if (empty($coursecat->visible)) {
@@ -50,7 +53,8 @@ class theme_essential_core_course_renderer extends core_course_renderer {
             $categorycontent = '';
             $classes[] = 'notloaded';
             if ($coursecat->get_children_count() ||
-                    ($chelper->get_show_courses() >= self::COURSECAT_SHOW_COURSES_COLLAPSED && $coursecat->get_courses_count())) {
+                ($chelper->get_show_courses() >= self::COURSECAT_SHOW_COURSES_COLLAPSED && $coursecat->get_courses_count())
+            ) {
                 $classes[] = 'with_children';
                 $classes[] = 'collapsed';
             }
@@ -64,8 +68,10 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         }
         $classes[] = 'essentialcats';
 
-        // Make sure JS file to expand category content is included.
-        $this->coursecat_include_js();
+        if (intval($CFG->version) >= 2013111800) {
+            // Make sure JS file to expand category content is included.
+            $this->coursecat_include_js();
+        }
 
         $content = html_writer::start_tag('div', array(
             'class' => join(' ', $classes),
@@ -75,19 +81,23 @@ class theme_essential_core_course_renderer extends core_course_renderer {
             'data-type' => self::COURSECAT_TYPE_CATEGORY,
         ));
 
+        if ($chelper->get_show_courses() == self::COURSECAT_SHOW_COURSES_COUNT) {
+            $coursescount = $coursecat->get_courses_count();
+            $content .= html_writer::tag('span', ' (' . $coursescount . ')',
+                array('title' => get_string('numberofcourses'), 'class' => 'numberofcourse'));
+        }
+
+
         // category name
-        $categoryname = $coursecat->get_formatted_name();
-        $categoryname = html_writer::tag('span', $categoryname);
-        
+        $categoryname = html_writer::tag('span', $coursecat->get_formatted_name());
+
         $categoryiconnum = 'categoryicon' . $coursecat->id;
-        
-        global $PAGE;
-        $val = '';
-        $icon = '';
+
         // Do a settings check to output our icon for the category
-        if(theme_essential_get_setting('enablecategoryicon')) {
-            if(theme_essential_get_setting($categoryiconnum) && 
-               theme_essential_get_setting('enablecustomcategoryicon')) {
+        if (theme_essential_get_setting('enablecategoryicon')) {
+            if (theme_essential_get_setting($categoryiconnum) &&
+                theme_essential_get_setting('enablecustomcategoryicon')
+            ) {
                 // User has set a value for the category
                 $val = theme_essential_get_setting($categoryiconnum);
             } else {
@@ -95,19 +105,13 @@ class theme_essential_core_course_renderer extends core_course_renderer {
                 $val = theme_essential_get_setting('defaultcategoryicon');
             }
         }
-        if(!empty($val)) {
+        if (!empty($val)) {
             $icon = html_writer::tag('i', '', array('class' => 'fa fa-' . $val));
         }
 
-        
         $categoryname = html_writer::link(new moodle_url('/course/index.php',
                 array('categoryid' => $coursecat->id)),
-                $icon . $categoryname);
-        if ($chelper->get_show_courses() == self::COURSECAT_SHOW_COURSES_COUNT
-                && ($coursescount = $coursecat->get_courses_count())) {
-            $categoryname .= html_writer::tag('span', ' ('. $coursescount.')',
-                    array('title' => get_string('numberofcourses'), 'class' => 'numberofcourse'));
-        }
+            $icon . $categoryname);
         $content .= html_writer::start_tag('div', array('class' => 'info'));
 
         $content .= html_writer::tag(($depth > 1) ? 'h4' : 'h3', $categoryname, array('class' => 'categoryname'));

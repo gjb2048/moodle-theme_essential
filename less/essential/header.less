@@ -1,185 +1,205 @@
 /* @group Header */
 
 #page-header {
-    height: 75px;
-    margin-top: 40px;
-    border-bottom: 1px solid #DDD;
-    .row-fluid [class*="span"] {
-        padding-right: 5px;
+  height: 75px;
+  margin-top: 40px;
+  border-bottom: 1px solid #DDD;
+  .row-fluid [class*="span"] {
+    padding-right: 5px;
+  }
+  .btn-icon {
+    display: none;
+    float: right;
+    padding: 7px 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-image: none;
+    background-color: #ededed;
+    .icon-bar {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background-color: #f5f5f5;
     }
-    .btn-icon {
-        display: none;
-        float: right;
-        padding: 7px 10px;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background-image: none;
-        background-color: #ededed;
-        .icon-bar {
-            display: block;
-            width: 18px;
-            height: 2px;
-            background-color: #f5f5f5;
-        }
-        &:hover {
-            background-color: #e5e5e5;
-        }
-        .icon-bar + .icon-bar {
-          margin-top: 3px;
-        }
+    &:hover {
+      background-color: #e5e5e5;
     }
-    .icon-collapse {
-        overflow: visible;
+    .icon-bar + .icon-bar {
+      margin-top: 3px;
     }
+  }
+  .icon-collapse {
+    overflow: visible;
+  }
 
-    h2.main,
-    #pageheading {
-        font-size: 1.4em;
-        line-height: 35px;
-        color: #777;
-        border-bottom: 1px solid #e1e1e1;
-    }
+  h2.main,
+  #pageheading {
+    font-size: 1.4em;
+    line-height: 35px;
+    color: #777;
+    border-bottom: 1px solid #e1e1e1;
+  }
 
-    a.logo {
-        display: block;
-        float: left;
-        height: 65px;
-        margin: 5px;
-        width: 100%;
-        background-size: contain;
-        background-position: left center;
-        background-repeat: no-repeat;
-    }
+  a.logo {
+    display: block;
+    float: left;
+    height: 65px;
+    margin: 5px;
+    width: 100%;
+    background-size: contain;
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
 
-    h1#title {
-        white-space: nowrap;
-        font-size: 3em;
-        top: 10px;
-        position: relative;
-        color: ~"[[setting:themecolor]]";
-    }
+  h1#title {
+    white-space: nowrap;
+    font-size: 3em;
+    top: 10px;
+    position: relative;
+    color: ~"[[setting:themecolor]]";
+  }
+  h1#smalltitle {
+    white-space: nowrap;
+    font-size: 2em;
+    position: relative;
+    color: ~"[[setting:themecolor]]";
+  }
+  h2#subtitle {
+    white-space: nowrap;
+    font-size: 1em;
+    top: -20px;
+    position: relative;
+    color: ~"[[setting:themetextcolor]]";
+  }
 
-    a.textlogo {
-        text-decoration: none;
-    }
+  a.textlogo {
+    text-decoration: none;
+  }
 
-    #headerlogo {
-        float: left;
-        font-size: 4.5em;
-        padding-right: 10px;
-        position: relative;
-        top: 10px;
-        margin-right: 10px;
-        color: ~"[[setting:themecolor]]";
-    }
+  #headerlogo {
+    float: left;
+    font-size: 4.5em;
+    padding-right: 10px;
+    position: relative;
+    top: 10px;
+    margin-right: 10px;
+    color: ~"[[setting:themecolor]]";
+  }
 }
 
-#page-header.oldnavbar, 
+#page-header.oldnavbar,
 .pagelayout-maintenance #page-header,
 #page-admin-upgradesettings #page-header,
 .pagelayout-redirect #page-header {
-    margin-top: 0px;
+  margin-top: 0px;
 }
 
 // Narrow page width with custom menu items can make the navigation bar big.
 .pagewidthnarrow.custommenuitems {
-    header .navbar-inner {
-        height: 80px;
-        max-height: 80px;
+  header .navbar-inner {
+    height: 80px;
+    max-height: 80px;
+  }
+  #page-header {
+    margin-top: 80px;
+    &.oldnavbar {
+      margin-top: 0px;
     }
-    #page-header {
-        margin-top: 80px;
-        &.oldnavbar {
-            margin-top: 0px;
-        }
-    }
+  }
 }
-
 
 /* @end */
 
 /* @group Social Buttons */
 
-#socialnetworks {
-    height: 75px;
+#socialnetworks,
+#mobileapps {
+  height: 75px;
+  margin-right: 10px;
 }
 
 .socials {
-    margin: 0px;
-    p {
-        font-weight: normal;
-        color: ~"[[setting:themetextcolor]]";
-        font-size: 1.1em;
-    }
+  margin: 0px;
+  p {
+    font-weight: normal;
+    color: ~"[[setting:themetextcolor]]";
+    font-size: 1.1em;
+  }
 }
 
 button {
-    &.socialicon {
-        background-color: #bbbbbb;
-        border-radius: 5px;
-        border: 0px none;
-        font-size: 1.6em;
-        padding: 5px;
-        text-align: center;
-        background-image: none;
-        min-width: 29px;
-    }
-    &.facebook:hover, &.facebook:focus {
-        background: #4a6ea9;
-    }
-    &.skype:hover, &.skype:focus {
-        background: #00adf7;
-    }
-    &.instagram:hover, &.instagram:focus {
-        background: #a5674a;
-    }
-    &.ios:hover, &.ios:focus {
-        background: #000;
-    }
-    &.android:hover, &.android:focus {
-        background: #98cd32;
-    }
-    &.vk:hover, &.vk:focus {
-        background: #4a6ea9;
-    }
-    &.twitter:hover, &.twitter:focus {
-        background: #00aced;
-    }
-    &.googleplus:hover, &.googleplus:focus {
-        background: #f42941;
-    }
-    &.flickr:hover, &.flickr:focus {
-        background: #ff3096;
-    }
-    &.instagram:hover, a.instagram:focus {
-        background: #b99c6b;
-    }
-    &.youtube:hover, &.youtube:focus {
-        background: #f42941;
-    }
-    &.pinterest:hover, &.pinterest:focus {
-        background: #f42941;
-    }
-    &.linkedin:hover, &.linkedin:focus {
-        background: #4A9CC9;
-    }
+  &.socialicon {
+    background-color: #bbbbbb;
+    border-radius: 5px;
+    border: 0px none;
+    font-size: 1.6em;
+    padding: 5px;
+    text-align: center;
+    background-image: none;
+    min-width: 29px;
+  }
+  &.facebook:hover, &.facebook:focus {
+    background: #4a6ea9;
+  }
+  &.skype:hover, &.skype:focus {
+    background: #00adf7;
+  }
+  &.instagram:hover, &.instagram:focus {
+    background: #a5674a;
+  }
+  &.ios:hover, &.ios:focus {
+    background: #000;
+  }
+  &.windows:hover, &.ios:focus {
+    background: #008A00;
+  }
+  &.winphone:hover, &.ios:focus {
+    background: #9B4F96;
+  }
+  &.android:hover, &.android:focus {
+    background: #98cd32;
+  }
+  &.vk:hover, &.vk:focus {
+    background: #4a6ea9;
+  }
+  &.twitter:hover, &.twitter:focus {
+    background: #00aced;
+  }
+  &.googleplus:hover, &.googleplus:focus {
+    background: #f42941;
+  }
+  &.flickr:hover, &.flickr:focus {
+    background: #ff3096;
+  }
+  &.instagram:hover, a.instagram:focus {
+    background: #b99c6b;
+  }
+  &.youtube:hover, &.youtube:focus {
+    background: #f42941;
+  }
+  &.pinterest:hover, &.pinterest:focus {
+    background: #f42941;
+  }
+  &.linkedin:hover, &.linkedin:focus {
+    background: #4A9CC9;
+  }
 }
 
 ul.socials {
+  text-align: right;
+  li {
     text-align: right;
-    li {
-        text-align: right;
-        display: inline-block;
-    }
+    display: inline-block;
+  }
 }
 
 #socialheading {
-    text-align: right;
-    letter-spacing: .2em;
-    padding: 0px;
-    margin: 0px;
-    margin-top: 8px;
+  text-align: right;
+  letter-spacing: .2em;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 8px;
 }
 
 /* @end */

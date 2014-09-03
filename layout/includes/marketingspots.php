@@ -23,62 +23,90 @@
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
- 
-require_once(dirname(__FILE__).'/pagesettings.php');
 ?>
-
 <div class="row-fluid" id="marketing-spots">
-    <div class="span4">
-        <!-- Advert #1 -->
-        <div class="service">
-            <!-- Icon & title. Font Awesome icon used. -->
-            <h5><span><i class="fa fa-<?php echo theme_essential_get_setting('marketing1icon'); ?>"></i> <?php echo theme_essential_get_setting('marketing1', true); ?></span></h5>
-            <?php if ($hasmarketing1image) { ?>
-                <div class="marketing-image1"></div>
-            <?php } ?>
-
-            <?php echo theme_essential_get_setting('marketing1content', 'format_text'); ?>
-            <p align="right">
-                <a href="<?php echo theme_essential_get_setting('marketing1buttonurl'); ?>" target="<?php echo theme_essential_get_setting('marketing1target'); ?>" id="button">
-                    <?php echo theme_essential_get_setting('marketing1buttontext', true); ?>
-                </a>
-            </p>
+    <!-- Advert #1 -->
+    <div class="marketing-spot span4">
+        <!-- Icon & title. Font Awesome icon used. -->
+        <h5><span><i
+                    class="fa fa-<?php echo theme_essential_get_setting('marketing1icon'); ?>"></i> <?php echo theme_essential_get_setting('marketing1', true); ?></span>
+        </h5>
+        <?php if (theme_essential_get_setting('marketing1image')) { ?>
+            <div class="marketing-image" id="marketing-image1"></div>
+        <?php } ?>
+        <?php echo theme_essential_get_setting('marketing1content', 'format_text'); ?>
+        <div class="button">
+            <a href="<?php echo theme_essential_get_setting('marketing1buttonurl'); ?>"
+               target="<?php echo theme_essential_get_setting('marketing1target'); ?>"
+               class="marketing-button responsive">
+                <?php echo theme_essential_get_setting('marketing1buttontext', true); ?>
+            </a>
         </div>
     </div>
 
-    <div class="span4">
-        <!-- Advert #2 -->
-        <div class="service">
-            <!-- Icon & title. Font Awesome icon used. -->
-            <h5><span><i class="fa fa-<?php echo theme_essential_get_setting('marketing2icon'); ?>"></i> <?php echo theme_essential_get_setting('marketing2', true); ?></span></h5>
-            <?php if ($hasmarketing2image) { ?>
-                <div class="marketing-image2"></div>
-            <?php } ?>
-
-            <?php echo theme_essential_get_setting('marketing2content', 'format_text'); ?>
-            <p align="right">
-                <a href="<?php echo theme_essential_get_setting('marketing2buttonurl'); ?>" target="<?php echo theme_essential_get_setting('marketing2target'); ?>" id="button">
-                    <?php echo theme_essential_get_setting('marketing2buttontext', true); ?>
-                </a>
-            </p>
+    <!-- Advert #2 -->
+    <div class="marketing-spot span4">
+        <!-- Icon & title. Font Awesome icon used. -->
+        <h5><span><i
+                    class="fa fa-<?php echo theme_essential_get_setting('marketing2icon'); ?>"></i> <?php echo theme_essential_get_setting('marketing2', true); ?></span>
+        </h5>
+        <?php if (theme_essential_get_setting('marketing2image')) { ?>
+            <div class="marketing-image" id="marketing-image2"></div>
+        <?php } ?>
+        <?php echo theme_essential_get_setting('marketing2content', 'format_text'); ?>
+        <div class="button">
+            <a href="<?php echo theme_essential_get_setting('marketing1buttonurl'); ?>"
+               target="<?php echo theme_essential_get_setting('marketing1target'); ?>"
+               class="marketing-button responsive">
+                <?php echo theme_essential_get_setting('marketing1buttontext', true); ?>
+            </a>
         </div>
     </div>
 
-    <div class="span4">
-        <!-- Advert #3 -->
-        <div class="service">
-            <!-- Icon & title. Font Awesome icon used. -->
-            <h5><span><i class="fa fa-<?php echo theme_essential_get_setting('marketing3icon'); ?>"></i> <?php echo theme_essential_get_setting('marketing3', true); ?></span></h5>
-            <?php if ($hasmarketing3image) { ?>
-                <div class="marketing-image3"></div>
-            <?php } ?>
-
-            <?php echo theme_essential_get_setting('marketing3content', 'format_text'); ?>
-            <p align="right">
-                <a href="<?php echo theme_essential_get_setting('marketing3buttonurl'); ?>" target="<?php echo theme_essential_get_setting('marketing3target'); ?>" id="button">
-                    <?php echo theme_essential_get_setting('marketing3buttontext', true); ?>
-                </a>
-            </p>
+    <!-- Advert #3 -->
+    <div class="marketing-spot span4">
+        <!-- Icon & title. Font Awesome icon used. -->
+        <h5><span><i
+                    class="fa fa-<?php echo theme_essential_get_setting('marketing3icon'); ?>"></i> <?php echo theme_essential_get_setting('marketing3', true); ?></span>
+        </h5>
+        <?php if (theme_essential_get_setting('marketing3image')) { ?>
+            <div class="marketing-image" id="marketing-image3"></div>
+        <?php } ?>
+        <?php echo theme_essential_get_setting('marketing3content', 'format_text'); ?>
+        <div class="button">
+            <a href="<?php echo theme_essential_get_setting('marketing1buttonurl'); ?>"
+               target="<?php echo theme_essential_get_setting('marketing1target'); ?>"
+               class="marketing-button responsive">
+                <?php echo theme_essential_get_setting('marketing1buttontext', true); ?>
+            </a>
         </div>
+    </div>
+</div>
+<div class="row-fluid" id="marketing-buttons">
+    <!-- Advert Button #1 -->
+    <div class="span4">
+        <a href="<?php echo theme_essential_get_setting('marketing1buttonurl'); ?>"
+           target="<?php echo theme_essential_get_setting('marketing1target'); ?>" class="marketing-button">
+            <?php echo theme_essential_get_setting('marketing1buttontext', true); ?>
+        </a>
+        <?php echo theme_essential_edit_button('theme_essential_frontpage'); ?>
+    </div>
+
+    <!-- Advert Button #2 -->
+    <div class="span4">
+        <a href="<?php echo theme_essential_get_setting('marketing2buttonurl'); ?>"
+           target="<?php echo theme_essential_get_setting('marketing2target'); ?>" class="marketing-button">
+            <?php echo theme_essential_get_setting('marketing2buttontext', true); ?>
+        </a>
+        <?php echo theme_essential_edit_button('theme_essential_frontpage'); ?>
+    </div>
+
+    <!-- Advert Button #3 -->
+    <div class="span4">
+        <a href="<?php echo theme_essential_get_setting('marketing3buttonurl'); ?>"
+           target="<?php echo theme_essential_get_setting('marketing3target'); ?>" class="marketing-button">
+            <?php echo theme_essential_get_setting('marketing3buttontext', true); ?>
+        </a>
+        <?php echo theme_essential_edit_button('theme_essential_frontpage'); ?>
     </div>
 </div>

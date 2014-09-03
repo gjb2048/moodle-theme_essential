@@ -24,12 +24,14 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(__FILE__).'/includes/header.php'); ?>
+require_once(dirname(__FILE__) . '/includes/header.php'); ?>
 
 <div id="page" class="container-fluid">
     <div id="page-navbar" class="clearfix row-fluid">
-        <div class="breadcrumb-nav pull-<?php echo ($left) ? 'left' : 'right'; ?>"><?php echo $OUTPUT->navbar(); ?></div>
-        <nav class="breadcrumb-button pull-<?php echo ($left) ? 'right' : 'left'; ?>"><?php echo $OUTPUT->page_heading_button(); ?></nav>
+        <div
+            class="breadcrumb-nav pull-<?php echo ($left) ? 'left' : 'right'; ?>"><?php echo $OUTPUT->navbar(); ?></div>
+        <nav
+            class="breadcrumb-button pull-<?php echo ($left) ? 'right' : 'left'; ?>"><?php echo $OUTPUT->page_heading_button(); ?></nav>
     </div>
     <section role="main-content">
         <!-- Start Main Regions -->
@@ -38,22 +40,24 @@ require_once(dirname(__FILE__).'/includes/header.php'); ?>
                 <div class="row-fluid">
                     <?php if ($hasboringlayout && $left) { ?>
                     <section id="region-main" class="span9 pull-right">
-                    <?php } else { ?>
-                    <section id="region-main" class="span9 desktop-first-column">
-                    <?php } ?>
-                        <?php if ($COURSE->id > 1) {
-                            echo $OUTPUT->heading($COURSE->fullname, 1, 'coursetitle');
-                            echo '<div class="bor" style="margin-top: 10px;"></div>';
-                        } ?>
-                        <?php echo $OUTPUT->course_content_header(); ?>
-                        <?php echo $OUTPUT->main_content(); ?>
-                        <?php echo $OUTPUT->course_content_footer(); ?>
-                    </section>
-                    <?php if ($hasboringlayout && $left) { ?>
-                    <?php echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column'); ?>
-                    <?php } else { ?>
-                    <?php echo $OUTPUT->blocks('side-pre', 'span3 pull-right'); ?>
-                    <?php } ?>
+                        <?php } else { ?>
+                        <section id="region-main" class="span9 desktop-first-column">
+                            <?php } ?>
+                            <?php if ($COURSE->id > 1) {
+                                echo $OUTPUT->heading($COURSE->fullname, 1, 'coursetitle');
+                                echo '<div class="bor"></div>';
+                            } ?>
+                            <?php echo $OUTPUT->course_content_header(); ?>
+                            <?php echo $OUTPUT->main_content(); ?>
+                            <?php if (empty($PAGE->layout_options['nocoursefooter'])) {
+                                echo $OUTPUT->course_content_footer();
+                            }?>
+                        </section>
+                        <?php if ($hasboringlayout && $left) { ?>
+                            <?php echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column'); ?>
+                        <?php } else { ?>
+                            <?php echo $OUTPUT->blocks('side-pre', 'span3 pull-right'); ?>
+                        <?php } ?>
                 </div>
             </div>
         </div>
@@ -61,7 +65,7 @@ require_once(dirname(__FILE__).'/includes/header.php'); ?>
     </section>
 </div>
 
-<?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
+<?php require_once(dirname(__FILE__) . '/includes/footer.php'); ?>
 
 </body>
 </html>
