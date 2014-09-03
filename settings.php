@@ -267,7 +267,7 @@ if (is_siteadmin()) {
     $name = 'theme_essential/themeiconcolor';
     $title = get_string('themeiconcolor', 'theme_essential');
     $description = get_string('themeiconcolordesc', 'theme_essential');
-    $default = '#000000';
+    $default = '#208700';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
