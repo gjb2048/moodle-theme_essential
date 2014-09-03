@@ -1,0 +1,40 @@
+/* @group Gradebook */
+
+.path-grade-report-grader {
+  .generaltable {
+    th.user {
+      padding-right: 45px;
+      img.userpicture {
+        float: left;
+      }
+    }
+    .heading.r1,
+    .heading_name_row.r1 {
+      > th {
+        padding-right: 35px;
+        vertical-align: middle;
+      }
+    }
+  }
+  h1 {
+    clear: none;
+  }
+
+  .gradeparent {
+    div:nth-of-type(2):not(.topscroll) {
+      &.right_scroller {
+        padding-top: 22px;
+      }
+    }
+    .left_scroller {
+      padding-top: 25px;
+    }
+    .right_scroller {
+      .topscroll {
+        min-height: 22px;
+      }
+    }
+  }
+}
+
+/* @end */

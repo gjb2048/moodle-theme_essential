@@ -86,6 +86,46 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
+New in 2.7.7
+============
+- FIX: Issue #173: Message menu shows wrong time difference in Russian.
+- FIX: Issue #175: Gradebook several bugs.
+- FIX: Issue #179: User picture error.
+- FIX: Issue #189: Gradebook - column text and sorting doesn't fit the column.
+- FIX: Issue #191: Blocks not showing on the right of the frontpage for non-admins.
+- FIX: Issue #196: Gradebook - vertical size in fixed column view.
+- FIX: Issue #200: Category Edit / Delete Missing in newest version of Essential.
+- FIX: Issue #208: Bug: Undefined function is_loggedin().
+- FIX: Issue #209: Showing white background.
+- FIX: Issue #211: Image size in message menu.
+- FIX: Issue #220: Standard Moodle Chat interface fails to load.
+- FIX: Issue #221: Missing string 'unreadnewnotification'.
+- FIX: Issue #225: Blank pages after some times.
+- FIX: Issue #228: Incorrect z-index in menu.
+- FIX: Issue #233: User image wrong in IE.
+- FIX: Issue #237: Homepage main content block layout issues.
+- FIX: Issue #238: Logged in user block styling.
+- FIX: Issue #241: Background image appears as text box background.
+- FIX: Issue #243: View Full toggle button not functional 2.6.9b.
+- FIX: Issue #246: Menu bar down arrow caret causes shift of menu.
+- NEW: Issue #74 : Fonts are CDN only.
+- NEW: Issue #139: Enter own CDN font names.
+- NEW: Issue #149: Add setting to not show the site shortname.
+- NEW: Issue #170: Option in settings to choose how the site title in header appears.
+- NEW: Issue #176: Option to Hide Calendar, Private Files, Forum Posts and Discussions from Dropdown.
+- NEW: Issue #178: Error when editing user preferences.
+- NEW: Issue #180: Same height marketing spots.
+- NEW: Issue #181: Marketing spot header same as navbar.
+- NEW: Issue #185: Custom background image dimensions.
+- NEW: Issue #186: Add edit links to custom frontpage content items.
+- NEW: Issue #197: Gradebook overall average font colour.
+- NEW: Issue #204: Windows Mobile Apps.
+- NEW: Issue #212: Upgrade FontAwesome 4.2.0.
+- NEW: Issue #223: How to make a sub menu from custom menu.
+- NEW: Issue #226: Move slideshow slides loading to function in lib.php.
+- NEW: Issue #235: Color of course navigation block.
+- NEW: Issue #240: Header title not wrapping in mobile view.
+
 New in 2.7.6b
 =============
 - FIX: Issue #205: Has the eye icon used to Enable/Disable an element been reversed in functionality?
@@ -94,7 +134,6 @@ New in 2.7.6b
 - FIX: huge code rewrite for menu items.
 - FIX: optimized more icons to be loaded from font.
 - NEW: New loading gif, reducing size by 500%.
-- NEW: Issue #194: Option to centre slide show text.
 - NEW: Issue #198: Collapsed Topics and other course formats (like core weeks) need print single page the same.
        Course formats catered for: Topics, Weeks, Collapsed Topics, Columns, Grid and Noticeboard.  If you require others,
        please let us know.

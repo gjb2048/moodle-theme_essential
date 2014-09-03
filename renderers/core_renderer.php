@@ -539,7 +539,7 @@ class theme_essential_core_renderer extends core_renderer
             return false;
         }
 
-        global $USER, $CFG, $DB;
+        global $USER, $CFG, $DB, $SESSION;
         $loginurl = get_login_url();
 
         $usermenu = html_writer::start_tag('ul', array('class' => 'nav'));
@@ -896,8 +896,6 @@ class theme_essential_core_renderer extends core_renderer
             't/up' => 'arrow-up',
             't/down' => 'arrow-down',
             't/copy' => 'copy',
-            't/switch_minus' => 'minus-square',
-            't/switch_plus' => 'plus-square',
             't/block_to_dock' => 'caret-square-o-left',
             't/sort' => 'sort',
             't/sort_asc' => 'sort-asc',

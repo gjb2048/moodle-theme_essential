@@ -1,0 +1,127 @@
+/* @group Edit Buttons */
+
+i > img {
+  display: none;
+  visibility: hidden;
+}
+
+.actions .moodle-actionmenu[data-enhanced].show .menu a {
+  text-decoration: none !important;
+}
+
+#page-mod-glossary-view .commands img,
+#page-calendar-view .commands img {
+  display: inline;
+}
+
+.commands i {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.menu a.menu-action,
+p.tree_item.leaf a,
+.course-item-actions a,
+.actions a {
+  > i {
+    color: @icon-colour;
+    width: 14px;
+  }
+  &.action-delete {
+    > i {
+      color: red;
+    }
+  }
+  &:hover {
+    > i {
+      color: ~"[[setting:themehovercolor]]";
+    }
+  }
+}
+
+.menu a.menu-action,
+.course-item-actions a,
+.actions a {
+  margin: 0px 3px;
+}
+
+a.action-icon,
+#studentheader,
+.heading_name_row a {
+  > i {
+    width: 14px;
+    margin: 0px 3px;
+  }
+}
+
+.menu a.menu-action:hover > i {
+  color: #FFF;
+}
+
+.section-modchooser-link {
+  img {
+    display: none;
+  }
+
+  > a:before {
+    font-family: 'FontAwesome';
+    content: "\f067 ";
+    margin-right: 3px;
+    color: @icon-colour;
+  }
+
+  > a:hover:before {
+    text-decoration: none;
+  }
+}
+
+.editing_title {
+  img {
+    display: none !important;
+  }
+
+  &:before {
+    font-family: 'FontAwesome';
+    content: "\f040 ";
+    margin-right: 5px;
+  }
+}
+
+.moodle-core-dragdrop-draghandle:before {
+  font-family: 'FontAwesome';
+  content: "\f047 ";
+  margin-right: 5px;
+  cursor: move;
+}
+
+.course-content .section .moodle-core-dragdrop-draghandle {
+  &:before {
+    font-family: 'FontAwesome';
+    content: "\f07d ";
+    margin-right: 5px;
+    cursor: move;
+  }
+  img {
+    display: none;
+  }
+}
+
+.section .summary {
+  > a:before {
+    font-family: 'FontAwesome';
+    content: "\f013 ";
+    margin-right: 5px;
+  }
+  .iconsmall.edit {
+    display: none;
+  }
+}
+
+.moodle-actionmenu.show[data-enhanced] .menu a {
+  padding: 0.2em;
+  i {
+    margin-right: 5px;
+  }
+}
+
+/* @end */

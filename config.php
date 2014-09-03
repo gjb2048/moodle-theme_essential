@@ -61,7 +61,7 @@ if (intval($CFG->version) >= 2013111800) {
 $THEME->editor_sheets = array('editor');
 
 $addregions = array();
-if (get_config('theme_essential', 'frontpagemiddleblocks') > 1) {
+if (get_config('theme_essential', 'frontpagemiddleblocks') > 0) {
     $addregions = array('home-left', 'home-middle', 'home-right');
 }
 

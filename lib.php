@@ -757,6 +757,7 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
     echo $that->start_section_list();
 
     echo $that->section_header($thissection, $course, true, $displaysection);
+
     // Show completion help icon.
     $completioninfo = new completion_info($course);
     echo $completioninfo->display_help_icon();
@@ -765,9 +766,6 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
     echo $courserenderer->course_section_add_cm_control($course, $displaysection, $displaysection);
     echo $that->section_footer();
     echo $that->end_section_list();
-
-    // Output Section Navigation
-    echo $sectionnav;
 
     // Close single-section div.
     echo html_writer::end_tag('div');
@@ -782,7 +780,7 @@ function theme_essential_render_slide($i)
     $slidetitle         = theme_essential_get_setting('slide'.$i, true);
     $slidecaption       = theme_essential_get_setting('slide'.$i.'caption', true);
     $slideextraclass    = ($i === 1)? 'active' : '';
-    $slideimagealt      = theme_essential_get_setting('slide'.$i);
+    $slideimagealt      = strip_tags(theme_essential_get_setting('slide'.$i, true));
     $slideimage         = $OUTPUT->pix_url('default_slide', 'theme');
 
     // Get slide image or fallback to default
