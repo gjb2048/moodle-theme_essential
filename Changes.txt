@@ -56,6 +56,7 @@ Fixes:
 1. Border 3px to 2px.
 2. Menu no bold on hover.
 3. Current day in calendar to logo green and light green on hover.
+4. Previous / Next section text hover.
 
 Notes:
 

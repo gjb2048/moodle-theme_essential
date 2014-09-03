@@ -5052,6 +5052,23 @@ a.btn.btn-info {
 #previous_section .nav_icon {
   font-size: 48px;
 }
+nav.section-navigation a {
+  color: #000000;
+}
+nav.section-navigation a .text {
+  color: #208700;
+}
+nav.section-navigation a .text .nav-guide {
+  color: #000000;
+}
+nav.section-navigation a .text:hover,
+nav.section-navigation a .text:focus {
+  color: #3ec650;
+}
+nav.section-navigation a .text:hover .nav-guide,
+nav.section-navigation a .text:focus .nav-guide {
+  color: #000000;
+}
 .coursebox > .info > .coursename a {
   background-image: url([[pix:theme|course_list]]);
   background-position: left center;
