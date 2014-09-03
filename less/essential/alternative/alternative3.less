@@ -1,489 +1,488 @@
 /* @group Alternative colours 3 */
 
-.essential-colours-alternative3 { 
+.essential-colours-alternative3 {
+  color: ~"[[setting:alternativethemetextcolor3]]";
+  h1, h2, h3, h4, h5, h6,
+  .color,
+  h1#title,
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"],
+  .uneditable-input,
+  .form-item .form-description,
+  .form-defaultinfo,
+  .form-label .form-shortname {
     color: ~"[[setting:alternativethemetextcolor3]]";
-    h1, h2, h3, h4, h5, h6,
-    .color,
-    h1#title,
-    select,
-    textarea,
-    input[type="text"],
-    input[type="password"],
-    input[type="datetime"],
-    input[type="datetime-local"],
-    input[type="date"],
-    input[type="month"],
-    input[type="time"],
-    input[type="week"],
-    input[type="number"],
-    input[type="email"],
-    input[type="url"],
-    input[type="search"],
-    input[type="tel"],
-    input[type="color"],
-    .uneditable-input,
-    .form-item .form-description,
-    .form-defaultinfo,
-    .form-label .form-shortname    {
-        color: ~"[[setting:alternativethemetextcolor3]]";
-    }
-    
-    .breadcrumb-nav {
-        /** Some breadcrumb style **/
-        ul.breadcrumb.style1 {  
-            li {
-                background: ~"[[setting:alternativethemecolor3]]";
-            }
-            li:after  { 
-                border-left: 30px solid ~"[[setting:alternativethemecolor3]]";;
-            }
-            li:hover {
-                background: ~"[[setting:themenavcolor]]";
-            }
-            li:hover:after {
-                border-left-color: ~"[[setting:themenavcolor]]" !important;
-            }
-        }
+  }
 
-        ul.breadcrumb.style2 {
-            li {
-                a {
-                    color: ~"[[setting:alternativethemetextcolor3]]";
-                    &:hover {
-                        color: ~"[[setting:alternativethemehovercolor3]]";
-                    }
-                }
-            }
-        }
-    }
-    a,
-    a:visited {
-        color: ~"[[setting:alternativethemeurlcolor3]]";
-    }
-
-    a:hover {
-        color: ~"[[setting:alternativethemehovercolor3]]";
-    }
-
-    #page-header {
-        h1#title, #headerlogo {
-            color: ~"[[setting:alternativethemecolor3]]";
-        }
-    }
-
-    #headerlogo {
-        border-right-color: ~"[[setting:alternativethemecolor3]]";
-    }
-
-    .breadcrumb-button {
-        input[type="submit"] {
-            background: ~"[[setting:alternativethemecolor3]]";
-            &:hover {
-                background: ~"[[setting:alternativethemehovercolor3]]";
-            }
-        }
-    }
-
-    a.website {
-        &:hover, &:focus {
-            background-color: ~"[[setting:alternativethemecolor3]]";
-        }
-    }
-
-    .navbar {
-        background-color: ~"[[setting:alternativethemecolor3]]" !important;
-
-        .navbar-inner {
-            border-top-color: ~"[[setting:alternativethemehovercolor3]]" !important;
-            border-bottom: 1px solid ~"[[setting:alternativethemehovercolor3]]" !important;
-            background-color: ~"[[setting:alternativethemecolor3]]" !important;
-            .nav {
-                border-right-color: ~"[[setting:alternativethemehovercolor3]]";
-                > li > a {
-                    border-left-color: ~"[[setting:alternativethemehovercolor3]]";
-                    &:hover {
-                        color: ~"[[setting:alternativethemecolor3]]";
-                        background: ~"[[setting:themenavcolor]]";
-                    }
-                }
-                > li.dropdown ul.dropdown-menu > li > a {
-                    color: ~"[[setting:alternativethemetextcolor3]]";
-                    &:hover, &:focus, &.open {
-                        color: ~"[[setting:themenavcolor]]";
-                        background-color: ~"[[setting:alternativethemecolor3]]";
-                    }
-                }
-            }
-            .dropdown-menu > li > a:hover,
-            .dropdown-menu > li > a:focus,
-            .dropdown-submenu:hover > a,
-            .dropdown-submenu:focus > a {
-                color: ~"[[setting:themenavcolor]]" !important;
-                background-color: ~"[[setting:alternativethemecolor3]]";
-                background-image: -moz-linear-gradient(top, ~"[[setting:alternativethemehovercolor3]]", ~"[[setting:alternativethemecolor3]]");
-                background-image: -webkit-gradient(linear, 0 0, 0 100%, from(~"[[setting:alternativethemehovercolor3]]"), to(~"[[setting:alternativethemecolor3]]"));
-                background-image: -webkit-linear-gradient(top, ~"[[setting:alternativethemehovercolor3]]", ~"[[setting:alternativethemecolor3]]");
-                background-image: -o-linear-gradient(top, ~"[[setting:alternativethemehovercolor3]]", ~"[[setting:alternativethemecolor3]]");
-                background-image: linear-gradient(to bottom, ~"[[setting:alternativethemehovercolor3]]", ~"[[setting:alternativethemecolor3]]");
-            }
-        }
-
-        .nav-collapse {
-            border-color: ~"[[setting:alternativethemecolor3]]";
-        }
-
-        .nav .active > a,
-        .nav .active > a:hover,
-        .nav .active > a:focus,
-        .nav li.dropdown.open > .dropdown-toggle,
-        .nav li.dropdown.active > .dropdown-toggle,
-        .nav li.dropdown.open.active > .dropdown-toggle {
-            background: ~"[[setting:alternativethemecolor3]]" !important;
-        }
-
-        .nav > li > a {
-            border-left-color: ~"[[setting:alternativethemehovercolor3]]";
-        }
-        
-        .messagemenu .nav > li > .dropdown-menu {
-            li {
-                &:hover .msg-title, &:focus .msg-title, &:active .msg-title,
-                &:hover .msg-body, &:focus .msg-body, &:active .msg-body,
-                &:hover .msg-sender, &:focus .msg-sender, &:active .msg-sender {
-                    color: ~"[[setting:alternativethemecolor3]]";
-                }
-                &:hover .msg-time, &:focus .msg-time, &:active .msg-time {
-                    color: ~"[[setting:alternativethemecolor3]]";
-                }
-            }
-            .msg-sender {
-                color: ~"[[setting:alternativethemetextcolor3]]";
-            }
-            .msg-time {
-                color: ~"[[setting:alternativethemetextcolor3]]";
-            }
-        }
-    }
-
-    .course-content ul.topics li.section.main.clearfix.current {
-        box-shadow: 0 0 10px ~"[[setting:alternativethemecolor3]]";
-    }
-
-    .firstword {
-        color: ~"[[setting:alternativethemetextcolor3]]" !important;
-    }
-
-    .forumpost {
-        .picture img {
-            box-shadow: 0 0 3px ~"[[setting:alternativethemecolor3]]";
-        }
-
-        .subject {
-            color: ~"[[setting:alternativethemetextcolor3]]";
-        }
-    }
-
-    .button {
-        a, a:visited {
-            background: ~"[[setting:alternativethemecolor3]]";
-        }
-    }
-
-    a#button,
-    a#button:visited {
+  .breadcrumb-nav {
+    /** Some breadcrumb style **/
+    ul.breadcrumb.style1 {
+      li {
         background: ~"[[setting:alternativethemecolor3]]";
+      }
+      li:after {
+        border-left: 30px solid ~"[[setting:alternativethemecolor3]]";;
+      }
+      li:hover {
+        background: ~"[[setting:themenavcolor]]";
+      }
+      li:hover:after {
+        border-left-color: ~"[[setting:themenavcolor]]" !important;
+      }
     }
 
-    a#button:hover {
+    ul.breadcrumb.style2 {
+      li {
+        a {
+          color: ~"[[setting:alternativethemetextcolor3]]";
+          &:hover {
+            color: ~"[[setting:alternativethemehovercolor3]]";
+          }
+        }
+      }
+    }
+  }
+  a,
+  a:visited {
+    color: ~"[[setting:alternativethemeurlcolor3]]";
+  }
+
+  a:hover {
+    color: ~"[[setting:alternativethemehovercolor3]]";
+  }
+
+  #page-header {
+    h1#title, #headerlogo {
+      color: ~"[[setting:alternativethemecolor3]]";
+    }
+  }
+
+  #headerlogo {
+    border-right-color: ~"[[setting:alternativethemecolor3]]";
+  }
+
+  .breadcrumb-button {
+    input[type="submit"] {
+      background: ~"[[setting:alternativethemecolor3]]";
+      &:hover {
         background: ~"[[setting:alternativethemehovercolor3]]";
+      }
     }
+  }
 
-    #essentialCarousel.carousel {
-        .carousel-inner {
-             // Caption for text below images.
-            .carousel-caption {
-                background-color: ~"[[setting:alternativethemecolor3]]";
-                .opacity(75);
-                h4, p {
-                    color: #eee; // TODO in settings.
-                }
-            }
-        }
-        // Left/right controls for nav.
-        .carousel-control {
+  a.website {
+    &:hover, &:focus {
+      background-color: ~"[[setting:alternativethemecolor3]]";
+    }
+  }
+
+  .navbar {
+    background-color: ~"[[setting:alternativethemecolor3]]" !important;
+
+    .navbar-inner {
+      border-top-color: ~"[[setting:alternativethemehovercolor3]]" !important;
+      border-bottom: 1px solid ~"[[setting:alternativethemehovercolor3]]" !important;
+      background-color: ~"[[setting:alternativethemecolor3]]" !important;
+      .nav {
+        border-right-color: ~"[[setting:alternativethemehovercolor3]]";
+        > li > a {
+          border-left-color: ~"[[setting:alternativethemehovercolor3]]";
+          &:hover {
             color: ~"[[setting:alternativethemecolor3]]";
-
-            // Hover/focus state.
-            &:hover,
-            &:focus {
-                color: ~"[[setting:alternativethemehovercolor3]]";
-            }
+            background: ~"[[setting:themenavcolor]]";
+          }
         }
-
-        // Carousel indicator pips.
-        .carousel-indicators {
-            li {
-                background: ~"[[setting:alternativethemecolor3]]";
-                .opacity(75);
-            }
-            .active {
-                background-color: ~"[[setting:alternativethemehovercolor3]]";
-            }
-        }
-    }
-
-    .block {
-        a {
-            color: ~"[[setting:alternativethemeurlcolor3]]";
-        }
-        a:hover {
-            color: ~"[[setting:alternativethemehovercolor3]]";
-        }
-        .header .title h2 {
-            color: ~"[[setting:alternativethemetextcolor3]]";
-            &:before {
-                color: ~"[[setting:alternativethemecolor3]]";
-            }
-        }
-        .icon {
-            color: @icon-colour;
-        }
-    }
-
-    .block_rss_client {
-        .footer a {
-            background: ~"[[setting:alternativethemeurlcolor3]]";
-            &:hover {
-                background: ~"[[setting:alternativethemehovercolor3]]";
-            }
-        }
-    }
-
-    .block_login {
-        .footer a {
-            background: ~"[[setting:alternativethemecolor3]]";
-            &:hover {
-                background: ~"[[setting:alternativethemehovercolor3]]";
-            }
-        }
-    }
-
-    #page-site-index h2.headingblock:before {
-        color: ~"[[setting:alternativethemetextcolor3]]";
-    }
-
-    .service i {
-        color: ~"[[setting:alternativethemecolor3]]";
-    }
-
-    #page-footer {
-        border-top-color: ~"[[setting:alternativethemecolor3]]";
-        .footnote {
-            a, a:visited {
-                color: ~"[[setting:alternativethemeurlcolor3]]" !important;
-            }
-        }
-        .block_login input[type="submit"] {
-            background: ~"[[setting:alternativethemecolor3]]";
-            &:hover {
-                background: ~"[[setting:alternativethemehovercolor3]]";
-            }
-        }
-        .block_rss_client .content a {
-            color: ~"[[setting:alternativethemeurlcolor3]]";
-        }
-    }
-
-    #page-footer .block_html ul li:before,
-    #greyboxright ul li:before {
-        background: ~"[[setting:alternativethemecolor3]]";
-    }
-
-    .tree_item.branch:before {
-        color: @icon-colour;
-    }
-
-    .afeature:hover {
-        border-color: ~"[[setting:alternativethemecolor3]]";
-    }
-
-    .afmatter i {
-        color: ~"[[setting:alternativethemecolor3]]";
-    }
-
-    .myprofileitem.picture:hover {
-        border-color: ~"[[setting:alternativethemecolor3]]";
-    }
-
-    .socials {
-        p {
-            color: ~"[[setting:alternativethemetextcolor3]]";
-        }
-        img:hover {
-            box-shadow: 0 0 10px 0 ~"[[setting:alternativethemecolor3]]";
-        }
-    }
-
-    .nav-tabs > li > a {
-        background-color: ~"[[setting:alternativethemecolor3]]";
-        &:hover {
-            background-color: ~"[[setting:alternativethemehovercolor3]]";
-        }
-    }
-
-    .performanceinfo {
-        var {
-            background: ~"[[setting:alternativethemecolor3]]";
-        }
-
-        h2:before {
-            color: ~"[[setting:alternativethemecolor3]]";
-        }
-    }
-
-    #page-mod-quiz-edit .questionbankwindow.block div.header {
-        background: ~"[[setting:alternativethemecolor3]]";
-    }
-
-    table#user-grades {
-        th.item, th.categoryitem, th.courseitem {
-            border-bottom-color: ~"[[setting:alternativethemecolor3]]";
-        }
-    }
-
-    table#user-grades td.controls,
-    .path-grade-report-grader table tr.avg .cell,
-    .path-grade-report-grader table tr.range .cell {
-        background-color: ~"[[setting:alternativethemecolor3]]";
-    }
-
-    .path-grade-report-grader table#fixed_column th {
-        border-right-color: ~"[[setting:alternativethemecolor3]]";
-    }
-
-    .back-to-top {
-        color: ~"[[setting:alternativethemecolor3]]";
-    }
-
-    .course_category_tree .category[data-categoryid] {
-        &:hover {
-            background: ~"[[setting:alternativethemecolor3]]";
-        }
-        > .info > .categoryname a:before {
-            color: ~"[[setting:alternativethemecolor3]]";
-        }
-    }
-
-    #dock {
-        background: ~"[[setting:alternativethemecolor3]]";
-
-        .dockedtitle h2{
-            color: ~"[[setting:alternativethemetextcolor3]]";
-        }
-
-        .dockedtitle {
+        > li.dropdown ul.dropdown-menu > li > a {
+          color: ~"[[setting:alternativethemetextcolor3]]";
+          &:hover, &:focus, &.open {
+            color: ~"[[setting:themenavcolor]]";
             background-color: ~"[[setting:alternativethemecolor3]]";
+          }
         }
-
-        .dockedtitle:hover,
-        .dockedtitle:focus,
-        .dockedtitle:active,
-        .dockedtitle.active,
-        .dockedtitle.disabled,
-        .dockedtitle[disabled] {
-            background-color: ~"[[setting:alternativethemehovercolor3]]";
-        }
+      }
+      .dropdown-menu > li > a:hover,
+      .dropdown-menu > li > a:focus,
+      .dropdown-submenu:hover > a,
+      .dropdown-submenu:focus > a {
+        color: ~"[[setting:themenavcolor]]" !important;
+        background-color: ~"[[setting:alternativethemecolor3]]";
+        background-image: -moz-linear-gradient(top, ~"[[setting:alternativethemehovercolor3]]", ~"[[setting:alternativethemecolor3]]");
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(~"[[setting:alternativethemehovercolor3]]"), to(~"[[setting:alternativethemecolor3]]"));
+        background-image: -webkit-linear-gradient(top, ~"[[setting:alternativethemehovercolor3]]", ~"[[setting:alternativethemecolor3]]");
+        background-image: -o-linear-gradient(top, ~"[[setting:alternativethemehovercolor3]]", ~"[[setting:alternativethemecolor3]]");
+        background-image: linear-gradient(to bottom, ~"[[setting:alternativethemehovercolor3]]", ~"[[setting:alternativethemecolor3]]");
+      }
     }
 
-    #dockeditempanel .dockeditempanel_hd h2{
-        color: ~"[[setting:alternativethemecolor3]]";
+    .nav-collapse {
+      border-color: ~"[[setting:alternativethemecolor3]]";
     }
 
+    .nav .active > a,
+    .nav .active > a:hover,
+    .nav .active > a:focus,
+    .nav li.dropdown.open > .dropdown-toggle,
+    .nav li.dropdown.active > .dropdown-toggle,
+    .nav li.dropdown.open.active > .dropdown-toggle {
+      background: ~"[[setting:alternativethemecolor3]]" !important;
+    }
 
-    .commands {
-        color: ~"[[setting:alternativethemecolor3]]";
-        a:hover {
-            color: ~"[[setting:alternativethemehovercolor3]]";
+    .nav > li > a {
+      border-left-color: ~"[[setting:alternativethemehovercolor3]]";
+    }
+
+    .messagemenu .nav > li > .dropdown-menu {
+      li {
+        &:hover .msg-title, &:focus .msg-title, &:active .msg-title,
+        &:hover .msg-body, &:focus .msg-body, &:active .msg-body,
+        &:hover .msg-sender, &:focus .msg-sender, &:active .msg-sender {
+          color: ~"[[setting:alternativethemecolor3]]";
         }
-    }
-
-    .drag-handle::before {
-        color: ~"[[setting:alternativethemecolor3]]";
-        a {
-            color: ~"[[setting:alternativethemecolor3]]";
+        &:hover .msg-time, &:focus .msg-time, &:active .msg-time {
+          color: ~"[[setting:alternativethemecolor3]]";
         }
-    }
-
-    #section_footer {
+      }
+      .msg-sender {
         color: ~"[[setting:alternativethemetextcolor3]]";
+      }
+      .msg-time {
+        color: ~"[[setting:alternativethemetextcolor3]]";
+      }
+    }
+  }
+
+  .course-content ul.topics li.section.main.clearfix.current {
+    box-shadow: 0 0 10px ~"[[setting:alternativethemecolor3]]";
+  }
+
+  .firstword {
+    color: ~"[[setting:alternativethemetextcolor3]]" !important;
+  }
+
+  .forumpost {
+    .picture img {
+      box-shadow: 0 0 3px ~"[[setting:alternativethemecolor3]]";
     }
 
-    .nav_icon {
-        color: ~"[[setting:alternativethemecolor3]]";
-        &:hover {
-            color: ~"[[setting:alternativethemehovercolor3]]";
+    .subject {
+      color: ~"[[setting:alternativethemetextcolor3]]";
+    }
+  }
+
+  .button {
+    a, a:visited {
+      background: ~"[[setting:alternativethemecolor3]]";
+    }
+  }
+
+  a.marketing-button,
+  a.marketing-button:visited {
+    background: ~"[[setting:alternativethemecolor3]]";
+  }
+
+  a.marketing-button:hover {
+    background: ~"[[setting:alternativethemehovercolor3]]";
+  }
+
+  #essentialCarousel.carousel {
+    .carousel-inner {
+      // Caption for text below images.
+      .carousel-caption {
+        background-color: ~"[[setting:alternativethemecolor3]]";
+        .opacity(75);
+        h4, p {
+          color: #eee; // TODO in settings.
         }
+      }
+    }
+    // Left/right controls for nav.
+    .carousel-control {
+      color: ~"[[setting:alternativethemecolor3]]";
+
+      // Hover/focus state.
+      &:hover,
+      &:focus {
+        color: ~"[[setting:alternativethemehovercolor3]]";
+      }
     }
 
-    .actions a {
-        color:~"[[setting:alternativethemeurlcolor3]]";
+    // Carousel indicator pips.
+    .carousel-indicators {
+      li {
+        background: ~"[[setting:alternativethemecolor3]]";
+        .opacity(75);
+      }
+      .active {
+        background-color: ~"[[setting:alternativethemehovercolor3]]";
+      }
+    }
+  }
+
+  .block {
+    a {
+      color: ~"[[setting:alternativethemeurlcolor3]]";
+    }
+    a:hover {
+      color: ~"[[setting:alternativethemehovercolor3]]";
+    }
+    .header .title h2 {
+      color: ~"[[setting:alternativethemetextcolor3]]";
+      &:before {
+        color: ~"[[setting:alternativethemecolor3]]";
+      }
+    }
+    .icon {
+      color: @icon-colour;
+    }
+  }
+
+  .block_rss_client {
+    .footer a {
+      background: ~"[[setting:alternativethemeurlcolor3]]";
+      &:hover {
+        background: ~"[[setting:alternativethemehovercolor3]]";
+      }
+    }
+  }
+
+  .block_login {
+    .footer a {
+      background: ~"[[setting:alternativethemecolor3]]";
+      &:hover {
+        background: ~"[[setting:alternativethemehovercolor3]]";
+      }
+    }
+  }
+
+  #page-site-index h2.headingblock:before {
+    color: ~"[[setting:alternativethemetextcolor3]]";
+  }
+
+  .service i {
+    color: ~"[[setting:alternativethemecolor3]]";
+  }
+
+  #page-footer {
+    border-top-color: ~"[[setting:alternativethemecolor3]]";
+    .footnote {
+      a, a:visited {
+        color: ~"[[setting:alternativethemeurlcolor3]]" !important;
+      }
+    }
+    .block_login input[type="submit"] {
+      background: ~"[[setting:alternativethemecolor3]]";
+      &:hover {
+        background: ~"[[setting:alternativethemehovercolor3]]";
+      }
+    }
+    .block_rss_client .content a {
+      color: ~"[[setting:alternativethemeurlcolor3]]";
+    }
+  }
+
+  #page-footer .block_html ul li:before,
+  #greyboxright ul li:before {
+    background: ~"[[setting:alternativethemecolor3]]";
+  }
+
+  .tree_item.branch:before {
+    color: @icon-colour;
+  }
+
+  .afeature:hover {
+    border-color: ~"[[setting:alternativethemecolor3]]";
+  }
+
+  .afmatter i {
+    color: ~"[[setting:alternativethemecolor3]]";
+  }
+
+  .myprofileitem.picture:hover {
+    border-color: ~"[[setting:alternativethemecolor3]]";
+  }
+
+  .socials {
+    p {
+      color: ~"[[setting:alternativethemetextcolor3]]";
+    }
+    img:hover {
+      box-shadow: 0 0 10px 0 ~"[[setting:alternativethemecolor3]]";
+    }
+  }
+
+  .nav-tabs > li > a {
+    background-color: ~"[[setting:alternativethemecolor3]]";
+    &:hover {
+      background-color: ~"[[setting:alternativethemehovercolor3]]";
+    }
+  }
+
+  .performanceinfo {
+    var {
+      background: ~"[[setting:alternativethemecolor3]]";
     }
 
-    .moodle-core-dragdrop-draghandle:before, .moodle-core-dragdrop-draghandle a {
-        color:~"[[setting:alternativethemeurlcolor3]]";
+    h2:before {
+      color: ~"[[setting:alternativethemecolor3]]";
     }
+  }
+
+  #page-mod-quiz-edit .questionbankwindow.block div.header {
+    background: ~"[[setting:alternativethemecolor3]]";
+  }
+
+  table#user-grades {
+    th.item, th.categoryitem, th.courseitem {
+      border-bottom-color: ~"[[setting:alternativethemecolor3]]";
+    }
+  }
+
+  table#user-grades td.controls,
+  .path-grade-report-grader table tr.avg .cell,
+  .path-grade-report-grader table tr.range .cell {
+    background-color: ~"[[setting:alternativethemecolor3]]";
+  }
+
+  .path-grade-report-grader table#fixed_column th {
+    border-right-color: ~"[[setting:alternativethemecolor3]]";
+  }
+
+  .back-to-top {
+    color: ~"[[setting:alternativethemecolor3]]";
+  }
+
+  .course_category_tree .category[data-categoryid] {
+    &:hover {
+      background: ~"[[setting:alternativethemecolor3]]";
+    }
+    > .info > .categoryname a:before {
+      color: ~"[[setting:alternativethemecolor3]]";
+    }
+  }
+
+  #dock {
+    background: ~"[[setting:alternativethemecolor3]]";
+
+    .dockedtitle h2 {
+      color: ~"[[setting:alternativethemetextcolor3]]";
+    }
+
+    .dockedtitle {
+      background-color: ~"[[setting:alternativethemecolor3]]";
+    }
+
+    .dockedtitle:hover,
+    .dockedtitle:focus,
+    .dockedtitle:active,
+    .dockedtitle.active,
+    .dockedtitle.disabled,
+    .dockedtitle[disabled] {
+      background-color: ~"[[setting:alternativethemehovercolor3]]";
+    }
+  }
+
+  #dockeditempanel .dockeditempanel_hd h2 {
+    color: ~"[[setting:alternativethemecolor3]]";
+  }
+
+  .commands {
+    color: ~"[[setting:alternativethemecolor3]]";
+    a:hover {
+      color: ~"[[setting:alternativethemehovercolor3]]";
+    }
+  }
+
+  .drag-handle::before {
+    color: ~"[[setting:alternativethemecolor3]]";
+    a {
+      color: ~"[[setting:alternativethemecolor3]]";
+    }
+  }
+
+  #section_footer {
+    color: ~"[[setting:alternativethemetextcolor3]]";
+  }
+
+  .nav_icon {
+    color: ~"[[setting:alternativethemecolor3]]";
+    &:hover {
+      color: ~"[[setting:alternativethemehovercolor3]]";
+    }
+  }
+
+  .actions a {
+    color: ~"[[setting:alternativethemeurlcolor3]]";
+  }
+
+  .moodle-core-dragdrop-draghandle:before, .moodle-core-dragdrop-draghandle a {
+    color: ~"[[setting:alternativethemeurlcolor3]]";
+  }
 }
 
 @media (max-width: 979px) {
-    .essential-colours-alternative3 { 
-        .nav-collapse {
-            background-color: ~"[[setting:alternativethemecolor3]]";
-            .dropdown-menu > li > a,
-            .dropdown-menu > li > a:visited {
-                color: ~"[[setting:themenavcolor]]";
-                i {
-                    color: ~"[[setting:alternativethemecolor3]]";
-                    background-color: ~"[[setting:themenavcolor]]";
-                    border: 1px solid ~"[[setting:themenavcolor]]";
-                    border-radius: 3px;
-                    margin-top: 2px;
-                    vertical-align: middle;
-                }
-            }
+  .essential-colours-alternative3 {
+    .nav-collapse {
+      background-color: ~"[[setting:alternativethemecolor3]]";
+      .dropdown-menu > li > a,
+      .dropdown-menu > li > a:visited {
+        color: ~"[[setting:themenavcolor]]";
+        i {
+          color: ~"[[setting:alternativethemecolor3]]";
+          background-color: ~"[[setting:themenavcolor]]";
+          border: 1px solid ~"[[setting:themenavcolor]]";
+          border-radius: 3px;
+          margin-top: 2px;
+          vertical-align: middle;
+        }
+      }
 
-            /* @group Custom Menu */
-            .dropdown-menu > li > a:hover,
-            .dropdown-menu > li > a:focus,
-            .dropdown-submenu:hover > a,
-            .dropdown-submenu:focus > a {
-                color: ~"[[setting:alternativethemecolor3]]";
-                background-color: ~"[[setting:themenavcolor]]";
-            }
-        }
-        .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a {
-            color: ~"[[setting:themenavcolor]]";
-            &:hover, &:focus {
-                background-color: ~"[[setting:themenavcolor]]";
-                color: ~"[[setting:alternativethemecolor3]]";
-            }
-        }
-        .navbar .navbar-inner .nav-collapse .nav > li.dropdown a {
-            &:hover, &:focus, &.open {
-                background-color: ~"[[setting:alternativethemecolor3]]";
-                color: ~"[[setting:themenavcolor]]";
-            }
-        }
-        .navbar .navbar-inner {
-            .dropdown-menu > li > a:hover,
-            .dropdown-menu > li > a:focus,
-            .dropdown-submenu:hover > a,
-            .dropdown-submenu:focus > a {
-                color: ~"[[setting:alternativethemecolor3]]" !important;
-                background-color: ~"[[setting:themenavcolor]]";
-                background-image: none;
-            }
-        }
+      /* @group Custom Menu */
+      .dropdown-menu > li > a:hover,
+      .dropdown-menu > li > a:focus,
+      .dropdown-submenu:hover > a,
+      .dropdown-submenu:focus > a {
+        color: ~"[[setting:alternativethemecolor3]]";
+        background-color: ~"[[setting:themenavcolor]]";
+      }
     }
+    .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a {
+      color: ~"[[setting:themenavcolor]]";
+      &:hover, &:focus {
+        background-color: ~"[[setting:themenavcolor]]";
+        color: ~"[[setting:alternativethemecolor3]]";
+      }
+    }
+    .navbar .navbar-inner .nav-collapse .nav > li.dropdown a {
+      &:hover, &:focus, &.open {
+        background-color: ~"[[setting:alternativethemecolor3]]";
+        color: ~"[[setting:themenavcolor]]";
+      }
+    }
+    .navbar .navbar-inner {
+      .dropdown-menu > li > a:hover,
+      .dropdown-menu > li > a:focus,
+      .dropdown-submenu:hover > a,
+      .dropdown-submenu:focus > a {
+        color: ~"[[setting:alternativethemecolor3]]" !important;
+        background-color: ~"[[setting:themenavcolor]]";
+        background-image: none;
+      }
+    }
+  }
 }
 
 /* @end */

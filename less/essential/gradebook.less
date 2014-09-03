@@ -1,7 +1,7 @@
 /* @group Gradebook */
 
 .path-grade-report-grader {
-  #user-grades {
+  .generaltable {
     th.user {
       padding-right: 45px;
       img.userpicture {
@@ -16,21 +16,25 @@
       }
     }
   }
-  h1#title {
+  h1 {
     clear: none;
   }
 
   .gradeparent {
-    .left_scroller {
-      padding-top: 26px;
-    }
     div:nth-of-type(2):not(.topscroll) {
       &.right_scroller {
         padding-top: 22px;
       }
     }
+    .left_scroller {
+      padding-top: 25px;
+    }
+    .right_scroller {
+      .topscroll {
+        min-height: 22px;
+      }
+    }
   }
 }
-
 
 /* @end */

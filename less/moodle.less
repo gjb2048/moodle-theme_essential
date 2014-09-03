@@ -1,6 +1,5 @@
 // Import the bootstrap variables.
 @import "bootstrap/variables.less";
-
 // Old Moodle stuff from base theme.
 // Massive, needs broken up.
 @import "moodle/core";
@@ -8,21 +7,17 @@
 @import "moodle/calendar";
 @import "moodle/course";
 @import "moodle/filemanager";
-@import "moodle/grade";
 @import "moodle/message";
 @import "moodle/question";
 @import "moodle/user";
-
-
 // Upstream Bootstrap.
 @import "bootstrap/bootstrap";
-
 // Override Bootstrap defaults.
 @import "moodle/bootstrapoverride";
 
 // Set image location.
-@iconSpritePath:          ~"[[pix:theme|glyphicons-halflings]]";
-@iconWhiteSpritePath:     ~"[[pix:theme|glyphicons-halflings-white]]";
+@iconSpritePath: ~"[[pix:theme|glyphicons-halflings]]";
+@iconWhiteSpritePath: ~"[[pix:theme|glyphicons-halflings-white]]";
 
 // Increase form label width.
 @horizontalComponentOffset: 200px;
@@ -34,8 +29,8 @@
 // Bootstrap defines - @linkColor: #08c;
 // We only need to darken this ever so slightly - so 7%;
 // Calculated with => @linkColor: darken(#08c, 7%);
-@linkColor:             #0070a8;
-@linkColorHover:        darken(@linkColor, 15%);
+@linkColor: #0070a8;
+@linkColorHover: darken(@linkColor, 15%);
 
 // Roll back nameclashes.
 @import "moodle/undo";
@@ -44,11 +39,13 @@
 @import "moodle/blocks";
 @import "moodle/forms";
 @import "moodle/modules";
+@import "moodle/chat";
 @import "moodle/reports";
 @import "moodle/backup-restore";
 @import "moodle/tables";
 @import "moodle/buttons";
-
+@import "moodle/grade";
+@import "moodle/dock";
 
 // The following responsive imports are copied in
 // from "bootstrap/responsive".

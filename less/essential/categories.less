@@ -7,123 +7,121 @@
  */
 
 /* @group Category Icons */
- 
 
 .categoryicons {
-    .course_category_tree .collapsible-actions {
+  .course_category_tree .collapsible-actions {
+    display: none;
+  }
+
+  /* Set the position on the frontpage */
+
+  .frontpage-category-names .collapsible-actions,
+  #frontpage-category-combo .collapsible-actions {
+    display: none;
+  }
+
+  /* adjust line height for tiles that include course count */
+  .frontpage-category-names.course_category_tree .category > .info > .categoryname,
+  .frontpage-category-names.course_category_tree .category.with_children > .info > .categoryname {
+    line-height: 15px;
+  }
+
+  .category-browse {
+    overflow: auto;
+    width: 100%;
+  }
+
+  /* Hide icon 'collapsed' because it makes no sense here */
+  .course_category_tree {
+    .category.with_children.collapsed > .info > .categoryname,
+    .category.with_children > .info > .categoryname,
+    .category > .info > .categoryname {
+      background-image: none;
+      padding: 0;
+      margin: 0;
+    }
+    .category.dimmed_category {
+      border-color: #AAAAAA;
+    }
+    .category {
+      float: left;
+      margin: 0 5px 10px 5px;
+      .numberofcourse {
+        background: #666;
+        color: #fff;
+        padding: 7px;
+        border-radius: 50%;
+        position: relative;
+        top: 8px;
+        left: 80%;
+        font-weight: 600;
+        font-size: 1em;
+        -moz-box-shadow: 1px 1px 5px 0px #ccc;
+        -webkit-box-shadow: 1px 1px 5px 0px #ccc;
+        box-shadow: 1px 1px 5px 0px #ccc;
+        border: 2px solid #fff;
+      }
+      .content {
         display: none;
-     }
-
-    /* Set the position on the frontpage */ 
-     
-    .frontpage-category-names .collapsible-actions,
-    #frontpage-category-combo .collapsible-actions {
-        display: none;
+      }
+      .info {
+        .name {
+          padding: 0px;
+          text-align: center;
+        }
+      }
     }
-
-    /* adjust line height for tiles that include course count */
-    .frontpage-category-names.course_category_tree .category > .info > .categoryname,
-    .frontpage-category-names.course_category_tree .category.with_children > .info > .categoryname {
-        line-height: 15px;
+    .category > .info,
+    .category > .info > .categoryname {
+      background: transparent;
+      border: 0px none;
+      text-align: center;
+      box-shadow: none;
+      margin: 0;
+      a {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 176px;
+        padding-top: 6px;
+      }
     }
-
-    .category-browse {
-        overflow: auto;
-        width: 100%;
+    .fa {
+      font-size: 140px;
+      width: 100%;
     }
-     
-    /* Hide icon 'collapsed' because it makes no sense here */ 
-    .course_category_tree {
-        .category.with_children.collapsed>.info>.categoryname,
-        .category.with_children>.info>.categoryname,
-        .category>.info>.categoryname {
-            background-image: none;
-            padding: 0;
-            margin: 0;
-        }
-        .category.dimmed_category { 
-            border-color: #AAAAAA;
-        } 
-        .category {
-            float: left;
-            margin: 0 5px 10px 5px;
-            .numberofcourse {
-                background: #666;
-                color: #fff;
-                padding: 5px 7px;
-                border-radius: 50%;
-                position: relative;
-                bottom: 90%;
-                left: 45%;
-                font-weight: normal;
-                font-size: 1em;
-                -moz-box-shadow: 1px 1px 5px 0px #ccc;
-                -webkit-box-shadow: 1px 1px 5px 0px #ccc;
-                box-shadow: 1px 1px 5px 0px #ccc;
-                border: 2px solid #fff;
-            }
-            .content {
-                display: none;
-            }
-            .info {
-                .name {
-                    padding: 0px; 
-                    text-align: center; 
-                }
-            }
-        }
-        .category>.info,
-        .category>.info>.categoryname {
-            background: transparent;
-            border: 0px none;
-            text-align: center;
-            box-shadow: none;
-            margin: 0;
-            a {
-                display: block;
-                overflow:hidden;
-                text-overflow:ellipsis;
-                width: 176px;
-                padding-top: 6px;
-            }
-        }
-        .fa {
-            font-size: 140px;
-            width: 100%;
-        }
-        .category[data-categoryid] {
-            border: 1px solid #e7e7e7;
-            border-radius: 5px;
-            border-bottom-width: 3px;
-        }
-        .category[data-categoryid]:hover {
-            background: ~"[[setting:themecolor]]";
-            -webkit-transition: all 0.3s ease;
-            -moz-transition:all 0.3s ease;  
-            -o-transition:all 0.3s ease;  
-            transition:all 0.3s ease;
-        }
-        .category[data-categoryid]>.info>.categoryname {
-            a {
-                line-height: 30px;
-            }
-            a:hover {
-                text-decoration: none;
-                color: ~"[[setting:themenavcolor]]";
-            }
-        }
+    .category[data-categoryid] {
+      border: 1px solid #e7e7e7;
+      border-radius: 5px;
+      border-bottom-width: 3px;
     }
-
-
-    /* Hide buttons to expand and collapse */ 
-    .jsenabled .course_category_tree .controls {
-        display: none;
+    .category[data-categoryid]:hover {
+      background: ~"[[setting:themecolor]]";
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
     }
-
-    /* clear course list with subcategory icons above */
-    .subcategories + .category-browse {
-        clear: both;
+    .category[data-categoryid] > .info > .categoryname {
+      a {
+        line-height: 30px;
+      }
+      a:hover {
+        text-decoration: none;
+        color: ~"[[setting:themenavcolor]]";
+      }
     }
+  }
+
+  /* Hide buttons to expand and collapse */
+  .jsenabled .course_category_tree .controls {
+    display: none;
+  }
+
+  /* clear course list with subcategory icons above */
+  .subcategories + .category-browse {
+    clear: both;
+  }
 }
 
 /* @end */

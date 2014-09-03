@@ -23,8 +23,8 @@
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
- 
-require_once(dirname(__FILE__).'/includes/header.php'); ?>
+
+require_once(dirname(__FILE__) . '/includes/header.php'); ?>
 
 <div id="page" class="container-fluid">
     <section role="main-content">
@@ -42,7 +42,7 @@ require_once(dirname(__FILE__).'/includes/header.php'); ?>
     </section>
 </div>
 
-<?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
+<?php require_once(dirname(__FILE__) . '/includes/footer.php'); ?>
 
 </body>
 </html>
