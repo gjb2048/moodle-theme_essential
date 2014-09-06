@@ -89,6 +89,7 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.6.11
 =============
 - FIX: Issue #248: Navbar overlay on activity selection popup.
+- FIX: Issue #254: Gradebook alignment.
 - FIX: Issue #304: Region not defined in M2.6.
 - FIX: Issue #326: Submit panel overlaps the message input area.
 - FIX: Issue #329: Social icons in mobile view showing odd behaviour.
