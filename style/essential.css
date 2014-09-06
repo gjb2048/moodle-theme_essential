@@ -1788,7 +1788,10 @@ ins {
   padding-top: 0px;
 }
 .path-grade-report-grader table {
-  background: transparent;
+  background-color: transparent;
+}
+.path-grade-report-grader table#fixed_column {
+  background-color: transparent;
 }
 .side-pre {
   border: 1px solid #333;
@@ -1851,6 +1854,9 @@ img.profilepicture {
 .block .moodle-core-dragdrop-draghandle img {
   display: none;
 }
+.block li.item_with_icon > p img {
+  position: initial !important;
+}
 .editing .block-region.yui3-dd-drop-active-valid {
   border: 1px dashed #e3e3e3;
   -webkit-border-radius: 6px;
@@ -1864,20 +1870,23 @@ img.profilepicture {
 #middle-blocks {
   margin: 15px 0px;
 }
-.tree_item {
+.tree_item.branch {
   background-image: none !important;
 }
-.tree_item.branch:before {
+.tree_item.branch.branch:before {
   font-family: FontAwesome;
   content: "\f07c ";
   color: [[setting:themeiconcolor]];
   margin-right: 5px;
 }
-.tree_item.emptybranch:before {
+.tree_item.branch.emptybranch:before {
   font-family: FontAwesome;
   content: "\f114 ";
   color: #d3d3d3;
   margin-right: 5px;
+}
+.tree_item.branch img.smallicon.navicon {
+  display: none;
 }
 .block_navigation.block li.type_user > .tree_item.branch:before {
   content: "\f007 ";
@@ -2583,12 +2592,12 @@ table.calendarmonth.calendartable {
 .categoryicons .course_category_tree .category .numberofcourse {
   background: #666;
   color: #fff;
-  padding: 5px 7px;
+  padding: 7px;
   border-radius: 50%;
   position: relative;
-  bottom: 90%;
-  left: 45%;
-  font-weight: normal;
+  top: 8px;
+  left: 80%;
+  font-weight: 600;
   font-size: 1em;
   -moz-box-shadow: 1px 1px 5px 0px #ccc;
   -webkit-box-shadow: 1px 1px 5px 0px #ccc;
@@ -2650,7 +2659,7 @@ table.calendarmonth.calendartable {
 /* @end */
 /* @group Chat */
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-input-area table.generaltable td.cell {
-  padding: 4px;
+  padding: 0px;
 }
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-userlist #users-list img {
   border-radius: 250px;
@@ -3041,6 +3050,10 @@ i > img {
 #page-calendar-view .commands img {
   display: inline;
 }
+.commands i {
+  margin-left: 3px;
+  margin-right: 3px;
+}
 .menu a.menu-action > i,
 p.tree_item.leaf a > i,
 .course-item-actions a > i,
@@ -3353,6 +3366,34 @@ input[type="color"],
 .path-admin-setting #page form .form-buttons,
 #page-admin-registration-register #page form .form-buttons,
 .path-backup #page form .form-buttons,
+#page-course-edit #page form table#form td.submit,
+.path-admin-setting #page form table#form td.submit,
+#page-admin-registration-register #page form table#form td.submit,
+.path-backup #page form table#form td.submit,
+#page-course-edit #page form .form-buttons,
+.path-admin-setting #page form .form-buttons,
+#page-admin-registration-register #page form .form-buttons,
+.path-backup #page form .form-buttons,
+#page-course-edit #page form .path-admin .buttons,
+.path-admin-setting #page form .path-admin .buttons,
+#page-admin-registration-register #page form .path-admin .buttons,
+.path-backup #page form .path-admin .buttons,
+#page-course-edit #page form #fitem_id_submitbutton,
+.path-admin-setting #page form #fitem_id_submitbutton,
+#page-admin-registration-register #page form #fitem_id_submitbutton,
+.path-backup #page form #fitem_id_submitbutton,
+#page-course-edit #page form .fp-content-center form + div,
+.path-admin-setting #page form .fp-content-center form + div,
+#page-admin-registration-register #page form .fp-content-center form + div,
+.path-backup #page form .fp-content-center form + div,
+#page-course-edit #page form div.backup-section + form,
+.path-admin-setting #page form div.backup-section + form,
+#page-admin-registration-register #page form div.backup-section + form,
+.path-backup #page form div.backup-section + form,
+#page-course-edit #page form #fgroup_id_buttonar,
+.path-admin-setting #page form #fgroup_id_buttonar,
+#page-admin-registration-register #page form #fgroup_id_buttonar,
+.path-backup #page form #fgroup_id_buttonar,
 #page-course-edit #page form fieldset:last-of-type.hidden,
 .path-admin-setting #page form fieldset:last-of-type.hidden,
 #page-admin-registration-register #page form fieldset:last-of-type.hidden,
@@ -3360,6 +3401,7 @@ input[type="color"],
   width: 600px;
   position: fixed;
   bottom: 30px;
+  padding-top: 10px;
   margin: 0px;
   border-radius: 8px;
   background-color: [[setting:themecolor]];
@@ -3368,6 +3410,34 @@ input[type="color"],
 .path-admin-setting #page form .form-buttons #fgroup_id_buttonar,
 #page-admin-registration-register #page form .form-buttons #fgroup_id_buttonar,
 .path-backup #page form .form-buttons #fgroup_id_buttonar,
+#page-course-edit #page form table#form td.submit #fgroup_id_buttonar,
+.path-admin-setting #page form table#form td.submit #fgroup_id_buttonar,
+#page-admin-registration-register #page form table#form td.submit #fgroup_id_buttonar,
+.path-backup #page form table#form td.submit #fgroup_id_buttonar,
+#page-course-edit #page form .form-buttons #fgroup_id_buttonar,
+.path-admin-setting #page form .form-buttons #fgroup_id_buttonar,
+#page-admin-registration-register #page form .form-buttons #fgroup_id_buttonar,
+.path-backup #page form .form-buttons #fgroup_id_buttonar,
+#page-course-edit #page form .path-admin .buttons #fgroup_id_buttonar,
+.path-admin-setting #page form .path-admin .buttons #fgroup_id_buttonar,
+#page-admin-registration-register #page form .path-admin .buttons #fgroup_id_buttonar,
+.path-backup #page form .path-admin .buttons #fgroup_id_buttonar,
+#page-course-edit #page form #fitem_id_submitbutton #fgroup_id_buttonar,
+.path-admin-setting #page form #fitem_id_submitbutton #fgroup_id_buttonar,
+#page-admin-registration-register #page form #fitem_id_submitbutton #fgroup_id_buttonar,
+.path-backup #page form #fitem_id_submitbutton #fgroup_id_buttonar,
+#page-course-edit #page form .fp-content-center form + div #fgroup_id_buttonar,
+.path-admin-setting #page form .fp-content-center form + div #fgroup_id_buttonar,
+#page-admin-registration-register #page form .fp-content-center form + div #fgroup_id_buttonar,
+.path-backup #page form .fp-content-center form + div #fgroup_id_buttonar,
+#page-course-edit #page form div.backup-section + form #fgroup_id_buttonar,
+.path-admin-setting #page form div.backup-section + form #fgroup_id_buttonar,
+#page-admin-registration-register #page form div.backup-section + form #fgroup_id_buttonar,
+.path-backup #page form div.backup-section + form #fgroup_id_buttonar,
+#page-course-edit #page form #fgroup_id_buttonar #fgroup_id_buttonar,
+.path-admin-setting #page form #fgroup_id_buttonar #fgroup_id_buttonar,
+#page-admin-registration-register #page form #fgroup_id_buttonar #fgroup_id_buttonar,
+.path-backup #page form #fgroup_id_buttonar #fgroup_id_buttonar,
 #page-course-edit #page form fieldset:last-of-type.hidden #fgroup_id_buttonar,
 .path-admin-setting #page form fieldset:last-of-type.hidden #fgroup_id_buttonar,
 #page-admin-registration-register #page form fieldset:last-of-type.hidden #fgroup_id_buttonar,
@@ -3380,6 +3450,34 @@ input[type="color"],
 .path-admin-setting #page form .form-buttons #id_previous,
 #page-admin-registration-register #page form .form-buttons #id_previous,
 .path-backup #page form .form-buttons #id_previous,
+#page-course-edit #page form table#form td.submit #id_previous,
+.path-admin-setting #page form table#form td.submit #id_previous,
+#page-admin-registration-register #page form table#form td.submit #id_previous,
+.path-backup #page form table#form td.submit #id_previous,
+#page-course-edit #page form .form-buttons #id_previous,
+.path-admin-setting #page form .form-buttons #id_previous,
+#page-admin-registration-register #page form .form-buttons #id_previous,
+.path-backup #page form .form-buttons #id_previous,
+#page-course-edit #page form .path-admin .buttons #id_previous,
+.path-admin-setting #page form .path-admin .buttons #id_previous,
+#page-admin-registration-register #page form .path-admin .buttons #id_previous,
+.path-backup #page form .path-admin .buttons #id_previous,
+#page-course-edit #page form #fitem_id_submitbutton #id_previous,
+.path-admin-setting #page form #fitem_id_submitbutton #id_previous,
+#page-admin-registration-register #page form #fitem_id_submitbutton #id_previous,
+.path-backup #page form #fitem_id_submitbutton #id_previous,
+#page-course-edit #page form .fp-content-center form + div #id_previous,
+.path-admin-setting #page form .fp-content-center form + div #id_previous,
+#page-admin-registration-register #page form .fp-content-center form + div #id_previous,
+.path-backup #page form .fp-content-center form + div #id_previous,
+#page-course-edit #page form div.backup-section + form #id_previous,
+.path-admin-setting #page form div.backup-section + form #id_previous,
+#page-admin-registration-register #page form div.backup-section + form #id_previous,
+.path-backup #page form div.backup-section + form #id_previous,
+#page-course-edit #page form #fgroup_id_buttonar #id_previous,
+.path-admin-setting #page form #fgroup_id_buttonar #id_previous,
+#page-admin-registration-register #page form #fgroup_id_buttonar #id_previous,
+.path-backup #page form #fgroup_id_buttonar #id_previous,
 #page-course-edit #page form fieldset:last-of-type.hidden #id_previous,
 .path-admin-setting #page form fieldset:last-of-type.hidden #id_previous,
 #page-admin-registration-register #page form fieldset:last-of-type.hidden #id_previous,
@@ -3606,28 +3704,29 @@ a.marketing-button:hover {
 /* @end */
 /* @end */
 /* @group Gradebook */
-.path-grade-report-grader .generaltable th.user {
+#page-grade-report-grader-index .generaltable th.user {
   padding-right: 45px;
 }
-.path-grade-report-grader .generaltable th.user img.userpicture {
+#page-grade-report-grader-index .generaltable th.user img.userpicture {
   float: left;
 }
-.path-grade-report-grader .generaltable .heading.r1 > th,
-.path-grade-report-grader .generaltable .heading_name_row.r1 > th {
+#page-grade-report-grader-index .generaltable .heading.r1 > th,
+#page-grade-report-grader-index .generaltable .heading_name_row.r1 > th {
   padding-right: 35px;
   vertical-align: middle;
 }
-.path-grade-report-grader h1 {
+#page-grade-report-grader-index h1 {
   clear: none;
 }
-.path-grade-report-grader .gradeparent div:nth-of-type(2):not(.topscroll).right_scroller {
+#page-grade-report-grader-index .gradeparent div:nth-of-type(2):not(.topscroll).right_scroller {
   padding-top: 22px;
 }
-.path-grade-report-grader .gradeparent .left_scroller {
-  padding-top: 25px;
-}
-.path-grade-report-grader .gradeparent .right_scroller .topscroll {
+#page-grade-report-grader-index .gradeparent .right_scroller .topscroll {
   min-height: 22px;
+}
+#page-grade-report-grader-index #user-grades,
+#page-grade-report-grader-index table#fixed_column {
+  margin-top: 0px;
 }
 /* @end */
 /* @group GreyBox */
@@ -3983,7 +4082,6 @@ ul.socials li {
 .navbar .navbar-inner .nav > li > a:hover .fa-caret-right:before {
   content: "\f0d7";
   margin-right: 0px;
-  margin-left: 4px;
 }
 .navbar .navbar-inner .nav > li.dropdown.open a .fa-caret-right:before {
   content: "\f0d7";
