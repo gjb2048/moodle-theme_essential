@@ -102,6 +102,11 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
+New in 2.7.8
+============
+- FIX: Issue #248: Navbar overlay on activity selection popup.
+- FIX: Issue #252: LESS background: transparent; being compiled as background: 0 0;
+
 New in 2.7.7
 ============
 - FIX: Issue #173: Message menu shows wrong time difference in Russian.
