@@ -755,7 +755,7 @@ class theme_essential_core_renderer extends core_renderer
         }
         if (has_capability('moodle/user:changeownpassword', $context)) {
             $branchlabel = '<em><i class="fa fa-key"></i>' . get_string('changepassword') . '</em>';
-            $branchurl = new moodle_url('/login/change_password.php', array('id' => $USER->id));
+            $branchurl = new moodle_url('/login/change_password.php');
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
         if (has_capability('moodle/user:editownmessageprofile', $context)) {
