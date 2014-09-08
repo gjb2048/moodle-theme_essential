@@ -12,14 +12,6 @@
     margin-right: 5px;
     color: @icon-colour;
   }
-  .menu {
-    a.menu-action {
-      color: ~"[[setting:themeurlcolor]]";
-    }
-    a.menu-action:hover {
-      color: ~"[[setting:themehovercolor]]";
-    }
-  }
   .moodle-actionmenu[data-enhanced].show .menu a:hover {
     text-decoration: none;
     &:before {
@@ -29,7 +21,7 @@
   .moodle-core-dragdrop-draghandle {
     &:before {
       font-family: 'FontAwesome';
-      content: "\f047 ";
+      content: "\f047";
       color: @icon-colour;
       margin-right: 5px;
       cursor: move;
@@ -67,13 +59,13 @@
 
   &.branch:before {
     font-family: FontAwesome;
-    content: "\f07c ";
+    content: "\f07c";
     color: @icon-colour;
     margin-right: 5px;
   }
   &.emptybranch:before {
     font-family: FontAwesome;
-    content: "\f114 ";
+    content: "\f114";
     color: #d3d3d3;
     margin-right: 5px;
   }
@@ -84,17 +76,17 @@
 
 .block_navigation.block {
   li.type_user > .tree_item.branch:before {
-    content: "\f007 ";
+    content: "\f007";
   }
 
   li.type_unknown.depth_1 > .tree_item.branch:before {
-    content: "\f015 ";
+    content: "\f015";
   }
 }
 
 .collapsed .tree_item.branch:before {
   font-family: FontAwesome;
-  content: "\f07b ";
+  content: "\f07b";
   color: @icon-colour;
   margin-right: 5px;
 }
@@ -125,7 +117,6 @@
 .block .header .title h2,
 .block h3.main {
   font-size: 1.15em;
-  color: ~"[[setting:themetextcolor]]";
   line-height: 26px;
   margin-bottom: 5px;
   text-transform: uppercase;

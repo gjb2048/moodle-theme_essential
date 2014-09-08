@@ -120,6 +120,26 @@ function theme_essential_edit_button($section)
     }
 }
 
+// Moodle CSS file serving.
+function theme_essential_get_csswww() {
+    global $CFG;
+
+    if (right_to_left()) {
+        $moodlecss = 'essential-rtl.css';
+    } else {
+        $moodlecss = 'essential.css';
+    }
+
+    $syscontext = context_system::instance();
+    $itemid = theme_get_revision();
+    $url = moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php", "/$syscontext->id/theme_essential/style/$itemid/$moodlecss");
+    // Now this is tricky because the we can not hard code http or https here, lets use the relative link.
+    // Note: unfortunately moodle_url does not support //urls yet.
+    $url = preg_replace('|^https?://|i', '//', $url->out(false));
+
+    return $url;
+}
+
 /**
  * Serves any files associated with the theme settings.
  *
@@ -141,6 +161,14 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
     if ($context->contextlevel == CONTEXT_SYSTEM) {
         if ($filearea === 'logo') {
             return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
+        } else if ($filearea === 'style') {
+            global $CFG;
+            if (!empty($CFG->themedir)) {
+                $thestylepath = $CFG->themedir . '/essential/style/';
+            } else {
+                $thestylepath = $CFG->dirroot . '/theme/essential/style/';
+            }
+            send_file($thestylepath.$args[1], $args[1], 20 , 0, false, false, 'text/css');
         } else if ($filearea === 'pagebackground') {
             return $theme->setting_file_serve('pagebackground', $args, $forcedownload, $options);
         } else if (preg_match("/slide[1-9][0-9]*image/", $filearea) !== false) {

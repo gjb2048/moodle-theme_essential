@@ -3,16 +3,9 @@
 .breadcrumb-button {
   margin-top: 0px;
   input[type="submit"] {
-    color: ~"[[setting:themenavcolor]]";
-    background: ~"[[setting:themecolor]]";
     text-shadow: none;
     border: 0px none;
     margin: 0;
-
-    &:hover {
-      color: ~"[[setting:themecolor]]";
-      background: ~"[[setting:themenavcolor]]";
-    }
 
     > .singlebutton > form > div {
       margin: 0;
@@ -42,9 +35,7 @@
     margin-top: 0px;
     background: none;
     li {
-      color: ~"[[setting:themenavcolor]]";
       padding: 0 0 0 45px;
-      background: ~"[[setting:themecolor]]";
       position: relative;
       display: block;
       float: left;
@@ -53,13 +44,11 @@
       border-radius: 0px;
       text-shadow: none;
       a {
-        color: ~"[[setting:themenavcolor]]";
         text-decoration: none;
         padding-right: 3px;
         overflow: hidden;
       }
       a:hover {
-        color: ~"[[setting:themecolor]]";
         text-decoration: underline;
       }
       .dimmed_text {
@@ -74,7 +63,8 @@
       height: 0;
       border-top: 50px solid transparent; /* Go big on the size, and let overflow hide */
       border-bottom: 50px solid transparent;
-      border-left: 30px solid ~"[[setting:themecolor]]";
+      border-left-width: 30px;
+      border-left-style: solid;
       position: absolute;
       top: 50%;
       margin-top: -50px;
@@ -110,9 +100,6 @@
         text-decoration: none;
         color: #fff;
       }
-      a:hover:before {
-        color: ~"[[setting:themecolor]]";
-      }
     }
     .last:before,
     .last:after,
@@ -128,20 +115,9 @@
       border-bottom-right-radius: 4px;
     }
     li:hover {
-      color: ~"[[setting:themecolor]]";
-      background: ~"[[setting:themenavcolor]]";
-      a {
-        color: ~"[[setting:themecolor]]";
-      }
       .dimmed_text {
         text-decoration: line-through;
         color: #999;
-      }
-    }
-    li:hover:after {
-      border-left-color: ~"[[setting:themenavcolor]]";
-      a {
-        color: ~"[[setting:themecolor]]";
       }
     }
   }
@@ -167,11 +143,7 @@
       text-shadow: none;
       background-color: #F5F5F5;
       a {
-        color: ~"[[setting:themetextcolor]]";
         margin-right: 3px;
-      }
-      a:hover {
-        color: ~"[[setting:themehovercolor]]";
       }
     }
     li:first-of-type {
@@ -183,7 +155,7 @@
     }
     li:after {
       font-family: FontAwesome;
-      content: "\f138 ";
+      content: "\f138";
       padding: 5px;
       line-height: 20px;
       vertical-align: top;

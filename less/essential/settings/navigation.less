@@ -1,0 +1,69 @@
+/* @group Navbar */
+
+/* @group Custom Menu */
+
+.navbar {
+  .navbar-inner {
+    .brand {
+      color: ~"[[setting:themenavcolor]]";
+    }
+
+    .dropdown-menu > li > a:hover,
+    .dropdown-menu > li > a:focus,
+    .dropdown-submenu:hover > a,
+    .dropdown-submenu:focus > a {
+      color: ~"[[setting:themenavcolor]]" !important;
+      background-color: ~"[[setting:themecolor]]";
+    }
+
+    .dropdown-menu {
+      border: 1px solid ~"[[setting:themecolor]]";
+    }
+
+    .nav > li.dropdown a,
+    .nav > li > a {
+      color: ~"[[setting:themenavcolor]]";
+      &:hover {
+        background-color: ~"[[setting:themenavcolor]]";
+        color: ~"[[setting:themecolor]]";
+      }
+    }
+
+    .nav > li.dropdown ul.dropdown-menu > li > a {
+      color: ~"[[setting:themetextcolor]]";
+      &:hover, &.open {
+        color: ~"[[setting:themenavcolor]]";
+        background-color: ~"[[setting:themecolor]]";
+      }
+    }
+
+    .usermenu {
+      .dropdown {
+        img.userpicture {
+          border: 1px solid ~"[[setting:themenavcolor]]";
+        }
+        ul.dropdown-menu {
+          border: 1px solid ~"[[setting:themecolor]]";
+          hr.sep {
+            border-bottom: 1px dotted ~"[[setting:themecolor]]";
+          }
+        }
+      }
+    }
+
+    .messagemenu {
+      ul.nav {
+        ul.dropdown-menu {
+          border: 1px solid ~"[[setting:themecolor]]";
+          li > a {
+            border-top: 1px dotted ~"[[setting:themecolor]]";
+          }
+        }
+      }
+    }
+  }
+}
+
+/* @end */
+
+/* @end */

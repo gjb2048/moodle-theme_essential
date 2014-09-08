@@ -1,0 +1,83 @@
+/* @group Breadcrumb Button */
+
+.breadcrumb-button {
+  input[type="submit"] {
+    color: ~"[[setting:themenavcolor]]";
+    background: ~"[[setting:themecolor]]";
+
+    &:hover {
+      color: ~"[[setting:themecolor]]";
+      background: ~"[[setting:themenavcolor]]";
+    }
+
+  }
+}
+
+/* @end */
+
+/* @group Breadcrumb */
+
+.breadcrumb-nav {
+  /* @group Breadcrumb Style Fancy */
+
+  ul.breadcrumb.style1 {
+    li {
+      color: ~"[[setting:themenavcolor]]";
+      background: ~"[[setting:themecolor]]";
+      a {
+        color: ~"[[setting:themenavcolor]]";
+      }
+      a:hover {
+        color: ~"[[setting:themecolor]]";
+      }
+    }
+    li:after {
+      border-left-color: ~"[[setting:themecolor]]";
+    }
+    .first {
+      a:hover:before {
+        color: ~"[[setting:themecolor]]";
+      }
+    }
+    li:hover {
+      color: ~"[[setting:themecolor]]";
+      background: ~"[[setting:themenavcolor]]";
+      a {
+        color: ~"[[setting:themecolor]]";
+      }
+    }
+    li:hover:after {
+      border-left-color: ~"[[setting:themenavcolor]]";
+      a {
+        color: ~"[[setting:themecolor]]";
+      }
+    }
+  }
+
+.dir-rtl .breadcrumb-nav {
+  ul.breadcrumb.style1 {
+    li:after {
+      border-right-color: ~"[[setting:themecolor]]";
+      border-left-color: transparent;
+    }
+  }
+}
+/* @end */
+
+  /* @group Breadcrumb Style Simple */
+
+  ul.breadcrumb.style2 {
+    li {
+      a {
+        color: ~"[[setting:themetextcolor]]";
+      }
+      a:hover {
+        color: ~"[[setting:themehovercolor]]";
+      }
+    }
+  }
+
+  /* @end */
+}
+
+/* @end */

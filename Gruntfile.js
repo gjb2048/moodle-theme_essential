@@ -147,7 +147,6 @@ module.exports = function(grunt) {
                 src: 'less/editor.less',
                 dest: 'style/editor.css'
             },
-            // Compile essential styles.
             essential_p: {
                 options: {
                     compress: false,
@@ -159,18 +158,7 @@ module.exports = function(grunt) {
                 src: 'less/essential.less',
                 dest: 'style/essential.css'
             },
-            alternative_p: {
-                options: {
-                    compress: false,
-                    cleancss: true,
-                    paths: "./less",
-                    report: 'min',
-                    sourceMap: false
-                },
-                src: 'less/alternative.less',
-                dest: 'style/alternative.css'
-            },
-            moodle_d: {
+            essential_d: { // Flipped.
                 options: {
                     compress: false,
                     cleancss: false,
@@ -178,10 +166,10 @@ module.exports = function(grunt) {
                     report: 'min',
                     sourceMap: true,
                     sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'style/moodle.treasure.map'
+                    sourceMapFilename: 'style/essential.treasure.map'
                 },
-                src: 'less/moodle.less',
-                dest: 'style/moodle.css'
+                src: 'less/essential.less',
+                dest: 'style/essential.css'
             },
             editor_d: {
                 options: {
@@ -196,8 +184,7 @@ module.exports = function(grunt) {
                 src: 'less/editor.less',
                 dest: 'style/editor.css'
             },
-            // Compile essential styles.
-            essential_d: {
+            essential_pix_d: {
                 options: {
                     compress: false,
                     cleancss: false,
@@ -205,12 +192,12 @@ module.exports = function(grunt) {
                     report: 'min',
                     sourceMap: true,
                     sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'style/essential.treasure.map'
+                    sourceMapFilename: 'style/essential-pix.treasure.map'
                 },
-                src: 'less/essential.less',
-                dest: 'style/essential.css'
+                src: 'less/essential-pix.less',
+                dest: 'style/essential-pix.css'
             },
-            alternative_d: {
+            fontawesome_d: {
                 options: {
                     compress: false,
                     cleancss: false,
@@ -218,10 +205,23 @@ module.exports = function(grunt) {
                     report: 'min',
                     sourceMap: true,
                     sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'style/alternative.treasure.map'
+                    sourceMapFilename: 'style/fontawesome.treasure.map'
                 },
-                src: 'less/alternative.less',
-                dest: 'style/alternative.css'
+                src: 'less/fontawesome.less',
+                dest: 'style/fontawesome.css'
+            },
+            settings_d: {
+                options: {
+                    compress: false,
+                    cleancss: false,
+                    paths: "./less",
+                    report: 'min',
+                    sourceMap: true,
+                    sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
+                    sourceMapFilename: 'style/settings.treasure.map'
+                },
+                src: 'less/settings.less',
+                dest: 'style/settings.css'
             }
         },
         exec: {
@@ -335,7 +335,7 @@ module.exports = function(grunt) {
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
 
-    grunt.registerTask("css", ["less:moodle_"+build,"less:editor_"+build, "less:essential_"+build, "less:alternative_"+build]);
+    grunt.registerTask("css", ["less:essential_"+build,"less:editor_"+build, "less:settings_"+build, "less:essential_pix_"+build, "less:fontawesome_"+build]);
     grunt.registerTask("compile", ["css", "cssflip:rtl_"+build, "decache"]);
     grunt.registerTask("copy:svg", ["copy:svg_core", "copy:svg_plugins"]);
     grunt.registerTask("replace:svg_colours", ["replace:svg_colours_core", "replace:svg_colours_plugins"]);

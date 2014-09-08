@@ -24,7 +24,6 @@
     }
 
     .brand {
-      color: ~"[[setting:themenavcolor]]";
       vertical-align: middle;
       text-shadow: none;
       line-height: @navbarHeight;
@@ -63,8 +62,6 @@
     .dropdown-menu > li > a:focus,
     .dropdown-submenu:hover > a,
     .dropdown-submenu:focus > a {
-      color: ~"[[setting:themenavcolor]]" !important;
-      background: ~"[[setting:themecolor]]";
       background-image: none;
       text-decoration: none;
     }
@@ -83,7 +80,6 @@
     .dropdown-menu {
       z-index: 200;
       margin: 0px;
-      border: 1px solid ~"[[setting:themecolor]]";
     }
 
     .dropdown-menu > li > a,
@@ -97,7 +93,6 @@
 
     .nav > li.dropdown a,
     .nav > li > a {
-      color: ~"[[setting:themenavcolor]]";
       text-shadow: none;
       .fa-caret-right:before {
         margin-left: 5px;
@@ -105,9 +100,7 @@
         content: "\f0da";
       }
       &:hover {
-        background: ~"[[setting:themenavcolor]]";
         background-image: none;
-        color: ~"[[setting:themecolor]]";
         .fa-caret-right:before {
           content: "\f0d7";
           margin-right: 0px;
@@ -122,10 +115,7 @@
     }
 
     .nav > li.dropdown ul.dropdown-menu > li > a {
-      color: ~"[[setting:themetextcolor]]";
       &:hover, &.open {
-        color: ~"[[setting:themenavcolor]]";
-        background: ~"[[setting:themecolor]]";
         background-image: none;
       }
     }
@@ -143,7 +133,6 @@
           height: auto;
           max-width: 20px;
           max-height: 20px;
-          border: 1px solid ~"[[setting:themenavcolor]]";
           border-radius: 4px;
           margin-right: 2px;
         }
@@ -156,7 +145,6 @@
           }
         }
         ul.dropdown-menu {
-          border: 1px solid ~"[[setting:themecolor]]";
           margin: 0px;
           i {
             margin-right: 5px;
@@ -166,7 +154,6 @@
             margin: 0px;
             height: 0px;
             border: none;
-            border-bottom: 1px dotted ~"[[setting:themecolor]]";
           }
         }
       }
@@ -181,10 +168,8 @@
           left: auto;
           right: 10px;
           margin: 0px;
-          border: 1px solid ~"[[setting:themecolor]]";
           li > a {
             padding: 0px;
-            border-top: 1px dotted ~"[[setting:themecolor]]";
             background: #fff;
             overflow: hidden;
             > .message {

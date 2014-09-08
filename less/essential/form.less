@@ -1,28 +1,5 @@
 /* @group Forms */
 
-select,
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-.uneditable-input,
-.form-item .form-description,
-.form-defaultinfo,
-.form-label .form-shortname {
-  color: ~"[[setting:themetextcolor]]";
-}
-
 .form-item .form-label, .mform .fitem div.fitemtitle {
   text-align: left;
 }
@@ -47,47 +24,46 @@ input[type="color"],
 }
 
 #region-main {
-  form {
-    table#form td.submit,
-    .form-buttons,
-    .path-admin .buttons,
-    #fitem_id_submitbutton,
+    form {
+      table#form td.submit,
+      .form-buttons,
+      .path-admin .buttons,
+      #fitem_id_submitbutton,
     .fp-content-center form+div,
-    div.backup-section+form,
+      div.backup-section+form,
     #fgroup_id_buttonar {
       width: 40%;
-      position: fixed;
-      bottom: 30px;
+        position: fixed;
+        bottom: 30px;
       padding: 20px;
-      border-radius: @baseBorderRadius * 2;
-      background-color: ~"[[setting:themecolor]]";
+        border-radius: @baseBorderRadius * 2;
       #id_previous,
       #id_cancel {
         margin-left: 0px;
         float: left;
-      }
+        }
       #id_next,
       #id_submitbutton,
       #id_submitbutton2{
         float: right;
         margin-right: 0px;
-      }
+        }
       > .fgroup {
         margin: 0px;
         padding-top: 15px;
       }
     }
-    .form-buttons {
-      width: 400px;
-      border-radius: @baseBorderRadius * 2;
-      input {
-        margin: 0px;
+      .form-buttons {
+        width: 400px;
+        border-radius: @baseBorderRadius * 2;
+        input {
+          margin: 0px;
+        }
+      }
+      .fdescription.required {
+        color: orangered;
       }
     }
-    .fdescription.required {
-      color: orangered;
-    }
   }
-}
 
 /* @end */

@@ -34,13 +34,8 @@ $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
 $THEME->parents = array();
 
-$THEME->sheets[] = 'moodle';
-
-if (right_to_left()) {
-    $THEME->sheets[] = 'essential-rtl';
-} else {
-    $THEME->sheets[] = 'essential';
-}
+$THEME->sheets[] = 'settings';
+$THEME->sheets[] = 'fontawesome';
 
 if ((get_config('theme_essential', 'enablealternativethemecolors1')) ||
     (get_config('theme_essential', 'enablealternativethemecolors2')) ||
