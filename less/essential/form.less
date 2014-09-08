@@ -46,48 +46,46 @@ input[type="color"],
   font-family: monospace;
 }
 
-#page-course-edit,
-.path-admin-setting,
-#page-admin-registration-register,
-.path-backup {
-  #page {
-    form {
-      .form-buttons,
-      table#form td.submit,
-      .form-buttons,
-      .path-admin .buttons,
-      #fitem_id_submitbutton,
-      .fp-content-center
-      form+div,
-      div.backup-section+form,
-      #fgroup_id_buttonar,
-      fieldset:last-of-type.hidden {
-        width: 600px;
-        position: fixed;
-        bottom: 30px;
-        padding-top: 10px;
+#region-main {
+  form {
+    table#form td.submit,
+    .form-buttons,
+    .path-admin .buttons,
+    #fitem_id_submitbutton,
+    .fp-content-center form+div,
+    div.backup-section+form,
+    #fgroup_id_buttonar {
+      width: 40%;
+      position: fixed;
+      bottom: 30px;
+      padding: 20px;
+      border-radius: @baseBorderRadius * 2;
+      background-color: ~"[[setting:themecolor]]";
+      #id_previous,
+      #id_cancel {
+        margin-left: 0px;
+        float: left;
+      }
+      #id_next,
+      #id_submitbutton,
+      #id_submitbutton2{
+        float: right;
+        margin-right: 0px;
+      }
+      > .fgroup {
         margin: 0px;
-        border-radius: @baseBorderRadius * 2;
-        background-color: ~"[[setting:themecolor]]";
-        #fgroup_id_buttonar {
-          padding: 0px;
-          background-color: ~"[[setting:themecolor]]";
-          border: none;
-        }
-        #id_previous {
-          margin-left: -250px;
-        }
+        padding-top: 15px;
       }
-      .form-buttons {
-        width: 400px;
-        border-radius: @baseBorderRadius * 2;
-        input {
-          margin: 0px;
-        }
+    }
+    .form-buttons {
+      width: 400px;
+      border-radius: @baseBorderRadius * 2;
+      input {
+        margin: 0px;
       }
-      .fdescription.required {
-        color: orangered;
-      }
+    }
+    .fdescription.required {
+      color: orangered;
     }
   }
 }
