@@ -1,0 +1,54 @@
+// RTL from original less file of same name which cannot be intelligently removed.  CSS Flip process would probably not affect the original.
+.dir-ltr,
+.mdl-left,
+.dir-rtl .mdl-right {
+  text-align: left;
+}
+
+.dir-rtl,
+.mdl-right,
+.dir-rtl .mdl-left {
+  text-align: right;
+}
+
+.dir-rtl img.iconhelp, .dir-rtl .helplink img {
+  padding-right: 3px;
+  padding-left: 0;
+}
+
+.dir-rtl .accesshide {
+  top: -30000px;
+  left: auto;
+}
+
+.dir-rtl .comment-delete {
+  left: 0;
+  right: auto;
+}
+
+.dir-rtl .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd .yui3-widget-buttons {
+  left: 0;
+  right: auto;
+}
+
+/* Question Bank - Question Chooser "Close" button */
+#page-question-edit.dir-rtl a.container-close {
+  right: auto;
+  left: 6px;
+}
+
+.dir-rtl.jschooser .choosercontainer #chooseform .instruction,
+.dir-rtl.jschooser .choosercontainer #chooseform .typesummary {
+  left: 0;
+  right: 18.5em;
+  border-right: 1px solid grey;
+}
+
+.dir-rtl {
+  // Bootstrap sets right margin to 0. Fail.
+  // They set left margin to 25px so we will copy that.
+  ul, ol {
+    margin-left: 0;
+    margin-right: 25px;
+  }
+}

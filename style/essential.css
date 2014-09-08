@@ -50,16 +50,6 @@
   float: right;
 }
 /** Page layout CSS ends **/
-.dir-ltr,
-.mdl-left,
-.dir-rtl .mdl-right {
-  text-align: left;
-}
-.dir-rtl,
-.mdl-right,
-.dir-rtl .mdl-left {
-  text-align: right;
-}
 #add,
 #remove,
 .centerpara,
@@ -155,24 +145,12 @@ a.autolink.glossary:hover {
   display: none;
   text-align: right;
 }
-.dir-rtl .collapsible-actions {
-  text-align: left;
-}
 .jsenabled .collapsible-actions {
   display: block;
 }
 .collapsible-actions .collapseexpand {
   padding-left: 20px;
-  background: url([[pix:t/collapsed]]) 2px center no-repeat;
-}
-.dir-rtl .collapsible-actions .collapseexpand {
-  padding-right: 20px;
-  padding-left: 0;
-  background: url([[pix:t/collapsed_rtl]]) right center no-repeat;
-}
-.collapsible-actions .collapse-all,
-.dir-rtl .collapsible-actions .collapse-all {
-  background-image: url([[pix:t/expanded]]);
+  padding-right: 0px;
 }
 .yui-overlay .yui-widget-bd {
   background-color: #FFEE69;
@@ -216,10 +194,7 @@ img.icon {
   vertical-align: text-bottom;
   width: 16px;
   padding-right: 6px;
-}
-.dir-rtl img.icon {
-  padding-left: 6px;
-  padding-right: 0;
+  padding-left: 0px;
 }
 img.iconsmall {
   height: 12px;
@@ -249,11 +224,6 @@ h6 img.icon {
   vertical-align: middle;
   padding: 4px;
 }
-.dir-rtl img.iconhelp,
-.dir-rtl .helplink img {
-  padding-right: 3px;
-  padding-left: 0;
-}
 img.iconlarge {
   height: 24px;
   width: 24px;
@@ -262,11 +232,8 @@ img.iconlarge {
 img.iconsort {
   vertical-align: text-bottom;
   padding-left: .3em;
+  padding-right: 0;
   margin-bottom: .15em;
-}
-.dir-rtl img.iconsort {
-  padding-right: .3em;
-  padding-left: 0;
 }
 img.icontoggle {
   height: 17px;
@@ -277,13 +244,11 @@ img.iconkbhelp {
   height: 17px;
   width: 49px;
 }
-img.icon-pre,
-.dir-rtl img.icon-post {
+img.icon-pre {
   padding-right: 3px;
   padding-left: 0;
 }
-img.icon-post,
-.dir-rtl img.icon-pre {
+img.icon-post {
   padding-left: 3px;
   padding-right: 0;
 }
@@ -358,10 +323,6 @@ form.popupform div {
   left: -10000px;
   font-weight: normal;
   font-size: 1em;
-}
-.dir-rtl .accesshide {
-  top: -30000px;
-  left: auto;
 }
 span.hide,
 div.hide {
@@ -440,8 +401,8 @@ a.skip:active {
 .groupmanagementtable #addselect_wrapper label {
   font-weight: normal;
 }
-.dir-rtl .groupmanagementtable p {
-  text-align: right;
+.groupmanagementtable p {
+  text-align: left;
 }
 #group-usersummary {
   width: 14em;
@@ -475,9 +436,6 @@ a.skip:active {
 }
 .loginbox .signuppanel .subcontent {
   text-align: left;
-}
-.dir-rtl .loginbox .signuppanel .subcontent {
-  text-align: right;
 }
 .loginbox .loginsub {
   margin-left: 0;
@@ -530,10 +488,6 @@ a.skip:active {
   min-height: 30px;
   margin-bottom: -2000px;
   padding-bottom: 2000px;
-}
-.dir-rtl .loginbox.twocolumns .loginpanel,
-.dir-rtl .loginbox.twocolumns .signuppanel {
-  float: right;
 }
 .loginbox .potentialidp .smallicon {
   vertical-align: text-bottom;
@@ -624,9 +578,6 @@ table.mod_index {
   width: 20px;
   float: left;
 }
-.dir-rtl .comment-message .picture {
-  float: right;
-}
 .comment-message .text {
   margin: 0;
   padding: 0;
@@ -639,12 +590,6 @@ table.mod_index {
   position: absolute;
   top: 0;
   right: 0;
-  margin: .3em;
-}
-.dir-rtl .comment-delete {
-  position: absolute;
-  left: 0;
-  right: auto;
   margin: .3em;
 }
 .comment-report-selectall {
@@ -967,7 +912,6 @@ body.tag .managelink {
   color: inherit;
 }
 .smartselect .smartselect_submenuitem {
-  background-image: url([[pix:moodle|t/collapsed]]);
   background-repeat: no-repeat;
   background-position: 100%;
 }
@@ -1068,9 +1012,6 @@ body.tag .managelink {
 .userenrolment .col_group .addgroup img {
   vertical-align: baseline;
 }
-.dir-rtl .userenrolment .col_role .role {
-  float: right;
-}
 .userenrolment .hasAllRoles .col_role .addrole {
   display: none;
 }
@@ -1150,53 +1091,6 @@ body.tag .managelink {
 }
 #page-enrol-users .user-enroller-panel .uep-search-results .user .details {
   width: 237px;
-}
-.dir-rtl#page-enrol-users .col_userdetails .subfield_picture {
-  float: right;
-}
-.dir-rtl#page-enrol-users .enrol_user_buttons {
-  float: left;
-}
-.dir-rtl#page-enrol-users .enrol_user_buttons .enrolusersbutton {
-  margin-left: 0;
-  margin-right: 1em;
-}
-.dir-rtl#page-enrol-users .enrol_user_buttons .enrolusersbutton div {
-  margin-left: 0;
-}
-.dir-rtl#page-enrol-users #filterform .fitem {
-  margin-right: 0;
-  margin-left: .3em;
-}
-.dir-rtl#page-enrol-users #filterform .fitem label {
-  padding-right: 0;
-  padding-left: .3em;
-}
-/**
-* Overide for RTL layout
-**/
-.dir-rtl .headermain {
-  float: right;
-}
-.dir-rtl .headermenu {
-  float: left;
-}
-.dir-rtl .loginbox .loginform .form-label {
-  float: right;
-  text-align: left;
-}
-.dir-rtl .loginbox .loginform .form-input {
-  text-align: right;
-  margin-right: 1%;
-}
-.dir-rtl .yui3-menu-hidden {
-  left: 0;
-}
-#page-admin-roles-define.dir-rtl #rolesform .felement {
-  margin-right: 180px;
-}
-#page-message-edit.dir-rtl table.generaltable th.c0 {
-  text-align: right;
 }
 .corelightbox {
   background-color: #CCC;
@@ -1307,106 +1201,6 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
   min-width: 0;
   background: none;
 }
-/** Fix YUI 2 Treeview for Right to left languages **/
-.dir-rtl .ygtvtn,
-.dir-rtl .ygtvtm,
-.dir-rtl .ygtvtmh,
-.dir-rtl .ygtvtmhh,
-.dir-rtl .ygtvtp,
-.dir-rtl .ygtvtph,
-.dir-rtl .ygtvtphh,
-.dir-rtl .ygtvln,
-.dir-rtl .ygtvlm,
-.dir-rtl .ygtvlmh,
-.dir-rtl .ygtvlmhh,
-.dir-rtl .ygtvlp,
-.dir-rtl .ygtvlph,
-.dir-rtl .ygtvlphh,
-.dir-rtl .ygtvdepthcell,
-.dir-rtl .ygtvok,
-.dir-rtl .ygtvok:hover,
-.dir-rtl .ygtvcancel,
-.dir-rtl .ygtvcancel:hover {
-  width: 18px;
-  height: 22px;
-  background-image: url([[pix:theme|yui2-treeview-sprite-rtl]]);
-  background-repeat: no-repeat;
-  cursor: pointer;
-}
-.dir-rtl .ygtvtn {
-  background-position: 0 -5600px;
-}
-.dir-rtl .ygtvtm {
-  background-position: 0 -4000px;
-}
-.dir-rtl .ygtvtmh,
-.dir-rtl .ygtvtmhh {
-  background-position: 0 -4800px;
-}
-.dir-rtl .ygtvtp {
-  background-position: 0 -6400px;
-}
-.dir-rtl .ygtvtph,
-.dir-rtl .ygtvtphh {
-  background-position: 0 -7200px;
-}
-.dir-rtl .ygtvln {
-  background-position: 0 -1600px;
-}
-.dir-rtl .ygtvlm {
-  background-position: 0 0;
-}
-.dir-rtl .ygtvlmh,
-.dir-rtl .ygtvlmhh {
-  background-position: 0 -800px;
-}
-.dir-rtl .ygtvlp {
-  background-position: 0 -2400px;
-}
-.dir-rtl .ygtvlph,
-.dir-rtl .ygtvlphh {
-  background-position: 0 -3200px;
-}
-.dir-rtl .ygtvdepthcell {
-  background-position: 0 -8000px;
-}
-.dir-rtl .ygtvok {
-  background-position: 0 -8800px;
-}
-.dir-rtl .ygtvok:hover {
-  background-position: 0 -8844px;
-}
-.dir-rtl .ygtvcancel {
-  background-position: 0 -8822px;
-}
-.dir-rtl .ygtvcancel:hover {
-  background-position: 0 -8866px;
-}
-.dir-rtl.yui-skin-sam .yui-panel .hd {
-  text-align: right;
-}
-.dir-rtl .yui-skin-sam .yui-layout .yui-layout-unit div.yui-layout-bd {
-  text-align: right;
-}
-/** Fix TinyMCE editor right to left **/
-.dir-rtl .clearlooks2.ie9 .mceAlert .mceMiddle span,
-.dir-rtl .clearlooks2 .mceConfirm .mceMiddle span {
-  top: 44px;
-}
-.dir-rtl .o2k7Skin table,
-.dir-rtl .o2k7Skin tbody,
-.dir-rtl .o2k7Skin a,
-.dir-rtl .o2k7Skin img,
-.dir-rtl .o2k7Skin tr,
-.dir-rtl .o2k7Skin div,
-.dir-rtl .o2k7Skin td,
-.dir-rtl .o2k7Skin iframe,
-.dir-rtl .o2k7Skin span,
-.dir-rtl .o2k7Skin *,
-.dir-rtl .o2k7Skin .mceText,
-.dir-rtl .o2k7Skin .mceListBox .mceText {
-  text-align: right;
-}
 .path-rating .ratingtable {
   width: 100%;
   margin-bottom: 1em;
@@ -1513,13 +1307,8 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
   display: inline-block;
   cursor: pointer;
   padding: 0;
-  background-image: url([[pix:theme|sprite]]);
   background-repeat: no-repeat;
   border-style: none;
-}
-.dir-rtl .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd .yui3-widget-buttons {
-  left: 0;
-  right: auto;
 }
 .moodle-dialogue-base .moodle-dialogue .moodle-dialogue-bd {
   padding: 1em;
@@ -1650,11 +1439,6 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 .moodle-dialogue-base .moodle-dialogue.moodle-dialogue-tooltip .moodle-dialogue-bd {
   overflow: auto;
 }
-/* Question Bank - Question Chooser "Close" button */
-#page-question-edit.dir-rtl a.container-close {
-  right: auto;
-  left: 6px;
-}
 /**
  * Chooser Dialogues (moodle-core-chooserdialogue)
  *
@@ -1729,12 +1513,6 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 .choosercontainer #chooseform .nonoption span.modicon img.icon {
   padding: 0 0 0 0.5em;
 }
-.dir-rtl .choosercontainer #chooseform .option .typename,
-.dir-rtl .choosercontainer #chooseform .option span.modicon img.icon,
-.dir-rtl .choosercontainer #chooseform .nonoption .typename,
-.dir-rtl .choosercontainer #chooseform .nonoption span.modicon img.icon {
-  padding: 0 0.5em 0 0;
-}
 .chooserdialogue-course-modchooser .choosercontainer #chooseform .option span.modicon img.icon,
 .chooserdialogue-course-modchooser .choosercontainer #chooseform .nonoption span.modicon img.icon {
   height: 24px;
@@ -1751,26 +1529,17 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
   border-bottom: 1px solid #FFFFFF;
 }
 .choosercontainer #chooseform .nonoption {
+  padding-right: 0;
   padding-left: 2.7em;
   padding-top: 0.3em;
   padding-bottom: 0.1em;
-}
-.dir-rtl .choosercontainer #chooseform .nonoption {
-  padding-right: 2.7em;
-  padding-left: 0;
 }
 .choosercontainer #chooseform .subtype {
   margin-bottom: 0;
   padding: 0 1.6em 0 3.2em;
 }
-.dir-rtl .choosercontainer #chooseform .subtype {
-  padding: 0 3.2em 0 1.6em;
-}
 .choosercontainer #chooseform .subtype .typename {
   margin: 0 0 0 0.2em;
-}
-.dir-rtl .choosercontainer #chooseform .subtype .typename {
-  margin: 0 0.2em 0 0;
 }
 /* The instruction/help area */
 .jschooser .choosercontainer #chooseform .instruction,
@@ -1787,12 +1556,6 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
   overflow-x: hidden;
   overflow-y: auto;
   line-height: 2em;
-}
-.dir-rtl.jschooser .choosercontainer #chooseform .instruction,
-.dir-rtl.jschooser .choosercontainer #chooseform .typesummary {
-  left: 0;
-  right: 18.5em;
-  border-right: 1px solid grey;
 }
 /* Selected option settings */
 .jschooser .choosercontainer #chooseform .instruction,
@@ -2044,10 +1807,6 @@ table.badgeissuedinfo .bfield {
   text-align: left;
   font-style: italic;
 }
-.dir-rtl table.badgeissuedinfo .bvalue,
-.dir-rtl table.badgeissuedinfo .bfield {
-  text-align: right;
-}
 ul.badges {
   margin: 0;
   list-style: none;
@@ -2135,9 +1894,6 @@ div.badge .expireimage {
   text-align: left;
   vertical-align: middle;
 }
-.dir-rtl .activatebadge {
-  text-align: right;
-}
 img#persona_signin {
   cursor: pointer;
 }
@@ -2153,9 +1909,6 @@ img#persona_signin {
 .breadcrumb-nav {
   float: left;
   margin-bottom: 10px;
-}
-.dir-rtl .breadcrumb-nav {
-  float: right;
 }
 .breadcrumb-button .singlebutton div {
   margin-right: 0;
@@ -2194,6 +1947,7 @@ img#persona_signin {
 .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu {
   display: block;
   margin-left: 4px;
+  margin-right: initial;
   padding-left: 4px;
   padding-right: 4px;
 }
@@ -2205,6 +1959,7 @@ img#persona_signin {
 .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu .caret {
   margin-top: 8px;
   margin-left: 2px;
+  margin-right: initial;
   border-top-color: #777777;
 }
 .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu .caret:hover,
@@ -2217,14 +1972,6 @@ img#persona_signin {
 }
 .jsenabled .moodle-actionmenu[data-enhanced] .menu-action-text {
   display: inline;
-}
-.jsenabled.dir-rtl .moodle-actionmenu[data-enhance] .toggle-display.textmenu {
-  margin-left: initial;
-  margin-right: 4px;
-}
-.jsenabled.dir-rtl .moodle-actionmenu[data-enhance] .toggle-display.textmenu .caret {
-  margin-left: initial;
-  margin-right: 2px;
 }
 .moodle-actionmenu[data-enhanced].show {
   position: relative;
@@ -2357,86 +2104,6 @@ img#persona_signin {
 .block .moodle-actionmenu {
   text-align: right;
 }
-.dir-rtl .moodle-actionmenu[data-enhanced].show .menu {
-  text-align: right;
-  left: 0;
-  right: auto;
-  /** bottom left of button **/
-  /** bottom right of button **/
-  /** top left of button **/
-  /** top right of button **/
-}
-.dir-rtl .moodle-actionmenu[data-enhanced].show .menu .iconsmall {
-  margin-right: 0;
-  margin-left: 8px;
-}
-.dir-rtl .moodle-actionmenu[data-enhanced].show .menu.align-tl-bl {
-  left: auto;
-  right: 0;
-}
-.dir-rtl .moodle-actionmenu[data-enhanced].show .menu.align-tr-bl {
-  right: auto;
-  left: 100%;
-}
-.dir-rtl .moodle-actionmenu[data-enhanced].show .menu.align-bl-bl {
-  left: auto;
-  right: 0;
-}
-.dir-rtl .moodle-actionmenu[data-enhanced].show .menu.align-br-bl {
-  right: auto;
-  left: 100%;
-}
-.dir-rtl .moodle-actionmenu[data-enhanced].show .menu.align-tl-br {
-  left: auto;
-  right: 100%;
-}
-.dir-rtl .moodle-actionmenu[data-enhanced].show .menu.align-tr-br {
-  right: auto;
-  left: 0;
-}
-.dir-rtl .moodle-actionmenu[data-enhanced].show .menu.align-bl-br {
-  left: auto;
-  right: 100%;
-}
-.dir-rtl .moodle-actionmenu[data-enhanced].show .menu.align-br-br {
-  right: auto;
-  left: 0;
-}
-.dir-rtl .moodle-actionmenu[data-enhanced].show .menu.align-tl-tl {
-  left: auto;
-  right: 0;
-}
-.dir-rtl .moodle-actionmenu[data-enhanced].show .menu.align-tr-tl {
-  right: auto;
-  left: 100%;
-}
-.dir-rtl .moodle-actionmenu[data-enhanced].show .menu.align-bl-tl {
-  left: auto;
-  right: 0;
-}
-.dir-rtl .moodle-actionmenu[data-enhanced].show .menu.align-br-tl {
-  right: auto;
-  left: 100%;
-}
-.dir-rtl .moodle-actionmenu[data-enhanced].show .menu.align-tl-tr {
-  left: auto;
-  right: 100%;
-}
-.dir-rtl .moodle-actionmenu[data-enhanced].show .menu.align-tr-tr {
-  right: auto;
-  left: 0;
-}
-.dir-rtl .moodle-actionmenu[data-enhanced].show .menu.align-bl-tr {
-  left: auto;
-  right: 100%;
-}
-.dir-rtl .moodle-actionmenu[data-enhanced].show .menu.align-br-tr {
-  right: auto;
-  left: 0;
-}
-.dir-rtl .block .moodle-actionmenu {
-  text-align: right;
-}
 ul.dragdrop-keyboard-drag li {
   list-style-type: none;
 }
@@ -2454,11 +2121,6 @@ a.disabled {
 body.lockscroll {
   height: 100%;
   overflow: hidden;
-}
-.dir-rtl ul,
-.dir-rtl ol {
-  margin-left: 0;
-  margin-right: 25px;
 }
 /* admin.less */
 .formtable tbody th {
@@ -2862,9 +2524,6 @@ img.iconsmall {
   text-align: left;
   font-weight: normal;
 }
-.path-admin.dir-rtl table.rolecap tr.rolecap th {
-  text-align: right;
-}
 .path-admin .rolecap .hiddenrow {
   display: none;
 }
@@ -2903,11 +2562,8 @@ img.iconsmall {
   padding: .15em .5em;
 }
 .environmenttable img.iconhelp {
+  padding-left: 0;
   padding-right: .3em;
-}
-.dir-rtl .environmenttable img.iconhelp {
-  padding-left: .3em;
-  padding-right: 0;
 }
 #trustedhosts .generaltable {
   margin-left: auto;
@@ -2926,29 +2582,16 @@ img.iconsmall {
 #adminsettings fieldset.error legend {
   display: block;
 }
-.dir-rtl #admin-spelllanguagelist textarea,
-#page-admin-setting-editorsettingstinymce.dir-rtl .form-textarea textarea {
-  text-align: left;
-  direction: ltr;
-}
 /* Styles for flags on admin settings */
 .adminsettingsflags {
   float: right;
 }
-.dir-rtl .adminsettingsflags {
-  float: left;
-}
 .adminsettingsflags label {
+  margin-left: 0px;
   margin-right: 7px;
-}
-.dir-rtl .adminsettingsflags label {
-  margin-left: 7px;
 }
 .form-description {
   clear: right;
-}
-.dir-rtl .form-description {
-  clear: left;
 }
 .form-item .form-setting .form-htmlarea {
   width: 640px;
@@ -2964,21 +2607,13 @@ img.iconsmall {
   margin: 7px 0 0 0;
 }
 .form-item .form-setting .defaultsnext {
+  margin-left: 0;
   margin-right: 0.5em;
   display: inline;
-}
-.dir-rtl .form-item .form-setting .defaultsnext {
-  margin-left: 0.5em;
-  margin-right: 0;
 }
 .form-item .form-setting .locked-checkbox {
   margin-right: 0.2em;
   margin-left: 0.5em;
-  display: inline;
-}
-.dir-rtl .form-item .form-setting .locked-checkbox {
-  margin-right: 0.5em;
-  margin-left: 0.2em;
   display: inline;
 }
 .form-item .form-setting .form-password .unmask,
@@ -3032,13 +2667,6 @@ img.iconsmall {
   border: 1px solid #000000;
   margin-left: 301px;
   border-top-width: 0;
-}
-/** Overide for RTL layout **/
-.dir-rtl .form-item .form-setting,
-.dir-rtl .form-item .form-label,
-.dir-rtl .form-item .form-description,
-.dir-rtl.path-admin .roleassigntable p {
-  text-align: right;
 }
 #page-admin-index #notice .checkforupdates {
   text-align: center;
@@ -3180,15 +2808,6 @@ img.iconsmall {
 #plugins-control-panel .notes .pluginupdateinfo a {
   padding-right: 1em;
 }
-.dir-rtl #plugins-check .pluginupdateinfo {
-  text-align: center;
-  direction: ltr;
-}
-.dir-rtl #plugins-check .rootdir,
-.dir-rtl #plugins-check .requires-ok {
-  text-align: left;
-  direction: ltr;
-}
 /** MNet networking */
 #page-admin-mnet-peers .box.deletedhosts {
   margin-bottom: 1em;
@@ -3292,6 +2911,7 @@ img.iconsmall {
   width: 100%;
 }
 .path-calendar .cal_courses_flt label {
+  margin-left: 0;
   margin-right: .45em;
 }
 .path-calendar .maincalendar {
@@ -3439,27 +3059,6 @@ img.iconsmall {
 .path-calendar .maincalendar .eventlist .event .commands a {
   margin: 0 3px;
 }
-.dir-rtl.path-calendar .cal_courses_flt label {
-  margin-left: .45em;
-  margin-right: 0;
-}
-.dir-rtl.path-calendar .maincalendar .calendar_event_course,
-.dir-rtl.path-calendar .maincalendar .calendar_event_global,
-.dir-rtl.path-calendar .maincalendar .calendar_event_group,
-.dir-rtl.path-calendar .maincalendar .calendar_event_user {
-  border-left-width: 1px;
-  border-right-width: 12px;
-}
-.dir-rtl.path-calendar .maincalendar .calendar-controls .next {
-  text-align: left;
-}
-.dir-rtl.path-calendar .maincalendar .calendar-controls .previous {
-  text-align: right;
-}
-.dir-rtl.path-calendar .maincalendar .calendartable td,
-.dir-rtl.path-calendar .maincalendar .calendartable li {
-  text-align: right;
-}
 .dir-rtl.path-calendar .maincalendar .calendartable li {
   padding-right: 10px;
   padding-left: 5px;
@@ -3519,6 +3118,7 @@ img.iconsmall {
   font-size: 18px;
 }
 .block .calendar-event-panel .yui3-overlay-content .eventcontent img {
+  padding-left: 0;
   padding-right: 5px;
 }
 .block .calendar-controls .previous,
@@ -3551,17 +3151,10 @@ img.iconsmall {
 }
 .block .calendar_filters .eventname {
   padding-left: 0.2em;
+  padding-right: 0;
 }
 .block .content h3.eventskey {
   margin-top: 0.5em;
-}
-.dir-rtl .block .calendar_filters .eventname {
-  padding-right: 0.2em;
-  padding-left: 0;
-}
-.dir-rtl .block .calendar-event-panel .yui3-overlay-content .eventcontent img {
-  padding-right: 0;
-  padding-left: 5px;
 }
 @media (min-width: 768px) {
   #page-calender-view .container-fluid {
@@ -3573,9 +3166,6 @@ img.iconsmall {
 .section_add_menus {
   text-align: right;
 }
-.dir-rtl .section_add_menus {
-  text-align: left;
-}
 .section_add_menus .horizontal div,
 .section_add_menus .horizontal form {
   display: inline;
@@ -3586,17 +3176,11 @@ img.iconsmall {
 }
 .section_add_menus .urlselect {
   margin-left: .4em;
-}
-.dir-rtl .section_add_menus .urlselect {
-  margin-right: .4em;
-  margin-left: 0;
+  margin-right: 0;
 }
 .section_add_menus .urlselect select {
   margin-left: .2em;
-}
-.dir-rtl .section_add_menus .urlselect select {
-  margin-right: .2em;
-  margin-left: 0;
+  margin-right: 0;
 }
 .section_add_menus .urlselect img.iconhelp {
   padding: 0;
@@ -3625,6 +3209,7 @@ img.iconsmall {
   /* Move the move icon to the start of the line */
   position: absolute;
   left: 0;
+  right: auto;
   top: 0;
 }
 .section .activity .mod-indent-outer {
@@ -3659,6 +3244,7 @@ img.iconsmall {
 }
 .section .label .mod-indent-outer {
   padding-left: 24px;
+  padding-right: initial;
   display: block;
 }
 .section .filler {
@@ -3680,45 +3266,10 @@ img.iconsmall {
   padding-bottom: initial;
   vertical-align: text-bottom;
 }
-.dir-rtl .section .activity {
-  /* The command block for each activity */
-}
-.dir-rtl .section .activity .spinner {
-  left: auto;
-  right: 100%;
-}
-.dir-rtl .section .activity .mod-indent-outer {
-  /**
-       * Add appropriate padding such that nothing overlaps the
-       * absolute positioned move icon.
-       */
-  padding-left: initial;
-  padding-right: 32px;
-}
-.dir-rtl .section .activity .actions {
-  left: 0;
-  right: auto;
-}
-.dir-rtl .section .activity .contentwithoutlink,
-.dir-rtl .section .activity .activityinstance {
-  padding-left: 4px;
-  padding-right: initial;
-}
-.dir-rtl.editing .section .activity .editing_move {
-  /* Move the move icon to the start of the line */
-  left: auto;
-  right: 0;
-}
-.dir-rtl.editing .section .activity.editor_displayed div.activityinstance {
-  padding-left: initial;
-}
 .activity img.activityicon {
+  margin-left: 0px;
   margin-right: 6px;
   vertical-align: text-bottom;
-}
-.dir-rtl .section .activity img.activityicon {
-  margin-left: 6px;
-  margin-right: 0;
 }
 .section .activity .activityinstance,
 .section .activity .activityinstance div {
@@ -3726,12 +3277,8 @@ img.iconsmall {
 }
 .editing .section .activity .contentwithoutlink,
 .editing .section .activity .activityinstance {
+  padding-left: 0;
   padding-right: 200px;
-}
-.dir-rtl.editing .section .activity .contentwithoutlink,
-.dir-rtl.editing .section .activity .activityinstance {
-  padding-left: 200px;
-  padding-right: 0;
 }
 .editing_show + .editing_assign,
 .editing_hide + .editing_assign {
@@ -3752,18 +3299,11 @@ img.iconsmall {
 .section .activity .activityinstance .groupinglabel {
   padding-left: 30px;
 }
-.dir-rtl .section .activity .activityinstance .groupinglabel {
-  padding-right: 30px;
-}
 .section .activity .availabilityinfo,
 .section .activity .contentafterlink {
   margin-top: 0.5em;
   margin-left: 30px;
-}
-.dir-rtl .section .activity .availabilityinfo,
-.dir-rtl .section .activity .contentafterlink {
-  margin-left: 0;
-  margin-right: 30px;
+  margin-right: 0;
 }
 .section .activity .contentafterlink p {
   margin: .5em 0;
@@ -3814,9 +3354,6 @@ img.iconsmall {
   float: left;
   margin-right: 1em;
 }
-.dir-rtl .course-content .single-section .section-navigation .mdl-left {
-  float: right;
-}
 .course-content .single-section .section-navigation .mdl-left .larrow {
   margin-right: 0.1em;
 }
@@ -3824,9 +3361,6 @@ img.iconsmall {
   font-weight: normal;
   float: right;
   margin-left: 1em;
-}
-.dir-rtl .course-content .single-section .section-navigation .mdl-right {
-  float: left;
 }
 .course-content .single-section .section-navigation .mdl-right .rarrow {
   margin-left: 0.1em;
@@ -3885,17 +3419,11 @@ img.iconsmall {
 .path-course-view .unread {
   margin-left: 30px;
 }
-.dir-rtl.path-course-view .unread {
-  margin-right: 30px;
-}
 .path-course-view .block.drag .header {
   cursor: move;
 }
 .path-course-view .completionprogress {
   text-align: right;
-}
-.dir-rtl.path-course-view .completionprogress {
-  text-align: left;
 }
 .path-course-view .single-section .completionprogress {
   margin-right: 5px;
@@ -3908,11 +3436,6 @@ img.iconsmall {
   position: relative;
   padding: 0 16px 0 0;
   /* to accommodate the floated completion icon with highlighting */
-}
-.dir-rtl.path-site li.activity > div,
-.dir-rtl.path-course-view li.activity > div {
-  position: relative;
-  padding: 0 0 0 16px;
 }
 .path-course-view li.activity span.autocompletion img {
   vertical-align: text-bottom;
@@ -3927,13 +3450,6 @@ img.iconsmall {
   position: absolute;
   right: 22px;
   top: 3px;
-  background: url([[pix:i/ajaxloader]]) no-repeat;
-}
-.dir-rtl.path-course-view .completionprogress {
-  float: none;
-}
-.dir-rtl.path-course-view li.activity form.togglecompletion .ajaxworking {
-  right: -22px;
 }
 li.section.hidden span.commands a.editing_hide,
 li.section.hidden span.commands a.editing_show {
@@ -4093,18 +3609,10 @@ span.editinstructions {
 }
 .coursebox > .info > .coursename a {
   display: block;
-  background-image: url([[pix:moodle|i/course]]);
   background-repeat: no-repeat;
   padding-left: 21px;
+  padding-right: 0px;
   background-position: left 0.5em;
-}
-.dir-rtl .coursebox > .info > .coursename a {
-  padding-left: 0;
-  padding-right: 21px;
-  background-position: right;
-}
-.coursebox.remotehost > .info > .categoryname a {
-  background-image: url([[pix:moodle|i/mnethost]]);
 }
 .coursebox .content .teachers,
 .coursebox .content .courseimage,
@@ -4112,13 +3620,6 @@ span.editinstructions {
   float: left;
   width: 40%;
   clear: left;
-}
-.dir-rtl .coursebox > .info > .coursename,
-.dir-rtl .coursebox .teachers,
-.dir-rtl .coursebox .content .courseimage,
-.dir-rtl .coursebox .content .coursefile {
-  float: right;
-  clear: right;
 }
 .coursebox > .info > h3.coursename {
   margin: 5px;
@@ -4173,30 +3674,6 @@ span.editinstructions {
   margin: 3px 5px;
   padding: 0;
 }
-.dir-rtl .coursebox > .info > .categoryname a {
-  padding-left: 0;
-  padding-right: 21px;
-  background-position: center right;
-}
-.dir-rtl .coursebox > .info > .categoryname,
-.dir-rtl .coursebox .teachers,
-.dir-rtl .coursebox .content .courseimage,
-.dir-rtl .coursebox .content .coursefile {
-  float: right;
-  clear: right;
-}
-.dir-rtl .coursebox .enrolmenticons,
-.dir-rtl .coursebox .moreinfo {
-  float: left;
-}
-.dir-rtl .coursebox .summary,
-.dir-rtl .coursebox .coursecat {
-  float: left;
-}
-.dir-rtl .coursebox .coursecat {
-  text-align: left;
-  clear: left;
-}
 .coursebox.collapsed {
   margin-bottom: 0;
 }
@@ -4237,25 +3714,13 @@ span.editinstructions {
   font-size: 75%;
 }
 .course_category_tree .category > .info > .categoryname {
-  background-image: url([[pix:moodle|t/collapsed_empty]]);
   background-repeat: no-repeat;
   padding: 2px 18px;
   margin: 3px;
   background-position: center left;
 }
-.dir-rtl .course_category_tree .category > .info > .categoryname {
-  background-image: url([[pix:moodle|t/collapsed_empty_rtl]]);
-  background-position: center right;
-}
 .course_category_tree .category.with_children > .info > .categoryname {
-  background-image: url([[pix:moodle|t/expanded]]);
   cursor: pointer;
-}
-.course_category_tree .category.with_children.collapsed > .info > .categoryname {
-  background-image: url([[pix:moodle|t/collapsed]]);
-}
-.dir-rtl .course_category_tree .category.with_children.collapsed > .info > .categoryname {
-  background-image: url([[pix:moodle|t/collapsed_rtl]]);
 }
 .course_category_tree .category.collapsed > .content {
   display: none;
@@ -4290,10 +3755,7 @@ span.editinstructions {
 }
 .course_category_tree .category > .content {
   padding-left: 16px;
-}
-.dir-rtl .course_category_tree .category > .content {
-  padding-left: 0;
-  padding-right: 16px;
+  padding-right: 0;
 }
 .course_category_tree .subcategories > .paging,
 .courses > .paging {
@@ -4307,10 +3769,6 @@ span.editinstructions {
 }
 .course_category_tree .paging.paging-morelink a {
   font-size: 11.9px;
-}
-.dir-rtl .courses > .paging.paging-morelink,
-.dir-rtl .course_category_tree .paging.paging-morelink {
-  text-align: right;
 }
 #page-course-index-category .generalbox.info {
   margin-bottom: 15px;
@@ -4347,10 +3805,6 @@ span.editinstructions {
 .section .moodle-actionmenu[data-enhanced] .menu img {
   width: 12px;
   height: 12px;
-}
-.dir-rtl .section .editing_title .iconsmall {
-  margin: 8px 0 0 8px;
-  padding: 4px 0 0 8px;
 }
 /**
  * Course management page
@@ -4650,95 +4104,6 @@ span.editinstructions {
   margin: 0 6px 0 0;
   cursor: pointer;
 }
-.dir-rtl #course-category-listings #category-listing,
-.dir-rtl #course-category-listings #course-listing {
-  float: right;
-  margin-left: 0;
-}
-.dir-rtl #course-category-listings .listitem > div > .float-left {
-  float: right;
-}
-.dir-rtl #course-category-listings .listitem > div > .float-right {
-  float: left;
-  text-align: left;
-}
-.dir-rtl #course-category-listings li .tree-icon {
-  margin: 2px 0 0 6px;
-}
-.dir-rtl #course-category-listings li .tree-icon {
-  margin-right: 0;
-}
-.dir-rtl #course-category-listings li li .tree-icon {
-  margin-right: 1em;
-}
-.dir-rtl #course-category-listings li li li .tree-icon {
-  margin-right: 2em;
-}
-.dir-rtl #course-category-listings li li li li .tree-icon {
-  margin-right: 3em;
-}
-.dir-rtl #course-category-listings li li li li li .tree-icon {
-  margin-right: 4em;
-}
-.dir-rtl #course-category-listings li li li li li li .tree-icon {
-  margin-right: 4.5em;
-}
-.dir-rtl #course-category-listings li li li li li li li .tree-icon {
-  margin-right: 5em;
-}
-.dir-rtl #course-category-listings li li li li li li li li .tree-icon {
-  margin-right: 5.5em;
-}
-.dir-rtl #course-category-listings #category-listing .listitem > div {
-  margin-right: 0.5em;
-  margin-left: 0;
-}
-.dir-rtl #course-category-listings #category-listing .listitem > div > .ba-checkbox {
-  margin: -1px 0 0 0.5em;
-}
-.dir-rtl #course-category-listings #category-listing .listitem[data-selected='1'] > div > .ba-checkbox {
-  margin: 0 0 0 0.5em;
-}
-.dir-rtl #course-category-listings #category-listing .course-count {
-  margin-left: 2rem;
-}
-.dir-rtl #course-category-listings #category-listing .bulk-action-checkbox {
-  margin-left: -3px;
-  margin-right: 0;
-}
-.dir-rtl #course-category-listings #course-listing {
-  padding-right: 24px;
-}
-.dir-rtl #course-category-listings #course-listing .listitem .idnumber {
-  color: #a1a1a8;
-  padding-right: 2em;
-}
-.dir-rtl #course-category-listings #course-listing .listitem .categoryname {
-  display: inline-block;
-  margin-right: 1em;
-  margin-left: 0;
-}
-.dir-rtl #course-category-listings #course-listing .listitem .drag-handle {
-  margin: 0 6px 0 6px;
-}
-.dir-rtl #course-category-listings #course-listing .listitem > div {
-  padding-left: 1rem;
-}
-.dir-rtl #course-category-listings #course-listing .bulk-action-checkbox {
-  vertical-align: middle;
-  margin: -2px 0 0 6px;
-}
-.dir-rtl #course-category-listings .detail-pair > * {
-  float: right;
-  margin-right: 0;
-}
-.dir-rtl #course-category-listings .detail-pair .pair-key span {
-  margin-right: 0;
-  margin-left: 0;
-}
-.dir-rtl #course-category-listings .detail-pair .pair-value {
-  margin-right: 0.5em;
-}
 /** Management header styling **/
 .coursecat-management-header {
   vertical-align: middle;
@@ -4754,6 +4119,7 @@ span.editinstructions {
 }
 .coursecat-management-header > div > div {
   margin-left: 1em;
+  margin-right: 0;
   margin: 10px 0;
   display: inline-block;
 }
@@ -4770,14 +4136,6 @@ span.editinstructions {
 }
 .coursecat-management-header .view-mode-selector .moodle-actionmenu[data-enhanced].show .menu a {
   padding-left: 1em;
-}
-.dir-rtl .coursecat-management-header h2 {
-  text-align: right;
-}
-.dir-rtl .coursecat-management-header > div {
-  float: left;
-  margin-right: 1em;
-  margin-left: 0;
 }
 .course-being-dragged-proxy {
   border: 0;
@@ -4950,11 +4308,7 @@ span.editinstructions {
   float: left;
   height: 525px;
   border-right: 1px solid #BBBBBB;
-}
-.dir-rtl .file-picker .fp-repo-area {
-  border-left: 1px solid #BBBBBB;
-  border-right: none;
-  float: right;
+  border-left: none;
 }
 .file-picker .fp-repo-items {
   float: none;
@@ -4965,15 +4319,6 @@ span.editinstructions {
   margin-left: 0px;
   margin-right: 0px;
   float: left;
-}
-.dir-rtl .file-picker .fp-repo-items {
-  margin-left: 0px;
-  margin-right: 181px;
-}
-.dir-rtl .moodle-dialogue-fullscreen .file-picker .fp-repo-items {
-  margin-left: 0px;
-  margin-right: 0px;
-  float: right;
 }
 .file-picker .fp-navbar {
   background: #F2F2F2;
@@ -5003,48 +4348,13 @@ span.editinstructions {
   width: 98%;
   height: 98%;
 }
-.dir-rtl .file-picker .fp-list {
-  text-align: right;
-}
-.dir-rtl .file-picker .fp-toolbar {
-  padding: 4px;
-}
-.dir-rtl .file-picker .fp-list {
-  text-align: right;
-}
-.dir-rtl .file-picker .fp-repo-name {
-  display: inline;
-}
-.dir-rtl .file-picker .fp-pathbar {
-  text-align: right;
-  display: block;
-  border-top: none;
-}
-.dir-rtl .file-picker div.bd {
-  text-align: right;
-}
-.dir-rtl #filemenu .yuimenuitemlabel {
-  text-align: right;
-}
-.dir-rtl .filepicker .yui-layout-unit-left {
-  left: 500px;
-}
-.dir-rtl .filepicker .yui-layout-unit-center {
-  left: 0;
-}
-.dir-rtl .filemanager-toolbar a {
-  padding: 0;
-}
 .file-picker .fp-list {
   list-style-type: none;
   padding: 0;
   float: left;
   width: 100%;
   margin: 0;
-}
-.dir-rtl .file-picker .fp-list {
-  text-align: right;
-  float: left;
+  text-align: left;
 }
 .file-picker .fp-list .fp-repo a {
   display: block;
@@ -5061,26 +4371,14 @@ span.editinstructions {
 .fp-toolbar {
   float: left;
 }
-.dir-rtl .fp-toolbar {
-  float: right;
-}
 .fp-toolbar.empty {
-  display: none;
-}
-.dir-rtl .fp-toolbar div.disabled,
-.fp-toolbar .disabled {
   display: none;
 }
 .fp-toolbar div {
   display: block;
   float: left;
+  margin-left: 0px;
   margin-right: 4px;
-}
-.dir-rtl .fp-toolbar div {
-  display: block;
-  float: right;
-  margin-left: 4px;
-  margin-right: 0px;
 }
 .fp-toolbar img {
   vertical-align: -15%;
@@ -5091,7 +4389,6 @@ span.editinstructions {
   height: 27px;
 }
 .fp-toolbar .fp-tb-search input {
-  background: #ffffff url('[[pix:a/search]]') no-repeat 7px 7px;
   padding: 2px 6px 1px 27px;
   width: 200px;
   height: 27px;
@@ -5107,12 +4404,6 @@ span.editinstructions {
 }
 .fp-repo-items fp-viewbar {
   margin: 4px;
-}
-.dir-rtl .fp-toolbar img {
-  vertical-align: -35%;
-}
-.dir-rtl .fp-viewbar {
-  float: left;
 }
 .fp-viewbar a {
   width: 30px;
@@ -5150,28 +4441,6 @@ span.editinstructions {
 .file-picker .fp-clear-left {
   clear: left;
 }
-.dir-rtl .filemanager-toolbar .fp-vb-icons a:hover {
-  background: url('[[pix:theme|fp/view_icon_selected]]');
-}
-.dir-rtl .filemanager-toolbar .fp-vb-icons.checked a:hover {
-  background: url('[[pix:theme|fp/view_icon_active]]') no-repeat 0 0;
-}
-.dir-rtl .fp-vb-details a:hover {
-  background: none;
-  border: 20px solid black;
-}
-.dir-rtl .fp-vb-details.checked a:hover {
-  background: none;
-  border: 40px solid black;
-}
-.dir-rtl .fp-vb-tree a:hover {
-  background: none;
-  border: 30px solid black;
-}
-.dir-rtl .fp-vb-tree.checked a:hover {
-  background: none;
-  border: 50px solid black;
-}
 .file-picker .fp-pathbar {
   display: table-row;
 }
@@ -5179,31 +4448,13 @@ span.editinstructions {
   display: none;
 }
 .fp-pathbar .fp-path-folder {
-  background: url('[[pix:theme|fp/path_folder]]') no-repeat 0 0;
   width: 27px;
   height: 12px;
   margin-left: 4px;
 }
-.dir-rtl .fp-pathbar .fp-path-folder {
-  background: url('[[pix:theme|fp/path_folder_rtl]]') no-repeat right top;
-  width: auto;
-  height: 12px;
-  margin-left: 4px;
-}
-.dir-rtl .fp-pathbar span {
-  display: inline-block;
-  *display: inline;
-  /* IE7 inline-block hack */
-  *zoom: 1;
-  float: right;
-  margin-left: 32px;
-}
 .fp-pathbar .fp-path-folder-name {
   margin-left: 32px;
-  line-height: 20px;
-}
-.dir-rtl .fp-pathbar .fp-path-folder-name {
-  margin-right: 32px;
+  margin-right: 0px;
   line-height: 20px;
 }
 .fp-iconview .fp-file {
@@ -5251,9 +4502,6 @@ span.editinstructions {
   padding-bottom: 12px;
   min-width: 112px;
 }
-.dir-rtl .fp-iconview .fp-file {
-  float: right;
-}
 .file-picker .yui3-datatable table {
   border: 0 solid #BBBBBB;
   width: 100%;
@@ -5272,112 +4520,71 @@ span.editinstructions {
   background-color: #FFFFFF;
   border-left: 0 solid #FFFFFF;
 }
-.dir-rtl .file-picker .yui3-datatable-header {
-  text-align: right;
-}
 .file-picker .ygtvtn,
 .filemanager .ygtvtn {
-  background: url('[[pix:moodle|y/tn]]') 0 0 no-repeat;
-  width: 17px;
-  height: 22px;
-}
-.dir-rtl .filemanager .ygtvtn,
-.dir-rtl .file-picker .ygtvtn {
-  background: url('[[pix:moodle|y/tn_rtl]]') 0 0 no-repeat;
   width: 17px;
   height: 22px;
 }
 .file-picker .ygtvtm,
 .filemanager .ygtvtm {
-  background: url('[[pix:moodle|y/tm]]') 0 10px no-repeat;
   width: 13px;
   height: 12px;
   cursor: pointer;
 }
 .file-picker .ygtvtmh,
 .filemanager .ygtvtmh {
-  background: url('[[pix:moodle|y/tm]]') 0 10px no-repeat;
   width: 13px;
   height: 12px;
   cursor: pointer;
 }
 .file-picker .ygtvtp,
 .filemanager .ygtvtp {
-  background: url('[[pix:moodle|y/tp]]') 0 10px no-repeat;
   width: 13px;
   height: 12px;
   cursor: pointer;
 }
-.dir-rtl .file-picker .ygtvtp,
-.dir-rtl .filemanager .ygtvtp {
-  background: url('[[pix:moodle|y/tp_rtl]]') 0 10px no-repeat;
-}
 .file-picker .ygtvtph,
 .filemanager .ygtvtph {
-  background: url('[[pix:moodle|y/tp]]') 0 10px no-repeat;
   width: 13px;
   height: 22px;
   cursor: pointer;
 }
-.dir-rtl .file-picker .ygtvtph,
-.dir-rtl .filemanager .ygtvtph {
-  background: url('[[pix:moodle|y/tp_rtl]]') 0 10px no-repeat;
-}
 .file-picker .ygtvln,
 .filemanager .ygtvln {
-  background: url('[[pix:moodle|y/ln]]') 0 0 no-repeat;
   width: 17px;
   height: 22px;
 }
-.dir-rtl .file-picker .ygtvln,
-.dir-rtl .filemanager .ygtvln {
-  background: url('[[pix:moodle|y/ln_rtl]]') 0 0 no-repeat;
-}
 .file-picker .ygtvlm,
 .filemanager .ygtvlm {
-  background: url('[[pix:moodle|y/lm]]') 0 10px no-repeat;
   width: 13px;
   height: 12px;
   cursor: pointer;
 }
 .file-picker .ygtvlmh,
 .filemanager .ygtvlmh {
-  background: url('[[pix:moodle|y/lm]]') 0 10px no-repeat;
   width: 13px;
   height: 12px;
   cursor: pointer;
 }
 .file-picker .ygtvlp,
 .filemanager .ygtvlp {
-  background: url('[[pix:moodle|y/lp]]') 0 10px no-repeat;
   width: 13px;
   height: 12px;
   cursor: pointer;
-}
-.dir-rtl .file-picker .ygtvlp,
-.dir-rtl .filemanager .ygtvlp {
-  background: url('[[pix:moodle|y/lp_rtl]]') 0 10px no-repeat;
 }
 .file-picker .ygtvlph,
 .filemanager .ygtvlph {
-  background: url('[[pix:moodle|y/lp]]') 0 10px no-repeat;
   width: 13px;
   height: 12px;
   cursor: pointer;
 }
-.dir-rtl .file-picker .ygtvlph,
-.dir-rtl .filemanager .ygtvlph {
-  background: url('[[pix:moodle|y/lp_rtl]]') 0 10px no-repeat;
-}
 .file-picker .ygtvloading,
 .filemanager .ygtvloading {
-  background: transparent url('[[pix:moodle|y/loading]]') 0 0 no-repeat;
   width: 16px;
   height: 22px;
 }
 .file-picker .ygtvdepthcell,
 .filemanager .ygtvdepthcell {
-  background: url('[[pix:moodle|y/vline]]') 0 0 no-repeat;
   width: 17px;
   height: 32px;
 }
@@ -5413,14 +4620,10 @@ a.ygtvspacer:hover {
   margin-top: -7px;
   width: 24px;
   height: 24px;
+  margin-left: 0;
   margin-right: 10px;
   text-align: center;
   line-height: 24px;
-}
-.dir-rtl .fp-icon {
-  float: right;
-  margin-left: 10px;
-  margin-right: 0;
 }
 .fp-icon img {
   max-height: 24px;
@@ -5428,11 +4631,8 @@ a.ygtvspacer:hover {
   vertical-align: middle;
 }
 .fp-filename {
+  padding-left: 0;
   padding-right: 10px;
-}
-.dir-rtl .fp-filename {
-  padding-left: 10px;
-  padding-right: 0;
 }
 .file-picker .fp-login-form {
   height: 100%;
@@ -5745,18 +4945,15 @@ a.ygtvspacer:hover {
   left: 0;
 }
 .fp-iconview .fp-file.fp-hasreferences .fp-reficons1 {
-  background: url('[[pix:theme|fp/link]]') no-repeat;
   background-position: bottom right;
 }
 .fp-iconview .fp-file.fp-isreference .fp-reficons2 {
-  background: url('[[pix:theme|fp/alias]]') no-repeat;
   background-position: bottom left;
 }
 .filemanager .fp-iconview .fp-file.fp-originalmissing .fp-thumbnail img {
   display: none;
 }
 .filemanager .fp-iconview .fp-file.fp-originalmissing .fp-thumbnail {
-  background: url([[pix:s/dead]]) no-repeat;
   background-position: center center;
 }
 .filemanager .yui3-datatable table {
@@ -5778,7 +4975,6 @@ a.ygtvspacer:hover {
   border-left: 0 solid #FFFFFF;
 }
 .filemanager .fp-filename-icon.fp-hasreferences .fp-reficons1 {
-  background: url('[[pix:theme|fp/link_sm]]') no-repeat 0 0;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -5787,7 +4983,6 @@ a.ygtvspacer:hover {
   z-index: 1000;
 }
 .filemanager .fp-filename-icon.fp-isreference .fp-reficons2 {
-  background: url('[[pix:theme|fp/alias_sm]]') no-repeat 0 0;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -5801,6 +4996,7 @@ a.ygtvspacer:hover {
 .filemanager .fp-iconview .fp-folder.fp-hascontextmenu .fp-contextmenu {
   display: block;
   position: absolute;
+  left: inherit;
   right: 7px;
   bottom: 5px;
 }
@@ -5811,16 +5007,6 @@ a.ygtvspacer:hover {
   left: 14px;
   margin-right: -20px;
   top: 6px;
-}
-.dir-rtl .filemanager .fp-iconview .fp-folder.fp-hascontextmenu .fp-contextmenu {
-  left: 7px;
-  right: inherit;
-}
-.dir-rtl .filemanager .fp-treeview .fp-folder.fp-hascontextmenu .fp-contextmenu,
-.dir-rtl .filemanager .fp-tableview .fp-folder.fp-hascontextmenu .fp-contextmenu {
-  left: inherit;
-  right: 16px;
-  margin-right: 0;
 }
 .filepicker-filelist .filepicker-container,
 .filemanager.fm-noitems .fm-empty-container {
@@ -5887,7 +5073,6 @@ a.ygtvspacer:hover {
   display: block;
 }
 .dndupload-arrow {
-  background: url([[pix:theme|fp/dnd_arrow]]) center no-repeat;
   width: 100%;
   height: 80px;
   position: absolute;
@@ -5989,9 +5174,6 @@ a.ygtvspacer:hover {
   text-align: left;
   margin: 20px;
 }
-.dir-rtl .filemanager .fp-mkdir-dlg p {
-  text-align: right;
-}
 .filemanager.fp-dlg {
   text-align: center;
 }
@@ -6007,30 +5189,6 @@ a.ygtvspacer:hover {
 }
 .file-picker div.bd {
   text-align: left;
-}
-.dir-rtl .filemanager .fp-restrictions {
-  text-align: left;
-}
-.dir-rtl .file-picker div.bd,
-.dir-rtl .file-picker .fp-pathbar,
-.dir-rtl .file-picker .fp-list,
-.dir-rtl #filemenu .yuimenuitemlabel,
-.dir-rtl .filemanager-container .yui3-skin-sam .yui3-datatable-header {
-  text-align: right;
-}
-.dir-rtl .filepicker .yui-layout-unit-left {
-  left: 500px;
-}
-.dir-rtl .filepicker .yui-layout-unit-center {
-  left: 0;
-}
-.dir-rtl .file-picker .fp-toolbar .fp-tb-search input {
-  background-position: 208px 7px;
-  padding: 2px 30px 1px 3px;
-}
-.dir-rtl .file-picker .fp-toolbar div {
-  float: right;
-  margin-left: 4px;
 }
 .fp-formset {
   max-width: 500px;
@@ -6056,6 +5214,7 @@ a.ygtvspacer:hover {
 }
 .fp-forminset .control-group .controls {
   margin-left: 125px;
+  margin-right: 0;
 }
 .fp-forminset .control-group .controls.control-radio input {
   margin-top: 3px;
@@ -6069,43 +5228,10 @@ a.ygtvspacer:hover {
 .fp-fileinfo .fp-value {
   display: inline-block;
   padding-left: 5px;
-}
-.dir-rtl .fp-forminset {
-  max-width: 400px;
-}
-.dir-rtl .fp-forminset .control-group label.control-label {
-  float: right;
-  text-align: left;
-}
-.dir-rtl .fp-forminset .control-group label.control-radio {
-  float: left;
-  text-align: right;
-  width: 215px;
-}
-.dir-rtl .fp-forminset .control-group .controls {
-  margin-left: 0;
-  margin-right: 125px;
-}
-.dir-rtl .fp-forminset .fp-select-buttons {
-  float: left;
-}
-.dir-rtl .fp-forminset input[type="text"] {
-  width: 228px;
-}
-.dir-rtl .fp-fileinfo .fp-value {
-  display: inline-block;
-  padding-right: 5px;
+  padding-right: 0px;
 }
 .dir-rtl .fp-select .fp-thumbnail {
   margin: 10px 0 0 0px;
-}
-.dir-rtl .filepicker .fp-formset label {
-  float: right;
-  text-align: left;
-}
-.dir-rtl .filepicker .fp-formset .controls {
-  margin-left: 0;
-  text-align: right;
 }
 /** Message **/
 .message-discussion-noframes h1 {
@@ -6201,17 +5327,11 @@ table.message .searchresults td {
   float: left;
   clear: both;
 }
-.dir-rtl .message .messagearea .messagehistory .left {
-  float: right;
-}
 .message .messagearea .messagehistory .right {
   padding-bottom: 10px;
   width: 50%;
   float: right;
   clear: both;
-}
-.dir-rtl .message .messagearea .messagehistory .right {
-  float: left;
 }
 .message .messagearea .messagehistory .notification {
   min-height: 20px;
@@ -6467,6 +5587,7 @@ table.message .searchresults td {
 #categoryquestions td,
 #categoryquestions th {
   padding: 0 0.2em;
+  text-align: left;
 }
 #categoryquestions th {
   text-align: left;
@@ -6493,9 +5614,6 @@ table.message .searchresults td {
 }
 #page-mod-quiz-edit div.questionbankwindow.block {
   padding: 0;
-}
-.dir-rtl #categoryquestions th {
-  text-align: right;
 }
 .questionbank .singleselect {
   margin: 0;
@@ -6527,9 +5645,6 @@ body.path-question-type .fitem_fgroup .accesshide {
   clear: left;
   text-align: left;
   margin: 0 auto 1.8em auto;
-}
-.dir-rtl .que {
-  text-align: right;
 }
 .que .info {
   float: left;
@@ -6621,9 +5736,6 @@ body.path-question-type .fitem_fgroup .accesshide {
 .que .im-controls {
   margin-top: 0.5em;
   text-align: left;
-}
-.dir-rtl .que .im-controls {
-  text-align: right;
 }
 .que .specificfeedback,
 .que .generalfeedback,
@@ -6775,11 +5887,8 @@ body.path-question-type .fitem_fgroup .accesshide {
   vertical-align: text-bottom;
 }
 .que input.questionflagimage {
+  padding-left: 0;
   padding-right: 3px;
-}
-.dir-rtl .que input.questionflagimage {
-  padding-left: 3px;
-  padding-right: 0;
 }
 .importerror {
   margin-top: 10px;
@@ -6790,14 +5899,6 @@ body.path-question-type .fitem_fgroup .accesshide {
 }
 #page-question-preview #techinfo {
   margin: 1em 0;
-}
-/** Overide for RTL layout **/
-.dir-rtl #chooseqtype .instruction,
-.dir-rtl #chooseqtype .qtypesummary {
-  right: 60%;
-  left: 0%;
-  border-left: 0;
-  border-right: 1px solid grey;
 }
 #page-mod-quiz-edit .box.generalbox.questionbank {
   padding: 0.5em;
@@ -6886,12 +5987,8 @@ body.path-question-type .fitem_fgroup .accesshide {
   position: static;
   width: 12.1em;
   float: right;
+  margin-left: 0px;
   margin-right: 60px;
-}
-#page-mod-quiz-edit.dir-rtl div.question div.content div.points {
-  float: left;
-  margin-left: 60px;
-  margin-right: 0px;
 }
 #page-mod-quiz-edit div.question div.content div.points br {
   display: none;
@@ -7005,20 +6102,6 @@ body.path-question-type .mform fieldset.hidden {
   text-align: center;
   float: left;
   clear: none;
-}
-.dir-rtl .userprofile .description {
-  margin-right: 0;
-}
-.dir-rtl .user-box {
-  float: right;
-}
-.dir-rtl .userprofile dl.list dt {
-  float: right;
-  text-align: left;
-  padding-left: 10px;
-}
-.dir-rtl .userprofile dl.list dd {
-  margin-left: 0;
 }
 .userlist .action-icon img {
   vertical-align: middle;
@@ -7161,9 +6244,6 @@ body.path-question-type .mform fieldset.hidden {
   margin: 0.2em 0;
   text-align: left;
 }
-.dir-rtl #userselector_options p {
-  text-align: right;
-}
 /** user full profile */
 #page-user-profile .messagebox {
   text-align: center;
@@ -7176,20 +6256,6 @@ body.path-question-type .mform fieldset.hidden {
   margin-left: auto;
   margin-right: auto;
 }
-/** Overide for RTL layout **/
-.dir-rtl .userprofilebox .descriptionbox {
-  margin: 0;
-}
-.dir-rtl .userlist table#participants td,
-.dir-rtl .userlist table#participants th {
-  text-align: right;
-}
-.dir-rtl .userlist table#participants {
-  margin: 0 auto;
-}
-#page-my-index.dir-rtl .block h3 {
-  text-align: right;
-}
 .profileeditor > .singleselect {
   margin: 0 0.5em 0 0;
 }
@@ -7200,12 +6266,6 @@ body.path-question-type .mform fieldset.hidden {
 .profileeditor > .singlebutton div,
 .profileeditor > .singlebutton input {
   margin: 0;
-}
-.dir-rtl .profileeditor > .singleselect {
-  margin: 0 0 0 0.5em;
-}
-.dir-rtl .profileeditor > .singlebutton {
-  margin: 0 0.5em 0 0;
 }
 /*!
  * Bootstrap v2.3.2
@@ -12354,11 +11414,13 @@ body:not(.jsenabled) .langmenu:hover > .dropdown-menu,
 }
 .block_calendar_upcoming .content .date {
   padding-left: 22px;
+  padding-right: 0px;
 }
 .block_calendar_upcoming .content .footer {
   margin-top: .5em;
   padding-top: 10px;
   padding-left: 0px;
+  padding-right: 0px;
 }
 .block_rss_client .content li {
   margin-bottom: 10px;
@@ -12393,6 +11455,7 @@ body:not(.jsenabled) .langmenu:hover > .dropdown-menu,
 .block_news_items .content ul li .name {
   font-size: 11.9px;
   padding-left: 1ex;
+  padding-right: 0;
   display: inline;
 }
 .block_news_items .content .footer {
@@ -12417,34 +11480,6 @@ body:not(.jsenabled) .langmenu:hover > .dropdown-menu,
 }
 .block_adminblock select {
   max-width: 92%;
-}
-.dir-rtl .block .header {
-  text-align: right;
-}
-.dir-rtl .block .header h2 {
-  text-align: right;
-}
-.dir-rtl .block .header .commands {
-  text-align: left;
-}
-.dir-rtl .block .header .commands > * {
-  margin-left: 0;
-  margin-right: 3px;
-}
-.dir-rtl .block .header .block_action {
-  float: left;
-}
-.dir-rtl .block_calendar_upcoming .content .date {
-  padding-right: 22px;
-}
-.dir-rtl .block_calendar_upcoming .content .footer {
-  padding-right: 0px;
-}
-.dir-rtl .block_news_items .content ul li .name {
-  padding-right: 1ex;
-}
-.dir-rtl .block_news_items .content .footer {
-  padding-left: 0px;
 }
 /**
  * Moodle forms HTML isn't changeable via renderers (yet?) so this
@@ -12481,19 +11516,8 @@ form {
 .mform fieldset.collapsible legend a.fheader {
   padding: 0 5px 0 20px;
   margin-left: -20px;
-  background: url([[pix:t/expanded]]) 2px center no-repeat;
-}
-.dir-rtl .mform fieldset.collapsible legend a.fheader {
-  padding: 0 20px 0 5px;
-  margin-right: -20px;
-  margin-left: 0;
-  background-position: right center;
-}
-.mform fieldset.collapsed legend a.fheader {
-  background-image: url([[pix:t/collapsed]]);
-}
-.dir-rtl .mform fieldset.collapsed legend a.fheader {
-  background-image: url([[pix:t/collapsed_rtl]]);
+  margin-right: 0;
+  background-position: left center;
 }
 .jsenabled .mform .collapsed .fcontainer {
   display: none;
@@ -12523,9 +11547,6 @@ form {
 }
 .mform .iconhelp {
   margin-left: 4px;
-}
-.dir-rtl .mform .iconhelp {
-  margin-right: 4px;
 }
 .mform .ftextarea #id_alltext {
   width: 100%;
@@ -12565,11 +11586,8 @@ form {
   margin: 0 .2em;
 }
 .singleselect label {
+  margin-left: 0;
   margin-right: .3em;
-}
-.dir-rtl .singleselect label {
-  margin-left: .3em;
-  margin-right: 0;
 }
 input#id_externalurl {
   direction: ltr;
@@ -12603,11 +11621,6 @@ input#id_externalurl {
   text-align: right;
   width: 140px;
 }
-.dir-rtl .form-item .form-label,
-.dir-rtl .mform .fitem div.fitemtitle {
-  float: right;
-  text-align: left;
-}
 .form-defaultinfo,
 .form-label .form-shortname {
   color: #999999;
@@ -12615,9 +11628,6 @@ input#id_externalurl {
 .form-label .form-shortname {
   font-size: 10.5px;
   display: block;
-}
-.dir-rtl .form-label .form-shortname {
-  text-align: left;
 }
 .form-item .form-setting,
 .form-item .form-description,
@@ -12693,52 +11703,6 @@ div.backup-section + form:after,
 .form-buttons {
   padding-left: 200px;
 }
-.dir-rtl table#form td.submit,
-.dir-rtl .form-buttons,
-.dir-rtl .path-admin .buttons,
-.dir-rtl #fitem_id_submitbutton,
-.dir-rtl .fp-content-center form + div,
-.dir-rtl div.backup-section + form,
-.dir-rtl #fgroup_id_buttonar {
-  padding: 19px 20px 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  background-color: #f5f5f5;
-  border-top: 1px solid #e5e5e5;
-  *zoom: 1;
-  padding-right: 0;
-}
-.dir-rtl table#form td.submit:before,
-.dir-rtl .form-buttons:before,
-.dir-rtl .path-admin .buttons:before,
-.dir-rtl #fitem_id_submitbutton:before,
-.dir-rtl .fp-content-center form + div:before,
-.dir-rtl div.backup-section + form:before,
-.dir-rtl #fgroup_id_buttonar:before,
-.dir-rtl table#form td.submit:after,
-.dir-rtl .form-buttons:after,
-.dir-rtl .path-admin .buttons:after,
-.dir-rtl #fitem_id_submitbutton:after,
-.dir-rtl .fp-content-center form + div:after,
-.dir-rtl div.backup-section + form:after,
-.dir-rtl #fgroup_id_buttonar:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-.dir-rtl table#form td.submit:after,
-.dir-rtl .form-buttons:after,
-.dir-rtl .path-admin .buttons:after,
-.dir-rtl #fitem_id_submitbutton:after,
-.dir-rtl .fp-content-center form + div:after,
-.dir-rtl div.backup-section + form:after,
-.dir-rtl #fgroup_id_buttonar:after {
-  clear: both;
-}
-.dir-rtl .path-admin .buttons,
-.dir-rtl .form-buttons {
-  padding-right: 200px;
-}
 .form-item .form-setting .form-checkbox.defaultsnext {
   margin-top: 5px;
   display: inline-block;
@@ -12758,74 +11722,6 @@ div.backup-section + form:after,
 .mform legend a:hover {
   color: #333333;
   text-decoration: none;
-}
-.dir-rtl .mform .fitem .felement {
-  margin-right: 30%;
-  margin-left: auto;
-  text-align: right;
-}
-.dir-rtl .mform .fitem .felement input[name=email],
-.dir-rtl .mform .fitem .felement input[name=email2],
-.dir-rtl .mform .fitem .felement input[name=url],
-.dir-rtl .mform .fitem .felement input[name=idnumber],
-.dir-rtl .mform .fitem .felement input[name=phone1],
-.dir-rtl .mform .fitem .felement input[name=phone2] {
-  text-align: left;
-  direction: ltr;
-}
-.dir-rtl #id_s__pathtodu,
-.dir-rtl #id_s__aspellpath,
-.dir-rtl #id_s__pathtodot,
-.dir-rtl #id_s__supportemail,
-.dir-rtl #id_s__supportpage,
-.dir-rtl #id_s__sessioncookie,
-.dir-rtl #id_s__sessioncookiepath,
-.dir-rtl #id_s__sessioncookiedomain,
-.dir-rtl #id_s__proxyhost,
-.dir-rtl #id_s__proxyuser,
-.dir-rtl #id_s__proxypassword,
-.dir-rtl #id_s__proxybypass,
-.dir-rtl #id_s__jabberhost,
-.dir-rtl #id_s__jabberserver,
-.dir-rtl #id_s__jabberusername,
-.dir-rtl #id_s__jabberpassword,
-.dir-rtl #id_s__additionalhtmlhead,
-.dir-rtl #id_s__additionalhtmltopofbody,
-.dir-rtl #id_s__additionalhtmlfooter,
-.dir-rtl #id_s__docroot,
-.dir-rtl #id_s__filter_tex_latexpreamble,
-.dir-rtl #id_s__filter_tex_latexbackground,
-.dir-rtl #id_s__filter_tex_pathlatex,
-.dir-rtl #id_s__filter_tex_pathdvips,
-.dir-rtl #id_s__filter_tex_pathconvert,
-.dir-rtl #id_s__blockedip,
-.dir-rtl #id_s__pathtoclam,
-.dir-rtl #id_s__quarantinedir,
-.dir-rtl #id_s__sitepolicy,
-.dir-rtl #id_s__sitepolicyguest,
-.dir-rtl #id_s__cronremotepassword,
-.dir-rtl #id_s__allowedip,
-.dir-rtl #id_s__blockedip,
-.dir-rtl #id_s_enrol_meta_nosyncroleids,
-.dir-rtl #id_s_enrol_ldap_host_url,
-.dir-rtl #id_s_enrol_ldap_ldapencoding,
-.dir-rtl #id_s_enrol_ldap_bind_dn,
-.dir-rtl #id_s_enrol_ldap_bind_pw,
-.dir-rtl #admin-emoticons .form-text,
-.dir-rtl #admin-role_mapping input[type=text],
-.dir-rtl #id_s_enrol_paypal_paypalbusiness,
-.dir-rtl #id_s_enrol_flatfile_location,
-#page-admin-setting-enrolsettingsflatfile.dir-rtl input[type=text],
-#page-admin-setting-enrolsettingsdatabase.dir-rtl input[type=text],
-#page-admin-auth-db.dir-rtl input[type=text] {
-  direction: ltr;
-}
-#page-admin-setting-enrolsettingsflatfile.dir-rtl .informationbox {
-  direction: ltr;
-  text-align: left;
-}
-#page-admin-grade-edit-scale-edit.dir-rtl .error input#id_name {
-  margin-right: 170px;
 }
 #page-grade-edit-outcome-course .courseoutcomes {
   margin-left: auto;
@@ -12857,12 +11753,8 @@ input[type="checkbox"] + label {
 input[type="radio"],
 input[type="checkbox"] {
   margin-top: -4px;
+  margin-left: auto;
   margin-right: 7px;
-}
-.dir-rtl input[type="radio"],
-.dir-rtl input[type="checkbox"] {
-  margin-left: 7px;
-  margin-right: auto;
 }
 .singleselect {
   display: inline-block;
@@ -12873,9 +11765,6 @@ input[type="checkbox"] {
 }
 .form-item .form-label label {
   margin-bottom: 0;
-}
-.dir-rtl .form-item .form-label label {
-  text-align: left;
 }
 .felement.ffilepicker {
   margin-top: 5px;
@@ -12933,22 +11822,6 @@ fieldset.coursesearchbox label {
   body #region-main .mform:not(.unresponsive) .fitem_fcheckbox .felement {
     padding: 6px;
   }
-  body.dir-rtl #region-main .mform:not(.unresponsive) .femptylabel .fitemtitle {
-    margin-right: 0px;
-    margin-left: 8px;
-  }
-  body.dir-rtl #region-main .mform:not(.unresponsive) .fitem .fitemtitle {
-    text-align: right;
-  }
-  body.dir-rtl #region-main .mform:not(.unresponsive) .fitem .felement {
-    margin-right: 0;
-    float: right;
-    padding-right: 0;
-    padding-left: 0;
-  }
-  body.dir-rtl #region-main .mform:not(.unresponsive) .fitem_fcheckbox .felement {
-    float: right;
-  }
 }
 /**
  * Make forms vertical when the screen is less than 1474px AND both side-pre and side-post contain blocks.
@@ -12995,22 +11868,6 @@ fieldset.coursesearchbox label {
   }
   .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .fitem_fcheckbox .felement {
     padding: 6px;
-  }
-  .used-region-side-pre.used-region-side-post.dir-rtl #region-main .mform:not(.unresponsive) .femptylabel .fitemtitle {
-    margin-right: 0px;
-    margin-left: 8px;
-  }
-  .used-region-side-pre.used-region-side-post.dir-rtl #region-main .mform:not(.unresponsive) .fitem .fitemtitle {
-    text-align: right;
-  }
-  .used-region-side-pre.used-region-side-post.dir-rtl #region-main .mform:not(.unresponsive) .fitem .felement {
-    margin-right: 0;
-    float: right;
-    padding-right: 0;
-    padding-left: 0;
-  }
-  .used-region-side-pre.used-region-side-post.dir-rtl #region-main .mform:not(.unresponsive) .fitem_fcheckbox .felement {
-    float: right;
   }
 }
 /* Section and module editing forms contain special JS components for the
@@ -13083,33 +11940,6 @@ fieldset.coursesearchbox label {
   margin-left: 20px;
   margin-bottom: 6px;
 }
-.dir-rtl #fitem_id_availabilityconditionsjson .availability-group {
-  margin-right: 0;
-  margin-left: 8px;
-}
-.dir-rtl #fitem_id_availabilityconditionsjson .availability-none {
-  margin-right: 20px;
-  margin-left: 0;
-}
-.dir-rtl #fitem_id_availabilityconditionsjson .availability-plugincontrols {
-  padding-right: 4px;
-  padding-left: 0px;
-  margin-right: 0;
-  margin-left: 8px;
-}
-.dir-rtl #fitem_id_availabilityconditionsjson .availability-eye,
-.dir-rtl #fitem_id_availabilityconditionsjson .availability-delete {
-  margin-left: 8px;
-  margin-right: 0;
-}
-.dir-rtl #fitem_id_availabilityconditionsjson .availability-button {
-  margin-right: 15px;
-  margin-left: 0;
-}
-.dir-rtl #fitem_id_availabilityconditionsjson .availability-connector {
-  margin-right: 20px;
-  margin-left: 0;
-}
 /* Default form styling colours all text red. With availability conditions
    this looks excessive as we show 'Invalid' markers in specific places. */
 .mform .error .availability-field {
@@ -13148,15 +11978,6 @@ fieldset.coursesearchbox label {
   margin-left: 1em;
   margin-right: 1em;
   margin-top: 4px;
-}
-.dir-rtl .availability-dialogue ul button {
-  float: right;
-  margin-right: 1em;
-  margin-left: 0;
-}
-.dir-rtl .availability-dialogue label {
-  margin-right: 170px;
-  margin-left: 1em;
 }
 /* Revert to the non-fixed width where a textarea has the number of columns
    specified, or an input has it's size specified. */
@@ -13477,6 +12298,7 @@ div#dock {
   padding: 5px 10px;
 }
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-userlist #users-list img {
+  margin-left: 0px;
   margin-right: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -13511,37 +12333,10 @@ div#dock {
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages .mdl-chat-my-entry .chat-message.course-theme .user {
   font-weight: bold;
 }
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax.dir-rtl .yui-layout-unit-right {
-  padding: 0;
-}
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax.dir-rtl .yui-layout-unit div.yui-layout-bd {
-  text-align: right;
-}
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax.dir-rtl #chat-userlist #users-list img {
-  margin-left: 8px;
-}
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax.dir-rtl #chat-messages .chat-message.course-theme .time {
-  float: left;
-}
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax.dir-rtl #chat-messages .chat-message.course-theme .user {
-  float: right;
-}
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax.dir-rtl #chat-messages .chat-message.course-theme .chat-message-meta {
-  height: 20px;
-}
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax.dir-rtl #chat-messages .chat-message.course-theme .text {
-  text-align: right;
-}
 /* reports.less */
 #page-report-participation-index .participationselectform div label {
   display: inline;
   margin: 0 5px;
-}
-#page-report-participation-index.dir-ltr .participationselectform div label[for=menuinstanceid] {
-  margin-left: 0px;
-}
-#page-report-participation-index.dir-rtl .participationselectform div label[for=menuinstanceid] {
-  margin-right: 0px;
 }
 .path-backup .mform .grouped_settings.section_level {
   min-height: 20px;
@@ -14237,36 +13032,6 @@ input.fp-btn-choose {
 .gradingform_rubric.editor .addcriterion input {
   background: #ffffff none no-repeat top left;
 }
-.dir-rtl #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .level .score {
-  text-align: right;
-  float: right;
-  margin-left: 28px;
-  margin-right: 0px;
-}
-.dir-rtl #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .level .delete {
-  float: left;
-}
-.dir-rtl #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .level .delete input {
-  left: 0;
-  right: auto;
-}
-.dir-rtl #rubric-rubric.gradingform_rubric .addcriterion {
-  margin-right: 5px;
-  margin-left: 0px;
-}
-.dir-rtl #rubric-rubric.gradingform_rubric .addcriterion input {
-  padding-right: 26px;
-  padding-left: 10px;
-  background-position: right 8px top 8px;
-}
-.dir-rtl #rubric-rubric.gradingform_rubric .options .option .value {
-  margin-left: 0px;
-  margin-right: 5px;
-}
-.dir-rtl #rubric-rubric.gradingform_rubric .options .option input {
-  margin-left: 12px;
-  margin-right: 5px;
-}
 #rubric-rubric.gradingform_rubric #rubric-criteria {
   margin-bottom: 1em;
 }
@@ -14523,7 +13288,6 @@ input.fp-btn-choose {
   text-shadow: inherit;
   border: 0px none;
   line-height: inherit;
-  background: transparent url([[pix:t/add]]) no-repeat 7px 8px;
   padding-left: 26px;
 }
 #rubric-rubric.gradingform_rubric .options {
@@ -14558,6 +13322,7 @@ input.fp-btn-choose {
 }
 body.has_dock #page {
   padding-left: 45px;
+  padding-right: 0;
 }
 body.has_dock div#dock {
   display: inline;
@@ -14566,7 +13331,8 @@ body.has_dock div#dock {
   width: 42px;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 0%;
+  right: auto;
   height: 100%;
   background-color: transparent;
   border-right: 0 none;
@@ -14768,23 +13534,6 @@ body.has_dock div#dock {
 }
 #dockeditempanel .dockeditempanel_hd .commands .hidepanemicon img {
   cursor: pointer;
-}
-.dir-rtl.has_dock #page {
-  padding-left: 0;
-  padding-right: 45px;
-}
-.dir-rtl #dock {
-  left: auto;
-  right: 0%;
-}
-.dir-rtl #dock .dockedtitle h2 {
-  line-height: 25px;
-}
-.dir-rtl #dockeditempanel {
-  right: 100%;
-}
-.dir-rtl #dockeditempanel .dockeditempanel_hd .commands {
-  text-align: left;
 }
 /*!
  * Bootstrap Responsive v2.3.2
@@ -15876,14 +14625,6 @@ body.has_dock div#dock {
   .form-horizontal .controls {
     margin-left: 220px;
   }
-  .dir-rtl .form-item .form-setting,
-  .dir-rtl .form-item .form-description,
-  .dir-rtl .mform .fitem .felement,
-  .dir-rtl .mform .fdescription.required,
-  .dir-rtl .userprofile dl.list dd,
-  .dir-rtl .form-horizontal .controls {
-    margin-right: 220px;
-  }
   #page-mod-forum-search.dir-lrt .c1 {
     margin-right: 220px;
   }
@@ -15908,31 +14649,16 @@ body.has_dock div#dock {
   .file-picker .fp-login-form .fp-login-input label {
     text-align: left;
   }
-  .dir-rtl .file-picker .fp-login-form .fp-login-input label {
-    text-align: right;
-  }
   .file-picker .fp-content form td {
     display: block;
     width: 100%;
     text-align: left;
   }
-  .dir-rtl .file-picker .fp-content form td {
-    text-align: right;
-  }
   .fp-content .mdl-right {
     text-align: left;
   }
-  .dir-rtl .fp-content .mdl-right {
-    text-align: right;
-  }
   .fp-repo-items .fp-navbar {
     border-top: 1px solid #bbbbbb;
-  }
-  .dir-rtl .userprofile dl.list dt,
-  .dir-rtl .userprofile dl.list dd {
-    float: none;
-    text-align: right;
-    margin-right: 0;
   }
   .fp-formset div {
     height: auto;
@@ -15965,30 +14691,9 @@ body.has_dock div#dock {
   .form-horizontal .controls {
     margin-left: 265px;
   }
-  .dir-rtl .form-item .form-setting,
-  .dir-rtl .form-item .form-description,
-  .dir-rtl .mform .fitem .felement,
-  .dir-rtl .mform .fdescription.required,
-  .dir-rtl .userprofile dl.list dd,
-  .dir-rtl .form-horizontal .controls {
-    margin-right: 165px;
-  }
-  .dir-rtl #page-mod-forum-search .c1 {
-    margin-right: 265px;
-  }
-  .dir-rtl .form-item .form-label,
-  .dir-rtl .mform .fitem div.fitemtitle,
-  .dir-rtl .userprofile dl.list dt,
-  .dir-rtl .form-horizontal .control-label {
-    width: 145px;
-  }
   .path-admin .buttons,
   .form-buttons {
     padding-left: 265px;
-  }
-  .dir-rtl .path-admin .buttons,
-  .dir-rtl .form-buttons {
-    padding-right: 265px;
   }
   .empty-region-side-post.used-region-side-pre #region-main.span8,
   .jsenabled.docked-region-side-post.used-region-side-pre #region-main.span8 {
@@ -16206,31 +14911,6 @@ body.has_dock div#dock {
     padding-right: 0;
   }
 }
-.dir-rtl .dropdown-menu {
-  right: 0;
-  left: auto;
-  margin-right: 0px;
-}
-.dir-rtl .navbar .nav > li > .dropdown-menu:before {
-  right: 9px;
-  left: auto;
-}
-.dir-rtl .navbar .nav > li > .dropdown-menu:after {
-  right: 10px;
-  left: auto;
-}
-.dir-rtl .dropdown-submenu > a:after {
-  margin-right: 0;
-  margin-left: -10px;
-  float: left;
-  border-right-color: #ccc;
-  border-left-color: transparent;
-  border-width: 5px 5px 5px 0px;
-}
-.dir-rtl .dropdown-submenu > .dropdown-menu {
-  right: 100%;
-  left: auto;
-}
 @media (max-width: 979px) {
   .nav-collapse {
     height: 0;
@@ -16391,24 +15071,10 @@ body.has_dock div#dock {
     margin-right: 0;
     padding-right: 0;
   }
-  #page-mod-forum-discuss.dir-rtl .discussioncontrols {
-    text-align: left;
-  }
 }
 @media (max-width: 768px) {
   .fp-forminset .control-group .controls {
     margin-left: 0;
-  }
-  .dir-rtl .fp-formset .control-group label.control-label {
-    text-align: right;
-    float: none;
-  }
-  .dir-rtl .fp-forminset .control-group label.control-label {
-    text-align: right;
-    float: none;
-  }
-  .dir-rtl .fp-forminset .control-group .controls {
-    margin-right: 0;
   }
 }
 table#explaincaps tbody > tr:nth-child(odd) > td,
@@ -16436,36 +15102,6 @@ form#movecourses table tbody > tr:nth-child(odd) > th,
 table.flexible tbody > tr:nth-child(odd) > th,
 .generaltable tbody > tr:nth-child(odd) > th {
   background-color: #f9f9f9;
-}
-.dir-rtl table#explaincaps td,
-.dir-rtl table#defineroletable td,
-.dir-rtl table.grading-report td,
-.dir-rtl table#listdirectories td,
-.dir-rtl table.rolecaps td,
-.dir-rtl table.userenrolment td,
-.dir-rtl table#form td,
-.dir-rtl form#movecourses table td,
-.dir-rtl .forumheaderlist td,
-.dir-rtl table.flexible td,
-.dir-rtl .generaltable td,
-.dir-rtl .generaltable thead:first-child tr:first-child td,
-.dir-rtl table#explaincaps th,
-.dir-rtl table#defineroletable th,
-.dir-rtl table.grading-report th,
-.dir-rtl table#listdirectories th,
-.dir-rtl table.rolecaps th,
-.dir-rtl table.userenrolment th,
-.dir-rtl table#form th,
-.dir-rtl form#movecourses table th,
-.dir-rtl .forumheaderlist th,
-.dir-rtl table.flexible th,
-.dir-rtl .generaltable th,
-.dir-rtl .generaltable thead:first-child tr:first-child th {
-  text-align: right;
-}
-#page-admin-course-index.dir-rtl .editcourse td,
-#page-admin-course-index.dir-rtl .editcourse th {
-  text-align: right;
 }
 #page-report-loglive-index .generaltable th,
 #page-admin-report-log-index .generaltable th,

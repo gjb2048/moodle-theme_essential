@@ -66,6 +66,7 @@
   }
   .cal_courses_flt {
     label {
+      margin-left: 0;
       margin-right: .45em;
     }
   }
@@ -223,32 +224,8 @@
 
 // RTL overrides for main calendar.
 .dir-rtl.path-calendar {
-  .cal_courses_flt {
-    label {
-      margin-left: .45em;
-      margin-right: 0;
-    }
-  }
   .maincalendar {
-    .calendar_event_course,
-    .calendar_event_global,
-    .calendar_event_group,
-    .calendar_event_user {
-      border-left-width: 1px;
-      border-right-width: 12px;
-    }
-    .calendar-controls {
-      .next {
-        text-align: left;
-      }
-      .previous {
-        text-align: right;
-      }
-    }
     .calendartable {
-      td, li {
-        text-align: right;
-      }
       li {
         padding-right: 10px;
         padding-left: 5px;
@@ -326,6 +303,7 @@
       }
       .eventcontent {
         img {
+          padding-left: 0;
           padding-right: 5px;
         }
       }
@@ -366,34 +344,13 @@
     }
     .eventname {
       padding-left: 0.2em;
+      padding-right: 0;
     }
   }
   .content {
     h3 {
       &.eventskey {
         margin-top: 0.5em;
-      }
-    }
-  }
-}
-
-// RTL overrides for block minicalendar.
-.dir-rtl {
-  .block {
-    .calendar_filters {
-      .eventname {
-        padding-right: 0.2em;
-        padding-left: 0;
-      }
-    }
-    .calendar-event-panel {
-      .yui3-overlay-content {
-        .eventcontent {
-          img {
-            padding-right: 0;
-            padding-left: 5px;
-          }
-        }
       }
     }
   }

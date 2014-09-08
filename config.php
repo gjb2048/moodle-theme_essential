@@ -34,6 +34,7 @@ $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
 $THEME->parents = array();
 
+$THEME->sheets[] = 'moodle-rtl';
 $THEME->sheets[] = 'settings';
 $THEME->sheets[] = 'fontawesome';
 

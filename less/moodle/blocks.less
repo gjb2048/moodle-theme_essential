@@ -146,11 +146,13 @@
   .content {
     .date {
       padding-left: 22px;
+      padding-right: 0px;
     }
     .footer {
       margin-top: .5em;
       padding-top: 10px;
       padding-left: 0px;
+      padding-right: 0px;
     }
   }
 }
@@ -191,6 +193,7 @@
     .name {
       font-size: @fontSizeSmall;
       padding-left: 1ex;
+      padding-right: 0;
       display: inline;
     }
   }
@@ -224,53 +227,5 @@
   }
   select {
     max-width: 92%;
-  }
-}
-
-// RTL styles for blocks.
-.dir-rtl {
-
-  // RTL styles for blocks in general.
-  .block {
-    .header {
-      text-align: right;
-      h2 {
-        text-align: right;
-      }
-      .commands {
-        text-align: left;
-        > * {
-          margin-left: 0;
-          margin-right: 3px;
-        }
-      }
-      .block_action {
-        float: left;
-      }
-    }
-  }
-
-  // LTR styles for the calendar upcoming block.
-  .block_calendar_upcoming {
-    .content {
-      .date {
-        padding-right: 22px;
-      }
-      .footer {
-        padding-right: 0px;
-      }
-    }
-  }
-
-  // RTL styles for the news items block.
-  .block_news_items .content {
-    ul li {
-      .name {
-        padding-right: 1ex;
-      }
-    }
-    .footer {
-      padding-left: 0px;
-    }
   }
 }

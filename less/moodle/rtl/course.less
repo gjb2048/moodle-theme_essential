@@ -1,0 +1,38 @@
+// RTL from original less file of same name which cannot be intelligently removed.  CSS Flip process would probably not affect the original.
+.dir-rtl .coursebox > .info > .coursename a {
+  background-position: right;
+}
+
+.dir-rtl .section {
+  .activity {
+    /* The command block for each activity */
+    .actions {
+      left: 0;
+      right: auto;
+    }
+
+    .contentwithoutlink,
+    .activityinstance {
+      padding-left: 4px;
+      padding-right: initial;
+    }
+  }
+}
+
+.dir-rtl.editing .section {
+  .activity {
+    &.editor_displayed {
+      div.activityinstance {
+        padding-left: initial;
+      }
+    }
+  }
+}
+
+.dir-rtl.path-course-view .completionprogress {
+  float: none;
+}
+
+.dir-rtl.path-course-view li.activity form.togglecompletion .ajaxworking {
+  right: -22px;
+}
