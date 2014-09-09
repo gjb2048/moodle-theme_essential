@@ -4143,7 +4143,7 @@ img.iconsmall {
 }
 
 .course-content ul.topics li.section {
-  padding-bottom: 20px;
+  padding-bottom: 20px !important;
 }
 
 .course-content ul.topics li.section .summary {
@@ -14553,15 +14553,6 @@ select {
   margin-right: 4px;
 }
 
-.dir-rtl .nav-tabs > li,
-.dir-rtl .nav-pills > li {
-  float: left;
-}
-
-.dir-rtl .navbar .brand {
-  float: left;
-}
-
 .navbar-inverse .logininfo a {
   color: #999999;
 }
@@ -14574,16 +14565,6 @@ select {
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   z-index: 4030;
-}
-
-.dir-rtl .breadcrumb-button,
-.dir-rtl .navbar .btn-navbar {
-  float: right;
-}
-
-.dir-rtl .breadcrumb-button .singlebutton {
-  float: left;
-  margin-left: 4px;
 }
 
 .ie .row-fluid .desktop-first-column {
@@ -14645,16 +14626,6 @@ div#dock {
   padding: 3px 8px 3px 20px;
 }
 
-.dir-rtl .dropdown-menu > li > a {
-  padding: 3px 20px 3px 8px;
-}
-
-.dir-rtl .dropdown-submenu > .dropdown-menu {
-  -webkit-border-radius: 0px 6px 6px 6px;
-  -moz-border-radius: 0px 6px 6px 6px;
-  border-radius: 0px 6px 6px 6px;
-}
-
 .path-mod-survey .surveytable > tbody > tr:nth-of-type(odd) {
   background-color: transparent;
 }
@@ -14675,20 +14646,8 @@ div#dock {
   text-align: center;
 }
 
-.dir-rtl.path-mod-forum .forumheaderlist thead .header.lastpost {
-  text-align: right;
-}
-
-.dir-rtl.path-mod-forum .forumheaderlist .discussion .lastpost {
-  text-align: right;
-}
-
 .nav .caret {
   margin-right: 4px;
-}
-
-.dir-rtl .nav .caret {
-  margin-left: 4px;
 }
 
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax {
@@ -18602,7 +18561,6 @@ img.profilepicture {
 
 .block .icon {
   margin-left: 5px;
-  color: [[setting:themeiconcolor]];
 }
 
 .block .moodle-actionmenu[data-enhanced].show .menu a:hover {
@@ -18616,7 +18574,6 @@ img.profilepicture {
 .block .moodle-core-dragdrop-draghandle:before {
   font-family: 'FontAwesome';
   content: "\f047";
-  color: [[setting:themeiconcolor]];
   margin-left: 5px;
   cursor: move;
 }
@@ -18653,14 +18610,12 @@ img.profilepicture {
 .tree_item.branch.branch:before {
   font-family: FontAwesome;
   content: "\f07c";
-  color: [[setting:themeiconcolor]];
   margin-left: 5px;
 }
 
 .tree_item.branch.emptybranch:before {
   font-family: FontAwesome;
   content: "\f114";
-  color: #d3d3d3;
   margin-left: 5px;
 }
 
@@ -18679,7 +18634,6 @@ img.profilepicture {
 .collapsed .tree_item.branch:before {
   font-family: FontAwesome;
   content: "\f07b";
-  color: [[setting:themeiconcolor]];
   margin-left: 5px;
 }
 
@@ -18886,200 +18840,6 @@ img.profilepicture {
 
 /* @end */
 
-/* @group Block Icons */
-
-.block_news_items .header .title h2:before {
-  content: "\f0a1";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_navigation .header .title h2:before {
-  content: "\f0e8";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_calendar_upcoming .header .title h2:before,
-.block_calendar_month .header .title h2:before {
-  content: "\f073";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_course_list .header .title h2:before {
-  content: "\f108";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_completionstatus .header .title h2:before,
-.block_selfcompletion .header .title h2:before {
-  content: "\f0e4";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_blog_menu .header .title h2:before {
-  content: "\f02d";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_quiz_results .header .title h2:before {
-  content: "\f080";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_quiz_navblock .header .title h2:before {
-  content: "\f126";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_glossary_random .header .title h2:before {
-  content: "\f0eb";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_book_toc .header .title h2:before {
-  content: "\f02d";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_participants .header .title h2:before,
-.block_online_users .header .title h2:before {
-  content: "\f0c0";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_html .header .title h2:before {
-  content: "\f022";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_section_links .header .title h2:before {
-  content: "\f02e";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_activity_modules .header .title h2:before {
-  content: "\f12e";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_comments .header .title h2:before {
-  content: "\f075";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_settings .header .title h2:before {
-  content: "\f085";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_admin_bookmarks .header .title h2:before {
-  content: "\f02e";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_blog_tags .header .title h2:before,
-.block_tags .header .title h2:before {
-  content: "\f02c";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_private_files .header .title h2:before {
-  content: "\f114";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_block_mentees .header .title h2:before {
-  content: "\f0c0";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_messages .header .title h2:before {
-  content: "\f0e0";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_community .header .title h2:before {
-  content: "\f0ac";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_recent_activity .header .title h2:before {
-  content: "\f017";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_search_forums .header .title h2:before {
-  content: "\f0e6";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_myprofile .header .title h2:before {
-  content: "\f007";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_adminblock .header .title h2:before {
-  content: "\f009";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_feedback .header .title h2:before {
-  content: "\f087";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_flickr .header .title h2:before {
-  content: "\f03e";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_youtube .header .title h2:before {
-  content: "\f145";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_course_badges .header .title h2:before {
-  content: "\f091";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-.block_twitter_search .header .title h2:before {
-  content: "\f099";
-  color: [[setting:themeiconcolor]];
-  font-family: FontAwesome;
-}
-
-/* @end */
-
 /* @end */
 
 /* @group Breadcrumb Button */
@@ -19258,7 +19018,8 @@ img.profilepicture {
 
 .breadcrumb-nav ul.breadcrumb.style2 li:after {
   font-family: FontAwesome;
-  content: "\f138";
+  /*@replace: "\f137"*/
+  content: "\f137";
   padding: 5px;
   line-height: 20px;
   vertical-align: top;
@@ -19583,7 +19344,6 @@ div.mdl-align.title {
 .listitem-category .icon {
   margin-left: 5px;
   margin-right: 3px;
-  color: [[setting:themeiconcolor]];
 }
 
 .editing .section .activity .activityinstance {
@@ -20028,7 +19788,6 @@ i > img {
 p.tree_item.leaf a > i,
 .course-item-actions a > i,
 .actions a > i {
-  color: [[setting:themeiconcolor]];
   width: 14px;
 }
 
@@ -20062,9 +19821,8 @@ a.action-icon > i,
 
 .section-modchooser-link > a:before {
   font-family: 'FontAwesome';
-  content: "\f067 ";
+  content: "\f067";
   margin-left: 3px;
-  color: [[setting:themeiconcolor]];
 }
 
 .section-modchooser-link > a:hover:before {
@@ -21357,6 +21115,194 @@ ul.socials li {
 }
 
 /* @end */
+
+/* Group scaffolding.less */
+
+.ecol12 {
+  width: 100%;
+  *width: 99.94680851%;
+}
+
+.ecol11 {
+  width: 91.4893617%;
+  *width: 91.43617021%;
+}
+
+.ecol10 {
+  width: 82.9787234%;
+  *width: 82.92553191%;
+}
+
+.ecol9 {
+  width: 74.46808511%;
+  *width: 74.41489362%;
+}
+
+.ecol8 {
+  width: 65.95744681%;
+  *width: 65.90425532%;
+}
+
+.ecol7 {
+  width: 57.44680851%;
+  *width: 57.39361702%;
+}
+
+.ecol6 {
+  width: 48.93617021%;
+  *width: 48.88297872%;
+}
+
+.ecol5 {
+  width: 40.42553191%;
+  *width: 40.37234043%;
+}
+
+.ecol4 {
+  width: 31.91489362%;
+  *width: 31.86170213%;
+}
+
+.ecol3 {
+  width: 23.40425532%;
+  *width: 23.35106383%;
+}
+
+.ecol2 {
+  width: 14.89361702%;
+  *width: 14.84042553%;
+}
+
+.ecol1 {
+  width: 6.38297872%;
+  *width: 6.32978723%;
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .ecol12 {
+    width: 100%;
+    *width: 99.94680851%;
+  }
+
+  .ecol11 {
+    width: 91.43646409%;
+    *width: 91.3832726%;
+  }
+
+  .ecol10 {
+    width: 82.87292818%;
+    *width: 82.81973669%;
+  }
+
+  .ecol9 {
+    width: 74.30939227%;
+    *width: 74.25620078%;
+  }
+
+  .ecol8 {
+    width: 65.74585635%;
+    *width: 65.69266486%;
+  }
+
+  .ecol7 {
+    width: 57.18232044%;
+    *width: 57.12912895%;
+  }
+
+  .ecol6 {
+    width: 48.61878453%;
+    *width: 48.56559304%;
+  }
+
+  .ecol5 {
+    width: 40.05524862%;
+    *width: 40.00205713%;
+  }
+
+  .ecol4 {
+    width: 31.49171271%;
+    *width: 31.43852122%;
+  }
+
+  .ecol3 {
+    width: 22.9281768%;
+    *width: 22.87498531%;
+  }
+
+  .ecol2 {
+    width: 14.36464088%;
+    *width: 14.31144939%;
+  }
+
+  .ecol1 {
+    width: 5.80110497%;
+    *width: 5.74791348%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .ecol12 {
+    width: 100%;
+    *width: 99.94680851%;
+  }
+
+  .ecol11 {
+    width: 91.45299145%;
+    *width: 91.39979996%;
+  }
+
+  .ecol10 {
+    width: 82.90598291%;
+    *width: 82.85279142%;
+  }
+
+  .ecol9 {
+    width: 74.35897436%;
+    *width: 74.30578287%;
+  }
+
+  .ecol8 {
+    width: 65.81196581%;
+    *width: 65.75877432%;
+  }
+
+  .ecol7 {
+    width: 57.26495726%;
+    *width: 57.21176578%;
+  }
+
+  .ecol6 {
+    width: 48.71794872%;
+    *width: 48.66475723%;
+  }
+
+  .ecol5 {
+    width: 40.17094017%;
+    *width: 40.11774868%;
+  }
+
+  .ecol4 {
+    width: 31.62393162%;
+    *width: 31.57074013%;
+  }
+
+  .ecol3 {
+    width: 23.07692308%;
+    *width: 23.02373159%;
+  }
+
+  .ecol2 {
+    width: 14.52991453%;
+    *width: 14.47672304%;
+  }
+
+  .ecol1 {
+    width: 5.98290598%;
+    *width: 5.92971449%;
+  }
+}
+
+/* End group scaffolding.less */
 
 /* @group Tabs */
 

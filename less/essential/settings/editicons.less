@@ -4,10 +4,19 @@
 p.tree_item.leaf a,
 .course-item-actions a,
 .actions a {
+  > i {
+    color: @icon-colour;
+  }
   &:hover {
     > i {
       color: ~"[[setting:themehovercolor]]";
     }
+  }
+}
+
+.section-modchooser-link {
+  > a:before {
+    color: @icon-colour;
   }
 }
 

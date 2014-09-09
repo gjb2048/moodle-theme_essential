@@ -124,14 +124,14 @@ echo $OUTPUT->doctype() ?>
         <div class="navbar<?php echo ($oldnavbar) ? ' oldnavbar' : ''; ?> moodle-has-zindex">
             <div class="container-fluid navbar-inner">
                 <div class="row-fluid">
-                    <div class="custommenus pull-left">
+                    <div class="custommenus pull-<?php echo ($left) ? 'left' : 'right'; ?>">
                         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
                         <?php echo theme_essential_get_title('navbar'); ?>
-                        <div class="nav-collapse collapse pull-left">
+                        <div class="nav-collapse collapse pull-<?php echo ($left) ? 'left' : 'right'; ?>">
                             <div id="custom_menu_language">
                                 <?php echo $OUTPUT->custom_menu_language(); ?>
                             </div>
@@ -148,7 +148,7 @@ echo $OUTPUT->doctype() ?>
                             </div>
                         </div>
                     </div>
-                    <div class="pull-right">
+                    <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>">
                         <div class="usermenu">
                             <?php echo $OUTPUT->custom_menu_user(); ?>
                         </div>

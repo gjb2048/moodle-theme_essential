@@ -1,0 +1,19 @@
+// RTL from original less file of same name which cannot be intelligently removed.  CSS Flip process would probably not affect the original.
+.dir-rtl .breadcrumb-button .singlebutton {
+  float: right;
+  margin-right: 4px;
+}
+
+// rtl overrides
+.dir-rtl {
+  &.path-mod-forum .forumheaderlist {
+    thead .header.lastpost {
+      text-align: left;
+    }
+    .discussion {
+      .lastpost {
+        text-align: left;
+      }
+    }
+  }
+}

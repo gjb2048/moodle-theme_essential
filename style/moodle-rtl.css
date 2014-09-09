@@ -466,6 +466,16 @@
 .dir-rtl .form-item .form-label label {
   text-align: left;
 }
+.dir-rtl .breadcrumb-button .singlebutton {
+  float: right;
+  margin-right: 4px;
+}
+.dir-rtl.path-mod-forum .forumheaderlist thead .header.lastpost {
+  text-align: left;
+}
+.dir-rtl.path-mod-forum .forumheaderlist .discussion .lastpost {
+  text-align: left;
+}
 /** Overide for RTL layout **/
 .dir-rtl #chooseqtype .instruction,
 .dir-rtl #chooseqtype .qtypesummary {
