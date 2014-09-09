@@ -3128,7 +3128,6 @@ img.iconsmall {
 }
 
 .environmenttable img.iconhelp {
-  padding-right: 0;
   padding-left: .3em;
 }
 
@@ -3161,7 +3160,6 @@ img.iconsmall {
 }
 
 .adminsettingsflags label {
-  margin-right: 0px;
   margin-left: 7px;
 }
 
@@ -5439,7 +5437,6 @@ span.editinstructions {
 
 .fp-pathbar .fp-path-folder-name {
   margin-right: 32px;
-  margin-left: 0px;
   line-height: 20px;
 }
 
@@ -6372,7 +6369,6 @@ a.ygtvspacer:hover {
 .fp-fileinfo .fp-value {
   display: inline-block;
   padding-right: 5px;
-  padding-left: 0px;
 }
 
 .dir-rtl .fp-select .fp-thumbnail {
@@ -13693,14 +13689,12 @@ body:not(.jsenabled) .langmenu:hover > .dropdown-menu,
 
 .block_calendar_upcoming .content .date {
   padding-right: 22px;
-  padding-left: 0px;
 }
 
 .block_calendar_upcoming .content .footer {
   margin-top: .5em;
   padding-top: 10px;
   padding-right: 0px;
-  padding-left: 0px;
 }
 
 .block_rss_client .content li {
@@ -13743,7 +13737,6 @@ body:not(.jsenabled) .langmenu:hover > .dropdown-menu,
 .block_news_items .content ul li .name {
   font-size: 11.9px;
   padding-right: 1ex;
-  padding-left: 0;
   display: inline;
 }
 
@@ -14776,7 +14769,6 @@ div#dock {
 }
 
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-userlist #users-list img {
-  margin-right: 0px;
   margin-left: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -18634,7 +18626,8 @@ img.profilepicture {
 }
 
 .block li.item_with_icon > p img {
-  position: initial !important;
+  position: static !important;
+  margin-left: 5px;
 }
 
 .editing .block-region.yui3-dd-drop-active-valid {
@@ -19395,7 +19388,7 @@ table.calendarmonth.calendartable {
 }
 
 #essentialCarousel.carousel .carousel-inner.below .carousel-caption {
-  position: initial;
+  position: static;
   height: 65px;
 }
 
@@ -19511,6 +19504,11 @@ table.calendarmonth.calendartable {
   text-overflow: ellipsis;
   width: 176px;
   padding-top: 6px;
+}
+
+.categoryicons .course_category_tree .category > .info a > span,
+.categoryicons .course_category_tree .category > .info > .categoryname a > span {
+  font-size: 18px;
 }
 
 .categoryicons .course_category_tree .fa {
@@ -20368,148 +20366,84 @@ a.action-icon > i,
   font-family: monospace;
 }
 
-#page-course-edit #page form .form-buttons,
-.path-admin-setting #page form .form-buttons,
-#page-admin-registration-register #page form .form-buttons,
-.path-backup #page form .form-buttons,
-#page-course-edit #page form table#form td.submit,
-.path-admin-setting #page form table#form td.submit,
-#page-admin-registration-register #page form table#form td.submit,
-.path-backup #page form table#form td.submit,
-#page-course-edit #page form .form-buttons,
-.path-admin-setting #page form .form-buttons,
-#page-admin-registration-register #page form .form-buttons,
-.path-backup #page form .form-buttons,
-#page-course-edit #page form .path-admin .buttons,
-.path-admin-setting #page form .path-admin .buttons,
-#page-admin-registration-register #page form .path-admin .buttons,
-.path-backup #page form .path-admin .buttons,
-#page-course-edit #page form #fitem_id_submitbutton,
-.path-admin-setting #page form #fitem_id_submitbutton,
-#page-admin-registration-register #page form #fitem_id_submitbutton,
-.path-backup #page form #fitem_id_submitbutton,
-#page-course-edit #page form .fp-content-center form + div,
-.path-admin-setting #page form .fp-content-center form + div,
-#page-admin-registration-register #page form .fp-content-center form + div,
-.path-backup #page form .fp-content-center form + div,
-#page-course-edit #page form div.backup-section + form,
-.path-admin-setting #page form div.backup-section + form,
-#page-admin-registration-register #page form div.backup-section + form,
-.path-backup #page form div.backup-section + form,
-#page-course-edit #page form #fgroup_id_buttonar,
-.path-admin-setting #page form #fgroup_id_buttonar,
-#page-admin-registration-register #page form #fgroup_id_buttonar,
-.path-backup #page form #fgroup_id_buttonar,
-#page-course-edit #page form fieldset:last-of-type.hidden,
-.path-admin-setting #page form fieldset:last-of-type.hidden,
-#page-admin-registration-register #page form fieldset:last-of-type.hidden,
-.path-backup #page form fieldset:last-of-type.hidden {
-  width: 600px;
+#region-main form table#form td.submit,
+#region-main form .form-buttons,
+#region-main form .path-admin .buttons,
+#region-main form #fitem_id_submitbutton,
+#region-main form .fp-content-center form + div,
+#region-main form div.backup-section + form,
+#region-main form #fgroup_id_buttonar {
+  width: 40%;
   position: fixed;
   bottom: 30px;
-  padding-top: 10px;
-  margin: 0px;
+  padding: 20px;
   border-radius: 8px;
 }
 
-#page-course-edit #page form .form-buttons #fgroup_id_buttonar,
-.path-admin-setting #page form .form-buttons #fgroup_id_buttonar,
-#page-admin-registration-register #page form .form-buttons #fgroup_id_buttonar,
-.path-backup #page form .form-buttons #fgroup_id_buttonar,
-#page-course-edit #page form table#form td.submit #fgroup_id_buttonar,
-.path-admin-setting #page form table#form td.submit #fgroup_id_buttonar,
-#page-admin-registration-register #page form table#form td.submit #fgroup_id_buttonar,
-.path-backup #page form table#form td.submit #fgroup_id_buttonar,
-#page-course-edit #page form .form-buttons #fgroup_id_buttonar,
-.path-admin-setting #page form .form-buttons #fgroup_id_buttonar,
-#page-admin-registration-register #page form .form-buttons #fgroup_id_buttonar,
-.path-backup #page form .form-buttons #fgroup_id_buttonar,
-#page-course-edit #page form .path-admin .buttons #fgroup_id_buttonar,
-.path-admin-setting #page form .path-admin .buttons #fgroup_id_buttonar,
-#page-admin-registration-register #page form .path-admin .buttons #fgroup_id_buttonar,
-.path-backup #page form .path-admin .buttons #fgroup_id_buttonar,
-#page-course-edit #page form #fitem_id_submitbutton #fgroup_id_buttonar,
-.path-admin-setting #page form #fitem_id_submitbutton #fgroup_id_buttonar,
-#page-admin-registration-register #page form #fitem_id_submitbutton #fgroup_id_buttonar,
-.path-backup #page form #fitem_id_submitbutton #fgroup_id_buttonar,
-#page-course-edit #page form .fp-content-center form + div #fgroup_id_buttonar,
-.path-admin-setting #page form .fp-content-center form + div #fgroup_id_buttonar,
-#page-admin-registration-register #page form .fp-content-center form + div #fgroup_id_buttonar,
-.path-backup #page form .fp-content-center form + div #fgroup_id_buttonar,
-#page-course-edit #page form div.backup-section + form #fgroup_id_buttonar,
-.path-admin-setting #page form div.backup-section + form #fgroup_id_buttonar,
-#page-admin-registration-register #page form div.backup-section + form #fgroup_id_buttonar,
-.path-backup #page form div.backup-section + form #fgroup_id_buttonar,
-#page-course-edit #page form #fgroup_id_buttonar #fgroup_id_buttonar,
-.path-admin-setting #page form #fgroup_id_buttonar #fgroup_id_buttonar,
-#page-admin-registration-register #page form #fgroup_id_buttonar #fgroup_id_buttonar,
-.path-backup #page form #fgroup_id_buttonar #fgroup_id_buttonar,
-#page-course-edit #page form fieldset:last-of-type.hidden #fgroup_id_buttonar,
-.path-admin-setting #page form fieldset:last-of-type.hidden #fgroup_id_buttonar,
-#page-admin-registration-register #page form fieldset:last-of-type.hidden #fgroup_id_buttonar,
-.path-backup #page form fieldset:last-of-type.hidden #fgroup_id_buttonar {
-  padding: 0px;
-  border: none;
+#region-main form table#form td.submit #id_previous,
+#region-main form .form-buttons #id_previous,
+#region-main form .path-admin .buttons #id_previous,
+#region-main form #fitem_id_submitbutton #id_previous,
+#region-main form .fp-content-center form + div #id_previous,
+#region-main form div.backup-section + form #id_previous,
+#region-main form #fgroup_id_buttonar #id_previous,
+#region-main form table#form td.submit #id_cancel,
+#region-main form .form-buttons #id_cancel,
+#region-main form .path-admin .buttons #id_cancel,
+#region-main form #fitem_id_submitbutton #id_cancel,
+#region-main form .fp-content-center form + div #id_cancel,
+#region-main form div.backup-section + form #id_cancel,
+#region-main form #fgroup_id_buttonar #id_cancel {
+  margin-right: 0px;
+  float: right;
 }
 
-#page-course-edit #page form .form-buttons #id_previous,
-.path-admin-setting #page form .form-buttons #id_previous,
-#page-admin-registration-register #page form .form-buttons #id_previous,
-.path-backup #page form .form-buttons #id_previous,
-#page-course-edit #page form table#form td.submit #id_previous,
-.path-admin-setting #page form table#form td.submit #id_previous,
-#page-admin-registration-register #page form table#form td.submit #id_previous,
-.path-backup #page form table#form td.submit #id_previous,
-#page-course-edit #page form .form-buttons #id_previous,
-.path-admin-setting #page form .form-buttons #id_previous,
-#page-admin-registration-register #page form .form-buttons #id_previous,
-.path-backup #page form .form-buttons #id_previous,
-#page-course-edit #page form .path-admin .buttons #id_previous,
-.path-admin-setting #page form .path-admin .buttons #id_previous,
-#page-admin-registration-register #page form .path-admin .buttons #id_previous,
-.path-backup #page form .path-admin .buttons #id_previous,
-#page-course-edit #page form #fitem_id_submitbutton #id_previous,
-.path-admin-setting #page form #fitem_id_submitbutton #id_previous,
-#page-admin-registration-register #page form #fitem_id_submitbutton #id_previous,
-.path-backup #page form #fitem_id_submitbutton #id_previous,
-#page-course-edit #page form .fp-content-center form + div #id_previous,
-.path-admin-setting #page form .fp-content-center form + div #id_previous,
-#page-admin-registration-register #page form .fp-content-center form + div #id_previous,
-.path-backup #page form .fp-content-center form + div #id_previous,
-#page-course-edit #page form div.backup-section + form #id_previous,
-.path-admin-setting #page form div.backup-section + form #id_previous,
-#page-admin-registration-register #page form div.backup-section + form #id_previous,
-.path-backup #page form div.backup-section + form #id_previous,
-#page-course-edit #page form #fgroup_id_buttonar #id_previous,
-.path-admin-setting #page form #fgroup_id_buttonar #id_previous,
-#page-admin-registration-register #page form #fgroup_id_buttonar #id_previous,
-.path-backup #page form #fgroup_id_buttonar #id_previous,
-#page-course-edit #page form fieldset:last-of-type.hidden #id_previous,
-.path-admin-setting #page form fieldset:last-of-type.hidden #id_previous,
-#page-admin-registration-register #page form fieldset:last-of-type.hidden #id_previous,
-.path-backup #page form fieldset:last-of-type.hidden #id_previous {
-  margin-right: -250px;
+#region-main form table#form td.submit #id_next,
+#region-main form .form-buttons #id_next,
+#region-main form .path-admin .buttons #id_next,
+#region-main form #fitem_id_submitbutton #id_next,
+#region-main form .fp-content-center form + div #id_next,
+#region-main form div.backup-section + form #id_next,
+#region-main form #fgroup_id_buttonar #id_next,
+#region-main form table#form td.submit #id_submitbutton,
+#region-main form .form-buttons #id_submitbutton,
+#region-main form .path-admin .buttons #id_submitbutton,
+#region-main form #fitem_id_submitbutton #id_submitbutton,
+#region-main form .fp-content-center form + div #id_submitbutton,
+#region-main form div.backup-section + form #id_submitbutton,
+#region-main form #fgroup_id_buttonar #id_submitbutton,
+#region-main form table#form td.submit #id_submitbutton2,
+#region-main form .form-buttons #id_submitbutton2,
+#region-main form .path-admin .buttons #id_submitbutton2,
+#region-main form #fitem_id_submitbutton #id_submitbutton2,
+#region-main form .fp-content-center form + div #id_submitbutton2,
+#region-main form div.backup-section + form #id_submitbutton2,
+#region-main form #fgroup_id_buttonar #id_submitbutton2 {
+  float: left;
+  margin-left: 0px;
 }
 
-#page-course-edit #page form .form-buttons,
-.path-admin-setting #page form .form-buttons,
-#page-admin-registration-register #page form .form-buttons,
-.path-backup #page form .form-buttons {
+#region-main form table#form td.submit > .fgroup,
+#region-main form .form-buttons > .fgroup,
+#region-main form .path-admin .buttons > .fgroup,
+#region-main form #fitem_id_submitbutton > .fgroup,
+#region-main form .fp-content-center form + div > .fgroup,
+#region-main form div.backup-section + form > .fgroup,
+#region-main form #fgroup_id_buttonar > .fgroup {
+  margin: 0px;
+  padding-top: 15px;
+}
+
+#region-main form .form-buttons {
   width: 400px;
   border-radius: 8px;
 }
 
-#page-course-edit #page form .form-buttons input,
-.path-admin-setting #page form .form-buttons input,
-#page-admin-registration-register #page form .form-buttons input,
-.path-backup #page form .form-buttons input {
+#region-main form .form-buttons input {
   margin: 0px;
 }
 
-#page-course-edit #page form .fdescription.required,
-.path-admin-setting #page form .fdescription.required,
-#page-admin-registration-register #page form .fdescription.required,
-.path-backup #page form .fdescription.required {
+#region-main form .fdescription.required {
   color: orangered;
 }
 
@@ -20548,6 +20482,10 @@ a.action-icon > i,
   font-weight: normal;
   font-size: 1.2em;
   margin-bottom: -5px;
+}
+
+.forumpost .header {
+  margin-bottom: 10px;
 }
 
 .forumsearch input[type="text"] {
@@ -20912,14 +20850,16 @@ table#greyboxleft h2 {
 #page-header h1#smalltitle {
   white-space: nowrap;
   font-size: 2em;
+  top: 10px;
+  line-height: 20px;
   position: relative;
 }
 
 #page-header h2#subtitle {
   white-space: nowrap;
   font-size: 1em;
-  top: -20px;
   position: relative;
+  line-height: 25px;
 }
 
 #page-header a.textlogo {
@@ -21328,7 +21268,7 @@ ul.socials li {
 
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a > .notification .notification-text {
   width: 185px;
-  white-space: initial;
+  white-space: normal;
   float: left;
   font-size: 12px;
 }
@@ -21410,6 +21350,10 @@ ul.socials li {
 
 .questionbankwindow.block .header .title {
   border-bottom: 0px none;
+}
+
+#page-question-preview h1 {
+  font-size: 1.5em;
 }
 
 /* @end */

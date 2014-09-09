@@ -1871,4 +1871,49 @@ body {
   text-decoration: none;
 }
 /* @end */
+/* @Group Editor */
+#tinymce {
+  color: [[setting:themetextcolor]];
+  font-family: [[setting:bodyfont]];
+}
+#tinymce .container-fluid {
+  max-width: [[setting:pagewidth]];
+}
+#tinymce h1,
+#tinymce h2 {
+  font-family: [[setting:headingfont]];
+}
+#tinymce h1,
+#tinymce h2,
+#tinymce h3,
+#tinymce h4,
+#tinymce h5,
+#tinymce h6,
+#tinymce #adminsettings h3 {
+  color: [[setting:themetextcolor]];
+}
+#tinymce a,
+#tinymce a:visited {
+  color: [[setting:themeurlcolor]];
+}
+#tinymce a:hover {
+  color: [[setting:themehovercolor]];
+}
+#tinymce a:hover:before {
+  color: [[setting:themehovercolor]];
+}
+#tinymce a:before {
+  color: [[setting:themeiconcolor]];
+  display: inline-block;
+  text-decoration: none;
+}
+#tinymce .color {
+  color: [[setting:themecolor]];
+}
+/* @end */
+/* @group Editor */
+#tinymce .bor {
+  background: url([[pix:theme|bg/dot]]) repeat-x;
+}
+/* @end Editor */
 /*# sourceMappingURL=/theme/essential/style/editor.treasure.map */

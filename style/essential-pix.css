@@ -4,49 +4,6 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 /* core.less */
-.dir-ltr,
-.mdl-left,
-.dir-rtl .mdl-right {
-  text-align: left;
-}
-.dir-rtl,
-.mdl-right,
-.dir-rtl .mdl-left {
-  text-align: right;
-}
-.dir-rtl img.iconhelp,
-.dir-rtl .helplink img {
-  padding-right: 3px;
-  padding-left: 0;
-}
-.dir-rtl .accesshide {
-  top: -30000px;
-  left: auto;
-}
-.dir-rtl .comment-delete {
-  left: 0;
-  right: auto;
-}
-.dir-rtl .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd .yui3-widget-buttons {
-  left: 0;
-  right: auto;
-}
-/* Question Bank - Question Chooser "Close" button */
-#page-question-edit.dir-rtl a.container-close {
-  right: auto;
-  left: 6px;
-}
-.dir-rtl.jschooser .choosercontainer #chooseform .instruction,
-.dir-rtl.jschooser .choosercontainer #chooseform .typesummary {
-  left: 0;
-  right: 18.5em;
-  border-right: 1px solid grey;
-}
-.dir-rtl ul,
-.dir-rtl ol {
-  margin-left: 0;
-  margin-right: 25px;
-}
 .collapsible-actions .collapseexpand {
   background: url([[pix:t/collapsed]]) 2px center no-repeat;
 }
@@ -60,7 +17,7 @@
 .smartselect .smartselect_submenuitem {
   background-image: url([[pix:moodle|t/collapsed]]);
 }
-/** Fix YUI 2 Treeview for Right to left languages - TODO not sure about this so leaving - GB. **/
+/** Fix YUI 2 Treeview for Right to left languages. **/
 .dir-rtl .ygtvtn,
 .dir-rtl .ygtvtm,
 .dir-rtl .ygtvtmh,
@@ -85,80 +42,6 @@
   background-image: url([[pix:theme|yui2-treeview-sprite-rtl]]);
   background-repeat: no-repeat;
   cursor: pointer;
-}
-.dir-rtl .ygtvtn {
-  background-position: 0 -5600px;
-}
-.dir-rtl .ygtvtm {
-  background-position: 0 -4000px;
-}
-.dir-rtl .ygtvtmh,
-.dir-rtl .ygtvtmhh {
-  background-position: 0 -4800px;
-}
-.dir-rtl .ygtvtp {
-  background-position: 0 -6400px;
-}
-.dir-rtl .ygtvtph,
-.dir-rtl .ygtvtphh {
-  background-position: 0 -7200px;
-}
-.dir-rtl .ygtvln {
-  background-position: 0 -1600px;
-}
-.dir-rtl .ygtvlm {
-  background-position: 0 0;
-}
-.dir-rtl .ygtvlmh,
-.dir-rtl .ygtvlmhh {
-  background-position: 0 -800px;
-}
-.dir-rtl .ygtvlp {
-  background-position: 0 -2400px;
-}
-.dir-rtl .ygtvlph,
-.dir-rtl .ygtvlphh {
-  background-position: 0 -3200px;
-}
-.dir-rtl .ygtvdepthcell {
-  background-position: 0 -8000px;
-}
-.dir-rtl .ygtvok {
-  background-position: 0 -8800px;
-}
-.dir-rtl .ygtvok:hover {
-  background-position: 0 -8844px;
-}
-.dir-rtl .ygtvcancel {
-  background-position: 0 -8822px;
-}
-.dir-rtl .ygtvcancel:hover {
-  background-position: 0 -8866px;
-}
-.dir-rtl.yui-skin-sam .yui-panel .hd {
-  text-align: right;
-}
-.dir-rtl .yui-skin-sam .yui-layout .yui-layout-unit div.yui-layout-bd {
-  text-align: right;
-}
-/** Fix TinyMCE editor right to left **/
-.dir-rtl .clearlooks2.ie9 .mceAlert .mceMiddle span,
-.dir-rtl .clearlooks2 .mceConfirm .mceMiddle span {
-  top: 44px;
-}
-.dir-rtl .o2k7Skin table,
-.dir-rtl .o2k7Skin tbody,
-.dir-rtl .o2k7Skin a,
-.dir-rtl .o2k7Skin img,
-.dir-rtl .o2k7Skin tr,
-.dir-rtl .o2k7Skin div,
-.dir-rtl .o2k7Skin td,
-.dir-rtl .o2k7Skin iframe,
-.dir-rtl .o2k7Skin span,
-.dir-rtl .o2k7Skin *,
-.dir-rtl .o2k7Skin .mceText,
-.dir-rtl .o2k7Skin .mceListBox .mceText {
-  text-align: right;
 }
 .moodle-dialogue-base .closebutton {
   background-image: url([[pix:theme|sprite]]);
@@ -188,30 +71,6 @@
 }
 .dir-rtl .course_category_tree .category.with_children.collapsed > .info > .categoryname {
   background-image: url([[pix:moodle|t/collapsed_rtl]]);
-}
-.dir-rtl .coursebox > .info > .coursename a {
-  background-position: right;
-}
-.dir-rtl .section .activity {
-  /* The command block for each activity */
-}
-.dir-rtl .section .activity .actions {
-  left: 0;
-  right: auto;
-}
-.dir-rtl .section .activity .contentwithoutlink,
-.dir-rtl .section .activity .activityinstance {
-  padding-left: 4px;
-  padding-right: initial;
-}
-.dir-rtl.editing .section .activity.editor_displayed div.activityinstance {
-  padding-left: initial;
-}
-.dir-rtl.path-course-view .completionprogress {
-  float: none;
-}
-.dir-rtl.path-course-view li.activity form.togglecompletion .ajaxworking {
-  right: -22px;
 }
 .fp-toolbar .fp-tb-search input {
   background: #ffffff url('[[pix:a/search]]') no-repeat 7px 7px;
@@ -330,9 +189,28 @@
 #rubric-rubric.gradingform_rubric .addcriterion input {
   background: transparent url([[pix:t/add]]) no-repeat 7px 8px;
 }
-/* @group Editor */
-#tinymce .bor {
-  background: url([[pix:theme|bg/dot]]) repeat-x;
+[class^="icon-"],
+[class*=" icon-"] {
+  background-image: url("[[pix:theme|glyphicons-halflings]]");
 }
-/* @end Editor */
+/* White icons with optional class, or on hover/focus/active states of certain elements */
+.icon-white,
+.nav-pills > .active > a > [class^="icon-"],
+.nav-pills > .active > a > [class*=" icon-"],
+.nav-list > .active > a > [class^="icon-"],
+.nav-list > .active > a > [class*=" icon-"],
+.navbar-inverse .nav > .active > a > [class^="icon-"],
+.navbar-inverse .nav > .active > a > [class*=" icon-"],
+.dropdown-menu > li > a:hover > [class^="icon-"],
+.dropdown-menu > li > a:focus > [class^="icon-"],
+.dropdown-menu > li > a:hover > [class*=" icon-"],
+.dropdown-menu > li > a:focus > [class*=" icon-"],
+.dropdown-menu > .active > a > [class^="icon-"],
+.dropdown-menu > .active > a > [class*=" icon-"],
+.dropdown-submenu:hover > a > [class^="icon-"],
+.dropdown-submenu:focus > a > [class^="icon-"],
+.dropdown-submenu:hover > a > [class*=" icon-"],
+.dropdown-submenu:focus > a > [class*=" icon-"] {
+  background-image: url("[[pix:theme|glyphicons-halflings-white]]");
+}
 /*# sourceMappingURL=/theme/essential/style/essential-pix.treasure.map */
