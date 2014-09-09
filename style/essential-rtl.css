@@ -21621,6 +21621,7 @@ ul.socials li {
 
   #page-header .icon-collapse {
     overflow: hidden;
+    margin-top: 34px;
     margin-left: 10px;
     float: left;
   }
