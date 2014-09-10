@@ -1,0 +1,18 @@
+/* @group Core */
+
+.moodle-actionmenu[data-enhanced].show {
+  .menu {
+    background-color: ~"[[setting:themecolor]]";
+     a {
+      color: ~"[[setting:themeurlcolor]]";
+      &:hover {
+        color: ~"[[setting:themecolor]]";
+        background-color: ~"[[setting:themetextcolor]]";
+        .fa:before {
+          color: ~"[[setting:themecolor]]";
+        }
+      }
+    }
+  }
+}
+/* @end */

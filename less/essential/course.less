@@ -18,6 +18,12 @@ div.mdl-align.title {
   border-radius: 5px;
 }
 
+body {  // Inside a body tag so will be more specific and override core plugin styles that come afterwards without the use of 'important' and can then override again in pre-processed theme setting style if needed.
+    .course-content ul.topics li.section {
+        padding-bottom: 20px;
+    }
+}
+
 .listitem-category {
   .icon {
     margin-right: 5px;

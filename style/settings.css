@@ -294,6 +294,21 @@
   color: [[setting:themenavcolor]];
 }
 /* @end */
+/* @group Core */
+.moodle-actionmenu[data-enhanced].show .menu {
+  background-color: [[setting:themecolor]];
+}
+.moodle-actionmenu[data-enhanced].show .menu a {
+  color: [[setting:themeurlcolor]];
+}
+.moodle-actionmenu[data-enhanced].show .menu a:hover {
+  color: [[setting:themecolor]];
+  background-color: [[setting:themetextcolor]];
+}
+.moodle-actionmenu[data-enhanced].show .menu a:hover .fa:before {
+  color: [[setting:themecolor]];
+}
+/* @end */
 /* @group Course */
 .listitem-category .icon {
   color: [[setting:themeiconcolor]];
@@ -881,11 +896,11 @@ h6,
   color: [[setting:themehovercolor]];
 }
 .actions .moodle-actionmenu[data-enhanced].show .menu a:hover {
-  background-color: [[setting:themecolor]];
-  color: #fff;
+  color: [[setting:themecolor]];
+  background-color: [[setting:themetextcolor]];
 }
-.actions .moodle-actionmenu[data-enhanced].show .menu a:hover:before {
-  color: #fff;
+.actions .moodle-actionmenu[data-enhanced].show .menu a:hover .fa:before {
+  color: [[setting:themecolor]];
 }
 /* @end */
 /* @group Chat */

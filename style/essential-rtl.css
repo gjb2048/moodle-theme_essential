@@ -4143,7 +4143,7 @@ img.iconsmall {
 }
 
 .course-content ul.topics li.section {
-  padding-bottom: 20px !important;
+  padding-bottom: 20px;
 }
 
 .course-content ul.topics li.section .summary {
@@ -18530,6 +18530,10 @@ img.profilepicture {
   margin-left: 5px;
 }
 
+body .chooserdialogue .moodle-dialogue-wrap .moodle-dialogue-bd {
+  padding: 0;
+}
+
 /* @end */
 
 /* @group Alerts */
@@ -18633,7 +18637,8 @@ img.profilepicture {
 
 .collapsed .tree_item.branch:before {
   font-family: FontAwesome;
-  content: "\f07b";
+  /*@replace: "\f053"*/
+  content: "\f053";
   margin-left: 5px;
 }
 
@@ -19341,6 +19346,10 @@ div.mdl-align.title {
   border-radius: 5px;
 }
 
+body .course-content ul.topics li.section {
+  padding-bottom: 20px;
+}
+
 .listitem-category .icon {
   margin-left: 5px;
   margin-right: 3px;
@@ -19859,7 +19868,7 @@ a.action-icon > i,
 
 .section .summary > a:before {
   font-family: 'FontAwesome';
-  content: "\f013 ";
+  content: "\f013";
   margin-left: 5px;
 }
 
@@ -20896,7 +20905,8 @@ ul.socials li {
 .navbar .navbar-inner .nav > li > a .fa-caret-right:before {
   margin-right: 5px;
   margin-left: 3px;
-  content: "\f0da";
+  /*@replace: "\f0d9"*/
+  content: "\f0d9";
 }
 
 .navbar .navbar-inner .nav > li.dropdown a:hover,
@@ -21078,6 +21088,18 @@ ul.socials li {
 }
 
 /* @end */
+
+/* @group Contributed Plugins */
+
+/* @group Collapsed Topics */
+
+body.format-topcoll .course-content ul.ctopics li.section.main {
+  padding-bottom: 20px;
+}
+
+/* @group End Collapsed Topics */
+
+/* @group End Contributed Plugins */
 
 /* @group Quiz */
 

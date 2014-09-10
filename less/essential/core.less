@@ -108,4 +108,10 @@ img.profilepicture {
   margin-right: 5px;
 }
 
+body { // Inside a body tag so will be more specific and override core plugin styles that come afterwards without the use of 'important' and can then override again in pre-processed theme setting style if needed.
+    .chooserdialogue .moodle-dialogue-wrap .moodle-dialogue-bd {
+        padding: 0;
+    }
+}
+
 /* @end */
