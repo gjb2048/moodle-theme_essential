@@ -699,7 +699,7 @@ a.marketing-button:hover {
   color: [[setting:themehovercolor]];
 }
 .block .header .title h2:before {
-  color: [[setting:themecolor]];
+  color: [[setting:themeiconcolor]];
 }
 .block_rss_client .footer a {
   background: [[setting:themecolor]];

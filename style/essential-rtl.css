@@ -19350,6 +19350,11 @@ body .course-content ul.topics li.section {
   padding-bottom: 20px;
 }
 
+body .course-content ul.topics li.section .content {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
 .listitem-category .icon {
   margin-left: 5px;
   margin-right: 3px;

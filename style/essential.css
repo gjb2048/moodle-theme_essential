@@ -16150,6 +16150,10 @@ div.mdl-align.title {
 body .course-content ul.topics li.section {
   padding-bottom: 20px;
 }
+body .course-content ul.topics li.section .content {
+  margin-left: 20px;
+  margin-right: 20px;
+}
 .listitem-category .icon {
   margin-right: 5px;
   margin-left: 3px;
