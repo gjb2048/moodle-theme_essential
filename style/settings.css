@@ -828,7 +828,8 @@ a.marketing-button:hover {
 /* @end */
 /* @group Performance Information */
 .performanceinfo var {
-  background: [[setting:themecolor]];
+  background-color: [[setting:themecolor]];
+  color: [[setting:themetextcolor]];
 }
 .performanceinfo h2:before {
   color: [[setting:themecolor]];
