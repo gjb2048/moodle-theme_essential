@@ -4133,7 +4133,6 @@ a.action-icon > i,
   font-size: 1.2em;
   padding: 5px;
   border-radius: 5px;
-  color: #fff !important;
   white-space: nowrap;
 }
 
@@ -6019,7 +6018,8 @@ a.marketing-button:hover {
 /* @group Performance Information */
 
 .performanceinfo var {
-  background: [[setting:themecolor]];
+  background-color: [[setting:themecolor]];
+  color: [[setting:themetextcolor]];
 }
 
 .performanceinfo h2:before {

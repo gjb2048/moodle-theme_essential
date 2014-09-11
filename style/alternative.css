@@ -311,6 +311,7 @@
 }
 .essential-colours-alternative1 .performanceinfo var {
   background: [[setting:alternativethemecolor1]];
+  color: [[setting:alternativethemetextcolor1]];
 }
 .essential-colours-alternative1 .performanceinfo h2:before {
   color: [[setting:alternativethemecolor1]];
@@ -717,6 +718,7 @@
 }
 .essential-colours-alternative2 .performanceinfo var {
   background: [[setting:alternativethemecolor2]];
+  color: [[setting:alternativethemetextcolor2]];
 }
 .essential-colours-alternative2 .performanceinfo h2:before {
   color: [[setting:alternativethemecolor2]];
@@ -1123,6 +1125,7 @@
 }
 .essential-colours-alternative3 .performanceinfo var {
   background: [[setting:alternativethemecolor3]];
+  color: [[setting:alternativethemetextcolor3]];
 }
 .essential-colours-alternative3 .performanceinfo h2:before {
   color: [[setting:alternativethemecolor3]];

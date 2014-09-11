@@ -107,6 +107,7 @@ New in 2.7.8
 - FIX: Issue #248: Navbar overlay on activity selection popup.
 - FIX: Issue #252: LESS background: transparent; being compiled as background: 0 0;
 - FIX: Issue #254: Gradebook alignment.
+- FIX: Issue #271: Performance information not readable when theme colour is #ffffff.
 - NEW: Issue #251: Marketing spots h tags.
 
 New in 2.7.7
