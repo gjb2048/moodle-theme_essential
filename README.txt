@@ -97,6 +97,7 @@ New in 2.6.11
 - FIX: Issue #263: Group Image alignment in Forums.
 - FIX: Issue #264: Incorrect H1 content in Password change screen.
 - FIX: Issue #268: When vertical, Marketing spot urls all link to the url for Marketing spot 1.
+- FIX: Issue #271: Performance information not readable when theme colour is #ffffff.
 - FIX: Issue #304: Region not defined in M2.6.
 - FIX: Issue #326: Submit panel overlaps the message input area.
 - FIX: Issue #329: Social icons in mobile view showing odd behaviour.
