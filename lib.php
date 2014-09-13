@@ -202,63 +202,108 @@ function theme_essential_performance_output($param, $perfinfo)
 {
     $html = html_writer::start_tag('div', array('class' => 'container-fluid performanceinfo'));
     $html .= html_writer::start_tag('div', array('class' => 'row-fluid'));
+    $html .= html_writer::start_tag('div', array('class' => 'span12'));
     $html .= html_writer::tag('h2', get_string('perfinfoheading', 'theme_essential'));
     $html .= html_writer::end_tag('div');
+    $html .= html_writer::end_tag('div');
     $html .= html_writer::start_tag('div', array('class' => 'row-fluid'));
+    $colcount = 0;
     if (isset($param['realtime'])) {
-        $html .= html_writer::start_tag('div', array('class' => 'span3'));
-        $html .= html_writer::tag('var', round($param['realtime'], 2) . ' ' . get_string('seconds'), array('id' => 'load'));
-        $html .= html_writer::span(get_string('loadtime', 'theme_essential'));
-        $html .= html_writer::end_tag('div');
+        $colcount++;
     }
     if (isset($param['memory_total'])) {
-        $html .= html_writer::start_tag('div', array('class' => 'span3'));
-        $html .= html_writer::tag('var', display_size($param['memory_total']), array('id' => 'memory'));
-        $html .= html_writer::span(get_string('memused', 'theme_essential'));
-        $html .= html_writer::end_tag('div');
+        $colcount++;
     }
     if (isset($param['includecount'])) {
-        $html .= html_writer::start_tag('div', array('class' => 'span3'));
-        $html .= html_writer::tag('var', $param['includecount'], array('id' => 'included'));
-        $html .= html_writer::span(get_string('included', 'theme_essential'));
-        $html .= html_writer::end_tag('div');
+        $colcount++;
     }
     if (isset($param['dbqueries'])) {
-        $html .= html_writer::start_tag('div', array('class' => 'span3'));
-        $html .= html_writer::tag('var', $param['dbqueries'], array('id' => 'db'));
-        $html .= html_writer::span(get_string('dbqueries', 'theme_essential'));
-        $html .= html_writer::end_tag('div');
+        $colcount++;
+    }
+    if ($colcount != 0) {
+        $thespan = 12 / $colcount;
+        if (isset($param['realtime'])) {
+            $html .= html_writer::start_tag('div', array('class' => 'span'.$thespan));
+            $html .= html_writer::tag('var', round($param['realtime'], 2) . ' ' . get_string('seconds'), array('id' => 'load'));
+            $html .= html_writer::span(get_string('loadtime', 'theme_essential'));
+            $html .= html_writer::end_tag('div');
+        }
+        if (isset($param['memory_total'])) {
+            $html .= html_writer::start_tag('div', array('class' => 'span'.$thespan));
+            $html .= html_writer::tag('var', display_size($param['memory_total']), array('id' => 'memory'));
+            $html .= html_writer::span(get_string('memused', 'theme_essential'));
+            $html .= html_writer::end_tag('div');
+        }
+        if (isset($param['includecount'])) {
+            $html .= html_writer::start_tag('div', array('class' => 'span'.$thespan));
+            $html .= html_writer::tag('var', $param['includecount'], array('id' => 'included'));
+            $html .= html_writer::span(get_string('included', 'theme_essential'));
+            $html .= html_writer::end_tag('div');
+        }
+        if (isset($param['dbqueries'])) {
+            $html .= html_writer::start_tag('div', array('class' => 'span'.$thespan));
+            $html .= html_writer::tag('var', $param['dbqueries'], array('id' => 'dbqueries'));
+            $html .= html_writer::span(get_string('dbqueries', 'theme_essential'));
+            $html .= html_writer::end_tag('div');
+        }
     }
     $html .= html_writer::end_tag('div');
     if ($perfinfo === "max") {
         $html .= html_writer::empty_tag('hr');
         $html .= html_writer::start_tag('div', array('class' => 'row-fluid'));
+        $html .= html_writer::start_tag('div', array('class' => 'span12'));
         $html .= html_writer::tag('h2', get_string('extperfinfoheading', 'theme_essential'));
         $html .= html_writer::end_tag('div');
+        $html .= html_writer::end_tag('div');
         $html .= html_writer::start_tag('div', array('class' => 'row-fluid'));
+        $colcountmax = 0;
         if (isset($param['serverload'])) {
-            $html .= html_writer::start_tag('div', array('class' => 'span3'));
-            $html .= html_writer::tag('var', $param['serverload'], array('id' => 'load'));
-            $html .= html_writer::span(get_string('serverload', 'theme_essential'));
-            $html .= html_writer::end_tag('div');
+            $colcountmax++;
         }
         if (isset($param['memory_peak'])) {
-            $html .= html_writer::start_tag('div', array('class' => 'span3'));
-            $html .= html_writer::tag('var', display_size($param['memory_peak']), array('id' => 'load'));
-            $html .= html_writer::span(get_string('peakmem', 'theme_essential'));
-            $html .= html_writer::end_tag('div');
+            $colcountmax++;
         }
         if (isset($param['cachesused'])) {
-            $html .= html_writer::start_tag('div', array('class' => 'span3'));
-            $html .= html_writer::tag('var', $param['cachesused'], array('id' => 'cache'));
-            $html .= html_writer::span(get_string('peakmem', 'theme_essential'));
-            $html .= html_writer::end_tag('div');
+            $colcountmax++;
         }
         if (isset($param['sessionsize'])) {
-            $html .= html_writer::start_tag('div', array('class' => 'span3'));
-            $html .= html_writer::tag('var', $param['sessionsize'], array('id' => 'session'));
-            $html .= html_writer::span(get_string('sessionsize', 'theme_essential'));
-            $html .= html_writer::end_tag('div');
+            $colcountmax++;
+        }
+        if (isset($param['dbtime'])) {
+            $colcountmax++;
+        }
+        if ($colcountmax != 0) {
+            $thespanmax = 12 / $colcountmax;
+            if (isset($param['serverload'])) {
+                $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
+                $html .= html_writer::tag('var', $param['serverload'], array('id' => 'load'));
+                $html .= html_writer::span(get_string('serverload', 'theme_essential'));
+                $html .= html_writer::end_tag('div');
+            }
+            if (isset($param['memory_peak'])) {
+                $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
+                $html .= html_writer::tag('var', display_size($param['memory_peak']), array('id' => 'peakmemory'));
+                $html .= html_writer::span(get_string('peakmem', 'theme_essential'));
+                $html .= html_writer::end_tag('div');
+            }
+            if (isset($param['cachesused'])) {
+                $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
+                $html .= html_writer::tag('var', $param['cachesused'], array('id' => 'cache'));
+                $html .= html_writer::span(get_string('cachesused', 'theme_essential'));
+                $html .= html_writer::end_tag('div');
+            }
+            if (isset($param['sessionsize'])) {
+                $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
+                $html .= html_writer::tag('var', $param['sessionsize'], array('id' => 'session'));
+                $html .= html_writer::span(get_string('sessionsize', 'theme_essential'));
+                $html .= html_writer::end_tag('div');
+            }
+            if (isset($param['dbtime'])) {
+                $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
+                $html .= html_writer::tag('var', $param['dbtime'], array('id' => 'dbtime'));
+                $html .= html_writer::span(get_string('dbtime', 'theme_essential'));
+                $html .= html_writer::end_tag('div');
+            }
         }
         $html .= html_writer::end_tag('div');
     }

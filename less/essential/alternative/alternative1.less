@@ -332,13 +332,23 @@
   }
 
   .performanceinfo {
+    border-color: ~"[[setting:themeiconcolor]]";
     var {
-      background: ~"[[setting:alternativethemecolor1]]";
+      background-color: ~"[[setting:alternativethemecolor1]]";
       color: ~"[[setting:alternativethemetextcolor1]]";
     }
-
-    h2:before {
-      color: ~"[[setting:alternativethemecolor1]]";
+    h2 {
+      color: ~"[[setting:alternativethemetextcolor1]]";
+      border-bottom-color: ~"[[setting:themeiconcolor]]";
+      &:before {
+        color: ~"[[setting:themeiconcolor]]";
+      }
+    }
+    span {
+      color: ~"[[setting:alternativethemetextcolor1]]";
+    }
+    #cache:before, #load:before, #memory:before, #peakmemory:before, #session:before, #included:before, #dbqueries:before, #dbtime:before {
+      color: ~"[[setting:themeiconcolor]]";
     }
   }
 

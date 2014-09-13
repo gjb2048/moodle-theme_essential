@@ -345,12 +345,23 @@ a.marketing-button:hover {
 /* @group Performance Information */
 
 .performanceinfo {
+  border-color: ~"[[setting:themeiconcolor]]";
   var {
     background-color: ~"[[setting:themecolor]]";
     color: ~"[[setting:themetextcolor]]";
   }
-  h2:before {
-    color: ~"[[setting:themecolor]]";
+  h2 {
+    color: ~"[[setting:themetextcolor]]";
+    border-bottom-color: ~"[[setting:themeiconcolor]]";
+    &:before {
+      color: ~"[[setting:themeiconcolor]]";
+    }
+  }
+  span {
+    color: ~"[[setting:themetextcolor]]";
+  }
+  #cache:before, #load:before, #memory:before, #peakmemory:before, #session:before, #included:before, #dbqueries:before, #dbtime:before {
+    color: ~"[[setting:themeiconcolor]]";
   }
 }
 

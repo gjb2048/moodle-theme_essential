@@ -3255,7 +3255,8 @@ a.action-icon > i,
   background: white;
   padding: 8px;
   border-radius: 6px;
-  border: 1px solid #E1E1E1;
+  border-width: 1px;
+  border-style: solid;
   margin-top: 5px;
 }
 .performanceinfo .span3 {
@@ -3269,12 +3270,12 @@ a.action-icon > i,
 }
 .performanceinfo h2 {
   font-size: 1.4em;
-  color: #888;
   line-height: 1.4em;
   text-transform: uppercase;
   font-weight: normal;
   padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
   margin-top: 5px;
 }
 .performanceinfo h2:before {
@@ -3284,7 +3285,6 @@ a.action-icon > i,
   content: "\f05a";
 }
 .performanceinfo span {
-  color: #444;
   display: block;
   margin-top: 5px;
 }
@@ -3292,16 +3292,24 @@ a.action-icon > i,
   font-family: FontAwesome;
   font-size: 1em;
   margin-right: .3em;
-  color: #fff;
   font-style: normal;
   font-weight: 100;
   content: "\f017";
 }
-.performanceinfo #memory:before {
+.performanceinfo #cache:before {
   font-family: FontAwesome;
   font-size: 1em;
   margin-right: .3em;
-  color: #fff;
+  font-style: normal;
+  font-weight: 100;
+  content: "\f1b0";
+}
+.performanceinfo #memory:before,
+.performanceinfo #peakmemory:before,
+.performanceinfo #session:before {
+  font-family: FontAwesome;
+  font-size: 1em;
+  margin-right: .3em;
   font-style: normal;
   content: "\f0e4";
 }
@@ -3309,15 +3317,14 @@ a.action-icon > i,
   font-family: FontAwesome;
   font-size: 1em;
   margin-right: .3em;
-  color: #fff;
   font-style: normal;
   content: "\f16c";
 }
-.performanceinfo #db:before {
+.performanceinfo #dbqueries:before,
+.performanceinfo #dbtime:before {
   font-family: FontAwesome;
   font-size: 1em;
   margin-right: .3em;
-  color: #fff;
   font-style: normal;
   content: "\f181";
 }
@@ -4776,12 +4783,32 @@ a.marketing-button:hover {
 }
 /* @end */
 /* @group Performance Information */
+.performanceinfo {
+  border-color: [[setting:themeiconcolor]];
+}
 .performanceinfo var {
   background-color: [[setting:themecolor]];
   color: [[setting:themetextcolor]];
 }
+.performanceinfo h2 {
+  color: [[setting:themetextcolor]];
+  border-bottom-color: [[setting:themeiconcolor]];
+}
 .performanceinfo h2:before {
-  color: [[setting:themecolor]];
+  color: [[setting:themeiconcolor]];
+}
+.performanceinfo span {
+  color: [[setting:themetextcolor]];
+}
+.performanceinfo #cache:before,
+.performanceinfo #load:before,
+.performanceinfo #memory:before,
+.performanceinfo #peakmemory:before,
+.performanceinfo #session:before,
+.performanceinfo #included:before,
+.performanceinfo #dbqueries:before,
+.performanceinfo #dbtime:before {
+  color: [[setting:themeiconcolor]];
 }
 /* @end */
 /* @group Quiz */

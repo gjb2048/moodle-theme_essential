@@ -133,6 +133,7 @@ $string['memused'] = 'Memory Used';
 $string['peakmem'] = 'Peak Memory';
 $string['included'] = 'Files Included';
 $string['dbqueries'] = 'DB Read/Write';
+$string['dbtime'] = 'DB Queries Time';
 $string['serverload'] = 'Server Load';
 $string['cachesused'] = 'Cached Used';
 $string['sessionsize'] = 'Session Size';
