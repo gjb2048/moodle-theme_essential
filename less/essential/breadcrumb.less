@@ -96,7 +96,7 @@
       left: 100%;
       z-index: 100;
     }
-    .first {
+    li.first {
       border-top-left-radius: 4px;
       border-bottom-left-radius: 4px;
       a {
@@ -108,10 +108,12 @@
         content: "\f015 ";
         margin-right: 5px;
         text-decoration: none;
-        color: #fff;
+        color: ~"[[setting:themeiconcolor]]";
       }
-      a:hover:before {
-        color: ~"[[setting:themecolor]]";
+      &:hover {
+        a:before {
+            color: ~"[[setting:themecolor]]";
+        }
       }
     }
     .last:before,

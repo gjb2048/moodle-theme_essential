@@ -2988,25 +2988,25 @@ img.profilepicture {
   z-index: 100;
 }
 
-.breadcrumb-nav ul.breadcrumb.style1 .first {
+.breadcrumb-nav ul.breadcrumb.style1 li.first {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
 
-.breadcrumb-nav ul.breadcrumb.style1 .first a {
+.breadcrumb-nav ul.breadcrumb.style1 li.first a {
   margin-right: -25px;
 }
 
-.breadcrumb-nav ul.breadcrumb.style1 .first a:before {
+.breadcrumb-nav ul.breadcrumb.style1 li.first a:before {
   display: inline-block;
   font-family: FontAwesome;
   content: "\f015 ";
   margin-left: 5px;
   text-decoration: none;
-  color: #fff;
+  color: [[setting:themeiconcolor]];
 }
 
-.breadcrumb-nav ul.breadcrumb.style1 .first a:hover:before {
+.breadcrumb-nav ul.breadcrumb.style1 li.first:hover a:before {
   color: [[setting:themecolor]];
 }
 

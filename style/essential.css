@@ -2331,22 +2331,22 @@ img.profilepicture {
   left: 100%;
   z-index: 100;
 }
-.breadcrumb-nav ul.breadcrumb.style1 .first {
+.breadcrumb-nav ul.breadcrumb.style1 li.first {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
-.breadcrumb-nav ul.breadcrumb.style1 .first a {
+.breadcrumb-nav ul.breadcrumb.style1 li.first a {
   margin-left: -25px;
 }
-.breadcrumb-nav ul.breadcrumb.style1 .first a:before {
+.breadcrumb-nav ul.breadcrumb.style1 li.first a:before {
   display: inline-block;
   font-family: FontAwesome;
   content: "\f015 ";
   margin-right: 5px;
   text-decoration: none;
-  color: #fff;
+  color: [[setting:themeiconcolor]];
 }
-.breadcrumb-nav ul.breadcrumb.style1 .first a:hover:before {
+.breadcrumb-nav ul.breadcrumb.style1 li.first:hover a:before {
   color: [[setting:themecolor]];
 }
 .breadcrumb-nav ul.breadcrumb.style1 .last:before,
