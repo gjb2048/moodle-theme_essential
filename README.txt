@@ -118,6 +118,7 @@ New in 2.6.11
 - FIX: Issue #330: Slider caption below causes jump.
 - FIX: Issue #346: Affix header height when using the old navbar setting.
 - NEW: Issue #269: Marketing Spots Social Media Widgets.
+- NEW: Issue #278: Site name needs to be formatted in line with MDL-47080.
 - NEW: Issue #340: Show slider navigation icons only when mouse in the slider.
 - NEW: Issue #327: Font file types.
 
