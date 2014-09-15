@@ -2838,13 +2838,14 @@ div.mdl-align.title {
   padding: 1px 8px;
 }
 body.has_dock {
-  padding-left: 40px;
+  padding-left: 42px;
 }
 body.has_dock div#dock {
   display: inline;
 }
 body.has_dock #page {
   padding-left: 20px;
+  padding-right: 20px;
 }
 body.has_dock #dock {
   position: fixed;
@@ -3042,7 +3043,15 @@ body.has_dock.empty-region-side-pre:not(.has-region-side-post) #region-bs-main-a
 body.has_dock.empty-region-side-pre.empty-region-side-post #region-bs-main-and-pre {
   width: 100%;
 }
-/* @end */
+/* @group Dock & Navbar */
+.has_dock .navbar .navbar-inner {
+  padding-left: 62px;
+}
+.has_dock .navbar.oldnavbar.affix-top .navbar-inner {
+  padding-left: 20px;
+}
+/* @end Dock & Navbar */
+/* @end Dock */
 /* @group Edit Buttons */
 i > img {
   display: none;

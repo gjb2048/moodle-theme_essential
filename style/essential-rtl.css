@@ -3610,7 +3610,7 @@ div.mdl-align.title {
 }
 
 body.has_dock {
-  padding-right: 40px;
+  padding-right: 42px;
 }
 
 body.has_dock div#dock {
@@ -3619,6 +3619,7 @@ body.has_dock div#dock {
 
 body.has_dock #page {
   padding-right: 20px;
+  padding-left: 20px;
 }
 
 body.has_dock #dock {
@@ -3856,7 +3857,19 @@ body.has_dock.empty-region-side-pre.empty-region-side-post #region-bs-main-and-p
   width: 100%;
 }
 
-/* @end */
+/* @group Dock & Navbar */
+
+.has_dock .navbar .navbar-inner {
+  padding-right: 62px;
+}
+
+.has_dock .navbar.oldnavbar.affix-top .navbar-inner {
+  padding-right: 20px;
+}
+
+/* @end Dock & Navbar */
+
+/* @end Dock */
 
 /* @group Edit Buttons */
 

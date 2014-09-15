@@ -84,12 +84,13 @@
 }
 
 body.has_dock {
-  padding-left: 40px;
+  padding-left: 42px;
   div#dock {
     display: inline;
   }
   #page {
     padding-left: 20px;
+    padding-right: 20px;
   }
 
   #dock {
@@ -313,4 +314,17 @@ body.has_dock {
   }
 }
 
-/* @end */
+/* @group Dock & Navbar */
+
+.has_dock {
+  .navbar .navbar-inner {
+    padding-left: 62px;
+  }
+  .navbar.oldnavbar.affix-top .navbar-inner {
+    padding-left: 20px;
+  }
+}
+
+/* @end Dock & Navbar */
+
+/* @end Dock */
