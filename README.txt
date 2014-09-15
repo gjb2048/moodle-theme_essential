@@ -110,6 +110,7 @@ New in 2.7.8
 - FIX: Issue #271: Performance information not readable when theme colour is #ffffff.
 - FIX: Issue #277: Docking clash when not using old navbar.
 - NEW: Issue #251: Marketing spots h tags.
+- NEW: Issue #278: Site name needs to be formatted in line with MDL-47080.
 
 New in 2.7.7
 ============

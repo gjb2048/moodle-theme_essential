@@ -4752,7 +4752,7 @@ table#greyboxleft h2 {
   font-size: 3em;
   top: 10px;
   position: relative;
-  color: [[setting:themecolor]];
+  color: [[setting:themetextcolor]];
 }
 
 #page-header h1#smalltitle {
@@ -4761,7 +4761,7 @@ table#greyboxleft h2 {
   top: 10px;
   line-height: 20px;
   position: relative;
-  color: [[setting:themecolor]];
+  color: [[setting:themetextcolor]];
 }
 
 #page-header h2#subtitle {
@@ -4783,7 +4783,7 @@ table#greyboxleft h2 {
   position: relative;
   top: 10px;
   margin-left: 10px;
-  color: [[setting:themecolor]];
+  color: [[setting:themeiconcolor]];
 }
 
 #page-header.oldnavbar,

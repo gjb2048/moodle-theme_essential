@@ -77,13 +77,13 @@ function theme_essential_get_title($location)
                 return false;
                 break;
             case 1:
-                $title = '<a class="brand" href="' . $CFG->wwwroot . '">' . $SITE->fullname . '</a>';
+                $title = '<a class="brand" href="' . $CFG->wwwroot . '">' . format_string($SITE->fullname, true, array('context' => context_course::instance(SITEID))) . '</a>';
                 break;
             case 2:
-                $title = '<a class="brand" href="' . $CFG->wwwroot . '">' . $SITE->shortname . '</a>';
+                $title = '<a class="brand" href="' . $CFG->wwwroot . '">' . format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))) . '</a>';
                 break;
             default:
-                $title = '<a class="brand" href="' . $CFG->wwwroot . '">' . $SITE->shortname . '</a>';
+                $title = '<a class="brand" href="' . $CFG->wwwroot . '">' . format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))) . '</a>';
                 break;
         }
     } else if ($location === 'header') {
@@ -92,17 +92,17 @@ function theme_essential_get_title($location)
                 return false;
                 break;
             case 1:
-                $title = '<h1 id="title">' . $SITE->fullname . '</h1>';
+                $title = '<h1 id="title">' . format_string($SITE->fullname, true, array('context' => context_course::instance(SITEID))) . '</h1>';
                 break;
             case 2:
-                $title = '<h1 id="title">' . $SITE->shortname . '</h1>';
+                $title = '<h1 id="title">' . format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))) . '</h1>';
                 break;
             case 3:
-                $title = '<h1 id="smalltitle">' . $SITE->fullname . '</h2>';
+                $title = '<h1 id="smalltitle">' . format_string($SITE->fullname, true, array('context' => context_course::instance(SITEID))) . '</h2>';
                 $title .= '<h2 id="subtitle">' . strip_tags($SITE->summary) . '</h3>';
                 break;
             case 4:
-                $title = '<h1 id="smalltitle">' . $SITE->shortname . '</h2>';
+                $title = '<h1 id="smalltitle">' . format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))) . '</h2>';
                 $title .= '<h2 id="subtitle">' . strip_tags($SITE->summary) . '</h3>';
                 break;
             default:
