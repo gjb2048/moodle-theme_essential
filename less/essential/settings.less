@@ -327,8 +327,10 @@ a.marketing-button:hover {
 /* @group Tabs */
 
 .nav-tabs > li > a {
+  color: ~"[[setting:themetextcolor]]";
   background-color: ~"[[setting:themecolor]]";
-  &:hover {
+  &:hover, &:focus {
+    color: ~"[[setting:themecolor]]";
     background-color: ~"[[setting:themehovercolor]]";
   }
 }
@@ -369,8 +371,24 @@ a.marketing-button:hover {
 
 /* @group Quiz */
 
-#page-mod-quiz-edit .questionbankwindow.block div.header {
-  background: ~"[[setting:themecolor]]";
+#page-mod-quiz-edit .questionbankwindow {
+  &.block div.header {
+    background: ~"[[setting:themecolor]]";
+    div.title h2 {
+      color: ~"[[setting:themenavcolor]]";
+      a {
+        &#showbankcmd, &#hidebankcmd {
+            color: ~"[[setting:themenavcolor]]";
+            &:hover {
+                color: ~"[[setting:themenavcolor]]";
+            }
+        }
+      }
+      &:before {
+          color: ~"[[setting:themeiconcolor]]";
+      }
+    }
+  }
 }
 
 /* @end */

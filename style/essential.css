@@ -4207,7 +4207,6 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
   border-radius: 6px;
 }
 .questionbankwindow.block .header .title h2:before {
-  color: #fff;
   content: "\f128";
 }
 .questionbankwindow.block {
@@ -4242,7 +4241,6 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
   border: 1px solid #ddd;
 }
 .nav-tabs > li > a {
-  color: #fff;
   cursor: default;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
@@ -4779,9 +4777,12 @@ a.marketing-button:hover {
 /* @end */
 /* @group Tabs */
 .nav-tabs > li > a {
+  color: [[setting:themetextcolor]];
   background-color: [[setting:themecolor]];
 }
-.nav-tabs > li > a:hover {
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+  color: [[setting:themecolor]];
   background-color: [[setting:themehovercolor]];
 }
 @media (max-width: 979px) {
@@ -4823,6 +4824,20 @@ a.marketing-button:hover {
 /* @group Quiz */
 #page-mod-quiz-edit .questionbankwindow.block div.header {
   background: [[setting:themecolor]];
+}
+#page-mod-quiz-edit .questionbankwindow.block div.header div.title h2 {
+  color: [[setting:themenavcolor]];
+}
+#page-mod-quiz-edit .questionbankwindow.block div.header div.title h2 a#showbankcmd,
+#page-mod-quiz-edit .questionbankwindow.block div.header div.title h2 a#hidebankcmd {
+  color: [[setting:themenavcolor]];
+}
+#page-mod-quiz-edit .questionbankwindow.block div.header div.title h2 a#showbankcmd:hover,
+#page-mod-quiz-edit .questionbankwindow.block div.header div.title h2 a#hidebankcmd:hover {
+  color: [[setting:themenavcolor]];
+}
+#page-mod-quiz-edit .questionbankwindow.block div.header div.title h2:before {
+  color: [[setting:themeiconcolor]];
 }
 /* @end */
 /* @group Gradebook */
