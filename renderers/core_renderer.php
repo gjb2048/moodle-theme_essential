@@ -455,6 +455,9 @@ class theme_essential_core_renderer extends core_renderer
             $messagecontent->text = $message->smallmessage;
             $messagecontent->type = 'notification';
             $messagecontent->url = new moodle_url($message->contexturl);
+            if (empty($message->contexturl)) {
+                $messagecontent->url = new moodle_url('/message/index.php', array('user1' => $USER->id, 'viewing' => 'recentnotifications'));
+            }
         } else {
             $messagecontent->type = 'message';
             if ($message->fullmessageformat == FORMAT_HTML) {
