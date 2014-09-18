@@ -698,7 +698,7 @@ class theme_essential_core_renderer extends core_renderer
      */
     private function theme_essential_render_helplink()
     {
-        global $USER;
+        global $USER, $CFG;
         if (!theme_essential_get_setting('helplinktype')) {
             return false;
         }
@@ -706,32 +706,36 @@ class theme_essential_core_renderer extends core_renderer
         $branchurl = '';
         $target = '';
 
-        if (theme_essential_get_setting('helplinktype') == 1) {
-            if (filter_var(theme_essential_get_setting('helplink'), FILTER_VALIDATE_EMAIL)) {
+        if (theme_essential_get_setting('helplinktype') === '1') {
+            if (theme_essential_get_setting('helplink') && filter_var(theme_essential_get_setting('helplink'), FILTER_VALIDATE_EMAIL)) {
                 $branchurl = 'mailto:' . theme_essential_get_setting('helplink') . '?cc=' . $USER->email;
-            } else if ((theme_essential_get_setting('helplink')) && (filter_var(get_config('supportemail'), FILTER_VALIDATE_EMAIL))) {
-                $branchurl = 'mailto:' . get_config('supportemail') . '?cc=' . $USER->email;
+            } else if ($CFG->supportemail && filter_var($CFG->supportemail, FILTER_VALIDATE_EMAIL)) {
+                $branchurl = 'mailto:' . $CFG->supportemail . '?cc=' . $USER->email;
             } else {
+                if (is_siteadmin()) {
+                    $branchurl = $CFG->wwwroot.'/admin/settings.php?section=theme_essential_header';
+                }
                 $branchlabel = '<em><i class="fa fa-exclamation-triangle red"></i>' . get_string('invalidemail') . '</em>';
             }
-
-            return html_writer::tag('li', html_writer::link($branchurl, $branchlabel, array('target' => $target)));
         }
 
-        if (theme_essential_get_setting('helplinktype') == 2) {
-            if (filter_var(theme_essential_get_setting('helplink'), FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED)) {
+        if (theme_essential_get_setting('helplinktype') === '2') {
+            if (theme_essential_get_setting('helplink') && filter_var(theme_essential_get_setting('helplink'), FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED)) {
                 $branchurl = theme_essential_get_setting('helplink');
                 $target = '_blank';
-            } else if ((!theme_essential_get_setting('helplink')) && (filter_var(get_config('supportpage'), FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED))) {
-                $branchurl = get_config('supportpage');
+            } else if ((!theme_essential_get_setting('helplink')) && (filter_var($CFG->supportpage, FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED))) {
+                $branchurl = $CFG->supportpage;
                 $target = '_blank';
             } else {
+                if (is_siteadmin()) {
+                    $branchurl = $CFG->wwwroot.'/admin/settings.php?section=theme_essential_header';
+                }
                 $branchlabel = '<em><i class="fa fa-exclamation-triangle red"></i>' . get_string('invalidurl', 'error') . '</em>';
             }
 
-            return html_writer::tag('li', html_writer::link($branchurl, $branchlabel, array('target' => $target)));
         }
 
+        return html_writer::tag('li', html_writer::link($branchurl, $branchlabel, array('target' => $target)));
     }
 
     /**
