@@ -48,7 +48,7 @@ function theme_essential_get_setting($setting, $format = false) {
     } else if (!$format) {
         return $theme->settings->$setting;
     } else if ($format === 'format_text') {
-        return format_text($theme->settings->$setting);
+        return format_text($theme->settings->$setting, $format = FORMAT_HTML, $options = array('trusted' => true));
     } else {
         return format_string($theme->settings->$setting);
     }
