@@ -99,9 +99,9 @@ $hasmobileapps = (theme_essential_get_setting('ios') ||
     theme_essential_get_setting('android')
 );
 
-$logoclass = 'span12';
+$logoclass = 'ecol12';
 if ($hassocialnetworks || $hasmobileapps) {
-    $logoclass = 'span6';
+    $logoclass = 'ecol6';
 }
 
 $oldnavbar = theme_essential_get_setting('oldnavbar');

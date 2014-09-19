@@ -1,0 +1,39 @@
+/* @Group Editor */
+
+#tinymce {
+    color: ~"[[setting:themetextcolor]]";
+    font-family: ~"[[setting:bodyfont]]";
+    .container-fluid {
+        max-width: ~"[[setting:pagewidth]]";
+    }
+    h1, h2 {
+        font-family: ~"[[setting:headingfont]]";
+    }
+
+    h1, h2, h3, h4, h5, h6, #adminsettings h3 {
+        color: ~"[[setting:themetextcolor]]";
+    }
+
+    a, a:visited {
+        color: ~"[[setting:themeurlcolor]]";
+    }
+
+    a:hover {
+        color: ~"[[setting:themehovercolor]]";
+        &:before {
+            color: ~"[[setting:themehovercolor]]";
+        }
+    }
+
+    a:before {
+        color: @icon-colour;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    .color {
+        color: ~"[[setting:themecolor]]";
+    }
+}
+
+/* @end */

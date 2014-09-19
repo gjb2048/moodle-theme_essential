@@ -1865,10 +1865,16 @@ body {
   margin: 8px;
 }
 /* @Group Editor */
+#tinymce a:before {
+  color: [[setting:themeiconcolor]];
+  display: inline-block;
+  text-decoration: none;
+}
+/* @end */
+/* @Group Editor */
 #tinymce {
   color: [[setting:themetextcolor]];
   font-family: [[setting:bodyfont]];
-  /* @group Custom */
 }
 #tinymce .container-fluid {
   max-width: [[setting:pagewidth]];
@@ -1904,8 +1910,10 @@ body {
 #tinymce .color {
   color: [[setting:themecolor]];
 }
+/* @end */
+/* @group Editor */
 #tinymce .bor {
   background: url([[pix:theme|bg/dot]]) repeat-x;
 }
-/* @end */
+/* @end Editor */
 /*# sourceMappingURL=/theme/essential/style/editor.treasure.map */

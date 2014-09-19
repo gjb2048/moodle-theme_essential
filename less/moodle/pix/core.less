@@ -1,0 +1,48 @@
+/* core.less */
+.collapsible-actions .collapseexpand {
+  background: url(~"[[pix:t/collapsed]]") 2px center no-repeat;
+}
+
+.dir-rtl .collapsible-actions .collapseexpand {
+  background: url(~"[[pix:t/collapsed_rtl]]") right center no-repeat;
+}
+
+.collapsible-actions .collapse-all,
+.dir-rtl .collapsible-actions .collapse-all {
+  background-image: url(~"[[pix:t/expanded]]");
+}
+
+.smartselect .smartselect_submenuitem {
+  background-image: url(~"[[pix:moodle|t/collapsed]]");
+}
+
+/** Fix YUI 2 Treeview for Right to left languages. **/
+.dir-rtl .ygtvtn,
+.dir-rtl .ygtvtm,
+.dir-rtl .ygtvtmh,
+.dir-rtl .ygtvtmhh,
+.dir-rtl .ygtvtp,
+.dir-rtl .ygtvtph,
+.dir-rtl .ygtvtphh,
+.dir-rtl .ygtvln,
+.dir-rtl .ygtvlm,
+.dir-rtl .ygtvlmh,
+.dir-rtl .ygtvlmhh,
+.dir-rtl .ygtvlp,
+.dir-rtl .ygtvlph,
+.dir-rtl .ygtvlphh,
+.dir-rtl .ygtvdepthcell,
+.dir-rtl .ygtvok,
+.dir-rtl .ygtvok:hover,
+.dir-rtl .ygtvcancel,
+.dir-rtl .ygtvcancel:hover {
+  width: 18px;
+  height: 22px;
+  background-image: url(~"[[pix:theme|yui2-treeview-sprite-rtl]]");
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.moodle-dialogue-base .closebutton {
+  background-image: url(~"[[pix:theme|sprite]]");
+}

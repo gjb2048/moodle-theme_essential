@@ -1,0 +1,95 @@
+// RTL from original less file of same name which cannot be intelligently removed.  CSS Flip process would probably not affect the original.
+
+@horizontalComponentOffset1200: 265px;
+
+@media (max-width: 873px) {
+  .dir-rtl {
+    .userprofile dl.list dt,
+    .userprofile dl.list dd {
+      float: none;
+      text-align: right;
+      margin-right: 0;
+    }
+  }
+}
+
+@media (min-width: 980px) {
+  .dir-rtl .navbar .nav.pull-right,
+  .dir-rtl .navbar .logininfo {
+    float: left;
+  }
+
+  .dir-rtl .navbar .nav {
+    float: right;
+    & > li {
+      float: right;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .dir-rtl {
+    .form-item .form-setting,
+    .form-item .form-description,
+    .mform .fitem .felement,
+    .mform .fdescription.required,
+    .userprofile dl.list dd,
+    .form-horizontal .controls {
+      margin-right: (@horizontalComponentOffset1200 - 100px);
+    }
+    .form-item .form-label,
+    .mform .fitem div.fitemtitle,
+    .userprofile dl.list dt,
+    .form-horizontal .control-label {
+      width: (@horizontalComponentOffset1200 - 120px);
+    }
+  }
+}
+
+.dir-rtl {
+  .dropdown-menu {
+    right: 0;
+    left: auto;
+    margin-right: 0px;
+  }
+  .navbar .nav > li > .dropdown-menu:before {
+    right: 9px;
+    left: auto;
+  }
+  .navbar .nav > li > .dropdown-menu:after {
+    right: 10px;
+    left: auto;
+  }
+  .dropdown-submenu > a:after {
+    margin-right: 0;
+    margin-left: -10px;
+    float: left;
+    border-right-color: #ccc;
+    border-left-color: transparent;
+    border-width: 5px 5px 5px 0px;
+  }
+  .dropdown-submenu > .dropdown-menu {
+    right: 100%;
+    left: auto;
+  }
+}
+
+// File Picker.
+@media (max-width: 768px) {
+  .dir-rtl .fp-formset .control-group {
+    label.control-label {
+      text-align: right;
+      float: none;
+    }
+  }
+
+  .dir-rtl .fp-forminset .control-group {
+    label.control-label {
+      text-align: right;
+      float: none;
+    }
+    .controls {
+      margin-right: 0;
+    }
+  }
+}

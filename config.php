@@ -34,13 +34,10 @@ $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
 $THEME->parents = array();
 
-$THEME->sheets[] = 'moodle';
-
-if (right_to_left()) {
-    $THEME->sheets[] = 'essential-rtl';
-} else {
-    $THEME->sheets[] = 'essential';
-}
+$THEME->sheets[] = 'moodle-rtl';
+$THEME->sheets[] = 'essential-pix';
+$THEME->sheets[] = 'settings';
+$THEME->sheets[] = 'fontawesome';
 
 if ((get_config('theme_essential', 'enablealternativethemecolors1')) ||
     (get_config('theme_essential', 'enablealternativethemecolors2')) ||
@@ -59,6 +56,8 @@ if (intval($CFG->version) >= 2013111800) {
 }
 
 $THEME->editor_sheets = array('editor');
+
+$THEME->plugins_exclude_sheets = array('mod' => array('quiz'));
 
 $addregions = array();
 if (get_config('theme_essential', 'frontpagemiddleblocks') > 0) {

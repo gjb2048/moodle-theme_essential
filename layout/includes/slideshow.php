@@ -44,8 +44,7 @@ if ($numberofslides) { ?>
                         echo theme_essential_render_slide($i);
                     } ?>
                 </div>
-                <a class="left carousel-control" href="#essentialCarousel" data-slide="prev"><i class="fa fa-chevron-circle-left"></i></a>
-                <a class="right carousel-control" href="#essentialCarousel" data-slide="next"><i class="fa fa-chevron-circle-right"></i></a>
+                <?php echo theme_essential_render_slide_controls($left); ?>
             </div>
         </div>
     </div>

@@ -177,7 +177,7 @@ a.marketing-button:hover {
     color: ~"[[setting:themehovercolor]]";
   }
   .header .title h2:before {
-    color: ~"[[setting:themecolor]]";
+    color: ~"[[setting:themeiconcolor]]";
   }
 }
 
@@ -350,7 +350,7 @@ a.marketing-button:hover {
   border-color: ~"[[setting:themeiconcolor]]";
   var {
     background-color: ~"[[setting:themecolor]]";
-    color: ~"[[setting:themetextcolor]]";
+    color: ~"[[setting:themenavcolor]]";
   }
   h2 {
     color: ~"[[setting:themetextcolor]]";
@@ -374,6 +374,7 @@ a.marketing-button:hover {
 #page-mod-quiz-edit .questionbankwindow {
   &.block div.header {
     background: ~"[[setting:themecolor]]";
+    border: 1px solid ~"[[setting:themeiconcolor]]";
     div.title h2 {
       color: ~"[[setting:themenavcolor]]";
       a {
@@ -453,10 +454,10 @@ h1, h2, h3, h4, h5, h6,
     }
   }
   .moodle-actionmenu[data-enhanced].show .menu a:hover {
-    background-color: ~"[[setting:themecolor]]";
-    color: #fff;
-    &:before {
-      color: #fff;
+    color: ~"[[setting:themecolor]]";
+    background-color: ~"[[setting:themetextcolor]]";
+    .fa:before {
+      color: ~"[[setting:themecolor]]";
     }
   }
 }

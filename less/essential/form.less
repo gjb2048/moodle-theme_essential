@@ -1,28 +1,5 @@
 /* @group Forms */
 
-select,
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-.uneditable-input,
-.form-item .form-description,
-.form-defaultinfo,
-.form-label .form-shortname {
-  color: ~"[[setting:themetextcolor]]";
-}
-
 .form-item .form-label, .mform .fitem div.fitemtitle {
   text-align: left;
 }
@@ -57,22 +34,21 @@ input[type="color"],
     #fgroup_id_buttonar {
       width: 40% !important;
       left: 37%;
-      position: fixed;
-      bottom: 30px;
+        position: fixed;
+        bottom: 30px;
       padding: 20px;
-      border-radius: @baseBorderRadius * 2;
-      background-color: ~"[[setting:themecolor]]";
+        border-radius: @baseBorderRadius * 2;
       #id_previous,
       #id_cancel {
         margin-left: 0px;
         float: left;
-      }
+        }
       #id_next,
       #id_submitbutton,
       #id_submitbutton2{
         float: right;
         margin-right: 0px;
-      }
+        }
       > .fgroup {
         margin: 0px;
         padding-top: 15px;
@@ -89,6 +65,10 @@ input[type="color"],
       color: orangered;
     }
   }
+}
+
+.mform fieldset.collapsible legend a.fheader {
+  margin-left: 0px;
 }
 
 /* @end */

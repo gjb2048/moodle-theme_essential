@@ -1,0 +1,23 @@
+/* @group Responsive */
+
+@media (max-width: 979px) {
+  .navbar {
+    .navbar-inner {
+      .nav-collapse {
+        .nav > li.dropdown ul.dropdown-menu > li > a {
+          color: ~"[[setting:themecolor]]";
+          &:hover, &.open {
+            color: ~"[[setting:themenavcolor]]";
+            background-color: ~"[[setting:themecolor]]";
+          }
+        }
+        .nav li.dropdown ul.dropdown-menu {
+          background-color: ~"[[setting:themenavcolor]]";
+          color: ~"[[setting:themecolor]]";
+        }
+      }
+    }
+  }
+}
+
+/* @end */

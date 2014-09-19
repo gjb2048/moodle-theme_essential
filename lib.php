@@ -120,6 +120,22 @@ function theme_essential_edit_button($section)
     }
 }
 
+// Moodle CSS file serving.
+function theme_essential_get_csswww() {
+    global $CFG;
+
+    if (right_to_left()) {
+        $moodlecss = 'essential-rtl.css';
+    } else {
+        $moodlecss = 'essential.css';
+    }
+
+    $syscontext = context_system::instance();
+    $itemid = theme_get_revision();
+    $url = moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php", "/$syscontext->id/theme_essential/style/$itemid/$moodlecss");
+    return $url;
+}
+
 /**
  * Serves any files associated with the theme settings.
  *
@@ -141,6 +157,8 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
     if ($context->contextlevel == CONTEXT_SYSTEM) {
         if ($filearea === 'logo') {
             return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
+        } else if ($filearea === 'style') {
+            theme_essential_serve_css($args[1]);
         } else if ($filearea === 'pagebackground') {
             return $theme->setting_file_serve('pagebackground', $args, $forcedownload, $options);
         } else if (preg_match("/slide[1-9][0-9]*image/", $filearea) !== false) {
@@ -165,6 +183,98 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
     } else {
         send_file_not_found();
     }
+}
+
+function theme_essential_serve_css($filename) {
+    global $CFG;
+    //require_once($CFG->dirroot.'/lib/csslib.php');
+    if (!empty($CFG->themedir)) {
+        $thestylepath = $CFG->themedir . '/essential/style/';
+    } else {
+        $thestylepath = $CFG->dirroot . '/theme/essential/style/';
+    }
+    $themerev = theme_get_revision();
+    $thesheet = $thestylepath.$filename;
+
+    /* http://css-tricks.com/snippets/php/intelligent-php-cache-control/ - rather than /lib/csslib.php as it is a static file who's
+       contents should only change if it is rebuilt.  But! There should be no difference with TDM on so will see for the moment if
+       that decision is a factor. */
+
+    $etagfile = md5_file($thesheet);
+    /*if ($themerev <= 0) {
+        // TDM on.
+        theme_essential_send_uncached_css($thestylepath, $filename, $etagfile);
+    } else {
+        // TDM off.
+    */
+        // File.
+        $lastmodified = filemtime($thesheet);
+        // Header.
+        $ifmodifiedsince = (isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) ? $_SERVER['HTTP_IF_MODIFIED_SINCE'] : false);
+        $etagheader = (isset($_SERVER['HTTP_IF_NONE_MATCH']) ? trim($_SERVER['HTTP_IF_NONE_MATCH']) : false);
+
+        if ((($ifmodifiedsince) && (strtotime($ifmodifiedsince)==$lastmodified)) || $etagheader == $etagfile) {
+            theme_essential_send_unmodified($lastmodified, $etagfile);
+        }
+        theme_essential_send_cached_css($thestylepath, $filename, $lastmodified, $etagfile);
+    //}
+
+    //send_file($thestylepath.$filename, $filename, 20 , 0, false, false, 'text/css');
+}
+
+function theme_essential_send_uncached_css($path, $filename, $etag) {
+    if (!defined('THEME_DESIGNER_CACHE_LIFETIME')) { // /lib/csslib.php.
+        // This can be also set in config.php file,
+        // it needs to be higher than the time it takes to generate all CSS content.
+        define('THEME_DESIGNER_CACHE_LIFETIME', 10);
+    }
+
+    header('Content-Disposition: inline; filename="$filename"');
+    header('Last-Modified: '. gmdate('D, d M Y H:i:s', time()) .' GMT');
+    header('Expires: '. gmdate('D, d M Y H:i:s', time() + THEME_DESIGNER_CACHE_LIFETIME) .' GMT');
+    header('Pragma: ');
+    header('Accept-Ranges: none');
+    header('Content-Type: text/css; charset=utf-8');
+    header('Etag: "'.$etag.'"');
+
+    readfile($path.$filename);
+    die;
+}
+
+function theme_essential_send_unmodified($lastmodified, $etag) {
+    $lifetime = 60*60*24*60;
+    header('HTTP/1.1 304 Not Modified');
+    header('Expires: '. gmdate('D, d M Y H:i:s', time() + $lifetime) .' GMT');
+    header('Cache-Control: public, max-age='.$lifetime);
+    header('Content-Type: text/css; charset=utf-8');
+    header('Etag: "'.$etag.'"');
+    if ($lastmodified) {
+        header('Last-Modified: '. gmdate('D, d M Y H:i:s', $lastmodified) .' GMT');
+    }
+    die;
+}
+
+function theme_essential_send_cached_css($path, $filename, $lastmodified, $etag) {
+    global $CFG;
+    require_once($CFG->dirroot.'/lib/configonlylib.php'); // For min_enable_zlib_compression().
+
+    // 60 days only - the revision may get incremented quite often.
+    $lifetime = 60*60*24*60;
+
+    header('Etag: "'.$etag.'"');
+    header('Content-Disposition: inline; filename="$filename"');
+    header('Last-Modified: '. gmdate('D, d M Y H:i:s', $lastmodified) .' GMT');
+    header('Expires: '. gmdate('D, d M Y H:i:s', time() + $lifetime) .' GMT');
+    header('Pragma: ');
+    header('Cache-Control: public, max-age='.$lifetime);
+    header('Accept-Ranges: none');
+    header('Content-Type: text/css; charset=utf-8');
+    if (!min_enable_zlib_compression()) {
+        header('Content-Length: '.filesize($path.$filename));
+    }
+
+    readfile($path.$filename);
+    die;
 }
 
 /**
@@ -673,8 +783,15 @@ function theme_essential_get_nav_links($course, $sections, $sectionno)
 {
     // FIXME: This is really evil and should by using the navigation API.
     $course = course_get_format($course)->get_course();
-    $previousarrow = '<i class="fa fa-chevron-circle-left"></i>';
-    $nextarrow = '<i class="fa fa-chevron-circle-right"></i>';
+    $left = 'left';
+    $right = 'right';
+    if (right_to_left()) {
+        $temp = $left;
+        $left = $right;
+        $right = $temp;
+    }
+    $previousarrow = '<i class="fa fa-chevron-circle-'.$left.'"></i>';
+    $nextarrow = '<i class="fa fa-chevron-circle-'.$right.'"></i>';
     $canviewhidden = has_capability('moodle/course:viewhiddensections', context_course::instance($course->id))
     or !$course->hiddensections;
 
@@ -853,6 +970,24 @@ function theme_essential_render_slide($i)
     $slide .= ($slideurl)? '</a>' : '</div>';
 
     return $slide;
+}
+
+function theme_essential_render_slide_controls($left) {
+    $faleft = 'left';
+    $faright = 'right';
+    if (!$left) {
+        $temp = $faleft;
+        $faleft = $faright;
+        $faright = $temp;
+    }
+    $prev = '<a class="left carousel-control" href="#essentialCarousel" data-slide="prev"><i class="fa fa-chevron-circle-'.$faleft.'"></i></a>';
+    $next = '<a class="right carousel-control" href="#essentialCarousel" data-slide="next"><i class="fa fa-chevron-circle-'.$faright.'"></i></a>';
+
+    if ($left) {
+        return $prev.$next;
+    } else {
+        return $next.$prev;
+    }
 }
 
 function theme_essential_page_init(moodle_page $page)

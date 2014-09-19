@@ -141,7 +141,7 @@
 .essential-colours-alternative1 .navbar .navbar-inner .dropdown-menu > li > a:focus,
 .essential-colours-alternative1 .navbar .navbar-inner .dropdown-submenu:hover > a,
 .essential-colours-alternative1 .navbar .navbar-inner .dropdown-submenu:focus > a {
-  color: [[setting:themenavcolor]] !important;
+  color: [[setting:themenavcolor]];
   background-color: [[setting:alternativethemecolor1]];
   background-image: -moz-linear-gradient(top, [[setting:alternativethemehovercolor1]], [[setting:alternativethemecolor1]]);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemehovercolor1]]), to([[setting:alternativethemecolor1]]));
@@ -314,7 +314,7 @@
 }
 .essential-colours-alternative1 .performanceinfo var {
   background-color: [[setting:alternativethemecolor1]];
-  color: [[setting:alternativethemetextcolor1]];
+  color: [[setting:themenavcolor]];
 }
 .essential-colours-alternative1 .performanceinfo h2 {
   color: [[setting:alternativethemetextcolor1]];
@@ -435,12 +435,12 @@
     background-color: [[setting:themenavcolor]];
   }
   .essential-colours-alternative1 .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a {
-    color: [[setting:themenavcolor]];
+    color: [[setting:alternativethemecolor1]];
   }
   .essential-colours-alternative1 .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a:hover,
   .essential-colours-alternative1 .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a:focus {
-    background-color: [[setting:themenavcolor]];
-    color: [[setting:alternativethemecolor1]];
+    background-color: [[setting:alternativethemecolor1]];
+    color: [[setting:themenavcolor]];
   }
   .essential-colours-alternative1 .navbar .navbar-inner .nav-collapse .nav > li.dropdown a:hover,
   .essential-colours-alternative1 .navbar .navbar-inner .nav-collapse .nav > li.dropdown a:focus,
@@ -452,7 +452,7 @@
   .essential-colours-alternative1 .navbar .navbar-inner .dropdown-menu > li > a:focus,
   .essential-colours-alternative1 .navbar .navbar-inner .dropdown-submenu:hover > a,
   .essential-colours-alternative1 .navbar .navbar-inner .dropdown-submenu:focus > a {
-    color: [[setting:alternativethemecolor1]] !important;
+    color: [[setting:alternativethemecolor1]];
     background-color: [[setting:themenavcolor]];
     background-image: none;
   }
@@ -568,7 +568,7 @@
 .essential-colours-alternative2 .navbar .navbar-inner .dropdown-menu > li > a:focus,
 .essential-colours-alternative2 .navbar .navbar-inner .dropdown-submenu:hover > a,
 .essential-colours-alternative2 .navbar .navbar-inner .dropdown-submenu:focus > a {
-  color: [[setting:themenavcolor]] !important;
+  color: [[setting:themenavcolor]];
   background-color: [[setting:alternativethemecolor2]];
   background-image: -moz-linear-gradient(top, [[setting:alternativethemehovercolor2]], [[setting:alternativethemecolor2]]);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemehovercolor2]]), to([[setting:alternativethemecolor2]]));
@@ -741,7 +741,7 @@
 }
 .essential-colours-alternative2 .performanceinfo var {
   background-color: [[setting:alternativethemecolor2]];
-  color: [[setting:alternativethemetextcolor2]];
+  color: [[setting:themenavcolor]];
 }
 .essential-colours-alternative2 .performanceinfo h2 {
   color: [[setting:alternativethemetextcolor2]];
@@ -862,12 +862,12 @@
     background-color: [[setting:themenavcolor]];
   }
   .essential-colours-alternative2 .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a {
-    color: [[setting:themenavcolor]];
+    color: [[setting:alternativethemecolor2]];
   }
   .essential-colours-alternative2 .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a:hover,
   .essential-colours-alternative2 .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a:focus {
-    background-color: [[setting:themenavcolor]];
-    color: [[setting:alternativethemecolor2]];
+    background-color: [[setting:alternativethemecolor2]];
+    color: [[setting:themenavcolor]];
   }
   .essential-colours-alternative2 .navbar .navbar-inner .nav-collapse .nav > li.dropdown a:hover,
   .essential-colours-alternative2 .navbar .navbar-inner .nav-collapse .nav > li.dropdown a:focus,
@@ -879,7 +879,7 @@
   .essential-colours-alternative2 .navbar .navbar-inner .dropdown-menu > li > a:focus,
   .essential-colours-alternative2 .navbar .navbar-inner .dropdown-submenu:hover > a,
   .essential-colours-alternative2 .navbar .navbar-inner .dropdown-submenu:focus > a {
-    color: [[setting:alternativethemecolor2]] !important;
+    color: [[setting:alternativethemecolor2]];
     background-color: [[setting:themenavcolor]];
     background-image: none;
   }
@@ -995,7 +995,7 @@
 .essential-colours-alternative3 .navbar .navbar-inner .dropdown-menu > li > a:focus,
 .essential-colours-alternative3 .navbar .navbar-inner .dropdown-submenu:hover > a,
 .essential-colours-alternative3 .navbar .navbar-inner .dropdown-submenu:focus > a {
-  color: [[setting:themenavcolor]] !important;
+  color: [[setting:themenavcolor]];
   background-color: [[setting:alternativethemecolor3]];
   background-image: -moz-linear-gradient(top, [[setting:alternativethemehovercolor3]], [[setting:alternativethemecolor3]]);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemehovercolor3]]), to([[setting:alternativethemecolor3]]));
@@ -1168,7 +1168,7 @@
 }
 .essential-colours-alternative3 .performanceinfo var {
   background-color: [[setting:alternativethemecolor3]];
-  color: [[setting:alternativethemetextcolor3]];
+  color: [[setting:themenavcolor]];
 }
 .essential-colours-alternative3 .performanceinfo h2 {
   color: [[setting:alternativethemetextcolor3]];
@@ -1289,12 +1289,12 @@
     background-color: [[setting:themenavcolor]];
   }
   .essential-colours-alternative3 .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a {
-    color: [[setting:themenavcolor]];
+    color: [[setting:alternativethemecolor3]];
   }
   .essential-colours-alternative3 .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a:hover,
   .essential-colours-alternative3 .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a:focus {
-    background-color: [[setting:themenavcolor]];
-    color: [[setting:alternativethemecolor3]];
+    background-color: [[setting:alternativethemecolor3]];
+    color: [[setting:themenavcolor]];
   }
   .essential-colours-alternative3 .navbar .navbar-inner .nav-collapse .nav > li.dropdown a:hover,
   .essential-colours-alternative3 .navbar .navbar-inner .nav-collapse .nav > li.dropdown a:focus,
@@ -1306,7 +1306,7 @@
   .essential-colours-alternative3 .navbar .navbar-inner .dropdown-menu > li > a:focus,
   .essential-colours-alternative3 .navbar .navbar-inner .dropdown-submenu:hover > a,
   .essential-colours-alternative3 .navbar .navbar-inner .dropdown-submenu:focus > a {
-    color: [[setting:alternativethemecolor3]] !important;
+    color: [[setting:alternativethemecolor3]];
     background-color: [[setting:themenavcolor]];
     background-image: none;
   }

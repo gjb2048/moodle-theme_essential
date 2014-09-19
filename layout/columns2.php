@@ -38,11 +38,11 @@ require_once(dirname(__FILE__) . '/includes/header.php'); ?>
         <div id="page-content" class="row-fluid">
             <div id="<?php echo $regionbsid ?>" class="span12">
                 <div class="row-fluid">
-                    <?php if ($hasboringlayout && $left) { ?>
-                    <section id="region-main" class="span9 pull-right">
-                        <?php } else { ?>
+                    <?php if (($hasboringlayout && $left) || (!$left)) { ?>
+                        <section id="region-main" class="span9 pull-right">
+                    <?php } else { ?>
                         <section id="region-main" class="span9 desktop-first-column">
-                            <?php } ?>
+                    <?php } ?>
                             <?php if ($COURSE->id > 1) {
                                 echo $OUTPUT->heading($COURSE->fullname, 1, 'coursetitle');
                                 echo '<div class="bor"></div>';
@@ -53,11 +53,11 @@ require_once(dirname(__FILE__) . '/includes/header.php'); ?>
                                 echo $OUTPUT->course_content_footer();
                             }?>
                         </section>
-                        <?php if ($hasboringlayout && $left) { ?>
-                            <?php echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column'); ?>
-                        <?php } else { ?>
-                            <?php echo $OUTPUT->blocks('side-pre', 'span3 pull-right'); ?>
-                        <?php } ?>
+                    <?php if (($hasboringlayout && $left) || (!$left)) { ?>
+                        <?php echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column'); ?>
+                    <?php } else { ?>
+                        <?php echo $OUTPUT->blocks('side-pre', 'span3 pull-right'); ?>
+                    <?php } ?>
                 </div>
             </div>
         </div>
