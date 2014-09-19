@@ -107,9 +107,19 @@ New in 2.7.8
 - FIX: Issue #248: Navbar overlay on activity selection popup.
 - FIX: Issue #252: LESS background: transparent; being compiled as background: 0 0;
 - FIX: Issue #254: Gradebook alignment.
+- FIX: Issue #257: Header options cause navbar to display incorrectly.
+- FIX: Issue #258: Message menu text wraping in IE 11.
+- FIX: Issue #259: In course page icon not appears.
+- FIX: Issue #260: Preview Questions.
+- FIX: Issue #263: Group Image alignment in Forums.
+- FIX: Issue #264: Incorrect H1 content in Password change screen.
+- FIX: Issue #268: When vertical, Marketing spot urls all link to the url for Marketing spot 1.
+- FIX: Issue #272: Email/URL for Help link not correctly parsed.
 - FIX: Issue #271: Performance information not readable when theme colour is #ffffff.
 - FIX: Issue #277: Docking clash when not using old navbar.
+- NEW: Issue #249: Implement RTL CSS switching.
 - NEW: Issue #251: Marketing spots h tags.
+- NEW: Issue #269: Marketing Spots Social Media Widgets.
 - NEW: Issue #278: Site name needs to be formatted in line with MDL-47080.
 
 New in 2.7.7
