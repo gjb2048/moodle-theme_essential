@@ -25,6 +25,13 @@
 
 #region-main {
   form {
+    .form-buttons {
+      width: 400px;
+      border-radius: @baseBorderRadius * 2;
+      input {
+        margin: 0px;
+      }
+    }
     table#form td.submit,
     .form-buttons,
     .path-admin .buttons,
@@ -32,33 +39,28 @@
     .fp-content-center form+div,
     div.backup-section+form,
     #fgroup_id_buttonar {
-      width: 40% !important;
-      left: 37%;
-        position: fixed;
-        bottom: 30px;
+      width: 40%;
+      left: 30%;
+      position: fixed;
+      text-align: center;
+      z-index: 1;
+      bottom: 30px;
       padding: 20px;
-        border-radius: @baseBorderRadius * 2;
+      border-radius: @baseBorderRadius * 2;
       #id_previous,
       #id_cancel {
         margin-left: 0px;
         float: left;
-        }
+      }
       #id_next,
       #id_submitbutton,
-      #id_submitbutton2{
+      #id_submitbutton2 {
         float: right;
         margin-right: 0px;
-        }
+      }
       > .fgroup {
         margin: 0px;
         padding-top: 15px;
-      }
-    }
-    .form-buttons {
-      width: 400px;
-      border-radius: @baseBorderRadius * 2;
-      input {
-        margin: 0px;
       }
     }
     .fdescription.required {

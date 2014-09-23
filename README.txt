@@ -117,6 +117,7 @@ New in 2.7.8
 - FIX: Issue #272: Email/URL for Help link not correctly parsed.
 - FIX: Issue #271: Performance information not readable when theme colour is #ffffff.
 - FIX: Issue #277: Docking clash when not using old navbar.
+- FIX: Issue #284: Testing 2.7.8a - Save changes bar offset to the right.
 - NEW: Issue #249: Implement RTL CSS switching.
 - NEW: Issue #251: Marketing spots h tags.
 - NEW: Issue #269: Marketing Spots Social Media Widgets.

@@ -21390,6 +21390,15 @@ a.action-icon > i,
   font-family: monospace;
 }
 
+#region-main form .form-buttons {
+  width: 400px;
+  border-radius: 8px;
+}
+
+#region-main form .form-buttons input {
+  margin: 0px;
+}
+
 #region-main form table#form td.submit,
 #region-main form .form-buttons,
 #region-main form .path-admin .buttons,
@@ -21397,9 +21406,11 @@ a.action-icon > i,
 #region-main form .fp-content-center form + div,
 #region-main form div.backup-section + form,
 #region-main form #fgroup_id_buttonar {
-  width: 40% !important;
-  right: 37%;
+  width: 40%;
+  right: 30%;
   position: fixed;
+  text-align: center;
+  z-index: 1;
   bottom: 30px;
   padding: 20px;
   border-radius: 8px;
@@ -21457,15 +21468,6 @@ a.action-icon > i,
 #region-main form #fgroup_id_buttonar > .fgroup {
   margin: 0px;
   padding-top: 15px;
-}
-
-#region-main form .form-buttons {
-  width: 400px;
-  border-radius: 8px;
-}
-
-#region-main form .form-buttons input {
-  margin: 0px;
 }
 
 #region-main form .fdescription.required {
