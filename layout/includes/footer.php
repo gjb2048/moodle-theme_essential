@@ -88,7 +88,7 @@ if (empty($PAGE->layout_options['nofooter'])) {
                 }
             });
             $('.breadcrumb').jBreadCrumb();
-            $('body').fitVids();
+            $('.mediaplugin').fitVids();
         });
     </script>
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
