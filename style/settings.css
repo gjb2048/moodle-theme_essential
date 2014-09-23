@@ -273,17 +273,17 @@ ul.breadcrumb.style2 li a:hover {
 /* @end */
 /* @group Core */
 .moodle-actionmenu[data-enhanced].show .menu {
-  background-color: [[setting:themecolor]];
+  background-color: #fff;
 }
 .moodle-actionmenu[data-enhanced].show .menu a {
   color: [[setting:themeurlcolor]];
 }
 .moodle-actionmenu[data-enhanced].show .menu a:hover {
-  color: [[setting:themecolor]];
-  background-color: [[setting:themetextcolor]];
+  color: [[setting:themenavcolor]];
+  background-color: [[setting:themecolor]];
 }
 .moodle-actionmenu[data-enhanced].show .menu a:hover .fa:before {
-  color: [[setting:themecolor]];
+  color: [[setting:themenavcolor]];
 }
 /* @end */
 /* @group Course */
@@ -795,13 +795,13 @@ a.marketing-button:hover {
 /* @end */
 /* @group Tabs */
 .nav-tabs > li > a {
-  color: [[setting:themetextcolor]];
+  color: [[setting:themenavcolor]];
   background-color: [[setting:themecolor]];
 }
 .nav-tabs > li > a:hover,
 .nav-tabs > li > a:focus {
   color: [[setting:themecolor]];
-  background-color: [[setting:themehovercolor]];
+  background-color: [[setting:themenavcolor]];
 }
 @media (max-width: 979px) {
   .nav-collapse {
@@ -856,7 +856,7 @@ a.marketing-button:hover {
   color: [[setting:themenavcolor]];
 }
 #page-mod-quiz-edit .questionbankwindow.block div.header div.title h2:before {
-  color: [[setting:themeiconcolor]];
+  color: [[setting:themenavcolor]];
 }
 /* @end */
 /* @group Gradebook */
