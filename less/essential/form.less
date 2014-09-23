@@ -52,7 +52,13 @@ input[type="color"],
 .path-backup {
   #page {
     form {
-      .form-buttons,
+    .form-buttons {
+      width: 400px;
+      border-radius: @baseBorderRadius * 2;
+      input {
+        margin: 0px;
+      }
+    }
       table#form td.submit,
       .form-buttons,
       .path-admin .buttons,
@@ -62,8 +68,11 @@ input[type="color"],
       div.backup-section+form,
       #fgroup_id_buttonar,
       fieldset:last-of-type.hidden {
-        width: 600px;
+        width: 40%;
+        left: 30%;
         position: fixed;
+        text-align: center;
+        z-index: 1;
         bottom: 30px;
         padding-top: 10px;
         margin: 0px;
@@ -76,13 +85,6 @@ input[type="color"],
         }
         #id_previous {
           margin-left: -250px;
-        }
-      }
-      .form-buttons {
-        width: 400px;
-        border-radius: @baseBorderRadius * 2;
-        input {
-          margin: 0px;
         }
       }
       .fdescription.required {

@@ -100,6 +100,7 @@ New in 2.6.11
 - FIX: Issue #271: Performance information not readable when theme colour is #ffffff.
 - FIX: Issue #272: Email/URL for Help link not correctly parsed.
 - FIX: Issue #277: Docking clash when not using old navbar.
+- FIX: Issue #284: Testing 2.7.8a - Save changes bar offset to the right.
 - FIX: Issue #304: Region not defined in M2.6.
 - FIX: Issue #326: Submit panel overlaps the message input area.
 - FIX: Issue #329: Social icons in mobile view showing odd behaviour.
