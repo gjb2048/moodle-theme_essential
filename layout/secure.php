@@ -83,7 +83,7 @@ echo $OUTPUT->doctype() ?>
                 return false;
             });
 
-            $('#page').fitVids();
+            $('.mediaplugin').fitVids();
         });
     </script>
 </footer>
