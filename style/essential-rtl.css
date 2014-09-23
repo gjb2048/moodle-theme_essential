@@ -19745,7 +19745,7 @@ ins {
 }
 
 .course-content ul.weeks li.section {
-  padding-bottom: 20px;
+  padding-bottom: 20px !important;
 }
 
 img.userpicture,
@@ -20598,6 +20598,10 @@ body .course-content ul.topics li.section .content {
 
 .editing .section .activity .contentwithoutlink {
   padding-left: 100px;
+}
+
+.coursebox > .info > .coursename a {
+  background-position: right 0.25em;
 }
 
 /* @group Course Footer */

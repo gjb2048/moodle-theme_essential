@@ -171,9 +171,6 @@
 .dir-rtl .o2k7Skin .mceListBox .mceText {
   text-align: right;
 }
-.dir-rtl .coursebox > .info > .coursename a {
-  background-position: right;
-}
 .dir-rtl .section .activity {
   /* The command block for each activity */
 }

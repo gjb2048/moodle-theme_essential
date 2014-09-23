@@ -16454,7 +16454,7 @@ ins {
   margin-top: -30px;
 }
 .course-content ul.weeks li.section {
-  padding-bottom: 20px;
+  padding-bottom: 20px !important;
 }
 img.userpicture,
 img.profilepicture {
@@ -17150,6 +17150,9 @@ body .course-content ul.topics li.section .content {
 }
 .editing .section .activity .contentwithoutlink {
   padding-right: 100px;
+}
+.coursebox > .info > .coursename a {
+  background-position: left 0.25em;
 }
 /* @group Course Footer */
 .section-navigation {
