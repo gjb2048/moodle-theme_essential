@@ -59,9 +59,10 @@ function theme_essential_get_setting($setting, $format = false)
 function theme_essential_set_logo($css, $logo)
 {
     $tag = '[[setting:logo]]';
-    $replacement = $logo;
-    if (!($replacement)) {
-        $replacement = '';
+    if (!($logo)) {
+        $replacement = 'none';
+    } else {
+        $replacement = 'url(\''.$logo.'\')';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -588,23 +589,17 @@ function theme_essential_process_css($css, $theme)
     $css                = theme_essential_set_marketingheight($css, $marketingheight);
 
     // Set Marketing Images.
-    if (theme_essential_get_setting('marketing1image')) {
-        $setting        = 'marketing1image';
-        $marketingimage = $theme->setting_file_url($setting, $setting);
-        $css            = theme_essential_set_marketingimage($css, $marketingimage, $setting);
-    }
+    $setting        = 'marketing1image';
+    $marketingimage = $theme->setting_file_url($setting, $setting);
+    $css            = theme_essential_set_marketingimage($css, $marketingimage, $setting);
 
-    if (theme_essential_get_setting('marketing2image')) {
-        $setting        = 'marketing2image';
-        $marketingimage = $theme->setting_file_url($setting, $setting);
-        $css            = theme_essential_set_marketingimage($css, $marketingimage, $setting);
-    }
+    $setting        = 'marketing2image';
+    $marketingimage = $theme->setting_file_url($setting, $setting);
+    $css            = theme_essential_set_marketingimage($css, $marketingimage, $setting);
 
-    if (theme_essential_get_setting('marketing3image')) {
-        $setting        = 'marketing3image';
-        $marketingimage = $theme->setting_file_url($setting, $setting);
-        $css            = theme_essential_set_marketingimage($css, $marketingimage, $setting);
-    }
+    $setting        = 'marketing3image';
+    $marketingimage = $theme->setting_file_url($setting, $setting);
+    $css            = theme_essential_set_marketingimage($css, $marketingimage, $setting);
 
     // Set FontAwesome font loading path
     $css                = theme_essential_set_fontwww($css);
@@ -719,7 +714,11 @@ function theme_essential_set_alternativecolor($css, $type, $customcolor, $defaul
 function theme_essential_set_pagebackground($css, $pagebackground)
 {
     $tag = '[[setting:pagebackground]]';
-    $replacement = $pagebackground;
+    if (!($pagebackground)) {
+        $replacement = 'none';
+    } else {
+        $replacement = 'url(\''.$pagebackground.'\')';
+    }
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
@@ -759,7 +758,11 @@ function theme_essential_set_marketingheight($css, $marketingheight)
 function theme_essential_set_marketingimage($css, $marketingimage, $setting)
 {
     $tag = '[[setting:' . $setting . ']]';
-    $replacement = $marketingimage;
+    if (!($marketingimage)) {
+        $replacement = 'none';
+    } else {
+        $replacement = 'url(\''.$marketingimage.'\')';
+    }
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }

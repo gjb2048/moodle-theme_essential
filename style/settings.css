@@ -549,7 +549,7 @@ p {
 body {
   color: [[setting:themetextcolor]];
   font-family: [[setting:bodyfont]];
-  background-image: url([[setting:pagebackground]]);
+  background-image: [[setting:pagebackground]];
   background-attachment: [[setting:backgroundattach]];
   background-repeat: [[setting:backgroundrepeat]];
   background-size: [[setting:backgroundsize]];
@@ -603,7 +603,7 @@ img.profilepicture {
   background: url([[pix:theme|bg/header]]) repeat;
 }
 a.logo {
-  background-image: url([[setting:logo]]);
+  background-image: [[setting:logo]];
 }
 h1#title {
   color: [[setting:themetextcolor]];
@@ -776,13 +776,16 @@ a.marketing-button:hover {
 /* @end */
 /* @group Marketing Spots */
 #marketing-image1 {
-  background: url([[setting:marketing1image]]) no-repeat;
+  background-image: [[setting:marketing1image]];
+  background-repeat: no-repeat;
 }
 #marketing-image2 {
-  background: url([[setting:marketing2image]]) no-repeat;
+  background-image: [[setting:marketing2image]];
+  background-repeat: no-repeat;
 }
 #marketing-image3 {
-  background: url([[setting:marketing3image]]) no-repeat;
+  background-image: [[setting:marketing3image]];
+  background-repeat: no-repeat;
 }
 .marketing-image {
   height: [[setting:marketingheight]];
