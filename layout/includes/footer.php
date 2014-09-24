@@ -82,7 +82,7 @@ if (empty($PAGE->layout_options['nofooter'])) {
                 return false;
             });
 
-            jQuery('.navbar').affix({
+            jQuery('#essentialnavbar').affix({
                 offset: {
                     top: $('#page-header').height()
                 }
