@@ -121,7 +121,7 @@ echo $OUTPUT->doctype() ?>
         </div>
     </div>
     <nav role="navigation">
-        <div class="navbar<?php echo ($oldnavbar) ? ' oldnavbar' : ''; ?> moodle-has-zindex">
+        <div id='essentialnavbar' class="navbar<?php echo ($oldnavbar) ? ' oldnavbar' : ''; ?> moodle-has-zindex">
             <div class="container-fluid navbar-inner">
                 <div class="row-fluid">
                     <div class="custommenus pull-<?php echo ($left) ? 'left' : 'right'; ?>">
