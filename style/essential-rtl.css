@@ -20361,7 +20361,8 @@ table.calendarmonth.calendartable {
 #essentialCarousel.carousel .carousel-inner > .item > .carousel-image {
   width: auto;
   margin: 0 auto;
-  height: 300px;
+  height: auto;
+  max-height: 300px;
   padding: 0;
 }
 

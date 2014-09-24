@@ -122,6 +122,7 @@ New in 2.7.8
 - FIX: Issue #286: CSS caching in Google Chrome.
 - FIX: Issue #287: Embedded objects overlap the navigation elements.
 - FIX: Issue #289: Conflict with Turnitin plugin's navbar.
+- FIX: Issue #291: Carousel images distort.
 - NEW: Issue #249: Implement RTL CSS switching.
 - NEW: Issue #251: Marketing spots h tags.
 - NEW: Issue #269: Marketing Spots Social Media Widgets.
