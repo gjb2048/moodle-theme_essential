@@ -123,6 +123,7 @@ New in 2.7.8
 - FIX: Issue #287: Embedded objects overlap the navigation elements.
 - FIX: Issue #289: Conflict with Turnitin plugin's navbar.
 - FIX: Issue #291: Carousel images distort.
+- FIX: Issue #292: Google Fonts through https FIX.
 - NEW: Issue #249: Implement RTL CSS switching.
 - NEW: Issue #251: Marketing spots h tags.
 - NEW: Issue #269: Marketing Spots Social Media Widgets.
