@@ -114,8 +114,8 @@ New in 2.7.8
 - FIX: Issue #263: Group Image alignment in Forums.
 - FIX: Issue #264: Incorrect H1 content in Password change screen.
 - FIX: Issue #268: When vertical, Marketing spot urls all link to the url for Marketing spot 1.
-- FIX: Issue #272: Email/URL for Help link not correctly parsed.
 - FIX: Issue #271: Performance information not readable when theme colour is #ffffff.
+- FIX: Issue #272: Email/URL for Help link not correctly parsed.
 - FIX: Issue #277: Docking clash when not using old navbar.
 - FIX: Issue #284: Testing 2.7.8a - Save changes bar offset to the right.
 - FIX: Issue #285: Some colours need checking.
@@ -124,6 +124,7 @@ New in 2.7.8
 - FIX: Issue #289: Conflict with Turnitin plugin's navbar.
 - FIX: Issue #291: Carousel images distort.
 - FIX: Issue #292: Google Fonts through https FIX.
+- FIX: Issue #294: Undefined variable icon.
 - NEW: Issue #249: Implement RTL CSS switching.
 - NEW: Issue #251: Marketing spots h tags.
 - NEW: Issue #269: Marketing Spots Social Media Widgets.

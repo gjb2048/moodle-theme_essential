@@ -17077,6 +17077,9 @@ table.calendarmonth.calendartable {
   overflow: hidden;
   text-overflow: ellipsis;
   width: 176px;
+}
+.categoryicons .course_category_tree .category > .info a > i,
+.categoryicons .course_category_tree .category > .info > .categoryname a > i {
   padding-top: 6px;
 }
 .categoryicons .course_category_tree .category > .info a > span,
