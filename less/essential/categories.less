@@ -14,7 +14,6 @@
   }
 
   /* Set the position on the frontpage */
-
   .frontpage-category-names .collapsible-actions,
   #frontpage-category-combo .collapsible-actions {
     display: none;
@@ -83,7 +82,12 @@
         overflow: hidden;
         text-overflow: ellipsis;
         width: 176px;
-        padding-top: 6px;
+        > i {
+          padding-top: 6px;
+        }
+        > span {
+          font-size: 18px;
+        }
       }
     }
     .fa {
