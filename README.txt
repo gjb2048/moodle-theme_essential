@@ -124,6 +124,7 @@ New in 2.7.8
 - FIX: Issue #289: Conflict with Turnitin plugin's navbar.
 - FIX: Issue #291: Carousel images distort.
 - FIX: Issue #292: Google Fonts through https FIX.  Thanks to @PiotrNawrot.
+- FIX: Issue #293: Multilang tags do not work with the course heading.
 - FIX: Issue #294: Undefined variable icon.
 - FIX: Issue #296: Quiz settings page.
 - NEW: Issue #249: Implement RTL CSS switching.
