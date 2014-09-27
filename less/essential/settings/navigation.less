@@ -37,6 +37,15 @@
       }
     }
 
+    .nav {
+        li.dropdown {
+            &.open > .dropdown-toggle, &.active > .dropdown-toggle, &.open.active > .dropdown-toggle {
+                background-color: ~"[[setting:themenavcolor]]";
+                color: ~"[[setting:themecolor]]";
+            }
+        }
+    }
+
     .usermenu {
       .dropdown {
         img.userpicture {

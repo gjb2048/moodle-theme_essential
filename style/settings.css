@@ -500,6 +500,12 @@ input[type="color"],
   color: [[setting:themecolor]];
   background-color: [[setting:themenavcolor]];
 }
+.navbar .navbar-inner .nav li.dropdown.open > .dropdown-toggle,
+.navbar .navbar-inner .nav li.dropdown.active > .dropdown-toggle,
+.navbar .navbar-inner .nav li.dropdown.open.active > .dropdown-toggle {
+  background-color: [[setting:themenavcolor]];
+  color: [[setting:themecolor]];
+}
 .navbar .navbar-inner .usermenu .dropdown img.userpicture {
   border: 1px solid [[setting:themenavcolor]];
 }
