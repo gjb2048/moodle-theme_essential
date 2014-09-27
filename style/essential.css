@@ -17030,7 +17030,7 @@ table.calendarmonth.calendartable {
 .categoryicons .course_category_tree .category.with_children.collapsed > .info > .categoryname,
 .categoryicons .course_category_tree .category.with_children > .info > .categoryname,
 .categoryicons .course_category_tree .category > .info > .categoryname {
-  background-image: none;
+  background-image: none !important;
   padding: 0;
   margin: 0;
 }
