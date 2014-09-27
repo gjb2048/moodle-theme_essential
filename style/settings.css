@@ -372,6 +372,9 @@ input[type="color"],
 #page form fieldset:last-of-type.hidden #fgroup_id_buttonar {
   background-color: [[setting:themecolor]];
 }
+body.path-admin-setting #page form .form-buttons {
+  background-color: [[setting:themecolor]];
+}
 /* @end */
 /* @group Frontpage */
 /* @group Marketing Spots */
