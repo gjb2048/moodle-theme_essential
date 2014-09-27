@@ -246,10 +246,14 @@ class theme_essential_core_renderer extends core_renderer
                 $branchtitle = get_string('mycourses', 'theme_essential');
             }
             $branchlabel = '<i class="fa fa-briefcase"></i>' . $branchtitle;
-            $branchurl = new moodle_url('/my/index.php');
+            $branchurl = new moodle_url('');
             $branchsort = 200;
 
             $branch = $coursemenu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+
+            $hometext = get_string('myhome');
+            $homelabel = html_writer::tag('i', '', array('class' => 'fa fa-home')).html_writer::tag('span', ' '.$hometext);
+            $branch->add($homelabel, new moodle_url('/my/index.php'), $hometext);
 
             // Retrieve courses and add them to the menu when they are visible
             $numcourses = 0;
