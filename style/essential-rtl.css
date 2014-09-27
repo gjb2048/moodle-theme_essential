@@ -21487,6 +21487,10 @@ a.action-icon > i,
   margin-right: 0px;
 }
 
+.mform fieldset a.visibleifjs img.smallicon {
+  padding-bottom: 6px;
+}
+
 /* @end */
 
 /* @group Forums */
@@ -22437,10 +22441,6 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
 
 #page-question-preview h1 {
   font-size: 1.5em;
-}
-
-.path-mod-quiz input[size] {
-  margin-bottom: 2px;
 }
 
 /* @end Quiz */

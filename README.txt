@@ -125,6 +125,7 @@ New in 2.7.8
 - FIX: Issue #291: Carousel images distort.
 - FIX: Issue #292: Google Fonts through https FIX.  Thanks to @PiotrNawrot.
 - FIX: Issue #294: Undefined variable icon.
+- FIX: Issue #296: Quiz settings page.
 - NEW: Issue #249: Implement RTL CSS switching.
 - NEW: Issue #251: Marketing spots h tags.
 - NEW: Issue #269: Marketing Spots Social Media Widgets.
