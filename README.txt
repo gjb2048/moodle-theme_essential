@@ -127,7 +127,7 @@ New in 2.7.8
 - FIX: Issue #293: Multilang tags do not work with the course heading.
 - FIX: Issue #294: Undefined variable icon.
 - FIX: Issue #296: Quiz settings page.
-- NEW: Issue #249: Implement RTL CSS switching.
+- NEW: Issue #249: Implement RTL CSS switching.  Thank you to Nadav Kavalerchik and many others for testing.
 - NEW: Issue #251: Marketing spots h tags.
 - NEW: Issue #269: Marketing Spots Social Media Widgets.
 - NEW: Issue #278: Site name needs to be formatted in line with MDL-47080.
