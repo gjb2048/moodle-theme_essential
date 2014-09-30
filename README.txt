@@ -108,6 +108,7 @@ New in 2.6.11
 - FIX: Issue #293: Multilang tags do not work with the course heading.
 - FIX: Issue #294: Undefined variable icon.
 - FIX: Issue #296: Quiz settings page.
+- FIX: Issue #298: User profile fields - can't edit Categories.
 - FIX: Issue #304: Region not defined in M2.6.
 - FIX: Issue #326: Submit panel overlaps the message input area.
 - FIX: Issue #329: Social icons in mobile view showing odd behaviour.

@@ -25,7 +25,6 @@
  */
 class theme_essential_core_renderer extends core_renderer
 {
-
     public $language = null;
 
     /**
@@ -71,19 +70,6 @@ class theme_essential_core_renderer extends core_renderer
         }
         $notification = "<div class=\"$type\">$message</div>";
         return $notification;
-    }
-
-    /**
-     * Outputs a heading
-     *
-     * @param string $text The text of the heading
-     * @param int $level The level of importance of the heading. Defaulting to 2
-     * @param string $classes A space-separated list of CSS classes. Defaulting to null
-     * @param string $id An optional ID
-     * @return string the HTML to output.
-     */
-    public function heading($text, $level = 2, $classes = null, $id = null) {
-        return parent::heading(format_string($text), $level, $classes, $id);
     }
 
     /**
