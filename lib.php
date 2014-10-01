@@ -188,13 +188,11 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
 
 function theme_essential_serve_css($filename) {
     global $CFG;
-    //require_once($CFG->dirroot.'/lib/csslib.php');
     if (!empty($CFG->themedir)) {
         $thestylepath = $CFG->themedir . '/essential/style/';
     } else {
         $thestylepath = $CFG->dirroot . '/theme/essential/style/';
     }
-    $themerev = theme_get_revision();
     $thesheet = $thestylepath.$filename;
 
     /* http://css-tricks.com/snippets/php/intelligent-php-cache-control/ - rather than /lib/csslib.php as it is a static file who's
@@ -202,44 +200,16 @@ function theme_essential_serve_css($filename) {
        that decision is a factor. */
 
     $etagfile = md5_file($thesheet);
-    /*if ($themerev <= 0) {
-        // TDM on.
-        theme_essential_send_uncached_css($thestylepath, $filename, $etagfile);
-    } else {
-        // TDM off.
-    */
-        // File.
-        $lastmodified = filemtime($thesheet);
-        // Header.
-        $ifmodifiedsince = (isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) ? $_SERVER['HTTP_IF_MODIFIED_SINCE'] : false);
-        $etagheader = (isset($_SERVER['HTTP_IF_NONE_MATCH']) ? trim($_SERVER['HTTP_IF_NONE_MATCH']) : false);
+    // File.
+    $lastmodified = filemtime($thesheet);
+    // Header.
+    $ifmodifiedsince = (isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) ? $_SERVER['HTTP_IF_MODIFIED_SINCE'] : false);
+    $etagheader = (isset($_SERVER['HTTP_IF_NONE_MATCH']) ? trim($_SERVER['HTTP_IF_NONE_MATCH']) : false);
 
-        if ((($ifmodifiedsince) && (strtotime($ifmodifiedsince)==$lastmodified)) || $etagheader == $etagfile) {
-            theme_essential_send_unmodified($lastmodified, $etagfile);
-        }
-        theme_essential_send_cached_css($thestylepath, $filename, $lastmodified, $etagfile);
-    //}
-
-    //send_file($thestylepath.$filename, $filename, 20 , 0, false, false, 'text/css');
-}
-
-function theme_essential_send_uncached_css($path, $filename, $etag) {
-    if (!defined('THEME_DESIGNER_CACHE_LIFETIME')) { // /lib/csslib.php.
-        // This can be also set in config.php file,
-        // it needs to be higher than the time it takes to generate all CSS content.
-        define('THEME_DESIGNER_CACHE_LIFETIME', 10);
+    if ((($ifmodifiedsince) && (strtotime($ifmodifiedsince)==$lastmodified)) || $etagheader == $etagfile) {
+        theme_essential_send_unmodified($lastmodified, $etagfile);
     }
-
-    header('Content-Disposition: inline; filename="$filename"');
-    header('Last-Modified: '. gmdate('D, d M Y H:i:s', time()) .' GMT');
-    header('Expires: '. gmdate('D, d M Y H:i:s', time() + THEME_DESIGNER_CACHE_LIFETIME) .' GMT');
-    header('Pragma: ');
-    header('Accept-Ranges: none');
-    header('Content-Type: text/css; charset=utf-8');
-    header('Etag: "'.$etag.'"');
-
-    readfile($path.$filename);
-    die;
+    theme_essential_send_cached_css($thestylepath, $filename, $lastmodified, $etagfile);
 }
 
 function theme_essential_send_unmodified($lastmodified, $etag) {

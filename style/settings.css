@@ -784,7 +784,7 @@ a.marketing-button:hover {
 .performanceinfo #included:before,
 .performanceinfo #dbqueries:before,
 .performanceinfo #dbtime:before {
-  color: [[setting:themeiconcolor]];
+  color: [[setting:themenavcolor]];
 }
 /* @end */
 /* @group Quiz */
