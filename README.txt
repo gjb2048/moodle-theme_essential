@@ -128,6 +128,7 @@ New in 2.7.8
 - FIX: Issue #294: Undefined variable icon.
 - FIX: Issue #296: Quiz settings page.
 - FIX: Issue #298: User profile fields - can't edit Categories.
+- FIX: Issue #300: Piwik not working in 2.7.8c.
 - NEW: Issue #249: Implement RTL CSS switching.  Thank you to Nadav Kavalerchik and many others for testing.
 - NEW: Issue #251: Marketing spots h tags.
 - NEW: Issue #269: Marketing Spots Social Media Widgets.
