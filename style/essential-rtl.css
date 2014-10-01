@@ -20598,11 +20598,15 @@ body .course-content ul.topics li.section .content {
 }
 
 .editing .section .activity .activityinstance {
-  padding-left: 20px;
+  padding-left: 180px;
 }
 
 .editing .section .activity .contentwithoutlink {
   padding-left: 100px;
+}
+
+.modeditingmenu.editing .section .activity .activityinstance {
+  padding-left: 80px;
 }
 
 .coursebox > .info > .coursename a {

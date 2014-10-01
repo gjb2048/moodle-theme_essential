@@ -63,6 +63,10 @@ if (theme_essential_get_setting('enablecategoryicon')) {
     $bodyclasses[] = 'categoryicons';
 }
 
+if (($PAGE->pagelayout == 'course') && (get_config('core', 'modeditingmenu'))) {
+    $bodyclasses[] = 'modeditingmenu';
+}
+
 $regionbsid = 'region-bs-main-and-pre';
 $left = true;
 if (right_to_left()) {

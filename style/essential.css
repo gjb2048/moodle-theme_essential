@@ -17150,10 +17150,13 @@ body .course-content ul.topics li.section .content {
   margin-left: 3px;
 }
 .editing .section .activity .activityinstance {
-  padding-right: 20px;
+  padding-right: 180px;
 }
 .editing .section .activity .contentwithoutlink {
   padding-right: 100px;
+}
+.modeditingmenu.editing .section .activity .activityinstance {
+  padding-right: 80px;
 }
 .coursebox > .info > .coursename a {
   background-position: left 0.25em;
