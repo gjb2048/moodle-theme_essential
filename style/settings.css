@@ -372,7 +372,8 @@ input[type="color"],
 #page form fieldset:last-of-type.hidden #fgroup_id_buttonar {
   background-color: [[setting:themecolor]];
 }
-body.path-admin-setting #page form .form-buttons {
+body.path-admin-setting #page form .form-buttons,
+#page-admin-search #page form .form-buttons {
   background-color: [[setting:themecolor]];
 }
 /* @end */
