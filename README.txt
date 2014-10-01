@@ -111,6 +111,7 @@ New in 2.6.11
 - FIX: Issue #298: User profile fields - can't edit Categories.
 - FIX: Issue #300: Piwik not working in 2.7.8c.
 - FIX: Issue #301: Long resource/activity names overlap editing menu with editing on.
+- FIX: Issue #302: Setting "Breadcrumb Style" to "hide" does not remove the breadcrumb background.
 - FIX: Issue #304: Region not defined in M2.6.
 - FIX: Issue #326: Submit panel overlaps the message input area.
 - FIX: Issue #329: Social icons in mobile view showing odd behaviour.
