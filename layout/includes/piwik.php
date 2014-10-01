@@ -67,16 +67,17 @@ function analytics_trackurl()
 
 function insert_analytics_tracking()
 {
-    $imagetrack = theme_essential_get_setting('analyticsimagetrack');
     $siteurl = theme_essential_get_setting('analyticssiteurl');
-    $siteid = theme_essential_get_setting('analyticssiteid');
-    $trackadmin = theme_essential_get_setting('analyticstrackadmin');
-    $cleanurl = theme_essential_get_setting('analyticscleanurl');
     $tracking = '';
 
     if (!empty($siteurl)) {
+        $imagetrack = theme_essential_get_setting('analyticsimagetrack');
+        $siteid = theme_essential_get_setting('analyticssiteid');
+        $trackadmin = theme_essential_get_setting('analyticstrackadmin');
+        $cleanurl = theme_essential_get_setting('analyticscleanurl');
+
         if ($imagetrack) {
-            $addition = '<noscript><p><img src="//' . $siteurl . '/piwik.php?idsite=' . $siteid . ' style="border:0" alt="" /></p></noscript>';
+            $addition = '<noscript><p><img src="//' . $siteurl . '/piwik.php?idsite=' . $siteid . '" style="border:0" alt="" /></p></noscript>';
         } else {
             $addition = '';
         }
@@ -88,19 +89,20 @@ function insert_analytics_tracking()
         }
 
         if (!is_siteadmin() || $trackadmin) {
-            $tracking = "
-				<script type='text/javascript'>
-					var _paq = _paq || [];
-					(function(){ var u=(('https:' == document.location.protocol) ? 'https://" . $siteurl . "/' : 'http://" . $siteurl . "/');
-					_paq.push(['setSiteId', " . $siteid . "]);
-					_paq.push(['setTrackerUrl', u+'piwik.php']);
-					_paq.push(['trackPageView']);
-					" . $doctitle . "
-					_paq.push(['enableLinkTracking']);
-					var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.defer=true; g.async=true; g.src=u+'piwik.js';
-					s.parentNode.insertBefore(g,s); })();
-				</script>
-				" . $addition;
+            $tracking = "<script type='text/javascript'>
+                    var _paq = _paq || [];
+                    " . $doctitle . "
+                    _paq.push(['enableLinkTracking']);
+                    _paq.push(['trackPageView']);
+                    (function(){
+                        var u=(('https:' == document.location.protocol) ? 'https' : 'http') + '://" . $siteurl . "/';
+                        _paq.push(['setSiteId', " . $siteid . "]);
+                        _paq.push(['setTrackerUrl', u+'piwik.php']);
+                        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.defer=true; g.async=true; g.src=u+'piwik.js';
+                        s.parentNode.insertBefore(g,s);
+                    })();
+                </script>
+                " . $addition;
         }
     }
     return $tracking;
