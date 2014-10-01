@@ -20103,12 +20103,18 @@ body .chooserdialogue .moodle-dialogue-wrap .moodle-dialogue-bd {
 .breadcrumb-nav {
   width: 65%;
   margin: 0px;
+  /* @group Breadcrumb Style None */
+  /* @end */
   /* @group Breadcrumb Style Fancy */
   /* @end */
   /* @group Breadcrumb Style Simple */
   /* @end */
   /* @group Breadcrumb Style Thin */
   /* @end */
+}
+
+.breadcrumb-nav ul.breadcrumb.style {
+  background-color: transparent;
 }
 
 .breadcrumb-nav ul.breadcrumb.style1 {

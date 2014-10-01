@@ -130,6 +130,7 @@ New in 2.7.8
 - FIX: Issue #298: User profile fields - can't edit Categories.
 - FIX: Issue #300: Piwik not working in 2.7.8c.
 - FIX: Issue #301: Long resource/activity names overlap editing menu with editing on.
+- FIX: Issue #302: Setting "Breadcrumb Style" to "hide" does not remove the breadcrumb background.
 - NEW: Issue #249: Implement RTL CSS switching.  Thank you to Nadav Kavalerchik and many others for testing.
 - NEW: Issue #251: Marketing spots h tags.
 - NEW: Issue #269: Marketing Spots Social Media Widgets.
