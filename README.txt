@@ -86,8 +86,12 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
-New in 2.7.7
-============
+New in 2.6.11
+=============
+- FIX: Issue #304: Region not defined in M2.6.
+
+New in 2.6.10
+=============
 - FIX: Issue #173: Message menu shows wrong time difference in Russian.
 - FIX: Issue #175: Gradebook several bugs.
 - FIX: Issue #179: User picture error.
@@ -126,7 +130,7 @@ New in 2.7.7
 - NEW: Issue #235: Color of course navigation block.
 - NEW: Issue #240: Header title not wrapping in mobile view.
 
-New in 2.7.6b
+New in 2.6.9b
 =============
 - FIX: Issue #205: Has the eye icon used to Enable/Disable an element been reversed in functionality?
 - FIX: Issue #207: Fixed solution for #175 #196 - thanks @ppv1979.
@@ -139,15 +143,15 @@ New in 2.7.6b
        please let us know.
        NOTE: If you are using the Collapsed Topics course format then you MUST have version 2.6.1.3 or above installed.
              If you are using the Columns course format then you MUST have version 2.6.1.1 or above installed.
-
-New in 2.7.6a
+ 
+New in 2.6.9a
 =============
 - FIX: Issue #159: Custom Category Icons not displaying in 2.7.5h (Build: 2014081404).
 - FIX: Various code optimizations
 - NEW: Issue #172: Google font character sets.  Implemented in #174 - thanks @vgango
 - NEW: Issue #194: Centred slide show caption.
 
-New in 2.7.6
+New in 2.6.9
 ============
 - FIX: Issue #159: Custom Category Icons not displaying in 2.7.5h (Build: 2014081404).
 - FIX: Issue #155: Social Icons Missing 2.7.5h
@@ -164,9 +168,9 @@ New in 2.7.6
 - NEW: Backported to Moodle 2.5!!!
 - HELP WANTED: All language strings are now in AMOS (Moodle Language packs) please update your own language!
 
-New in 2.7.5
+New in 2.6.8
 ============
-- FIX: Issue #96:  2.7.4 breaks 'oldnavbar' setting.
+- FIX: Issue #96:  2.6.7 breaks 'oldnavbar' setting.
 - FIX: Issue #98:  Lang en/iosicondesc - Change 'them' to 'theme'.  Thanks to Skylar Kelty.
 - FIX: Issue #101: Navbar not expanding properly on android mobile and tablet.
 - FIX: Issue #107: No fixed width to header on login page.
@@ -206,7 +210,7 @@ New in 2.7.5
 - NEW: Updated HTMLshiv
 - NEW: Persistent link to your own grade report, available as long as you are enrolled in one visible course
 
-New in 2.7.4
+New in 2.6.7
 ============
 - FIX: Issue #68.  Expand all not showing on Edit course settings.
 - FIX: Issue #58.  Add font colour setting.
@@ -233,7 +237,7 @@ New in 2.7.4
         a code solution to swapping files does not work at the moment and combining all possible CSS into one file leads to a big file with
         lots of redundant CSS.  This presents problems when it comes to portable devices and bandwidth.
 
-New in 2.7.3
+New in 2.6.6
 ============
 - FIX: Fixed slide show by replacing with Bootstrap 2.3.2 one.  Issue #18.
 - FIX: Make background image fixed and set a background transparent colour
@@ -259,14 +263,14 @@ New in 2.7.3
 - NEW: Full custom category icon settings (Thanks Danny Wahl)
 - NEW: Transparent fixed background when setting a background image
 
-New in 2.7.2
+New in 2.6.5
 ============
 - FIX: Slideshow CSS fixes
 - FIX: Image alignment on slideshow
 - NEW: Select slideshow background color
 - NEW: Option to bring back the old navbar location
  
-New in 2.7.1
+New in 2.6.4
 ============
 - FIX: Numerous CSS fixes
 - FIX: Translation fixes
@@ -279,7 +283,7 @@ New in 2.7.1
 - NEW: Moved menu bar to top
 - NEW: Now allows setting target on links
 - NEW: New slideshow design (WIP)
- 
+
 New in 2.6.3
 ============
 - FIX: Numerous CSS fixes
