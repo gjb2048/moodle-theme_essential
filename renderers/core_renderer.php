@@ -548,9 +548,10 @@ class theme_essential_core_renderer extends core_renderer
         $usermenu .= html_writer::start_tag('li', array('class' => 'dropdown'));
 
         if (!isloggedin()) {
-            $userpic = '<em><i class="fa fa-sign-in"></i>' . get_string('login') . '</em>';
-            $usermenu .= html_writer::link($loginurl, $userpic, array('class' => 'loginurl'));
-
+            if ($this->page->pagelayout != 'login') {
+                $userpic = '<em><i class="fa fa-sign-in"></i>' . get_string('login') . '</em>';
+                $usermenu .= html_writer::link($loginurl, $userpic, array('class' => 'loginurl'));
+            }
         } else if (isguestuser()) {
             $userurl = new moodle_url('#');
             $userpic = parent::user_picture($USER, array('link' => false));

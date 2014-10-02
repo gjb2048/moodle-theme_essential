@@ -120,8 +120,9 @@ New in 2.6.11
 - NEW: Issue #269: Marketing Spots Social Media Widgets.
 - NEW: Issue #278: Site name needs to be formatted in line with MDL-47080.
 - NEW: Issue #295: My Courses navbar link not working.
-- NEW: Issue #340: Show slider navigation icons only when mouse in the slider.
+- NEW: Issue #305: Login button in menu bar on login page.
 - NEW: Issue #327: Font file types.
+- NEW: Issue #340: Show slider navigation icons only when mouse in the slider.
 
 New in 2.6.10
 =============
