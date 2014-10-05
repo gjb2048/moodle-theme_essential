@@ -379,11 +379,7 @@ body.path-mod-quiz table tbody tr.gradedattempt > td {
   text-align: center;
   display: inline;
   margin-right: 20%;
-}
-
-.dir-rtl .quizattemptcounts {
-  margin-right: 0;
-  margin-left: 20%;
+  margin-left: 0;
 }
 
 #page-mod-quiz-view .quizattemptcounts,
@@ -436,10 +432,6 @@ table.quizreviewsummary td.cell {
   padding: 1px 0.5em 1px 1em;
   text-align: right;
   background: #fafafa;
-}
-
-.dir-rtl table.quizreviewsummary td.cell {
-  text-align: left;
 }
 
 /** Mod quiz make comment or override grade popup. **/
@@ -554,11 +546,7 @@ table.quizreviewsummary td.cell {
 #page-mod-quiz-report table#attempts .questionflag {
   vertical-align: text-bottom;
   padding-right: 6px;
-}
-
-.dir-rtl#page-mod-quiz-report table#attempts .questionflag {
-  padding-left: 6px;
-  padding-right: 0;
+  padding-left: 0;
 }
 
 #page-mod-quiz-report .graph.flexible-wrap {
