@@ -4816,7 +4816,8 @@ img.iconsmall {
 .path-calendar .calendar-controls .next,
 .path-calendar .calendar-controls .current {
   display: block;
-  float: right;
+  /*@noflip*/
+  float: left;
   width: 12%;
 }
 
