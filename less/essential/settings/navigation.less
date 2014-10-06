@@ -8,6 +8,7 @@
       color: ~"[[setting:themenavcolor]]";
     }
 
+    .nav-collapse .nav > li.dropdown > a:hover,
     .dropdown-menu > li > a:hover,
     .dropdown-menu > li > a:focus,
     .dropdown-submenu:hover > a,
@@ -23,17 +24,17 @@
     .nav > li.dropdown a,
     .nav > li > a {
       color: ~"[[setting:themenavcolor]]";
-      &:hover {
-        background-color: ~"[[setting:themecolor]]";
-        color: ~"[[setting:themenavcolor]]";
-      }
     }
 
-    .nav > li.dropdown ul.dropdown-menu > li > a {
-      color: ~"[[setting:themetextcolor]]";
-      &:hover, &.open {
+    .nav > li.dropdown ul.dropdown-menu > li {
+      > a {
         color: ~"[[setting:themecolor]]";
-        background-color: ~"[[setting:themenavcolor]]";
+        &:hover {
+          color: ~"[[setting:themenavcolor]]";
+        }
+      }
+      &.dropdown-submenu:hover > a {
+        color: ~"[[setting:themenavcolor]]";
       }
     }
 
