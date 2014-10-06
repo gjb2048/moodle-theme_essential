@@ -604,7 +604,10 @@ table#categoryquestions {
 #page-mod-quiz-edit div.reorder .reordercontrols .moveselectedonpage {
     clear: right;
     float: right;
-    padding: 0.5em 0.3em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    padding-top: 0em;
+    padding-bottom: 0.5em;
     text-align: right;
 }
 #page-mod-quiz-edit div.reorder .reordercontrols .addnewpagesafterselected,
@@ -751,23 +754,23 @@ table#categoryquestions {
     line-height: 1em;
     max-width: 30%;
     position: absolute;
-    right: 60px;
+    right: 64px;
     border-radius: 0.2em;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     display: block;
     margin: 0;
     background-color: #ddf;
+    input {
+        padding: 0;
+        margin: 0;
+    }
 }
 #page-mod-quiz-edit div.question div.content .editicon {
     width: 15px;
 }
-#page-mod-quiz-edit div.question div.content .singlequestion .questionname,
-#page-mod-quiz-edit div.question div.content .singlequestion .questiontext {
-    display: inline-block;
-}
 #page-mod-quiz-edit div.question div.content .singlequestion .questionpreview {
-    background-color: #eee;
+    //background-color: #eee;
 }
 #page-mod-quiz-edit div.question div.content .questiontype {
     display: block;
@@ -782,7 +785,7 @@ table#categoryquestions {
     padding-right: 0.2em;
 }
 #page-mod-quiz-edit div.question div.content .questionpreview a {
-    background-color: #eee;
+    //background-color: #eee;
 }
 #page-mod-quiz-edit div.question div.content div.quiz_randomquestion .questionpreview {
     display: inline;

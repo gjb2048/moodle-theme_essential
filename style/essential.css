@@ -573,7 +573,10 @@ table#categoryquestions {
 #page-mod-quiz-edit div.reorder .reordercontrols .moveselectedonpage {
   clear: right;
   float: right;
-  padding: 0.5em 0.3em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  padding-top: 0em;
+  padding-bottom: 0.5em;
   text-align: right;
 }
 #page-mod-quiz-edit div.reorder .reordercontrols .addnewpagesafterselected,
@@ -715,7 +718,7 @@ table#categoryquestions {
   line-height: 1em;
   max-width: 30%;
   position: absolute;
-  right: 60px;
+  right: 64px;
   border-radius: 0.2em;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -723,15 +726,12 @@ table#categoryquestions {
   margin: 0;
   background-color: #ddf;
 }
+#page-mod-quiz-edit div.question div.content div.qorder input {
+  padding: 0;
+  margin: 0;
+}
 #page-mod-quiz-edit div.question div.content .editicon {
   width: 15px;
-}
-#page-mod-quiz-edit div.question div.content .singlequestion .questionname,
-#page-mod-quiz-edit div.question div.content .singlequestion .questiontext {
-  display: inline-block;
-}
-#page-mod-quiz-edit div.question div.content .singlequestion .questionpreview {
-  background-color: #eee;
 }
 #page-mod-quiz-edit div.question div.content .questiontype {
   display: block;
@@ -744,9 +744,6 @@ table#categoryquestions {
   margin-left: 0.3em;
   padding-left: 0.2em;
   padding-right: 0.2em;
-}
-#page-mod-quiz-edit div.question div.content .questionpreview a {
-  background-color: #eee;
 }
 #page-mod-quiz-edit div.question div.content div.quiz_randomquestion .questionpreview {
   display: inline;
@@ -18615,8 +18612,8 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
   right: 0.3em;
   top: 0.2em;
   display: block;
-  padding: 0.2em;
   text-align: right;
+  background-color: transparent;
 }
 #page-mod-quiz-edit div.quizpage .pagecontent {
   width: 100%;
@@ -18638,6 +18635,9 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
 }
 #page-mod-quiz-edit .questionbankwindow.block div.header .title h2 {
   margin-bottom: 0px;
+}
+#page-mod-quiz-edit .reorder div.question div.content .questionpreview .fa {
+  vertical-align: middle;
 }
 .questionbankwindow.block {
   background: white;
