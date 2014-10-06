@@ -136,6 +136,7 @@ New in 2.7.8
 - FIX: Issue #312: Calendar header in RTL.
 - FIX: Issue #315: Dropdown Menu Highlighting.
 - FIX: Issue #318: Quiz Order and Paging - Alignment fine-tuning.
+- FIX: Issue #319: Preview Question displays directly on background image.
 - NEW: Issue #249: Implement RTL CSS switching.  Thank you to Nadav Kavalerchik and many others for testing.
 - NEW: Issue #251: Marketing spots h tags.
 - NEW: Issue #269: Marketing Spots Social Media Widgets.
