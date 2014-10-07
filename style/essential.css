@@ -18572,7 +18572,6 @@ ul.socials li {
   font-weight: 700;
 }
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message {
-  background: transparent;
   opacity: 1;
   filter: alpha(opacity=100);
 }
