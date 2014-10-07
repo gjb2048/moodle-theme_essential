@@ -460,12 +460,15 @@ body.path-admin-setting #page form .form-buttons,
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a {
   border-top: 1px dotted [[setting:themecolor]];
 }
-.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message {
+.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message,
+.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification {
   color: [[setting:themenavcolor]];
   background-color: [[setting:themecolor]];
 }
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message img.userpicture,
-.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message img.profilepicture {
+.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification img.userpicture,
+.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message img.profilepicture,
+.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification img.profilepicture {
   box-shadow: 0 0 3px [[setting:themenavcolor]];
 }
 /* @end */
