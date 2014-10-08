@@ -138,6 +138,7 @@ New in 2.7.8
 - FIX: Issue #318: Quiz Order and Paging - Alignment fine-tuning.
 - FIX: Issue #319: Preview Question displays directly on background image.
 - FIX: Issue #321: Theme not load essential.css when using https on login page.
+- FIX: Issue #322: Menu colour needs checking.
 - NEW: Issue #249: Implement RTL CSS switching.  Thank you to Nadav Kavalerchik and many others for testing.
 - NEW: Issue #251: Marketing spots h tags.
 - NEW: Issue #269: Marketing Spots Social Media Widgets.

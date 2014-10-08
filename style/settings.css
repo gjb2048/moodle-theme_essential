@@ -431,7 +431,7 @@ body.path-admin-setting #page form .form-buttons,
   color: [[setting:themenavcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a {
-  color: [[setting:themecolor]];
+  color: [[setting:themeurlcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:hover {
   color: [[setting:themenavcolor]];
