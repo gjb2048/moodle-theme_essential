@@ -719,7 +719,7 @@ class theme_essential_core_renderer extends core_renderer
                 $branchurl = 'mailto:' . $CFG->supportemail . '?cc=' . $USER->email;
             } else {
                 if (is_siteadmin()) {
-                    $branchurl = $CFG->wwwroot.'/admin/settings.php?section=theme_essential_header';
+                    $branchurl = preg_replace("(https?:)", "", $CFG->wwwroot).'/admin/settings.php?section=theme_essential_header';
                 }
                 $branchlabel = '<em><i class="fa fa-exclamation-triangle red"></i>' . get_string('invalidemail') . '</em>';
             }
@@ -734,7 +734,7 @@ class theme_essential_core_renderer extends core_renderer
                 $target = '_blank';
             } else {
                 if (is_siteadmin()) {
-                    $branchurl = $CFG->wwwroot.'/admin/settings.php?section=theme_essential_header';
+                    $branchurl = preg_replace("(https?:)", "", $CFG->wwwroot).'/admin/settings.php?section=theme_essential_header';
                 }
                 $branchlabel = '<em><i class="fa fa-exclamation-triangle red"></i>' . get_string('invalidurl', 'error') . '</em>';
             }

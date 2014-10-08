@@ -56,12 +56,12 @@ echo $OUTPUT->doctype() ?>
                 <div class="<?php echo $logoclass;
                 echo (!$left) ? ' pull-right' : ' pull-left'; ?>">
                     <?php if (!$haslogo) { ?>
-                        <a class="textlogo" href="<?php echo $CFG->wwwroot; ?>">
+                        <a class="textlogo" href="<?php echo preg_replace("(https?:)", "", $CFG->wwwroot); ?>">
                             <i id="headerlogo" class="fa fa-<?php echo theme_essential_get_setting('siteicon'); ?>"></i>
                             <?php echo theme_essential_get_title('header'); ?>
                         </a>
                     <?php } else { ?>
-                        <a class="logo" href="<?php echo $CFG->wwwroot; ?>" title="<?php print_string('home'); ?>"></a>
+                        <a class="logo" href="<?php echo preg_replace("(https?:)", "", $CFG->wwwroot); ?>" title="<?php print_string('home'); ?>"></a>
                     <?php } ?>
                 </div>
                 <?php if ($hassocialnetworks || $hasmobileapps) { ?>

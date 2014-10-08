@@ -73,18 +73,19 @@ function theme_essential_get_title($location)
     global $CFG, $SITE;
     $title = '';
     if ($location === 'navbar') {
+        $url = preg_replace("(https?:)", "", $CFG->wwwroot);
         switch (theme_essential_get_setting('navbartitle')) {
             case 0:
                 return false;
                 break;
             case 1:
-                $title = '<a class="brand" href="' . $CFG->wwwroot . '">' . format_string($SITE->fullname, true, array('context' => context_course::instance(SITEID))) . '</a>';
+                $title = '<a class="brand" href="' . $url . '">' . format_string($SITE->fullname, true, array('context' => context_course::instance(SITEID))) . '</a>';
                 break;
             case 2:
-                $title = '<a class="brand" href="' . $CFG->wwwroot . '">' . format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))) . '</a>';
+                $title = '<a class="brand" href="' . $url . '">' . format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))) . '</a>';
                 break;
             default:
-                $title = '<a class="brand" href="' . $CFG->wwwroot . '">' . format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))) . '</a>';
+                $title = '<a class="brand" href="' . $url . '">' . format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))) . '</a>';
                 break;
         }
     } else if ($location === 'header') {
@@ -117,7 +118,8 @@ function theme_essential_edit_button($section)
 {
     global $PAGE, $CFG;
     if ($PAGE->user_is_editing() && is_siteadmin()) {
-        return '<a class="btn btn-success" href="' . $CFG->wwwroot . '/admin/settings.php?section=' . $section . '">' . get_string('edit') . '</a>';
+        $url = preg_replace("(https?:)", "", $CFG->wwwroot . '/admin/settings.php?section=');
+        return '<a class="btn btn-success" href="' . $url . $section . '">' . get_string('edit') . '</a>';
     }
 }
 
@@ -134,6 +136,7 @@ function theme_essential_get_csswww() {
     $syscontext = context_system::instance();
     $itemid = theme_get_revision();
     $url = moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php", "/$syscontext->id/theme_essential/style/$itemid/$moodlecss");
+    $url = preg_replace('|^https?://|i', '//', $url->out(false));
     return $url;
 }
 
