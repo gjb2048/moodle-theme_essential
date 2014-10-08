@@ -214,6 +214,8 @@ body.jsenabled .questionflagcheckbox {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: bottom;
 }
 #page-mod-quiz-edit div.question div.content .questionname,
 #categoryquestions .questionname {
