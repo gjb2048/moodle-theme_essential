@@ -1,10 +1,9 @@
 /* @group Custom */
 
-// Way off piste...
-// http://css-tricks.com/custom-scrollbars-in-webkit/ and http://stackoverflow.com/questions/7725652/css-scrollbar-style-cross-browser
+/* @Group Scrollbar */
+
 body {
     scrollbar-face-color: ~"[[setting:themecolor]]";
-    scrollbar-shadow-color: ~"[[setting:themetextcolor]]";
     scrollbar-highlight-color: ~"[[setting:themenavcolor]]";
     scrollbar-3dlight-color: ~"[[setting:themenavcolor]]";
     scrollbar-darkshadow-color: ~"[[setting:themecolor]]";
@@ -24,10 +23,12 @@ body {
 }
 ::-webkit-scrollbar-thumb {
     background-color: ~"[[setting:themecolor]]";
-    border: 2px solid ~"[[setting:themetextcolor]]";
+    border: 0px;
 }
 ::-webkit-scrollbar-corner {
     background-color: ~"[[setting:themecolor]]";
 }
+
+/* @end Scrollbar */
 
 /* @end Custom */

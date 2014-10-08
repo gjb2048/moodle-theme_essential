@@ -87,8 +87,10 @@ if (empty($PAGE->layout_options['nofooter'])) {
                     top: $('header').height()
                 }
             });
-            $('.breadcrumb').jBreadCrumb();
-            $('.mediaplugin').fitVids();
+            <?php if ($breadcrumbanimate == '1') {
+                echo "$('.breadcrumb').jBreadCrumb();";
+            }?>
+            $('#page-site-index').fitVids();
         });
     </script>
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
