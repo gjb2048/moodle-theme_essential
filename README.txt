@@ -1,8 +1,13 @@
 The "Essential" Moodle Theme
 ======================
 
-With 2.5 now released Julian thought it time to take the opportunity to build a new theme that would push the new theme engine to it's limits a bit. With that in mind he introduced the new "Essential" theme. Now Julian has left us for Canvassian adventures, Gareth and David have taken over development and maintenance of this theme.
-The idea of this theme is to make the site look as little like Moodle as possible. In this specific instance, it would be used on sites where Moodle would potentially serve as a company homepage rather than just a course list.
+With 2.5 now released Julian thought it time to take the opportunity to build a new theme that would push the new theme engine
+to it's limits a bit. With that in mind he introduced the new "Essential" theme.  Now Julian has left us for Canvassian
+adventures, David and Gareth took over development and maintenance.  And now David has left for pastures new, Gareth continues
+to maintain and make improvements.
+
+The idea of this theme is to make the site look as little like Moodle as possible. In this specific instance, it would be used
+on sites where Moodle would potentially serve as a company homepage rather than just a course list.
 
 Cool things to know about the theme.
  - It attempts to load as many as possible icons from a font
@@ -21,23 +26,25 @@ Julian Ridden
 Moodle profile: https://moodle.org/user/profile.php?id=39680
 Web profile:    http://au.linkedin.com/in/eduridden/
 
-Maintained by
-=============
+Previous Authors
+================
 David Bezemer
 Moodle profile | https://moodle.org/user/profile.php?id=1416592
 Web profile | http://www.davidbezemer.nl
 
+Maintained by
+=============
 G J Barnard MSc. BSc(Hons)(Sndw). MBCS. CEng. CITP. PGCE.
 Moodle profile | http://moodle.org/user/profile.php?id=442195
 Web profile | http://about.me/gjbarnard
 
 Required version of Moodle
 ==========================
-This version works with Moodle version 2013111800 release 2.6 (Build: 20131118) and above within the 2.6 branch until the
+This version works with Moodle version 2014051200.00 release 2.7 (Build: 20140512) and above within the 2.7 branch until the
 next release.
 
 Please ensure that your hardware and software complies with 'Requirements' in 'Installing Moodle' on
-'docs.moodle.org/26/en/Installing_Moodle'.
+'docs.moodle.org/27/en/Installing_Moodle'.
 
 Installation
 ============
@@ -95,7 +102,7 @@ that you are operating the required version of Moodle as stated at the top - thi
 functionality that is out of its control.
 
 When reporting an issue you can post in the theme's forum on Moodle.org (currently 'moodle.org/mod/forum/view.php?id=46')
-or check the issue list https://github.com/DBezemer/moodle-theme_essential/issues and if the problem does not exist, create an
+or check the issue list https://github.com/gjb2048/moodle-theme_essential/issues and if the problem does not exist, create an
 issue.
 
 It is essential that you provide as much information as possible, the critical information being the contents of the theme's 
@@ -440,5 +447,5 @@ A video showing many of the core features is available for viewing at http://vim
 
 Documentation
 =============
-As always, documentation is a work in progress. Available documentation is available at http://docs.moodle.org/25/en/Essential_theme
-If you have questions you can post them in the issue tracker at https://github.com/DBezemer/moodle-theme_essential/issues
+As always, documentation is a work in progress. Available documentation is available at http://docs.moodle.org/27/en/Essential_theme
+If you have questions you can post them in the issue tracker at https://github.com/gjb2048/moodle-theme_essential/issues

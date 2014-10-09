@@ -42,6 +42,8 @@ Bas Brands, Stuart Lamour, Mark Aberdour, Paul Hibbitts, Mary Evans.</p>
 Work taken over in July 2014 by:<br>
 Gareth J. Barnard<br>
 David Bezemer<br>
+Work taken over on the 9th October 2014 by:<br>
+Gareth J. Barnard<br>
 </p>
 <h3>Donations</h3>
 <p>This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider donating by
@@ -544,4 +546,3 @@ $string['nomessagesfound'] = 'No messages were found';
 $string['blogpreferences'] = 'Blog preferences';
 $string['badgepreferences'] = 'Badge preferences';
 $string['messagepreferences'] = 'Message preferences';
-
