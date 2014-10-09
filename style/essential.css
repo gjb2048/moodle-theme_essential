@@ -223,7 +223,10 @@ body.jsenabled .questionflagcheckbox {
   overflow: hidden;
   zoom: 1;
   position: relative;
-  max-width: 20%;
+  max-width: 24%;
+  display: inline-block;
+  vertical-align: bottom;
+  text-overflow: ellipsis;
 }
 #page-mod-quiz-edit div.editq div.question div.content .singlequestion a .questionname,
 div.editq div.question div.content .singlequestion a .questiontext {
