@@ -25,9 +25,10 @@
  */
 
 if (theme_essential_get_setting('analyticsenabled')) {
-    if (theme_essential_get_setting('analytics') === "piwik") {
+    $analytics = theme_essential_get_setting('analytics');
+    if ($analytics === "piwik") {
         require_once('piwik.php');
-    } elseif (theme_essential_get_setting('analytics') === "guniversal") {
+    } elseif ($analytics === "guniversal") {
         require_once('guniversal.php');
     }
 }

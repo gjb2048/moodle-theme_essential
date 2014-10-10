@@ -304,10 +304,6 @@ img.iconsmall {
   font-weight: normal;
 }
 
-.path-admin.dir-rtl table.rolecap tr.rolecap th {
-  text-align: right;
-}
-
 .path-admin .rolecap .hiddenrow {
   display: none;
 }
@@ -361,11 +357,6 @@ img.iconsmall {
   padding-right: .3em;
 }
 
-.dir-rtl .environmenttable img.iconhelp {
-  padding-left: .3em;
-  padding-right: 0
-}
-
 #trustedhosts .generaltable {
   margin-left: auto;
   margin-right: auto;
@@ -391,36 +382,17 @@ img.iconsmall {
 #adminsettings fieldset.error legend {
   display: block;
 }
-
-.dir-rtl #admin-spelllanguagelist textarea,
-#page-admin-setting-editorsettingstinymce.dir-rtl .form-textarea textarea {
-  text-align: left;
-  direction: ltr;
-}
-
 /* Styles for flags on admin settings */
 .adminsettingsflags {
   float: right;
-}
-
-.dir-rtl .adminsettingsflags {
-  float: left;
 }
 
 .adminsettingsflags label {
   margin-right: 7px;
 }
 
-.dir-rtl .adminsettingsflags label {
-  margin-left: 7px;
-}
-
 .form-description {
   clear: right;
-}
-
-.dir-rtl .form-description {
-  clear: left;
 }
 
 .form-item .form-setting .form-htmlarea {
@@ -440,24 +412,14 @@ img.iconsmall {
 }
 
 .form-item .form-setting .defaultsnext {
+  margin-left: 0;
   margin-right: 0.5em;
   display: inline;
-}
-
-.dir-rtl .form-item .form-setting .defaultsnext {
-  margin-left: 0.5em;
-  margin-right: 0;
 }
 
 .form-item .form-setting .locked-checkbox {
   margin-right: 0.2em;
   margin-left: 0.5em;
-  display: inline;
-}
-
-.dir-rtl .form-item .form-setting .locked-checkbox {
-  margin-right: 0.5em;
-  margin-left: 0.2em;
   display: inline;
 }
 
@@ -524,14 +486,6 @@ img.iconsmall {
   border: 1px solid @black;
   margin-left: 301px;
   border-top-width: 0;
-}
-
-/** Overide for RTL layout **/
-.dir-rtl .form-item .form-setting,
-.dir-rtl .form-item .form-label,
-.dir-rtl .form-item .form-description,
-.dir-rtl.path-admin .roleassigntable p {
-  text-align: right
 }
 
 // Plugins check.
@@ -696,19 +650,6 @@ img.iconsmall {
 #plugins-control-panel .notes .pluginupdateinfo span,
 #plugins-control-panel .notes .pluginupdateinfo a {
   padding-right: 1em;
-}
-
-.dir-rtl {
-  #plugins-check .pluginupdateinfo {
-    text-align: center;
-    direction: ltr;
-  }
-
-  #plugins-check .rootdir,
-  #plugins-check .requires-ok {
-    text-align: left;
-    direction: ltr;
-  }
 }
 
 /** MNet networking */

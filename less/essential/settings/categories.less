@@ -1,0 +1,25 @@
+/*
+ * @package   theme_essential
+ * @author    Franc Pombal
+ * @modified  Julian Ridden
+ * @modified  Gareth J Barnard, David Bezemer
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+/* @group Category Icons */
+
+.categoryicons {
+  /* Hide icon 'collapsed' because it makes no sense here */
+  .course_category_tree {
+    .category[data-categoryid]:hover {
+      background-color: ~"[[setting:themecolor]]";
+    }
+    .category[data-categoryid] > .info > .categoryname {
+      a:hover {
+        color: ~"[[setting:themenavcolor]]";
+      }
+    }
+  }
+}
+
+/* @end */

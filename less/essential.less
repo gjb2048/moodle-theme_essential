@@ -4,13 +4,74 @@
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-// Import the bootstrap variables and mixins
-@import "bootstrap/variables";
-@import "bootstrap/mixins";
-// Import the essential variables
-@import "essential/variables";
-// Import Font-Awesome
-@import "fontawesome/font-awesome";
+
+// Import plugin styles that are excluded in the config.php file as they need to be before the Moodle bootstrap changes to them.
+// This only needs to happen with styles that have an issue.  It also allows us to have our own version of them to strip out
+// any dir-rtl styles that would be flipped, remove IE6 styles, be able to maintain the styles on a 1-1 merge and deal with any issues.
+@import "moodle/plugins/mod/quiz";
+
+// Import the bootstrap variables.
+@import "bootstrap/variables.less";
+// Old Moodle stuff from base theme.
+// Massive, needs broken up.
+@import "moodle/core";
+@import "moodle/admin";
+@import "moodle/calendar";
+@import "moodle/course";
+@import "moodle/filemanager";
+@import "moodle/message";
+@import "moodle/question";
+@import "moodle/user";
+// Upstream Bootstrap.
+@import "bootstrap/bootstrap";
+// Override Bootstrap defaults.
+@import "moodle/bootstrapoverride";
+
+// Set image location.  Now in essential/bootstrap-pix.less included in essential-pix.less.
+@iconSpritePath: ~"";
+@iconWhiteSpritePath: ~"";
+
+// Increase form label width.
+@horizontalComponentOffset: 200px;
+// On Wider screens.
+@horizontalComponentOffset980: 220px;
+@horizontalComponentOffset1200: 265px;
+
+// We need to darken the link colour as its contrast is too low for accessibility tests.
+// Bootstrap defines - @linkColor: #08c;
+// We only need to darken this ever so slightly - so 7%;
+// Calculated with => @linkColor: darken(#08c, 7%);
+@linkColor: #0070a8;
+@linkColorHover: darken(@linkColor, 15%);
+
+// Roll back nameclashes.
+@import "moodle/undo";
+
+// New Moodle stuff that builds on Bootstrap.
+@import "moodle/blocks";
+@import "moodle/forms";
+@import "moodle/modules";
+@import "moodle/chat";
+@import "moodle/reports";
+@import "moodle/backup-restore";
+@import "moodle/tables";
+@import "moodle/buttons";
+@import "moodle/grade";
+@import "moodle/dock";
+
+// The following responsive imports are copied in
+// from "bootstrap/responsive".
+@import "bootstrap/responsive";
+@import "moodle/responsive";
+
+// Anything below this line is considered expendable,
+// so it doesn't matter if it doesn't show up in ie < 9
+// though at current time (2013-03-13) the whole file is
+// picked up in IE8, and IE9 fails at some point during the
+// responsive section, cutting off the last 400 selectors.
+@import "moodle/expendable";
+
+// Essential styles
 // Start with core
 @import "essential/core";
 // Import the essential styles
@@ -34,11 +95,11 @@
 @import "essential/header";
 @import "essential/message";
 @import "essential/navigation";
+@import "essential/plugins";
 @import "essential/quiz";
+@import "essential/scaffolding";
 @import "essential/tabs";
 // Load as last for potential overwrites
 @import "essential/print";
 @import "essential/responsive";
-@import "essential/settings";
-@import "essential/rtl";
 @import "essential/fixes";

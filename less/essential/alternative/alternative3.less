@@ -118,7 +118,7 @@
       .dropdown-menu > li > a:focus,
       .dropdown-submenu:hover > a,
       .dropdown-submenu:focus > a {
-        color: ~"[[setting:themenavcolor]]" !important;
+        color: ~"[[setting:themenavcolor]]";
         background-color: ~"[[setting:alternativethemecolor3]]";
         background-image: -moz-linear-gradient(top, ~"[[setting:alternativethemehovercolor3]]", ~"[[setting:alternativethemecolor3]]");
         background-image: -webkit-gradient(linear, 0 0, 0 100%, from(~"[[setting:alternativethemehovercolor3]]"), to(~"[[setting:alternativethemecolor3]]"));
@@ -332,12 +332,23 @@
   }
 
   .performanceinfo {
+    border-color: ~"[[setting:themeiconcolor]]";
     var {
-      background: ~"[[setting:alternativethemecolor3]]";
+      background-color: ~"[[setting:alternativethemecolor3]]";
+      color: ~"[[setting:themenavcolor]]";
     }
-
-    h2:before {
-      color: ~"[[setting:alternativethemecolor3]]";
+    h2 {
+      color: ~"[[setting:alternativethemetextcolor3]]";
+      border-bottom-color: ~"[[setting:themeiconcolor]]";
+      &:before {
+        color: ~"[[setting:themeiconcolor]]";
+    }
+  }
+    span {
+      color: ~"[[setting:alternativethemetextcolor3]]";
+    }
+    #cache:before, #load:before, #memory:before, #peakmemory:before, #session:before, #included:before, #dbqueries:before, #dbtime:before {
+      color: ~"[[setting:themeiconcolor]]";
     }
   }
 
@@ -460,10 +471,10 @@
       }
     }
     .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a {
-      color: ~"[[setting:themenavcolor]]";
+      color: ~"[[setting:alternativethemecolor3]]";
       &:hover, &:focus {
-        background-color: ~"[[setting:themenavcolor]]";
-        color: ~"[[setting:alternativethemecolor3]]";
+        background-color: ~"[[setting:alternativethemecolor3]]";
+        color: ~"[[setting:themenavcolor]]";
       }
     }
     .navbar .navbar-inner .nav-collapse .nav > li.dropdown a {
@@ -477,7 +488,7 @@
       .dropdown-menu > li > a:focus,
       .dropdown-submenu:hover > a,
       .dropdown-submenu:focus > a {
-        color: ~"[[setting:alternativethemecolor3]]" !important;
+        color: ~"[[setting:alternativethemecolor3]]";
         background-color: ~"[[setting:themenavcolor]]";
         background-image: none;
       }

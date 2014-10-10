@@ -50,7 +50,7 @@ function theme_essential_get_setting($setting, $format = false)
     } else if (!$format) {
         return $theme->settings->$setting;
     } else if ($format === 'format_text') {
-        return format_text($theme->settings->$setting);
+        return format_text($theme->settings->$setting, $format = FORMAT_HTML, $options = array('trusted' => true));
     } else {
         return format_string($theme->settings->$setting);
     }
@@ -59,9 +59,10 @@ function theme_essential_get_setting($setting, $format = false)
 function theme_essential_set_logo($css, $logo)
 {
     $tag = '[[setting:logo]]';
-    $replacement = $logo;
-    if (!($replacement)) {
-        $replacement = '';
+    if (!($logo)) {
+        $replacement = 'none';
+    } else {
+        $replacement = 'url(\''.$logo.'\')';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -72,18 +73,19 @@ function theme_essential_get_title($location)
     global $CFG, $SITE;
     $title = '';
     if ($location === 'navbar') {
+        $url = preg_replace("(https?:)", "", $CFG->wwwroot);
         switch (theme_essential_get_setting('navbartitle')) {
             case 0:
                 return false;
                 break;
             case 1:
-                $title = '<a class="brand" href="' . $CFG->wwwroot . '">' . $SITE->fullname . '</a>';
+                $title = '<a class="brand" href="' . $url . '">' . format_string($SITE->fullname, true, array('context' => context_course::instance(SITEID))) . '</a>';
                 break;
             case 2:
-                $title = '<a class="brand" href="' . $CFG->wwwroot . '">' . $SITE->shortname . '</a>';
+                $title = '<a class="brand" href="' . $url . '">' . format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))) . '</a>';
                 break;
             default:
-                $title = '<a class="brand" href="' . $CFG->wwwroot . '">' . $SITE->shortname . '</a>';
+                $title = '<a class="brand" href="' . $url . '">' . format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))) . '</a>';
                 break;
         }
     } else if ($location === 'header') {
@@ -92,17 +94,17 @@ function theme_essential_get_title($location)
                 return false;
                 break;
             case 1:
-                $title = '<h1 id="title">' . $SITE->fullname . '</h1>';
+                $title = '<h1 id="title">' . format_string($SITE->fullname, true, array('context' => context_course::instance(SITEID))) . '</h1>';
                 break;
             case 2:
-                $title = '<h1 id="title">' . $SITE->shortname . '</h1>';
+                $title = '<h1 id="title">' . format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))) . '</h1>';
                 break;
             case 3:
-                $title = '<h1 id="smalltitle">' . $SITE->fullname . '</h2>';
+                $title = '<h1 id="smalltitle">' . format_string($SITE->fullname, true, array('context' => context_course::instance(SITEID))) . '</h2>';
                 $title .= '<h2 id="subtitle">' . strip_tags($SITE->summary) . '</h3>';
                 break;
             case 4:
-                $title = '<h1 id="smalltitle">' . $SITE->shortname . '</h2>';
+                $title = '<h1 id="smalltitle">' . format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))) . '</h2>';
                 $title .= '<h2 id="subtitle">' . strip_tags($SITE->summary) . '</h3>';
                 break;
             default:
@@ -116,8 +118,26 @@ function theme_essential_edit_button($section)
 {
     global $PAGE, $CFG;
     if ($PAGE->user_is_editing() && is_siteadmin()) {
-        return '<a class="btn btn-success" href="' . $CFG->wwwroot . '/admin/settings.php?section=' . $section . '">' . get_string('edit') . '</a>';
+        $url = preg_replace("(https?:)", "", $CFG->wwwroot . '/admin/settings.php?section=');
+        return '<a class="btn btn-success" href="' . $url . $section . '">' . get_string('edit') . '</a>';
     }
+}
+
+// Moodle CSS file serving.
+function theme_essential_get_csswww() {
+    global $CFG;
+
+    if (right_to_left()) {
+        $moodlecss = 'essential-rtl.css';
+    } else {
+        $moodlecss = 'essential.css';
+    }
+
+    $syscontext = context_system::instance();
+    $itemid = theme_get_revision();
+    $url = moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php", "/$syscontext->id/theme_essential/style/$itemid/$moodlecss");
+    $url = preg_replace('|^https?://|i', '//', $url->out(false));
+    return $url;
 }
 
 /**
@@ -141,6 +161,8 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
     if ($context->contextlevel == CONTEXT_SYSTEM) {
         if ($filearea === 'logo') {
             return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
+        } else if ($filearea === 'style') {
+            theme_essential_serve_css($args[1]);
         } else if ($filearea === 'pagebackground') {
             return $theme->setting_file_serve('pagebackground', $args, $forcedownload, $options);
         } else if (preg_match("/slide[1-9][0-9]*image/", $filearea) !== false) {
@@ -165,6 +187,68 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
     } else {
         send_file_not_found();
     }
+}
+
+function theme_essential_serve_css($filename) {
+    global $CFG;
+    if (!empty($CFG->themedir)) {
+        $thestylepath = $CFG->themedir . '/essential/style/';
+    } else {
+        $thestylepath = $CFG->dirroot . '/theme/essential/style/';
+    }
+    $thesheet = $thestylepath.$filename;
+
+    /* http://css-tricks.com/snippets/php/intelligent-php-cache-control/ - rather than /lib/csslib.php as it is a static file who's
+       contents should only change if it is rebuilt.  But! There should be no difference with TDM on so will see for the moment if
+       that decision is a factor. */
+
+    $etagfile = md5_file($thesheet);
+    // File.
+    $lastmodified = filemtime($thesheet);
+    // Header.
+    $ifmodifiedsince = (isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) ? $_SERVER['HTTP_IF_MODIFIED_SINCE'] : false);
+    $etagheader = (isset($_SERVER['HTTP_IF_NONE_MATCH']) ? trim($_SERVER['HTTP_IF_NONE_MATCH']) : false);
+
+    if ((($ifmodifiedsince) && (strtotime($ifmodifiedsince)==$lastmodified)) || $etagheader == $etagfile) {
+        theme_essential_send_unmodified($lastmodified, $etagfile);
+    }
+    theme_essential_send_cached_css($thestylepath, $filename, $lastmodified, $etagfile);
+}
+
+function theme_essential_send_unmodified($lastmodified, $etag) {
+    $lifetime = 60*60*24*60;
+    header('HTTP/1.1 304 Not Modified');
+    header('Expires: '. gmdate('D, d M Y H:i:s', time() + $lifetime) .' GMT');
+    header('Cache-Control: public, max-age='.$lifetime);
+    header('Content-Type: text/css; charset=utf-8');
+    header('Etag: "'.$etag.'"');
+    if ($lastmodified) {
+        header('Last-Modified: '. gmdate('D, d M Y H:i:s', $lastmodified) .' GMT');
+    }
+    die;
+}
+
+function theme_essential_send_cached_css($path, $filename, $lastmodified, $etag) {
+    global $CFG;
+    require_once($CFG->dirroot.'/lib/configonlylib.php'); // For min_enable_zlib_compression().
+
+    // 60 days only - the revision may get incremented quite often.
+    $lifetime = 60*60*24*60;
+
+    header('Etag: "'.$etag.'"');
+    header('Content-Disposition: inline; filename="$filename"');
+    header('Last-Modified: '. gmdate('D, d M Y H:i:s', $lastmodified) .' GMT');
+    header('Expires: '. gmdate('D, d M Y H:i:s', time() + $lifetime) .' GMT');
+    header('Pragma: ');
+    header('Cache-Control: public, max-age='.$lifetime);
+    header('Accept-Ranges: none');
+    header('Content-Type: text/css; charset=utf-8');
+    if (!min_enable_zlib_compression()) {
+        header('Content-Length: '.filesize($path.$filename));
+    }
+
+    readfile($path.$filename);
+    die;
 }
 
 /**
@@ -202,63 +286,108 @@ function theme_essential_performance_output($param, $perfinfo)
 {
     $html = html_writer::start_tag('div', array('class' => 'container-fluid performanceinfo'));
     $html .= html_writer::start_tag('div', array('class' => 'row-fluid'));
+    $html .= html_writer::start_tag('div', array('class' => 'span12'));
     $html .= html_writer::tag('h2', get_string('perfinfoheading', 'theme_essential'));
     $html .= html_writer::end_tag('div');
+    $html .= html_writer::end_tag('div');
     $html .= html_writer::start_tag('div', array('class' => 'row-fluid'));
+    $colcount = 0;
     if (isset($param['realtime'])) {
-        $html .= html_writer::start_tag('div', array('class' => 'span3'));
-        $html .= html_writer::tag('var', round($param['realtime'], 2) . ' ' . get_string('seconds'), array('id' => 'load'));
-        $html .= html_writer::span(get_string('loadtime', 'theme_essential'));
-        $html .= html_writer::end_tag('div');
+        $colcount++;
     }
     if (isset($param['memory_total'])) {
-        $html .= html_writer::start_tag('div', array('class' => 'span3'));
-        $html .= html_writer::tag('var', display_size($param['memory_total']), array('id' => 'memory'));
-        $html .= html_writer::span(get_string('memused', 'theme_essential'));
-        $html .= html_writer::end_tag('div');
+        $colcount++;
     }
     if (isset($param['includecount'])) {
-        $html .= html_writer::start_tag('div', array('class' => 'span3'));
-        $html .= html_writer::tag('var', $param['includecount'], array('id' => 'included'));
-        $html .= html_writer::span(get_string('included', 'theme_essential'));
-        $html .= html_writer::end_tag('div');
+        $colcount++;
     }
     if (isset($param['dbqueries'])) {
-        $html .= html_writer::start_tag('div', array('class' => 'span3'));
-        $html .= html_writer::tag('var', $param['dbqueries'], array('id' => 'db'));
-        $html .= html_writer::span(get_string('dbqueries', 'theme_essential'));
-        $html .= html_writer::end_tag('div');
+        $colcount++;
+    }
+    if ($colcount != 0) {
+        $thespan = 12 / $colcount;
+        if (isset($param['realtime'])) {
+            $html .= html_writer::start_tag('div', array('class' => 'span'.$thespan));
+            $html .= html_writer::tag('var', round($param['realtime'], 2) . ' ' . get_string('seconds'), array('id' => 'load'));
+            $html .= html_writer::span(get_string('loadtime', 'theme_essential'));
+            $html .= html_writer::end_tag('div');
+        }
+        if (isset($param['memory_total'])) {
+            $html .= html_writer::start_tag('div', array('class' => 'span'.$thespan));
+            $html .= html_writer::tag('var', display_size($param['memory_total']), array('id' => 'memory'));
+            $html .= html_writer::span(get_string('memused', 'theme_essential'));
+            $html .= html_writer::end_tag('div');
+        }
+        if (isset($param['includecount'])) {
+            $html .= html_writer::start_tag('div', array('class' => 'span'.$thespan));
+            $html .= html_writer::tag('var', $param['includecount'], array('id' => 'included'));
+            $html .= html_writer::span(get_string('included', 'theme_essential'));
+            $html .= html_writer::end_tag('div');
+        }
+        if (isset($param['dbqueries'])) {
+            $html .= html_writer::start_tag('div', array('class' => 'span'.$thespan));
+            $html .= html_writer::tag('var', $param['dbqueries'], array('id' => 'dbqueries'));
+            $html .= html_writer::span(get_string('dbqueries', 'theme_essential'));
+            $html .= html_writer::end_tag('div');
+        }
     }
     $html .= html_writer::end_tag('div');
     if ($perfinfo === "max") {
         $html .= html_writer::empty_tag('hr');
         $html .= html_writer::start_tag('div', array('class' => 'row-fluid'));
+        $html .= html_writer::start_tag('div', array('class' => 'span12'));
         $html .= html_writer::tag('h2', get_string('extperfinfoheading', 'theme_essential'));
         $html .= html_writer::end_tag('div');
+        $html .= html_writer::end_tag('div');
         $html .= html_writer::start_tag('div', array('class' => 'row-fluid'));
+        $colcountmax = 0;
         if (isset($param['serverload'])) {
-            $html .= html_writer::start_tag('div', array('class' => 'span3'));
-            $html .= html_writer::tag('var', $param['serverload'], array('id' => 'load'));
-            $html .= html_writer::span(get_string('serverload', 'theme_essential'));
-            $html .= html_writer::end_tag('div');
+            $colcountmax++;
         }
         if (isset($param['memory_peak'])) {
-            $html .= html_writer::start_tag('div', array('class' => 'span3'));
-            $html .= html_writer::tag('var', display_size($param['memory_peak']), array('id' => 'load'));
-            $html .= html_writer::span(get_string('peakmem', 'theme_essential'));
-            $html .= html_writer::end_tag('div');
+            $colcountmax++;
         }
         if (isset($param['cachesused'])) {
-            $html .= html_writer::start_tag('div', array('class' => 'span3'));
-            $html .= html_writer::tag('var', $param['cachesused'], array('id' => 'cache'));
-            $html .= html_writer::span(get_string('peakmem', 'theme_essential'));
-            $html .= html_writer::end_tag('div');
+            $colcountmax++;
         }
         if (isset($param['sessionsize'])) {
-            $html .= html_writer::start_tag('div', array('class' => 'span3'));
-            $html .= html_writer::tag('var', $param['sessionsize'], array('id' => 'session'));
-            $html .= html_writer::span(get_string('sessionsize', 'theme_essential'));
-            $html .= html_writer::end_tag('div');
+            $colcountmax++;
+        }
+        if (isset($param['dbtime'])) {
+            $colcountmax++;
+        }
+        if ($colcountmax != 0) {
+            $thespanmax = 12 / $colcountmax;
+            if (isset($param['serverload'])) {
+                $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
+                $html .= html_writer::tag('var', $param['serverload'], array('id' => 'load'));
+                $html .= html_writer::span(get_string('serverload', 'theme_essential'));
+                $html .= html_writer::end_tag('div');
+            }
+            if (isset($param['memory_peak'])) {
+                $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
+                $html .= html_writer::tag('var', display_size($param['memory_peak']), array('id' => 'peakmemory'));
+                $html .= html_writer::span(get_string('peakmem', 'theme_essential'));
+                $html .= html_writer::end_tag('div');
+            }
+            if (isset($param['cachesused'])) {
+                $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
+                $html .= html_writer::tag('var', $param['cachesused'], array('id' => 'cache'));
+                $html .= html_writer::span(get_string('cachesused', 'theme_essential'));
+                $html .= html_writer::end_tag('div');
+            }
+            if (isset($param['sessionsize'])) {
+                $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
+                $html .= html_writer::tag('var', $param['sessionsize'], array('id' => 'session'));
+                $html .= html_writer::span(get_string('sessionsize', 'theme_essential'));
+                $html .= html_writer::end_tag('div');
+            }
+            if (isset($param['dbtime'])) {
+                $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
+                $html .= html_writer::tag('var', $param['dbtime'], array('id' => 'dbtime'));
+                $html .= html_writer::span(get_string('dbtime', 'theme_essential'));
+                $html .= html_writer::end_tag('div');
+            }
         }
         $html .= html_writer::end_tag('div');
     }
@@ -433,23 +562,17 @@ function theme_essential_process_css($css, $theme)
     $css                = theme_essential_set_marketingheight($css, $marketingheight);
 
     // Set Marketing Images.
-    if (theme_essential_get_setting('marketing1image')) {
-        $setting        = 'marketing1image';
-        $marketingimage = $theme->setting_file_url($setting, $setting);
-        $css            = theme_essential_set_marketingimage($css, $marketingimage, $setting);
-    }
+    $setting        = 'marketing1image';
+    $marketingimage = $theme->setting_file_url($setting, $setting);
+    $css            = theme_essential_set_marketingimage($css, $marketingimage, $setting);
 
-    if (theme_essential_get_setting('marketing2image')) {
-        $setting        = 'marketing2image';
-        $marketingimage = $theme->setting_file_url($setting, $setting);
-        $css            = theme_essential_set_marketingimage($css, $marketingimage, $setting);
-    }
+    $setting        = 'marketing2image';
+    $marketingimage = $theme->setting_file_url($setting, $setting);
+    $css            = theme_essential_set_marketingimage($css, $marketingimage, $setting);
 
-    if (theme_essential_get_setting('marketing3image')) {
-        $setting        = 'marketing3image';
-        $marketingimage = $theme->setting_file_url($setting, $setting);
-        $css            = theme_essential_set_marketingimage($css, $marketingimage, $setting);
-    }
+    $setting        = 'marketing3image';
+    $marketingimage = $theme->setting_file_url($setting, $setting);
+    $css            = theme_essential_set_marketingimage($css, $marketingimage, $setting);
 
     // Set FontAwesome font loading path
     $css                = theme_essential_set_fontwww($css);
@@ -564,7 +687,11 @@ function theme_essential_set_alternativecolor($css, $type, $customcolor, $defaul
 function theme_essential_set_pagebackground($css, $pagebackground)
 {
     $tag = '[[setting:pagebackground]]';
-    $replacement = $pagebackground;
+    if (!($pagebackground)) {
+        $replacement = 'none';
+    } else {
+        $replacement = 'url(\''.$pagebackground.'\')';
+    }
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
@@ -604,7 +731,11 @@ function theme_essential_set_marketingheight($css, $marketingheight)
 function theme_essential_set_marketingimage($css, $marketingimage, $setting)
 {
     $tag = '[[setting:' . $setting . ']]';
-    $replacement = $marketingimage;
+    if (!($marketingimage)) {
+        $replacement = 'none';
+    } else {
+        $replacement = 'url(\''.$marketingimage.'\')';
+    }
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
@@ -628,8 +759,15 @@ function theme_essential_get_nav_links($course, $sections, $sectionno)
 {
     // FIXME: This is really evil and should by using the navigation API.
     $course = course_get_format($course)->get_course();
-    $previousarrow = '<i class="fa fa-chevron-circle-left"></i>';
-    $nextarrow = '<i class="fa fa-chevron-circle-right"></i>';
+    $left = 'left';
+    $right = 'right';
+    if (right_to_left()) {
+        $temp = $left;
+        $left = $right;
+        $right = $temp;
+    }
+    $previousarrow = '<i class="fa fa-chevron-circle-'.$left.'"></i>';
+    $nextarrow = '<i class="fa fa-chevron-circle-'.$right.'"></i>';
     $canviewhidden = has_capability('moodle/course:viewhiddensections', context_course::instance($course->id))
     or !$course->hiddensections;
 
@@ -808,6 +946,24 @@ function theme_essential_render_slide($i)
     $slide .= ($slideurl)? '</a>' : '</div>';
 
     return $slide;
+}
+
+function theme_essential_render_slide_controls($left) {
+    $faleft = 'left';
+    $faright = 'right';
+    if (!$left) {
+        $temp = $faleft;
+        $faleft = $faright;
+        $faright = $temp;
+    }
+    $prev = '<a class="left carousel-control" href="#essentialCarousel" data-slide="prev"><i class="fa fa-chevron-circle-'.$faleft.'"></i></a>';
+    $next = '<a class="right carousel-control" href="#essentialCarousel" data-slide="next"><i class="fa fa-chevron-circle-'.$faright.'"></i></a>';
+
+    if ($left) {
+        return $prev.$next;
+    } else {
+        return $next.$prev;
+    }
 }
 
 function theme_essential_page_init(moodle_page $page)

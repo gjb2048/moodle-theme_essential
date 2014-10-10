@@ -42,6 +42,8 @@ Bas Brands, Stuart Lamour, Mark Aberdour, Paul Hibbitts, Mary Evans.</p>
 Work taken over in July 2014 by:<br>
 Gareth J. Barnard<br>
 David Bezemer<br>
+Work taken over on the 9th October 2014 by:<br>
+Gareth J. Barnard<br>
 </p>
 <h3>Donations</h3>
 <p>This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider donating by
@@ -133,6 +135,7 @@ $string['memused'] = 'Memory Used';
 $string['peakmem'] = 'Peak Memory';
 $string['included'] = 'Files Included';
 $string['dbqueries'] = 'DB Read/Write';
+$string['dbtime'] = 'DB Queries Time';
 $string['serverload'] = 'Server Load';
 $string['cachesused'] = 'Cached Used';
 $string['sessionsize'] = 'Session Size';
@@ -493,16 +496,16 @@ $string['ipadretinaicondesc'] = 'Icon should be a PNG files sized 144px by 144px
 /* Analytics */
 $string['analytics'] = 'Analytics';
 $string['analyticsheadingsub'] = 'Powerful analytics for Moodle';
-$string['analyticsdesc'] = 'Choose the type of Analytics you want to insert and save to enable the other options.';
+$string['analyticsdesc'] = 'Choose the type of analytics you want to insert and save to enable the other options.';
 $string['analyticssiteid'] = 'Site ID';
 $string['analyticssiteiddesc'] = 'Enter your Site ID';
 $string['analyticstrackingid'] = 'Site ID';
 $string['analyticstrackingiddesc'] = 'Enter your Tracking ID';
 $string['analyticssiteurl'] = 'Analytics URL';
-$string['analyticssiteurldesc'] = 'Enter your Piwik Analytics URL without http(s) or a trailing slash';
+$string['analyticssiteurldesc'] = 'Enter your "Piwik Analytics" URL without http(s) or a trailing slash.  For example "mysite.com/analytics".';
 $string['analyticsenabled'] = 'Enabled';
-$string['analyticsenableddesc'] = 'Enable Analytics for Moodle';
-$string['analyticsimagetrack'] = 'Image Tracking';
+$string['analyticsenableddesc'] = 'Enable analytics for Moodle';
+$string['analyticsimagetrack'] = 'Image tracking';
 $string['analyticscleanurl'] = 'Clean URLs';
 $string['analyticscleanurldesc'] = 'Generate clean URL for in advanced tracking';
 $string['analyticsimagetrackdesc'] = 'Enable Image Tracking for browsers with JavaScript disabled.';
@@ -543,4 +546,3 @@ $string['nomessagesfound'] = 'No messages were found';
 $string['blogpreferences'] = 'Blog preferences';
 $string['badgepreferences'] = 'Badge preferences';
 $string['messagepreferences'] = 'Message preferences';
-

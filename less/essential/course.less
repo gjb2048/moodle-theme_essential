@@ -18,11 +18,20 @@ div.mdl-align.title {
   border-radius: 5px;
 }
 
+body {  // Inside a body tag so will be more specific and override core plugin styles that come afterwards without the use of 'important' and can then override again in pre-processed theme setting style if needed.
+    .course-content ul.topics li.section {
+        padding-bottom: 20px;
+        .content {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    }
+}
+
 .listitem-category {
   .icon {
     margin-right: 5px;
     margin-left: 3px;
-    color: @icon-colour;
   }
 }
 
@@ -30,7 +39,7 @@ div.mdl-align.title {
   .section {
     .activity {
       .activityinstance {
-        padding-right: 20px;
+        padding-right: 180px;
       }
       .contentwithoutlink {
         padding-right: 100px;
@@ -39,11 +48,24 @@ div.mdl-align.title {
   }
 }
 
+.modeditingmenu.editing {
+  .section {
+    .activity {
+      .activityinstance {
+        padding-right: 80px;
+      }
+    }
+  }
+}
+
+.coursebox > .info > .coursename a {
+    background-position: left 0.25em;
+}
+
 /* @group Course Footer */
 
 .section-navigation {
   padding: 2em 0;
-  color: ~"[[setting:themetextcolor]]";
   line-height: 1.5;
   clear: both;
 
@@ -96,17 +118,12 @@ div.mdl-align.title {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-style: normal;
-  color: ~"[[setting:themetextcolor]]";
 }
 
 .nav_icon {
-  color: ~"[[setting:themecolor]]";
   padding: 0.3em;
   width: 8.3%;
   text-align: center;
-  &:hover {
-    color: ~"[[setting:themehovercolor]]";
-  }
 }
 
 /* @end */

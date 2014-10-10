@@ -10,15 +10,6 @@
   }
   .icon {
     margin-right: 5px;
-    color: @icon-colour;
-  }
-  .menu {
-    a.menu-action {
-      color: ~"[[setting:themeurlcolor]]";
-    }
-    a.menu-action:hover {
-      color: ~"[[setting:themehovercolor]]";
-    }
   }
   .moodle-actionmenu[data-enhanced].show .menu a:hover {
     text-decoration: none;
@@ -29,8 +20,7 @@
   .moodle-core-dragdrop-draghandle {
     &:before {
       font-family: 'FontAwesome';
-      content: "\f047 ";
-      color: @icon-colour;
+      content: "\f047";
       margin-right: 5px;
       cursor: move;
     }
@@ -39,7 +29,8 @@
     }
   }
   li.item_with_icon > p img {
-    position: initial !important;
+    position: static !important;
+    margin-right: 5px;
   }
 }
 
@@ -66,14 +57,12 @@
 
   &.branch:before {
     font-family: FontAwesome;
-    content: "\f07c ";
-    color: @icon-colour;
+    content: "\f07c";
     margin-right: 5px;
   }
   &.emptybranch:before {
     font-family: FontAwesome;
-    content: "\f114 ";
-    color: #d3d3d3;
+    content: "\f114";
     margin-right: 5px;
   }
   img.smallicon.navicon {
@@ -83,18 +72,17 @@
 
 .block_navigation.block {
   li.type_user > .tree_item.branch:before {
-    content: "\f007 ";
+    content: "\f007";
   }
 
   li.type_unknown.depth_1 > .tree_item.branch:before {
-    content: "\f015 ";
+    content: "\f015";
   }
 }
 
 .collapsed .tree_item.branch:before {
   font-family: FontAwesome;
-  content: "\f07b ";
-  color: @icon-colour;
+  /*@replace: "\f053"*/content: "\f07b";
   margin-right: 5px;
 }
 
@@ -124,7 +112,6 @@
 .block .header .title h2,
 .block h3.main {
   font-size: 1.15em;
-  color: ~"[[setting:themetextcolor]]";
   line-height: 26px;
   margin-bottom: 5px;
   text-transform: uppercase;
@@ -192,6 +179,14 @@
     }
   }
 }
+
+/* @group Calendar Block */
+.block .minicalendar {
+    th, td {
+        word-break: break-word;
+    }
+}
+/* @end */
 
 /* @group Logged in User Block */
 .block_myprofile {
@@ -286,200 +281,6 @@
     font-family: FontAwesome;
     margin-right: 5px;
   }
-}
-
-/* @end */
-
-/* @group Block Icons */
-
-.block_news_items .header .title h2:before {
-  content: "\f0a1";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_navigation .header .title h2:before {
-  content: "\f0e8";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_calendar_upcoming .header .title h2:before,
-.block_calendar_month .header .title h2:before {
-  content: "\f073";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_course_list .header .title h2:before {
-  content: "\f108";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_completionstatus .header .title h2:before,
-.block_selfcompletion .header .title h2:before {
-  content: "\f0e4";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_blog_menu .header .title h2:before {
-  content: "\f02d";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_quiz_results .header .title h2:before {
-  content: "\f080";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_quiz_navblock .header .title h2:before {
-  content: "\f126";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_glossary_random .header .title h2:before {
-  content: "\f0eb";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_book_toc .header .title h2:before {
-  content: "\f02d";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_participants .header .title h2:before,
-.block_online_users .header .title h2:before {
-  content: "\f0c0";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_html .header .title h2:before {
-  content: "\f022";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_section_links .header .title h2:before {
-  content: "\f02e";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_activity_modules .header .title h2:before {
-  content: "\f12e";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_comments .header .title h2:before {
-  content: "\f075";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_settings .header .title h2:before {
-  content: "\f085";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_admin_bookmarks .header .title h2:before {
-  content: "\f02e";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_blog_tags .header .title h2:before,
-.block_tags .header .title h2:before {
-  content: "\f02c";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_private_files .header .title h2:before {
-  content: "\f114";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_block_mentees .header .title h2:before {
-  content: "\f0c0";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_messages .header .title h2:before {
-  content: "\f0e0";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_community .header .title h2:before {
-  content: "\f0ac";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_recent_activity .header .title h2:before {
-  content: "\f017";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_search_forums .header .title h2:before {
-  content: "\f0e6";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_myprofile .header .title h2:before {
-  content: "\f007";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_adminblock .header .title h2:before {
-  content: "\f009";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_feedback .header .title h2:before {
-  content: "\f087";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_flickr .header .title h2:before {
-  content: "\f03e";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_youtube .header .title h2:before {
-  content: "\f145";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_course_badges .header .title h2:before {
-  content: "\f091";
-  color: @icon-colour;
-  font-family: FontAwesome;
-}
-
-.block_twitter_search .header .title h2:before {
-  content: "\f099";
-  color: @icon-colour;
-  font-family: FontAwesome;
 }
 
 /* @end */

@@ -1,8 +1,13 @@
 The "Essential" Moodle Theme
 ======================
 
-With 2.5 now released Julian thought it time to take the opportunity to build a new theme that would push the new theme engine to it's limits a bit. With that in mind he introduced the new "Essential" theme. Now Julian has left us for Canvassian adventures, Gareth and David have taken over development and maintenance of this theme.
-The idea of this theme is to make the site look as little like Moodle as possible. In this specific instance, it would be used on sites where Moodle would potentially serve as a company homepage rather than just a course list.
+With 2.5 now released Julian thought it time to take the opportunity to build a new theme that would push the new theme engine
+to it's limits a bit. With that in mind he introduced the new "Essential" theme.  Now Julian has left us for Canvassian
+adventures, David and Gareth took over development and maintenance.  And now David has left for pastures new, Gareth continues
+to maintain and make improvements.
+
+The idea of this theme is to make the site look as little like Moodle as possible. In this specific instance, it would be used
+on sites where Moodle would potentially serve as a company homepage rather than just a course list.
 
 Cool things to know about the theme.
  - It attempts to load as many as possible icons from a font
@@ -15,13 +20,31 @@ Cool things to know about the theme.
  - The entire colour scheme can be modified with theme settings
  - The homepage main area is just a label. The theme will ship with custom classes that you can set for tables and links to modify their formatting. No knowledge of code is needed as you can use the text editor to do this. Documentation will be provided outlining what the additional classes are.
 
+Original Author
+===============
+Julian Ridden
+Moodle profile: https://moodle.org/user/profile.php?id=39680
+Web profile:    http://au.linkedin.com/in/eduridden/
+
+Previous Authors
+================
+David Bezemer
+Moodle profile | https://moodle.org/user/profile.php?id=1416592
+Web profile | http://www.davidbezemer.nl
+
+Maintained by
+=============
+G J Barnard MSc. BSc(Hons)(Sndw). MBCS. CEng. CITP. PGCE.
+Moodle profile | http://moodle.org/user/profile.php?id=442195
+Web profile | http://about.me/gjbarnard
+
 Required version of Moodle
 ==========================
-This version works with Moodle version 2013111800 release 2.6 (Build: 20131118) and above within the 2.6 branch until the
+This version works with Moodle version 2014051200.00 release 2.7 (Build: 20140512) and above within the 2.7 branch until the
 next release.
 
 Please ensure that your hardware and software complies with 'Requirements' in 'Installing Moodle' on
-'docs.moodle.org/26/en/Installing_Moodle'.
+'docs.moodle.org/27/en/Installing_Moodle'.
 
 Installation
 ============
@@ -79,12 +102,56 @@ that you are operating the required version of Moodle as stated at the top - thi
 functionality that is out of its control.
 
 When reporting an issue you can post in the theme's forum on Moodle.org (currently 'moodle.org/mod/forum/view.php?id=46')
-or check the issue list https://github.com/DBezemer/moodle-theme_essential/issues and if the problem does not exist, create an
+or check the issue list https://github.com/gjb2048/moodle-theme_essential/issues and if the problem does not exist, create an
 issue.
 
 It is essential that you provide as much information as possible, the critical information being the contents of the theme's 
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
+
+New in 2.7.8
+============
+- FIX: Issue #248: Navbar overlay on activity selection popup.
+- FIX: Issue #252: LESS background: transparent; being compiled as background: 0 0;
+- FIX: Issue #254: Gradebook alignment.
+- FIX: Issue #257: Header options cause navbar to display incorrectly.
+- FIX: Issue #258: Message menu text wraping in IE 11.
+- FIX: Issue #259: In course page icon not appears.
+- FIX: Issue #260: Preview Questions.
+- FIX: Issue #263: Group Image alignment in Forums.
+- FIX: Issue #264: Incorrect H1 content in Password change screen.
+- FIX: Issue #268: When vertical, Marketing spot urls all link to the url for Marketing spot 1.
+- FIX: Issue #271: Performance information not readable when theme colour is #ffffff.
+- FIX: Issue #272: Email/URL for Help link not correctly parsed.
+- FIX: Issue #277: Docking clash when not using old navbar.
+- FIX: Issue #284: Testing 2.7.8a - Save changes bar offset to the right.
+- FIX: Issue #285: Some colours need checking.
+- FIX: Issue #286: CSS caching in Google Chrome.
+- FIX: Issue #287: Embedded objects overlap the navigation elements.
+- FIX: Issue #289: Conflict with Turnitin plugin's navbar.
+- FIX: Issue #291: Carousel images distort.
+- FIX: Issue #292: Google Fonts through https FIX.  Thanks to @PiotrNawrot.
+- FIX: Issue #293: Multilang tags do not work with the course heading.
+- FIX: Issue #294: Undefined variable icon.
+- FIX: Issue #296: Quiz settings page.
+- FIX: Issue #298: User profile fields - can't edit Categories.
+- FIX: Issue #300: Piwik not working in 2.7.8c.
+- FIX: Issue #301: Long resource/activity names overlap editing menu with editing on.
+- FIX: Issue #302: Setting "Breadcrumb Style" to "hide" does not remove the breadcrumb background.
+- FIX: Issue #304: Region not defined in M2.6.
+- FIX: Issue #311: Quiz submission in RTL.
+- FIX: Issue #312: Calendar header in RTL.
+- FIX: Issue #315: Dropdown Menu Highlighting.
+- FIX: Issue #318: Quiz Order and Paging - Alignment fine-tuning.
+- FIX: Issue #319: Preview Question displays directly on background image.
+- FIX: Issue #321: Theme not load essential.css when using https on login page.
+- FIX: Issue #322: Menu colour needs checking.
+- NEW: Issue #249: Implement RTL CSS switching.  Thank you to Nadav Kavalerchik and many others for testing.
+- NEW: Issue #251: Marketing spots h tags.
+- NEW: Issue #269: Marketing Spots Social Media Widgets.
+- NEW: Issue #278: Site name needs to be formatted in line with MDL-47080.
+- NEW: Issue #295: My Courses navbar link not working.
+- NEW: Issue #305: Login button in menu bar on login page.
 
 New in 2.7.7
 ============
@@ -380,21 +447,5 @@ A video showing many of the core features is available for viewing at http://vim
 
 Documentation
 =============
-As always, documentation is a work in progress. Available documentation is available at http://docs.moodle.org/25/en/Essential_theme
-If you have questions you can post them in the issue tracker at https://github.com/DBezemer/moodle-theme_essential/issues
-
-Original Author
-===============
-Julian Ridden
-Moodle profile: https://moodle.org/user/profile.php?id=39680
-Web profile:    http://au.linkedin.com/in/eduridden/
-
-Maintained by
-=============
-David Bezemer
-Moodle profile: https://moodle.org/user/profile.php?id=1416592
-Web profile:    http://www.davidbezemer.nl
-
-G J Barnard MSc. BSc(Hons)(Sndw). MBCS. CEng. CITP. PGCE.
-Moodle profile: http://moodle.org/user/profile.php?id=442195
-Web profile   : http://about.me/gjbarnard
+As always, documentation is a work in progress. Available documentation is available at http://docs.moodle.org/27/en/Essential_theme
+If you have questions you can post them in the issue tracker at https://github.com/gjb2048/moodle-theme_essential/issues

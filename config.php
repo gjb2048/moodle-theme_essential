@@ -34,13 +34,10 @@ $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
 $THEME->parents = array();
 
-$THEME->sheets[] = 'moodle';
-
-if (right_to_left()) {
-    $THEME->sheets[] = 'essential-rtl';
-} else {
-    $THEME->sheets[] = 'essential';
-}
+$THEME->sheets[] = 'moodle-rtl';
+$THEME->sheets[] = 'essential-pix';
+$THEME->sheets[] = 'settings';
+$THEME->sheets[] = 'fontawesome';
 
 if ((get_config('theme_essential', 'enablealternativethemecolors1')) ||
     (get_config('theme_essential', 'enablealternativethemecolors2')) ||
@@ -53,12 +50,14 @@ $THEME->sheets[] = 'custom';
 
 $THEME->supportscssoptimisation = false;
 
-if (intval($CFG->version) >= 2013111800) {
+if (floatval($CFG->version) >= 2013111803.02) { // 2.6.3+ (Build: 20140522) which has MDL-43995 integrated into it.
     $THEME->enable_dock = true;
     $THEME->javascripts_footer[] = 'dock';
 }
 
 $THEME->editor_sheets = array('editor');
+
+$THEME->plugins_exclude_sheets = array('mod' => array('quiz'));
 
 $addregions = array();
 if (get_config('theme_essential', 'frontpagemiddleblocks') > 0) {
@@ -181,7 +180,7 @@ $THEME->layouts = array(
     // The pagelayout used for safebrowser and securewindow.
     'secure' => array(
         'file' => 'secure.php',
-        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
+        'regions' => array('side-pre', 'side-post'),
         'defaultregion' => 'side-pre'
     ),
 );

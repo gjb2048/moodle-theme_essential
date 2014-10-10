@@ -25,7 +25,6 @@
  */
 class theme_essential_core_renderer extends core_renderer
 {
-
     public $language = null;
 
     /**
@@ -72,7 +71,6 @@ class theme_essential_core_renderer extends core_renderer
         $notification = "<div class=\"$type\">$message</div>";
         return $notification;
     }
-
 
     /**
      * Outputs the page's footer
@@ -248,10 +246,14 @@ class theme_essential_core_renderer extends core_renderer
                 $branchtitle = get_string('mycourses', 'theme_essential');
             }
             $branchlabel = '<i class="fa fa-briefcase"></i>' . $branchtitle;
-            $branchurl = new moodle_url('/my/index.php');
+            $branchurl = new moodle_url('');
             $branchsort = 200;
 
             $branch = $coursemenu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+
+            $hometext = get_string('myhome');
+            $homelabel = html_writer::tag('i', '', array('class' => 'fa fa-home')).html_writer::tag('span', ' '.$hometext);
+            $branch->add($homelabel, new moodle_url('/my/index.php'), $hometext);
 
             // Retrieve courses and add them to the menu when they are visible
             $numcourses = 0;
@@ -455,6 +457,9 @@ class theme_essential_core_renderer extends core_renderer
             $messagecontent->text = $message->smallmessage;
             $messagecontent->type = 'notification';
             $messagecontent->url = new moodle_url($message->contexturl);
+            if (empty($message->contexturl)) {
+                $messagecontent->url = new moodle_url('/message/index.php', array('user1' => $USER->id, 'viewing' => 'recentnotifications'));
+            }
         } else {
             $messagecontent->type = 'message';
             if ($message->fullmessageformat == FORMAT_HTML) {
@@ -546,9 +551,10 @@ class theme_essential_core_renderer extends core_renderer
         $usermenu .= html_writer::start_tag('li', array('class' => 'dropdown'));
 
         if (!isloggedin()) {
-            $userpic = '<em><i class="fa fa-sign-in"></i>' . get_string('login') . '</em>';
-            $usermenu .= html_writer::link($loginurl, $userpic, array('class' => 'loginurl'));
-
+            if ($this->page->pagelayout != 'login') {
+                $userpic = '<em><i class="fa fa-sign-in"></i>' . get_string('login') . '</em>';
+                $usermenu .= html_writer::link($loginurl, $userpic, array('class' => 'loginurl'));
+            }
         } else if (isguestuser()) {
             $userurl = new moodle_url('#');
             $userpic = parent::user_picture($USER, array('link' => false));
@@ -698,7 +704,7 @@ class theme_essential_core_renderer extends core_renderer
      */
     private function theme_essential_render_helplink()
     {
-        global $USER;
+        global $USER, $CFG;
         if (!theme_essential_get_setting('helplinktype')) {
             return false;
         }
@@ -706,32 +712,36 @@ class theme_essential_core_renderer extends core_renderer
         $branchurl = '';
         $target = '';
 
-        if (theme_essential_get_setting('helplinktype') == 1) {
-            if (filter_var(theme_essential_get_setting('helplink'), FILTER_VALIDATE_EMAIL)) {
+        if (theme_essential_get_setting('helplinktype') === '1') {
+            if (theme_essential_get_setting('helplink') && filter_var(theme_essential_get_setting('helplink'), FILTER_VALIDATE_EMAIL)) {
                 $branchurl = 'mailto:' . theme_essential_get_setting('helplink') . '?cc=' . $USER->email;
-            } else if ((theme_essential_get_setting('helplink')) && (filter_var(get_config('supportemail'), FILTER_VALIDATE_EMAIL))) {
-                $branchurl = 'mailto:' . get_config('supportemail') . '?cc=' . $USER->email;
+            } else if ($CFG->supportemail && filter_var($CFG->supportemail, FILTER_VALIDATE_EMAIL)) {
+                $branchurl = 'mailto:' . $CFG->supportemail . '?cc=' . $USER->email;
             } else {
+                if (is_siteadmin()) {
+                    $branchurl = preg_replace("(https?:)", "", $CFG->wwwroot).'/admin/settings.php?section=theme_essential_header';
+                }
                 $branchlabel = '<em><i class="fa fa-exclamation-triangle red"></i>' . get_string('invalidemail') . '</em>';
             }
-
-            return html_writer::tag('li', html_writer::link($branchurl, $branchlabel, array('target' => $target)));
         }
 
-        if (theme_essential_get_setting('helplinktype') == 2) {
-            if (filter_var(theme_essential_get_setting('helplink'), FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED)) {
+        if (theme_essential_get_setting('helplinktype') === '2') {
+            if (theme_essential_get_setting('helplink') && filter_var(theme_essential_get_setting('helplink'), FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED)) {
                 $branchurl = theme_essential_get_setting('helplink');
                 $target = '_blank';
-            } else if ((!theme_essential_get_setting('helplink')) && (filter_var(get_config('supportpage'), FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED))) {
-                $branchurl = get_config('supportpage');
+            } else if ((!theme_essential_get_setting('helplink')) && (filter_var($CFG->supportpage, FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED))) {
+                $branchurl = $CFG->supportpage;
                 $target = '_blank';
             } else {
+                if (is_siteadmin()) {
+                    $branchurl = preg_replace("(https?:)", "", $CFG->wwwroot).'/admin/settings.php?section=theme_essential_header';
+                }
                 $branchlabel = '<em><i class="fa fa-exclamation-triangle red"></i>' . get_string('invalidurl', 'error') . '</em>';
             }
 
-            return html_writer::tag('li', html_writer::link($branchurl, $branchlabel, array('target' => $target)));
         }
 
+        return html_writer::tag('li', html_writer::link($branchurl, $branchlabel, array('target' => $target)));
     }
 
     /**
@@ -755,7 +765,7 @@ class theme_essential_core_renderer extends core_renderer
         }
         if (has_capability('moodle/user:changeownpassword', $context)) {
             $branchlabel = '<em><i class="fa fa-key"></i>' . get_string('changepassword') . '</em>';
-            $branchurl = new moodle_url('/login/change_password.php', array('id' => $USER->id));
+            $branchurl = new moodle_url('/login/change_password.php');
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
         if (has_capability('moodle/user:editownmessageprofile', $context)) {

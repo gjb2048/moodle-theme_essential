@@ -1,0 +1,18 @@
+/* @group Core */
+
+.moodle-actionmenu[data-enhanced].show {
+  .menu {
+    background-color: #fff; // TODO: Page background colour needs to be a setting.
+     a {
+      color: ~"[[setting:themeurlcolor]]";
+      &:hover {
+        color: ~"[[setting:themenavcolor]]";
+        background-color: ~"[[setting:themecolor]]";
+        .fa:before {
+          color: ~"[[setting:themenavcolor]]";
+        }
+      }
+    }
+  }
+}
+/* @end */

@@ -1,0 +1,30 @@
+// RTL from original less file of same name which cannot be intelligently removed.  CSS Flip process would probably not affect the original.
+.dir-rtl {
+  .userprofile .description {
+    margin-right: 0;
+  }
+  .user-box {
+    float: right;
+  }
+  .userprofile dl.list dt {
+    float: right;
+    text-align: left;
+    padding-left: 10px;
+  }
+  .userprofile dl.list dd {
+    margin-left: 0;
+  }
+}
+
+/** Overide for RTL layout **/
+.dir-rtl .userprofilebox .descriptionbox {
+  margin: 0;
+}
+
+.dir-rtl .userlist table#participants {
+  margin: 0 auto;
+}
+
+#page-my-index.dir-rtl .block h3 {
+  text-align: right;
+}

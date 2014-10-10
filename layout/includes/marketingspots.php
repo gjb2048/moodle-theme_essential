@@ -55,10 +55,10 @@
         <?php } ?>
         <?php echo theme_essential_get_setting('marketing2content', 'format_text'); ?>
         <div class="button">
-            <a href="<?php echo theme_essential_get_setting('marketing1buttonurl'); ?>"
-               target="<?php echo theme_essential_get_setting('marketing1target'); ?>"
+            <a href="<?php echo theme_essential_get_setting('marketing2buttonurl'); ?>"
+               target="<?php echo theme_essential_get_setting('marketing2target'); ?>"
                class="marketing-button responsive">
-                <?php echo theme_essential_get_setting('marketing1buttontext', true); ?>
+                <?php echo theme_essential_get_setting('marketing2buttontext', true); ?>
             </a>
         </div>
     </div>
@@ -74,10 +74,10 @@
         <?php } ?>
         <?php echo theme_essential_get_setting('marketing3content', 'format_text'); ?>
         <div class="button">
-            <a href="<?php echo theme_essential_get_setting('marketing1buttonurl'); ?>"
-               target="<?php echo theme_essential_get_setting('marketing1target'); ?>"
+            <a href="<?php echo theme_essential_get_setting('marketing3buttonurl'); ?>"
+               target="<?php echo theme_essential_get_setting('marketing3target'); ?>"
                class="marketing-button responsive">
-                <?php echo theme_essential_get_setting('marketing1buttontext', true); ?>
+                <?php echo theme_essential_get_setting('marketing3buttontext', true); ?>
             </a>
         </div>
     </div>

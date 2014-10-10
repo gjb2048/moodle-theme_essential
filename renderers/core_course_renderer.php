@@ -107,6 +107,8 @@ class theme_essential_core_course_renderer extends core_course_renderer
         }
         if (!empty($val)) {
             $icon = html_writer::tag('i', '', array('class' => 'fa fa-' . $val));
+        } else {
+            $icon = '';
         }
 
         $categoryname = html_writer::link(new moodle_url('/course/index.php',

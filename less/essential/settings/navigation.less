@@ -1,0 +1,90 @@
+/* @group Navbar */
+
+/* @group Custom Menu */
+
+.navbar {
+  .navbar-inner {
+    .brand {
+      color: ~"[[setting:themenavcolor]]";
+    }
+
+    .nav-collapse .nav > li.dropdown > a:hover,
+    .dropdown-menu > li > a:hover,
+    .dropdown-menu > li > a:focus,
+    .dropdown-submenu:hover > a,
+    .dropdown-submenu:focus > a {
+      color: ~"[[setting:themenavcolor]]";
+      background-color: ~"[[setting:themecolor]]";
+    }
+
+    .dropdown-menu {
+      border: 1px solid ~"[[setting:themecolor]]";
+    }
+
+    .nav > li.dropdown a,
+    .nav > li > a {
+      color: ~"[[setting:themenavcolor]]";
+    }
+
+    .nav > li.dropdown ul.dropdown-menu > li {
+      > a {
+        color: ~"[[setting:themeurlcolor]]";
+        &:hover {
+          color: ~"[[setting:themenavcolor]]";
+        }
+      }
+      &.dropdown-submenu:hover > a {
+        color: ~"[[setting:themenavcolor]]";
+      }
+    }
+
+    .nav {
+        li.dropdown {
+            &.open > .dropdown-toggle, &.active > .dropdown-toggle, &.open.active > .dropdown-toggle {
+                background-color: ~"[[setting:themenavcolor]]";
+                color: ~"[[setting:themecolor]]";
+            }
+        }
+    }
+
+    .usermenu {
+      .dropdown {
+        img.userpicture {
+          border: 1px solid ~"[[setting:themenavcolor]]";
+        }
+        ul.dropdown-menu {
+          border: 1px solid ~"[[setting:themecolor]]";
+          hr.sep {
+            border-bottom: 1px dotted ~"[[setting:themecolor]]";
+          }
+        }
+      }
+    }
+
+    .messagemenu {
+      ul.nav {
+        ul.dropdown-menu {
+          border: 1px solid ~"[[setting:themecolor]]";
+          li > a {
+            border-top: 1px dotted ~"[[setting:themecolor]]";
+            &:hover {
+              .message, .notification {
+                color: ~"[[setting:themenavcolor]]";
+                background-color: ~"[[setting:themecolor]]";
+                img {
+                  &.userpicture, &.profilepicture {
+                    box-shadow: 0 0 3px ~"[[setting:themenavcolor]]";
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* @end */
+
+/* @end */

@@ -79,9 +79,9 @@
         // If the final element is really long, compress more elements
         if (jQuery(finalElement).width() > _options.maxFinalElementLength) 
         {
-            if (_options.beginingElementsToLeaveOpen > 0) 
+            if (_options.beginningElementsToLeaveOpen > 0)
             {
-                _options.beginingElementsToLeaveOpen--;
+                _options.beginningElementsToLeaveOpen--;
                 
             }
             if (_options.endElementsToLeaveOpen > 0) 
@@ -92,9 +92,9 @@
         // If the final element is within the short and long range, compress to the default end elements and 1 less beginning elements
         if (jQuery(finalElement).width() < _options.maxFinalElementLength && jQuery(finalElement).width() > _options.minFinalElementLength) 
         {
-            if (_options.beginingElementsToLeaveOpen > 0) 
+            if (_options.beginningElementsToLeaveOpen > 0)
             {
-                _options.beginingElementsToLeaveOpen--;
+                _options.beginningElementsToLeaveOpen--;
                 
             }
         }
@@ -104,7 +104,7 @@
         // We compress only elements determined by the formula setting below
         $(_breadCrumbElements).each(function(i, listElement)
         {
-            if (i > _options.beginingElementsToLeaveOpen && i < itemsToRemove) 
+            if (i > _options.beginningElementsToLeaveOpen && i < itemsToRemove)
             {
             
                 jQuery(listElement).find('a').wrap('<span></span>').width(jQuery(listElement).find('a').width() + _options.previewWidth);
@@ -135,12 +135,11 @@
     
     function expandBreadCrumb(e)
     {
-        var elementID = e.data.id;
         var originalWidth = e.data.width;
         jQuery(e.data.element).stop();
         jQuery(e.data.element).animate(
         {
-            width: originalWidth + _options.previewWidth
+            width: originalWidth + (_options.previewWidth / 2)
         }, 
         {
             duration: _options.timeExpansionAnimation,
@@ -153,7 +152,6 @@
     
     function shrinkBreadCrumb(e)
     {
-        var elementID = e.data.id;
         jQuery(e.data.element).stop();
         jQuery(e.data.element).animate(
         {
@@ -171,16 +169,16 @@
     
     jQuery.fn.jBreadCrumb.defaults = 
     {
-        maxFinalElementLength: Math.round($(window).width() * .08),
-        minFinalElementLength: Math.round($(window).width() *.03),
+        maxFinalElementLength: Math.round($(window).width() * .05),
+        minFinalElementLength: Math.round($(window).width() *.02),
         minimumCompressionElements: 1,
         endElementsToLeaveOpen: 0,
-        beginingElementsToLeaveOpen: 0,
-        timeExpansionAnimation: 800,
-        timeCompressionAnimation: 500,
-        timeInitialCollapse: 600,
+        beginningElementsToLeaveOpen: 0,
+        timeExpansionAnimation: 500,
+        timeCompressionAnimation: 400,
+        timeInitialCollapse: 500,
         easing: 'swing',
-        previewWidth: Math.round($(window).width() * .01)
+        previewWidth: Math.round($(window).width() * .015)
     };
     
 })(jQuery);

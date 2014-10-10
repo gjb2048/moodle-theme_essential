@@ -24,17 +24,11 @@ p.tree_item.leaf a,
 .course-item-actions a,
 .actions a {
   > i {
-    color: @icon-colour;
     width: 14px;
   }
   &.action-delete {
     > i {
       color: red;
-    }
-  }
-  &:hover {
-    > i {
-      color: ~"[[setting:themehovercolor]]";
     }
   }
 }
@@ -65,9 +59,8 @@ a.action-icon,
 
   > a:before {
     font-family: 'FontAwesome';
-    content: "\f067 ";
+    content: "\f067";
     margin-right: 3px;
-    color: @icon-colour;
   }
 
   > a:hover:before {
@@ -109,7 +102,7 @@ a.action-icon,
 .section .summary {
   > a:before {
     font-family: 'FontAwesome';
-    content: "\f013 ";
+    content: "\f013";
     margin-right: 5px;
   }
   .iconsmall.edit {

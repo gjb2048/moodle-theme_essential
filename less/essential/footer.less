@@ -142,7 +142,8 @@
   background: white;
   padding: 8px;
   border-radius: 6px;
-  border: 1px solid #E1E1E1;
+  border-width: 1px;
+  border-style: solid;
   margin-top: 5px;
 
   .span3 {
@@ -153,18 +154,17 @@
     font-size: 1.2em;
     padding: 5px;
     border-radius: 5px;
-    color: #fff !important;
     white-space: nowrap;
   }
 
   h2 {
     font-size: 1.4em;
-    color: #888;
     line-height: 1.4em;
     text-transform: uppercase;
     font-weight: normal;
     padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
     margin-top: 5px;
     &:before {
       font-family: FontAwesome;
@@ -175,7 +175,6 @@
   }
 
   span {
-    color: #444;
     display: block;
     margin-top: 5px;
   }
@@ -184,17 +183,24 @@
     font-family: FontAwesome;
     font-size: 1em;
     margin-right: .3em;
-    color: #fff;
     font-style: normal;
     font-weight: 100;
     content: "\f017";
   }
 
-  #memory:before {
+  #cache:before {
     font-family: FontAwesome;
     font-size: 1em;
     margin-right: .3em;
-    color: #fff;
+    font-style: normal;
+    font-weight: 100;
+    content: "\f1b0";
+  }
+
+  #memory:before, #peakmemory:before, #session:before {
+    font-family: FontAwesome;
+    font-size: 1em;
+    margin-right: .3em;
     font-style: normal;
     content: "\f0e4";
   }
@@ -203,16 +209,14 @@
     font-family: FontAwesome;
     font-size: 1em;
     margin-right: .3em;
-    color: #fff;
     font-style: normal;
     content: "\f16c";
   }
 
-  #db:before {
+  #dbqueries:before, #dbtime:before {
     font-family: FontAwesome;
     font-size: 1em;
     margin-right: .3em;
-    color: #fff;
     font-style: normal;
     content: "\f181";
   }

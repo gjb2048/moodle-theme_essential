@@ -25,12 +25,14 @@
  */
 
 require_once(dirname(__FILE__) . '/pagesettings.php');
+require_once(dirname(__FILE__) . '/../../lib.php');
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?> class="no-js">
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>"/>
+    <?php echo '<link rel="stylesheet" href="'.theme_essential_get_csswww().'">'; ?>
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google web fonts -->
@@ -54,12 +56,12 @@ echo $OUTPUT->doctype() ?>
                 <div class="<?php echo $logoclass;
                 echo (!$left) ? ' pull-right' : ' pull-left'; ?>">
                     <?php if (!$haslogo) { ?>
-                        <a class="textlogo" href="<?php echo $CFG->wwwroot; ?>">
+                        <a class="textlogo" href="<?php echo preg_replace("(https?:)", "", $CFG->wwwroot); ?>">
                             <i id="headerlogo" class="fa fa-<?php echo theme_essential_get_setting('siteicon'); ?>"></i>
                             <?php echo theme_essential_get_title('header'); ?>
                         </a>
                     <?php } else { ?>
-                        <a class="logo" href="<?php echo $CFG->wwwroot; ?>" title="<?php print_string('home'); ?>"></a>
+                        <a class="logo" href="<?php echo preg_replace("(https?:)", "", $CFG->wwwroot); ?>" title="<?php print_string('home'); ?>"></a>
                     <?php } ?>
                 </div>
                 <?php if ($hassocialnetworks || $hasmobileapps) { ?>
@@ -119,17 +121,17 @@ echo $OUTPUT->doctype() ?>
         </div>
     </div>
     <nav role="navigation">
-        <div class="navbar<?php echo ($oldnavbar) ? ' oldnavbar' : ''; ?>">
+        <div id='essentialnavbar' class="navbar<?php echo ($oldnavbar) ? ' oldnavbar' : ''; ?> moodle-has-zindex">
             <div class="container-fluid navbar-inner">
                 <div class="row-fluid">
-                    <div class="custommenus pull-left">
+                    <div class="custommenus pull-<?php echo ($left) ? 'left' : 'right'; ?>">
                         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
                         <?php echo theme_essential_get_title('navbar'); ?>
-                        <div class="nav-collapse collapse pull-left">
+                        <div class="nav-collapse collapse pull-<?php echo ($left) ? 'left' : 'right'; ?>">
                             <div id="custom_menu_language">
                                 <?php echo $OUTPUT->custom_menu_language(); ?>
                             </div>
@@ -146,7 +148,7 @@ echo $OUTPUT->doctype() ?>
                             </div>
                         </div>
                     </div>
-                    <div class="pull-right">
+                    <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>">
                         <div class="usermenu">
                             <?php echo $OUTPUT->custom_menu_user(); ?>
                         </div>

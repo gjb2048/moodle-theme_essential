@@ -38,10 +38,6 @@ a:focus {
   background: none;
 }
 
-.mform fieldset.collapsible legend a.fheader {
-  margin-left: 0px;
-}
-
 del {
   color: red !important;
 }
@@ -84,7 +80,10 @@ ins {
 }
 
 .path-grade-report-grader table {
-  background: transparent;
+  background-color: transparent;
+  &#fixed_column {
+    background-color: transparent;
+  }
 }
 
 .side-pre {
@@ -96,13 +95,19 @@ ins {
 }
 
 .course-content ul.weeks li.section {
-  padding-bottom: 20px;
+  padding-bottom: 20px !important; // Override weeks course format styles.css.
 }
 
 img.userpicture,
 img.profilepicture {
   border-radius: 250px;
   margin-right: 5px;
+}
+
+body { // Inside a body tag so will be more specific and override core plugin styles that come afterwards without the use of 'important' and can then override again in pre-processed theme setting style if needed.
+    .chooserdialogue .moodle-dialogue-wrap .moodle-dialogue-bd {
+        padding: 0;
+    }
 }
 
 /* @end */

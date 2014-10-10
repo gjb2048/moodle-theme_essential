@@ -1,32 +1,67 @@
 /* @group Quiz */
 
-#page-mod-quiz-edit div.quizcontents {
-  clear: left;
-  display: block;
-  float: left;
-  width: 67%;
-}
-
-#page-mod-quiz-edit .questionbankwindow.block div.header {
-  margin: 0px;
-  border-radius: 6px;
-}
-
-.questionbankwindow.block .header .title h2:before {
-  color: #fff;
-  content: "\f128";
+#page-mod-quiz-edit {
+    div.question {
+        div.content {
+            div.points {
+                margin-top: 0;
+            }
+            div.questioncontrols {
+                float: right;
+                width: 60px;
+                position: absolute;
+                right: 0.3em;
+                top: 0.2em;
+                display: block;
+                text-align: right;
+                background-color: transparent;
+            }
+        }
+    }
+    div.quizpage .pagecontent {
+      width: 100%;
+    }
+    .pagecontrols .singlebutton {
+        margin-left: 1.4em;
+    }
+    .addpage {
+        margin-right: 0em;
+    }
+    div.quizcontents {
+        clear: left;
+        display: block;
+        float: left;
+        width: 67%;
+    }
+    .questionbankwindow.block div.header {
+        border-radius: 6px;
+        .title h2 {
+            margin-bottom: 0px;
+        }
+    }
+    .reorder div.question div.content .questionpreview .fa {
+        vertical-align: middle;
+    }
 }
 
 .questionbankwindow.block {
-  background: white;
-  padding: 0px 12px;
-  border-radius: 8px;
-  border: 1px solid #E1E1E1;
-  margin-bottom: 10px;
+    background: white;
+    padding: 0px 12px;
+    border-radius: 8px;
+    border: 1px solid #E1E1E1;
+    margin-bottom: 10px;
+    .header .title {
+        border-bottom: 0px none;
+        h2:before {
+            content: "\f128";
+        }
+    }
 }
 
-.questionbankwindow.block .header .title {
-  border-bottom: 0px none;
+#page-question-preview {
+  h1 {
+    font-size: 1.5em;
+  }
 }
 
-/* @end */
+/* @end Quiz */

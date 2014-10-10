@@ -63,6 +63,10 @@ if (theme_essential_get_setting('enablecategoryicon')) {
     $bodyclasses[] = 'categoryicons';
 }
 
+if (($PAGE->pagelayout == 'course') && (get_config('core', 'modeditingmenu'))) {
+    $bodyclasses[] = 'modeditingmenu';
+}
+
 $regionbsid = 'region-bs-main-and-pre';
 $left = true;
 if (right_to_left()) {
@@ -99,9 +103,9 @@ $hasmobileapps = (theme_essential_get_setting('ios') ||
     theme_essential_get_setting('android')
 );
 
-$logoclass = 'span12';
+$logoclass = 'ecol12';
 if ($hassocialnetworks || $hasmobileapps) {
-    $logoclass = 'span6';
+    $logoclass = 'ecol8';
 }
 
 $oldnavbar = theme_essential_get_setting('oldnavbar');
@@ -119,3 +123,6 @@ $hasboringlayout = theme_essential_get_setting('layout');
 /* Group Footer */
 $hascopyright = theme_essential_get_setting('copyright', true);
 $hasfootnote = theme_essential_get_setting('footnote', 'format_text');
+
+/* Group Breadcrumb */
+$breadcrumbanimate = theme_essential_get_setting('breadcrumbstyle');
