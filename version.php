@@ -26,9 +26,9 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version = 2014101000; // YYYYMMDDVV.
+$plugin->version = 2014101400; // YYYYMMDDVV.
 $plugin->maturity = MATURITY_STABLE; // this version's maturity level.
-$plugin->release = '2.7.8 (Build: 2014091804)';
+$plugin->release = '2.7.9a (Build: 2014101400)';
 $plugin->requires = 2014050800; // Requires Moodle 2.7
 $plugin->component = 'theme_essential';
 $plugin->dependencies = array();
