@@ -24,8 +24,7 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-function theme_essential_set_fontwww($css)
-{
+function theme_essential_set_fontwww($css) {
     global $CFG;
     $fontwww = preg_replace("(https?:)", "", $CFG->wwwroot . '/theme/essential/fonts/');
 
@@ -39,8 +38,7 @@ function theme_essential_set_fontwww($css)
     return $css;
 }
 
-function theme_essential_get_setting($setting, $format = false)
-{
+function theme_essential_get_setting($setting, $format = false) {
     static $theme;
     if (empty($theme)) {
         $theme = theme_config::load('essential');
@@ -56,8 +54,7 @@ function theme_essential_get_setting($setting, $format = false)
     }
 }
 
-function theme_essential_set_logo($css, $logo)
-{
+function theme_essential_set_logo($css, $logo) {
     $tag = '[[setting:logo]]';
     $replacement = $logo;
     if (!($replacement)) {
@@ -67,8 +64,7 @@ function theme_essential_set_logo($css, $logo)
     return $css;
 }
 
-function theme_essential_get_title($location)
-{
+function theme_essential_get_title($location) {
     global $CFG, $SITE;
     $title = '';
     if ($location === 'navbar') {
@@ -112,8 +108,7 @@ function theme_essential_get_title($location)
     return $title;
 }
 
-function theme_essential_edit_button($section)
-{
+function theme_essential_edit_button($section) {
     global $PAGE, $CFG;
     if ($PAGE->user_is_editing() && is_siteadmin()) {
         return '<a class="btn btn-success" href="' . $CFG->wwwroot . '/admin/settings.php?section=' . $section . '">' . get_string('edit') . '</a>';
@@ -132,8 +127,7 @@ function theme_essential_edit_button($section)
  * @param array $options
  * @return bool
  */
-function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array())
-{
+function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
     static $theme;
     if (empty($theme)) {
         $theme = theme_config::load('essential');
@@ -174,8 +168,7 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
  * @param mixed $pagewidth
  * @return string
  */
-function theme_essential_set_pagewidth($css, $pagewidth)
-{
+function theme_essential_set_pagewidth($css, $pagewidth) {
     $tag = '[[setting:pagewidth]]';
     $replacement = $pagewidth;
     if (!($replacement)) {
@@ -198,8 +191,7 @@ function theme_essential_set_pagewidth($css, $pagewidth)
  * @param string $perfinfo
  * @return string $html
  */
-function theme_essential_performance_output($param, $perfinfo)
-{
+function theme_essential_performance_output($param, $perfinfo) {
     $html = html_writer::start_tag('div', array('class' => 'container-fluid performanceinfo'));
     $html .= html_writer::start_tag('div', array('class' => 'row-fluid'));
     $html .= html_writer::tag('h2', get_string('perfinfoheading', 'theme_essential'));
@@ -268,8 +260,7 @@ function theme_essential_performance_output($param, $perfinfo)
     return $html;
 }
 
-function theme_essential_hex2rgba($hex, $opacity)
-{
+function theme_essential_hex2rgba($hex, $opacity) {
     $hex = str_replace("#", "", $hex);
 
     if (strlen($hex) == 3) {
@@ -291,16 +282,14 @@ function theme_essential_hex2rgba($hex, $opacity)
  * @param string $customcss The custom CSS to add.
  * @return string The CSS which now contains our custom CSS.
  */
-function theme_essential_set_customcss($css, $customcss)
-{
+function theme_essential_set_customcss($css, $customcss) {
     $tag = '[[setting:customcss]]';
     $replacement = $customcss;
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
 
-function theme_essential_process_css($css, $theme)
-{
+function theme_essential_process_css($css, $theme) {
     // Set the theme width
     $pagewidth          = theme_essential_get_setting('pagewidth');
     $css                = theme_essential_set_pagewidth($css, $pagewidth);
@@ -466,8 +455,7 @@ function theme_essential_process_css($css, $theme)
  *
  * @param moodle_page $page
  */
-function theme_essential_initialise_colourswitcher(moodle_page $page)
-{
+function theme_essential_initialise_colourswitcher(moodle_page $page) {
     user_preference_allow_ajax_update('theme_essential_colours', PARAM_ALPHANUM);
     $page->requires->yui_module(
         'moodle-theme_essential-coloursswitcher',
@@ -482,8 +470,7 @@ function theme_essential_initialise_colourswitcher(moodle_page $page)
  * @param string $default The default theme colors to use
  * @return string The theme colours the user has selected
  */
-function theme_essential_get_colours($default = 'default')
-{
+function theme_essential_get_colours($default = 'default') {
     $preference = get_user_preferences('theme_essential_colours', $default);
     foreach (range(1, 3) as $alternativethemenumber) {
         if ($preference == 'alternative' . $alternativethemenumber && theme_essential_get_setting('enablealternativethemecolors' . $alternativethemenumber)) {
@@ -498,8 +485,7 @@ function theme_essential_get_colours($default = 'default')
  *
  * If they are this updates the users preference in the database
  */
-function theme_essential_check_colours_switch()
-{
+function theme_essential_check_colours_switch() {
     $colours = optional_param('essentialcolours', null, PARAM_ALPHANUM);
     if (in_array($colours, array('default', 'alternative1', 'alternative2', 'alternative3'))) {
         set_user_preference('theme_essential_colours', $colours);
@@ -507,24 +493,21 @@ function theme_essential_check_colours_switch()
 }
 
 
-function theme_essential_set_headingfont($css, $headingfont)
-{
+function theme_essential_set_headingfont($css, $headingfont) {
     $tag = '[[setting:headingfont]]';
     $replacement = $headingfont;
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
 
-function theme_essential_set_bodyfont($css, $bodyfont)
-{
+function theme_essential_set_bodyfont($css, $bodyfont) {
     $tag = '[[setting:bodyfont]]';
     $replacement = $bodyfont;
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
 
-function theme_essential_set_fontfiles($css, $type, $fontname, $theme)
-{
+function theme_essential_set_fontfiles($css, $type, $fontname, $theme) {
     $tag = '[[setting:fontfiles'.$type.']]';
     $replacement = '';
     if(theme_essential_get_setting('fontselect') === '3') {
@@ -568,8 +551,7 @@ function theme_essential_set_fontfiles($css, $type, $fontname, $theme)
     return $css;
 }
 
-function theme_essential_set_color($css, $themecolor, $tag, $default)
-{
+function theme_essential_set_color($css, $themecolor, $tag, $default) {
     if (!($themecolor)) {
         $replacement = $default;
     } else {
@@ -579,8 +561,7 @@ function theme_essential_set_color($css, $themecolor, $tag, $default)
     return $css;
 }
 
-function theme_essential_set_alternativecolor($css, $type, $customcolor, $defaultcolor)
-{
+function theme_essential_set_alternativecolor($css, $type, $customcolor, $defaultcolor) {
     $tag = '[[setting:alternativetheme' . $type . ']]';
     if (!($customcolor)) {
         $replacement = $defaultcolor;
@@ -591,16 +572,14 @@ function theme_essential_set_alternativecolor($css, $type, $customcolor, $defaul
     return $css;
 }
 
-function theme_essential_set_pagebackground($css, $pagebackground)
-{
+function theme_essential_set_pagebackground($css, $pagebackground) {
     $tag = '[[setting:pagebackground]]';
     $replacement = $pagebackground;
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
 
-function theme_essential_set_pagebackgroundstyle($css, $style)
-{
+function theme_essential_set_pagebackgroundstyle($css, $style) {
     $tagattach = '[[setting:backgroundattach]]';
     $tagrepeat = '[[setting:backgroundrepeat]]';
     $tagsize = '[[setting:backgroundsize]]';
@@ -620,8 +599,7 @@ function theme_essential_set_pagebackgroundstyle($css, $style)
     return $css;
 }
 
-function theme_essential_set_marketingheight($css, $marketingheight)
-{
+function theme_essential_set_marketingheight($css, $marketingheight) {
     $tag = '[[setting:marketingheight]]';
     $replacement = $marketingheight;
     if (!($replacement)) {
@@ -631,8 +609,7 @@ function theme_essential_set_marketingheight($css, $marketingheight)
     return $css;
 }
 
-function theme_essential_set_marketingimage($css, $marketingimage, $setting)
-{
+function theme_essential_set_marketingimage($css, $marketingimage, $setting) {
     $tag = '[[setting:' . $setting . ']]';
     $replacement = $marketingimage;
     $css = str_replace($tag, $replacement, $css);
@@ -654,8 +631,7 @@ function theme_essential_showslider($setting)
     return $noslides;
 }
 
-function theme_essential_get_nav_links($course, $sections, $sectionno)
-{
+function theme_essential_get_nav_links($course, $sections, $sectionno) {
     // FIXME: This is really evil and should by using the navigation API.
     $course = course_get_format($course)->get_course();
     $previousarrow = '<i class="fa fa-chevron-circle-left"></i>';
@@ -711,8 +687,7 @@ function theme_essential_get_nav_links($course, $sections, $sectionno)
     return $links;
 }
 
-function theme_essential_print_single_section_page(&$that, &$courserenderer, $course, $sections, $mods, $modnames, $modnamesused, $displaysection)
-{
+function theme_essential_print_single_section_page(&$that, &$courserenderer, $course, $sections, $mods, $modnames, $modnamesused, $displaysection) {
     global $PAGE;
 
     $modinfo = get_fast_modinfo($course);
@@ -801,8 +776,7 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
     echo html_writer::end_tag('div');
 }
 
-function theme_essential_render_slide($i)
-{
+function theme_essential_render_slide($i, $captionsbelow) {
     global $PAGE, $OUTPUT;
 
     $slideurl           = theme_essential_get_setting('slide'.$i.'url');
@@ -810,6 +784,8 @@ function theme_essential_render_slide($i)
     $slidetitle         = theme_essential_get_setting('slide'.$i, true);
     $slidecaption       = theme_essential_get_setting('slide'.$i.'caption', true);
     $slideextraclass    = ($i === 1)? 'active' : '';
+    $slidebelownocaption = ((!($slidetitle || $slidecaption)) && $captionsbelow)? ' nocaption' : '';
+    $slideextraclass     = $slideextraclass.$slidebelownocaption;
     $slideimagealt      = strip_tags(theme_essential_get_setting('slide'.$i, true));
     $slideimage         = $OUTPUT->pix_url('default_slide', 'theme');
 
@@ -840,8 +816,7 @@ function theme_essential_render_slide($i)
     return $slide;
 }
 
-function theme_essential_page_init(moodle_page $page)
-{
+function theme_essential_page_init(moodle_page $page) {
     global $CFG;
     $page->requires->jquery();
     if (intval($CFG->version) >= 2013111800) {

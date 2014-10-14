@@ -78,7 +78,10 @@ sub {
 
 // Img border in a's and image quality
 // -------------------------
-
+// NOTE: Responsive images by default unlike core Moodle in MDL-42195 -
+// https://github.com/moodle/moodle/commit/9d5859925e6d5f480558d31aa8f08e6b947e0ff6
+// and
+// https://github.com/moodle/moodle/commit/2471088111f4fc6e85fcd9a61e5d4c935e2d83fd
 img {
   /* Responsive images (ensure images don't scale beyond their parents) */
   max-width: 100%; /* Part 1: Set a maxium relative to the parent */
