@@ -20386,6 +20386,10 @@ table.calendarmonth.calendartable {
   height: 65px;
 }
 
+#essentialCarousel.carousel .carousel-inner.below .item.nocaption {
+  padding-bottom: 95px;
+}
+
 #essentialCarousel.carousel .carousel-inner.centred .carousel-caption {
   text-align: center;
 }
