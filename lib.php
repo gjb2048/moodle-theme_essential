@@ -634,10 +634,40 @@ function theme_essential_set_fontfiles($css, $type, $fontname, $theme) {
     $tag = '[[setting:fontfiles'.$type.']]';
     $replacement = '';
     if(theme_essential_get_setting('fontselect') === '3') {
-        $fontfilettf  = $theme->setting_file_url('fontfilettf'.$type, 'fontfilettf'.$type);
-        $replacement  = '@font-face {font-family: "'.$fontname.'";';
-        $replacement .= !empty($fontfilettf)? "src: url('".$fontfilettf."');" : '';
-        $replacement .= "}";
+        $fontfiles = array();
+        $fontfileeot = $theme->setting_file_url('fontfileeot'.$type, 'fontfileeot'.$type);
+        if (!empty($fontfileeot)) {
+           $fontfiles[] = "url('".$fontfileeot."?#iefix') format('embedded-opentype')";
+        }
+        $fontfilewoff = $theme->setting_file_url('fontfilewoff'.$type, 'fontfilewoff'.$type);
+        if (!empty($fontfilewoff)) {
+           $fontfiles[] = "url('".$fontfilewoff."') format('woff')";
+        }
+        $fontfilewofftwo = $theme->setting_file_url('fontfilewofftwo'.$type, 'fontfilewofftwo'.$type);
+        if (!empty($fontfilewofftwo)) {
+           $fontfiles[] = "url('".$fontfilewofftwo."') format('woff2')";
+        }
+        $fontfileotf = $theme->setting_file_url('fontfileotf'.$type, 'fontfileotf'.$type);
+        if (!empty($fontfileotf)) {
+           $fontfiles[] = "url('".$fontfileotf."') format('opentype')";
+        }
+        $fontfilettf = $theme->setting_file_url('fontfilettf'.$type, 'fontfilettf'.$type);
+        if (!empty($fontfilettf)) {
+           $fontfiles[] = "url('".$fontfilettf."') format('truetype')";
+        }
+        $fontfilesvg = $theme->setting_file_url('fontfilesvg'.$type, 'fontfilesvg'.$type);
+        if (!empty($fontfilesvg)) {
+           $fontfiles[] = "url('".$fontfilesvg."') format('svg')";
+        }
+
+        $replacement  = '@font-face {'.PHP_EOL.'font-family: "'.$fontname.'";'.PHP_EOL;
+        $replacement .= !empty($fontfileeot)? "src: url('".$fontfileeot."');".PHP_EOL : '';
+        if (!empty($fontfiles)) {
+            $replacement .= "src: ";
+            $replacement .= implode(",".PHP_EOL." ", $fontfiles);
+            $replacement .= ";";
+        }
+        $replacement .= ''.PHP_EOL."}";
     }
 
     $css = str_replace($tag, $replacement, $css);

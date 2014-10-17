@@ -114,6 +114,7 @@ New in 2.7.9
 - FIX: Issue #326: Submit panel overlaps the message input area.
 - FIX: Issue #329: Social icons in mobile view showing odd behaviour.
 - FIX: Issue #330: Slider caption below causes jump.
+- NEW: Issue #327: Font file types.
 
 New in 2.7.8
 ============
