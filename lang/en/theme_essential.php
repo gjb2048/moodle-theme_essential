@@ -67,7 +67,8 @@ $string['logodesc'] = 'Please upload your custom logo here if you want to add it
                        <br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
 
 /* Font settings */
-$string['fontheading'] = 'Font settings';
+$string['fontsettings'] = 'Font';
+$string['fontheadingsub'] = 'Font settings';
 $string['fontheadingdesc'] = 'Select and enter the fonts that you want to use in your Moodle environment.';
 $string['fontselect'] = 'Font type selector';
 $string['fontselectdesc'] = 'Choose from the list of available font types. Please save to show the options for your choice.';
@@ -81,9 +82,19 @@ $string['fontnamebodydesc'] = 'Enter the exact name of the font to use for all o
 
 /* Font files */
 $string['fontfiles'] = 'Font files';
-$string['fontfilesdesc'] = 'Upload your font files here, only TTF files are supported.';
+$string['fontfilesdesc'] = 'Upload your font files here.';
 $string['fontfilettfheading'] = 'Heading TTF font file';
+$string['fontfileotfheading'] = 'Heading OTF font file';
+$string['fontfilewoffheading'] = 'Heading WOFF font file';
+$string['fontfilewofftwoheading'] = 'Heading WOFF2 font file';
+$string['fontfileeotheading'] = 'Heading EOT font file';
+$string['fontfilesvgheading'] = 'Heading SVG font file';
 $string['fontfilettfbody'] = 'Body TTF font file';
+$string['fontfileotfbody'] = 'Body OTF font file';
+$string['fontfilewoffbody'] = 'Body WOFF font file';
+$string['fontfilewofftwobody'] = 'Body WOFF2 font file';
+$string['fontfileeotbody'] = 'Body EOT font file';
+$string['fontfilesvgbody'] = 'Body SVG font file';
 
 
 $string['fontcharacterset'] = 'Google font additional character set';
