@@ -90,6 +90,7 @@ New in 2.6.11
 =============
 - FIX: Issue #248: Navbar overlay on activity selection popup.
 - FIX: Issue #304: Region not defined in M2.6.
+- NEW: Issue #340: Show slider navigation icons only when mouse in the slider.
 
 New in 2.6.10
 =============
