@@ -16990,6 +16990,7 @@ table.calendarmonth.calendartable {
   text-align: center;
 }
 #essentialCarousel.carousel .carousel-control {
+  display: none;
   background: none;
   border: 0px;
 }
@@ -16997,6 +16998,9 @@ table.calendarmonth.calendartable {
 #essentialCarousel.carousel .carousel-control:focus {
   background: none;
   border: 0px;
+}
+#essentialCarousel.carousel:hover .carousel-control {
+  display: block;
 }
 /* @end */
 /*

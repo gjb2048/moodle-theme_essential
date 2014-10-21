@@ -115,6 +115,7 @@ New in 2.7.9
 - FIX: Issue #329: Social icons in mobile view showing odd behaviour.
 - FIX: Issue #330: Slider caption below causes jump.
 - NEW: Issue #327: Font file types.
+- NEW: Issue #340: Show slider navigation icons only when mouse in the slider.
 
 New in 2.7.8
 ============
