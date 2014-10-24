@@ -84,7 +84,7 @@ if (empty($PAGE->layout_options['nofooter'])) {
 
             jQuery('#essentialnavbar').affix({
                 offset: {
-                    top: $('header').height()
+                    top: $('#page-header').height()
                 }
             });
             <?php if ($breadcrumbanimate == '1') {
