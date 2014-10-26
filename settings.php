@@ -1344,12 +1344,17 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Show caption below the image.
-    $name = 'theme_essential/slidecaptionbelow';
-    $title = get_string('slidecaptionbelow', 'theme_essential');
-    $description = get_string('slidecaptionbelowdesc', 'theme_essential');
-    $default = false;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    // Show caption options.
+    $name = 'theme_essential/slidecaptionoptions';
+    $title = get_string('slidecaptionoptions', 'theme_essential');
+    $description = get_string('slidecaptionoptionsdesc', 'theme_essential');
+    $default = '0';
+    $choices = array(
+        0 => get_string('slidecaptionbeside', 'theme_essential'),
+        1 => get_string('slidecaptionontop', 'theme_essential'),
+        2 => get_string('slidecaptionunderneath', 'theme_essential'),
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 

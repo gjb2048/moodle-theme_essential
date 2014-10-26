@@ -27,8 +27,8 @@
 $numberofslides = theme_essential_showslider('numberofslides');
 $slideinterval  = theme_essential_get_setting('slideinterval');
 $captionscenter = (theme_essential_get_setting('slidecaptioncentred'))? ' centred' : '';
-$captionsbelow  = theme_essential_get_setting('slidecaptionbelow');
-$captionsbelowclass  = ($captionsbelow)? ' below' : '';
+$captionoptions = theme_essential_get_setting('slidecaptionoptions');
+$captionsbelowclass  = ($captionoptions == 2) ? ' below' : '';
 
 if ($numberofslides) { ?>
     <div class="row-fluid">
@@ -42,7 +42,7 @@ if ($numberofslides) { ?>
                 </ol>
                 <div class="carousel-inner<?php echo $captionscenter.$captionsbelowclass;?>">
                     <?php for ($i = 1; $i <= $numberofslides; $i++) {
-                        echo theme_essential_render_slide($i, $captionsbelow);
+                        echo theme_essential_render_slide($i, $captionoptions);
                     } ?>
                 </div>
                 <?php echo theme_essential_render_slide_controls($left); ?>

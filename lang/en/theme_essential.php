@@ -55,7 +55,7 @@ Gareth J. Barnard<br>
 /* General */
 $string['genericsettings'] = 'General';
 $string['generalheadingsub'] = 'General settings';
-$string['generalheadingdesc'] = 'Configure the global settings for the theme here. You will find both layout and visual options here.';
+$string['generalheadingdesc'] = 'Configure the general settings for the theme here.';
 
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
@@ -334,6 +334,12 @@ $string['slideintervaldesc'] = 'Slide transition interval in milliseconds.';
 $string['slidecolor'] = 'Slide text colour';
 $string['slidecolordesc'] = 'What colour the slide caption text should be.';
 
+$string['slidecaptionoptions'] = 'Slide caption options';
+$string['slidecaptionoptionsdesc'] = 'Where the captions should appear in releation to the image.';
+$string['slidecaptionbeside'] = 'Beside';
+$string['slidecaptionontop'] = 'On top';
+$string['slidecaptionunderneath'] = 'Underneath';
+// Backward compatibility.
 $string['slidecaptionbelow'] = 'Slide caption below image';
 $string['slidecaptionbelowdesc'] = 'If the slide caption should be below the image.';
 

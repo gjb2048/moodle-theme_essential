@@ -20350,15 +20350,25 @@ table.calendarmonth.calendartable {
 /* @group Carousel */
 
 #essentialCarousel.carousel {
+  min-height: 334px;
   margin-bottom: 10px;
 }
 
-#essentialCarousel.carousel .carousel-inner > .item > .carousel-image {
+#essentialCarousel.carousel .carousel-inner > .item {
+  min-height: 320px;
+  max-height: 320px;
+}
+
+#essentialCarousel.carousel .carousel-inner > .item .carousel-image {
   width: auto;
-  margin: 0 auto;
+  margin: 8px auto;
   height: auto;
   max-height: 300px;
-  padding: 0;
+}
+
+#essentialCarousel.carousel .carousel-inner > .item .carousel-image {
+  box-shadow: 0px 0px 8px #222;
+  padding: 8px;
 }
 
 #essentialCarousel.carousel .carousel-inner a,
@@ -20408,6 +20418,90 @@ table.calendarmonth.calendartable {
 
 #essentialCarousel.carousel:hover .carousel-control {
   display: block;
+}
+
+#essentialCarousel.carousel .side-caption div.the-side-caption {
+  margin-top: 4.5%;
+}
+
+#essentialCarousel.carousel .carousel-inner > .item .side-caption div h4 {
+  font-size: 14px;
+}
+
+#essentialCarousel.carousel .carousel-inner > .item .side-caption div p {
+  font-size: 10px;
+}
+
+@media (min-width: 480px) {
+  #essentialCarousel.carousel .carousel-inner > .item .side-caption {
+    min-height: 165px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption {
+    margin-top: 4.5%;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption h4 {
+    font-size: 16px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption p {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  #essentialCarousel.carousel .carousel-inner > .item .side-caption {
+    min-height: 195px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption {
+    margin-top: 8.5%;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption h4 {
+    font-size: 24px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption p {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 992px) {
+  #essentialCarousel.carousel .carousel-inner > .item .side-caption {
+    min-height: 225px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption {
+    margin-top: 8.5%;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption h4 {
+    font-size: 30px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption p {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #essentialCarousel.carousel .carousel-inner > .item .side-caption {
+    min-height: 300px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption {
+    margin-top: 10.5%;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption h4 {
+    font-size: 36px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption p {
+    font-size: 24px;
+  }
 }
 
 /* @end */
@@ -22916,7 +23010,11 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
     margin-right: 0;
   }
 
-  #essentialCarousel.carousel .carousel-inner > .item > .carousel-image {
+  #essentialCarousel.carousel {
+    min-height: 245px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item .carousel-image {
     max-height: 225px;
   }
 
@@ -22994,7 +23092,16 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
     display: none;
   }
 
-  #essentialCarousel.carousel .carousel-inner > .item > .carousel-image {
+  #essentialCarousel.carousel {
+    min-height: 185px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item {
+    width: 90%;
+    padding-right: 5%;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item .carousel-image {
     max-height: 165px;
   }
 
