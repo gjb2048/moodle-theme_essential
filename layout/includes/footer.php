@@ -82,13 +82,16 @@ if (empty($PAGE->layout_options['nofooter'])) {
                 return false;
             });
 
-            jQuery('#essentialnavbar').affix({
-                offset: {
-                    top: $('#page-header').height()
-                }
-            });
-            <?php if ($breadcrumbanimate == '1') {
-                echo "$('.breadcrumb').jBreadCrumb();";
+            <?php
+            if (theme_essential_not_lte_ie9()) {
+              echo "jQuery('#essentialnavbar').affix({";
+              echo "offset: {";
+              echo "top: $('#page-header').height()";
+              echo "}";
+              echo "});";
+              if ($breadcrumbanimate == '1') {
+                  echo "$('.breadcrumb').jBreadCrumb();";
+              }
             }?>
             $('#page-site-index').fitVids();
         });

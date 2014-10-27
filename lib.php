@@ -1003,6 +1003,18 @@ function theme_essential_render_slide_controls($left) {
     }
 }
 
+/**
+ * States if the browser is not IE9 or less.
+ */
+function theme_essential_not_lte_ie9() {
+    $properties = core_useragent::check_ie_properties();; // In /lib/classes/useragent.php.
+    if (!is_array($properties)) {
+        return true;
+    }
+    // We have properties, it is a version of IE, so is it greater than 9?
+    return ($properties['version'] > 9.0);
+}
+
 function theme_essential_page_init(moodle_page $page) {
     global $CFG;
     $page->requires->jquery();
