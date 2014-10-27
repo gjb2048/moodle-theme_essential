@@ -20350,20 +20350,27 @@ table.calendarmonth.calendartable {
 /* @group Carousel */
 
 #essentialCarousel.carousel {
-  min-height: 334px;
   margin-bottom: 10px;
 }
 
-#essentialCarousel.carousel .carousel-inner > .item {
-  min-height: 320px;
-  max-height: 320px;
+#essentialCarousel.carousel .carousel-inner > .item .carousel-image-container {
+  text-align: center;
+  width: 90%;
+  padding-right: 5%;
+  padding-left: 5%;
 }
 
 #essentialCarousel.carousel .carousel-inner > .item .carousel-image {
   width: auto;
-  margin: 8px auto;
+  margin: 0 auto;
+  margin-top: 8px;
   height: auto;
   max-height: 300px;
+  vertical-align: middle;
+}
+
+#essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption {
+  margin-top: 4.5%;
 }
 
 #essentialCarousel.carousel .carousel-inner > .item .carousel-image {
@@ -20391,15 +20398,6 @@ table.calendarmonth.calendartable {
   padding: 0px 20px;
 }
 
-#essentialCarousel.carousel .carousel-inner.below .carousel-caption {
-  position: static;
-  height: 65px;
-}
-
-#essentialCarousel.carousel .carousel-inner.below .item.nocaption {
-  padding-bottom: 95px;
-}
-
 #essentialCarousel.carousel .carousel-inner.centred .carousel-caption {
   text-align: center;
 }
@@ -20408,6 +20406,7 @@ table.calendarmonth.calendartable {
   display: none;
   background: none;
   border: 0px;
+  font-size: 30px;
 }
 
 #essentialCarousel.carousel .carousel-control:hover,
@@ -20420,10 +20419,6 @@ table.calendarmonth.calendartable {
   display: block;
 }
 
-#essentialCarousel.carousel .side-caption div.the-side-caption {
-  margin-top: 4.5%;
-}
-
 #essentialCarousel.carousel .carousel-inner > .item .side-caption div h4 {
   font-size: 14px;
 }
@@ -20433,74 +20428,193 @@ table.calendarmonth.calendartable {
 }
 
 @media (min-width: 480px) {
-  #essentialCarousel.carousel .carousel-inner > .item .side-caption {
-    min-height: 165px;
-  }
-
-  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption {
-    margin-top: 4.5%;
-  }
-
-  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption h4 {
+  #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption h4 {
     font-size: 16px;
   }
 
-  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption p {
+  #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption p {
     font-size: 12px;
+  }
+
+  #essentialCarousel.carousel .carousel-control {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 767px) {
+  #essentialCarousel.carousel .carousel-inner > .item {
+    height: 200px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item .carousel-image-container {
+    line-height: 200px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item .carousel-image {
+    max-height: 165px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item .carousel-caption {
+    position: absolute;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item .carousel-caption h4 {
+    font-size: 1.2em;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item .carousel-caption p {
+    line-height: 1;
+  }
+
+  #essentialCarousel.carousel .carousel-inner.below > .item,
+  #essentialCarousel.carousel .carousel-inner > .item.side-caption {
+    height: 280px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner.below > .item .carousel-caption,
+  #essentialCarousel.carousel .carousel-inner > .item.side-caption .carousel-caption {
+    height: 45px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner.below > .item .carousel-image-container.nocaption,
+  #essentialCarousel.carousel .carousel-inner > .item.side-caption .carousel-image-container.nocaption {
+    line-height: 280px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item.side-caption div.nocaption {
+    margin-top: 6.5%;
   }
 }
 
 @media (min-width: 768px) {
-  #essentialCarousel.carousel .carousel-inner > .item .side-caption {
-    min-height: 195px;
+  #essentialCarousel.carousel .carousel-inner > .item {
+    height: 260px;
   }
 
-  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption {
+  #essentialCarousel.carousel .carousel-inner > .item .carousel-image-container {
+    line-height: 260px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item .carousel-image {
+    max-height: 225px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption {
     margin-top: 8.5%;
   }
 
-  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption h4 {
+  #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption h4 {
     font-size: 24px;
   }
 
-  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption p {
+  #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption p {
     font-size: 18px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner.below > .item {
+    height: 345px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner.below > .item .carousel-caption {
+    height: 55px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner.below > .item .carousel-image-container.nocaption {
+    line-height: 345px;
+  }
+
+  #essentialCarousel.carousel .carousel-control {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  #essentialCarousel.carousel .carousel-inner > .item .carousel-caption h4 {
+    font-size: 1.2em;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item .carousel-caption p {
+    line-height: 1;
   }
 }
 
 @media (min-width: 992px) {
-  #essentialCarousel.carousel .carousel-inner > .item .side-caption {
-    min-height: 225px;
+  #essentialCarousel.carousel .carousel-inner > .item {
+    height: 328px;
   }
 
-  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption {
-    margin-top: 8.5%;
+  #essentialCarousel.carousel .carousel-inner > .item .carousel-image-container {
+    line-height: 328px;
   }
 
-  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption h4 {
+  #essentialCarousel.carousel .carousel-inner > .item .carousel-image {
+    max-height: 293px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption {
+    margin-top: 10.5%;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption h4 {
     font-size: 30px;
   }
 
-  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption p {
+  #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption p {
     font-size: 22px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner.below > .item {
+    height: 428px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner.below > .item .carousel-caption {
+    height: 65px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner.below > .item .carousel-image-container.nocaption {
+    line-height: 428px;
+  }
+
+  #essentialCarousel.carousel .carousel-control {
+    font-size: 50px;
   }
 }
 
 @media (min-width: 1200px) {
-  #essentialCarousel.carousel .carousel-inner > .item .side-caption {
-    min-height: 300px;
+  #essentialCarousel.carousel .carousel-inner > .item {
+    height: 368px;
   }
 
-  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption {
-    margin-top: 10.5%;
+  #essentialCarousel.carousel .carousel-inner > .item .carousel-image-container {
+    line-height: 368px;
   }
 
-  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption h4 {
+  #essentialCarousel.carousel .carousel-inner > .item .carousel-image {
+    max-height: 333px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption {
+    margin-top: 8.5%;
+  }
+
+  #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption h4 {
     font-size: 36px;
   }
 
-  #essentialCarousel.carousel .carousel-inner > .item .side-caption div.the-side-caption p {
+  #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption p {
     font-size: 24px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner.below > .item {
+    height: 468px;
+  }
+
+  #essentialCarousel.carousel .carousel-inner.below > .item .carousel-image-container.nocaption {
+    line-height: 468px;
+  }
+
+  #essentialCarousel.carousel .carousel-control {
+    font-size: 60px;
   }
 }
 
@@ -23009,22 +23123,6 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
   .row-fluid .desktop-first-column {
     margin-right: 0;
   }
-
-  #essentialCarousel.carousel {
-    min-height: 245px;
-  }
-
-  #essentialCarousel.carousel .carousel-inner > .item .carousel-image {
-    max-height: 225px;
-  }
-
-  #essentialCarousel.carousel .carousel-inner > .item .carousel-caption h4 {
-    font-size: 1.2em;
-  }
-
-  #essentialCarousel.carousel .carousel-inner > .item .carousel-caption p {
-    line-height: 1;
-  }
 }
 
 @media (max-width: 767px) {
@@ -23090,27 +23188,6 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
 
   #marketing-buttons {
     display: none;
-  }
-
-  #essentialCarousel.carousel {
-    min-height: 185px;
-  }
-
-  #essentialCarousel.carousel .carousel-inner > .item {
-    width: 90%;
-    padding-right: 5%;
-  }
-
-  #essentialCarousel.carousel .carousel-inner > .item .carousel-image {
-    max-height: 165px;
-  }
-
-  #essentialCarousel.carousel .carousel-inner > .item .carousel-caption h4 {
-    font-size: 1.2em;
-  }
-
-  #essentialCarousel.carousel .carousel-inner > .item .carousel-caption p {
-    line-height: 1;
   }
 }
 

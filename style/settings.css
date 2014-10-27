@@ -227,7 +227,7 @@ ul.breadcrumb.style2 li a:hover {
 /* @end */
 /* @group Carousel */
 #essentialCarousel.carousel .carousel-inner > .item .carousel-image {
-  max-width: [[setting:pagewidth]];
+  max-width: [[setting:pagewidthimage]];
 }
 #essentialCarousel.carousel .carousel-inner .carousel-caption {
   background-color: [[setting:carouselcolor]];

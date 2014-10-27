@@ -95,6 +95,11 @@ do so:
     Default'.
 9.  Put Moodle out of 'Maintenance mode' under 'Home -> Administration -> Site administration -> Server -> Maintenance mode'.
 
+Videos and FitVids
+==================
+Essential uses FitVids.js - http://fitvidsjs.com/ - to make embedded videos responsive.  If you do not want this feature for a particular
+video, then please add the class 'fitvidsignore' to the video element.
+
 Reporting issues
 ================
 Before reporting an issue, please ensure that you are running the latest version for your release of Moodle.  It is essential

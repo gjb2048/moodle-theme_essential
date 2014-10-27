@@ -260,14 +260,17 @@ function theme_essential_send_cached_css($path, $filename, $lastmodified, $etag)
  */
 function theme_essential_set_pagewidth($css, $pagewidth) {
     $tag = '[[setting:pagewidth]]';
+    $imagetag = '[[setting:pagewidthimage]]';
     $replacement = $pagewidth;
     if (!($replacement)) {
         $replacement = '1200';
     }
     if ($replacement == "100") {
         $css = str_replace($tag, $replacement . '%', $css);
+        $css = str_replace($imagetag, '90' . '%', $css);
     } else {
         $css = str_replace($tag, $replacement . 'px', $css);
+        $css = str_replace($imagetag, $replacement . 'px', $css);
     }
     return $css;
 }
@@ -924,10 +927,7 @@ function theme_essential_render_slide($i, $captionoptions) {
     $slideurltarget = theme_essential_get_setting('slide' . $i . 'target');
     $slidetitle = theme_essential_get_setting('slide' . $i, true);
     $slidecaption = theme_essential_get_setting('slide' . $i . 'caption', true);
-    $slideextraclass = ($i === 1) ? 'active' : '';
-    $captionsbelow = ($captionoptions == 2) ? true : false;
-    $slidebelownocaption = ((!($slidetitle || $slidecaption)) && $captionsbelow) ? ' nocaption' : '';
-    $slideextraclass = $slideextraclass . $slidebelownocaption;
+    $slideextraclass = ($i === 1) ? ' active' : '';
     $slideimagealt = strip_tags(theme_essential_get_setting('slide' . $i, true));
     $slideimage = $OUTPUT->pix_url('default_slide', 'theme');
 
@@ -936,14 +936,17 @@ function theme_essential_render_slide($i, $captionoptions) {
         $slideimage = $PAGE->theme->setting_file_url('slide' . $i . 'image', 'slide' . $i . 'image');
     }
 
+    if ($captionoptions == 0) {
+        $slideextraclass .= ' side-caption';
+    }
     if ($slideurl) {
-        $slide = '<a href="' . $slideurl . '" target="' . $slideurltarget . '" class="item ' . $slideextraclass . '">';
+        $slide = '<a href="' . $slideurl . '" target="' . $slideurltarget . '" class="item' . $slideextraclass . '">';
     } else {
-        $slide = '<div class="item ' . $slideextraclass . '">';
+        $slide = '<div class="item' . $slideextraclass . '">';
     }
 
     if ($captionoptions == 0) {
-        $slide .= '<div class="row-fluid text-center side-caption">';
+        $slide .= '<div class="row-fluid text-center">';
         if ($slidetitle || $slidecaption) {
             $slide .= '<div class="span3 offset1 the-side-caption">';
             $slide .= '<h4>' . $slidetitle . '</h4>';
@@ -951,13 +954,18 @@ function theme_essential_render_slide($i, $captionoptions) {
             $slide .= '</div>';
             $slide .= '<div class="span6 offset1">';
         } else {
-            $slide .= '<div class="span10 offset1">';
+            $slide .= '<div class="span10 offset1 nocaption">';
         }
+        $slide .= '<div class="carousel-image-container">';
         $slide .= '<img src="' . $slideimage . '" alt="' . $slideimagealt . '" class="carousel-image"/>';
+        $slide .= '</div>';
         $slide .= '</div>';
         $slide .= '</div>';
     } else {
+        $nocaption = (!($slidetitle || $slidecaption)) ? ' nocaption' : '';
+        $slide .= '<div class="carousel-image-container'.$nocaption.'">';
         $slide .= '<img src="' . $slideimage . '" alt="' . $slideimagealt . '" class="carousel-image"/>';
+        $slide .= '</div>';
 
         // Output title and caption if either is present
         if ($slidetitle || $slidecaption) {
