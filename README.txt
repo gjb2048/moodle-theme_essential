@@ -117,6 +117,7 @@ New in 2.6.11
 - FIX: Issue #329: Social icons in mobile view showing odd behaviour.
 - FIX: Issue #330: Slider caption below causes jump.
 - FIX: Issue #346: Affix header height when using the old navbar setting.
+- FIX: Issue #350: Background missing after posting to forum.
 - NEW: Issue #269: Marketing Spots Social Media Widgets.
 - NEW: Issue #278: Site name needs to be formatted in line with MDL-47080.
 - NEW: Issue #295: My Courses navbar link not working.
