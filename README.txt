@@ -88,6 +88,7 @@ can be really useful in visualising the issue along with any files you consider 
 
 New in 2.6.11
 =============
+- FIX: Issue #248: Navbar overlay on activity selection popup.
 - FIX: Issue #304: Region not defined in M2.6.
 
 New in 2.6.10
