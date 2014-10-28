@@ -25,5 +25,5 @@
  */
 
 if ($fontselect === '2') { ?>
-    <link href='http://fonts.googleapis.com/css?family=<?php echo $headingfont.'|'.$bodyfont.$fontcharacterset;?>' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=<?php echo $headingfont.'|'.$bodyfont.$fontcharacterset;?>' rel='stylesheet' type='text/css'>
 <?php } ?>
