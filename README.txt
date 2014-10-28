@@ -92,6 +92,7 @@ New in 2.6.11
 - FIX: Issue #254: Gradebook alignment.
 - FIX: Issue #257: Header options cause navbar to display incorrectly.
 - FIX: Issue #258: Message menu text wrapping in IE 11.
+- FIX: Issue #259: In course page icon not appears.
 - FIX: Issue #304: Region not defined in M2.6.
 - FIX: Issue #326: Submit panel overlaps the message input area.
 - FIX: Issue #329: Social icons in mobile view showing odd behaviour.
