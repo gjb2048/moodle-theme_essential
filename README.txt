@@ -90,6 +90,7 @@ New in 2.6.11
 =============
 - FIX: Issue #248: Navbar overlay on activity selection popup.
 - FIX: Issue #304: Region not defined in M2.6.
+- FIX: Issue #326: Submit panel overlaps the message input area.
 - FIX: Issue #329: Social icons in mobile view showing odd behaviour.
 - FIX: Issue #330: Slider caption below causes jump.
 - FIX: Issue #346: Affix header height when using the old navbar setting.
