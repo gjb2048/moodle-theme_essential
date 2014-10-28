@@ -95,6 +95,7 @@ New in 2.6.11
 - FIX: Issue #259: In course page icon not appears.
 - FIX: Issue #260: Preview Questions.
 - FIX: Issue #263: Group Image alignment in Forums.
+- FIX: Issue #264: Incorrect H1 content in Password change screen.
 - FIX: Issue #304: Region not defined in M2.6.
 - FIX: Issue #326: Submit panel overlaps the message input area.
 - FIX: Issue #329: Social icons in mobile view showing odd behaviour.
