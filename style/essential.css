@@ -1063,7 +1063,6 @@ bank window's title is prominent enough*/
 }
 .empty-region-side-pre #region-bs-main-and-pre.span9 #region-main,
 .jsenabled.docked-region-side-pre #region-bs-main-and-pre.span9 #region-main {
-  float: none;
   width: 100%;
 }
 .empty-region-side-post.used-region-side-pre #region-main.span8,
