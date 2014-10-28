@@ -19678,17 +19678,21 @@ ins {
   color: green !important;
 }
 
-#page {
+#page,
+.pagelayout-redirect {
   padding-top: 10px;
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-#page #page-content {
+#page #page-content,
+.pagelayout-redirect #page-content {
   margin-top: 10px;
 }
 
 #page #page-content #region-main,
-#page #page-content div[role="main"] {
+.pagelayout-redirect #page-content #region-main,
+#page #page-content div[role="main"],
+.pagelayout-redirect #page-content div[role="main"] {
   border: 1px solid #e3e3e3;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -19698,7 +19702,8 @@ ins {
   margin-bottom: 20px;
 }
 
-#page #page-content #region-main > div[role="main"] {
+#page #page-content #region-main > div[role="main"],
+.pagelayout-redirect #page-content #region-main > div[role="main"] {
   border: none;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;

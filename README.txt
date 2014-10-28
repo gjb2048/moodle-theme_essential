@@ -120,6 +120,7 @@ New in 2.7.9
 - FIX: Issue #329: Social icons in mobile view showing odd behaviour.
 - FIX: Issue #330: Slider caption below causes jump.
 - FIX: Issue #346: Affix header height when using the old navbar setting.
+- FIX: Issue #350: Background missing after posting to forum.
 - NEW: Issue #327: Font file types.
 - NEW: Issue #340: Show slider navigation icons only when mouse in the slider.
 
@@ -129,7 +130,7 @@ New in 2.7.8
 - FIX: Issue #252: LESS background: transparent; being compiled as background: 0 0;
 - FIX: Issue #254: Gradebook alignment.
 - FIX: Issue #257: Header options cause navbar to display incorrectly.
-- FIX: Issue #258: Message menu text wraping in IE 11.
+- FIX: Issue #258: Message menu text wrapping in IE 11.
 - FIX: Issue #259: In course page icon not appears.
 - FIX: Issue #260: Preview Questions.
 - FIX: Issue #263: Group Image alignment in Forums.
