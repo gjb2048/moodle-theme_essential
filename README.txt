@@ -125,6 +125,7 @@ New in 2.6.11
 - NEW: Issue #305: Login button in menu bar on login page.
 - NEW: Issue #327: Font file types.
 - NEW: Issue #340: Show slider navigation icons only when mouse in the slider.
+- NEW: Issue #354: Ability to turn FitVids on / off.
 
 New in 2.6.10
 =============

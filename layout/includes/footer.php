@@ -88,7 +88,11 @@ if (empty($PAGE->layout_options['nofooter'])) {
                 }
             });
             $('.breadcrumb').jBreadCrumb();
-            $('.mediaplugin').fitVids();
+            <?php
+            if (theme_essential_get_setting('fitvids')) {
+                echo "$('#page').fitVids();";
+            }
+            ?>
         });
     </script>
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
