@@ -123,3 +123,6 @@ $hasboringlayout = theme_essential_get_setting('layout');
 /* Group Footer */
 $hascopyright = theme_essential_get_setting('copyright', true);
 $hasfootnote = theme_essential_get_setting('footnote', 'format_text');
+
+/* Group Breadcrumb */
+$breadcrumbstyle = theme_essential_get_setting('breadcrumbstyle');

@@ -34,6 +34,9 @@ class theme_essential_core_renderer extends core_renderer
     public function navbar()
     {
         $breadcrumbstyle = theme_essential_get_setting('breadcrumbstyle');
+        if ($breadcrumbstyle == '4') {
+            $breadcrumbstyle = '1'; // Fancy style with no collapse.
+        }
         $breadcrumbs = html_writer::start_tag('ul', array('class' => "breadcrumb style$breadcrumbstyle"));
         if ($breadcrumbstyle) {
             $index = 1;

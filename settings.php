@@ -100,7 +100,9 @@ if (is_siteadmin()) {
     $title = get_string('breadcrumbstyle', 'theme_essential');
     $description = get_string('breadcrumbstyledesc', 'theme_essential');
     $default = 1;
-    $choices = array(1 => get_string('breadcrumbstyled', 'theme_essential'),
+    $choices = array(
+        1 => get_string('breadcrumbstyled', 'theme_essential'),
+        4 => get_string('breadcrumbstylednocollapse', 'theme_essential'),
         2 => get_string('breadcrumbsimple', 'theme_essential'),
         3 => get_string('breadcrumbthin', 'theme_essential'),
         0 => get_string('nobreadcrumb', 'theme_essential')

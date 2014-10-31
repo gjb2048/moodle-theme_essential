@@ -119,6 +119,7 @@ New in 2.6.11
 - FIX: Issue #346: Affix header height when using the old navbar setting.
 - FIX: Issue #350: Background missing after posting to forum.
 - FIX: Issue #352: Piwik function clash with local plugin version - https://moodle.org/plugins/view.php?plugin=local_analytics.
+- NEW: Issue #247: Provide option to prevent automatic collapse for breadcrumbs.
 - NEW: Issue #269: Marketing Spots Social Media Widgets.
 - NEW: Issue #278: Site name needs to be formatted in line with MDL-47080.
 - NEW: Issue #295: My Courses navbar link not working.
