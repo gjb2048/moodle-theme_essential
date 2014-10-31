@@ -20380,6 +20380,7 @@ table.calendarmonth.calendartable {
 #essentialCarousel.carousel .carousel-inner > .item .carousel-image {
   box-shadow: 0px 0px 8px #222;
   padding: 8px;
+  background-color: #fff;
 }
 
 #essentialCarousel.carousel .carousel-inner a,

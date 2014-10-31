@@ -946,6 +946,7 @@ function theme_essential_render_slide($i, $captionoptions) {
     }
 
     if ($captionoptions == 0) {
+        $slide .= '<div class="container-fluid">';
         $slide .= '<div class="row-fluid text-center">';
         
         if ($slidetitle || $slidecaption) {
@@ -962,6 +963,7 @@ function theme_essential_render_slide($i, $captionoptions) {
         $slide .= '</div>';
         $slide .= '</div>';
         
+        $slide .= '</div>';
         $slide .= '</div>';
     } else {
         $nocaption = (!($slidetitle || $slidecaption)) ? ' nocaption' : '';
