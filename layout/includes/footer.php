@@ -92,8 +92,11 @@ if (empty($PAGE->layout_options['nofooter'])) {
               if ($breadcrumbanimate == '1') {
                   echo "$('.breadcrumb').jBreadCrumb();";
               }
-            }?>
-            $('#page-site-index').fitVids();
+            }
+            if (theme_essential_get_setting('fitvids')) {
+                echo "$('#page').fitVids();";
+            }
+            ?>
         });
     </script>
 <?php echo $OUTPUT->standard_end_of_body_html() ?>

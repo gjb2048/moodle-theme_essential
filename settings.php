@@ -109,6 +109,15 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Fitvids.
+    $name = 'theme_essential/fitvids';
+    $title = get_string('fitvids', 'theme_essential');
+    $description = get_string('fitvidsdesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     // Custom CSS file.
     $name = 'theme_essential/customcss';
     $title = get_string('customcss', 'theme_essential');

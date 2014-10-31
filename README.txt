@@ -124,6 +124,7 @@ New in 2.7.9
 - FIX: Issue #350: Background missing after posting to forum.
 - NEW: Issue #327: Font file types.
 - NEW: Issue #340: Show slider navigation icons only when mouse in the slider.
+- NEW: Issue #354: Ability to turn FitVids on / off.
 
 New in 2.7.8
 ============
