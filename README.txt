@@ -122,6 +122,7 @@ New in 2.7.9
 - FIX: Issue #346: Affix header height when using the old navbar setting.
 - FIX: Issue #349: Background missing in private messages.
 - FIX: Issue #350: Background missing after posting to forum.
+- NEW: Issue #247: Provide option to prevent automatic collapse for breadcrumbs.
 - NEW: Issue #327: Font file types.
 - NEW: Issue #340: Show slider navigation icons only when mouse in the slider.
 - NEW: Issue #354: Ability to turn FitVids on / off.

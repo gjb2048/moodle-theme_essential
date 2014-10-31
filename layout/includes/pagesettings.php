@@ -125,4 +125,4 @@ $hascopyright = theme_essential_get_setting('copyright', true);
 $hasfootnote = theme_essential_get_setting('footnote', 'format_text');
 
 /* Group Breadcrumb */
-$breadcrumbanimate = theme_essential_get_setting('breadcrumbstyle');
+$breadcrumbstyle = theme_essential_get_setting('breadcrumbstyle');

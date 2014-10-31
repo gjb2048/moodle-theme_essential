@@ -217,6 +217,7 @@ $string['coursegrades'] = 'Course grades';
 $string['breadcrumbstyle'] = 'Breadcrumb style';
 $string['breadcrumbstyledesc'] = 'Here you can change the style of the breadcrumbs.';
 $string['breadcrumbstyled'] = 'Fancy';
+$string['breadcrumbstylednocollapse'] = 'Fancy with no collapse';
 $string['breadcrumbsimple'] = 'Simple';
 $string['breadcrumbthin'] = 'Thin';
 $string['nobreadcrumb'] = 'Hide';

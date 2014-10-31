@@ -89,7 +89,7 @@ if (empty($PAGE->layout_options['nofooter'])) {
               echo "top: $('#page-header').height()";
               echo "}";
               echo "});";
-              if ($breadcrumbanimate == '1') {
+              if ($breadcrumbstyle == '1') {
                   echo "$('.breadcrumb').jBreadCrumb();";
               }
             }
