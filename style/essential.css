@@ -2980,7 +2980,8 @@ img#persona_signin {
   padding-left: 4px;
   padding-right: 4px;
 }
-.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu .iconsmall {
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu .iconsmall,
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu .smallicon {
   margin: 4px 4px 4px 0px;
   padding: 8px 4px 0px 2px;
   vertical-align: text-bottom;
@@ -3054,7 +3055,8 @@ img#persona_signin {
 .moodle-actionmenu[data-enhanced].show .menu img {
   vertical-align: middle;
 }
-.moodle-actionmenu[data-enhanced].show .menu .iconsmall {
+.moodle-actionmenu[data-enhanced].show .menu .iconsmall,
+.moodle-actionmenu[data-enhanced].show .menu .smallicon {
   margin: 4px 4px 4px -24px;
 }
 .moodle-actionmenu[data-enhanced].show .menu > li {
@@ -3150,6 +3152,14 @@ a.disabled {
 body.lockscroll {
   height: 100%;
   overflow: hidden;
+}
+dd:before,
+dd:after {
+  display: block;
+  content: " ";
+}
+dd:after {
+  clear: both;
 }
 /* admin.less */
 .formtable tbody th {
@@ -4941,14 +4951,15 @@ span.editinstructions {
   display: inline-block;
   display: initial;
 }
-#course-category-listings .item-actions img {
+#course-category-listings .item-actions > a img,
+#course-category-listings .item-actions .menubar img {
   margin: 0 4px;
   height: 12px;
   padding: 0;
   vertical-align: inherit;
 }
-#course-category-listings .item-actions.show .menu a {
-  padding: 4px 1em 4px 4px;
+#course-category-listings .item-actions.show .menu li {
+  line-height: 20px;
 }
 #course-category-listings .item-actions.show .menu img {
   width: 12px;
@@ -15885,6 +15896,74 @@ body.has_dock div#dock {
   }
   .path-mod-forum .forumheaderlist .discussion .replies .unread a {
     padding: 0;
+  }
+  .navbar .nav-collapse.active {
+    border-top: 1px solid #d4d4d4;
+  }
+  .navbar .nav-collapse.active.pull-left,
+  .navbar .nav-collapse.active.pull-right {
+    float: none;
+  }
+  .navbar .nav-collapse.active > .nav {
+    margin: 0;
+  }
+  .navbar .nav-collapse.active > .nav > li > a {
+    padding-left: 20px;
+    border-radius: 0px;
+  }
+  .navbar .nav-collapse.active > .nav .dropdown-menu {
+    margin: 0px 0px 0px 15px;
+  }
+  .navbar .nav-collapse.active > .nav .dropdown-menu li > a {
+    border-radius: 0px;
+  }
+  .navbar .nav-collapse.active .nav .dropdown-submenu .dropdown-toggle:after,
+  .navbar .nav-collapse.active .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
+    float: none;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: top;
+    border-top: 4px solid #000000;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    content: "";
+    border-top-color: #d4d4d4;
+    margin-left: 4px;
+    margin-top: 8px;
+  }
+  .navbar .nav-collapse.active .nav .dropdown-submenu.open > a,
+  .navbar .nav-collapse.active .nav .dropdown-menu .dropdown-submenu.open > a {
+    background-color: #f2f2f2;
+  }
+  .navbar .nav-collapse.active .nav .dropdown-submenu:hover .dropdown-menu,
+  .navbar .nav-collapse.active .nav .dropdown-menu .dropdown-submenu:hover .dropdown-menu {
+    display: none;
+  }
+  .navbar .nav-collapse.active .nav .dropdown-submenu:hover.open > a,
+  .navbar .nav-collapse.active .nav .dropdown-menu .dropdown-submenu:hover.open > a {
+    background: #f2f2f2;
+  }
+  .navbar .nav-collapse.active .nav .dropdown-submenu:hover.open > .dropdown-menu,
+  .navbar .nav-collapse.active .nav .dropdown-menu .dropdown-submenu:hover.open > .dropdown-menu,
+  .navbar .nav-collapse.active .nav .dropdown-submenu:hover.open .open > .dropdown-menu,
+  .navbar .nav-collapse.active .nav .dropdown-menu .dropdown-submenu:hover.open .open > .dropdown-menu {
+    display: block;
+  }
+  .navbar.navbar-inverse .nav-collapse.active {
+    border-top-color: #252525;
+  }
+  .navbar.navbar-inverse .nav-collapse.active .nav .dropdown-submenu .dropdown-toggle:after,
+  .navbar.navbar-inverse .nav-collapse.active .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
+    border-top-color: #252525;
+  }
+  .navbar.navbar-inverse .nav-collapse.active .nav .dropdown-submenu.open > a,
+  .navbar.navbar-inverse .nav-collapse.active .nav .dropdown-menu .dropdown-submenu.open > a {
+    background-color: #111111;
+  }
+  .navbar.navbar-inverse .nav-collapse.active .nav .dropdown-submenu:hover.open > a,
+  .navbar.navbar-inverse .nav-collapse.active .nav .dropdown-menu .dropdown-submenu:hover.open > a {
+    background: #111111;
   }
 }
 @media (max-width: 767px) {

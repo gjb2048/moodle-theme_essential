@@ -123,6 +123,9 @@ New in 2.7.9
 - FIX: Issue #349: Background missing in private messages.
 - FIX: Issue #350: Background missing after posting to forum.
 - FIX: Issue #352: Piwik function clash with local plugin version - https://moodle.org/plugins/view.php?plugin=local_analytics.
+- UPDATE         : moodle/core.less - MDL-47340 & MDL-47097.
+- UPDATE         : moodle/course.less - MDL-47340.
+- UPDATE         : moodle/responsive.less - MDL-47242.
 - NEW: Issue #247: Provide option to prevent automatic collapse for breadcrumbs.
 - NEW: Issue #327: Font file types.
 - NEW: Issue #340: Show slider navigation icons only when mouse in the slider.

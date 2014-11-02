@@ -767,6 +767,13 @@ a.marketing-button:hover {
     background-color: [[setting:themecolor]];
     border: 1px solid [[setting:themecolor]];
   }
+  .nav-collapse .nav > li a:hover,
+  .nav-collapse .dropdown-menu a:hover,
+  .nav-collapse .nav > li a:focus,
+  .nav-collapse .dropdown-menu a:focus {
+    color: [[setting:themecolor]];
+    background-color: [[setting:themenavcolor]];
+  }
 }
 /* @end */
 /* @group Performance Information */

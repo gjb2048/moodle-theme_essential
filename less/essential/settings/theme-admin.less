@@ -338,10 +338,18 @@ a.marketing-button:hover {
   }
 }
 
-@media (max-width: 979px) {
+@media (max-width: @navbarCollapseWidth) {
   .nav-collapse {
     background-color: ~"[[setting:themecolor]]";
     border: 1px solid ~"[[setting:themecolor]]";
+    .nav > li >, .dropdown-menu {
+      a {
+        &:hover, &:focus {
+          color: ~"[[setting:themecolor]]";
+          background-color: ~"[[setting:themenavcolor]]";
+        }
+      }
+    }
   }
 }
 

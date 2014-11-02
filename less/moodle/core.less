@@ -2097,7 +2097,8 @@ img#persona_signin {
       padding-left: 4px;
       padding-right: 4px;
 
-      .iconsmall {
+     .iconsmall,
+     .smallicon {
         margin: 4px 4px 4px 0px;
         padding: 8px 4px 0px 2px;
         vertical-align: text-bottom;
@@ -2161,7 +2162,8 @@ img#persona_signin {
     img {
       vertical-align: middle;
     }
-    .iconsmall {
+    .iconsmall,
+    .smallicon {
       margin: 4px 4px 4px -24px;
     }
     > li {
@@ -2269,4 +2271,13 @@ a.disabled {
 body.lockscroll {
   height: 100%;
   overflow: hidden;
+}
+
+dd:before,
+dd:after {
+  display: block;
+  content: " ";
+}
+dd:after {
+  clear: both;
 }
