@@ -236,7 +236,7 @@ function theme_essential_send_cached_css($path, $filename, $lastmodified, $etag)
     $lifetime = 60 * 60 * 24 * 60;
 
     header('Etag: "' . $etag . '"');
-    header('Content-Disposition: inline; filename="$filename"');
+    header('Content-Disposition: inline; filename="'.$filename.'"');
     header('Last-Modified: ' . gmdate('D, d M Y H:i:s', $lastmodified) . ' GMT');
     header('Expires: ' . gmdate('D, d M Y H:i:s', time() + $lifetime) . ' GMT');
     header('Pragma: ');
