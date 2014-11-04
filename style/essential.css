@@ -17054,7 +17054,7 @@ table.calendarmonth.calendartable {
   vertical-align: middle;
 }
 #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption {
-  margin-top: 4.5%;
+  padding-left: 3%;
 }
 #essentialCarousel.carousel .carousel-inner > .item .carousel-image {
   box-shadow: 0px 0px 8px #222;
@@ -17094,11 +17094,21 @@ table.calendarmonth.calendartable {
 #essentialCarousel.carousel:hover .carousel-control {
   display: block;
 }
-#essentialCarousel.carousel .carousel-inner > .item .side-caption div h4 {
-  font-size: 14px;
+#essentialCarousel.carousel .carousel-indicators {
+  border-radius: 4px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.5);
 }
-#essentialCarousel.carousel .carousel-inner > .item .side-caption div p {
+#essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption h4 {
+  font-size: 14px;
+  line-height: 1;
+}
+#essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption p {
   font-size: 10px;
+  line-height: 1;
 }
 @media (min-width: 480px) {
   #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption h4 {
@@ -17130,6 +17140,12 @@ table.calendarmonth.calendartable {
   #essentialCarousel.carousel .carousel-inner > .item .carousel-caption p {
     line-height: 1;
   }
+  #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption {
+    padding-left: 0;
+  }
+  #essentialCarousel.carousel .carousel-inner > .item.side-caption div.nocaption {
+    margin-top: 6.5%;
+  }
   #essentialCarousel.carousel .carousel-inner.below > .item,
   #essentialCarousel.carousel .carousel-inner > .item.side-caption {
     height: 280px;
@@ -17141,9 +17157,6 @@ table.calendarmonth.calendartable {
   #essentialCarousel.carousel .carousel-inner.below > .item .carousel-image-container.nocaption,
   #essentialCarousel.carousel .carousel-inner > .item.side-caption .carousel-image-container.nocaption {
     line-height: 280px;
-  }
-  #essentialCarousel.carousel .carousel-inner > .item.side-caption div.nocaption {
-    margin-top: 6.5%;
   }
 }
 @media (min-width: 768px) {
@@ -17157,7 +17170,21 @@ table.calendarmonth.calendartable {
     max-height: 225px;
   }
   #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption {
-    margin-top: 8.5%;
+    height: 260px;
+    text-align: center;
+  }
+  #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+    /* Adjusts for spacing */
+  }
+  #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption .the-side-caption-content {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
   }
   #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption h4 {
     font-size: 24px;
@@ -17197,7 +17224,7 @@ table.calendarmonth.calendartable {
     max-height: 293px;
   }
   #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption {
-    margin-top: 10.5%;
+    height: 328px;
   }
   #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption h4 {
     font-size: 30px;
@@ -17229,7 +17256,7 @@ table.calendarmonth.calendartable {
     max-height: 333px;
   }
   #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption {
-    margin-top: 8.5%;
+    height: 368px;
   }
   #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption h4 {
     font-size: 36px;

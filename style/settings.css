@@ -246,6 +246,9 @@ ul.breadcrumb.style2 li a:hover {
 #essentialCarousel.carousel .carousel-control:focus {
   color: [[setting:slidebuttonhovercolor]];
 }
+#essentialCarousel.carousel .carousel-indicators {
+  box-shadow: 0px 0px 8px [[setting:carouselcolor]];
+}
 #essentialCarousel.carousel .carousel-indicators li {
   background-color: [[setting:carouselcolor]];
 }

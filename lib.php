@@ -950,11 +950,13 @@ function theme_essential_render_slide($i, $captionoptions) {
         $slide .= '<div class="row-fluid text-center">';
         
         if ($slidetitle || $slidecaption) {
-            $slide .= '<div class="span3 offset1 the-side-caption">';
+            $slide .= '<div class="span5 the-side-caption">';
+            $slide .= '<div class="the-side-caption-content">';
             $slide .= '<h4>' . $slidetitle . '</h4>';
             $slide .= '<p>' . $slidecaption . '</p>';
             $slide .= '</div>';
-            $slide .= '<div class="span6 offset1">';
+            $slide .= '</div>';
+            $slide .= '<div class="span7">';
         } else {
             $slide .= '<div class="span10 offset1 nocaption">';
         }

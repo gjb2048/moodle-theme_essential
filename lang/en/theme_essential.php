@@ -46,10 +46,16 @@ Work taken over on the 9th October 2014 by:<br>
 Gareth J. Barnard<br>
 </p>
 <h3>Donations</h3>
-<p>This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider donating by
+<p>This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider donating by:
+<h4>PayPal</h4>
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=themmai%40gmail%2ecom&lc=GB&item_name=Essential%20Theme%20Fund&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted" target="_blank">
-     clicking here to donate.
-</a><br>Donations may allow us to provide you with more or better features in less time.</p>
+click here to donate.
+</a>
+<h4>Flattr</h4>
+<a href="https://flattr.com/profile/gjb2048" target="_blank">
+clicking here to donate.
+</a>
+<br>Donations may allow me to provide you with more or better features in less time.</p>
 </div></div>';
 
 /* General */
@@ -174,8 +180,12 @@ $string['dontdisplay'] = 'Never show';
 
 // Donate
 $string['donate_title'] = 'Essential donations';
-$string['donate_desc'] = 'Please {$a->url} to keep the Essential development going, or simply expressing your gratitude.';
-$string['donate_click'] = 'click to donate';
+$string['donate_desc'] = 'Please ';
+$string['donate_desc2'] = ' to keep the Essential development going, or simply to express your gratitude.';
+$string['paypal_desc'] = '{$a->url} or ';
+$string['flattr_desc'] = '{$a->url}';
+$string['paypal_click'] = 'donate via PayPal';
+$string['flattr_click'] = 'donate via Flattr';
 
 // Readme
 $string['readme_title'] = 'Essential read-me';
