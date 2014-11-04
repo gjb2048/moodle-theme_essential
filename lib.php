@@ -947,7 +947,7 @@ function theme_essential_render_slide($i, $captionoptions) {
 
     if ($captionoptions == 0) {
         $slide .= '<div class="container-fluid">';
-        $slide .= '<div class="row-fluid text-center">';
+        $slide .= '<div class="row-fluid">';
         
         if ($slidetitle || $slidecaption) {
             $slide .= '<div class="span5 the-side-caption">';

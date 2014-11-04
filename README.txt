@@ -125,6 +125,7 @@ New in 2.7.9
 - FIX: Issue #352: Piwik function clash with local plugin version - https://moodle.org/plugins/view.php?plugin=local_analytics.
 - FIX: Issue #356: Incorrect $filename in /pluginfile.php/1/theme_essential/style/<timestamp>/essential.css.
 - FIX: Issue #357: Beside slider option layout issues.
+- FIX: Issue #358: 2.7.9b issues.
 - UPDATE         : moodle/core.less - MDL-47340 & MDL-47097.
 - UPDATE         : moodle/course.less - MDL-47340.
 - UPDATE         : moodle/responsive.less - MDL-47242.

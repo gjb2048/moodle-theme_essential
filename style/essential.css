@@ -16895,14 +16895,14 @@ body .chooserdialogue .moodle-dialogue-wrap .moodle-dialogue-bd {
   border-left: 30px solid white;
   margin-left: 1px;
 }
-.breadcrumb-nav ul.breadcrumb.style1 li.first {
+.breadcrumb-nav ul.breadcrumb.style1 li:first-of-type {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
-.breadcrumb-nav ul.breadcrumb.style1 li.first a {
+.breadcrumb-nav ul.breadcrumb.style1 li:first-of-type a {
   margin-left: -25px;
 }
-.breadcrumb-nav ul.breadcrumb.style1 li.first a:before {
+.breadcrumb-nav ul.breadcrumb.style1 li:first-of-type a:before {
   display: inline-block;
   font-family: FontAwesome;
   content: "\f015 ";
@@ -16942,7 +16942,6 @@ body .chooserdialogue .moodle-dialogue-wrap .moodle-dialogue-bd {
   padding: 2px;
   border-radius: 0px;
   text-shadow: none;
-  background-color: #F5F5F5;
 }
 .breadcrumb-nav ul.breadcrumb.style2 li a {
   margin-right: 3px;
@@ -17054,9 +17053,9 @@ table.calendarmonth.calendartable {
   vertical-align: middle;
 }
 #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption {
-  padding-left: 3%;
+  padding-left: 5%;
 }
-#essentialCarousel.carousel .carousel-inner > .item .carousel-image {
+#essentialCarousel.carousel .carousel-inner > .item.side-caption .carousel-image {
   box-shadow: 0px 0px 8px #222;
   padding: 8px;
   background-color: #fff;
@@ -17077,7 +17076,11 @@ table.calendarmonth.calendartable {
 #essentialCarousel.carousel .carousel-inner .carousel-caption p {
   padding: 0px 20px;
 }
-#essentialCarousel.carousel .carousel-inner.centred .carousel-caption {
+#essentialCarousel.carousel .carousel-inner .carousel-caption p {
+  line-height: 1;
+}
+#essentialCarousel.carousel .carousel-inner.centred .carousel-caption,
+#essentialCarousel.carousel .carousel-inner.centred div.the-side-caption {
   text-align: center;
 }
 #essentialCarousel.carousel .carousel-control {
@@ -17137,9 +17140,6 @@ table.calendarmonth.calendartable {
   #essentialCarousel.carousel .carousel-inner > .item .carousel-caption h4 {
     font-size: 1.2em;
   }
-  #essentialCarousel.carousel .carousel-inner > .item .carousel-caption p {
-    line-height: 1;
-  }
   #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption {
     padding-left: 0;
   }
@@ -17171,7 +17171,6 @@ table.calendarmonth.calendartable {
   }
   #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption {
     height: 260px;
-    text-align: center;
   }
   #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption:before {
     content: '';
@@ -17187,10 +17186,10 @@ table.calendarmonth.calendartable {
     width: 100%;
   }
   #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption h4 {
-    font-size: 24px;
+    font-size: 20px;
   }
   #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption p {
-    font-size: 18px;
+    font-size: 14px;
   }
   #essentialCarousel.carousel .carousel-inner.below > .item {
     height: 345px;
@@ -17209,9 +17208,6 @@ table.calendarmonth.calendartable {
   #essentialCarousel.carousel .carousel-inner > .item .carousel-caption h4 {
     font-size: 1.2em;
   }
-  #essentialCarousel.carousel .carousel-inner > .item .carousel-caption p {
-    line-height: 1;
-  }
 }
 @media (min-width: 992px) {
   #essentialCarousel.carousel .carousel-inner > .item {
@@ -17227,10 +17223,10 @@ table.calendarmonth.calendartable {
     height: 328px;
   }
   #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption h4 {
-    font-size: 30px;
+    font-size: 26px;
   }
   #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption p {
-    font-size: 22px;
+    font-size: 18px;
   }
   #essentialCarousel.carousel .carousel-inner.below > .item {
     height: 428px;
@@ -17259,10 +17255,10 @@ table.calendarmonth.calendartable {
     height: 368px;
   }
   #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption h4 {
-    font-size: 36px;
+    font-size: 32px;
   }
   #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption p {
-    font-size: 24px;
+    font-size: 20px;
   }
   #essentialCarousel.carousel .carousel-inner.below > .item {
     height: 468px;
@@ -17934,6 +17930,9 @@ a.action-icon > i,
 }
 .footerlinks {
   line-height: 15px;
+}
+body.path-admin-setting #page-footer {
+  min-height: 101px;
 }
 /* @group Footer Block Formatting */
 #page-footer .block {

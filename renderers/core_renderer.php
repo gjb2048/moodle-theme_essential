@@ -34,11 +34,11 @@ class theme_essential_core_renderer extends core_renderer
     public function navbar()
     {
         $breadcrumbstyle = theme_essential_get_setting('breadcrumbstyle');
-        if ($breadcrumbstyle == '4') {
-            $breadcrumbstyle = '1'; // Fancy style with no collapse.
-        }
-        $breadcrumbs = html_writer::start_tag('ul', array('class' => "breadcrumb style$breadcrumbstyle"));
         if ($breadcrumbstyle) {
+            if ($breadcrumbstyle == '4') {
+                $breadcrumbstyle = '1'; // Fancy style with no collapse.
+            }
+            $breadcrumbs = html_writer::start_tag('ul', array('class' => "breadcrumb style$breadcrumbstyle"));
             $index = 1;
             foreach ($this->page->navbar->get_items() as $item) {
                 $item->hideicon = true;
@@ -46,6 +46,8 @@ class theme_essential_core_renderer extends core_renderer
                 $index += 1;
             }
             $breadcrumbs .= html_writer::end_tag('ul');
+        } else {
+            $breadcrumbs = html_writer::tag('h2', 'Breadcrumb error');
         }
         return $breadcrumbs;
     }
