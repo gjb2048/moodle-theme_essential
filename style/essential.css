@@ -210,7 +210,6 @@ body.jsenabled .questionflagcheckbox {
   position: relative;
   zoom: 1;
   padding-left: 0.3em;
-  max-width: 40%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -1015,7 +1014,7 @@ bank window's title is prominent enough*/
   margin-top: 0.3em;
 }
 #categoryquestions .questiontext {
-  width: 50%;
+  width: 70%;
 }
 #categoryquestions .questionname {
   width: 50%;
@@ -17053,7 +17052,7 @@ table.calendarmonth.calendartable {
   vertical-align: middle;
 }
 #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption {
-  padding-left: 5%;
+  padding-left: 7%;
 }
 #essentialCarousel.carousel .carousel-inner > .item.side-caption .carousel-image {
   box-shadow: 0px 0px 8px #222;
@@ -17104,6 +17103,7 @@ table.calendarmonth.calendartable {
   padding-bottom: 2px;
   background-color: #fff;
   background-color: rgba(255, 255, 255, 0.5);
+  right: 5px;
 }
 #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption h4 {
   font-size: 14px;
@@ -18923,6 +18923,9 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
 }
 #page-mod-quiz-edit .reorder div.question div.content .questionpreview .fa {
   vertical-align: middle;
+}
+#page-mod-quiz-edit .questionbank select.menucategory {
+  width: 100%;
 }
 .questionbankwindow.block {
   background: white;

@@ -38,6 +38,34 @@ G J Barnard MSc. BSc(Hons)(Sndw). MBCS. CEng. CITP. PGCE.
 Moodle profile | http://moodle.org/user/profile.php?id=442195
 Web profile | http://about.me/gjbarnard
 
+Free Software
+=============
+The Essential theme is 'free' software under the terms of the GNU GPLv3 License, please see 'COPYING.txt'.
+
+It can be obtained for free from:
+http://moodle.org/plugins/view.php?plugin=theme_essential
+and
+https://github.com/gjb2048/moodle-theme_essential/releases
+
+You have all the rights granted to you by the GPLv3 license.  If you are unsure about anything, then the
+FAQ - http://www.gnu.org/licenses/gpl-faq.html - is a good place to look.
+
+If you reuse any of the code then I kindly ask that you make reference to the theme.
+
+If you make improvements or bug fixes then I would appreciate if you would send them back to me by forking from
+https://github.com/gjb2048/moodle-theme_essential and doing a 'Pull Request' so that the rest of the
+Moodle community benefits.
+
+Donations
+=========
+This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider donating by:
+
+PayPal - https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=themmai%40gmail%2ecom&lc=GB&item_name=Essential%20Theme%20Fund&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted
+
+Flattr - https://flattr.com/profile/gjb2048
+
+Donations may allow me to provide you with more or better features in less time.
+
 Required version of Moodle
 ==========================
 This version works with Moodle version 2014051200.00 release 2.7 (Build: 20140512) and above within the 2.7 branch until the
@@ -126,6 +154,7 @@ New in 2.7.9
 - FIX: Issue #356: Incorrect $filename in /pluginfile.php/1/theme_essential/style/<timestamp>/essential.css.
 - FIX: Issue #357: Beside slider option layout issues.
 - FIX: Issue #358: 2.7.9b issues.
+- FIX: Issue #359: Further 2.7.9b issues.
 - UPDATE         : moodle/core.less - MDL-47340 & MDL-47097.
 - UPDATE         : moodle/course.less - MDL-47340.
 - UPDATE         : moodle/responsive.less - MDL-47242.
