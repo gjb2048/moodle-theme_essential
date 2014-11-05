@@ -15,6 +15,52 @@ Cool things to know about the theme.
  - The entire colour scheme can be modified with theme settings
  - The homepage main area is just a label. The theme will ship with custom classes that you can set for tables and links to modify their formatting. No knowledge of code is needed as you can use the text editor to do this. Documentation will be provided outlining what the additional classes are.
 
+Original Author
+===============
+Julian Ridden
+Moodle profile: https://moodle.org/user/profile.php?id=39680
+Web profile:    http://au.linkedin.com/in/eduridden/
+
+Previous Authors
+================
+David Bezemer
+Moodle profile | https://moodle.org/user/profile.php?id=1416592
+Web profile    | http://www.davidbezemer.nl
+
+Maintained by
+=============
+G J Barnard MSc. BSc(Hons)(Sndw). MBCS. CEng. CITP. PGCE.
+Moodle profile | http://moodle.org/user/profile.php?id=442195
+Web profile    | http://about.me/gjbarnard
+
+Free Software
+=============
+The Essential theme is 'free' software under the terms of the GNU GPLv3 License, please see 'COPYING.txt'.
+
+It can be obtained for free from:
+http://moodle.org/plugins/view.php?plugin=theme_essential
+and
+https://github.com/gjb2048/moodle-theme_essential/releases
+
+You have all the rights granted to you by the GPLv3 license.  If you are unsure about anything, then the
+FAQ - http://www.gnu.org/licenses/gpl-faq.html - is a good place to look.
+
+If you reuse any of the code then I kindly ask that you make reference to the theme.
+
+If you make improvements or bug fixes then I would appreciate if you would send them back to me by forking from
+https://github.com/gjb2048/moodle-theme_essential and doing a 'Pull Request' so that the rest of the
+Moodle community benefits.
+
+Donations
+=========
+This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider donating by:
+
+PayPal - https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=themmai%40gmail%2ecom&lc=GB&item_name=Essential%20Theme%20Fund&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted
+
+Flattr - https://flattr.com/profile/gjb2048
+
+Donations may allow me to provide you with more or better features in less time.
+
 Required version of Moodle
 ==========================
 This version works with Moodle version 2013111800 release 2.6 (Build: 20131118) and above within the 2.6 branch until the
@@ -128,6 +174,7 @@ New in 2.6.11
 - NEW: Issue #327: Font file types.
 - NEW: Issue #340: Show slider navigation icons only when mouse in the slider.
 - NEW: Issue #354: Ability to turn FitVids on / off.
+NOTE: This will almost certainly be the last release in the M2.6 branch with the expected arrival of M2.8 on the 10th November 2014.
 
 New in 2.6.10
 =============
