@@ -277,7 +277,7 @@ body.jsenabled .questionflagcheckbox {
   overflow: hidden;
   zoom: 1;
   position: relative;
-  max-width: 24%;
+  max-width: 34%;
   display: inline-block;
   vertical-align: bottom;
   text-overflow: ellipsis;
@@ -1261,7 +1261,7 @@ bank window's title is prominent enough*/
 }
 
 #categoryquestions .questiontext {
-  width: 70%;
+  width: 60%;
 }
 
 #categoryquestions .questionname {
