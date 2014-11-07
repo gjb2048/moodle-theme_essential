@@ -271,6 +271,10 @@ body.jsenabled .questionflagcheckbox {
   vertical-align: bottom;
 }
 
+#page-mod-quiz-edit div.question div.content .questiontext {
+  max-width: 40%;
+}
+
 #page-mod-quiz-edit div.question div.content .questionname,
 #categoryquestions .questionname {
   white-space: nowrap;
