@@ -17500,6 +17500,12 @@ body .course-content ul.topics li.section .content {
 .coursebox > .info > .coursename a {
   background-position: left 0.25em;
 }
+/* @group Course Resource */
+/* mod_resource css */
+.path-mod-resource .resourcecontent {
+  overflow: auto;
+}
+/* @end */
 /* @group Course Footer */
 .section-navigation {
   padding: 2em 0;
