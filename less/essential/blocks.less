@@ -285,4 +285,60 @@
 
 /* @end */
 
+/* @group Footer blocks - copied from Shoelace */
+
+.footer-fluid-span (@columns, @fluidGridColumnWidth, @fluidGridGutterWidth) {
+    width: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1));
+    *width: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) - (.5 / @gridRowWidth * 100 * 1%);
+}
+
+aside.footer-edit .block {
+    .footer-fluid-span(3, @fluidGridColumnWidth, @fluidGridGutterWidth);
+    display: block;
+    float: left;
+    min-height: 240px;
+    max-height: 240px;
+    overflow-y: overlay;
+    margin-left: @fluidGridGutterWidth;
+    .box-sizing(border-box);
+}
+
+// MDL-44074.
+@media (min-width: 768px) and (max-width: 979px) {
+    aside.footer-edit .block {
+        .footer-fluid-span(3, @fluidGridColumnWidth768, @fluidGridGutterWidth768);
+        margin-left: @fluidGridGutterWidth768;
+    }
+}
+
+@media (min-width: 1200px) {
+    aside.footer-edit .block {
+        .footer-fluid-span(3, @fluidGridColumnWidth1200, @fluidGridGutterWidth1200);
+        margin-left: @fluidGridGutterWidth1200;
+    }
+}
+
+// Eliminates need for 'desktop-first-column' but does not work in IE8.
+// Info on: http://www.w3schools.com/cssref/sel_first-of-type.asp
+aside.footer-blocks div.row-fluid div.block:first-of-type {
+    margin-left: 0px;
+}
+
+// Support multiple rows when editing otherwise above works, see: http://www.w3schools.com/cssref/sel_nth-of-type.asp
+.footer-nth(@index) {
+    aside.footer-edit div.block:nth-of-type(@{index}) {
+        margin-left: 0px;
+    }
+}
+
+.footer-nthX (@index) when (@index > 0) {
+    .footer-nth(@index);
+    .footer-nthX(@index - 4);
+}
+
+.footer-nthX(37); // Ten rows.
+
+/* @end */
+
+
 /* @end */

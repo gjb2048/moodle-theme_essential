@@ -163,6 +163,7 @@ New in 2.7.9
 - NEW: Issue #327: Font file types.
 - NEW: Issue #340: Show slider navigation icons only when mouse in the slider.
 - NEW: Issue #354: Ability to turn FitVids on / off.
+- NEW: Issue #364: Add Shoelace dynamic footer blocks.
 
 New in 2.7.8
 ============

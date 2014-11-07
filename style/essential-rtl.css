@@ -20166,6 +20166,84 @@ body .chooserdialogue .moodle-dialogue-wrap .moodle-dialogue-bd {
 
 /* @end */
 
+/* @group Footer blocks - copied from Shoelace */
+
+aside.footer-edit .block {
+  width: 23.40425532%;
+  *width: 23.35106383%;
+  display: block;
+  float: right;
+  min-height: 240px;
+  max-height: 240px;
+  overflow-y: overlay;
+  margin-right: 2.12765957%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  aside.footer-edit .block {
+    width: 22.9281768%;
+    *width: 22.87498531%;
+    margin-right: 2.76243094%;
+  }
+}
+
+@media (min-width: 1200px) {
+  aside.footer-edit .block {
+    width: 23.07692308%;
+    *width: 23.02373159%;
+    margin-right: 2.56410256%;
+  }
+}
+
+aside.footer-blocks div.row-fluid div.block:first-of-type {
+  margin-right: 0px;
+}
+
+aside.footer-edit div.block:nth-of-type(37) {
+  margin-right: 0px;
+}
+
+aside.footer-edit div.block:nth-of-type(33) {
+  margin-right: 0px;
+}
+
+aside.footer-edit div.block:nth-of-type(29) {
+  margin-right: 0px;
+}
+
+aside.footer-edit div.block:nth-of-type(25) {
+  margin-right: 0px;
+}
+
+aside.footer-edit div.block:nth-of-type(21) {
+  margin-right: 0px;
+}
+
+aside.footer-edit div.block:nth-of-type(17) {
+  margin-right: 0px;
+}
+
+aside.footer-edit div.block:nth-of-type(13) {
+  margin-right: 0px;
+}
+
+aside.footer-edit div.block:nth-of-type(9) {
+  margin-right: 0px;
+}
+
+aside.footer-edit div.block:nth-of-type(5) {
+  margin-right: 0px;
+}
+
+aside.footer-edit div.block:nth-of-type(1) {
+  margin-right: 0px;
+}
+
+/* @end */
+
 /* @end */
 
 /* @group Breadcrumb Button */

@@ -983,6 +983,141 @@ class theme_essential_core_renderer extends core_renderer
             return false;
         }
     }
+
+    /**
+     * Get the HTML for blocks in the given region.
+     *
+     * @since 2.5.1 2.6
+     * @param string $region The region to get HTML for.
+     * @param array $classes array of classes for the tag.
+     * @param string $tag Tag to use.
+     * @param int $footer if > 0 then this is a footer block specifying the number of blocks per row, max of '4'.
+     * @return string HTML.
+     */
+    public function essential_blocks($region, $classes = array(), $tag = 'aside', $footer = 0) {
+        $classes = (array) $classes;
+        $classes[] = 'block-region';
+
+        $attributes = array(
+            'id' => 'block-region-' . preg_replace('#[^a-zA-Z0-9_\-]+#', '-', $region),
+            'class' => join(' ', $classes),
+            'data-blockregion' => $region,
+            'data-droptarget' => '1'
+        );
+
+        if ($footer > 0) {
+            $attributes['class'] .= ' footer-blocks';
+            $editing = $this->page->user_is_editing();
+            if ($editing) {
+                $attributes['class'] .= ' footer-edit';
+            }
+            $output = html_writer::tag($tag, $this->essential_blocks_for_region($region, $footer, $editing), $attributes);
+        } else {
+            $output = html_writer::tag($tag, $this->blocks_for_region($region), $attributes);
+        }
+
+        return $output;
+    }
+
+    /**
+     * Output all the blocks in a particular region.
+     *
+     * @param string $region the name of a region on this page.
+     * @param int $blocksperrow Number of blocks per row, if > 4 will be set at 4.
+     * @param boolean $editing If we are editing.
+     * @return string the HTML to be output.
+     */
+    protected function essential_blocks_for_region($region, $blocksperrow, $editing) {
+        $region = $this->page->apply_theme_region_manipulations($region);
+        $blockcontents = $this->page->blocks->get_content_for_region($region, $this);
+        $output = '';
+
+        $blockcount = count($blockcontents);
+
+        if ($blockcount >= 1) {
+            if (!$editing) {
+                $output .= html_writer::start_tag('div', array('class' => 'row-fluid'));
+            }
+            $blocks = $this->page->blocks->get_blocks_for_region($region);
+            $lastblock = null;
+            $zones = array();
+            foreach ($blocks as $block) {
+                $zones[] = $block->title;
+            }
+
+            /*
+             * When editing we want all the blocks to be the same as side-pre / side-post so set by CSS:
+             *
+             * aside.footer-edit .block {
+             *     .footer-fluid-span(3);
+             * }
+             */
+            if (($blocksperrow > 4) || ($editing)) {
+                $blocksperrow = 4; // Will result in a 'span3' when more than one row.
+            }
+            $rows = $blockcount / $blocksperrow; // Maximum blocks per row.
+
+            if (!$editing) {
+                if ($rows <= 1) {
+                    $span = 12 / $blockcount;
+                    if ($span < 1) {
+                        // Should not happen but a fail safe - block will be small so good for screen shots when this happens.
+                        $span = 1;
+                    }
+                } else {
+                    $span = 12 / $blocksperrow;
+                }
+            }
+
+            $currentblockcount = 0;
+            $currentrow = 0;
+            $currentrequiredrow = 1;
+            foreach ($blockcontents as $bc) {
+
+                if (!$editing) { // Using CSS and special 'span3' only when editing.
+                    $currentblockcount++;
+                    if ($currentblockcount > ($currentrequiredrow * $blocksperrow)) {
+                        // Tripping point.
+                        $currentrequiredrow++;
+                        // Break...
+                        $output .= html_writer::end_tag('div');
+                        $output .= html_writer::start_tag('div', array('class' => 'row-fluid'));
+                        // Recalculate span if needed...
+                        $remainingblocks = $blockcount - ($currentblockcount - 1);
+                        if ($remainingblocks < $blocksperrow) {
+                            $span = 12 / $remainingblocks;
+                            if ($span < 1) {
+                                // Should not happen but a fail safe - block will be small so good for screen shots when this happens.
+                                $span = 1;
+                            }
+                        }
+                    }
+
+                    if ($currentrow < $currentrequiredrow) {
+                        $currentrow = $currentrequiredrow;
+                    }
+
+                    // 'desktop-first-column' done in CSS with ':first-of-type' and ':nth-of-type'.
+                    // 'spanX' done in CSS with calculated special width class as fixed at 'span3' for all.
+                    $bc->attributes['class'] .= ' span' . $span;
+                }
+
+                if ($bc instanceof block_contents) {
+                    $output .= $this->block($bc, $region);
+                    $lastblock = $bc->title;
+                } else if ($bc instanceof block_move_target) {
+                    $output .= $this->block_move_target($bc, $zones, $lastblock);
+                } else {
+                    throw new coding_exception('Unexpected type of thing (' . get_class($bc) . ') found in list of block contents.');
+                }
+            }
+            if (!$editing) {
+                $output .= html_writer::end_tag('div');
+            }
+        }
+
+        return $output;
+    }
 }
 
 ?>
