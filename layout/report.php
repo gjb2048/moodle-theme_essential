@@ -40,7 +40,7 @@ require_once(dirname(__FILE__) . '/includes/header.php'); ?>
                 <div class="row-fluid">
                     <section id="region-main" class="span12">
                     <?php
-                    if ($COURSE->id > 1) {
+                    if (($COURSE->id > 1) && (essential_report_page_has_title() == true)) {
                         echo $OUTPUT->heading(format_string($COURSE->fullname), 1, 'coursetitle');
                         echo '<div class="bor"></div>';
                     }

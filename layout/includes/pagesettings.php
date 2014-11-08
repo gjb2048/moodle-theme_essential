@@ -112,6 +112,21 @@ $haslogo = theme_essential_get_setting('logo');
 /* Group Content */
 $hasboringlayout = theme_essential_get_setting('layout');
 
+/* Group Report Page Title */
+function essential_report_page_has_title() {
+    global $PAGE;
+    $hastitle = true;
+
+    switch ($PAGE->pagetype) {
+        case 'grade-report-overview-index':
+            $hastitle = false;
+            break;
+        default: break;
+    }
+
+    return $hastitle;
+}
+
 /* Group Page Footer Region */
 function essential_has_footer_region() {
     global $PAGE;
