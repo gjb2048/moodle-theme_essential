@@ -21034,6 +21034,11 @@ body .course-content ul.topics li.section .content {
   background-position: right 0.25em;
 }
 
+.coursebox .content .summary.noteachers {
+  width: 100%;
+  float: none;
+}
+
 /* @group Course Resource */
 
 /* mod_resource css */

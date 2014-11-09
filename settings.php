@@ -846,6 +846,14 @@ if (is_siteadmin()) {
 
     $temp = new admin_settingpage('theme_essential_frontpage', get_string('frontpageheading', 'theme_essential'));
 
+    $name = 'theme_essential/courselistteachericon';
+    $title = get_string('courselistteachericon', 'theme_essential');
+    $description = get_string('courselistteachericondesc', 'theme_essential');
+    $default = 'graduation-cap';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     $temp->add(new admin_setting_heading('theme_essential_frontcontent', get_string('frontcontentheading', 'theme_essential'),
         ''));
 

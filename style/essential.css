@@ -17500,6 +17500,10 @@ body .course-content ul.topics li.section .content {
 .coursebox > .info > .coursename a {
   background-position: left 0.25em;
 }
+.coursebox .content .summary.noteachers {
+  width: 100%;
+  float: none;
+}
 /* @group Course Resource */
 /* mod_resource css */
 .path-mod-resource .resourcecontent {

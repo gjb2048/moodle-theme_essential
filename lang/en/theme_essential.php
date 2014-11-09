@@ -129,7 +129,7 @@ $string['contactinfo'] = 'Contact information';
 $string['contactinfodesc'] = 'Enter your contact information';
 
 $string['siteicon'] = 'Site icon';
-$string['siteicondesc'] = 'Do not have a logo? Enter the name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "fa-". ';
+$string['siteicondesc'] = 'Do not have a logo? Enter the name of the icon you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "fa-". ';
 
 $string['layout'] = 'Use a standard course layout';
 $string['layoutdesc'] = 'This theme is designed to put both block columns on the side.  If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
@@ -193,7 +193,7 @@ $string['readme_desc'] = 'Please {$a->url} containing more information about the
 $string['readme_click'] = 'click for README.txt';
 
 
-/* CustomMenu */
+/* Custom Menu */
 $string['mycoursesinfo'] = 'Enrolled courses menu';
 $string['mycoursesinfodesc'] = 'Displays a dynamic list of enrolled courses to the user.';
 $string['displaymycourses'] = 'Display enrolled courses';
@@ -311,6 +311,9 @@ $string['enablealternativethemecolorsdesc'] = 'If enabled, the user will be able
 $string['frontpageheading'] = 'Front page';
 $string['frontpageheadingdesc'] = 'Configure here what additional items you want to show on the front page.';
 
+$string['courselistteachericon'] = 'Course list teacher icon';
+$string['courselistteachericondesc'] = 'Name of the icon you wish to use or empty for none.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after "fa-", e.g. "star".';
+
 $string['frontcontentheading'] = 'Front page content area';
 $string['frontcontent'] = 'Enable front page content area';
 $string['frontcontentdesc'] = 'If enabled this adds a custom content area between the Slide show and the Marketing boxes for your own custom content.';
@@ -353,6 +356,7 @@ $string['slidecaptionoptionsdesc'] = 'Where the captions should appear in releat
 $string['slidecaptionbeside'] = 'Beside';
 $string['slidecaptionontop'] = 'On top';
 $string['slidecaptionunderneath'] = 'Underneath';
+
 // Backward compatibility.
 $string['slidecaptionbelow'] = 'Slide caption below image';
 $string['slidecaptionbelowdesc'] = 'If the slide caption should be below the image.';
@@ -401,7 +405,7 @@ $string['marketing3'] = 'Marketing spot three';
 $string['marketingtitle'] = 'Title';
 $string['marketingtitledesc'] = 'Title to show in this marketing spot';
 $string['marketingicon'] = 'Icon';
-$string['marketingicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after "fa-", e.g. "star".';
+$string['marketingicondesc'] = 'Name of the icon you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after "fa-", e.g. "star".';
 $string['marketingimage'] = 'Image';
 $string['marketingimagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot';
 $string['marketingcontent'] = 'Content';
