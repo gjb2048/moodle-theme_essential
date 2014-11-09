@@ -48,9 +48,7 @@ Gareth J. Barnard<br>
 <h3>Donations</h3>
 <p>This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider donating by:
 <h4>PayPal</h4>
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=themmai%40gmail%2ecom&lc=GB&item_name=Essential%20Theme%20Fund&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted" target="_blank">
-click here to donate.
-</a>
+<p>Please contact me via my <a href="http://moodle.org/user/profile.php?id=442195" target="_blank">\'Moodle profile\'</a> for details as I am an individual and therefore am unable to have \'donation\' / \'buy me now\' buttons under their terms.</p>
 <h4>Flattr</h4>
 <a href="https://flattr.com/profile/gjb2048" target="_blank">
 clicking here to donate.
@@ -180,11 +178,11 @@ $string['dontdisplay'] = 'Never show';
 
 // Donate
 $string['donate_title'] = 'Essential donations';
-$string['donate_desc'] = 'Please ';
+$string['donate_desc'] = 'Please donate via PayPal by contacting me via my \'';
 $string['donate_desc2'] = ' to keep the Essential development going, or simply to express your gratitude.';
-$string['paypal_desc'] = '{$a->url} or ';
+$string['paypal_desc'] = '{$a->url}\' for details as I am an individual and therefore am unable to have \'donation\' / \'buy me now\' buttons under their terms or ';
 $string['flattr_desc'] = '{$a->url}';
-$string['paypal_click'] = 'donate via PayPal';
+$string['paypal_click'] = 'Moodle profile';
 $string['flattr_click'] = 'donate via Flattr';
 
 // Readme

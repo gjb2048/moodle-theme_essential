@@ -34,7 +34,7 @@ if (is_siteadmin()) {
     /* Generic Settings */
     $temp = new admin_settingpage('theme_essential_generic', get_string('genericsettings', 'theme_essential'));
 
-    $donate = new moodle_url('https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=themmai%40gmail%2ecom&lc=GB&item_name=Essential%20Theme%20Fund&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted');
+    $donate = new moodle_url('http://moodle.org/user/profile.php?id=442195');
     $donate = html_writer::link($donate, get_string('paypal_click', 'theme_essential'), array('target' => '_blank'));
 
     $flattr = new moodle_url('https://flattr.com/profile/gjb2048');
