@@ -146,10 +146,11 @@ class theme_essential_core_course_renderer extends core_course_renderer
         }
         $content = '';
 
+        $coursehascontacts = $course->has_course_contacts();
         // Display course summary.
         if ($course->has_summary()) {
             $summaryclass = 'summary';
-            if (!$course->has_course_contacts()) {
+            if ($coursehascontacts == false) {
                 $summaryclass .= ' noteachers';
             }
             $content .= html_writer::start_tag('div', array('class' => $summaryclass));
@@ -181,7 +182,7 @@ class theme_essential_core_course_renderer extends core_course_renderer
         $content .= $contentimages. $contentfiles;
 
         // display course contacts. See course_in_list::get_course_contacts()
-        if ($course->has_course_contacts()) {
+        if ($coursehascontacts) {
             $content .= html_writer::start_tag('ul', array('class' => 'teachers'));
             foreach ($course->get_course_contacts() as $userid => $coursecontact) {
                 $faiconsetting = theme_essential_get_setting('courselistteachericon');

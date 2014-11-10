@@ -20961,6 +20961,11 @@ table.calendarmonth.calendartable {
   text-decoration: none;
 }
 
+.categoryicons .course_category_tree .content .teachers .fa {
+  display: inline;
+  font-size: inherit;
+}
+
 .categoryicons .jsenabled .course_category_tree .controls {
   display: none;
 }
@@ -21037,6 +21042,10 @@ body .course-content ul.topics li.section .content {
 .coursebox .content .summary.noteachers {
   width: 100%;
   float: none;
+}
+
+.coursebox .content .teachers .fa {
+  font-size: inherit;
 }
 
 /* @group Course Resource */
