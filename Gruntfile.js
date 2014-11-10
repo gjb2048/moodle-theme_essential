@@ -112,12 +112,12 @@ module.exports = function(grunt) {
         THEMEDIR        = path.basename(path.resolve('.'));
 
     // Production / development.
-    var build = grunt.option('build') || 'p';
+    var build = grunt.option('build') || 'd'; // Development for 'watch' task.
 
     if ((build != 'p') && (build != 'd')) {
         build = 'p';
         console.log('-build switch only accepts \'p\' for production or \'d\' for development,');
-        console.log('e.g. -build=p or -build=d.  Defaulting to production.');
+        console.log('e.g. -build=p or -build=d.  Defaulting to development.');
     }
 
     decachephp = '../../admin/cli/purge_caches.php';

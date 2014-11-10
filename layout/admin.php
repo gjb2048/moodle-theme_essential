@@ -24,7 +24,11 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(__FILE__) . '/includes/header.php'); ?>
+require_once(dirname(__FILE__) . '/includes/header.php');
+
+$footerregion = essential_has_footer_region(); // In pagesettings.php.
+
+?>
 
 <div id="page" class="container-fluid">
     <div id="page-navbar" class="clearfix row-fluid">
@@ -38,22 +42,38 @@ require_once(dirname(__FILE__) . '/includes/header.php'); ?>
         <div id="page-content" class="row-fluid">
             <div id="<?php echo $regionbsid ?>" class="span12">
                 <div class="row-fluid">
-                    <section id="region-main" class="span12">
-                    <?php
-                    if (($COURSE->id > 1) && (essential_report_page_has_title() == true)) {
-                        echo $OUTPUT->heading(format_string($COURSE->fullname), 1, 'coursetitle');
-                        echo '<div class="bor"></div>';
-                    }
-                    echo $OUTPUT->course_content_header();
-                    echo $OUTPUT->main_content();
-                    if (empty($PAGE->layout_options['nocoursefooter'])) {
-                        echo $OUTPUT->course_content_footer();
+                    <?php if ($footerregion) { ?>
+                        <section id="region-main" class="span12">
+                    <?php } else if (($hasboringlayout && $left) || (!$left)) { ?>
+                        <section id="region-main" class="span9 pull-right">
+                    <?php } else { ?>
+                        <section id="region-main" class="span9 desktop-first-column">
+                    <?php }
+                            if ($COURSE->id > 1) {
+                                echo $OUTPUT->heading(format_string($COURSE->fullname), 1, 'coursetitle');
+                                echo '<div class="bor"></div>';
+                            }
+                            echo $OUTPUT->course_content_header();
+                            echo $OUTPUT->main_content();
+                            if (empty($PAGE->layout_options['nocoursefooter'])) {
+                                echo $OUTPUT->course_content_footer();
+                            }
+                            ?>
+                        </section>
+                    <?php 
+                    if (!$footerregion) {
+                        if (($hasboringlayout && $left) || (!$left)) {
+                            echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column');
+                        } else {
+                            echo $OUTPUT->blocks('side-pre', 'span3 pull-right');
+                        }
                     }
                     ?>
-                    </section>
                 </div>
                 <?php 
-                echo $OUTPUT->essential_blocks('side-pre', 'row-fluid', 'aside', 4);
+                if ($footerregion) {
+                    echo $OUTPUT->essential_blocks('side-pre', 'row-fluid', 'aside', 4);
+                }
                 ?>
             </div>
         </div>

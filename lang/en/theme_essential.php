@@ -46,16 +46,20 @@ Work taken over on the 9th October 2014 by:<br>
 Gareth J. Barnard<br>
 </p>
 <h3>Donations</h3>
-<p>This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider donating by
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=themmai%40gmail%2ecom&lc=GB&item_name=Essential%20Theme%20Fund&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted" target="_blank">
-     clicking here to donate.
-</a><br>Donations may allow us to provide you with more or better features in less time.</p>
+<p>This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider donating by:
+<h4>PayPal</h4>
+<p>Please contact me via my <a href="http://moodle.org/user/profile.php?id=442195" target="_blank">\'Moodle profile\'</a> for details as I am an individual and therefore am unable to have \'donation\' / \'buy me now\' buttons under their terms.</p>
+<h4>Flattr</h4>
+<a href="https://flattr.com/profile/gjb2048" target="_blank">
+clicking here to donate.
+</a>
+<br>Donations may allow me to provide you with more or better features in less time.</p>
 </div></div>';
 
 /* General */
 $string['genericsettings'] = 'General';
 $string['generalheadingsub'] = 'General settings';
-$string['generalheadingdesc'] = 'Configure the global settings for the theme here. You will find both layout and visual options here.';
+$string['generalheadingdesc'] = 'Configure the general settings for the theme here.';
 
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
@@ -69,7 +73,8 @@ $string['logodesc'] = 'Please upload your custom logo here if you want to add it
                        <br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
 
 /* Font settings */
-$string['fontheading'] = 'Font settings';
+$string['fontsettings'] = 'Font';
+$string['fontheadingsub'] = 'Font settings';
 $string['fontheadingdesc'] = 'Select and enter the fonts that you want to use in your Moodle environment.';
 $string['fontselect'] = 'Font type selector';
 $string['fontselectdesc'] = 'Choose from the list of available font types. Please save to show the options for your choice.';
@@ -83,9 +88,19 @@ $string['fontnamebodydesc'] = 'Enter the exact name of the font to use for all o
 
 /* Font files */
 $string['fontfiles'] = 'Font files';
-$string['fontfilesdesc'] = 'Upload your font files here, only TTF files are supported.';
+$string['fontfilesdesc'] = 'Upload your font files here.';
 $string['fontfilettfheading'] = 'Heading TTF font file';
+$string['fontfileotfheading'] = 'Heading OTF font file';
+$string['fontfilewoffheading'] = 'Heading WOFF font file';
+$string['fontfilewofftwoheading'] = 'Heading WOFF2 font file';
+$string['fontfileeotheading'] = 'Heading EOT font file';
+$string['fontfilesvgheading'] = 'Heading SVG font file';
 $string['fontfilettfbody'] = 'Body TTF font file';
+$string['fontfileotfbody'] = 'Body OTF font file';
+$string['fontfilewoffbody'] = 'Body WOFF font file';
+$string['fontfilewofftwobody'] = 'Body WOFF2 font file';
+$string['fontfileeotbody'] = 'Body EOT font file';
+$string['fontfilesvgbody'] = 'Body SVG font file';
 
 
 $string['fontcharacterset'] = 'Google font additional character set';
@@ -112,13 +127,16 @@ $string['contactinfo'] = 'Contact information';
 $string['contactinfodesc'] = 'Enter your contact information';
 
 $string['siteicon'] = 'Site icon';
-$string['siteicondesc'] = 'Do not have a logo? Enter the name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "fa-". ';
+$string['siteicondesc'] = 'Do not have a logo? Enter the name of the icon you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "fa-". ';
 
 $string['layout'] = 'Use a standard course layout';
 $string['layoutdesc'] = 'This theme is designed to put both block columns on the side.  If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
 
 $string['oldnavbar'] = 'Use the old navbar position';
 $string['oldnavbardesc'] = 'Enable this option to use the old navbar position.';
+
+$string['fitvids'] = 'Use FitVids';
+$string['fitvidsdesc'] = 'Enable FitVids (fitvidsjs.com) to make your embedded videos responsive.  If FitVids is on and you want a video to be excluded then add \'class="fitvidsignore"\' to the \'iframe\' tag in the HTML mode of the editor.  For example: \'iframe class="fitvidsignore" width="420" height="315" src="//www.youtube.com/embed/enmEmym85xc" frameborder="0" allowfullscreen=""></iframe\'.';
 
 $string['left'] = 'Left';
 $string['right'] = 'Right';
@@ -160,8 +178,12 @@ $string['dontdisplay'] = 'Never show';
 
 // Donate
 $string['donate_title'] = 'Essential donations';
-$string['donate_desc'] = 'Please {$a->url} to keep the Essential development going, or simply expressing your gratitude.';
-$string['donate_click'] = 'click to donate';
+$string['donate_desc'] = 'Please donate via PayPal by contacting me via my \'';
+$string['donate_desc2'] = ' to keep the Essential development going, or simply to express your gratitude.';
+$string['paypal_desc'] = '{$a->url}\' for details as I am an individual and therefore am unable to have \'donation\' / \'buy me now\' buttons under their terms or ';
+$string['flattr_desc'] = '{$a->url}';
+$string['paypal_click'] = 'Moodle profile';
+$string['flattr_click'] = 'donate via Flattr';
 
 // Readme
 $string['readme_title'] = 'Essential read-me';
@@ -169,7 +191,7 @@ $string['readme_desc'] = 'Please {$a->url} containing more information about the
 $string['readme_click'] = 'click for README.txt';
 
 
-/* CustomMenu */
+/* Custom Menu */
 $string['mycoursesinfo'] = 'Enrolled courses menu';
 $string['mycoursesinfodesc'] = 'Displays a dynamic list of enrolled courses to the user.';
 $string['displaymycourses'] = 'Display enrolled courses';
@@ -203,6 +225,7 @@ $string['coursegrades'] = 'Course grades';
 $string['breadcrumbstyle'] = 'Breadcrumb style';
 $string['breadcrumbstyledesc'] = 'Here you can change the style of the breadcrumbs.';
 $string['breadcrumbstyled'] = 'Fancy';
+$string['breadcrumbstylednocollapse'] = 'Fancy with no collapse';
 $string['breadcrumbsimple'] = 'Simple';
 $string['breadcrumbthin'] = 'Thin';
 $string['nobreadcrumb'] = 'Hide';
@@ -286,6 +309,9 @@ $string['enablealternativethemecolorsdesc'] = 'If enabled, the user will be able
 $string['frontpageheading'] = 'Front page';
 $string['frontpageheadingdesc'] = 'Configure here what additional items you want to show on the front page.';
 
+$string['courselistteachericon'] = 'Course list teacher icon';
+$string['courselistteachericondesc'] = 'Name of the icon you wish to use or empty for none.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after "fa-", e.g. "star".';
+
 $string['frontcontentheading'] = 'Front page content area';
 $string['frontcontent'] = 'Enable front page content area';
 $string['frontcontentdesc'] = 'If enabled this adds a custom content area between the Slide show and the Marketing boxes for your own custom content.';
@@ -323,6 +349,13 @@ $string['slideintervaldesc'] = 'Slide transition interval in milliseconds.';
 $string['slidecolor'] = 'Slide text colour';
 $string['slidecolordesc'] = 'What colour the slide caption text should be.';
 
+$string['slidecaptionoptions'] = 'Slide caption options';
+$string['slidecaptionoptionsdesc'] = 'Where the captions should appear in releation to the image.';
+$string['slidecaptionbeside'] = 'Beside';
+$string['slidecaptionontop'] = 'On top';
+$string['slidecaptionunderneath'] = 'Underneath';
+
+// Backward compatibility.
 $string['slidecaptionbelow'] = 'Slide caption below image';
 $string['slidecaptionbelowdesc'] = 'If the slide caption should be below the image.';
 
@@ -370,7 +403,7 @@ $string['marketing3'] = 'Marketing spot three';
 $string['marketingtitle'] = 'Title';
 $string['marketingtitledesc'] = 'Title to show in this marketing spot';
 $string['marketingicon'] = 'Icon';
-$string['marketingicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after "fa-", e.g. "star".';
+$string['marketingicondesc'] = 'Name of the icon you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after "fa-", e.g. "star".';
 $string['marketingimage'] = 'Image';
 $string['marketingimagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot';
 $string['marketingcontent'] = 'Content';

@@ -38,6 +38,34 @@ G J Barnard MSc. BSc(Hons)(Sndw). MBCS. CEng. CITP. PGCE.
 Moodle profile | http://moodle.org/user/profile.php?id=442195
 Web profile | http://about.me/gjbarnard
 
+Free Software
+=============
+The Essential theme is 'free' software under the terms of the GNU GPLv3 License, please see 'COPYING.txt'.
+
+It can be obtained for free from:
+http://moodle.org/plugins/view.php?plugin=theme_essential
+and
+https://github.com/gjb2048/moodle-theme_essential/releases
+
+You have all the rights granted to you by the GPLv3 license.  If you are unsure about anything, then the
+FAQ - http://www.gnu.org/licenses/gpl-faq.html - is a good place to look.
+
+If you reuse any of the code then I kindly ask that you make reference to the theme.
+
+If you make improvements or bug fixes then I would appreciate if you would send them back to me by forking from
+https://github.com/gjb2048/moodle-theme_essential and doing a 'Pull Request' so that the rest of the
+Moodle community benefits.
+
+Donations
+=========
+This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider donating by:
+
+PayPal - Please contact me via my 'Moodle profile' (above) for details as I am an individual and therefore am unable to have 'donation' / 'buy me now' buttons under their terms.
+
+Flattr - https://flattr.com/profile/gjb2048
+
+Donations may allow me to provide you with more or better features in less time.
+
 Required version of Moodle
 ==========================
 This version works with Moodle version 2014051200.00 release 2.7 (Build: 20140512) and above within the 2.7 branch until the
@@ -95,6 +123,11 @@ do so:
     Default'.
 9.  Put Moodle out of 'Maintenance mode' under 'Home -> Administration -> Site administration -> Server -> Maintenance mode'.
 
+Videos and FitVids
+==================
+Essential uses FitVids.js - http://fitvidsjs.com/ - to make embedded videos responsive.  If you do not want this feature for a particular
+video, then please add the class 'fitvidsignore' to the video element.
+
 Reporting issues
 ================
 Before reporting an issue, please ensure that you are running the latest version for your release of Moodle.  It is essential
@@ -109,13 +142,39 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
+New in 2.7.9
+============
+- FIX: Issue #326: Submit panel overlaps the message input area.
+- FIX: Issue #329: Social icons in mobile view showing odd behaviour.
+- FIX: Issue #330: Slider caption below causes jump.
+- FIX: Issue #346: Affix header height when using the old navbar setting.
+- FIX: Issue #349: Background missing in private messages.
+- FIX: Issue #350: Background missing after posting to forum.
+- FIX: Issue #352: Piwik function clash with local plugin version - https://moodle.org/plugins/view.php?plugin=local_analytics.
+- FIX: Issue #356: Incorrect $filename in /pluginfile.php/1/theme_essential/style/<timestamp>/essential.css.
+- FIX: Issue #357: Beside slider option layout issues.
+- FIX: Issue #358: 2.7.9b issues.
+- FIX: Issue #359: Further 2.7.9b issues.
+- FIX: Issue #361: Tweak to quiz editing in 2.7.9b.
+- FIX: Issue #366: My Grades view includes course name.
+- FIX: Issue #367: Course discription summary box not wide enough.
+- FIX: Issue #370: Fancy breadcrumb hidden courses are strikethrough.
+- UPDATE         : moodle/core.less - MDL-47340 & MDL-47097.
+- UPDATE         : moodle/course.less - MDL-47340.
+- UPDATE         : moodle/responsive.less - MDL-47242.
+- NEW: Issue #247: Provide option to prevent automatic collapse for breadcrumbs.
+- NEW: Issue #327: Font file types.
+- NEW: Issue #340: Show slider navigation icons only when mouse in the slider.
+- NEW: Issue #354: Ability to turn FitVids on / off.
+- NEW: Issue #364: Add Shoelace dynamic footer blocks.
+
 New in 2.7.8
 ============
 - FIX: Issue #248: Navbar overlay on activity selection popup.
 - FIX: Issue #252: LESS background: transparent; being compiled as background: 0 0;
 - FIX: Issue #254: Gradebook alignment.
 - FIX: Issue #257: Header options cause navbar to display incorrectly.
-- FIX: Issue #258: Message menu text wraping in IE 11.
+- FIX: Issue #258: Message menu text wrapping in IE 11.
 - FIX: Issue #259: In course page icon not appears.
 - FIX: Issue #260: Preview Questions.
 - FIX: Issue #263: Group Image alignment in Forums.

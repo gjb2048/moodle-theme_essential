@@ -62,6 +62,25 @@ body {  // Inside a body tag so will be more specific and override core plugin s
     background-position: left 0.25em;
 }
 
+.coursebox .content {
+    .summary.noteachers { // Class 'noteachers' is an Essential special in the overridded core_course_renderer.php.
+        width: 100%;
+        float: none;
+    }
+    .teachers .fa {
+        font-size: inherit;
+    }
+}
+
+/* @group Course Resource */
+
+/* mod_resource css */
+.path-mod-resource .resourcecontent {
+    overflow: auto;
+}
+
+/* @end */
+
 /* @group Course Footer */
 
 .section-navigation {

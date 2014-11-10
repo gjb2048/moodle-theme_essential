@@ -83,9 +83,7 @@ $headingfont = urlencode(theme_essential_get_setting('fontnameheading'));
 $bodyfont = urlencode(theme_essential_get_setting('fontnamebody'));
 
 
-
 /* Group Header */
-
 $hassocialnetworks = (
     theme_essential_get_setting('facebook') ||
     theme_essential_get_setting('twitter') ||
@@ -111,18 +109,42 @@ if ($hassocialnetworks || $hasmobileapps) {
 $oldnavbar = theme_essential_get_setting('oldnavbar');
 $haslogo = theme_essential_get_setting('logo');
 
-
-/* Group Frontpage */
-$alertinfo = '<span class="fa-stack "><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-info fa-stack-1x fa-inverse"></i></span>';
-$alerterror = '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-warning fa-stack-1x fa-inverse"></i></span>';
-$alertsuccess = '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-bullhorn fa-stack-1x fa-inverse"></i></span>';
-
 /* Group Content */
 $hasboringlayout = theme_essential_get_setting('layout');
+
+/* Group Report Page Title */
+function essential_report_page_has_title() {
+    global $PAGE;
+    $hastitle = true;
+
+    switch ($PAGE->pagetype) {
+        case 'grade-report-overview-index':
+            $hastitle = false;
+            break;
+        default: break;
+    }
+
+    return $hastitle;
+}
+
+/* Group Page Footer Region */
+function essential_has_footer_region() {
+    global $PAGE;
+    $hasregion = false;
+
+    switch ($PAGE->pagetype) {
+        case 'mod-quiz-edit':
+            $hasregion = true;
+            break;
+        default: break;
+    }
+
+    return $hasregion;
+}
 
 /* Group Footer */
 $hascopyright = theme_essential_get_setting('copyright', true);
 $hasfootnote = theme_essential_get_setting('footnote', 'format_text');
 
 /* Group Breadcrumb */
-$breadcrumbanimate = theme_essential_get_setting('breadcrumbstyle');
+$breadcrumbstyle = theme_essential_get_setting('breadcrumbstyle');

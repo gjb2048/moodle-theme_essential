@@ -1,4 +1,5 @@
 <?php
+
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -23,9 +24,7 @@
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-function theme_essential_set_fontwww($css)
-{
+function theme_essential_set_fontwww($css) {
     global $CFG;
     $fontwww = preg_replace("(https?:)", "", $CFG->wwwroot . '/theme/essential/fonts/');
 
@@ -39,8 +38,7 @@ function theme_essential_set_fontwww($css)
     return $css;
 }
 
-function theme_essential_get_setting($setting, $format = false)
-{
+function theme_essential_get_setting($setting, $format = false) {
     static $theme;
     if (empty($theme)) {
         $theme = theme_config::load('essential');
@@ -56,20 +54,18 @@ function theme_essential_get_setting($setting, $format = false)
     }
 }
 
-function theme_essential_set_logo($css, $logo)
-{
+function theme_essential_set_logo($css, $logo) {
     $tag = '[[setting:logo]]';
     if (!($logo)) {
         $replacement = 'none';
     } else {
-        $replacement = 'url(\''.$logo.'\')';
+        $replacement = 'url(\'' . $logo . '\')';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
 
-function theme_essential_get_title($location)
-{
+function theme_essential_get_title($location) {
     global $CFG, $SITE;
     $title = '';
     if ($location === 'navbar') {
@@ -79,13 +75,16 @@ function theme_essential_get_title($location)
                 return false;
                 break;
             case 1:
-                $title = '<a class="brand" href="' . $url . '">' . format_string($SITE->fullname, true, array('context' => context_course::instance(SITEID))) . '</a>';
+                $title = '<a class="brand" href="' . $url . '">' . format_string($SITE->fullname, true,
+                                array('context' => context_course::instance(SITEID))) . '</a>';
                 break;
             case 2:
-                $title = '<a class="brand" href="' . $url . '">' . format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))) . '</a>';
+                $title = '<a class="brand" href="' . $url . '">' . format_string($SITE->shortname, true,
+                                array('context' => context_course::instance(SITEID))) . '</a>';
                 break;
             default:
-                $title = '<a class="brand" href="' . $url . '">' . format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))) . '</a>';
+                $title = '<a class="brand" href="' . $url . '">' . format_string($SITE->shortname, true,
+                                array('context' => context_course::instance(SITEID))) . '</a>';
                 break;
         }
     } else if ($location === 'header') {
@@ -94,17 +93,21 @@ function theme_essential_get_title($location)
                 return false;
                 break;
             case 1:
-                $title = '<h1 id="title">' . format_string($SITE->fullname, true, array('context' => context_course::instance(SITEID))) . '</h1>';
+                $title = '<h1 id="title">' . format_string($SITE->fullname, true,
+                                array('context' => context_course::instance(SITEID))) . '</h1>';
                 break;
             case 2:
-                $title = '<h1 id="title">' . format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))) . '</h1>';
+                $title = '<h1 id="title">' . format_string($SITE->shortname, true,
+                                array('context' => context_course::instance(SITEID))) . '</h1>';
                 break;
             case 3:
-                $title = '<h1 id="smalltitle">' . format_string($SITE->fullname, true, array('context' => context_course::instance(SITEID))) . '</h2>';
+                $title = '<h1 id="smalltitle">' . format_string($SITE->fullname, true,
+                                array('context' => context_course::instance(SITEID))) . '</h2>';
                 $title .= '<h2 id="subtitle">' . strip_tags($SITE->summary) . '</h3>';
                 break;
             case 4:
-                $title = '<h1 id="smalltitle">' . format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))) . '</h2>';
+                $title = '<h1 id="smalltitle">' . format_string($SITE->shortname, true,
+                                array('context' => context_course::instance(SITEID))) . '</h2>';
                 $title .= '<h2 id="subtitle">' . strip_tags($SITE->summary) . '</h3>';
                 break;
             default:
@@ -114,8 +117,7 @@ function theme_essential_get_title($location)
     return $title;
 }
 
-function theme_essential_edit_button($section)
-{
+function theme_essential_edit_button($section) {
     global $PAGE, $CFG;
     if ($PAGE->user_is_editing() && is_siteadmin()) {
         $url = preg_replace("(https?:)", "", $CFG->wwwroot . '/admin/settings.php?section=');
@@ -152,8 +154,7 @@ function theme_essential_get_csswww() {
  * @param array $options
  * @return bool
  */
-function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array())
-{
+function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
     static $theme;
     if (empty($theme)) {
         $theme = theme_config::load('essential');
@@ -196,11 +197,11 @@ function theme_essential_serve_css($filename) {
     } else {
         $thestylepath = $CFG->dirroot . '/theme/essential/style/';
     }
-    $thesheet = $thestylepath.$filename;
+    $thesheet = $thestylepath . $filename;
 
     /* http://css-tricks.com/snippets/php/intelligent-php-cache-control/ - rather than /lib/csslib.php as it is a static file who's
-       contents should only change if it is rebuilt.  But! There should be no difference with TDM on so will see for the moment if
-       that decision is a factor. */
+      contents should only change if it is rebuilt.  But! There should be no difference with TDM on so will see for the moment if
+      that decision is a factor. */
 
     $etagfile = md5_file($thesheet);
     // File.
@@ -209,45 +210,44 @@ function theme_essential_serve_css($filename) {
     $ifmodifiedsince = (isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) ? $_SERVER['HTTP_IF_MODIFIED_SINCE'] : false);
     $etagheader = (isset($_SERVER['HTTP_IF_NONE_MATCH']) ? trim($_SERVER['HTTP_IF_NONE_MATCH']) : false);
 
-    if ((($ifmodifiedsince) && (strtotime($ifmodifiedsince)==$lastmodified)) || $etagheader == $etagfile) {
+    if ((($ifmodifiedsince) && (strtotime($ifmodifiedsince) == $lastmodified)) || $etagheader == $etagfile) {
         theme_essential_send_unmodified($lastmodified, $etagfile);
     }
     theme_essential_send_cached_css($thestylepath, $filename, $lastmodified, $etagfile);
 }
 
 function theme_essential_send_unmodified($lastmodified, $etag) {
-    $lifetime = 60*60*24*60;
+    $lifetime = 60 * 60 * 24 * 60;
     header('HTTP/1.1 304 Not Modified');
-    header('Expires: '. gmdate('D, d M Y H:i:s', time() + $lifetime) .' GMT');
-    header('Cache-Control: public, max-age='.$lifetime);
+    header('Expires: ' . gmdate('D, d M Y H:i:s', time() + $lifetime) . ' GMT');
+    header('Cache-Control: public, max-age=' . $lifetime);
     header('Content-Type: text/css; charset=utf-8');
-    header('Etag: "'.$etag.'"');
+    header('Etag: "' . $etag . '"');
     if ($lastmodified) {
-        header('Last-Modified: '. gmdate('D, d M Y H:i:s', $lastmodified) .' GMT');
+        header('Last-Modified: ' . gmdate('D, d M Y H:i:s', $lastmodified) . ' GMT');
     }
     die;
 }
 
 function theme_essential_send_cached_css($path, $filename, $lastmodified, $etag) {
     global $CFG;
-    require_once($CFG->dirroot.'/lib/configonlylib.php'); // For min_enable_zlib_compression().
-
+    require_once($CFG->dirroot . '/lib/configonlylib.php'); // For min_enable_zlib_compression().
     // 60 days only - the revision may get incremented quite often.
-    $lifetime = 60*60*24*60;
+    $lifetime = 60 * 60 * 24 * 60;
 
-    header('Etag: "'.$etag.'"');
-    header('Content-Disposition: inline; filename="$filename"');
-    header('Last-Modified: '. gmdate('D, d M Y H:i:s', $lastmodified) .' GMT');
-    header('Expires: '. gmdate('D, d M Y H:i:s', time() + $lifetime) .' GMT');
+    header('Etag: "' . $etag . '"');
+    header('Content-Disposition: inline; filename="'.$filename.'"');
+    header('Last-Modified: ' . gmdate('D, d M Y H:i:s', $lastmodified) . ' GMT');
+    header('Expires: ' . gmdate('D, d M Y H:i:s', time() + $lifetime) . ' GMT');
     header('Pragma: ');
-    header('Cache-Control: public, max-age='.$lifetime);
+    header('Cache-Control: public, max-age=' . $lifetime);
     header('Accept-Ranges: none');
     header('Content-Type: text/css; charset=utf-8');
     if (!min_enable_zlib_compression()) {
-        header('Content-Length: '.filesize($path.$filename));
+        header('Content-Length: ' . filesize($path . $filename));
     }
 
-    readfile($path.$filename);
+    readfile($path . $filename);
     die;
 }
 
@@ -258,21 +258,22 @@ function theme_essential_send_cached_css($path, $filename, $lastmodified, $etag)
  * @param mixed $pagewidth
  * @return string
  */
-function theme_essential_set_pagewidth($css, $pagewidth)
-{
+function theme_essential_set_pagewidth($css, $pagewidth) {
     $tag = '[[setting:pagewidth]]';
+    $imagetag = '[[setting:pagewidthimage]]';
     $replacement = $pagewidth;
     if (!($replacement)) {
         $replacement = '1200';
     }
     if ($replacement == "100") {
         $css = str_replace($tag, $replacement . '%', $css);
+        $css = str_replace($imagetag, '90' . '%', $css);
     } else {
         $css = str_replace($tag, $replacement . 'px', $css);
+        $css = str_replace($imagetag, $replacement . 'px', $css);
     }
     return $css;
 }
-
 
 /**
  * get_performance_output() override get_peformance_info()
@@ -282,8 +283,7 @@ function theme_essential_set_pagewidth($css, $pagewidth)
  * @param string $perfinfo
  * @return string $html
  */
-function theme_essential_performance_output($param, $perfinfo)
-{
+function theme_essential_performance_output($param, $perfinfo) {
     $html = html_writer::start_tag('div', array('class' => 'container-fluid performanceinfo'));
     $html .= html_writer::start_tag('div', array('class' => 'row-fluid'));
     $html .= html_writer::start_tag('div', array('class' => 'span12'));
@@ -307,25 +307,25 @@ function theme_essential_performance_output($param, $perfinfo)
     if ($colcount != 0) {
         $thespan = 12 / $colcount;
         if (isset($param['realtime'])) {
-            $html .= html_writer::start_tag('div', array('class' => 'span'.$thespan));
+            $html .= html_writer::start_tag('div', array('class' => 'span' . $thespan));
             $html .= html_writer::tag('var', round($param['realtime'], 2) . ' ' . get_string('seconds'), array('id' => 'load'));
             $html .= html_writer::span(get_string('loadtime', 'theme_essential'));
             $html .= html_writer::end_tag('div');
         }
         if (isset($param['memory_total'])) {
-            $html .= html_writer::start_tag('div', array('class' => 'span'.$thespan));
+            $html .= html_writer::start_tag('div', array('class' => 'span' . $thespan));
             $html .= html_writer::tag('var', display_size($param['memory_total']), array('id' => 'memory'));
             $html .= html_writer::span(get_string('memused', 'theme_essential'));
             $html .= html_writer::end_tag('div');
         }
         if (isset($param['includecount'])) {
-            $html .= html_writer::start_tag('div', array('class' => 'span'.$thespan));
+            $html .= html_writer::start_tag('div', array('class' => 'span' . $thespan));
             $html .= html_writer::tag('var', $param['includecount'], array('id' => 'included'));
             $html .= html_writer::span(get_string('included', 'theme_essential'));
             $html .= html_writer::end_tag('div');
         }
         if (isset($param['dbqueries'])) {
-            $html .= html_writer::start_tag('div', array('class' => 'span'.$thespan));
+            $html .= html_writer::start_tag('div', array('class' => 'span' . $thespan));
             $html .= html_writer::tag('var', $param['dbqueries'], array('id' => 'dbqueries'));
             $html .= html_writer::span(get_string('dbqueries', 'theme_essential'));
             $html .= html_writer::end_tag('div');
@@ -359,31 +359,31 @@ function theme_essential_performance_output($param, $perfinfo)
         if ($colcountmax != 0) {
             $thespanmax = 12 / $colcountmax;
             if (isset($param['serverload'])) {
-                $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
+                $html .= html_writer::start_tag('div', array('class' => 'span' . $thespanmax));
                 $html .= html_writer::tag('var', $param['serverload'], array('id' => 'load'));
                 $html .= html_writer::span(get_string('serverload', 'theme_essential'));
                 $html .= html_writer::end_tag('div');
             }
             if (isset($param['memory_peak'])) {
-                $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
+                $html .= html_writer::start_tag('div', array('class' => 'span' . $thespanmax));
                 $html .= html_writer::tag('var', display_size($param['memory_peak']), array('id' => 'peakmemory'));
                 $html .= html_writer::span(get_string('peakmem', 'theme_essential'));
                 $html .= html_writer::end_tag('div');
             }
             if (isset($param['cachesused'])) {
-                $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
+                $html .= html_writer::start_tag('div', array('class' => 'span' . $thespanmax));
                 $html .= html_writer::tag('var', $param['cachesused'], array('id' => 'cache'));
                 $html .= html_writer::span(get_string('cachesused', 'theme_essential'));
                 $html .= html_writer::end_tag('div');
             }
             if (isset($param['sessionsize'])) {
-                $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
+                $html .= html_writer::start_tag('div', array('class' => 'span' . $thespanmax));
                 $html .= html_writer::tag('var', $param['sessionsize'], array('id' => 'session'));
                 $html .= html_writer::span(get_string('sessionsize', 'theme_essential'));
                 $html .= html_writer::end_tag('div');
             }
             if (isset($param['dbtime'])) {
-                $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
+                $html .= html_writer::start_tag('div', array('class' => 'span' . $thespanmax));
                 $html .= html_writer::tag('var', $param['dbtime'], array('id' => 'dbtime'));
                 $html .= html_writer::span(get_string('dbtime', 'theme_essential'));
                 $html .= html_writer::end_tag('div');
@@ -397,8 +397,7 @@ function theme_essential_performance_output($param, $perfinfo)
     return $html;
 }
 
-function theme_essential_hex2rgba($hex, $opacity)
-{
+function theme_essential_hex2rgba($hex, $opacity) {
     $hex = str_replace("#", "", $hex);
 
     if (strlen($hex) == 3) {
@@ -420,162 +419,160 @@ function theme_essential_hex2rgba($hex, $opacity)
  * @param string $customcss The custom CSS to add.
  * @return string The CSS which now contains our custom CSS.
  */
-function theme_essential_set_customcss($css, $customcss)
-{
+function theme_essential_set_customcss($css, $customcss) {
     $tag = '[[setting:customcss]]';
     $replacement = $customcss;
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
 
-function theme_essential_process_css($css, $theme)
-{
+function theme_essential_process_css($css, $theme) {
     // Set the theme width
-    $pagewidth          = theme_essential_get_setting('pagewidth');
-    $css                = theme_essential_set_pagewidth($css, $pagewidth);
+    $pagewidth = theme_essential_get_setting('pagewidth');
+    $css = theme_essential_set_pagewidth($css, $pagewidth);
 
     // Set the theme font
-    $headingfont        = theme_essential_get_setting('fontnameheading');
-    $bodyfont           = theme_essential_get_setting('fontnamebody');
+    $headingfont = theme_essential_get_setting('fontnameheading');
+    $bodyfont = theme_essential_get_setting('fontnamebody');
 
-    $css                = theme_essential_set_headingfont($css, $headingfont);
-    $css                = theme_essential_set_bodyfont($css, $bodyfont);
-    $css                = theme_essential_set_fontfiles($css, 'heading', $headingfont, $theme);
-    $css                = theme_essential_set_fontfiles($css, 'body', $bodyfont, $theme);
+    $css = theme_essential_set_headingfont($css, $headingfont);
+    $css = theme_essential_set_bodyfont($css, $bodyfont);
+    $css = theme_essential_set_fontfiles($css, 'heading', $headingfont, $theme);
+    $css = theme_essential_set_fontfiles($css, 'body', $bodyfont, $theme);
 
     // Set the theme colour.
-    $themecolor         = theme_essential_get_setting('themecolor');
-    $css                = theme_essential_set_color($css, $themecolor, '[[setting:themecolor]]', '#30ADD1');
+    $themecolor = theme_essential_get_setting('themecolor');
+    $css = theme_essential_set_color($css, $themecolor, '[[setting:themecolor]]', '#30ADD1');
 
     // Set the theme text colour.
-    $themetextcolor     = theme_essential_get_setting('themetextcolor');
-    $css                = theme_essential_set_color($css, $themetextcolor, '[[setting:themetextcolor]]', '#047797');
+    $themetextcolor = theme_essential_get_setting('themetextcolor');
+    $css = theme_essential_set_color($css, $themetextcolor, '[[setting:themetextcolor]]', '#047797');
 
     // Set the theme url colour.
-    $themeurlcolor      = theme_essential_get_setting('themeurlcolor');
-    $css                = theme_essential_set_color($css, $themeurlcolor, '[[setting:themeurlcolor]]', '#FF5034');
+    $themeurlcolor = theme_essential_get_setting('themeurlcolor');
+    $css = theme_essential_set_color($css, $themeurlcolor, '[[setting:themeurlcolor]]', '#FF5034');
 
     // Set the theme hover colour.
-    $themehovercolor    = theme_essential_get_setting('themehovercolor');
-    $css                = theme_essential_set_color($css, $themehovercolor, '[[setting:themehovercolor]]', '#F32100');
+    $themehovercolor = theme_essential_get_setting('themehovercolor');
+    $css = theme_essential_set_color($css, $themehovercolor, '[[setting:themehovercolor]]', '#F32100');
 
     // Set the theme icon colour.
-    $themeiconcolor     = theme_essential_get_setting('themeiconcolor');
-    $css                = theme_essential_set_color($css, $themeiconcolor, '[[setting:themeiconcolor]]', '#30ADD1');
+    $themeiconcolor = theme_essential_get_setting('themeiconcolor');
+    $css = theme_essential_set_color($css, $themeiconcolor, '[[setting:themeiconcolor]]', '#30ADD1');
 
     // Set the theme navigation colour.
-    $themenavcolor      = theme_essential_get_setting('themenavcolor');
-    $css                = theme_essential_set_color($css, $themenavcolor, '[[setting:themenavcolor]]', '#ffffff');
+    $themenavcolor = theme_essential_get_setting('themenavcolor');
+    $css = theme_essential_set_color($css, $themenavcolor, '[[setting:themenavcolor]]', '#ffffff');
 
     // Set the footer colour.
-    $footercolor        = theme_essential_hex2rgba(theme_essential_get_setting('footercolor'), '0.95');
-    $css                = theme_essential_set_color($css, $footercolor, '[[setting:footercolor]]', '#555555');
+    $footercolor = theme_essential_hex2rgba(theme_essential_get_setting('footercolor'), '0.95');
+    $css = theme_essential_set_color($css, $footercolor, '[[setting:footercolor]]', '#555555');
 
     // Set the footer text color.
-    $footertextcolor    = theme_essential_get_setting('footertextcolor');
-    $css                = theme_essential_set_color($css, $footertextcolor, '[[setting:footertextcolor]]', '#bbbbbb');
+    $footertextcolor = theme_essential_get_setting('footertextcolor');
+    $css = theme_essential_set_color($css, $footertextcolor, '[[setting:footertextcolor]]', '#bbbbbb');
 
     // Set the footer heading colour.
     $footerheadingcolor = theme_essential_get_setting('footerheadingcolor');
-    $css                = theme_essential_set_color($css, $footerheadingcolor, '[[setting:footerheadingcolor]]', '#cccccc');
+    $css = theme_essential_set_color($css, $footerheadingcolor, '[[setting:footerheadingcolor]]', '#cccccc');
 
     // Set the footer separator colour.
-    $footersepcolor     = theme_essential_get_setting('footersepcolor');
-    $css                = theme_essential_set_color($css, $footersepcolor, '[[setting:footersepcolor]]', '#313131');
+    $footersepcolor = theme_essential_get_setting('footersepcolor');
+    $css = theme_essential_set_color($css, $footersepcolor, '[[setting:footersepcolor]]', '#313131');
 
     // Set the footer URL color.
-    $footerurlcolor     = theme_essential_get_setting('footerurlcolor');
-    $css                = theme_essential_set_color($css, $footerurlcolor, '[[setting:footerurlcolor]]', '#217a94');
+    $footerurlcolor = theme_essential_get_setting('footerurlcolor');
+    $css = theme_essential_set_color($css, $footerurlcolor, '[[setting:footerurlcolor]]', '#217a94');
 
     // Set the footer hover colour.
-    $footerhovercolor   = theme_essential_get_setting('footerhovercolor');
-    $css                = theme_essential_set_color($css, $footerhovercolor, '[[setting:footerhovercolor]]', '#30add1');
+    $footerhovercolor = theme_essential_get_setting('footerhovercolor');
+    $css = theme_essential_set_color($css, $footerhovercolor, '[[setting:footerhovercolor]]', '#30add1');
 
     // Set the slide background colour.
-    $slidebgcolor       = theme_essential_hex2rgba(theme_essential_get_setting('themecolor'), '.75');
-    $css                = theme_essential_set_color($css, $slidebgcolor, '[[setting:carouselcolor]]', '#30add1');
+    $slidebgcolor = theme_essential_hex2rgba(theme_essential_get_setting('themecolor'), '.75');
+    $css = theme_essential_set_color($css, $slidebgcolor, '[[setting:carouselcolor]]', '#30add1');
 
     // Set the slide active pip colour.
-    $slidebgcolor       = theme_essential_hex2rgba(theme_essential_get_setting('themecolor'), '.25');
-    $css                = theme_essential_set_color($css, $slidebgcolor, '[[setting:carouselactivecolor]]', '#30add1');
+    $slidebgcolor = theme_essential_hex2rgba(theme_essential_get_setting('themecolor'), '.25');
+    $css = theme_essential_set_color($css, $slidebgcolor, '[[setting:carouselactivecolor]]', '#30add1');
 
     // Set the slide header colour.
-    $slideshowcolor     = theme_essential_get_setting('slideshowcolor');
-    $css                = theme_essential_set_color($css, $slideshowcolor, '[[setting:slideshowcolor]]', '#30add1');
+    $slideshowcolor = theme_essential_get_setting('slideshowcolor');
+    $css = theme_essential_set_color($css, $slideshowcolor, '[[setting:slideshowcolor]]', '#30add1');
 
     // Set the slide header colour.
-    $slideheadercolor   = theme_essential_get_setting('slideheadercolor');
-    $css                = theme_essential_set_color($css, $slideheadercolor, '[[setting:slideheadercolor]]', '#30add1');
+    $slideheadercolor = theme_essential_get_setting('slideheadercolor');
+    $css = theme_essential_set_color($css, $slideheadercolor, '[[setting:slideheadercolor]]', '#30add1');
 
     // Set the slide text colour.
-    $slidecolor         = theme_essential_get_setting('slidecolor');
-    $css                = theme_essential_set_color($css, $slidecolor, '[[setting:slidecolor]]', '#ffffff');
+    $slidecolor = theme_essential_get_setting('slidecolor');
+    $css = theme_essential_set_color($css, $slidecolor, '[[setting:slidecolor]]', '#ffffff');
 
     // Set the slide button colour.
-    $slidebuttoncolor   = theme_essential_get_setting('slidebuttoncolor');
-    $css                = theme_essential_set_color($css, $slidebuttoncolor, '[[setting:slidebuttoncolor]]', '#30add1');
+    $slidebuttoncolor = theme_essential_get_setting('slidebuttoncolor');
+    $css = theme_essential_set_color($css, $slidebuttoncolor, '[[setting:slidebuttoncolor]]', '#30add1');
 
     // Set the slide button hover colour.
-    $slidebuttonhcolor  = theme_essential_get_setting('slidebuttonhovercolor');
-    $css                = theme_essential_set_color($css, $slidebuttonhcolor, '[[setting:slidebuttonhovercolor]]', '#217a94');
+    $slidebuttonhcolor = theme_essential_get_setting('slidebuttonhovercolor');
+    $css = theme_essential_set_color($css, $slidebuttonhcolor, '[[setting:slidebuttonhovercolor]]', '#217a94');
 
     if ((get_config('theme_essential', 'enablealternativethemecolors1')) ||
-        (get_config('theme_essential', 'enablealternativethemecolors2')) ||
-        (get_config('theme_essential', 'enablealternativethemecolors3'))
+            (get_config('theme_essential', 'enablealternativethemecolors2')) ||
+            (get_config('theme_essential', 'enablealternativethemecolors3'))
     ) {
         // Set theme alternative colours.
-        $defaultcolors      = array('#a430d1', '#d15430', '#5dd130');
+        $defaultcolors = array('#a430d1', '#d15430', '#5dd130');
         $defaulthovercolors = array('#9929c4', '#c44c29', '#53c429');
 
         foreach (range(1, 3) as $alternative) {
-            $default        = $defaultcolors[$alternative - 1];
-            $defaulthover   = $defaulthovercolors[$alternative - 1];
-            $css            = theme_essential_set_alternativecolor($css, 'color' . $alternative,
-                                theme_essential_get_setting('alternativethemehovercolor' . $alternative), $default);
-            $css            = theme_essential_set_alternativecolor($css, 'textcolor' . $alternative,
-                                theme_essential_get_setting('alternativethemetextcolor' . $alternative), $default);
-            $css            = theme_essential_set_alternativecolor($css, 'urlcolor' . $alternative,
-                                theme_essential_get_setting('alternativethemeurlcolor' . $alternative), $default);
-            $css            = theme_essential_set_alternativecolor($css, 'hovercolor' . $alternative,
-                                theme_essential_get_setting('alternativethemehovercolor' . $alternative), $defaulthover);
+            $default = $defaultcolors[$alternative - 1];
+            $defaulthover = $defaulthovercolors[$alternative - 1];
+            $css = theme_essential_set_alternativecolor($css, 'color' . $alternative,
+                    theme_essential_get_setting('alternativethemehovercolor' . $alternative), $default);
+            $css = theme_essential_set_alternativecolor($css, 'textcolor' . $alternative,
+                    theme_essential_get_setting('alternativethemetextcolor' . $alternative), $default);
+            $css = theme_essential_set_alternativecolor($css, 'urlcolor' . $alternative,
+                    theme_essential_get_setting('alternativethemeurlcolor' . $alternative), $default);
+            $css = theme_essential_set_alternativecolor($css, 'hovercolor' . $alternative,
+                    theme_essential_get_setting('alternativethemehovercolor' . $alternative), $defaulthover);
         }
     }
 
     // Set custom CSS.
-    $customcss          = theme_essential_get_setting('customcss');
-    $css                = theme_essential_set_customcss($css, $customcss);
+    $customcss = theme_essential_get_setting('customcss');
+    $css = theme_essential_set_customcss($css, $customcss);
 
     // Set the background image for the logo.
-    $logo               = $theme->setting_file_url('logo', 'logo');
-    $css                = theme_essential_set_logo($css, $logo);
+    $logo = $theme->setting_file_url('logo', 'logo');
+    $css = theme_essential_set_logo($css, $logo);
 
     // Set the background image for the page.
-    $pagebackground     = $theme->setting_file_url('pagebackground', 'pagebackground');
-    $css                = theme_essential_set_pagebackground($css, $pagebackground);
+    $pagebackground = $theme->setting_file_url('pagebackground', 'pagebackground');
+    $css = theme_essential_set_pagebackground($css, $pagebackground);
 
     // Set the background style for the page.
-    $pagebgstyle        = theme_essential_get_setting('pagebackgroundstyle');
-    $css                = theme_essential_set_pagebackgroundstyle($css, $pagebgstyle);
+    $pagebgstyle = theme_essential_get_setting('pagebackgroundstyle');
+    $css = theme_essential_set_pagebackgroundstyle($css, $pagebgstyle);
 
     // Set Marketing Image Height.
-    $marketingheight    = theme_essential_get_setting('marketingheight');
-    $css                = theme_essential_set_marketingheight($css, $marketingheight);
+    $marketingheight = theme_essential_get_setting('marketingheight');
+    $css = theme_essential_set_marketingheight($css, $marketingheight);
 
     // Set Marketing Images.
-    $setting        = 'marketing1image';
+    $setting = 'marketing1image';
     $marketingimage = $theme->setting_file_url($setting, $setting);
-    $css            = theme_essential_set_marketingimage($css, $marketingimage, $setting);
+    $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
 
-    $setting        = 'marketing2image';
+    $setting = 'marketing2image';
     $marketingimage = $theme->setting_file_url($setting, $setting);
-    $css            = theme_essential_set_marketingimage($css, $marketingimage, $setting);
+    $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
 
-    $setting        = 'marketing3image';
+    $setting = 'marketing3image';
     $marketingimage = $theme->setting_file_url($setting, $setting);
-    $css            = theme_essential_set_marketingimage($css, $marketingimage, $setting);
+    $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
 
     // Set FontAwesome font loading path
-    $css                = theme_essential_set_fontwww($css);
+    $css = theme_essential_set_fontwww($css);
 
     // Finally return processed CSS
     return $css;
@@ -589,13 +586,11 @@ function theme_essential_process_css($css, $theme)
  *
  * @param moodle_page $page
  */
-function theme_essential_initialise_colourswitcher(moodle_page $page)
-{
+function theme_essential_initialise_colourswitcher(moodle_page $page) {
     user_preference_allow_ajax_update('theme_essential_colours', PARAM_ALPHANUM);
     $page->requires->yui_module(
-        'moodle-theme_essential-coloursswitcher',
-        'M.theme_essential.initColoursSwitcher',
-        array(array('div' => '.dropdown-menu'))
+            'moodle-theme_essential-coloursswitcher', 'M.theme_essential.initColoursSwitcher',
+            array(array('div' => '.dropdown-menu'))
     );
 }
 
@@ -605,8 +600,7 @@ function theme_essential_initialise_colourswitcher(moodle_page $page)
  * @param string $default The default theme colors to use
  * @return string The theme colours the user has selected
  */
-function theme_essential_get_colours($default = 'default')
-{
+function theme_essential_get_colours($default = 'default') {
     $preference = get_user_preferences('theme_essential_colours', $default);
     foreach (range(1, 3) as $alternativethemenumber) {
         if ($preference == 'alternative' . $alternativethemenumber && theme_essential_get_setting('enablealternativethemecolors' . $alternativethemenumber)) {
@@ -621,48 +615,72 @@ function theme_essential_get_colours($default = 'default')
  *
  * If they are this updates the users preference in the database
  */
-function theme_essential_check_colours_switch()
-{
+function theme_essential_check_colours_switch() {
     $colours = optional_param('essentialcolours', null, PARAM_ALPHANUM);
     if (in_array($colours, array('default', 'alternative1', 'alternative2', 'alternative3'))) {
         set_user_preference('theme_essential_colours', $colours);
     }
 }
 
-
-function theme_essential_set_headingfont($css, $headingfont)
-{
+function theme_essential_set_headingfont($css, $headingfont) {
     $tag = '[[setting:headingfont]]';
     $replacement = $headingfont;
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
 
-function theme_essential_set_bodyfont($css, $bodyfont)
-{
+function theme_essential_set_bodyfont($css, $bodyfont) {
     $tag = '[[setting:bodyfont]]';
     $replacement = $bodyfont;
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
 
-function theme_essential_set_fontfiles($css, $type, $fontname, $theme)
-{
-    $tag = '[[setting:fontfiles'.$type.']]';
+function theme_essential_set_fontfiles($css, $type, $fontname, $theme) {
+    $tag = '[[setting:fontfiles' . $type . ']]';
     $replacement = '';
-    if(theme_essential_get_setting('fontselect') === '3') {
-        $fontfilettf  = $theme->setting_file_url('fontfilettf'.$type, 'fontfilettf'.$type);
-        $replacement  = '@font-face {font-family: "'.$fontname.'";';
-        $replacement .= !empty($fontfilettf)? "src: url('".$fontfilettf."');" : '';
-        $replacement .= "}";
+    if (theme_essential_get_setting('fontselect') === '3') {
+        $fontfiles = array();
+        $fontfileeot = $theme->setting_file_url('fontfileeot' . $type, 'fontfileeot' . $type);
+        if (!empty($fontfileeot)) {
+            $fontfiles[] = "url('" . $fontfileeot . "?#iefix') format('embedded-opentype')";
+        }
+        $fontfilewoff = $theme->setting_file_url('fontfilewoff' . $type, 'fontfilewoff' . $type);
+        if (!empty($fontfilewoff)) {
+            $fontfiles[] = "url('" . $fontfilewoff . "') format('woff')";
+        }
+        $fontfilewofftwo = $theme->setting_file_url('fontfilewofftwo' . $type, 'fontfilewofftwo' . $type);
+        if (!empty($fontfilewofftwo)) {
+            $fontfiles[] = "url('" . $fontfilewofftwo . "') format('woff2')";
+        }
+        $fontfileotf = $theme->setting_file_url('fontfileotf' . $type, 'fontfileotf' . $type);
+        if (!empty($fontfileotf)) {
+            $fontfiles[] = "url('" . $fontfileotf . "') format('opentype')";
+        }
+        $fontfilettf = $theme->setting_file_url('fontfilettf' . $type, 'fontfilettf' . $type);
+        if (!empty($fontfilettf)) {
+            $fontfiles[] = "url('" . $fontfilettf . "') format('truetype')";
+        }
+        $fontfilesvg = $theme->setting_file_url('fontfilesvg' . $type, 'fontfilesvg' . $type);
+        if (!empty($fontfilesvg)) {
+            $fontfiles[] = "url('" . $fontfilesvg . "') format('svg')";
+        }
+
+        $replacement = '@font-face {' . PHP_EOL . 'font-family: "' . $fontname . '";' . PHP_EOL;
+        $replacement .=!empty($fontfileeot) ? "src: url('" . $fontfileeot . "');" . PHP_EOL : '';
+        if (!empty($fontfiles)) {
+            $replacement .= "src: ";
+            $replacement .= implode("," . PHP_EOL . " ", $fontfiles);
+            $replacement .= ";";
+        }
+        $replacement .= '' . PHP_EOL . "}";
     }
 
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
 
-function theme_essential_set_color($css, $themecolor, $tag, $default)
-{
+function theme_essential_set_color($css, $themecolor, $tag, $default) {
     if (!($themecolor)) {
         $replacement = $default;
     } else {
@@ -672,8 +690,7 @@ function theme_essential_set_color($css, $themecolor, $tag, $default)
     return $css;
 }
 
-function theme_essential_set_alternativecolor($css, $type, $customcolor, $defaultcolor)
-{
+function theme_essential_set_alternativecolor($css, $type, $customcolor, $defaultcolor) {
     $tag = '[[setting:alternativetheme' . $type . ']]';
     if (!($customcolor)) {
         $replacement = $defaultcolor;
@@ -684,20 +701,18 @@ function theme_essential_set_alternativecolor($css, $type, $customcolor, $defaul
     return $css;
 }
 
-function theme_essential_set_pagebackground($css, $pagebackground)
-{
+function theme_essential_set_pagebackground($css, $pagebackground) {
     $tag = '[[setting:pagebackground]]';
     if (!($pagebackground)) {
         $replacement = 'none';
     } else {
-        $replacement = 'url(\''.$pagebackground.'\')';
+        $replacement = 'url(\'' . $pagebackground . '\')';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
 
-function theme_essential_set_pagebackgroundstyle($css, $style)
-{
+function theme_essential_set_pagebackgroundstyle($css, $style) {
     $tagattach = '[[setting:backgroundattach]]';
     $tagrepeat = '[[setting:backgroundrepeat]]';
     $tagsize = '[[setting:backgroundsize]]';
@@ -717,8 +732,7 @@ function theme_essential_set_pagebackgroundstyle($css, $style)
     return $css;
 }
 
-function theme_essential_set_marketingheight($css, $marketingheight)
-{
+function theme_essential_set_marketingheight($css, $marketingheight) {
     $tag = '[[setting:marketingheight]]';
     $replacement = $marketingheight;
     if (!($replacement)) {
@@ -728,20 +742,18 @@ function theme_essential_set_marketingheight($css, $marketingheight)
     return $css;
 }
 
-function theme_essential_set_marketingimage($css, $marketingimage, $setting)
-{
+function theme_essential_set_marketingimage($css, $marketingimage, $setting) {
     $tag = '[[setting:' . $setting . ']]';
     if (!($marketingimage)) {
         $replacement = 'none';
     } else {
-        $replacement = 'url(\''.$marketingimage.'\')';
+        $replacement = 'url(\'' . $marketingimage . '\')';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
 
-function theme_essential_showslider($setting)
-{
+function theme_essential_showslider($setting) {
     global $CFG;
     $noslides = theme_essential_get_setting($setting);
     if ($noslides && (intval($CFG->version) >= 2013111800)) {
@@ -755,8 +767,7 @@ function theme_essential_showslider($setting)
     return $noslides;
 }
 
-function theme_essential_get_nav_links($course, $sections, $sectionno)
-{
+function theme_essential_get_nav_links($course, $sections, $sectionno) {
     // FIXME: This is really evil and should by using the navigation API.
     $course = course_get_format($course)->get_course();
     $left = 'left';
@@ -766,10 +777,10 @@ function theme_essential_get_nav_links($course, $sections, $sectionno)
         $left = $right;
         $right = $temp;
     }
-    $previousarrow = '<i class="fa fa-chevron-circle-'.$left.'"></i>';
-    $nextarrow = '<i class="fa fa-chevron-circle-'.$right.'"></i>';
+    $previousarrow = '<i class="fa fa-chevron-circle-' . $left . '"></i>';
+    $nextarrow = '<i class="fa fa-chevron-circle-' . $right . '"></i>';
     $canviewhidden = has_capability('moodle/course:viewhiddensections', context_course::instance($course->id))
-    or !$course->hiddensections;
+            or ! $course->hiddensections;
 
     $links = array('previous' => '', 'next' => '');
     $back = $sectionno - 1;
@@ -819,8 +830,8 @@ function theme_essential_get_nav_links($course, $sections, $sectionno)
     return $links;
 }
 
-function theme_essential_print_single_section_page(&$that, &$courserenderer, $course, $sections, $mods, $modnames, $modnamesused, $displaysection)
-{
+function theme_essential_print_single_section_page(&$that, &$courserenderer, $course, $sections, $mods, $modnames, $modnamesused,
+        $displaysection) {
     global $PAGE;
 
     $modinfo = get_fast_modinfo($course);
@@ -846,7 +857,7 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
     // Copy activity clipboard..
     echo $that->course_activity_clipboard($course, $displaysection);
     $thissection = $modinfo->get_section_info(0);
-    if ($thissection->summary or !empty($modinfo->sections[0]) or $PAGE->user_is_editing()) {
+    if ($thissection->summary or ! empty($modinfo->sections[0]) or $PAGE->user_is_editing()) {
         echo $that->start_section_list();
         echo $that->section_header($thissection, $course, true, $displaysection);
         echo $courserenderer->course_section_cm_list($course, $thissection, $displaysection);
@@ -909,41 +920,71 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
     echo html_writer::end_tag('div');
 }
 
-function theme_essential_render_slide($i)
-{
+function theme_essential_render_slide($i, $captionoptions) {
     global $PAGE, $OUTPUT;
 
-    $slideurl           = theme_essential_get_setting('slide'.$i.'url');
-    $slideurltarget     = theme_essential_get_setting('slide'.$i.'target');
-    $slidetitle         = theme_essential_get_setting('slide'.$i, true);
-    $slidecaption       = theme_essential_get_setting('slide'.$i.'caption', true);
-    $slideextraclass    = ($i === 1)? 'active' : '';
-    $slideimagealt      = strip_tags(theme_essential_get_setting('slide'.$i, true));
-    $slideimage         = $OUTPUT->pix_url('default_slide', 'theme');
+    $slideurl = theme_essential_get_setting('slide' . $i . 'url');
+    $slideurltarget = theme_essential_get_setting('slide' . $i . 'target');
+    $slidetitle = theme_essential_get_setting('slide' . $i, true);
+    $slidecaption = theme_essential_get_setting('slide' . $i . 'caption', true);
+    $slideextraclass = ($i === 1) ? ' active' : '';
+    $slideimagealt = strip_tags(theme_essential_get_setting('slide' . $i, true));
+    $slideimage = $OUTPUT->pix_url('default_slide', 'theme');
 
     // Get slide image or fallback to default
-    if (theme_essential_get_setting('slide'.$i.'image')) {
-        $slideimage     = $PAGE->theme->setting_file_url('slide'.$i.'image', 'slide'.$i.'image');
+    if (theme_essential_get_setting('slide' . $i . 'image')) {
+        $slideimage = $PAGE->theme->setting_file_url('slide' . $i . 'image', 'slide' . $i . 'image');
     }
 
-    if($slideurl) {
-        $slide = '<a href="'.$slideurl.'" target="'.$slideurltarget.'" class="item '.$slideextraclass.'">';
+    if ($captionoptions == 0) {
+        $slideextraclass .= ' side-caption';
+    }
+    if ($slideurl) {
+        $slide = '<a href="' . $slideurl . '" target="' . $slideurltarget . '" class="item' . $slideextraclass . '">';
     } else {
-        $slide = '<div class="item '.$slideextraclass.'">';
-    }
-    $slide .= '<img src="'.$slideimage.'" alt="'.$slideimagealt.'" class="carousel-image"/>';
-
-    // Output title and caption if either is present
-    if ($slidetitle || $slidecaption) {
-        $slide .= '<div class="carousel-caption">';
-        $slide .= '<div class="carousel-caption-inner">';
-        $slide .= '<h4>'.$slidetitle.'</h4>';
-        $slide .= '<p>'.$slidecaption.'</p>';
-        $slide .= '</div>';
-        $slide .= '</div>';
+        $slide = '<div class="item' . $slideextraclass . '">';
     }
 
-    $slide .= ($slideurl)? '</a>' : '</div>';
+    if ($captionoptions == 0) {
+        $slide .= '<div class="container-fluid">';
+        $slide .= '<div class="row-fluid">';
+        
+        if ($slidetitle || $slidecaption) {
+            $slide .= '<div class="span5 the-side-caption">';
+            $slide .= '<div class="the-side-caption-content">';
+            $slide .= '<h4>' . $slidetitle . '</h4>';
+            $slide .= '<p>' . $slidecaption . '</p>';
+            $slide .= '</div>';
+            $slide .= '</div>';
+            $slide .= '<div class="span7">';
+        } else {
+            $slide .= '<div class="span10 offset1 nocaption">';
+        }
+        $slide .= '<div class="carousel-image-container">';
+        $slide .= '<img src="' . $slideimage . '" alt="' . $slideimagealt . '" class="carousel-image"/>';
+        $slide .= '</div>';
+        $slide .= '</div>';
+        
+        $slide .= '</div>';
+        $slide .= '</div>';
+    } else {
+        $nocaption = (!($slidetitle || $slidecaption)) ? ' nocaption' : '';
+        $slide .= '<div class="carousel-image-container'.$nocaption.'">';
+        $slide .= '<img src="' . $slideimage . '" alt="' . $slideimagealt . '" class="carousel-image"/>';
+        $slide .= '</div>';
+
+        // Output title and caption if either is present
+        if ($slidetitle || $slidecaption) {
+            $slide .= '<div class="carousel-caption">';
+            $slide .= '<div class="carousel-caption-inner">';
+            $slide .= '<h4>' . $slidetitle . '</h4>';
+            $slide .= '<p>' . $slidecaption . '</p>';
+            $slide .= '</div>';
+            $slide .= '</div>';
+        }
+    }
+    $slide .= ($slideurl) ? '</a>' : '</div>';
+
 
     return $slide;
 }
@@ -956,18 +997,29 @@ function theme_essential_render_slide_controls($left) {
         $faleft = $faright;
         $faright = $temp;
     }
-    $prev = '<a class="left carousel-control" href="#essentialCarousel" data-slide="prev"><i class="fa fa-chevron-circle-'.$faleft.'"></i></a>';
-    $next = '<a class="right carousel-control" href="#essentialCarousel" data-slide="next"><i class="fa fa-chevron-circle-'.$faright.'"></i></a>';
+    $prev = '<a class="left carousel-control" href="#essentialCarousel" data-slide="prev"><i class="fa fa-chevron-circle-' . $faleft . '"></i></a>';
+    $next = '<a class="right carousel-control" href="#essentialCarousel" data-slide="next"><i class="fa fa-chevron-circle-' . $faright . '"></i></a>';
 
     if ($left) {
-        return $prev.$next;
+        return $prev . $next;
     } else {
-        return $next.$prev;
+        return $next . $prev;
     }
 }
 
-function theme_essential_page_init(moodle_page $page)
-{
+/**
+ * States if the browser is not IE9 or less.
+ */
+function theme_essential_not_lte_ie9() {
+    $properties = core_useragent::check_ie_properties();; // In /lib/classes/useragent.php.
+    if (!is_array($properties)) {
+        return true;
+    }
+    // We have properties, it is a version of IE, so is it greater than 9?
+    return ($properties['version'] > 9.0);
+}
+
+function theme_essential_page_init(moodle_page $page) {
     global $CFG;
     $page->requires->jquery();
     if (intval($CFG->version) >= 2013111800) {

@@ -52,7 +52,7 @@ require_once(dirname(__FILE__) . '/includes/header.php');?>
                 <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
                 <?php
                 $alert1icon = 'alert' . theme_essential_get_setting('alert1type');
-                echo $$alert1icon . '<span class="title">' . theme_essential_get_setting('alert1title', true) . '</span>' . theme_essential_get_setting('alert1text', true); ?>
+                echo $alert1icon . '<span class="title">' . theme_essential_get_setting('alert1title', true) . '</span>' . theme_essential_get_setting('alert1text', true); ?>
             </div>
         <?php } ?>
 
@@ -62,7 +62,7 @@ require_once(dirname(__FILE__) . '/includes/header.php');?>
                 <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
                 <?php
                 $alert2icon = 'alert' . theme_essential_get_setting('alert2type');
-                echo $$alert2icon . '<span class="title">' . theme_essential_get_setting('alert2title', true) . '</span>' . theme_essential_get_setting('alert2text', true); ?>
+                echo $alert2icon . '<span class="title">' . theme_essential_get_setting('alert2title', true) . '</span>' . theme_essential_get_setting('alert2text', true); ?>
             </div>
         <?php } ?>
 
@@ -72,7 +72,7 @@ require_once(dirname(__FILE__) . '/includes/header.php');?>
                 <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
                 <?php
                 $alert3icon = 'alert' . theme_essential_get_setting('alert3type');
-                echo $$alert3icon . '<span class="title">' . theme_essential_get_setting('alert3title', true) . '</span>' . theme_essential_get_setting('alert3text', true); ?>
+                echo $alert3icon . '<span class="title">' . theme_essential_get_setting('alert3title', true) . '</span>' . theme_essential_get_setting('alert3text', true); ?>
             </div>
         <?php } ?>
         <!-- End Alerts -->
