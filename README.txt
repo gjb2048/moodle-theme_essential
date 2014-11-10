@@ -158,6 +158,7 @@ New in 2.7.9
 - FIX: Issue #361: Tweak to quiz editing in 2.7.9b.
 - FIX: Issue #366: My Grades view includes course name.
 - FIX: Issue #367: Course discription summary box not wide enough.
+- FIX: Issue #370: Fancy breadcrumb hidden courses are strikethrough.
 - UPDATE         : moodle/core.less - MDL-47340 & MDL-47097.
 - UPDATE         : moodle/course.less - MDL-47340.
 - UPDATE         : moodle/responsive.less - MDL-47242.

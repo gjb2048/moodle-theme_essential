@@ -20322,7 +20322,7 @@ aside.footer-edit div.block:nth-of-type(1) {
 }
 
 .breadcrumb-nav ul.breadcrumb.style1 li .dimmed_text {
-  text-decoration: line-through;
+  font-style: italic;
   color: #999;
 }
 
