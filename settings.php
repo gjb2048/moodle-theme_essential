@@ -1145,6 +1145,8 @@ if (is_siteadmin()) {
     $temp->add(new admin_setting_heading('theme_essential_alerts', get_string('alertsheadingsub', 'theme_essential'),
         format_text(get_string('alertsdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
+    $information = get_string('alertinfodesc', 'theme_essential');
+
     // This is the descriptor for Alert One
     $name = 'theme_essential/alert1info';
     $heading = get_string('alert1', 'theme_essential');

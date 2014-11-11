@@ -558,6 +558,7 @@ $string['enablealertdesc'] = 'Enable or disable alerts';
 $string['alert1'] = 'First alert';
 $string['alert2'] = 'Second alert';
 $string['alert3'] = 'Third alert';
+$string['alertinfodesc'] = 'Enter the settings for your alert.';
 
 $string['alerttitle'] = 'Title';
 $string['alerttitledesc'] = 'Main title/heading for your alert.';
