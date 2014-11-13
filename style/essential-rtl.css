@@ -21936,6 +21936,10 @@ body.path-admin-setting #page-footer {
   color: orangered;
 }
 
+#page-mod-assign-view.jsenabled .gradingoptionsform .fitem_actionbuttons {
+  display: none;
+}
+
 .mform fieldset.collapsible legend a.fheader {
   margin-right: 0px;
 }

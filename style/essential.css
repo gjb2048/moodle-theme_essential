@@ -18243,6 +18243,9 @@ body.path-admin-setting #page-footer {
 #region-main form .fdescription.required {
   color: orangered;
 }
+#page-mod-assign-view.jsenabled .gradingoptionsform .fitem_actionbuttons {
+  display: none;
+}
 .mform fieldset.collapsible legend a.fheader {
   margin-left: 0px;
 }
