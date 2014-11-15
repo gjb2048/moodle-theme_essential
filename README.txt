@@ -145,6 +145,7 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.7.9.2
 ==============
 - FIX: Issue #372: Hovering block on Grading page.
+- FIX: Issue #377: Fixed width setting breaks carousel images.
 
 New in 2.7.9.1
 ==============
