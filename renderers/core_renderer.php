@@ -47,7 +47,7 @@ class theme_essential_core_renderer extends core_renderer
             }
             $breadcrumbs .= html_writer::end_tag('ul');
         } else {
-            $breadcrumbs = html_writer::tag('h2', 'Breadcrumb error');
+            $breadcrumbs = html_writer::tag('p', '&nbsp;');
         }
         return $breadcrumbs;
     }
