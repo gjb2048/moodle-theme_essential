@@ -94,11 +94,11 @@ if ($enable1alert || $enable2alert || $enable3alert) {
             <div class="frontpagecontent">
                 <div class="bor"></div>
                 <?php if (theme_essential_get_setting('togglefrontcontent') == 1) {
-                    echo theme_essential_get_setting('frontcontentarea', 'format_text');
+                    echo theme_essential_get_setting('frontcontentarea', 'format_html');
                 } else if (theme_essential_get_setting('togglefrontcontent') == 2 && !isloggedin()) {
-                    echo theme_essential_get_setting('frontcontentarea', 'format_text');
+                    echo theme_essential_get_setting('frontcontentarea', 'format_html');
                 } else if (theme_essential_get_setting('togglefrontcontent') == 3 && isloggedin()) {
-                    echo theme_essential_get_setting('frontcontentarea', 'format_text');
+                    echo theme_essential_get_setting('frontcontentarea', 'format_html');
                 } ?>
                 <?php echo theme_essential_edit_button('theme_essential_frontpage'); ?>
                 <div class="bor"></div>

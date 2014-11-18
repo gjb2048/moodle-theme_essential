@@ -123,6 +123,15 @@ do so:
     Default'.
 9.  Put Moodle out of 'Maintenance mode' under 'Home -> Administration -> Site administration -> Server -> Maintenance mode'.
 
+CSlider
+=======
+The original version of Essential used 'CSlider' - http://tympanus.net/codrops/2012/03/15/parallax-content-slider-with-css3-and-jquery/.
+
+It has been removed because of licencing issues: https://github.com/gjb2048/moodle-theme_essential/issues/61
+
+Please do not request that it be put back.  The licence that CSlider has is incompatible with GPLv3 and therefore cannot be a part
+of or redistributed with the theme.
+
 Videos and FitVids
 ==================
 Essential uses FitVids.js - http://fitvidsjs.com/ - to make embedded videos responsive.  If you do not want this feature for a particular
@@ -141,6 +150,11 @@ issue.
 It is essential that you provide as much information as possible, the critical information being the contents of the theme's 
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
+
+New in 2.7.9.3
+==============
+- FIX: Issue #382: Missing style in mod_feedback.
+- FIX: Issue #385: Embedded YouTube videos not working.
 
 New in 2.7.9.2
 ==============

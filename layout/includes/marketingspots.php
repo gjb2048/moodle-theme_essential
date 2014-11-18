@@ -34,7 +34,7 @@
         <?php if (theme_essential_get_setting('marketing1image')) { ?>
             <div class="marketing-image" id="marketing-image1"></div>
         <?php } ?>
-        <?php echo theme_essential_get_setting('marketing1content', 'format_text'); ?>
+        <?php echo theme_essential_get_setting('marketing1content', 'format_html'); ?>
         <div class="button">
             <a href="<?php echo theme_essential_get_setting('marketing1buttonurl'); ?>"
                target="<?php echo theme_essential_get_setting('marketing1target'); ?>"
@@ -53,7 +53,7 @@
         <?php if (theme_essential_get_setting('marketing2image')) { ?>
             <div class="marketing-image" id="marketing-image2"></div>
         <?php } ?>
-        <?php echo theme_essential_get_setting('marketing2content', 'format_text'); ?>
+        <?php echo theme_essential_get_setting('marketing2content', 'format_html'); ?>
         <div class="button">
             <a href="<?php echo theme_essential_get_setting('marketing2buttonurl'); ?>"
                target="<?php echo theme_essential_get_setting('marketing2target'); ?>"
@@ -72,7 +72,7 @@
         <?php if (theme_essential_get_setting('marketing3image')) { ?>
             <div class="marketing-image" id="marketing-image3"></div>
         <?php } ?>
-        <?php echo theme_essential_get_setting('marketing3content', 'format_text'); ?>
+        <?php echo theme_essential_get_setting('marketing3content', 'format_html'); ?>
         <div class="button">
             <a href="<?php echo theme_essential_get_setting('marketing3buttonurl'); ?>"
                target="<?php echo theme_essential_get_setting('marketing3target'); ?>"
