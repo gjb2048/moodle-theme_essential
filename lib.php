@@ -39,6 +39,8 @@ function theme_essential_set_fontwww($css) {
 }
 
 function theme_essential_get_setting($setting, $format = false) {
+    global $CFG;
+    require_once($CFG->dirroot . '/lib/weblib.php');
     static $theme;
     if (empty($theme)) {
         $theme = theme_config::load('essential');
@@ -48,7 +50,9 @@ function theme_essential_get_setting($setting, $format = false) {
     } else if (!$format) {
         return $theme->settings->$setting;
     } else if ($format === 'format_text') {
-        return format_text($theme->settings->$setting, $format = FORMAT_HTML, $options = array('trusted' => true));
+        return format_text($theme->settings->$setting, FORMAT_PLAIN);
+    } else if ($format === 'format_html') {
+        return format_text($theme->settings->$setting, FORMAT_HTML, array('trusted' => true, 'noclean' => true));
     } else {
         return format_string($theme->settings->$setting);
     }
