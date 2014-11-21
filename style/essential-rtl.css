@@ -23547,7 +23547,7 @@ a[name="lastused"] {
 
 .yui3-overlay,
 .user-enroller-panel {
-  z-index: 100 !important;
+  z-index: 300;
 }
 
 label {
