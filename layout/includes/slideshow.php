@@ -24,25 +24,32 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$numberofslides = theme_essential_showslider('numberofslides');
-$slideinterval  = theme_essential_get_setting('slideinterval');
-$captionscenter = (theme_essential_get_setting('slidecaptioncentred'))? ' centred' : '';
-$captionoptions = theme_essential_get_setting('slidecaptionoptions');
-$captionsbelowclass  = ($captionoptions == 2) ? ' below' : '';
+$numberofslides = theme_essential_showslider();
 
-if ($numberofslides) { ?>
+if ($numberofslides) {
+    $slideinterval  = theme_essential_get_setting('slideinterval');
+    $captionscenter = (theme_essential_get_setting('slidecaptioncentred'))? ' centred' : '';
+    $captionoptions = theme_essential_get_setting('slidecaptionoptions');
+    $captionsbelowclass  = ($captionoptions == 2) ? ' below' : '';
+    ?>
     <div class="row-fluid">
         <div class="span12">
             <div id="essentialCarousel" class="carousel slide" data-interval="<?php echo $slideinterval;?>">
                 <?php echo theme_essential_edit_button('theme_essential_slideshow');?>
                 <ol class="carousel-indicators">
-                    <?php for ($p = 1; $p <= $numberofslides; $p++) {
-                        echo '<li data-target="#essentialCarousel" data-slide-to="'.$p.'" class=""></li>';
-                    } ?>
+                    <?php
+                    for ($indicatorslideindex = 0; $indicatorslideindex < $numberofslides; $indicatorslideindex++) {
+                        echo '<li data-target="#essentialCarousel" data-slide-to="'.$indicatorslideindex.'"';
+                        if ($indicatorslideindex == 0) {
+                            echo 'class="active"';
+                        }
+                        echo '></li>';
+                    }
+                    ?>
                 </ol>
                 <div class="carousel-inner<?php echo $captionscenter.$captionsbelowclass;?>">
-                    <?php for ($i = 1; $i <= $numberofslides; $i++) {
-                        echo theme_essential_render_slide($i, $captionoptions);
+                    <?php for ($slideindex = 1; $slideindex <= $numberofslides; $slideindex++) {
+                        echo theme_essential_render_slide($slideindex, $captionoptions);
                     } ?>
                 </div>
                 <?php echo theme_essential_render_slide_controls($left); ?>
