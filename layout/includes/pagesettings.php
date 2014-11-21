@@ -133,6 +133,7 @@ function essential_has_footer_region() {
     $hasregion = false;
 
     switch ($PAGE->pagetype) {
+        case 'admin-plugins':
         case 'mod-quiz-edit':
             $hasregion = true;
             break;
