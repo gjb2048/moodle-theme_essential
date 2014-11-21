@@ -42,11 +42,12 @@ if ($enable1alert || $enable2alert || $enable3alert) {
     <section class="slideshow">
         <!-- Start Slideshow -->
         <?php
-        if (theme_essential_get_setting('toggleslideshow') == 1) {
+        $toggleslideshow = theme_essential_get_setting('toggleslideshow');
+        if ($toggleslideshow == 1) {
             require_once(dirname(__FILE__) . '/includes/slideshow.php');
-        } else if (theme_essential_get_setting('toggleslideshow') == 2 && !isloggedin()) {
+        } else if ($toggleslideshow == 2 && !isloggedin()) {
             require_once(dirname(__FILE__) . '/includes/slideshow.php');
-        } else if (theme_essential_get_setting('toggleslideshow') == 3 && isloggedin()) {
+        } else if ($toggleslideshow == 3 && isloggedin()) {
             require_once(dirname(__FILE__) . '/includes/slideshow.php');
         }
         ?>

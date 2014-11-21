@@ -155,6 +155,7 @@ New in 2.7.9.3
 ==============
 - FIX: Issue #382: Missing style in mod_feedback.
 - FIX: Issue #385: Embedded YouTube videos not working.
+- FIX: Issue #389: Slideshow data-slide-to index regression.
 
 New in 2.7.9.2
 ==============
