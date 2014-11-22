@@ -1947,6 +1947,12 @@ table.mod_index {
   overflow: auto;
 }
 
+.comment-area textarea.fullwidth {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 .comment-area .fd {
   text-align: left;
 }

@@ -650,8 +650,12 @@ table.mod_index {
 .comment-area textarea {
   width: 100%;
   overflow: auto;
+  &.fullwidth { // MDL-48206.
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+  }
 }
-
 .comment-area .fd {
   text-align: right;
 }
