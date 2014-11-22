@@ -42,6 +42,15 @@ if (theme_essential_get_setting('enablealternativethemecolors1') ||
     $colourswitcher = false;
 }
 
+$devicetype = core_useragent::get_device_type(); // In /lib/classes/useragent.php.
+if ($devicetype == "mobile") {
+    $bodyclasses[] = 'mobiledevice';
+} else if ($devicetype == "tablet") {
+    $bodyclasses[] = 'tabletdevice';
+} else {
+    $bodyclasses[] = 'desktopdevice';
+}
+
 switch (theme_essential_get_setting('pagewidth')) {
     case 100:
         $bodyclasses[] = 'pagewidthvariable';

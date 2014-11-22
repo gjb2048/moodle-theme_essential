@@ -539,7 +539,23 @@ class theme_essential_core_renderer extends core_renderer
     }
 
     /**
-     * Outputs the messages menu
+     * Outputs the goto bottom menu.
+     * @return custom_menu object
+     */
+    public function custom_menu_goto_bottom()
+    {
+        $html = '';
+        if (($this->page->pagelayout == 'course') || ($this->page->pagelayout == 'incourse') || ($this->page->pagelayout == 'admin')) { // Go to bottom.
+            $menu = new custom_menu();
+            $gotobottom = html_writer::tag('i', '', array('class' => 'fa fa-arrow-circle-o-down'));
+            $menu->add($gotobottom, new moodle_url('#region-main'), get_string('gotobottom', 'theme_essential'));
+            $html = $this->render_custom_menu($menu);
+        }
+        return $html;
+    }
+
+    /**
+     * Outputs the user menu.
      * @return custom_menu object
      */
     public function custom_menu_user()
@@ -791,8 +807,6 @@ class theme_essential_core_renderer extends core_renderer
         $preferences .= html_writer::end_tag('ul');
         $preferences .= html_writer::end_tag('li');
         return $preferences;
-
-
     }
 
     /**

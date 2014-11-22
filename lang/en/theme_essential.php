@@ -221,6 +221,8 @@ $string['loggedinfrom'] = 'Logged in from ';
 $string['mygrades'] = 'My grades';
 $string['coursegrades'] = 'Course grades';
 
+$string['gotobottom'] = 'Go to the bottom of the page';
+
 // Breadcrumb Style.
 $string['breadcrumbstyle'] = 'Breadcrumb style';
 $string['breadcrumbstyledesc'] = 'Here you can change the style of the breadcrumbs.';

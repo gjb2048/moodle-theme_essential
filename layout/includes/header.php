@@ -131,6 +131,17 @@ echo $OUTPUT->doctype() ?>
                             <span class="icon-bar"></span>
                         </a>
                         <?php echo theme_essential_get_title('navbar'); ?>
+                    <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>">
+                        <div class="usermenu">
+                            <?php echo $OUTPUT->custom_menu_user(); ?>
+                        </div>
+                        <div class="messagemenu">
+                            <?php echo $OUTPUT->custom_menu_messages(); ?>
+                        </div>
+                        <div class="gotobottommenu">
+                            <?php echo $OUTPUT->custom_menu_goto_bottom(); ?>
+                        </div>
+                    </div>
                         <div class="nav-collapse collapse pull-<?php echo ($left) ? 'left' : 'right'; ?>">
                             <div id="custom_menu_language">
                                 <?php echo $OUTPUT->custom_menu_language(); ?>
@@ -146,14 +157,6 @@ echo $OUTPUT->doctype() ?>
                             <div id="custom_menu">
                                 <?php echo $OUTPUT->custom_menu(); ?>
                             </div>
-                        </div>
-                    </div>
-                    <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>">
-                        <div class="usermenu">
-                            <?php echo $OUTPUT->custom_menu_user(); ?>
-                        </div>
-                        <div class="messagemenu">
-                            <?php echo $OUTPUT->custom_menu_messages(); ?>
                         </div>
                     </div>
                 </div>

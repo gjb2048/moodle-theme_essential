@@ -40,23 +40,26 @@
     div.backup-section+form,
     #fgroup_id_buttonar {
       width: 40%;
-      left: 30%;
-      position: fixed;
       text-align: center;
+      margin-left: auto;
+      margin-right: auto;
       z-index: 1;
-      bottom: 30px;
       padding: 20px;
       border-radius: @baseBorderRadius * 2;
+      .felement {
+        margin-left: auto;
+        margin-right: auto;
+      }
       #id_previous,
       #id_cancel {
-        margin-left: 0px;
-        float: left;
+        //margin-left: 0px;
+        //float: left;
       }
       #id_next,
       #id_submitbutton,
       #id_submitbutton2 {
-        float: right;
-        margin-right: 0px;
+        //float: right;
+        //margin-right: 0px;
       }
       > .fgroup {
         margin: 0px;
@@ -68,6 +71,22 @@
     }
     .fdescription.required {
       color: orangered;
+    }
+  }
+}
+
+body.desktopdevice #region-main {
+  form {
+    table#form td.submit,
+    .form-buttons,
+    .path-admin .buttons,
+    #fitem_id_submitbutton,
+    .fp-content-center form+div,
+    div.backup-section+form,
+    #fgroup_id_buttonar {
+      position: fixed;
+      left: 30%;
+      bottom: 30px;
     }
   }
 }
