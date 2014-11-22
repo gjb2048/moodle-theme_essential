@@ -154,7 +154,7 @@ function essential_has_footer_region() {
 
 /* Group Footer */
 $hascopyright = theme_essential_get_setting('copyright', true);
-$hasfootnote = theme_essential_get_setting('footnote', 'format_text');
+$hasfootnote = theme_essential_get_setting('footnote', 'format_html');
 
 /* Group Breadcrumb */
 $breadcrumbstyle = theme_essential_get_setting('breadcrumbstyle');
