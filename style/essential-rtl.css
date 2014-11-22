@@ -21872,56 +21872,23 @@ body.path-admin-setting #page-footer {
 #region-main form div.backup-section + form,
 #region-main form #fgroup_id_buttonar {
   width: 40%;
-  right: 30%;
-  position: fixed;
   text-align: center;
+  margin-right: auto;
+  margin-left: auto;
   z-index: 1;
-  bottom: 30px;
   padding: 20px;
   border-radius: 8px;
 }
 
-#region-main form table#form td.submit #id_previous,
-#region-main form .form-buttons #id_previous,
-#region-main form .path-admin .buttons #id_previous,
-#region-main form #fitem_id_submitbutton #id_previous,
-#region-main form .fp-content-center form + div #id_previous,
-#region-main form div.backup-section + form #id_previous,
-#region-main form #fgroup_id_buttonar #id_previous,
-#region-main form table#form td.submit #id_cancel,
-#region-main form .form-buttons #id_cancel,
-#region-main form .path-admin .buttons #id_cancel,
-#region-main form #fitem_id_submitbutton #id_cancel,
-#region-main form .fp-content-center form + div #id_cancel,
-#region-main form div.backup-section + form #id_cancel,
-#region-main form #fgroup_id_buttonar #id_cancel {
-  margin-right: 0px;
-  float: right;
-}
-
-#region-main form table#form td.submit #id_next,
-#region-main form .form-buttons #id_next,
-#region-main form .path-admin .buttons #id_next,
-#region-main form #fitem_id_submitbutton #id_next,
-#region-main form .fp-content-center form + div #id_next,
-#region-main form div.backup-section + form #id_next,
-#region-main form #fgroup_id_buttonar #id_next,
-#region-main form table#form td.submit #id_submitbutton,
-#region-main form .form-buttons #id_submitbutton,
-#region-main form .path-admin .buttons #id_submitbutton,
-#region-main form #fitem_id_submitbutton #id_submitbutton,
-#region-main form .fp-content-center form + div #id_submitbutton,
-#region-main form div.backup-section + form #id_submitbutton,
-#region-main form #fgroup_id_buttonar #id_submitbutton,
-#region-main form table#form td.submit #id_submitbutton2,
-#region-main form .form-buttons #id_submitbutton2,
-#region-main form .path-admin .buttons #id_submitbutton2,
-#region-main form #fitem_id_submitbutton #id_submitbutton2,
-#region-main form .fp-content-center form + div #id_submitbutton2,
-#region-main form div.backup-section + form #id_submitbutton2,
-#region-main form #fgroup_id_buttonar #id_submitbutton2 {
-  float: left;
-  margin-left: 0px;
+#region-main form table#form td.submit .felement,
+#region-main form .form-buttons .felement,
+#region-main form .path-admin .buttons .felement,
+#region-main form #fitem_id_submitbutton .felement,
+#region-main form .fp-content-center form + div .felement,
+#region-main form div.backup-section + form .felement,
+#region-main form #fgroup_id_buttonar .felement {
+  margin-right: auto;
+  margin-left: auto;
 }
 
 #region-main form table#form td.submit > .fgroup,
@@ -22036,6 +22003,18 @@ body.path-admin-setting #page-footer {
 
 #region-main form .fdescription.required {
   color: orangered;
+}
+
+body.desktopdevice #region-main form table#form td.submit,
+body.desktopdevice #region-main form .form-buttons,
+body.desktopdevice #region-main form .path-admin .buttons,
+body.desktopdevice #region-main form #fitem_id_submitbutton,
+body.desktopdevice #region-main form .fp-content-center form + div,
+body.desktopdevice #region-main form div.backup-section + form,
+body.desktopdevice #region-main form #fgroup_id_buttonar {
+  position: fixed;
+  right: 30%;
+  bottom: 30px;
 }
 
 #page-mod-assign-view.jsenabled .gradingoptionsform .fitem_actionbuttons {
@@ -22771,8 +22750,13 @@ ul.socials li {
   background-image: none;
 }
 
+.navbar .navbar-inner .custommenus {
+  width: 100%;
+}
+
 .navbar .navbar-inner .messagemenu,
-.navbar .navbar-inner .usermenu {
+.navbar .navbar-inner .usermenu,
+.navbar .navbar-inner .gotobottommenu {
   float: left;
 }
 
@@ -23367,13 +23351,10 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
     display: none;
   }
 
-  .navbar-inner .custommenus {
-    max-width: 60%;
-  }
-
   .navbar-inner .nav-collapse {
     float: right;
     display: block;
+    width: 100%;
     z-index: 10;
     /* Get on top of slider. */
     margin-right: -10px;
