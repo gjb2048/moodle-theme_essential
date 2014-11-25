@@ -93,6 +93,11 @@ img {
   -ms-interpolation-mode: bicubic;
 }
 
+// Because responsive images are on, this can muck up the tables, see #376 where the icons are iffy.
+table img {
+  max-width: none;
+}
+
 // Prevent max-width from affecting Google Maps
 #map_canvas img,
 .google-maps img {

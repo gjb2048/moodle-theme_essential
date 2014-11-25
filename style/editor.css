@@ -86,6 +86,9 @@ img {
   border: 0;
   -ms-interpolation-mode: bicubic;
 }
+table img {
+  max-width: none;
+}
 #map_canvas img,
 .google-maps img {
   max-width: none;

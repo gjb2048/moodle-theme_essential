@@ -68,11 +68,11 @@ Donations may allow me to provide you with more or better features in less time.
 
 Required version of Moodle
 ==========================
-This version works with Moodle version 2014051200.00 release 2.7 (Build: 20140512) and above within the 2.7 branch until the
+This version works with Moodle version 2014111000.00 release 2.8 (Build: 20141110) and above within the 2.8 branch until the
 next release.
 
 Please ensure that your hardware and software complies with 'Requirements' in 'Installing Moodle' on
-'docs.moodle.org/27/en/Installing_Moodle'.
+'docs.moodle.org/28/en/Installing_Moodle'.
 
 Installation
 ============
@@ -150,6 +150,11 @@ issue.
 It is essential that you provide as much information as possible, the critical information being the contents of the theme's 
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
+
+New in 2.8.0.1
+==============
+NOTE: Beta version - test servers only.  Use on production servers is not recommended or supported.
+- FIX: Issue #376: Grade report overflow in M2.8.
 
 New in 2.7.9.3
 ==============
