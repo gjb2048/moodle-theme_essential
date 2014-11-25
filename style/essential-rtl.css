@@ -22226,8 +22226,16 @@ body.desktopdevice #region-main form #fgroup_id_buttonar {
   padding: 10px;
 }
 
-.forumheaderlist td {
+.path-mod-forum .forumheaderlist td {
   padding: 5px;
+}
+
+.path-mod-forum .forumheaderlist td:last-of-type {
+  border-left-width: 1px;
+}
+
+.path-mod-forum .forumheaderlist tr:last-of-type td {
+  border-bottom-width: 1px;
 }
 
 .forumpost .picture img {

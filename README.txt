@@ -155,6 +155,7 @@ New in 2.8.0.1
 ==============
 NOTE: Beta version - test servers only.  Use on production servers is not recommended or supported.
 - FIX: Issue #376: Grade report overflow in M2.8.
+- FIX: Issue #381: The grid exceeds limits of the central area of the forum.
 
 New in 2.7.9.3
 ==============
