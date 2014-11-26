@@ -15,20 +15,20 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/DBezemer/moodle-theme_essential.git"
+    "url": "https://github.com/gjb2048/moodle-theme_essential.git"
   },
   "bugs": {
-    "url": "https://github.com/DBezemer/moodle-theme_essential/issues"
+    "url": "https://github.com/gjb2048/moodle-theme_essential/issues"
   },
  "devDependencies": {
     "grunt": "~0.4.5",
-    "grunt-contrib-less": "~0.11.3",
+    "grunt-contrib-less": "~0.12.0",
     "grunt-contrib-watch": "~0.6.1",
-    "grunt-exec": "~0.4.5",
-    "grunt-text-replace": "~0.3.12",
+    "grunt-exec": "~0.4.6",
+    "grunt-text-replace": "~0.4.0",
     "grunt-css-flip": "~0.4.0",
-    "grunt-contrib-copy": "~0.5.0",
-    "grunt-svgmin": "~0.4.0"
+    "grunt-contrib-copy": "~0.7.0",
+    "grunt-svgmin": "~2.0.0"
   },
   "license": "GPLv3.0+"
 }
