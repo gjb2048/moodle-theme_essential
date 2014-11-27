@@ -66,6 +66,11 @@ Flattr - https://flattr.com/profile/gjb2048
 
 Donations may allow me to provide you with more or better features in less time.
 
+Donators
+========
+Mihai Bojonca, TCM International Institute.
+Guido Hornig, actXcellence http://actxcellence.de
+
 Required version of Moodle
 ==========================
 This version works with Moodle version 2014051200.00 release 2.7 (Build: 20140512) and above within the 2.7 branch until the
