@@ -165,6 +165,7 @@ New in 2.7.9.3
 - FIX: Issue #387: Floating "Submit" area on mobiles is evil.  Also added 'Go to bottom' icon when applicable.
 - FIX: Issue #388: Navbar overlaps "Enrol Users" window, z index?
 - FIX: Issue #389: Slideshow data-slide-to index regression.
+- FIX: Issue #391: question bank - strings of questionnames cuted.
 
 New in 2.7.9.2
 ==============
