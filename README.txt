@@ -174,6 +174,7 @@ New in 2.7.9.3
 - FIX: Issue #388: Navbar overlaps "Enrol Users" window, z index?
 - FIX: Issue #389: Slideshow data-slide-to index regression.
 - FIX: Issue #391: question bank - strings of questionnames cuted.
+- FIX: Issue #395: Small overlap on Course and Category Management page.
 
 New in 2.7.9.2
 ==============

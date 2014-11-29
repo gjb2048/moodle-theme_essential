@@ -19,26 +19,25 @@
  * Moodle's new Bootstrap theme engine
  *
  * @package     theme_essential
- * @copyright   2013 Julian Ridden
- * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @copyright   2014 Gareth J Barnard
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-global $CFG;
 
-require_once('renderers/core_renderer.php');
+class theme_essential_core_course_management_renderer extends core_course_management_renderer {
 
-require_once('renderers/format_topics_renderer.php');
-require_once('renderers/format_weeks_renderer.php');
-require_once('renderers/format_topcoll_renderer.php');
-require_once('renderers/format_grid_renderer.php');
-require_once('renderers/format_noticebd_renderer.php');
-require_once('renderers/format_columns_renderer.php');
-
-if (theme_essential_get_setting('enablecategoryicon')) {
-    require_once('renderers/core_course_renderer.php');
-}
-
-if (intval($CFG->version) >= 2013111800) {
-    require_once('renderers/core_renderer_maintenance.php');
-    require_once('renderers/core_course_management_renderer.php');
+    /**
+     * Renderers a key value pair of information for display.
+     *
+     * @param string $key
+     * @param string $value
+     * @param string $class
+     * @return string
+     */
+    protected function detail_pair($key, $value, $class ='') {
+        $html = html_writer::start_div('detail-pair row yui3-g '.preg_replace('#[^a-zA-Z0-9_\-]#', '-', $class));
+        $html .= html_writer::div(html_writer::span($key), 'pair-key span4 yui3-u-1-4');
+        $html .= html_writer::div(html_writer::span($value), 'pair-value span8 yui3-u-3-4');
+        $html .= html_writer::end_div();
+        return $html;
+    }
 }
