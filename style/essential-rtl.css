@@ -6509,6 +6509,12 @@ span.editinstructions {
   box-shadow: -2px 2px 3px 0.1px #999999;
 }
 
+.moodle-dialogue h3 {
+  font-size: 14px;
+  margin: 0;
+  line-height: 20px;
+}
+
 .moodle-dialogue-base .filepicker .moodle-dialogue-wrap .moodle-dialogue-bd {
   padding: 0px;
 }
@@ -6531,9 +6537,8 @@ span.editinstructions {
   /* IE7 inline-block hack */
   *zoom: 1;
   float: right;
-  height: 525px;
+  height: 520px;
   border-left: 1px solid #BBBBBB;
-  border-right: none;
 }
 
 .file-picker .fp-repo-items {
@@ -6551,19 +6556,20 @@ span.editinstructions {
 .file-picker .fp-navbar {
   background: #F2F2F2;
   border-bottom: 1px solid #BBBBBB;
-  min-height: 40px;
+  min-height: 36px;
   overflow: hidden;
 }
 
 .file-picker .fp-navbar .fp-viewbar {
-  margin: 4px;
+  margin: 2px 4px;
 }
 
 .file-picker .fp-content {
+  padding-top: 0px;
   background: #FFFFFF;
   clear: none;
   overflow: auto;
-  height: 452px;
+  height: 482px;
 }
 
 .filepicker.moodle-dialogue-fullscreen .file-picker .fp-content {
@@ -6588,7 +6594,6 @@ span.editinstructions {
   float: right;
   width: 100%;
   margin: 0;
-  text-align: right;
 }
 
 .file-picker .fp-list .fp-repo a {
@@ -6614,10 +6619,13 @@ span.editinstructions {
   display: none;
 }
 
+.fp-toolbar .disabled {
+  display: none;
+}
+
 .fp-toolbar div {
   display: block;
   float: right;
-  margin-right: 0px;
   margin-left: 4px;
 }
 
@@ -6685,8 +6693,7 @@ span.editinstructions {
 }
 
 .fp-viewbar.disabled a {
-  opacity: 0.45;
-  filter: alpha(opacity=45);
+  opacity: .45;
   background: none;
   cursor: default;
 }
@@ -6905,7 +6912,6 @@ a.ygtvspacer:hover {
   margin-top: -7px;
   width: 24px;
   height: 24px;
-  margin-right: 0;
   margin-left: 10px;
   text-align: center;
   line-height: 24px;
@@ -6918,7 +6924,6 @@ a.ygtvspacer:hover {
 }
 
 .fp-filename {
-  padding-right: 0;
   padding-left: 10px;
 }
 
@@ -7191,7 +7196,7 @@ a.ygtvspacer:hover {
 }
 
 .file-picker .fp-toolbar {
-  padding: 4px;
+  padding: 2px 4px;
 }
 
 .fp-toolbar .fp-btn-add,
@@ -7318,19 +7323,19 @@ a.ygtvspacer:hover {
 }
 
 .filemanager .yui3-datatable-header {
-  background: #FFFFFF !important;
-  border-bottom: 1px solid #CCCCCC !important;
-  border-right: 0 solid #FFFFFF !important;
-  color: #555555 !important;
+  background: #FFFFFF!important;
+  border-bottom: 1px solid #CCCCCC!important;
+  border-right: 0 solid #FFFFFF!important;
+  color: #555555!important;
 }
 
 .filemanager .yui3-datatable-odd .yui3-datatable-cell {
-  background-color: #F6F6F6 !important;
+  background-color: #F6F6F6!important;
   border-right: 0 solid #F6F6F6;
 }
 
 .filemanager .yui3-datatable-even .yui3-datatable-cell {
-  background-color: #FFFFFF !important;
+  background-color: #FFFFFF!important;
   border-right: 0 solid #FFFFFF;
 }
 
@@ -7359,7 +7364,6 @@ a.ygtvspacer:hover {
 .filemanager .fp-iconview .fp-folder.fp-hascontextmenu .fp-contextmenu {
   display: block;
   position: absolute;
-  right: inherit;
   left: 7px;
   bottom: 5px;
 }
@@ -7625,7 +7629,6 @@ a.ygtvspacer:hover {
 
 .fp-forminset .control-group .controls {
   margin-right: 125px;
-  margin-left: 0;
 }
 
 .fp-forminset .control-group .controls.control-radio input {
