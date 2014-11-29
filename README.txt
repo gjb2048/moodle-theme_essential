@@ -68,6 +68,7 @@ Donations may allow me to provide you with more or better features in less time.
 
 Donators
 ========
+Donations gratefully received with thanks from:
 Mihai Bojonca, TCM International Institute.
 Guido Hornig, actXcellence http://actxcellence.de
 
