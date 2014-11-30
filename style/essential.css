@@ -636,6 +636,7 @@ table.quizreviewsummary td.cell {
   top: 0;
   left: 5em;
   width: auto;
+  min-width: 70%;
 }
 #page-mod-quiz-edit ul.slots li.section li.activity .mod-indent-outer {
   padding-left: 22px;
@@ -654,7 +655,7 @@ table.quizreviewsummary td.cell {
   text-overflow: ellipsis;
   overflow: hidden;
   word-break: break-word;
-  width: 70%;
+  width: 84%;
   display: inline-block;
   height: 20px;
 }

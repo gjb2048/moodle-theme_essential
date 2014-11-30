@@ -164,6 +164,7 @@ NOTE: Beta version - test servers only.  Use on production servers is not recomm
 - FIX: Issue #335: Sorting buttons on headings on gradebook in 2.8 overlap other cells
 - FIX: Issue #376: Grade report overflow in M2.8.
 - FIX: Issue #381: The grid exceeds limits of the central area of the forum.
+- FIX: Issue #392: Essential quiz - edit mode - action btns broken.
 
 New in 2.7.9.3
 ==============
