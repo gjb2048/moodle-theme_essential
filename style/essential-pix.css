@@ -189,6 +189,9 @@
 #rubric-rubric.gradingform_rubric .addcriterion input {
   background: transparent url([[pix:t/add]]) no-repeat 7px 8px;
 }
+.path-mod-quiz .qnbutton.flagged .trafficlight {
+  background: url([[pix:quiz|navflagged]]) no-repeat top right;
+}
 [class^="icon-"],
 [class*=" icon-"] {
   background-image: url("[[pix:theme|glyphicons-halflings]]");

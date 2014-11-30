@@ -226,7 +226,6 @@
 }
 .dir-rtl .file-picker .fp-pathbar {
   text-align: right;
-  display: block;
   border-top: none;
 }
 .dir-rtl .file-picker div.bd {
@@ -505,5 +504,26 @@
 }
 #page-my-index.dir-rtl .block h3 {
   text-align: right;
+}
+#page-mod-quiz-view .quizattemptcounts,
+.dir-rtl #page-mod-quiz-view .quizattemptcounts {
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+}
+#page-mod-quiz-view.dir-rtl .generalbox#feedback h3 {
+  text-align: center;
+}
+#page-mod-quiz-edit.dir-rtl .add-menu-outer {
+  right: auto;
+  left: 0;
+}
+#page-mod-quiz-edit.dir-rtl .maxgrade,
+#page-mod-quiz-edit.dir-rtl .totalpoints {
+  float: left;
+}
+#page-mod-quiz-edit.dir-rtl ul.slots li.section li.activity .page_split_join {
+  left: auto;
+  right: -20px;
 }
 /*# sourceMappingURL=/theme/essential/style/moodle-rtl.treasure.map */
