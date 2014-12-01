@@ -179,6 +179,7 @@ New in 2.7.9.3
 - FIX: Issue #389: Slideshow data-slide-to index regression.
 - FIX: Issue #391: question bank - strings of questionnames cuted.
 - FIX: Issue #395: Small overlap on Course and Category Management page.
+- FIX: MDL-48246 : YUI generated class 'hidepanelicon' not styled because of a typo.
 
 New in 2.7.9.2
 ==============
