@@ -160,6 +160,9 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.7.9.3
 ==============
 - FIX: Issue #244: Rows too long on plugins overview page.
+- FIX: Issue #310: Moodle TinyMCE editor issue.
+                   Thanks to Mary Evans for the fix on: https://moodle.org/mod/forum/discuss.php?d=275976 and
+                   https://github.com/zahrah- for testing.
 - FIX: Issue #382: Missing style in mod_feedback.
 - FIX: Issue #385: Embedded YouTube videos not working.
 - FIX: Issue #387: Floating "Submit" area on mobiles is evil.  Also added 'Go to bottom' icon when applicable.
