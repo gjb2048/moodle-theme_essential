@@ -17802,7 +17802,7 @@ body.has_dock #dockeditempanel {
 }
 body.has_dock #dockeditempanel .dockeditempanel_content {
   z-index: 12050;
-  width: 200px;
+  width: 384px;
   background-color: #fff;
 }
 body.has_dock #dockeditempanel .dockeditempanel_bd {
@@ -17813,6 +17813,7 @@ body.has_dock #dockeditempanel .dockeditempanel_bd .block_navigation .block_tree
   overflow: visible;
 }
 body.has_dock #dockeditempanel .dockeditempanel_hd {
+  position: relative;
   border-bottom: 1px solid #EEE;
 }
 body.has_dock #dockeditempanel .dockeditempanel_hd h2 {
@@ -19538,6 +19539,9 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
   }
   #page-mod-quiz-edit div.question div.content .questiontext {
     max-width: 40%;
+  }
+  body.has_dock #dockeditempanel .dockeditempanel_content {
+    width: 300px;
   }
 }
 /* @end */
