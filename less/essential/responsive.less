@@ -5,6 +5,17 @@
     #page-login-index #region-main {
         width: 100% !important;
     }
+    #page-mod-quiz-edit {
+        .reorder div.question div.content {
+            width: 92%;
+        }
+        div.question div.content .questiontext {
+            max-width: 60%;
+        }
+        #categoryquestions .questiontext {
+            max-width: 60%;
+        }
+    }
 }
 
 @media (max-width: @navbarCollapseWidth) {
@@ -110,6 +121,9 @@
     .row-fluid .desktop-first-column {
         margin-left: 0;
     }
+    #page-mod-quiz-edit .reorder div.question div.content {
+        width: 90%;
+    }
 }
 
 @media (max-width: 767px) {
@@ -175,14 +189,56 @@
         div.quizcontents {
             width: 98%;
         }
-        div.question div.content .questiontext {
-            max-width: 40%;
+        #categoryquestions .questiontext {
+            max-width: 80%;
+        }
+        div.question div.content {
+            min-height: 45px;
+            .questiontext {
+                max-width: 50%;
+            }
+            div.questioncontrols {
+                width: 20px;
+                a {
+                    display: block;
+                }
+            }
+            div.points {
+                width: 9.1em;
+                margin-right: 20px;
+            }
+            div.qorder {
+                right: 24px;
+            }
         }
     }
 
     // Docked blocks.
     body.has_dock #dockeditempanel .dockeditempanel_content {
         width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    // quiz.less in Essential and mod version.
+    #page-mod-quiz-edit {
+        div.question {
+            div.questioncontainer {
+                background-color: #fff;
+            }
+            div.content {
+                .questiontext {
+                    max-width: 30%;
+                }
+            }
+        }
+        div.editq div.question div.content {
+            float: none;
+            margin: 0 auto;
+        }
+        #categoryquestions .questiontext {
+            max-width: 70%;
+        }
     }
 }
 

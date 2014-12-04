@@ -210,14 +210,12 @@ body.jsenabled .questionflagcheckbox {
   position: relative;
   zoom: 1;
   padding-left: 0.3em;
+  max-width: 40%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   display: inline-block;
   vertical-align: bottom;
-}
-#page-mod-quiz-edit div.question div.content .questiontext {
-  max-width: 50%;
 }
 #page-mod-quiz-edit div.question div.content .questionname {
   min-width: 14%;
@@ -608,8 +606,8 @@ table#categoryquestions {
   padding-top: 0.1em;
 }
 #page-mod-quiz-edit .reorder div.question div.content {
-  width: 98%;
-  float: left;
+  width: 87%;
+  float: right;
   position: relative;
   border-radius: 0.3em;
   border-bottom-left-radius: 0;
@@ -19380,6 +19378,15 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
   #page-login-index #region-main {
     width: 100% !important;
   }
+  #page-mod-quiz-edit .reorder div.question div.content {
+    width: 92%;
+  }
+  #page-mod-quiz-edit div.question div.content .questiontext {
+    max-width: 60%;
+  }
+  #page-mod-quiz-edit #categoryquestions .questiontext {
+    max-width: 60%;
+  }
 }
 @media (max-width: 979px) {
   font-size: 13px !important;
@@ -19482,6 +19489,9 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
   .row-fluid .desktop-first-column {
     margin-left: 0;
   }
+  #page-mod-quiz-edit .reorder div.question div.content {
+    width: 90%;
+  }
 }
 @media (max-width: 767px) {
   body {
@@ -19537,11 +19547,45 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
   #page-mod-quiz-edit div.quizcontents {
     width: 98%;
   }
+  #page-mod-quiz-edit #categoryquestions .questiontext {
+    max-width: 80%;
+  }
+  #page-mod-quiz-edit div.question div.content {
+    min-height: 45px;
+  }
   #page-mod-quiz-edit div.question div.content .questiontext {
-    max-width: 40%;
+    max-width: 50%;
+  }
+  #page-mod-quiz-edit div.question div.content div.questioncontrols {
+    width: 20px;
+  }
+  #page-mod-quiz-edit div.question div.content div.questioncontrols a {
+    display: block;
+  }
+  #page-mod-quiz-edit div.question div.content div.points {
+    width: 9.1em;
+    margin-right: 20px;
+  }
+  #page-mod-quiz-edit div.question div.content div.qorder {
+    right: 24px;
   }
   body.has_dock #dockeditempanel .dockeditempanel_content {
     width: 300px;
+  }
+}
+@media (max-width: 480px) {
+  #page-mod-quiz-edit div.question div.questioncontainer {
+    background-color: #fff;
+  }
+  #page-mod-quiz-edit div.question div.content .questiontext {
+    max-width: 30%;
+  }
+  #page-mod-quiz-edit div.editq div.question div.content {
+    float: none;
+    margin: 0 auto;
+  }
+  #page-mod-quiz-edit #categoryquestions .questiontext {
+    max-width: 70%;
   }
 }
 /* @end */
