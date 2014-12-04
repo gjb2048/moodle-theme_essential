@@ -5,6 +5,14 @@
     #page-login-index #region-main {
         width: 100% !important;
     }
+    #page-mod-quiz-edit ul.slots {
+        li.section li.activity .activityinstance {
+            width: 90%;
+        }
+        .activityinstance span.instancename {
+            width: 94%;
+        }
+    }
 }
 
 @media (max-width: @navbarCollapseWidth) {
@@ -110,6 +118,14 @@
     .row-fluid .desktop-first-column {
         margin-left: 0;
     }
+    #page-mod-quiz-edit ul.slots {
+        li.section li.activity .activityinstance {
+            width: 80%;
+        }
+        .activityinstance span.instancename {
+            width: 90%;
+        }
+    }
 }
 
 @media (max-width: 767px) {
@@ -171,18 +187,30 @@
     }
 
     // quiz.less in Essential and mod version.
-    #page-mod-quiz-edit {
-        div.quizcontents {
-            width: 98%;
+    #page-mod-quiz-edit ul.slots {
+        li.section li.activity .activityinstance {
+            width: 80%;
         }
-        div.question div.content .questiontext {
-            max-width: 40%;
+        .activityinstance span.instancename {
+            width: 70%;
         }
     }
 
     // Docked blocks.
     body.has_dock #dockeditempanel .dockeditempanel_content {
         width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    // quiz.less in Essential and mod version.
+    #page-mod-quiz-edit ul.slots {
+        li.section li.activity .activityinstance {
+            width: 80%;
+        }
+        .activityinstance span.instancename {
+            width: 40%;
+        }
     }
 }
 

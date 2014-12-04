@@ -228,7 +228,7 @@ body.jsenabled .questionflagcheckbox {
     position: relative;
     zoom: 1;
     padding-left: 0.3em;
-    //max-width: 40%;
+    max-width: 40%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -236,9 +236,6 @@ body.jsenabled .questionflagcheckbox {
     vertical-align: bottom;
 }
 
-#page-mod-quiz-edit div.question div.content .questiontext {
-    max-width: 50%;
-}
 #page-mod-quiz-edit div.question div.content .questionname {
     min-width: 14%;
     max-width: 34%;
@@ -680,8 +677,7 @@ table.quizreviewsummary td.cell {
     position: absolute;
     top: 0;
     left: 5em;
-    width: auto; // Was: width: 100%;.
-    min-width: 70%; // Essential addition.
+    width: 90%; // Tried: width: auto; was 100%.
 }
 
 #page-mod-quiz-edit ul.slots li.section li.activity .mod-indent-outer {
@@ -697,12 +693,10 @@ table.quizreviewsummary td.cell {
 }
 
 #page-mod-quiz-edit ul.slots .activityinstance span.instancename {
-    overflow-x: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    word-break: break-word;
-    width: 84%; // Original 70%.
+    width: 84%; // Was 80%.
     display: inline-block;
     height: 20px;
 }

@@ -215,14 +215,12 @@ body.jsenabled .questionflagcheckbox {
   position: relative;
   zoom: 1;
   padding-left: 0.3em;
+  max-width: 40%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   display: inline-block;
   vertical-align: bottom;
-}
-#page-mod-quiz-edit div.question div.content .questiontext {
-  max-width: 50%;
 }
 #page-mod-quiz-edit div.question div.content .questionname {
   min-width: 14%;
@@ -635,8 +633,7 @@ table.quizreviewsummary td.cell {
   position: absolute;
   top: 0;
   left: 5em;
-  width: auto;
-  min-width: 70%;
+  width: 90%;
 }
 #page-mod-quiz-edit ul.slots li.section li.activity .mod-indent-outer {
   padding-left: 22px;
@@ -650,11 +647,9 @@ table.quizreviewsummary td.cell {
   right: 0;
 }
 #page-mod-quiz-edit ul.slots .activityinstance span.instancename {
-  overflow-x: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  word-break: break-word;
   width: 84%;
   display: inline-block;
   height: 20px;
@@ -19311,6 +19306,12 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
   #page-login-index #region-main {
     width: 100% !important;
   }
+  #page-mod-quiz-edit ul.slots li.section li.activity .activityinstance {
+    width: 90%;
+  }
+  #page-mod-quiz-edit ul.slots .activityinstance span.instancename {
+    width: 94%;
+  }
 }
 @media (max-width: 979px) {
   font-size: 13px !important;
@@ -19413,6 +19414,12 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
   .row-fluid .desktop-first-column {
     margin-left: 0;
   }
+  #page-mod-quiz-edit ul.slots li.section li.activity .activityinstance {
+    width: 80%;
+  }
+  #page-mod-quiz-edit ul.slots .activityinstance span.instancename {
+    width: 90%;
+  }
 }
 @media (max-width: 767px) {
   body {
@@ -19465,14 +19472,22 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
   #marketing-buttons {
     display: none;
   }
-  #page-mod-quiz-edit div.quizcontents {
-    width: 98%;
+  #page-mod-quiz-edit ul.slots li.section li.activity .activityinstance {
+    width: 80%;
   }
-  #page-mod-quiz-edit div.question div.content .questiontext {
-    max-width: 40%;
+  #page-mod-quiz-edit ul.slots .activityinstance span.instancename {
+    width: 70%;
   }
   body.has_dock #dockeditempanel .dockeditempanel_content {
     width: 300px;
+  }
+}
+@media (max-width: 480px) {
+  #page-mod-quiz-edit ul.slots li.section li.activity .activityinstance {
+    width: 80%;
+  }
+  #page-mod-quiz-edit ul.slots .activityinstance span.instancename {
+    width: 40%;
   }
 }
 /* @end */
