@@ -19019,6 +19019,9 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
 #page-mod-quiz-edit .questionbank select.menucategory {
   width: 100%;
 }
+#page-mod-quiz-edit ul.slots li.section li.activity img.iconsmall {
+  display: none;
+}
 .questionbankwindow {
   width: 100%;
 }
