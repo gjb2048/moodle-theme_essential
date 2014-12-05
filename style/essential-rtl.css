@@ -272,21 +272,24 @@ body.jsenabled .questionflagcheckbox {
   vertical-align: bottom;
 }
 
-#page-mod-quiz-edit div.question div.content .questionname {
-  min-width: 14%;
-  max-width: 34%;
-}
-
 #page-mod-quiz-edit div.question div.content .questionname,
 #categoryquestions .questionname {
   white-space: nowrap;
   overflow: hidden;
   zoom: 1;
   position: relative;
-  max-width: 100%;
   display: inline-block;
   vertical-align: bottom;
   text-overflow: ellipsis;
+}
+
+#categoryquestions .questionname {
+  max-width: 100%;
+}
+
+#page-mod-quiz-edit div.question div.content .questionname {
+  min-width: 14%;
+  max-width: 24%;
 }
 
 #page-mod-quiz-edit div.editq div.question div.content .singlequestion a .questionname,
@@ -23567,6 +23570,10 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
     left: 24px;
   }
 
+  #page-mod-quiz-edit div.question div.content .questionname {
+    max-width: 16%;
+  }
+
   body.has_dock #dockeditempanel .dockeditempanel_content {
     width: 300px;
   }
@@ -23575,6 +23582,10 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
 @media (max-width: 480px) {
   #page-mod-quiz-edit div.question div.questioncontainer {
     background-color: #fff;
+  }
+
+  #page-mod-quiz-edit div.question div.content .questionname {
+    max-width: 16%;
   }
 
   #page-mod-quiz-edit div.question div.content .questiontext {

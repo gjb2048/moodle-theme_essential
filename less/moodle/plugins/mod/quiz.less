@@ -230,21 +230,24 @@ body.jsenabled .questionflagcheckbox {
     vertical-align: bottom;
 }
 
-#page-mod-quiz-edit div.question div.content .questionname {
-    min-width: 14%;
-    max-width: 34%;
-}
-
 #page-mod-quiz-edit div.question div.content .questionname,
 #categoryquestions .questionname {
     white-space: nowrap;
     overflow: hidden;
     zoom: 1;
     position: relative;
-    max-width: 100%;
     display: inline-block;
     vertical-align: bottom;
     text-overflow: ellipsis;
+}
+
+#categoryquestions .questionname {
+    max-width: 100%;
+}
+
+#page-mod-quiz-edit div.question div.content .questionname {
+    min-width: 14%;
+    max-width: 24%;
 }
 
 #page-mod-quiz-edit div.editq div.question div.content .singlequestion a .questionname,
