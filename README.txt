@@ -181,6 +181,7 @@ New in 2.7.9.3
 - FIX: Issue #395: Small overlap on Course and Category Management page.
 - FIX: Issue #396: Fine tuning required on Edit Quiz page.
 - FIX: Issue #397: Docked blocks are not wide enough.
+- FIX: Issue #402: Moving "Automatic redirect" window.
 - FIX: MDL-48246 : YUI generated class 'hidepanelicon' not styled because of a typo.
 
 New in 2.7.9.2
