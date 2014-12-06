@@ -26,7 +26,7 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version = 2014113000; // YYYYMMDDVV.
+$plugin->version = 2014120600; // YYYYMMDDVV.
 $plugin->maturity = MATURITY_BETA; // this version's maturity level.
 $plugin->release = '2.8.0.1 (Build: 2014113000)';
 $plugin->requires  = 2014111000.00; // 2.8 (Build: 20141110).
