@@ -1004,11 +1004,7 @@ function theme_essential_render_slide_controls($left) {
     $prev = '<a class="left carousel-control" href="#essentialCarousel" data-slide="prev"><i class="fa fa-chevron-circle-' . $faleft . '"></i></a>';
     $next = '<a class="right carousel-control" href="#essentialCarousel" data-slide="next"><i class="fa fa-chevron-circle-' . $faright . '"></i></a>';
 
-    if ($left) {
-        return $prev . $next;
-    } else {
-        return $next . $prev;
-    }
+    return $prev . $next;
 }
 
 /**
