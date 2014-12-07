@@ -1011,7 +1011,7 @@ function theme_essential_render_slide_controls($left) {
  * States if the browser is not IE9 or less.
  */
 function theme_essential_not_lte_ie9() {
-    $properties = core_useragent::check_ie_properties();; // In /lib/classes/useragent.php.
+    $properties = theme_essential_ie_properties();
     if (!is_array($properties)) {
         return true;
     }
@@ -1019,14 +1019,23 @@ function theme_essential_not_lte_ie9() {
     return ($properties['version'] > 9.0);
 }
 
+/**
+ * States if the browser is IE by returning properties, otherwise false.
+ */
+function theme_essential_ie_properties() {
+    $properties = core_useragent::check_ie_properties(); // In /lib/classes/useragent.php.
+    if (!is_array($properties)) {
+        return false;
+    } else {
+        return $properties;
+    }
+}
+
 function theme_essential_page_init(moodle_page $page) {
     global $CFG;
     $page->requires->jquery();
-    if (intval($CFG->version) >= 2013111800) {
-        if (core_useragent::check_ie_version() && !core_useragent::check_ie_version('9.0')) {
-            $page->requires->jquery_plugin('html5shiv', 'theme_essential');
-        }
-    } else if (check_browser_version('MSIE') && !check_browser_version('MSIE', '9.0')) {
+    $properties = theme_essential_ie_properties();
+    if ((is_array($properties)) && ($properties['version'] <= 8.0)) {
         $page->requires->jquery_plugin('html5shiv', 'theme_essential');
     }
     $page->requires->jquery_plugin('bootstrap', 'theme_essential');

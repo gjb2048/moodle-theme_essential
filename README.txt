@@ -160,6 +160,7 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.7.9.4
 ==============
 Attempt at #348 by initially putting back unminified bootstrap.js for debugging.
+Attempt to see if html5shiv needs to be applied to IE9 to make it look ok.
 
 New in 2.7.9.3
 ==============
