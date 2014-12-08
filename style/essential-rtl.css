@@ -21932,6 +21932,18 @@ body.desktopdevice #region-main form #fgroup_id_buttonar {
   bottom: 30px;
 }
 
+body#page-enrol-index.desktopdevice #region-main form table#form td.submit,
+body#page-enrol-index.desktopdevice #region-main form .form-buttons,
+body#page-enrol-index.desktopdevice #region-main form .path-admin .buttons,
+body#page-enrol-index.desktopdevice #region-main form #fitem_id_submitbutton,
+body#page-enrol-index.desktopdevice #region-main form .fp-content-center form + div,
+body#page-enrol-index.desktopdevice #region-main form div.backup-section + form,
+body#page-enrol-index.desktopdevice #region-main form #fgroup_id_buttonar {
+  position: inherit;
+  right: inherit;
+  bottom: inherit;
+}
+
 #page-mod-assign-view.jsenabled .gradingoptionsform .fitem_actionbuttons {
   display: none;
 }
