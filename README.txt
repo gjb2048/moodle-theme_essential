@@ -161,6 +161,7 @@ New in 2.7.9.4
 ==============
 Attempt at #348 by initially putting back unminified bootstrap.js for debugging.
 Attempt to see if html5shiv needs to be applied to IE9 to make it look ok.
+- FIX: Issue #403: Enroll button does not work with two or more self-enrollment options.
 
 New in 2.7.9.3
 ==============
