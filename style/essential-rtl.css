@@ -264,7 +264,7 @@ body.jsenabled .questionflagcheckbox {
   position: relative;
   zoom: 1;
   padding-right: 0.3em;
-  max-width: 40%;
+  max-width: 36%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -23341,7 +23341,7 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
   }
 
   #page-mod-quiz-edit div.question div.content .questiontext {
-    max-width: 60%;
+    max-width: 50%;
   }
 
   #page-mod-quiz-edit #categoryquestions .questiontext {
@@ -23472,6 +23472,49 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
   }
 }
 
+@media (max-width: 979px) {
+  #page-mod-quiz-edit .questionbankwindow.block {
+    width: 98%;
+  }
+
+  #page-mod-quiz-edit div.quizcontents {
+    width: 98%;
+  }
+
+  #page-mod-quiz-edit #categoryquestions .questiontext {
+    max-width: 80%;
+  }
+
+  #page-mod-quiz-edit div.question div.content {
+    min-height: 45px;
+  }
+
+  #page-mod-quiz-edit div.question div.content .questiontext {
+    max-width: 60%;
+  }
+
+  #page-mod-quiz-edit div.question div.content div.questioncontrols {
+    width: 20px;
+  }
+
+  #page-mod-quiz-edit div.question div.content div.questioncontrols a {
+    display: block;
+  }
+
+  #page-mod-quiz-edit div.question div.content div.points {
+    width: 9.1em;
+    margin-left: 20px;
+  }
+
+  #page-mod-quiz-edit div.question div.content div.qorder {
+    left: 24px;
+  }
+
+  #page-mod-quiz-edit div.question div.content .questionname {
+    max-width: 16%;
+  }
+}
+
 @media (max-width: 767px) {
   body {
     font-size: 12px !important;
@@ -23537,45 +23580,12 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
     display: none;
   }
 
-  #page-mod-quiz-edit div.quizcontents {
-    width: 98%;
-  }
-
-  #page-mod-quiz-edit #categoryquestions .questiontext {
-    max-width: 80%;
-  }
-
-  #page-mod-quiz-edit div.question div.content {
-    min-height: 45px;
+  body.has_dock #dockeditempanel .dockeditempanel_content {
+    width: 300px;
   }
 
   #page-mod-quiz-edit div.question div.content .questiontext {
     max-width: 50%;
-  }
-
-  #page-mod-quiz-edit div.question div.content div.questioncontrols {
-    width: 20px;
-  }
-
-  #page-mod-quiz-edit div.question div.content div.questioncontrols a {
-    display: block;
-  }
-
-  #page-mod-quiz-edit div.question div.content div.points {
-    width: 9.1em;
-    margin-left: 20px;
-  }
-
-  #page-mod-quiz-edit div.question div.content div.qorder {
-    left: 24px;
-  }
-
-  #page-mod-quiz-edit div.question div.content .questionname {
-    max-width: 16%;
-  }
-
-  body.has_dock #dockeditempanel .dockeditempanel_content {
-    width: 300px;
   }
 }
 

@@ -10,7 +10,7 @@
             width: 92%;
         }
         div.question div.content .questiontext {
-            max-width: 60%;
+            max-width: 50%;
         }
         #categoryquestions .questiontext {
             max-width: 60%;
@@ -126,6 +126,44 @@
     }
 }
 
+@media (max-width: 979px) {
+    // quiz.less in Essential and mod version.
+    #page-mod-quiz-edit {
+        .questionbankwindow.block {
+            width: 98%;
+        }
+        div.quizcontents {
+            width: 98%;
+        }
+        #categoryquestions .questiontext {
+            max-width: 80%;
+        }
+        div.question div.content {
+            min-height: 45px;
+            .questiontext {
+                max-width: 60%;
+            }
+            div.questioncontrols {
+                width: 20px;
+                a {
+                    display: block;
+                }
+            }
+            div.points {
+                width: 9.1em;
+                margin-right: 20px;
+            }
+            div.qorder {
+                right: 24px;
+            }
+            .questionname {
+                max-width: 16%;
+            }
+        }
+    }
+}
+
+
 @media (max-width: 767px) {
     body{
         font-size: 12px !important;
@@ -184,41 +222,18 @@
         display: none;
     }
 
-    // quiz.less in Essential and mod version.
-    #page-mod-quiz-edit {
-        div.quizcontents {
-            width: 98%;
-        }
-        #categoryquestions .questiontext {
-            max-width: 80%;
-        }
-        div.question div.content {
-            min-height: 45px;
-            .questiontext {
-                max-width: 50%;
-            }
-            div.questioncontrols {
-                width: 20px;
-                a {
-                    display: block;
-                }
-            }
-            div.points {
-                width: 9.1em;
-                margin-right: 20px;
-            }
-            div.qorder {
-                right: 24px;
-            }
-            .questionname {
-                max-width: 16%;
-            }
-        }
-    }
-
     // Docked blocks.
     body.has_dock #dockeditempanel .dockeditempanel_content {
         width: 300px;
+    }
+
+    // quiz.less in Essential and mod version.
+    #page-mod-quiz-edit {
+        div.question div.content {
+            .questiontext {
+                max-width: 50%;
+            }
+        }
     }
 }
 
