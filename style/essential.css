@@ -964,7 +964,6 @@ a.autolink.glossary:hover {
 }
 .collapsible-actions .collapseexpand {
   padding-left: 20px;
-  padding-right: 0px;
 }
 .yui-overlay .yui-widget-bd {
   background-color: #FFEE69;
@@ -1008,7 +1007,6 @@ img.icon {
   vertical-align: text-bottom;
   width: 16px;
   padding-right: 6px;
-  padding-left: 0px;
 }
 img.iconsmall {
   height: 12px;
@@ -1046,7 +1044,6 @@ img.iconlarge {
 img.iconsort {
   vertical-align: text-bottom;
   padding-left: .3em;
-  padding-right: 0;
   margin-bottom: .15em;
 }
 img.icontoggle {
@@ -1214,9 +1211,6 @@ a.skip:active {
 .groupmanagementtable #removeselect_wrapper label,
 .groupmanagementtable #addselect_wrapper label {
   font-weight: normal;
-}
-.groupmanagementtable p {
-  text-align: left;
 }
 #group-usersummary {
   width: 14em;
@@ -1911,6 +1905,9 @@ body.tag .managelink {
 #page-enrol-users .user-enroller-panel .uep-search-results .user .details {
   width: 237px;
 }
+#page-enrol-users .user-enroller-panel .uep-search-results .cohort .details {
+  width: 237px;
+}
 .corelightbox {
   background-color: #CCC;
   position: absolute;
@@ -2345,7 +2342,6 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
   border-bottom: 1px solid #FFFFFF;
 }
 .choosercontainer #chooseform .nonoption {
-  padding-right: 0;
   padding-left: 2.7em;
   padding-top: 0.3em;
   padding-bottom: 0.1em;
@@ -2603,26 +2599,6 @@ a.criteria-action {
   padding: 0px 3px;
   float: right;
 }
-table.issuedbadgebox {
-  width: 750px;
-  background-color: #f5f5f5;
-}
-table.badgeissuedimage {
-  width: 150px;
-  text-align: center;
-}
-table.badgeissuedinfo {
-  width: 600px;
-}
-table.badgeissuedinfo .bvalue {
-  text-align: left;
-  vertical-align: middle;
-}
-table.badgeissuedinfo .bfield {
-  width: 125px;
-  text-align: left;
-  font-style: italic;
-}
 ul.badges {
   margin: 0;
   list-style: none;
@@ -2643,8 +2619,8 @@ ul.badges {
   position: absolute;
 }
 .badges li .badge-image {
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 100px;
   left: 10px;
   top: 0px;
   z-index: 1;
@@ -2652,25 +2628,68 @@ ul.badges {
 .badges li .badge-actions {
   position: relative;
 }
-div.badge {
-  position: relative;
-  display: block;
-}
-div.badge .expireimage {
+.badges li .expireimage {
   width: 100px;
   height: 100px;
-  left: 20px;
-  top: 0px;
-}
-.expireimage {
-  opacity: 0.85;
-  filter: alpha(opacity=85);
-  width: 90px;
-  height: 90px;
-  left: 30px;
+  left: 25px;
   top: 0px;
   position: absolute;
   z-index: 10;
+  opacity: 0.85;
+}
+#badge-image {
+  background-color: transparent;
+  padding: 0;
+  position: relative;
+  min-width: 100px;
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 17px;
+}
+#badge-image .expireimage {
+  width: 100px;
+  height: 100px;
+  left: 0px;
+  top: 0px;
+  opacity: 0.85;
+  filter: alpha(opacity=85);
+  position: absolute;
+  z-index: 10;
+}
+#badge-image .singlebutton {
+  padding-top: 5px;
+}
+#badge-image .singlebutton input {
+  margin-left: 0px;
+}
+#badge-details {
+  display: inline-block;
+  width: 79%;
+}
+#badge-overview dl,
+#badge-details dl {
+  margin: 0;
+}
+#badge-overview dl dt,
+#badge-details dl dt,
+#badge-overview dl dd,
+#badge-details dl dd {
+  vertical-align: top;
+  padding: 3px 0;
+}
+#badge-overview dl dt,
+#badge-details dl dt {
+  clear: both;
+  display: inline-block;
+  width: 20%;
+  min-width: 100px;
+}
+#badge-overview dl dd,
+#badge-details dl dd {
+  display: inline-block;
+  width: 79%;
+  margin-left: 1%;
 }
 .badge-profile {
   vertical-align: top;
@@ -2696,14 +2715,25 @@ div.badge .expireimage {
 #page-badges-award .recipienttable tr td.potential {
   width: 42%;
 }
-.statustable {
-  margin-bottom: 0px;
+#issued-badge-table .activatebadge {
+  display: inline-block;
 }
 .statusbox.active {
   background-color: #dff0d8;
 }
 .statusbox.inactive {
   background-color: #fcf8e3;
+}
+.statusbox {
+  text-align: center;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+.statusbox .activatebadge {
+  display: inline-block;
+}
+.statusbox .activatebadge input[type=submit] {
+  margin: 3px;
 }
 .activatebadge {
   margin: 0px;
@@ -2763,7 +2793,6 @@ img#persona_signin {
 .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu {
   display: block;
   margin-left: 4px;
-  margin-right: initial;
   padding-left: 4px;
   padding-right: 4px;
 }
@@ -2776,7 +2805,6 @@ img#persona_signin {
 .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu .caret {
   margin-top: 8px;
   margin-left: 2px;
-  margin-right: initial;
   border-top-color: #777777;
 }
 .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu .caret:hover,
@@ -2944,6 +2972,14 @@ a.disabled {
 body.lockscroll {
   height: 100%;
   overflow: hidden;
+}
+.progressbar_container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+/* IE10 only fix for calendar titling */
+.ie10 .yui3-calendar-header-label {
+  display: inline-block;
 }
 dd:before,
 dd:after {
