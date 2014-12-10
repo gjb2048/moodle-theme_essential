@@ -2792,6 +2792,7 @@ img#persona_signin {
 }
 .moodle-actionmenu[data-enhanced].show {
   position: relative;
+  /** no wrap is set - prevent menu items from wrapping **/
 }
 .moodle-actionmenu[data-enhanced].show .menu {
   display: block;
@@ -2845,6 +2846,7 @@ img#persona_signin {
 .moodle-actionmenu[data-enhanced].show .menu .iconsmall,
 .moodle-actionmenu[data-enhanced].show .menu .smallicon {
   margin: 4px 4px 4px -24px;
+  padding: 4px;
 }
 .moodle-actionmenu[data-enhanced].show .menu > li {
   display: block;
@@ -2918,6 +2920,9 @@ img#persona_signin {
   bottom: 100%;
   right: 0;
   margin-bottom: 4px;
+}
+.moodle-actionmenu[data-enhanced].show.nowrap-items .menu > li {
+  white-space: nowrap;
 }
 .block .moodle-actionmenu {
   text-align: right;

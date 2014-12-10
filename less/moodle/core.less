@@ -2130,125 +2130,76 @@ img#persona_signin {
   }
 }
 
-.moodle-actionmenu[data-enhanced].show {
+.moodle-actionmenu[data-enhanced].show  {
 
-  position: relative;
+    position: relative;
 
-  .menu {
+    .menu {
 
-    display: block;
-    position: absolute;
-    text-align: left;
-    background-color: @dropdownBackground;
-    border: 1px solid @dropdownBorder;
-    z-index: 1000;
-    .border-radius(5px);
-    .box-shadow(5px 5px 20px 0 #666);
+        display:block;
+        position: absolute;
+        text-align: left;
+        background-color: @dropdownBackground;
+        border: 1px solid @dropdownBorder;
+        z-index:1000;
+        .border-radius(5px);
+        .box-shadow(5px 5px 20px 0 #666);
 
-    a {
-      display: block;
-      color: @dropdownLinkColor;
-      padding: 2px 1em 2px 28px;
-      &:hover {
-        color: @dropdownLinkColorHover;
-        background-color: @dropdownLinkBackgroundHover;
-      }
-      &:first-child {
-        .border-top-radius(4px);
-      }
-      &:last-child {
-        .border-bottom-radius(4px);
-      }
-    }
-    a.hidden {
-      display: none;
-    }
-    img {
-      vertical-align: middle;
-    }
-    .iconsmall,
-    .smallicon {
-      margin: 4px 4px 4px -24px;
-    }
-    > li {
-      display: block;
-    }
+        a {
+            display: block;
+            color: @dropdownLinkColor;
+            padding:2px 1em 2px 28px;
+            &:hover {
+                color: @dropdownLinkColorHover;
+                background-color: @dropdownLinkBackgroundHover;
+            }
+            &:first-child {
+                .border-top-radius(4px);
+            }
+            &:last-child {
+                .border-bottom-radius(4px);
+            }
+        }
+        a.hidden {
+            display:none;
+        }
+        img {
+            vertical-align: middle;
+        }
+        .iconsmall,
+        .smallicon {
+            margin: 4px 4px 4px -24px;
+            padding: 4px;
+        }
+        > li {
+            display:block;
+        }
 
-    /** bottom left of button **/
-    &.align-tl-bl {
-      top: 100%;
-      left: 0;
-      margin-top: 4px;
+        /** bottom left of button **/
+        &.align-tl-bl {top: 100%;left:0;margin-top: 4px;}
+        &.align-tr-bl {top: 100%;right: 100%;}
+        &.align-bl-bl {bottom: 100%;left:0;}
+        &.align-br-bl {bottom: 100%;right: 100%;}
+        /** bottom right of button **/
+        &.align-tl-br {top: 100%;left:100%;}
+        &.align-tr-br {top: 100%;right: 0;margin-top: 4px;}
+        &.align-bl-br {bottom: 100%;left:100%;}
+        &.align-br-br {bottom: 100%;right: 0;}
+        /** top left of button **/
+        &.align-tl-tl {top: 0;left:0;}
+        &.align-tr-tl {top: 0;right: 100%;margin-right: 4px;}
+        &.align-bl-tl {bottom: 100%;left:0;margin-bottom: 4px;}
+        &.align-br-tl {bottom: 100%;right: 100%;}
+        /** top right of button **/
+        &.align-tl-tr {top: 0;left:100%;margin-left: 4px;}
+        &.align-tr-tr {top: 0;right: 0;}
+        &.align-bl-tr {bottom: 100%;left:100%;}
+        &.align-br-tr {bottom: 100%;right: 0;margin-bottom: 4px;}
     }
-    &.align-tr-bl {
-      top: 100%;
-      right: 100%;
+    /** no wrap is set - prevent menu items from wrapping **/
+    &.nowrap-items .menu > li {
+        white-space: nowrap;
     }
-    &.align-bl-bl {
-      bottom: 100%;
-      left: 0;
-    }
-    &.align-br-bl {
-      bottom: 100%;
-      right: 100%;
-    }
-    /** bottom right of button **/
-    &.align-tl-br {
-      top: 100%;
-      left: 100%;
-    }
-    &.align-tr-br {
-      top: 100%;
-      right: 0;
-      margin-top: 4px;
-    }
-    &.align-bl-br {
-      bottom: 100%;
-      left: 100%;
-    }
-    &.align-br-br {
-      bottom: 100%;
-      right: 0;
-    }
-    /** top left of button **/
-    &.align-tl-tl {
-      top: 0;
-      left: 0;
-    }
-    &.align-tr-tl {
-      top: 0;
-      right: 100%;
-      margin-right: 4px;
-    }
-    &.align-bl-tl {
-      bottom: 100%;
-      left: 0;
-      margin-bottom: 4px;
-    }
-    &.align-br-tl {
-      bottom: 100%;
-      right: 100%;
-    }
-    /** top right of button **/
-    &.align-tl-tr {
-      top: 0;
-      left: 100%;
-      margin-left: 4px;
-    }
-    &.align-tr-tr {
-      top: 0;
-      right: 0;
-    }
-    &.align-bl-tr {
-      bottom: 100%;
-      left: 100%;
-    }
-    &.align-br-tr {
-      bottom: 100%;
-      right: 0;
-      margin-bottom: 4px;
-    }
-  }
 }
 
 .block .moodle-actionmenu {
