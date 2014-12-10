@@ -16819,7 +16819,7 @@ aside.footer-edit .block {
   float: left;
   min-height: 240px;
   max-height: 240px;
-  overflow-y: overlay;
+  overflow-y: scroll;
   margin-left: 2.12765957%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

@@ -162,6 +162,7 @@ New in 2.7.9.4
 Attempt to see if html5shiv needs to be applied to IE9 to make it look ok.
 - FIX: Issue #348: Slider controls do not work in RTL.
 - FIX: Issue #403: Enroll button does not work with two or more self-enrollment options.
+- FIX: Issue #405: Extension of blocks into Footer region with "Edit Settings" on.
 - FIX: Issue #406: Assignment types: Online Audio Recording.
 
 New in 2.7.9.3
