@@ -931,7 +931,12 @@ function theme_essential_render_slide($i, $captionoptions) {
     $slideurltarget = theme_essential_get_setting('slide' . $i . 'target');
     $slidetitle = theme_essential_get_setting('slide' . $i, true);
     $slidecaption = theme_essential_get_setting('slide' . $i . 'caption', true);
-    $slideextraclass = ($i === 1) ? ' active' : '';
+    if ($captionoptions == 0) {
+        $slideextraclass = ' side-caption';
+    } else {
+        $slideextraclass = '';
+    }
+    $slideextraclass .= ($i === 1) ? ' active' : '';
     $slideimagealt = strip_tags(theme_essential_get_setting('slide' . $i, true));
     $slideimage = $OUTPUT->pix_url('default_slide', 'theme');
 
@@ -940,9 +945,6 @@ function theme_essential_render_slide($i, $captionoptions) {
         $slideimage = $PAGE->theme->setting_file_url('slide' . $i . 'image', 'slide' . $i . 'image');
     }
 
-    if ($captionoptions == 0) {
-        $slideextraclass .= ' side-caption';
-    }
     if ($slideurl) {
         $slide = '<a href="' . $slideurl . '" target="' . $slideurltarget . '" class="item' . $slideextraclass . '">';
     } else {

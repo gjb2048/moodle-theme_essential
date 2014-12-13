@@ -11920,6 +11920,7 @@ a.badge:focus {
   display: block;
 }
 .carousel-inner > .active {
+  /*@noflip*/
   left: 0;
 }
 .carousel-inner > .next,
@@ -11929,19 +11930,24 @@ a.badge:focus {
   width: 100%;
 }
 .carousel-inner > .next {
+  /*@noflip*/
   left: 100%;
 }
 .carousel-inner > .prev {
+  /*@noflip*/
   left: -100%;
 }
 .carousel-inner > .next.left,
 .carousel-inner > .prev.right {
+  /*@noflip*/
   left: 0;
 }
 .carousel-inner > .active.left {
+  /*@noflip*/
   left: -100%;
 }
 .carousel-inner > .active.right {
+  /*@noflip*/
   left: 100%;
 }
 .carousel-control {
