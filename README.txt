@@ -159,6 +159,7 @@ can be really useful in visualising the issue along with any files you consider 
 
 New in 2.8.0.2
 ==============
+- FIX: Issue #348: Slider controls do not work in RTL.
 - FIX: Issue #403: Enroll button does not work with two or more self-enrollment options.
 - FIX: Issue #404: M2.8 Adding a question to a new Quiz needs checking.
 - FIX: Issue #405: Extension of blocks into Footer region with "Edit Settings" on.

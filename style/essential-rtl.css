@@ -14141,7 +14141,8 @@ a.badge:focus {
 }
 
 .carousel-inner > .active {
-  right: 0;
+  /*@noflip*/
+  left: 0;
 }
 
 .carousel-inner > .next,
@@ -14152,24 +14153,29 @@ a.badge:focus {
 }
 
 .carousel-inner > .next {
-  right: 100%;
+  /*@noflip*/
+  left: 100%;
 }
 
 .carousel-inner > .prev {
-  right: -100%;
+  /*@noflip*/
+  left: -100%;
 }
 
 .carousel-inner > .next.left,
 .carousel-inner > .prev.right {
-  right: 0;
+  /*@noflip*/
+  left: 0;
 }
 
 .carousel-inner > .active.left {
-  right: -100%;
+  /*@noflip*/
+  left: -100%;
 }
 
 .carousel-inner > .active.right {
-  right: 100%;
+  /*@noflip*/
+  left: 100%;
 }
 
 .carousel-control {
