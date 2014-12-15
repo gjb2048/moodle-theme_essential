@@ -1,7 +1,7 @@
 /*global jQuery */
 /*jshint browser:true */
 /*!
- * FitVids 1.1
+ * FitVids 1.1.1
  *
  * Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
  * Credit to Thierry Koblentz - http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
@@ -60,6 +60,9 @@
                 var $this = $(this);
                 if($this.parents(ignoreList).length > 0) {
                     return; // Disable FitVids on this video.
+                }
+                if($this.parent().find("object object").length > 0) {
+                    return; // Disable FitVids on this as a SwfObj - not sure why "object object" does not catch above and do not wish to risk just "object" only.
                 }
                 if (this.tagName.toLowerCase() === 'embed' && $this.parent('object').length || $this.parent('.fluid-width-video-wrapper').length) { return; }
                 if ((!$this.css('height') && !$this.css('width')) && (isNaN($this.attr('height')) || isNaN($this.attr('width'))))
