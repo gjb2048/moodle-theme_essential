@@ -1042,7 +1042,6 @@ class theme_essential_core_renderer extends core_renderer
      * @return string the HTML to be output.
      */
     protected function essential_blocks_for_region($region, $blocksperrow, $editing) {
-        $region = $this->page->apply_theme_region_manipulations($region);
         $blockcontents = $this->page->blocks->get_content_for_region($region, $this);
         $output = '';
 
