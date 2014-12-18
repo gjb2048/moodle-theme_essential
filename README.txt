@@ -165,6 +165,7 @@ New in 2.8.0.2
 - FIX: Issue #405: Extension of blocks into Footer region with "Edit Settings" on.
 - FIX: Issue #406: Assignment types: Online Audio Recording.
 - FIX: Issue #408: Show text of question in list.
+- FIX: Issue #411: Atto editor causing horizontal scroll bar.
 
 New in 2.8.0.1
 ==============
