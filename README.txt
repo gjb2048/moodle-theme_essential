@@ -165,6 +165,7 @@ Attempt to see if html5shiv needs to be applied to IE9 to make it look ok.
 - FIX: Issue #405: Extension of blocks into Footer region with "Edit Settings" on.
 - FIX: Issue #406: Assignment types: Online Audio Recording.
 - FIX: Issue #408: Show text of question in list.
+- FIX: Issue #411: Atto editor causing horizontal scroll bar.
 
 New in 2.7.9.3
 ==============
