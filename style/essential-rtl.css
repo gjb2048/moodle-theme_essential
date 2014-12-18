@@ -264,11 +264,9 @@ body.jsenabled .questionflagcheckbox {
   position: relative;
   zoom: 1;
   padding-right: 0.3em;
-  max-width: 36%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  display: inline-block;
   vertical-align: bottom;
 }
 
@@ -948,6 +946,8 @@ table#categoryquestions {
 
 #page-mod-quiz-edit div.question div.content .questiontext {
   font-weight: bold;
+  max-width: 36%;
+  display: inline-block;
 }
 
 #page-mod-quiz-edit div.question div.content .questiontype {
