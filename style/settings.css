@@ -882,11 +882,11 @@ h6,
   color: [[setting:themehovercolor]];
 }
 .actions .moodle-actionmenu[data-enhanced].show .menu a:hover {
-  color: [[setting:themecolor]];
-  background-color: [[setting:themeurlcolor]];
+  color: [[setting:themenavcolor]];
+  background-color: [[setting:themecolor]];
 }
 .actions .moodle-actionmenu[data-enhanced].show .menu a:hover .fa:before {
-  color: [[setting:themecolor]];
+  color: [[setting:themenavcolor]];
 }
 /* @end */
 /* @group Chat */
