@@ -167,6 +167,7 @@ Attempt to see if html5shiv needs to be applied to IE9 to make it look ok.
 - FIX: Issue #408: Show text of question in list.
 - FIX: Issue #411: Atto editor causing horizontal scroll bar.
 - FIX: Issue #412: Drop down background should be themeurlcolour and not themetextcolour.
+- NEW: Issue #410: Use admin preference for 'My courses' menu sort order.  Thanks to Tony Butler for this.
 
 New in 2.7.9.3
 ==============
