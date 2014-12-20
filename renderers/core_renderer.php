@@ -236,6 +236,8 @@ class theme_essential_core_renderer extends core_renderer
      */
     public function custom_menu_courses()
     {
+        global $CFG;
+
         $coursemenu = new custom_menu();
 
         $hasdisplaymycourses = theme_essential_get_setting('displaymycourses');
@@ -260,9 +262,14 @@ class theme_essential_core_renderer extends core_renderer
             $homelabel = html_writer::tag('i', '', array('class' => 'fa fa-home')).html_writer::tag('span', ' '.$hometext);
             $branch->add($homelabel, new moodle_url('/my/index.php'), $hometext);
 
+            // Get 'My courses' sort preference from admin config.
+            if (!$sortorder = $CFG->navsortmycoursessort) {
+                $sortorder = 'sortorder';
+            }
+
             // Retrieve courses and add them to the menu when they are visible
             $numcourses = 0;
-            if ($courses = enrol_get_my_courses(NULL, 'fullname ASC')) {
+            if ($courses = enrol_get_my_courses(NULL, $sortorder . ' ASC')) {
                 foreach ($courses as $course) {
                     if ($course->visible) {
                         $branch->add('<i class="fa fa-graduation-cap"></i>' . format_string($course->fullname), new moodle_url('/course/view.php?id=' . $course->id), format_string($course->shortname));
