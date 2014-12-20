@@ -168,6 +168,7 @@ New in 2.8.0.2
 - FIX: Issue #409: Single view in Grades references unknown block.
 - FIX: Issue #411: Atto editor causing horizontal scroll bar.
 - FIX: Issue #412: Drop down background should be themeurlcolour and not themetextcolour.
+- NEW: Issue #410: Use admin preference for 'My courses' menu sort order.  Thanks to Tony Butler for this.
 
 New in 2.8.0.1
 ==============
