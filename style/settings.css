@@ -883,7 +883,7 @@ h6,
 }
 .actions .moodle-actionmenu[data-enhanced].show .menu a:hover {
   color: [[setting:themecolor]];
-  background-color: [[setting:themetextcolor]];
+  background-color: [[setting:themeurlcolor]];
 }
 .actions .moodle-actionmenu[data-enhanced].show .menu a:hover .fa:before {
   color: [[setting:themecolor]];
