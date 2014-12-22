@@ -157,6 +157,10 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
+New in 2.7.9.4.1
+================
+- FIX: Issue #413: Maturity BETA wrong for STABLE version.
+
 New in 2.7.9.4
 ==============
 Attempt to see if html5shiv needs to be applied to IE9 to make it look ok.
