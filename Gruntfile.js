@@ -128,7 +128,7 @@ module.exports = function(grunt) {
         less: {
             essential_p: {
                 options: {
-                    compress: true,
+                    compress: false,
                     cleancss: false,
                     paths: "./less",
                     report: 'min',
@@ -139,7 +139,7 @@ module.exports = function(grunt) {
             },
             editor_p: {
                 options: {
-                    compress: true,
+                    compress: false,
                     cleancss: false,
                     paths: "./less",
                     report: 'min',
@@ -150,7 +150,7 @@ module.exports = function(grunt) {
             },
             moodle_rtl_p: {
                 options: {
-                    compress: true,
+                    compress: false,
                     cleancss: false,
                     paths: "./less",
                     report: 'min',
@@ -161,7 +161,7 @@ module.exports = function(grunt) {
             },
             essential_pix_p: {
                 options: {
-                    compress: true,
+                    compress: false,
                     cleancss: false,
                     paths: "./less",
                     report: 'min',
@@ -172,7 +172,7 @@ module.exports = function(grunt) {
             },
             fontawesome_p: {
                 options: {
-                    compress: true,
+                    compress: false,
                     cleancss: false,
                     paths: "./less",
                     report: 'min',
@@ -183,7 +183,7 @@ module.exports = function(grunt) {
             },
             settings_p: {
                 options: {
-                    compress: true,
+                    compress: false,
                     cleancss: false,
                     paths: "./less",
                     report: 'min',
@@ -194,7 +194,7 @@ module.exports = function(grunt) {
             },
             alternative_p: {
                 options: {
-                    compress: true,
+                    compress: false,
                     cleancss: false,
                     paths: "./less",
                     report: 'min',
@@ -318,7 +318,7 @@ module.exports = function(grunt) {
         cssflip: {
             rtl_p: {
                 options: {
-                    compress: true
+                    compress: false
                 },
                 src:  'style/essential.css',
                 dest: 'style/essential-rtl.css'
@@ -329,6 +329,17 @@ module.exports = function(grunt) {
                 },
                 src:  'style/essential.css',
                 dest: 'style/essential-rtl.css'
+            }
+        },
+        cssmin: {
+            essential_p: {
+                files: [{
+                    expand: true,
+                    cwd: 'style',
+                    src: ['essential.css', 'essential-rtl.css', 'essential-pix.css', 'alernative.css', 'editor.css', 'fontawesome.css', 'moodle-rtl.css', 'settings.css'],
+                    dest: 'style',
+                    ext: '.css'
+                }]
             }
         },
         copy: {
@@ -407,7 +418,12 @@ module.exports = function(grunt) {
     grunt.registerTask("decache", ["exec:decache"]);
 
     grunt.registerTask("css", ["less:essential_"+build, "less:editor_"+build, "less:moodle_rtl_"+build, "less:settings_"+build, "less:essential_pix_"+build, "less:fontawesome_"+build, "less:alternative_"+build]);
-    grunt.registerTask("compile", ["css", "cssflip:rtl_"+build, "decache"]);
+    if (build == 'd') {
+        grunt.registerTask("compile", ["css", "cssflip:rtl_"+build, "decache"]);
+    } else {
+        grunt.loadNpmTasks('grunt-contrib-cssmin');
+        grunt.registerTask("compile", ["css", "cssflip:rtl_"+build, "cssmin:essential_p", "decache"]);
+    }
     grunt.registerTask("copy:svg", ["copy:svg_core", "copy:svg_plugins"]);
     grunt.registerTask("replace:svg_colours", ["replace:svg_colours_core", "replace:svg_colours_plugins"]);
     grunt.registerTask("svg", ["copy:svg", "replace:svg_colours", "svgmin"]);
