@@ -161,6 +161,7 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.8.0.3
 ==============
 - FIX: Issue #414: Slider not work properly in RTL.
+- FIX: Issue #416: Missing background colour in breadcrumb and footer.
 
 New in 2.8.0.2
 ==============
