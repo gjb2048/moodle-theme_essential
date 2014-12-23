@@ -336,7 +336,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'style',
-                    src: ['essential.css', 'essential-rtl.css', 'essential-pix.css', 'alernative.css', 'editor.css', 'fontawesome.css', 'moodle-rtl.css', 'settings.css'],
+                    src: ['essential.css', 'essential-rtl.css', 'essential-pix.css', 'alernative.css', 'editor.css', 'fontawesome.css', 'moodle-rtl.css'],
                     dest: 'style',
                     ext: '.css'
                 }]
