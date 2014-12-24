@@ -159,6 +159,7 @@ can be really useful in visualising the issue along with any files you consider 
 
 New in 2.7.9.4.3
 ================
+- FIX: Issue #342: Essential Theme (version 2014101000 2.7.8 Build: 2014091804) issue with IE9 and earlier.
 - FIX: Issue #416: Missing background colour in breadcrumb and footer.
 
 New in 2.7.9.4.2
