@@ -158,8 +158,10 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
-New in 2.8.0.3
-==============
+New in 2.8.1
+============
+First stable release.
+- FIX: Issue #342: Essential Theme (version 2014101000 2.7.8 Build: 2014091804) issue with IE9 and earlier.
 - FIX: Issue #414: Slider not work properly in RTL.
 - FIX: Issue #416: Missing background colour in breadcrumb and footer.
 
