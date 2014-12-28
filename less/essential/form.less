@@ -1,8 +1,45 @@
 /* @group Forms */
-.uneditable-input, .form-item .form-description, .form-defaultinfo, .form-label .form-shortname {
-    .fluid-span(8);
+fieldset {
+    select,
+    textarea[cols],
+    input[size],
+    .form-item .form-description {
+        .fluid-span(8);
+    }
 }
 
+@media (max-width: 979px) {
+    fieldset {
+        select,
+        textarea[cols],
+        input[size],
+        .form-item .form-description {
+            .fluid-span(6);
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    fieldset {
+        select,
+        textarea[cols],
+        input[size],
+        .form-item .form-description {
+            .fluid-span(5);
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    fieldset {
+        select,
+        textarea[cols],
+        input[size],
+        .form-item .form-description {
+            .fluid-span(3);
+        }
+    }
+}
 .form-item .form-label, .mform .fitem div.fitemtitle {
   text-align: left;
 }
