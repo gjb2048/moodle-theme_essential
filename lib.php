@@ -129,23 +129,6 @@ function theme_essential_edit_button($section) {
     }
 }
 
-// Moodle CSS file serving.
-function theme_essential_get_csswww() {
-    global $CFG;
-
-    if (right_to_left()) {
-        $moodlecss = 'essential-rtl.css';
-    } else {
-        $moodlecss = 'essential.css';
-    }
-
-    $syscontext = context_system::instance();
-    $itemid = theme_get_revision();
-    $url = moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php", "/$syscontext->id/theme_essential/style/$itemid/$moodlecss");
-    $url = preg_replace('|^https?://|i', '//', $url->out(false));
-    return $url;
-}
-
 /**
  * Serves any files associated with the theme settings.
  *

@@ -45,6 +45,24 @@ class theme_essential_core_renderer_maintenance extends core_renderer_maintenanc
         }
         return "<div class=\"$type\">$message</div>";
     }
+
+    // Essential custom bits.
+    // Moodle CSS file serving.
+    public function get_csswww() {
+        global $CFG;
+
+        if (right_to_left()) {
+            $moodlecss = 'essential-rtl.css';
+        } else {
+            $moodlecss = 'essential.css';
+        }
+
+        $syscontext = context_system::instance();
+        $itemid = theme_get_revision();
+        $url = moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php", "/$syscontext->id/theme_essential/style/$itemid/$moodlecss");
+        $url = preg_replace('|^https?://|i', '//', $url->out(false));
+        return $url;
+    }
 }
 
 ?>
