@@ -391,6 +391,9 @@ class theme_essential_core_renderer extends core_renderer
                     $messagecontent .= html_writer::span($message->text, 'notification-text');
                     $messagecontent .= html_writer::end_div();
                 } else {
+                    if (!is_object($message->from) || !empty($message->from->deleted)) {
+                        continue;
+                    }
                     $senderpicture = new user_picture($message->from);
                     $senderpicture->link = false;
                     $senderpicture->size = 60;

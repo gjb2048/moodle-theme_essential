@@ -161,6 +161,7 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.8.1.1
 ==============
 - FIX: Issue #417: M2.8 Mail Settings page needs checking.
+- FIX: Issue #422: Regression from #179 in the core_renderer.php file.
 
 New in 2.8.1
 ============
