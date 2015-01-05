@@ -157,6 +157,10 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
+New in 2.7.9.5
+==============
+- FIX: Issue #422: Regression from #179 in the core_renderer.php file.
+
 New in 2.7.9.4.3
 ================
 - FIX: Issue #342: Essential Theme (version 2014101000 2.7.8 Build: 2014091804) issue with IE9 and earlier.
