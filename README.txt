@@ -164,6 +164,7 @@ New in 2.8.1.1
 - FIX: Issue #422: Regression from #179 in the core_renderer.php file.
 - FIX: Issue #423: Forum floating buttons.
 - FIX: Apply MDL-46183.
+- FIX: Apply MDL-45930.
 
 New in 2.8.1
 ============
