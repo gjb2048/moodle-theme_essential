@@ -7124,6 +7124,10 @@ a.ygtvspacer:hover {
   display: none;
 }
 
+.fp-select .fp-size.fp-unknown {
+  display: none;
+}
+
 .filemanager-loading {
   display: none;
 }
