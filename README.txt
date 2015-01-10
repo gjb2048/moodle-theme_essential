@@ -160,6 +160,7 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.7.9.5
 ==============
 - FIX: Issue #422: Regression from #179 in the core_renderer.php file.
+- FIX: Issue #423: Forum floating buttons.
 
 New in 2.7.9.4.3
 ================
