@@ -163,6 +163,7 @@ New in 2.8.1.1
 - FIX: Issue #417: M2.8 Mail Settings page needs checking.
 - FIX: Issue #422: Regression from #179 in the core_renderer.php file.
 - FIX: Issue #423: Forum floating buttons.
+- FIX: Apply MDL-46183.
 
 New in 2.8.1
 ============
