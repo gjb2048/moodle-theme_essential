@@ -50,7 +50,7 @@ if (empty($PAGE->layout_options['nofooter'])) {
                 <hr/>
                 <span class="helplink"><?php echo page_doc_link(get_string('moodledocslink')); ?></span>
                 <?php if ($hascopyright) { ?>
-                    <span class="copy">&copy;<?php echo date("Y") . ' ' . $hascopyright; ?></span>
+                    <span class="copy">&copy;<?php echo userdate(time(), '%Y') . ' ' . $hascopyright; ?></span>
                 <?php } ?>
                 <?php if ($hasfootnote) {
                     echo '<div class="footnote span12">' . $hasfootnote . '</div>';
