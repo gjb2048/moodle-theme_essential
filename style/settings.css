@@ -556,7 +556,7 @@ img.profilepicture {
 /* @end */
 /* @group Header */
 #page-header {
-  background: url([[pix:theme|bg/header]]) repeat;
+  background: url('[[setting:headerbackground]]') repeat;
 }
 a.logo {
   background-image: [[setting:logo]];
