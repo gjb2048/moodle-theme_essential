@@ -278,6 +278,8 @@ $string['footerhovercolordesc'] = 'Set the colour for your linked text when hove
 $string['footerheadingcolor'] = 'Footer heading colour';
 $string['footerheadingcolordesc'] = 'Set the colour for block headings in the footer.';
 
+$string['headerbackground'] = 'Header background image';
+$string['headerbackgrounddesc'] = 'Upload your own background image.';
 $string['pagebackground'] = 'Page background image';
 $string['pagebackgrounddesc'] = 'Upload your own background image. Select the style of the image below.';
 $string['pagebackgroundstyle'] = 'Page background style';
