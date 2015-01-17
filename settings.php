@@ -46,7 +46,7 @@ if (is_siteadmin()) {
     $temp->add(new admin_setting_heading('theme_essential_generalheading', get_string('generalheadingsub', 'theme_essential'),
         format_text(get_string('generalheadingdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
-    // Background Image.
+    // Page Background Image.
     $name = 'theme_essential/pagebackground';
     $title = get_string('pagebackground', 'theme_essential');
     $description = get_string('pagebackgrounddesc', 'theme_essential');
@@ -54,7 +54,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Background Image.
+    // Background Style.
     $name = 'theme_essential/pagebackgroundstyle';
     $title = get_string('pagebackgroundstyle', 'theme_essential');
     $description = get_string('pagebackgroundstyledesc', 'theme_essential');
@@ -392,6 +392,14 @@ if (is_siteadmin()) {
         2 => get_string('shortname', 'theme_essential'),
     );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Header Background Image.
+    $name = 'theme_essential/headerbackground';
+    $title = get_string('headerbackground', 'theme_essential');
+    $description = get_string('headerbackgrounddesc', 'theme_essential');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'headerbackground');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
