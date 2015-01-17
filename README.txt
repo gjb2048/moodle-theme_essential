@@ -162,6 +162,7 @@ New in 2.7.9.5
 - FIX: Issue #422: Regression from #179 in the core_renderer.php file.
 - FIX: Issue #423: Forum floating buttons.
 - FIX: Issue #425: Copyright date localization.
+- FIX: Issue #430: Book Module - Print (centred) - layout changed.
 - FIX: Apply MDL-46183.
 - FIX: Apply MDL-45930.
 
