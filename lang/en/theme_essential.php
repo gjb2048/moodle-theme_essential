@@ -485,7 +485,7 @@ $string['categoryiconinfodesc'] = 'Enter the name of the icon you wish to use.  
 // Header Settings.
 $string['headerheading'] = 'Header';
 $string['headertitle'] = 'Header title';
-$string['headertitledesc'] = 'Configure here what title to output in the header.';
+$string['headertitledesc'] = 'Configure here what title to output in the header.  Note: The header title will only be used if there is no logo.';
 $string['navbartitle'] = 'Navigation bar title';
 $string['navbartitledesc'] = 'Configure here what title to output in the navigation bar.';
 $string['notitle'] = 'No Title';
