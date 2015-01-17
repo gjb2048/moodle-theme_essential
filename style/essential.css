@@ -12522,7 +12522,8 @@ form {
 .mform fieldset.error {
   border: 1px solid #b94a48;
 }
-.mform span.error {
+.mform span.error,
+#adminsettings span.error {
   display: inline-block;
   border: 1px solid #eed3d7;
   border-radius: 4px;
@@ -12543,6 +12544,7 @@ form {
 .mform .fitem .fitemtitle div {
   display: inline;
 }
+#adminsettings span.error,
 .loginpanel .error,
 .mform .error {
   color: #b94a48;

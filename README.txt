@@ -165,6 +165,7 @@ New in 2.7.9.5
 - FIX: Issue #430: Book Module - Print (centred) - layout changed.
 - FIX: Apply MDL-46183.
 - FIX: Apply MDL-45930.
+- FIX: Apply MDL-44907.
 
 New in 2.7.9.4.3
 ================

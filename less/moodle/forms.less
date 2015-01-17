@@ -29,7 +29,8 @@ form {
   border: 1px solid @errorText;
 }
 
-.mform span.error {
+.mform span.error,
+#adminsettings span.error {
   display: inline-block;
   border: 1px solid @errorBorder;
   border-radius: 4px;
@@ -54,6 +55,7 @@ form {
   display: inline;
 }
 
+#adminsettings span.error,
 .loginpanel .error,
 .mform .error {
   color: @errorText;
