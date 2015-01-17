@@ -391,23 +391,26 @@ input[type="color"],
 /* @end */
 /* @end */
 /* @group Header */
+#page-header {
+  color: [[setting:headertextcolor]];
+}
 #page-header h1#title {
-  color: [[setting:themetextcolor]];
+  color: [[setting:headertextcolor]];
 }
 #page-header h1#smalltitle {
-  color: [[setting:themetextcolor]];
+  color: [[setting:headertextcolor]];
 }
 #page-header h2#subtitle {
-  color: [[setting:themetextcolor]];
+  color: [[setting:headertextcolor]];
 }
 #page-header #headerlogo {
-  color: [[setting:themecolor]];
+  color: [[setting:themeiconcolor]];
 }
 .socials {
   margin: 0px;
 }
 .socials p {
-  color: [[setting:themetextcolor]];
+  color: [[setting:headertextcolor]];
 }
 /* @end */
 /* @group Navbar */

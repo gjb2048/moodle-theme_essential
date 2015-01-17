@@ -445,6 +445,10 @@ function theme_essential_process_css($css, $theme) {
     $themehovercolor = theme_essential_get_setting('themehovercolor');
     $css = theme_essential_set_color($css, $themehovercolor, '[[setting:themehovercolor]]', '#F32100');
 
+    // Set the theme header text colour.
+    $themetextcolor = theme_essential_get_setting('headertextcolor');
+    $css = theme_essential_set_color($css, $themetextcolor, '[[setting:headertextcolor]]', '#217a94');
+
     // Set the theme icon colour.
     $themeiconcolor = theme_essential_get_setting('themeiconcolor');
     $css = theme_essential_set_color($css, $themeiconcolor, '[[setting:themeiconcolor]]', '#30ADD1');
