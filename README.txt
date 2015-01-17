@@ -170,6 +170,7 @@ New in 2.7.9.5
 - FIX: Apply MDL-45930.
 - FIX: Apply MDL-44907.
 - NEW: Issue #428: Add setting to customise header background image.  Thanks to Jerome Charaoui for this.
+- NEW: Issue #433: Add a 'This Course' dropdown menu.  Thanks to ActionJONA (https://github.com/ActionJONA) for the ported BCU theme code.
 
 New in 2.7.9.4.3
 ================

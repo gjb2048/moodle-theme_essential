@@ -208,6 +208,8 @@ $string['allunits'] = 'All units';
 $string['allmodules'] = 'All modules';
 $string['allclasses'] = 'All classes';
 $string['noenrolments'] = 'You have no current enrolments';
+$string['thiscourse'] = 'This course';
+$string['people'] = 'People';
 
 $string['helplinktype'] = 'Enable help link in menu';
 $string['helplinktypedesc'] = 'Choose whether you want to enable a help option in the user menu, you can choose to either provide an URL that will be opened in a new window or an email address.';

@@ -157,6 +157,9 @@ echo $OUTPUT->doctype() ?>
                             <div id="custom_menu">
                                 <?php echo $OUTPUT->custom_menu(); ?>
                             </div>
+                            <div id="custom_menu_activitystream">
+                                <?php echo $OUTPUT->custom_menu_activitystream(); ?>
+                            </div>
                         </div>
                     </div>
                 </div>

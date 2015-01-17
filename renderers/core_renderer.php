@@ -331,6 +331,78 @@ class theme_essential_core_renderer extends core_renderer
     }
 
     /**
+     * Outputs the Activity Stream menu
+     * @return custom_menu object
+     */
+    public function custom_menu_activitystream() {
+        if ($this->page->pagelayout != 'course') {
+            return '';
+        }
+
+        if (!isguestuser()) {
+            if (isset($this->page->course->id) && $this->page->course->id > 1) {
+                $activitystreammenu = new custom_menu();
+                $branchtitle = get_string('thiscourse', 'theme_essential');
+                $branchlabel = '<i class="fa fa-book"></i>'.$branchtitle;
+                $branchurl = new moodle_url('#');
+                $branch = $activitystreammenu->add($branchlabel, $branchurl, $branchtitle, 10002);
+                $branchtitle = get_string('people', 'theme_essential');
+                $branchlabel = '<i class="fa fa-users"></i>'.$branchtitle;
+                $branchurl = new moodle_url('/user/index.php', array('id' => $this->page->course->id));
+                $branch->add($branchlabel, $branchurl, $branchtitle, 100003);
+                $branchtitle = get_string('grades');
+                $branchlabel = '<i class="fa fa-list-alt icon"></i>'.$branchtitle;
+                $branchurl = new moodle_url('/grade/report/index.php', array('id' => $this->page->course->id));
+                $branch->add($branchlabel, $branchurl, $branchtitle, 100004);
+
+                $data = $this->get_course_activities();
+                foreach ($data as $modname => $modfullname) {
+                    if ($modname === 'resources') {
+                        $icon = $this->pix_icon('icon', '', 'mod_page', array('class' => 'icon'));
+                        $branch->add($icon.$modfullname, new moodle_url('/course/resources.php', array('id' => $this->page->course->id)));
+                    } else {
+                        $icon = '<img src="'.$this->pix_url('icon', $modname) . '" class="icon" alt="" />';
+                        $branch->add($icon.$modfullname, new moodle_url('/mod/'.$modname.'/index.php', array('id' => $this->page->course->id)));
+                    }
+                }
+                return $this->render_custom_menu($activitystreammenu);
+            }
+        }
+        return '';
+    }
+
+    private function get_course_activities() {
+        // A copy of block_activity_modules.
+        $course = $this->page->course;
+        $content = new stdClass();
+        $modinfo = get_fast_modinfo($course);
+        $modfullnames = array();
+        $archetypes = array();
+        foreach ($modinfo->cms as $cm) {
+            // Exclude activities which are not visible or have no link (=label).
+            if (!$cm->uservisible or !$cm->has_view()) {
+                continue;
+            }
+            if (array_key_exists($cm->modname, $modfullnames)) {
+                continue;
+            }
+            if (!array_key_exists($cm->modname, $archetypes)) {
+                $archetypes[$cm->modname] = plugin_supports('mod', $cm->modname, FEATURE_MOD_ARCHETYPE, MOD_ARCHETYPE_OTHER);
+            }
+            if ($archetypes[$cm->modname] == MOD_ARCHETYPE_RESOURCE) {
+                if (!array_key_exists('resources', $modfullnames)) {
+                    $modfullnames['resources'] = get_string('resources');
+                }
+            } else {
+                $modfullnames[$cm->modname] = $cm->modplural;
+            }
+        }
+        core_collator::asort($modfullnames);
+
+        return $modfullnames;
+    }
+
+    /**
      * Outputs the messages menu
      * @return custom_menu object
      */
