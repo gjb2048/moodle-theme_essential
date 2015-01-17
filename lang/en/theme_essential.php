@@ -282,6 +282,8 @@ $string['footerheadingcolordesc'] = 'Set the colour for block headings in the fo
 
 $string['headerbackground'] = 'Header background image';
 $string['headerbackgrounddesc'] = 'Upload your own background image.';
+$string['headertextcolor'] = 'Header text colour';
+$string['headertextcolordesc'] = 'Set the text colour for the header.';
 $string['pagebackground'] = 'Page background image';
 $string['pagebackgrounddesc'] = 'Upload your own background image. Select the style of the image below.';
 $string['pagebackgroundstyle'] = 'Page background style';
@@ -461,7 +463,7 @@ $string['instagram'] = 'Instagram URL';
 $string['instagramdesc'] = 'Enter the URL of your Instagram page. (i.e http://instagram.com/mycollege)';
 
 $string['website'] = 'Website URL';
-$string['websitedesc'] = 'Enter the URL of your own website. (i.e http://www.uplearning.nl)';
+$string['websitedesc'] = 'Enter the URL of your own website. (i.e http://about.me/gjbarnard)';
 
 // Category Icons.
 $string['categoryiconheading'] = 'Category icons';

@@ -403,6 +403,16 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Header text colour setting.
+    $name = 'theme_essential/headertextcolor';
+    $title = get_string('headertextcolor', 'theme_essential');
+    $description = get_string('headertextcolordesc', 'theme_essential');
+    $default = '#217a94';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     /* Course Menu Settings */
     $name = 'theme_essential/mycoursesinfo';
     $heading = get_string('mycoursesinfo', 'theme_essential');

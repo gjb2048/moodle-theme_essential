@@ -166,6 +166,7 @@ New in 2.7.9.5
 - FIX: Issue #430: Book Module - Print (centred) - layout changed.
 - FIX: Issue #432: Adjusted lang string for 'oldnavbardesc'.  Thanks to Mathieu Pelletier (https://github.com/mkpelletier) for this.
 - FIX: Issue #434: Explain if a logo uploaded then no header title will be shown.
+- FIX: Issue #436: Header background colour setting.
 - FIX: Apply MDL-46183.
 - FIX: Apply MDL-45930.
 - FIX: Apply MDL-44907.
