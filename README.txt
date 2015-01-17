@@ -167,6 +167,7 @@ New in 2.8.1.1
 - FIX: Apply MDL-46183.
 - FIX: Apply MDL-45930.
 - FIX: Apply MDL-44907.
+- NEW: Issue #428: Add setting to customise header background image.  Thanks to Jerome Charaoui for this.
 
 New in 2.8.1
 ============
