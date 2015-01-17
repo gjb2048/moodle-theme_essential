@@ -166,6 +166,7 @@ New in 2.8.1.1
 - FIX: Issue #425: Copyright date localization.
 - FIX: Apply MDL-46183.
 - FIX: Apply MDL-45930.
+- FIX: Apply MDL-44907.
 
 New in 2.8.1
 ============
