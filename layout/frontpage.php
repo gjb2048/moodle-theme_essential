@@ -91,30 +91,45 @@ if ($enable1alert || $enable2alert || $enable3alert) {
         <!-- End Alerts -->
 
         <!-- Start Frontpage Content -->
-        <?php if (theme_essential_get_setting('togglefrontcontent')) { ?>
+        <?php
+        $showfrontcontent = false;
+        switch (theme_essential_get_setting('togglefrontcontent')) {
+            case 1:
+                $showfrontcontent = true;
+                break;
+            case 2:
+                if (!isloggedin()) {
+                    $showfrontcontent = true;
+                }
+                break;
+            case 3:
+                if (isloggedin()) {
+                    $showfrontcontent = true;
+                }
+                break;
+        }
+        if ($showfrontcontent) { ?>
             <div class="frontpagecontent">
                 <div class="bor"></div>
-                <?php if (theme_essential_get_setting('togglefrontcontent') == 1) {
-                    echo theme_essential_get_setting('frontcontentarea', 'format_html');
-                } else if (theme_essential_get_setting('togglefrontcontent') == 2 && !isloggedin()) {
-                    echo theme_essential_get_setting('frontcontentarea', 'format_html');
-                } else if (theme_essential_get_setting('togglefrontcontent') == 3 && isloggedin()) {
-                    echo theme_essential_get_setting('frontcontentarea', 'format_html');
-                } ?>
-                <?php echo theme_essential_edit_button('theme_essential_frontpage'); ?>
+                <?php
+                echo theme_essential_get_setting('frontcontentarea', 'format_html');
+                echo theme_essential_edit_button('theme_essential_frontpage');
+                ?>
                 <div class="bor"></div>
             </div>
-        <?php } ?>
-
+        <?php
+        }
+        ?>
         <!-- End Frontpage Content -->
 
         <!-- Start Marketing Spots -->
         <?php
-        if (theme_essential_get_setting('togglemarketing') == 1) {
+        $togglemarketing = theme_essential_get_setting('togglemarketing');
+        if ($togglemarketing == 1) {
             require_once(dirname(__FILE__) . '/includes/marketingspots.php');
-        } else if (theme_essential_get_setting('togglemarketing') == 2 && !isloggedin()) {
+        } else if ($togglemarketing == 2 && !isloggedin()) {
             require_once(dirname(__FILE__) . '/includes/marketingspots.php');
-        } else if (theme_essential_get_setting('togglemarketing') == 3 && isloggedin()) {
+        } else if ($togglemarketing == 3 && isloggedin()) {
             require_once(dirname(__FILE__) . '/includes/marketingspots.php');
         }
         ?>
@@ -122,11 +137,12 @@ if ($enable1alert || $enable2alert || $enable3alert) {
 
         <!-- Start Middle Blocks -->
         <?php
-        if (theme_essential_get_setting('frontpagemiddleblocks') == 1) {
+        $frontpagemiddleblocks = theme_essential_get_setting('frontpagemiddleblocks');
+        if ($frontpagemiddleblocks == 1) {
             require_once(dirname(__FILE__) . '/includes/middleblocks.php');
-        } else if (theme_essential_get_setting('frontpagemiddleblocks') == 2 && !isloggedin()) {
+        } else if ($frontpagemiddleblocks == 2 && !isloggedin()) {
             require_once(dirname(__FILE__) . '/includes/middleblocks.php');
-        } else if (theme_essential_get_setting('frontpagemiddleblocks') == 3 && isloggedin()) {
+        } else if ($frontpagemiddleblocks == 3 && isloggedin()) {
             require_once(dirname(__FILE__) . '/includes/middleblocks.php');
         }
         ?>
