@@ -164,6 +164,7 @@ New in 2.8.1.1
 - FIX: Issue #422: Regression from #179 in the core_renderer.php file.
 - FIX: Issue #423: Forum floating buttons.
 - FIX: Issue #425: Copyright date localization.
+- FIX: Issue #429: Front page content area set to "Show before login only" still paritally displays.
 - FIX: Issue #432: Adjusted lang string for 'oldnavbardesc'.  Thanks to Mathieu Pelletier (https://github.com/mkpelletier) for this.
 - FIX: Apply MDL-46183.
 - FIX: Apply MDL-45930.
