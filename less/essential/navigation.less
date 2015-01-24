@@ -89,8 +89,8 @@
       padding: 3px 25px 3px 15px;
     }
 
-    .dropdown-menu > li > a:hover {
-      background: none;
+    .dropdown-menu > li > a:hover .fa {
+      color: @dropdownLinkColorHover;
     }
 
     .nav > li.dropdown a,
@@ -118,7 +118,9 @@
 
     .nav > li.dropdown ul.dropdown-menu > li > a {
       &:hover, &.open {
-        background-image: none;
+        .fa {
+            color: @dropdownLinkColorHover;
+        }
       }
     }
 

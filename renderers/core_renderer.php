@@ -23,8 +23,7 @@
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class theme_essential_core_renderer extends core_renderer
-{
+class theme_essential_core_renderer extends core_renderer {
     public $language = null;
 
     /**
@@ -1237,5 +1236,3 @@ class theme_essential_core_renderer extends core_renderer
         return $url;
     }
 }
-
-?>

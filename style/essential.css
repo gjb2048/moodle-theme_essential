@@ -18933,8 +18933,8 @@ ul.socials li {
 .navbar .navbar-inner .dropdown-submenu > a {
   padding: 3px 25px 3px 15px;
 }
-.navbar .navbar-inner .dropdown-menu > li > a:hover {
-  background: none;
+.navbar .navbar-inner .dropdown-menu > li > a:hover .fa {
+  color: #ffffff;
 }
 .navbar .navbar-inner .nav > li.dropdown a,
 .navbar .navbar-inner .nav > li > a {
@@ -18960,9 +18960,9 @@ ul.socials li {
   content: "\f0d7";
   margin-right: 0px;
 }
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:hover,
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a.open {
-  background-image: none;
+.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:hover .fa,
+.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a.open .fa {
+  color: #ffffff;
 }
 .navbar .navbar-inner .custommenus {
   width: 100%;

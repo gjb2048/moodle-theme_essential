@@ -15,20 +15,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This is built using the bootstrapbase template to allow for new theme's using
- * Moodle's new Bootstrap theme engine
+ * Essentials is a basic child theme of Essential to help you as a theme
+ * developer create your own child theme of Essential.
  *
- * @package     theme_essential
- * @copyright   2013 Julian Ridden
- * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @package     theme_essentials
+ * @copyright   2015 Gareth J Barnard
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+global $CFG;
 
-defined('MOODLE_INTERNAL') || die;
-
-$plugin->version = 2015012400; // YYYYMMDDVV.
-$plugin->maturity = MATURITY_STABLE; // this version's maturity level.
-$plugin->release = '2.8.1.1 (Build: 2015010500)';
-$plugin->requires  = 2014111000.00; // 2.8 (Build: 20141110).
-$plugin->component = 'theme_essential';
-$plugin->dependencies = array();
+require_once('renderers/core_renderer.php');

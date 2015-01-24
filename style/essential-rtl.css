@@ -22779,8 +22779,8 @@ ul.socials li {
   padding: 3px 15px 3px 25px;
 }
 
-.navbar .navbar-inner .dropdown-menu > li > a:hover {
-  background: none;
+.navbar .navbar-inner .dropdown-menu > li > a:hover .fa {
+  color: #ffffff;
 }
 
 .navbar .navbar-inner .nav > li.dropdown a,
@@ -22812,9 +22812,9 @@ ul.socials li {
   margin-left: 0px;
 }
 
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:hover,
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a.open {
-  background-image: none;
+.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:hover .fa,
+.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a.open .fa {
+  color: #ffffff;
 }
 
 .navbar .navbar-inner .custommenus {
