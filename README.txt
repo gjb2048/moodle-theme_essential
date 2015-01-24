@@ -83,7 +83,7 @@ Please ensure that your hardware and software complies with 'Requirements' in 'I
 Installation
 ============
  1. Ensure you have the version of Moodle as stated above in 'Required version of Moodle'.  This is essential as the
-    theme relies on underlying core code that is out of our control.
+    theme relies on underlying core code that is out of my control.
  2. Login as an administrator and put Moodle in 'Maintenance Mode' so that there are no users using it bar you as the administrator.
  3. Copy the extracted 'essential' folder to the '/theme/' folder.
  4. Go to 'Site administration' -> 'Notifications' and follow standard the 'plugin' update notification.
@@ -93,7 +93,7 @@ Installation
 Upgrading
 =========
  1. Ensure you have the version of Moodle as stated above in 'Required version of Moodle'.  This is essential as the
-    theme relies on underlying core code that is out of our control.
+    theme relies on underlying core code that is out of my control.
  2. Login as an administrator and put Moodle in 'Maintenance Mode' so that there are no users using it bar you as the administrator.
  3. Make a backup of your old 'essential' folder in '/theme/' and then delete the folder.
  4. Copy the replacement extracted 'essential' folder to the '/theme/' folder.
@@ -172,6 +172,8 @@ New in 2.7.9.5
 - FIX: Apply MDL-44907.
 - NEW: Issue #428: Add setting to customise header background image.  Thanks to Jerome Charaoui for this.
 - NEW: Issue #433: Add a 'This Course' dropdown menu.  Thanks to ActionJONA (https://github.com/ActionJONA) for the ported BCU theme code.
+- NEW: Added 'Essentials' child theme in 'essentials' sub-folder.  To use, read the 'Installation' instructions in 'essentials/README.txt'.
+       The 'essentials' sub-folder is just a place to store and distribute the child theme.  It will NOT be available until you install it.
 
 New in 2.7.9.4.3
 ================
@@ -591,5 +593,5 @@ A video showing many of the core features is available for viewing at http://vim
 
 Documentation
 =============
-As always, documentation is a work in progress. Available documentation is available at http://docs.moodle.org/27/en/Essential_theme
+As always, documentation is a work in progress. Available documentation is available at http://docs.moodle.org/28/en/Essential_theme
 If you have questions you can post them in the issue tracker at https://github.com/gjb2048/moodle-theme_essential/issues

@@ -1,0 +1,17 @@
+/*
+ * @package     theme_essentials
+ * @copyright   2015 Gareth J Barnard
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+.block  .tree_item.branch::before, .block .header .title h2:before, .fa {
+  color: #0070a8;
+}
+
+.frontpagetitle {
+    font-size: 24px;
+}
+
+.frontpagedetails {
+    font-size: 18px;
+}
