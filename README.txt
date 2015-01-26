@@ -174,6 +174,7 @@ New in 2.7.9.5
 - NEW: Issue #433: Add a 'This Course' dropdown menu.  Thanks to ActionJONA (https://github.com/ActionJONA) for the ported BCU theme code.
 - NEW: Added 'Essentials' child theme in 'essentials' sub-folder.  To use, read the 'Installation' instructions in 'essentials/README.txt'.
        The 'essentials' sub-folder is just a place to store and distribute the child theme.  It will NOT be available until you install it.
+- NEW: Code refactoring to make child theme creation easier.
 
 New in 2.7.9.4.3
 ================

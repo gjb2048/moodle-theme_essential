@@ -1213,3 +1213,31 @@ class theme_essential_core_renderer extends core_renderer {
         return $output;
     }
 }
+    // Essential custom bits.
+    // Moodle CSS file serving.
+    public function get_csswww() {
+        global $CFG;
+
+        if (right_to_left()) {
+            $moodlecss = 'essential-rtl.css';
+        } else {
+            $moodlecss = 'essential.css';
+        }
+
+        $syscontext = context_system::instance();
+        $itemid = theme_get_revision();
+        $url = moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php", "/$syscontext->id/theme_essential/style/$itemid/$moodlecss");
+        $url = preg_replace('|^https?://|i', '//', $url->out(false));
+        return $url;
+    }
+
+    /**
+     *  Override this method in the child to use its 'header' and 'footer' in '/layout/includes/' in inherited layouts from Essential.
+     *  This is so that non-overridden layout files in Essential's 'layout' folder can find the child's 'includes' version rather than Essential's.
+     *  Child theme's do not need to call this method when including files.
+     *  Please look at the included 'Essentials' child theme for an example.
+     */
+    public function get_child_relative_layout_path() {
+        return '';
+    }
+}

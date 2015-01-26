@@ -24,12 +24,13 @@
  */
 
 require_once(dirname(__FILE__) . '/../../../essential/layout/includes/pagesettings.php');
-require_once(dirname(__FILE__) . '/../../../essential/lib.php');
+require_once(dirname(__FILE__) . '/../../../essential/lib.php');  // Make use of Essential lib.php functions here and in the footer.
 
 $breadcrumbstyle = 2;
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?> class="no-js">
+<!-- Essentials Header -->
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>"/>
@@ -38,11 +39,6 @@ echo $OUTPUT->doctype() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google web fonts -->
     <?php require_once(dirname(__FILE__) . '/../../../essential/layout/includes/fonts.php'); ?>
-    <!-- iOS Homescreen Icons -->
-    <?php require_once(dirname(__FILE__) . '/../../../essential/layout/includes/iosicons.php'); ?>
-    <!-- Start Analytics -->
-    <?php require_once(dirname(__FILE__) . '/../../../essential/layout/includes/analytics.php'); ?>
-    <!-- End Analytics -->
 </head>
 
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>

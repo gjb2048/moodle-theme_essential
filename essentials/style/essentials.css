@@ -4,7 +4,7 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-.block  .tree_item.branch::before, .block .header .title h2:before, .fa {
+.block  .tree_item.branch::before, .block .header .title h2:before, .block .fa {
   color: #0070a8;
 }
 

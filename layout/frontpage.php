@@ -24,7 +24,7 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(__FILE__) . '/includes/header.php');
+require_once(dirname(__FILE__) . $OUTPUT->get_child_relative_layout_path() . '/includes/header.php');
 
 $enable1alert = theme_essential_get_setting('enable1alert');
 $enable2alert = theme_essential_get_setting('enable2alert');
@@ -187,7 +187,7 @@ if ($enable1alert || $enable2alert || $enable3alert) {
     </section>
 </div>
 
-<?php require_once(dirname(__FILE__) . '/includes/footer.php'); ?>
+<?php require_once(dirname(__FILE__) . $OUTPUT->get_child_relative_layout_path() . '/includes/footer.php'); ?>
 
 <!-- Initialize slideshow -->
 <script type="text/javascript">
