@@ -24,7 +24,7 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(__FILE__) . '/includes/header.php'); ?>
+require_once(dirname(__FILE__) . $OUTPUT->get_child_relative_layout_path() . '/includes/header.php'); ?>
 
 <div id="page" class="container-fluid">
     <div id="page-navbar" class="clearfix row-fluid">
@@ -53,6 +53,6 @@ require_once(dirname(__FILE__) . '/includes/header.php'); ?>
     </section>
 </div>
 
-<?php require_once(dirname(__FILE__) . '/includes/footer.php'); ?>
+<?php require_once(dirname(__FILE__) . $OUTPUT->get_child_relative_layout_path() . '/includes/footer.php'); ?>
 </body>
 </html>

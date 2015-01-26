@@ -30,9 +30,8 @@ $THEME->parents = array('essential');
 
 $THEME->sheets[] = 'essentials';
 
-/* If you need all of the Essential settings values, then remove this ($THEME->parents_exclude_sheets)
-   and change 'theme_essentials_process_css' to 'theme_essentials_process_css' for '$THEME->csspostprocess'
-   below. */
+/* If you need all of the Essential settings values, then comment this ($THEME->parents_exclude_sheets)
+   out and look at 'theme_essentials_process_css' in lib.php for more information. */
 $THEME->parents_exclude_sheets = array(
     'essential' => array(
         'settings',
@@ -51,6 +50,12 @@ $THEME->layouts = array(
     'frontpage' => array(
         'file' => 'frontpage.php',
         'regions' => array('side-pre'),
+        'defaultregion' => 'side-pre'
+    ),
+    // The pagelayout used for safebrowser and securewindow.
+    'secure' => array(
+        'file' => 'secure.php',
+        'regions' => array('side-pre', 'side-post'),
         'defaultregion' => 'side-pre'
     )
 );

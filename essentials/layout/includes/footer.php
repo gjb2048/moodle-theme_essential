@@ -26,6 +26,7 @@
 
 if (empty($PAGE->layout_options['nofooter'])) {
     ?>
+<!-- Essentials Footer -->
     <footer role="contentinfo" id="page-footer">
         <div class="container-fluid">
             <?php echo theme_essential_edit_button('theme_essential_footer'); ?>
@@ -63,7 +64,6 @@ if (empty($PAGE->layout_options['nofooter'])) {
     </footer>
     <a href="#top" class="back-to-top" ><i class="fa fa-angle-up "></i></a>
 <?php } ?>
-
     <script type="text/javascript">
         jQuery(document).ready(function () {
             <?php
