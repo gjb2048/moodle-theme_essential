@@ -159,6 +159,28 @@ module.exports = function(grunt) {
                 src: 'less/moodle-rtl.less',
                 dest: 'style/moodle-rtl.css'
             },
+            bootstrap_pix_p: {
+                options: {
+                    compress: false,
+                    cleancss: false,
+                    paths: "./less",
+                    report: 'min',
+                    sourceMap: false,
+                },
+                src: 'less/bootstrap-pix.less',
+                dest: 'style/bootstrap-pix.css'
+            },
+            moodle_pix_p: {
+                options: {
+                    compress: false,
+                    cleancss: false,
+                    paths: "./less",
+                    report: 'min',
+                    sourceMap: false,
+                },
+                src: 'less/moodle-pix.less',
+                dest: 'style/moodle-pix.css'
+            },
             essential_pix_p: {
                 options: {
                     compress: false,
@@ -189,8 +211,8 @@ module.exports = function(grunt) {
                     report: 'min',
                     sourceMap: false,
                 },
-                src: 'less/settings.less',
-                dest: 'style/settings.css'
+                src: 'less/essential-settings.less',
+                dest: 'style/essential-settings.css'
             },
             alternative_p: {
                 options: {
@@ -200,8 +222,8 @@ module.exports = function(grunt) {
                     report: 'min',
                     sourceMap: false,
                 },
-                src: 'less/alternative.less',
-                dest: 'style/alternative.css'
+                src: 'less/essential-alternative.less',
+                dest: 'style/essential-alternative.css'
             },
             essential_d: { // Flipped.
                 options: {
@@ -242,6 +264,32 @@ module.exports = function(grunt) {
                 src: 'less/moodle-rtl.less',
                 dest: 'style/moodle-rtl.css'
             },
+            bootstrap_pix_d: {
+                options: {
+                    compress: false,
+                    cleancss: false,
+                    paths: "./less",
+                    report: 'min',
+                    sourceMap: true,
+                    sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
+                    sourceMapFilename: 'style/bootstrap-pix.treasure.map'
+                },
+                src: 'less/bootstrap-pix.less',
+                dest: 'style/bootstrap-pix.css'
+            },
+            moodle_pix_d: {
+                options: {
+                    compress: false,
+                    cleancss: false,
+                    paths: "./less",
+                    report: 'min',
+                    sourceMap: true,
+                    sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
+                    sourceMapFilename: 'style/moodle-pix.treasure.map'
+                },
+                src: 'less/moodle-pix.less',
+                dest: 'style/moodle-pix.css'
+            },
             essential_pix_d: {
                 options: {
                     compress: false,
@@ -276,10 +324,10 @@ module.exports = function(grunt) {
                     report: 'min',
                     sourceMap: true,
                     sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'style/settings.treasure.map'
+                    sourceMapFilename: 'style/essential-settings.treasure.map'
                 },
-                src: 'less/settings.less',
-                dest: 'style/settings.css'
+                src: 'less/essential-settings.less',
+                dest: 'style/essential-settings.css'
             },
             alternative_d: {
                 options: {
@@ -289,10 +337,10 @@ module.exports = function(grunt) {
                     report: 'min',
                     sourceMap: true,
                     sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'style/alternative.treasure.map'
+                    sourceMapFilename: 'style/essential-alternative.treasure.map'
                 },
-                src: 'less/alternative.less',
-                dest: 'style/alternative.css'
+                src: 'less/essential-alternative.less',
+                dest: 'style/essential-alternative.css'
             }
         },
         exec: {
@@ -336,7 +384,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'style',
-                    src: ['essential.css', 'essential-rtl.css', 'essential-pix.css', 'alernative.css', 'editor.css', 'fontawesome.css', 'moodle-rtl.css'],
+                    src: ['essential.css', 'essential-rtl.css', 'bootstrap-pix.css', 'moodle-pix.css', 'essential-pix.css', 'essential-alternative.css', 'editor.css', 'fontawesome.css', 'moodle-rtl.css'],
                     dest: 'style',
                     ext: '.css'
                 }]
@@ -417,7 +465,7 @@ module.exports = function(grunt) {
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
 
-    grunt.registerTask("css", ["less:essential_"+build, "less:editor_"+build, "less:moodle_rtl_"+build, "less:settings_"+build, "less:essential_pix_"+build, "less:fontawesome_"+build, "less:alternative_"+build]);
+    grunt.registerTask("css", ["less:essential_"+build, "less:editor_"+build, "less:moodle_rtl_"+build, "less:settings_"+build, "less:bootstrap_pix_"+build, "less:moodle_pix_"+build, "less:essential_pix_"+build, "less:fontawesome_"+build, "less:alternative_"+build]);
     if (build == 'd') {
         grunt.registerTask("compile", ["css", "cssflip:rtl_"+build, "decache"]);
     } else {

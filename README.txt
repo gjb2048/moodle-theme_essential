@@ -176,6 +176,7 @@ New in 2.8.1.1
 - NEW: Added 'Essentials' child theme in 'essentials' sub-folder.  To use, read the 'Installation' instructions in 'essentials/README.txt'.
        The 'essentials' sub-folder is just a place to store and distribute the child theme.  It will NOT be available until you install it.
 - NEW: Code refactoring to make child theme creation easier.
+- NEW: LESS refactoring to make future transition to Bootstrap v3 easier.
 
 New in 2.8.1
 ============

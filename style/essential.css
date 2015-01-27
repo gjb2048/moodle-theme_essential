@@ -14505,7 +14505,7 @@ body.has_dock div#dock {
     display: inherit !important;
   }
   .visible-desktop {
-    display: none !important;
+    display: none !important ;
   }
   .visible-tablet {
     display: inherit !important;

@@ -11,7 +11,7 @@
 @import "moodle/plugins/mod/quiz";
 
 // Import the bootstrap variables.
-@import "bootstrap/variables.less";
+@import "bootstrap-override/variables.less";
 // Old Moodle stuff from base theme.
 // Massive, needs broken up.
 @import "moodle/core";
@@ -23,11 +23,11 @@
 @import "moodle/question";
 @import "moodle/user";
 // Upstream Bootstrap.
-@import "bootstrap/bootstrap";
+@import "bootstrap-override/bootstrap";
 // Override Bootstrap defaults.
 @import "moodle/bootstrapoverride";
 
-// Set image location.  Now in essential/bootstrap-pix.less included in essential-pix.less.
+// Set image location.  Now in bootstrap-override/sprites.less included in bootstrap-pix.less.
 @iconSpritePath: ~"";
 @iconWhiteSpritePath: ~"";
 
@@ -61,7 +61,7 @@
 
 // The following responsive imports are copied in
 // from "bootstrap/responsive".
-@import "bootstrap/responsive";
+@import "bootstrap-override/responsive";  // Get the correct variables.less file.
 @import "moodle/responsive";
 
 // Anything below this line is considered expendable,

@@ -34,7 +34,7 @@ $THEME->sheets[] = 'essentials';
    out and look at 'theme_essentials_process_css' in lib.php for more information. */
 $THEME->parents_exclude_sheets = array(
     'essential' => array(
-        'settings',
+        'essential-settings',
         'custom'
     )
 );

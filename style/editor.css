@@ -86,9 +86,6 @@ img {
   border: 0;
   -ms-interpolation-mode: bicubic;
 }
-table img {
-  max-width: none;
-}
 #map_canvas img,
 .google-maps img {
   max-width: none;
@@ -809,7 +806,7 @@ table th[class*="span"],
   background-image: url("[[pix:theme|glyphicons-halflings-white]]");
 }
 .icon-glass {
-  background-position: 0 0;
+  background-position: 0      0;
 }
 .icon-music {
   background-position: -24px 0;
