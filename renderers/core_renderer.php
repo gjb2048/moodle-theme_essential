@@ -1212,7 +1212,7 @@ class theme_essential_core_renderer extends core_renderer {
 
         return $output;
     }
-}
+
     // Essential custom bits.
     // Moodle CSS file serving.
     public function get_csswww() {
