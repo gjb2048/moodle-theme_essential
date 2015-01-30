@@ -172,7 +172,9 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
             return $theme->setting_file_serve('headerbackground', $args, $forcedownload, $options);
         } else if ($filearea === 'pagebackground') {
             return $theme->setting_file_serve('pagebackground', $args, $forcedownload, $options);
-        } else if (preg_match("/slide[1-9][0-9]*image/", $filearea) !== false) {
+        } else if (preg_match("/fontfile(eot|otf|svg|ttf|woff|woff2)(heading|body)/", $filearea)) {
+            return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
+        } else if (preg_match("/slide[1-9][0-9]*image/", $filearea)) {
             return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
         } else if ((substr($filearea, 0, 9) === 'marketing') && (substr($filearea, 10, 5) === 'image')) {
             return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
@@ -184,10 +186,6 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
             return $theme->setting_file_serve('ipadicon', $args, $forcedownload, $options);
         } else if ($filearea === 'ipadretinaicon') {
             return $theme->setting_file_serve('ipadretinaicon', $args, $forcedownload, $options);
-        } else if ($filearea === 'fontfilettfheading') {
-            return $theme->setting_file_serve('fontfilettfheading', $args, $forcedownload, $options);
-        } else if ($filearea === 'fontfilettfbody') {
-            return $theme->setting_file_serve('fontfilettfbody', $args, $forcedownload, $options);
         } else {
             send_file_not_found();
         }
@@ -443,8 +441,8 @@ function theme_essential_process_css($css, $theme) {
 
     $css = theme_essential_set_headingfont($css, $headingfont);
     $css = theme_essential_set_bodyfont($css, $bodyfont);
-    $css = theme_essential_set_fontfiles($css, 'heading', $headingfont, $theme);
-    $css = theme_essential_set_fontfiles($css, 'body', $bodyfont, $theme);
+    $css = theme_essential_set_fontfiles($css, 'heading', $headingfont);
+    $css = theme_essential_set_fontfiles($css, 'body', $bodyfont);
 
     // Set the theme colour.
     $themecolor = theme_essential_get_setting('themecolor');
@@ -650,10 +648,15 @@ function theme_essential_set_bodyfont($css, $bodyfont) {
     return $css;
 }
 
-function theme_essential_set_fontfiles($css, $type, $fontname, $theme) {
+function theme_essential_set_fontfiles($css, $type, $fontname) {
     $tag = '[[setting:fontfiles' . $type . ']]';
     $replacement = '';
     if (theme_essential_get_setting('fontselect') === '3') {
+        static $theme;
+        if (empty($theme)) {
+            $theme = theme_config::load('essential');  // $theme needs to be us for child themes.
+        }
+
         $fontfiles = array();
         $fontfileeot = $theme->setting_file_url('fontfileeot' . $type, 'fontfileeot' . $type);
         if (!empty($fontfileeot)) {

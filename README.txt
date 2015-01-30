@@ -170,7 +170,8 @@ New in 2.7.9.5
 - FIX: Apply MDL-46183.
 - FIX: Apply MDL-45930.
 - FIX: Apply MDL-44907.
-- NEW: Issue #428: Add setting to customise header background image.  Thanks to Jerome Charaoui for this.
+- FIX: Improved custom font file detection and serving.
+- NEW: Issue #428: Add setting to customise header background image.  Thanks to Jerome Charaoui (https://github.com/jcharaoui) for this.
 - NEW: Issue #433: Add a 'This Course' dropdown menu.  Thanks to ActionJONA (https://github.com/ActionJONA) for the ported BCU theme code.
 - NEW: Added 'Essentials' child theme in 'essentials' sub-folder.  To use, read the 'Installation' instructions in 'essentials/README.txt'.
        The 'essentials' sub-folder is just a place to store and distribute the child theme.  It will NOT be available until you install it.
