@@ -57,6 +57,12 @@ If you make improvements or bug fixes then I would appreciate if you would send 
 https://github.com/gjb2048/moodle-theme_essential and doing a 'Pull Request' so that the rest of the
 Moodle community benefits.
 
+Support
+=======
+As Essential is licensed under the GNU GPLv3 License it comes with NO support.  If you would like support from
+me then I'm happy to provide it for a fee (please see my contact details above).  Otherwise, the 'Themes' forum:
+moodle.org/mod/forum/view.php?id=46 is an excellent place to ask questions.
+
 Donations
 =========
 This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider donating by:
