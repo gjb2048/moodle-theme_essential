@@ -164,7 +164,7 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
-New in 2.8.1.1 - RC1
+New in 2.8.1.1 - RC2
 ====================
 - FIX: Issue #417: M2.8 Mail Settings page needs checking.
 - FIX: Issue #422: Regression from #179 in the core_renderer.php file.
@@ -174,6 +174,7 @@ New in 2.8.1.1 - RC1
 - FIX: Issue #432: Adjusted lang string for 'oldnavbardesc'.  Thanks to Mathieu Pelletier (https://github.com/mkpelletier) for this.
 - FIX: Issue #434: Explain if a logo uploaded then no header title will be shown.
 - FIX: Issue #436: Header background colour setting.
+- FIX: Issue #441: Messages Screen when on mobile ( - 767px ) - background not filling area (region-main).
 - FIX: Apply MDL-46183.
 - FIX: Apply MDL-45930.
 - FIX: Apply MDL-44907.

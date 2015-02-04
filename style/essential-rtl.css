@@ -23530,6 +23530,19 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
     -moz-border-radius: 6px;
     border-radius: 6px;
   }
+
+  #page-message-index #region-main {
+    float: right;
+  }
+
+  #page-message-index #region-main .message .contactselector,
+  #page-message-index #region-main .message .messagearea {
+    width: 100%;
+  }
+
+  #page-message-index #region-main .message .messagearea {
+    border-right: transparent;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
