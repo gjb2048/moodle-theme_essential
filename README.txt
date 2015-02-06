@@ -179,6 +179,7 @@ New in 2.8.1.1 - RC2
 - FIX: Apply MDL-45930.
 - FIX: Apply MDL-44907.
 - FIX: Improved custom font file detection and serving.
+- FIX: Serving of slide show images when the parent frontpage is used in a child theme.
 - NEW: Issue #428: Add setting to customise header background image.  Thanks to Jerome Charaoui (https://github.com/jcharaoui) for this.
 - NEW: Issue #433: Add a 'This Course' dropdown menu.  Thanks to ActionJONA (https://github.com/ActionJONA) for the ported BCU theme code.
 - NEW: Added 'Essentials' child theme in 'essentials' sub-folder.  To use, read the 'Installation' instructions in 'essentials/README.txt'.

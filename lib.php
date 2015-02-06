@@ -931,7 +931,12 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
 }
 
 function theme_essential_render_slide($i, $captionoptions) {
-    global $PAGE, $OUTPUT;
+    global $OUTPUT;
+
+    static $theme;
+    if (empty($theme)) {
+        $theme = theme_config::load('essential');
+    }
 
     $slideurl = theme_essential_get_setting('slide' . $i . 'url');
     $slideurltarget = theme_essential_get_setting('slide' . $i . 'target');
@@ -948,7 +953,7 @@ function theme_essential_render_slide($i, $captionoptions) {
 
     // Get slide image or fallback to default
     if (theme_essential_get_setting('slide' . $i . 'image')) {
-        $slideimage = $PAGE->theme->setting_file_url('slide' . $i . 'image', 'slide' . $i . 'image');
+        $slideimage = $theme->setting_file_url('slide' . $i . 'image', 'slide' . $i . 'image');
     }
 
     if ($slideurl) {
@@ -1023,7 +1028,7 @@ function theme_essential_render_slide_controls($left) {
  * States if the browser is not IE9 or less.
  */
 function theme_essential_not_lte_ie9() {
-    $properties = core_useragent::check_ie_properties();; // In /lib/classes/useragent.php.
+    $properties = core_useragent::check_ie_properties(); // In /lib/classes/useragent.php.
     if (!is_array($properties)) {
         return true;
     }
