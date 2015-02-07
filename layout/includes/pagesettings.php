@@ -25,14 +25,14 @@
  */
 
 /* Default globals */
-global $CFG, $PAGE, $USER, $SITE, $COURSE;
+global $CFG, $PAGE, $USER, $SITE, $COURSE, $OUTPUT;
 
 /* Group Body */
 $bodyclasses = array();
 
-if (theme_essential_get_setting('enablealternativethemecolors1') ||
-    theme_essential_get_setting('enablealternativethemecolors2') ||
-    theme_essential_get_setting('enablealternativethemecolors3')
+if ($OUTPUT->get_setting('enablealternativethemecolors1') ||
+    $OUTPUT->get_setting('enablealternativethemecolors2') ||
+    $OUTPUT->get_setting('enablealternativethemecolors3')
 ) {
     $colourswitcher = true;
     theme_essential_check_colours_switch();
@@ -51,7 +51,7 @@ if ($devicetype == "mobile") {
     $bodyclasses[] = 'desktopdevice';
 }
 
-switch (theme_essential_get_setting('pagewidth')) {
+switch ($OUTPUT->get_setting('pagewidth')) {
     case 100:
         $bodyclasses[] = 'pagewidthvariable';
         break;
@@ -68,7 +68,7 @@ switch (theme_essential_get_setting('pagewidth')) {
 if (!empty($CFG->custommenuitems)) {
     $bodyclasses[] = 'custommenuitems';
 }
-if (theme_essential_get_setting('enablecategoryicon')) {
+if ($OUTPUT->get_setting('enablecategoryicon')) {
     $bodyclasses[] = 'categoryicons';
 }
 
@@ -83,31 +83,31 @@ if (right_to_left()) {
     $left = false;
 }
 
-$fontselect = theme_essential_get_setting('fontselect');
+$fontselect = $OUTPUT->get_setting('fontselect');
 $fontcharacterset = '&subset=latin';
-if(theme_essential_get_setting('fontcharacterset')) {
-    $fontcharacterset = '&subset=latin,'.theme_essential_get_setting('fontcharacterset');
+if($OUTPUT->get_setting('fontcharacterset')) {
+    $fontcharacterset = '&subset=latin,'.$OUTPUT->get_setting('fontcharacterset');
 }
-$headingfont = urlencode(theme_essential_get_setting('fontnameheading'));
-$bodyfont = urlencode(theme_essential_get_setting('fontnamebody'));
+$headingfont = urlencode($OUTPUT->get_setting('fontnameheading'));
+$bodyfont = urlencode($OUTPUT->get_setting('fontnamebody'));
 
 
 /* Group Header */
 $hassocialnetworks = (
-    theme_essential_get_setting('facebook') ||
-    theme_essential_get_setting('twitter') ||
-    theme_essential_get_setting('googleplus') ||
-    theme_essential_get_setting('linkedin') ||
-    theme_essential_get_setting('youtube') ||
-    theme_essential_get_setting('flickr') ||
-    theme_essential_get_setting('vk') ||
-    theme_essential_get_setting('pinterest') ||
-    theme_essential_get_setting('instagram') ||
-    theme_essential_get_setting('skype') ||
-    theme_essential_get_setting('website')
+    $OUTPUT->get_setting('facebook') ||
+    $OUTPUT->get_setting('twitter') ||
+    $OUTPUT->get_setting('googleplus') ||
+    $OUTPUT->get_setting('linkedin') ||
+    $OUTPUT->get_setting('youtube') ||
+    $OUTPUT->get_setting('flickr') ||
+    $OUTPUT->get_setting('vk') ||
+    $OUTPUT->get_setting('pinterest') ||
+    $OUTPUT->get_setting('instagram') ||
+    $OUTPUT->get_setting('skype') ||
+    $OUTPUT->get_setting('website')
 );
-$hasmobileapps = (theme_essential_get_setting('ios') ||
-    theme_essential_get_setting('android')
+$hasmobileapps = ($OUTPUT->get_setting('ios') ||
+    $OUTPUT->get_setting('android')
 );
 
 $logoclass = 'ecol12';
@@ -115,11 +115,11 @@ if ($hassocialnetworks || $hasmobileapps) {
     $logoclass = 'ecol8';
 }
 
-$oldnavbar = theme_essential_get_setting('oldnavbar');
-$haslogo = theme_essential_get_setting('logo');
+$oldnavbar = $OUTPUT->get_setting('oldnavbar');
+$haslogo = $OUTPUT->get_setting('logo');
 
 /* Group Content */
-$hasboringlayout = theme_essential_get_setting('layout');
+$hasboringlayout = $OUTPUT->get_setting('layout');
 
 /* Group Report Page Title */
 function essential_report_page_has_title() {
@@ -154,8 +154,8 @@ function essential_has_footer_region() {
 }
 
 /* Group Footer */
-$hascopyright = theme_essential_get_setting('copyright', true);
-$hasfootnote = theme_essential_get_setting('footnote', 'format_html');
+$hascopyright = $OUTPUT->get_setting('copyright', true);
+$hasfootnote = $OUTPUT->get_setting('footnote', 'format_html');
 
 /* Group Breadcrumb */
-$breadcrumbstyle = theme_essential_get_setting('breadcrumbstyle');
+$breadcrumbstyle = $OUTPUT->get_setting('breadcrumbstyle');

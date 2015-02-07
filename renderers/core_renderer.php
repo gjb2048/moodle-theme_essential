@@ -25,6 +25,7 @@
  */
 class theme_essential_core_renderer extends core_renderer {
     public $language = null;
+    protected $theme = null;
 
     /**
      * This renders the breadcrumbs
@@ -32,7 +33,7 @@ class theme_essential_core_renderer extends core_renderer {
      */
     public function navbar()
     {
-        $breadcrumbstyle = theme_essential_get_setting('breadcrumbstyle');
+        $breadcrumbstyle = $this->get_setting('breadcrumbstyle');
         if ($breadcrumbstyle) {
             if ($breadcrumbstyle == '4') {
                 $breadcrumbstyle = '1'; // Fancy style with no collapse.
@@ -96,7 +97,7 @@ class theme_essential_core_renderer extends core_renderer {
                 error_log("PERF: " . $perf['txt']);
             }
             if (defined('MDL_PERFTOFOOT') || debugging() || $CFG->perfdebug > 7) {
-                $performanceinfo = theme_essential_performance_output($perf, theme_essential_get_setting('perfinfo'));
+                $performanceinfo = theme_essential_performance_output($perf, $this->get_setting('perfinfo'));
             }
         }
 
@@ -239,9 +240,9 @@ class theme_essential_core_renderer extends core_renderer {
 
         $coursemenu = new custom_menu();
 
-        $hasdisplaymycourses = theme_essential_get_setting('displaymycourses');
+        $hasdisplaymycourses = $this->get_setting('displaymycourses');
         if (isloggedin() && !isguestuser() && $hasdisplaymycourses) {
-            $mycoursetitle = theme_essential_get_setting('mycoursetitle');
+            $mycoursetitle = $this->get_setting('mycoursetitle');
             if ($mycoursetitle == 'module') {
                 $branchtitle = get_string('mymodules', 'theme_essential');
             } else if ($mycoursetitle == 'unit') {
@@ -301,7 +302,7 @@ class theme_essential_core_renderer extends core_renderer {
         if (!isguestuser()) {
             $alternativethemes = array();
             foreach (range(1, 3) as $alternativethemenumber) {
-                if (theme_essential_get_setting('enablealternativethemecolors' . $alternativethemenumber)) {
+                if ($this->get_setting('enablealternativethemecolors' . $alternativethemenumber)) {
                     $alternativethemes[] = $alternativethemenumber;
                 }
             }
@@ -316,8 +317,8 @@ class theme_essential_core_renderer extends core_renderer {
                 $branch->add('<i class="fa fa-square colours-default"></i>' . $defaultthemecolorslabel,
                     new moodle_url($this->page->url, array('essentialcolours' => 'default')), $defaultthemecolorslabel);
                 foreach ($alternativethemes as $alternativethemenumber) {
-                    if (theme_essential_get_setting('alternativethemename' . $alternativethemenumber)) {
-                        $alternativethemeslabel = theme_essential_get_setting('alternativethemename' . $alternativethemenumber);
+                    if ($this->get_setting('alternativethemename' . $alternativethemenumber)) {
+                        $alternativethemeslabel = $this->get_setting('alternativethemename' . $alternativethemenumber);
                     } else {
                         $alternativethemeslabel = get_string('alternativecolors', 'theme_essential', $alternativethemenumber);
                     }
@@ -807,16 +808,16 @@ class theme_essential_core_renderer extends core_renderer {
     private function theme_essential_render_helplink()
     {
         global $USER, $CFG;
-        if (!theme_essential_get_setting('helplinktype')) {
+        if (!$this->get_setting('helplinktype')) {
             return false;
         }
         $branchlabel = '<em><i class="fa fa-question-circle"></i>' . get_string('help') . '</em>';
         $branchurl = '';
         $target = '';
 
-        if (theme_essential_get_setting('helplinktype') === '1') {
-            if (theme_essential_get_setting('helplink') && filter_var(theme_essential_get_setting('helplink'), FILTER_VALIDATE_EMAIL)) {
-                $branchurl = 'mailto:' . theme_essential_get_setting('helplink') . '?cc=' . $USER->email;
+        if ($this->get_setting('helplinktype') === '1') {
+            if ($this->get_setting('helplink') && filter_var($this->get_setting('helplink'), FILTER_VALIDATE_EMAIL)) {
+                $branchurl = 'mailto:' . $this->get_setting('helplink') . '?cc=' . $USER->email;
             } else if ($CFG->supportemail && filter_var($CFG->supportemail, FILTER_VALIDATE_EMAIL)) {
                 $branchurl = 'mailto:' . $CFG->supportemail . '?cc=' . $USER->email;
             } else {
@@ -827,11 +828,11 @@ class theme_essential_core_renderer extends core_renderer {
             }
         }
 
-        if (theme_essential_get_setting('helplinktype') === '2') {
-            if (theme_essential_get_setting('helplink') && filter_var(theme_essential_get_setting('helplink'), FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED)) {
-                $branchurl = theme_essential_get_setting('helplink');
+        if ($this->get_setting('helplinktype') === '2') {
+            if ($this->get_setting('helplink') && filter_var($this->get_setting('helplink'), FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED)) {
+                $branchurl = $this->get_setting('helplink');
                 $target = '_blank';
-            } else if ((!theme_essential_get_setting('helplink')) && (filter_var($CFG->supportpage, FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED))) {
+            } else if ((!$this->get_setting('helplink')) && (filter_var($CFG->supportpage, FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED))) {
                 $branchurl = $CFG->supportpage;
                 $target = '_blank';
             } else {
@@ -1049,7 +1050,7 @@ class theme_essential_core_renderer extends core_renderer {
 
     public function render_social_network($socialnetwork)
     {
-        if (theme_essential_get_setting($socialnetwork)) {
+        if ($this->get_setting($socialnetwork)) {
             $icon = $socialnetwork;
             if ($socialnetwork === 'googleplus') {
                 $icon = 'google-plus';
@@ -1063,7 +1064,7 @@ class theme_essential_core_renderer extends core_renderer {
             $socialhtml = html_writer::start_tag('li');
             $socialhtml .= html_writer::start_tag('button', array('type' => "button",
                 'class' => 'socialicon ' . $socialnetwork,
-                'onclick' => "window.open('" . theme_essential_get_setting($socialnetwork) . "')",
+                'onclick' => "window.open('" . $this->get_setting($socialnetwork) . "')",
                 'title' => get_string($socialnetwork, 'theme_essential'),
             ));
             $socialhtml .= html_writer::start_tag('i', array('class' => 'fa fa-' . $icon . ' fa-inverse'));
@@ -1244,5 +1245,129 @@ class theme_essential_core_renderer extends core_renderer {
      */
     public function get_child_relative_layout_path() {
         return '';
+    }
+
+    public function get_setting($setting, $format = false, $theme = null) {
+
+        if (empty($theme)) {
+            if (empty($this->theme)) {
+                $this->theme = theme_config::load('essential');
+            }
+            $theme = $this->theme;
+        }
+
+        global $CFG;
+        require_once($CFG->dirroot . '/lib/weblib.php');
+        if (empty($theme->settings->$setting)) {
+            return false;
+        } else if (!$format) {
+            return $theme->settings->$setting;
+        } else if ($format === 'format_text') {
+            return format_text($theme->settings->$setting, FORMAT_PLAIN);
+        } else if ($format === 'format_html') {
+            return format_text($theme->settings->$setting, FORMAT_HTML, array('trusted' => true, 'noclean' => true));
+        } else {
+            return format_string($theme->settings->$setting);
+        }
+    }
+
+    public function render_slide($i, $captionoptions, $theme = null) {
+
+        if (empty($theme)) {
+            if (empty($this->theme)) {
+                $this->theme = theme_config::load('essential');
+            }
+            $theme = $this->theme;
+        }
+
+        $slideurl = $this->get_setting('slide' . $i . 'url', false, $theme);
+        $slideurltarget = $this->get_setting('slide' . $i . 'target', false, $theme);
+        $slidetitle = $this->get_setting('slide' . $i, true, $theme);
+        $slidecaption = $this->get_setting('slide' . $i . 'caption', true, $theme);
+        if ($captionoptions == 0) {
+            $slideextraclass = ' side-caption';
+        } else {
+            $slideextraclass = '';
+        }
+        $slideextraclass .= ($i === 1) ? ' active' : '';
+        $slideimagealt = strip_tags($slidetitle);
+
+        // Get slide image or fallback to default.
+        $slideimage = $this->get_setting('slide' . $i . 'image', false, $theme);
+        if ($slideimage) {
+            $slideimage = $theme->setting_file_url('slide' . $i . 'image', 'slide' . $i . 'image');
+        } else {
+            $slideimage = $this->pix_url('default_slide', 'theme');
+        }
+
+        if ($slideurl) {
+            $slide = '<a href="' . $slideurl . '" target="' . $slideurltarget . '" class="item' . $slideextraclass . '">';
+        } else {
+            $slide = '<div class="item' . $slideextraclass . '">';
+        }
+
+        if ($captionoptions == 0) {
+            $slide .= '<div class="container-fluid">';
+            $slide .= '<div class="row-fluid">';
+        
+            if ($slidetitle || $slidecaption) {
+                $slide .= '<div class="span5 the-side-caption">';
+                $slide .= '<div class="the-side-caption-content">';
+                $slide .= '<h4>' . $slidetitle . '</h4>';
+                $slide .= '<p>' . $slidecaption . '</p>';
+                $slide .= '</div>';
+                $slide .= '</div>';
+                $slide .= '<div class="span7">';
+            } else {
+                $slide .= '<div class="span10 offset1 nocaption">';
+            }
+            $slide .= '<div class="carousel-image-container">';
+            $slide .= '<img src="' . $slideimage . '" alt="' . $slideimagealt . '" class="carousel-image"/>';
+            $slide .= '</div>';
+            $slide .= '</div>';
+
+            $slide .= '</div>';
+            $slide .= '</div>';
+        } else {
+            $nocaption = (!($slidetitle || $slidecaption)) ? ' nocaption' : '';
+            $slide .= '<div class="carousel-image-container'.$nocaption.'">';
+            $slide .= '<img src="' . $slideimage . '" alt="' . $slideimagealt . '" class="carousel-image"/>';
+            $slide .= '</div>';
+
+            // Output title and caption if either is present
+            if ($slidetitle || $slidecaption) {
+                $slide .= '<div class="carousel-caption">';
+                $slide .= '<div class="carousel-caption-inner">';
+                $slide .= '<h4>' . $slidetitle . '</h4>';
+                $slide .= '<p>' . $slidecaption . '</p>';
+                $slide .= '</div>';
+                $slide .= '</div>';
+            }
+        }
+        $slide .= ($slideurl) ? '</a>' : '</div>';
+
+        return $slide;
+    }
+
+    public function render_slide_controls($left) {
+        $faleft = 'left';
+        $faright = 'right';
+        if (!$left) {
+            $temp = $faleft;
+            $faleft = $faright;
+            $faright = $temp;
+        }
+        $prev = '<a class="left carousel-control" href="#essentialCarousel" data-slide="prev"><i class="fa fa-chevron-circle-' . $faleft . '"></i></a>';
+        $next = '<a class="right carousel-control" href="#essentialCarousel" data-slide="next"><i class="fa fa-chevron-circle-' . $faright . '"></i></a>';
+
+        return $prev . $next;
+    }
+
+    public function essential_edit_button($section) {
+        global $CFG;
+        if ($this->page->user_is_editing() && is_siteadmin()) {
+            $url = preg_replace("(https?:)", "", $CFG->wwwroot . '/admin/settings.php?section=');
+            return '<a class="btn btn-success" href="' . $url . $section . '">' . get_string('edit') . '</a>';
+        }
     }
 }

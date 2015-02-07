@@ -27,15 +27,15 @@
 $numberofslides = theme_essential_showslider();
 
 if ($numberofslides) {
-    $slideinterval  = theme_essential_get_setting('slideinterval');
-    $captionscenter = (theme_essential_get_setting('slidecaptioncentred'))? ' centred' : '';
-    $captionoptions = theme_essential_get_setting('slidecaptionoptions');
+    $slideinterval  = $OUTPUT->get_setting('slideinterval');
+    $captionscenter = ($OUTPUT->get_setting('slidecaptioncentred'))? ' centred' : '';
+    $captionoptions = $OUTPUT->get_setting('slidecaptionoptions');
     $captionsbelowclass  = ($captionoptions == 2) ? ' below' : '';
     ?>
     <div class="row-fluid">
         <div class="span12">
             <div id="essentialCarousel" class="carousel slide" data-interval="<?php echo $slideinterval;?>">
-                <?php echo theme_essential_edit_button('theme_essential_slideshow');?>
+                <?php echo $OUTPUT->essential_edit_button('theme_essential_slideshow');?>
                 <ol class="carousel-indicators">
                     <?php
                     for ($indicatorslideindex = 0; $indicatorslideindex < $numberofslides; $indicatorslideindex++) {
@@ -49,10 +49,10 @@ if ($numberofslides) {
                 </ol>
                 <div class="carousel-inner<?php echo $captionscenter.$captionsbelowclass;?>">
                     <?php for ($slideindex = 1; $slideindex <= $numberofslides; $slideindex++) {
-                        echo theme_essential_render_slide($slideindex, $captionoptions);
+                        echo $OUTPUT->render_slide($slideindex, $captionoptions);
                     } ?>
                 </div>
-                <?php echo theme_essential_render_slide_controls($left); ?>
+                <?php echo $OUTPUT->render_slide_controls($left); ?>
             </div>
         </div>
     </div>

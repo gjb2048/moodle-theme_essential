@@ -28,7 +28,7 @@ if (empty($PAGE->layout_options['nofooter'])) {
     ?>
     <footer role="contentinfo" id="page-footer">
         <div class="container-fluid">
-            <?php echo theme_essential_edit_button('theme_essential_footer'); ?>
+            <?php echo $OUTPUT->essential_edit_button('theme_essential_footer'); ?>
             <div class="row-fluid footerblocks">
                 <div class="span4 pull-left">
                     <div class="column">
@@ -77,7 +77,7 @@ if (empty($PAGE->layout_options['nofooter'])) {
                   echo "$('.breadcrumb').jBreadCrumb();";
               }
             }
-            if (theme_essential_get_setting('fitvids')) {
+            if ($OUTPUT->get_setting('fitvids')) {
                 echo "$('#page').fitVids();";
             }
             ?>

@@ -42,7 +42,7 @@ class theme_essential_core_course_renderer extends core_course_renderer
      */
     protected function coursecat_category(coursecat_helper $chelper, $coursecat, $depth)
     {
-        global $CFG;
+        global $CFG, $OUTPUT;
         // open category tag
         $classes = array('category');
         if (empty($coursecat->visible)) {
@@ -94,15 +94,15 @@ class theme_essential_core_course_renderer extends core_course_renderer
         $categoryiconnum = 'categoryicon' . $coursecat->id;
 
         // Do a settings check to output our icon for the category
-        if (theme_essential_get_setting('enablecategoryicon')) {
-            if (theme_essential_get_setting($categoryiconnum) &&
-                theme_essential_get_setting('enablecustomcategoryicon')
+        if ($OUTPUT->get_setting('enablecategoryicon')) {
+            if ($OUTPUT->get_setting($categoryiconnum) &&
+                $OUTPUT->get_setting('enablecustomcategoryicon')
             ) {
                 // User has set a value for the category
-                $val = theme_essential_get_setting($categoryiconnum);
+                $val = $OUTPUT->get_setting($categoryiconnum);
             } else {
                 // User hasn't set a value for the category, get the default
-                $val = theme_essential_get_setting('defaultcategoryicon');
+                $val = $OUTPUT->get_setting('defaultcategoryicon');
             }
         }
         if (!empty($val)) {
@@ -185,7 +185,7 @@ class theme_essential_core_course_renderer extends core_course_renderer
         if ($coursehascontacts) {
             $content .= html_writer::start_tag('ul', array('class' => 'teachers'));
             foreach ($course->get_course_contacts() as $userid => $coursecontact) {
-                $faiconsetting = theme_essential_get_setting('courselistteachericon');
+                $faiconsetting = $this->output->get_setting('courselistteachericon');
                 $faiconsettinghtml = (empty($faiconsetting)) ? '' : '<i class="fa fa-'.$faiconsetting.'"></i> ';
                 $name = $faiconsettinghtml.$coursecontact['rolename'].': '.
                         html_writer::link(new moodle_url('/user/view.php',

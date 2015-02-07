@@ -121,14 +121,6 @@ function theme_essential_get_title($location) {
     return $title;
 }
 
-function theme_essential_edit_button($section) {
-    global $PAGE, $CFG;
-    if ($PAGE->user_is_editing() && is_siteadmin()) {
-        $url = preg_replace("(https?:)", "", $CFG->wwwroot . '/admin/settings.php?section=');
-        return '<a class="btn btn-success" href="' . $url . $section . '">' . get_string('edit') . '</a>';
-    }
-}
-
 /**
  * Serves any files associated with the theme settings.
  *
@@ -928,100 +920,6 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
 
     // Close single-section div.
     echo html_writer::end_tag('div');
-}
-
-function theme_essential_render_slide($i, $captionoptions) {
-    global $OUTPUT;
-
-    static $theme;
-    if (empty($theme)) {
-        $theme = theme_config::load('essential');
-    }
-
-    $slideurl = theme_essential_get_setting('slide' . $i . 'url');
-    $slideurltarget = theme_essential_get_setting('slide' . $i . 'target');
-    $slidetitle = theme_essential_get_setting('slide' . $i, true);
-    $slidecaption = theme_essential_get_setting('slide' . $i . 'caption', true);
-    if ($captionoptions == 0) {
-        $slideextraclass = ' side-caption';
-    } else {
-        $slideextraclass = '';
-    }
-    $slideextraclass .= ($i === 1) ? ' active' : '';
-    $slideimagealt = strip_tags(theme_essential_get_setting('slide' . $i, true));
-    $slideimage = $OUTPUT->pix_url('default_slide', 'theme');
-
-    // Get slide image or fallback to default
-    if (theme_essential_get_setting('slide' . $i . 'image')) {
-        $slideimage = $theme->setting_file_url('slide' . $i . 'image', 'slide' . $i . 'image');
-    }
-
-    if ($slideurl) {
-        $slide = '<a href="' . $slideurl . '" target="' . $slideurltarget . '" class="item' . $slideextraclass . '">';
-    } else {
-        $slide = '<div class="item' . $slideextraclass . '">';
-    }
-
-    if ($captionoptions == 0) {
-        $slide .= '<div class="container-fluid">';
-        $slide .= '<div class="row-fluid">';
-        
-        if ($slidetitle || $slidecaption) {
-            $slide .= '<div class="span5 the-side-caption">';
-            $slide .= '<div class="the-side-caption-content">';
-            $slide .= '<h4>' . $slidetitle . '</h4>';
-            $slide .= '<p>' . $slidecaption . '</p>';
-            $slide .= '</div>';
-            $slide .= '</div>';
-            $slide .= '<div class="span7">';
-        } else {
-            $slide .= '<div class="span10 offset1 nocaption">';
-        }
-        $slide .= '<div class="carousel-image-container">';
-        $slide .= '<img src="' . $slideimage . '" alt="' . $slideimagealt . '" class="carousel-image"/>';
-        $slide .= '</div>';
-        $slide .= '</div>';
-        
-        $slide .= '</div>';
-        $slide .= '</div>';
-    } else {
-        $nocaption = (!($slidetitle || $slidecaption)) ? ' nocaption' : '';
-        $slide .= '<div class="carousel-image-container'.$nocaption.'">';
-        $slide .= '<img src="' . $slideimage . '" alt="' . $slideimagealt . '" class="carousel-image"/>';
-        $slide .= '</div>';
-
-        // Output title and caption if either is present
-        if ($slidetitle || $slidecaption) {
-            $slide .= '<div class="carousel-caption">';
-            $slide .= '<div class="carousel-caption-inner">';
-            $slide .= '<h4>' . $slidetitle . '</h4>';
-            $slide .= '<p>' . $slidecaption . '</p>';
-            $slide .= '</div>';
-            $slide .= '</div>';
-        }
-    }
-    $slide .= ($slideurl) ? '</a>' : '</div>';
-
-
-    return $slide;
-}
-
-function theme_essential_render_slide_controls($left) {
-    $faleft = 'left';
-    $faright = 'right';
-    if (!$left) {
-        $temp = $faleft;
-        $faleft = $faright;
-        $faright = $temp;
-    }
-    $prev = '<a class="left carousel-control" href="#essentialCarousel" data-slide="prev"><i class="fa fa-chevron-circle-' . $faleft . '"></i></a>';
-    $next = '<a class="right carousel-control" href="#essentialCarousel" data-slide="next"><i class="fa fa-chevron-circle-' . $faright . '"></i></a>';
-
-    if ($left) {
-        return $prev . $next;
-    } else {
-        return $next . $prev;
-    }
 }
 
 /**

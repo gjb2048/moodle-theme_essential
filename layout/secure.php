@@ -80,7 +80,7 @@ echo $OUTPUT->doctype() ?>
                   echo "$('.breadcrumb').jBreadCrumb();";
               }
             }
-            if (theme_essential_get_setting('fitvids')) {
+            if ($OUTPUT->get_setting('fitvids')) {
                 echo "$('#page').fitVids();";
             }
             ?>
