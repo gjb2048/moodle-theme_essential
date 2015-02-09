@@ -1309,7 +1309,7 @@ class theme_essential_core_renderer extends core_renderer {
         if ($captionoptions == 0) {
             $slide .= '<div class="container-fluid">';
             $slide .= '<div class="row-fluid">';
-        
+
             if ($slidetitle || $slidecaption) {
                 $slide .= '<div class="span5 the-side-caption">';
                 $slide .= '<div class="the-side-caption-content">';
