@@ -93,7 +93,7 @@ function insert_analytics_tracking()
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
             ga('create', '" . $trackingid . "', {'siteSpeedSampleRate': 50});
             ga('send', " . $addition . ");
-			
+
             </script>
 			";
     }
