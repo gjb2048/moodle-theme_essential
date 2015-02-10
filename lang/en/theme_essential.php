@@ -588,3 +588,13 @@ $string['nomessagesfound'] = 'No messages were found';
 $string['blogpreferences'] = 'Blog preferences';
 $string['badgepreferences'] = 'Badge preferences';
 $string['messagepreferences'] = 'Message preferences';
+
+// Slide show size
+$string['slidesize'] = 'Slide show size';
+$string['slidesizedesc'] = 'The height of the slide show. Full corresponds to 368 pixel at full screen, Very small corresonds fo 36 pixel at full screen';
+$string['slide10percent'] = 'Very small';
+$string['slide25percent'] = 'Small';
+$string['slide50percent'] = 'Medium';
+$string['slide75percent'] = 'Big';
+$string['slide100percent'] = 'Full';
+
