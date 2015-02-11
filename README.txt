@@ -164,7 +164,7 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
-New in 2.8.1.1 - RC2
+New in 2.8.1.1 - RC3
 ====================
 - FIX: Issue #417: M2.8 Mail Settings page needs checking.
 - FIX: Issue #422: Regression from #179 in the core_renderer.php file.
@@ -180,6 +180,7 @@ New in 2.8.1.1 - RC2
 - FIX: Apply MDL-44907.
 - FIX: Improved custom font file detection and serving.
 - FIX: Serving of slide show images when the parent frontpage is used in a child theme.
+- FIX: doctype() warning when debugging.
 - NEW: Issue #428: Add setting to customise header background image.  Thanks to Jerome Charaoui (https://github.com/jcharaoui) for this.
 - NEW: Issue #433: Add a 'This Course' dropdown menu.  Thanks to ActionJONA (https://github.com/ActionJONA) for the ported BCU theme code.
 - NEW: Added 'Essentials' child theme in 'essentials' sub-folder.  To use, read the 'Installation' instructions in 'essentials/README.txt'.

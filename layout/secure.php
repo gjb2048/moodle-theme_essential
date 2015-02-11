@@ -27,7 +27,8 @@
 require_once(dirname(__FILE__) . $OUTPUT->get_child_relative_layout_path() . '/includes/pagesettings.php');
 require_once(dirname(__FILE__) . '/../lib.php');
 
-echo $OUTPUT->doctype() ?>
+echo $OUTPUT->doctype();
+?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>

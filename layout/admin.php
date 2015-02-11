@@ -27,7 +27,6 @@
 require_once(dirname(__FILE__) . $OUTPUT->get_child_relative_layout_path() . '/includes/header.php');
 
 $footerregion = essential_has_footer_region(); // In pagesettings.php.
-
 ?>
 
 <div id="page" class="container-fluid">

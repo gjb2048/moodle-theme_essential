@@ -32,5 +32,5 @@ $plugin->release = '2.8.0.2 (Build: 2015012700)';
 $plugin->requires  = 2014111000.00; // 2.8 (Build: 20141110).
 $plugin->component = 'theme_essentials';
 $plugin->dependencies = array(
-    'theme_essential'  => 2015020800
+    'theme_essential'  => 2015021100
 );

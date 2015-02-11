@@ -24,10 +24,11 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+echo $OUTPUT->doctype();
+
 require_once(dirname(__FILE__) . '/pagesettings.php');
 require_once(dirname(__FILE__) . '/../../lib.php');
-
-echo $OUTPUT->doctype() ?>
+?>
 <html <?php echo $OUTPUT->htmlattributes(); ?> class="no-js">
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>

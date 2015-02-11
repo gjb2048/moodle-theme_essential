@@ -34,7 +34,8 @@
  * breaking installation or upgrade unwittingly.
  */
 
-echo $OUTPUT->doctype() ?>
+echo $OUTPUT->doctype();
+?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>
