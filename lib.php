@@ -396,6 +396,55 @@ function theme_essential_hex2rgba($hex, $opacity) {
 }
 
 /**
+ * theme_essential_set_slide_size
+ *
+ * @param string $css The original CSS.
+ * @param string $slideheight The slide height in percent.
+ * @return string The modified CSS.
+ */
+function theme_essential_set_slide_size($css, $slidesize) {
+// global $CFG;
+
+    if ($slidesize > 100) {
+        $slidesize = 100;
+    }
+
+    $slidesize /= 100;
+
+    $cases = range(1, 4);
+    foreach ($cases as $case) {
+        $tagbase = '[[setting:slidesize_case'."$case";
+        switch ($case) {
+            case 1:
+                $slideheight = $slidesize * 200;
+                break;
+            case 2:
+                $slideheight = $slidesize * 260;
+                break;
+            case 3:
+                $slideheight = $slidesize * 328;
+                break;
+            case 4:
+                $slideheight = $slidesize * 368;
+                break;
+        }
+        $tag = $tagbase.']]';
+        $replacement = intval($slideheight);
+        $css = str_replace($tag, $replacement . 'px', $css);
+
+        $tag = $tagbase.'_90percent]]';
+        $replacement = intval($slideheight * 0.9);
+        $css = str_replace($tag, $replacement . 'px', $css);
+
+        $tag = $tagbase.'_135percent]]';
+        $replacement = intval($slideheight * 1.35);
+        $css = str_replace($tag, $replacement . 'px', $css);
+    }
+
+    return $css;
+}
+
+/**
  * Adds any custom CSS to the CSS before it is cached.
  *
  * @param string $css The original CSS.
@@ -422,6 +471,10 @@ function theme_essential_process_css($css, $theme) {
     $css = theme_essential_set_bodyfont($css, $bodyfont);
     $css = theme_essential_set_fontfiles($css, 'heading', $headingfont);
     $css = theme_essential_set_fontfiles($css, 'body', $bodyfont);
+
+    // Set the slide size.
+    $slidesize = theme_essential_get_setting('slidesize');
+    $css = theme_essential_set_slide_size($css, $slidesize);
 
     // Set the theme colour.
     $themecolor = theme_essential_get_setting('themecolor');

@@ -1376,6 +1376,22 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Slide size.
+    $name = 'theme_essential/slidesize';
+    $title = get_string('slidesize', 'theme_essential');
+    $description = get_string('slidesizedesc', 'theme_essential');
+    $default = '100';
+    $choices = array(
+         10 => get_string('slide10percent', 'theme_essential'),
+         25 => get_string('slide25percent', 'theme_essential'),
+         50 => get_string('slide50percent', 'theme_essential'),
+         75 => get_string('slide75percent', 'theme_essential'),
+        100 => get_string('slide100percent', 'theme_essential'),
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     // Slide Text colour setting.
     $name = 'theme_essential/slidecolor';
     $title = get_string('slidecolor', 'theme_essential');
