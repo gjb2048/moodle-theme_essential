@@ -38,3 +38,23 @@ label {
 .course-content #completionprogressid {
   z-index: 10;
 }
+
+// Solve overflowing table issue: https://moodle.org/mod/forum/discuss.php?d=279883 - related to: https://moodle.org/mod/forum/discuss.php?d=274915 - which might be too - code comes from: https://github.com/gjb2048/moodle-theme_shoehorn/issues/5
+table {
+    th, td {
+        padding-left: 20px;
+        word-break: break-word;
+        word-wrap: break-word;
+    }
+    th:first-of-type, td:first-of-type {
+        padding-left: 0px;
+    }
+}
+
+table.flexible, .generaltable {
+    //max-width: 100%; // Add in when move to BS3.
+}
+
+fieldset {
+    min-width: 0;
+}

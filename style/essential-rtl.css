@@ -23699,4 +23699,20 @@ label {
   z-index: 10;
 }
 
+table th,
+table td {
+  padding-right: 20px;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+table th:first-of-type,
+table td:first-of-type {
+  padding-right: 0px;
+}
+
+fieldset {
+  min-width: 0;
+}
+
 /*# sourceMappingURL=/theme/essential/style/essential.treasure.map */

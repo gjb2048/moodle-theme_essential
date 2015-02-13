@@ -175,6 +175,7 @@ New in 2.8.1.1 - RC3
 - FIX: Issue #434: Explain if a logo uploaded then no header title will be shown.
 - FIX: Issue #436: Header background colour setting.
 - FIX: Issue #441: Messages Screen when on mobile ( - 767px ) - background not filling area (region-main).
+- FIX: Issue #447: Essential overlapping of Admin Settings.
 - FIX: Apply MDL-46183.
 - FIX: Apply MDL-45930.
 - FIX: Apply MDL-44907.
