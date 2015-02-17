@@ -18372,6 +18372,10 @@ body#page-mod-forum-post.desktopdevice #region-main form #fgroup_id_buttonar {
 .mform fieldset a.visibleifjs img.smallicon {
   padding-bottom: 6px;
 }
+.singleselect form,
+.singleselect select {
+  width: 100%;
+}
 /* @end */
 /* @group Forums */
 .forumheaderlist .picture img {

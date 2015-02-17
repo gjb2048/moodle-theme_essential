@@ -178,6 +178,7 @@ New in 2.8.1.1 - RC3
 - FIX: Issue #447: Essential overlapping of Admin Settings.
 - FIX: Issue #449: Embedded question text alignment.
 - FIX: Issue #450: Undefined variable fontselect in embedded question preview.
+- FIX: Issue #452: Messages Screen when on mobile still not quite correct.
 - FIX: Apply MDL-46183.
 - FIX: Apply MDL-45930.
 - FIX: Apply MDL-44907.
