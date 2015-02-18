@@ -432,37 +432,48 @@ $string['socialheadingsub'] = 'Engage your users with social networking';
 $string['socialdesc'] = 'Provide direct links to the core social networks that promote your brand.  These will appear in the header of every page.';
 $string['socialnetworks'] = 'Social networks';
 
-$string['facebook'] = 'Facebook URL';
+$string['facebook'] = 'Facebook';
+$string['facebookurl'] = 'Facebook URL';
 $string['facebookdesc'] = 'Enter the URL of your Facebook page. (i.e https://www.facebook.com/mycollege)';
 
-$string['twitter'] = 'Twitter URL';
+$string['twitter'] = 'Twitter';
+$string['twitterurl'] = 'Twitter URL';
 $string['twitterdesc'] = 'Enter the URL of your Twitter feed. (i.e https://www.twitter.com/mycollege)';
 
-$string['googleplus'] = 'Google+ URL';
+$string['googleplus'] = 'Google+';
+$string['googleplusurl'] = 'Google+ URL';
 $string['googleplusdesc'] = 'Enter the URL of your Google+ profile. (i.e https://plus.google.com/+mycollege)';
 
-$string['linkedin'] = 'LinkedIn URL';
+$string['linkedin'] = 'LinkedIn';
+$string['linkedinurl'] = 'LinkedIn URL';
 $string['linkedindesc'] = 'Enter the URL of your LinkedIn profile. (i.e https://www.linkedin.com/company/mycollege)';
 
-$string['youtube'] = 'YouTube URL';
+$string['youtube'] = 'YouTube';
+$string['youtubeurl'] = 'YouTube URL';
 $string['youtubedesc'] = 'Enter the URL of your YouTube channel. (i.e https://www.youtube.com/user/mycollege)';
 
-$string['flickr'] = 'Flickr URL';
+$string['flickr'] = 'Flickr';
+$string['flickrurl'] = 'Flickr URL';
 $string['flickrdesc'] = 'Enter the URL of your Flickr page. (i.e http://www.flickr.com/photos/mycollege)';
 
-$string['vk'] = 'VKontakte URL';
+$string['vk'] = 'VKontakte';
+$string['vkurl'] = 'VKontakte URL';
 $string['vkdesc'] = 'Enter the URL of your Vkontakte page. (i.e http://www.vk.com/mycollege)';
 
 $string['skype'] = 'Skype Account';
-$string['skypedesc'] = 'Enter the Skype user name of your organisations Skype account (i.e my.college)';
+$string['skypeuri'] = 'Skype Account URI';
+$string['skypedesc'] = 'Enter the Skype user name URI of your organisations Skype account (i.e skype://my.college)';
 
-$string['pinterest'] = 'Pinterest URL';
+$string['pinterest'] = 'Pinterest';
+$string['pinteresturl'] = 'Pinterest URL';
 $string['pinterestdesc'] = 'Enter the URL of your Pinterest page. (i.e http://pinterest.com/mycollege/mypinboard)';
 
-$string['instagram'] = 'Instagram URL';
+$string['instagram'] = 'Instagram';
+$string['instagramurl'] = 'Instagram URL';
 $string['instagramdesc'] = 'Enter the URL of your Instagram page. (i.e http://instagram.com/mycollege)';
 
-$string['website'] = 'Website URL';
+$string['website'] = 'Website';
+$string['websiteurl'] = 'Website URL';
 $string['websitedesc'] = 'Enter the URL of your own website. (i.e http://about.me/gjbarnard)';
 
 // Category Icons.
@@ -507,15 +518,19 @@ $string['mobileappsheadingsub'] = 'Link to your app to get your students using m
 $string['mobileappsdesc'] = 'Have you got a web app on the App Store or Google Play Store?  Provide a link here so your users can grab the apps online.';
 
 $string['android'] = 'Android (Google Play)';
+$string['androidurl'] = 'Android (Google Play) URL';
 $string['androiddesc'] = 'Provide an URL to your mobile App on the Google Play Store.  If you do not have one of your own maybe consider linking to the official Moodle Mobile app. (https://play.google.com/store/apps/details?id=com.moodle.moodlemobile)';
 
 $string['windows'] = 'Windows Desktop';
+$string['windowsurl'] = 'Windows Desktop URL';
 $string['windowsdesc'] = 'Provide an URL to your mobile App on the Windows Store.  If you do not have one of your own maybe consider linking to the official Moodle Mobile app. (http://apps.microsoft.com/windows/en-us/app/9df51338-015c-41b7-8a85-db2fdfb870bc)';
 
 $string['winphone'] = 'Windows Mobile';
+$string['winphoneurl'] = 'Windows Mobile URL';
 $string['winphonedesc'] = 'Provide an URL to your mobile App on the Google Play Store.  If you do not have one of your own maybe consider linking to the official Moodle Mobile app. (http://www.windowsphone.com/en-us/store/app/moodlemobile/d0732b88-3c6d-4127-8f24-3fca2452a4dc)';
 
 $string['ios'] = 'iPhone/iPad (App Store)';
+$string['iosurl'] = 'iPhone/iPad (App Store) URL';
 $string['iosdesc'] = 'Provide an URL to your mobile App on the App Store.  If you do not have one of your own maybe consider linking to the official Moodle Mobile app (https://itunes.apple.com/en/app/moodle-mobile/id633359593).';
 
 // iOS Icons.
