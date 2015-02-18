@@ -24,7 +24,7 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(__FILE__) . $OUTPUT->get_child_relative_layout_path() . '/includes/header.php');
+require_once($OUTPUT->get_include_file('header'));
 
 $footerregion = essential_has_footer_region(); // In pagesettings.php.
 ?>
@@ -79,7 +79,8 @@ $footerregion = essential_has_footer_region(); // In pagesettings.php.
     </section>
 </div>
 
-<?php require_once(dirname(__FILE__) . $OUTPUT->get_child_relative_layout_path() . '/includes/footer.php'); ?>
-
+<?php
+require_once($OUTPUT->get_include_file('footer'));
+?>
 </body>
 </html>

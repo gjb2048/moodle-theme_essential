@@ -67,7 +67,7 @@ if (empty($PAGE->layout_options['nofooter'])) {
     <script type="text/javascript">
         jQuery(document).ready(function () {
             <?php
-            if (theme_essential_not_lte_ie9()) {
+            if ($OUTPUT->theme_essential_not_lte_ie9()) {
               echo "jQuery('#essentialnavbar').affix({";
               echo "offset: {";
               echo "top: $('#page-header').height()";

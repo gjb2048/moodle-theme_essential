@@ -97,7 +97,7 @@ class theme_essential_core_renderer extends core_renderer {
                 error_log("PERF: " . $perf['txt']);
             }
             if (defined('MDL_PERFTOFOOT') || debugging() || $CFG->perfdebug > 7) {
-                $performanceinfo = theme_essential_performance_output($perf, $this->get_setting('perfinfo'));
+                $performanceinfo = $this->performance_output($perf, $this->get_setting('perfinfo'));
             }
         }
 
@@ -805,8 +805,7 @@ class theme_essential_core_renderer extends core_renderer {
      *
      * @return string
      */
-    private function theme_essential_render_helplink()
-    {
+    protected function theme_essential_render_helplink() {
         global $USER, $CFG;
         if (!$this->get_setting('helplinktype')) {
             return false;
@@ -853,8 +852,7 @@ class theme_essential_core_renderer extends core_renderer {
      * @param integer $context
      * @return string $preferences
      */
-    private function theme_essential_render_preferences($context)
-    {
+    protected function theme_essential_render_preferences($context) {
         global $USER, $CFG;
         $label = '<em><i class="fa fa-cog"></i>' . get_string('preferences') . '</em>';
         $preferences = html_writer::start_tag('li', array('class' => 'dropdown-submenu preferences'));
@@ -1238,13 +1236,30 @@ class theme_essential_core_renderer extends core_renderer {
     }
 
     /**
-     *  Override this method in the child to use its 'header' and 'footer' in '/layout/includes/' in inherited layouts from Essential.
-     *  This is so that non-overridden layout files in Essential's 'layout' folder can find the child's 'includes' version rather than Essential's.
-     *  Child theme's do not need to call this method when including files.
-     *  Please look at the included 'Essentials' child theme for an example.
+     * Finds the given include file in the theme.  If it does not exist for the Essential child theme then the parent is checked.
+     * @param string $filename Filename without extension to get.
+     * @return string Complete path of the file.
      */
-    public function get_child_relative_layout_path() {
-        return '';
+    public function get_include_file($filename) {
+        global $CFG;
+        $themedir = $this->page->theme->dir;
+        $themename = $this->page->theme->name;
+        $filename .= '.php';
+        if (file_exists("$themedir/layout/includes/$filename")) {
+            return "$themedir/layout/includes/$filename";
+        } else if (file_exists("$CFG->dirroot/theme/$themename/layout/includes/$filename")) {
+            return "$CFG->dirroot/theme/$themename/layout/includes/$filename";
+        } else if (!empty($CFG->themedir) and file_exists("$CFG->themedir/$themename/layout/includes/$filename")) {
+            return "$CFG->themedir/$themename/includes/$filename";
+        }
+        // Not here so check parent Essential.
+        if (file_exists("$CFG->dirroot/theme/essential/layout/includes/$filename")) {
+            return "$CFG->dirroot/theme/essential/layout/includes/$filename";
+        } else if (!empty($CFG->themedir) and file_exists("$CFG->themedir/essential/layout/includes/$filename")) {
+            return "$CFG->themedir/essential/includes/$filename";
+        } else {
+            return dirname(__FILE__)."$filename";
+        }
     }
 
     public function get_setting($setting, $format = false, $theme = null) {
@@ -1370,4 +1385,247 @@ class theme_essential_core_renderer extends core_renderer {
             return '<a class="btn btn-success" href="' . $url . $section . '">' . get_string('edit') . '</a>';
         }
     }
+
+    public function get_title($location) {
+        global $CFG, $SITE;
+        $title = '';
+        if ($location === 'navbar') {
+            $url = preg_replace("(https?:)", "", $CFG->wwwroot);
+            switch ($this->get_setting('navbartitle')) {
+                case 0:
+                    return false;
+                break;
+                case 1:
+                    $title = '<a class="brand" href="' . $url . '">' . format_string($SITE->fullname, true,
+                                    array('context' => context_course::instance(SITEID))) . '</a>';
+                    break;
+                case 2:
+                    $title = '<a class="brand" href="' . $url . '">' . format_string($SITE->shortname, true,
+                                    array('context' => context_course::instance(SITEID))) . '</a>';
+                    break;
+                default:
+                    $title = '<a class="brand" href="' . $url . '">' . format_string($SITE->shortname, true,
+                                    array('context' => context_course::instance(SITEID))) . '</a>';
+                    break;
+            }
+        } else if ($location === 'header') {
+            switch ($this->get_setting('headertitle')) {
+                case 0:
+                    return false;
+                    break;
+                case 1:
+                    $title = '<h1 id="title">' . format_string($SITE->fullname, true,
+                                    array('context' => context_course::instance(SITEID))) . '</h1>';
+                    break;
+                case 2:
+                    $title = '<h1 id="title">' . format_string($SITE->shortname, true,
+                                    array('context' => context_course::instance(SITEID))) . '</h1>';
+                    break;
+                case 3:
+                    $title = '<h1 id="smalltitle">' . format_string($SITE->fullname, true,
+                                    array('context' => context_course::instance(SITEID))) . '</h2>';
+                    $title .= '<h2 id="subtitle">' . strip_tags($SITE->summary) . '</h3>';
+                    break;
+                case 4:
+                    $title = '<h1 id="smalltitle">' . format_string($SITE->shortname, true,
+                                    array('context' => context_course::instance(SITEID))) . '</h2>';
+                    $title .= '<h2 id="subtitle">' . strip_tags($SITE->summary) . '</h3>';
+                    break;
+                default:
+                    break;
+            }
+        }
+        return $title;
+    }
+
+    /**
+     * get_performance_output() override get_peformance_info()
+     *  in moodlelib.php. Returns a string
+     * values ready for use.
+     * @param array $param
+     * @param string $perfinfo
+     * @return string $html
+     */
+    protected function performance_output($param, $perfinfo) {
+        $html = html_writer::start_tag('div', array('class' => 'container-fluid performanceinfo'));
+        $html .= html_writer::start_tag('div', array('class' => 'row-fluid'));
+        $html .= html_writer::start_tag('div', array('class' => 'span12'));
+        $html .= html_writer::tag('h2', get_string('perfinfoheading', 'theme_essential'));
+        $html .= html_writer::end_tag('div');
+        $html .= html_writer::end_tag('div');
+        $html .= html_writer::start_tag('div', array('class' => 'row-fluid'));
+        $colcount = 0;
+        if (isset($param['realtime'])) {
+            $colcount++;
+        }
+        if (isset($param['memory_total'])) {
+            $colcount++;
+        }
+        if (isset($param['includecount'])) {
+            $colcount++;
+        }
+        if (isset($param['dbqueries'])) {
+            $colcount++;
+        }
+        if ($colcount != 0) {
+            $thespan = 12 / $colcount;
+            if (isset($param['realtime'])) {
+                $html .= html_writer::start_tag('div', array('class' => 'span' . $thespan));
+                $html .= html_writer::tag('var', round($param['realtime'], 2) . ' ' . get_string('seconds'), array('id' => 'load'));
+                $html .= html_writer::span(get_string('loadtime', 'theme_essential'));
+                $html .= html_writer::end_tag('div');
+            }
+            if (isset($param['memory_total'])) {
+                $html .= html_writer::start_tag('div', array('class' => 'span' . $thespan));
+                $html .= html_writer::tag('var', display_size($param['memory_total']), array('id' => 'memory'));
+                $html .= html_writer::span(get_string('memused', 'theme_essential'));
+                $html .= html_writer::end_tag('div');
+            }
+            if (isset($param['includecount'])) {
+                $html .= html_writer::start_tag('div', array('class' => 'span' . $thespan));
+                $html .= html_writer::tag('var', $param['includecount'], array('id' => 'included'));
+                $html .= html_writer::span(get_string('included', 'theme_essential'));
+                $html .= html_writer::end_tag('div');
+            }
+            if (isset($param['dbqueries'])) {
+                $html .= html_writer::start_tag('div', array('class' => 'span' . $thespan));
+                $html .= html_writer::tag('var', $param['dbqueries'], array('id' => 'dbqueries'));
+                $html .= html_writer::span(get_string('dbqueries', 'theme_essential'));
+                $html .= html_writer::end_tag('div');
+            }
+        }
+        $html .= html_writer::end_tag('div');
+        if ($perfinfo === "max") {
+            $html .= html_writer::empty_tag('hr');
+            $html .= html_writer::start_tag('div', array('class' => 'row-fluid'));
+            $html .= html_writer::start_tag('div', array('class' => 'span12'));
+            $html .= html_writer::tag('h2', get_string('extperfinfoheading', 'theme_essential'));
+            $html .= html_writer::end_tag('div');
+            $html .= html_writer::end_tag('div');
+            $html .= html_writer::start_tag('div', array('class' => 'row-fluid'));
+            $colcountmax = 0;
+            if (isset($param['serverload'])) {
+                $colcountmax++;
+            }
+            if (isset($param['memory_peak'])) {
+                $colcountmax++;
+            }
+            if (isset($param['cachesused'])) {
+                $colcountmax++;
+            }
+            if (isset($param['sessionsize'])) {
+                $colcountmax++;
+            }
+            if (isset($param['dbtime'])) {
+                $colcountmax++;
+            }
+            if ($colcountmax != 0) {
+                $thespanmax = 12 / $colcountmax;
+                if (isset($param['serverload'])) {
+                    $html .= html_writer::start_tag('div', array('class' => 'span' . $thespanmax));
+                    $html .= html_writer::tag('var', $param['serverload'], array('id' => 'load'));
+                    $html .= html_writer::span(get_string('serverload', 'theme_essential'));
+                    $html .= html_writer::end_tag('div');
+                }
+                if (isset($param['memory_peak'])) {
+                    $html .= html_writer::start_tag('div', array('class' => 'span' . $thespanmax));
+                    $html .= html_writer::tag('var', display_size($param['memory_peak']), array('id' => 'peakmemory'));
+                    $html .= html_writer::span(get_string('peakmem', 'theme_essential'));
+                    $html .= html_writer::end_tag('div');
+                }
+                if (isset($param['cachesused'])) {
+                    $html .= html_writer::start_tag('div', array('class' => 'span' . $thespanmax));
+                    $html .= html_writer::tag('var', $param['cachesused'], array('id' => 'cache'));
+                    $html .= html_writer::span(get_string('cachesused', 'theme_essential'));
+                    $html .= html_writer::end_tag('div');
+                }
+                if (isset($param['sessionsize'])) {
+                    $html .= html_writer::start_tag('div', array('class' => 'span' . $thespanmax));
+                    $html .= html_writer::tag('var', $param['sessionsize'], array('id' => 'session'));
+                    $html .= html_writer::span(get_string('sessionsize', 'theme_essential'));
+                    $html .= html_writer::end_tag('div');
+                }
+                if (isset($param['dbtime'])) {
+                    $html .= html_writer::start_tag('div', array('class' => 'span' . $thespanmax));
+                    $html .= html_writer::tag('var', $param['dbtime'], array('id' => 'dbtime'));
+                    $html .= html_writer::span(get_string('dbtime', 'theme_essential'));
+                    $html .= html_writer::end_tag('div');
+                }
+            }
+            $html .= html_writer::end_tag('div');
+        }
+        $html .= html_writer::end_tag('div');
+        $html .= html_writer::end_tag('div');
+
+        return $html;
+    }
+
+    /**
+     * Checks if the user is switching colours with a refresh
+     *
+     * If they are this updates the users preference in the database
+     */
+    public function theme_essential_check_colours_switch() {
+        $colours = optional_param('essentialcolours', null, PARAM_ALPHANUM);
+        if (in_array($colours, array('default', 'alternative1', 'alternative2', 'alternative3'))) {
+            set_user_preference('theme_essential_colours', $colours);
+        }
+    }
+
+    /**
+     * Adds the JavaScript for the colour switcher to the page.
+     *
+     * The colour switcher is a YUI moodle module that is located in
+     *     theme/udemspl/yui/udemspl/udemspl.js
+     *
+     * @param moodle_page $page
+     */
+    public function theme_essential_initialise_colourswitcher() {
+        user_preference_allow_ajax_update('theme_essential_colours', PARAM_ALPHANUM);
+        $this->page->requires->yui_module(
+                'moodle-theme_essential-coloursswitcher', 'M.theme_essential.initColoursSwitcher',
+                array(array('div' => '.dropdown-menu'))
+        );
+    }
+
+    /**
+     * Gets the theme colours the user has selected if enabled or the default if they have never changed
+     *
+     * @param string $default The default theme colors to use
+     * @return string The theme colours the user has selected
+     */
+    public function theme_essential_get_colours($default = 'default') {
+        $preference = get_user_preferences('theme_essential_colours', $default);
+        foreach (range(1, 3) as $alternativethemenumber) {
+            if ($preference == 'alternative' . $alternativethemenumber && theme_essential_get_setting('enablealternativethemecolors' . $alternativethemenumber)) {
+                return $preference;
+            }
+        }
+        return $default;
+    }
+
+    /**
+     * States if the browser is not IE9 or less.
+     */
+    public function theme_essential_not_lte_ie9() {
+        $properties = $this->theme_essential_ie_properties();
+        if (!is_array($properties)) {
+            return true;
+        }
+        // We have properties, it is a version of IE, so is it greater than 9?
+        return ($properties['version'] > 9.0);
+    }
+
+    /**
+     * States if the browser is IE by returning properties, otherwise false.
+     */
+    public function theme_essential_ie_properties() {
+        $properties = core_useragent::check_ie_properties(); // In /lib/classes/useragent.php.
+        if (!is_array($properties)) {
+            return false;
+        } else {
+            return $properties;
+        }
+    }
+
 }

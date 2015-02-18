@@ -25,7 +25,7 @@
  */
 
 /* Default globals */
-global $CFG, $PAGE, $USER, $SITE, $COURSE, $OUTPUT;
+global $CFG, $PAGE, $OUTPUT;
 
 /* Group Body */
 $bodyclasses = array();
@@ -35,9 +35,9 @@ if ($OUTPUT->get_setting('enablealternativethemecolors1') ||
     $OUTPUT->get_setting('enablealternativethemecolors3')
 ) {
     $colourswitcher = true;
-    theme_essential_check_colours_switch();
-    theme_essential_initialise_colourswitcher($PAGE);
-    $bodyclasses[]  = 'essential-colours-' . theme_essential_get_colours();
+    $OUTPUT->theme_essential_check_colours_switch();
+    $OUTPUT->theme_essential_initialise_colourswitcher($PAGE);
+    $bodyclasses[]  = 'essential-colours-' . $OUTPUT->theme_essential_get_colours();
 } else {
     $colourswitcher = false;
 }

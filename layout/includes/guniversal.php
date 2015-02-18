@@ -26,8 +26,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-function analytics_trackurl()
-{
+function analytics_trackurl() {
     global $DB, $PAGE;
     $pageinfo = get_context_info_array($PAGE->context->id);
     $trackurl = "'/";
@@ -65,8 +64,7 @@ function analytics_trackurl()
     return $trackurl;
 }
 
-function insert_analytics_tracking()
-{
+function insert_analytics_tracking() {
     global $PAGE, $OUTPUT;
     $trackingid = $OUTPUT->get_setting('analyticstrackingid');
     $trackadmin = $OUTPUT->get_setting('analyticstrackadmin');
@@ -93,9 +91,8 @@ function insert_analytics_tracking()
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
             ga('create', '" . $trackingid . "', {'siteSpeedSampleRate': 50});
             ga('send', " . $addition . ");
-			
-            </script>
-			";
+
+            </script>";
     }
     return $tracking;
 }

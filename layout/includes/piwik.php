@@ -26,8 +26,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-function theme_essential_analytics_trackurl()
-{
+function theme_essential_analytics_trackurl() {
     global $DB, $PAGE;
     $pageinfo = get_context_info_array($PAGE->context->id);
     $trackurl = "'";

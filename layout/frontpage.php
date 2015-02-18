@@ -24,7 +24,7 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(__FILE__) . $OUTPUT->get_child_relative_layout_path() . '/includes/header.php');
+require_once($OUTPUT->get_include_file('header'));
 
 $enable1alert = $OUTPUT->get_setting('enable1alert');
 $enable2alert = $OUTPUT->get_setting('enable2alert');
@@ -43,11 +43,11 @@ if ($enable1alert || $enable2alert || $enable3alert) {
         <?php
         $toggleslideshow = $OUTPUT->get_setting('toggleslideshow');
         if ($toggleslideshow == 1) {
-            require_once(dirname(__FILE__) . '/includes/slideshow.php');
+            require_once($OUTPUT->get_include_file('slideshow'));
         } else if ($toggleslideshow == 2 && !isloggedin()) {
-            require_once(dirname(__FILE__) . '/includes/slideshow.php');
+            require_once($OUTPUT->get_include_file('slideshow'));
         } else if ($toggleslideshow == 3 && isloggedin()) {
-            require_once(dirname(__FILE__) . '/includes/slideshow.php');
+            require_once($OUTPUT->get_include_file('slideshow'));
         }
         ?>
         <!-- End Slideshow -->
@@ -125,11 +125,11 @@ if ($enable1alert || $enable2alert || $enable3alert) {
         <?php
         $togglemarketing = $OUTPUT->get_setting('togglemarketing');
         if ($togglemarketing == 1) {
-            require_once(dirname(__FILE__) . '/includes/marketingspots.php');
+            require_once($OUTPUT->get_include_file('marketingspots'));
         } else if ($togglemarketing == 2 && !isloggedin()) {
-            require_once(dirname(__FILE__) . '/includes/marketingspots.php');
+            require_once($OUTPUT->get_include_file('marketingspots'));
         } else if ($togglemarketing == 3 && isloggedin()) {
-            require_once(dirname(__FILE__) . '/includes/marketingspots.php');
+            require_once($OUTPUT->get_include_file('marketingspots'));
         }
         ?>
         <!-- End Marketing Spots -->
@@ -138,11 +138,11 @@ if ($enable1alert || $enable2alert || $enable3alert) {
         <?php
         $frontpagemiddleblocks = $OUTPUT->get_setting('frontpagemiddleblocks');
         if ($frontpagemiddleblocks == 1) {
-            require_once(dirname(__FILE__) . '/includes/middleblocks.php');
+            require_once($OUTPUT->get_include_file('middleblocks'));
         } else if ($frontpagemiddleblocks == 2 && !isloggedin()) {
-            require_once(dirname(__FILE__) . '/includes/middleblocks.php');
+            require_once($OUTPUT->get_include_file('middleblocks'));
         } else if ($frontpagemiddleblocks == 3 && isloggedin()) {
-            require_once(dirname(__FILE__) . '/includes/middleblocks.php');
+            require_once($OUTPUT->get_include_file('middleblocks'));
         }
         ?>
         <!-- End Middle Blocks -->
@@ -186,7 +186,9 @@ if ($enable1alert || $enable2alert || $enable3alert) {
     </section>
 </div>
 
-<?php require_once(dirname(__FILE__) . $OUTPUT->get_child_relative_layout_path() . '/includes/footer.php'); ?>
+<?php 
+require_once($OUTPUT->get_include_file('footer'));
+?>
 
 <!-- Initialize slideshow -->
 <script type="text/javascript">
