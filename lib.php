@@ -796,7 +796,7 @@ function theme_essential_get_nav_links($course, $sections, $sectionno) {
         if ($canviewhidden || $sections[$back]->uservisible) {
             $params = array('id' => 'previous_section');
             if (!$sections[$back]->visible) {
-                $params = array('class' => 'dimmed_text');
+                $params['class'] = 'dimmed_text';
             }
             $previouslink = html_writer::start_tag('div', array('class' => 'nav_icon'));
             $previouslink .= $previousarrow;
@@ -818,7 +818,7 @@ function theme_essential_get_nav_links($course, $sections, $sectionno) {
         if ($canviewhidden || $sections[$forward]->uservisible) {
             $params = array('id' => 'next_section');
             if (!$sections[$forward]->visible) {
-                $params = array('class' => 'dimmed_text');
+                $params['class'] = 'dimmed_text';
             }
             $nextlink = html_writer::start_tag('div', array('class' => 'nav_icon'));
             $nextlink .= $nextarrow;
