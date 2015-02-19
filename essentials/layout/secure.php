@@ -23,8 +23,7 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(__FILE__) . $OUTPUT->get_child_relative_layout_path() . '/includes/pagesettings.php');
-require_once(dirname(__FILE__) . '/../../essential/lib.php');  // Make use of Essential lib.php functions here.
+require_once($OUTPUT->get_include_file('pagesettings'));
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
@@ -69,7 +68,7 @@ echo $OUTPUT->doctype() ?>
     <script type="text/javascript">
         jQuery(document).ready(function () {
             <?php
-            if (theme_essential_not_lte_ie9()) {
+            if ($OUTPUT->theme_essential_not_lte_ie9()) {
               echo "jQuery('#essentialnavbar').affix({";
               echo "offset: {";
               echo "top: $('#page-header').height()";

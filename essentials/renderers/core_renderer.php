@@ -39,11 +39,4 @@ class theme_essentials_core_renderer extends theme_essential_core_renderer {
         $breadcrumbs .= html_writer::end_tag('ul');
         return $breadcrumbs;
     }
-
-    /**
-     *  Override this method in the child to use its 'header' and 'footer' in '/layout/includes/' in inherited layouts from Essential.
-     */
-    public function get_child_relative_layout_path() {
-        return '/../../essentials/layout';
-    }
 }

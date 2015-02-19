@@ -23,8 +23,7 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(__FILE__) . '/../../../essential/layout/includes/pagesettings.php');
-require_once(dirname(__FILE__) . '/../../../essential/lib.php');  // Make use of Essential lib.php functions here and in the footer.
+require_once($OUTPUT->get_include_file('pagesettings'));
 
 $breadcrumbstyle = 2;
 
@@ -38,7 +37,7 @@ echo $OUTPUT->doctype() ?>
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google web fonts -->
-    <?php require_once(dirname(__FILE__) . '/../../../essential/layout/includes/fonts.php'); ?>
+    <?php require_once($OUTPUT->get_include_file('fonts')); ?>
 </head>
 
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
@@ -55,7 +54,7 @@ echo $OUTPUT->doctype() ?>
                     <?php if (!$haslogo) { ?>
                         <a class="textlogo" href="<?php echo preg_replace("(https?:)", "", $CFG->wwwroot); ?>">
                             <i id="headerlogo" class="fa fa-<?php echo $OUTPUT->get_setting('siteicon'); ?>"></i>
-                            <?php echo theme_essential_get_title('header'); ?>
+                            <?php echo $OUTPUT->get_title('header'); ?>
                         </a>
                     <?php } else { ?>
                         <a class="logo" href="<?php echo preg_replace("(https?:)", "", $CFG->wwwroot); ?>" title="<?php print_string('home'); ?>"></a>
@@ -128,7 +127,7 @@ echo $OUTPUT->doctype() ?>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <?php echo theme_essential_get_title('navbar'); ?>
+                        <?php echo $OUTPUT->get_title('navbar'); ?>
                     <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>">
                         <div class="usermenu">
                             <?php echo $OUTPUT->custom_menu_user(); ?>
