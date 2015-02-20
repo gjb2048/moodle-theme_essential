@@ -83,4 +83,49 @@ if (empty($PAGE->layout_options['nofooter'])) {
             ?>
         });
     </script>
+    <script type="text/javascript">
+        // https://gist.github.com/psebborn/1885511
+        function countCSSRules() {
+            var results = '',
+            log = '';
+            if (!document.styleSheets) {
+                return;
+            }
+            for (var i = 0; i < document.styleSheets.length; i++) {
+                countSheet(document.styleSheets[i]);
+            }
+            function countSheet(sheet) {
+                var count = 0;
+                if (sheet && sheet.cssRules) {
+                    for (var j = 0, l = sheet.cssRules.length; j < l; j++) {
+                        if (!sheet.cssRules[j].selectorText) {
+                            if (sheet.cssRules[j].cssRules) {
+                                for (var m = 0, n = sheet.cssRules[j].cssRules.length; m < n; m++) {
+                                    if(sheet.cssRules[j].cssRules[m].selectorText) {
+                                        count += sheet.cssRules[j].cssRules[m].selectorText.split(',').length;
+                                    }
+                                }
+                            }
+                        }
+                        else {
+                            count += sheet.cssRules[j].selectorText.split(',').length;
+                        }
+                    }
+                    log += '\nFile: ' + (sheet.href ? sheet.href : 'inline <style> tag');
+                    log += '\nRules: ' + sheet.cssRules.length;
+                    log += '\nSelectors: ' + count;
+                    log += '\n--------------------------';
+                    if (count >= 4096) {
+                        results += '\n********************************\nWARNING:\n There are ' + count + ' CSS selectors in the stylesheet ' + sheet.href + ' - IE will ignore the last ' + (count - 4096) + ' selectors!\n';
+                    }
+                    if (document.styleSheets.length >= 30) {
+                        results += 'Found ' + document.styleSheets.length + ' stylesheets. <= IE9 will ignore stylesheets after 30!\n';
+                    }
+                }
+            }
+            console.log(log);
+            console.log(results);
+        };
+        countCSSRules();
+    </script>
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
