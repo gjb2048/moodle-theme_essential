@@ -65,13 +65,9 @@ class theme_essential_core_renderer_maintenance extends core_renderer_maintenanc
             return '<link rel="stylesheet" href="'.$url.'">';
         } else {
             if (right_to_left()) {
-                //$moodlecssone = 'essential_ie9_1-rtl.css';
-                //$moodlecsstwo = 'essential_ie9_2-rtl.css';
                 $moodlecssone = 'essential-rtl_ie9-blessed1.css';
                 $moodlecsstwo = 'essential-rtl_ie9.css';
             } else {
-                //$moodlecssone = 'essential_ie9_1.css';
-                //$moodlecsstwo = 'essential_ie9_2.css';
                 $moodlecssone = 'essential_ie9-blessed1.css';
                 $moodlecsstwo = 'essential_ie9.css';
             }

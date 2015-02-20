@@ -181,6 +181,7 @@ New in 2.8.1.1 - RC3
 - FIX: Issue #451: Hidden categories not aligning correctly.
 - FIX: Issue #452: Messages Screen when on mobile still not quite correct.
 - FIX: Issue #454: Social icon hover text is odd with 'URL' postfix.
+- FIX: Issue #455: IE9 4096 selector limit.
 - FIX: Apply MDL-46183.
 - FIX: Apply MDL-45930.
 - FIX: Apply MDL-44907.

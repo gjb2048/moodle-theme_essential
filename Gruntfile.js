@@ -137,28 +137,6 @@ module.exports = function(grunt) {
                 src: 'less/essential.less',
                 dest: 'style/essential.css'
             },
-            essential_ie9_1_p: {
-                options: {
-                    compress: false,
-                    cleancss: false,
-                    paths: "./less",
-                    report: 'min',
-                    sourceMap: false,
-                },
-                src: 'less/essential_ie9_1.less',
-                dest: 'style/essential_ie9_1.css'
-            },
-            essential_ie9_2_p: {
-                options: {
-                    compress: false,
-                    cleancss: false,
-                    paths: "./less",
-                    report: 'min',
-                    sourceMap: false,
-                },
-                src: 'less/essential_ie9_2.less',
-                dest: 'style/essential_ie9_2.css'
-            },
             editor_p: {
                 options: {
                     compress: false,
@@ -259,32 +237,6 @@ module.exports = function(grunt) {
                 },
                 src: 'less/essential.less',
                 dest: 'style/essential.css'
-            },
-            essential_ie9_1_d: {
-                options: {
-                    compress: false,
-                    cleancss: false,
-                    paths: "./less",
-                    report: 'min',
-                    sourceMap: true,
-                    sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'style/essential_ie9_1.treasure.map'
-                },
-                src: 'less/essential_ie9_1.less',
-                dest: 'style/essential_ie9_1.css'
-            },
-            essential_ie9_2_d: {
-                options: {
-                    compress: false,
-                    cleancss: false,
-                    paths: "./less",
-                    report: 'min',
-                    sourceMap: true,
-                    sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'style/essential_ie9_2.treasure.map'
-                },
-                src: 'less/essential_ie9_2.less',
-                dest: 'style/essential_ie9_2.css'
             },
             editor_d: {
                 options: {
@@ -425,34 +377,6 @@ module.exports = function(grunt) {
                 },
                 src:  'style/essential.css',
                 dest: 'style/essential-rtl.css'
-            },
-            rtl_ie9_1_p: {
-                options: {
-                    compress: false
-                },
-                src:  'style/essential_ie9_1.css',
-                dest: 'style/essential_ie9_1-rtl.css'
-            },
-            rtl_ie9_1_d: {
-                options: {
-                    compress: false
-                },
-                src:  'style/essential_ie9_1.css',
-                dest: 'style/essential_ie9_1-rtl.css'
-            },
-            rtl_ie9_2_p: {
-                options: {
-                    compress: false
-                },
-                src:  'style/essential_ie9_2.css',
-                dest: 'style/essential_ie9_2-rtl.css'
-            },
-            rtl_ie9_2_d: {
-                options: {
-                    compress: false
-                },
-                src:  'style/essential_ie9_2.css',
-                dest: 'style/essential_ie9_2-rtl.css'
             }
         },
         bless: {
@@ -473,7 +397,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'style',
-                    src: ['essential.css', 'essential_ie9_1.css', 'essential_ie9_2.css', 'essential-rtl.css', 'essential_ie9_1-rtl.css', 'essential_ie9_2-rtl.css', 'bootstrap-pix.css', 'moodle-pix.css', 'essential-pix.css', 'essential-alternative.css', 'editor.css', 'fontawesome.css', 'moodle-rtl.css'],
+                    src: ['essential.css', 'essential-rtl.css', 'bootstrap-pix.css', 'moodle-pix.css', 'essential-pix.css', 'essential-alternative.css', 'editor.css', 'fontawesome.css', 'moodle-rtl.css'],
                     dest: 'style',
                     ext: '.css'
                 }]
@@ -563,12 +487,12 @@ module.exports = function(grunt) {
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
 
-    grunt.registerTask("css", ["less:essential_"+build, "less:essential_ie9_1_"+build, "less:essential_ie9_2_"+build, "less:editor_"+build, "less:moodle_rtl_"+build, "less:settings_"+build, "less:bootstrap_pix_"+build, "less:moodle_pix_"+build, "less:essential_pix_"+build, "less:fontawesome_"+build, "less:alternative_"+build]);
+    grunt.registerTask("css", ["less:essential_"+build, "less:editor_"+build, "less:moodle_rtl_"+build, "less:settings_"+build, "less:bootstrap_pix_"+build, "less:moodle_pix_"+build, "less:essential_pix_"+build, "less:fontawesome_"+build, "less:alternative_"+build]);
     if (build == 'd') {
-        grunt.registerTask("compile", ["css", "cssflip:rtl_"+build, "cssflip:rtl_ie9_1_"+build, "cssflip:rtl_ie9_2_"+build, "bless", 'cssmetrics', "decache"]);
+        grunt.registerTask("compile", ["css", "cssflip:rtl_"+build, "bless", 'cssmetrics', "decache"]);
     } else {
         grunt.loadNpmTasks('grunt-contrib-cssmin');
-        grunt.registerTask("compile", ["css", "cssflip:rtl_"+build, "cssflip:rtl_ie9_2_"+build, "cssflip:rtl_ie9_2_"+build, "cssmin:essential_p", "bless", 'cssmetrics', "decache"]);
+        grunt.registerTask("compile", ["css", "cssflip:rtl_"+build, "cssmin:essential_p", "bless", 'cssmetrics', "decache"]);
     }
     grunt.registerTask("copy:svg", ["copy:svg_core", "copy:svg_plugins"]);
     grunt.registerTask("replace:svg_colours", ["replace:svg_colours_core", "replace:svg_colours_plugins"]);
