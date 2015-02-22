@@ -164,6 +164,19 @@ body {
     }
 }
 
+// Checkbox labels. Bootstrap puts the associated checkbox inside the label.
+// Moodle puts it beside the label, so we need to make it inline-block
+// to keep it on the same horizontal level.
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  padding-right: 0.4em;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: auto;
+}
+
 .singleselect {
     form, select {
         width: 100%;

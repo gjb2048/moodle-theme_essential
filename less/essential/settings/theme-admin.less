@@ -123,8 +123,9 @@ a {
 
 .course-content ul li.section.main {
   background: url(~"[[pix:theme|bg/dot]]") bottom repeat-x;
-  &.clearfix.current {
-    box-shadow: 0px 0px 10px ~"[[setting:themecolor]]";
+  &.clearfix.current .content {
+    box-shadow: 0px 0px 6px 2px ~"[[setting:themecolor]]";
+    border-radius: 10px;
   }
 }
 
@@ -235,10 +236,10 @@ a.marketing-button:hover {
   color: ~"[[setting:footertextcolor]]";
   border-top: 2px solid ~"[[setting:themecolor]]";
   border-bottom: 3px solid ~"[[setting:themecolor]]";
-  a {
+  a, a > i {
     color: ~"[[setting:footerurlcolor]]";
   }
-  a:hover {
+  a:hover, a:hover > i {
     color: ~"[[setting:footerhovercolor]]";
   }
   .footnote {

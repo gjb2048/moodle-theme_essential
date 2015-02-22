@@ -58,8 +58,11 @@ body {  // Inside a body tag so will be more specific and override core plugin s
   }
 }
 
-.pagelayout-coursecategory .coursebox > .info > .coursename a {
-    background-position: left 0.25em;
+// This drives me nuts!
+#page-course-index.pagelayout-coursecategory .category .coursebox, #page-course-index-category.pagelayout-coursecategory .coursebox.collapsed, #frontpage-category-combo .coursebox {
+    > .info > .coursename a {
+        background-position: left 0.2em;
+    }
 }
 
 .coursebox .content {
