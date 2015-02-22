@@ -1,4 +1,4 @@
-@import url('essential_ie9-blessed1.css?z=1424689994538');
+@import url('essential_ie9-blessed1.css?z=1424691804048');
 button:focus,
 input.form-submit:focus,
 input[type="button"]:focus,
@@ -3739,8 +3739,10 @@ body .course-content ul.topics li.section .content {
 .modeditingmenu.editing .section .activity .activityinstance {
   padding-right: 80px;
 }
-.pagelayout-coursecategory .coursebox > .info > .coursename a {
-  background-position: left 0.25em;
+#page-course-index.pagelayout-coursecategory .category .coursebox > .info > .coursename a,
+#page-course-index-category.pagelayout-coursecategory .coursebox.collapsed > .info > .coursename a,
+#frontpage-category-combo .coursebox > .info > .coursename a {
+  background-position: left 0.2em;
 }
 .coursebox .content .summary.noteachers {
   width: 100%;
@@ -4230,7 +4232,7 @@ a.action-icon > i,
 #page-footer hr {
   padding: 0px;
   border-bottom: 0px none;
-  margin-top: -10px;
+  margin-top: 0px;
 }
 #page-footer h4 {
   font-size: 1.2em;
@@ -4241,13 +4243,12 @@ a.action-icon > i,
 #greyboxright ul {
   list-style-type: none !important;
   margin: 0px;
-  margin-top: -10px;
+  margin-top: 0px;
   margin-bottom: 10px;
 }
 #page-footer ul li,
 #greyboxright ul li {
-  padding: 4px 0px;
-  padding-left: 0px;
+  padding: 0px;
 }
 .footerlinks {
   line-height: 15px;
@@ -4582,6 +4583,18 @@ body#page-mod-forum-post.desktopdevice #region-main form #fgroup_id_buttonar {
 }
 .mform fieldset a.visibleifjs img.smallicon {
   padding-bottom: 6px;
+}
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  padding-right: 0.4em;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: auto;
+}
+.singleselect form,
+.singleselect select {
+  width: 100%;
 }
 /* @end */
 /* @group Forums */

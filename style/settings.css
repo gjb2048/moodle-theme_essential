@@ -603,8 +603,9 @@ a .colours-alternative3 {
 .course-content ul li.section.main {
   background: url([[pix:theme|bg/dot]]) bottom repeat-x;
 }
-.course-content ul li.section.main.clearfix.current {
-  box-shadow: 0px 0px 10px [[setting:themecolor]];
+.course-content ul li.section.main.clearfix.current .content {
+  box-shadow: 0px 0px 6px 2px [[setting:themecolor]];
+  border-radius: 10px;
 }
 h2.pagetitle {
   background: url([[pix:theme|bg/dot]]) left center repeat-x;
@@ -682,10 +683,12 @@ a.marketing-button:hover {
   border-top: 2px solid [[setting:themecolor]];
   border-bottom: 3px solid [[setting:themecolor]];
 }
-#page-footer a {
+#page-footer a,
+#page-footer a > i {
   color: [[setting:footerurlcolor]];
 }
-#page-footer a:hover {
+#page-footer a:hover,
+#page-footer a:hover > i {
   color: [[setting:footerhovercolor]];
 }
 #page-footer .footnote {
