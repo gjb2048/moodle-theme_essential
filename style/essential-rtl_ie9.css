@@ -1,4 +1,4 @@
-@import url('essential-rtl_ie9-blessed1.css?z=1424621876428');
+@import url('essential-rtl_ie9-blessed1.css?z=1424688874682');
 
 button,
 input.form-submit,
@@ -5217,6 +5217,11 @@ a.action-icon > i,
   font-size: 1.2em;
   padding-bottom: 6px;
   margin-bottom: 4px;
+}
+
+#page-footer .footercredit {
+  font-size: 10pt;
+  text-align: center;
 }
 
 #page-footer ul,
