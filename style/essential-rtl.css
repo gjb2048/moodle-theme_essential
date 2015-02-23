@@ -21671,6 +21671,11 @@ a.action-icon > i,
   margin-bottom: 4px;
 }
 
+#page-footer .footercredit {
+  font-size: 10pt;
+  text-align: center;
+}
+
 #page-footer ul,
 #greyboxright ul {
   list-style-type: none !important;

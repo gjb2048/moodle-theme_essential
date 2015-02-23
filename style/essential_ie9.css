@@ -1,4 +1,4 @@
-@import url('essential_ie9-blessed1.css?z=1424691804048');
+@import url('essential_ie9-blessed1.css?z=1424691954767');
 button:focus,
 input.form-submit:focus,
 input[type="button"]:focus,
@@ -4238,6 +4238,10 @@ a.action-icon > i,
   font-size: 1.2em;
   padding-bottom: 6px;
   margin-bottom: 4px;
+}
+#page-footer .footercredit {
+  font-size: 10pt;
+  text-align: center;
 }
 #page-footer ul,
 #greyboxright ul {

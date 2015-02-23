@@ -71,6 +71,7 @@ $string['logo'] = 'Logo';
 $string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.
                        <br>The image should be 65px high and any reasonable width that suits.
                        <br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
+$string['credit'] = 'The Essential theme is developed, enhanced and maintained by ';
 
 // Font settings.
 $string['fontsettings'] = 'Font';
