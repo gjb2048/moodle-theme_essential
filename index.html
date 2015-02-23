@@ -96,6 +96,13 @@ FAQ - <a href="http://www.gnu.org/licenses/gpl-faq.html">http://www.gnu.org/lice
 Moodle community benefits.</p>
 
 <h1>
+<a id="support" class="anchor" href="#support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support</h1>
+
+<p>As Essential is licensed under the GNU GPLv3 License it comes with NO support.  If you would like support from
+me then I'm happy to provide it for a fee (please see my contact details above).  Otherwise, the 'Themes' forum:
+moodle.org/mod/forum/view.php?id=46 is an excellent place to ask questions.</p>
+
+<h1>
 <a id="donations" class="anchor" href="#donations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Donations</h1>
 
 <p>This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider donating by:</p>
@@ -127,7 +134,7 @@ next release.</p>
 
 <ol>
 <li>Ensure you have the version of Moodle as stated above in 'Required version of Moodle'.  This is essential as the
-theme relies on underlying core code that is out of our control.</li>
+theme relies on underlying core code that is out of my control.</li>
 <li>Login as an administrator and put Moodle in 'Maintenance Mode' so that there are no users using it bar you as the administrator.</li>
 <li>Copy the extracted 'essential' folder to the '/theme/' folder.</li>
 <li>Go to 'Site administration' -&gt; 'Notifications' and follow standard the 'plugin' update notification.</li>
@@ -140,7 +147,7 @@ theme relies on underlying core code that is out of our control.</li>
 
 <ol>
 <li>Ensure you have the version of Moodle as stated above in 'Required version of Moodle'.  This is essential as the
-theme relies on underlying core code that is out of our control.</li>
+theme relies on underlying core code that is out of my control.</li>
 <li>Login as an administrator and put Moodle in 'Maintenance Mode' so that there are no users using it bar you as the administrator.</li>
 <li>Make a backup of your old 'essential' folder in '/theme/' and then delete the folder.</li>
 <li>Copy the replacement extracted 'essential' folder to the '/theme/' folder.</li>
@@ -211,6 +218,41 @@ issue.</p>
 <p>It is essential that you provide as much information as possible, the critical information being the contents of the theme's 
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.</p>
+
+<h1>
+<a id="new-in-2811" class="anchor" href="#new-in-2811" aria-hidden="true"><span class="octicon octicon-link"></span></a>New in 2.8.1.1</h1>
+
+<ul>
+<li>FIX: Issue #417: M2.8 Mail Settings page needs checking.</li>
+<li>FIX: Issue #422: Regression from #179 in the core_renderer.php file.</li>
+<li>FIX: Issue #423: Forum floating buttons.</li>
+<li>FIX: Issue #425: Copyright date localization.</li>
+<li>FIX: Issue #429: Front page content area set to "Show before login only" still paritally displays.</li>
+<li>FIX: Issue #432: Adjusted lang string for 'oldnavbardesc'.  Thanks to Mathieu Pelletier (<a href="https://github.com/mkpelletier">https://github.com/mkpelletier</a>) for this.</li>
+<li>FIX: Issue #434: Explain if a logo uploaded then no header title will be shown.</li>
+<li>FIX: Issue #436: Header background colour setting.</li>
+<li>FIX: Issue #441: Messages Screen when on mobile ( - 767px ) - background not filling area (region-main).</li>
+<li>FIX: Issue #447: Essential overlapping of Admin Settings.</li>
+<li>FIX: Issue #449: Embedded question text alignment.</li>
+<li>FIX: Issue #450: Undefined variable fontselect in embedded question preview.</li>
+<li>FIX: Issue #451: Hidden categories not aligning correctly.</li>
+<li>FIX: Issue #452: Messages Screen when on mobile still not quite correct.</li>
+<li>FIX: Issue #454: Social icon hover text is odd with 'URL' postfix.</li>
+<li>FIX: Issue #455: IE9 4096 selector limit.</li>
+<li>FIX: Apply MDL-46183.</li>
+<li>FIX: Apply MDL-45930.</li>
+<li>FIX: Apply MDL-44907.</li>
+<li>FIX: Improved custom font file detection and serving.</li>
+<li>FIX: Serving of slide show images when the parent frontpage is used in a child theme.</li>
+<li>FIX: doctype() warning when debugging.</li>
+<li>FIX: Misc tweaks I spotted - look at the commit on 22/2/2015 for details.</li>
+<li>NEW: Issue #428: Add setting to customise header background image.  Thanks to Jerome Charaoui (<a href="https://github.com/jcharaoui">https://github.com/jcharaoui</a>) for this.</li>
+<li>NEW: Issue #433: Add a 'This Course' dropdown menu.  Thanks to ActionJONA (<a href="https://github.com/ActionJONA">https://github.com/ActionJONA</a>) for the ported BCU theme code.</li>
+<li>NEW: Added 'Essentials' child theme in 'essentials' sub-folder.  To use, read the 'Installation' instructions in 'essentials/README.txt'.
+   The 'essentials' sub-folder is just a place to store and distribute the child theme.  It will NOT be available until you install it.</li>
+<li>NEW: Code refactoring to make child theme creation easier.</li>
+<li>NEW: LESS refactoring to make future transition to Bootstrap v3 easier.</li>
+</ul>
 
 <h1>
 <a id="new-in-281" class="anchor" href="#new-in-281" aria-hidden="true"><span class="octicon octicon-link"></span></a>New in 2.8.1</h1>
@@ -717,7 +759,7 @@ can be really useful in visualising the issue along with any files you consider 
 <h1>
 <a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h1>
 
-<p>As always, documentation is a work in progress. Available documentation is available at <a href="http://docs.moodle.org/27/en/Essential_theme">http://docs.moodle.org/27/en/Essential_theme</a>
+<p>As always, documentation is a work in progress. Available documentation is available at <a href="http://docs.moodle.org/28/en/Essential_theme">http://docs.moodle.org/28/en/Essential_theme</a>
 If you have questions you can post them in the issue tracker at <a href="https://github.com/gjb2048/moodle-theme_essential/issues">https://github.com/gjb2048/moodle-theme_essential/issues</a></p>
         </section>
 
