@@ -32,5 +32,5 @@ $plugin->release = '2.7.0.2 (Build: 2015012600)';
 $plugin->requires = 2014050800; // Requires Moodle 2.7
 $plugin->component = 'theme_essentials';
 $plugin->dependencies = array(
-    'theme_essential'  => 2014111008
+    'theme_essential'  => 2014111009
 );

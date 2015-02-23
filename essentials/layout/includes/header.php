@@ -34,8 +34,8 @@ echo $OUTPUT->doctype() ?>
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>"/>
-    <?php echo '<link rel="stylesheet" href="'.$OUTPUT->get_csswww().'">'; ?>
-    <?php echo $OUTPUT->standard_head_html() ?>
+    <?php echo $OUTPUT->get_csswww(); ?>
+    <?php echo $OUTPUT->standard_head_html(); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google web fonts -->
     <?php require_once(dirname(__FILE__) . '/../../../essential/layout/includes/fonts.php'); ?>
