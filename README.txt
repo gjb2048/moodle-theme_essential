@@ -164,8 +164,8 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
-New in 2.8.1.1 - RC5
-====================
+New in 2.8.1.1
+==============
 - FIX: Issue #417: M2.8 Mail Settings page needs checking.
 - FIX: Issue #422: Regression from #179 in the core_renderer.php file.
 - FIX: Issue #423: Forum floating buttons.
