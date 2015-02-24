@@ -15,7 +15,7 @@ $(document).ready(function() {
       return false;
     });
 
-  $("a[href='#region-main']").click(function(e) {
+  jQuery("a[href='#region-main']").click(function(e) {
     e.preventDefault();
     var target = $('#region-main');
     $('html, body').animate({scrollTop : target.height()}, duration);
