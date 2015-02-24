@@ -112,7 +112,7 @@ $hasmobileapps = (theme_essential_get_setting('ios') ||
 
 $logoclass = 'ecol12';
 if ($hassocialnetworks || $hasmobileapps) {
-    $logoclass = 'ecol8';
+    $logoclass = 'ecol7';
 }
 
 $oldnavbar = theme_essential_get_setting('oldnavbar');
