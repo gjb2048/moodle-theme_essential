@@ -53,7 +53,7 @@ Gareth J. Barnard<br>
 <a href="https://flattr.com/profile/gjb2048" target="_blank">
 clicking here to donate.
 </a>
-<br>Donations may allow me to provide you with more or better features in less time.</p>
+<br>Donations help to faciliate maintenance and allow me to provide you with more and better features.  Without your support the theme cannot be maintained.</p>
 </div></div>';
 
 // General.

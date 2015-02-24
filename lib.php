@@ -711,9 +711,9 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
 }
 
 function theme_essential_page_init(moodle_page $page) {
-    global $CFG, $OUTPUT;
+    global $CFG;
     $page->requires->jquery();
-    $properties = $OUTPUT->theme_essential_ie_properties();
+    $properties = core_useragent::check_ie_properties(); // In /lib/classes/useragent.php.
     if ((is_array($properties)) && ($properties['version'] <= 8.0)) {
         $page->requires->jquery_plugin('html5shiv', 'theme_essential');
     }

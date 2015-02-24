@@ -25,19 +25,19 @@
  */
 
 /* Default globals */
-global $CFG, $PAGE, $OUTPUT;
+global $CFG, $PAGE, $USER, $SITE, $COURSE;
 
 /* Group Body */
 $bodyclasses = array();
 
-if ($OUTPUT->get_setting('enablealternativethemecolors1') ||
-    $OUTPUT->get_setting('enablealternativethemecolors2') ||
-    $OUTPUT->get_setting('enablealternativethemecolors3')
+if (theme_essential_get_setting('enablealternativethemecolors1') ||
+    theme_essential_get_setting('enablealternativethemecolors2') ||
+    theme_essential_get_setting('enablealternativethemecolors3')
 ) {
     $colourswitcher = true;
-    $OUTPUT->theme_essential_check_colours_switch();
-    $OUTPUT->theme_essential_initialise_colourswitcher($PAGE);
-    $bodyclasses[]  = 'essential-colours-' . $OUTPUT->theme_essential_get_colours();
+    theme_essential_check_colours_switch();
+    theme_essential_initialise_colourswitcher($PAGE);
+    $bodyclasses[]  = 'essential-colours-' . theme_essential_get_colours();
 } else {
     $colourswitcher = false;
 }
@@ -51,7 +51,7 @@ if ($devicetype == "mobile") {
     $bodyclasses[] = 'desktopdevice';
 }
 
-switch ($OUTPUT->get_setting('pagewidth')) {
+switch (theme_essential_get_setting('pagewidth')) {
     case 100:
         $bodyclasses[] = 'pagewidthvariable';
         break;
@@ -68,7 +68,7 @@ switch ($OUTPUT->get_setting('pagewidth')) {
 if (!empty($CFG->custommenuitems)) {
     $bodyclasses[] = 'custommenuitems';
 }
-if ($OUTPUT->get_setting('enablecategoryicon')) {
+if (theme_essential_get_setting('enablecategoryicon')) {
     $bodyclasses[] = 'categoryicons';
 }
 
@@ -83,31 +83,31 @@ if (right_to_left()) {
     $left = false;
 }
 
-$fontselect = $OUTPUT->get_setting('fontselect');
+$fontselect = theme_essential_get_setting('fontselect');
 $fontcharacterset = '&subset=latin';
-if($OUTPUT->get_setting('fontcharacterset')) {
-    $fontcharacterset = '&subset=latin,'.$OUTPUT->get_setting('fontcharacterset');
+if(theme_essential_get_setting('fontcharacterset')) {
+    $fontcharacterset = '&subset=latin,'.theme_essential_get_setting('fontcharacterset');
 }
-$headingfont = urlencode($OUTPUT->get_setting('fontnameheading'));
-$bodyfont = urlencode($OUTPUT->get_setting('fontnamebody'));
+$headingfont = urlencode(theme_essential_get_setting('fontnameheading'));
+$bodyfont = urlencode(theme_essential_get_setting('fontnamebody'));
 
 
 /* Group Header */
 $hassocialnetworks = (
-    $OUTPUT->get_setting('facebook') ||
-    $OUTPUT->get_setting('twitter') ||
-    $OUTPUT->get_setting('googleplus') ||
-    $OUTPUT->get_setting('linkedin') ||
-    $OUTPUT->get_setting('youtube') ||
-    $OUTPUT->get_setting('flickr') ||
-    $OUTPUT->get_setting('vk') ||
-    $OUTPUT->get_setting('pinterest') ||
-    $OUTPUT->get_setting('instagram') ||
-    $OUTPUT->get_setting('skype') ||
-    $OUTPUT->get_setting('website')
+    theme_essential_get_setting('facebook') ||
+    theme_essential_get_setting('twitter') ||
+    theme_essential_get_setting('googleplus') ||
+    theme_essential_get_setting('linkedin') ||
+    theme_essential_get_setting('youtube') ||
+    theme_essential_get_setting('flickr') ||
+    theme_essential_get_setting('vk') ||
+    theme_essential_get_setting('pinterest') ||
+    theme_essential_get_setting('instagram') ||
+    theme_essential_get_setting('skype') ||
+    theme_essential_get_setting('website')
 );
-$hasmobileapps = ($OUTPUT->get_setting('ios') ||
-    $OUTPUT->get_setting('android')
+$hasmobileapps = (theme_essential_get_setting('ios') ||
+    theme_essential_get_setting('android')
 );
 
 $logoclass = 'ecol12';
@@ -115,11 +115,11 @@ if ($hassocialnetworks || $hasmobileapps) {
     $logoclass = 'ecol8';
 }
 
-$oldnavbar = $OUTPUT->get_setting('oldnavbar');
-$haslogo = $OUTPUT->get_setting('logo');
+$oldnavbar = theme_essential_get_setting('oldnavbar');
+$haslogo = theme_essential_get_setting('logo');
 
 /* Group Content */
-$hasboringlayout = $OUTPUT->get_setting('layout');
+$hasboringlayout = theme_essential_get_setting('layout');
 
 /* Group Report Page Title */
 function essential_report_page_has_title() {
@@ -154,8 +154,8 @@ function essential_has_footer_region() {
 }
 
 /* Group Footer */
-$hascopyright = $OUTPUT->get_setting('copyright', true);
-$hasfootnote = $OUTPUT->get_setting('footnote', 'format_html');
+$hascopyright = theme_essential_get_setting('copyright', true);
+$hasfootnote = theme_essential_get_setting('footnote', 'format_html');
 
 /* Group Breadcrumb */
-$breadcrumbstyle = $OUTPUT->get_setting('breadcrumbstyle');
+$breadcrumbstyle = theme_essential_get_setting('breadcrumbstyle');
