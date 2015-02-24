@@ -1,4 +1,4 @@
-$(document).ready(function() {
+jQuery(document).ready(function() {
   var offset = 220;
   var duration = 500;
   jQuery(window).scroll(function () {
@@ -17,8 +17,8 @@ $(document).ready(function() {
 
   jQuery("a[href='#region-main']").click(function(e) {
     e.preventDefault();
-    var target = $('#region-main');
-    $('html, body').animate({scrollTop : target.height()}, duration);
+    var target = jQuery('#region-main');
+    jQuery('html, body').animate({scrollTop : target.height()}, duration);
     return false;
   });
 });

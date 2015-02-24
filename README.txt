@@ -168,6 +168,7 @@ New in 2.8.1.2
 ==============
 - FIX: Incredibly strange regression when changing theme to Essential.
 - FIX: Issue #458: Header logo pushing social icons off header - smaller sized screens.
+- FIX: Issue #460: jQuery instead of $.
 
 New in 2.8.1.1
 ==============
