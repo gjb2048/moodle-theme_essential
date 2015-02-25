@@ -71,7 +71,7 @@ PayPal - Please contact me via my 'Moodle profile' (above) for details as I am a
 
 Flattr - https://flattr.com/profile/gjb2048
 
-Donations help to faciliate maintenance and allow me to provide you with more and better features.  Without your support the theme cannot be maintained.
+Donations help to facilitate maintenance and allow me to provide you with more and better features.  Without your support the theme cannot be maintained.
 
 Donators
 ========
@@ -163,6 +163,10 @@ issue.
 It is essential that you provide as much information as possible, the critical information being the contents of the theme's 
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
+
+New in 2.8.1.3
+==============
+- FIX: Adjust quiz report.
 
 New in 2.8.1.2
 ==============

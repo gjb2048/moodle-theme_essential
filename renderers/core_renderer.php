@@ -31,8 +31,7 @@ class theme_essential_core_renderer extends core_renderer {
      * This renders the breadcrumbs
      * @return string $breadcrumbs
      */
-    public function navbar()
-    {
+    public function navbar() {
         $breadcrumbstyle = $this->get_setting('breadcrumbstyle');
         if ($breadcrumbstyle) {
             if ($breadcrumbstyle == '4') {
@@ -59,8 +58,7 @@ class theme_essential_core_renderer extends core_renderer {
      * @param string $class
      * @return string $notification
      */
-    public function notification($message, $class = 'notifyproblem')
-    {
+    public function notification($message, $class = 'notifyproblem') {
         $message = clean_text($message);
         $type = '';
 
@@ -81,8 +79,7 @@ class theme_essential_core_renderer extends core_renderer {
      * Outputs the page's footer
      * @return string HTML fragment
      */
-    public function footer()
-    {
+    public function footer() {
         global $CFG;
 
         $output = $this->container_end_all(true);
@@ -102,12 +99,11 @@ class theme_essential_core_renderer extends core_renderer {
         }
 
         $footer = str_replace($this->unique_performance_info_token, $performanceinfo, $footer);
-
         $footer = str_replace($this->unique_end_html_token, $this->page->requires->get_end_code(), $footer);
-
         $this->page->set_state(moodle_page::STATE_DONE);
+        $info = '<!-- Essential theme, version: '.$this->theme->settings->version.', developed, enhanced and maintained by Gareth J Barnard: about.me/gjbarnard -->';
 
-        return $output . $footer;
+        return $output . $footer . $info;
     }
 
     /**
@@ -115,8 +111,7 @@ class theme_essential_core_renderer extends core_renderer {
      * @param string $custommenuitems
      * @return render_custom_menu for $custommenu
      */
-    public function custom_menu($custommenuitems = '')
-    {
+    public function custom_menu($custommenuitems = '') {
         global $CFG;
 
         if (empty($custommenuitems) && !empty($CFG->custommenuitems)) {
@@ -131,8 +126,7 @@ class theme_essential_core_renderer extends core_renderer {
      * @param custom_menu $menu
      * @return string $content
      */
-    protected function render_custom_menu(custom_menu $menu)
-    {
+    protected function render_custom_menu(custom_menu $menu) {
 
         $content = '<ul class="nav">';
         foreach ($menu->get_children() as $item) {
@@ -148,8 +142,7 @@ class theme_essential_core_renderer extends core_renderer {
      * @param int $level
      * @return string $content
      */
-    protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0)
-    {
+    protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0) {
         static $submenucount = 0;
 
         if ($menunode->has_children()) {
@@ -200,8 +193,7 @@ class theme_essential_core_renderer extends core_renderer {
      * Outputs the language menu
      * @return custom_menu object
      */
-    public function custom_menu_language()
-    {
+    public function custom_menu_language() {
         global $CFG;
         $langmenu = new custom_menu();
 
@@ -234,8 +226,7 @@ class theme_essential_core_renderer extends core_renderer {
      * Outputs the courses menu
      * @return custom_menu object
      */
-    public function custom_menu_courses()
-    {
+    public function custom_menu_courses() {
         global $CFG;
 
         $coursemenu = new custom_menu();
@@ -295,8 +286,7 @@ class theme_essential_core_renderer extends core_renderer {
      * Outputs the alternative colours menu
      * @return custom_menu object
      */
-    public function custom_menu_themecolours()
-    {
+    public function custom_menu_themecolours() {
         $colourmenu = new custom_menu();
 
         if (!isguestuser()) {
@@ -406,8 +396,7 @@ class theme_essential_core_renderer extends core_renderer {
      * Outputs the messages menu
      * @return custom_menu object
      */
-    public function custom_menu_messages()
-    {
+    public function custom_menu_messages() {
         global $CFG;
         $messagemenu = new custom_menu();
 
@@ -493,8 +482,7 @@ class theme_essential_core_renderer extends core_renderer {
      * Retrieves messages from the database
      * @return array $messagelist
      */
-    private function get_user_messages()
-    {
+    private function get_user_messages() {
         global $USER, $DB;
         $messagelist['messages'] = array();
         $maxmessages = 5;
@@ -535,8 +523,7 @@ class theme_essential_core_renderer extends core_renderer {
      * @param $message object
      * @return object $messagecontent
      */
-    private function process_message($message)
-    {
+    private function process_message($message) {
         global $DB, $USER;
         $messagecontent = new stdClass();
 
@@ -571,8 +558,7 @@ class theme_essential_core_renderer extends core_renderer {
      * @param $created_time int
      * @return string
      */
-    private function get_time_difference($created_time)
-    {
+    private function get_time_difference($created_time) {
         $today = usertime(time());
 
         // It returns the time difference in Seconds...
@@ -624,8 +610,7 @@ class theme_essential_core_renderer extends core_renderer {
      * Outputs the goto bottom menu.
      * @return custom_menu object
      */
-    public function custom_menu_goto_bottom()
-    {
+    public function custom_menu_goto_bottom() {
         $html = '';
         if (($this->page->pagelayout == 'course') || ($this->page->pagelayout == 'incourse') || ($this->page->pagelayout == 'admin')) { // Go to bottom.
             $menu = new custom_menu();
@@ -640,8 +625,7 @@ class theme_essential_core_renderer extends core_renderer {
      * Outputs the user menu.
      * @return custom_menu object
      */
-    public function custom_menu_user()
-    {
+    public function custom_menu_user() {
         // die if executed during install
         if (during_initial_install()) {
             return false;
@@ -895,8 +879,7 @@ class theme_essential_core_renderer extends core_renderer {
      * @param tabtree $tabtree
      * @return string
      */
-    public function render_tabtree(tabtree $tabtree)
-    {
+    public function render_tabtree(tabtree $tabtree) {
         if (empty($tabtree->subtree)) {
             return false;
         }
@@ -919,8 +902,7 @@ class theme_essential_core_renderer extends core_renderer {
      * @param tabobject $tab
      * @return string HTML fragment
      */
-    public function render_tabobject(tabobject $tab)
-    {
+    public function render_tabobject(tabobject $tab) {
         if ($tab->selected or $tab->activated) {
             return html_writer::tag('li', html_writer::tag('a', $tab->text), array('class' => 'active'));
         } else if ($tab->inactive) {
@@ -941,8 +923,7 @@ class theme_essential_core_renderer extends core_renderer {
     * FontAwesome variants where available.
     */
 
-    public function render_pix_icon(pix_icon $icon)
-    {
+    public function render_pix_icon(pix_icon $icon) {
         if (self::replace_moodle_icon($icon->pix)) {
             $newicon = self::replace_moodle_icon($icon->pix, $icon->attributes['alt']) . parent::render_pix_icon($icon) . "</i>";
             return $newicon;
@@ -951,8 +932,7 @@ class theme_essential_core_renderer extends core_renderer {
         }
     }
 
-    private static function replace_moodle_icon($icon, $alt = false)
-    {
+    private static function replace_moodle_icon($icon, $alt = false) {
         $icons = array(
             'add' => 'plus',
             'book' => 'book',
@@ -1028,8 +1008,7 @@ class theme_essential_core_renderer extends core_renderer {
      * Written by G J Barnard
      */
 
-    public function edit_button(moodle_url $url)
-    {
+    public function edit_button(moodle_url $url) {
         $url->param('sesskey', sesskey());
         if ($this->page->user_is_editing()) {
             $url->param('edit', 'off');
@@ -1046,8 +1025,7 @@ class theme_essential_core_renderer extends core_renderer {
             html_writer::end_tag('i') . $title, array('href' => $url, 'class' => 'btn ' . $btn, 'title' => $title));
     }
 
-    public function render_social_network($socialnetwork)
-    {
+    public function render_social_network($socialnetwork) {
         if ($this->get_setting($socialnetwork)) {
             $icon = $socialnetwork;
             if ($socialnetwork === 'googleplus') {
