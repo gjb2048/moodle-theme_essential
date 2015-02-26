@@ -166,7 +166,8 @@ can be really useful in visualising the issue along with any files you consider 
 
 New in 2.8.1.3
 ==============
-- FIX: Adjust quiz report.
+- FIX  : Adjust quiz report.
+- REFIX: Issue #447: Essential overlapping of Admin Settings.
 
 New in 2.8.1.2
 ==============
