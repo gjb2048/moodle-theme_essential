@@ -144,6 +144,7 @@ function essential_has_footer_region() {
     switch ($PAGE->pagetype) {
         case 'admin-plugins':
         case 'course-management':
+        case 'mod-assign-view':
         case 'mod-quiz-edit':
             $hasregion = true;
             break;
