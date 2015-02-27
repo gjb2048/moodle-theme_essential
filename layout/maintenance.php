@@ -40,14 +40,16 @@ echo $OUTPUT->doctype();
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>"/>
-    <?php echo $OUTPUT->get_csswww(); ?>
-    <?php echo $OUTPUT->standard_head_html() ?>
+    <?php 
+    echo $OUTPUT->get_csswww();
+    echo $OUTPUT->standard_head_html();
+    ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body <?php echo $OUTPUT->body_attributes(); ?>>
 
-<?php echo $OUTPUT->standard_top_of_body_html() ?>
+<?php echo $OUTPUT->standard_top_of_body_html(); ?>
 
 <header id="page-header" class="clearfix">
     <div class="container-fluid maintenance">
@@ -77,6 +79,6 @@ echo $OUTPUT->doctype();
     </div>
 </footer>
 
-<?php echo $OUTPUT->standard_end_of_body_html() ?>
+<?php echo $OUTPUT->standard_end_of_body_html(); ?>
 </body>
 </html>

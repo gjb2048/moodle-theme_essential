@@ -32,8 +32,10 @@ require_once($OUTPUT->get_include_file('pagesettings'));
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>"/>
-    <?php echo $OUTPUT->get_csswww(); ?>
-    <?php echo $OUTPUT->standard_head_html() ?>
+    <?php 
+    echo $OUTPUT->get_csswww();
+    echo $OUTPUT->standard_head_html();
+    ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google web fonts -->
     <?php require_once($OUTPUT->get_include_file('fonts')); ?>
@@ -46,7 +48,7 @@ require_once($OUTPUT->get_include_file('pagesettings'));
 
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
 
-<?php echo $OUTPUT->standard_top_of_body_html() ?>
+<?php echo $OUTPUT->standard_top_of_body_html(); ?>
 
 <header role="banner">
     <div id="page-header" class="clearfix<?php echo ($oldnavbar) ? ' oldnavbar' : ''; ?>">
@@ -66,6 +68,7 @@ require_once($OUTPUT->get_include_file('pagesettings'));
                 </div>
                 <?php if ($hassocialnetworks || $hasmobileapps) { ?>
                 <a class="btn btn-icon" data-toggle="collapse" data-target=".icon-collapse">
+                    <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -98,8 +101,7 @@ require_once($OUTPUT->get_include_file('pagesettings'));
                     <?php
                     }
                     // If true, displays the heading and available social links; displays nothing if false.
-                    if ($hasmobileapps) {
-                        ?>
+                    if ($hasmobileapps) { ?>
                         <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>" id="mobileapps">
                             <p id="socialheading"><?php echo get_string('mobileappsheading', 'theme_essential') ?></p>
                             <ul class="socials unstyled">
@@ -126,6 +128,7 @@ require_once($OUTPUT->get_include_file('pagesettings'));
                 <div class="row-fluid">
                     <div class="custommenus pull-<?php echo ($left) ? 'left' : 'right'; ?>">
                         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>

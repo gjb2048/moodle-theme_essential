@@ -67,8 +67,6 @@ require_once($OUTPUT->get_include_file('header'));
     </section>
 </div>
 
-<?php
-require_once($OUTPUT->get_include_file('footer'));
-?>
+<?php require_once($OUTPUT->get_include_file('footer')); ?>
 </body>
 </html>

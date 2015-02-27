@@ -168,6 +168,7 @@ New in 2.8.1.3
 ==============
 - FIX  : Adjust quiz report.
 - FIX  : Adjust assignment grading to have blocks underneath for more space.
+- FIX  : Missing function errors in 2.8.1.2.
 - REFIX: Issue #447: Essential overlapping of Admin Settings.
 - FIX  : Issue #459: Messages Screen.
 - FIX  : Issue #463: Notification Time Stamp Issue.

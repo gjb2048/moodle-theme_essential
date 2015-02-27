@@ -85,7 +85,7 @@ if (right_to_left()) {
 
 $fontselect = theme_essential_get_setting('fontselect');
 $fontcharacterset = '&subset=latin';
-if(theme_essential_get_setting('fontcharacterset')) {
+if (theme_essential_get_setting('fontcharacterset')) {
     $fontcharacterset = '&subset=latin,'.theme_essential_get_setting('fontcharacterset');
 }
 $headingfont = urlencode(theme_essential_get_setting('fontnameheading'));

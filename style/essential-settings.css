@@ -406,6 +406,9 @@ input[type="color"],
 #page-header #headerlogo {
   color: [[setting:themeiconcolor]];
 }
+#page-header .btn-icon .icon-bar {
+  background-color: [[setting:themecolor]];
+}
 .socials {
   margin: 0px;
 }
@@ -417,6 +420,9 @@ input[type="color"],
 /* @group Custom Menu */
 .navbar .navbar-inner .brand {
   color: [[setting:themenavcolor]];
+}
+.navbar .navbar-inner .btn-navbar .icon-bar {
+  background-color: [[setting:themecolor]];
 }
 .navbar .navbar-inner .nav-collapse .nav > li.dropdown > a:hover,
 .navbar .navbar-inner .dropdown-menu > li > a:hover,

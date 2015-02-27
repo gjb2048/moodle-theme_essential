@@ -79,8 +79,6 @@ $footerregion = essential_has_footer_region(); // In pagesettings.php.
     </section>
 </div>
 
-<?php
-require_once($OUTPUT->get_include_file('footer'));
-?>
+<?php require_once($OUTPUT->get_include_file('footer')); ?>
 </body>
 </html>

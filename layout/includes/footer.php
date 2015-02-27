@@ -24,8 +24,7 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-if (empty($PAGE->layout_options['nofooter'])) {
-    ?>
+if (empty($PAGE->layout_options['nofooter'])) { ?>
     <footer role="contentinfo" id="page-footer">
         <div class="container-fluid">
             <?php echo $OUTPUT->essential_edit_button('theme_essential_footer'); ?>
@@ -60,7 +59,7 @@ if (empty($PAGE->layout_options['nofooter'])) {
                 <?php echo $OUTPUT->standard_footer_html(); ?>
             </div>
             <div class="footercredit row-fluid">
-                <?php echo get_string('credit' ,'theme_essential'); ?><a href="//about.me/gjbarnard" target="_blank">Gareth J Barnard</a>
+                <?php echo get_string('credit', 'theme_essential'); ?><a href="//about.me/gjbarnard" target="_blank">Gareth J Barnard</a>
             </div>
         </div>
     </footer>
@@ -86,4 +85,4 @@ if (empty($PAGE->layout_options['nofooter'])) {
             ?>
         });
     </script>
-<?php echo $OUTPUT->standard_end_of_body_html() ?>
+<?php echo $OUTPUT->standard_end_of_body_html(); ?>

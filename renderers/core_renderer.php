@@ -1555,50 +1555,6 @@ class theme_essential_core_renderer extends core_renderer {
     }
 
     /**
-     * Checks if the user is switching colours with a refresh
-     *
-     * If they are this updates the users preference in the database
-     */
-    public function theme_essential_check_colours_switch() {
-        $colours = optional_param('essentialcolours', null, PARAM_ALPHANUM);
-        if (in_array($colours, array('default', 'alternative1', 'alternative2', 'alternative3'))) {
-            set_user_preference('theme_essential_colours', $colours);
-        }
-    }
-
-    /**
-     * Adds the JavaScript for the colour switcher to the page.
-     *
-     * The colour switcher is a YUI moodle module that is located in
-     *     theme/udemspl/yui/udemspl/udemspl.js
-     *
-     * @param moodle_page $page
-     */
-    public function theme_essential_initialise_colourswitcher() {
-        user_preference_allow_ajax_update('theme_essential_colours', PARAM_ALPHANUM);
-        $this->page->requires->yui_module(
-                'moodle-theme_essential-coloursswitcher', 'M.theme_essential.initColoursSwitcher',
-                array(array('div' => '.dropdown-menu'))
-        );
-    }
-
-    /**
-     * Gets the theme colours the user has selected if enabled or the default if they have never changed
-     *
-     * @param string $default The default theme colors to use
-     * @return string The theme colours the user has selected
-     */
-    public function theme_essential_get_colours($default = 'default') {
-        $preference = get_user_preferences('theme_essential_colours', $default);
-        foreach (range(1, 3) as $alternativethemenumber) {
-            if ($preference == 'alternative' . $alternativethemenumber && theme_essential_get_setting('enablealternativethemecolors' . $alternativethemenumber)) {
-                return $preference;
-            }
-        }
-        return $default;
-    }
-
-    /**
      * States if the browser is not IE9 or less.
      */
     public function theme_essential_not_lte_ie9() {

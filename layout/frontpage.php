@@ -60,7 +60,7 @@ if ($enable1alert || $enable2alert || $enable3alert) {
 
         <!-- Alert #1 -->
         <?php if ($enable1alert) { ?>
-            <div class="useralerts alert alert-<?php echo $OUTPUT->get_setting('alert1type') ?>">
+            <div class="useralerts alert alert-<?php echo $OUTPUT->get_setting('alert1type'); ?>">
                 <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
                 <?php
                 $alert1icon = 'alert' . $OUTPUT->get_setting('alert1type');
@@ -70,7 +70,7 @@ if ($enable1alert || $enable2alert || $enable3alert) {
 
         <!-- Alert #2 -->
         <?php if ($enable2alert) { ?>
-            <div class="useralerts alert alert-<?php echo $OUTPUT->get_setting('alert2type') ?>">
+            <div class="useralerts alert alert-<?php echo $OUTPUT->get_setting('alert2type'); ?>">
                 <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
                 <?php
                 $alert2icon = 'alert' . $OUTPUT->get_setting('alert2type');
@@ -80,7 +80,7 @@ if ($enable1alert || $enable2alert || $enable3alert) {
 
         <!-- Alert #3 -->
         <?php if ($enable3alert) { ?>
-            <div class="useralerts alert alert-<?php echo $OUTPUT->get_setting('alert3type') ?>">
+            <div class="useralerts alert alert-<?php echo $OUTPUT->get_setting('alert3type'); ?>">
                 <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
                 <?php
                 $alert3icon = 'alert' . $OUTPUT->get_setting('alert3type');
@@ -175,10 +175,8 @@ if ($enable1alert || $enable2alert || $enable3alert) {
         <?php if (is_siteadmin()) { ?>
             <div class="hidden-blocks">
                 <div class="row-fluid">
-                    <h4><?php echo get_string('visibleadminonly', 'theme_essential') ?></h4>
-                    <?php
-                    echo $OUTPUT->blocks('hidden-dock');
-                    ?>
+                    <h4><?php echo get_string('visibleadminonly', 'theme_essential'); ?></h4>
+                    <?php echo $OUTPUT->blocks('hidden-dock'); ?>
                 </div>
             </div>
         <?php } ?>
@@ -186,9 +184,7 @@ if ($enable1alert || $enable2alert || $enable3alert) {
     </section>
 </div>
 
-<?php 
-require_once($OUTPUT->get_include_file('footer'));
-?>
+<?php require_once($OUTPUT->get_include_file('footer')); ?>
 
 <!-- Initialize slideshow -->
 <script type="text/javascript">
