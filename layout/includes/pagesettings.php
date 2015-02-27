@@ -120,6 +120,9 @@ $haslogo = theme_essential_get_setting('logo');
 
 /* Group Content */
 $hasboringlayout = theme_essential_get_setting('layout');
+if ($hasboringlayout) {
+    $bodyclasses[] = 'hasboringlayout';
+}
 
 /* Group Report Page Title */
 function essential_report_page_has_title() {

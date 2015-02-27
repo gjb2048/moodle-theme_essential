@@ -172,6 +172,7 @@ New in 2.8.1.3
 - REFIX: Issue #447: Essential overlapping of Admin Settings.
 - FIX  : Issue #459: Messages Screen.
 - FIX  : Issue #463: Notification Time Stamp Issue.
+- FIX  : Issue #464: When 'layout' set then message screen is between 768px and 979px is broken.
 - FIX  : Apply MDL-49078.
 
 New in 2.8.1.2
