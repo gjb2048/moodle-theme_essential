@@ -170,6 +170,7 @@ New in 2.8.1.3
 - FIX  : Adjust assignment grading to have blocks underneath for more space.
 - REFIX: Issue #447: Essential overlapping of Admin Settings.
 - FIX  : Issue #459: Messages Screen.
+- FIX  : Issue #463: Notification Time Stamp Issue.
 - FIX  : Apply MDL-49078.
 
 New in 2.8.1.2

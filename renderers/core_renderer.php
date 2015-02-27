@@ -559,10 +559,8 @@ class theme_essential_core_renderer extends core_renderer {
      * @return string
      */
     private function get_time_difference($created_time) {
-        $today = usertime(time());
-
         // It returns the time difference in Seconds...
-        $time_difference = $today - $created_time;
+        $time_difference = time() - $created_time;
 
         // To Calculate the time difference in Years...
         $years = 60 * 60 * 24 * 365;
