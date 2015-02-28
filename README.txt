@@ -168,9 +168,9 @@ New in 2.8.1.3
 ==============
 - FIX  : Adjust quiz report.
 - FIX  : Adjust assignment grading to have blocks underneath for more space.
-- FIX  : Missing function errors in 2.8.1.2.
 - REFIX: Issue #447: Essential overlapping of Admin Settings.
 - FIX  : Issue #459: Messages Screen.
+- FIX  : Issue #461: Missing function errors in 2.8.1.2 - upgrade now site is blank.
 - FIX  : Issue #463: Notification Time Stamp Issue.
 - FIX  : Issue #464: When 'layout' set then message screen is between 768px and 979px is broken.
 - FIX  : Apply MDL-49078.
