@@ -167,6 +167,7 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.8.1.4
 ==============
 - FIX: Social icons when collapsed.
+- FIX: Default user pix as svg in IE.
 
 New in 2.8.1.3
 ==============
