@@ -89,15 +89,6 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // New or old navbar.
-    $name = 'theme_essential/oldnavbar';
-    $title = get_string('oldnavbar', 'theme_essential');
-    $description = get_string('oldnavbardesc', 'theme_essential');
-    $default = false;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
     // Choose breadcrumbstyle
     $name = 'theme_essential/breadcrumbstyle';
     $title = get_string('breadcrumbstyle', 'theme_essential');
@@ -348,6 +339,15 @@ if (is_siteadmin()) {
 
     /* Header Settings */
     $temp = new admin_settingpage('theme_essential_header', get_string('headerheading', 'theme_essential'));
+
+    // New or old navbar.
+    $name = 'theme_essential/oldnavbar';
+    $title = get_string('oldnavbar', 'theme_essential');
+    $description = get_string('oldnavbardesc', 'theme_essential');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
     // Default Site icon setting.
     $name = 'theme_essential/siteicon';
