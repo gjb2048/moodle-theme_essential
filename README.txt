@@ -168,6 +168,7 @@ New in 2.8.1.4
 ==============
 - FIX: Social icons when collapsed.
 - FIX: Default user pix as svg in IE.
+- FIX: Print adjustments.
 - FIX: Issue #466: Forum overflow.
 - FIX: Issue #471: Descriptions on profile page truncated.
 
