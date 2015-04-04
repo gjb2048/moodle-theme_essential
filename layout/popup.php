@@ -25,6 +25,15 @@
  */
 
 $fontselect = $OUTPUT->get_setting('fontselect');
+if ($fontselect === '2') {
+    $fontcharacterset = '&subset=latin';
+    if ($OUTPUT->get_setting('fontcharacterset')) {
+        $fontcharacterset = '&subset=latin,'.$OUTPUT->get_setting('fontcharacterset');
+    }
+    $headingfont = urlencode($OUTPUT->get_setting('fontnameheading'));
+    $bodyfont = urlencode($OUTPUT->get_setting('fontnamebody'));
+}
+
 echo $OUTPUT->doctype();
 ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
