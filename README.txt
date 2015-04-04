@@ -171,6 +171,7 @@ New in 2.8.1.4
 - FIX: Print adjustments.
 - FIX: Issue #466: Forum overflow.
 - FIX: Issue #471: Descriptions on profile page truncated.
+- FIX: Issue #476: Essential hidden category headings.
 
 New in 2.8.1.3
 ==============
