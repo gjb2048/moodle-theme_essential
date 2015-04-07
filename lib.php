@@ -117,14 +117,14 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
 
 function theme_essential_serve_css($filename) {
     global $CFG;
-    if (!empty($CFG->themedir)) {
-        $thestylepath = $CFG->themedir . '/essential/style/';
-        if (!file_exists($thestylepath)) {
-            header('HTTP/1.0 404 Not Found');
-            die('Essential style folder not found, check $CFG->themedir is correct.');
-        }
-    } else {
+
+    if (file_exists("{$CFG->dirroot}/theme/essential/style/")) {
         $thestylepath = $CFG->dirroot . '/theme/essential/style/';
+    } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/essential/style/")) {
+        $thestylepath = $CFG->themedir . '/essential/style/';
+     } else {
+        header('HTTP/1.0 404 Not Found');
+        die('Essential style folder not found, check $CFG->themedir is correct.');
     }
     $thesheet = $thestylepath . $filename;
 
