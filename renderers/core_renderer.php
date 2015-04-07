@@ -101,7 +101,7 @@ class theme_essential_core_renderer extends core_renderer {
         $footer = str_replace($this->unique_performance_info_token, $performanceinfo, $footer);
         $footer = str_replace($this->unique_end_html_token, $this->page->requires->get_end_code(), $footer);
         $this->page->set_state(moodle_page::STATE_DONE);
-        $info = '<!-- Essential theme version: '.$this->get_setting('version').', developed, enhanced and maintained by Gareth J Barnard: about.me/gjbarnard -->';
+        $info = '<!-- Essential theme version: '.$this->page->theme->settings->version.', developed, enhanced and maintained by Gareth J Barnard: about.me/gjbarnard -->';
 
         return $output . $footer . $info;
     }
