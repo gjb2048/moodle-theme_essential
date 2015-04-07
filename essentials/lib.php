@@ -30,9 +30,6 @@ function theme_essentials_process_css($css, $theme) {
     if ($usingessentialsettings) {
         require_once(dirname(__FILE__) . '/../essential/lib.php');
         $css = theme_essential_process_css($css, $theme);
-    } else {
-        // Set FontAwesome font loading path as we have not excluded the Essential 'style/fontawesome.css' file.
-        $css = theme_essentials_set_fontwww($css);
     }
 
     // If you have your own settings, then add them here.

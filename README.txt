@@ -173,6 +173,7 @@ New in 2.8.1.4
 - FIX: Issue #471: Descriptions on profile page truncated.
 - FIX: Issue #475: Popup layout does not get all settings for fonts.php.
 - FIX: Issue #476: Essential hidden category headings.
+- NEW: Updated to FontAwesome 4.3.0 with WOFF2 font support.  Requires 2.8.5+ (Build: 20150313) - https://moodle.org/mod/forum/discuss.php?d=307270
 
 New in 2.8.1.3
 ==============
