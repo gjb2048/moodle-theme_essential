@@ -150,6 +150,11 @@ Videos and FitVids
 Essential uses FitVids.js - http://fitvidsjs.com/ - to make embedded videos responsive.  If you do not want this feature for a particular
 video, then please add the class 'fitvidsignore' to the video element.
 
+WOFF2 Font Support
+==================
+WOFF2 font support will automatically kick in if you are running Moodle 2.8.5+ (Build: 20150313) - 2014111005.01 or above.  If you are
+and the settings do not appear on the font setting page when using 'Custom font' for 'fontselect', then perform a 'Purge all caches'.
+
 Reporting issues
 ================
 Before reporting an issue, please ensure that you are running the latest version for your release of Moodle.  It is essential
@@ -174,6 +179,7 @@ New in 2.8.1.4
 - FIX: Issue #475: Popup layout does not get all settings for fonts.php.
 - FIX: Issue #476: Essential hidden category headings.
 - NEW: Updated to FontAwesome 4.3.0 with WOFF2 font support.  Requires 2.8.5+ (Build: 20150313) - https://moodle.org/mod/forum/discuss.php?d=307270
+- NEW: Dynamic WOFF2 support based upon Moodle version - see: MDL-49074.
 
 New in 2.8.1.3
 ==============

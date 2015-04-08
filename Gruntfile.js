@@ -192,6 +192,28 @@ module.exports = function(grunt) {
                 src: 'less/essential-pix.less',
                 dest: 'style/essential-pix.css'
             },
+            fontawesome_woff2_p: {
+                options: {
+                    compress: false,
+                    cleancss: false,
+                    paths: "./less",
+                    report: 'min',
+                    sourceMap: false,
+                },
+                src: 'less/fontawesome-woff2.less',
+                dest: 'style/fontawesome-woff2.css'
+            },
+            fontawesome_no_woff2_p: {
+                options: {
+                    compress: false,
+                    cleancss: false,
+                    paths: "./less",
+                    report: 'min',
+                    sourceMap: false,
+                },
+                src: 'less/fontawesome-no-woff2.less',
+                dest: 'style/fontawesome-no-woff2.css'
+            },
             fontawesome_p: {
                 options: {
                     compress: false,
@@ -303,6 +325,32 @@ module.exports = function(grunt) {
                 src: 'less/essential-pix.less',
                 dest: 'style/essential-pix.css'
             },
+            fontawesome_woff2_d: {
+                options: {
+                    compress: false,
+                    cleancss: false,
+                    paths: "./less",
+                    report: 'min',
+                    sourceMap: true,
+                    sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
+                    sourceMapFilename: 'style/fontawesome-woff2.treasure.map'
+                },
+                src: 'less/fontawesome-woff2.less',
+                dest: 'style/fontawesome-woff2.css'
+            },
+            fontawesome_no_woff2_d: {
+                options: {
+                    compress: false,
+                    cleancss: false,
+                    paths: "./less",
+                    report: 'min',
+                    sourceMap: true,
+                    sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
+                    sourceMapFilename: 'style/fontawesome-no-woff2.treasure.map'
+                },
+                src: 'less/fontawesome-no-woff2.less',
+                dest: 'style/fontawesome-no-woff2.css'
+            },
             fontawesome_d: {
                 options: {
                     compress: false,
@@ -397,7 +445,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'style',
-                    src: ['essential.css', 'essential-rtl.css', 'bootstrap-pix.css', 'moodle-pix.css', 'essential-pix.css', 'essential-alternative.css', 'editor.css', 'fontawesome.css', 'moodle-rtl.css'],
+                    src: ['essential.css', 'essential-rtl.css', 'bootstrap-pix.css', 'moodle-pix.css', 'essential-pix.css', 'essential-alternative.css', 'editor.css', 'fontawesome-woff2.css', 'fontawesome-no-woff2.css', 'fontawesome.css', 'moodle-rtl.css'],
                     dest: 'style',
                     ext: '.css'
                 }]
@@ -487,7 +535,7 @@ module.exports = function(grunt) {
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
 
-    grunt.registerTask("css", ["less:essential_"+build, "less:editor_"+build, "less:moodle_rtl_"+build, "less:settings_"+build, "less:bootstrap_pix_"+build, "less:moodle_pix_"+build, "less:essential_pix_"+build, "less:fontawesome_"+build, "less:alternative_"+build]);
+    grunt.registerTask("css", ["less:essential_"+build, "less:editor_"+build, "less:moodle_rtl_"+build, "less:settings_"+build, "less:bootstrap_pix_"+build, "less:moodle_pix_"+build, "less:essential_pix_"+build, "less:fontawesome_woff2_"+build, "less:fontawesome_no_woff2_"+build, "less:fontawesome_"+build, "less:alternative_"+build]);
     if (build == 'd') {
         grunt.registerTask("compile", ["css", "cssflip:rtl_"+build, "bless", 'cssmetrics', "decache"]);
     } else {

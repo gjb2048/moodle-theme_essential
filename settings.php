@@ -711,6 +711,12 @@ if (is_siteadmin()) {
 
     } else if(get_config('theme_essential', 'fontselect') === "3") {
 
+        if (floatval($CFG->version) >= 2014111005.01) { // 2.8.5+ (Build: 20150313) which has MDL-49074 integrated into it.
+            $woff2 = true;
+        } else {
+            $woff2 = false;
+        }
+
         // This is the descriptor for the font files
         $name = 'theme_essential/fontfiles';
         $heading = get_string('fontfiles', 'theme_essential');
@@ -743,13 +749,15 @@ if (is_siteadmin()) {
         $setting->set_updatedcallback('theme_reset_all_caches');
         $temp->add($setting);
 
-        // WOFF2 Font.
-        $name = 'theme_essential/fontfilewofftwoheading';
-        $title = get_string('fontfilewofftwoheading', 'theme_essential');
-        $description = '';
-        $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfilewofftwoheading');
-        $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        if ($woff2) {
+            // WOFF2 Font.
+            $name = 'theme_essential/fontfilewofftwoheading';
+            $title = get_string('fontfilewofftwoheading', 'theme_essential');
+            $description = '';
+            $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfilewofftwoheading');
+            $setting->set_updatedcallback('theme_reset_all_caches');
+            $temp->add($setting);
+        }
 
         // EOT Font.
         $name = 'theme_essential/fontfileeotheading';
@@ -792,13 +800,15 @@ if (is_siteadmin()) {
         $setting->set_updatedcallback('theme_reset_all_caches');
         $temp->add($setting);
 
-        // WOFF2 Font.
-        $name = 'theme_essential/fontfilewofftwobody';
-        $title = get_string('fontfilewofftwobody', 'theme_essential');
-        $description = '';
-        $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfilewofftwobody');
-        $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        if ($woff2) {
+            // WOFF2 Font.
+            $name = 'theme_essential/fontfilewofftwobody';
+            $title = get_string('fontfilewofftwobody', 'theme_essential');
+            $description = '';
+            $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfilewofftwobody');
+            $setting->set_updatedcallback('theme_reset_all_caches');
+            $temp->add($setting);
+        }
 
         // EOT Font.
         $name = 'theme_essential/fontfileeotbody';

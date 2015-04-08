@@ -39,6 +39,11 @@ $THEME->sheets[] = 'bootstrap-pix';
 $THEME->sheets[] = 'moodle-pix';
 $THEME->sheets[] = 'essential-pix';
 $THEME->sheets[] = 'essential-settings';
+if (floatval($CFG->version) >= 2014111005.01) { // 2.8.5+ (Build: 20150313) which has MDL-49074 integrated into it.
+    $THEME->sheets[] = 'fontawesome-woff2';
+} else {
+    $THEME->sheets[] = 'fontawesome-no-woff2';
+}
 $THEME->sheets[] = 'fontawesome';
 
 if ((get_config('theme_essential', 'enablealternativethemecolors1')) ||
