@@ -179,6 +179,10 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
+New in 2.8.1.5
+==============
+- FIX: Carousel control icons slightly clipped.
+
 New in 2.8.1.4
 ==============
 - FIX: Social icons when collapsed.
