@@ -944,6 +944,7 @@ class theme_essential_core_renderer extends core_renderer {
             'i/backup' => 'cloud-download',
             'i/checkpermissions' => 'user',
             'i/edit' => 'pencil',
+            'i/enrolusers' => 'user-plus',
             'i/filter' => 'filter',
             'i/grades' => 'table',
             'i/group' => 'group',

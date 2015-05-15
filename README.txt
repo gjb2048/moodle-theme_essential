@@ -182,6 +182,7 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.8.1.5
 ==============
 - FIX: Carousel control icons slightly clipped.
+- FIX: Enrol users icon -> FontAwesome one.
 
 New in 2.8.1.4
 ==============
