@@ -23,7 +23,8 @@
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
+?>
+<div id="pageWrapper">
 require_once($OUTPUT->get_include_file('header'));
 
 $enable1alert = $OUTPUT->get_setting('enable1alert');
@@ -185,7 +186,7 @@ if ($enable1alert || $enable2alert || $enable3alert) {
 </div>
 
 <?php require_once($OUTPUT->get_include_file('footer')); ?>
-
+</div>
 <!-- Initialize slideshow -->
 <script type="text/javascript">
     jQuery(document).ready(function () {
