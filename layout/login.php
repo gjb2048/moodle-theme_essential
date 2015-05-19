@@ -25,6 +25,7 @@
  */
 ?>
 <div id="pageWrapper">
+<?php
 require_once($OUTPUT->get_include_file('header'));
 ?>
 
