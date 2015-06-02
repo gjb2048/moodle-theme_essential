@@ -488,6 +488,14 @@ module.exports = function(grunt) {
                         from: '#999999',
                         to: svgcolour
                     }]
+            },
+            placeholder: {
+                src: 'style/essential.css',
+                    overwrite: true,
+                    replacements: [{
+                        from: '/* Essential placeholder */',
+                        to: 'div#page::before { content: "Development Version"; font-size: 4em; margin-top: 20px; margin-bottom: 20px; }'
+                    }]
             }
         },
         svgmin: {
@@ -537,7 +545,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask("css", ["less:essential_"+build, "less:editor_"+build, "less:moodle_rtl_"+build, "less:settings_"+build, "less:bootstrap_pix_"+build, "less:moodle_pix_"+build, "less:essential_pix_"+build, "less:fontawesome_woff2_"+build, "less:fontawesome_no_woff2_"+build, "less:fontawesome_"+build, "less:alternative_"+build]);
     if (build == 'd') {
-        grunt.registerTask("compile", ["css", "cssflip:rtl_"+build, "bless", 'cssmetrics', "decache"]);
+        grunt.registerTask("compile", ["css", "replace:placeholder", "cssflip:rtl_"+build, "bless", 'cssmetrics', "decache"]);
     } else {
         grunt.loadNpmTasks('grunt-contrib-cssmin');
         grunt.registerTask("compile", ["css", "cssflip:rtl_"+build, "cssmin:essential_p", "bless", 'cssmetrics', "decache"]);

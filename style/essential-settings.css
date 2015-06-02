@@ -445,6 +445,9 @@ input[type="color"],
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:hover {
   color: [[setting:themenavcolor]];
 }
+.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:hover .dimmed_text {
+  color: #eeeeee;
+}
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li.dropdown-submenu:hover > a {
   color: [[setting:themenavcolor]];
 }
@@ -932,3 +935,4 @@ body {
 }
 /* @end Scrollbar */
 /* @end Custom */
+/*# sourceMappingURL=/theme/essential/style/essential-settings.treasure.map */
