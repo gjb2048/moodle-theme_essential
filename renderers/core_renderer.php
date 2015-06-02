@@ -325,7 +325,7 @@ class theme_essential_core_renderer extends core_renderer {
      * @return custom_menu object
      */
     public function custom_menu_activitystream() {
-        if ($this->page->pagelayout != 'course') {
+        if (($this->page->pagelayout != 'course') && ($this->page->pagelayout != 'incourse') && ($this->page->pagelayout != 'report')) {
             return '';
         }
 
@@ -502,7 +502,7 @@ class theme_essential_core_renderer extends core_renderer {
         if ($messagelist['newmessages'] < $maxmessages) {
             $maxmessages = 5 - $messagelist['newmessages'];
 
-            $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated,timeread, fullmessageformat, notification, contexturl
+            $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, timeread, fullmessageformat, notification, contexturl
                                FROM {message_read}
                                WHERE useridto = :userid
                                ORDER BY timecreated DESC";
