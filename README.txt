@@ -181,6 +181,7 @@ can be really useful in visualising the issue along with any files you consider 
 
 New in 2.8.1.5
 ==============
+- FIX: Issue #496: Category icons number of courses not shown on front page category list.
 - FIX: Carousel control icons slightly clipped.
 - FIX: Enrol users icon -> FontAwesome one.
 

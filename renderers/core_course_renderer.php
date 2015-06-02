@@ -81,12 +81,9 @@ class theme_essential_core_course_renderer extends core_course_renderer
             'data-type' => self::COURSECAT_TYPE_CATEGORY,
         ));
 
-        if ($chelper->get_show_courses() == self::COURSECAT_SHOW_COURSES_COUNT) {
-            $coursescount = $coursecat->get_courses_count();
-            $content .= html_writer::tag('span', ' (' . $coursescount . ')',
-                array('title' => get_string('numberofcourses'), 'class' => 'numberofcourse'));
-        }
-
+        $coursescount = $coursecat->get_courses_count();
+        $content .= html_writer::tag('span', '(' . $coursescount . ')',
+            array('title' => get_string('numberofcourses'), 'class' => 'numberofcourse'));
 
         // category name
         $categoryname = html_writer::tag('span', $coursecat->get_formatted_name());
