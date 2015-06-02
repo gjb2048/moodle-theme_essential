@@ -510,7 +510,9 @@ class theme_essential_core_renderer extends core_renderer {
             $messages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id), 0, $maxmessages);
 
             foreach ($messages as $message) {
-                $messagelist['messages'][] = $this->process_message($message);
+                if (!$message->notification) {
+                    $messagelist['messages'][] = $this->process_message($message);
+                }
             }
         }
 
