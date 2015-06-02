@@ -23,7 +23,9 @@
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
+?>
+<div id="pageWrapper">
+<?php
 require_once($OUTPUT->get_include_file('header'));
 ?>
 
@@ -55,5 +57,6 @@ require_once($OUTPUT->get_include_file('header'));
 </div>
 
 <?php require_once($OUTPUT->get_include_file('footer')); ?>
+</div>
 </body>
 </html>
