@@ -1,4 +1,4 @@
-@import url('essential_ie9-blessed1.css?z=1433262608648');
+@import url('essential_ie9-blessed1.css?z=1433426432223');
 button .label,
 input.form-submit .label,
 input[type="button"] .label,
@@ -4503,36 +4503,48 @@ body.path-admin-setting #page-footer {
 /* @end */
 /* @end */
 /* @group Forms */
-fieldset select,
 fieldset textarea[cols],
 fieldset input[size],
 fieldset .form-item .form-description {
   width: 65.95744681%;
   *width: 65.90425532%;
 }
+body#page-admin-setting-messageinbound_mailsettings fieldset select {
+  width: 65.95744681%;
+  *width: 65.90425532%;
+}
 @media (max-width: 979px) {
-  fieldset select,
   fieldset textarea[cols],
   fieldset input[size],
   fieldset .form-item .form-description {
     width: 48.93617021%;
     *width: 48.88297872%;
   }
+  body#page-admin-setting-messageinbound_mailsettings fieldset select {
+    width: 48.93617021%;
+    *width: 48.88297872%;
+  }
 }
 @media (max-width: 767px) {
-  fieldset select,
   fieldset textarea[cols],
   fieldset input[size],
   fieldset .form-item .form-description {
     width: 40.42553191%;
     *width: 40.37234043%;
   }
+  body#page-admin-setting-messageinbound_mailsettings fieldset select {
+    width: 40.42553191%;
+    *width: 40.37234043%;
+  }
 }
 @media (max-width: 480px) {
-  fieldset select,
   fieldset textarea[cols],
   fieldset input[size],
   fieldset .form-item .form-description {
+    width: 23.40425532%;
+    *width: 23.35106383%;
+  }
+  body#page-admin-setting-messageinbound_mailsettings fieldset select {
     width: 23.40425532%;
     *width: 23.35106383%;
   }

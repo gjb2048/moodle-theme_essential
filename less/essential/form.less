@@ -1,6 +1,5 @@
 /* @group Forms */
 fieldset {
-    select,
     textarea[cols],
     input[size],
     .form-item .form-description {
@@ -8,36 +7,46 @@ fieldset {
     }
 }
 
+body#page-admin-setting-messageinbound_mailsettings fieldset select {
+    .fluid-span(8);
+}
+
 @media (max-width: 979px) {
     fieldset {
-        select,
         textarea[cols],
         input[size],
         .form-item .form-description {
             .fluid-span(6);
         }
     }
+    body#page-admin-setting-messageinbound_mailsettings fieldset select {
+        .fluid-span(6);
+    }
 }
 
 @media (max-width: 767px) {
     fieldset {
-        select,
         textarea[cols],
         input[size],
         .form-item .form-description {
             .fluid-span(5);
         }
     }
+    body#page-admin-setting-messageinbound_mailsettings fieldset select {
+        .fluid-span(5);
+    }
 }
 
 @media (max-width: 480px) {
     fieldset {
-        select,
         textarea[cols],
         input[size],
         .form-item .form-description {
             .fluid-span(3);
         }
+    }
+    body#page-admin-setting-messageinbound_mailsettings fieldset select {
+        .fluid-span(3);
     }
 }
 .form-item .form-label, .mform .fitem div.fitemtitle {
