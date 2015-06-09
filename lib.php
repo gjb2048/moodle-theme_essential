@@ -328,7 +328,7 @@ function theme_essential_process_css($css, $theme) {
             $default = $defaultcolors[$alternative - 1];
             $defaulthover = $defaulthovercolors[$alternative - 1];
             $css = theme_essential_set_alternativecolor($css, 'color' . $alternative,
-                    theme_essential_get_setting('alternativethemehovercolor' . $alternative), $default);
+                    theme_essential_get_setting('alternativethemecolor' . $alternative), $default);
             $css = theme_essential_set_alternativecolor($css, 'textcolor' . $alternative,
                     theme_essential_get_setting('alternativethemetextcolor' . $alternative), $default);
             $css = theme_essential_set_alternativecolor($css, 'urlcolor' . $alternative,

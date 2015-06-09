@@ -186,6 +186,8 @@ New in 2.8.1.5
 - FIX: Issue #485: My courses not using correct context for view hidden courses capability.
 - FIX: Issue #490: Availability date selection dropdowns.
 - FIX: Issue #496: Category icons number of courses not shown on front page category list.
+- FIX: Issue #504: Essentials child theme will not inherit parent settings.  Thanks to Brendan Anderson.
+- FIX: Tidy up alternative colours.
 - FIX: Carousel control icons slightly clipped.
 - FIX: Enrol users icon -> FontAwesome one.
 

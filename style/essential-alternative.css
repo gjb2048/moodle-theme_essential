@@ -114,15 +114,15 @@
   background-color: [[setting:alternativethemecolor1]] !important;
 }
 .essential-colours-alternative1 .navbar .navbar-inner {
-  border-top-color: [[setting:alternativethemehovercolor1]] !important;
-  border-bottom: 1px solid [[setting:alternativethemehovercolor1]] !important;
+  border-top-color: [[setting:alternativethemecolor1]] !important;
+  border-bottom: 1px solid [[setting:alternativethemecolor1]] !important;
   background-color: [[setting:alternativethemecolor1]] !important;
 }
 .essential-colours-alternative1 .navbar .navbar-inner .nav {
-  border-right-color: [[setting:alternativethemehovercolor1]];
+  border-right-color: [[setting:alternativethemecolor1]];
 }
 .essential-colours-alternative1 .navbar .navbar-inner .nav > li > a {
-  border-left-color: [[setting:alternativethemehovercolor1]];
+  border-left-color: [[setting:alternativethemecolor1]];
 }
 .essential-colours-alternative1 .navbar .navbar-inner .nav > li > a:hover {
   color: [[setting:alternativethemecolor1]];
@@ -143,11 +143,11 @@
 .essential-colours-alternative1 .navbar .navbar-inner .dropdown-submenu:focus > a {
   color: [[setting:themenavcolor]];
   background-color: [[setting:alternativethemecolor1]];
-  background-image: -moz-linear-gradient(top, [[setting:alternativethemehovercolor1]], [[setting:alternativethemecolor1]]);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemehovercolor1]]), to([[setting:alternativethemecolor1]]));
-  background-image: -webkit-linear-gradient(top, [[setting:alternativethemehovercolor1]], [[setting:alternativethemecolor1]]);
-  background-image: -o-linear-gradient(top, [[setting:alternativethemehovercolor1]], [[setting:alternativethemecolor1]]);
-  background-image: linear-gradient(to bottom, [[setting:alternativethemehovercolor1]], [[setting:alternativethemecolor1]]);
+  background-image: -moz-linear-gradient(top, [[setting:alternativethemetextcolor1]], [[setting:alternativethemecolor1]]);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemetextcolor1]]), to([[setting:alternativethemecolor1]]));
+  background-image: -webkit-linear-gradient(top, [[setting:alternativethemetextcolor1]], [[setting:alternativethemecolor1]]);
+  background-image: -o-linear-gradient(top, [[setting:alternativethemetextcolor1]], [[setting:alternativethemecolor1]]);
+  background-image: linear-gradient(to bottom, [[setting:alternativethemetextcolor1]], [[setting:alternativethemecolor1]]);
 }
 .essential-colours-alternative1 .navbar .nav-collapse {
   border-color: [[setting:alternativethemecolor1]];
@@ -541,15 +541,15 @@
   background-color: [[setting:alternativethemecolor2]] !important;
 }
 .essential-colours-alternative2 .navbar .navbar-inner {
-  border-top-color: [[setting:alternativethemehovercolor2]] !important;
-  border-bottom: 1px solid [[setting:alternativethemehovercolor2]] !important;
+  border-top-color: [[setting:alternativethemecolor2]] !important;
+  border-bottom: 1px solid [[setting:alternativethemecolor2]] !important;
   background-color: [[setting:alternativethemecolor2]] !important;
 }
 .essential-colours-alternative2 .navbar .navbar-inner .nav {
-  border-right-color: [[setting:alternativethemehovercolor2]];
+  border-right-color: [[setting:alternativethemecolor2]];
 }
 .essential-colours-alternative2 .navbar .navbar-inner .nav > li > a {
-  border-left-color: [[setting:alternativethemehovercolor2]];
+  border-left-color: [[setting:alternativethemecolor2]];
 }
 .essential-colours-alternative2 .navbar .navbar-inner .nav > li > a:hover {
   color: [[setting:alternativethemecolor2]];
@@ -570,11 +570,11 @@
 .essential-colours-alternative2 .navbar .navbar-inner .dropdown-submenu:focus > a {
   color: [[setting:themenavcolor]];
   background-color: [[setting:alternativethemecolor2]];
-  background-image: -moz-linear-gradient(top, [[setting:alternativethemehovercolor2]], [[setting:alternativethemecolor2]]);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemehovercolor2]]), to([[setting:alternativethemecolor2]]));
-  background-image: -webkit-linear-gradient(top, [[setting:alternativethemehovercolor2]], [[setting:alternativethemecolor2]]);
-  background-image: -o-linear-gradient(top, [[setting:alternativethemehovercolor2]], [[setting:alternativethemecolor2]]);
-  background-image: linear-gradient(to bottom, [[setting:alternativethemehovercolor2]], [[setting:alternativethemecolor2]]);
+  background-image: -moz-linear-gradient(top, [[setting:alternativethemetextcolor2]], [[setting:alternativethemecolor2]]);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemetextcolor2]]), to([[setting:alternativethemecolor2]]));
+  background-image: -webkit-linear-gradient(top, [[setting:alternativethemetextcolor2]], [[setting:alternativethemecolor2]]);
+  background-image: -o-linear-gradient(top, [[setting:alternativethemetextcolor2]], [[setting:alternativethemecolor2]]);
+  background-image: linear-gradient(to bottom, [[setting:alternativethemetextcolor2]], [[setting:alternativethemecolor2]]);
 }
 .essential-colours-alternative2 .navbar .nav-collapse {
   border-color: [[setting:alternativethemecolor2]];
@@ -968,15 +968,15 @@
   background-color: [[setting:alternativethemecolor3]] !important;
 }
 .essential-colours-alternative3 .navbar .navbar-inner {
-  border-top-color: [[setting:alternativethemehovercolor3]] !important;
-  border-bottom: 1px solid [[setting:alternativethemehovercolor3]] !important;
+  border-top-color: [[setting:alternativethemecolor3]] !important;
+  border-bottom: 1px solid [[setting:alternativethemecolor3]] !important;
   background-color: [[setting:alternativethemecolor3]] !important;
 }
 .essential-colours-alternative3 .navbar .navbar-inner .nav {
-  border-right-color: [[setting:alternativethemehovercolor3]];
+  border-right-color: [[setting:alternativethemecolor3]];
 }
 .essential-colours-alternative3 .navbar .navbar-inner .nav > li > a {
-  border-left-color: [[setting:alternativethemehovercolor3]];
+  border-left-color: [[setting:alternativethemecolor3]];
 }
 .essential-colours-alternative3 .navbar .navbar-inner .nav > li > a:hover {
   color: [[setting:alternativethemecolor3]];
@@ -997,11 +997,11 @@
 .essential-colours-alternative3 .navbar .navbar-inner .dropdown-submenu:focus > a {
   color: [[setting:themenavcolor]];
   background-color: [[setting:alternativethemecolor3]];
-  background-image: -moz-linear-gradient(top, [[setting:alternativethemehovercolor3]], [[setting:alternativethemecolor3]]);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemehovercolor3]]), to([[setting:alternativethemecolor3]]));
-  background-image: -webkit-linear-gradient(top, [[setting:alternativethemehovercolor3]], [[setting:alternativethemecolor3]]);
-  background-image: -o-linear-gradient(top, [[setting:alternativethemehovercolor3]], [[setting:alternativethemecolor3]]);
-  background-image: linear-gradient(to bottom, [[setting:alternativethemehovercolor3]], [[setting:alternativethemecolor3]]);
+  background-image: -moz-linear-gradient(top, [[setting:alternativethemetextcolor3]], [[setting:alternativethemecolor3]]);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemetextcolor3]]), to([[setting:alternativethemecolor3]]));
+  background-image: -webkit-linear-gradient(top, [[setting:alternativethemetextcolor3]], [[setting:alternativethemecolor3]]);
+  background-image: -o-linear-gradient(top, [[setting:alternativethemetextcolor3]], [[setting:alternativethemecolor3]]);
+  background-image: linear-gradient(to bottom, [[setting:alternativethemetextcolor3]], [[setting:alternativethemecolor3]]);
 }
 .essential-colours-alternative3 .navbar .nav-collapse {
   border-color: [[setting:alternativethemecolor3]];
@@ -1312,4 +1312,61 @@
   }
 }
 /* @end */
+.essential-colours-alternative1 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.default:hover,
+.essential-colours-alternative2 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.default:hover,
+.essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.default:hover,
+.essential-colours-alternative1 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.default:focus,
+.essential-colours-alternative2 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.default:focus,
+.essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.default:focus {
+  background-color: [[setting:themecolor]];
+  background-image: none;
+}
+.essential-colours-alternative1 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative1:hover,
+.essential-colours-alternative2 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative1:hover,
+.essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative1:hover,
+.essential-colours-alternative1 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative1:focus,
+.essential-colours-alternative2 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative1:focus,
+.essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative1:focus {
+  background-color: [[setting:alternativethemecolor1]];
+  background-image: -moz-linear-gradient(top, [[setting:alternativethemetextcolor1]], [[setting:alternativethemecolor1]]);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemetextcolor1]]), to([[setting:alternativethemecolor1]]));
+  background-image: -webkit-linear-gradient(top, [[setting:alternativethemetextcolor1]], [[setting:alternativethemecolor1]]);
+  background-image: -o-linear-gradient(top, [[setting:alternativethemetextcolor1]], [[setting:alternativethemecolor1]]);
+  background-image: linear-gradient(to bottom, [[setting:alternativethemetextcolor1]], [[setting:alternativethemecolor1]]);
+}
+.essential-colours-alternative1 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative2:hover,
+.essential-colours-alternative2 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative2:hover,
+.essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative2:hover,
+.essential-colours-alternative1 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative2:focus,
+.essential-colours-alternative2 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative2:focus,
+.essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative2:focus {
+  background-color: [[setting:alternativethemecolor2]];
+  background-image: -moz-linear-gradient(top, [[setting:alternativethemetextcolor2]], [[setting:alternativethemecolor2]]);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemetextcolor2]]), to([[setting:alternativethemecolor2]]));
+  background-image: -webkit-linear-gradient(top, [[setting:alternativethemetextcolor2]], [[setting:alternativethemecolor2]]);
+  background-image: -o-linear-gradient(top, [[setting:alternativethemetextcolor2]], [[setting:alternativethemecolor2]]);
+  background-image: linear-gradient(to bottom, [[setting:alternativethemetextcolor2]], [[setting:alternativethemecolor2]]);
+}
+.essential-colours-alternative1 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:hover,
+.essential-colours-alternative2 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:hover,
+.essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:hover,
+.essential-colours-alternative1 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:focus,
+.essential-colours-alternative2 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:focus,
+.essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:focus {
+  background-color: [[setting:alternativethemecolor3]];
+  background-image: -moz-linear-gradient(top, [[setting:alternativethemetextcolor3]], [[setting:alternativethemecolor3]]);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemetextcolor3]]), to([[setting:alternativethemecolor3]]));
+  background-image: -webkit-linear-gradient(top, [[setting:alternativethemetextcolor3]], [[setting:alternativethemecolor3]]);
+  background-image: -o-linear-gradient(top, [[setting:alternativethemetextcolor3]], [[setting:alternativethemecolor3]]);
+  background-image: linear-gradient(to bottom, [[setting:alternativethemetextcolor3]], [[setting:alternativethemecolor3]]);
+}
+.navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative1 i {
+  background-color: [[setting:alternativethemecolor1]];
+}
+.navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative2 i {
+  background-color: [[setting:alternativethemecolor2]];
+}
+.navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3 i {
+  background-color: [[setting:alternativethemecolor3]];
+}
 /*# sourceMappingURL=/theme/essential/style/essential-alternative.treasure.map */

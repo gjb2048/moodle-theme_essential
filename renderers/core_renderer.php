@@ -179,12 +179,14 @@ class theme_essential_core_renderer extends core_renderer {
         } else {
             $content = '<li>';
             // The node doesn't have children so produce a final menuitem.
+            $class = '';
             if ($menunode->get_url() !== null) {
                 $url = $menunode->get_url();
+                $class = $url->get_param('essentialcolours');
             } else {
                 $url = '#';
             }
-            $content .= html_writer::link($url, $menunode->get_text(), array('title' => $menunode->get_title()));
+            $content .= html_writer::link($url, $menunode->get_text(), array('title' => $menunode->get_title(), 'class' => $class));
         }
         return $content;
     }
@@ -1592,5 +1594,4 @@ class theme_essential_core_renderer extends core_renderer {
             return $properties;
         }
     }
-
 }
