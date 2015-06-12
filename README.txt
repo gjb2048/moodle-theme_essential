@@ -195,6 +195,7 @@ New in 2.8.1.5
 - FIX: Tidy up alternative colours.
 - FIX: Carousel control icons slightly clipped.
 - FIX: Enrol users icon -> FontAwesome one.
+- FIX: Slight tweak to floating headers in gradebook.
 
 New in 2.8.1.4
 ==============

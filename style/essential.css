@@ -18651,6 +18651,9 @@ a.marketing-button:hover {
 #page-grade-report-grader-index .gradeparent .right_scroller .topscroll {
   min-height: 22px;
 }
+#page-grade-report-grader-index .gradeparent div.floater:first-of-type .cell:nth-child(odd) {
+  background-color: #ffffff;
+}
 #page-grade-report-grader-index #page #page-content #region-main {
   overflow-x: visible;
   width: auto;
