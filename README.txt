@@ -185,6 +185,7 @@ New in 2.8.1.5
 - FIX: Issue #479: "This Course" menu only displays on course home page.
 - FIX: Issue #480: Calendar issues.
 - FIX: Issue #481: Drag and drop img handle shown on front page calendar when editing.
+- FIX: Issue #483: Colouring a heading in TinyMCE reverts back to paragraph / body font.
 - FIX: Issue #485: My courses not using correct context for view hidden courses capability.
 - FIX: Issue #490: Availability date selection dropdowns.
 - FIX: Issue #496: Category icons number of courses not shown on front page category list.
