@@ -183,6 +183,7 @@ New in 2.8.1.5
 ==============
 - FIX: Issue #469: Top menu bar message Update notifications messages blank.
 - FIX: Issue #479: "This Course" menu only displays on course home page.
+- FIX: Issue #481: Drag and drop img handle shown on front page calendar when editing.
 - FIX: Issue #485: My courses not using correct context for view hidden courses capability.
 - FIX: Issue #490: Availability date selection dropdowns.
 - FIX: Issue #496: Category icons number of courses not shown on front page category list.

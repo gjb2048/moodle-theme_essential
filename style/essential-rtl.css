@@ -21510,8 +21510,7 @@ i > img {
   text-decoration: none !important;
 }
 
-#page-mod-glossary-view .commands img,
-#page-calendar-view .commands img {
+#page-mod-glossary-view .commands img {
   display: inline;
 }
 

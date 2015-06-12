@@ -1,4 +1,4 @@
-@import url('essential-rtl_ie9-blessed1.css?z=1433867937929');
+@import url('essential-rtl_ie9-blessed1.css?z=1434124750843');
 
 button .label,
 input.form-submit .label,
@@ -5088,8 +5088,7 @@ i > img {
   text-decoration: none !important;
 }
 
-#page-mod-glossary-view .commands img,
-#page-calendar-view .commands img {
+#page-mod-glossary-view .commands img {
   display: inline;
 }
 
