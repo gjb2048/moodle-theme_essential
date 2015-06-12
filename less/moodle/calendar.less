@@ -1,325 +1,328 @@
 /* calendar.less */
 
 // Calendar colour variables defined.
-@calendarEventCourseColor: #ffd3bd;
-// Pale red.
-@calendarEventGlobalColor: #d6f8cd;
-// Pale green.
-@calendarEventGroupColor: #fee7ae;
-// Pale yellow.
-@calendarEventUserColor: #dce7ec;
-// Pale blue.
+@calendarEventCourseColor: #ffd3bd; // Pale red.
+@calendarEventGlobalColor: #d6f8cd; // Pale green.
+@calendarEventGroupColor:  #fee7ae; // Pale yellow.
+@calendarEventUserColor:   #dce7ec; // Pale blue.
 
 // Calendar event background colours defined.
 .calendar_event_course {
-  background-color: @calendarEventCourseColor;
+    background-color: @calendarEventCourseColor;
 }
-
 .calendar_event_global {
-  background-color: @calendarEventGlobalColor;
+    background-color: @calendarEventGlobalColor;
 }
-
 .calendar_event_group {
-  background-color: @calendarEventGroupColor;
+    background-color: @calendarEventGroupColor;
 }
-
 .calendar_event_user {
-  background-color: @calendarEventUserColor;
+    background-color: @calendarEventUserColor;
 }
 
 // Calendar restyling.
 .path-calendar {
-  .calendartable {
-    width: 100%;
-    th, td {
-      width: 14%;
-      vertical-align: top;
-      text-align: center;
-      border: 0;
-    }
-  }
-  .calendar-controls {
-    .previous,
-    .next,
-    .current {
-      display: block;
-      /*@noflip*/float: left;
-      width: 12%;
-    }
-    .previous {
-      text-align: left;
-    }
-    .current {
-      text-align: center;
-      width: 76%;
-    }
-    .next {
-      text-align: right;
-    }
-  }
-  .filters {
-    table {
-      border-collapse: separate;
-      border-spacing: 2px;
-      width: 100%;
-    }
-  }
-  .cal_courses_flt {
-    label {
-      margin-left: 0;
-      margin-right: .45em;
-    }
-  }
-  .maincalendar {
-    vertical-align: top;
-    padding: 0;
-    .bottom {
-      text-align: center;
-      padding: 5px 0 0 0;
-    }
-    .heightcontainer {
-      height: 100%;
-      position: relative;
-    }
-    .calendarmonth {
-      width: 98%;
-      margin: 10px auto;
-    }
-    .calendarmonth {
-      ul {
-        margin: 0;
-        li {
-          list-style-type: none;
-          margin-top: 4px;
-        }
-      }
-      td {
-        height: 5em;
-      }
-    }
-    .calendar-controls {
-      .previous,
-      .next {
-        width: 30%;
-      }
-      .current {
-        width: 39.95%;
-      }
-    }
-    .controls {
-      width: 98%;
-      margin: 10px auto;
-    }
-    .calendar_event_course,
-    .calendar_event_global,
-    .calendar_event_group,
-    .calendar_event_user {
-      border-width: 1px 1px 1px 12px;
-      border-style: solid;
-    }
-    .calendar_event_course {
-      border-color: @calendarEventCourseColor;
-    }
-    .calendar_event_global {
-      border-color: @calendarEventGlobalColor;
-    }
-    .calendar_event_group {
-      border-color: @calendarEventGroupColor;
-    }
-    .calendar_event_user {
-      border-color: @calendarEventUserColor;
-    }
-    .calendar-event-panel {
-      background-color: @grayLighter;
-      border: 2px solid @grayLighter;
-      .yui3-overlay-content {
-        padding: 19px;
-        background-color: lighten(@wellBackground, 3%);
-        border: 1px solid darken(@wellBackground, 7%);
-        .border-radius(@baseBorderRadius);
-        .box-shadow(inset 0 1px 1px rgba(0, 0, 0, .05));
-      }
-    }
-    .calendar-controls {
-      .current {
-        font-family: @headingsFontFamily;
-        font-weight: @headingsFontWeight;
-        color: @headingsColor;
-        font-size: 25px;
-        line-height: 1.2;
-      }
-    }
     .calendartable {
-      td, li {
-        padding: 5px;
-      }
-      li {
-        padding-left: 10px;
-        text-align: left;
-      }
-    }
-    .header {
-      overflow: hidden;
-      .buttons {
-        float: right;
-      }
-    }
-    .eventlist {
-      .event {
         width: 100%;
-        border-spacing: 0;
-        border-collapse: separate;
-        position: relative;
-        padding: 19px;
-        margin-bottom: 20px;
-        background-color: lighten(@wellBackground, 3%);
-        border: 1px solid darken(@wellBackground, 7%);
-        .border-radius(@baseBorderRadius);
-        .box-shadow(inset 0 1px 1px rgba(0, 0, 0, .05));
-        .picture {
-          vertical-align: text-top;
+        th, td {
+            width: 14%;
+            vertical-align: top;
+            text-align: center;
+            border: 0;
         }
-        .topic {
-          .name {
-            font-size: @fontSizeLarge;
-            font-weight: 200;
-            line-height: 24px;
-            float: left;
-          }
-          .name,
-          .course {
-            margin-bottom: 5px;
-          }
-          .date {
-            float: right;
-          }
-        }
-        .course,
-        .subscription {
-          float: left;
-          clear: left;
-        }
-        .side {
-          width: 22px;
-        }
-        .description {
-          background-color: @white;
-          padding: 5px;
-          .commands {
-            position: absolute;
-            right: 0;
-            top: 0;
-            margin: 3px;
-          }
-        }
-        .commands {
-          a {
-            margin: 0 3px;
-          }
-        }
-      }
     }
-  }
+    .calendar-controls {
+        .previous,
+        .next,
+        .current {
+            display: block;
+            /*@noflip*/float: left;
+            width: 12%;
+        }
+        .previous {
+            text-align: left;
+        }
+        .current {
+            text-align: center;
+            width: 76%;
+        }
+        .next {
+            text-align: right;
+        }
+    }
+    .filters {
+        table {
+            border-collapse: separate;
+            border-spacing: 2px;
+            width: 100%;
+        }
+    }
+    .cal_courses_flt {
+        /*@noflip*/float: left;
+
+        label {
+            margin-left: 0;
+            margin-right: .45em;
+        }
+    }
+    .maincalendar {
+        vertical-align: top;
+        padding: 0;
+        .bottom {
+            text-align: center;
+            padding: 5px 0 0 0;
+        }
+        .heightcontainer {
+            height: 100%;
+            position: relative;
+        }
+        .calendarmonth {
+            width: 98%;
+            margin: 10px auto;
+        }
+        .calendarmonth {
+            ul {
+                margin: 0;
+                li {
+                    list-style-type: none;
+                    margin-top: 4px;
+                }
+            }
+            td {
+                height: 5em;
+            }
+        }
+        .calendar-controls {
+            .previous,
+            .next {
+                width: 30%;
+            }
+            .current {
+                width: 39.95%;
+            }
+        }
+        .controls {
+            width: 98%;
+            margin: 10px auto;
+        }
+        .calendar_event_course,
+        .calendar_event_global,
+        .calendar_event_group,
+        .calendar_event_user {
+            border-width: 1px 1px 1px 12px;
+            border-style: solid;
+        }
+        .calendar_event_course {
+            border-color: @calendarEventCourseColor;
+        }
+        .calendar_event_global {
+            border-color: @calendarEventGlobalColor;
+        }
+        .calendar_event_group {
+            border-color: @calendarEventGroupColor;
+        }
+        .calendar_event_user {
+            border-color: @calendarEventUserColor;
+        }
+        .calendar-event-panel {
+            background-color: @grayLighter;
+            border: 2px solid @grayLighter;
+            .yui3-overlay-content {
+                padding: 19px;
+                background-color: lighten(@wellBackground, 3%);
+                border: 1px solid darken(@wellBackground, 7%);
+                .border-radius(@baseBorderRadius);
+                .box-shadow(inset 0 1px 1px rgba(0, 0, 0, .05));
+            }
+        }
+        .calendar-controls {
+            .current {
+                font-family: @headingsFontFamily;
+                font-weight: @headingsFontWeight;
+                color: @headingsColor;
+                font-size: 25px;
+                line-height: 1.2;
+            }
+        }
+        .calendartable {
+            td, li {
+                padding: 5px;
+            }
+            li {
+                padding-left: 10px;
+                text-align: left;
+            }
+        }
+        .header {
+            overflow: hidden;
+            .buttons {
+                float: right;
+            }
+        }
+        .eventlist {
+            margin: 0;
+
+            .event {
+                width: 92%;
+                border-spacing: 0;
+                border-collapse: separate;
+                position: relative;
+                padding: 20px 4%;
+                margin-bottom: 20px;
+                background-color: lighten(@wellBackground, 3%);
+                border: 1px solid darken(@wellBackground, 7%);
+                .border-radius(@baseBorderRadius);
+                .box-shadow(inset 0 1px 1px rgba(0,0,0,.05));
+                list-style-type: none;
+
+                > img {
+                    padding-top: 3px;
+                    float: left;
+                }
+                .name {
+                    font-size: @fontSizeLarge;
+                    font-weight: 200;
+                    line-height: 24px;
+                    float: left;
+                    margin: 0;
+                }
+                .name,
+                .course {
+                    margin-bottom: 5px;
+                }
+                .date {
+                    float: right;
+                }
+                .course,
+                .subscription {
+                    float: left;
+                    clear: left;
+                }
+                .side {
+                    width: 22px;
+                }
+                .description {
+                    background-color: @white;
+                    padding: 5px;
+                    clear: both;
+                    .commands {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        margin: 3px;
+                    }
+                }
+                .commands {
+                    position: absolute;
+                    top: 2px;
+                    right: 2px;
+                    a {
+                        margin: 0 3px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 // Calendar export.
 #page-calendar-export {
-  .indent {
-    padding-left: 20px;
-  }
+    .indent {
+        padding-left: 20px;
+    }
 }
 
 // Block minicalendar.
 .block {
-  .minicalendar {
-    max-width: 280px;
-    margin: 0 auto;
-    width: 100%;
-    th, td {
-      padding: 2px;
-      font-size: 0.8em;
-      text-align: center;
-    }
-    td {
-      &.weekend {
-        .muted;
-      }
-    }
-  }
-  .calendar-event-panel {
-    background-color: @grayLighter;
-    border: 1px solid @grayLighter;
-    .yui3-overlay-content {
-      padding: 19px;
-      background-color: lighten(@wellBackground, 3%);
-      border: 1px solid darken(@wellBackground, 7%);
-      .border-radius(@baseBorderRadius);
-      .box-shadow(inset 0 1px 1px rgba(0, 0, 0, .05));
-      h2 {
-        &.eventtitle {
-          line-height: 1.2;
-          font-size: 18px;
+    .minicalendar {
+        max-width: 280px;
+        margin: 0 auto;
+        width: 100%;
+        th, td {
+            padding: 2px;
+            font-size: 0.8em;
+            text-align: center;
         }
-      }
-      .eventcontent {
-        img {
-          padding-left: 0;
-          padding-right: 5px;
+        td {
+            &.weekend {
+                .muted;
+            }
         }
-      }
     }
-  }
-  .calendar-controls {
-    .previous,
-    .current,
-    .next {
-      display: block;
-      /*@noflip*/float: left;
-    }
-    .previous {
-      text-align: left;
-      width: 12%;
-    }
-    .current {
-      text-align: center;
-      width: 76%;
-    }
-    .next {
-      text-align: right;
-      width: 12%;
-    }
-  }
-  .calendar_filters {
-    ul {
-      list-style: none;
-      margin: 0;
-    }
-    li {
-      margin-bottom: 0.2em;
-      span {
-        img {
-          padding: 0 0.2em;
+    .calendar-event-panel {
+        background-color: @grayLighter;
+        border: 1px solid @grayLighter;
+        .yui3-overlay-content {
+            padding: 19px;
+            background-color: lighten(@wellBackground, 3%);
+            border: 1px solid darken(@wellBackground, 7%);
+            .border-radius(@baseBorderRadius);
+            .box-shadow(inset 0 1px 1px rgba(0 ,0 ,0 , .05));
+            h2 {
+                &.eventtitle {
+                    line-height: 1.2;
+                    font-size: 18px;
+                }
+            }
+            .eventcontent {
+                img {
+                    padding-left: 0;
+                    padding-right: 5px;
+                }
+            }
         }
-      }
     }
-    .eventname {
-      padding-left: 0.2em;
-      padding-right: 0;
+    .calendar-controls {
+        .previous,
+        .current,
+        .next {
+            display: block;
+            /*@noflip*/float: left;
+        }
+        .previous {
+            text-align: left;
+            width: 12%;
+        }
+        .current {
+            text-align: center;
+            width: 76%;
+        }
+        .next {
+            text-align: right;
+            width: 12%;
+        }
     }
-  }
-  .content {
-    h3 {
-      &.eventskey {
-        margin-top: 0.5em;
-      }
+    .calendar_filters {
+        ul {
+            list-style: none;
+            margin: 0;
+        }
+        li {
+            margin-bottom: 0.2em;
+            span {
+                img {
+                    padding: 0 0.2em;
+                }
+            }
+        }
+        .eventname {
+            padding-left: 0.2em;
+            padding-right: 0;
+        }
     }
-  }
+    .content {
+        h3 {
+            &.eventskey {
+                margin-top: 0.5em;
+            }
+        }
+    }
 }
 
 @media (min-width: 768px) {
-  #page-calender-view {
-    .container-fluid {
-      min-width: 1024px;
+    #page-calender-view {
+        .container-fluid {
+            min-width: 1024px;
+        }
     }
-  }
 }

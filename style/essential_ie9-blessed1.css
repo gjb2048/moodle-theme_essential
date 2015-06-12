@@ -3778,6 +3778,10 @@ img.iconsmall {
   border-spacing: 2px;
   width: 100%;
 }
+.path-calendar .cal_courses_flt {
+  /*@noflip*/
+  float: left;
+}
 .path-calendar .cal_courses_flt label {
   margin-left: 0;
   margin-right: .45em;
@@ -3874,12 +3878,15 @@ img.iconsmall {
 .path-calendar .maincalendar .header .buttons {
   float: right;
 }
+.path-calendar .maincalendar .eventlist {
+  margin: 0;
+}
 .path-calendar .maincalendar .eventlist .event {
-  width: 100%;
+  width: 92%;
   border-spacing: 0;
   border-collapse: separate;
   position: relative;
-  padding: 19px;
+  padding: 20px 4%;
   margin-bottom: 20px;
   background-color: #fdfdfd;
   border: 1px solid #e3e3e3;
@@ -3889,21 +3896,24 @@ img.iconsmall {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  list-style-type: none;
 }
-.path-calendar .maincalendar .eventlist .event .picture {
-  vertical-align: text-top;
+.path-calendar .maincalendar .eventlist .event > img {
+  padding-top: 3px;
+  float: left;
 }
-.path-calendar .maincalendar .eventlist .event .topic .name {
+.path-calendar .maincalendar .eventlist .event .name {
   font-size: 17.5px;
   font-weight: 200;
   line-height: 24px;
   float: left;
+  margin: 0;
 }
-.path-calendar .maincalendar .eventlist .event .topic .name,
-.path-calendar .maincalendar .eventlist .event .topic .course {
+.path-calendar .maincalendar .eventlist .event .name,
+.path-calendar .maincalendar .eventlist .event .course {
   margin-bottom: 5px;
 }
-.path-calendar .maincalendar .eventlist .event .topic .date {
+.path-calendar .maincalendar .eventlist .event .date {
   float: right;
 }
 .path-calendar .maincalendar .eventlist .event .course,
@@ -3917,12 +3927,18 @@ img.iconsmall {
 .path-calendar .maincalendar .eventlist .event .description {
   background-color: #ffffff;
   padding: 5px;
+  clear: both;
 }
 .path-calendar .maincalendar .eventlist .event .description .commands {
   position: absolute;
   right: 0;
   top: 0;
   margin: 3px;
+}
+.path-calendar .maincalendar .eventlist .event .commands {
+  position: absolute;
+  top: 2px;
+  right: 2px;
 }
 .path-calendar .maincalendar .eventlist .event .commands a {
   margin: 0 3px;
