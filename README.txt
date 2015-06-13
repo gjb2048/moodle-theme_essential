@@ -197,6 +197,7 @@ New in 2.8.1.5
 - FIX: Carousel control icons slightly clipped.
 - FIX: Enrol users icon -> FontAwesome one.
 - FIX: Slight tweak to floating headers in gradebook.
+- FIX: Production LESS -> CSS issues when generating 'background:' attributes for colours, resulting in 'background:0 0;'.
 
 New in 2.8.1.4
 ==============
