@@ -29,7 +29,10 @@ function theme_essentials_process_css($css, $theme) {
 
     if ($usingessentialsettings) {
         require_once(dirname(__FILE__) . '/../essential/lib.php');
-        $parenttheme = theme_config::load('essential'); 
+        static $parenttheme;
+        if (empty($parenttheme)) {
+            $parenttheme = theme_config::load('essential'); 
+        }
         $css = theme_essential_process_css($css, $parenttheme);
     }
 
