@@ -1,4 +1,4 @@
-@import url('essential_ie9-blessed1.css?z=1434131926081');
+@import url('essential_ie9-blessed1.css?z=1434200118744');
 button .label,
 input.form-submit .label,
 input[type="button"] .label,
@@ -5574,6 +5574,10 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
 }
 #page-question-preview h1 {
   font-size: 1.5em;
+}
+.formulation input[type="text"],
+.formulation select {
+  max-width: 100%;
 }
 /* @end Quiz */
 /* Group scaffolding.less */

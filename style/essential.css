@@ -19244,6 +19244,10 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
 #page-question-preview h1 {
   font-size: 1.5em;
 }
+.formulation input[type="text"],
+.formulation select {
+  max-width: 100%;
+}
 /* @end Quiz */
 /* Group scaffolding.less */
 .ecol12 {

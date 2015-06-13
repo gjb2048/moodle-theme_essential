@@ -23171,6 +23171,11 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
   font-size: 1.5em;
 }
 
+.formulation input[type="text"],
+.formulation select {
+  max-width: 100%;
+}
+
 /* @end Quiz */
 
 /* Group scaffolding.less */
