@@ -164,6 +164,7 @@
 .breadcrumb-button input[type="submit"] {
   color: [[setting:themenavcolor]];
   background-color: [[setting:themecolor]];
+  background-image: none;
 }
 .breadcrumb-button input[type="submit"]:hover {
   color: [[setting:themecolor]];
@@ -943,3 +944,4 @@ body {
 }
 /* @end Scrollbar */
 /* @end Custom */
+/*# sourceMappingURL=/theme/essential/style/essential-settings.treasure.map */
