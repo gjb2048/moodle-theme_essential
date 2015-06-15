@@ -198,6 +198,7 @@ New in 2.8.1.5
 - FIX: Enrol users icon -> FontAwesome one.
 - FIX: Slight tweak to floating headers in gradebook.
 - FIX: Production LESS -> CSS issues when generating 'background:' attributes for colours, resulting in 'background:0 0;'.
+- NEW: Issue #503: Use Alternate Name in user menu as the main name.  Gratefully funded by Mark Whitington.
 
 New in 2.8.1.4
 ==============

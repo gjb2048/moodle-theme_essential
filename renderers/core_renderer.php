@@ -672,7 +672,11 @@ class theme_essential_core_renderer extends core_renderer {
             $caret = '<i class="fa fa-caret-right"></i>';
             $userclass = array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown');
 
-            $usermenu .= html_writer::link($userurl, $userpic . $USER->firstname . $caret, $userclass);
+            if (!empty($USER->alternatename)) {
+                $usermenu .= html_writer::link($userurl, $userpic . $USER->alternatename . $caret, $userclass);
+            } else {
+                $usermenu .= html_writer::link($userurl, $userpic . $USER->firstname . $caret, $userclass);
+            }
 
             // Start dropdown menu items
             $usermenu .= html_writer::start_tag('ul', array('class' => 'dropdown-menu pull-right'));
@@ -680,13 +684,11 @@ class theme_essential_core_renderer extends core_renderer {
             if (\core\session\manager::is_loggedinas()) {
                 $realuser = \core\session\manager::get_realuser();
                 $branchlabel = '<em><i class="fa fa-key"></i>' . fullname($realuser, true) . get_string('loggedinas', 'theme_essential') . fullname($USER, true) . '</em>';
-                $branchurl = new moodle_url('/user/profile.php', array('id' => $USER->id));
-                $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             } else {
                 $branchlabel = '<em><i class="fa fa-user"></i>' . fullname($USER, true) . '</em>';
-                $branchurl = new moodle_url('/user/profile.php', array('id' => $USER->id));
-                $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
+            $branchurl = new moodle_url('/user/profile.php', array('id' => $USER->id));
+            $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
 
             if (is_mnet_remote_user($USER) && $idprovider = $DB->get_record('mnet_host', array('id' => $USER->mnethostid))) {
                 $branchlabel = '<em><i class="fa fa-users"></i>' . get_string('loggedinfrom', 'theme_essential') . $idprovider->name . '</em>';
