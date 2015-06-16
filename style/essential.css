@@ -16886,8 +16886,8 @@ aside.footer-edit div.block:nth-of-type(1) {
 .breadcrumb-button input[type="submit"] > .singlebutton > form > div {
   margin: 0;
 }
-.breadcrumb-button a,
-.breadcrumb-button a:visited {
+.breadcrumb-button a:not(.btn),
+.breadcrumb-button a:visited:not(.btn) {
   display: inline-block;
   *display: inline;
   /* IE7 inline-block hack */
@@ -16937,36 +16937,36 @@ aside.footer-edit div.block:nth-of-type(1) {
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
-.breadcrumb-button a:hover,
-.breadcrumb-button a:visited:hover,
-.breadcrumb-button a:focus,
-.breadcrumb-button a:visited:focus,
-.breadcrumb-button a:active,
-.breadcrumb-button a:visited:active,
-.breadcrumb-button a.active,
-.breadcrumb-button a:visited.active,
-.breadcrumb-button a.disabled,
-.breadcrumb-button a:visited.disabled,
-.breadcrumb-button a[disabled],
-.breadcrumb-button a:visited[disabled] {
+.breadcrumb-button a:not(.btn):hover,
+.breadcrumb-button a:visited:not(.btn):hover,
+.breadcrumb-button a:not(.btn):focus,
+.breadcrumb-button a:visited:not(.btn):focus,
+.breadcrumb-button a:not(.btn):active,
+.breadcrumb-button a:visited:not(.btn):active,
+.breadcrumb-button a:not(.btn).active,
+.breadcrumb-button a:visited:not(.btn).active,
+.breadcrumb-button a:not(.btn).disabled,
+.breadcrumb-button a:visited:not(.btn).disabled,
+.breadcrumb-button a:not(.btn)[disabled],
+.breadcrumb-button a:visited:not(.btn)[disabled] {
   color: #333333;
   background-color: #e6e6e6;
   *background-color: #d9d9d9;
 }
-.breadcrumb-button a:active,
-.breadcrumb-button a:visited:active,
-.breadcrumb-button a.active,
-.breadcrumb-button a:visited.active {
+.breadcrumb-button a:not(.btn):active,
+.breadcrumb-button a:visited:not(.btn):active,
+.breadcrumb-button a:not(.btn).active,
+.breadcrumb-button a:visited:not(.btn).active {
   background-color: #cccccc \9;
 }
-.breadcrumb-button a:first-child,
-.breadcrumb-button a:visited:first-child {
+.breadcrumb-button a:not(.btn):first-child,
+.breadcrumb-button a:visited:not(.btn):first-child {
   *margin-left: 0;
 }
-.breadcrumb-button a:hover,
-.breadcrumb-button a:visited:hover,
-.breadcrumb-button a:focus,
-.breadcrumb-button a:visited:focus {
+.breadcrumb-button a:not(.btn):hover,
+.breadcrumb-button a:visited:not(.btn):hover,
+.breadcrumb-button a:not(.btn):focus,
+.breadcrumb-button a:visited:not(.btn):focus {
   color: #333333;
   text-decoration: none;
   background-position: 0 -15px;
@@ -16975,26 +16975,26 @@ aside.footer-edit div.block:nth-of-type(1) {
   -o-transition: background-position 0.1s linear;
   transition: background-position 0.1s linear;
 }
-.breadcrumb-button a:focus,
-.breadcrumb-button a:visited:focus {
+.breadcrumb-button a:not(.btn):focus,
+.breadcrumb-button a:visited:not(.btn):focus {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.breadcrumb-button a.active,
-.breadcrumb-button a:visited.active,
-.breadcrumb-button a:active,
-.breadcrumb-button a:visited:active {
+.breadcrumb-button a:not(.btn).active,
+.breadcrumb-button a:visited:not(.btn).active,
+.breadcrumb-button a:not(.btn):active,
+.breadcrumb-button a:visited:not(.btn):active {
   background-image: none;
   outline: 0;
   -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
   -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
   box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
 }
-.breadcrumb-button a.disabled,
-.breadcrumb-button a:visited.disabled,
-.breadcrumb-button a[disabled],
-.breadcrumb-button a:visited[disabled] {
+.breadcrumb-button a:not(.btn).disabled,
+.breadcrumb-button a:visited:not(.btn).disabled,
+.breadcrumb-button a:not(.btn)[disabled],
+.breadcrumb-button a:visited:not(.btn)[disabled] {
   cursor: default;
   background-image: none;
   opacity: 0.65;
@@ -17003,37 +17003,37 @@ aside.footer-edit div.block:nth-of-type(1) {
   -moz-box-shadow: none;
   box-shadow: none;
 }
-.breadcrumb-button a .label,
-.breadcrumb-button a:visited .label,
-.breadcrumb-button a .badge,
-.breadcrumb-button a:visited .badge {
+.breadcrumb-button a:not(.btn) .label,
+.breadcrumb-button a:visited:not(.btn) .label,
+.breadcrumb-button a:not(.btn) .badge,
+.breadcrumb-button a:visited:not(.btn) .badge {
   position: relative;
   top: -1px;
 }
-.breadcrumb-button a:hover,
-.breadcrumb-button a:visited:hover,
-.breadcrumb-button a:focus,
-.breadcrumb-button a:visited:focus,
-.breadcrumb-button a:active,
-.breadcrumb-button a:visited:active,
-.breadcrumb-button a.active,
-.breadcrumb-button a:visited.active,
-.breadcrumb-button a.disabled,
-.breadcrumb-button a:visited.disabled,
-.breadcrumb-button a[disabled],
-.breadcrumb-button a:visited[disabled] {
+.breadcrumb-button a:not(.btn):hover,
+.breadcrumb-button a:visited:not(.btn):hover,
+.breadcrumb-button a:not(.btn):focus,
+.breadcrumb-button a:visited:not(.btn):focus,
+.breadcrumb-button a:not(.btn):active,
+.breadcrumb-button a:visited:not(.btn):active,
+.breadcrumb-button a:not(.btn).active,
+.breadcrumb-button a:visited:not(.btn).active,
+.breadcrumb-button a:not(.btn).disabled,
+.breadcrumb-button a:visited:not(.btn).disabled,
+.breadcrumb-button a:not(.btn)[disabled],
+.breadcrumb-button a:visited:not(.btn)[disabled] {
   color: #ffffff;
   background-color: #0038a8;
   *background-color: #002f8f;
 }
-.breadcrumb-button a:active,
-.breadcrumb-button a:visited:active,
-.breadcrumb-button a.active,
-.breadcrumb-button a:visited.active {
+.breadcrumb-button a:not(.btn):active,
+.breadcrumb-button a:visited:not(.btn):active,
+.breadcrumb-button a:not(.btn).active,
+.breadcrumb-button a:visited:not(.btn).active {
   background-color: #002775 \9;
 }
-.breadcrumb-button a .caret,
-.breadcrumb-button a:visited .caret {
+.breadcrumb-button a:not(.btn) .caret,
+.breadcrumb-button a:visited:not(.btn) .caret {
   border-top-color: #ffffff;
   border-bottom-color: #ffffff;
 }
@@ -18574,6 +18574,9 @@ input[type="checkbox"] {
 }
 .form-item .form-setting .form-colourpicker.defaultsnext {
   margin-right: 0;
+}
+select {
+  max-width: 570px;
 }
 /* @end */
 /* @group Forums */
