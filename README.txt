@@ -199,6 +199,7 @@ New in 2.8.1.5
 - FIX: Slight tweak to floating headers in gradebook.
 - FIX: Production LESS -> CSS issues when generating 'background:' attributes for colours, resulting in 'background:0 0;'.
 - FIX: Responsive form issues as reported here: https://moodle.org/mod/forum/discuss.php?d=315157.
+- FIX: Alternative colours in dock.
 - NEW: Issue #503: Use Alternate Name in user menu as the main name.  Gratefully funded by Mark Whitington.
 - NEW: Styled 'Exit Activity' link for SCORM activities.
 

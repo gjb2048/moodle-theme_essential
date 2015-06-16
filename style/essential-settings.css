@@ -318,6 +318,63 @@ body.has_dock #dock .dockedtitle.disabled,
 body.has_dock #dock .dockedtitle[disabled] {
   background-color: [[setting:themehovercolor]];
 }
+body.has_dock.essential-colours-alternative1 #dock {
+  background-color: [[setting:alternativethemecolor1]];
+}
+body.has_dock.essential-colours-alternative1 #dock .dockedtitle h2,
+body.has_dock.essential-colours-alternative1 #dock .dockeditempanel_hd h2 {
+  color: [[setting:alternativethemetextcolor1]];
+}
+body.has_dock.essential-colours-alternative1 #dock .dockedtitle h2:before,
+body.has_dock.essential-colours-alternative1 #dock .dockeditempanel_hd h2:before {
+  color: [[setting:alternativethemecolor1]];
+}
+body.has_dock.essential-colours-alternative1 #dock .dockedtitle:hover,
+body.has_dock.essential-colours-alternative1 #dock .dockedtitle:focus,
+body.has_dock.essential-colours-alternative1 #dock .dockedtitle:active,
+body.has_dock.essential-colours-alternative1 #dock .dockedtitle.active,
+body.has_dock.essential-colours-alternative1 #dock .dockedtitle.disabled,
+body.has_dock.essential-colours-alternative1 #dock .dockedtitle[disabled] {
+  background-color: [[setting:alternativethemehovercolor1]];
+}
+body.has_dock.essential-colours-alternative2 #dock {
+  background-color: [[setting:alternativethemecolor2]];
+}
+body.has_dock.essential-colours-alternative2 #dock .dockedtitle h2,
+body.has_dock.essential-colours-alternative2 #dock .dockeditempanel_hd h2 {
+  color: [[setting:alternativethemetextcolor2]];
+}
+body.has_dock.essential-colours-alternative2 #dock .dockedtitle h2:before,
+body.has_dock.essential-colours-alternative2 #dock .dockeditempanel_hd h2:before {
+  color: [[setting:alternativethemecolor2]];
+}
+body.has_dock.essential-colours-alternative2 #dock .dockedtitle:hover,
+body.has_dock.essential-colours-alternative2 #dock .dockedtitle:focus,
+body.has_dock.essential-colours-alternative2 #dock .dockedtitle:active,
+body.has_dock.essential-colours-alternative2 #dock .dockedtitle.active,
+body.has_dock.essential-colours-alternative2 #dock .dockedtitle.disabled,
+body.has_dock.essential-colours-alternative2 #dock .dockedtitle[disabled] {
+  background-color: [[setting:alternativethemehovercolor2]];
+}
+body.has_dock.essential-colours-alternative3 #dock {
+  background-color: [[setting:alternativethemecolor3]];
+}
+body.has_dock.essential-colours-alternative3 #dock .dockedtitle h2,
+body.has_dock.essential-colours-alternative3 #dock .dockeditempanel_hd h2 {
+  color: [[setting:alternativethemetextcolor3]];
+}
+body.has_dock.essential-colours-alternative3 #dock .dockedtitle h2:before,
+body.has_dock.essential-colours-alternative3 #dock .dockeditempanel_hd h2:before {
+  color: [[setting:alternativethemecolor3]];
+}
+body.has_dock.essential-colours-alternative3 #dock .dockedtitle:hover,
+body.has_dock.essential-colours-alternative3 #dock .dockedtitle:focus,
+body.has_dock.essential-colours-alternative3 #dock .dockedtitle:active,
+body.has_dock.essential-colours-alternative3 #dock .dockedtitle.active,
+body.has_dock.essential-colours-alternative3 #dock .dockedtitle.disabled,
+body.has_dock.essential-colours-alternative3 #dock .dockedtitle[disabled] {
+  background-color: [[setting:alternativethemehovercolor3]];
+}
 /* @end */
 /* @group Edit Buttons */
 .menu a.menu-action > i,

@@ -316,8 +316,8 @@ if (is_siteadmin()) {
 
         // Alternative theme link colour setting.
         $name = 'theme_essential/alternativethemeurlcolor' . $alternativethemenumber;
-        $title = get_string('alternativethemehovercolor', 'theme_essential', $alternativethemenumber);
-        $description = get_string('alternativethemehovercolordesc', 'theme_essential', $alternativethemenumber);
+        $title = get_string('alternativethemeurlcolor', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemeurlcolordesc', 'theme_essential', $alternativethemenumber);
         $default = $defaultalternativethemecolors[$alternativethemenumber - 1];
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);

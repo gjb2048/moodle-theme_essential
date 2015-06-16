@@ -361,26 +361,6 @@
 .essential-colours-alternative1 .course_category_tree .category[data-categoryid] > .info > .categoryname a:before {
   color: [[setting:alternativethemecolor1]];
 }
-.essential-colours-alternative1 #dock {
-  background-color: [[setting:alternativethemecolor1]];
-}
-.essential-colours-alternative1 #dock .dockedtitle h2 {
-  color: [[setting:alternativethemetextcolor1]];
-}
-.essential-colours-alternative1 #dock .dockedtitle {
-  background-color: [[setting:alternativethemecolor1]];
-}
-.essential-colours-alternative1 #dock .dockedtitle:hover,
-.essential-colours-alternative1 #dock .dockedtitle:focus,
-.essential-colours-alternative1 #dock .dockedtitle:active,
-.essential-colours-alternative1 #dock .dockedtitle.active,
-.essential-colours-alternative1 #dock .dockedtitle.disabled,
-.essential-colours-alternative1 #dock .dockedtitle[disabled] {
-  background-color: [[setting:alternativethemehovercolor1]];
-}
-.essential-colours-alternative1 #dockeditempanel .dockeditempanel_hd h2 {
-  color: [[setting:alternativethemecolor1]];
-}
 .essential-colours-alternative1 .commands {
   color: [[setting:alternativethemecolor1]];
 }
@@ -788,26 +768,6 @@
 .essential-colours-alternative2 .course_category_tree .category[data-categoryid] > .info > .categoryname a:before {
   color: [[setting:alternativethemecolor2]];
 }
-.essential-colours-alternative2 #dock {
-  background-color: [[setting:alternativethemecolor2]];
-}
-.essential-colours-alternative2 #dock .dockedtitle h2 {
-  color: [[setting:alternativethemetextcolor2]];
-}
-.essential-colours-alternative2 #dock .dockedtitle {
-  background-color: [[setting:alternativethemecolor2]];
-}
-.essential-colours-alternative2 #dock .dockedtitle:hover,
-.essential-colours-alternative2 #dock .dockedtitle:focus,
-.essential-colours-alternative2 #dock .dockedtitle:active,
-.essential-colours-alternative2 #dock .dockedtitle.active,
-.essential-colours-alternative2 #dock .dockedtitle.disabled,
-.essential-colours-alternative2 #dock .dockedtitle[disabled] {
-  background-color: [[setting:alternativethemehovercolor2]];
-}
-.essential-colours-alternative2 #dockeditempanel .dockeditempanel_hd h2 {
-  color: [[setting:alternativethemecolor2]];
-}
 .essential-colours-alternative2 .commands {
   color: [[setting:alternativethemecolor2]];
 }
@@ -1213,26 +1173,6 @@
   background-color: [[setting:alternativethemecolor3]];
 }
 .essential-colours-alternative3 .course_category_tree .category[data-categoryid] > .info > .categoryname a:before {
-  color: [[setting:alternativethemecolor3]];
-}
-.essential-colours-alternative3 #dock {
-  background-color: [[setting:alternativethemecolor3]];
-}
-.essential-colours-alternative3 #dock .dockedtitle h2 {
-  color: [[setting:alternativethemetextcolor3]];
-}
-.essential-colours-alternative3 #dock .dockedtitle {
-  background-color: [[setting:alternativethemecolor3]];
-}
-.essential-colours-alternative3 #dock .dockedtitle:hover,
-.essential-colours-alternative3 #dock .dockedtitle:focus,
-.essential-colours-alternative3 #dock .dockedtitle:active,
-.essential-colours-alternative3 #dock .dockedtitle.active,
-.essential-colours-alternative3 #dock .dockedtitle.disabled,
-.essential-colours-alternative3 #dock .dockedtitle[disabled] {
-  background-color: [[setting:alternativethemehovercolor3]];
-}
-.essential-colours-alternative3 #dockeditempanel .dockeditempanel_hd h2 {
   color: [[setting:alternativethemecolor3]];
 }
 .essential-colours-alternative3 .commands {
