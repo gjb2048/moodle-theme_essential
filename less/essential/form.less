@@ -24,6 +24,10 @@ body#page-admin-setting-messageinbound_mailsettings fieldset select {
     }
 }
 
+.form-item .form-label, .mform .fitem div.fitemtitle {
+  text-align: right;
+}
+
 @media (max-width: 767px) {
     fieldset {
         textarea[cols],
@@ -34,6 +38,9 @@ body#page-admin-setting-messageinbound_mailsettings fieldset select {
     }
     body#page-admin-setting-messageinbound_mailsettings fieldset select {
         .fluid-span(5);
+    }
+    .form-item .form-label, .mform .fitem div.fitemtitle {
+        text-align: left;
     }
 }
 
@@ -48,16 +55,6 @@ body#page-admin-setting-messageinbound_mailsettings fieldset select {
     body#page-admin-setting-messageinbound_mailsettings fieldset select {
         .fluid-span(3);
     }
-}
-.form-item .form-label, .mform .fitem div.fitemtitle {
-  text-align: left;
-}
-
-.form-item .form-setting,
-.form-item .form-description,
-.mform .fitem .felement,
-#page-mod-forum-search .c1 {
-  margin-left: 180px;
 }
 
 .form-item .form-label .form-overridden {
@@ -183,6 +180,10 @@ input[type="checkbox"] {
   .author, .lastpost {
     white-space: normal !important;  // Override mod style.css that comes afterwards, yuck '!important' :(.
   }
+}
+
+.form-item .form-setting .form-colourpicker.defaultsnext {
+  margin-right: 0;
 }
 
 /* @end */
