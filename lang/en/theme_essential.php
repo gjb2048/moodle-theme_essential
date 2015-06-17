@@ -114,10 +114,6 @@ $string['fontcharactersetgreek'] = 'Greek';
 $string['fontcharactersetgreekext'] = 'Greek Extended';
 $string['fontcharactersetvietnamese'] = 'Vietnamese';
 
-$string['bootstrapcdn'] = 'FontAwesome from CDN';
-$string['bootstrapcdndesc'] = 'If enabled this will load FontAwesome from the online Bootstrap CDN source.
-                               Enable this if you are having issues getting the Font Awesome icons to display in your site.';
-
 $string['copyright'] = 'Copyright';
 $string['copyrightdesc'] = 'The name of your organisation.';
 

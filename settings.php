@@ -827,16 +827,7 @@ if (is_siteadmin()) {
         $temp->add($setting);
     }
 
-    // Include Awesome Font from Bootstrapcdn
-    $name = 'theme_essential/bootstrapcdn';
-    $title = get_string('bootstrapcdn', 'theme_essential');
-    $description = get_string('bootstrapcdndesc', 'theme_essential');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
     $ADMIN->add('theme_essential', $temp);
-
 
     /* Footer Settings */
     $temp = new admin_settingpage('theme_essential_footer', get_string('footerheading', 'theme_essential'));

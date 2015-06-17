@@ -48,11 +48,6 @@ function theme_essentials_set_fontwww($css) {
 
     $tag = '[[setting:fontwww]]';
 
-    if (theme_essential_get_setting('bootstrapcdn')) {
-        $css = str_replace($tag, '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/fonts/', $css);
-    } else {
-        $css = str_replace($tag, $fontwww, $css);
-    }
     return $css;
 }
 
