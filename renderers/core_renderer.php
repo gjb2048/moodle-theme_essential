@@ -560,6 +560,10 @@ class theme_essential_core_renderer extends core_renderer {
             $messagecontent->url = new moodle_url('/message/index.php', array('user1' => $USER->id, 'user2' => $message->useridfrom));
         }
 
+        $options = new stdClass();
+        $options->para = false;
+        $messagecontent->text = format_text($messagecontent->text, FORMAT_PLAIN, $options);
+
         $messagecontent->date = $message->timecreated;
         $messagecontent->unread = empty($message->timeread);
         return $messagecontent;

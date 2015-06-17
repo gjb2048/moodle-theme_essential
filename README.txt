@@ -163,6 +163,10 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
+New in 2.7.9.5.2
+================
+- FIX: Small security issue.
+
 New in 2.7.9.5.1
 ================
 - FIX: Small issues in 2.7.9.5.
