@@ -777,7 +777,11 @@ class theme_essential_core_renderer extends core_renderer {
 
             // Render direct logout link
             $branchlabel = '<em><i class="fa fa-sign-out"></i>' . get_string('logout') . '</em>';
-            $branchurl = new moodle_url('/login/logout.php?sesskey=' . sesskey());
+            if (\core\session\manager::is_loggedinas()) {
+                $branchurl = new moodle_url('/course/loginas.php', array('id' => $course->id, 'sesskey' => sesskey()));
+            } else {
+                $branchurl = new moodle_url('/login/logout.php', array('sesskey' => sesskey()));
+            }
             $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
 
             // Render Help Link

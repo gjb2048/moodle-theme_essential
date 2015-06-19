@@ -181,6 +181,7 @@ can be really useful in visualising the issue along with any files you consider 
 
 New in 2.8.1.6
 ==============
+- FIX: No 'loginas' URL when logged in as another user, ref: https://moodle.org/mod/forum/discuss.php?d=315453.
 
 New in 2.8.1.5
 ==============
