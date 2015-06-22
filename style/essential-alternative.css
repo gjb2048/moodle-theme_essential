@@ -143,11 +143,6 @@
 .essential-colours-alternative1 .navbar .navbar-inner .dropdown-submenu:focus > a {
   color: [[setting:themenavcolor]];
   background-color: [[setting:alternativethemecolor1]];
-  background-image: -moz-linear-gradient(top, [[setting:alternativethemetextcolor1]], [[setting:alternativethemecolor1]]);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemetextcolor1]]), to([[setting:alternativethemecolor1]]));
-  background-image: -webkit-linear-gradient(top, [[setting:alternativethemetextcolor1]], [[setting:alternativethemecolor1]]);
-  background-image: -o-linear-gradient(top, [[setting:alternativethemetextcolor1]], [[setting:alternativethemecolor1]]);
-  background-image: linear-gradient(to bottom, [[setting:alternativethemetextcolor1]], [[setting:alternativethemecolor1]]);
 }
 .essential-colours-alternative1 .navbar .nav-collapse {
   border-color: [[setting:alternativethemecolor1]];
@@ -550,11 +545,6 @@
 .essential-colours-alternative2 .navbar .navbar-inner .dropdown-submenu:focus > a {
   color: [[setting:themenavcolor]];
   background-color: [[setting:alternativethemecolor2]];
-  background-image: -moz-linear-gradient(top, [[setting:alternativethemetextcolor2]], [[setting:alternativethemecolor2]]);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemetextcolor2]]), to([[setting:alternativethemecolor2]]));
-  background-image: -webkit-linear-gradient(top, [[setting:alternativethemetextcolor2]], [[setting:alternativethemecolor2]]);
-  background-image: -o-linear-gradient(top, [[setting:alternativethemetextcolor2]], [[setting:alternativethemecolor2]]);
-  background-image: linear-gradient(to bottom, [[setting:alternativethemetextcolor2]], [[setting:alternativethemecolor2]]);
 }
 .essential-colours-alternative2 .navbar .nav-collapse {
   border-color: [[setting:alternativethemecolor2]];
@@ -957,11 +947,6 @@
 .essential-colours-alternative3 .navbar .navbar-inner .dropdown-submenu:focus > a {
   color: [[setting:themenavcolor]];
   background-color: [[setting:alternativethemecolor3]];
-  background-image: -moz-linear-gradient(top, [[setting:alternativethemetextcolor3]], [[setting:alternativethemecolor3]]);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemetextcolor3]]), to([[setting:alternativethemecolor3]]));
-  background-image: -webkit-linear-gradient(top, [[setting:alternativethemetextcolor3]], [[setting:alternativethemecolor3]]);
-  background-image: -o-linear-gradient(top, [[setting:alternativethemetextcolor3]], [[setting:alternativethemecolor3]]);
-  background-image: linear-gradient(to bottom, [[setting:alternativethemetextcolor3]], [[setting:alternativethemecolor3]]);
 }
 .essential-colours-alternative3 .navbar .nav-collapse {
   border-color: [[setting:alternativethemecolor3]];

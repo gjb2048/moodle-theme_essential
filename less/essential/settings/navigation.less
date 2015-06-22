@@ -30,16 +30,29 @@
     .nav > li.dropdown a,
     .nav > li > a {
       color: ~"[[setting:themenavcolor]]";
+      i {
+        color: ~"[[setting:themeiconcolor]]";
+        &:hover {
+          color: ~"[[setting:themecolor]]";
+        }
+      }
     }
 
     .nav > li.dropdown ul.dropdown-menu > li {
       > a {
         color: ~"[[setting:themeurlcolor]]";
         &:hover {
-          color: ~"[[setting:themenavcolor]]";
+          background-color: ~"[[setting:themehovercolor]]";
+          color: ~"[[setting:themecolor]]";
         }
         &:hover .dimmed_text {
           color: @grayLighter;
+        }
+        i {
+          color: ~"[[setting:themeiconcolor]]";
+          &:hover {
+            color: ~"[[setting:themecolor]]";
+          }
         }
       }
       &.dropdown-submenu:hover > a {
@@ -48,12 +61,18 @@
     }
 
     .nav {
-        li.dropdown {
-            &.open > .dropdown-toggle, &.active > .dropdown-toggle, &.open.active > .dropdown-toggle {
-                background-color: ~"[[setting:themenavcolor]]";
-                color: ~"[[setting:themecolor]]";
-            }
+      li.dropdown {
+        &.open > .dropdown-toggle, &.active > .dropdown-toggle, &.open.active > .dropdown-toggle {
+          background-color: ~"[[setting:themehovercolor]]";
+          color: ~"[[setting:themecolor]]";
+          i {
+            color: ~"[[setting:themecolor]]";
+          }
+          &:hover i {
+            color: ~"[[setting:themeiconcolor]]";
+          }
         }
+      }
     }
 
     .usermenu {
