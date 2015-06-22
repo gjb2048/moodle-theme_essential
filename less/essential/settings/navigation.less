@@ -14,15 +14,6 @@
       }
     }
 
-    .nav-collapse .nav > li.dropdown > a:hover,
-    .dropdown-menu > li > a:hover,
-    .dropdown-menu > li > a:focus,
-    .dropdown-submenu:hover > a,
-    .dropdown-submenu:focus > a {
-      color: ~"[[setting:themenavcolor]]";
-      background-color: ~"[[setting:themecolor]]";
-    }
-
     .dropdown-menu {
       border: 1px solid ~"[[setting:themecolor]]";
     }
@@ -32,7 +23,11 @@
       color: ~"[[setting:themenavcolor]]";
       i {
         color: ~"[[setting:themeiconcolor]]";
-        &:hover {
+      }
+      &:hover {
+        color: ~"[[setting:themecolor]]";
+        background-color: ~"[[setting:themehovercolor]]";
+        i {
           color: ~"[[setting:themecolor]]";
         }
       }
@@ -50,9 +45,6 @@
         }
         i {
           color: ~"[[setting:themeiconcolor]]";
-          &:hover {
-            color: ~"[[setting:themecolor]]";
-          }
         }
       }
       &.dropdown-submenu:hover > a {
@@ -67,9 +59,6 @@
           color: ~"[[setting:themecolor]]";
           i {
             color: ~"[[setting:themecolor]]";
-          }
-          &:hover i {
-            color: ~"[[setting:themeiconcolor]]";
           }
         }
       }
@@ -97,8 +86,8 @@
             border-top: 1px dotted ~"[[setting:themecolor]]";
             &:hover {
               .message, .notification {
-                color: ~"[[setting:themenavcolor]]";
-                background-color: ~"[[setting:themecolor]]";
+                color: ~"[[setting:themecolor]]";
+                background-color: ~"[[setting:themehovercolor]]";
                 img {
                   &.userpicture, &.profilepicture {
                     box-shadow: 0 0 3px ~"[[setting:themenavcolor]]";

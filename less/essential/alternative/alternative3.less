@@ -103,7 +103,7 @@
           border-left-color: ~"[[setting:alternativethemecolor3]]";
           &:hover {
             color: ~"[[setting:alternativethemecolor3]]";
-            background-color: ~"[[setting:themenavcolor]]";
+            background-color: ~"[[setting:alternativethemehovercolor3]]";
           }
         }
         > li.dropdown ul.dropdown-menu > li > a {
@@ -140,22 +140,25 @@
       border-left-color: ~"[[setting:alternativethemehovercolor3]]";
     }
 
-    .messagemenu .nav > li > .dropdown-menu {
-      li {
-        &:hover .msg-title, &:focus .msg-title, &:active .msg-title,
-        &:hover .msg-body, &:focus .msg-body, &:active .msg-body,
-        &:hover .msg-sender, &:focus .msg-sender, &:active .msg-sender {
-          color: ~"[[setting:alternativethemecolor3]]";
+    .navbar-inner .messagemenu {
+      ul.nav {
+        ul.dropdown-menu {
+          border: 1px solid ~"[[setting:alternativethemecolor3]]";
+          li > a {
+            border-top: 1px dotted ~"[[setting:alternativethemecolor3]]";
+            &:hover {
+              .message, .notification {
+                color: ~"[[setting:alternativethemecolor1]]";
+                background-color: ~"[[setting:alternativethemehovercolor3]]";
+                img {
+                  &.userpicture, &.profilepicture {
+                    box-shadow: 0 0 3px ~"[[setting:themenavcolor]]";
+                  }
+                }
+              }
+            }
+          }
         }
-        &:hover .msg-time, &:focus .msg-time, &:active .msg-time {
-          color: ~"[[setting:alternativethemecolor3]]";
-        }
-      }
-      .msg-sender {
-        color: ~"[[setting:alternativethemetextcolor3]]";
-      }
-      .msg-time {
-        color: ~"[[setting:alternativethemetextcolor3]]";
       }
     }
   }

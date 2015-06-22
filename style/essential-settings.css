@@ -482,14 +482,6 @@ input[type="color"],
 .navbar .navbar-inner .btn-navbar .icon-bar {
   background-color: [[setting:themecolor]];
 }
-.navbar .navbar-inner .nav-collapse .nav > li.dropdown > a:hover,
-.navbar .navbar-inner .dropdown-menu > li > a:hover,
-.navbar .navbar-inner .dropdown-menu > li > a:focus,
-.navbar .navbar-inner .dropdown-submenu:hover > a,
-.navbar .navbar-inner .dropdown-submenu:focus > a {
-  color: [[setting:themenavcolor]];
-  background-color: [[setting:themecolor]];
-}
 .navbar .navbar-inner .dropdown-menu {
   border: 1px solid [[setting:themecolor]];
 }
@@ -501,8 +493,13 @@ input[type="color"],
 .navbar .navbar-inner .nav > li > a i {
   color: [[setting:themeiconcolor]];
 }
-.navbar .navbar-inner .nav > li.dropdown a i:hover,
-.navbar .navbar-inner .nav > li > a i:hover {
+.navbar .navbar-inner .nav > li.dropdown a:hover,
+.navbar .navbar-inner .nav > li > a:hover {
+  color: [[setting:themecolor]];
+  background-color: [[setting:themehovercolor]];
+}
+.navbar .navbar-inner .nav > li.dropdown a:hover i,
+.navbar .navbar-inner .nav > li > a:hover i {
   color: [[setting:themecolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a {
@@ -518,9 +515,6 @@ input[type="color"],
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a i {
   color: [[setting:themeiconcolor]];
 }
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a i:hover {
-  color: [[setting:themecolor]];
-}
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li.dropdown-submenu:hover > a {
   color: [[setting:themenavcolor]];
 }
@@ -534,11 +528,6 @@ input[type="color"],
 .navbar .navbar-inner .nav li.dropdown.active > .dropdown-toggle i,
 .navbar .navbar-inner .nav li.dropdown.open.active > .dropdown-toggle i {
   color: [[setting:themecolor]];
-}
-.navbar .navbar-inner .nav li.dropdown.open > .dropdown-toggle:hover i,
-.navbar .navbar-inner .nav li.dropdown.active > .dropdown-toggle:hover i,
-.navbar .navbar-inner .nav li.dropdown.open.active > .dropdown-toggle:hover i {
-  color: [[setting:themeiconcolor]];
 }
 .navbar .navbar-inner .usermenu .dropdown img.userpicture {
   border: 1px solid [[setting:themenavcolor]];
@@ -557,8 +546,8 @@ input[type="color"],
 }
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message,
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification {
-  color: [[setting:themenavcolor]];
-  background-color: [[setting:themecolor]];
+  color: [[setting:themecolor]];
+  background-color: [[setting:themehovercolor]];
 }
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message img.userpicture,
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification img.userpicture,

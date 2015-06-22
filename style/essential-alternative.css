@@ -126,7 +126,7 @@
 }
 .essential-colours-alternative1 .navbar .navbar-inner .nav > li > a:hover {
   color: [[setting:alternativethemecolor1]];
-  background-color: [[setting:themenavcolor]];
+  background-color: [[setting:alternativethemehovercolor1]];
 }
 .essential-colours-alternative1 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a {
   color: [[setting:alternativethemetextcolor1]];
@@ -158,27 +158,22 @@
 .essential-colours-alternative1 .navbar .nav > li > a {
   border-left-color: [[setting:alternativethemehovercolor1]];
 }
-.essential-colours-alternative1 .navbar .messagemenu .nav > li > .dropdown-menu li:hover .msg-title,
-.essential-colours-alternative1 .navbar .messagemenu .nav > li > .dropdown-menu li:focus .msg-title,
-.essential-colours-alternative1 .navbar .messagemenu .nav > li > .dropdown-menu li:active .msg-title,
-.essential-colours-alternative1 .navbar .messagemenu .nav > li > .dropdown-menu li:hover .msg-body,
-.essential-colours-alternative1 .navbar .messagemenu .nav > li > .dropdown-menu li:focus .msg-body,
-.essential-colours-alternative1 .navbar .messagemenu .nav > li > .dropdown-menu li:active .msg-body,
-.essential-colours-alternative1 .navbar .messagemenu .nav > li > .dropdown-menu li:hover .msg-sender,
-.essential-colours-alternative1 .navbar .messagemenu .nav > li > .dropdown-menu li:focus .msg-sender,
-.essential-colours-alternative1 .navbar .messagemenu .nav > li > .dropdown-menu li:active .msg-sender {
+.essential-colours-alternative1 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu {
+  border: 1px solid [[setting:alternativethemecolor1]];
+}
+.essential-colours-alternative1 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a {
+  border-top: 1px dotted [[setting:alternativethemecolor1]];
+}
+.essential-colours-alternative1 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message,
+.essential-colours-alternative1 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification {
   color: [[setting:alternativethemecolor1]];
+  background-color: [[setting:alternativethemehovercolor1]];
 }
-.essential-colours-alternative1 .navbar .messagemenu .nav > li > .dropdown-menu li:hover .msg-time,
-.essential-colours-alternative1 .navbar .messagemenu .nav > li > .dropdown-menu li:focus .msg-time,
-.essential-colours-alternative1 .navbar .messagemenu .nav > li > .dropdown-menu li:active .msg-time {
-  color: [[setting:alternativethemecolor1]];
-}
-.essential-colours-alternative1 .navbar .messagemenu .nav > li > .dropdown-menu .msg-sender {
-  color: [[setting:alternativethemetextcolor1]];
-}
-.essential-colours-alternative1 .navbar .messagemenu .nav > li > .dropdown-menu .msg-time {
-  color: [[setting:alternativethemetextcolor1]];
+.essential-colours-alternative1 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message img.userpicture,
+.essential-colours-alternative1 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification img.userpicture,
+.essential-colours-alternative1 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message img.profilepicture,
+.essential-colours-alternative1 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification img.profilepicture {
+  box-shadow: 0 0 3px [[setting:themenavcolor]];
 }
 .essential-colours-alternative1 .course-content ul.topics li.section.main.clearfix.current {
   box-shadow: 0 0 10px [[setting:alternativethemecolor1]];
@@ -528,7 +523,7 @@
 }
 .essential-colours-alternative2 .navbar .navbar-inner .nav > li > a:hover {
   color: [[setting:alternativethemecolor2]];
-  background-color: [[setting:themenavcolor]];
+  background-color: [[setting:alternativethemehovercolor2]];
 }
 .essential-colours-alternative2 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a {
   color: [[setting:alternativethemetextcolor2]];
@@ -560,27 +555,22 @@
 .essential-colours-alternative2 .navbar .nav > li > a {
   border-left-color: [[setting:alternativethemehovercolor2]];
 }
-.essential-colours-alternative2 .navbar .messagemenu .nav > li > .dropdown-menu li:hover .msg-title,
-.essential-colours-alternative2 .navbar .messagemenu .nav > li > .dropdown-menu li:focus .msg-title,
-.essential-colours-alternative2 .navbar .messagemenu .nav > li > .dropdown-menu li:active .msg-title,
-.essential-colours-alternative2 .navbar .messagemenu .nav > li > .dropdown-menu li:hover .msg-body,
-.essential-colours-alternative2 .navbar .messagemenu .nav > li > .dropdown-menu li:focus .msg-body,
-.essential-colours-alternative2 .navbar .messagemenu .nav > li > .dropdown-menu li:active .msg-body,
-.essential-colours-alternative2 .navbar .messagemenu .nav > li > .dropdown-menu li:hover .msg-sender,
-.essential-colours-alternative2 .navbar .messagemenu .nav > li > .dropdown-menu li:focus .msg-sender,
-.essential-colours-alternative2 .navbar .messagemenu .nav > li > .dropdown-menu li:active .msg-sender {
-  color: [[setting:alternativethemecolor2]];
+.essential-colours-alternative2 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu {
+  border: 1px solid [[setting:alternativethemecolor2]];
 }
-.essential-colours-alternative2 .navbar .messagemenu .nav > li > .dropdown-menu li:hover .msg-time,
-.essential-colours-alternative2 .navbar .messagemenu .nav > li > .dropdown-menu li:focus .msg-time,
-.essential-colours-alternative2 .navbar .messagemenu .nav > li > .dropdown-menu li:active .msg-time {
-  color: [[setting:alternativethemecolor2]];
+.essential-colours-alternative2 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a {
+  border-top: 1px dotted [[setting:alternativethemecolor2]];
 }
-.essential-colours-alternative2 .navbar .messagemenu .nav > li > .dropdown-menu .msg-sender {
-  color: [[setting:alternativethemetextcolor2]];
+.essential-colours-alternative2 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message,
+.essential-colours-alternative2 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification {
+  color: [[setting:alternativethemecolor1]];
+  background-color: [[setting:alternativethemehovercolor2]];
 }
-.essential-colours-alternative2 .navbar .messagemenu .nav > li > .dropdown-menu .msg-time {
-  color: [[setting:alternativethemetextcolor2]];
+.essential-colours-alternative2 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message img.userpicture,
+.essential-colours-alternative2 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification img.userpicture,
+.essential-colours-alternative2 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message img.profilepicture,
+.essential-colours-alternative2 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification img.profilepicture {
+  box-shadow: 0 0 3px [[setting:themenavcolor]];
 }
 .essential-colours-alternative2 .course-content ul.topics li.section.main.clearfix.current {
   box-shadow: 0 0 10px [[setting:alternativethemecolor2]];
@@ -930,7 +920,7 @@
 }
 .essential-colours-alternative3 .navbar .navbar-inner .nav > li > a:hover {
   color: [[setting:alternativethemecolor3]];
-  background-color: [[setting:themenavcolor]];
+  background-color: [[setting:alternativethemehovercolor3]];
 }
 .essential-colours-alternative3 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a {
   color: [[setting:alternativethemetextcolor3]];
@@ -962,27 +952,22 @@
 .essential-colours-alternative3 .navbar .nav > li > a {
   border-left-color: [[setting:alternativethemehovercolor3]];
 }
-.essential-colours-alternative3 .navbar .messagemenu .nav > li > .dropdown-menu li:hover .msg-title,
-.essential-colours-alternative3 .navbar .messagemenu .nav > li > .dropdown-menu li:focus .msg-title,
-.essential-colours-alternative3 .navbar .messagemenu .nav > li > .dropdown-menu li:active .msg-title,
-.essential-colours-alternative3 .navbar .messagemenu .nav > li > .dropdown-menu li:hover .msg-body,
-.essential-colours-alternative3 .navbar .messagemenu .nav > li > .dropdown-menu li:focus .msg-body,
-.essential-colours-alternative3 .navbar .messagemenu .nav > li > .dropdown-menu li:active .msg-body,
-.essential-colours-alternative3 .navbar .messagemenu .nav > li > .dropdown-menu li:hover .msg-sender,
-.essential-colours-alternative3 .navbar .messagemenu .nav > li > .dropdown-menu li:focus .msg-sender,
-.essential-colours-alternative3 .navbar .messagemenu .nav > li > .dropdown-menu li:active .msg-sender {
-  color: [[setting:alternativethemecolor3]];
+.essential-colours-alternative3 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu {
+  border: 1px solid [[setting:alternativethemecolor3]];
 }
-.essential-colours-alternative3 .navbar .messagemenu .nav > li > .dropdown-menu li:hover .msg-time,
-.essential-colours-alternative3 .navbar .messagemenu .nav > li > .dropdown-menu li:focus .msg-time,
-.essential-colours-alternative3 .navbar .messagemenu .nav > li > .dropdown-menu li:active .msg-time {
-  color: [[setting:alternativethemecolor3]];
+.essential-colours-alternative3 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a {
+  border-top: 1px dotted [[setting:alternativethemecolor3]];
 }
-.essential-colours-alternative3 .navbar .messagemenu .nav > li > .dropdown-menu .msg-sender {
-  color: [[setting:alternativethemetextcolor3]];
+.essential-colours-alternative3 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message,
+.essential-colours-alternative3 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification {
+  color: [[setting:alternativethemecolor1]];
+  background-color: [[setting:alternativethemehovercolor3]];
 }
-.essential-colours-alternative3 .navbar .messagemenu .nav > li > .dropdown-menu .msg-time {
-  color: [[setting:alternativethemetextcolor3]];
+.essential-colours-alternative3 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message img.userpicture,
+.essential-colours-alternative3 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification img.userpicture,
+.essential-colours-alternative3 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message img.profilepicture,
+.essential-colours-alternative3 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification img.profilepicture {
+  box-shadow: 0 0 3px [[setting:themenavcolor]];
 }
 .essential-colours-alternative3 .course-content ul.topics li.section.main.clearfix.current {
   box-shadow: 0 0 10px [[setting:alternativethemecolor3]];
