@@ -31,7 +31,7 @@ $string['choosereadme'] = '
 <div class="clearfix">
 <div class="well">
 <h2>Essential</h2>
-<p><img class="img-polaroid" src="essential/pix/screenshot.jpg" /></p>
+<p><img class="img-polaroid" src="essential/pix/screenshot.jpg" alt="Essential screen shot"/></p>
 </div>
 <div class="well">
 <h3>About Essential</h3>
@@ -51,9 +51,18 @@ Gareth J. Barnard<br>
 <p>Please contact me via my <a href="http://moodle.org/user/profile.php?id=442195" target="_blank">\'Moodle profile\'</a> for details as I am an individual and therefore am unable to have \'donation\' / \'buy me now\' buttons under their terms.</p>
 <h4>Flattr</h4>
 <a href="https://flattr.com/profile/gjb2048" target="_blank">
-clicking here to donate.
+click here to donate.
 </a>
 <br>Donations help to facilitate maintenance and allow me to provide you with more and better features.  Without your support the theme cannot be maintained.</p>
+<p>
+<h3>Donators</h3>
+<p>Donations gratefully received with thanks from:</p>
+<ul>
+<li>Mihai Bojonca, TCM International Institute.</li>
+<li>Guido Hornig, actXcellence <a href="//actxcellence.de" target="_blank">actxcellence.de</a></li>
+<li>Delvon Forrester, Esparanza co uk</li>
+</ul>
+</p>
 </div></div>';
 
 // General.
