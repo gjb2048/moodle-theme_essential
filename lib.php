@@ -737,16 +737,3 @@ function theme_essential_get_colours($default = 'default') {
     }
     return $default;
 }
-
-function theme_essential_page_init(moodle_page $page) {
-    global $CFG;
-    $page->requires->jquery();
-    $properties = core_useragent::check_ie_properties(); // In /lib/classes/useragent.php.
-    if ((is_array($properties)) && ($properties['version'] <= 8.0)) {
-        $page->requires->jquery_plugin('html5shiv', 'theme_essential');
-    }
-    $page->requires->jquery_plugin('bootstrap', 'theme_essential');
-    $page->requires->jquery_plugin('breadcrumb', 'theme_essential');
-    $page->requires->jquery_plugin('fitvids', 'theme_essential');
-    $page->requires->jquery_plugin('antigravity', 'theme_essential');
-}

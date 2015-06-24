@@ -185,6 +185,7 @@ New in 2.9.0.1
 - NEW: Update icons.
 - NEW: Update quiz LESS.
 - NEW: Update moodle LESS.
+- NEW: Convert jQuery from pluginfile.php to AMD.
 
 New in 2.8.1.6
 ==============

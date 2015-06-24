@@ -34,6 +34,7 @@
  * breaking installation or upgrade unwittingly.
  */
 
+require_once(dirname(__FILE__).'/includes/additionaljs.php');
 echo $OUTPUT->doctype();
 ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>

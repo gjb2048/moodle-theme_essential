@@ -61,6 +61,20 @@
  *                                  URL, i.e. /moodle27 being:
  *                                  --urlprefix=/moodle27
  *
+ * grunt amd     Create the Asynchronous Module Definition JavaScript files.  See: MDL-49046.
+ *               Done here as core Gruntfile.js currently *nix only.
+ *
+ * grunt svg                 Change the colour of the SVGs in pix_core by
+ *                           text replacing #999999 with a new hex colour.
+ *                           Note this requires the SVGs to be #999999 to
+ *                           start with or the replace will do nothing
+ *                           so should usually be preceded by copying
+ *                           a fresh set of the original SVGs.
+ *
+ *                           Options:
+ *
+ *                           --svgcolour=<hexcolour> Hex colour to use for SVGs
+ *
  * Plumbing tasks & targets:
  * -------------------------
  * Lower level tasks encapsulating a specific piece of functionality
@@ -78,17 +92,6 @@
  *                                      not in the standard location.
  *
  * grunt replace             Run all text replace tasks.
- *
- * grunt svg                 Change the colour of the SVGs in pix_core by
- *                           text replacing #999999 with a new hex colour.
- *                           Note this requires the SVGs to be #999999 to
- *                           start with or the replace will do nothing
- *                           so should usually be preceded by copying
- *                           a fresh set of the original SVGs.
- *
- *                           Options:
- *
- *                           --svgcolour=<hexcolour> Hex colour to use for SVGs
  *
  * grunt cssflip    Create essential-rtl.css by flipping the direction styles
  *                  in essential.css.  Ref: https://www.npmjs.org/package/css-flip
@@ -111,6 +114,15 @@ module.exports = function(grunt) {
         MOODLEURLPREFIX = grunt.option('urlprefix') || '',
         THEMEDIR        = path.basename(path.resolve('.'));
 
+    // PHP strings for exec task.
+    var moodleroot = path.dirname(path.dirname(__dirname)),
+        dirrootopt = grunt.option('dirroot') || process.env.MOODLE_DIR || '';
+
+    // Allow user to explicitly define Moodle root dir.
+    if ('' !== dirrootopt) {
+        moodleroot = path.resolve(dirrootopt);
+    }
+
     // Production / development.
     var build = grunt.option('build') || 'd'; // Development for 'watch' task.
 
@@ -120,7 +132,9 @@ module.exports = function(grunt) {
         console.log('e.g. -build=p or -build=d.  Defaulting to development.');
     }
 
-    decachephp = '../../admin/cli/purge_caches.php';
+    var PWD = process.cwd();
+
+    var decachephp = '../../admin/cli/purge_caches.php';
 
     var svgcolour = grunt.option('svgcolour') || '#999999';
 
@@ -525,6 +539,27 @@ module.exports = function(grunt) {
                     ext: '.svg'
                 }]
             }
+        },
+        jshint: {
+            options: {jshintrc: moodleroot + '/.jshintrc'},
+            files: ['**/amd/src/*.js']
+        },
+        uglify: {
+            dynamic_mappings: {
+                files: grunt.file.expandMapping(
+                    ['**/src/*.js', '!**/node_modules/**'],
+                    '',
+                    {
+                        cwd: PWD,
+                        rename: function(destBase, destPath) {
+                            destPath = destPath.replace('src', 'build');
+                            destPath = destPath.replace('.js', '.min.js');
+                            destPath = path.resolve(PWD, destPath);
+                            return destPath;
+                        }
+                    }
+                )
+            }
         }
     });
 
@@ -538,6 +573,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-css-metrics");
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-svgmin');
+
+    // Load core tasks.
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
 
     // Register tasks.
     grunt.registerTask("default", ["watch"]);
@@ -553,4 +592,5 @@ module.exports = function(grunt) {
     grunt.registerTask("copy:svg", ["copy:svg_core", "copy:svg_plugins"]);
     grunt.registerTask("replace:svg_colours", ["replace:svg_colours_core", "replace:svg_colours_plugins"]);
     grunt.registerTask("svg", ["copy:svg", "replace:svg_colours", "svgmin"]);
+    grunt.registerTask("amd", ["jshint", "uglify", "decache"]);
 };

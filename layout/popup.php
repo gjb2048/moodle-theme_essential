@@ -24,6 +24,7 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+require_once(dirname(__FILE__).'/includes/additionaljs.php');
 $fontselect = $OUTPUT->get_setting('fontselect');
 if ($fontselect === '2') {
     $fontcharacterset = '&subset=latin';

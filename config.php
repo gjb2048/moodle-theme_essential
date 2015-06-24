@@ -57,6 +57,7 @@ $THEME->sheets[] = 'custom';
 
 $THEME->supportscssoptimisation = false;
 
+$THEME->javascripts_footer = array('essential', 'coloursswitcher');
 if (floatval($CFG->version) >= 2013111803.02) { // 2.6.3+ (Build: 20140522) which has MDL-43995 integrated into it.
     $THEME->enable_dock = true;
     $THEME->javascripts_footer[] = 'dock';
@@ -192,7 +193,9 @@ $THEME->layouts = array(
     ),
 );
 
-$THEME->javascripts_footer[] = 'coloursswitcher';
+if (core_useragent::is_ie() && !core_useragent::check_ie_version('9.0')) {
+    $THEME->javascripts[] = 'html5shiv';
+}
 
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->csspostprocess = 'theme_essential_process_css';

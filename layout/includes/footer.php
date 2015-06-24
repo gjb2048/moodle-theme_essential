@@ -64,25 +64,6 @@ if (empty($PAGE->layout_options['nofooter'])) { ?>
         </div>
     </footer>
     <a href="#top" class="back-to-top" ><i class="fa fa-angle-up "></i></a>
-<?php } ?>
-
-    <script type="text/javascript">
-        jQuery(document).ready(function () {
-            <?php
-            if ($OUTPUT->theme_essential_not_lte_ie9()) {
-              echo "jQuery('#essentialnavbar').affix({";
-              echo "offset: {";
-              echo "top: $('#page-header').height()";
-              echo "}";
-              echo "});";
-              if ($breadcrumbstyle == '1') {
-                  echo "$('.breadcrumb').jBreadCrumb();";
-              }
-            }
-            if ($OUTPUT->get_setting('fitvids')) {
-                echo "$('#page').fitVids();";
-            }
-            ?>
-        });
-    </script>
-<?php echo $OUTPUT->standard_end_of_body_html(); ?>
+<?php }
+echo $OUTPUT->standard_end_of_body_html();
+?>
