@@ -88,11 +88,11 @@ Delvon Forrester, Esparanza co uk
 
 Required version of Moodle
 ==========================
-This version works with Moodle version 2014111000.00 release 2.8 (Build: 20141110) and above within the 2.8 branch until the
+This version works with Moodle version 2015051100.00 release 2.9 (Build: 20150511) and above within the 2.9 branch until the
 next release.
 
 Please ensure that your hardware and software complies with 'Requirements' in 'Installing Moodle' on
-'docs.moodle.org/28/en/Installing_Moodle'.
+'docs.moodle.org/29/en/Installing_Moodle'.
 
 Installation
 ============
@@ -179,6 +179,11 @@ issue.
 It is essential that you provide as much information as possible, the critical information being the contents of the theme's 
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
+
+New in 2.9.0.1
+==============
+- NEW: Update icons.
+
 
 New in 2.8.1.6
 ==============
