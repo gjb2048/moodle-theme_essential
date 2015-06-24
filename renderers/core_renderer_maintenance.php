@@ -12,8 +12,9 @@
  * @copyright  2014 Sam Hemelryk
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class theme_essential_core_renderer_maintenance extends core_renderer_maintenance
-{
+class theme_essential_core_renderer_maintenance extends core_renderer_maintenance {
+    protected $theme = null;
+
     /**
      * Renders notifications for maintenance scripts.
      *
@@ -80,6 +81,42 @@ class theme_essential_core_renderer_maintenance extends core_renderer_maintenanc
             $urltwo = preg_replace('|^https?://|i', '//', $urltwo->out(false));
             return '<link rel="stylesheet" href="'.$urlone.'"><link rel="stylesheet" href="'.$urltwo.'">';
         }
+    }
+
+    public function get_setting($setting, $format = false, $theme = null) {
+
+        if (empty($theme)) {
+            if (empty($this->theme)) {
+                $this->theme = theme_config::load('essential');
+            }
+            $theme = $this->theme;
+        }
+
+        global $CFG;
+        require_once($CFG->dirroot . '/lib/weblib.php');
+        if (empty($theme->settings->$setting)) {
+            return false;
+        } else if (!$format) {
+            return $theme->settings->$setting;
+        } else if ($format === 'format_text') {
+            return format_text($theme->settings->$setting, FORMAT_PLAIN);
+        } else if ($format === 'format_html') {
+            return format_text($theme->settings->$setting, FORMAT_HTML, array('trusted' => true, 'noclean' => true));
+        } else {
+            return format_string($theme->settings->$setting);
+        }
+    }
+
+    /**
+     * States if the browser is not IE9 or less.
+     */
+    public function theme_essential_not_lte_ie9() {
+        $properties = $this->theme_essential_ie_properties();
+        if (!is_array($properties)) {
+            return true;
+        }
+        // We have properties, it is a version of IE, so is it greater than 9?
+        return ($properties['version'] > 9.0);
     }
 
     /**

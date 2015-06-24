@@ -187,6 +187,7 @@ New in 2.9.0.1
 - NEW: Update moodle LESS.
 - NEW: Convert jQuery from pluginfile.php to AMD.
 - NEW: Convert carousel to AMD.
+- NEW: Update 'Essentials' child theme for M2.9 changes above.
 
 New in 2.8.1.6
 ==============

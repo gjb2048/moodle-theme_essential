@@ -50,8 +50,3 @@ function theme_essentials_set_fontwww($css) {
 
     return $css;
 }
-
-function theme_essentials_page_init(moodle_page $page) {
-    require_once(dirname(__FILE__) . '/../essential/lib.php');
-    theme_essential_page_init($page);
-}
