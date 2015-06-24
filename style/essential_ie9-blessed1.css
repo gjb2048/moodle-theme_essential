@@ -131,9 +131,6 @@ body.jsenabled .questionflagcheckbox {
 .path-mod-quiz .qnbutton.thispage .thispageholder {
   border: 1px solid #666;
 }
-.path-mod-quiz .qnbutton.flagged .trafficlight {
-  background: url([[pix:quiz|navflagged]]) no-repeat top right;
-}
 .path-mod-quiz .qnbutton.blocked,
 .path-mod-quiz .qnbutton.notyetanswered,
 .path-mod-quiz .qnbutton.requiresgrading,
@@ -927,6 +924,7 @@ table#categoryquestions {
 .jsenabled.docked-region-side-pre #block-region-side-pre {
   display: none;
 }
+/** Start Legacy styles. Deprecated since Moodle 2.9. See MDL-48160 for further information. **/
 .content-only #region-main.span9,
 .empty-region-side-post #region-bs-main-and-pre.span9,
 .empty-region-side-pre #region-bs-main-and-post.span9,
@@ -938,6 +936,29 @@ table#categoryquestions {
 }
 .empty-region-side-pre #region-bs-main-and-pre.span9 #region-main,
 .jsenabled.docked-region-side-pre #region-bs-main-and-pre.span9 #region-main {
+  width: 100%;
+}
+.empty-region-side-pre #region-bs-main-and-post.span9 #region-main.span8,
+.jsenabled.docked-region-side-pre #region-bs-main-and-post.span9 #region-main.span8 {
+  float: right;
+}
+/** End Legacy styles **/
+/* Default Three Columns - All
+------------------------------*/
+.content-only #region-main-box,
+.content-only #region-main {
+  width: 100%;
+}
+.empty-region-side-pre.used-region-side-post #region-main {
+  width: 100%;
+}
+.empty-region-side-post.used-region-side-pre #region-main-box {
+  width: 100%;
+}
+.jsenabled.docked-region-side-pre.empty-region-side-pre.used-region-side-post #region-main {
+  width: 100%;
+}
+.jsenabled.docked-region-side-post.empty-region-side-post.used-region-side-pre #region-main-box {
   width: 100%;
 }
 .empty-region-side-post.used-region-side-pre #region-main.span8,
@@ -952,11 +973,19 @@ table#categoryquestions {
   width: 23.40425532%;
   *width: 23.35106383%;
 }
-.empty-region-side-pre #region-bs-main-and-post.span9 #region-main.span8,
-.jsenabled.docked-region-side-pre #region-bs-main-and-post.span9 #region-main.span8 {
-  float: right;
-}
 /** Page layout CSS ends **/
+.dir-ltr,
+.mdl-left,
+.dir-rtl .mdl-right {
+  /*@noflip*/
+  text-align: left;
+}
+.dir-rtl,
+.mdl-right,
+.dir-rtl .mdl-left {
+  /*@noflip*/
+  text-align: right;
+}
 #add,
 #remove,
 .centerpara,
@@ -1148,12 +1177,18 @@ img.iconkbhelp {
   height: 17px;
   width: 49px;
 }
-img.icon-pre {
+img.icon-pre,
+.dir-rtl img.icon-post {
+  /*@noflip*/
   padding-right: 3px;
+  /*@noflip*/
   padding-left: 0;
 }
-img.icon-post {
+img.icon-post,
+.dir-rtl img.icon-pre {
+  /*@noflip*/
   padding-left: 3px;
+  /*@noflip*/
   padding-right: 0;
 }
 .boxaligncenter {
@@ -2438,6 +2473,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
   padding-left: 2.7em;
   padding-top: 0.3em;
   padding-bottom: 0.1em;
+  padding-right: 0;
 }
 .choosercontainer #chooseform .subtype {
   margin-bottom: 0;
@@ -2692,6 +2728,12 @@ a.criteria-action {
   padding: 0px 3px;
   float: right;
 }
+div.criteria-description {
+  padding: 10px 15px;
+  margin: 5px 0px;
+  background: none repeat scroll 0 0 #f9f9f9;
+  border: 1px solid #EEE;
+}
 ul.badges {
   margin: 0;
   list-style: none;
@@ -2854,6 +2896,39 @@ img#persona_signin {
 }
 .breadcrumb-nav .breadcrumb {
   margin: 0;
+}
+/** Header-bar styles **/
+.page-context-header {
+  overflow: hidden;
+}
+.page-context-header .page-header-image,
+.page-context-header .page-header-headings {
+  display: block;
+  position: relative;
+}
+.page-context-header .page-header-image {
+  margin-bottom: 1em;
+  z-index: 1;
+}
+.page-context-header .page-header-headings {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.page-context-header .page-header-headings h1 {
+  display: block;
+}
+.page-context-header .page-header-headings,
+.page-context-header .header-button-group {
+  position: relative;
+  line-height: 24px;
+  vertical-align: middle;
+}
+.page-context-header .header-button-group {
+  display: block;
+}
+.page-context-header .header-button-group a {
+  position: relative;
+  top: -0.4em;
 }
 /** Action menu component styles **/
 .moodle-actionmenu,
@@ -4051,6 +4126,17 @@ img.iconsmall {
 .block .minicalendar td.weekend {
   color: #999999;
 }
+.block .minicalendar td a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.block .minicalendar caption {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-align: center;
+}
 .block .calendar-event-panel {
   background-color: #eeeeee;
   border: 1px solid #eeeeee;
@@ -4110,6 +4196,24 @@ img.iconsmall {
 .block .content h3.eventskey {
   margin-top: 0.5em;
 }
+.ical-link {
+  font-size: 10px;
+  font-weight: bold;
+  background-color: #f60;
+  padding: 0px 5px;
+  color: #fff;
+  border-top: 1px solid #f93;
+  border-left: 1px solid #f93;
+  border-bottom: 1px solid #013;
+  border-right: 1px solid #013;
+}
+.ical-link:hover,
+.ical-link:active,
+.ical-link:focus,
+.ical-link:visited {
+  color: #fff;
+  text-decoration: none;
+}
 @media (min-width: 768px) {
   #page-calender-view .container-fluid {
     min-width: 1024px;
@@ -4168,9 +4272,9 @@ img.iconsmall {
 }
 .section .activity .mod-indent-outer {
   /**
-       * Add appropriate padding such that nothing overlaps the
-       * absolute positioned move icon.
-       */
+             * Add appropriate padding such that nothing overlaps the
+             * absolute positioned move icon.
+             */
   padding-left: 32px;
 }
 .section .activity .actions {
@@ -4328,7 +4432,6 @@ img.iconsmall {
 }
 .course-content ul li.section.hidden {
   opacity: 0.5;
-  filter: alpha(opacity=50);
 }
 .course-content ul.topics li.section .content,
 .course-content ul.weeks li.section .content {
@@ -4565,18 +4668,24 @@ span.editinstructions {
   display: block;
   background-repeat: no-repeat;
   padding-left: 21px;
-  padding-right: 0px;
-  background-position: left 0.5em;
+  padding-right: 0;
+  background-position: left 0.2em;
 }
+.coursebox > .info > .coursename,
 .coursebox .content .teachers,
 .coursebox .content .courseimage,
 .coursebox .content .coursefile {
   float: left;
-  width: 40%;
   clear: left;
+}
+.coursebox .content .teachers,
+.coursebox .content .courseimage,
+.coursebox .content .coursefile {
+  width: 40%;
 }
 .coursebox > .info > h3.coursename {
   margin: 5px;
+  line-height: 1;
 }
 .coursebox > .info > .coursename {
   margin: 5px;
@@ -4709,7 +4818,6 @@ span.editinstructions {
 }
 .course_category_tree .category > .content {
   padding-left: 16px;
-  padding-right: 0;
 }
 .course_category_tree .subcategories > .paging,
 .courses > .paging {
@@ -5267,7 +5375,7 @@ span.editinstructions {
   /* IE7 inline-block hack */
   *zoom: 1;
   float: left;
-  height: 520px;
+  height: 525px;
   border-right: 1px solid #BBBBBB;
 }
 .file-picker .fp-repo-items {
@@ -5283,18 +5391,17 @@ span.editinstructions {
 .file-picker .fp-navbar {
   background: #F2F2F2;
   border-bottom: 1px solid #BBBBBB;
-  min-height: 36px;
+  min-height: 40px;
   overflow: hidden;
 }
 .file-picker .fp-navbar .fp-viewbar {
-  margin: 2px 4px;
+  margin: 4px;
 }
 .file-picker .fp-content {
-  padding-top: 0px;
   background: #FFFFFF;
   clear: none;
   overflow: auto;
-  height: 482px;
+  height: 452px;
 }
 .filepicker.moodle-dialogue-fullscreen .file-picker .fp-content {
   width: 100%;
@@ -5815,7 +5922,7 @@ a.ygtvspacer:hover {
   min-height: 20px;
 }
 .file-picker .fp-toolbar {
-  padding: 2px 4px;
+  padding: 4px;
 }
 .fp-toolbar .fp-btn-add,
 .fp-toolbar .fp-btn-download,
@@ -6200,6 +6307,7 @@ a.ygtvspacer:hover {
 .message .heading {
   font-size: 1em;
   font-weight: bold;
+  clear: both;
 }
 .message .author {
   font-weight: bold;
@@ -6233,44 +6341,105 @@ table.message .searchresults td {
   padding: 5px;
 }
 .message .contactselector {
-  width: 24%;
   float: left;
 }
-.message .contactselector .contact {
-  text-align: left;
-}
-.message .contactselector .messageselecteduser {
-  font-weight: bold;
+@media screen and (min-width: 1000px) {
+  .message .contactselector {
+    width: 24%;
+  }
 }
 .message .contactselector .paging {
   z-index: 1;
   position: relative;
 }
+.message .message-contacts {
+  list-style-type: none;
+  margin: 0;
+}
+.message .message-contacts li {
+  clear: both;
+  position: relative;
+  min-height: 23px;
+}
+.message .message-contacts li .pix {
+  left: 0;
+  right: auto;
+  position: absolute;
+}
+.message .message-contacts li .contact {
+  margin: 0 24% 0 25px;
+  text-align: left;
+}
+.message .message-contacts li .contact.nolinks {
+  margin-right: 5px;
+}
+.message .message-contacts li .link {
+  float: right;
+  max-width: 30%;
+}
 .message .messagearea {
-  padding-left: 1%;
-  border-left: 1px solid #dddddd;
-  width: 74%;
   float: right;
   min-height: 200px;
+}
+@media screen and (min-width: 1000px) {
+  .message .messagearea {
+    width: 74%;
+    border-left: 1px solid #dddddd;
+    padding-left: 1%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .message .messagearea {
+    width: 100%;
+  }
 }
 .message .messagearea .messagehistorytype {
   clear: both;
   padding-bottom: 20px;
 }
-.message .messagearea .messagehistory .message_user_pictures {
-  margin-left: auto;
-  margin-right: auto;
-}
-.message .messagearea .messagehistory .message_user_pictures #user1 {
+.message .messagearea .messagehistory .user {
   vertical-align: top;
-  width: 200px;
+  width: 45%;
+  min-width: 100px;
+  float: left;
 }
-.message .messagearea .messagehistory .message_user_pictures #user2 {
-  vertical-align: top;
-  width: 200px;
+.message .messagearea .messagehistory .user > div {
+  text-align: center;
 }
-.message .messagearea .messagehistory .message_user_pictures .useractionlinks {
-  font-size: 0.9em;
+.message .messagearea .messagehistory .between {
+  float: left;
+  width: 16px;
+  margin: 0 1%;
+  padding-top: 40px;
+}
+@media screen and (min-width: 800px) {
+  .message .messagearea .messagehistory .between {
+    margin: 0 3%;
+  }
+  .message .messagearea .messagehistory .user {
+    width: 32%;
+  }
+  .message .messagearea .messagehistory .user:first-child {
+    margin-left: 13%;
+    margin-right: 0%;
+  }
+  .message .messagearea .messagehistory .user:last-child {
+    margin-right: 13%;
+    margin-left: 0%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .message .messagearea .messagehistory .user {
+    width: 25%;
+  }
+  .message .messagearea .messagehistory .user:first-child {
+    margin-left: 20%;
+    margin-right: 0;
+  }
+  .message .messagearea .messagehistory .user:last-child {
+    margin-left: 0%;
+    margin-right: 20%;
+  }
 }
 .message .messagearea .messagehistory .heading {
   width: 100%;
@@ -6357,6 +6526,7 @@ table.message .searchresults td {
   white-space: nowrap;
 }
 .messagesearchresults td img.userpicture {
+  padding-left: 0;
   padding-right: .45em;
   vertical-align: text-bottom;
 }
@@ -6392,6 +6562,58 @@ table.message .searchresults td {
 /* Widen the plain text editor on the bulk message screen */
 #page-user-action_redir #edit-messagebody {
   width: auto;
+}
+/** Messenger send message dialog */
+.core_message-messenger-sendmessage-hidden {
+  display: none;
+}
+.core_message-messenger-sendmessage .message-actions {
+  position: relative;
+}
+.core_message-messenger-sendmessage .message-area {
+  height: 240px;
+  max-height: 100%;
+  position: relative;
+  margin-bottom: 10px;
+}
+.core_message-messenger-sendmessage .message-input {
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.core_message-messenger-sendmessage .message-send {
+  margin: 0;
+  float: right;
+}
+.core_message-messenger-sendmessage .message-notice-area {
+  display: table;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.core_message-messenger-sendmessage .message-notice {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.core_message-messenger-sendmessage .message-notice > div {
+  background: #eee;
+  padding: 5px;
+  font-size: 12px;
+}
+.core_message-messenger-sendmessage .message-footer {
+  margin-top: 3px;
+  line-height: 20px;
+}
+.core_message-messenger-sendmessage .message-history {
+  position: absolute;
+  bottom: 0;
 }
 /* Question */
 .questionbank h2 {
@@ -6491,8 +6713,8 @@ table.message .searchresults td {
   max-height: 400px;
   max-height: calc(85vh);
   /* The next line is a workaround because recess is crap. Delete ththe following line once
-   * https://github.com/twitter/recess/issues/59 / https://github.com/twitter/recess/issues/75
-   * is fixed. The previous line is the right one. */
+  * https://github.com/twitter/recess/issues/59 / https://github.com/twitter/recess/issues/75
+  * is fixed. The previous line is the right one. */
   max-height: 60vh;
   width: 60%;
 }
@@ -6535,7 +6757,6 @@ table.message .searchresults td {
 #categoryquestions td,
 #categoryquestions th {
   padding: 0 0.2em;
-  text-align: left;
 }
 #categoryquestions th {
   text-align: left;
@@ -6936,7 +7157,6 @@ body.path-question-type .fitem_fgroup .accesshide {
   position: static;
   width: 12.1em;
   float: right;
-  margin-left: 0px;
   margin-right: 60px;
 }
 #page-mod-quiz-edit div.question div.content div.points br {
@@ -7020,6 +7240,18 @@ body.path-question-type .mform fieldset.hidden {
 .userprofile .description {
   margin-bottom: 20px;
 }
+.userprofile .profile_tree {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+}
+.userprofile .profile_tree section {
+  display: inline-block;
+  width: 100%;
+}
 .userprofile dl.list {
   *zoom: 1;
 }
@@ -7051,6 +7283,29 @@ body.path-question-type .mform fieldset.hidden {
   text-align: center;
   float: left;
   clear: none;
+}
+#page-user-profile .node_category li,
+.path-user .node_category li {
+  list-style-type: square;
+}
+#page-user-profile .node_category li.contentnode,
+.path-user .node_category li.contentnode {
+  list-style-type: none;
+}
+#page-user-profile .node_category .contentnode,
+.path-user .node_category .contentnode {
+  margin-left: -25px;
+}
+@media (max-width: 480px) {
+  .userprofile .profile_tree {
+    /** Display the profile on one column on phones. */
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+  }
 }
 .userlist .action-icon img {
   vertical-align: middle;
@@ -7215,6 +7470,22 @@ body.path-question-type .mform fieldset.hidden {
 .profileeditor > .singlebutton div,
 .profileeditor > .singlebutton input {
   margin: 0;
+}
+#groupeditform .groups,
+#groupeditform .members {
+  width: 49%;
+  float: left;
+  text-align: left;
+}
+/** Preferences page */
+.preferences-group ul {
+  list-style: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+.dir-rtl .preferences-group {
+  /*@noflip*/
+  float: right;
 }
 /*!
  * Bootstrap v2.3.2
@@ -12224,6 +12495,9 @@ body:not(.jsenabled) .langmenu:hover > .dropdown-menu,
   max-height: 150px;
   overflow-y: auto;
 }
+ol {
+  margin: 0 0 10px 2.5em;
+}
 .block {
   min-height: 20px;
   padding: 19px;
@@ -12471,9 +12745,6 @@ form {
 .mform fieldset.collapsible legend a.fheader {
   padding: 0 5px 0 20px;
   margin-left: -20px;
-  margin-right: 0;
-  background-position: 2px center;
-  background-repeat: no-repeat;
 }
 .jsenabled .mform .collapsed .fcontainer {
   display: none;
@@ -12481,7 +12752,7 @@ form {
 .mform .fitem .fitemtitle div {
   display: inline;
 }
-#adminsettings span.error,
+#adminsettings .error,
 .loginpanel .error,
 .mform .error {
   color: #b94a48;
@@ -12519,6 +12790,11 @@ form {
 }
 .mform .fcheckbox input {
   margin-left: 0;
+}
+.mform .fcheckbox > span,
+.mform .fradio > span,
+.mform .fgroup > span {
+  display: inline-block;
   margin-top: 5px;
 }
 .mform .fitem fieldset.fgroup label,
@@ -12543,7 +12819,6 @@ form {
   margin: 0 .2em;
 }
 .singleselect label {
-  margin-left: 0;
   margin-right: .3em;
 }
 input#id_externalurl {
@@ -12612,6 +12887,9 @@ input#id_externalurl {
 }
 .form-item .form-description {
   padding-top: 0;
+}
+.fitem .fstaticlabel {
+  font-weight: bold;
 }
 table#form td.submit,
 .form-buttons,
@@ -12709,7 +12987,6 @@ input[type="checkbox"] + label {
 input[type="radio"],
 input[type="checkbox"] {
   margin-top: -4px;
-  margin-left: auto;
   margin-right: 7px;
 }
 .singleselect {
@@ -12759,6 +13036,11 @@ fieldset.coursesearchbox label {
   body #region-main .mform:not(.unresponsive) .fitem .fstatic:empty {
     display: none;
   }
+  body #region-main .mform:not(.unresponsive) .fitem .fcheckbox > span,
+  body #region-main .mform:not(.unresponsive) .fitem .fradio > span,
+  body #region-main .mform:not(.unresponsive) .fitem .fgroup > span {
+    margin-top: 4px;
+  }
   body #region-main .mform:not(.unresponsive) .femptylabel .fitemtitle {
     display: inline-block;
     width: auto;
@@ -12805,6 +13087,11 @@ fieldset.coursesearchbox label {
   }
   .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .fitem .fstatic:empty {
     display: none;
+  }
+  .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .fitem .fcheckbox > span,
+  .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .fitem .fradio > span,
+  .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .fitem .fgroup > span {
+    margin-top: 4px;
   }
   .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .femptylabel .fitemtitle {
     display: inline-block;
@@ -12953,6 +13240,13 @@ select {
 .path-mod-forum .forumheaderlist td {
   border: none;
 }
+.path-mod-forum .forumheaderlist thead .header,
+.path-mod-forum .forumheaderlist tbody .discussion td {
+  white-space: normal;
+  vertical-align: top;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
 .path-mod-forum .forumheaderlist thead .header {
   white-space: normal;
   vertical-align: top;
@@ -12963,15 +13257,23 @@ select {
 .path-mod-forum .forumheaderlist thead .header.lastpost {
   text-align: right;
 }
+.path-mod-forum .forumheaderlist thead .header th.discussionsubscription,
+.path-mod-forum .forumheaderlist tbody .discussion td.discussionsubscription {
+  width: 16px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
 .path-mod-forum .forumheaderlist .discussion .author,
 .path-mod-forum .forumheaderlist .discussion .replies,
 .path-mod-forum .forumheaderlist .discussion .lastpost {
   white-space: normal;
 }
+.path-mod-forum .forumheaderlist .discussion .discussionsubscription,
 .path-mod-forum .forumheaderlist .discussion .replies {
   text-align: center;
 }
 .path-mod-forum .forumheaderlist .discussion .topic,
+.path-mod-forum .forumheaderlist .discussion .discussionsubscription,
 .path-mod-forum .forumheaderlist .discussion .topic.starter,
 .path-mod-forum .forumheaderlist .discussion .picture,
 .path-mod-forum .forumheaderlist .discussion .author,
@@ -13146,6 +13448,264 @@ div#dock {
 .nav .caret {
   margin-left: 4px;
 }
+.nav .divider {
+  overflow: hidden;
+  width: 0;
+  height: 40px;
+  border-left: 1px solid #e5e5e5;
+  border-right: 1px solid #fff;
+}
+.dropdown-menu .divider {
+  width: auto;
+  height: 1px;
+  border-left: 0px none;
+  border-right: 0px none;
+}
+.usermenu .login {
+  color: #777777;
+  line-height: 40px;
+}
+.usermenu .login a {
+  color: #0070a8;
+}
+.usermenu .login a:hover,
+.usermenu .login a:focus {
+  color: #003d5c;
+  text-decoration: underline;
+}
+.usermenu .moodle-actionmenu .toggle-display {
+  display: block;
+  opacity: 1;
+  color: #777777;
+  line-height: 40px;
+  height: 40px;
+}
+.usermenu .moodle-actionmenu .toggle-display:hover {
+  color: #333333;
+}
+.usermenu .moodle-actionmenu .toggle-display .userbutton {
+  height: 40px;
+  line-height: 40px;
+}
+.usermenu .moodle-actionmenu .toggle-display .userbutton .avatars {
+  display: inline-block;
+  height: 36px;
+  width: 36px;
+  vertical-align: middle;
+  margin-right: 6px;
+  margin-left: 6px;
+}
+.usermenu .moodle-actionmenu .toggle-display .userbutton .avatars .avatar,
+.usermenu .moodle-actionmenu .toggle-display .userbutton .avatars img {
+  display: block;
+}
+.usermenu .moodle-actionmenu .toggle-display .userbutton .usertext {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1em;
+  color: inherit;
+}
+.usermenu .moodle-actionmenu .toggle-display .userbutton .usertext .meta,
+.usermenu .moodle-actionmenu .toggle-display .userbutton .usertext .role {
+  display: block;
+  font-size: 12px;
+}
+.usermenu .moodle-actionmenu .toggle-display .userbutton .usertext .meta .value,
+.usermenu .moodle-actionmenu .toggle-display .userbutton .usertext .role .value {
+  font-weight: bold;
+}
+.usermenu .moodle-actionmenu .toggle-display .userbutton .usertext .role {
+  font-weight: bold;
+}
+.usermenu .moodle-actionmenu .toggle-display .caret {
+  display: none;
+}
+.usermenu .moodle-actionmenu .menu .menu-action.icon img {
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.usermenu .moodle-actionmenu .menu .menu-action.icon:hover img {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.125);
+}
+.usermenu .moodle-actionmenu[data-enhanced] .menu .menu-action.icon img,
+.usermenu .moodle-actionmenu[data-enhanced] .menu .menu-action.icon:hover img {
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.navbar-inverse .usermenu .login {
+  color: #999999;
+}
+.navbar-inverse .usermenu .login a {
+  color: #999999;
+}
+.navbar-inverse .usermenu .login a:hover {
+  color: #ffffff;
+}
+.navbar-inverse .usermenu .moodle-actionmenu .toggle-display {
+  color: #999999;
+}
+.navbar-inverse .usermenu .moodle-actionmenu .userbutton .usertext {
+  color: #999999;
+}
+.navbar-inverse .usermenu .moodle-actionmenu .userbutton .usertext .meta {
+  color: #999999;
+}
+.navbar-inverse .usermenu .moodle-actionmenu .userbutton .usertext .meta .value {
+  color: #999999;
+}
+.navbar-inverse .usermenu .moodle-actionmenu:hover .usertext {
+  color: #ffffff;
+}
+.navbar-inverse .usermenu .moodle-actionmenu:hover .usertext .meta {
+  color: #999999;
+}
+.navbar-inverse .usermenu .moodle-actionmenu:hover .usertext .meta .value {
+  color: #ffffff;
+}
+.navbar-inverse .usermenu .moodle-actionmenu[data-enhanced] .toggle-display.textmenu .caret {
+  border-top-color: #ffffff;
+}
+.navbar-inverse .usermenu .moodle-actionmenu .menu .menu-action.icon img {
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.navbar-inverse .usermenu .moodle-actionmenu .menu .menu-action.icon:hover img {
+  background: #333;
+  border-radius: 4px;
+  box-shadow: 0px 0px 16px #ffffff;
+}
+.navbar-inverse .usermenu .moodle-actionmenu[data-enhanced] .menu .menu-action.icon img,
+.navbar-inverse .usermenu .moodle-actionmenu[data-enhanced] .menu .menu-action.icon:hover img {
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.jsenabled .usermenu .moodle-actionmenu .toggle-display {
+  display: block;
+}
+.jsenabled .usermenu .moodle-actionmenu .toggle-display.textmenu {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.jsenabled .usermenu .moodle-actionmenu .toggle-display .caret {
+  display: inline-block;
+  position: relative;
+  top: 9px;
+}
+.jsenabled .usermenu .moodle-actionmenu > .menubar {
+  display: block;
+  margin: 0px 0px 2px 0px;
+}
+.jsenabled .usermenu .moodle-actionmenu > .menu {
+  min-width: 160px;
+}
+.jsenabled .usermenu .moodle-actionmenu > .menu .filler {
+  display: block;
+  *width: 100%;
+  height: 1px;
+  margin: 9px 1px;
+  *margin: -5px 0 5px;
+  overflow: hidden;
+  background-color: #e5e5e5;
+  border-bottom: 1px solid #ffffff;
+}
+.jsenabled .usermenu .moodle-actionmenu.show {
+  background-color: #e5e5e5;
+}
+.jsenabled .usermenu .moodle-actionmenu.show .menu {
+  padding: 5px 0;
+  margin: 2px 0 0;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.jsenabled .usermenu .moodle-actionmenu.show .menu:before {
+  content: '';
+  display: inline-block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: -7px;
+}
+.jsenabled .usermenu .moodle-actionmenu.show .menu:after {
+  content: '';
+  display: inline-block;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #ffffff;
+  position: absolute;
+  top: -6px;
+}
+.jsenabled .usermenu .moodle-actionmenu.show .menu a {
+  border-radius: 0;
+}
+.jsenabled .usermenu .moodle-actionmenu.show .menu a:focus {
+  text-decoration: none;
+}
+.jsenabled .usermenu .moodle-actionmenu.show .menu a:hover {
+  text-decoration: none;
+  background-color: #00699e;
+  background-image: -moz-linear-gradient(top, #0070a8, #005f8f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0070a8), to(#005f8f));
+  background-image: -webkit-linear-gradient(top, #0070a8, #005f8f);
+  background-image: -o-linear-gradient(top, #0070a8, #005f8f);
+  background-image: linear-gradient(to bottom, #0070a8, #005f8f);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0070a8', endColorstr='#ff005f8f', GradientType=0);
+}
+.jsenabled .usermenu .moodle-actionmenu.show .menu.align-tr-br {
+  margin-top: 2px;
+}
+.jsenabled .navbar-inverse .usermenu .moodle-actionmenu.show {
+  background-color: #111111;
+}
+.usermenu {
+  float: right;
+}
+.usermenu > .moodle-actionmenu > .menu:before {
+  right: 9px;
+}
+.usermenu > .moodle-actionmenu > .menu:after {
+  right: 10px;
+}
+.usermenu > .moodle-actionmenu > .menubar li a {
+  text-align: right;
+}
+.dir-ltr.userloggedinas .usermenu .userbutton .avatars .avatar.current {
+  /*@noflip*/
+  left: 16px;
+}
+.dir-rtl.userloggedinas .usermenu .userbutton .avatars .avatar.current {
+  /*@noflip*/
+  left: -14px;
+}
+.userloggedinas .usermenu .userbutton .avatars .avatar {
+  overflow: hidden;
+}
+.userloggedinas .usermenu .userbutton .avatars .avatar.current {
+  position: relative;
+  top: 4px;
+  left: 4px;
+  width: 20px;
+  height: 20px;
+  margin-top: 11px;
+  margin-bottom: -34px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  box-shadow: -2px -2px 16px rgba(0, 0, 0, 0.25);
+}
+.userloggedinas .usermenu .userbutton .avatars .avatar img {
+  width: inherit;
+  height: inherit;
+}
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax {
   background-color: #ffffff;
 }
@@ -13216,477 +13776,4 @@ div#dock {
   border: 1px solid #ccc;
   border-radius: 4px;
   max-width: none;
-}
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages {
-  margin: 20px 25px;
-}
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages .chat-event.course-theme {
-  text-align: center;
-  margin: 10px 0;
-  font-size: 11.9px;
-  color: #777;
-}
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages .chat-message.course-theme {
-  background-color: #ffffff;
-  border: 1px dotted #ddd;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  padding: 4px 10px;
-  margin: 10px 0;
-}
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages .chat-message.course-theme .time {
-  float: right;
-  font-size: 11px;
-  color: #777;
-}
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages .mdl-chat-my-entry .chat-message.course-theme {
-  background-color: #f6f6f6;
-}
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages .mdl-chat-my-entry .chat-message.course-theme .user {
-  font-weight: bold;
-}
-/* reports.less */
-#page-report-participation-index .participationselectform div label {
-  display: inline;
-  margin: 0 5px;
-}
-.path-backup .mform .grouped_settings.section_level {
-  min-height: 20px;
-  padding: 19px;
-  margin-bottom: 20px;
-  background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  border-color: #e3e3e3;
-  padding: 10px 0 0 0;
-  clear: both;
-}
-.path-backup .mform .grouped_settings.section_level blockquote {
-  border-color: #ddd;
-  border-color: rgba(0, 0, 0, 0.15);
-}
-.path-backup .mform .grouped_settings {
-  clear: both;
-  overflow: hidden;
-}
-.path-backup .include_setting,
-.path-backup .grouped_settings .normal_setting {
-  display: inline-block;
-}
-.path-backup .include_setting.section_level label {
-  font-weight: bold;
-}
-.path-backup .mform .fitem .fitemtitle {
-  width: 260px;
-}
-.path-backup .mform .fitem .felement {
-  margin-left: 280px;
-}
-.path-backup .notification.dependencies_enforced {
-  text-align: center;
-  color: #b94a48;
-  font-weight: bold;
-}
-.path-backup .backup_progress {
-  text-align: center;
-}
-.path-backup .backup_progress .backup_stage {
-  color: #999999;
-}
-.path-backup .backup_progress .backup_stage.backup_stage_current {
-  font-weight: bold;
-  color: inherit;
-}
-.path-backup .backup_progress span.backup_stage.backup_stage_complete {
-  color: inherit;
-}
-#page-backup-restore .filealiasesfailures {
-  background-color: #f2dede;
-}
-#page-backup-restore .filealiasesfailures .aliaseslist {
-  width: 90%;
-  margin: 0.8em auto;
-  background-color: #ffffff;
-  border: 1px dotted #666;
-}
-.path-backup .fitem .smallicon {
-  vertical-align: text-bottom;
-}
-.backup-restore .backup-section > h2.header,
-.backup-restore .backup-section .backup-sub-section h3 {
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin-bottom: 20px;
-  font-size: 21px;
-  line-height: 40px;
-  color: #333333;
-  border: 0;
-  border-bottom: 1px solid #e5e5e5;
-}
-.backup-restore .backup-section .noticebox {
-  margin: 1em auto;
-  width: 60%;
-  text-align: center;
-}
-.backup-restore .backup-section.settings-section .detail-pair {
-  width: 50%;
-  display: inline-block;
-  *display: inline;
-  /* IE7 inline-block hack */
-  *zoom: 1;
-}
-.backup-restore .backup-section.settings-section .detail-pair-label {
-  width: 65%;
-}
-.backup-restore .backup-section.settings-section .detail-pair-value {
-  width: 25%;
-}
-.backup-restore .activitytable {
-  min-width: 500px;
-}
-.backup-restore .activitytable .modulename {
-  width: 100px;
-}
-.backup-restore .activitytable .moduleincluded {
-  width: 50px;
-}
-.backup-restore .activitytable .userinfoincluded {
-  width: 50px;
-}
-.backup-restore .detail-pair-label {
-  display: inline-block;
-  *display: inline;
-  /* IE7 inline-block hack */
-  *zoom: 1;
-  width: 25%;
-  padding: 8px;
-  margin: 0;
-  text-align: right;
-  font-weight: bold;
-  vertical-align: top;
-}
-.backup-restore .detail-pair-value {
-  display: inline-block;
-  *display: inline;
-  /* IE7 inline-block hack */
-  *zoom: 1;
-  width: 65%;
-  padding: 8px;
-  margin: 0;
-}
-.backup-restore .detail-pair-value > .sub-detail {
-  display: block;
-  font-size: 11.9px;
-  color: #999999;
-}
-.backup-restore > .singlebutton {
-  text-align: right;
-}
-.path-backup .mform .fgroup .proceedbutton {
-  float: right;
-  margin-right: 5%;
-}
-.restore-course-search .rcs-results {
-  width: 70%;
-  min-width: 400px;
-}
-.restore-course-search .rcs-results table {
-  width: 100%;
-  margin: 0;
-  border-width: 0;
-}
-.restore-course-search .rcs-results table .no-overflow {
-  max-width: 600px;
-}
-.restore-course-search .rcs-results .paging {
-  text-align: left;
-  margin: 0;
-  background-color: #eee;
-  padding: 3px;
-}
-.restore-course-category .rcs-results {
-  width: 70%;
-  min-width: 400px;
-  border: 1px solid #ddd;
-  margin: 5px 0;
-}
-.restore-course-category .rcs-results table {
-  width: 100%;
-  margin: 0;
-  border-width: 0;
-}
-.restore-course-category .rcs-results table .no-overflow {
-  max-width: 600px;
-}
-.restore-course-category .rcs-results .paging {
-  text-align: left;
-  margin: 0;
-  background-color: #eee;
-  padding: 3px;
-}
-.path-backup .wibbler {
-  width: 500px;
-  margin: 0 auto 10px;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
-  border-left: 1px solid black;
-  position: relative;
-  min-height: 4px;
-}
-.path-backup .wibbler .wibble {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 4px;
-}
-.path-backup .wibbler .state0 {
-  background: #eee;
-}
-.path-backup .wibbler .state1 {
-  background: #ddd;
-}
-.path-backup .wibbler .state2 {
-  background: #ccc;
-}
-.path-backup .wibbler .state3 {
-  background: #bbb;
-}
-.path-backup .wibbler .state4 {
-  background: #aaa;
-}
-.path-backup .wibbler .state5 {
-  background: #999;
-}
-.path-backup .wibbler .state6 {
-  background: #888;
-}
-.path-backup .wibbler .state7 {
-  background: #777;
-}
-.path-backup .wibbler .state8 {
-  background: #666;
-}
-.path-backup .wibbler .state9 {
-  background: #555;
-}
-.path-backup .wibbler .state10 {
-  background: #444;
-}
-.path-backup .wibbler .state11 {
-  background: #333;
-}
-.path-backup .wibbler .state12 {
-  background: #222;
-}
-.path-backup .backup_log {
-  margin-top: 2em;
-}
-.path-backup .backup_log h2 {
-  font-size: 1em;
-}
-.path-backup .backup_log_contents {
-  border: 1px solid #ddd;
-  padding: 10px;
-  height: 300px;
-  overflow-y: scroll;
-}
-table.flexible,
-.generaltable {
-  width: 100%;
-  margin-bottom: 20px;
-}
-table.flexible th,
-.generaltable th,
-table.flexible td,
-.generaltable td {
-  padding: 8px;
-  line-height: 20px;
-  text-align: left;
-  vertical-align: top;
-  border-top: 1px solid #dddddd;
-}
-table.flexible th,
-.generaltable th {
-  font-weight: bold;
-}
-table.flexible thead th,
-.generaltable thead th {
-  vertical-align: bottom;
-}
-table.flexible caption + thead tr:first-child th,
-.generaltable caption + thead tr:first-child th,
-table.flexible caption + thead tr:first-child td,
-.generaltable caption + thead tr:first-child td,
-table.flexible colgroup + thead tr:first-child th,
-.generaltable colgroup + thead tr:first-child th,
-table.flexible colgroup + thead tr:first-child td,
-.generaltable colgroup + thead tr:first-child td,
-table.flexible thead:first-child tr:first-child th,
-.generaltable thead:first-child tr:first-child th,
-table.flexible thead:first-child tr:first-child td,
-.generaltable thead:first-child tr:first-child td {
-  border-top: 0;
-}
-table.flexible tbody + tbody,
-.generaltable tbody + tbody {
-  border-top: 2px solid #dddddd;
-}
-table.flexible .table,
-.generaltable .table {
-  background-color: #ffffff;
-}
-.singlebutton div {
-  display: inline-block;
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-bottom: 5px;
-}
-#notice .buttons .singlebutton {
-  display: inline-block;
-}
-.continuebutton {
-  text-align: center;
-}
-.btn-lineup {
-  margin: 0 0 10px 5px;
-}
-input[name="searchwikicontent"] + input[type="submit"],
-select + input[type="submit"],
-input[type="text"] + input[type="button"],
-input[type="password"] + input[type="submit"],
-input[type="text"] + button,
-input[type="text"] + input[type="submit"] {
-  margin: 0 0 10px 5px;
-}
-p.arrow_button {
-  margin-top: 5em;
-  text-align: center;
-}
-p.arrow_button #remove {
-  margin: 3em auto 5em;
-}
-p.arrow_button input {
-  display: block;
-  width: 100%;
-  padding-left: 0;
-  padding-right: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-#addcontrols {
-  margin-top: 30px;
-  text-align: center;
-  margin-bottom: 3em;
-}
-#addcontrols label {
-  display: inline;
-}
-#addcontrols input,
-#removecontrols input {
-  display: block;
-  width: 100%;
-  padding-left: 0;
-  padding-right: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  margin-right: auto;
-  margin-left: auto;
-}
-button,
-input.form-submit,
-input[type="button"],
-input[type="submit"],
-input[type="reset"] {
-  display: inline-block;
-  *display: inline;
-  /* IE7 inline-block hack */
-  *zoom: 1;
-  padding: 4px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  line-height: 20px;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  color: #333333;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-  background-color: #f5f5f5;
-  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
-  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
-  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #e6e6e6;
-  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  border: 1px solid #cccccc;
-  *border: 0;
-  border-bottom-color: #b3b3b3;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  *margin-left: .3em;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
-  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
-}
-button:hover,
-input.form-submit:hover,
-input[type="button"]:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-button:focus,
-input.form-submit:focus,
-input[type="button"]:focus,
-input[type="submit"]:focus,
-input[type="reset"]:focus,
-button:active,
-input.form-submit:active,
-input[type="button"]:active,
-input[type="submit"]:active,
-input[type="reset"]:active,
-button.active,
-input.form-submit.active,
-input[type="button"].active,
-input[type="submit"].active,
-input[type="reset"].active,
-button.disabled,
-input.form-submit.disabled,
-input[type="button"].disabled,
-input[type="submit"].disabled,
-input[type="reset"].disabled,
-button[disabled],
-input.form-submit[disabled],
-input[type="button"][disabled],
-input[type="submit"][disabled],
-input[type="reset"][disabled] {
-  color: #333333;
-  background-color: #e6e6e6;
-  *background-color: #d9d9d9;
-}
-button:active,
-input.form-submit:active,
-input[type="button"]:active,
-input[type="submit"]:active,
-input[type="reset"]:active,
-button.active,
-input.form-submit.active,
-input[type="button"].active,
-input[type="submit"].active,
-input[type="reset"].active {
-  background-color: #cccccc \9;
 }

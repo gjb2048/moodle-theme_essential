@@ -183,7 +183,8 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.9.0.1
 ==============
 - NEW: Update icons.
-
+- NEW: Update quiz LESS.
+- NEW: Update moodle LESS.
 
 New in 2.8.1.6
 ==============

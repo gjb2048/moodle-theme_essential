@@ -16,6 +16,7 @@
     display:none;
 }
 
+/** Start Legacy styles. Deprecated since Moodle 2.9. See MDL-48160 for further information. **/
 .content-only #region-main.span9, // Two column layout with no block or all blocks docked.
 .empty-region-side-post #region-bs-main-and-pre.span9, // LTR with no post area.
 .empty-region-side-pre #region-bs-main-and-post.span9, // RTL with no pre area.
@@ -29,28 +30,83 @@
 .empty-region-side-pre #region-bs-main-and-pre.span9 #region-main, // LTR with no pre area.
 .jsenabled.docked-region-side-pre #region-bs-main-and-pre.span9 #region-main { // LTR with all pre blocks docked.
     // float: none;  // I do not know why!
-    width:100%;
-}
-
-.empty-region-side-post.used-region-side-pre, // Post region is empty and pre region is in use.
-.jsenabled.docked-region-side-post.used-region-side-pre { // All post blocks docked and pre region is in use.
-    #region-main.span8 {
-        /** Increase the span size by 1 **/
-        .fluid-span(9);
-    }
-    #block-region-side-pre.span4 {
-        /** Decrease the span size by 1 **/
-        .fluid-span(3);
-    }
+    width: 100%;
 }
 
 .empty-region-side-pre #region-bs-main-and-post.span9 #region-main.span8, // RTL with no pre area.
 .jsenabled.docked-region-side-pre #region-bs-main-and-post.span9 #region-main.span8 { // RTL with all pre blocks docked.
     float: right;
 }
+/** End Legacy styles **/
+
+
+/* Default Three Columns - All
+------------------------------*/
+
+.content-only {
+    #region-main-box,
+    #region-main {
+        width: 100%;
+    }
+}
+.empty-region-side-pre {
+    &.used-region-side-post {
+        #region-main {
+            width: 100%;
+        }
+    }
+}
+.empty-region-side-post {
+    &.used-region-side-pre {
+        #region-main-box {
+            width: 100%;
+        }
+    }
+}
+.jsenabled {
+    &.docked-region-side-pre {
+        &.empty-region-side-pre {
+            &.used-region-side-post {
+                #region-main {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &.docked-region-side-post {
+        &.empty-region-side-post {
+            &.used-region-side-pre {
+                #region-main-box {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+.empty-region-side-post.used-region-side-pre, // Post region is empty and pre region is in use.
+.jsenabled.docked-region-side-post.used-region-side-pre { // All post blocks docked and pre region is in use.
+    #region-main.span8 {
+    /** Increase the span size by 1 **/
+        .fluid-span(9);
+    }
+    #block-region-side-pre.span4 {
+    /** Decrease the span size by 1 **/
+        .fluid-span(3);
+    }
+}
 
 /** Page layout CSS ends **/
 
+.dir-ltr,
+.mdl-left,
+.dir-rtl .mdl-right {
+    /*@noflip*/text-align: left;
+}
+.dir-rtl,
+.mdl-right,
+.dir-rtl .mdl-left {
+    /*@noflip*/text-align: right;
+}
 #add,
 #remove,
 .centerpara,
@@ -238,13 +294,13 @@ img.iconkbhelp {
     height: 17px;
     width: 49px;
 }
-img.icon-pre {
-    padding-right: 3px;
-    padding-left: 0;
+img.icon-pre, .dir-rtl img.icon-post {
+    /*@noflip*/padding-right: 3px;
+    /*@noflip*/padding-left: 0;
 }
-img.icon-post {
-    padding-left: 3px;
-    padding-right: 0;
+img.icon-post, .dir-rtl img.icon-pre {
+    /*@noflip*/padding-left: 3px;
+    /*@noflip*/padding-right: 0;
 }
 .boxaligncenter {
     margin-left: auto;
@@ -1479,6 +1535,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     padding-left: 2.7em;
     padding-top: 0.3em;
     padding-bottom: 0.1em;
+    padding-right: 0;
 }
 
 .choosercontainer #chooseform .subtype {
@@ -1617,6 +1674,12 @@ table.collection .actions {
 a.criteria-action {
     padding: 0px 3px;
     float: right;
+}
+div.criteria-description {
+    padding: 10px 15px;
+    margin: 5px 0px;
+    background: none repeat scroll 0 0 #f9f9f9;
+    border: 1px solid #EEE;
 }
 ul.badges {
     margin: 0;
@@ -1786,6 +1849,52 @@ img#persona_signin {
 }
 .breadcrumb-nav .breadcrumb {
     margin: 0;
+}
+
+/** Header-bar styles **/
+.page-context-header {
+    // We need to be explicit about the height of the header.
+    @pageHeaderHeight: 140px;
+
+    // Do not remove these rules.
+    overflow: hidden;
+
+    .page-header-image,
+    .page-header-headings {
+        display: block;
+        position: relative;
+    }
+    .page-header-image {
+        margin-bottom: 1em;
+        z-index: 1;
+
+    }
+    .page-header-headings {
+        margin-top: 30px;
+        margin-bottom: 10px;
+
+        h1 {
+            display: block;
+        }
+    }
+
+    .page-header-headings,
+    .header-button-group {
+        position: relative;
+        line-height: 24px;
+        vertical-align: middle;
+    }
+
+    .header-button-group {
+        display: block;
+
+        a {
+            position: relative;
+
+            // Don't touch it unless you know exactly what you are doing.
+            top: -0.4em;
+        }
+    }
 }
 
 /** Action menu component styles **/

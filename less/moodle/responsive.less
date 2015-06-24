@@ -20,7 +20,6 @@
     .form-horizontal .controls {
         margin-left: @horizontalComponentOffset980;
     }
-
     #page-mod-forum-search.dir-lrt .c1 {
         margin-right: @horizontalComponentOffset980;
     }
@@ -46,22 +45,17 @@
     .file-picker .fp-login-form .fp-login-input label {
         text-align: left;
     }
-
     .file-picker .fp-content form td {
         display: block;
         width: 100%;
         text-align: left;
     }
-
     .fp-content .mdl-right {
         text-align: left;
     }
-
-
     .fp-repo-items .fp-navbar {
         border-top: 1px solid rgb(187, 187, 187);
     }
-
 
     .fp-formset div {
         height: auto;
@@ -100,13 +94,10 @@
     .form-horizontal .controls {
         margin-left: @horizontalComponentOffset1200;
     }
-
     .path-admin .buttons,
     .form-buttons {
         padding-left: @horizontalComponentOffset1200;
     }
-
-
     // Core empty block regions.
     .fluid-span (@columns) {
         .fluid-span-full(@columns, @fluidGridColumnWidth1200, @fluidGridGutterWidth1200);
@@ -275,7 +266,7 @@
 }
 @media (max-width : 767px) {
   .row-fluid .desktop-first-column {
-      clear: right;
+      clear: both;
   }
 }
 // Forms
@@ -352,6 +343,18 @@
     }
     .nav-collapse.active {
         height: auto;
+        .usermenu .moodle-actionmenu[data-enhanced] {
+            .toggle-display {
+                display: none;
+            }
+            .menu {
+                display: block;
+
+                li {
+                    margin: 0 0.5em;
+                }
+            }
+        }
     }
     .path-mod-data .box > table > tbody > tr > td {
         display: block;
@@ -428,6 +431,16 @@
                             }
                         }
                     }
+                }
+                .divider {
+                    width: auto;
+                    display: block;
+                    height: 0px;
+                    margin: 4px 1px;
+                    border-left: 0px none;
+                    border-right: 0px none;
+                    border-top: 1px solid @navbarBorder;
+                    border-bottom: 1px solid @navbarBackgroundHighlight;
                 }
             }
         }
@@ -624,6 +637,7 @@
         }
     }
 }
+
 
 // File Picker.
 @media (max-width: 768px) {

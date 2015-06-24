@@ -1,4 +1,21 @@
 // RTL from original less file of same name which cannot be intelligently removed.  CSS Flip process would probably not affect the original.
+
+.dir-rtl .accesshide {
+  top: -30000px;
+  left: auto;
+}
+
+.dir-rtl {
+  // Bootstrap sets right margin to 0. Fail.
+  // They set left margin to 25px so we will copy that.
+  ul, ol {
+    margin-left: 0;
+    margin-right: 25px;
+  }
+}
+
+/* Removed all, test to see if needed.
+
 .dir-ltr,
 .mdl-left,
 .dir-rtl .mdl-right {
@@ -11,11 +28,6 @@
   text-align: right;
 }
 
-.dir-rtl .accesshide {
-  top: -30000px;
-  left: auto;
-}
-
 .dir-rtl .comment-delete {
   left: 0;
   right: auto;
@@ -26,7 +38,7 @@
   right: auto;
 }
 
-/* Question Bank - Question Chooser "Close" button */
+// Question Bank - Question Chooser "Close" button.
 #page-question-edit.dir-rtl a.container-close {
   right: auto;
   left: 6px;
@@ -39,20 +51,11 @@
   border-right: 1px solid grey;  // Really not sure about this as cannot find a definition that sets the border colour in LTR.
 }
 
-.dir-rtl {
-  // Bootstrap sets right margin to 0. Fail.
-  // They set left margin to 25px so we will copy that.
-  ul, ol {
-    margin-left: 0;
-    margin-right: 25px;
-  }
-}
-
 .dir-rtl.jschooser .choosercontainer #chooseform .alloptions {
   max-width: 18.3em;
 }
 
-/** Fix YUI 2 Treeview for Right to left languages. **/
+// Fix YUI 2 Treeview for Right to left languages.
 .dir-rtl .ygtvtn {
   background-position: 0 -5600px;
 }
@@ -125,7 +128,7 @@
   text-align: right;
 }
 
-/** Fix TinyMCE editor right to left **/
+// Fix TinyMCE editor right to left.
 .dir-rtl .clearlooks2.ie9 .mceAlert .mceMiddle span, .dir-rtl .clearlooks2 .mceConfirm .mceMiddle span {
   top: 44px;
 }
@@ -145,3 +148,4 @@
   text-align: right;
 }
 
+*/

@@ -19,7 +19,6 @@ li.activity.label,
   font-size: inherit;
   line-height: inherit;
 }
-
 .file-picker td.label {
   display: table-cell;
   text-align: right;
@@ -28,7 +27,7 @@ li.activity.label,
 // Some of this dialog is sized in ems so a different font size
 // effects the whole layout.
 .choosercontainer #chooseform .option label {
-  font-size: 12px;
+    font-size: 12px;
 }
 
 /* block.invisible vs .invisible
@@ -61,6 +60,7 @@ li.section.hidden,
   display: block;
 }
 
+
 /* .row vs .row
  *
  * very tricky to track down this when it goes wrong,
@@ -75,14 +75,12 @@ li.section.hidden,
   margin-left: 0 !important;
   // not sure if this needs !important
 }
-
 #turnitintool_style .row:before,
 #turnitintool_style .row:after,
 .forumpost .row:before,
 .forumpost .row:after {
   content: none;
 }
-
 /* fieldset.hidden vs .hidden
  *
  * Moodle uses fieldset.hidden for mforms, to signify a collection of
@@ -99,14 +97,16 @@ li.section.hidden,
  */
 
 fieldset.hidden {
-  display: inherit;
-  visibility: inherit;
+    display: inherit;
+    visibility: inherit;
 }
+
 
 /* .controls vs .controls
  *
  * in expanding course list, can be fixed in renderer though
  */
+
 
 /* .btn vs .btn
  *
@@ -116,24 +116,23 @@ fieldset.hidden {
  */
 
 div.c1.btn {
-  display: block;
-  padding: 0;
-  margin-bottom: 0;
-  font-size: inherit;
-  line-height: inherit;
-  text-align: inherit;
-  vertical-align: inherit;
-  cursor: default;
-  color: inherit;
-  text-shadow: inherit;
-  background-color: inherit;
-  background-image: none;
-  background-repeat: none;
-  border: none;
-  border-radius: none;
-  box-shadow: none;
+    display: block;
+    padding: 0;
+    margin-bottom: 0;
+    font-size: inherit;
+    line-height: inherit;
+    text-align: inherit;
+    vertical-align: inherit;
+    cursor: default;
+    color: inherit;
+    text-shadow: inherit;
+    background-color: inherit;
+    background-image: none;
+    background-repeat: none;
+    border: none;
+    border-radius: none;
+    box-shadow: none;
 }
-
 /* .container vs .container
  *
  * bootstrap uses .container to set the width of the layout at 960px or so, Moodle uses it
@@ -142,13 +141,12 @@ div.c1.btn {
  */
 
 #questionbank + .container {
-  width: auto;
+    width: auto;
 }
-
 // In Moodle .hide is the eye icon
 // In Bootstrap it hides things
 img.hide {
-  display: inherit;
+    display: inherit;
 }
 
 // Bootstrap adds a background sprite to anything with classname starting "icon-".
@@ -158,36 +156,43 @@ img.icon-post,
 img.icon-info,
 img.icon-warn,
 img.icon-pre {
-  background-image: none;
+    background-image: none;
 }
 
 // Weird big margins on login page
 .loginbox.twocolumns,
 .loginbox.twocolumns {
-  .signuppanel,
-  .loginpanel {
-    padding: 0px;
-    margin: 0px;
-  }
+    .signuppanel,
+    .loginpanel {
+        padding: 0px;
+        margin: 0px;
+    }
 }
 
 //Bootstrap needs tooltips to be specified. Moodle does not use this
 .tooltip {
-  .opacity(100);
-  display: inline;
+    .opacity(100);
+    display: inline;
 }
 
 // Allow the custom menu to expand/collapse when the user hovers over it with JS disabled.
 body:not(.jsenabled) .dropdown:hover > .dropdown-menu {
-  display: block;
-  margin-top: -6px; // We need to move it up to counter the arrows as they introduce hover bugs.
+    display: block;
+    margin-top: -6px; // We need to move it up to counter the arrows as they introduce hover bugs.
 }
 
 // Extends bootstrapbase/less/bootstrap/navbar.less
-// to enable scroll in the language menu.  MDL-41788.
+// to enable scroll in the language menu.
 body:not(.jsenabled) .langmenu:hover > .dropdown-menu,
 .langmenu.open > .dropdown-menu {
-  display: block;
-  max-height: 150px;
-  overflow-y: auto;
+    display: block;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+// Extends bootstrapbase/less/bootstrap/type.less
+// to enable ol lists to use a larger number set.
+
+ol {
+    margin: 0 0 @baseLineHeight / 2 2.5em;
 }

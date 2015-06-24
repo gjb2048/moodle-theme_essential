@@ -1,4 +1,569 @@
-@import url('essential-rtl_ie9-blessed1.css?z=1435140233856');
+@import url('essential-rtl_ie9-blessed1.css?z=1435144813411');
+
+.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages {
+  margin: 20px 25px;
+}
+
+.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages .chat-event.course-theme {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 11.9px;
+  color: #777;
+}
+
+.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages .chat-message.course-theme {
+  background-color: #ffffff;
+  border: 1px dotted #ddd;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 4px 10px;
+  margin: 10px 0;
+}
+
+.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages .chat-message.course-theme .time {
+  float: left;
+  font-size: 11px;
+  color: #777;
+}
+
+.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages .mdl-chat-my-entry .chat-message.course-theme {
+  background-color: #f6f6f6;
+}
+
+.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages .mdl-chat-my-entry .chat-message.course-theme .user {
+  font-weight: bold;
+}
+
+/* reports.less */
+
+#page-report-participation-index .participationselectform div label {
+  display: inline;
+  margin: 0 5px;
+}
+
+#page-report-participation-index .participationselectform div label[for=menuinstanceid] {
+  margin-right: 0px;
+}
+
+.path-backup .mform .grouped_settings.section_level {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  border-color: #e3e3e3;
+  padding: 10px 0 0 0;
+  clear: both;
+}
+
+.path-backup .mform .grouped_settings.section_level blockquote {
+  border-color: #ddd;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.path-backup .mform .grouped_settings {
+  clear: both;
+  overflow: hidden;
+}
+
+.path-backup .include_setting,
+.path-backup .grouped_settings .normal_setting {
+  display: inline-block;
+}
+
+.path-backup .include_setting.section_level label {
+  font-weight: bold;
+}
+
+.path-backup .mform .fitem .fitemtitle {
+  width: 260px;
+}
+
+.path-backup .mform .fitem .felement {
+  margin-right: 280px;
+}
+
+.path-backup .notification.dependencies_enforced {
+  text-align: center;
+  color: #b94a48;
+  font-weight: bold;
+}
+
+.path-backup .backup_progress {
+  text-align: center;
+}
+
+.path-backup .backup_progress .backup_stage {
+  color: #999999;
+}
+
+.path-backup .backup_progress .backup_stage.backup_stage_current {
+  font-weight: bold;
+  color: inherit;
+}
+
+.path-backup .backup_progress span.backup_stage.backup_stage_complete {
+  color: inherit;
+}
+
+#page-backup-restore .filealiasesfailures {
+  background-color: #f2dede;
+}
+
+#page-backup-restore .filealiasesfailures .aliaseslist {
+  width: 90%;
+  margin: 0.8em auto;
+  background-color: #ffffff;
+  border: 1px dotted #666;
+}
+
+.path-backup .fitem .smallicon {
+  vertical-align: text-bottom;
+}
+
+.backup-restore .backup-section > h2.header,
+.backup-restore .backup-section .backup-sub-section h3 {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: 40px;
+  color: #333333;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.backup-restore .backup-section .noticebox {
+  margin: 1em auto;
+  width: 60%;
+  text-align: center;
+}
+
+.backup-restore .backup-section.settings-section .detail-pair {
+  width: 50%;
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+}
+
+.backup-restore .backup-section.settings-section .detail-pair-label {
+  width: 65%;
+}
+
+.backup-restore .backup-section.settings-section .detail-pair-value {
+  width: 25%;
+}
+
+.backup-restore .activitytable {
+  min-width: 500px;
+}
+
+.backup-restore .activitytable .modulename {
+  width: 100px;
+}
+
+.backup-restore .activitytable .moduleincluded {
+  width: 50px;
+}
+
+.backup-restore .activitytable .userinfoincluded {
+  width: 50px;
+}
+
+.backup-restore .detail-pair-label {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  width: 25%;
+  padding: 8px;
+  margin: 0;
+  text-align: left;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+.backup-restore .detail-pair-value {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  width: 65%;
+  padding: 8px;
+  margin: 0;
+}
+
+.backup-restore .detail-pair-value > .sub-detail {
+  display: block;
+  font-size: 11.9px;
+  color: #999999;
+}
+
+.backup-restore > .singlebutton {
+  text-align: left;
+}
+
+.path-backup .mform .fgroup .proceedbutton {
+  float: left;
+  margin-left: 5%;
+}
+
+.path-backup .mform .fgroup .oneclickbackup {
+  float: left;
+}
+
+.restore-course-search .rcs-results {
+  width: 70%;
+  min-width: 400px;
+}
+
+.restore-course-search .rcs-results table {
+  width: 100%;
+  margin: 0;
+  border-width: 0;
+}
+
+.restore-course-search .rcs-results table .no-overflow {
+  max-width: 600px;
+}
+
+.restore-course-search .rcs-results .paging {
+  text-align: right;
+  margin: 0;
+  background-color: #eee;
+  padding: 3px;
+}
+
+.restore-course-category .rcs-results {
+  width: 70%;
+  min-width: 400px;
+  border: 1px solid #ddd;
+  margin: 5px 0;
+}
+
+.restore-course-category .rcs-results table {
+  width: 100%;
+  margin: 0;
+  border-width: 0;
+}
+
+.restore-course-category .rcs-results table .no-overflow {
+  max-width: 600px;
+}
+
+.restore-course-category .rcs-results .paging {
+  text-align: right;
+  margin: 0;
+  background-color: #eee;
+  padding: 3px;
+}
+
+.path-backup .wibbler {
+  width: 500px;
+  margin: 0 auto 10px;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  position: relative;
+  min-height: 4px;
+}
+
+.path-backup .wibbler .wibble {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  height: 4px;
+}
+
+.path-backup .wibbler .state0 {
+  background-color: #eee;
+}
+
+.path-backup .wibbler .state1 {
+  background-color: #ddd;
+}
+
+.path-backup .wibbler .state2 {
+  background-color: #ccc;
+}
+
+.path-backup .wibbler .state3 {
+  background-color: #bbb;
+}
+
+.path-backup .wibbler .state4 {
+  background-color: #aaa;
+}
+
+.path-backup .wibbler .state5 {
+  background-color: #999;
+}
+
+.path-backup .wibbler .state6 {
+  background-color: #888;
+}
+
+.path-backup .wibbler .state7 {
+  background-color: #777;
+}
+
+.path-backup .wibbler .state8 {
+  background-color: #666;
+}
+
+.path-backup .wibbler .state9 {
+  background-color: #555;
+}
+
+.path-backup .wibbler .state10 {
+  background-color: #444;
+}
+
+.path-backup .wibbler .state11 {
+  background-color: #333;
+}
+
+.path-backup .wibbler .state12 {
+  background-color: #222;
+}
+
+.path-backup .backup_log {
+  margin-top: 2em;
+}
+
+.path-backup .backup_log h2 {
+  font-size: 1em;
+}
+
+.path-backup .backup_log_contents {
+  border: 1px solid #ddd;
+  padding: 10px;
+  height: 300px;
+  overflow-y: scroll;
+}
+
+table.flexible,
+.generaltable {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+table.flexible th,
+.generaltable th,
+table.flexible td,
+.generaltable td {
+  padding: 8px;
+  line-height: 20px;
+  text-align: right;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+
+table.flexible th,
+.generaltable th {
+  font-weight: bold;
+}
+
+table.flexible thead th,
+.generaltable thead th {
+  vertical-align: bottom;
+}
+
+table.flexible caption + thead tr:first-child th,
+.generaltable caption + thead tr:first-child th,
+table.flexible caption + thead tr:first-child td,
+.generaltable caption + thead tr:first-child td,
+table.flexible colgroup + thead tr:first-child th,
+.generaltable colgroup + thead tr:first-child th,
+table.flexible colgroup + thead tr:first-child td,
+.generaltable colgroup + thead tr:first-child td,
+table.flexible thead:first-child tr:first-child th,
+.generaltable thead:first-child tr:first-child th,
+table.flexible thead:first-child tr:first-child td,
+.generaltable thead:first-child tr:first-child td {
+  border-top: 0;
+}
+
+table.flexible tbody + tbody,
+.generaltable tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+
+table.flexible .table,
+.generaltable .table {
+  background-color: #ffffff;
+}
+
+.singlebutton div {
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+#notice .buttons .singlebutton {
+  display: inline-block;
+}
+
+.continuebutton {
+  text-align: center;
+}
+
+.btn-lineup {
+  margin: 0 5px 10px 0;
+}
+
+input[name="searchwikicontent"] + input[type="submit"],
+select + input[type="submit"],
+input[type="text"] + input[type="button"],
+input[type="password"] + input[type="submit"],
+input[type="text"] + button,
+input[type="text"] + input[type="submit"] {
+  margin: 0 5px 10px 0;
+}
+
+p.arrow_button {
+  margin-top: 5em;
+  text-align: center;
+}
+
+p.arrow_button #remove {
+  margin: 3em auto 5em;
+}
+
+p.arrow_button input {
+  display: block;
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#addcontrols {
+  margin-top: 30px;
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+#addcontrols label {
+  display: inline;
+}
+
+#addcontrols input,
+#removecontrols input {
+  display: block;
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button,
+input.form-submit,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #333333;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #e6e6e6;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  border: 1px solid #cccccc;
+  *border: 0;
+  border-bottom-color: #b3b3b3;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  *margin-left: .3em;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+}
+
+button:hover,
+input.form-submit:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:focus,
+input.form-submit:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+button:active,
+input.form-submit:active,
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+button.active,
+input.form-submit.active,
+input[type="button"].active,
+input[type="submit"].active,
+input[type="reset"].active,
+button.disabled,
+input.form-submit.disabled,
+input[type="button"].disabled,
+input[type="submit"].disabled,
+input[type="reset"].disabled,
+button[disabled],
+input.form-submit[disabled],
+input[type="button"][disabled],
+input[type="submit"][disabled],
+input[type="reset"][disabled] {
+  color: #333333;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+}
+
+button:active,
+input.form-submit:active,
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+button.active,
+input.form-submit.active,
+input[type="button"].active,
+input[type="submit"].active,
+input[type="reset"].active {
+  background-color: #cccccc \9;
+}
 
 button:first-child,
 input.form-submit:first-child,
@@ -121,6 +686,19 @@ input.fp-btn-choose {
   top: 0;
 }
 
+.user-enroller-panel .uep-search-results .cohort .options .enrol {
+  padding: 0 6px;
+  font-size: 10.5px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.user-enroller-panel .uep-search-results .cohort .options .enrol .label,
+.user-enroller-panel .uep-search-results .cohort .options .enrol .badge {
+  top: 0;
+}
+
 .gradetreebox h4 {
   font-size: 14px;
 }
@@ -133,6 +711,10 @@ input.fp-btn-choose {
 .gradetreebox input[type=text],
 .gradetreebox select {
   margin-bottom: 0;
+}
+
+.core_grades_notices .singlebutton {
+  display: inline-block;
 }
 
 #page-grade-grading-manage #activemethodselector label {
@@ -739,6 +1321,10 @@ input.fp-btn-choose {
   background-color: #f9f9f9;
 }
 
+.path-grade-report .gradeparent table .clickable {
+  cursor: pointer;
+}
+
 /**
  * User report.
  */
@@ -782,7 +1368,7 @@ input.fp-btn-choose {
 
 body.has_dock #page {
   padding-right: 45px;
-  padding-left: 0;
+  padding-left: 20px;
 }
 
 body.has_dock div#dock {
@@ -793,7 +1379,7 @@ body.has_dock div#dock {
   width: 42px;
   position: fixed;
   top: 0;
-  right: 0%;
+  right: 0;
   left: auto;
   height: 100%;
   background-color: transparent;
@@ -1025,6 +1611,10 @@ body.has_dock div#dock {
 
 #dockeditempanel .dockeditempanel_hd .commands .hidepanelicon img {
   cursor: pointer;
+}
+
+#dockeditempanel .dockeditempanel_hd .commands img.actionmenu {
+  width: auto;
 }
 
 /*!
@@ -2646,7 +3236,7 @@ body.has_dock div#dock {
 
 @media (max-width: 767px) {
   .row-fluid .desktop-first-column {
-    clear: left;
+    clear: both;
   }
 }
 
@@ -2731,6 +3321,18 @@ body.has_dock div#dock {
     height: auto;
   }
 
+  .nav-collapse.active .usermenu .moodle-actionmenu[data-enhanced] .toggle-display {
+    display: none;
+  }
+
+  .nav-collapse.active .usermenu .moodle-actionmenu[data-enhanced] .menu {
+    display: block;
+  }
+
+  .nav-collapse.active .usermenu .moodle-actionmenu[data-enhanced] .menu li {
+    margin: 0 0.5em;
+  }
+
   .path-mod-data .box > table > tbody > tr > td {
     display: block;
   }
@@ -2812,6 +3414,18 @@ body.has_dock div#dock {
   .navbar .nav-collapse.active .nav .dropdown-submenu:hover.open .open > .dropdown-menu,
   .navbar .nav-collapse.active .nav .dropdown-menu .dropdown-submenu:hover.open .open > .dropdown-menu {
     display: block;
+  }
+
+  .navbar .nav-collapse.active .nav .divider,
+  .navbar .nav-collapse.active .nav .dropdown-menu .divider {
+    width: auto;
+    display: block;
+    height: 0px;
+    margin: 4px 1px;
+    border-right: 0px none;
+    border-left: 0px none;
+    border-top: 1px solid #d4d4d4;
+    border-bottom: 1px solid #ffffff;
   }
 
   .navbar.navbar-inverse .nav-collapse.active {
@@ -3016,6 +3630,18 @@ table.flexible tbody > tr:nth-child(odd) > th,
   background-color: #f9f9f9;
 }
 
+table caption {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 42px;
+  text-align: right;
+}
+
+#page-admin-course-index.dir-rtl .editcourse td,
+#page-admin-course-index.dir-rtl .editcourse th {
+  text-align: left;
+}
+
 #page-report-loglive-index .generaltable th,
 #page-admin-report-log-index .generaltable th,
 #page-report-log-user .generaltable th,
@@ -3036,6 +3662,7 @@ table#listdirectories td {
 }
 
 .user-enroller-panel .uep-search-results .users tbody tr:hover > td,
+.user-enroller-panel .uep-search-results .cohorts tbody tr:hover > td,
 table.grading-report tbody tr:hover > td,
 .forumheaderlist tbody tr:hover > td,
 .generaltable tbody tr:hover > td,
@@ -3044,6 +3671,7 @@ table.flexible tbody tr:hover > td,
 table#modules tbody tr:hover > td,
 table#permissions tbody tr:hover > td,
 .user-enroller-panel .uep-search-results .users tbody tr:hover > th,
+.user-enroller-panel .uep-search-results .cohorts tbody tr:hover > th,
 table.grading-report tbody tr:hover > th,
 .forumheaderlist tbody tr:hover > th,
 .generaltable tbody tr:hover > th,
