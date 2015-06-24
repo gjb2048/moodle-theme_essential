@@ -39,6 +39,16 @@ if ($OUTPUT->theme_essential_not_lte_ie9()) {
         $PAGE->requires->js_call_amd('theme_essential/fitvids', 'init');
     }
 }
+
+/*
+switch($PAGE->pagelayout) {
+    case 'frontpage':
+        $data = array('data' => array('slideinterval' => '5000'));
+        $PAGE->requires->js_call_amd('theme_essential/carousel', 'init', $data);
+    break;
+}
+*/
+
 //$PAGE->requires->jquery_plugin('bootstrap', 'theme_essential');
 //$PAGE->requires->jquery_plugin('breadcrumb', 'theme_essential');
 //$PAGE->requires->jquery_plugin('fitvids', 'theme_essential');

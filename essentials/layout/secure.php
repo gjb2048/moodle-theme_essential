@@ -23,6 +23,7 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+require_once($OUTPUT->get_include_file('additionaljs'));
 require_once($OUTPUT->get_include_file('pagesettings'));
 
 echo $OUTPUT->doctype() ?>

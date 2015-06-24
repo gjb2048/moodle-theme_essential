@@ -23,7 +23,6 @@
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-global $CFG;
 
 require_once('renderers/core_renderer.php');
 
@@ -38,7 +37,5 @@ if (theme_essential_get_setting('enablecategoryicon')) {
     require_once('renderers/core_course_renderer.php');
 }
 
-if (intval($CFG->version) >= 2013111800) {
-    require_once('renderers/core_renderer_maintenance.php');
-    require_once('renderers/core_course_management_renderer.php');
-}
+require_once('renderers/core_renderer_maintenance.php');
+require_once('renderers/core_course_management_renderer.php');

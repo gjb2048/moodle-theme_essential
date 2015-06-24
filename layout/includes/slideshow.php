@@ -24,6 +24,9 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+$data = array('data' => array('slideinterval' => '5000'));
+$PAGE->requires->js_call_amd('theme_essential/carousel', 'init', $data);
+
 $numberofslides = theme_essential_showslider();
 
 if ($numberofslides) {

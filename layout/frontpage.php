@@ -24,6 +24,7 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+require_once($OUTPUT->get_include_file('additionaljs'));
 require_once($OUTPUT->get_include_file('header'));
 
 $enable1alert = $OUTPUT->get_setting('enable1alert');
@@ -186,11 +187,5 @@ if ($enable1alert || $enable2alert || $enable3alert) {
 
 <?php require_once($OUTPUT->get_include_file('footer')); ?>
 
-<!-- Initialize slideshow -->
-<script type="text/javascript">
-    jQuery(document).ready(function () {
-        $('.carousel').carousel();
-    });
-</script>
 </body>
 </html>
