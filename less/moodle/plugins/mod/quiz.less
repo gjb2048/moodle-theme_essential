@@ -21,6 +21,20 @@
     padding-top: 1.5em;
 }
 
+.path-mod-quiz .mod_quiz-redo_question_button {
+    margin: 0;
+}
+.path-mod-quiz input[type="submit"].mod_quiz-redo_question_button {
+    padding: 2px 0.8em;
+    font-size: 1em;
+}
+
+#page-mod-quiz-attempt .mod_quiz-blocked_question_warning .que .formulation,
+#page-mod-quiz-review .mod_quiz-blocked_question_warning .que .formulation {
+    background-color: #eee;
+    border: 1px solid #dcdcdc;
+}
+
 body.jsenabled .questionflagcheckbox {
     display: none;
 }
@@ -79,6 +93,15 @@ body.jsenabled .questionflagcheckbox {
     vertical-align: bottom;
 }
 
+.path-mod-quiz #mod_quiz_navblock h3.mod_quiz-section-heading {
+    padding: 0.7em 0 0;
+    margin: 0;
+    clear: both;
+}
+.path-mod-quiz #mod_quiz_navblock h3.mod_quiz-section-heading:first-child {
+    padding-top: 0;
+}
+
 .path-mod-quiz .qnbutton {
     display: block;
     position: relative;
@@ -95,6 +118,10 @@ body.jsenabled .questionflagcheckbox {
     line-height: 1.5em !important;
     font-weight: bold;
     text-decoration: none;
+}
+.path-mod-quiz .qnbutton:visited:hover,
+.path-mod-quiz .qnbutton:link:hover {
+    text-decoration: underline;
 }
 
 .path-mod-quiz .qnbutton .trafficlight,
@@ -114,7 +141,11 @@ body.jsenabled .questionflagcheckbox {
     border: 1px solid #666;
 }
 
+.path-mod-quiz .qnbutton.flagged .trafficlight {
+    background: url([[pix:quiz|navflagged]]) no-repeat top right;
+}
 
+.path-mod-quiz .qnbutton.blocked,
 .path-mod-quiz .qnbutton.notyetanswered,
 .path-mod-quiz .qnbutton.requiresgrading,
 .path-mod-quiz .qnbutton.invalidanswer {
@@ -133,16 +164,12 @@ body.jsenabled .questionflagcheckbox {
 .path-mod-quiz .qnbutton.incorrect {
     background-color: #fcc;
 }
+.path-mod-quiz .qnbutton.blocked {
+    color: #999;
+}
 .path-mod-quiz .qnbutton.notanswered .trafficlight,
 .path-mod-quiz .qnbutton.incorrect .trafficlight {
     border-top: 3px solid #800;
-}
-
-.path-mod-quiz .qnbutton.free:hover {
-    text-decoration: underline;
-}
-.path-mod-quiz .qnbutton.free span {
-    cursor: pointer;
 }
 
 .path-mod-quiz .othernav {
@@ -222,44 +249,6 @@ body.jsenabled .questionflagcheckbox {
     text-align: left;
     margin-left: 0;
 }
-#page-mod-quiz-edit div.question div.content .questiontext,
-#categoryquestions .questiontext {
-    text-overflow: ellipsis;
-    position: relative;
-    zoom: 1;
-    padding-left: 0.3em;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    vertical-align: bottom;
-}
-
-#page-mod-quiz-edit div.question div.content .questiontext {
-    max-width: 40%;
-    display: inline-block;
-}
-
-#page-mod-quiz-edit div.question div.content .questionname {
-    min-width: 14%;
-    max-width: 34%;
-}
-
-#page-mod-quiz-edit div.question div.content .questionname,
-#categoryquestions .questionname {
-    white-space: nowrap;
-    overflow: hidden;
-    zoom: 1;
-    position: relative;
-    max-width: 100%;
-    display: inline-block;
-    vertical-align: bottom;
-    text-overflow: ellipsis;
-}
-
-#page-mod-quiz-edit div.editq div.question div.content .singlequestion a .questionname,
-div.editq div.question div.content .singlequestion a .questiontext {
-    text-decoration: underline;
-}
 #page-mod-quiz-mod #id_reviewoptionshdr .fitem {
     float: left;
     width: 23%;
@@ -320,6 +309,7 @@ table.quizattemptsummary .noreviewmessage {
 #page-mod-quiz-view .generalbox#feedback h3 {
     text-align: left;
 }
+
 #page-mod-quiz-view .generalbox#feedback .overriddennotice {
     text-align: center;
     font-size: 0.7em;
@@ -342,7 +332,7 @@ body.path-mod-quiz table tbody tr.gradedattempt > td {
     text-align: center;
     display:inline;
     margin-left:20%;
-    margin-right:0;
+    margin-right: 0;
 }
 
 /** Mod quiz summary **/
@@ -438,7 +428,7 @@ table.quizreviewsummary td.cell {
 
 #page-mod-quiz-report table#attempts {
     clear: both;
-    width: 100%;
+    width: 80%;
     margin: 0.2em auto;
 }
 #page-mod-quiz-report table#attempts .header,
@@ -474,7 +464,8 @@ table.quizreviewsummary td.cell {
 #page-mod-quiz-report table#attempts .questionflag {
     vertical-align: text-bottom;
     padding-left: 6px;
-    padding-right: 0;}
+    padding-right: 0;
+}
 
 #page-mod-quiz-report .graph.flexible-wrap {
     text-align: center;
@@ -497,36 +488,26 @@ table.quizreviewsummary td.cell {
 }
 
 /** Mod quiz edit **/
-#page-mod-quiz-edit h2.main {
-    display: inline;
-    padding-right: 1em;
-    padding-left: 0;
-    clear: left;
-}
-
-
 #page-mod-quiz-edit .statusbar {
     margin: 0.6em 0.4em;
 }
 #page-mod-quiz-edit .statusdisplay {
     background-color: #ffc;
     clear: both;
-    margin: 0.3em 1em 0.3em 0;
-    padding: 1px ;
-    /* Stop margin collapse. */
+    margin: 0.3em 0;
+    padding: 1px 10px;
 }
-
 #page-mod-quiz-edit .statusdisplay p {
-    margin: 0.4em;
+    margin: 4px 0;
 }
-
 #page-mod-quiz-edit .maxgrade,
 #page-mod-quiz-edit .totalpoints {
     display: block;
     float: right;
-    margin: -2.5em 1em 0em 1em;
+    margin: -2.5em 0 0;
     padding: .2em;
 }
+
 #page-mod-quiz-edit .maxgrade label {
     display: inline;
 }
@@ -536,13 +517,18 @@ table.quizreviewsummary td.cell {
     position: relative;
 }
 
+#page-mod-quiz-edit ul.section li.pagenumber:first-child .add-menu-outer ul.menu li:first-child,
+#page-mod-quiz-edit .last-add-menu .add-menu-outer ul.menu li:first-child {
+    display: none;
+}
+
 #page-mod-quiz-edit .last-add-menu {
     position: relative;
     height: 1.5em;
+    margin: 0 20px;
 }
 #page-mod-quiz-edit .add-menu-outer {
     position: absolute;
-    top: 0;
     right: 0;
 }
 
@@ -554,58 +540,74 @@ table.quizreviewsummary td.cell {
     display: inline-block;
 }
 
-#page-mod-quiz-edit ul.slots li.section {
-    border: 0;
+#page-mod-quiz-edit .section-heading {
+    font-size: 24px;
+    margin-left: 20px;
+    margin-bottom: 0;
+    height: 40px;
 }
-#page-mod-quiz-edit ul.slots li.section .content {
-    background-color:#FAFAFA;
-    padding:5px 10px;
+#page-mod-quiz-edit .section-heading .instancesectioncontainer {
+    display: inline;
 }
-#page-mod-quiz-edit ul.slots li.section .content h3 {
+#page-mod-quiz-edit .section-heading .instancesectioncontainer h3 {
+    display: inline;
+    color: #999;
+}
+#page-mod-quiz-edit .section-heading .editing_section,
+#page-mod-quiz-edit .section-heading .editing_delete {
+    margin-left: 10px;
+}
+#page-mod-quiz-edit .section-heading .sectioninstance {
+    position: relative;
+}
+#page-mod-quiz-edit .section-heading form {
+    display: inline;
+    position: relative;
+    top: 3px;
+    left: -7px;
+}
+#page-mod-quiz-edit .section-heading form input {
+    font-size: 24px;
+    font-weight: bold;
+    width: 50%;
+}
+
+#page-mod-quiz-edit .section-heading .instanceshufflequestions {
+    float: right;
+    margin: 0.3em 20px 0 0;
+}
+
+#page-mod-quiz-edit ul.section {
     margin: 0;
-    color: #777;
-    font-weight: normal;
-}
-#page-mod-quiz-edit ul.slots li.section .left {
-    padding: 4px 0;
-}
-#page-mod-quiz-edit ul.slots li.section .right {
-    padding: 4px 0;
+    padding: 0 20px;
 }
 #page-mod-quiz-edit ul.slots {
     margin: 0;
 }
 #page-mod-quiz-edit ul.slots li.section {
+    border: 0;
+}
+#page-mod-quiz-edit ul.slots li.section .content {
+    background-color:#FAFAFA;
+    padding: 1px 0;
+}
+#page-mod-quiz-edit ul.slots li.section {
     list-style: none;
-    margin: 0 0 5px 0;
+    margin: 0;
     padding: 0;
-}
-#page-mod-quiz-edit ul.slots li.section .left {
-    float: left;
-}
-#page-mod-quiz-edit ul.slots li.section .right {
-    float: right;
-}
-#page-mod-quiz-edit ul.slots li.section .left,
-#page-mod-quiz-edit ul.slots li.section .right {
-    width: 40px;
-    text-align: center;
-    padding: 6px 0;
-}
-#page-mod-quiz-edit ul.slots li.section .right img.icon {
-    padding: 0 0 4px 0;
-}
-#page-mod-quiz-edit ul.slots li.section .left .section-handle img.icon {
-    padding: 0;
-    vertical-align: baseline;
 }
 #page-mod-quiz-edit ul.slots li.section li.activity {
     background-color: #E6E6E6;
-    margin: 3px 0 3px 0;
+    margin: 3px 0;
     padding: 0.2em;
 }
 #page-mod-quiz-edit ul.slots li.section li.activity.page {
     background-color: transparent;
+}
+#page-mod-quiz-edit ul.slots li.section li.activity.page h4 {
+    display: inline;
+    font-weight: normal;
+    font-size: 1em;
 }
 
 #page-mod-quiz-edit ul.slots li.section li.activity .instancemaxmarkcontainer {
@@ -673,6 +675,35 @@ table.quizreviewsummary td.cell {
 #page-mod-quiz-edit ul.slots li.section li.activity .editing_maxmark {
     margin: 0 2px;
 }
+#page-mod-quiz-edit ul.slots li.section.only-has-one-slot li.activity .editing_move,
+#page-mod-quiz-edit ul.slots li.section.only-has-one-slot li.activity .editing_delete {
+    visibility: hidden;
+}
+
+#page-mod-quiz-edit ul.slots li.section li.activity .question_dependency_wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#page-mod-quiz-edit.dir-rtl ul.slots li.section li.activity .question_dependency_wrapper {
+    left: 0;
+    right: auto;
+}
+#page-mod-quiz-edit ul.slots li.section li.activity .question_dependency_wrapper.question_dependency_cannot_depend {
+    display: none;
+}
+
+#page-mod-quiz-edit ul.slots li.section li.activity .question_dependency_wrapper .currentlink,
+#page-mod-quiz-edit ul.slots li.section li.activity .question_dependency_wrapper .cm-edit-action {
+    position: relative;
+    left: 20px;
+    top: -1em;
+}
+#page-mod-quiz-edit.dir-rtl ul.slots li.section li.activity .question_dependency_wrapper .currentlink,
+#page-mod-quiz-edit.dir-rtl ul.slots li.section li.activity .question_dependency_wrapper .cm-edit-action {
+    right: 20px;
+    left: auto;
+}
 
 #page-mod-quiz-edit ul.slots li.section li.activity .activityinstance {
     display: block;
@@ -680,12 +711,14 @@ table.quizreviewsummary td.cell {
     position: absolute;
     top: 0;
     left: 5em;
-    width: 90%; // Tried: width: auto; was 100%.
+    right: auto;
+    width: 100%;
 }
 
 #page-mod-quiz-edit ul.slots li.section li.activity .mod-indent-outer {
     padding-left: 22px;
-    padding-right: 0;}
+    padding-right: 0;
+}
 
 #page-mod-quiz-edit ul.slots .activityinstance form {
     display: inline;
@@ -696,10 +729,12 @@ table.quizreviewsummary td.cell {
 }
 
 #page-mod-quiz-edit ul.slots .activityinstance span.instancename {
+    overflow-x: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    width: 84%; // Was 80%.
+    word-break: break-word;
+    width: 70%;
     display: inline-block;
     height: 20px;
 }
@@ -725,7 +760,6 @@ table.quizreviewsummary td.cell {
     padding: 0;
 }
 
-
 #page-mod-quiz-edit .section .activity .actions {
     white-space: nowrap;
     background-color: #e6e6e6;
@@ -749,6 +783,15 @@ table.quizreviewsummary td.cell {
 }
 #categoryquestions th.modifiername .sorters,
 #categoryquestions th.creatorname .sorters {
+    font-weight: normal;
+    font-size: 0.8em;
+}
+#categoryquestions td.modifiername,
+#categoryquestions td.creatorname {
+    line-height: 1em;
+}
+#categoryquestions td.modifiername span.date,
+#categoryquestions td.creatorname span.date {
     font-weight: normal;
     font-size: 0.8em;
 }
@@ -783,6 +826,7 @@ table#categoryquestions {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
 #categoryquestions .questionname {
     white-space: nowrap;
     overflow: hidden;
@@ -816,6 +860,9 @@ table#categoryquestions {
     text-align: center;
     opacity: 0.5;
     padding-top: 50px;
+}
+.mod_quiz_qbank_dialogue #advancedsearch label {
+    font-size: 100%;
 }
 
 .modulespecificbuttonscontainer {
@@ -884,6 +931,64 @@ table#categoryquestions {
 /* Base theme needs extra support. */
 #page-mod-quiz-edit ul.slots li.section ul.section {
     list-style: none;
+}
+
+/** Print formatting for attempt and review pages **/
+
+@media print {
+
+    #page-mod-quiz-attempt header.navbar,
+    #page-mod-quiz-review header.navbar {
+        display: none;
+    }
+
+    #page-mod-quiz-attempt #dock,
+    #page-mod-quiz-review #dock {
+        display: none;
+    }
+
+    #page-mod-quiz-attempt #page #page-header h1,
+    #page-mod-quiz-review #page #page-header h1 {
+        display: none;
+    }
+
+    #page-mod-quiz-attempt #region-main,
+    #page-mod-quiz-review #region-main {
+        width: 100%;
+    }
+
+    #page-mod-quiz-attempt #block-region-side-pre,
+    #page-mod-quiz-attempt #block-region-side-post,
+    #page-mod-quiz-review #block-region-side-pre,
+    #page-mod-quiz-review #block-region-side-post {
+        display: none;
+    }
+
+    #page-mod-quiz-attempt #page-footer,
+    #page-mod-quiz-review #page-footer {
+        display: none;
+    }
+
+    #page-mod-quiz-attempt .editquestion,
+    #page-mod-quiz-review .editquestion,
+    #page-mod-quiz-attempt .questionflag,
+    #page-mod-quiz-review .questionflag {
+        display: none;
+    }
+
+    #page-mod-quiz-attempt .submitbtns,
+    #page-mod-quiz-review .submitbtns {
+        display: none;
+    }
+
+    #page-mod-quiz-review .que .commentlink {
+        display: none;
+    }
+
+    #page-mod-quiz-attempt .que,
+    #page-mod-quiz-review .que {
+        page-break-inside: avoid;
+    }
 }
 
 /* @end Quiz styles.css */
