@@ -271,8 +271,8 @@ $string['themehovercolor'] = 'Theme hover colour';
 $string['themehovercolordesc'] = 'What colour should your theme hovers be. This is used for links, menus, etc.';
 $string['themeiconcolor'] = 'Icon colour';
 $string['themeiconcolordesc'] = 'Set the colour for all icons.';
-$string['themenavcolor'] = 'Navigation colour';
-$string['themenavcolordesc'] = 'Set the colour for navigation.  Being the navigation bar and the breadcrumb fancy style.';
+$string['themenavcolor'] = 'Navigation text colour';
+$string['themenavcolordesc'] = 'Set the text colour for navigation.  Being the navigation bar and the breadcrumb fancy style.';
 
 $string['footercolor'] = 'Footer background colour';
 $string['footercolordesc'] = 'Set what colour the background of the Footer box should be.';
