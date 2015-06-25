@@ -61,6 +61,7 @@ click here to donate.
 <li>Mihai Bojonca, TCM International Institute.</li>
 <li>Guido Hornig, actXcellence <a href="//actxcellence.de" target="_blank">actxcellence.de</a></li>
 <li>Delvon Forrester, Esparanza co uk</li>
+<li>iZone</li>
 </ul>
 </p>
 </div></div>';

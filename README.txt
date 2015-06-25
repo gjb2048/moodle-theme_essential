@@ -85,6 +85,7 @@ Donations gratefully received with thanks from:
 Mihai Bojonca, TCM International Institute.
 Guido Hornig, actXcellence http://actxcellence.de
 Delvon Forrester, Esparanza co uk
+iZone
 
 Required version of Moodle
 ==========================
