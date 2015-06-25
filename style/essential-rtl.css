@@ -23157,6 +23157,7 @@ body#page-mod-forum-post.desktopdevice #region-main form #fgroup_id_buttonar {
 
 .mform fieldset.collapsible legend a.fheader {
   margin-right: 0px;
+  background-repeat: no-repeat;
 }
 
 .mform fieldset a.visibleifjs img.smallicon {

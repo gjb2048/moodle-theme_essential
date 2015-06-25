@@ -1,4 +1,4 @@
-@import url('essential-rtl_ie9-blessed1.css?z=1435144813411');
+@import url('essential-rtl_ie9-blessed1.css?z=1435245719535');
 
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages {
   margin: 20px 25px;
@@ -6552,6 +6552,7 @@ body#page-mod-forum-post.desktopdevice #region-main form #fgroup_id_buttonar {
 
 .mform fieldset.collapsible legend a.fheader {
   margin-right: 0px;
+  background-repeat: no-repeat;
 }
 
 .mform fieldset a.visibleifjs img.smallicon {
