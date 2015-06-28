@@ -20,6 +20,9 @@
 .block h3.main {
   color: [[setting:themetextcolor]];
 }
+.tree_item.branch {
+  color: [[setting:themeiconcolor]];
+}
 .tree_item.branch.branch:before {
   color: [[setting:themeiconcolor]];
 }
@@ -259,9 +262,6 @@ ul.breadcrumb.style2 li a:hover {
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 /* @group Category Icons */
-.categoryicons {
-  /* Hide icon 'collapsed' because it makes no sense here */
-}
 .categoryicons .course_category_tree .category[data-categoryid]:hover {
   background-color: [[setting:themecolor]];
 }

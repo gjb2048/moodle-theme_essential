@@ -47,7 +47,7 @@
         }
 
         .editing_move {
-            /* Move the move icon to the start of the line */
+            // Move the move icon to the start of the line.
             position: absolute;
             left: 0;
             right: auto;
@@ -55,14 +55,12 @@
         }
 
         .mod-indent-outer {
-            /**
-             * Add appropriate padding such that nothing overlaps the
-             * absolute positioned move icon.
-             */
+            // Add appropriate padding such that nothing overlaps the
+            // absolute positioned move icon.
             padding-left: 32px;
         }
 
-        /* The command block for each activity */
+        // The command block for each activity.S
         .actions {
             position: absolute;
             right: 0;
@@ -314,14 +312,14 @@
 .path-site li.activity > div,
 .path-course-view li.activity > div {
     position: relative;
-    padding: 0 16px 0 0; /* to accommodate the floated completion icon with highlighting */
+    padding: 0 16px 0 0; // To accommodate the floated completion icon with highlighting.
 }
 
 .path-course-view li.activity span.autocompletion img {
     vertical-align: text-bottom;
 }
 .path-course-view li.activity form.togglecompletion img {
-    max-width: none; /* The width is 0 so ensure we don't end up with a relative max-width */
+    max-width: none; // The width is 0 so ensure we don't end up with a relative max-width.
 }
 .path-course-view li.activity form.togglecompletion .ajaxworking {
     width: 16px;
@@ -373,7 +371,7 @@ span.editinstructions {
     border: 1px solid @infoBorder;
 }
 
-/* Course drag and drop upload styles */
+// Course drag and drop upload styles.
 #dndupload-status {
     position: fixed;
     left:0;
@@ -645,7 +643,7 @@ span.editinstructions {
     }
     .moodle-actionmenu {
         .iconsmall {
-            max-width: none !important; /** reset sets 100% !important which breaks on IE8 without this !important */
+            max-width: none !important; // Reset sets 100% !important which breaks on IE8 without this !important.
             width:16px;
             height:16px;
             padding: 4px;
@@ -675,14 +673,14 @@ span.editinstructions {
     background-color: @tableBackground;
     margin-bottom:200px;
 
-    /** Two column layout */
+    // Two column layout.
     &.columns-2 {
         > #course-listing > div {
             position:relative;
             left:-1px;
         }
     }
-    /** Three column layout */
+    // Three column layout.
     &.columns-3 > #course-listing > div {
         height:100%;
     }
@@ -998,7 +996,7 @@ span.editinstructions {
     cursor:pointer;
 }
 
-/** Management header styling **/
+// Management header styling.
 .coursecat-management-header {
     vertical-align:middle;
     h2 {

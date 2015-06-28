@@ -508,7 +508,7 @@ module.exports = function(grunt) {
                     overwrite: true,
                     replacements: [{
                         from: '/* Essential placeholder */',
-                        to: 'div#page::before { content: "Development Version"; font-size: 4em; margin-top: 20px; margin-bottom: 20px; }'
+                        to: 'div#page::before { content: "Development version - test server only."; font-size: 4em; margin-top: 24px; margin-bottom: 24px; line-height: 42px; text-align: center; }'
                     }]
             }
         },

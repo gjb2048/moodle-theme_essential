@@ -79,7 +79,7 @@ body.has_dock {
 }
 
 #dockeditempanel {
-    z-index: 12000; /** Required to place the dock panel above the fixed pos navbar */
+    z-index: 12000; // Required to place the dock panel above the fixed pos navbar.
     &.dockitempanel_hidden {
         display: none;
     }
@@ -95,7 +95,7 @@ body.has_dock {
         .border-radius(4px);
     }
     .dockeditempanel_bd {
-        overflow: auto; /** Required to make the content scrollable when it flows over the fixed area of the screen */
+        overflow: auto; // Required to make the content scrollable when it flows over the fixed area of the screen.
         > * {
             margin: 1em;
         }

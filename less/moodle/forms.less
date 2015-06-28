@@ -215,7 +215,7 @@ div.backup-section + form,
 #page-grade-edit-outcome-course .courseoutcomes td {
     text-align:center;
 }
-/* Install Process' text fields Forms, should always be justified to the left */
+// Install Process' text fields Forms, should always be justified to the left.
 #installform #id_wwwroot,
 #installform #id_dirroot,
 #installform #id_dataroot,
@@ -260,16 +260,14 @@ input[type="checkbox"] {
     margin-top: 5px;
 }
 div#dateselector-calendar-panel {
-    z-index: 3100; /* Set higher than the z-index of the filemanager - see MDL-39047. */
+    z-index: 3100; // Set higher than the z-index of the filemanager - see MDL-39047.
 }
 
 fieldset.coursesearchbox label {
     display: inline;
 }
 
-/**
- * Show the labels above text editors and file managers except on wide screens.
- */
+// Show the labels above text editors and file managers except on wide screens.
 #region-main .mform:not(.unresponsive) .fitem .fitemtitle label {
     font-weight: bold;
 }
@@ -326,24 +324,20 @@ fieldset.coursesearchbox label {
     }
 }
 
-/**
- * Make forms vertical when the screen is less than 1200px;
- */
+// Make forms vertical when the screen is less than 1200px;
 @media (max-width: 1199px) {
     body {
         .makeFormsVertical;
     }
 }
 
-/**
- * Make forms vertical when the screen is less than 1474px AND both side-pre and side-post contain blocks.
- * This is an extra special media rule.
- * It causes forms to show vertically when the screen size is calculated as:
- * 1199px + (1199px * 23%)
- * Where 23% is the width of span3
- * Full calculation is:
- *   @maxWidthForVerticalForms: 1199px * (unit(((@fluidGridColumnWidth1200 * 3) + (@fluidGridGutterWidth * (3 - 1)))) / 100) + 1199px;
- */
+// Make forms vertical when the screen is less than 1474px AND both side-pre and side-post contain blocks.
+// This is an extra special media rule.
+// It causes forms to show vertically when the screen size is calculated as:
+// 1199px + (1199px * 23%)
+// Where 23% is the width of span3
+// Full calculation is:
+// @maxWidthForVerticalForms: 1199px * (unit(((@fluidGridColumnWidth1200 * 3) + (@fluidGridGutterWidth * (3 - 1)))) / 100) + 1199px;
 @maxWidthForVerticalForms: 1474px;
 @media (max-width: @maxWidthForVerticalForms) {
     .used-region-side-pre.used-region-side-post {
@@ -351,8 +345,8 @@ fieldset.coursesearchbox label {
     }
 }
 
-/* Section and module editing forms contain special JS components for the
-   availability system (if enabled). */
+// Section and module editing forms contain special JS components for the
+// availability system (if enabled).
 #fitem_id_availabilityconditionsjson {
     *[aria-hidden=true] {
         display: none;
@@ -383,26 +377,26 @@ fieldset.coursesearchbox label {
         display: inline-block;
         margin-right: 8px;
     }
-    /* Eye icon in front of an item and delete icon after it. */
+    // Eye icon in front of an item and delete icon after it.
     .availability-eye,
     .availability-delete {
         margin-right: 8px;
     }
-    /* Hidden eye icon still takes up space. */
+    // Hidden eye icon still takes up space.
     .availability-eye[aria-hidden=true] {
         display: inline;
         visibility: hidden;
     }
-    /* Eye icons in front of child lists are aligned specially. */
+    // Eye icons in front of child lists are aligned specially.
     .availability-list > .availability-eye img {
         vertical-align: top;
         margin-top: 12px;
     }
-    /* Add button lines up with child elements. */
+    // Add button lines up with child elements.
     .availability-button {
         margin-left: 15px;
     }
-    /* Nested section is grey. */
+    // Nested section is grey.
     .availability-childlist > .availability-inner {
         display: inline-block;
         background: @wellBackground;
@@ -411,24 +405,24 @@ fieldset.coursesearchbox label {
         padding: 6px;
         margin-bottom: 6px;
     }
-    /* Second (and more) levels of nested sections are white. */
+    // Second (and more) levels of nested sections are white.
     .availability-childlist .availability-childlist > .availability-inner {
         background: white;
     }
-    /* Connecting text needs to be indented. */
+    // Connecting text needs to be indented.
     .availability-connector {
         margin-left: 20px;
         margin-bottom: 6px;
     }
 }
 
-/* Default form styling colours all text red. With availability conditions
-   this looks excessive as we show 'Invalid' markers in specific places. */
+// Default form styling colours all text red. With availability conditions
+// this looks excessive as we show 'Invalid' markers in specific places.
 .mform .error .availability-field {
     color: @textColor;
 }
 
-/* This dialogue is used to add an availability condition. */
+// This dialogue is used to add an availability condition.
 .availability-dialogue {
     .moodle-dialogue .moodle-dialogue-bd {
         padding-left: 0;
@@ -464,8 +458,8 @@ fieldset.coursesearchbox label {
         margin-top: 4px;
     }
 }
-/* Revert to the non-fixed width where a textarea has the number of columns
-   specified, or an input has it's size specified. */
+// Revert to the non-fixed width where a textarea has the number of columns
+// specified, or an input has it's size specified.
 textarea[cols],
 input[size] {
     width: auto;

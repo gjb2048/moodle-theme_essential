@@ -109,7 +109,7 @@ function theme_essential_serve_css($filename) {
         $thestylepath = $CFG->dirroot . '/theme/essential/style/';
     } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/essential/style/")) {
         $thestylepath = $CFG->themedir . '/essential/style/';
-     } else {
+    } else {
         header('HTTP/1.0 404 Not Found');
         die('Essential style folder not found, check $CFG->themedir is correct.');
     }

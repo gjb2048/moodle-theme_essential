@@ -60,7 +60,7 @@ if (empty($PAGE->layout_options['nofooter'])) {
             <div class="footerperformance row-fluid">
                 <?php echo $OUTPUT->standard_footer_html(); ?>
             </div>
-            <div class="footercredit row-fluid">
+            <div class="themecredit row-fluid">
                 <?php echo get_string('credit' ,'theme_essential'); ?><a href="//about.me/gjbarnard" target="_blank">Gareth J Barnard</a>
             </div>
         </div>

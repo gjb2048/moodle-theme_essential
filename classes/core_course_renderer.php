@@ -24,10 +24,19 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once($CFG->dirroot . "/course/renderer.php");
+//require_once($CFG->dirroot . "/course/renderer.php");
 
-class theme_essential_core_course_renderer extends core_course_renderer
-{
+class theme_essential_core_course_renderer extends core_course_renderer {
+    protected $enablecategoryicon;
+
+    public function __construct(moodle_page $page, $target) {
+        parent::__construct($page, $target);
+        static $theme;
+        if (empty($theme)) {
+            $theme = theme_config::load('essential');
+        }
+        $this->enablecategoryicon = (!empty($theme->settings->enablecategoryicon)) ? $theme->settings->enablecategoryicon : false;
+    }
 
     /**
      * Returns HTML to display a course category as a part of a tree
@@ -40,8 +49,10 @@ class theme_essential_core_course_renderer extends core_course_renderer
      * @param int $depth depth of this category in the current tree
      * @return string
      */
-    protected function coursecat_category(coursecat_helper $chelper, $coursecat, $depth)
-    {
+    protected function coursecat_category(coursecat_helper $chelper, $coursecat, $depth) {
+        if (!$this->enablecategoryicon) {
+            return parent::coursecat_category($chelper, $coursecat, $depth);
+        }
         global $CFG, $OUTPUT;
         // Open category tag.
         $classes = array('category');
@@ -133,6 +144,9 @@ class theme_essential_core_course_renderer extends core_course_renderer
      * @return string
      */
     protected function coursecat_coursebox_content(coursecat_helper $chelper, $course) {
+        if (!$this->enablecategoryicon) {
+            return parent::coursecat_coursebox_content($chelper, $course);
+        }
         global $CFG;
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
             return '';

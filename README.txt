@@ -184,6 +184,7 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.9.0.2
 ==============
 - FIX: Form header icon repeated.
+- NEW: Implement class autoloading for renderers.
 
 New in 2.9.0.1
 ==============

@@ -7,7 +7,6 @@
 [class*=" icon-"] {
   background-image: url("[[pix:theme|glyphicons-halflings]]");
 }
-/* White icons with optional class, or on hover/focus/active states of certain elements */
 .icon-white,
 .nav-pills > .active > a > [class^="icon-"],
 .nav-pills > .active > a > [class*=" icon-"],

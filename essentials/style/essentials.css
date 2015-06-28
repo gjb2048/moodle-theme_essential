@@ -4,7 +4,13 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-.block  .tree_item.branch::before, .block .header .title h2:before, .block .fa {
+.tree_item.branch.branch:before,
+.collapsed .tree_item.branch:before,
+.menu a.menu-action > i,
+p.tree_item.leaf a > i,
+.course-item-actions a > i,
+.actions a>i,
+.block .fa {
   color: #0070a8;
 }
 

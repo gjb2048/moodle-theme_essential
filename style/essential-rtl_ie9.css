@@ -1,15 +1,4 @@
-@import url('essential-rtl_ie9-blessed1.css?z=1435245719535');
-
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages {
-  margin: 20px 25px;
-}
-
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages .chat-event.course-theme {
-  text-align: center;
-  margin: 10px 0;
-  font-size: 11.9px;
-  color: #777;
-}
+@import url('essential-rtl_ie9-blessed1.css?z=1435496300647');
 
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages .chat-message.course-theme {
   background-color: #ffffff;
@@ -1537,7 +1526,6 @@ body.has_dock div#dock {
 
 #dockeditempanel {
   z-index: 12000;
-  /** Required to place the dock panel above the fixed pos navbar */
   min-width: 200px;
   position: relative;
   right: 100%;
@@ -1562,7 +1550,6 @@ body.has_dock div#dock {
 
 #dockeditempanel .dockeditempanel_bd {
   overflow: auto;
-  /** Required to make the content scrollable when it flows over the fixed area of the screen */
 }
 
 #dockeditempanel .dockeditempanel_bd > * {
@@ -3038,14 +3025,12 @@ body.has_dock div#dock {
 
   .empty-region-side-post.used-region-side-pre #region-main.span8,
   .jsenabled.docked-region-side-post.used-region-side-pre #region-main.span8 {
-    /** increase the span size by 1 **/
     width: 74.35897436%;
     *width: 74.30578287%;
   }
 
   .empty-region-side-post.used-region-side-pre #block-region-side-pre.span4,
   .jsenabled.docked-region-side-post.used-region-side-pre #block-region-side-pre.span4 {
-    /** decrease the span size by 1 **/
     width: 23.07692308%;
     *width: 23.02373159%;
   }
@@ -3076,14 +3061,12 @@ body.has_dock div#dock {
 
   .empty-region-side-post.used-region-side-pre #region-main.span8,
   .jsenabled.docked-region-side-post.used-region-side-pre #region-main.span8 {
-    /** increase the span size by 1 **/
     width: 74.30939227%;
     *width: 74.25620078%;
   }
 
   .empty-region-side-post.used-region-side-pre #block-region-side-pre.span4,
   .jsenabled.docked-region-side-post.used-region-side-pre #block-region-side-pre.span4 {
-    /** decrease the span size by 1 **/
     width: 22.9281768%;
     *width: 22.87498531%;
   }
@@ -3190,8 +3173,6 @@ body.has_dock div#dock {
   .course-content .section .activity .commands {
     text-align: left;
   }
-
-  /** Handles display of the activity chooser on small screens **/
 
   .jsenabled .choosercontainer #chooseform .alloptions {
     max-width: 100%;
@@ -4035,12 +4016,6 @@ ins {
   color: green !important;
 }
 
-#page,
-.pagelayout-redirect {
-  padding-top: 10px;
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
 #page #page-content,
 .pagelayout-redirect #page-content {
   margin-top: 10px;
@@ -4784,7 +4759,6 @@ aside.footer-edit div.block:nth-of-type(1) {
   width: 0;
   height: 0;
   border-top: 50px solid transparent;
-  /* Go big on the size, and let overflow hide */
   border-bottom: 50px solid transparent;
   position: absolute;
   top: 50%;
@@ -5163,7 +5137,6 @@ table.calendarmonth.calendartable {
     height: 100%;
     vertical-align: middle;
     margin-left: -0.25em;
-    /* Adjusts for spacing */
   }
 
   #essentialCarousel.carousel .carousel-inner > .item.side-caption div.the-side-caption .the-side-caption-content {
@@ -5300,14 +5273,6 @@ table.calendarmonth.calendartable {
  */
 
 /* @group Category Icons */
-
-.categoryicons {
-  /* Set the position on the frontpage */
-  /* adjust line height for tiles that include course count */
-  /* Hide icon 'collapsed' because it makes no sense here */
-  /* Hide buttons to expand and collapse */
-  /* clear course list with subcategory icons above */
-}
 
 .categoryicons .course_category_tree .collapsible-actions {
   display: none;
@@ -5513,8 +5478,6 @@ body .course-content ul.topics li.section .content {
 }
 
 /* @group Course Resource */
-
-/* mod_resource css */
 
 .path-mod-resource .resourcecontent {
   overflow: auto;
@@ -6112,7 +6075,7 @@ a.action-icon > i,
   margin-bottom: 4px;
 }
 
-#page-footer .thecredit {
+#page-footer .themecredit {
   font-size: 9pt;
   text-align: center;
 }
@@ -7995,7 +7958,6 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
     display: block;
     width: 100%;
     z-index: 10;
-    /* Get on top of slider. */
     margin-right: -10px;
     margin-left: -10px;
     border-bottom-right-radius: 4px;
@@ -8269,8 +8231,10 @@ body.ie img.defaultuserpic {
 }
 
 div#page::before {
-  content: "Development Version";
+  content: "Development version - test server only.";
   font-size: 4em;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  line-height: 42px;
+  text-align: center;
 }
