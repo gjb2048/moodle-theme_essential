@@ -507,20 +507,6 @@ function theme_essential_set_marketingimage($css, $marketingimage, $setting) {
     return $css;
 }
 
-function theme_essential_showslider() {
-    global $CFG;
-    $noslides = \theme_essential\toolbox::get_setting('numberofslides');
-    if ($noslides && (intval($CFG->version) >= 2013111800)) {
-        $devicetype = core_useragent::get_device_type(); // In moodlelib.php.
-        if (($devicetype == "mobile") && \theme_essential\toolbox::get_setting('hideonphone')) {
-            $noslides = false;
-        } else if (($devicetype == "tablet") && \theme_essential\toolbox::get_setting('hideontablet')) {
-            $noslides = false;
-        }
-    }
-    return $noslides;
-}
-
 function theme_essential_get_nav_links($course, $sections, $sectionno) {
     // FIXME: This is really evil and should by using the navigation API.
     $course = course_get_format($course)->get_course();

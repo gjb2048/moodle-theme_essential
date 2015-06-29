@@ -27,7 +27,7 @@
 $data = array('data' => array('slideinterval' => '5000'));
 $PAGE->requires->js_call_amd('theme_essential/carousel', 'init', $data);
 
-$numberofslides = theme_essential_showslider();
+$numberofslides = \theme_essential\toolbox::showslider();
 
 if ($numberofslides) {
     $slideinterval  = \theme_essential\toolbox::get_setting('slideinterval');

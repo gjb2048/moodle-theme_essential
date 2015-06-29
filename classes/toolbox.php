@@ -93,6 +93,20 @@ class toolbox {
         }
     }
 
+    static public function showslider() {
+        global $CFG;
+        $noslides = self::get_setting('numberofslides');
+        if ($noslides && (intval($CFG->version) >= 2013111800)) {
+            $devicetype = \core_useragent::get_device_type(); // In moodlelib.php.
+            if (($devicetype == "mobile") && self::get_setting('hideonphone')) {
+                $noslides = false;
+            } else if (($devicetype == "tablet") && self::get_setting('hideontablet')) {
+                $noslides = false;
+            }
+        }
+        return $noslides;
+    }
+
     static public function render_slide($i, $captionoptions, $theme = null) {
 
         if (empty($theme)) {
@@ -213,7 +227,7 @@ class toolbox {
     /**
      * States if the browser is IE by returning properties, otherwise false.
      */
-    static public function ie_properties() {
+    static protected function ie_properties() {
         $properties = \core_useragent::check_ie_properties(); // In /lib/classes/useragent.php.
         if (!is_array($properties)) {
             return false;
