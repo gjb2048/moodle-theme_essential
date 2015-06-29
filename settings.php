@@ -133,8 +133,8 @@ if (is_siteadmin()) {
 
 
     /* Colour Settings */
-    $temp = new admin_settingpage('theme_essential_color', get_string('colorheading', 'theme_essential'));
-    $temp->add(new admin_setting_heading('theme_essential_color', get_string('colorheadingsub', 'theme_essential'),
+    $temp = new admin_settingpage('theme_essential_colour', get_string('colorheading', 'theme_essential'));
+    $temp->add(new admin_setting_heading('theme_essential_colour', get_string('colorheadingsub', 'theme_essential'),
         format_text(get_string('colordesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
     // Main theme colour setting.

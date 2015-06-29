@@ -354,6 +354,51 @@ class toolbox {
     }
 
     /**
+     * Checks if the user is switching colours with a refresh
+     *
+     * If they are this updates the users preference in the database
+     */
+    static protected function check_colours_switch() {
+        $colours = \optional_param('essentialcolours', null, PARAM_ALPHANUM);
+        if (in_array($colours, array('default', 'alternative1', 'alternative2', 'alternative3'))) {
+            \set_user_preference('theme_essential_colours', $colours);
+        }
+    }
+
+    /**
+     * Adds the JavaScript for the colour switcher to the page.
+     *
+     * The colour switcher is a YUI moodle module that is located in
+     *     theme/udemspl/yui/udemspl/udemspl.js
+     *
+     * @param moodle_page $page
+     */
+    static public function initialise_colourswitcher(\moodle_page $page) {
+        self::check_colours_switch();
+        \user_preference_allow_ajax_update('theme_essential_colours', PARAM_ALPHANUM);
+        $page->requires->yui_module(
+                'moodle-theme_essential-coloursswitcher', 'M.theme_essential.initColoursSwitcher',
+                array(array('div' => '.dropdown-menu'))
+        );
+    }
+
+    /**
+     * Gets the theme colours the user has selected if enabled or the default if they have never changed
+     *
+     * @param string $default The default theme colors to use
+     * @return string The theme colours the user has selected
+     */
+    static public function get_colours($default = 'default') {
+        $preference = \get_user_preferences('theme_essential_colours', $default);
+        foreach (range(1, 3) as $alternativethemenumber) {
+            if ($preference == 'alternative' . $alternativethemenumber && self::get_setting('enablealternativethemecolors' . $alternativethemenumber)) {
+                return $preference;
+            }
+        }
+        return $default;
+    }
+
+    /**
      * States if the browser is not IE9 or less.
      */
     static public function not_lte_ie9() {

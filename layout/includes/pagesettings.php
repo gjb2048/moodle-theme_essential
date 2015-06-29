@@ -35,9 +35,8 @@ if (\theme_essential\toolbox::get_setting('enablealternativethemecolors1') ||
     \theme_essential\toolbox::get_setting('enablealternativethemecolors3')
 ) {
     $colourswitcher = true;
-    theme_essential_check_colours_switch();
-    theme_essential_initialise_colourswitcher($PAGE);
-    $bodyclasses[]  = 'essential-colours-' . theme_essential_get_colours();
+    \theme_essential\toolbox::initialise_colourswitcher($PAGE);
+    $bodyclasses[]  = 'essential-colours-' . \theme_essential\toolbox::get_colours();
 } else {
     $colourswitcher = false;
 }
