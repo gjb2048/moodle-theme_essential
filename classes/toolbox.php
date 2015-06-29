@@ -6,6 +6,41 @@ class toolbox {
 
     static protected $theme;
 
+    // Moodle CSS file serving.
+    static public function get_csswww() {
+        global $CFG;
+
+        if (!self::lte_ie9()) {
+            if (\right_to_left()) {
+                $moodlecss = 'essential-rtl.css';
+            } else {
+                $moodlecss = 'essential.css';
+            }
+
+            $syscontext = \context_system::instance();
+            $itemid = \theme_get_revision();
+            $url = \moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php", "/$syscontext->id/theme_essential/style/$itemid/$moodlecss");
+            $url = preg_replace('|^https?://|i', '//', $url->out(false));
+            return '<link rel="stylesheet" href="'.$url.'">';
+        } else {
+            if (\right_to_left()) {
+                $moodlecssone = 'essential-rtl_ie9-blessed1.css';
+                $moodlecsstwo = 'essential-rtl_ie9.css';
+            } else {
+                $moodlecssone = 'essential_ie9-blessed1.css';
+                $moodlecsstwo = 'essential_ie9.css';
+            }
+
+            $syscontext = \context_system::instance();
+            $itemid = \theme_get_revision();
+            $urlone = \moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php", "/$syscontext->id/theme_essential/style/$itemid/$moodlecssone");
+            $urlone = preg_replace('|^https?://|i', '//', $urlone->out(false));
+            $urltwo = \moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php", "/$syscontext->id/theme_essential/style/$itemid/$moodlecsstwo");
+            $urltwo = preg_replace('|^https?://|i', '//', $urltwo->out(false));
+            return '<link rel="stylesheet" href="'.$urlone.'"><link rel="stylesheet" href="'.$urltwo.'">';
+        }
+    }
+
     static public function get_setting($setting, $format = false, $theme = null) {
 
         if (empty($theme)) {
