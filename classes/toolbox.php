@@ -150,4 +150,40 @@ class toolbox {
 
         return $prev . $next;
     }
+
+    /**
+     * States if the browser is not IE9 or less.
+     */
+    static public function not_lte_ie9() {
+        $properties = self::ie_properties();
+        if (!is_array($properties)) {
+            return true;
+        }
+        // We have properties, it is a version of IE, so is it greater than 9?
+        return ($properties['version'] > 9.0);
+    }
+
+    /**
+     * States if the browser is IE9 or less.
+     */
+    static public function lte_ie9() {
+        $properties = self::ie_properties();
+        if (!is_array($properties)) {
+            return false;
+        }
+        // We have properties, it is a version of IE, so is it greater than 9?
+        return ($properties['version'] <= 9.0);
+    }
+
+    /**
+     * States if the browser is IE by returning properties, otherwise false.
+     */
+    static public function ie_properties() {
+        $properties = \core_useragent::check_ie_properties(); // In /lib/classes/useragent.php.
+        if (!is_array($properties)) {
+            return false;
+        } else {
+            return $properties;
+        }
+    }
 }

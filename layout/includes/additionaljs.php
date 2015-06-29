@@ -29,7 +29,7 @@
 //if ((is_array($properties)) && ($properties['version'] <= 8.0)) {
 //    $PAGE->requires->jquery_plugin('html5shiv', 'theme_essential');
 //}
-if ($OUTPUT->theme_essential_not_lte_ie9()) {
+if (\theme_essential\toolbox::not_lte_ie9()) {
     $PAGE->requires->js_call_amd('theme_essential/affix', 'init');
     $breadcrumbstyle = \theme_essential\toolbox::get_setting('breadcrumbstyle');
     if ($breadcrumbstyle == '1') {

@@ -1213,7 +1213,7 @@ class theme_essential_core_renderer extends core_renderer {
     public function get_csswww() {
         global $CFG;
 
-        if (!$this->theme_essential_lte_ie9()) {
+        if (!\theme_essential\toolbox::lte_ie9()) {
             if (right_to_left()) {
                 $moodlecss = 'essential-rtl.css';
             } else {
@@ -1424,41 +1424,5 @@ class theme_essential_core_renderer extends core_renderer {
         $html .= html_writer::end_tag('div');
 
         return $html;
-    }
-
-    /**
-     * States if the browser is not IE9 or less.
-     */
-    public function theme_essential_not_lte_ie9() {
-        $properties = $this->theme_essential_ie_properties();
-        if (!is_array($properties)) {
-            return true;
-        }
-        // We have properties, it is a version of IE, so is it greater than 9?
-        return ($properties['version'] > 9.0);
-    }
-
-    /**
-     * States if the browser is IE9 or less.
-     */
-    public function theme_essential_lte_ie9() {
-        $properties = $this->theme_essential_ie_properties();
-        if (!is_array($properties)) {
-            return false;
-        }
-        // We have properties, it is a version of IE, so is it greater than 9?
-        return ($properties['version'] <= 9.0);
-    }
-
-    /**
-     * States if the browser is IE by returning properties, otherwise false.
-     */
-    public function theme_essential_ie_properties() {
-        $properties = core_useragent::check_ie_properties(); // In /lib/classes/useragent.php.
-        if (!is_array($properties)) {
-            return false;
-        } else {
-            return $properties;
-        }
     }
 }

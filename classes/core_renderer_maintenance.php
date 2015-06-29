@@ -52,7 +52,7 @@ class theme_essential_core_renderer_maintenance extends core_renderer_maintenanc
     public function get_csswww() {
         global $CFG;
 
-        if (!$this->theme_essential_lte_ie9()) {
+        if (!\theme_essential\toolbox::lte_ie9()) {
             if (right_to_left()) {
                 $moodlecss = 'essential-rtl.css';
             } else {
@@ -80,66 +80,6 @@ class theme_essential_core_renderer_maintenance extends core_renderer_maintenanc
             $urltwo = moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php", "/$syscontext->id/theme_essential/style/$itemid/$moodlecsstwo");
             $urltwo = preg_replace('|^https?://|i', '//', $urltwo->out(false));
             return '<link rel="stylesheet" href="'.$urlone.'"><link rel="stylesheet" href="'.$urltwo.'">';
-        }
-    }
-
-    public function get_setting($setting, $format = false, $theme = null) {
-
-        if (empty($theme)) {
-            if (empty($this->theme)) {
-                $this->theme = theme_config::load('essential');
-            }
-            $theme = $this->theme;
-        }
-
-        global $CFG;
-        require_once($CFG->dirroot . '/lib/weblib.php');
-        if (empty($theme->settings->$setting)) {
-            return false;
-        } else if (!$format) {
-            return $theme->settings->$setting;
-        } else if ($format === 'format_text') {
-            return format_text($theme->settings->$setting, FORMAT_PLAIN);
-        } else if ($format === 'format_html') {
-            return format_text($theme->settings->$setting, FORMAT_HTML, array('trusted' => true, 'noclean' => true));
-        } else {
-            return format_string($theme->settings->$setting);
-        }
-    }
-
-    /**
-     * States if the browser is not IE9 or less.
-     */
-    public function theme_essential_not_lte_ie9() {
-        $properties = $this->theme_essential_ie_properties();
-        if (!is_array($properties)) {
-            return true;
-        }
-        // We have properties, it is a version of IE, so is it greater than 9?
-        return ($properties['version'] > 9.0);
-    }
-
-    /**
-     * States if the browser is IE9 or less.
-     */
-    public function theme_essential_lte_ie9() {
-        $properties = $this->theme_essential_ie_properties();
-        if (!is_array($properties)) {
-            return false;
-        }
-        // We have properties, it is a version of IE, so is it greater than 9?
-        return ($properties['version'] <= 9.0);
-    }
-
-    /**
-     * States if the browser is IE by returning properties, otherwise false.
-     */
-    public function theme_essential_ie_properties() {
-        $properties = core_useragent::check_ie_properties(); // In /lib/classes/useragent.php.
-        if (!is_array($properties)) {
-            return false;
-        } else {
-            return $properties;
         }
     }
 }
