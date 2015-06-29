@@ -24,8 +24,8 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-if ($OUTPUT->get_setting('analyticsenabled')) {
-    $analytics = $OUTPUT->get_setting('analytics');
+if (\theme_essential\toolbox::get_setting('analyticsenabled')) {
+    $analytics = \theme_essential\toolbox::get_setting('analytics');
     if ($analytics === "piwik") {
         require_once(\theme_essential\toolbox::get_include_file('piwik'));
     } elseif ($analytics === "guniversal") {

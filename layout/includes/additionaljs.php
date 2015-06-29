@@ -31,11 +31,11 @@
 //}
 if ($OUTPUT->theme_essential_not_lte_ie9()) {
     $PAGE->requires->js_call_amd('theme_essential/affix', 'init');
-    $breadcrumbstyle = $OUTPUT->get_setting('breadcrumbstyle');
+    $breadcrumbstyle = \theme_essential\toolbox::get_setting('breadcrumbstyle');
     if ($breadcrumbstyle == '1') {
         $PAGE->requires->js_call_amd('theme_essential/jBreadCrumb', 'init');
     }
-    if ($OUTPUT->get_setting('fitvids')) {
+    if (\theme_essential\toolbox::get_setting('fitvids')) {
         $PAGE->requires->js_call_amd('theme_essential/fitvids', 'init');
     }
 }

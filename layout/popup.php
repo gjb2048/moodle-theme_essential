@@ -25,14 +25,14 @@
  */
 
 require_once(\theme_essential\toolbox::get_include_file('additionaljs'));
-$fontselect = $OUTPUT->get_setting('fontselect');
+$fontselect = \theme_essential\toolbox::get_setting('fontselect');
 if ($fontselect === '2') {
     $fontcharacterset = '&subset=latin';
-    if ($OUTPUT->get_setting('fontcharacterset')) {
-        $fontcharacterset = '&subset=latin,'.$OUTPUT->get_setting('fontcharacterset');
+    if (\theme_essential\toolbox::get_setting('fontcharacterset')) {
+        $fontcharacterset = '&subset=latin,'.\theme_essential\toolbox::get_setting('fontcharacterset');
     }
-    $headingfont = urlencode($OUTPUT->get_setting('fontnameheading'));
-    $bodyfont = urlencode($OUTPUT->get_setting('fontnamebody'));
+    $headingfont = urlencode(\theme_essential\toolbox::get_setting('fontnameheading'));
+    $bodyfont = urlencode(\theme_essential\toolbox::get_setting('fontnamebody'));
 }
 
 echo $OUTPUT->doctype();

@@ -30,9 +30,9 @@ global $CFG, $PAGE, $USER, $SITE, $COURSE;
 /* Group Body */
 $bodyclasses = array();
 
-if (theme_essential_get_setting('enablealternativethemecolors1') ||
-    theme_essential_get_setting('enablealternativethemecolors2') ||
-    theme_essential_get_setting('enablealternativethemecolors3')
+if (\theme_essential\toolbox::get_setting('enablealternativethemecolors1') ||
+    \theme_essential\toolbox::get_setting('enablealternativethemecolors2') ||
+    \theme_essential\toolbox::get_setting('enablealternativethemecolors3')
 ) {
     $colourswitcher = true;
     theme_essential_check_colours_switch();
@@ -51,7 +51,7 @@ if ($devicetype == "mobile") {
     $bodyclasses[] = 'desktopdevice';
 }
 
-switch (theme_essential_get_setting('pagewidth')) {
+switch (\theme_essential\toolbox::get_setting('pagewidth')) {
     case 100:
         $bodyclasses[] = 'pagewidthvariable';
         break;
@@ -68,7 +68,7 @@ switch (theme_essential_get_setting('pagewidth')) {
 if (!empty($CFG->custommenuitems)) {
     $bodyclasses[] = 'custommenuitems';
 }
-if (theme_essential_get_setting('enablecategoryicon')) {
+if (\theme_essential\toolbox::get_setting('enablecategoryicon')) {
     $bodyclasses[] = 'categoryicons';
 }
 
@@ -83,32 +83,32 @@ if (right_to_left()) {
     $left = false;
 }
 
-$fontselect = theme_essential_get_setting('fontselect');
+$fontselect = \theme_essential\toolbox::get_setting('fontselect');
 if ($fontselect === '2') {
     $fontcharacterset = '&subset=latin';
-    if (theme_essential_get_setting('fontcharacterset')) {
-        $fontcharacterset = '&subset=latin,'.theme_essential_get_setting('fontcharacterset');
+    if (\theme_essential\toolbox::get_setting('fontcharacterset')) {
+        $fontcharacterset = '&subset=latin,'.\theme_essential\toolbox::get_setting('fontcharacterset');
     }
-    $headingfont = urlencode(theme_essential_get_setting('fontnameheading'));
-    $bodyfont = urlencode(theme_essential_get_setting('fontnamebody'));
+    $headingfont = urlencode(\theme_essential\toolbox::get_setting('fontnameheading'));
+    $bodyfont = urlencode(\theme_essential\toolbox::get_setting('fontnamebody'));
 }
 
 /* Group Header */
 $hassocialnetworks = (
-    theme_essential_get_setting('facebook') ||
-    theme_essential_get_setting('twitter') ||
-    theme_essential_get_setting('googleplus') ||
-    theme_essential_get_setting('linkedin') ||
-    theme_essential_get_setting('youtube') ||
-    theme_essential_get_setting('flickr') ||
-    theme_essential_get_setting('vk') ||
-    theme_essential_get_setting('pinterest') ||
-    theme_essential_get_setting('instagram') ||
-    theme_essential_get_setting('skype') ||
-    theme_essential_get_setting('website')
+    \theme_essential\toolbox::get_setting('facebook') ||
+    \theme_essential\toolbox::get_setting('twitter') ||
+    \theme_essential\toolbox::get_setting('googleplus') ||
+    \theme_essential\toolbox::get_setting('linkedin') ||
+    \theme_essential\toolbox::get_setting('youtube') ||
+    \theme_essential\toolbox::get_setting('flickr') ||
+    \theme_essential\toolbox::get_setting('vk') ||
+    \theme_essential\toolbox::get_setting('pinterest') ||
+    \theme_essential\toolbox::get_setting('instagram') ||
+    \theme_essential\toolbox::get_setting('skype') ||
+    \theme_essential\toolbox::get_setting('website')
 );
-$hasmobileapps = (theme_essential_get_setting('ios') ||
-    theme_essential_get_setting('android')
+$hasmobileapps = (\theme_essential\toolbox::get_setting('ios') ||
+    \theme_essential\toolbox::get_setting('android')
 );
 
 $logoclass = 'ecol12';
@@ -116,11 +116,11 @@ if ($hassocialnetworks || $hasmobileapps) {
     $logoclass = 'ecol7';
 }
 
-$oldnavbar = theme_essential_get_setting('oldnavbar');
-$haslogo = theme_essential_get_setting('logo');
+$oldnavbar = \theme_essential\toolbox::get_setting('oldnavbar');
+$haslogo = \theme_essential\toolbox::get_setting('logo');
 
 /* Group Content */
-$hasboringlayout = theme_essential_get_setting('layout');
+$hasboringlayout = \theme_essential\toolbox::get_setting('layout');
 if ($hasboringlayout) {
     $bodyclasses[] = 'hasboringlayout';
 }
@@ -159,6 +159,6 @@ function essential_has_footer_region() {
 }
 
 /* Group Footer */
-$hascopyright = theme_essential_get_setting('copyright', true);
-$hasfootnote = theme_essential_get_setting('footnote', 'format_html');
+$hascopyright = \theme_essential\toolbox::get_setting('copyright', true);
+$hasfootnote = \theme_essential\toolbox::get_setting('footnote', 'format_html');
 

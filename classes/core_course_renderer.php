@@ -102,15 +102,15 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         $categoryiconnum = 'categoryicon' . $coursecat->id;
 
         // Do a settings check to output our icon for the category.
-        if ($OUTPUT->get_setting('enablecategoryicon')) {
-            if ($OUTPUT->get_setting($categoryiconnum) &&
-                $OUTPUT->get_setting('enablecustomcategoryicon')
+        if (\theme_essential\toolbox::get_setting('enablecategoryicon')) {
+            if (\theme_essential\toolbox::get_setting($categoryiconnum) &&
+                \theme_essential\toolbox::get_setting('enablecustomcategoryicon')
             ) {
                 // User has set a value for the category.
-                $val = $OUTPUT->get_setting($categoryiconnum);
+                $val = \theme_essential\toolbox::get_setting($categoryiconnum);
             } else {
                 // User hasn't set a value for the category, get the default.
-                $val = $OUTPUT->get_setting('defaultcategoryicon');
+                $val = \theme_essential\toolbox::get_setting('defaultcategoryicon');
             }
         }
         if (!empty($val)) {
@@ -196,7 +196,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         if ($coursehascontacts) {
             $content .= html_writer::start_tag('ul', array('class' => 'teachers'));
             foreach ($course->get_course_contacts() as $userid => $coursecontact) {
-                $faiconsetting = theme_essential_get_setting('courselistteachericon');
+                $faiconsetting = \theme_essential\toolbox::get_setting('courselistteachericon');
                 $faiconsettinghtml = (empty($faiconsetting)) ? '' : '<i class="fa fa-'.$faiconsetting.'"></i> ';
                 $name = $faiconsettinghtml.$coursecontact['rolename'].': '.
                         html_writer::link(new moodle_url('/user/view.php',

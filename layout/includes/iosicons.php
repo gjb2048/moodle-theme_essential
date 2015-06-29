@@ -24,23 +24,23 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-if ($OUTPUT->get_setting('iphoneicon')) {
-    $iphoneicon = $OUTPUT->get_setting('iphoneicon');
+if (\theme_essential\toolbox::get_setting('iphoneicon')) {
+    $iphoneicon = \theme_essential\toolbox::get_setting('iphoneicon');
 } else {
     $iphoneicon = $OUTPUT->pix_url('homeicon/iphone', 'theme');
 }
-if ($OUTPUT->get_setting('ipadicon')) {
-    $ipadicon = $OUTPUT->get_setting('ipadicon');
+if (\theme_essential\toolbox::get_setting('ipadicon')) {
+    $ipadicon = \theme_essential\toolbox::get_setting('ipadicon');
 } else {
     $ipadicon = $OUTPUT->pix_url('homeicon/ipad', 'theme');
 }
-if ($OUTPUT->get_setting('iphoneretinaicon')) {
-    $iphoneretinaicon = $OUTPUT->get_setting('iphoneretinaicon');
+if (\theme_essential\toolbox::get_setting('iphoneretinaicon')) {
+    $iphoneretinaicon = \theme_essential\toolbox::get_setting('iphoneretinaicon');
 } else {
     $iphoneretinaicon = $OUTPUT->pix_url('homeicon/iphone_retina', 'theme');
 }
-if ($OUTPUT->get_setting('ipadretinaicon')) {
-    $ipadretinaicon = $OUTPUT->get_setting('ipadretinaicon');
+if (\theme_essential\toolbox::get_setting('ipadretinaicon')) {
+    $ipadretinaicon = \theme_essential\toolbox::get_setting('ipadretinaicon');
 } else {
     $ipadretinaicon = $OUTPUT->pix_url('homeicon/ipad_retina', 'theme');
 }

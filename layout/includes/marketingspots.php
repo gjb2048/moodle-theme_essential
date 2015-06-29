@@ -29,17 +29,17 @@
     <div class="marketing-spot span4">
         <!-- Icon & title. Font Awesome icon used. -->
         <h5><span><i
-                    class="fa fa-<?php echo $OUTPUT->get_setting('marketing1icon'); ?>"></i> <?php echo $OUTPUT->get_setting('marketing1', true); ?></span>
+                    class="fa fa-<?php echo \theme_essential\toolbox::get_setting('marketing1icon'); ?>"></i> <?php echo \theme_essential\toolbox::get_setting('marketing1', true); ?></span>
         </h5>
-        <?php if ($OUTPUT->get_setting('marketing1image')) { ?>
+        <?php if (\theme_essential\toolbox::get_setting('marketing1image')) { ?>
             <div class="marketing-image" id="marketing-image1"></div>
         <?php } ?>
-        <?php echo $OUTPUT->get_setting('marketing1content', 'format_html'); ?>
+        <?php echo \theme_essential\toolbox::get_setting('marketing1content', 'format_html'); ?>
         <div class="button">
-            <a href="<?php echo $OUTPUT->get_setting('marketing1buttonurl'); ?>"
-               target="<?php echo $OUTPUT->get_setting('marketing1target'); ?>"
+            <a href="<?php echo \theme_essential\toolbox::get_setting('marketing1buttonurl'); ?>"
+               target="<?php echo \theme_essential\toolbox::get_setting('marketing1target'); ?>"
                class="marketing-button responsive">
-                <?php echo $OUTPUT->get_setting('marketing1buttontext', true); ?>
+                <?php echo \theme_essential\toolbox::get_setting('marketing1buttontext', true); ?>
             </a>
         </div>
     </div>
@@ -48,17 +48,17 @@
     <div class="marketing-spot span4">
         <!-- Icon & title. Font Awesome icon used. -->
         <h5><span><i
-                    class="fa fa-<?php echo $OUTPUT->get_setting('marketing2icon'); ?>"></i> <?php echo $OUTPUT->get_setting('marketing2', true); ?></span>
+                    class="fa fa-<?php echo \theme_essential\toolbox::get_setting('marketing2icon'); ?>"></i> <?php echo \theme_essential\toolbox::get_setting('marketing2', true); ?></span>
         </h5>
-        <?php if ($OUTPUT->get_setting('marketing2image')) { ?>
+        <?php if (\theme_essential\toolbox::get_setting('marketing2image')) { ?>
             <div class="marketing-image" id="marketing-image2"></div>
         <?php } ?>
-        <?php echo $OUTPUT->get_setting('marketing2content', 'format_html'); ?>
+        <?php echo \theme_essential\toolbox::get_setting('marketing2content', 'format_html'); ?>
         <div class="button">
-            <a href="<?php echo $OUTPUT->get_setting('marketing2buttonurl'); ?>"
-               target="<?php echo $OUTPUT->get_setting('marketing2target'); ?>"
+            <a href="<?php echo \theme_essential\toolbox::get_setting('marketing2buttonurl'); ?>"
+               target="<?php echo \theme_essential\toolbox::get_setting('marketing2target'); ?>"
                class="marketing-button responsive">
-                <?php echo $OUTPUT->get_setting('marketing2buttontext', true); ?>
+                <?php echo \theme_essential\toolbox::get_setting('marketing2buttontext', true); ?>
             </a>
         </div>
     </div>
@@ -67,17 +67,17 @@
     <div class="marketing-spot span4">
         <!-- Icon & title. Font Awesome icon used. -->
         <h5><span><i
-                    class="fa fa-<?php echo $OUTPUT->get_setting('marketing3icon'); ?>"></i> <?php echo $OUTPUT->get_setting('marketing3', true); ?></span>
+                    class="fa fa-<?php echo \theme_essential\toolbox::get_setting('marketing3icon'); ?>"></i> <?php echo \theme_essential\toolbox::get_setting('marketing3', true); ?></span>
         </h5>
-        <?php if ($OUTPUT->get_setting('marketing3image')) { ?>
+        <?php if (\theme_essential\toolbox::get_setting('marketing3image')) { ?>
             <div class="marketing-image" id="marketing-image3"></div>
         <?php } ?>
-        <?php echo $OUTPUT->get_setting('marketing3content', 'format_html'); ?>
+        <?php echo \theme_essential\toolbox::get_setting('marketing3content', 'format_html'); ?>
         <div class="button">
-            <a href="<?php echo $OUTPUT->get_setting('marketing3buttonurl'); ?>"
-               target="<?php echo $OUTPUT->get_setting('marketing3target'); ?>"
+            <a href="<?php echo \theme_essential\toolbox::get_setting('marketing3buttonurl'); ?>"
+               target="<?php echo \theme_essential\toolbox::get_setting('marketing3target'); ?>"
                class="marketing-button responsive">
-                <?php echo $OUTPUT->get_setting('marketing3buttontext', true); ?>
+                <?php echo \theme_essential\toolbox::get_setting('marketing3buttontext', true); ?>
             </a>
         </div>
     </div>
@@ -85,27 +85,27 @@
 <div class="row-fluid" id="marketing-buttons">
     <!-- Advert Button #1 -->
     <div class="span4">
-        <a href="<?php echo $OUTPUT->get_setting('marketing1buttonurl'); ?>"
-           target="<?php echo $OUTPUT->get_setting('marketing1target'); ?>" class="marketing-button">
-            <?php echo $OUTPUT->get_setting('marketing1buttontext', true); ?>
+        <a href="<?php echo \theme_essential\toolbox::get_setting('marketing1buttonurl'); ?>"
+           target="<?php echo \theme_essential\toolbox::get_setting('marketing1target'); ?>" class="marketing-button">
+            <?php echo \theme_essential\toolbox::get_setting('marketing1buttontext', true); ?>
         </a>
         <?php echo $OUTPUT->essential_edit_button('theme_essential_frontpage'); ?>
     </div>
 
     <!-- Advert Button #2 -->
     <div class="span4">
-        <a href="<?php echo $OUTPUT->get_setting('marketing2buttonurl'); ?>"
-           target="<?php echo $OUTPUT->get_setting('marketing2target'); ?>" class="marketing-button">
-            <?php echo $OUTPUT->get_setting('marketing2buttontext', true); ?>
+        <a href="<?php echo \theme_essential\toolbox::get_setting('marketing2buttonurl'); ?>"
+           target="<?php echo \theme_essential\toolbox::get_setting('marketing2target'); ?>" class="marketing-button">
+            <?php echo \theme_essential\toolbox::get_setting('marketing2buttontext', true); ?>
         </a>
         <?php echo $OUTPUT->essential_edit_button('theme_essential_frontpage'); ?>
     </div>
 
     <!-- Advert Button #3 -->
     <div class="span4">
-        <a href="<?php echo $OUTPUT->get_setting('marketing3buttonurl'); ?>"
-           target="<?php echo $OUTPUT->get_setting('marketing3target'); ?>" class="marketing-button">
-            <?php echo $OUTPUT->get_setting('marketing3buttontext', true); ?>
+        <a href="<?php echo \theme_essential\toolbox::get_setting('marketing3buttonurl'); ?>"
+           target="<?php echo \theme_essential\toolbox::get_setting('marketing3target'); ?>" class="marketing-button">
+            <?php echo \theme_essential\toolbox::get_setting('marketing3buttontext', true); ?>
         </a>
         <?php echo $OUTPUT->essential_edit_button('theme_essential_frontpage'); ?>
     </div>

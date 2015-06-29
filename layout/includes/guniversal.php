@@ -66,9 +66,9 @@ function analytics_trackurl() {
 
 function insert_analytics_tracking() {
     global $PAGE, $OUTPUT;
-    $trackingid = $OUTPUT->get_setting('analyticstrackingid');
-    $trackadmin = $OUTPUT->get_setting('analyticstrackadmin');
-    $cleanurl = $OUTPUT->get_setting('analyticscleanurl');
+    $trackingid = \theme_essential\toolbox::get_setting('analyticstrackingid');
+    $trackadmin = \theme_essential\toolbox::get_setting('analyticstrackadmin');
+    $cleanurl = \theme_essential\toolbox::get_setting('analyticscleanurl');
     $tracking = '';
 
     if ($cleanurl) {

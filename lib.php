@@ -25,26 +25,6 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-function theme_essential_get_setting($setting, $format = false) {
-    global $CFG;
-    require_once($CFG->dirroot . '/lib/weblib.php');
-    static $theme;
-    if (empty($theme)) {
-        $theme = theme_config::load('essential');
-    }
-    if (empty($theme->settings->$setting)) {
-        return false;
-    } else if (!$format) {
-        return $theme->settings->$setting;
-    } else if ($format === 'format_text') {
-        return format_text($theme->settings->$setting, FORMAT_PLAIN);
-    } else if ($format === 'format_html') {
-        return format_text($theme->settings->$setting, FORMAT_HTML, array('trusted' => true, 'noclean' => true));
-    } else {
-        return format_string($theme->settings->$setting);
-    }
-}
-
 function theme_essential_set_logo($css, $logo) {
     $tag = '[[setting:logo]]';
     if (!($logo)) {
@@ -224,12 +204,12 @@ function theme_essential_set_customcss($css, $customcss) {
 
 function theme_essential_process_css($css, $theme) {
     // Set the theme width
-    $pagewidth = theme_essential_get_setting('pagewidth');
+    $pagewidth = \theme_essential\toolbox::get_setting('pagewidth');
     $css = theme_essential_set_pagewidth($css, $pagewidth);
 
     // Set the theme font
-    $headingfont = theme_essential_get_setting('fontnameheading');
-    $bodyfont = theme_essential_get_setting('fontnamebody');
+    $headingfont = \theme_essential\toolbox::get_setting('fontnameheading');
+    $bodyfont = \theme_essential\toolbox::get_setting('fontnamebody');
 
     $css = theme_essential_set_headingfont($css, $headingfont);
     $css = theme_essential_set_bodyfont($css, $bodyfont);
@@ -237,83 +217,83 @@ function theme_essential_process_css($css, $theme) {
     $css = theme_essential_set_fontfiles($css, 'body', $bodyfont);
 
     // Set the theme colour.
-    $themecolor = theme_essential_get_setting('themecolor');
+    $themecolor = \theme_essential\toolbox::get_setting('themecolor');
     $css = theme_essential_set_color($css, $themecolor, '[[setting:themecolor]]', '#30ADD1');
 
     // Set the theme text colour.
-    $themetextcolor = theme_essential_get_setting('themetextcolor');
+    $themetextcolor = \theme_essential\toolbox::get_setting('themetextcolor');
     $css = theme_essential_set_color($css, $themetextcolor, '[[setting:themetextcolor]]', '#047797');
 
     // Set the theme url colour.
-    $themeurlcolor = theme_essential_get_setting('themeurlcolor');
+    $themeurlcolor = \theme_essential\toolbox::get_setting('themeurlcolor');
     $css = theme_essential_set_color($css, $themeurlcolor, '[[setting:themeurlcolor]]', '#FF5034');
 
     // Set the theme hover colour.
-    $themehovercolor = theme_essential_get_setting('themehovercolor');
+    $themehovercolor = \theme_essential\toolbox::get_setting('themehovercolor');
     $css = theme_essential_set_color($css, $themehovercolor, '[[setting:themehovercolor]]', '#F32100');
 
     // Set the theme header text colour.
-    $themetextcolor = theme_essential_get_setting('headertextcolor');
+    $themetextcolor = \theme_essential\toolbox::get_setting('headertextcolor');
     $css = theme_essential_set_color($css, $themetextcolor, '[[setting:headertextcolor]]', '#217a94');
 
     // Set the theme icon colour.
-    $themeiconcolor = theme_essential_get_setting('themeiconcolor');
+    $themeiconcolor = \theme_essential\toolbox::get_setting('themeiconcolor');
     $css = theme_essential_set_color($css, $themeiconcolor, '[[setting:themeiconcolor]]', '#30ADD1');
 
     // Set the theme navigation colour.
-    $themenavcolor = theme_essential_get_setting('themenavcolor');
+    $themenavcolor = \theme_essential\toolbox::get_setting('themenavcolor');
     $css = theme_essential_set_color($css, $themenavcolor, '[[setting:themenavcolor]]', '#ffffff');
 
     // Set the footer colour.
-    $footercolor = theme_essential_hex2rgba(theme_essential_get_setting('footercolor'), '0.95');
+    $footercolor = theme_essential_hex2rgba(\theme_essential\toolbox::get_setting('footercolor'), '0.95');
     $css = theme_essential_set_color($css, $footercolor, '[[setting:footercolor]]', '#555555');
 
     // Set the footer text color.
-    $footertextcolor = theme_essential_get_setting('footertextcolor');
+    $footertextcolor = \theme_essential\toolbox::get_setting('footertextcolor');
     $css = theme_essential_set_color($css, $footertextcolor, '[[setting:footertextcolor]]', '#bbbbbb');
 
     // Set the footer heading colour.
-    $footerheadingcolor = theme_essential_get_setting('footerheadingcolor');
+    $footerheadingcolor = \theme_essential\toolbox::get_setting('footerheadingcolor');
     $css = theme_essential_set_color($css, $footerheadingcolor, '[[setting:footerheadingcolor]]', '#cccccc');
 
     // Set the footer separator colour.
-    $footersepcolor = theme_essential_get_setting('footersepcolor');
+    $footersepcolor = \theme_essential\toolbox::get_setting('footersepcolor');
     $css = theme_essential_set_color($css, $footersepcolor, '[[setting:footersepcolor]]', '#313131');
 
     // Set the footer URL color.
-    $footerurlcolor = theme_essential_get_setting('footerurlcolor');
+    $footerurlcolor = \theme_essential\toolbox::get_setting('footerurlcolor');
     $css = theme_essential_set_color($css, $footerurlcolor, '[[setting:footerurlcolor]]', '#217a94');
 
     // Set the footer hover colour.
-    $footerhovercolor = theme_essential_get_setting('footerhovercolor');
+    $footerhovercolor = \theme_essential\toolbox::get_setting('footerhovercolor');
     $css = theme_essential_set_color($css, $footerhovercolor, '[[setting:footerhovercolor]]', '#30add1');
 
     // Set the slide background colour.
-    $slidebgcolor = theme_essential_hex2rgba(theme_essential_get_setting('themecolor'), '.75');
+    $slidebgcolor = theme_essential_hex2rgba(\theme_essential\toolbox::get_setting('themecolor'), '.75');
     $css = theme_essential_set_color($css, $slidebgcolor, '[[setting:carouselcolor]]', '#30add1');
 
     // Set the slide active pip colour.
-    $slidebgcolor = theme_essential_hex2rgba(theme_essential_get_setting('themecolor'), '.25');
+    $slidebgcolor = theme_essential_hex2rgba(\theme_essential\toolbox::get_setting('themecolor'), '.25');
     $css = theme_essential_set_color($css, $slidebgcolor, '[[setting:carouselactivecolor]]', '#30add1');
 
     // Set the slide header colour.
-    $slideshowcolor = theme_essential_get_setting('slideshowcolor');
+    $slideshowcolor = \theme_essential\toolbox::get_setting('slideshowcolor');
     $css = theme_essential_set_color($css, $slideshowcolor, '[[setting:slideshowcolor]]', '#30add1');
 
     // Set the slide header colour.
-    $slideheadercolor = theme_essential_get_setting('slideheadercolor');
+    $slideheadercolor = \theme_essential\toolbox::get_setting('slideheadercolor');
     $css = theme_essential_set_color($css, $slideheadercolor, '[[setting:slideheadercolor]]', '#30add1');
 
     // Set the slide text colour.
-    $slidecolor = theme_essential_get_setting('slidecolor');
+    $slidecolor = \theme_essential\toolbox::get_setting('slidecolor');
     $css = theme_essential_set_color($css, $slidecolor, '[[setting:slidecolor]]', '#ffffff');
 
     // Set the slide button colour.
-    $slidebuttoncolor = theme_essential_get_setting('slidebuttoncolor');
+    $slidebuttoncolor = \theme_essential\toolbox::get_setting('slidebuttoncolor');
     $css = theme_essential_set_color($css, $slidebuttoncolor, '[[setting:slidebuttoncolor]]', '#30add1');
 
     // Set the slide button hover colour.
-    $slidebuttonhcolor = theme_essential_get_setting('slidebuttonhovercolor');
+    $slidebuttonhcolor = \theme_essential\toolbox::get_setting('slidebuttonhovercolor');
     $css = theme_essential_set_color($css, $slidebuttonhcolor, '[[setting:slidebuttonhovercolor]]', '#217a94');
 
     if ((get_config('theme_essential', 'enablealternativethemecolors1')) ||
@@ -328,18 +308,18 @@ function theme_essential_process_css($css, $theme) {
             $default = $defaultcolors[$alternative - 1];
             $defaulthover = $defaulthovercolors[$alternative - 1];
             $css = theme_essential_set_alternativecolor($css, 'color' . $alternative,
-                    theme_essential_get_setting('alternativethemecolor' . $alternative), $default);
+                    \theme_essential\toolbox::get_setting('alternativethemecolor' . $alternative), $default);
             $css = theme_essential_set_alternativecolor($css, 'textcolor' . $alternative,
-                    theme_essential_get_setting('alternativethemetextcolor' . $alternative), $default);
+                    \theme_essential\toolbox::get_setting('alternativethemetextcolor' . $alternative), $default);
             $css = theme_essential_set_alternativecolor($css, 'urlcolor' . $alternative,
-                    theme_essential_get_setting('alternativethemeurlcolor' . $alternative), $default);
+                    \theme_essential\toolbox::get_setting('alternativethemeurlcolor' . $alternative), $default);
             $css = theme_essential_set_alternativecolor($css, 'hovercolor' . $alternative,
-                    theme_essential_get_setting('alternativethemehovercolor' . $alternative), $defaulthover);
+                    \theme_essential\toolbox::get_setting('alternativethemehovercolor' . $alternative), $defaulthover);
         }
     }
 
     // Set custom CSS.
-    $customcss = theme_essential_get_setting('customcss');
+    $customcss = \theme_essential\toolbox::get_setting('customcss');
     $css = theme_essential_set_customcss($css, $customcss);
 
     // Set the background image for the logo.
@@ -355,11 +335,11 @@ function theme_essential_process_css($css, $theme) {
     $css = theme_essential_set_pagebackground($css, $pagebackground);
 
     // Set the background style for the page.
-    $pagebgstyle = theme_essential_get_setting('pagebackgroundstyle');
+    $pagebgstyle = \theme_essential\toolbox::get_setting('pagebackgroundstyle');
     $css = theme_essential_set_pagebackgroundstyle($css, $pagebgstyle);
 
     // Set Marketing Image Height.
-    $marketingheight = theme_essential_get_setting('marketingheight');
+    $marketingheight = \theme_essential\toolbox::get_setting('marketingheight');
     $css = theme_essential_set_marketingheight($css, $marketingheight);
 
     // Set Marketing Images.
@@ -396,7 +376,7 @@ function theme_essential_set_bodyfont($css, $bodyfont) {
 function theme_essential_set_fontfiles($css, $type, $fontname) {
     $tag = '[[setting:fontfiles' . $type . ']]';
     $replacement = '';
-    if (theme_essential_get_setting('fontselect') === '3') {
+    if (\theme_essential\toolbox::get_setting('fontselect') === '3') {
         static $theme;
         if (empty($theme)) {
             $theme = theme_config::load('essential');  // $theme needs to be us for child themes.
@@ -529,12 +509,12 @@ function theme_essential_set_marketingimage($css, $marketingimage, $setting) {
 
 function theme_essential_showslider() {
     global $CFG;
-    $noslides = theme_essential_get_setting('numberofslides');
+    $noslides = \theme_essential\toolbox::get_setting('numberofslides');
     if ($noslides && (intval($CFG->version) >= 2013111800)) {
         $devicetype = core_useragent::get_device_type(); // In moodlelib.php.
-        if (($devicetype == "mobile") && theme_essential_get_setting('hideonphone')) {
+        if (($devicetype == "mobile") && \theme_essential\toolbox::get_setting('hideonphone')) {
             $noslides = false;
-        } else if (($devicetype == "tablet") && theme_essential_get_setting('hideontablet')) {
+        } else if (($devicetype == "tablet") && \theme_essential\toolbox::get_setting('hideontablet')) {
             $noslides = false;
         }
     }
@@ -731,7 +711,7 @@ function theme_essential_initialise_colourswitcher(moodle_page $page) {
 function theme_essential_get_colours($default = 'default') {
     $preference = get_user_preferences('theme_essential_colours', $default);
     foreach (range(1, 3) as $alternativethemenumber) {
-        if ($preference == 'alternative' . $alternativethemenumber && theme_essential_get_setting('enablealternativethemecolors' . $alternativethemenumber)) {
+        if ($preference == 'alternative' . $alternativethemenumber && \theme_essential\toolbox::get_setting('enablealternativethemecolors' . $alternativethemenumber)) {
             return $preference;
         }
     }

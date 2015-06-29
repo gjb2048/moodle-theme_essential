@@ -79,7 +79,7 @@ echo $OUTPUT->doctype() ?>
                   echo "$('.breadcrumb').jBreadCrumb();";
               }
             }
-            if ($OUTPUT->get_setting('fitvids')) {
+            if (\theme_essential\toolbox::get_setting('fitvids')) {
                 echo "$('#page').fitVids();";
             }
             ?>

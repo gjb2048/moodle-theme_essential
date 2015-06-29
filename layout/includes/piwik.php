@@ -65,14 +65,14 @@ function theme_essential_analytics_trackurl() {
 }
 
 function theme_essential_insert_analytics_tracking() {
-    $siteurl = theme_essential_get_setting('analyticssiteurl');
+    $siteurl = \theme_essential\toolbox::get_setting('analyticssiteurl');
     $tracking = '';
 
     if (!empty($siteurl)) {
-        $imagetrack = theme_essential_get_setting('analyticsimagetrack');
-        $siteid = theme_essential_get_setting('analyticssiteid');
-        $trackadmin = theme_essential_get_setting('analyticstrackadmin');
-        $cleanurl = theme_essential_get_setting('analyticscleanurl');
+        $imagetrack = \theme_essential\toolbox::get_setting('analyticsimagetrack');
+        $siteid = \theme_essential\toolbox::get_setting('analyticssiteid');
+        $trackadmin = \theme_essential\toolbox::get_setting('analyticstrackadmin');
+        $cleanurl = \theme_essential\toolbox::get_setting('analyticscleanurl');
 
         if ($imagetrack) {
             $addition = '<noscript><p><img src="//' . $siteurl . '/piwik.php?idsite=' . $siteid . '" style="border:0" alt="" /></p></noscript>';
