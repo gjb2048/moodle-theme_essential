@@ -24,9 +24,9 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-echo $OUTPUT->doctype();
+require_once(\theme_essential\toolbox::get_include_file('pagesettings'));
 
-require_once($OUTPUT->get_include_file('pagesettings'));
+echo $OUTPUT->doctype();
 ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?> class="no-js">
 <head>
@@ -38,11 +38,11 @@ require_once($OUTPUT->get_include_file('pagesettings'));
     ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google web fonts -->
-    <?php require_once($OUTPUT->get_include_file('fonts')); ?>
+    <?php require_once(\theme_essential\toolbox::get_include_file('fonts')); ?>
     <!-- iOS Homescreen Icons -->
-    <?php require_once($OUTPUT->get_include_file('iosicons')); ?>
+    <?php require_once(\theme_essential\toolbox::get_include_file('iosicons')); ?>
     <!-- Start Analytics -->
-    <?php require_once($OUTPUT->get_include_file('analytics')); ?>
+    <?php require_once(\theme_essential\toolbox::get_include_file('analytics')); ?>
     <!-- End Analytics -->
 </head>
 

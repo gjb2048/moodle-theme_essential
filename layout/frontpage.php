@@ -24,8 +24,8 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once($OUTPUT->get_include_file('additionaljs'));
-require_once($OUTPUT->get_include_file('header'));
+require_once(\theme_essential\toolbox::get_include_file('additionaljs'));
+require_once(\theme_essential\toolbox::get_include_file('header'));
 
 $enable1alert = $OUTPUT->get_setting('enable1alert');
 $enable2alert = $OUTPUT->get_setting('enable2alert');
@@ -44,11 +44,11 @@ if ($enable1alert || $enable2alert || $enable3alert) {
         <?php
         $toggleslideshow = $OUTPUT->get_setting('toggleslideshow');
         if ($toggleslideshow == 1) {
-            require_once($OUTPUT->get_include_file('slideshow'));
+            require_once(\theme_essential\toolbox::get_include_file('slideshow'));
         } else if ($toggleslideshow == 2 && !isloggedin()) {
-            require_once($OUTPUT->get_include_file('slideshow'));
+            require_once(\theme_essential\toolbox::get_include_file('slideshow'));
         } else if ($toggleslideshow == 3 && isloggedin()) {
-            require_once($OUTPUT->get_include_file('slideshow'));
+            require_once(\theme_essential\toolbox::get_include_file('slideshow'));
         }
         ?>
         <!-- End Slideshow -->
@@ -126,11 +126,11 @@ if ($enable1alert || $enable2alert || $enable3alert) {
         <?php
         $togglemarketing = $OUTPUT->get_setting('togglemarketing');
         if ($togglemarketing == 1) {
-            require_once($OUTPUT->get_include_file('marketingspots'));
+            require_once(\theme_essential\toolbox::get_include_file('marketingspots'));
         } else if ($togglemarketing == 2 && !isloggedin()) {
-            require_once($OUTPUT->get_include_file('marketingspots'));
+            require_once(\theme_essential\toolbox::get_include_file('marketingspots'));
         } else if ($togglemarketing == 3 && isloggedin()) {
-            require_once($OUTPUT->get_include_file('marketingspots'));
+            require_once(\theme_essential\toolbox::get_include_file('marketingspots'));
         }
         ?>
         <!-- End Marketing Spots -->
@@ -139,11 +139,11 @@ if ($enable1alert || $enable2alert || $enable3alert) {
         <?php
         $frontpagemiddleblocks = $OUTPUT->get_setting('frontpagemiddleblocks');
         if ($frontpagemiddleblocks == 1) {
-            require_once($OUTPUT->get_include_file('middleblocks'));
+            require_once(\theme_essential\toolbox::get_include_file('middleblocks'));
         } else if ($frontpagemiddleblocks == 2 && !isloggedin()) {
-            require_once($OUTPUT->get_include_file('middleblocks'));
+            require_once(\theme_essential\toolbox::get_include_file('middleblocks'));
         } else if ($frontpagemiddleblocks == 3 && isloggedin()) {
-            require_once($OUTPUT->get_include_file('middleblocks'));
+            require_once(\theme_essential\toolbox::get_include_file('middleblocks'));
         }
         ?>
         <!-- End Middle Blocks -->
@@ -185,7 +185,7 @@ if ($enable1alert || $enable2alert || $enable3alert) {
     </section>
 </div>
 
-<?php require_once($OUTPUT->get_include_file('footer')); ?>
+<?php require_once(\theme_essential\toolbox::get_include_file('footer')); ?>
 
 </body>
 </html>

@@ -1244,33 +1244,6 @@ class theme_essential_core_renderer extends core_renderer {
         }
     }
 
-    /**
-     * Finds the given include file in the theme.  If it does not exist for the Essential child theme then the parent is checked.
-     * @param string $filename Filename without extension to get.
-     * @return string Complete path of the file.
-     */
-    public function get_include_file($filename) {
-        global $CFG;
-        $themedir = $this->page->theme->dir;
-        $themename = $this->page->theme->name;
-        $filename .= '.php';
-        if (file_exists("$themedir/layout/includes/$filename")) {
-            return "$themedir/layout/includes/$filename";
-        } else if (file_exists("$CFG->dirroot/theme/$themename/layout/includes/$filename")) {
-            return "$CFG->dirroot/theme/$themename/layout/includes/$filename";
-        } else if (!empty($CFG->themedir) and file_exists("$CFG->themedir/$themename/layout/includes/$filename")) {
-            return "$CFG->themedir/$themename/includes/$filename";
-        }
-        // Not here so check parent Essential.
-        if (file_exists("$CFG->dirroot/theme/essential/layout/includes/$filename")) {
-            return "$CFG->dirroot/theme/essential/layout/includes/$filename";
-        } else if (!empty($CFG->themedir) and file_exists("$CFG->themedir/essential/layout/includes/$filename")) {
-            return "$CFG->themedir/essential/includes/$filename";
-        } else {
-            return dirname(__FILE__)."$filename";
-        }
-    }
-
     public function get_setting($setting, $format = false, $theme = null) {
 
         if (empty($theme)) {

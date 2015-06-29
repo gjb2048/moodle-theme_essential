@@ -27,8 +27,8 @@
 if ($OUTPUT->get_setting('analyticsenabled')) {
     $analytics = $OUTPUT->get_setting('analytics');
     if ($analytics === "piwik") {
-        require_once($OUTPUT->get_include_file('piwik'));
+        require_once(\theme_essential\toolbox::get_include_file('piwik'));
     } elseif ($analytics === "guniversal") {
-        require_once($OUTPUT->get_include_file('guniversal'));
+        require_once(\theme_essential\toolbox::get_include_file('guniversal'));
     }
 }
