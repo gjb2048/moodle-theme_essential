@@ -28,7 +28,11 @@ function theme_essentials_process_css($css, $theme) {
     $usingessentialsettings = false;
 
     if ($usingessentialsettings) {
-        require_once(dirname(__FILE__) . '/../essential/lib.php');
+        if (file_exists("$CFG->dirroot/theme/essential/lib.php")) {
+            require_once("$CFG->dirroot/theme/essential/lib.php");
+        } else if (!empty($CFG->themedir) and file_exists("$CFG->themedir/essential/lib.php")) {
+            require_once("$CFG->themedir/essential/lib.php");
+        } // else will just fail when cannot find theme_essential_process_css!
         static $parenttheme;
         if (empty($parenttheme)) {
             $parenttheme = theme_config::load('essential'); 
