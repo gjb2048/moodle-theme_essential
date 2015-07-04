@@ -1,4 +1,11 @@
-@import url('essential-rtl_ie9-blessed1.css?z=1435496300647');
+@import url('essential-rtl_ie9-blessed1.css?z=1436045403136');
+
+.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages .chat-event.course-theme {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 11.9px;
+  color: #777;
+}
 
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages .chat-message.course-theme {
   background-color: #ffffff;

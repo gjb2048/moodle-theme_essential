@@ -38,10 +38,10 @@
         border-left: 30px solid ~"[[setting:alternativethemecolor1]]";;
       }
       li:hover {
-        background-color: ~"[[setting:themenavcolor]]";
+        background-color: ~"[[setting:alternativethemenavcolor1]]";
       }
       li:hover:after {
-        border-left-color: ~"[[setting:themenavcolor]]" !important;
+        border-left-color: ~"[[setting:alternativethemenavcolor1]]" !important;
       }
     }
 
@@ -97,20 +97,46 @@
       border-top-color: ~"[[setting:alternativethemecolor1]]" !important;
       border-bottom: 1px solid ~"[[setting:alternativethemecolor1]]" !important;
       background-color: ~"[[setting:alternativethemecolor1]]" !important;
+
+      .nav > li.dropdown a,
+      .nav > li > a {
+        color: ~"[[setting:alternativethemenavcolor1]]";
+        i {
+          color: ~"[[setting:alternativethemenavcolor1]]";
+        }
+        &:hover {
+          background-color: ~"[[setting:alternativethemehovercolor1]]";
+        }
+      }
+
       .nav {
         border-right-color: ~"[[setting:alternativethemecolor1]]";
         > li > a {
+          color: ~"[[setting:alternativethemenavcolor1]]";
           border-left-color: ~"[[setting:alternativethemecolor1]]";
+          i {
+            color: ~"[[setting:alternativethemenavcolor1]]";
+          }
           &:hover {
-            color: ~"[[setting:alternativethemecolor1]]";
+            color: ~"[[setting:alternativethemenavcolor1]]";
             background-color: ~"[[setting:alternativethemehovercolor1]]";
           }
         }
         > li.dropdown ul.dropdown-menu > li > a {
           color: ~"[[setting:alternativethemetextcolor1]]";
-          &:hover, &:focus, &.open {
-            color: ~"[[setting:themenavcolor]]";
+          &:hover { 
+            color: ~"[[setting:alternativethemenavcolor1]]";
+            background-color: ~"[[setting:alternativethemehovercolor1]]";
+          }
+          &:focus, &.open {
+            color: ~"[[setting:alternativethemenavcolor1]]";
             background-color: ~"[[setting:alternativethemecolor1]]";
+            i {
+              color: ~"[[setting:alternativethemenavcolor1]]";
+            }
+          }
+          i {
+            color: ~"[[setting:alternativethemecolor1]]";
           }
         }
       }
@@ -118,7 +144,7 @@
       .dropdown-menu > li > a:focus,
       .dropdown-submenu:hover > a,
       .dropdown-submenu:focus > a {
-        color: ~"[[setting:themenavcolor]]";
+        color: ~"[[setting:alternativethemenavcolor1]]";
         background-color: ~"[[setting:alternativethemecolor1]]";
       }
     }
@@ -129,13 +155,21 @@
 
     .nav .active > a,
     .nav .active > a:hover,
-    .nav .active > a:focus,
-    .nav li.dropdown.open > .dropdown-toggle,
-    .nav li.dropdown.active > .dropdown-toggle,
-    .nav li.dropdown.open.active > .dropdown-toggle {
+    .nav .active > a:focus {
+      color: ~"[[setting:alternativethemenavcolor1]]";
       background-color: ~"[[setting:alternativethemecolor1]]" !important;
     }
-
+    .nav {
+      li.dropdown {
+        &.open > .dropdown-toggle, &.active > .dropdown-toggle, &.open.active > .dropdown-toggle {
+          color: ~"[[setting:alternativethemenavcolor1]]";
+          background-color: ~"[[setting:alternativethemehovercolor1]]";
+          i {
+            color: ~"[[setting:alternativethemenavcolor1]]";
+          }
+        }
+      }
+    }
     .nav > li > a {
       border-left-color: ~"[[setting:alternativethemehovercolor1]]";
     }
@@ -152,7 +186,7 @@
                 background-color: ~"[[setting:alternativethemehovercolor1]]";
                 img {
                   &.userpicture, &.profilepicture {
-                    box-shadow: 0 0 3px ~"[[setting:themenavcolor]]";
+                    box-shadow: 0 0 3px ~"[[setting:alternativethemenavcolor1]]";
                   }
                 }
               }
@@ -244,7 +278,7 @@
       }
     }
     .icon {
-      color: @icon-colour;
+      color: ~"[[setting:alternativethemecolor1]]";
     }
   }
 
@@ -297,6 +331,13 @@
     background-color: ~"[[setting:alternativethemecolor1]]";
   }
 
+  .tree_item.branch {
+    color: ~"[[setting:alternativethemeurlcolor1]]";
+    &:before {
+      color: ~"[[setting:alternativethemecolor1]]";
+    }
+  }
+
   .afeature:hover {
     border-color: ~"[[setting:alternativethemecolor1]]";
   }
@@ -329,15 +370,15 @@
     border-color: ~"[[setting:themeiconcolor]]";
     var {
       background-color: ~"[[setting:alternativethemecolor1]]";
-      color: ~"[[setting:themenavcolor]]";
+      color: ~"[[setting:alternativethemenavcolor1]]";
     }
     h2 {
       color: ~"[[setting:alternativethemetextcolor1]]";
       border-bottom-color: ~"[[setting:themeiconcolor]]";
       &:before {
         color: ~"[[setting:themeiconcolor]]";
+      }
     }
-  }
     span {
       color: ~"[[setting:alternativethemetextcolor1]]";
     }
@@ -411,6 +452,19 @@
   .moodle-core-dragdrop-draghandle:before, .moodle-core-dragdrop-draghandle a {
     color: ~"[[setting:alternativethemeurlcolor1]]";
   }
+  .menu a.menu-action,
+  p.tree_item.leaf a,
+  .course-item-actions a,
+  .actions a {
+    > i {
+      color: ~"[[setting:alternativethemecolor1]]";
+    }
+    &:hover {
+      > i {
+        color: ~"[[setting:alternativethemehovercolor1]]";
+      }
+    }
+  }
 }
 
 @media (max-width: 979px) {
@@ -419,11 +473,11 @@
       background-color: ~"[[setting:alternativethemecolor1]]";
       .dropdown-menu > li > a,
       .dropdown-menu > li > a:visited {
-        color: ~"[[setting:themenavcolor]]";
+        color: ~"[[setting:alternativethemenavcolor1]]";
         i {
           color: ~"[[setting:alternativethemecolor1]]";
-          background-color: ~"[[setting:themenavcolor]]";
-          border: 1px solid ~"[[setting:themenavcolor]]";
+          background-color: ~"[[setting:alternativethemenavcolor1]]";
+          border: 1px solid ~"[[setting:alternativethemenavcolor1]]";
           border-radius: 3px;
           margin-top: 2px;
           vertical-align: middle;
@@ -436,20 +490,20 @@
       .dropdown-submenu:hover > a,
       .dropdown-submenu:focus > a {
         color: ~"[[setting:alternativethemecolor1]]";
-        background-color: ~"[[setting:themenavcolor]]";
+        background-color: ~"[[setting:alternativethemenavcolor1]]";
       }
     }
     .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a {
       color: ~"[[setting:alternativethemecolor1]]";
       &:hover, &:focus {
         background-color: ~"[[setting:alternativethemecolor1]]";
-        color: ~"[[setting:themenavcolor]]";
+        color: ~"[[setting:alternativethemenavcolor1]]";
       }
     }
     .navbar .navbar-inner .nav-collapse .nav > li.dropdown a {
       &:hover, &:focus, &.open {
         background-color: ~"[[setting:alternativethemecolor1]]";
-        color: ~"[[setting:themenavcolor]]";
+        color: ~"[[setting:alternativethemenavcolor1]]";
       }
     }
     .navbar .navbar-inner {
@@ -458,7 +512,7 @@
       .dropdown-submenu:hover > a,
       .dropdown-submenu:focus > a {
         color: ~"[[setting:alternativethemecolor1]]";
-        background-color: ~"[[setting:themenavcolor]]";
+        background-color: ~"[[setting:alternativethemenavcolor1]]";
         background-image: none;
       }
     }

@@ -324,6 +324,16 @@ if (is_siteadmin()) {
         $setting->set_updatedcallback('theme_reset_all_caches');
         $temp->add($setting);
 
+        // Alternative theme nav colour setting.
+        $name = 'theme_essential/alternativethemenavcolor' . $alternativethemenumber;
+        $title = get_string('alternativethemenavcolor', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemenavcolordesc', 'theme_essential', $alternativethemenumber);
+        $default = '#ffffff';
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
         // User theme hover colour setting.
         $name = 'theme_essential/alternativethemehovercolor' . $alternativethemenumber;
         $title = get_string('alternativethemehovercolor', 'theme_essential', $alternativethemenumber);

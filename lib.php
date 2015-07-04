@@ -313,6 +313,8 @@ function theme_essential_process_css($css, $theme) {
                     \theme_essential\toolbox::get_setting('alternativethemetextcolor' . $alternative), $default);
             $css = theme_essential_set_alternativecolor($css, 'urlcolor' . $alternative,
                     \theme_essential\toolbox::get_setting('alternativethemeurlcolor' . $alternative), $default);
+            $css = theme_essential_set_alternativecolor($css, 'navcolor' . $alternative,
+                    \theme_essential\toolbox::get_setting('alternativethemenavcolor' . $alternative), $default);
             $css = theme_essential_set_alternativecolor($css, 'hovercolor' . $alternative,
                     \theme_essential\toolbox::get_setting('alternativethemehovercolor' . $alternative), $defaulthover);
         }

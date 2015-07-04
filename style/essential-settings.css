@@ -21,7 +21,7 @@
   color: [[setting:themetextcolor]];
 }
 .tree_item.branch {
-  color: [[setting:themeiconcolor]];
+  color: [[setting:themeurlcolor]];
 }
 .tree_item.branch.branch:before {
   color: [[setting:themeiconcolor]];
@@ -491,23 +491,27 @@ input[type="color"],
 }
 .navbar .navbar-inner .nav > li.dropdown a i,
 .navbar .navbar-inner .nav > li > a i {
-  color: [[setting:themeiconcolor]];
+  color: [[setting:themenavcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown a:hover,
 .navbar .navbar-inner .nav > li > a:hover {
-  color: [[setting:themecolor]];
   background-color: [[setting:themehovercolor]];
-}
-.navbar .navbar-inner .nav > li.dropdown a:hover i,
-.navbar .navbar-inner .nav > li > a:hover i {
-  color: [[setting:themecolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a {
   color: [[setting:themeurlcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:hover {
+  color: [[setting:themenavcolor]];
   background-color: [[setting:themehovercolor]];
-  color: [[setting:themecolor]];
+}
+.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:focus,
+.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a.open {
+  color: [[setting:themenavcolor]];
+  background-color: [[setting:themecolor]];
+}
+.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:focus i,
+.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a.open i {
+  color: [[setting:themenavcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:hover .dimmed_text {
   color: #eeeeee;
@@ -521,13 +525,13 @@ input[type="color"],
 .navbar .navbar-inner .nav li.dropdown.open > .dropdown-toggle,
 .navbar .navbar-inner .nav li.dropdown.active > .dropdown-toggle,
 .navbar .navbar-inner .nav li.dropdown.open.active > .dropdown-toggle {
+  color: [[setting:themenavcolor]];
   background-color: [[setting:themehovercolor]];
-  color: [[setting:themecolor]];
 }
 .navbar .navbar-inner .nav li.dropdown.open > .dropdown-toggle i,
 .navbar .navbar-inner .nav li.dropdown.active > .dropdown-toggle i,
 .navbar .navbar-inner .nav li.dropdown.open.active > .dropdown-toggle i {
-  color: [[setting:themecolor]];
+  color: [[setting:themenavcolor]];
 }
 .navbar .navbar-inner .usermenu .dropdown img.userpicture {
   border: 1px solid [[setting:themenavcolor]];
