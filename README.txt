@@ -194,6 +194,7 @@ New in 2.9.0.4
        is 'Custom font'.  Otherwise reverts to default font name.
 - FIX: Drop down menu colours when not used on a Navbar.
 - NEW: Implemented MDL-50497.
+- NEW: Add Composer support, issues #508 and #513.
 
 New in 2.9.0.3
 ==============
