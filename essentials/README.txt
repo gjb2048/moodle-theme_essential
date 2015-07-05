@@ -42,6 +42,12 @@ Flattr - https://flattr.com/profile/gjb2048
 
 Donations may allow me to provide you with more or better features in less time.
 
+Customisation
+=============
+If you would like this theme customised or build a new theme from scratch, then I offer competitive rates.
+Please contact me via 'www.gjbarnard.co.uk/contact/' or 'gjbarnard at gmail dot com' or 'about.me/gjbarnard'
+to discuss your requirements.
+
 Required version of Moodle
 ==========================
 This version works with Moodle version 2015051100.00 release 2.9 (Build: 20150511) and above within the 2.9 branch until the

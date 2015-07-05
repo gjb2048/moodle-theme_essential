@@ -112,6 +112,9 @@ class theme_essential_core_renderer extends core_renderer {
      * @return render_custom_menu for $custommenu
      */
     public function custom_menu($custommenuitems = '') {
+        /*if (!isloggedin()) {
+            return '';
+        }*/
         global $CFG;
 
         if (empty($custommenuitems) && !empty($CFG->custommenuitems)) {

@@ -64,6 +64,8 @@ click here to donate.
 <li>iZone</li>
 </ul>
 </p>
+<h3>Customisation</h3>
+<p>If you like this theme and would like me to customise it, transpose functionality to another theme or build a new theme from scratch, then I offer competitive rates.  Please contact me via \'www.gjbarnard.co.uk/contact/\' or \'gjbarnard at gmail dot com\' or \'about.me/gjbarnard\' to discuss your requirements.</p>
 </div></div>';
 
 // General.

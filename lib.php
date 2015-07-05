@@ -208,13 +208,8 @@ function theme_essential_process_css($css, $theme) {
     $css = theme_essential_set_pagewidth($css, $pagewidth);
 
     // Set the theme font
-    $headingfont = \theme_essential\toolbox::get_setting('fontnameheading');
-    $bodyfont = \theme_essential\toolbox::get_setting('fontnamebody');
-
-    $css = theme_essential_set_headingfont($css, $headingfont);
-    $css = theme_essential_set_bodyfont($css, $bodyfont);
-    $css = theme_essential_set_fontfiles($css, 'heading', $headingfont);
-    $css = theme_essential_set_fontfiles($css, 'body', $bodyfont);
+    $css = theme_essential_set_font($css, 'heading', \theme_essential\toolbox::get_setting('fontnameheading'));
+    $css = theme_essential_set_font($css, 'body', \theme_essential\toolbox::get_setting('fontnamebody'));
 
     // Set the theme colour.
     $themecolor = \theme_essential\toolbox::get_setting('themecolor');
@@ -361,24 +356,13 @@ function theme_essential_process_css($css, $theme) {
     return $css;
 }
 
-function theme_essential_set_headingfont($css, $headingfont) {
-    $tag = '[[setting:headingfont]]';
-    $replacement = $headingfont;
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function theme_essential_set_bodyfont($css, $bodyfont) {
-    $tag = '[[setting:bodyfont]]';
-    $replacement = $bodyfont;
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function theme_essential_set_fontfiles($css, $type, $fontname) {
-    $tag = '[[setting:fontfiles' . $type . ']]';
-    $replacement = '';
-    if (\theme_essential\toolbox::get_setting('fontselect') === '3') {
+function theme_essential_set_font($css, $type, $fontname) {
+    $familytag = '[[setting:' . $type .'font]]';
+    $facetag = '[[setting:fontfiles' . $type . ']]';
+    if (empty($fontname)) {
+        $familyreplacement = 'Verdana';
+        $facereplacement = '';
+    } else if (\theme_essential\toolbox::get_setting('fontselect') === '3') {
         static $theme;
         if (empty($theme)) {
             $theme = theme_config::load('essential');  // $theme needs to be us for child themes.
@@ -410,17 +394,27 @@ function theme_essential_set_fontfiles($css, $type, $fontname) {
             $fontfiles[] = "url('" . $fontfilesvg . "') format('svg')";
         }
 
-        $replacement = '@font-face {' . PHP_EOL . 'font-family: "' . $fontname . '";' . PHP_EOL;
-        $replacement .=!empty($fontfileeot) ? "src: url('" . $fontfileeot . "');" . PHP_EOL : '';
         if (!empty($fontfiles)) {
-            $replacement .= "src: ";
-            $replacement .= implode("," . PHP_EOL . " ", $fontfiles);
-            $replacement .= ";";
+            $familyreplacement = '"'.$fontname.'"';
+            $facereplacement = '@font-face {' . PHP_EOL . 'font-family: "' . $fontname . '";' . PHP_EOL;
+            $facereplacement .= !empty($fontfileeot) ? "src: url('" . $fontfileeot . "');" . PHP_EOL : '';
+            $facereplacement .= "src: ";
+            $facereplacement .= implode("," . PHP_EOL . " ", $fontfiles);
+            $facereplacement .= ";";
+            $facereplacement .= '' . PHP_EOL . "}";
+        } else {
+            // No files back to default.
+            $familyreplacement = 'Verdana';
+            $facereplacement = '';
         }
-        $replacement .= '' . PHP_EOL . "}";
+    } else {
+        $familyreplacement = '"'.$fontname.'"';
+        $facereplacement = '';
     }
 
-    $css = str_replace($tag, $replacement, $css);
+    $css = str_replace($familytag, $familyreplacement, $css);
+    $css = str_replace($facetag, $facereplacement, $css);
+
     return $css;
 }
 

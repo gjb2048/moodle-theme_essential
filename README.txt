@@ -87,6 +87,12 @@ Guido Hornig, actXcellence http://actxcellence.de
 Delvon Forrester, Esparanza co uk
 iZone
 
+Customisation
+=============
+If you like this theme and would like me to customise it, transpose functionality to another theme or
+build a new theme from scratch, then I offer competitive rates.  Please contact me via 'www.gjbarnard.co.uk/contact/'
+or 'gjbarnard at gmail dot com' or 'about.me/gjbarnard' to discuss your requirements.
+
 Required version of Moodle
 ==========================
 This version works with Moodle version 2015051100.00 release 2.9 (Build: 20150511) and above within the 2.9 branch until the
@@ -184,6 +190,9 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.9.0.4
 ==============
 - NEW: Implemented MDL-50497.
+- FIX: Refactored Navbar and menu colours.
+- FIX: Improved CSS font code from Shoehorn.  Now font name only used if files are available when 'Font type selector'
+       is 'Custom font'.  Otherwise reverts to default font name.
 
 New in 2.9.0.3
 ==============
