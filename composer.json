@@ -1,0 +1,7 @@
+{
+    "name": "gjb2048/moodle-theme-essential",
+    "type": "moodle-theme",
+    "extra": {
+        "installer-name": "essential"
+    }
+}
