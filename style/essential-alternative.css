@@ -426,6 +426,19 @@
 .essential-colours-alternative1 .actions a:hover > i {
   color: [[setting:alternativethemehovercolor1]];
 }
+.essential-colours-alternative1 .moodle-actionmenu[data-enhanced].show .menu {
+  background-color: #fff;
+}
+.essential-colours-alternative1 .moodle-actionmenu[data-enhanced].show .menu a {
+  color: [[setting:alternativethemeurlcolor1]];
+}
+.essential-colours-alternative1 .moodle-actionmenu[data-enhanced].show .menu a:hover {
+  color: [[setting:alternativethemenavcolor1]];
+  background-color: [[setting:alternativethemehovercolor1]];
+}
+.essential-colours-alternative1 .moodle-actionmenu[data-enhanced].show .menu a:hover .fa:before {
+  color: [[setting:alternativethemenavcolor1]];
+}
 @media (max-width: 979px) {
   .essential-colours-alternative1 .nav-collapse {
     background-color: [[setting:alternativethemecolor1]];
@@ -870,6 +883,19 @@
 .essential-colours-alternative2 .actions a:hover > i {
   color: [[setting:alternativethemehovercolor2]];
 }
+.essential-colours-alternative2 .moodle-actionmenu[data-enhanced].show .menu {
+  background-color: #fff;
+}
+.essential-colours-alternative2 .moodle-actionmenu[data-enhanced].show .menu a {
+  color: [[setting:alternativethemeurlcolor2]];
+}
+.essential-colours-alternative2 .moodle-actionmenu[data-enhanced].show .menu a:hover {
+  color: [[setting:alternativethemenavcolor2]];
+  background-color: [[setting:alternativethemehovercolor2]];
+}
+.essential-colours-alternative2 .moodle-actionmenu[data-enhanced].show .menu a:hover .fa:before {
+  color: [[setting:alternativethemenavcolor2]];
+}
 @media (max-width: 979px) {
   .essential-colours-alternative2 .nav-collapse {
     background-color: [[setting:alternativethemecolor2]];
@@ -1313,6 +1339,19 @@
 .essential-colours-alternative3 .course-item-actions a:hover > i,
 .essential-colours-alternative3 .actions a:hover > i {
   color: [[setting:alternativethemehovercolor3]];
+}
+.essential-colours-alternative3 .moodle-actionmenu[data-enhanced].show .menu {
+  background-color: #fff;
+}
+.essential-colours-alternative3 .moodle-actionmenu[data-enhanced].show .menu a {
+  color: [[setting:alternativethemeurlcolor3]];
+}
+.essential-colours-alternative3 .moodle-actionmenu[data-enhanced].show .menu a:hover {
+  color: [[setting:alternativethemenavcolor3]];
+  background-color: [[setting:alternativethemehovercolor3]];
+}
+.essential-colours-alternative3 .moodle-actionmenu[data-enhanced].show .menu a:hover .fa:before {
+  color: [[setting:alternativethemenavcolor3]];
 }
 @media (max-width: 979px) {
   .essential-colours-alternative3 .nav-collapse {

@@ -278,7 +278,7 @@ ul.breadcrumb.style2 li a:hover {
 }
 .moodle-actionmenu[data-enhanced].show .menu a:hover {
   color: [[setting:themenavcolor]];
-  background-color: [[setting:themecolor]];
+  background-color: [[setting:themehovercolor]];
 }
 .moodle-actionmenu[data-enhanced].show .menu a:hover .fa:before {
   color: [[setting:themenavcolor]];

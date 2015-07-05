@@ -189,10 +189,11 @@ can be really useful in visualising the issue along with any files you consider 
 
 New in 2.9.0.4
 ==============
-- NEW: Implemented MDL-50497.
 - FIX: Refactored Navbar and menu colours.
 - FIX: Improved CSS font code from Shoehorn.  Now font name only used if files are available when 'Font type selector'
        is 'Custom font'.  Otherwise reverts to default font name.
+- FIX: Drop down menu colours when not used on a Navbar.
+- NEW: Implemented MDL-50497.
 
 New in 2.9.0.3
 ==============

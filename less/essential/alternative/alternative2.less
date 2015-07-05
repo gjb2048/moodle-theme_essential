@@ -466,6 +466,21 @@
       }
     }
   }
+  .moodle-actionmenu[data-enhanced].show {
+    .menu {
+      background-color: #fff; // TODO: Page background colour needs to be a setting.
+       a {
+        color: ~"[[setting:alternativethemeurlcolor2]]";
+        &:hover {
+          color: ~"[[setting:alternativethemenavcolor2]]";
+          background-color: ~"[[setting:alternativethemehovercolor2]]";
+          .fa:before {
+            color: ~"[[setting:alternativethemenavcolor2]]";
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 979px) {
