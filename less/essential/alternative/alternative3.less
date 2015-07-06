@@ -481,6 +481,35 @@
       }
     }
   }
+  #page {
+    form {
+      .form-buttons,
+      table#form td.submit,
+      .form-buttons,
+      .path-admin .buttons,
+      #fitem_id_submitbutton,
+      .fp-content-center
+      form+div,
+      div.backup-section+form,
+      #fgroup_id_buttonar,
+      fieldset:last-of-type.hidden {
+        #fgroup_id_buttonar {
+          background-color: ~"[[setting:alternativethemecolor3]]";
+        }
+      }
+      #fitem_id_submitbutton {
+          background-color: ~"[[setting:alternativethemecolor3]]";
+      }
+    }
+  }
+
+  #page, #region-main {
+    form {
+      .form-buttons, #fgroup_id_buttonar {
+        background-color: ~"[[setting:alternativethemecolor3]]";
+      }
+    }
+  }
 }
 
 @media (max-width: 979px) {

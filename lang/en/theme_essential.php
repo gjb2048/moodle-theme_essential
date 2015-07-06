@@ -611,6 +611,5 @@ $string['alert_general'] = 'Announcement';
 $string['unreadnewnotification'] = 'New notification';
 $string['nomessagesfound'] = 'No messages were found';
 
-$string['blogpreferences'] = 'Blog preferences';
-$string['badgepreferences'] = 'Badge preferences';
-$string['messagepreferences'] = 'Message preferences';
+// Preferences.
+$string['badgepreferences'] = 'Badge';

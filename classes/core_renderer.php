@@ -857,9 +857,13 @@ class theme_essential_core_renderer extends core_renderer {
         $preferences = html_writer::start_tag('li', array('class' => 'dropdown-submenu preferences'));
         $preferences .= html_writer::link(new moodle_url('#'), $label, array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown'));
         $preferences .= html_writer::start_tag('ul', array('class' => 'dropdown-menu'));
+
+        $branchlabel = '<em><i class="fa fa-user"></i>' . get_string('user', 'moodle') . '</em>';
+        $branchurl = new moodle_url('/user/preferences.php', array('userid' => $USER->id));
+        $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         // Check if user is allowed to edit profile
         if (has_capability('moodle/user:editownprofile', $context)) {
-            $branchlabel = '<em><i class="fa fa-user"></i>' . get_string('editmyprofile') . '</em>';
+            $branchlabel = '<em><i class="fa fa-info-circle"></i>' . get_string('editmyprofile') . '</em>';
             $branchurl = new moodle_url('/user/edit.php', array('id' => $USER->id));
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
@@ -869,12 +873,12 @@ class theme_essential_core_renderer extends core_renderer {
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
         if (has_capability('moodle/user:editownmessageprofile', $context)) {
-            $branchlabel = '<em><i class="fa fa-comments"></i>' . get_string('messagepreferences', 'theme_essential') . '</em>';
+            $branchlabel = '<em><i class="fa fa-comments"></i>' . get_string('message', 'message') . '</em>';
             $branchurl = new moodle_url('/message/edit.php', array('id' => $USER->id));
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
         if ($CFG->enableblogs) {
-            $branchlabel = '<em><i class="fa fa-rss-square"></i>' . get_string('blogpreferences', 'theme_essential') . '</em>';
+            $branchlabel = '<em><i class="fa fa-rss-square"></i>' . get_string('blog', 'blog') . '</em>';
             $branchurl = new moodle_url('/blog/preferences.php');
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }

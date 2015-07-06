@@ -439,6 +439,26 @@
 .essential-colours-alternative1 .moodle-actionmenu[data-enhanced].show .menu a:hover .fa:before {
   color: [[setting:alternativethemenavcolor1]];
 }
+.essential-colours-alternative1 #page form .form-buttons #fgroup_id_buttonar,
+.essential-colours-alternative1 #page form table#form td.submit #fgroup_id_buttonar,
+.essential-colours-alternative1 #page form .form-buttons #fgroup_id_buttonar,
+.essential-colours-alternative1 #page form .path-admin .buttons #fgroup_id_buttonar,
+.essential-colours-alternative1 #page form #fitem_id_submitbutton #fgroup_id_buttonar,
+.essential-colours-alternative1 #page form .fp-content-center form + div #fgroup_id_buttonar,
+.essential-colours-alternative1 #page form div.backup-section + form #fgroup_id_buttonar,
+.essential-colours-alternative1 #page form #fgroup_id_buttonar #fgroup_id_buttonar,
+.essential-colours-alternative1 #page form fieldset:last-of-type.hidden #fgroup_id_buttonar {
+  background-color: [[setting:alternativethemecolor1]];
+}
+.essential-colours-alternative1 #page form #fitem_id_submitbutton {
+  background-color: [[setting:alternativethemecolor1]];
+}
+.essential-colours-alternative1 #page form .form-buttons,
+.essential-colours-alternative1 #region-main form .form-buttons,
+.essential-colours-alternative1 #page form #fgroup_id_buttonar,
+.essential-colours-alternative1 #region-main form #fgroup_id_buttonar {
+  background-color: [[setting:alternativethemecolor1]];
+}
 @media (max-width: 979px) {
   .essential-colours-alternative1 .nav-collapse {
     background-color: [[setting:alternativethemecolor1]];
@@ -896,6 +916,26 @@
 .essential-colours-alternative2 .moodle-actionmenu[data-enhanced].show .menu a:hover .fa:before {
   color: [[setting:alternativethemenavcolor2]];
 }
+.essential-colours-alternative2 #page form .form-buttons #fgroup_id_buttonar,
+.essential-colours-alternative2 #page form table#form td.submit #fgroup_id_buttonar,
+.essential-colours-alternative2 #page form .form-buttons #fgroup_id_buttonar,
+.essential-colours-alternative2 #page form .path-admin .buttons #fgroup_id_buttonar,
+.essential-colours-alternative2 #page form #fitem_id_submitbutton #fgroup_id_buttonar,
+.essential-colours-alternative2 #page form .fp-content-center form + div #fgroup_id_buttonar,
+.essential-colours-alternative2 #page form div.backup-section + form #fgroup_id_buttonar,
+.essential-colours-alternative2 #page form #fgroup_id_buttonar #fgroup_id_buttonar,
+.essential-colours-alternative2 #page form fieldset:last-of-type.hidden #fgroup_id_buttonar {
+  background-color: [[setting:alternativethemecolor2]];
+}
+.essential-colours-alternative2 #page form #fitem_id_submitbutton {
+  background-color: [[setting:alternativethemecolor2]];
+}
+.essential-colours-alternative2 #page form .form-buttons,
+.essential-colours-alternative2 #region-main form .form-buttons,
+.essential-colours-alternative2 #page form #fgroup_id_buttonar,
+.essential-colours-alternative2 #region-main form #fgroup_id_buttonar {
+  background-color: [[setting:alternativethemecolor2]];
+}
 @media (max-width: 979px) {
   .essential-colours-alternative2 .nav-collapse {
     background-color: [[setting:alternativethemecolor2]];
@@ -1352,6 +1392,26 @@
 }
 .essential-colours-alternative3 .moodle-actionmenu[data-enhanced].show .menu a:hover .fa:before {
   color: [[setting:alternativethemenavcolor3]];
+}
+.essential-colours-alternative3 #page form .form-buttons #fgroup_id_buttonar,
+.essential-colours-alternative3 #page form table#form td.submit #fgroup_id_buttonar,
+.essential-colours-alternative3 #page form .form-buttons #fgroup_id_buttonar,
+.essential-colours-alternative3 #page form .path-admin .buttons #fgroup_id_buttonar,
+.essential-colours-alternative3 #page form #fitem_id_submitbutton #fgroup_id_buttonar,
+.essential-colours-alternative3 #page form .fp-content-center form + div #fgroup_id_buttonar,
+.essential-colours-alternative3 #page form div.backup-section + form #fgroup_id_buttonar,
+.essential-colours-alternative3 #page form #fgroup_id_buttonar #fgroup_id_buttonar,
+.essential-colours-alternative3 #page form fieldset:last-of-type.hidden #fgroup_id_buttonar {
+  background-color: [[setting:alternativethemecolor3]];
+}
+.essential-colours-alternative3 #page form #fitem_id_submitbutton {
+  background-color: [[setting:alternativethemecolor3]];
+}
+.essential-colours-alternative3 #page form .form-buttons,
+.essential-colours-alternative3 #region-main form .form-buttons,
+.essential-colours-alternative3 #page form #fgroup_id_buttonar,
+.essential-colours-alternative3 #region-main form #fgroup_id_buttonar {
+  background-color: [[setting:alternativethemecolor3]];
 }
 @media (max-width: 979px) {
   .essential-colours-alternative3 .nav-collapse {
