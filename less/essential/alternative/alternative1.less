@@ -32,23 +32,41 @@
     // Some breadcrumb style.
     ul.breadcrumb.style1 {
       li {
+        color: ~"[[setting:alternativethemenavcolor1]]";
         background-color: ~"[[setting:alternativethemecolor1]]";
-      }
-      li:after {
-        border-left: 30px solid ~"[[setting:alternativethemecolor1]]";;
-      }
-      li:hover {
-        background-color: ~"[[setting:alternativethemenavcolor1]]";
-      }
-      li:hover:after {
-        border-left-color: ~"[[setting:alternativethemenavcolor1]]" !important;
+        a {
+          color: inherit;
+          &:before {
+            color: inherit;
+          }
+          &:hover, &:focus {
+            color: ~"[[setting:alternativethemecolor1]]";
+          }
+        }
+        &:after {
+          border-left: 30px solid ~"[[setting:alternativethemecolor1]]";;
+        }
+        &:hover {
+          color: ~"[[setting:alternativethemecolor1]]";
+          background-color: ~"[[setting:alternativethemenavcolor1]]";
+        }
+        &:hover:after {
+          border-left-color: ~"[[setting:alternativethemenavcolor1]]";
+        }
+        &:first-of-type {
+          &:hover, &:focus {
+            a:before {
+              color: ~"[[setting:alternativethemecolor1]]";
+            }
+          }
+        }
       }
     }
 
     ul.breadcrumb.style2 {
       li {
         a {
-          color: ~"[[setting:alternativethemetextcolor1]]";
+          color: ~"[[setting:alternativethemenavcolor1]]";
           &:hover {
             color: ~"[[setting:alternativethemehovercolor1]]";
           }
@@ -77,9 +95,11 @@
 
   .breadcrumb-button {
     input[type="submit"] {
+      color: ~"[[setting:alternativethemenavcolor1]]";
       background-color: ~"[[setting:alternativethemecolor1]]";
       &:hover {
-        background-color: ~"[[setting:alternativethemehovercolor1]]";
+        color: ~"[[setting:alternativethemecolor1]]";
+        background-color: ~"[[setting:alternativethemenavcolor1]]";
       }
     }
   }
@@ -122,21 +142,26 @@
             background-color: ~"[[setting:alternativethemehovercolor1]]";
           }
         }
-        > li.dropdown ul.dropdown-menu > li > a {
-          color: ~"[[setting:alternativethemetextcolor1]]";
-          &:hover { 
-            color: ~"[[setting:alternativethemenavcolor1]]";
-            background-color: ~"[[setting:alternativethemehovercolor1]]";
-          }
-          &:focus, &.open {
-            color: ~"[[setting:alternativethemenavcolor1]]";
-            background-color: ~"[[setting:alternativethemecolor1]]";
-            i {
+        > li.dropdown ul.dropdown-menu {
+          > li > a {
+            color: ~"[[setting:alternativethemetextcolor1]]";
+            &:hover { 
               color: ~"[[setting:alternativethemenavcolor1]]";
+              background-color: ~"[[setting:alternativethemehovercolor1]]";
+            }
+            &:focus, &.open {
+              color: ~"[[setting:alternativethemenavcolor1]]";
+              background-color: ~"[[setting:alternativethemecolor1]]";
+              i {
+                color: ~"[[setting:alternativethemenavcolor1]]";
+              }
+            }
+            i {
+              color: ~"[[setting:alternativethemecolor1]]";
             }
           }
-          i {
-            color: ~"[[setting:alternativethemecolor1]]";
+          li.dropdown-submenu:hover > a {
+            background-color: ~"[[setting:alternativethemecolor1]]";
           }
         }
       }
@@ -146,6 +171,10 @@
       .dropdown-submenu:focus > a {
         color: ~"[[setting:alternativethemenavcolor1]]";
         background-color: ~"[[setting:alternativethemecolor1]]";
+      }
+
+      .brand {
+        color: ~"[[setting:alternativethemenavcolor1]]";
       }
     }
 
@@ -278,7 +307,7 @@
       }
     }
     .icon {
-      color: ~"[[setting:alternativethemecolor1]]";
+      color: ~"[[setting:alternativethemeiconcolor1]]";
     }
   }
 
@@ -334,7 +363,7 @@
   .tree_item.branch {
     color: ~"[[setting:alternativethemeurlcolor1]]";
     &:before {
-      color: ~"[[setting:alternativethemecolor1]]";
+      color: ~"[[setting:alternativethemeiconcolor1]]";
     }
   }
 

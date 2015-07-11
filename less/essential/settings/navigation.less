@@ -25,7 +25,11 @@
         color: ~"[[setting:themenavcolor]]";
       }
       &:hover {
+        color: ~"[[setting:themecolor]]";
         background-color: ~"[[setting:themehovercolor]]";
+        i {
+          color: inherit;
+        }
       }
     }
 
@@ -33,11 +37,11 @@
       > a {
         color: ~"[[setting:themeurlcolor]]";
         &:hover {
-          color: ~"[[setting:themenavcolor]]";
+          color: ~"[[setting:themecolor]]";
           background-color: ~"[[setting:themehovercolor]]";
         }
         &:focus, &.open {
-          color: ~"[[setting:themenavcolor]]";
+          color: ~"[[setting:themecolor]]";
           background-color: ~"[[setting:themecolor]]";
           i {
             color: ~"[[setting:themenavcolor]]";
@@ -51,17 +55,21 @@
         }
       }
       &.dropdown-submenu:hover > a {
-        color: ~"[[setting:themenavcolor]]";
+        color: ~"[[setting:themecolor]]";
+        background-color: ~"[[setting:themehovercolor]]";
+        i {
+          color: inherit;
+        }
       }
     }
 
     .nav {
       li.dropdown {
         &.open > .dropdown-toggle, &.active > .dropdown-toggle, &.open.active > .dropdown-toggle {
-          color: ~"[[setting:themenavcolor]]";
+          color: ~"[[setting:themecolor]]";
           background-color: ~"[[setting:themehovercolor]]";
           i {
-            color: ~"[[setting:themenavcolor]]";
+            color: inherit;
           }
         }
       }

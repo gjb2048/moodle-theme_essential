@@ -66,22 +66,22 @@ As Essential is licensed under the GNU GPLv3 License it comes with NO support.  
 me then I'm happy to provide it for a fee (please see my contact details above).  Otherwise, the 'Themes' forum:
 moodle.org/mod/forum/view.php?id=46 is an excellent place to ask questions.
 
-Donations
-=========
-This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider donating
+Sponsorships
+============
+This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider sponsoring
 by:
 
 PayPal - Please contact me via my 'Moodle profile' (above) for details as I am an individual and therefore am unable to have
-'donation' / 'buy me now' buttons under their terms.
+'buy me now' buttons under their terms.
 
 Flattr - https://flattr.com/profile/gjb2048
 
-Donations help to facilitate maintenance and allow me to provide you with more and better features.  Without your support the theme
+Sponsorships help to facilitate maintenance and allow me to provide you with more and better features.  Without your support the theme
 cannot be maintained.
 
-Donators
+Sponsors
 ========
-Donations gratefully received with thanks from:
+Sponsorships gratefully received with thanks from:
 Mihai Bojonca, TCM International Institute.
 Guido Hornig, actXcellence http://actxcellence.de
 Delvon Forrester, Esparanza co uk
@@ -190,7 +190,9 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.9.0.5
 ==============
 - FIX: Forum submit area background colour for alternative colours.
+- FIX: More navbar and breadcrumb colour fixes.
 - NEW: Added new user preference link to 'Preferences' sub-menu.
+- NEW: Added alternative icon color setting.
 
 New in 2.9.0.4
 ==============

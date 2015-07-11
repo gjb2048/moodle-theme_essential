@@ -45,18 +45,18 @@ David Bezemer<br>
 Work taken over on the 9th October 2014 by:<br>
 Gareth J. Barnard<br>
 </p>
-<h3>Donations</h3>
-<p>This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider donating by:
+<h3>Sponsorships</h3>
+<p>This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider sponsoring by:
 <h4>PayPal</h4>
-<p>Please contact me via my <a href="http://moodle.org/user/profile.php?id=442195" target="_blank">\'Moodle profile\'</a> for details as I am an individual and therefore am unable to have \'donation\' / \'buy me now\' buttons under their terms.</p>
+<p>Please contact me via my <a href="http://moodle.org/user/profile.php?id=442195" target="_blank">\'Moodle profile\'</a> for details as I am an individual and therefore am unable to have \'buy me now\' buttons under their terms.</p>
 <h4>Flattr</h4>
 <a href="https://flattr.com/profile/gjb2048" target="_blank">
-click here to donate.
+click here to sponsor.
 </a>
-<br>Donations help to facilitate maintenance and allow me to provide you with more and better features.  Without your support the theme cannot be maintained.</p>
+<br>Sponsorships help to facilitate maintenance and allow me to provide you with more and better features.  Without your support the theme cannot be maintained.</p>
 <p>
-<h3>Donators</h3>
-<p>Donations gratefully received with thanks from:</p>
+<h3>Sponsors</h3>
+<p>Sponsorships gratefully received with thanks from:</p>
 <ul>
 <li>Mihai Bojonca, TCM International Institute.</li>
 <li>Guido Hornig, actXcellence <a href="//actxcellence.de" target="_blank">actxcellence.de</a></li>
@@ -185,14 +185,14 @@ $string['displaybeforelogin'] = 'Show before login only';
 $string['displayafterlogin'] = 'Show after login only';
 $string['dontdisplay'] = 'Never show';
 
-// Donate.
-$string['donate_title'] = 'Essential donations';
-$string['donate_desc'] = 'Please donate via PayPal by contacting me via my \'';
-$string['donate_desc2'] = ' to keep the Essential development going, or simply to express your gratitude.';
-$string['paypal_desc'] = '{$a->url}\' for details as I am an individual and therefore am unable to have \'donation\' / \'buy me now\' buttons under their terms or ';
+// Sponsor.
+$string['sponsor_title'] = 'Sponsor Essential';
+$string['sponsor_desc'] = 'Please sponsor via PayPal by contacting me via my \'';
+$string['sponsor_desc2'] = ' to keep the Essential development going, or simply to express your gratitude.';
+$string['paypal_desc'] = '{$a->url}\' for details as I am an individual and therefore am unable to have \'buy me now\' buttons under their terms or ';
 $string['flattr_desc'] = '{$a->url}';
 $string['paypal_click'] = 'Moodle profile';
-$string['flattr_click'] = 'donate via Flattr';
+$string['flattr_click'] = 'sponsor via Flattr';
 
 // Readme.
 $string['readme_title'] = 'Essential read-me';
@@ -317,6 +317,8 @@ $string['alternativethemetextcolor'] = 'Alternative text colour {$a}';
 $string['alternativethemetextcolordesc'] = 'Set the colour for your alternative text {$a}.';
 $string['alternativethemeurlcolor'] = 'Alternative link colour {$a}';
 $string['alternativethemeurlcolordesc'] = 'Set the colour for your alternative linked text {$a}.';
+$string['alternativethemeiconcolor'] = 'Alternative icon colour {$a}';
+$string['alternativethemeiconcolordesc'] = 'Set the alternative {$a} colour for all icons.';
 $string['alternativethemenavcolor'] = 'Navigation text colour {$a}';
 $string['alternativethemenavcolordesc'] = 'Set the alternative {$a} text colour for navigation.  Being the navigation bar and the breadcrumb fancy style.';
 $string['alternativethemehovercolor'] = 'Alternative theme hover colour {$a}';

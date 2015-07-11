@@ -495,18 +495,23 @@ input[type="color"],
 }
 .navbar .navbar-inner .nav > li.dropdown a:hover,
 .navbar .navbar-inner .nav > li > a:hover {
+  color: [[setting:themecolor]];
   background-color: [[setting:themehovercolor]];
+}
+.navbar .navbar-inner .nav > li.dropdown a:hover i,
+.navbar .navbar-inner .nav > li > a:hover i {
+  color: inherit;
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a {
   color: [[setting:themeurlcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:hover {
-  color: [[setting:themenavcolor]];
+  color: [[setting:themecolor]];
   background-color: [[setting:themehovercolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:focus,
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a.open {
-  color: [[setting:themenavcolor]];
+  color: [[setting:themecolor]];
   background-color: [[setting:themecolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:focus i,
@@ -520,18 +525,22 @@ input[type="color"],
   color: [[setting:themeiconcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li.dropdown-submenu:hover > a {
-  color: [[setting:themenavcolor]];
+  color: [[setting:themecolor]];
+  background-color: [[setting:themehovercolor]];
+}
+.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li.dropdown-submenu:hover > a i {
+  color: inherit;
 }
 .navbar .navbar-inner .nav li.dropdown.open > .dropdown-toggle,
 .navbar .navbar-inner .nav li.dropdown.active > .dropdown-toggle,
 .navbar .navbar-inner .nav li.dropdown.open.active > .dropdown-toggle {
-  color: [[setting:themenavcolor]];
+  color: [[setting:themecolor]];
   background-color: [[setting:themehovercolor]];
 }
 .navbar .navbar-inner .nav li.dropdown.open > .dropdown-toggle i,
 .navbar .navbar-inner .nav li.dropdown.active > .dropdown-toggle i,
 .navbar .navbar-inner .nav li.dropdown.open.active > .dropdown-toggle i {
-  color: [[setting:themenavcolor]];
+  color: inherit;
 }
 .navbar .navbar-inner .usermenu .dropdown img.userpicture {
   border: 1px solid [[setting:themenavcolor]];

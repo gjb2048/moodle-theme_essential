@@ -32,23 +32,41 @@
     // Some breadcrumb style.
     ul.breadcrumb.style1 {
       li {
+        color: ~"[[setting:alternativethemenavcolor2]]";
         background-color: ~"[[setting:alternativethemecolor2]]";
-      }
-      li:after {
-        border-left: 30px solid ~"[[setting:alternativethemecolor2]]";;
-      }
-      li:hover {
-        background-color: ~"[[setting:alternativethemenavcolor2]]";
-      }
-      li:hover:after {
-        border-left-color: ~"[[setting:alternativethemenavcolor2]]" !important;
+        a {
+          color: inherit;
+          &:before {
+            color: inherit;
+          }
+          &:hover, &:focus {
+            color: ~"[[setting:alternativethemecolor2]]";
+          }
+        }
+        &:after {
+          border-left: 30px solid ~"[[setting:alternativethemecolor2]]";;
+        }
+        &:hover {
+          color: ~"[[setting:alternativethemecolor2]]";
+          background-color: ~"[[setting:alternativethemenavcolor2]]";
+        }
+        &:hover:after {
+          border-left-color: ~"[[setting:alternativethemenavcolor2]]";
+        }
+        &:first-of-type {
+          &:hover, &:focus {
+            a:before {
+              color: ~"[[setting:alternativethemecolor2]]";
+            }
+          }
+        }
       }
     }
 
     ul.breadcrumb.style2 {
       li {
         a {
-          color: ~"[[setting:alternativethemetextcolor2]]";
+          color: ~"[[setting:alternativethemenavcolor2]]";
           &:hover {
             color: ~"[[setting:alternativethemehovercolor2]]";
           }
@@ -77,9 +95,11 @@
 
   .breadcrumb-button {
     input[type="submit"] {
+      color: ~"[[setting:alternativethemenavcolor2]]";
       background-color: ~"[[setting:alternativethemecolor2]]";
       &:hover {
-        background-color: ~"[[setting:alternativethemehovercolor2]]";
+        color: ~"[[setting:alternativethemecolor2]]";
+        background-color: ~"[[setting:alternativethemenavcolor2]]";
       }
     }
   }
@@ -122,21 +142,26 @@
             background-color: ~"[[setting:alternativethemehovercolor2]]";
           }
         }
-        > li.dropdown ul.dropdown-menu > li > a {
-          color: ~"[[setting:alternativethemetextcolor2]]";
-          &:hover { 
-            color: ~"[[setting:alternativethemenavcolor2]]";
-            background-color: ~"[[setting:alternativethemehovercolor2]]";
-          }
-          &:focus, &.open {
-            color: ~"[[setting:alternativethemenavcolor2]]";
-            background-color: ~"[[setting:alternativethemecolor2]]";
-            i {
+        > li.dropdown ul.dropdown-menu {
+          > li > a {
+            color: ~"[[setting:alternativethemetextcolor2]]";
+            &:hover { 
               color: ~"[[setting:alternativethemenavcolor2]]";
+              background-color: ~"[[setting:alternativethemehovercolor2]]";
+            }
+            &:focus, &.open {
+              color: ~"[[setting:alternativethemenavcolor2]]";
+              background-color: ~"[[setting:alternativethemecolor2]]";
+              i {
+                color: ~"[[setting:alternativethemenavcolor2]]";
+              }
+            }
+            i {
+              color: ~"[[setting:alternativethemecolor2]]";
             }
           }
-          i {
-            color: ~"[[setting:alternativethemecolor2]]";
+          li.dropdown-submenu:hover > a {
+            background-color: ~"[[setting:alternativethemecolor2]]";
           }
         }
       }
@@ -146,6 +171,10 @@
       .dropdown-submenu:focus > a {
         color: ~"[[setting:alternativethemenavcolor2]]";
         background-color: ~"[[setting:alternativethemecolor2]]";
+      }
+
+      .brand {
+        color: ~"[[setting:alternativethemenavcolor2]]";
       }
     }
 
@@ -183,7 +212,7 @@
             border-top: 1px dotted ~"[[setting:alternativethemecolor2]]";
             &:hover {
               .message, .notification {
-                color: ~"[[setting:alternativethemecolor1]]";
+                color: ~"[[setting:alternativethemecolor2]]";
                 background-color: ~"[[setting:alternativethemehovercolor2]]";
                 img {
                   &.userpicture, &.profilepicture {
@@ -279,7 +308,7 @@
       }
     }
     .icon {
-      color: ~"[[setting:alternativethemecolor2]]";
+      color: ~"[[setting:alternativethemeiconcolor2]]";
     }
   }
 
@@ -335,7 +364,7 @@
   .tree_item.branch {
     color: ~"[[setting:alternativethemeurlcolor2]]";
     &:before {
-      color: ~"[[setting:alternativethemecolor2]]";
+      color: ~"[[setting:alternativethemeiconcolor2]]";
     }
   }
 
