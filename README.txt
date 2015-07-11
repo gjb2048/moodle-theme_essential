@@ -187,6 +187,10 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
+New in 2.9.0.6
+==============
+- FIX: #adminsettings h3 colour in alternative colours.
+
 New in 2.9.0.5
 ==============
 - FIX: Forum submit area background colour for alternative colours.

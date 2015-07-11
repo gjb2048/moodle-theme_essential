@@ -39,4 +39,12 @@ class theme_essentials_core_renderer extends theme_essential_core_renderer {
         $breadcrumbs .= html_writer::end_tag('ul');
         return $breadcrumbs;
     }
+
+    /**
+     * Outputs the alternative colours menu
+     * @return custom_menu object
+     */
+    public function custom_menu_themecolours() {
+        return '';
+    }
 }

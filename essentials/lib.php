@@ -24,7 +24,9 @@
  */
 
 function theme_essentials_process_css($css, $theme) {
-    // Change to 'true' if you want to use Essential's settings after removing the '$THEME->parents_exclude_sheets' in config.php.
+    /* Change to 'true' if you want to use Essential's settings after removing the '$THEME->parents_exclude_sheets' in config.php.
+       Then to get the alternive colours back, renove the overridden method 'custom_menu_themecolours' in the 'theme_essentials_core_renderer'
+       class in the 'core_renderer.php' file in the 'classes' folder. */
     $usingessentialsettings = false;
 
     if ($usingessentialsettings) {

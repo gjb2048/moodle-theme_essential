@@ -1212,6 +1212,16 @@ class theme_essential_core_renderer extends core_renderer {
         return $output;
     }
 
+    public function standard_footer_html() {
+        $output = parent::standard_footer_html();
+        $output .= html_writer::start_tag('div', array ('class' => 'themecredit')).
+                   get_string('credit', 'theme_essential').
+                   html_writer::link('//about.me/gjbarnard', 'Gareth J Barnard', array('target' => '_blank')).
+                   html_writer::end_tag('div');
+
+        return $output;
+    }
+
     // Essential custom bits.
     public function essential_edit_button($section) {
         global $CFG;
