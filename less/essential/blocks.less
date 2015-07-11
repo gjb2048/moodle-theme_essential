@@ -52,10 +52,21 @@
   margin: 15px 0px;
 }
 
+p.tree_item.leaf a {
+  > i {
+    width: 14px;
+  }
+  &.action-delete {
+    > i {
+      color: red;
+    }
+  }
+}
+
 .tree_item.branch {
   background-image: none !important;
 
-  &.branch:before {
+  &:before {
     font-family: FontAwesome;
     content: "\f07c";
     margin-right: 5px;

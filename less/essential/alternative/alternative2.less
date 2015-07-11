@@ -40,23 +40,23 @@
             color: inherit;
           }
           &:hover, &:focus {
-            color: ~"[[setting:alternativethemecolor2]]";
+            color: ~"[[setting:alternativethemenavcolor2]]";
           }
         }
         &:after {
           border-left: 30px solid ~"[[setting:alternativethemecolor2]]";;
         }
         &:hover {
-          color: ~"[[setting:alternativethemecolor2]]";
-          background-color: ~"[[setting:alternativethemenavcolor2]]";
+          color: ~"[[setting:alternativethemenavcolor2]]";
+          background-color: ~"[[setting:alternativethemehovercolor2]]";
         }
         &:hover:after {
-          border-left-color: ~"[[setting:alternativethemenavcolor2]]";
+          border-left-color: ~"[[setting:alternativethemehovercolor2]]";
         }
         &:first-of-type {
           &:hover, &:focus {
             a:before {
-              color: ~"[[setting:alternativethemecolor2]]";
+              color: ~"[[setting:alternativethemenavcolor2]]";
             }
           }
         }
@@ -84,8 +84,11 @@
   }
 
   #page-header {
-    h1#title, #headerlogo {
+    h1#title {
       color: ~"[[setting:alternativethemecolor2]]";
+    }
+    #headerlogo {
+      color: ~"[[setting:alternativethemeiconcolor2]]";
     }
   }
 
@@ -98,8 +101,8 @@
       color: ~"[[setting:alternativethemenavcolor2]]";
       background-color: ~"[[setting:alternativethemecolor2]]";
       &:hover {
-        color: ~"[[setting:alternativethemecolor2]]";
-        background-color: ~"[[setting:alternativethemenavcolor2]]";
+        color: ~"[[setting:alternativethemenavcolor2]]";
+        background-color: ~"[[setting:alternativethemehovercolor2]]";
       }
     }
   }
@@ -122,7 +125,7 @@
       .nav > li > a {
         color: ~"[[setting:alternativethemenavcolor2]]";
         i {
-          color: ~"[[setting:alternativethemenavcolor2]]";
+          color: inherit;
         }
         &:hover {
           background-color: ~"[[setting:alternativethemehovercolor2]]";
@@ -135,7 +138,7 @@
           color: ~"[[setting:alternativethemenavcolor2]]";
           border-left-color: ~"[[setting:alternativethemecolor2]]";
           i {
-            color: ~"[[setting:alternativethemenavcolor2]]";
+            color: inherit;
           }
           &:hover {
             color: ~"[[setting:alternativethemenavcolor2]]";
@@ -153,11 +156,11 @@
               color: ~"[[setting:alternativethemenavcolor2]]";
               background-color: ~"[[setting:alternativethemecolor2]]";
               i {
-                color: ~"[[setting:alternativethemenavcolor2]]";
+                color: ~"[[setting:alternativethemeiconcolor2]]";
               }
             }
             i {
-              color: ~"[[setting:alternativethemecolor2]]";
+              color: ~"[[setting:alternativethemeiconcolor2]]";
             }
           }
           li.dropdown-submenu:hover > a {
@@ -194,12 +197,11 @@
           color: ~"[[setting:alternativethemenavcolor2]]";
           background-color: ~"[[setting:alternativethemehovercolor2]]";
           i {
-            color: ~"[[setting:alternativethemenavcolor2]]";
+            color: ~"[[setting:alternativethemeiconcolor2]]";
           }
         }
       }
     }
-
     .nav > li > a {
       border-left-color: ~"[[setting:alternativethemehovercolor2]]";
     }
@@ -304,7 +306,7 @@
     .header .title h2 {
       color: ~"[[setting:alternativethemetextcolor2]]";
       &:before {
-        color: ~"[[setting:alternativethemecolor2]]";
+        color: ~"[[setting:alternativethemeiconcolor2]]";
       }
     }
     .icon {
@@ -335,7 +337,7 @@
   }
 
   .service i {
-    color: ~"[[setting:alternativethemecolor2]]";
+    color: ~"[[setting:alternativethemeiconcolor2]]";
   }
 
   #page-footer {
@@ -361,10 +363,42 @@
     background-color: ~"[[setting:alternativethemecolor2]]";
   }
 
-  .tree_item.branch {
-    color: ~"[[setting:alternativethemeurlcolor2]]";
-    &:before {
-      color: ~"[[setting:alternativethemeiconcolor2]]";
+  p.tree_item {
+    &.leaf a {
+      > i {
+        color: ~"[[setting:alternativethemeiconcolor2]]";
+      }
+      &:hover, &:focus {
+        color: ~"[[setting:alternativethemehovercolor2]]";
+        > i {
+          color: inherit;
+        }
+      }
+    }
+    &.branch {
+      color: ~"[[setting:alternativethemeurlcolor2]]";
+      &:before {
+        color: ~"[[setting:alternativethemeiconcolor2]]";
+      }
+      &:hover, &:focus {
+        color: ~"[[setting:alternativethemehovercolor2]]";
+        &:before {
+          color: inherit;
+        }
+        a {
+          color: inherit;
+        }
+      }
+      &.emptybranch {
+        &:before {
+          color: ~"[[setting:alternativethemeiconcolor2]]";
+        }
+        &:hover, &:focus {
+          &:before {
+            color: ~"[[setting:alternativethemehovercolor2]]";
+          }
+        }
+      }
     }
   }
 
@@ -373,7 +407,7 @@
   }
 
   .afmatter i {
-    color: ~"[[setting:alternativethemecolor2]]";
+    color: ~"[[setting:alternativethemeiconcolor2]]";
   }
 
   .myprofileitem.picture:hover {
@@ -483,11 +517,10 @@
     color: ~"[[setting:alternativethemeurlcolor2]]";
   }
   .menu a.menu-action,
-  p.tree_item.leaf a,
   .course-item-actions a,
   .actions a {
     > i {
-      color: ~"[[setting:alternativethemecolor2]]";
+      color: ~"[[setting:alternativethemeiconcolor2]]";
     }
     &:hover {
       > i {
@@ -549,7 +582,7 @@
       .dropdown-menu > li > a:visited {
         color: ~"[[setting:alternativethemenavcolor2]]";
         i {
-          color: ~"[[setting:alternativethemecolor2]]";
+          color: inherit;
           background-color: ~"[[setting:alternativethemenavcolor2]]";
           border: 1px solid ~"[[setting:alternativethemenavcolor2]]";
           border-radius: 3px;

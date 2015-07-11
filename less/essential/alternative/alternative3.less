@@ -40,23 +40,23 @@
             color: inherit;
           }
           &:hover, &:focus {
-            color: ~"[[setting:alternativethemecolor3]]";
+            color: ~"[[setting:alternativethemenavcolor3]]";
           }
         }
         &:after {
           border-left: 30px solid ~"[[setting:alternativethemecolor3]]";;
         }
         &:hover {
-          color: ~"[[setting:alternativethemecolor3]]";
-          background-color: ~"[[setting:alternativethemenavcolor3]]";
+          color: ~"[[setting:alternativethemenavcolor3]]";
+          background-color: ~"[[setting:alternativethemehovercolor3]]";
         }
         &:hover:after {
-          border-left-color: ~"[[setting:alternativethemenavcolor3]]";
+          border-left-color: ~"[[setting:alternativethemehovercolor3]]";
         }
         &:first-of-type {
           &:hover, &:focus {
             a:before {
-              color: ~"[[setting:alternativethemecolor3]]";
+              color: ~"[[setting:alternativethemenavcolor3]]";
             }
           }
         }
@@ -84,8 +84,11 @@
   }
 
   #page-header {
-    h1#title, #headerlogo {
+    h1#title {
       color: ~"[[setting:alternativethemecolor3]]";
+    }
+    #headerlogo {
+      color: ~"[[setting:alternativethemeiconcolor3]]";
     }
   }
 
@@ -98,8 +101,8 @@
       color: ~"[[setting:alternativethemenavcolor3]]";
       background-color: ~"[[setting:alternativethemecolor3]]";
       &:hover {
-        color: ~"[[setting:alternativethemecolor3]]";
-        background-color: ~"[[setting:alternativethemenavcolor3]]";
+        color: ~"[[setting:alternativethemenavcolor3]]";
+        background-color: ~"[[setting:alternativethemehovercolor3]]";
       }
     }
   }
@@ -122,7 +125,7 @@
       .nav > li > a {
         color: ~"[[setting:alternativethemenavcolor3]]";
         i {
-          color: ~"[[setting:alternativethemenavcolor3]]";
+          color: inherit;
         }
         &:hover {
           background-color: ~"[[setting:alternativethemehovercolor3]]";
@@ -135,7 +138,7 @@
           color: ~"[[setting:alternativethemenavcolor3]]";
           border-left-color: ~"[[setting:alternativethemecolor3]]";
           i {
-            color: ~"[[setting:alternativethemenavcolor3]]";
+            color: inherit;
           }
           &:hover {
             color: ~"[[setting:alternativethemenavcolor3]]";
@@ -153,11 +156,11 @@
               color: ~"[[setting:alternativethemenavcolor3]]";
               background-color: ~"[[setting:alternativethemecolor3]]";
               i {
-                color: ~"[[setting:alternativethemenavcolor3]]";
+                color: ~"[[setting:alternativethemeiconcolor3]]";
               }
             }
             i {
-              color: ~"[[setting:alternativethemecolor3]]";
+              color: ~"[[setting:alternativethemeiconcolor3]]";
             }
           }
           li.dropdown-submenu:hover > a {
@@ -172,11 +175,11 @@
         color: ~"[[setting:alternativethemenavcolor3]]";
         background-color: ~"[[setting:alternativethemecolor3]]";
       }
-    
+
       .brand {
         color: ~"[[setting:alternativethemenavcolor3]]";
       }
-}
+    }
 
     .nav-collapse {
       border-color: ~"[[setting:alternativethemecolor3]]";
@@ -194,12 +197,11 @@
           color: ~"[[setting:alternativethemenavcolor3]]";
           background-color: ~"[[setting:alternativethemehovercolor3]]";
           i {
-            color: ~"[[setting:alternativethemenavcolor3]]";
+            color: ~"[[setting:alternativethemeiconcolor3]]";
           }
         }
       }
     }
-
     .nav > li > a {
       border-left-color: ~"[[setting:alternativethemehovercolor3]]";
     }
@@ -304,11 +306,11 @@
     .header .title h2 {
       color: ~"[[setting:alternativethemetextcolor3]]";
       &:before {
-        color: ~"[[setting:alternativethemecolor3]]";
+        color: ~"[[setting:alternativethemeiconcolor3]]";
       }
     }
     .icon {
-       color: ~"[[setting:alternativethemeiconcolor3]]";
+      color: ~"[[setting:alternativethemeiconcolor3]]";
     }
   }
 
@@ -335,7 +337,7 @@
   }
 
   .service i {
-    color: ~"[[setting:alternativethemecolor3]]";
+    color: ~"[[setting:alternativethemeiconcolor3]]";
   }
 
   #page-footer {
@@ -361,10 +363,42 @@
     background-color: ~"[[setting:alternativethemecolor3]]";
   }
 
-  .tree_item.branch {
-    color: ~"[[setting:alternativethemeurlcolor3]]";
-    &:before {
-      color: ~"[[setting:alternativethemeiconcolor3]]";
+  p.tree_item {
+    &.leaf a {
+      > i {
+        color: ~"[[setting:alternativethemeiconcolor3]]";
+      }
+      &:hover, &:focus {
+        color: ~"[[setting:alternativethemehovercolor3]]";
+        > i {
+          color: inherit;
+        }
+      }
+    }
+    &.branch {
+      color: ~"[[setting:alternativethemeurlcolor3]]";
+      &:before {
+        color: ~"[[setting:alternativethemeiconcolor3]]";
+      }
+      &:hover, &:focus {
+        color: ~"[[setting:alternativethemehovercolor3]]";
+        &:before {
+          color: inherit;
+        }
+        a {
+          color: inherit;
+        }
+      }
+      &.emptybranch {
+        &:before {
+          color: ~"[[setting:alternativethemeiconcolor3]]";
+        }
+        &:hover, &:focus {
+          &:before {
+            color: ~"[[setting:alternativethemehovercolor3]]";
+          }
+        }
+      }
     }
   }
 
@@ -373,7 +407,7 @@
   }
 
   .afmatter i {
-    color: ~"[[setting:alternativethemecolor3]]";
+    color: ~"[[setting:alternativethemeiconcolor3]]";
   }
 
   .myprofileitem.picture:hover {
@@ -483,11 +517,10 @@
     color: ~"[[setting:alternativethemeurlcolor3]]";
   }
   .menu a.menu-action,
-  p.tree_item.leaf a,
   .course-item-actions a,
   .actions a {
     > i {
-      color: ~"[[setting:alternativethemecolor3]]";
+      color: ~"[[setting:alternativethemeiconcolor3]]";
     }
     &:hover {
       > i {
@@ -549,7 +582,7 @@
       .dropdown-menu > li > a:visited {
         color: ~"[[setting:alternativethemenavcolor3]]";
         i {
-          color: ~"[[setting:alternativethemecolor3]]";
+          color: inherit;
           background-color: ~"[[setting:alternativethemenavcolor3]]";
           border: 1px solid ~"[[setting:alternativethemenavcolor3]]";
           border-radius: 3px;

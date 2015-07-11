@@ -20611,11 +20611,19 @@ body .chooserdialogue .moodle-dialogue-wrap .moodle-dialogue-bd {
   margin: 15px 0px;
 }
 
+p.tree_item.leaf a > i {
+  width: 14px;
+}
+
+p.tree_item.leaf a.action-delete > i {
+  color: red;
+}
+
 .tree_item.branch {
   background-image: none !important;
 }
 
-.tree_item.branch.branch:before {
+.tree_item.branch:before {
   font-family: FontAwesome;
   content: "\f07c";
   margin-left: 5px;
@@ -22371,14 +22379,12 @@ i > img {
 }
 
 .menu a.menu-action > i,
-p.tree_item.leaf a > i,
 .course-item-actions a > i,
 .actions a > i {
   width: 14px;
 }
 
 .menu a.menu-action.action-delete > i,
-p.tree_item.leaf a.action-delete > i,
 .course-item-actions a.action-delete > i,
 .actions a.action-delete > i {
   color: red;

@@ -20,14 +20,41 @@
 .block h3.main {
   color: [[setting:themetextcolor]];
 }
-.tree_item.branch {
+p.tree_item.leaf a > i {
+  color: [[setting:themeiconcolor]];
+}
+p.tree_item.leaf a:hover,
+p.tree_item.leaf a:focus {
+  color: [[setting:themehovercolor]];
+}
+p.tree_item.leaf a:hover > i,
+p.tree_item.leaf a:focus > i {
+  color: inherit;
+}
+p.tree_item.branch {
   color: [[setting:themeurlcolor]];
 }
-.tree_item.branch.branch:before {
+p.tree_item.branch:before {
   color: [[setting:themeiconcolor]];
 }
-.tree_item.branch.emptybranch:before {
+p.tree_item.branch:hover,
+p.tree_item.branch:focus {
+  color: [[setting:themehovercolor]];
+}
+p.tree_item.branch:hover:before,
+p.tree_item.branch:focus:before {
+  color: inherit;
+}
+p.tree_item.branch:hover a,
+p.tree_item.branch:focus a {
+  color: inherit;
+}
+p.tree_item.branch.emptybranch:before {
   color: [[setting:themeiconcolor]];
+}
+p.tree_item.branch.emptybranch:hover:before,
+p.tree_item.branch.emptybranch:focus:before {
+  color: [[setting:themehovercolor]];
 }
 .collapsed .tree_item.branch:before {
   color: [[setting:themeiconcolor]];
@@ -171,7 +198,7 @@
 }
 .breadcrumb-button input[type="submit"]:hover {
   color: [[setting:themecolor]];
-  background-color: [[setting:themenavcolor]];
+  background-color: [[setting:themehovercolor]];
 }
 /* @end */
 /* @group Breadcrumb */
@@ -199,13 +226,13 @@
 }
 .breadcrumb-nav ul.breadcrumb.style1 li:hover {
   color: [[setting:themecolor]];
-  background-color: [[setting:themenavcolor]];
+  background-color: [[setting:themehovercolor]];
 }
 .breadcrumb-nav ul.breadcrumb.style1 li:hover a {
   color: [[setting:themecolor]];
 }
 .breadcrumb-nav ul.breadcrumb.style1 li:hover:after {
-  border-left-color: [[setting:themenavcolor]];
+  border-left-color: [[setting:themehovercolor]];
 }
 .breadcrumb-nav ul.breadcrumb.style1 li:hover:after a {
   color: [[setting:themecolor]];
@@ -378,13 +405,11 @@ body.has_dock.essential-colours-alternative3 #dock .dockedtitle[disabled] {
 /* @end */
 /* @group Edit Buttons */
 .menu a.menu-action > i,
-p.tree_item.leaf a > i,
 .course-item-actions a > i,
 .actions a > i {
   color: [[setting:themeiconcolor]];
 }
 .menu a.menu-action:hover > i,
-p.tree_item.leaf a:hover > i,
 .course-item-actions a:hover > i,
 .actions a:hover > i {
   color: [[setting:themehovercolor]];

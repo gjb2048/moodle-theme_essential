@@ -190,7 +190,7 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.9.0.5
 ==============
 - FIX: Forum submit area background colour for alternative colours.
-- FIX: More navbar and breadcrumb colour fixes.
+- FIX: More navbar, breadcrumb and block colour fixes.
 - NEW: Added new user preference link to 'Preferences' sub-menu.
 - NEW: Added alternative icon color setting.
 

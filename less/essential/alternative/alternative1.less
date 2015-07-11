@@ -40,23 +40,23 @@
             color: inherit;
           }
           &:hover, &:focus {
-            color: ~"[[setting:alternativethemecolor1]]";
+            color: ~"[[setting:alternativethemenavcolor1]]";
           }
         }
         &:after {
           border-left: 30px solid ~"[[setting:alternativethemecolor1]]";;
         }
         &:hover {
-          color: ~"[[setting:alternativethemecolor1]]";
-          background-color: ~"[[setting:alternativethemenavcolor1]]";
+          color: ~"[[setting:alternativethemenavcolor1]]";
+          background-color: ~"[[setting:alternativethemehovercolor1]]";
         }
         &:hover:after {
-          border-left-color: ~"[[setting:alternativethemenavcolor1]]";
+          border-left-color: ~"[[setting:alternativethemehovercolor1]]";
         }
         &:first-of-type {
           &:hover, &:focus {
             a:before {
-              color: ~"[[setting:alternativethemecolor1]]";
+              color: ~"[[setting:alternativethemenavcolor1]]";
             }
           }
         }
@@ -84,8 +84,11 @@
   }
 
   #page-header {
-    h1#title, #headerlogo {
+    h1#title {
       color: ~"[[setting:alternativethemecolor1]]";
+    }
+    #headerlogo {
+      color: ~"[[setting:alternativethemeiconcolor1]]";
     }
   }
 
@@ -98,8 +101,8 @@
       color: ~"[[setting:alternativethemenavcolor1]]";
       background-color: ~"[[setting:alternativethemecolor1]]";
       &:hover {
-        color: ~"[[setting:alternativethemecolor1]]";
-        background-color: ~"[[setting:alternativethemenavcolor1]]";
+        color: ~"[[setting:alternativethemenavcolor1]]";
+        background-color: ~"[[setting:alternativethemehovercolor1]]";
       }
     }
   }
@@ -122,7 +125,7 @@
       .nav > li > a {
         color: ~"[[setting:alternativethemenavcolor1]]";
         i {
-          color: ~"[[setting:alternativethemenavcolor1]]";
+          color: inherit;
         }
         &:hover {
           background-color: ~"[[setting:alternativethemehovercolor1]]";
@@ -135,7 +138,7 @@
           color: ~"[[setting:alternativethemenavcolor1]]";
           border-left-color: ~"[[setting:alternativethemecolor1]]";
           i {
-            color: ~"[[setting:alternativethemenavcolor1]]";
+            color: inherit;
           }
           &:hover {
             color: ~"[[setting:alternativethemenavcolor1]]";
@@ -153,11 +156,11 @@
               color: ~"[[setting:alternativethemenavcolor1]]";
               background-color: ~"[[setting:alternativethemecolor1]]";
               i {
-                color: ~"[[setting:alternativethemenavcolor1]]";
+                color: ~"[[setting:alternativethemeiconcolor1]]";
               }
             }
             i {
-              color: ~"[[setting:alternativethemecolor1]]";
+              color: ~"[[setting:alternativethemeiconcolor1]]";
             }
           }
           li.dropdown-submenu:hover > a {
@@ -194,7 +197,7 @@
           color: ~"[[setting:alternativethemenavcolor1]]";
           background-color: ~"[[setting:alternativethemehovercolor1]]";
           i {
-            color: ~"[[setting:alternativethemenavcolor1]]";
+            color: ~"[[setting:alternativethemeiconcolor1]]";
           }
         }
       }
@@ -303,7 +306,7 @@
     .header .title h2 {
       color: ~"[[setting:alternativethemetextcolor1]]";
       &:before {
-        color: ~"[[setting:alternativethemecolor1]]";
+        color: ~"[[setting:alternativethemeiconcolor1]]";
       }
     }
     .icon {
@@ -334,7 +337,7 @@
   }
 
   .service i {
-    color: ~"[[setting:alternativethemecolor1]]";
+    color: ~"[[setting:alternativethemeiconcolor1]]";
   }
 
   #page-footer {
@@ -360,10 +363,42 @@
     background-color: ~"[[setting:alternativethemecolor1]]";
   }
 
-  .tree_item.branch {
-    color: ~"[[setting:alternativethemeurlcolor1]]";
-    &:before {
-      color: ~"[[setting:alternativethemeiconcolor1]]";
+  p.tree_item {
+    &.leaf a {
+      > i {
+        color: ~"[[setting:alternativethemeiconcolor1]]";
+      }
+      &:hover, &:focus {
+        color: ~"[[setting:alternativethemehovercolor1]]";
+        > i {
+          color: inherit;
+        }
+      }
+    }
+    &.branch {
+      color: ~"[[setting:alternativethemeurlcolor1]]";
+      &:before {
+        color: ~"[[setting:alternativethemeiconcolor1]]";
+      }
+      &:hover, &:focus {
+        color: ~"[[setting:alternativethemehovercolor1]]";
+        &:before {
+          color: inherit;
+        }
+        a {
+          color: inherit;
+        }
+      }
+      &.emptybranch {
+        &:before {
+          color: ~"[[setting:alternativethemeiconcolor1]]";
+        }
+        &:hover, &:focus {
+          &:before {
+            color: ~"[[setting:alternativethemehovercolor1]]";
+          }
+        }
+      }
     }
   }
 
@@ -372,7 +407,7 @@
   }
 
   .afmatter i {
-    color: ~"[[setting:alternativethemecolor1]]";
+    color: ~"[[setting:alternativethemeiconcolor1]]";
   }
 
   .myprofileitem.picture:hover {
@@ -482,11 +517,10 @@
     color: ~"[[setting:alternativethemeurlcolor1]]";
   }
   .menu a.menu-action,
-  p.tree_item.leaf a,
   .course-item-actions a,
   .actions a {
     > i {
-      color: ~"[[setting:alternativethemecolor1]]";
+      color: ~"[[setting:alternativethemeiconcolor1]]";
     }
     &:hover {
       > i {
@@ -548,7 +582,7 @@
       .dropdown-menu > li > a:visited {
         color: ~"[[setting:alternativethemenavcolor1]]";
         i {
-          color: ~"[[setting:alternativethemecolor1]]";
+          color: inherit;
           background-color: ~"[[setting:alternativethemenavcolor1]]";
           border: 1px solid ~"[[setting:alternativethemenavcolor1]]";
           border-radius: 3px;
