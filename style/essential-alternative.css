@@ -1621,6 +1621,7 @@
 .essential-colours-alternative1 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.default:focus,
 .essential-colours-alternative2 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.default:focus,
 .essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.default:focus {
+  color: [[setting:themenavcolor]];
   background-color: [[setting:themecolor]];
   background-image: none;
 }
@@ -1630,6 +1631,7 @@
 .essential-colours-alternative1 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative1:focus,
 .essential-colours-alternative2 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative1:focus,
 .essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative1:focus {
+  color: [[setting:alternativethemenavcolor1]];
   background-color: [[setting:alternativethemecolor1]];
   background-image: -moz-linear-gradient(top, [[setting:alternativethemetextcolor1]], [[setting:alternativethemecolor1]]);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemetextcolor1]]), to([[setting:alternativethemecolor1]]));
@@ -1643,6 +1645,7 @@
 .essential-colours-alternative1 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative2:focus,
 .essential-colours-alternative2 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative2:focus,
 .essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative2:focus {
+  color: [[setting:alternativethemenavcolor2]];
   background-color: [[setting:alternativethemecolor2]];
   background-image: -moz-linear-gradient(top, [[setting:alternativethemetextcolor2]], [[setting:alternativethemecolor2]]);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemetextcolor2]]), to([[setting:alternativethemecolor2]]));
@@ -1656,6 +1659,7 @@
 .essential-colours-alternative1 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:focus,
 .essential-colours-alternative2 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:focus,
 .essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:focus {
+  color: [[setting:alternativethemenavcolor3]];
   background-color: [[setting:alternativethemecolor3]];
   background-image: -moz-linear-gradient(top, [[setting:alternativethemetextcolor3]], [[setting:alternativethemecolor3]]);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemetextcolor3]]), to([[setting:alternativethemecolor3]]));

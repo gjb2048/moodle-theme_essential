@@ -37,15 +37,17 @@ $string['choosereadme'] = '
 <p>Essentials is a basic child theme of Essential to help you as a theme developer create your own child theme of Essential.</p>
 <h3>Theme Credits</h3>
 <p>Author: Gareth J Barnard</p>
-<h3>Donations</h3>
-<p>This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider donating by:
+<h3>Sponsorships</h3>
+<p>This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider sponsoring by:
 <h4>PayPal</h4>
-<p>Please contact me via my <a href="http://moodle.org/user/profile.php?id=442195" target="_blank">\'Moodle profile\'</a> for details as I am an individual and therefore am unable to have \'donation\' / \'buy me now\' buttons under their terms.</p>
+<p>Please contact me via my <a href="http://moodle.org/user/profile.php?id=442195" target="_blank">\'Moodle profile\'</a> for details as I am an individual and therefore am unable to have \'buy me now\' buttons under their terms.</p>
 <h4>Flattr</h4>
 <a href="https://flattr.com/profile/gjb2048" target="_blank">
-clicking here to donate.
+clicking here to sponsor.
 </a>
-<br>Donations may allow me to provide you with more or better features in less time.</p>
+<br>Sponsorships may allow me to provide you with more or better features in less time.</p>
+<h3>Customisation</h3>
+<p>If you would like this theme customised or build a new theme from scratch, then I offer competitive rates.  Please contact me via \'www.gjbarnard.co.uk/contact/\' or \'gjbarnard at gmail dot com\' or \'about.me/gjbarnard\' to discuss your requirements.</p>
 </div></div>';
 
 // General.

@@ -32,15 +32,15 @@ If you make improvements or bug fixes then I would appreciate if you would send 
 https://github.com/gjb2048/moodle-theme_essential and doing a 'Pull Request' so that the rest of the
 Moodle community benefits.
 
-Donations
-=========
-This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider donating by:
+Sponsoring
+==========
+This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider sponsoring by:
 
-PayPal - Please contact me via my 'Moodle profile' (above) for details as I am an individual and therefore am unable to have 'donation' / 'buy me now' buttons under their terms.
+PayPal - Please contact me via my 'Moodle profile' (above) for details as I am an individual and therefore am unable to have 'buy me now' buttons under their terms.
 
 Flattr - https://flattr.com/profile/gjb2048
 
-Donations may allow me to provide you with more or better features in less time.
+Sponsorships may allow me to provide you with more or better features in less time.
 
 Required version of Moodle
 ==========================
