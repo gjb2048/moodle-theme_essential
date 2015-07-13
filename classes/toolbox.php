@@ -73,17 +73,19 @@ class toolbox {
     static public function get_include_file($filename) {
         global $CFG, $PAGE;
         $themedir = $PAGE->theme->dir;
-        $themename = $PAGE->theme->name;
-        //error_log('filename: '.$filename.', dir: '.$themedir.', name: '.$themename);
         $filename .= '.php';
-        if (file_exists("$themedir/layout/includes/$filename")) {
-            return "$themedir/layout/includes/$filename";
-        } else if (file_exists("$CFG->dirroot/theme/$themename/layout/includes/$filename")) {
-            return "$CFG->dirroot/theme/$themename/layout/includes/$filename";
-        } else if (!empty($CFG->themedir) and file_exists("$CFG->themedir/$themename/layout/includes/$filename")) {
-            return "$CFG->themedir/$themename/includes/$filename";
+        // Check only if a child of 'Essential' to prevent conflicts with other themes using the 'includes' folder....
+        if (in_array('essential', $PAGE->theme->parents)) {
+            $themename = $PAGE->theme->name;
+            if (file_exists("$themedir/layout/includes/$filename")) {
+                return "$themedir/layout/includes/$filename";
+            } else if (file_exists("$CFG->dirroot/theme/$themename/layout/includes/$filename")) {
+                return "$CFG->dirroot/theme/$themename/layout/includes/$filename";
+            } else if (!empty($CFG->themedir) and file_exists("$CFG->themedir/$themename/layout/includes/$filename")) {
+                return "$CFG->themedir/$themename/includes/$filename";
+            }
         }
-        // Not here so check parent Essential.
+        // Check Essential.
         if (file_exists("$CFG->dirroot/theme/essential/layout/includes/$filename")) {
             return "$CFG->dirroot/theme/essential/layout/includes/$filename";
         } else if (!empty($CFG->themedir) and file_exists("$CFG->themedir/essential/layout/includes/$filename")) {
