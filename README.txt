@@ -183,6 +183,7 @@ can be really useful in visualising the issue along with any files you consider 
 
 New in 2.8.1.6
 ==============
+- FIX: Issue #514: Quiz feedback colours are not accessible.
 - FIX: No 'loginas' URL when logged in as another user, ref: https://moodle.org/mod/forum/discuss.php?d=315453.
 - FIX: More colour adjustments to navigation menus with alternative colours.
 
