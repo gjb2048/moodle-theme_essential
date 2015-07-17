@@ -189,6 +189,7 @@ can be really useful in visualising the issue along with any files you consider 
 
 New in 2.9.0.6
 ==============
+- FIX Issue #514: Quiz feedback colours are not accessible.
 - FIX: #adminsettings h3 colour in alternative colours.
 
 New in 2.9.0.5
