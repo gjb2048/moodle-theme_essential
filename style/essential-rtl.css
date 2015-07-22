@@ -21761,16 +21761,19 @@ a.action-icon > i,
 
 .moodle-core-dragdrop-draghandle:before {
   font-family: 'FontAwesome';
-  content: "\f047 ";
+  content: "\f047";
   margin-left: 5px;
   cursor: move;
 }
 
 .course-content .section .moodle-core-dragdrop-draghandle:before {
   font-family: 'FontAwesome';
-  content: "\f07d ";
-  margin-left: 5px;
-  cursor: move;
+  content: "\f07d";
+  font-size: 1.4em;
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-left: 0px;
+  cursor: n-resize;
 }
 
 .course-content .section .moodle-core-dragdrop-draghandle img {
@@ -23540,30 +23543,17 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
 
 /* @group Tabs */
 
-.nav-tabs > li,
-.nav-pills > li {
-  float: none;
-  display: inline-block;
-}
-
-.nav-tabs,
-.nav-pills {
-  text-align: center;
-}
-
 .nav > .disabled > a {
-  color: #555;
-  background: #fff;
+  color: #999999;
 }
 
 .nav > .disabled > a:hover {
-  border: 1px solid #ddd;
+  color: #999999;
+  border: 1px solid #eeeeee;
 }
 
 .nav-tabs > li > a {
-  cursor: default;
-  border: 1px solid #ddd;
-  border-bottom-color: transparent;
+  border: 1px solid #eeeeee;
 }
 
 /* @end */

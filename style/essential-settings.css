@@ -271,17 +271,17 @@ ul.breadcrumb.style2 li a:hover {
 /* @end */
 /* @group Core */
 .moodle-actionmenu[data-enhanced].show .menu {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 .moodle-actionmenu[data-enhanced].show .menu a {
   color: [[setting:themeurlcolor]];
 }
 .moodle-actionmenu[data-enhanced].show .menu a:hover {
-  color: [[setting:themenavcolor]];
-  background-color: [[setting:themecolor]];
+  color: #ffffff;
+  background-color: [[setting:themeurlcolor]];
 }
 .moodle-actionmenu[data-enhanced].show .menu a:hover .fa:before {
-  color: [[setting:themenavcolor]];
+  color: #ffffff;
 }
 /* @end */
 /* @group Course */
@@ -491,23 +491,32 @@ input[type="color"],
 }
 .navbar .navbar-inner .nav > li.dropdown a i,
 .navbar .navbar-inner .nav > li > a i {
-  color: [[setting:themeiconcolor]];
+  color: inherit;
 }
 .navbar .navbar-inner .nav > li.dropdown a:hover,
 .navbar .navbar-inner .nav > li > a:hover {
   color: [[setting:themecolor]];
-  background-color: [[setting:themehovercolor]];
+  background-color: [[setting:themenavcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown a:hover i,
 .navbar .navbar-inner .nav > li > a:hover i {
-  color: [[setting:themecolor]];
+  color: inherit;
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a {
   color: [[setting:themeurlcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:hover {
-  background-color: [[setting:themehovercolor]];
-  color: [[setting:themecolor]];
+  color: #ffffff;
+  background-color: [[setting:themeurlcolor]];
+}
+.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:focus,
+.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a.open {
+  color: #ffffff;
+  background-color: [[setting:themeurlcolor]];
+}
+.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:focus i,
+.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a.open i {
+  color: #ffffff;
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:hover .dimmed_text {
   color: #eeeeee;
@@ -516,18 +525,22 @@ input[type="color"],
   color: [[setting:themeiconcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li.dropdown-submenu:hover > a {
-  color: [[setting:themenavcolor]];
+  color: #ffffff;
+  background-color: [[setting:themeurlcolor]];
+}
+.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li.dropdown-submenu:hover > a i {
+  color: inherit;
 }
 .navbar .navbar-inner .nav li.dropdown.open > .dropdown-toggle,
 .navbar .navbar-inner .nav li.dropdown.active > .dropdown-toggle,
 .navbar .navbar-inner .nav li.dropdown.open.active > .dropdown-toggle {
+  color: #ffffff;
   background-color: [[setting:themehovercolor]];
-  color: [[setting:themecolor]];
 }
 .navbar .navbar-inner .nav li.dropdown.open > .dropdown-toggle i,
 .navbar .navbar-inner .nav li.dropdown.active > .dropdown-toggle i,
 .navbar .navbar-inner .nav li.dropdown.open.active > .dropdown-toggle i {
-  color: [[setting:themecolor]];
+  color: inherit;
 }
 .navbar .navbar-inner .usermenu .dropdown img.userpicture {
   border: 1px solid [[setting:themenavcolor]];
@@ -546,7 +559,7 @@ input[type="color"],
 }
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message,
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification {
-  color: [[setting:themecolor]];
+  color: #ffffff;
   background-color: [[setting:themehovercolor]];
 }
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message img.userpicture,

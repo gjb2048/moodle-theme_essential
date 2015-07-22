@@ -3,6 +3,7 @@
 .essential-colours-alternative2 {
   color: ~"[[setting:alternativethemetextcolor2]]";
   h1, h2, h3, h4, h5, h6,
+  #adminsettings h3,
   .color,
   h1#title,
   select,
@@ -29,26 +30,44 @@
   }
 
   .breadcrumb-nav {
-    /** Some breadcrumb style **/
+    // Some breadcrumb style.
     ul.breadcrumb.style1 {
       li {
+        color: ~"[[setting:alternativethemenavcolor2]]";
         background-color: ~"[[setting:alternativethemecolor2]]";
-      }
-      li:after {
-        border-left: 30px solid ~"[[setting:alternativethemecolor2]]";;
-      }
-      li:hover {
-        background-color: ~"[[setting:themenavcolor]]";
-      }
-      li:hover:after {
-        border-left-color: ~"[[setting:themenavcolor]]" !important;
+        a {
+          color: inherit;
+          &:before {
+            color: inherit;
+          }
+          &:hover, &:focus {
+            color: ~"[[setting:alternativethemenavcolor2]]";
+          }
+        }
+        &:after {
+          border-left: 30px solid ~"[[setting:alternativethemecolor2]]";;
+        }
+        &:hover {
+          color: ~"[[setting:alternativethemenavcolor2]]";
+          background-color: ~"[[setting:alternativethemehovercolor2]]";
+        }
+        &:hover:after {
+          border-left-color: ~"[[setting:alternativethemehovercolor2]]";
+        }
+        &:first-of-type {
+          &:hover, &:focus {
+            a:before {
+              color: ~"[[setting:alternativethemenavcolor2]]";
+            }
+          }
+        }
       }
     }
 
     ul.breadcrumb.style2 {
       li {
         a {
-          color: ~"[[setting:alternativethemetextcolor2]]";
+          color: ~"[[setting:alternativethemenavcolor2]]";
           &:hover {
             color: ~"[[setting:alternativethemehovercolor2]]";
           }
@@ -66,8 +85,11 @@
   }
 
   #page-header {
-    h1#title, #headerlogo {
+    h1#title {
       color: ~"[[setting:alternativethemecolor2]]";
+    }
+    #headerlogo {
+      color: ~"[[setting:alternativethemeiconcolor2]]";
     }
   }
 
@@ -77,8 +99,10 @@
 
   .breadcrumb-button {
     input[type="submit"] {
+      color: ~"[[setting:alternativethemenavcolor2]]";
       background-color: ~"[[setting:alternativethemecolor2]]";
       &:hover {
+        color: ~"[[setting:alternativethemenavcolor2]]";
         background-color: ~"[[setting:alternativethemehovercolor2]]";
       }
     }
@@ -97,20 +121,52 @@
       border-top-color: ~"[[setting:alternativethemecolor2]]" !important;
       border-bottom: 1px solid ~"[[setting:alternativethemecolor2]]" !important;
       background-color: ~"[[setting:alternativethemecolor2]]" !important;
+
+      .nav > li.dropdown a,
+      .nav > li > a {
+        color: ~"[[setting:alternativethemenavcolor2]]";
+        i {
+          color: inherit;
+        }
+        &:hover {
+          color: ~"[[setting:alternativethemecolor2]]";
+          background-color: ~"[[setting:alternativethemenavcolor2]]";
+        }
+      }
+
       .nav {
         border-right-color: ~"[[setting:alternativethemecolor2]]";
         > li > a {
+          color: ~"[[setting:alternativethemenavcolor2]]";
           border-left-color: ~"[[setting:alternativethemecolor2]]";
+          i {
+            color: inherit;
+          }
           &:hover {
-            color: ~"[[setting:alternativethemecolor2]]";
+            color: ~"[[setting:alternativethemenavcolor2]]";
             background-color: ~"[[setting:alternativethemehovercolor2]]";
           }
         }
-        > li.dropdown ul.dropdown-menu > li > a {
-          color: ~"[[setting:alternativethemetextcolor2]]";
-          &:hover, &:focus, &.open {
-            color: ~"[[setting:themenavcolor]]";
-            background-color: ~"[[setting:alternativethemecolor2]]";
+        > li.dropdown ul.dropdown-menu {
+          > li > a {
+            color: ~"[[setting:alternativethemetextcolor2]]";
+            &:hover { 
+              color: @white; // TODO: Page background colour needs to be a setting.
+              background-color: ~"[[setting:alternativethemeurlcolor2]]";
+            }
+            &:focus, &.open {
+              color: @white; // TODO: Page background colour needs to be a setting.
+              background-color: ~"[[setting:alternativethemeurlcolor2]]";
+              i {
+                color: @white; // TODO: Page background colour needs to be a setting.
+              }
+            }
+            i {
+              color: ~"[[setting:alternativethemeiconcolor2]]";
+            }
+          }
+          li.dropdown-submenu:hover > a {
+            background-color: ~"[[setting:alternativethemeurlcolor2]]";
           }
         }
       }
@@ -118,8 +174,12 @@
       .dropdown-menu > li > a:focus,
       .dropdown-submenu:hover > a,
       .dropdown-submenu:focus > a {
-        color: ~"[[setting:themenavcolor]]";
+        color: ~"[[setting:alternativethemenavcolor2]]";
         background-color: ~"[[setting:alternativethemecolor2]]";
+      }
+
+      .brand {
+        color: ~"[[setting:alternativethemenavcolor2]]";
       }
     }
 
@@ -129,13 +189,18 @@
 
     .nav .active > a,
     .nav .active > a:hover,
-    .nav .active > a:focus,
-    .nav li.dropdown.open > .dropdown-toggle,
-    .nav li.dropdown.active > .dropdown-toggle,
-    .nav li.dropdown.open.active > .dropdown-toggle {
+    .nav .active > a:focus {
+      color: ~"[[setting:alternativethemenavcolor2]]";
       background-color: ~"[[setting:alternativethemecolor2]]" !important;
     }
-
+    .nav {
+      li.dropdown {
+        &.open > .dropdown-toggle, &.active > .dropdown-toggle, &.open.active > .dropdown-toggle {
+          color: @white; // TODO: Page background colour needs to be a setting.
+          background-color: ~"[[setting:alternativethemehovercolor2]]";
+        }
+      }
+    }
     .nav > li > a {
       border-left-color: ~"[[setting:alternativethemehovercolor2]]";
     }
@@ -148,11 +213,11 @@
             border-top: 1px dotted ~"[[setting:alternativethemecolor2]]";
             &:hover {
               .message, .notification {
-                color: ~"[[setting:alternativethemecolor1]]";
+                color: @white; // TODO: Page background colour needs to be a setting.
                 background-color: ~"[[setting:alternativethemehovercolor2]]";
                 img {
                   &.userpicture, &.profilepicture {
-                    box-shadow: 0 0 3px ~"[[setting:themenavcolor]]";
+                    box-shadow: 0 0 3px ~"[[setting:alternativethemenavcolor2]]";
                   }
                 }
               }
@@ -240,11 +305,11 @@
     .header .title h2 {
       color: ~"[[setting:alternativethemetextcolor2]]";
       &:before {
-        color: ~"[[setting:alternativethemecolor2]]";
+        color: ~"[[setting:alternativethemeiconcolor2]]";
       }
     }
     .icon {
-      color: @icon-colour;
+      color: ~"[[setting:alternativethemeiconcolor2]]";
     }
   }
 
@@ -271,7 +336,7 @@
   }
 
   .service i {
-    color: ~"[[setting:alternativethemecolor2]]";
+    color: ~"[[setting:alternativethemeiconcolor2]]";
   }
 
   #page-footer {
@@ -297,8 +362,43 @@
     background-color: ~"[[setting:alternativethemecolor2]]";
   }
 
-  .tree_item.branch:before {
-    color: @icon-colour;
+  p.tree_item {
+    &.leaf a {
+      > i {
+        color: ~"[[setting:alternativethemeiconcolor2]]";
+      }
+      &:hover, &:focus {
+        color: ~"[[setting:alternativethemehovercolor2]]";
+        > i {
+          color: inherit;
+        }
+      }
+    }
+    &.branch {
+      color: ~"[[setting:alternativethemeurlcolor2]]";
+      &:before {
+        color: ~"[[setting:alternativethemeiconcolor2]]";
+      }
+      &:hover, &:focus {
+        color: ~"[[setting:alternativethemehovercolor2]]";
+        &:before {
+          color: inherit;
+        }
+        a {
+          color: inherit;
+        }
+      }
+      &.emptybranch {
+        &:before {
+          color: ~"[[setting:alternativethemeiconcolor2]]";
+        }
+        &:hover, &:focus {
+          &:before {
+            color: ~"[[setting:alternativethemehovercolor2]]";
+          }
+        }
+      }
+    }
   }
 
   .afeature:hover {
@@ -306,7 +406,7 @@
   }
 
   .afmatter i {
-    color: ~"[[setting:alternativethemecolor2]]";
+    color: ~"[[setting:alternativethemeiconcolor2]]";
   }
 
   .myprofileitem.picture:hover {
@@ -333,15 +433,15 @@
     border-color: ~"[[setting:themeiconcolor]]";
     var {
       background-color: ~"[[setting:alternativethemecolor2]]";
-      color: ~"[[setting:themenavcolor]]";
+      color: ~"[[setting:alternativethemenavcolor2]]";
     }
     h2 {
       color: ~"[[setting:alternativethemetextcolor2]]";
       border-bottom-color: ~"[[setting:themeiconcolor]]";
       &:before {
         color: ~"[[setting:themeiconcolor]]";
+      }
     }
-  }
     span {
       color: ~"[[setting:alternativethemetextcolor2]]";
     }
@@ -415,6 +515,62 @@
   .moodle-core-dragdrop-draghandle:before, .moodle-core-dragdrop-draghandle a {
     color: ~"[[setting:alternativethemeurlcolor2]]";
   }
+  .menu a.menu-action,
+  .course-item-actions a,
+  .actions a {
+    > i {
+      color: ~"[[setting:alternativethemeiconcolor2]]";
+    }
+    &:hover {
+      > i {
+        color: ~"[[setting:alternativethemehovercolor2]]";
+      }
+    }
+  }
+  .moodle-actionmenu[data-enhanced].show {
+    .menu {
+      background-color: @white; // TODO: Page background colour needs to be a setting.
+       a {
+        color: ~"[[setting:alternativethemeurlcolor2]]";
+        &:hover {
+          color: @white; // TODO: Page background colour needs to be a setting.
+          background-color: ~"[[setting:alternativethemeurlcolor2]]";
+          .fa:before {
+            color: @white; // TODO: Page background colour needs to be a setting.
+          }
+        }
+      }
+    }
+  }
+  #page {
+    form {
+      .form-buttons,
+      table#form td.submit,
+      .form-buttons,
+      .path-admin .buttons,
+      #fitem_id_submitbutton,
+      .fp-content-center
+      form+div,
+      div.backup-section+form,
+      #fgroup_id_buttonar,
+      fieldset:last-of-type.hidden {
+        #fgroup_id_buttonar {
+          background-color: ~"[[setting:alternativethemecolor2]]";
+        }
+      }
+      #fitem_id_submitbutton {
+          background-color: ~"[[setting:alternativethemecolor2]]";
+      }
+    }
+  }
+
+  #page, #region-main {
+    form {
+      .form-buttons, #fgroup_id_buttonar {
+        background-color: ~"[[setting:alternativethemecolor2]]";
+      }
+    }
+  }
 }
 
 @media (max-width: 979px) {
@@ -423,11 +579,11 @@
       background-color: ~"[[setting:alternativethemecolor2]]";
       .dropdown-menu > li > a,
       .dropdown-menu > li > a:visited {
-        color: ~"[[setting:themenavcolor]]";
+        color: ~"[[setting:alternativethemenavcolor2]]";
         i {
-          color: ~"[[setting:alternativethemecolor2]]";
-          background-color: ~"[[setting:themenavcolor]]";
-          border: 1px solid ~"[[setting:themenavcolor]]";
+          color: inherit;
+          background-color: ~"[[setting:alternativethemenavcolor2]]";
+          border: 1px solid ~"[[setting:alternativethemenavcolor2]]";
           border-radius: 3px;
           margin-top: 2px;
           vertical-align: middle;
@@ -440,20 +596,20 @@
       .dropdown-submenu:hover > a,
       .dropdown-submenu:focus > a {
         color: ~"[[setting:alternativethemecolor2]]";
-        background-color: ~"[[setting:themenavcolor]]";
+        background-color: ~"[[setting:alternativethemenavcolor2]]";
       }
     }
     .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a {
       color: ~"[[setting:alternativethemecolor2]]";
       &:hover, &:focus {
         background-color: ~"[[setting:alternativethemecolor2]]";
-        color: ~"[[setting:themenavcolor]]";
+        color: ~"[[setting:alternativethemenavcolor2]]";
       }
     }
     .navbar .navbar-inner .nav-collapse .nav > li.dropdown a {
       &:hover, &:focus, &.open {
         background-color: ~"[[setting:alternativethemecolor2]]";
-        color: ~"[[setting:themenavcolor]]";
+        color: ~"[[setting:alternativethemenavcolor2]]";
       }
     }
     .navbar .navbar-inner {
@@ -462,7 +618,7 @@
       .dropdown-submenu:hover > a,
       .dropdown-submenu:focus > a {
         color: ~"[[setting:alternativethemecolor2]]";
-        background-color: ~"[[setting:themenavcolor]]";
+        background-color: ~"[[setting:alternativethemenavcolor2]]";
         background-image: none;
       }
     }

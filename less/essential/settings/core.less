@@ -2,14 +2,14 @@
 
 .moodle-actionmenu[data-enhanced].show {
   .menu {
-    background-color: #fff; // TODO: Page background colour needs to be a setting.
+    background-color: @white; // TODO: Page background colour needs to be a setting.
      a {
       color: ~"[[setting:themeurlcolor]]";
       &:hover {
-        color: ~"[[setting:themenavcolor]]";
-        background-color: ~"[[setting:themecolor]]";
+        color: @white; // TODO: Page background colour needs to be a setting.
+        background-color: ~"[[setting:themeurlcolor]]";
         .fa:before {
-          color: ~"[[setting:themenavcolor]]";
+          color: @white; // TODO: Page background colour needs to be a setting.
         }
       }
     }

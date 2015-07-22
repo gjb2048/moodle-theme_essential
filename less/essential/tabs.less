@@ -1,27 +1,15 @@
 /* @group Tabs */
 
-.nav-tabs > li, .nav-pills > li {
-  float: none;
-  display: inline-block;
-}
-
-.nav-tabs, .nav-pills {
-  text-align: center;
-}
-
 .nav > .disabled > a {
-  color: #555;
-  background: #fff;
-}
-
-.nav > .disabled > a:hover {
-  border: 1px solid #ddd;
+  color: @grayLight;
+  &:hover {
+    color: @grayLight;
+    border: 1px solid @grayLighter;
+  }
 }
 
 .nav-tabs > li > a {
-  cursor: default;
-  border: 1px solid #ddd;
-  border-bottom-color: transparent;
+  border: 1px solid @grayLighter;
 }
 
 /* @end */
