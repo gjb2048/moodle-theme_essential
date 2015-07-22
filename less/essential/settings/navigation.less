@@ -22,11 +22,11 @@
     .nav > li > a {
       color: ~"[[setting:themenavcolor]]";
       i {
-        color: ~"[[setting:themenavcolor]]";
+        color: inherit;
       }
       &:hover {
         color: ~"[[setting:themecolor]]";
-        background-color: ~"[[setting:themehovercolor]]";
+        background-color: ~"[[setting:themenavcolor]]";
         i {
           color: inherit;
         }
@@ -37,14 +37,14 @@
       > a {
         color: ~"[[setting:themeurlcolor]]";
         &:hover {
-          color: ~"[[setting:themecolor]]";
-          background-color: ~"[[setting:themehovercolor]]";
+          color: @white; // TODO: Page background colour needs to be a setting.
+          background-color: ~"[[setting:themeurlcolor]]";
         }
         &:focus, &.open {
-          color: ~"[[setting:themecolor]]";
-          background-color: ~"[[setting:themecolor]]";
+          color: @white; // TODO: Page background colour needs to be a setting.
+          background-color: ~"[[setting:themeurlcolor]]";
           i {
-            color: ~"[[setting:themenavcolor]]";
+            color: @white; // TODO: Page background colour needs to be a setting.
           }
         }
         &:hover .dimmed_text {
@@ -55,8 +55,8 @@
         }
       }
       &.dropdown-submenu:hover > a {
-        color: ~"[[setting:themecolor]]";
-        background-color: ~"[[setting:themehovercolor]]";
+        color: @white; // TODO: Page background colour needs to be a setting.
+        background-color: ~"[[setting:themeurlcolor]]";
         i {
           color: inherit;
         }
@@ -66,7 +66,7 @@
     .nav {
       li.dropdown {
         &.open > .dropdown-toggle, &.active > .dropdown-toggle, &.open.active > .dropdown-toggle {
-          color: ~"[[setting:themecolor]]";
+          color: @white; // TODO: Page background colour needs to be a setting.
           background-color: ~"[[setting:themehovercolor]]";
           i {
             color: inherit;
@@ -97,7 +97,7 @@
             border-top: 1px dotted ~"[[setting:themecolor]]";
             &:hover {
               .message, .notification {
-                color: ~"[[setting:themecolor]]";
+                color: @white; // TODO: Page background colour needs to be a setting.
                 background-color: ~"[[setting:themehovercolor]]";
                 img {
                   &.userpicture, &.profilepicture {

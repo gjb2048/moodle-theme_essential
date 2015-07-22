@@ -129,7 +129,8 @@
           color: inherit;
         }
         &:hover {
-          background-color: ~"[[setting:alternativethemehovercolor2]]";
+          color: ~"[[setting:alternativethemecolor2]]";
+          background-color: ~"[[setting:alternativethemenavcolor2]]";
         }
       }
 
@@ -150,14 +151,14 @@
           > li > a {
             color: ~"[[setting:alternativethemetextcolor2]]";
             &:hover { 
-              color: ~"[[setting:alternativethemenavcolor2]]";
-              background-color: ~"[[setting:alternativethemehovercolor2]]";
+              color: @white; // TODO: Page background colour needs to be a setting.
+              background-color: ~"[[setting:alternativethemeurlcolor2]]";
             }
             &:focus, &.open {
-              color: ~"[[setting:alternativethemenavcolor2]]";
-              background-color: ~"[[setting:alternativethemecolor2]]";
+              color: @white; // TODO: Page background colour needs to be a setting.
+              background-color: ~"[[setting:alternativethemeurlcolor2]]";
               i {
-                color: ~"[[setting:alternativethemeiconcolor2]]";
+                color: @white; // TODO: Page background colour needs to be a setting.
               }
             }
             i {
@@ -165,7 +166,7 @@
             }
           }
           li.dropdown-submenu:hover > a {
-            background-color: ~"[[setting:alternativethemecolor2]]";
+            background-color: ~"[[setting:alternativethemeurlcolor2]]";
           }
         }
       }
@@ -195,11 +196,8 @@
     .nav {
       li.dropdown {
         &.open > .dropdown-toggle, &.active > .dropdown-toggle, &.open.active > .dropdown-toggle {
-          color: ~"[[setting:alternativethemenavcolor2]]";
+          color: @white; // TODO: Page background colour needs to be a setting.
           background-color: ~"[[setting:alternativethemehovercolor2]]";
-          i {
-            color: ~"[[setting:alternativethemeiconcolor2]]";
-          }
         }
       }
     }
@@ -215,7 +213,7 @@
             border-top: 1px dotted ~"[[setting:alternativethemecolor2]]";
             &:hover {
               .message, .notification {
-                color: ~"[[setting:alternativethemecolor2]]";
+                color: @white; // TODO: Page background colour needs to be a setting.
                 background-color: ~"[[setting:alternativethemehovercolor2]]";
                 img {
                   &.userpicture, &.profilepicture {
@@ -531,14 +529,14 @@
   }
   .moodle-actionmenu[data-enhanced].show {
     .menu {
-      background-color: #fff; // TODO: Page background colour needs to be a setting.
+      background-color: @white; // TODO: Page background colour needs to be a setting.
        a {
         color: ~"[[setting:alternativethemeurlcolor2]]";
         &:hover {
-          color: ~"[[setting:alternativethemenavcolor2]]";
-          background-color: ~"[[setting:alternativethemehovercolor2]]";
+          color: @white; // TODO: Page background colour needs to be a setting.
+          background-color: ~"[[setting:alternativethemeurlcolor2]]";
           .fa:before {
-            color: ~"[[setting:alternativethemenavcolor2]]";
+            color: @white; // TODO: Page background colour needs to be a setting.
           }
         }
       }

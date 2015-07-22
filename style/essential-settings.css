@@ -298,17 +298,17 @@ ul.breadcrumb.style2 li a:hover {
 /* @end */
 /* @group Core */
 .moodle-actionmenu[data-enhanced].show .menu {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 .moodle-actionmenu[data-enhanced].show .menu a {
   color: [[setting:themeurlcolor]];
 }
 .moodle-actionmenu[data-enhanced].show .menu a:hover {
-  color: [[setting:themenavcolor]];
-  background-color: [[setting:themehovercolor]];
+  color: #ffffff;
+  background-color: [[setting:themeurlcolor]];
 }
 .moodle-actionmenu[data-enhanced].show .menu a:hover .fa:before {
-  color: [[setting:themenavcolor]];
+  color: #ffffff;
 }
 /* @end */
 /* @group Course */
@@ -516,12 +516,12 @@ input[type="color"],
 }
 .navbar .navbar-inner .nav > li.dropdown a i,
 .navbar .navbar-inner .nav > li > a i {
-  color: [[setting:themenavcolor]];
+  color: inherit;
 }
 .navbar .navbar-inner .nav > li.dropdown a:hover,
 .navbar .navbar-inner .nav > li > a:hover {
   color: [[setting:themecolor]];
-  background-color: [[setting:themehovercolor]];
+  background-color: [[setting:themenavcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown a:hover i,
 .navbar .navbar-inner .nav > li > a:hover i {
@@ -531,17 +531,17 @@ input[type="color"],
   color: [[setting:themeurlcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:hover {
-  color: [[setting:themecolor]];
-  background-color: [[setting:themehovercolor]];
+  color: #ffffff;
+  background-color: [[setting:themeurlcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:focus,
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a.open {
-  color: [[setting:themecolor]];
-  background-color: [[setting:themecolor]];
+  color: #ffffff;
+  background-color: [[setting:themeurlcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:focus i,
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a.open i {
-  color: [[setting:themenavcolor]];
+  color: #ffffff;
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:hover .dimmed_text {
   color: #eeeeee;
@@ -550,8 +550,8 @@ input[type="color"],
   color: [[setting:themeiconcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li.dropdown-submenu:hover > a {
-  color: [[setting:themecolor]];
-  background-color: [[setting:themehovercolor]];
+  color: #ffffff;
+  background-color: [[setting:themeurlcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li.dropdown-submenu:hover > a i {
   color: inherit;
@@ -559,7 +559,7 @@ input[type="color"],
 .navbar .navbar-inner .nav li.dropdown.open > .dropdown-toggle,
 .navbar .navbar-inner .nav li.dropdown.active > .dropdown-toggle,
 .navbar .navbar-inner .nav li.dropdown.open.active > .dropdown-toggle {
-  color: [[setting:themecolor]];
+  color: #ffffff;
   background-color: [[setting:themehovercolor]];
 }
 .navbar .navbar-inner .nav li.dropdown.open > .dropdown-toggle i,
@@ -584,7 +584,7 @@ input[type="color"],
 }
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message,
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification {
-  color: [[setting:themecolor]];
+  color: #ffffff;
   background-color: [[setting:themehovercolor]];
 }
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message img.userpicture,
