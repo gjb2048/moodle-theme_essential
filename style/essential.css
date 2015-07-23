@@ -18906,7 +18906,6 @@ body.path-admin-setting #page-footer {
 /* @end */
 /* @group Forms */
 fieldset textarea[cols],
-fieldset input[size],
 fieldset .form-item .form-description {
   width: 65.95744681%;
   *width: 65.90425532%;

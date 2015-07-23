@@ -195,6 +195,8 @@ New in 2.9.0.6
 - FIX: Course drag and drop icon tricky to use.
 - FIX: Action menu hover text colour.
 - FIX: Navbar and dropdown adjustments to make cohesive with alternative colours.
+- FIX: Drag and Drop Image Qtype Drop Zones entry boxes too big.
+- FIX: Quiz navigation block preview icon not FontAwesome instance.
 
 New in 2.9.0.5
 ==============

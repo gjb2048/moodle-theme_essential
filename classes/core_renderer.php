@@ -974,6 +974,7 @@ class theme_essential_core_renderer extends core_renderer {
             'i/move_2d' => 'arrows',
             'i/navigationitem' => 'file',
             'i/outcomes' => 'magic',
+            'i/preview' => 'search',
             'i/publish' => 'globe',
             'i/reload' => 'refresh',
             'i/report' => 'list-alt',
@@ -992,9 +993,9 @@ class theme_essential_core_renderer extends core_renderer {
             't/edit_menu' => 'cogs',
             'i/withsubcat' => 'indent',
             'i/permissions' => 'key',
-            't/cohort' => 'users',
             'i/assignroles' => 'lock',
             't/assignroles' => 'lock',
+            't/cohort' => 'users',
             't/delete' => 'times-circle',
             't/edit' => 'cog',
             't/hide' => 'eye',
@@ -1007,7 +1008,7 @@ class theme_essential_core_renderer extends core_renderer {
             't/sort_asc' => 'sort-asc',
             't/sort_desc' => 'sort-desc',
             't/grades' => 'th-list',
-            't/preview' => 'search',
+            't/preview' => 'search'
         );
         if (array_key_exists($icon, $icons)) {
             return "<i class=\"fa fa-$icons[$icon] icon\" title=\"$alt\">";
