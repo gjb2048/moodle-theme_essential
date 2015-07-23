@@ -1,4 +1,4 @@
-@import url('essential-rtl_ie9-blessed1.css?z=1437596425250');
+@import url('essential-rtl_ie9-blessed1.css?z=1437653485392');
 
 button .label,
 input.form-submit .label,
@@ -5599,7 +5599,6 @@ body.path-admin-setting #page-footer {
 /* @group Forms */
 
 fieldset textarea[cols],
-fieldset input[size],
 fieldset .form-item .form-description {
   width: 65.95744681%;
   *width: 65.90425532%;

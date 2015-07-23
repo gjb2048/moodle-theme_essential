@@ -192,6 +192,8 @@ New in 2.8.1.6
 - FIX: Action menu hover text colour.
 - FIX: Navbar and dropdown adjustments to make cohesive with alternative colours.
 - FIX: More navbar and breadcrumb colour fixes.
+- FIX: Drag and Drop Image Qtype Drop Zones entry boxes too big.
+- FIX: Quiz navigation block preview icon not FontAwesome instance.
 - NEW: Added alternative icon color setting.
 
 New in 2.8.1.5
