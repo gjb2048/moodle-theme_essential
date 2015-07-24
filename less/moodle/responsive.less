@@ -20,6 +20,7 @@
     .form-horizontal .controls {
         margin-left: @horizontalComponentOffset980;
     }
+
     #page-mod-forum-search.dir-lrt .c1 {
         margin-right: @horizontalComponentOffset980;
     }
@@ -45,14 +46,17 @@
     .file-picker .fp-login-form .fp-login-input label {
         text-align: left;
     }
+
     .file-picker .fp-content form td {
         display: block;
         width: 100%;
         text-align: left;
     }
+
     .fp-content .mdl-right {
         text-align: left;
     }
+
     .fp-repo-items .fp-navbar {
         border-top: 1px solid rgb(187, 187, 187);
     }
@@ -94,10 +98,12 @@
     .form-horizontal .controls {
         margin-left: @horizontalComponentOffset1200;
     }
+
     .path-admin .buttons,
     .form-buttons {
         padding-left: @horizontalComponentOffset1200;
     }
+
     // Core empty block regions.
     .fluid-span (@columns) {
         .fluid-span-full(@columns, @fluidGridColumnWidth1200, @fluidGridGutterWidth1200);
@@ -229,7 +235,7 @@
     .course-content .section .activity .commands {
         text-align: right;
     }
-    // Handles display of the activity chooser on small screens.
+    /** Handles display of the activity chooser on small screens **/
     .jsenabled .choosercontainer #chooseform .alloptions {
         max-width: 100%;
     }
@@ -387,12 +393,12 @@
                 // Add padding to first-level links.
                 > li > a {
                     padding-left: 20px;
-                    border-radius: 0px;
+                    border-radius: 0;
                 }
                 .dropdown-menu {
-                    margin: 0px 0px 0px 15px;
+                    margin: 0 0 0 15px;
                     li > a {
-                        border-radius: 0px;
+                        border-radius: 0;
                     }
                 }
             }
@@ -423,7 +429,7 @@
                         }
                         &.open {
                             > a {
-                                background: @navbarBackground;
+                                background-color: @navbarBackground;
                             }
                             > .dropdown-menu,
                             .open > .dropdown-menu {
@@ -435,40 +441,49 @@
                 .divider {
                     width: auto;
                     display: block;
-                    height: 0px;
+                    height: 0;
                     margin: 4px 1px;
-                    border-left: 0px none;
-                    border-right: 0px none;
+                    border-left: 0 none;
+                    border-right: 0 none;
                     border-top: 1px solid @navbarBorder;
                     border-bottom: 1px solid @navbarBackgroundHighlight;
                 }
             }
         }
-        &.navbar-inverse {
-            .nav-collapse.active {
-                border-top-color: @navbarInverseBorder;
-                .nav,
-                .nav .dropdown-menu {
-                    .dropdown-submenu {
-                        .dropdown-toggle {
-                            &:after {
-                                border-top-color: @navbarInverseBorder;
-                            }
+    }
+
+    .navbar-inverse {
+        .nav-collapse.active {
+            border-top-color: @navbarInverseBorder;
+            .nav,
+            .nav .dropdown-menu {
+                .dropdown-submenu {
+                    .dropdown-toggle {
+                        &:after {
+                            border-top-color: @navbarInverseBorder;
                         }
+                    }
+                    &.open {
+                        > a {
+                            background-color: @navbarInverseBackground;
+                        }
+                    }
+
+                    &:hover {
                         &.open {
                             > a {
                                 background-color: @navbarInverseBackground;
                             }
                         }
-
-                        &:hover {
-                            &.open {
-                                > a {
-                                    background: @navbarInverseBackground;
-                                }
-                            }
-                        }
                     }
+                }
+                .divider {
+                    width: auto;
+                    display: block;
+                    height: 0;
+                    margin: 4px 1px;
+                    border-top: 1px solid @navbarInverseBackground;
+                    border-bottom: 1px solid lighten(@navbarInverseBackground, 25%);
                 }
             }
         }
@@ -637,7 +652,6 @@
         }
     }
 }
-
 
 // File Picker.
 @media (max-width: 768px) {

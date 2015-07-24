@@ -1036,6 +1036,9 @@ a.autolink.glossary:hover {
 .collapsibleregioncaption {
   white-space: nowrap;
 }
+.pagelayout-mydashboard.jsenabled .collapsibleregioncaption {
+  cursor: pointer;
+}
 .collapsibleregioncaption img {
   vertical-align: middle;
 }
@@ -13663,7 +13666,4 @@ div#dock {
   border: 1px solid #ccc;
   border-radius: 4px;
   max-width: none;
-}
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages {
-  margin: 20px 25px;
 }

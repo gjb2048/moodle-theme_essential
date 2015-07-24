@@ -1,4 +1,8 @@
-@import url('essential-rtl_ie9-blessed1.css?z=1437655078750');
+@import url('essential-rtl_ie9-blessed1.css?z=1437754614910');
+
+.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages {
+  margin: 20px 25px;
+}
 
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages .chat-event.course-theme {
   text-align: center;
@@ -3181,6 +3185,8 @@ body.has_dock div#dock {
     text-align: left;
   }
 
+  /** Handles display of the activity chooser on small screens **/
+
   .jsenabled .choosercontainer #chooseform .alloptions {
     max-width: 100%;
   }
@@ -3355,15 +3361,15 @@ body.has_dock div#dock {
 
   .navbar .nav-collapse.active > .nav > li > a {
     padding-right: 20px;
-    border-radius: 0px;
+    border-radius: 0;
   }
 
   .navbar .nav-collapse.active > .nav .dropdown-menu {
-    margin: 0px 15px 0px 0px;
+    margin: 0 15px 0 0;
   }
 
   .navbar .nav-collapse.active > .nav .dropdown-menu li > a {
-    border-radius: 0px;
+    border-radius: 0;
   }
 
   .navbar .nav-collapse.active .nav .dropdown-submenu .dropdown-toggle:after,
@@ -3394,7 +3400,7 @@ body.has_dock div#dock {
 
   .navbar .nav-collapse.active .nav .dropdown-submenu:hover.open > a,
   .navbar .nav-collapse.active .nav .dropdown-menu .dropdown-submenu:hover.open > a {
-    background: #f2f2f2;
+    background-color: #f2f2f2;
   }
 
   .navbar .nav-collapse.active .nav .dropdown-submenu:hover.open > .dropdown-menu,
@@ -3408,31 +3414,41 @@ body.has_dock div#dock {
   .navbar .nav-collapse.active .nav .dropdown-menu .divider {
     width: auto;
     display: block;
-    height: 0px;
+    height: 0;
     margin: 4px 1px;
-    border-right: 0px none;
-    border-left: 0px none;
+    border-right: 0 none;
+    border-left: 0 none;
     border-top: 1px solid #d4d4d4;
     border-bottom: 1px solid #ffffff;
   }
 
-  .navbar.navbar-inverse .nav-collapse.active {
+  .navbar-inverse .nav-collapse.active {
     border-top-color: #252525;
   }
 
-  .navbar.navbar-inverse .nav-collapse.active .nav .dropdown-submenu .dropdown-toggle:after,
-  .navbar.navbar-inverse .nav-collapse.active .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
+  .navbar-inverse .nav-collapse.active .nav .dropdown-submenu .dropdown-toggle:after,
+  .navbar-inverse .nav-collapse.active .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
     border-top-color: #252525;
   }
 
-  .navbar.navbar-inverse .nav-collapse.active .nav .dropdown-submenu.open > a,
-  .navbar.navbar-inverse .nav-collapse.active .nav .dropdown-menu .dropdown-submenu.open > a {
+  .navbar-inverse .nav-collapse.active .nav .dropdown-submenu.open > a,
+  .navbar-inverse .nav-collapse.active .nav .dropdown-menu .dropdown-submenu.open > a {
     background-color: #111111;
   }
 
-  .navbar.navbar-inverse .nav-collapse.active .nav .dropdown-submenu:hover.open > a,
-  .navbar.navbar-inverse .nav-collapse.active .nav .dropdown-menu .dropdown-submenu:hover.open > a {
-    background: #111111;
+  .navbar-inverse .nav-collapse.active .nav .dropdown-submenu:hover.open > a,
+  .navbar-inverse .nav-collapse.active .nav .dropdown-menu .dropdown-submenu:hover.open > a {
+    background-color: #111111;
+  }
+
+  .navbar-inverse .nav-collapse.active .nav .divider,
+  .navbar-inverse .nav-collapse.active .nav .dropdown-menu .divider {
+    width: auto;
+    display: block;
+    height: 0;
+    margin: 4px 1px;
+    border-top: 1px solid #111111;
+    border-bottom: 1px solid #515151;
   }
 }
 
@@ -7985,10 +8001,6 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
     clear: both;
   }
 
-  .navbar-inner .nav-collapse.collapse.in {
-    overflow: visible;
-  }
-
   .navbar-inner .nav-collapse .nav > li > a {
     margin-bottom: 0px;
     border-radius: 0;
@@ -8215,13 +8227,7 @@ label {
 
 table th,
 table td {
-  padding-right: 20px;
   word-wrap: break-word;
-}
-
-table th:first-of-type,
-table td:first-of-type {
-  padding-right: 0px;
 }
 
 fieldset {

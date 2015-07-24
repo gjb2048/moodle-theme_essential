@@ -189,14 +189,19 @@ can be really useful in visualising the issue along with any files you consider 
 
 New in 2.9.0.6
 ==============
-- FIX Issue #514: Quiz feedback colours are not accessible.
-- FIX Issue #515: Gradebook Tabs Not Left Justified.
+- FIX: Issue #514: Quiz feedback colours are not accessible.
+- FIX: Issue #515: Gradebook Tabs Not Left Justified.
+- FIX: Issue #517: Mobile nav button overflow.
+- FIX: Issue #517: Lesson table padding removed.
 - FIX: #adminsettings h3 colour in alternative colours.
 - FIX: Course drag and drop icon tricky to use.
 - FIX: Action menu hover text colour.
 - FIX: Navbar and dropdown adjustments to make cohesive with alternative colours.
 - FIX: Drag and Drop Image Qtype Drop Zones entry boxes too big.
 - FIX: Quiz navigation block preview icon not FontAwesome instance.
+- FIX: MDL-50869.
+- NEW: MDL-37832.
+- NEW: MDL-50711.
 
 New in 2.9.0.5
 ==============
