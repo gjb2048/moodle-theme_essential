@@ -57,7 +57,6 @@
         text-align: left;
     }
 
-
     .fp-repo-items .fp-navbar {
         border-top: 1px solid rgb(187, 187, 187);
     }
@@ -352,6 +351,18 @@
     }
     .nav-collapse.active {
         height: auto;
+        .usermenu .moodle-actionmenu[data-enhanced] {
+            .toggle-display {
+                display: none;
+            }
+            .menu {
+                display: block;
+
+                li {
+                    margin: 0 0.5em;
+                }
+            }
+        }
     }
     .path-mod-data .box > table > tbody > tr > td {
         display: block;
@@ -384,12 +395,12 @@
                 // Add padding to first-level links.
                 > li > a {
                     padding-left: 20px;
-                    border-radius: 0px;
+                    border-radius: 0;
                 }
                 .dropdown-menu {
-                    margin: 0px 0px 0px 15px;
+                    margin: 0 0 0 15px;
                     li > a {
-                        border-radius: 0px;
+                        border-radius: 0;
                     }
                 }
             }
@@ -420,7 +431,7 @@
                         }
                         &.open {
                             > a {
-                                background: @navbarBackground;
+                                background-color: @navbarBackground;
                             }
                             > .dropdown-menu,
                             .open > .dropdown-menu {
@@ -429,33 +440,52 @@
                         }
                     }
                 }
+                .divider {
+                    width: auto;
+                    display: block;
+                    height: 0;
+                    margin: 4px 1px;
+                    border-left: 0 none;
+                    border-right: 0 none;
+                    border-top: 1px solid @navbarBorder;
+                    border-bottom: 1px solid @navbarBackgroundHighlight;
+                }
             }
         }
-        &.navbar-inverse {
-            .nav-collapse.active {
-                border-top-color: @navbarInverseBorder;
-                .nav,
-                .nav .dropdown-menu {
-                    .dropdown-submenu {
-                        .dropdown-toggle {
-                            &:after {
-                                border-top-color: @navbarInverseBorder;
-                            }
+    }
+
+    .navbar-inverse {
+        .nav-collapse.active {
+            border-top-color: @navbarInverseBorder;
+            .nav,
+            .nav .dropdown-menu {
+                .dropdown-submenu {
+                    .dropdown-toggle {
+                        &:after {
+                            border-top-color: @navbarInverseBorder;
                         }
+                    }
+                    &.open {
+                        > a {
+                            background-color: @navbarInverseBackground;
+                        }
+                    }
+
+                    &:hover {
                         &.open {
                             > a {
                                 background-color: @navbarInverseBackground;
                             }
                         }
-
-                        &:hover {
-                            &.open {
-                                > a {
-                                    background: @navbarInverseBackground;
-                                }
-                            }
-                        }
                     }
+                }
+                .divider {
+                    width: auto;
+                    display: block;
+                    height: 0;
+                    margin: 4px 1px;
+                    border-top: 1px solid @navbarInverseBackground;
+                    border-bottom: 1px solid lighten(@navbarInverseBackground, 25%);
                 }
             }
         }

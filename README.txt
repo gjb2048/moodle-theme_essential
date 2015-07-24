@@ -185,6 +185,8 @@ New in 2.8.1.6
 ==============
 - FIX: Issue #514: Quiz feedback colours are not accessible.
 - FIX: Issue #515: Gradebook Tabs Not Left Justified.
+- FIX: Issue #517: Mobile nav button overflow.
+- FIX: Issue #517: Lesson table padding removed.
 - FIX: No 'loginas' URL when logged in as another user, ref: https://moodle.org/mod/forum/discuss.php?d=315453.
 - FIX: More colour adjustments to navigation menus with alternative colours.
 - FIX: #adminsettings h3 colour in alternative colours.
@@ -194,6 +196,9 @@ New in 2.8.1.6
 - FIX: More navbar and breadcrumb colour fixes.
 - FIX: Drag and Drop Image Qtype Drop Zones entry boxes too big.
 - FIX: Quiz navigation block preview icon not FontAwesome instance.
+- FIX: MDL-50869.
+- NEW: MDL-37832.
+- NEW: MDL-50711.
 - NEW: Added alternative icon color setting.
 
 New in 2.8.1.5
