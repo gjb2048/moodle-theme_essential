@@ -1,4 +1,4 @@
-@import url('essential-rtl_ie9-blessed1.css?z=1437754614910');
+@import url('essential-rtl_ie9-blessed1.css?z=1437856474481');
 
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages {
   margin: 20px 25px;
@@ -7940,11 +7940,6 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
 /* @group Responsive */
 
 @media (min-width: 1200px) {
-  .maintenance #region-main,
-  #page-login-index #region-main {
-    width: 100% !important;
-  }
-
   #page-mod-quiz-edit ul.slots li.section li.activity .activityinstance {
     width: 90%;
   }
@@ -7955,8 +7950,6 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
 }
 
 @media (max-width: 979px) {
-  font-size: 13px !important;
-  
   h1#title {
     font-size: 2.5em;
     line-height: 35px;

@@ -193,9 +193,5 @@ $THEME->layouts = array(
     ),
 );
 
-if (core_useragent::is_ie() && !core_useragent::check_ie_version('9.0')) {
-    $THEME->javascripts[] = 'html5shiv';
-}
-
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->csspostprocess = 'theme_essential_process_css';
