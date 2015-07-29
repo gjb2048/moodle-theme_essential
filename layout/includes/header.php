@@ -127,7 +127,7 @@ require_once($OUTPUT->get_include_file('pagesettings'));
             <div class="container-fluid navbar-inner">
                 <div class="row-fluid">
                     <div class="custommenus pull-<?php echo ($left) ? 'left' : 'right'; ?>">
-                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target="#essentialmenus">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -145,7 +145,7 @@ require_once($OUTPUT->get_include_file('pagesettings'));
                             <?php echo $OUTPUT->custom_menu_goto_bottom(); ?>
                         </div>
                     </div>
-                        <div class="nav-collapse collapse pull-<?php echo ($left) ? 'left' : 'right'; ?>">
+                        <div id='essentialmenus' class="nav-collapse collapse pull-<?php echo ($left) ? 'left' : 'right'; ?>">
                             <div id="custom_menu_language">
                                 <?php echo $OUTPUT->custom_menu_language(); ?>
                             </div>

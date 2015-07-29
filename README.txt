@@ -181,12 +181,17 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
+New in 2.8.1.7
+==============
+- FIX: Regression of initital fix for issue 517 whereby dropdown menus cannot be seen over the carousel when screen width is less
+       than the @navbarCollapseWidth, see: https://moodle.org/mod/forum/discuss.php?d=317306#p1272655.
+
 New in 2.8.1.6
 ==============
 - FIX: Issue #514: Quiz feedback colours are not accessible.
 - FIX: Issue #515: Gradebook Tabs Not Left Justified.
 - FIX: Issue #517: Mobile nav button overflow.
-- FIX: Issue #517: Lesson table padding removed.
+- FIX: Issue #518: Lesson table padding removed.
 - FIX: No 'loginas' URL when logged in as another user, ref: https://moodle.org/mod/forum/discuss.php?d=315453.
 - FIX: More colour adjustments to navigation menus with alternative colours.
 - FIX: #adminsettings h3 colour in alternative colours.

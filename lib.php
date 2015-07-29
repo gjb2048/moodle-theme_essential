@@ -751,4 +751,5 @@ function theme_essential_page_init(moodle_page $page) {
     $page->requires->jquery_plugin('breadcrumb', 'theme_essential');
     $page->requires->jquery_plugin('fitvids', 'theme_essential');
     $page->requires->jquery_plugin('antigravity', 'theme_essential');
+    $page->requires->jquery_plugin('essentialcustom', 'theme_essential');
 }
