@@ -193,13 +193,15 @@ New in 2.9.0.7
 - FIX: Removed redundant maintenance selector.
 - FIX: Removed login page selector.
 - FIX: JavaScript tidy up and remove html5shiv support for IE8.
+- FIX: Regression of initital fix for issue 517 whereby dropdown menus cannot be seen over the carousel when screen width is less
+       than the @navbarCollapseWidth, see: https://moodle.org/mod/forum/discuss.php?d=317306#p1272655.
 
 New in 2.9.0.6
 ==============
 - FIX: Issue #514: Quiz feedback colours are not accessible.
 - FIX: Issue #515: Gradebook Tabs Not Left Justified.
 - FIX: Issue #517: Mobile nav button overflow.
-- FIX: Issue #517: Lesson table padding removed.
+- FIX: Issue #518: Lesson table padding removed.
 - FIX: #adminsettings h3 colour in alternative colours.
 - FIX: Course drag and drop icon tricky to use.
 - FIX: Action menu hover text colour.

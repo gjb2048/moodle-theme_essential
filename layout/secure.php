@@ -70,25 +70,6 @@ echo $OUTPUT->doctype();
 
 <footer>
     <a href="#top" class="back-to-top" ><i class="fa fa-angle-up "></i></a>
-    <script type="text/javascript">
-        jQuery(document).ready(function () {
-            <?php
-            if (\theme_essential\toolbox::not_lte_ie9()) {
-              echo "jQuery('#essentialnavbar').affix({";
-              echo "offset: {";
-              echo "top: $('#page-header').height()";
-              echo "}";
-              echo "});";
-              if ($breadcrumbstyle == '1') {
-                  echo "$('.breadcrumb').jBreadCrumb();";
-              }
-            }
-            if (\theme_essential\toolbox::get_setting('fitvids')) {
-                echo "$('#page').fitVids();";
-            }
-            ?>
-        });
-    </script>
 </footer>
 
 <?php echo $OUTPUT->standard_end_of_body_html(); ?>
