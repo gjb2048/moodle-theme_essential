@@ -177,10 +177,10 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
 
 function theme_essential_serve_css($filename) {
     global $CFG;
-    if (!empty($CFG->themedir)) {
+
+    $thestylepath = $CFG->dirroot . '/theme/essential/style/';
+    if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/essential/style/")) {
         $thestylepath = $CFG->themedir . '/essential/style/';
-    } else {
-        $thestylepath = $CFG->dirroot . '/theme/essential/style/';
     }
     $thesheet = $thestylepath . $filename;
 
