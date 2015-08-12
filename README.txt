@@ -195,6 +195,7 @@ New in 2.9.0.7
 - FIX: JavaScript tidy up and remove html5shiv support for IE8.
 - FIX: Regression of initital fix for issue 517 whereby dropdown menus cannot be seen over the carousel when screen width is less
        than the @navbarCollapseWidth, see: https://moodle.org/mod/forum/discuss.php?d=317306#p1272655.
+- NEW: Update to FontAwesome 4.4.0.
 
 New in 2.9.0.6
 ==============
