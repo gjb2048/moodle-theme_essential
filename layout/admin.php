@@ -37,6 +37,7 @@ $footerregion = essential_has_footer_region(); // In pagesettings.php.
             class="breadcrumb-button pull-<?php echo ($left) ? 'right' : 'left'; ?>"><?php echo $OUTPUT->page_heading_button(); ?></nav>
     </div>
     <section role="main-content">
+        <?php echo $OUTPUT->version_alert(); ?>
         <!-- Start Main Regions -->
         <div id="page-content" class="row-fluid">
             <div id="<?php echo $regionbsid ?>" class="span12">

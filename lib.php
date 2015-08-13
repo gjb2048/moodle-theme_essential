@@ -25,6 +25,13 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+/**
+ * Returns the value of the given setting in the desired format.
+ *
+ * @param string $setting The setting name to get.
+ * @param bool|string $format false for as is, format_text for text and format_html for html.
+ * @return string|bool The value of the setting or false if empty.
+ */
 function theme_essential_get_setting($setting, $format = false) {
     global $CFG;
     require_once($CFG->dirroot . '/lib/weblib.php');
@@ -59,14 +66,14 @@ function theme_essential_set_logo($css, $logo) {
 /**
  * Serves any files associated with the theme settings.
  *
- * @param stdClass $course
- * @param stdClass $cm
- * @param context $context
- * @param string $filearea
- * @param array $args
- * @param bool $forcedownload
- * @param array $options
- * @return bool
+ * @param stdClass $course.
+ * @param stdClass $cm.
+ * @param context $context.
+ * @param string $filearea.
+ * @param array $args.
+ * @param bool $forcedownload.
+ * @param array $options.
+ * @return bool.
  */
 function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
     static $theme;
@@ -170,11 +177,11 @@ function theme_essential_send_cached_css($path, $filename, $lastmodified, $etag)
 }
 
 /**
- * Set the width on the container-fluid div
+ * Set the width on the container-fluid div.
  *
- * @param string $css
- * @param mixed $pagewidth
- * @return string
+ * @param string $css.
+ * @param mixed $pagewidth.
+ * @return string.
  */
 function theme_essential_set_pagewidth($css, $pagewidth) {
     $tag = '[[setting:pagewidth]]';
@@ -193,6 +200,13 @@ function theme_essential_set_pagewidth($css, $pagewidth) {
     return $css;
 }
 
+/**
+ * Convert a colour hex string to an opacity supporting rgba one.
+ *
+ * @param string $hex Hex RGB string.
+ * @param float $opacity between 0.0 and 1.0.
+ * @return string.
+ */
 function theme_essential_hex2rgba($hex, $opacity) {
     $hex = str_replace("#", "", $hex);
 
@@ -217,17 +231,18 @@ function theme_essential_hex2rgba($hex, $opacity) {
  */
 function theme_essential_set_customcss($css, $customcss) {
     $tag = '[[setting:customcss]]';
+    $customcss = str_replace('thecredit', 'themepagefooter', $customcss);
     $replacement = $customcss;
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
 
 function theme_essential_process_css($css, $theme) {
-    // Set the theme width
+    // Set the theme width.
     $pagewidth = theme_essential_get_setting('pagewidth');
     $css = theme_essential_set_pagewidth($css, $pagewidth);
 
-    // Set the theme font
+    // Set the theme font.
     $headingfont = theme_essential_get_setting('fontnameheading');
     $bodyfont = theme_essential_get_setting('fontnamebody');
 
@@ -268,7 +283,7 @@ function theme_essential_process_css($css, $theme) {
     $footercolor = theme_essential_hex2rgba(theme_essential_get_setting('footercolor'), '0.95');
     $css = theme_essential_set_color($css, $footercolor, '[[setting:footercolor]]', '#555555');
 
-    // Set the footer text color.
+    // Set the footer text colour.
     $footertextcolor = theme_essential_get_setting('footertextcolor');
     $css = theme_essential_set_color($css, $footertextcolor, '[[setting:footertextcolor]]', '#bbbbbb');
 
@@ -280,7 +295,7 @@ function theme_essential_process_css($css, $theme) {
     $footersepcolor = theme_essential_get_setting('footersepcolor');
     $css = theme_essential_set_color($css, $footersepcolor, '[[setting:footersepcolor]]', '#313131');
 
-    // Set the footer URL color.
+    // Set the footer URL colour.
     $footerurlcolor = theme_essential_get_setting('footerurlcolor');
     $css = theme_essential_set_color($css, $footerurlcolor, '[[setting:footerurlcolor]]', '#217a94');
 
@@ -360,11 +375,11 @@ function theme_essential_process_css($css, $theme) {
     $pagebgstyle = theme_essential_get_setting('pagebackgroundstyle');
     $css = theme_essential_set_pagebackgroundstyle($css, $pagebgstyle);
 
-    // Set Marketing Image Height.
+    // Set marketing image height.
     $marketingheight = theme_essential_get_setting('marketingheight');
     $css = theme_essential_set_marketingheight($css, $marketingheight);
 
-    // Set Marketing Images.
+    // Set marketing images.
     $setting = 'marketing1image';
     $marketingimage = $theme->setting_file_url($setting, $setting);
     $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
@@ -377,7 +392,7 @@ function theme_essential_process_css($css, $theme) {
     $marketingimage = $theme->setting_file_url($setting, $setting);
     $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
 
-    // Finally return processed CSS
+    // Finally return processed CSS.
     return $css;
 }
 
@@ -401,7 +416,7 @@ function theme_essential_set_fontfiles($css, $type, $fontname) {
     if (theme_essential_get_setting('fontselect') === '3') {
         static $theme;
         if (empty($theme)) {
-            $theme = theme_config::load('essential');  // $theme needs to be us for child themes.
+            $theme = theme_config::load('essential');  // The $theme static variable needs to be us for child themes.
         }
 
         $fontfiles = array();
@@ -615,7 +630,7 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
 
     // Can we view the section in question?
     if (!($sectioninfo = $modinfo->get_section_info($displaysection))) {
-        // This section doesn't exist
+        // This section doesn't exist.
         print_error('unknowncoursesection', 'error', null, $course->fullname);
         return false;
     }
@@ -630,7 +645,7 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
         return false;
     }
 
-    // Copy activity clipboard..
+    // Copy activity clipboard.
     echo $that->course_activity_clipboard($course, $displaysection);
     $thissection = $modinfo->get_section_info(0);
     if ($thissection->summary or ! empty($modinfo->sections[0]) or $PAGE->user_is_editing()) {
@@ -642,7 +657,7 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
         echo $that->end_section_list();
     }
 
-    // Start single-section div
+    // Start single-section div.
     echo html_writer::start_tag('div', array('class' => 'single-section'));
 
     // The requested section page.
@@ -651,7 +666,7 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
     // Title with section navigation links.
     $sectionnavlinks = $that->get_nav_links($course, $modinfo->get_section_info_all(), $displaysection);
 
-    // Construct navigation links
+    // Construct navigation links.
     $sectionnav = html_writer::start_tag('nav', array('class' => 'section-navigation'));
     $sectionnav .= $sectionnavlinks['previous'];
     $sectionnav .= $sectionnavlinks['next'];
@@ -659,13 +674,13 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
     $sectionnav .= html_writer::end_tag('nav');
     $sectionnav .= html_writer::tag('div', '', array('class' => 'bor'));
 
-    // Output Section Navigation
+    // Output section navigation.
     echo $sectionnav;
 
-    // Define the Section Title
+    // Define the section title.
     $sectiontitle = '';
     $sectiontitle .= html_writer::start_tag('div', array('class' => 'section-title'));
-    // Title attributes
+    // Title attributes.
     $titleattr = 'title';
     if (!$thissection->visible) {
         $titleattr .= ' dimmed_text';
@@ -675,7 +690,7 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
     $sectiontitle .= html_writer::end_tag('h3');
     $sectiontitle .= html_writer::end_tag('div');
 
-    // Output the Section Title.
+    // Output the section title.
     echo $sectiontitle;
 
     // Now the list of sections..

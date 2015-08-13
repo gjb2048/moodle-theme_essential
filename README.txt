@@ -181,6 +181,13 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
+New in 2.8.1.8
+==============
+- FIX: Issue #523: Forum grids do not wrap.
+- NEW: Issue #524: MDL-48202.
+- NEW: Update to FontAwesome 4.4.0.
+- NEW: Version alert on admin pages if installed on wrong Moodle version as per 'Required version of Moodle' above.
+
 New in 2.8.1.7
 ==============
 - FIX: Regression of initital fix for issue 517 whereby dropdown menus cannot be seen over the carousel when screen width is less

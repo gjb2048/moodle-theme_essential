@@ -1571,6 +1571,25 @@ class theme_essential_core_renderer extends core_renderer {
     }
 
     /**
+     * Returns the alert markup if outside of the Moodle version supported as can cause issues.
+     */
+    public function version_alert() {
+        global $CFG;
+        $result = '';
+
+        if (($CFG->version < 2014111000.00) || ($CFG->version >= 2015051100.00)) {
+            $result = '<div class="useralerts alert alert-error">';
+            $result .= '<a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>';
+            $result .= '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-warning fa-stack-1x fa-inverse"></i></span>';
+            $result .= '<span class="title">'.get_string('versionalerttitle', 'theme_essential').'</span><br />'.
+                       get_string('versionalerttext1', 'theme_essential').'<br />'.get_string('versionalerttext2', 'theme_essential');
+            $result .= '</div>';
+        }
+
+        return $result;
+    }
+
+    /**
      * States if the browser is not IE9 or less.
      */
     public function theme_essential_not_lte_ie9() {
