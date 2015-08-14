@@ -24,23 +24,6 @@
                 display: none;
             }
         }
-        .commands {
-            clear: both;
-            text-align: right;
-            display: block;
-            padding: 3px 15px;
-
-            > a {
-                margin: 0 3px;
-            }
-            .icon img {
-                width: 12px;
-                height: 12px;
-            }
-            img.actionmenu {
-                width: auto;
-            }
-        }
     }
     .content {
         padding: 4px 14px;
@@ -95,6 +78,29 @@
     &.list_block .unlist > li > .column {
         display: inline-block;
         .ie7-inline-block();
+    }
+}
+.editing {
+    .block {
+        .header {
+            .commands {
+                clear: both;
+                text-align: right;
+                display: block;
+                padding: 3px 15px;
+
+                > a {
+                    margin: 0 3px;
+                }
+                .icon img {
+                    width: 12px;
+                    height: 12px;
+                }
+                img.actionmenu {
+                    width: auto;
+                }
+            }
+        }
     }
 }
 

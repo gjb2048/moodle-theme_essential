@@ -50,8 +50,11 @@
                 float: left;
                 clear: both;
             }
-            &.collapse.in.shown {
-                overflow: visible;
+            &[shown~="yes"] {
+                overflow-y: visible;
+            }
+            &[shown~="no"] {
+                overflow-y: hidden;
             }
             .nav > li > a {
                 margin-bottom: 0px;

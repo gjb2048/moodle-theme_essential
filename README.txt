@@ -86,6 +86,7 @@ Mihai Bojonca, TCM International Institute.
 Guido Hornig, actXcellence http://actxcellence.de
 Delvon Forrester, Esparanza co uk
 iZone
+Anis Jradah
 
 Customisation
 =============
@@ -189,6 +190,11 @@ can be really useful in visualising the issue along with any files you consider 
 
 New in 2.9.0.7
 ==============
+- FIX: Issue #523: Forum grids do not wrap.
+- NEW: Issue #524: MDL-48202.
+- NEW: Issue #525: MDL-46860.
+- NEW: Issue #526: MDL-50533.
+- FIX: Issue #528: Repeated show / hide of custom menu fails when small screen.
 - FIX: Misplaced CSS attribute with no selector.
 - FIX: Removed redundant maintenance selector.
 - FIX: Removed login page selector.
@@ -196,6 +202,7 @@ New in 2.9.0.7
 - FIX: Regression of initital fix for issue 517 whereby dropdown menus cannot be seen over the carousel when screen width is less
        than the @navbarCollapseWidth, see: https://moodle.org/mod/forum/discuss.php?d=317306#p1272655.
 - NEW: Update to FontAwesome 4.4.0.
+- NEW: Version alert on admin pages if installed on wrong Moodle version as per 'Required version of Moodle' above.
 
 New in 2.9.0.6
 ==============

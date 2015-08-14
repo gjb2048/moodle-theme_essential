@@ -39,14 +39,14 @@ function theme_essential_set_logo($css, $logo) {
 /**
  * Serves any files associated with the theme settings.
  *
- * @param stdClass $course
- * @param stdClass $cm
- * @param context $context
- * @param string $filearea
- * @param array $args
- * @param bool $forcedownload
- * @param array $options
- * @return bool
+ * @param stdClass $course.
+ * @param stdClass $cm.
+ * @param context $context.
+ * @param string $filearea.
+ * @param array $args.
+ * @param bool $forcedownload.
+ * @param array $options.
+ * @return bool.
  */
 function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
     static $theme;
@@ -89,7 +89,7 @@ function theme_essential_serve_css($filename) {
         $thestylepath = $CFG->dirroot . '/theme/essential/style/';
     } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/essential/style/")) {
         $thestylepath = $CFG->themedir . '/essential/style/';
-    } else {
+     } else {
         header('HTTP/1.0 404 Not Found');
         die('Essential style folder not found, check $CFG->themedir is correct.');
     }
@@ -150,11 +150,11 @@ function theme_essential_send_cached_css($path, $filename, $lastmodified, $etag)
 }
 
 /**
- * Set the width on the container-fluid div
+ * Set the width on the container-fluid div.
  *
- * @param string $css
- * @param mixed $pagewidth
- * @return string
+ * @param string $css.
+ * @param mixed $pagewidth.
+ * @return string.
  */
 function theme_essential_set_pagewidth($css, $pagewidth) {
     $tag = '[[setting:pagewidth]]';
@@ -173,6 +173,13 @@ function theme_essential_set_pagewidth($css, $pagewidth) {
     return $css;
 }
 
+/**
+ * Convert a colour hex string to an opacity supporting rgba one.
+ *
+ * @param string $hex Hex RGB string.
+ * @param float $opacity between 0.0 and 1.0.
+ * @return string.
+ */
 function theme_essential_hex2rgba($hex, $opacity) {
     $hex = str_replace("#", "", $hex);
 
@@ -197,17 +204,18 @@ function theme_essential_hex2rgba($hex, $opacity) {
  */
 function theme_essential_set_customcss($css, $customcss) {
     $tag = '[[setting:customcss]]';
+    $customcss = str_replace('themecredit', 'themepagefooter', $customcss);
     $replacement = $customcss;
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
 
 function theme_essential_process_css($css, $theme) {
-    // Set the theme width
+    // Set the theme width.
     $pagewidth = \theme_essential\toolbox::get_setting('pagewidth');
     $css = theme_essential_set_pagewidth($css, $pagewidth);
 
-    // Set the theme font
+    // Set the theme font.
     $css = theme_essential_set_font($css, 'heading', \theme_essential\toolbox::get_setting('fontnameheading'));
     $css = theme_essential_set_font($css, 'body', \theme_essential\toolbox::get_setting('fontnamebody'));
 
@@ -243,7 +251,7 @@ function theme_essential_process_css($css, $theme) {
     $footercolor = theme_essential_hex2rgba(\theme_essential\toolbox::get_setting('footercolor'), '0.95');
     $css = theme_essential_set_color($css, $footercolor, '[[setting:footercolor]]', '#555555');
 
-    // Set the footer text color.
+    // Set the footer text colour.
     $footertextcolor = \theme_essential\toolbox::get_setting('footertextcolor');
     $css = theme_essential_set_color($css, $footertextcolor, '[[setting:footertextcolor]]', '#bbbbbb');
 
@@ -255,7 +263,7 @@ function theme_essential_process_css($css, $theme) {
     $footersepcolor = \theme_essential\toolbox::get_setting('footersepcolor');
     $css = theme_essential_set_color($css, $footersepcolor, '[[setting:footersepcolor]]', '#313131');
 
-    // Set the footer URL color.
+    // Set the footer URL colour.
     $footerurlcolor = \theme_essential\toolbox::get_setting('footerurlcolor');
     $css = theme_essential_set_color($css, $footerurlcolor, '[[setting:footerurlcolor]]', '#217a94');
 
@@ -337,11 +345,11 @@ function theme_essential_process_css($css, $theme) {
     $pagebgstyle = \theme_essential\toolbox::get_setting('pagebackgroundstyle');
     $css = theme_essential_set_pagebackgroundstyle($css, $pagebgstyle);
 
-    // Set Marketing Image Height.
+    // Set marketing image height.
     $marketingheight = \theme_essential\toolbox::get_setting('marketingheight');
     $css = theme_essential_set_marketingheight($css, $marketingheight);
 
-    // Set Marketing Images.
+    // Set marketing images.
     $setting = 'marketing1image';
     $marketingimage = $theme->setting_file_url($setting, $setting);
     $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
@@ -354,7 +362,7 @@ function theme_essential_process_css($css, $theme) {
     $marketingimage = $theme->setting_file_url($setting, $setting);
     $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
 
-    // Finally return processed CSS
+    // Finally return processed CSS.
     return $css;
 }
 

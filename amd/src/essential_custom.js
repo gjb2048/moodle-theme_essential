@@ -7,11 +7,14 @@ define(['jquery', 'core/log'], function(jQuery, log) {
 
   jQuery(document).ready(function() {
     // Note: Update event names if upgrade to BS3 - see BS docs.
-    jQuery('#essentialmenus').on('hide', function () {
-      jQuery(this).removeClass('shown');
+    var menu = jQuery('#essentialmenus');
+    menu.on('hide', function (event) {
+      jQuery(this).attr('shown', 'no');
+      log.debug('#essentialmenus remove shown');
     });
-    jQuery('#essentialmenus').on('shown', function () {
-      jQuery(this).addClass('shown');
+    menu.on('shown', function (event) {
+      jQuery(this).attr('shown', 'yes');
+      log.debug('#essentialmenus add shown');
     });
   });
 });

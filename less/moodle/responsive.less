@@ -30,7 +30,7 @@
     }
 }
 
-@media (max-width: 873px) {
+@media (max-width: 767px) {
     .file-picker .fp-repo-area {
         width: 100%;
         height: auto;
@@ -347,7 +347,7 @@
             color: @grayDark;
         }
     }
-    .nav-collapse.active {
+    .nav-collapse.in {
         height: auto;
         .usermenu .moodle-actionmenu[data-enhanced] {
             .toggle-display {
@@ -381,7 +381,7 @@
     }
 
     .navbar {
-        .nav-collapse.active {
+        .nav-collapse.in {
             border-top: 1px solid @navbarBorder;
             &.pull-left,
             &.pull-right {
@@ -403,7 +403,8 @@
                 }
             }
 
-            .nav, .nav .dropdown-menu {
+            .nav,
+            .nav .dropdown-menu {
                 .dropdown-submenu {
                     .dropdown-toggle {
                         &:after {
@@ -453,7 +454,7 @@
     }
 
     .navbar-inverse {
-        .nav-collapse.active {
+        .nav-collapse.in {
             border-top-color: @navbarInverseBorder;
             .nav,
             .nav .dropdown-menu {
@@ -651,7 +652,7 @@
             }
         }
     }
-}
+   }
 
 // File Picker.
 @media (max-width: 768px) {

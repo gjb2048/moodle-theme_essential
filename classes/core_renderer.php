@@ -177,16 +177,24 @@ class theme_essential_core_renderer extends core_renderer {
             }
             $content .= '</ul>';
         } else {
-            $content = '<li>';
-            // The node doesn't have children so produce a final menuitem.
-            $class = '';
-            if ($menunode->get_url() !== null) {
-                $url = $menunode->get_url();
-                $class = $url->get_param('essentialcolours');
+            // Also, if the node's text matches '####', add a class so we can treat it as a divider.
+            $content = '';
+            if (preg_match("/^#+$/", $menunode->get_text())) {
+                // This is a divider.
+                $content = html_writer::start_tag('li', array('class' => 'divider'));
             } else {
-                $url = '#';
+                $content = html_writer::start_tag('li');
+                // The node doesn't have children so produce a final menuitem.
+                $class = '';
+                if ($menunode->get_url() !== null) {
+                    $url = $menunode->get_url();
+                    $class = $url->get_param('essentialcolours');
+                } else {
+                    $url = '#';
+                }
+                $content .= html_writer::link($url, $menunode->get_text(), array('title' => $menunode->get_title(), 'class' => $class));
             }
-            $content .= html_writer::link($url, $menunode->get_text(), array('title' => $menunode->get_title(), 'class' => $class));
+            $content .= html_writer::end_tag('li');
         }
         return $content;
     }
@@ -1404,5 +1412,30 @@ class theme_essential_core_renderer extends core_renderer {
         $html .= html_writer::end_tag('div');
 
         return $html;
+    }
+
+    /**
+     * Returns the alert markup if outside of the Moodle version supported as can cause issues.
+     */
+    public function version_alert() {
+        global $CFG;
+        $result = '';
+
+        if (($CFG->version < 2015051100.00) || ($CFG->version >= 2015060200.00)) {
+            $result = '<div class="useralerts alert alert-error">';
+            $result .= '<a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>';
+            $result .= '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-warning fa-stack-1x fa-inverse"></i></span>';
+            $result .= '<span class="title">'.get_string('versionalerttitle', 'theme_essential').'</span><br />'.
+                       get_string('versionalerttext1', 'theme_essential').'<br />'.get_string('versionalerttext2', 'theme_essential');
+            $result .= '</div>';
+        }
+        // TODO: Remove when production version.
+        $result .= '<div class="useralerts alert alert-error">';
+        $result .= '<a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>';
+        $result .= '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-warning fa-stack-1x fa-inverse"></i></span>';
+        $result .= '<span class="title">Beta version</span><br />Development beta version for testing only, do not use on a production server.';
+        $result .= '</div>';
+
+        return $result;
     }
 }
