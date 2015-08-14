@@ -195,6 +195,7 @@ New in 2.9.0.7
 - NEW: Issue #525: MDL-46860.
 - NEW: Issue #526: MDL-50533.
 - FIX: Issue #528: Repeated show / hide of custom menu fails when small screen.
+- FIX: Issue #529: Divider does not show.
 - FIX: Misplaced CSS attribute with no selector.
 - FIX: Removed redundant maintenance selector.
 - FIX: Removed login page selector.
