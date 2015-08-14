@@ -86,6 +86,7 @@ Mihai Bojonca, TCM International Institute.
 Guido Hornig, actXcellence http://actxcellence.de
 Delvon Forrester, Esparanza co uk
 iZone
+Anis Jradah
 
 Required version of Moodle
 ==========================
@@ -185,6 +186,7 @@ New in 2.8.1.8
 ==============
 - FIX: Issue #523: Forum grids do not wrap.
 - NEW: Issue #524: MDL-48202.
+- NEW: Issue #525: MDL-46860.
 - NEW: Update to FontAwesome 4.4.0.
 - NEW: Version alert on admin pages if installed on wrong Moodle version as per 'Required version of Moodle' above.
 
