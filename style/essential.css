@@ -20317,7 +20317,7 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
     clear: both;
   }
   .navbar-inner .nav-collapse.collapse.in[style*="height: auto"] {
-    overflow: visible;
+    min-height: 768px;
   }
   .navbar-inner .nav-collapse .nav > li > a {
     margin-bottom: 0px;
