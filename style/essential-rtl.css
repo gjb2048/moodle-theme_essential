@@ -24434,7 +24434,7 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
   }
 
   .navbar-inner .nav-collapse.collapse.in[style*="height: auto"] {
-    background: yellow;
+    overflow: visible;
   }
 
   .navbar-inner .nav-collapse .nav > li > a {

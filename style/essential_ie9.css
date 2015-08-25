@@ -1,4 +1,4 @@
-@import url('essential_ie9-blessed1.css?z=1440510695280');
+@import url('essential_ie9-blessed1.css?z=1440511136104');
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages {
   margin: 20px 25px;
 }
@@ -6649,7 +6649,7 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
     clear: both;
   }
   .navbar-inner .nav-collapse.collapse.in[style*="height: auto"] {
-    background: yellow;
+    overflow: visible;
   }
   .navbar-inner .nav-collapse .nav > li > a {
     margin-bottom: 0px;
