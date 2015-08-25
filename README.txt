@@ -182,6 +182,10 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
+New in 2.8.1.9
+==============
+- FIX: Issue #530: Essential Custom Menu Hamburger Behaviour.
+
 New in 2.8.1.8
 ==============
 - FIX: Issue #523: Forum grids do not wrap.
