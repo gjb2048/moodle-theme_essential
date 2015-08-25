@@ -50,11 +50,9 @@
                 float: left;
                 clear: both;
             }
-            &[shown~="yes"] {
-                overflow-y: visible;
-            }
-            &[shown~="no"] {
-                overflow-y: hidden;
+            &.collapse.in[style*="height: auto"] {
+                background: yellow;
+                //overflow: visible;
             }
             .nav > li > a {
                 margin-bottom: 0px;
