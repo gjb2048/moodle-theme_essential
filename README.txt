@@ -185,6 +185,7 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.8.1.9
 ==============
 - FIX: Issue #530: Essential Custom Menu Hamburger Behaviour.
+- NEW: Improve code used in #530 to use CSS and not JS solution.
 
 New in 2.8.1.8
 ==============
