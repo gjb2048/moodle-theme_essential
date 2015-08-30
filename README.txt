@@ -190,7 +190,8 @@ can be really useful in visualising the issue along with any files you consider 
 
 New in 2.9.0.8
 ==============
-- FIX: Issue #530: Essential Custom Menu Hamburger Behaviour - WORK IN PROGRESS.
+- FIX: Issue #529: Divider does not show.
+- UPD: Issue #530: Essential Custom Menu Hamburger Behaviour - Unable to fix, help wanted.
 
 New in 2.9.0.7
 ==============

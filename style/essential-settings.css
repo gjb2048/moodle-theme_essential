@@ -612,6 +612,10 @@ input[type="color"],
     color: [[setting:themenavcolor]];
     background-color: [[setting:themecolor]];
   }
+  .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a:hover .fa,
+  .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a.open .fa {
+    color: inherit;
+  }
   .navbar .navbar-inner .nav-collapse .nav li.dropdown ul.dropdown-menu {
     background-color: [[setting:themenavcolor]];
     color: [[setting:themecolor]];

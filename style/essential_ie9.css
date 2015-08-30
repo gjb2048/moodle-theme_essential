@@ -1,4 +1,4 @@
-@import url('essential_ie9-blessed1.css?z=1440954304346');
+@import url('essential_ie9-blessed1.css?z=1440956430898');
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages {
   margin: 20px 25px;
 }
@@ -2432,14 +2432,6 @@ body.has_dock div#dock {
     overflow: hidden;
     height: 0;
   }
-  /*
-  .nav-collapse.collapse {
-    display: none;
-  }
-  .nav-collapse.collapse.in {
-    display: block;
-  }
-  */
   .navbar .btn-navbar {
     display: block;
   }
@@ -6655,9 +6647,13 @@ body.format-topcoll .course-content ul.ctopics li.section.main {
     vertical-align: top;
     float: left;
     clear: both;
+    width: 100%;
   }
   .navbar-inner .nav-collapse.collapse.in[style*="height: auto"] {
     min-height: 768px;
+  }
+  .navbar-inner .nav-collapse.in .nav .divider {
+    width: 100%;
   }
   .navbar-inner .nav-collapse .nav > li > a {
     margin-bottom: 0px;
