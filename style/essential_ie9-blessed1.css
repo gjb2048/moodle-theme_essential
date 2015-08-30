@@ -4370,8 +4370,13 @@ img.iconsmall {
   border-bottom: 2px solid #dddddd;
   margin-top: 0;
 }
-.course-content ul li.section.hidden {
+.course-content ul li.section.hidden .sectionname,
+.course-content ul li.section.hidden .content > div,
+.course-content ul li.section.hidden .activity .activityinstance {
   opacity: 0.5;
+  filter: alpha(opacity=50);
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .course-content ul.topics li.section .content,
 .course-content ul.weeks li.section .content {
@@ -12505,7 +12510,7 @@ ol {
   border-width: 2px;
   border-style: dashed;
 }
-.block.invisible {
+.block.invisible .header h2 {
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
@@ -13655,15 +13660,4 @@ div#dock {
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-userlist #users-list {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ffffff;
-}
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-userlist #users-list li {
-  border-top: 1px solid #ffffff;
-  border-bottom: 1px solid #ddd;
-  padding: 5px 10px;
-}
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-userlist #users-list img {
-  margin-right: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  max-width: none;
 }

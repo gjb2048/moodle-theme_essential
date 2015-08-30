@@ -1,4 +1,17 @@
-@import url('essential-rtl_ie9-blessed1.css?z=1440956430898');
+@import url('essential-rtl_ie9-blessed1.css?z=1440959410666');
+
+.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-userlist #users-list li {
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ddd;
+  padding: 5px 10px;
+}
+
+.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-userlist #users-list img {
+  margin-left: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: none;
+}
 
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages {
   margin: 20px 25px;
