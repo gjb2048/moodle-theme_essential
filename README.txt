@@ -185,6 +185,7 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.8.1.10
 ===============
 - FIX: Issue #529: Divider does not show.
+- FIX: MDL-42634.
 
 New in 2.8.1.9
 ==============

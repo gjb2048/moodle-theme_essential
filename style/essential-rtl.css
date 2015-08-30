@@ -5210,9 +5210,13 @@ img.iconsmall {
   margin-top: 0;
 }
 
-.course-content ul li.section.hidden {
+.course-content ul li.section.hidden .sectionname,
+.course-content ul li.section.hidden .content > div,
+.course-content ul li.section.hidden .activity .activityinstance {
   opacity: 0.5;
   filter: alpha(opacity=50);
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .course-content ul.topics li.section .content,
@@ -14706,7 +14710,7 @@ body:not(.jsenabled) .langmenu:hover > .dropdown-menu,
   border-style: dashed;
 }
 
-.block.invisible {
+.block.invisible .header h2 {
   opacity: 0.5;
   filter: alpha(opacity=50);
 }

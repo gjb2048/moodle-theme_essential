@@ -4238,9 +4238,13 @@ img.iconsmall {
   border-bottom: 2px solid #dddddd;
   margin-top: 0;
 }
-.course-content ul li.section.hidden {
+.course-content ul li.section.hidden .sectionname,
+.course-content ul li.section.hidden .content > div,
+.course-content ul li.section.hidden .activity .activityinstance {
   opacity: 0.5;
   filter: alpha(opacity=50);
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .course-content ul.topics li.section .content,
 .course-content ul.weeks li.section .content {
@@ -12224,7 +12228,7 @@ body:not(.jsenabled) .langmenu:hover > .dropdown-menu,
   border-width: 2px;
   border-style: dashed;
 }
-.block.invisible {
+.block.invisible .header h2 {
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
