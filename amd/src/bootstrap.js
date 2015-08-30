@@ -174,6 +174,8 @@ define(['jquery', 'core/log'], function($, log) {
             that.transitioning = 0
             that.$element.trigger(completeEvent)
 		console.log('collapse transition complete 2');
+		//(startEvent.type == 'show') ? that.$element.css('overflow', 'visible') : that.$element.css('overflow', 'hidden');
+		console.log('collapse transition complete 3');
           }
 
 		console.log('collapse transition 2');
