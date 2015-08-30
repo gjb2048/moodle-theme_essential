@@ -107,50 +107,39 @@ define(['jquery', 'core/log'], function($, log) {
     }
 
   , show: function () {
-		console.log('collapse show 1');
       var dimension
         , scroll
         , actives
         , hasData
 
-		console.log('collapse show transitioning: ' + this.transitioning);
       if (this.transitioning || this.$element.hasClass('in')) return
-		console.log('collapse show 2');
 
       dimension = this.dimension()
       scroll = $.camelCase(['scroll', dimension].join('-'))
       actives = this.$parent && this.$parent.find('> .accordion-group > .in')
 
-		console.log('collapse show 3');
       if (actives && actives.length) {
-		console.log('collapse show 4');
         hasData = actives.data('collapse')
         if (hasData && hasData.transitioning) return
         actives.collapse('hide')
         hasData || actives.data('collapse', null)
-		console.log('collapse show 5');
       }
 
       this.$element[dimension](0)
       this.transition('addClass', $.Event('show'), 'shown')
-		console.log('collapse show 6');
       $.support.transition && this.$element[dimension](this.$element[0][scroll])
-		console.log('collapse show 7');
     }
 
   , hide: function () {
-		console.log('collapse hide: ');
       var dimension
       if (this.transitioning || !this.$element.hasClass('in')) return
       dimension = this.dimension()
       this.reset(this.$element[dimension]())
       this.transition('removeClass', $.Event('hide'), 'hidden')
       this.$element[dimension](0)
-		console.log('collapse hide transitioning: ' + this.transitioning);
     }
 
   , reset: function (size) {
-		console.log('collapse reset 1');
       var dimension = this.dimension()
 
       this.$element
@@ -160,46 +149,31 @@ define(['jquery', 'core/log'], function($, log) {
 
       this.$element[size !== null ? 'addClass' : 'removeClass']('collapse')
 
-		console.log('collapse reset 2');
-
-		return this
+      return this
     }
 
   , transition: function (method, startEvent, completeEvent) {
-		console.log('collapse transition 1');
       var that = this
         , complete = function () {
-		console.log('collapse transition complete 1');
             if (startEvent.type == 'show') that.reset()
             that.transitioning = 0
             that.$element.trigger(completeEvent)
-		console.log('collapse transition complete 2');
-		//(startEvent.type == 'show') ? that.$element.css('overflow', 'visible') : that.$element.css('overflow', 'hidden');
-		console.log('collapse transition complete 3');
           }
 
-		console.log('collapse transition 2');
       this.$element.trigger(startEvent)
-		console.log('collapse transition 3');
 
       if (startEvent.isDefaultPrevented()) return
 
       this.transitioning = 1
 
       this.$element[method]('in')
-		console.log('collapse transition 4');
 
-		console.log('collapse transition 4 - transition: ' + $.support.transition);
-		console.log('collapse transition 4 - transition end: ' + $.support.transition.end);
-		console.log('collapse transition 4 - hasClass(collapse): ' + this.$element.hasClass('collapse'));
       $.support.transition && this.$element.hasClass('collapse') ?
         this.$element.one($.support.transition.end, complete) :
         complete()
-		console.log('collapse transition 5 element: ' + JSON.stringify(this.$element));
     }
 
   , toggle: function () {
-		console.log('collapse toggle: ' + JSON.stringify(this.$element.hasClass('in')));
       this[this.$element.hasClass('in') ? 'hide' : 'show']()
     }
 
@@ -247,11 +221,7 @@ define(['jquery', 'core/log'], function($, log) {
         || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') //strip for ie7
       , option = $(target).data('collapse') ? 'toggle' : $this.data()
     $this[$(target).hasClass('in') ? 'addClass' : 'removeClass']('collapsed')
-	console.log('collapse option : ' + JSON.stringify(option));
     $(target).collapse(option)
-	console.log('collapse target1: ' + $this.attr('data-target'));
-	console.log('collapse this   : ' + JSON.stringify($this.data()));
-	console.log('collapse target3: ' + JSON.stringify($(target).data('collapse')));
   })
 
   /* ============================================================
