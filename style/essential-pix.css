@@ -1,1 +1,14 @@
-#page-header .icon-collapse{background-image:none}
+/*
+ * @package     theme_essential
+ * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+/*
+ * @package     theme_essential
+ * @copyright   2014 Gareth J Barnard
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+#page-header .icon-collapse {
+  background-image: none;
+}
+/*# sourceMappingURL=/theme/essential/style/essential-pix.treasure.map */

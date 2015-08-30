@@ -54,9 +54,15 @@
                 vertical-align: top;
                 float: left;
                 clear: both;
+                width: 100%;
             }
             &.collapse.in[style*="height: auto;"] {
                 overflow: visible;
+            }
+            &.in .nav {
+                .divider {
+                    width: 100%;
+                }
             }
             .nav > li > a {
                 margin-bottom: 0px;
@@ -101,6 +107,7 @@
             }
         }
     }
+
     #page-message-index {
         #region-main {
             float: left;
