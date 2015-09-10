@@ -1,7 +1,7 @@
 YUI.add('moodle-theme_essential-coloursswitcher', function (Y) {
 
 // Available color schemes.
-    var SCHEMES = ['default', 'alternative1', 'alternative2', 'alternative3'];
+    var SCHEMES = ['default', 'alternative1', 'alternative2', 'alternative3', 'alternative4'];
 
     /**
      * Essential theme colours switcher class.
