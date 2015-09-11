@@ -192,7 +192,11 @@ New in 2.9.0.8
 ==============
 - FIX: Issue #529: Divider does not show.
 - FIX: MDL-42634.
+- FIX: MDL-51229.
+- NEW: Issue #533: PIWIK Analytics and IP addresses.
+- NEW: Improved PIWIK document title.
 - UPD: Issue #530: Essential Custom Menu Hamburger Behaviour - Unable to fix, help wanted.
+- UPD: Updated bootstrap.js such that all modules are included as discovered that 'modals' were missing.
 
 New in 2.9.0.7
 ==============

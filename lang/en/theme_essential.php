@@ -580,6 +580,8 @@ $string['analyticscleanurldesc'] = 'Generate clean URL for in advanced tracking'
 $string['analyticsimagetrackdesc'] = 'Enable Image Tracking for browsers with JavaScript disabled.';
 $string['analyticstrackadmin'] = 'Tracking Admins';
 $string['analyticstrackadmindesc'] = 'Enable tracking of Admin users (not recommended)';
+$string['analyticsuseuserid'] = 'User ID';
+$string['analyticsuseuseriddesc'] = 'Enable use of User ID in tracking.';
 $string['analyticspiwik'] = 'Piwik';
 $string['analyticsguniversal'] = 'Google Universal Analytics';
 

@@ -1627,6 +1627,13 @@ if (is_siteadmin()) {
         $default = '';
         $setting = new admin_setting_configtext($name, $title, $description, $default);
         $temp->add($setting);
+
+        $name = 'theme_essential/analyticsuseuserid';
+        $title = get_string('analyticsuseuserid', 'theme_essential');
+        $description = get_string('analyticsuseuseriddesc', 'theme_essential');
+        $default = false;
+        $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+        $temp->add($setting);
     } else if (get_config('theme_essential', 'analytics') === 'guniversal') {
         $name = 'theme_essential/analyticstrackingid';
         $title = get_string('analyticstrackingid', 'theme_essential');

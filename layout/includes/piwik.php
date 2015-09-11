@@ -29,35 +29,39 @@
 function theme_essential_analytics_trackurl() {
     global $DB, $PAGE;
     $pageinfo = get_context_info_array($PAGE->context->id);
+    // Adds page title.
     $trackurl = "'";
 
-    // Adds course category name.
-    if (isset($pageinfo[1]->category)) {
-        if ($category = $DB->get_record('course_categories', array('id' => $pageinfo[1]->category))) {
-            $cats = explode("/", $category->path);
-            foreach (array_filter($cats) as $cat) {
-                if ($categorydepth = $DB->get_record("course_categories", array("id" => $cat))) {
-                    ;
-                    $trackurl .= $categorydepth->name . '/';
+    if ((isset($pageinfo[1]->category)) || (isset($pageinfo[1]->fullname)) || (isset($pageinfo[2]->name))) {
+        // Adds course category name.
+        if (isset($pageinfo[1]->category)) {
+            if ($category = $DB->get_record('course_categories', array('id' => $pageinfo[1]->category))) {
+                $cats = explode("/", $category->path);
+                foreach (array_filter($cats) as $cat) {
+                    if ($categorydepth = $DB->get_record("course_categories", array("id" => $cat))) {
+                        $trackurl .= $categorydepth->name . '/';
+                    }
                 }
             }
         }
-    }
 
-    // Adds course full name.
-    if (isset($pageinfo[1]->fullname)) {
-        if (isset($pageinfo[2]->name)) {
-            $trackurl .= $pageinfo[1]->fullname . '/';
-        } else if ($PAGE->user_is_editing()) {
-            $trackurl .= $pageinfo[1]->fullname . '/' . get_string('edit');
-        } else {
-            $trackurl .= $pageinfo[1]->fullname . '/' . get_string('view');
+        // Adds course full name.
+        if (isset($pageinfo[1]->fullname)) {
+            if (isset($pageinfo[2]->name)) {
+                $trackurl .= $pageinfo[1]->fullname . '/';
+            } else if ($PAGE->user_is_editing()) {
+                $trackurl .= $pageinfo[1]->fullname . '/' . get_string('edit');
+            } else {
+                $trackurl .= $pageinfo[1]->fullname . '/' . get_string('view');
+            }
         }
-    }
 
-    // Adds activity name.
-    if (isset($pageinfo[2]->name)) {
-        $trackurl .= $pageinfo[2]->modname . '/' . $pageinfo[2]->name;
+        // Adds activity name.
+        if (isset($pageinfo[2]->name)) {
+            $trackurl .= $pageinfo[2]->modname . '/' . $pageinfo[2]->name;
+        }
+    } else {
+        $trackurl .= $PAGE->title;
     }
 
     $trackurl .= "'";
@@ -72,6 +76,7 @@ function theme_essential_insert_analytics_tracking() {
         $imagetrack = \theme_essential\toolbox::get_setting('analyticsimagetrack');
         $siteid = \theme_essential\toolbox::get_setting('analyticssiteid');
         $trackadmin = \theme_essential\toolbox::get_setting('analyticstrackadmin');
+        $useuserid = \theme_essential\toolbox::get_setting('analyticsuseuserid');
         $cleanurl = \theme_essential\toolbox::get_setting('analyticscleanurl');
 
         if ($imagetrack) {
@@ -80,17 +85,27 @@ function theme_essential_insert_analytics_tracking() {
             $addition = '';
         }
 
+        if ($useuserid) {
+            global $USER;
+            if ($USER->id) {
+                $userid = "".PHP_EOL."_paq.push(['setUserId', '".$USER->id."']);";
+            } else {
+                $userid = "";
+            }
+        } else {
+            $userid = "";
+        }
+
         if ($cleanurl) {
-            $doctitle = "_paq.push(['setDocumentTitle', " . theme_essential_analytics_trackurl() . "]);";
+            $doctitle = "".PHP_EOL."_paq.push(['setDocumentTitle', " . theme_essential_analytics_trackurl() . "]);";
         } else {
             $doctitle = "";
         }
 
         if (!is_siteadmin() || $trackadmin) {
             $tracking = "<script type='text/javascript'>
-                    var _paq = _paq || [];
-                    " . $doctitle . "
-                    _paq.push(['enableLinkTracking']);
+                    var _paq = _paq || [];".$doctitle."
+                    _paq.push(['enableLinkTracking']);".$userid."
                     _paq.push(['trackPageView']);
                     (function(){
                         var u=(('https:' == document.location.protocol) ? 'https' : 'http') + '://" . $siteurl . "/';

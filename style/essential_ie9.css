@@ -1,4 +1,4 @@
-@import url('essential_ie9-blessed1.css?z=1440959410666');
+@import url('essential_ie9-blessed1.css?z=1441987696817');
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-userlist #users-list li {
   border-top: 1px solid #ffffff;
   border-bottom: 1px solid #ddd;
@@ -1188,6 +1188,7 @@ body.has_dock div#dock {
   display: inline;
 }
 #dock {
+  z-index: 12000;
   width: 42px;
   position: fixed;
   top: 0;

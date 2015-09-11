@@ -14850,6 +14850,7 @@ body.has_dock div#dock {
   display: inline;
 }
 #dock {
+  z-index: 12000;
   width: 42px;
   position: fixed;
   top: 0;

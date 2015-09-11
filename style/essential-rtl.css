@@ -17816,6 +17816,7 @@ body.has_dock div#dock {
 }
 
 #dock {
+  z-index: 12000;
   width: 42px;
   position: fixed;
   top: 0;
