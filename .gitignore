@@ -12,4 +12,3 @@ quickpush.sh
 /node_modules
 /style/*.map
 /nbproject/private/
-/.idea/
