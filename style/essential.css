@@ -19376,7 +19376,8 @@ ul.socials li {
 a .colours-default,
 a .colours-alternative1,
 a .colours-alternative2,
-a .colours-alternative3 {
+a .colours-alternative3,
+a .colours-alternative4 {
   box-shadow: rgba(255, 255, 255, 0.8) 0px 0px 2px 3px;
   border-radius: 2px;
 }

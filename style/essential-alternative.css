@@ -1615,12 +1615,545 @@
   }
 }
 /* @end */
+
+/* @group Alternative colours 4 */
+.essential-colours-alternative4 {
+    color: [[setting:alternativethemetextcolor4]];
+}
+.essential-colours-alternative4 h1,
+.essential-colours-alternative4 h2,
+.essential-colours-alternative4 h3,
+.essential-colours-alternative4 h4,
+.essential-colours-alternative4 h5,
+.essential-colours-alternative4 h6,
+.essential-colours-alternative4 #adminsettings h3,
+.essential-colours-alternative4 .color,
+.essential-colours-alternative4 h1#title,
+.essential-colours-alternative4 select,
+.essential-colours-alternative4 textarea,
+.essential-colours-alternative4 input[type="text"],
+.essential-colours-alternative4 input[type="password"],
+.essential-colours-alternative4 input[type="datetime"],
+.essential-colours-alternative4 input[type="datetime-local"],
+.essential-colours-alternative4 input[type="date"],
+.essential-colours-alternative4 input[type="month"],
+.essential-colours-alternative4 input[type="time"],
+.essential-colours-alternative4 input[type="week"],
+.essential-colours-alternative4 input[type="number"],
+.essential-colours-alternative4 input[type="email"],
+.essential-colours-alternative4 input[type="url"],
+.essential-colours-alternative4 input[type="search"],
+.essential-colours-alternative4 input[type="tel"],
+.essential-colours-alternative4 input[type="color"],
+.essential-colours-alternative4 .uneditable-input,
+.essential-colours-alternative4 .form-item .form-description,
+.essential-colours-alternative4 .form-defaultinfo,
+.essential-colours-alternative4 .form-label .form-shortname {
+    color: [[setting:alternativethemetextcolor4]];
+}
+.essential-colours-alternative4 .breadcrumb-nav ul.breadcrumb.style1 li {
+    color: [[setting:alternativethemenavcolor4]];
+    background-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .breadcrumb-nav ul.breadcrumb.style1 li a {
+    color: inherit;
+}
+.essential-colours-alternative4 .breadcrumb-nav ul.breadcrumb.style1 li a:before {
+    color: inherit;
+}
+.essential-colours-alternative4 .breadcrumb-nav ul.breadcrumb.style1 li a:hover,
+.essential-colours-alternative4 .breadcrumb-nav ul.breadcrumb.style1 li a:focus {
+    color: [[setting:alternativethemenavcolor4]];
+}
+.essential-colours-alternative4 .breadcrumb-nav ul.breadcrumb.style1 li:after {
+    border-left: 30px solid [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .breadcrumb-nav ul.breadcrumb.style1 li:hover {
+    color: [[setting:alternativethemenavcolor4]];
+    background-color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 .breadcrumb-nav ul.breadcrumb.style1 li:hover:after {
+    border-left-color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 .breadcrumb-nav ul.breadcrumb.style1 li:first-of-type:hover a:before,
+.essential-colours-alternative4 .breadcrumb-nav ul.breadcrumb.style1 li:first-of-type:focus a:before {
+    color: [[setting:alternativethemenavcolor4]];
+}
+.essential-colours-alternative4 .breadcrumb-nav ul.breadcrumb.style2 li a {
+    color: [[setting:alternativethemenavcolor4]];
+}
+.essential-colours-alternative4 .breadcrumb-nav ul.breadcrumb.style2 li a:hover {
+    color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 a,
+.essential-colours-alternative4 a:visited {
+    color: [[setting:alternativethemeurlcolor4]];
+}
+.essential-colours-alternative4 a:hover {
+    color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 #page-header h1#title {
+    color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 #page-header #headerlogo {
+    color: [[setting:alternativethemeiconcolor4]];
+}
+.essential-colours-alternative4 #headerlogo {
+    border-right-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .breadcrumb-button input[type="submit"] {
+    color: [[setting:alternativethemenavcolor4]];
+    background-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .breadcrumb-button input[type="submit"]:hover {
+    color: [[setting:alternativethemenavcolor4]];
+    background-color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 a.website:hover,
+.essential-colours-alternative4 a.website:focus {
+    background-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .navbar {
+    background-color: [[setting:alternativethemecolor4]] !important;
+}
+.essential-colours-alternative4 .navbar .navbar-inner {
+    border-top-color: [[setting:alternativethemecolor4]] !important;
+    border-bottom: 1px solid [[setting:alternativethemecolor4]] !important;
+    background-color: [[setting:alternativethemecolor4]] !important;
+}
+.essential-colours-alternative4 .navbar .navbar-inner .nav > li.dropdown a,
+.essential-colours-alternative4 .navbar .navbar-inner .nav > li > a {
+    color: [[setting:alternativethemenavcolor4]];
+}
+.essential-colours-alternative4 .navbar .navbar-inner .nav > li.dropdown a i,
+.essential-colours-alternative4 .navbar .navbar-inner .nav > li > a i {
+    color: inherit;
+}
+.essential-colours-alternative4 .navbar .navbar-inner .nav > li.dropdown a:hover,
+.essential-colours-alternative4 .navbar .navbar-inner .nav > li > a:hover {
+    color: [[setting:alternativethemecolor4]];
+    background-color: [[setting:alternativethemenavcolor4]];
+}
+.essential-colours-alternative4 .navbar .navbar-inner .nav {
+    border-right-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .navbar .navbar-inner .nav > li > a {
+    color: [[setting:alternativethemenavcolor4]];
+    border-left-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .navbar .navbar-inner .nav > li > a i {
+    color: inherit;
+}
+.essential-colours-alternative4 .navbar .navbar-inner .nav > li > a:hover {
+    color: [[setting:alternativethemenavcolor4]];
+    background-color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a {
+    color: [[setting:alternativethemetextcolor4]];
+}
+.essential-colours-alternative4 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:hover {
+    color: #ffffff;
+    background-color: [[setting:alternativethemeurlcolor4]];
+}
+.essential-colours-alternative4 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:focus,
+.essential-colours-alternative4 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a.open {
+    color: #ffffff;
+    background-color: [[setting:alternativethemeurlcolor4]];
+}
+.essential-colours-alternative4 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:focus i,
+.essential-colours-alternative4 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a.open i {
+    color: #ffffff;
+}
+.essential-colours-alternative4 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a i {
+    color: [[setting:alternativethemeiconcolor4]];
+}
+.essential-colours-alternative4 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu li.dropdown-submenu:hover > a {
+    background-color: [[setting:alternativethemeurlcolor4]];
+}
+.essential-colours-alternative4 .navbar .navbar-inner .dropdown-menu > li > a:hover,
+.essential-colours-alternative4 .navbar .navbar-inner .dropdown-menu > li > a:focus,
+.essential-colours-alternative4 .navbar .navbar-inner .dropdown-submenu:hover > a,
+.essential-colours-alternative4 .navbar .navbar-inner .dropdown-submenu:focus > a {
+    color: [[setting:alternativethemenavcolor4]];
+    background-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .navbar .navbar-inner .brand {
+    color: [[setting:alternativethemenavcolor4]];
+}
+.essential-colours-alternative4 .navbar .nav-collapse {
+    border-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .navbar .nav .active > a,
+.essential-colours-alternative4 .navbar .nav .active > a:hover,
+.essential-colours-alternative4 .navbar .nav .active > a:focus {
+    color: [[setting:alternativethemenavcolor4]];
+    background-color: [[setting:alternativethemecolor4]] !important;
+}
+.essential-colours-alternative4 .navbar .nav li.dropdown.open > .dropdown-toggle,
+.essential-colours-alternative4 .navbar .nav li.dropdown.active > .dropdown-toggle,
+.essential-colours-alternative4 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+    color: #ffffff;
+    background-color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 .navbar .nav > li > a {
+    border-left-color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu {
+    border: 1px solid [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a {
+    border-top: 1px dotted [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message,
+.essential-colours-alternative4 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification {
+    color: #ffffff;
+    background-color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message img.userpicture,
+.essential-colours-alternative4 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification img.userpicture,
+.essential-colours-alternative4 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message img.profilepicture,
+.essential-colours-alternative4 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification img.profilepicture {
+    box-shadow: 0 0 3px [[setting:alternativethemenavcolor4]];
+}
+.essential-colours-alternative4 .course-content ul.topics li.section.main.clearfix.current {
+    box-shadow: 0 0 10px [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .firstword {
+    color: [[setting:alternativethemetextcolor4]] !important;
+}
+.essential-colours-alternative4 .forumpost .picture img {
+    box-shadow: 0 0 3px [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .forumpost .subject {
+    color: [[setting:alternativethemetextcolor4]];
+}
+.essential-colours-alternative4 .button a,
+.essential-colours-alternative4 .button a:visited {
+    background-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 a.marketing-button,
+.essential-colours-alternative4 a.marketing-button:visited {
+    background-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 a.marketing-button:hover {
+    background-color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 #essentialCarousel.carousel .carousel-inner .carousel-caption {
+    background-color: [[setting:alternativethemecolor4]];
+    opacity: 0.75;
+    filter: alpha(opacity=75);
+}
+.essential-colours-alternative4 #essentialCarousel.carousel .carousel-inner .carousel-caption h4,
+.essential-colours-alternative4 #essentialCarousel.carousel .carousel-inner .carousel-caption p {
+    color: #eee;
+}
+.essential-colours-alternative4 #essentialCarousel.carousel .carousel-control {
+    color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 #essentialCarousel.carousel .carousel-control:hover,
+.essential-colours-alternative4 #essentialCarousel.carousel .carousel-control:focus {
+    color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 #essentialCarousel.carousel .carousel-indicators li {
+    background-color: [[setting:alternativethemecolor4]];
+    opacity: 0.75;
+    filter: alpha(opacity=75);
+}
+.essential-colours-alternative4 #essentialCarousel.carousel .carousel-indicators .active {
+    background-color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 .block a {
+    color: [[setting:alternativethemeurlcolor4]];
+}
+.essential-colours-alternative4 .block a:hover {
+    color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 .block .header .title h2 {
+    color: [[setting:alternativethemetextcolor4]];
+}
+.essential-colours-alternative4 .block .header .title h2:before {
+    color: [[setting:alternativethemeiconcolor4]];
+}
+.essential-colours-alternative4 .block .icon {
+    color: [[setting:alternativethemeiconcolor4]];
+}
+.essential-colours-alternative4 .block_rss_client .footer a {
+    background-color: [[setting:alternativethemeurlcolor4]];
+}
+.essential-colours-alternative4 .block_rss_client .footer a:hover {
+    background-color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 .block_login .footer a {
+    background-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .block_login .footer a:hover {
+    background-color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 #page-site-index h2.headingblock:before {
+    color: [[setting:alternativethemetextcolor4]];
+}
+.essential-colours-alternative4 .service i {
+    color: [[setting:alternativethemeiconcolor4]];
+}
+.essential-colours-alternative4 #page-footer {
+    border-top-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 #page-footer .footnote a,
+.essential-colours-alternative4 #page-footer .footnote a:visited {
+    color: [[setting:alternativethemeurlcolor4]] !important;
+}
+.essential-colours-alternative4 #page-footer .block_login input[type="submit"] {
+    background-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 #page-footer .block_login input[type="submit"]:hover {
+    background-color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 #page-footer .block_rss_client .content a {
+    color: [[setting:alternativethemeurlcolor4]];
+}
+.essential-colours-alternative4 #page-footer .block_html ul li:before,
+.essential-colours-alternative4 #greyboxright ul li:before {
+    background-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 p.tree_item.leaf a > i {
+    color: [[setting:alternativethemeiconcolor4]];
+}
+.essential-colours-alternative4 p.tree_item.leaf a:hover,
+.essential-colours-alternative4 p.tree_item.leaf a:focus {
+    color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 p.tree_item.leaf a:hover > i,
+.essential-colours-alternative4 p.tree_item.leaf a:focus > i {
+    color: inherit;
+}
+.essential-colours-alternative4 p.tree_item.branch {
+    color: [[setting:alternativethemeurlcolor4]];
+}
+.essential-colours-alternative4 p.tree_item.branch:before {
+    color: [[setting:alternativethemeiconcolor4]];
+}
+.essential-colours-alternative4 p.tree_item.branch:hover,
+.essential-colours-alternative4 p.tree_item.branch:focus {
+    color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 p.tree_item.branch:hover:before,
+.essential-colours-alternative4 p.tree_item.branch:focus:before {
+    color: inherit;
+}
+.essential-colours-alternative4 p.tree_item.branch:hover a,
+.essential-colours-alternative4 p.tree_item.branch:focus a {
+    color: inherit;
+}
+.essential-colours-alternative4 p.tree_item.branch.emptybranch:before {
+    color: [[setting:alternativethemeiconcolor4]];
+}
+.essential-colours-alternative4 p.tree_item.branch.emptybranch:hover:before,
+.essential-colours-alternative4 p.tree_item.branch.emptybranch:focus:before {
+    color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 .afeature:hover {
+    border-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .afmatter i {
+    color: [[setting:alternativethemeiconcolor4]];
+}
+.essential-colours-alternative4 .myprofileitem.picture:hover {
+    border-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .socials p {
+    color: [[setting:alternativethemetextcolor4]];
+}
+.essential-colours-alternative4 .socials img:hover {
+    box-shadow: 0 0 10px 0 [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .nav-tabs > li > a {
+    background-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .nav-tabs > li > a:hover {
+    background-color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 .performanceinfo {
+    border-color: [[setting:themeiconcolor]];
+}
+.essential-colours-alternative4 .performanceinfo var {
+    background-color: [[setting:alternativethemecolor4]];
+    color: [[setting:alternativethemenavcolor4]];
+}
+.essential-colours-alternative4 .performanceinfo h2 {
+    color: [[setting:alternativethemetextcolor4]];
+    border-bottom-color: [[setting:themeiconcolor]];
+}
+.essential-colours-alternative4 .performanceinfo h2:before {
+    color: [[setting:themeiconcolor]];
+}
+.essential-colours-alternative4 .performanceinfo span {
+    color: [[setting:alternativethemetextcolor4]];
+}
+.essential-colours-alternative4 .performanceinfo #cache:before,
+.essential-colours-alternative4 .performanceinfo #load:before,
+.essential-colours-alternative4 .performanceinfo #memory:before,
+.essential-colours-alternative4 .performanceinfo #peakmemory:before,
+.essential-colours-alternative4 .performanceinfo #session:before,
+.essential-colours-alternative4 .performanceinfo #included:before,
+.essential-colours-alternative4 .performanceinfo #dbqueries:before,
+.essential-colours-alternative4 .performanceinfo #dbtime:before {
+    color: [[setting:themeiconcolor]];
+}
+.essential-colours-alternative4 #page-mod-quiz-edit .questionbankwindow.block div.header {
+    background-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 table#user-grades th.item,
+.essential-colours-alternative4 table#user-grades th.categoryitem,
+.essential-colours-alternative4 table#user-grades th.courseitem {
+    border-bottom-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 table#user-grades td.controls,
+.essential-colours-alternative4 .path-grade-report-grader table tr.avg .cell,
+.essential-colours-alternative4 .path-grade-report-grader table tr.range .cell {
+    background-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .path-grade-report-grader table#fixed_column th {
+    border-right-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .back-to-top {
+    color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .course_category_tree .category[data-categoryid]:hover {
+    background-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .course_category_tree .category[data-categoryid] > .info > .categoryname a:before {
+    color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .commands {
+    color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .commands a:hover {
+    color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 .drag-handle::before {
+    color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .drag-handle::before a {
+    color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 #section_footer {
+    color: [[setting:alternativethemetextcolor4]];
+}
+.essential-colours-alternative4 .nav_icon {
+    color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 .nav_icon:hover {
+    color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 .actions a {
+    color: [[setting:alternativethemeurlcolor4]];
+}
+.essential-colours-alternative4 .moodle-core-dragdrop-draghandle:before,
+.essential-colours-alternative4 .moodle-core-dragdrop-draghandle a {
+    color: [[setting:alternativethemeurlcolor4]];
+}
+.essential-colours-alternative4 .menu a.menu-action > i,
+.essential-colours-alternative4 .course-item-actions a > i,
+.essential-colours-alternative4 .actions a > i {
+    color: [[setting:alternativethemeiconcolor4]];
+}
+.essential-colours-alternative4 .menu a.menu-action:hover > i,
+.essential-colours-alternative4 .course-item-actions a:hover > i,
+.essential-colours-alternative4 .actions a:hover > i {
+    color: [[setting:alternativethemehovercolor4]];
+}
+.essential-colours-alternative4 .moodle-actionmenu[data-enhanced].show .menu {
+    background-color: #ffffff;
+}
+.essential-colours-alternative4 .moodle-actionmenu[data-enhanced].show .menu a {
+    color: [[setting:alternativethemeurlcolor4]];
+}
+.essential-colours-alternative4 .moodle-actionmenu[data-enhanced].show .menu a:hover {
+    color: #ffffff;
+    background-color: [[setting:alternativethemeurlcolor4]];
+}
+.essential-colours-alternative4 .moodle-actionmenu[data-enhanced].show .menu a:hover .fa:before {
+    color: #ffffff;
+}
+.essential-colours-alternative4 #page form .form-buttons #fgroup_id_buttonar,
+.essential-colours-alternative4 #page form table#form td.submit #fgroup_id_buttonar,
+.essential-colours-alternative4 #page form .form-buttons #fgroup_id_buttonar,
+.essential-colours-alternative4 #page form .path-admin .buttons #fgroup_id_buttonar,
+.essential-colours-alternative4 #page form #fitem_id_submitbutton #fgroup_id_buttonar,
+.essential-colours-alternative4 #page form .fp-content-center form + div #fgroup_id_buttonar,
+.essential-colours-alternative4 #page form div.backup-section + form #fgroup_id_buttonar,
+.essential-colours-alternative4 #page form #fgroup_id_buttonar #fgroup_id_buttonar,
+.essential-colours-alternative4 #page form fieldset:last-of-type.hidden #fgroup_id_buttonar {
+    background-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 #page form #fitem_id_submitbutton {
+    background-color: [[setting:alternativethemecolor4]];
+}
+.essential-colours-alternative4 #page form .form-buttons,
+.essential-colours-alternative4 #region-main form .form-buttons,
+.essential-colours-alternative4 #page form #fgroup_id_buttonar,
+.essential-colours-alternative4 #region-main form #fgroup_id_buttonar {
+    background-color: [[setting:alternativethemecolor4]];
+}
+@media (max-width: 979px) {
+    .essential-colours-alternative4 .nav-collapse {
+        background-color: [[setting:alternativethemecolor4]];
+        /* @group Custom Menu */
+    }
+    .essential-colours-alternative4 .nav-collapse .dropdown-menu > li > a,
+    .essential-colours-alternative4 .nav-collapse .dropdown-menu > li > a:visited {
+        color: [[setting:alternativethemenavcolor4]];
+    }
+    .essential-colours-alternative4 .nav-collapse .dropdown-menu > li > a i,
+    .essential-colours-alternative4 .nav-collapse .dropdown-menu > li > a:visited i {
+        color: inherit;
+        background-color: [[setting:alternativethemenavcolor4]];
+        border: 1px solid [[setting:alternativethemenavcolor4]];
+        border-radius: 3px;
+        margin-top: 2px;
+        vertical-align: middle;
+    }
+    .essential-colours-alternative4 .nav-collapse .dropdown-menu > li > a:hover,
+    .essential-colours-alternative4 .nav-collapse .dropdown-menu > li > a:focus,
+    .essential-colours-alternative4 .nav-collapse .dropdown-submenu:hover > a,
+    .essential-colours-alternative4 .nav-collapse .dropdown-submenu:focus > a {
+        color: [[setting:alternativethemecolor4]];
+        background-color: [[setting:alternativethemenavcolor4]];
+    }
+    .essential-colours-alternative4 .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a {
+        color: [[setting:alternativethemecolor4]];
+    }
+    .essential-colours-alternative4 .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a:hover,
+    .essential-colours-alternative4 .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a:focus {
+        background-color: [[setting:alternativethemecolor4]];
+        color: [[setting:alternativethemenavcolor4]];
+    }
+    .essential-colours-alternative4 .navbar .navbar-inner .nav-collapse .nav > li.dropdown a:hover,
+    .essential-colours-alternative4 .navbar .navbar-inner .nav-collapse .nav > li.dropdown a:focus,
+    .essential-colours-alternative4 .navbar .navbar-inner .nav-collapse .nav > li.dropdown a.open {
+        background-color: [[setting:alternativethemecolor4]];
+        color: [[setting:alternativethemenavcolor4]];
+    }
+    .essential-colours-alternative4 .navbar .navbar-inner .dropdown-menu > li > a:hover,
+    .essential-colours-alternative4 .navbar .navbar-inner .dropdown-menu > li > a:focus,
+    .essential-colours-alternative4 .navbar .navbar-inner .dropdown-submenu:hover > a,
+    .essential-colours-alternative4 .navbar .navbar-inner .dropdown-submenu:focus > a {
+        color: [[setting:alternativethemecolor4]];
+        background-color: [[setting:alternativethemenavcolor4]];
+        background-image: none;
+    }
+}
+/* @end */
+
+
 .essential-colours-alternative1 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.default:hover,
 .essential-colours-alternative2 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.default:hover,
 .essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.default:hover,
+.essential-colours-alternative4 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.default:hover,
 .essential-colours-alternative1 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.default:focus,
 .essential-colours-alternative2 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.default:focus,
-.essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.default:focus {
+.essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.default:focus,
+.essential-colours-alternative4 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.default:focus {
   color: [[setting:themenavcolor]];
   background-color: [[setting:themecolor]];
   background-image: none;
@@ -1628,9 +2161,11 @@
 .essential-colours-alternative1 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative1:hover,
 .essential-colours-alternative2 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative1:hover,
 .essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative1:hover,
+.essential-colours-alternative4 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative1:hover,
 .essential-colours-alternative1 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative1:focus,
 .essential-colours-alternative2 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative1:focus,
-.essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative1:focus {
+.essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative1:focus,
+.essential-colours-alternative4 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative1:focus {
   color: [[setting:alternativethemenavcolor1]];
   background-color: [[setting:alternativethemecolor1]];
   background-image: -moz-linear-gradient(top, [[setting:alternativethemetextcolor1]], [[setting:alternativethemecolor1]]);
@@ -1642,9 +2177,11 @@
 .essential-colours-alternative1 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative2:hover,
 .essential-colours-alternative2 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative2:hover,
 .essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative2:hover,
+.essential-colours-alternative4 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative2:hover,
 .essential-colours-alternative1 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative2:focus,
 .essential-colours-alternative2 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative2:focus,
-.essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative2:focus {
+.essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative2:focus,
+.essential-colours-alternative4 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative2:focus {
   color: [[setting:alternativethemenavcolor2]];
   background-color: [[setting:alternativethemecolor2]];
   background-image: -moz-linear-gradient(top, [[setting:alternativethemetextcolor2]], [[setting:alternativethemecolor2]]);
@@ -1656,9 +2193,11 @@
 .essential-colours-alternative1 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:hover,
 .essential-colours-alternative2 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:hover,
 .essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:hover,
+.essential-colours-alternative4 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:hover,
 .essential-colours-alternative1 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:focus,
 .essential-colours-alternative2 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:focus,
-.essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:focus {
+.essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:focus,
+.essential-colours-alternative4 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:focus{
   color: [[setting:alternativethemenavcolor3]];
   background-color: [[setting:alternativethemecolor3]];
   background-image: -moz-linear-gradient(top, [[setting:alternativethemetextcolor3]], [[setting:alternativethemecolor3]]);
@@ -1667,6 +2206,24 @@
   background-image: -o-linear-gradient(top, [[setting:alternativethemetextcolor3]], [[setting:alternativethemecolor3]]);
   background-image: linear-gradient(to bottom, [[setting:alternativethemetextcolor3]], [[setting:alternativethemecolor3]]);
 }
+
+.essential-colours-alternative1 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:hover,
+.essential-colours-alternative2 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:hover,
+.essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:hover,
+.essential-colours-alternative4 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:hover,
+.essential-colours-alternative1 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:focus,
+.essential-colours-alternative2 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:focus,
+.essential-colours-alternative3 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:focus,
+.essential-colours-alternative4 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3:focus{
+    color: [[setting:alternativethemenavcolor4]];
+    background-color: [[setting:alternativethemecolor4]];
+    background-image: -moz-linear-gradient(top, [[setting:alternativethemetextcolor4]], [[setting:alternativethemecolor4]]);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:alternativethemetextcolor4]]), to([[setting:alternativethemecolor4]]));
+    background-image: -webkit-linear-gradient(top, [[setting:alternativethemetextcolor4]], [[setting:alternativethemecolor4]]);
+    background-image: -o-linear-gradient(top, [[setting:alternativethemetextcolor4]], [[setting:alternativethemecolor4]]);
+    background-image: linear-gradient(to bottom, [[setting:alternativethemetextcolor4]], [[setting:alternativethemecolor4]]);
+}
+
 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative1 i {
   background-color: [[setting:alternativethemecolor1]];
 }
@@ -1676,4 +2233,7 @@
 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative3 i {
   background-color: [[setting:alternativethemecolor3]];
 }
+.navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative4 i {
+     background-color: [[setting:alternativethemecolor4]];
+ }
 /*# sourceMappingURL=/theme/essential/style/essential-alternative.treasure.map */

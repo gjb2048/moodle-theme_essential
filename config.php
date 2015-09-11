@@ -48,7 +48,8 @@ $THEME->sheets[] = 'fontawesome';
 
 if ((get_config('theme_essential', 'enablealternativethemecolors1')) ||
     (get_config('theme_essential', 'enablealternativethemecolors2')) ||
-    (get_config('theme_essential', 'enablealternativethemecolors3'))
+    (get_config('theme_essential', 'enablealternativethemecolors3')) ||
+    (get_config('theme_essential', 'enablealternativethemecolors4'))
 ) {
     $THEME->sheets[] = 'essential-alternative';
 }
@@ -57,6 +58,7 @@ $THEME->sheets[] = 'custom';
 
 $THEME->supportscssoptimisation = false;
 
+$THEME->javascripts_footer = array('essential', 'coloursswitcher');
 if (floatval($CFG->version) >= 2013111803.02) { // 2.6.3+ (Build: 20140522) which has MDL-43995 integrated into it.
     $THEME->enable_dock = true;
     $THEME->javascripts_footer[] = 'dock';
@@ -191,8 +193,6 @@ $THEME->layouts = array(
         'defaultregion' => 'side-pre'
     ),
 );
-
-$THEME->javascripts_footer[] = 'coloursswitcher';
 
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->csspostprocess = 'theme_essential_process_css';

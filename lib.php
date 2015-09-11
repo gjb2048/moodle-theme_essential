@@ -333,13 +333,14 @@ function theme_essential_process_css($css, $theme) {
 
     if ((get_config('theme_essential', 'enablealternativethemecolors1')) ||
             (get_config('theme_essential', 'enablealternativethemecolors2')) ||
-            (get_config('theme_essential', 'enablealternativethemecolors3'))
+            (get_config('theme_essential', 'enablealternativethemecolors3')) ||
+            (get_config('theme_essential', 'enablealternativethemecolors4'))
     ) {
         // Set theme alternative colours.
         $defaultcolors = array('#a430d1', '#d15430', '#5dd130');
         $defaulthovercolors = array('#9929c4', '#c44c29', '#53c429');
 
-        foreach (range(1, 3) as $alternative) {
+        foreach (range(1, 4) as $alternative) {
             $default = $defaultcolors[$alternative - 1];
             $defaulthover = $defaulthovercolors[$alternative - 1];
             $css = theme_essential_set_alternativecolor($css, 'color' . $alternative,
@@ -718,7 +719,7 @@ function theme_essential_print_single_section_page(&$that, &$courserenderer, $co
  */
 function theme_essential_check_colours_switch() {
     $colours = optional_param('essentialcolours', null, PARAM_ALPHANUM);
-    if (in_array($colours, array('default', 'alternative1', 'alternative2', 'alternative3'))) {
+    if (in_array($colours, array('default', 'alternative1', 'alternative2', 'alternative3', 'alternative4'))) {
         set_user_preference('theme_essential_colours', $colours);
     }
 }
@@ -747,7 +748,7 @@ function theme_essential_initialise_colourswitcher(moodle_page $page) {
  */
 function theme_essential_get_colours($default = 'default') {
     $preference = get_user_preferences('theme_essential_colours', $default);
-    foreach (range(1, 3) as $alternativethemenumber) {
+    foreach (range(1, 4) as $alternativethemenumber) {
         if ($preference == 'alternative' . $alternativethemenumber && theme_essential_get_setting('enablealternativethemecolors' . $alternativethemenumber)) {
             return $preference;
         }

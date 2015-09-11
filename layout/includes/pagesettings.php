@@ -32,7 +32,8 @@ $bodyclasses = array();
 
 if (theme_essential_get_setting('enablealternativethemecolors1') ||
     theme_essential_get_setting('enablealternativethemecolors2') ||
-    theme_essential_get_setting('enablealternativethemecolors3')
+    theme_essential_get_setting('enablealternativethemecolors3') ||
+    theme_essential_get_setting('enablealternativethemecolors4')
 ) {
     $colourswitcher = true;
     theme_essential_check_colours_switch();
