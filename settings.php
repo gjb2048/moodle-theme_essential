@@ -271,8 +271,8 @@ if (is_siteadmin()) {
     $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
 
-    $defaultalternativethemecolors = array('#a430d1', '#d15430', '#5dd130','#5dd130');
-    $defaultalternativethemehovercolors = array('#9929c4', '#c44c29', '#53c429','#53c429');
+    $defaultalternativethemecolors = array('#a430d1', '#d15430', '#5dd130','#006b94');
+    $defaultalternativethemehovercolors = array('#9929c4', '#c44c29', '#53c429','#4090AF');
 
     foreach (range(1, 4) as $alternativethemenumber) {
 
