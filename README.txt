@@ -202,6 +202,7 @@ New in 2.9.0.8
 - UPD: Updated bootstrap.js such that all modules are included as discovered that 'modals' were missing.
 - UPD: Tidy up icon colours and in alternatives.
 - UPD: Changed course icon to colourable Font Awesome alternative.
+- UPD: Refactor marketing spot settings in settings.php.
 
 New in 2.9.0.7
 ==============

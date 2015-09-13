@@ -89,6 +89,9 @@
     &:hover {
       color: ~"[[setting:alternativethemehovercolor2]]";
     }
+    &.fa-warning {
+      color: inherit;
+    }
   }
 
   a:before {
@@ -279,32 +282,40 @@
     .carousel-inner {
       // Caption for text below images.
       .carousel-caption {
-        background-color: ~"[[setting:alternativethemecolor2]]";
+        background-color: ~"[[setting:alternativethemeslidecaptionbackgroundcolor2]]";
         .opacity(75);
         h4, p {
-          color: #eee; // TODO in settings.
+          color: ~"[[setting:alternativethemeslidecaptiontextcolor2]]";
         }
       }
     }
     // Left/right controls for nav.
     .carousel-control {
-      color: ~"[[setting:alternativethemecolor2]]";
+      color: ~"[[setting:alternativethemeslidebuttoncolor2]]";
 
       // Hover/focus state.
       &:hover,
       &:focus {
-        color: ~"[[setting:alternativethemehovercolor2]]";
+        color: ~"[[setting:alternativethemeslidebuttonhovercolor2]]";
+      }
+      i {
+        color: ~"[[setting:alternativethemeslidebuttoncolor2]]";
+        &:hover,
+        &:focus {
+          color: ~"[[setting:alternativethemeslidebuttonhovercolor2]]";
+        }
       }
     }
 
     // Carousel indicator pips.
     .carousel-indicators {
+      box-shadow: 0px 0px 8px ~"[[setting:alternativethemeslidebuttoncolor2]]";
       li {
-        background-color: ~"[[setting:alternativethemecolor2]]";
+        background-color: ~"[[setting:alternativethemeslidebuttoncolor2]]";
         .opacity(75);
       }
       .active {
-        background-color: ~"[[setting:alternativethemehovercolor2]]";
+        background-color: ~"[[setting:alternativethemeslidebuttonhovercolor2]]";
       }
     }
   }

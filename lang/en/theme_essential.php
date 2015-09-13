@@ -310,7 +310,7 @@ $string['alternativethemecolordesc'] = 'What colour should your theme be for the
 $string['alternativethemename'] = 'Colour scheme name';
 $string['alternativethemenamedesc'] = 'Provide a name for your alternative theme colours';
 $string['alternativethemecolors'] = 'Alternative theme colours';
-$string['alternativethemecolorsdesc'] = 'Defines theme colours alternative that the user may select.';
+$string['alternativethemecolorsdesc'] = 'Defines alternative theme colours that the user may select.';
 $string['alternativethemecolorname'] = 'Name of alternative colour set {$a}';
 $string['alternativethemecolornamedesc'] = 'Provide a recognisable name for this set of alternative theme colours';
 $string['alternativethemetextcolor'] = 'Alternative text colour {$a}';
@@ -323,6 +323,16 @@ $string['alternativethemenavcolor'] = 'Navigation text colour {$a}';
 $string['alternativethemenavcolordesc'] = 'Set the alternative {$a} text colour for navigation.  Being the navigation bar and the breadcrumb fancy style.';
 $string['alternativethemehovercolor'] = 'Alternative theme hover colour {$a}';
 $string['alternativethemehovercolordesc'] = 'What colour should your theme hovers be for the alternative theme colours {$a}.';
+$string['alternativethemeslidecolors'] = 'Alternative theme slide colours';
+$string['alternativethemeslidecolorsdesc'] = 'Defines alternative theme slide colours that the user may select.';
+$string['alternativethemeslidecaptiontextcolor'] = 'Alternative theme slide caption text colour {$a}';
+$string['alternativethemeslidecaptiontextcolordesc'] = 'What colour should your theme slide caption text be for the alternative theme colours {$a}.  Does not apply to \'Beside\' slide caption option.';
+$string['alternativethemeslidecaptionbackgroundcolor'] = 'Alternative theme slide caption background colour {$a}';
+$string['alternativethemeslidecaptionbackgroundcolordesc'] = 'What colour should your theme slide caption background be for the alternative theme colours {$a}.  Does not apply to \'Beside\' slide caption option.';
+$string['alternativethemeslidebuttoncolor'] = 'Alternative theme slide button colour {$a}';
+$string['alternativethemeslidebuttoncolordesc'] = 'What colour should your theme slide button be for the alternative theme colours {$a}.';
+$string['alternativethemeslidebuttonhovercolor'] = 'Alternative theme slide button hover colour {$a}';
+$string['alternativethemeslidebuttonhovercolordesc'] = 'What hover colour should your theme slide button be for the alternative theme colours {$a}.';
 $string['enablealternativethemecolors'] = 'Enable alternative theme colours {$a}';
 $string['enablealternativethemecolorsdesc'] = 'If enabled, the user will be able to choose the alternative theme colours {$a}.';
 
@@ -367,6 +377,13 @@ $string['readmore'] = 'Read more';
 $string['slideinterval'] = 'Slide interval';
 $string['slideintervaldesc'] = 'Slide transition interval in milliseconds.';
 
+// New...
+$string['slidecaptiontextcolor'] = 'Slide caption text colour';
+$string['slidecaptiontextcolordesc'] = 'What colour the slide caption text should be.  Does not apply to \'Beside\' slide caption option.';
+$string['slidecaptionbackgroundcolor'] = 'Slide caption background colour';
+$string['slidecaptionbackgroundcolordesc'] = 'What colour the slide caption background should be.  Does not apply to \'Beside\' slide caption option.';
+
+// Old...
 $string['slidecolor'] = 'Slide text colour';
 $string['slidecolordesc'] = 'What colour the slide caption text should be.';
 

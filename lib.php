@@ -221,7 +221,7 @@ function theme_essential_process_css($css, $theme) {
 
     // Set the theme colour.
     $themecolor = \theme_essential\toolbox::get_setting('themecolor');
-    $css = theme_essential_set_color($css, $themecolor, '[[setting:themecolor]]', '#30ADD1');
+    $css = theme_essential_set_color($css, $themecolor, '[[setting:themecolor]]', '#30add1');
 
     // Set the theme text colour.
     $themetextcolor = \theme_essential\toolbox::get_setting('themetextcolor');
@@ -241,7 +241,7 @@ function theme_essential_process_css($css, $theme) {
 
     // Set the theme icon colour.
     $themeiconcolor = \theme_essential\toolbox::get_setting('themeiconcolor');
-    $css = theme_essential_set_color($css, $themeiconcolor, '[[setting:themeiconcolor]]', '#30ADD1');
+    $css = theme_essential_set_color($css, $themeiconcolor, '[[setting:themeiconcolor]]', '#30add1');
 
     // Set the theme navigation colour.
     $themenavcolor = \theme_essential\toolbox::get_setting('themenavcolor');
@@ -271,14 +271,6 @@ function theme_essential_process_css($css, $theme) {
     $footerhovercolor = \theme_essential\toolbox::get_setting('footerhovercolor');
     $css = theme_essential_set_color($css, $footerhovercolor, '[[setting:footerhovercolor]]', '#30add1');
 
-    // Set the slide background colour.
-    $slidebgcolor = theme_essential_hex2rgba(\theme_essential\toolbox::get_setting('themecolor'), '.75');
-    $css = theme_essential_set_color($css, $slidebgcolor, '[[setting:carouselcolor]]', '#30add1');
-
-    // Set the slide active pip colour.
-    $slidebgcolor = theme_essential_hex2rgba(\theme_essential\toolbox::get_setting('themecolor'), '.25');
-    $css = theme_essential_set_color($css, $slidebgcolor, '[[setting:carouselactivecolor]]', '#30add1');
-
     // Set the slide header colour.
     $slideshowcolor = \theme_essential\toolbox::get_setting('slideshowcolor');
     $css = theme_essential_set_color($css, $slideshowcolor, '[[setting:slideshowcolor]]', '#30add1');
@@ -287,9 +279,13 @@ function theme_essential_process_css($css, $theme) {
     $slideheadercolor = \theme_essential\toolbox::get_setting('slideheadercolor');
     $css = theme_essential_set_color($css, $slideheadercolor, '[[setting:slideheadercolor]]', '#30add1');
 
-    // Set the slide text colour.
-    $slidecolor = \theme_essential\toolbox::get_setting('slidecolor');
-    $css = theme_essential_set_color($css, $slidecolor, '[[setting:slidecolor]]', '#ffffff');
+    // Set the slide caption text colour.
+    $slidecaptiontextcolor = \theme_essential\toolbox::get_setting('slidecaptiontextcolor');
+    $css = theme_essential_set_color($css, $slidecaptiontextcolor, '[[setting:slidecaptiontextcolor]]', '#ffffff');
+
+    // Set the slide caption background colour.
+    $slidecaptionbackgroundcolor = \theme_essential\toolbox::get_setting('slidecaptionbackgroundcolor');
+    $css = theme_essential_set_color($css, $slidecaptionbackgroundcolor, '[[setting:slidecaptionbackgroundcolor]]', '#30add1');
 
     // Set the slide button colour.
     $slidebuttoncolor = \theme_essential\toolbox::get_setting('slidebuttoncolor');
@@ -322,6 +318,14 @@ function theme_essential_process_css($css, $theme) {
                     \theme_essential\toolbox::get_setting('alternativethemenavcolor' . $alternative), $default);
             $css = theme_essential_set_alternativecolor($css, 'hovercolor' . $alternative,
                     \theme_essential\toolbox::get_setting('alternativethemehovercolor' . $alternative), $defaulthover);
+            $css = theme_essential_set_alternativecolor($css, 'slidecaptiontextcolor' . $alternative,
+                    \theme_essential\toolbox::get_setting('alternativethemeslidecaptiontextcolor' . $alternative), $default);
+            $css = theme_essential_set_alternativecolor($css, 'slidecaptionbackgroundcolor' . $alternative,
+                    \theme_essential\toolbox::get_setting('alternativethemeslidecaptionbackgroundcolor' . $alternative), $default);
+            $css = theme_essential_set_alternativecolor($css, 'slidebuttoncolor' . $alternative,
+                    \theme_essential\toolbox::get_setting('alternativethemeslidebuttoncolor' . $alternative), $default);
+            $css = theme_essential_set_alternativecolor($css, 'slidebuttonhovercolor' . $alternative,
+                    \theme_essential\toolbox::get_setting('alternativethemeslidebuttonhovercolor' . $alternative), $defaulthover);
         }
     }
 

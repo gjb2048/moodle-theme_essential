@@ -255,14 +255,14 @@ ul.breadcrumb.style2 li a:hover {
 /* @end */
 /* @group Carousel */
 #essentialCarousel.carousel .carousel-inner .carousel-caption {
-  background-color: [[setting:carouselcolor]];
+  background-color: [[setting:slidecaptionbackgroundcolor]];
 }
 #essentialCarousel.carousel .carousel-inner .carousel-caption .carousel-caption-inner {
   max-width: [[setting:pagewidth]];
 }
 #essentialCarousel.carousel .carousel-inner .carousel-caption h4,
 #essentialCarousel.carousel .carousel-inner .carousel-caption p {
-  color: [[setting:slidecolor]];
+  color: [[setting:slidecaptiontextcolor]];
 }
 #essentialCarousel.carousel .carousel-control {
   color: [[setting:slidebuttoncolor]];
@@ -271,14 +271,18 @@ ul.breadcrumb.style2 li a:hover {
 #essentialCarousel.carousel .carousel-control:focus {
   color: [[setting:slidebuttonhovercolor]];
 }
+#essentialCarousel.carousel .carousel-control:hover i,
+#essentialCarousel.carousel .carousel-control:focus i {
+  color: [[setting:slidebuttonhovercolor]];
+}
 #essentialCarousel.carousel .carousel-indicators {
-  box-shadow: 0px 0px 8px [[setting:carouselcolor]];
+  box-shadow: 0px 0px 8px [[setting:slidebuttoncolor]];
 }
 #essentialCarousel.carousel .carousel-indicators li {
-  background-color: [[setting:carouselcolor]];
+  background-color: [[setting:slidebuttoncolor]];
 }
 #essentialCarousel.carousel .carousel-indicators .active {
-  background-color: [[setting:carouselactivecolor]];
+  background-color: [[setting:slidebuttonhovercolor]];
 }
 /* @end */
 /*

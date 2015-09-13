@@ -113,6 +113,9 @@
 .essential-colours-alternative1 i:hover {
   color: [[setting:alternativethemehovercolor1]];
 }
+.essential-colours-alternative1 i.fa-warning {
+  color: inherit;
+}
 .essential-colours-alternative1 a:before {
   color: [[setting:alternativethemeiconcolor1]];
 }
@@ -266,28 +269,38 @@
   background-color: [[setting:alternativethemehovercolor1]];
 }
 .essential-colours-alternative1 #essentialCarousel.carousel .carousel-inner .carousel-caption {
-  background-color: [[setting:alternativethemecolor1]];
+  background-color: [[setting:alternativethemeslidecaptionbackgroundcolor1]];
   opacity: 0.75;
   filter: alpha(opacity=75);
 }
 .essential-colours-alternative1 #essentialCarousel.carousel .carousel-inner .carousel-caption h4,
 .essential-colours-alternative1 #essentialCarousel.carousel .carousel-inner .carousel-caption p {
-  color: #eee;
+  color: [[setting:alternativethemeslidecaptiontextcolor1]];
 }
 .essential-colours-alternative1 #essentialCarousel.carousel .carousel-control {
-  color: [[setting:alternativethemecolor1]];
+  color: [[setting:alternativethemeslidebuttoncolor1]];
 }
 .essential-colours-alternative1 #essentialCarousel.carousel .carousel-control:hover,
 .essential-colours-alternative1 #essentialCarousel.carousel .carousel-control:focus {
-  color: [[setting:alternativethemehovercolor1]];
+  color: [[setting:alternativethemeslidebuttonhovercolor1]];
+}
+.essential-colours-alternative1 #essentialCarousel.carousel .carousel-control i {
+  color: [[setting:alternativethemeslidebuttoncolor1]];
+}
+.essential-colours-alternative1 #essentialCarousel.carousel .carousel-control i:hover,
+.essential-colours-alternative1 #essentialCarousel.carousel .carousel-control i:focus {
+  color: [[setting:alternativethemeslidebuttonhovercolor1]];
+}
+.essential-colours-alternative1 #essentialCarousel.carousel .carousel-indicators {
+  box-shadow: 0px 0px 8px [[setting:alternativethemeslidebuttoncolor1]];
 }
 .essential-colours-alternative1 #essentialCarousel.carousel .carousel-indicators li {
-  background-color: [[setting:alternativethemecolor1]];
+  background-color: [[setting:alternativethemeslidebuttoncolor1]];
   opacity: 0.75;
   filter: alpha(opacity=75);
 }
 .essential-colours-alternative1 #essentialCarousel.carousel .carousel-indicators .active {
-  background-color: [[setting:alternativethemehovercolor1]];
+  background-color: [[setting:alternativethemeslidebuttonhovercolor1]];
 }
 .essential-colours-alternative1 .block a {
   color: [[setting:alternativethemeurlcolor1]];
@@ -653,6 +666,9 @@
 .essential-colours-alternative2 i:hover {
   color: [[setting:alternativethemehovercolor2]];
 }
+.essential-colours-alternative2 i.fa-warning {
+  color: inherit;
+}
 .essential-colours-alternative2 a:before {
   color: [[setting:alternativethemeiconcolor2]];
 }
@@ -806,28 +822,38 @@
   background-color: [[setting:alternativethemehovercolor2]];
 }
 .essential-colours-alternative2 #essentialCarousel.carousel .carousel-inner .carousel-caption {
-  background-color: [[setting:alternativethemecolor2]];
+  background-color: [[setting:alternativethemeslidecaptionbackgroundcolor2]];
   opacity: 0.75;
   filter: alpha(opacity=75);
 }
 .essential-colours-alternative2 #essentialCarousel.carousel .carousel-inner .carousel-caption h4,
 .essential-colours-alternative2 #essentialCarousel.carousel .carousel-inner .carousel-caption p {
-  color: #eee;
+  color: [[setting:alternativethemeslidecaptiontextcolor2]];
 }
 .essential-colours-alternative2 #essentialCarousel.carousel .carousel-control {
-  color: [[setting:alternativethemecolor2]];
+  color: [[setting:alternativethemeslidebuttoncolor2]];
 }
 .essential-colours-alternative2 #essentialCarousel.carousel .carousel-control:hover,
 .essential-colours-alternative2 #essentialCarousel.carousel .carousel-control:focus {
-  color: [[setting:alternativethemehovercolor2]];
+  color: [[setting:alternativethemeslidebuttonhovercolor2]];
+}
+.essential-colours-alternative2 #essentialCarousel.carousel .carousel-control i {
+  color: [[setting:alternativethemeslidebuttoncolor2]];
+}
+.essential-colours-alternative2 #essentialCarousel.carousel .carousel-control i:hover,
+.essential-colours-alternative2 #essentialCarousel.carousel .carousel-control i:focus {
+  color: [[setting:alternativethemeslidebuttonhovercolor2]];
+}
+.essential-colours-alternative2 #essentialCarousel.carousel .carousel-indicators {
+  box-shadow: 0px 0px 8px [[setting:alternativethemeslidebuttoncolor2]];
 }
 .essential-colours-alternative2 #essentialCarousel.carousel .carousel-indicators li {
-  background-color: [[setting:alternativethemecolor2]];
+  background-color: [[setting:alternativethemeslidebuttoncolor2]];
   opacity: 0.75;
   filter: alpha(opacity=75);
 }
 .essential-colours-alternative2 #essentialCarousel.carousel .carousel-indicators .active {
-  background-color: [[setting:alternativethemehovercolor2]];
+  background-color: [[setting:alternativethemeslidebuttonhovercolor2]];
 }
 .essential-colours-alternative2 .block a {
   color: [[setting:alternativethemeurlcolor2]];
@@ -1193,6 +1219,9 @@
 .essential-colours-alternative3 i:hover {
   color: [[setting:alternativethemehovercolor3]];
 }
+.essential-colours-alternative3 i.fa-warning {
+  color: inherit;
+}
 .essential-colours-alternative3 a:before {
   color: [[setting:alternativethemeiconcolor3]];
 }
@@ -1346,28 +1375,38 @@
   background-color: [[setting:alternativethemehovercolor3]];
 }
 .essential-colours-alternative3 #essentialCarousel.carousel .carousel-inner .carousel-caption {
-  background-color: [[setting:alternativethemecolor3]];
+  background-color: [[setting:alternativethemeslidecaptionbackgroundcolor3]];
   opacity: 0.75;
   filter: alpha(opacity=75);
 }
 .essential-colours-alternative3 #essentialCarousel.carousel .carousel-inner .carousel-caption h4,
 .essential-colours-alternative3 #essentialCarousel.carousel .carousel-inner .carousel-caption p {
-  color: #eee;
+  color: [[setting:alternativethemeslidecaptiontextcolor3]];
 }
 .essential-colours-alternative3 #essentialCarousel.carousel .carousel-control {
-  color: [[setting:alternativethemecolor3]];
+  color: [[setting:alternativethemeslidebuttoncolor3]];
 }
 .essential-colours-alternative3 #essentialCarousel.carousel .carousel-control:hover,
 .essential-colours-alternative3 #essentialCarousel.carousel .carousel-control:focus {
-  color: [[setting:alternativethemehovercolor3]];
+  color: [[setting:alternativethemeslidebuttonhovercolor3]];
+}
+.essential-colours-alternative3 #essentialCarousel.carousel .carousel-control i {
+  color: [[setting:alternativethemeslidebuttoncolor3]];
+}
+.essential-colours-alternative3 #essentialCarousel.carousel .carousel-control i:hover,
+.essential-colours-alternative3 #essentialCarousel.carousel .carousel-control i:focus {
+  color: [[setting:alternativethemeslidebuttonhovercolor3]];
+}
+.essential-colours-alternative3 #essentialCarousel.carousel .carousel-indicators {
+  box-shadow: 0px 0px 8px [[setting:alternativethemeslidebuttoncolor3]];
 }
 .essential-colours-alternative3 #essentialCarousel.carousel .carousel-indicators li {
-  background-color: [[setting:alternativethemecolor3]];
+  background-color: [[setting:alternativethemeslidebuttoncolor3]];
   opacity: 0.75;
   filter: alpha(opacity=75);
 }
 .essential-colours-alternative3 #essentialCarousel.carousel .carousel-indicators .active {
-  background-color: [[setting:alternativethemehovercolor3]];
+  background-color: [[setting:alternativethemeslidebuttonhovercolor3]];
 }
 .essential-colours-alternative3 .block a {
   color: [[setting:alternativethemeurlcolor3]];

@@ -14565,8 +14565,6 @@ a.badge:focus {
   -webkit-border-radius: 23px;
   -moz-border-radius: 23px;
   border-radius: 23px;
-  opacity: 0.5;
-  filter: alpha(opacity=50);
 }
 
 .carousel-control.right {

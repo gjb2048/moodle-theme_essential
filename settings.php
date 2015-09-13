@@ -264,7 +264,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // This is the descriptor for the user theme colors.
+    // This is the descriptor for the user theme colours.
     $name = 'theme_essential/alternativethemecolorsinfo';
     $heading = get_string('alternativethemecolors', 'theme_essential');
     $information = get_string('alternativethemecolorsdesc', 'theme_essential');
@@ -275,7 +275,6 @@ if (is_siteadmin()) {
     $defaultalternativethemehovercolors = array('#9929c4', '#c44c29', '#53c429');
 
     foreach (range(1, 3) as $alternativethemenumber) {
-
         // Enables the user to select an alternative colours choice.
         $name = 'theme_essential/enablealternativethemecolors' . $alternativethemenumber;
         $title = get_string('enablealternativethemecolors', 'theme_essential', $alternativethemenumber);
@@ -979,206 +978,74 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $temp->add($setting);
 
-    // This is the descriptor for Marketing Spot One.
-    $name = 'theme_essential/marketing1info';
-    $heading = get_string('marketing1', 'theme_essential');
-    $information = get_string('marketinginfodesc', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
+    foreach (range(1, 3) as $marketingspotnumber) {
+        // This is the descriptor for Marketing Spot in $marketingspotnumber.
+        $name = 'theme_essential/marketing'.$marketingspotnumber.'info';
+        $heading = get_string('marketing'.$marketingspotnumber, 'theme_essential');
+        $information = get_string('marketinginfodesc', 'theme_essential');
+        $setting = new admin_setting_heading($name, $heading, $information);
+        $temp->add($setting);
 
-    // Marketing Spot One.
-    $name = 'theme_essential/marketing1';
-    $title = get_string('marketingtitle', 'theme_essential');
-    $description = get_string('marketingtitledesc', 'theme_essential');
-    $default = '';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+        // Marketing Spot.
+        $name = 'theme_essential/marketing'.$marketingspotnumber;
+        $title = get_string('marketingtitle', 'theme_essential');
+        $description = get_string('marketingtitledesc', 'theme_essential');
+        $default = '';
+        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
 
-    $name = 'theme_essential/marketing1icon';
-    $title = get_string('marketingicon', 'theme_essential');
-    $description = get_string('marketingicondesc', 'theme_essential');
-    $default = 'star';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+        $name = 'theme_essential/marketing'.$marketingspotnumber.'icon';
+        $title = get_string('marketingicon', 'theme_essential');
+        $description = get_string('marketingicondesc', 'theme_essential');
+        $default = 'star';
+        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
 
-    $name = 'theme_essential/marketing1image';
-    $title = get_string('marketingimage', 'theme_essential');
-    $description = get_string('marketingimagedesc', 'theme_essential');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'marketing1image');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+        $name = 'theme_essential/marketing'.$marketingspotnumber.'image';
+        $title = get_string('marketingimage', 'theme_essential');
+        $description = get_string('marketingimagedesc', 'theme_essential');
+        $setting = new admin_setting_configstoredfile($name, $title, $description, 'marketing'.$marketingspotnumber.'image');
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
 
-    $name = 'theme_essential/marketing1content';
-    $title = get_string('marketingcontent', 'theme_essential');
-    $description = get_string('marketingcontentdesc', 'theme_essential');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+        $name = 'theme_essential/marketing'.$marketingspotnumber.'content';
+        $title = get_string('marketingcontent', 'theme_essential');
+        $description = get_string('marketingcontentdesc', 'theme_essential');
+        $default = '';
+        $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
 
-    $name = 'theme_essential/marketing1buttontext';
-    $title = get_string('marketingbuttontext', 'theme_essential');
-    $description = get_string('marketingbuttontextdesc', 'theme_essential');
-    $default = '';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+        $name = 'theme_essential/marketing'.$marketingspotnumber.'buttontext';
+        $title = get_string('marketingbuttontext', 'theme_essential');
+        $description = get_string('marketingbuttontextdesc', 'theme_essential');
+        $default = '';
+        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
 
-    $name = 'theme_essential/marketing1buttonurl';
-    $title = get_string('marketingbuttonurl', 'theme_essential');
-    $description = get_string('marketingbuttonurldesc', 'theme_essential');
-    $default = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+        $name = 'theme_essential/marketing'.$marketingspotnumber.'buttonurl';
+        $title = get_string('marketingbuttonurl', 'theme_essential');
+        $description = get_string('marketingbuttonurldesc', 'theme_essential');
+        $default = '';
+        $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
 
-    $name = 'theme_essential/marketing1target';
-    $title = get_string('marketingurltarget', 'theme_essential');
-    $description = get_string('marketingurltargetdesc', 'theme_essential');
-    $target1 = get_string('marketingurltargetself', 'theme_essential');
-    $target2 = get_string('marketingurltargetnew', 'theme_essential');
-    $target3 = get_string('marketingurltargetparent', 'theme_essential');
-    $default = '_blank';
-    $choices = array('_self' => $target1, '_blank' => $target2, '_parent' => $target3);
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // This is the descriptor for Marketing Spot Two.
-    $name = 'theme_essential/marketing2info';
-    $heading = get_string('marketing2', 'theme_essential');
-    $information = get_string('marketinginfodesc', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
-
-    // Marketing Spot Two.
-    $name = 'theme_essential/marketing2';
-    $title = get_string('marketingtitle', 'theme_essential');
-    $description = get_string('marketingtitledesc', 'theme_essential');
-    $default = '';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_essential/marketing2icon';
-    $title = get_string('marketingicon', 'theme_essential');
-    $description = get_string('marketingicondesc', 'theme_essential');
-    $default = 'star';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_essential/marketing2image';
-    $title = get_string('marketingimage', 'theme_essential');
-    $description = get_string('marketingimagedesc', 'theme_essential');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'marketing2image');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_essential/marketing2content';
-    $title = get_string('marketingcontent', 'theme_essential');
-    $description = get_string('marketingcontentdesc', 'theme_essential');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_essential/marketing2buttontext';
-    $title = get_string('marketingbuttontext', 'theme_essential');
-    $description = get_string('marketingbuttontextdesc', 'theme_essential');
-    $default = '';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_essential/marketing2buttonurl';
-    $title = get_string('marketingbuttonurl', 'theme_essential');
-    $description = get_string('marketingbuttonurldesc', 'theme_essential');
-    $default = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_essential/marketing2target';
-    $title = get_string('marketingurltarget', 'theme_essential');
-    $description = get_string('marketingurltargetdesc', 'theme_essential');
-    $target1 = get_string('marketingurltargetself', 'theme_essential');
-    $target2 = get_string('marketingurltargetnew', 'theme_essential');
-    $target3 = get_string('marketingurltargetparent', 'theme_essential');
-    $default = '_blank';
-    $choices = array('_self' => $target1, '_blank' => $target2, '_parent' => $target3);
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // This is the descriptor for Marketing Spot Three
-    $name = 'theme_essential/marketing3info';
-    $heading = get_string('marketing3', 'theme_essential');
-    $information = get_string('marketinginfodesc', 'theme_essential');
-    $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
-
-    // Marketing Spot Three.
-    $name = 'theme_essential/marketing3';
-    $title = get_string('marketingtitle', 'theme_essential');
-    $description = get_string('marketingtitledesc', 'theme_essential');
-    $default = '';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_essential/marketing3icon';
-    $title = get_string('marketingicon', 'theme_essential');
-    $description = get_string('marketingicondesc', 'theme_essential');
-    $default = 'star';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_essential/marketing3image';
-    $title = get_string('marketingimage', 'theme_essential');
-    $description = get_string('marketingimagedesc', 'theme_essential');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'marketing3image');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_essential/marketing3content';
-    $title = get_string('marketingcontent', 'theme_essential');
-    $description = get_string('marketingcontentdesc', 'theme_essential');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_essential/marketing3buttontext';
-    $title = get_string('marketingbuttontext', 'theme_essential');
-    $description = get_string('marketingbuttontextdesc', 'theme_essential');
-    $default = '';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_essential/marketing3buttonurl';
-    $title = get_string('marketingbuttonurl', 'theme_essential');
-    $description = get_string('marketingbuttonurldesc', 'theme_essential');
-    $default = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_essential/marketing3target';
-    $title = get_string('marketingurltarget', 'theme_essential');
-    $description = get_string('marketingurltargetdesc', 'theme_essential');
-    $target1 = get_string('marketingurltargetself', 'theme_essential');
-    $target2 = get_string('marketingurltargetnew', 'theme_essential');
-    $target3 = get_string('marketingurltargetparent', 'theme_essential');
-    $default = '_blank';
-    $choices = array('_self' => $target1, '_blank' => $target2, '_parent' => $target3);
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+        $name = 'theme_essential/marketing'.$marketingspotnumber.'target';
+        $title = get_string('marketingurltarget', 'theme_essential');
+        $description = get_string('marketingurltargetdesc', 'theme_essential');
+        $target1 = get_string('marketingurltargetself', 'theme_essential');
+        $target2 = get_string('marketingurltargetnew', 'theme_essential');
+        $target3 = get_string('marketingurltargetparent', 'theme_essential');
+        $default = '_blank';
+        $choices = array('_self' => $target1, '_blank' => $target2, '_parent' => $target3);
+        $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+    }
 
     /* User Alerts */
     $temp->add(new admin_setting_heading('theme_essential_alerts', get_string('alertsheadingsub', 'theme_essential'),
@@ -1397,11 +1264,21 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Slide Text colour setting.
-    $name = 'theme_essential/slidecolor';
-    $title = get_string('slidecolor', 'theme_essential');
-    $description = get_string('slidecolordesc', 'theme_essential');
+    // Slide caption text colour setting.
+    $name = 'theme_essential/slidecaptiontextcolor';
+    $title = get_string('slidecaptiontextcolor', 'theme_essential');
+    $description = get_string('slidecaptiontextcolordesc', 'theme_essential');
     $default = '#ffffff';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Slide caption background colour setting.
+    $name = 'theme_essential/slidecaptionbackgroundcolor';
+    $title = get_string('slidecaptionbackgroundcolor', 'theme_essential');
+    $description = get_string('slidecaptionbackgroundcolordesc', 'theme_essential');
+    $default = '#30add1';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -1449,6 +1326,55 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+
+    // This is the descriptor for the user theme slide colours.
+    $name = 'theme_essential/alternativethemeslidecolorsinfo';
+    $heading = get_string('alternativethemeslidecolors', 'theme_essential');
+    $information = get_string('alternativethemeslidecolorsdesc', 'theme_essential');
+    $setting = new admin_setting_heading($name, $heading, $information);
+    $temp->add($setting);
+
+    foreach (range(1, 3) as $alternativethemenumber) {
+        // Alternative theme slide caption text colour setting.
+        $name = 'theme_essential/alternativethemeslidecaptiontextcolor' . $alternativethemenumber;
+        $title = get_string('alternativethemeslidecaptiontextcolor', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemeslidecaptiontextcolordesc', 'theme_essential', $alternativethemenumber);
+        $default = '#ffffff';
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        // Alternative theme slide caption background colour setting.
+        $name = 'theme_essential/alternativethemeslidecaptionbackgroundcolor'.$alternativethemenumber;
+        $title = get_string('alternativethemeslidecaptionbackgroundcolor', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemeslidecaptionbackgroundcolordesc', 'theme_essential', $alternativethemenumber);
+        $default = $defaultalternativethemecolors[$alternativethemenumber - 1];
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        // Alternative theme slide button colour setting.
+        $name = 'theme_essential/alternativethemeslidebuttoncolor'.$alternativethemenumber;
+        $title = get_string('alternativethemeslidebuttoncolor', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemeslidebuttoncolordesc', 'theme_essential', $alternativethemenumber);
+        $default = $defaultalternativethemecolors[$alternativethemenumber - 1];
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        // Alternative theme slide button hover colour setting.
+        $name = 'theme_essential/alternativethemeslidebuttonhovercolor'.$alternativethemenumber;
+        $title = get_string('alternativethemeslidebuttonhovercolor', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemeslidebuttonhovercolordesc', 'theme_essential', $alternativethemenumber);
+        $default = $defaultalternativethemehovercolors[$alternativethemenumber - 1];
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+    }
 
     $numberofslides = get_config('theme_essential', 'numberofslides');
     for ($i = 1; $i <= $numberofslides; $i++) {
