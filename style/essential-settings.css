@@ -200,6 +200,9 @@ p.tree_item.branch.emptybranch:focus:before {
   color: [[setting:themecolor]];
   background-color: [[setting:themehovercolor]];
 }
+.breadcrumb-button i {
+  color: inherit;
+}
 /* @end */
 /* @group Breadcrumb */
 .breadcrumb-nav {

@@ -196,6 +196,7 @@ New in 2.9.0.8
 - FIX: MDL-51194.
 - FIX: MDL-51229.
 - FIX: Issue #520: Alternative carousel colours not working.
+- FIX: Issue #535: Group mode icons not different.
 - NEW: Issue #533: PIWIK Analytics and IP addresses.
 - NEW: Improved PIWIK document title.
 - NEW: Reduced size of floating button area.
