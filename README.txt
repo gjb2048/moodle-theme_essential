@@ -200,6 +200,8 @@ New in 2.9.0.8
 - NEW: Reduced size of floating button area.
 - UPD: Issue #530: Essential Custom Menu Hamburger Behaviour - Unable to fix, help wanted.
 - UPD: Updated bootstrap.js such that all modules are included as discovered that 'modals' were missing.
+- UPD: Tidy up icon colours and in alternatives.
+- UPD: Changed course icon to colourable Font Awesome alternative.
 
 New in 2.9.0.7
 ==============

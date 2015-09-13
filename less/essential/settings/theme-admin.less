@@ -13,6 +13,12 @@ body {
   background-attachment: ~"[[setting:backgroundattach]]";
   background-repeat: ~"[[setting:backgroundrepeat]]";
   background-size: ~"[[setting:backgroundsize]]";
+  i {
+    color: ~"[[setting:themeiconcolor]]";
+    &:hover {
+      color: ~"[[setting:themehovercolor]]";
+    }
+  }
 }
 
 .container-fluid {
@@ -35,9 +41,12 @@ a:hover {
 }
 
 a:before {
-  color: @icon-colour;
+  color: ~"[[setting:themeiconcolor]]";
   display: inline-block;
   text-decoration: none;
+  &:hover {
+    color: ~"[[setting:themehovercolor]]";
+  }
 }
 
 .color {

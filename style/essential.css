@@ -17761,7 +17761,7 @@ aside.footer-edit div.block:nth-of-type(1) {
 .breadcrumb-nav ul.breadcrumb.style1 li:first-of-type a:before {
   display: inline-block;
   font-family: FontAwesome;
-  content: "\f015 ";
+  content: "\f015";
   margin-right: 5px;
   text-decoration: none;
 }
@@ -18282,6 +18282,17 @@ body .course-content ul.topics li.section .content {
   margin-left: 20px;
   margin-right: 20px;
 }
+.coursebox > .info > .coursename a {
+  background-position: left 0;
+  padding-left: 0;
+}
+.coursebox > .info > .coursename a:before {
+  display: inline-block;
+  font-family: FontAwesome;
+  content: "\f278";
+  margin-right: 5px;
+  text-decoration: none;
+}
 .listitem-category .icon {
   margin-right: 5px;
   margin-left: 3px;
@@ -18294,11 +18305,6 @@ body .course-content ul.topics li.section .content {
 }
 .modeditingmenu.editing .section .activity .activityinstance {
   padding-right: 80px;
-}
-#page-course-index.pagelayout-coursecategory .category .coursebox > .info > .coursename a,
-#page-course-index-category.pagelayout-coursecategory .coursebox.collapsed > .info > .coursename a,
-#frontpage-category-combo .coursebox > .info > .coursename a {
-  background-position: left 0.2em;
 }
 .coursebox .content .summary.noteachers {
   width: 100%;
