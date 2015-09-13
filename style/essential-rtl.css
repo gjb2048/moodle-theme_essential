@@ -2483,6 +2483,10 @@ body.tag .managelink {
   width: 237px;
 }
 
+#page-enrol-users .enrol-users-page-action input {
+  margin-right: 0;
+}
+
 .corelightbox {
   background-color: #CCC;
   position: absolute;
@@ -5369,6 +5373,30 @@ img.iconsmall {
 
 .course-content ul.topics li.section .summary {
   margin-right: 25px;
+}
+
+.course-content li.section ul {
+  list-style: disc;
+}
+
+.course-content li.section ul ul {
+  list-style: circle;
+}
+
+.course-content li.section ul ul ul {
+  list-style: square;
+}
+
+.course-content li.section li.activity ul {
+  list-style: disc;
+}
+
+.course-content li.section li.activity ul ul {
+  list-style: circle;
+}
+
+.course-content li.section li.activity ul ul ul {
+  list-style: square;
 }
 
 .path-course-view .completionprogress {
@@ -22816,13 +22844,13 @@ body#page-admin-setting-messageinbound_mailsettings fieldset select {
 #region-main form .fp-content-center form + div,
 #region-main form div.backup-section + form,
 #region-main form #fgroup_id_buttonar {
-  width: 40%;
+  width: 30%;
   text-align: center;
   margin-right: auto;
   margin-left: auto;
   z-index: 1;
-  padding: 20px;
-  border-radius: 8px;
+  padding: 10px;
+  border-radius: 4px;
 }
 
 #region-main form table#form td.submit .felement,

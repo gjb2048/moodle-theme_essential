@@ -2012,6 +2012,9 @@ body.tag .managelink {
 #page-enrol-users .user-enroller-panel .uep-search-results .cohort .details {
   width: 237px;
 }
+#page-enrol-users .enrol-users-page-action input {
+  margin-left: 0;
+}
 .corelightbox {
   background-color: #CCC;
   position: absolute;
@@ -4392,6 +4395,24 @@ img.iconsmall {
 }
 .course-content ul.topics li.section .summary {
   margin-left: 25px;
+}
+.course-content li.section ul {
+  list-style: disc;
+}
+.course-content li.section ul ul {
+  list-style: circle;
+}
+.course-content li.section ul ul ul {
+  list-style: square;
+}
+.course-content li.section li.activity ul {
+  list-style: disc;
+}
+.course-content li.section li.activity ul ul {
+  list-style: circle;
+}
+.course-content li.section li.activity ul ul ul {
+  list-style: square;
 }
 .path-course-view .completionprogress {
   margin-left: 25px;
@@ -13640,24 +13661,4 @@ div#dock {
   border: 0;
   padding: 3px 15px;
   white-space: nowrap;
-}
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-input-area table.generaltable input,
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-input-area table.generaltable td.cell input {
-  margin: 0 10px;
-}
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-input-area table.generaltable input#input-message,
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-input-area table.generaltable td.cell input#input-message {
-  width: 45%;
-  margin: auto;
-}
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-input-area table.generaltable a,
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-input-area table.generaltable td.cell a {
-  margin: 0 5px;
-}
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-userlist {
-  padding: 10px 5px;
-}
-.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-userlist #users-list {
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ffffff;
 }

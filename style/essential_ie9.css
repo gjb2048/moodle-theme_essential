@@ -1,4 +1,24 @@
-@import url('essential_ie9-blessed1.css?z=1441987696817');
+@import url('essential_ie9-blessed1.css?z=1442145319625');
+.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-input-area table.generaltable input,
+.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-input-area table.generaltable td.cell input {
+  margin: 0 10px;
+}
+.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-input-area table.generaltable input#input-message,
+.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-input-area table.generaltable td.cell input#input-message {
+  width: 45%;
+  margin: auto;
+}
+.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-input-area table.generaltable a,
+.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-input-area table.generaltable td.cell a {
+  margin: 0 5px;
+}
+.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-userlist {
+  padding: 10px 5px;
+}
+.yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-userlist #users-list {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ffffff;
+}
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-userlist #users-list li {
   border-top: 1px solid #ffffff;
   border-bottom: 1px solid #ddd;
@@ -5333,13 +5353,13 @@ body#page-admin-setting-messageinbound_mailsettings fieldset select {
 #region-main form .fp-content-center form + div,
 #region-main form div.backup-section + form,
 #region-main form #fgroup_id_buttonar {
-  width: 40%;
+  width: 30%;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   z-index: 1;
-  padding: 20px;
-  border-radius: 8px;
+  padding: 10px;
+  border-radius: 4px;
 }
 #region-main form table#form td.submit .felement,
 #region-main form .form-buttons .felement,
