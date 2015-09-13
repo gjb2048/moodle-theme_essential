@@ -33,7 +33,16 @@ if ($numberofslides) {
     $slideinterval  = \theme_essential\toolbox::get_setting('slideinterval');
     $captionscenter = (\theme_essential\toolbox::get_setting('slidecaptioncentred'))? ' centred' : '';
     $captionoptions = \theme_essential\toolbox::get_setting('slidecaptionoptions');
-    $captionsbelowclass  = ($captionoptions == 2) ? ' below' : '';
+    switch($captionoptions) {
+        case 1:
+            $captionsbelowclass = ' ontop';
+        break;
+        case 2:
+            $captionsbelowclass = ' below';
+        break;
+        default:
+            $captionsbelowclass = '';
+    }
     ?>
     <div class="row-fluid">
         <div class="span12">

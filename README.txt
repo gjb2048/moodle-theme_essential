@@ -200,6 +200,7 @@ New in 2.9.0.8
 - NEW: Issue #533: PIWIK Analytics and IP addresses.
 - NEW: Improved PIWIK document title.
 - NEW: Reduced size of floating button area.
+- NEW: Added slider caption opacity when 'on top' slide caption option.
 - UPD: Issue #530: Essential Custom Menu Hamburger Behaviour - Unable to fix, help wanted.
 - UPD: Updated bootstrap.js such that all modules are included as discovered that 'modals' were missing.
 - UPD: Tidy up icon colours and in alternatives.

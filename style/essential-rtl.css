@@ -21514,6 +21514,11 @@ table.calendarmonth.calendartable {
   text-align: center;
 }
 
+#essentialCarousel.carousel .carousel-inner.ontop .carousel-caption {
+  opacity: 0.75;
+  filter: alpha(opacity=75);
+}
+
 #essentialCarousel.carousel .carousel-control {
   display: none;
   background-color: none;

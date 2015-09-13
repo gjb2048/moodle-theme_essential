@@ -1,4 +1,4 @@
-@import url('essential-rtl_ie9-blessed1.css?z=1442158409089');
+@import url('essential-rtl_ie9-blessed1.css?z=1442159635491');
 
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-input-area table.generaltable input,
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-input-area table.generaltable td.cell input {
@@ -5084,6 +5084,11 @@ table.calendarmonth.calendartable {
 #essentialCarousel.carousel .carousel-inner.centred .carousel-caption,
 #essentialCarousel.carousel .carousel-inner.centred div.the-side-caption {
   text-align: center;
+}
+
+#essentialCarousel.carousel .carousel-inner.ontop .carousel-caption {
+  opacity: 0.75;
+  filter: alpha(opacity=75);
 }
 
 #essentialCarousel.carousel .carousel-control {
