@@ -188,6 +188,11 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
+New in 2.9.0.9
+==============
+- FIX: Issue #536: FitVids targets players with mp3 files.
+- FIX: Incorrect path in get_include_file(). 
+
 New in 2.9.0.8
 ==============
 - FIX: Issue #529: Divider does not show.

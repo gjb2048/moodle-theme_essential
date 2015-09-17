@@ -17163,6 +17163,10 @@ body .chooserdialogue .moodle-dialogue-wrap .moodle-dialogue-bd {
 .dimmed_category a:visited {
   color: #999999;
 }
+.resourcecontent .mediaplugin.mediaplugin_mp3 object {
+  width: 600px;
+  height: 25px;
+}
 /* @end */
 /* @group Alerts */
 .alert .close {
@@ -20547,5 +20551,5 @@ fieldset {
 body.ie img.defaultuserpic {
   height: 100%;
 }
-div#page::before { content: "Development version - test server only."; font-size: 4em; margin-top: 24px; margin-bottom: 24px; line-height: 42px; text-align: center; }
+div#page::before { content: "Development version - recomplile LESS with 'grunt compile -build=p' for production CSS."; font-size: 2em; margin-top: 24px; margin-bottom: 24px; line-height: 42px; text-align: center; }
 /*# sourceMappingURL=/theme/essential/style/essential.treasure.map */

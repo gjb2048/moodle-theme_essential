@@ -42,7 +42,6 @@ class toolbox {
     }
 
     static public function get_setting($setting, $format = false, $theme = null) {
-
         if (empty($theme)) {
             if (empty(self::$theme)) {
                 self::$theme = \theme_config::load('essential');
@@ -82,16 +81,52 @@ class toolbox {
             } else if (file_exists("$CFG->dirroot/theme/$themename/layout/includes/$filename")) {
                 return "$CFG->dirroot/theme/$themename/layout/includes/$filename";
             } else if (!empty($CFG->themedir) and file_exists("$CFG->themedir/$themename/layout/includes/$filename")) {
-                return "$CFG->themedir/$themename/includes/$filename";
+                return "$CFG->themedir/$themename/layout/includes/$filename";
             }
         }
         // Check Essential.
         if (file_exists("$CFG->dirroot/theme/essential/layout/includes/$filename")) {
             return "$CFG->dirroot/theme/essential/layout/includes/$filename";
         } else if (!empty($CFG->themedir) and file_exists("$CFG->themedir/essential/layout/includes/$filename")) {
-            return "$CFG->themedir/essential/includes/$filename";
+            return "$CFG->themedir/essential/layout/includes/$filename";
         } else {
             return dirname(__FILE__)."$filename";
+        }
+    }
+
+    /**
+     * Includes the given folder for the theme in the caller.
+     * If it does not exist for the Essential child theme then the parent is checked.
+     * @param string $folder Folder to include relative to the theme root.
+     * @return void.
+     */
+    static public function include_folder($folder) {
+        global $CFG, $PAGE;
+        $themedir = $PAGE->theme->dir;
+        $thefolder = false;
+        // Check only if a child of 'Essential'.
+        if (in_array('essential', $PAGE->theme->parents)) {
+            $themename = $PAGE->theme->name;
+            if (file_exists("$themedir/$folder")) {
+                $thefolder = "$themedir/$folder";
+            } else if (file_exists("$CFG->dirroot/theme/$themename/$folder")) {
+                $thefolder = "$CFG->dirroot/theme/$themename/$folder";
+            } else if (!empty($CFG->themedir) and file_exists("$CFG->themedir/$themename/$folder")) {
+                $thefolder = "$CFG->themedir/$themename/$folder";
+            }
+        }
+        if (!$thefolder) {
+            // Check Essential.
+            if (file_exists("$CFG->dirroot/theme/essential/$folder")) {
+                $thefolder = "$CFG->dirroot/theme/essential/$folder";
+            } else if (!empty($CFG->themedir) and file_exists("$CFG->themedir/essential/$folder")) {
+                $thefolder = "$CFG->themedir/essential/$folder";
+            } else {
+                $thefolder = dirname(__FILE__)."$folder";
+            }
+        }
+        foreach (glob($thefolder.'/*.php') as $filename) {
+            require_once $filename;
         }
     }
 
@@ -398,6 +433,211 @@ class toolbox {
             }
         }
         return $default;
+    }
+
+    static public function set_font($css, $type, $fontname) {
+        $familytag = '[[setting:' . $type .'font]]';
+        $facetag = '[[setting:fontfiles' . $type . ']]';
+        if (empty($fontname)) {
+            $familyreplacement = 'Verdana';
+            $facereplacement = '';
+        } else if (\theme_essential\toolbox::get_setting('fontselect') === '3') {
+            static $theme;
+            if (empty($theme)) {
+                $theme = theme_config::load('essential');  // $theme needs to be us for child themes.
+            }
+
+            $fontfiles = array();
+            $fontfileeot = $theme->setting_file_url('fontfileeot' . $type, 'fontfileeot' . $type);
+            if (!empty($fontfileeot)) {
+                $fontfiles[] = "url('" . $fontfileeot . "?#iefix') format('embedded-opentype')";
+            }
+            $fontfilewoff = $theme->setting_file_url('fontfilewoff' . $type, 'fontfilewoff' . $type);
+            if (!empty($fontfilewoff)) {
+                $fontfiles[] = "url('" . $fontfilewoff . "') format('woff')";
+            }
+            $fontfilewofftwo = $theme->setting_file_url('fontfilewofftwo' . $type, 'fontfilewofftwo' . $type);
+            if (!empty($fontfilewofftwo)) {
+                $fontfiles[] = "url('" . $fontfilewofftwo . "') format('woff2')";
+            }
+            $fontfileotf = $theme->setting_file_url('fontfileotf' . $type, 'fontfileotf' . $type);
+            if (!empty($fontfileotf)) {
+                $fontfiles[] = "url('" . $fontfileotf . "') format('opentype')";
+            }
+            $fontfilettf = $theme->setting_file_url('fontfilettf' . $type, 'fontfilettf' . $type);
+            if (!empty($fontfilettf)) {
+                $fontfiles[] = "url('" . $fontfilettf . "') format('truetype')";
+            }
+            $fontfilesvg = $theme->setting_file_url('fontfilesvg' . $type, 'fontfilesvg' . $type);
+            if (!empty($fontfilesvg)) {
+                $fontfiles[] = "url('" . $fontfilesvg . "') format('svg')";
+            }
+
+            if (!empty($fontfiles)) {
+                $familyreplacement = '"'.$fontname.'"';
+                $facereplacement = '@font-face {' . PHP_EOL . 'font-family: "' . $fontname . '";' . PHP_EOL;
+                $facereplacement .= !empty($fontfileeot) ? "src: url('" . $fontfileeot . "');" . PHP_EOL : '';
+                $facereplacement .= "src: ";
+                $facereplacement .= implode("," . PHP_EOL . " ", $fontfiles);
+                $facereplacement .= ";";
+                $facereplacement .= '' . PHP_EOL . "}";
+            } else {
+                // No files back to default.
+                $familyreplacement = 'Verdana';
+                $facereplacement = '';
+            }
+        } else {
+            $familyreplacement = '"'.$fontname.'"';
+            $facereplacement = '';
+        }
+
+        $css = str_replace($familytag, $familyreplacement, $css);
+        $css = str_replace($facetag, $facereplacement, $css);
+
+        return $css;
+    }
+
+    static public function set_color($css, $themecolor, $tag, $default) {
+        if (!($themecolor)) {
+            $replacement = $default;
+        } else {
+            $replacement = $themecolor;
+        }
+        $css = str_replace($tag, $replacement, $css);
+        return $css;
+    }
+
+    static public function set_alternativecolor($css, $type, $customcolor, $defaultcolor) {
+        $tag = '[[setting:alternativetheme' . $type . ']]';
+        if (!($customcolor)) {
+            $replacement = $defaultcolor;
+        } else {
+            $replacement = $customcolor;
+        }
+        $css = str_replace($tag, $replacement, $css);
+        return $css;
+    }
+
+    static public function set_headerbackground($css, $headerbackground) {
+        global $OUTPUT;
+        $tag = '[[setting:headerbackground]]';
+        if ($headerbackground) {
+            $replacement = $headerbackground;
+        } else {
+            $replacement = $OUTPUT->pix_url('bg/header', 'theme');
+        }
+        $css = str_replace($tag, $replacement, $css);
+        return $css;
+    }
+
+    static public function set_pagebackground($css, $pagebackground) {
+        $tag = '[[setting:pagebackground]]';
+        if (!($pagebackground)) {
+            $replacement = 'none';
+        } else {
+            $replacement = 'url(\'' . $pagebackground . '\')';
+        }
+        $css = str_replace($tag, $replacement, $css);
+        return $css;
+    }
+
+    static public function set_pagebackgroundstyle($css, $style) {
+        $tagattach = '[[setting:backgroundattach]]';
+        $tagrepeat = '[[setting:backgroundrepeat]]';
+        $tagsize = '[[setting:backgroundsize]]';
+        $replacementattach = 'fixed';
+        $replacementrepeat = 'no-repeat';
+        $replacementsize = 'cover';
+        if ($style === 'tiled') {
+            $replacementrepeat = 'repeat';
+            $replacementsize = 'initial';
+        } else if ($style === 'stretch') {
+            $replacementattach = 'scroll';
+        }
+
+        $css = str_replace($tagattach, $replacementattach, $css);
+        $css = str_replace($tagrepeat, $replacementrepeat, $css);
+        $css = str_replace($tagsize, $replacementsize, $css);
+        return $css;
+    }
+
+    static public function set_marketingheight($css, $marketingheight) {
+        $tag = '[[setting:marketingheight]]';
+        $replacement = $marketingheight;
+        if (!($replacement)) {
+            $replacement = 100;
+        }
+        $css = str_replace($tag, $replacement . 'px', $css);
+        return $css;
+    }
+
+    static public function set_marketingimage($css, $marketingimage, $setting) {
+        $tag = '[[setting:' . $setting . ']]';
+        if (!($marketingimage)) {
+            $replacement = 'none';
+        } else {
+            $replacement = 'url(\'' . $marketingimage . '\')';
+        }
+        $css = str_replace($tag, $replacement, $css);
+        return $css;
+    }
+
+    static public function set_customcss($css, $customcss) {
+        $tag = '[[setting:customcss]]';
+        $customcss = str_replace('themecredit', 'themepagefooter', $customcss);
+        $replacement = $customcss;
+        $css = str_replace($tag, $replacement, $css);
+        return $css;
+    }
+
+    static public function set_logo($css, $logo) {
+        $tag = '[[setting:logo]]';
+        if (!($logo)) {
+            $replacement = 'none';
+        } else {
+            $replacement = 'url(\'' . $logo . '\')';
+        }
+        $css = str_replace($tag, $replacement, $css);
+        return $css;
+    }
+
+    static public function set_pagewidth($css, $pagewidth) {
+        $tag = '[[setting:pagewidth]]';
+        $imagetag = '[[setting:pagewidthimage]]';
+        $replacement = $pagewidth;
+        if (!($replacement)) {
+            $replacement = '1200';
+        }
+        if ($replacement == "100") {
+            $css = str_replace($tag, $replacement . '%', $css);
+            $css = str_replace($imagetag, '90' . '%', $css);
+        } else {
+            $css = str_replace($tag, $replacement . 'px', $css);
+            $css = str_replace($imagetag, $replacement . 'px', $css);
+        }
+        return $css;
+    }
+
+    /**
+     * Convert a colour hex string to an opacity supporting rgba one.
+     *
+     * @param string $hex Hex RGB string.
+     * @param float $opacity between 0.0 and 1.0.
+     * @return string.
+     */
+    static public function hex2rgba($hex, $opacity) {
+        $hex = str_replace("#", "", $hex);
+
+        if (strlen($hex) == 3) {
+            $r = hexdec(substr($hex, 0, 1) . substr($hex, 0, 1));
+            $g = hexdec(substr($hex, 1, 1) . substr($hex, 1, 1));
+            $b = hexdec(substr($hex, 2, 1) . substr($hex, 2, 1));
+        } else {
+            $r = hexdec(substr($hex, 0, 2));
+            $g = hexdec(substr($hex, 2, 2));
+            $b = hexdec(substr($hex, 4, 2));
+        }
+        return "rgba($r, $g, $b, $opacity)";
     }
 
     /**

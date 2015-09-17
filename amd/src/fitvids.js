@@ -61,12 +61,28 @@ define(['jquery', 'core/log'], function($, log) {
 
             $allVideos.each(function(){
                 var $this = $(this);
+
+                log.debug('FitVids attempt on: ' + $this.prop('outerHTML'));
+
                 if($this.parents(ignoreList).length > 0) {
+                    log.debug('FitVids not on (ignoreList)');
                     return; // Disable FitVids on this video.
                 }
-                if($this.parent().find("object object").length > 0) {
-                    return; // Disable FitVids on this as a SwfObj - not sure why "object object" does not catch above and do not wish to risk just "object" only.
+
+                var $id = $this.attr('id');
+                if ($id) {
+                    if($id === 'onlineaudiorecorder') {
+                        log.debug('FitVids not on (onlineaudiorecorder)');
+                        return; // Disable FitVids on this 'onlineaudiorecorder' #406 and #536.
+                    }
+                    if($id.indexOf('mp3') >= 0) {
+                        log.debug('FitVids not on (core media mp3)');
+                        return; // Disable FitVids on this 'core media mp3' #536.
+                    }
                 }
+
+                log.debug('FitVids attempt successful');
+
                 if (this.tagName.toLowerCase() === 'embed' && $this.parent('object').length || $this.parent('.fluid-width-video-wrapper').length) { return; }
                 if ((!$this.css('height') && !$this.css('width')) && (isNaN($this.attr('height')) || isNaN($this.attr('width'))))
                 {

@@ -1,4 +1,4 @@
-@import url('essential-rtl_ie9-blessed1.css?z=1442159635491');
+@import url('essential-rtl_ie9-blessed1.css?z=1442519226442');
 
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-input-area table.generaltable input,
 .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-input-area table.generaltable td.cell input {
@@ -4158,6 +4158,11 @@ body .chooserdialogue .moodle-dialogue-wrap .moodle-dialogue-bd {
   color: #999999;
 }
 
+.resourcecontent .mediaplugin.mediaplugin_mp3 object {
+  width: 600px;
+  height: 25px;
+}
+
 /* @end */
 
 /* @group Alerts */
@@ -8296,8 +8301,8 @@ body.ie img.defaultuserpic {
 }
 
 div#page::before {
-  content: "Development version - test server only.";
-  font-size: 4em;
+  content: "Development version - recomplile LESS with 'grunt compile -build=p' for production CSS.";
+  font-size: 2em;
   margin-top: 24px;
   margin-bottom: 24px;
   line-height: 42px;
