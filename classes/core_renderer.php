@@ -469,7 +469,7 @@ class theme_essential_core_renderer extends core_renderer {
                     $messagecontent .= html_writer::tag('i', '', array('class' => 'fa fa-comment' . $iconadd));
                     $messagecontent .= $this->get_time_difference($message->date);
                     $messagecontent .= html_writer::end_span();
-                    $messagecontent .= html_writer::span($message->text, 'notification-text');
+                    $messagecontent .= html_writer::span(htmlspecialchars($message->text, ENT_COMPAT | ENT_HTML401, 'UTF-8'), 'notification-text');
                     $messagecontent .= html_writer::end_div();
                 } else {
                     if (!is_object($message->from) || !empty($message->from->deleted)) {
@@ -487,12 +487,12 @@ class theme_essential_core_renderer extends core_renderer {
                     $messagecontent .= $this->get_time_difference($message->date);
                     $messagecontent .= html_writer::end_span();
                     $messagecontent .= html_writer::span($message->from->firstname, 'msg-sender');
-                    $messagecontent .= html_writer::span($message->text, 'msg-text');
+                    $messagecontent .= html_writer::span(htmlspecialchars($message->text, ENT_COMPAT | ENT_HTML401, 'UTF-8'), 'msg-text');
                     $messagecontent .= html_writer::end_span();
                     $messagecontent .= html_writer::end_div();
                 }
 
-                $messagesubmenu->add($messagecontent, $message->url, $message->text);
+                $messagesubmenu->add($messagecontent, $message->url, htmlspecialchars($message->text, ENT_COMPAT | ENT_HTML401, 'UTF-8'));
             }
         }
         return $this->render_custom_menu($messagemenu);
