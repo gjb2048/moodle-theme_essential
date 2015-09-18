@@ -24,9 +24,7 @@ define(['jquery', 'theme_essential/bootstrap', 'core/log'], function($, bootstra
    * limitations under the License.
    * ========================================================== */
 
-
   "use strict"; // jshint ;_;
-
 
  /* CAROUSEL CLASS DEFINITION
   * ========================= */
@@ -156,7 +154,6 @@ define(['jquery', 'theme_essential/bootstrap', 'core/log'], function($, bootstra
 
   }
 
-
  /* CAROUSEL PLUGIN DEFINITION
   * ========================== */
 
@@ -181,7 +178,6 @@ define(['jquery', 'theme_essential/bootstrap', 'core/log'], function($, bootstra
   }
 
   $.fn.carousel.Constructor = Carousel
-
 
  /* CAROUSEL NO CONFLICT
   * ==================== */

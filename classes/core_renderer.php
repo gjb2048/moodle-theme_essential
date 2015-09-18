@@ -21,6 +21,7 @@
  * @package     theme_essential
  * @copyright   2013 Julian Ridden
  * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @copyright   2015 Gareth J Barnard
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class theme_essential_core_renderer extends core_renderer {
@@ -376,25 +377,34 @@ class theme_essential_core_renderer extends core_renderer {
         $course = $this->page->course;
         $content = new stdClass();
         $modinfo = get_fast_modinfo($course);
+        $course = course_get_format($course)->get_course();
         $modfullnames = array();
         $archetypes = array();
-        foreach ($modinfo->cms as $cm) {
-            // Exclude activities which are not visible or have no link (=label).
-            if (!$cm->uservisible or !$cm->has_view()) {
+
+        foreach ($modinfo->get_section_info_all() as $section => $thissection) {
+            if (($section > $course->numsections) or (empty($modinfo->sections[$section]))) {
+                // This is a stealth section or is empty.
                 continue;
             }
-            if (array_key_exists($cm->modname, $modfullnames)) {
-                continue;
-            }
-            if (!array_key_exists($cm->modname, $archetypes)) {
-                $archetypes[$cm->modname] = plugin_supports('mod', $cm->modname, FEATURE_MOD_ARCHETYPE, MOD_ARCHETYPE_OTHER);
-            }
-            if ($archetypes[$cm->modname] == MOD_ARCHETYPE_RESOURCE) {
-                if (!array_key_exists('resources', $modfullnames)) {
-                    $modfullnames['resources'] = get_string('resources');
+            foreach ($modinfo->sections[$thissection->section] as $modnumber) {
+                $cm = $modinfo->cms[$modnumber];
+                // Exclude activities which are not visible or have no link (=label).
+                if (!$cm->uservisible or !$cm->has_view()) {
+                    continue;
                 }
-            } else {
-                $modfullnames[$cm->modname] = $cm->modplural;
+                if (array_key_exists($cm->modname, $modfullnames)) {
+                    continue;
+                }
+                if (!array_key_exists($cm->modname, $archetypes)) {
+                    $archetypes[$cm->modname] = plugin_supports('mod', $cm->modname, FEATURE_MOD_ARCHETYPE, MOD_ARCHETYPE_OTHER);
+                }
+                if ($archetypes[$cm->modname] == MOD_ARCHETYPE_RESOURCE) {
+                    if (!array_key_exists('resources', $modfullnames)) {
+                        $modfullnames['resources'] = get_string('resources');
+                    }
+                } else {
+                    $modfullnames[$cm->modname] = $cm->modplural;
+                }
             }
         }
         core_collator::asort($modfullnames);

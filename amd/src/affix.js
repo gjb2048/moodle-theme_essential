@@ -26,7 +26,6 @@ define(['jquery', 'core/log'], function($, log) {
 
   "use strict"; // jshint ;_;
 
-
   /* AFFIX CLASS DEFINITION
    * ====================== */
 
@@ -68,7 +67,6 @@ define(['jquery', 'core/log'], function($, log) {
     this.$element.removeClass(reset).addClass('affix' + (affix ? '-' + affix : ''))
   }
 
-
   /* AFFIX PLUGIN DEFINITION
    * ======================= */
 
@@ -90,7 +88,6 @@ define(['jquery', 'core/log'], function($, log) {
     offset: 0
   }
 
-
   /* AFFIX NO CONFLICT
    * ================= */
 
@@ -98,7 +95,6 @@ define(['jquery', 'core/log'], function($, log) {
     $.fn.affix = old
     return this
   }
-
 
   /* AFFIX DATA-API
    * ============== */

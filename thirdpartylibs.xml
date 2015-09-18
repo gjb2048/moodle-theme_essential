@@ -15,21 +15,14 @@
         <licenseversion>1.0</licenseversion>
     </library>
     <library>
-        <location>bootstrap_2_3_2.js</location>
+        <location>amd/src/bootstrap.js</location>
         <name>Twitter Bootstrap JavaScript</name>
         <license>Apache</license>
         <version>2.3.2</version>
         <licenseversion>2.0</licenseversion>
     </library>
     <library>
-        <location>jquery/html5shiv_3_7_2.js</location>
-        <name>Html5Shiv</name>
-        <license>GPL</license>
-        <version>3.7.2</version>
-        <licenseversion>2.0</licenseversion>
-    </library>
-    <library>
-        <location>jBreadCrumb_1_1.js</location>
+        <location>amd/src/jBreadCrumb.js</location>
         <name>jBreadcrumb</name>
         <license>MIT</license>
         <version>1.1</version>
@@ -50,10 +43,10 @@
         <licenseversion>3.0</licenseversion>
     </library>
     <library>
-        <location>jquery/fitvids_1_1.js</location>
+        <location>amd/src/fitvids.js</location>
         <name>FitVids auto video sizer</name>
         <license>WTFPL</license>
-        <version>1_1</version>
+        <version>1_1_2</version>
         <licenseversion>2.0</licenseversion>
     </library>
 </libraries>

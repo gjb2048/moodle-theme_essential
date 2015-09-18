@@ -191,6 +191,8 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.9.0.9
 ==============
 - FIX: Issue #536: FitVids targets players with mp3 files.
+- FIX: Issue #537: Activities and resources in 'stealth section' are shown in the course menu.  Partial fix, see: MDL-51465.
+- FIX: Issue #539: Incorrect path found in thirdpartylibs.
 - FIX: Incorrect path in get_include_file(). 
 
 New in 2.9.0.8
