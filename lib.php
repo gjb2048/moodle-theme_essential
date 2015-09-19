@@ -223,16 +223,14 @@ function theme_essential_hex2rgba($hex, $opacity) {
 }
 
 /**
- * Adds any custom CSS to the CSS before it is cached.
- *
- * @param string $css The original CSS.
- * @param string $customcss The custom CSS to add.
- * @return string The CSS which now contains our custom CSS.
+ * Generic function for colour setting.
  */
-function theme_essential_set_customcss($css, $customcss) {
-    $tag = '[[setting:customcss]]';
-    $customcss = str_replace('thecredit', 'themepagefooter', $customcss);
-    $replacement = $customcss;
+function theme_essential_set_color($css, $themecolor, $tag, $default) {
+    if (!($themecolor)) {
+        $replacement = $default;
+    } else {
+        $replacement = $themecolor;
+    }
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
@@ -459,16 +457,6 @@ function theme_essential_set_fontfiles($css, $type, $fontname) {
     return $css;
 }
 
-function theme_essential_set_color($css, $themecolor, $tag, $default) {
-    if (!($themecolor)) {
-        $replacement = $default;
-    } else {
-        $replacement = $themecolor;
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
 function theme_essential_set_alternativecolor($css, $type, $customcolor, $defaultcolor) {
     $tag = '[[setting:alternativetheme' . $type . ']]';
     if (!($customcolor)) {
@@ -540,6 +528,14 @@ function theme_essential_set_marketingimage($css, $marketingimage, $setting) {
     } else {
         $replacement = 'url(\'' . $marketingimage . '\')';
     }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_essential_set_customcss($css, $customcss) {
+    $tag = '[[setting:customcss]]';
+    $customcss = str_replace('ecredit', 'themepagefooter', $customcss);
+    $replacement = $customcss;
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }

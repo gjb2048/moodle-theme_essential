@@ -184,8 +184,14 @@ can be really useful in visualising the issue along with any files you consider 
 
 New in 2.8.1.10
 ===============
+- FIX: Issue #486: Update grade.less in light of MDL-49926.
 - FIX: Issue #529: Divider does not show.
+- FIX: Issue #535: Group mode icons not different.
+- FIX: Issue #536: FitVids targets players with mp3 files.
+- FIX: Issue #537: Activities and resources in 'stealth section' are shown in the course menu.  Partial fix, see: MDL-51465.
+- FIX: Issue #538: Problem in core_renderer when outputs the messages menu containing HTML special chars.
 - FIX: MDL-42634.
+- NEW: Reduced size of floating button area.
 
 New in 2.8.1.9
 ==============

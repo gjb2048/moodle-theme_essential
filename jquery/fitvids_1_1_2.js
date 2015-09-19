@@ -1,7 +1,7 @@
 /*global jQuery */
 /*jshint browser:true */
 /*!
- * FitVids 1.1.1
+ * FitVids 1.1.2
  *
  * Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
  * Credit to Thierry Koblentz - http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
@@ -58,12 +58,34 @@
 
             $allVideos.each(function(){
                 var $this = $(this);
+
+                console.log('FitVids attempt on: ' + $this.prop('outerHTML'));
+
                 if($this.parents(ignoreList).length > 0) {
+                    console.log('FitVids not on (ignoreList)');
                     return; // Disable FitVids on this video.
                 }
-                if($this.parent().find("object object").length > 0) {
-                    return; // Disable FitVids on this as a SwfObj - not sure why "object object" does not catch above and do not wish to risk just "object" only.
+                var $id = $this.attr('id');
+                if ($id) {
+                    if($id === 'onlineaudiorecorder') {
+                        console.log('FitVids not on (onlineaudiorecorder)');
+                        return; // Disable FitVids on this 'onlineaudiorecorder' #406 and #536.
+                    }
+                    if($id.indexOf('mp3') >= 0) {
+                        console.log('FitVids not on (core media mp3)');
+                        return; // Disable FitVids on this 'core media mp3' #536.
+                    }
                 }
+                var $src = $this.attr('src');
+                if ($src) {
+                    if($src.indexOf('swf') >= 0) {
+                        console.log('FitVids not on (swf src)');
+                        return; // Disable FitVids on this 'swf' #536.
+                    }
+                }
+
+                console.log('FitVids attempt successful');
+
                 if (this.tagName.toLowerCase() === 'embed' && $this.parent('object').length || $this.parent('.fluid-width-video-wrapper').length) { return; }
                 if ((!$this.css('height') && !$this.css('width')) && (isNaN($this.attr('height')) || isNaN($this.attr('width'))))
                 {

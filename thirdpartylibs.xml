@@ -50,10 +50,10 @@
         <licenseversion>3.0</licenseversion>
     </library>
     <library>
-        <location>jquery/fitvids_1_1.js</location>
+        <location>jquery/fitvids_1_1_2.js</location>
         <name>FitVids auto video sizer</name>
         <license>WTFPL</license>
-        <version>1_1</version>
+        <version>1_1_2</version>
         <licenseversion>2.0</licenseversion>
     </library>
 </libraries>

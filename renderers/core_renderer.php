@@ -376,25 +376,33 @@ class theme_essential_core_renderer extends core_renderer {
         $course = $this->page->course;
         $content = new stdClass();
         $modinfo = get_fast_modinfo($course);
+        $course = course_get_format($course)->get_course();
         $modfullnames = array();
         $archetypes = array();
-        foreach ($modinfo->cms as $cm) {
-            // Exclude activities which are not visible or have no link (=label).
-            if (!$cm->uservisible or !$cm->has_view()) {
+        foreach ($modinfo->get_section_info_all() as $section => $thissection) {
+            if (($section > $course->numsections) or (empty($modinfo->sections[$section]))) {
+                // This is a stealth section or is empty.
                 continue;
             }
-            if (array_key_exists($cm->modname, $modfullnames)) {
-                continue;
-            }
-            if (!array_key_exists($cm->modname, $archetypes)) {
-                $archetypes[$cm->modname] = plugin_supports('mod', $cm->modname, FEATURE_MOD_ARCHETYPE, MOD_ARCHETYPE_OTHER);
-            }
-            if ($archetypes[$cm->modname] == MOD_ARCHETYPE_RESOURCE) {
-                if (!array_key_exists('resources', $modfullnames)) {
-                    $modfullnames['resources'] = get_string('resources');
+            foreach ($modinfo->sections[$thissection->section] as $modnumber) {
+                $cm = $modinfo->cms[$modnumber];
+                // Exclude activities which are not visible or have no link (=label).
+                if (!$cm->uservisible or !$cm->has_view()) {
+                    continue;
                 }
-            } else {
-                $modfullnames[$cm->modname] = $cm->modplural;
+                if (array_key_exists($cm->modname, $modfullnames)) {
+                    continue;
+                }
+                if (!array_key_exists($cm->modname, $archetypes)) {
+                    $archetypes[$cm->modname] = plugin_supports('mod', $cm->modname, FEATURE_MOD_ARCHETYPE, MOD_ARCHETYPE_OTHER);
+                }
+                if ($archetypes[$cm->modname] == MOD_ARCHETYPE_RESOURCE) {
+                    if (!array_key_exists('resources', $modfullnames)) {
+                        $modfullnames['resources'] = get_string('resources');
+                    }
+                } else {
+                    $modfullnames[$cm->modname] = $cm->modplural;
+                }
             }
         }
         core_collator::asort($modfullnames);
@@ -459,7 +467,7 @@ class theme_essential_core_renderer extends core_renderer {
                     $messagecontent .= html_writer::tag('i', '', array('class' => 'fa fa-comment' . $iconadd));
                     $messagecontent .= $this->get_time_difference($message->date);
                     $messagecontent .= html_writer::end_span();
-                    $messagecontent .= html_writer::span($message->text, 'notification-text');
+                    $messagecontent .= html_writer::span(htmlspecialchars($message->text, ENT_COMPAT | ENT_HTML401, 'UTF-8'), 'notification-text');
                     $messagecontent .= html_writer::end_div();
                 } else {
                     if (!is_object($message->from) || !empty($message->from->deleted)) {
@@ -477,12 +485,12 @@ class theme_essential_core_renderer extends core_renderer {
                     $messagecontent .= $this->get_time_difference($message->date);
                     $messagecontent .= html_writer::end_span();
                     $messagecontent .= html_writer::span($message->from->firstname, 'msg-sender');
-                    $messagecontent .= html_writer::span($message->text, 'msg-text');
+                    $messagecontent .= html_writer::span(htmlspecialchars($message->text, ENT_COMPAT | ENT_HTML401, 'UTF-8'), 'msg-text');
                     $messagecontent .= html_writer::end_span();
                     $messagecontent .= html_writer::end_div();
                 }
 
-                $messagesubmenu->add($messagecontent, $message->url, $message->text);
+                $messagesubmenu->add($messagecontent, $message->url, htmlspecialchars($message->text, ENT_COMPAT | ENT_HTML401, 'UTF-8'));
             }
         }
         return $this->render_custom_menu($messagemenu);
@@ -970,9 +978,9 @@ class theme_essential_core_renderer extends core_renderer {
             'i/filter' => 'filter',
             'i/grades' => 'table',
             'i/group' => 'group',
-            'i/groupn' => 'group',
-            'i/groupv' => 'group',
-            'i/groups' => 'group',
+            'i/groupn' => 'user',
+            'i/groupv' => 'user-plus',
+            'i/groups' => 'user-secret',
             'i/hide' => 'eye',
             'i/import' => 'upload',
             'i/move_2d' => 'arrows',

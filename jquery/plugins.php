@@ -46,6 +46,6 @@ $plugins = array(
     'bootstrap' => array('files' => array('bootstrap_2_3_2_min.js')),
     'html5shiv' => array('files' => array('html5shiv_3_7_2.js')),
     'breadcrumb' => array('files' => array('jBreadCrumb_1_1.js')),
-    'fitvids' => array('files' => array('fitvids_1_1_1.js')),
+    'fitvids' => array('files' => array('fitvids_1_1_2.js')),
     'antigravity' => array('files' => array('anti_gravity_1_1.js'))
 );
