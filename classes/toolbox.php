@@ -444,7 +444,7 @@ class toolbox {
         } else if (\theme_essential\toolbox::get_setting('fontselect') === '3') {
             static $theme;
             if (empty($theme)) {
-                $theme = theme_config::load('essential');  // $theme needs to be us for child themes.
+                $theme = \theme_config::load('essential');  // $theme needs to be us for child themes.
             }
 
             $fontfiles = array();

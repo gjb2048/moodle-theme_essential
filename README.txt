@@ -188,6 +188,11 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
+
+New in 2.9.0.10
+===============
+- FIX: Issue #541: PHP Fatal error: Class 'theme_essential\\theme_config' not found in /classes/toolbox.php on line 447.
+
 New in 2.9.0.9
 ==============
 - FIX: Issue #536: FitVids targets players with mp3 files.
