@@ -192,6 +192,8 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.9.0.10
 ===============
 - FIX: Issue #541: PHP Fatal error: Class 'theme_essential\\theme_config' not found in /classes/toolbox.php on line 447.
+- FIX: Issue #543: Alternative colors: box borders remain in standard color.
+- FIX: Issue #544: Alternative colors: background hover always black in standard color scheme.
 
 New in 2.9.0.9
 ==============

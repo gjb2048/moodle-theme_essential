@@ -139,6 +139,10 @@
       border-bottom: 1px solid ~"[[setting:alternativethemecolor2]]" !important;
       background-color: ~"[[setting:alternativethemecolor2]]" !important;
 
+      .dropdown-menu {
+        border: 1px solid ~"[[setting:alternativethemecolor2]]";
+      }
+
       .nav > li.dropdown a,
       .nav > li > a {
         color: ~"[[setting:alternativethemenavcolor2]]";
@@ -220,6 +224,20 @@
     }
     .nav > li > a {
       border-left-color: ~"[[setting:alternativethemehovercolor2]]";
+    }
+
+    .navbar-inner .usermenu {
+      .dropdown {
+        img.userpicture {
+          border: 1px solid ~"[[setting:alternativethemenavcolor2]]";
+        }
+        ul.dropdown-menu {
+          border: 1px solid ~"[[setting:alternativethemecolor2]]";
+          hr.sep {
+            border-bottom: 1px dotted ~"[[setting:alternativethemecolor2]]";
+          }
+        }
+      }
     }
 
     .navbar-inner .messagemenu {
