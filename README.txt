@@ -194,6 +194,8 @@ New in 2.9.0.10
 - FIX: Issue #541: PHP Fatal error: Class 'theme_essential\\theme_config' not found in /classes/toolbox.php on line 447.
 - FIX: Issue #543: Alternative colors: box borders remain in standard color.
 - FIX: Issue #544: Alternative colors: background hover always black in standard color scheme.
+- FIX: Issue #547: Alternative colors: background hover on the frontpage.
+- FIX: Issue #548: Slideshow: slidebuttoncolor does not have an effect.
 
 New in 2.9.0.9
 ==============

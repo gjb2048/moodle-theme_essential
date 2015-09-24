@@ -517,12 +517,15 @@
     color: ~"[[setting:alternativethemecolor2]]";
   }
 
-  .course_category_tree .category[data-categoryid] {
+  &.categoryicons .course_category_tree .category[data-categoryid] {
     &:hover {
       background-color: ~"[[setting:alternativethemecolor2]]";
-    }
-    > .info > .categoryname a:before {
-      color: ~"[[setting:alternativethemecolor2]]";
+      > .info > .categoryname a {
+        color: ~"[[setting:alternativethemenavcolor2]]";
+        i {
+          color: inherit;
+        }
+      }
     }
   }
 

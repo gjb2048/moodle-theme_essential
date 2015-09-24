@@ -270,13 +270,16 @@ ul.breadcrumb.style2 li a:hover {
 #essentialCarousel.carousel .carousel-control {
   color: [[setting:slidebuttoncolor]];
 }
+#essentialCarousel.carousel .carousel-control i {
+  color: inherit;
+}
 #essentialCarousel.carousel .carousel-control:hover,
 #essentialCarousel.carousel .carousel-control:focus {
   color: [[setting:slidebuttonhovercolor]];
 }
 #essentialCarousel.carousel .carousel-control:hover i,
 #essentialCarousel.carousel .carousel-control:focus i {
-  color: [[setting:slidebuttonhovercolor]];
+  color: inherit;
 }
 #essentialCarousel.carousel .carousel-indicators {
   box-shadow: 0px 0px 8px [[setting:slidebuttoncolor]];
@@ -299,8 +302,11 @@ ul.breadcrumb.style2 li a:hover {
 .categoryicons .course_category_tree .category[data-categoryid]:hover {
   background-color: [[setting:themecolor]];
 }
-.categoryicons .course_category_tree .category[data-categoryid] > .info > .categoryname a:hover {
+.categoryicons .course_category_tree .category[data-categoryid]:hover > .info > .categoryname a {
   color: [[setting:themenavcolor]];
+}
+.categoryicons .course_category_tree .category[data-categoryid]:hover > .info > .categoryname a i {
+  color: inherit;
 }
 /* @end */
 /* @group Core */

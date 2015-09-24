@@ -8,15 +8,13 @@
 
 /* @group Category Icons */
 
-.categoryicons {
-  // Hide icon 'collapsed' because it makes no sense here.
-  .course_category_tree {
-    .category[data-categoryid]:hover {
-      background-color: ~"[[setting:themecolor]]";
-    }
-    .category[data-categoryid] > .info > .categoryname {
-      a:hover {
-        color: ~"[[setting:themenavcolor]]";
+.categoryicons .course_category_tree .category[data-categoryid] {
+  &:hover {
+    background-color: ~"[[setting:themecolor]]";
+    > .info > .categoryname a {
+      color: ~"[[setting:themenavcolor]]";
+      i {
+        color: inherit;
       }
     }
   }
