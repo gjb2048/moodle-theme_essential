@@ -45,22 +45,23 @@
     display: block;
     padding: 0;
     float: left;
-    height: 28px;
     width: 100%;
     overflow: hidden;
     word-wrap: break-word;
     text-overflow: clip;
-    margin-top: 0px;
-    background-color: none;
+    margin-right: -@baseBorderRadius;
+    background-color: transparent;
     li {
-      padding: 0 0 0 45px;
+      padding: 0 0 0 20px;
       position: relative;
       display: block;
       float: left;
       line-height: 28px;
       height: 28px;
-      border-radius: 0px;
+      border-top-left-radius: @baseBorderRadius;
+      border-bottom-left-radius: @baseBorderRadius;
       text-shadow: none;
+      margin-bottom: 4px;
       a {
         text-decoration: none;
         padding-right: 3px;
@@ -73,20 +74,23 @@
         font-style: italic;
         color: #999;
       }
+      span {
+        margin-right: 4px;
+      }
     }
     li:after {
       content: " ";
       display: block;
       width: 0;
       height: 0;
-      border-top: 50px solid transparent; // Go big on the size, and let overflow hide.
-      border-bottom: 50px solid transparent;
+      border-top: 14px solid transparent;
+      border-bottom: 14px solid transparent;
       position: absolute;
       top: 50%;
-      margin-top: -50px;
+      margin-top: -14px;
       left: 100%;
       z-index: 100;
-      border-left-width: 30px;
+      border-left-width: 14px;
       border-left-style: solid;
     }
     li:before {
@@ -94,19 +98,20 @@
       display: block;
       width: 0;
       height: 0;
-      border-top: 50px solid transparent;
-      border-bottom: 50px solid transparent;
+      border-top: 14px solid transparent;
+      border-bottom: 14px solid transparent;
       position: absolute;
       top: 50%;
-      margin-top: -50px;
+      margin-top: -14px;
       left: 100%;
       z-index: 100;
-      border-left: 30px solid white;
+      border-left: 14px solid white;
       margin-left: 1px;
     }
     li:first-of-type {
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px;
+      padding-left: 34px;
+      border-top-left-radius: @baseBorderRadius;
+      border-bottom-left-radius: @baseBorderRadius;
       a {
         margin-left: -25px;
       }
@@ -128,8 +133,8 @@
     .last,
     li:last-of-type {
       padding-right: 10px;
-      border-top-right-radius: 4px;
-      border-bottom-right-radius: 4px;
+      border-top-right-radius: @baseBorderRadius;
+      border-bottom-right-radius: @baseBorderRadius;
     }
     li:hover {
       .dimmed_text {
@@ -198,7 +203,6 @@
     overflow: hidden;
     word-wrap: break-word;
     text-overflow: clip;
-    height: 12px;
     li {
       line-height: 12px;
       display: block;

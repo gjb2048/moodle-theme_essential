@@ -196,6 +196,7 @@ New in 2.9.0.10
 - FIX: Issue #544: Alternative colors: background hover always black in standard color scheme.
 - FIX: Issue #547: Alternative colors: background hover on the frontpage.
 - FIX: Issue #548: Slideshow: slidebuttoncolor does not have an effect.
+- FIX: Issue #550: Breadcrumb menu "eaten away" when tighter window.
 
 New in 2.9.0.9
 ==============
