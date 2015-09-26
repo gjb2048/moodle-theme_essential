@@ -495,31 +495,39 @@
     }
   }
 
-  .nav-tabs > li > a {
-    background-color: ~"[[setting:alternativethemecolor4]]";
-    &:hover {
-      background-color: ~"[[setting:alternativethemehovercolor4]]";
+  .nav-tabs > li {
+    > a {
+      color: ~"[[setting:alternativethemenavcolor4]]";
+      background-color: ~"[[setting:alternativethemecolor4]]";
+      &:hover, &:focus {
+        color: ~"[[setting:alternativethemecolor4]]";
+        background-color: ~"[[setting:alternativethemenavcolor4]]";
+      }
+    }
+    &.active > a {
+      color: ~"[[setting:alternativethemetextcolor4]]";
+      background-color: #fff;  // TODO: Pagecolour.
     }
   }
 
   .performanceinfo {
-    border-color: ~"[[setting:themeiconcolor]]";
+    border-color: ~"[[setting:alternativethemeiconcolor4]]";
     var {
       background-color: ~"[[setting:alternativethemecolor4]]";
       color: ~"[[setting:alternativethemenavcolor4]]";
     }
     h2 {
       color: ~"[[setting:alternativethemetextcolor4]]";
-      border-bottom-color: ~"[[setting:themeiconcolor]]";
+      border-bottom-color: ~"[[setting:alternativethemeiconcolor4]]";
       &:before {
-        color: ~"[[setting:themeiconcolor]]";
+        color: ~"[[setting:alternativethemeiconcolor4]]";
       }
     }
     span {
       color: ~"[[setting:alternativethemetextcolor4]]";
     }
     #cache:before, #load:before, #memory:before, #peakmemory:before, #session:before, #included:before, #dbqueries:before, #dbtime:before {
-      color: ~"[[setting:themeiconcolor]]";
+      color: ~"[[setting:alternativethemeiconcolor4]]";
     }
   }
 

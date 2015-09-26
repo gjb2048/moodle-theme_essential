@@ -932,6 +932,15 @@ a.marketing-button:hover {
   color: [[setting:themecolor]];
   background-color: [[setting:themenavcolor]];
 }
+.nav-tabs > li.active > a {
+  color: [[setting:themetextcolor]];
+  background-color: #fff;
+}
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  color: inherit;
+  background-color: inherit;
+}
 @media (max-width: 979px) {
   .nav-collapse {
     background-color: [[setting:themecolor]];

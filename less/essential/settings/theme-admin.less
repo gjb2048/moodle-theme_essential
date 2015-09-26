@@ -337,12 +337,22 @@ a.marketing-button:hover {
 
 /* @group Tabs */
 
-.nav-tabs > li > a {
-  color: ~"[[setting:themenavcolor]]";
-  background-color: ~"[[setting:themecolor]]";
-  &:hover, &:focus {
-    color: ~"[[setting:themecolor]]";
-    background-color: ~"[[setting:themenavcolor]]";
+.nav-tabs > li {
+  > a {
+    color: ~"[[setting:themenavcolor]]";
+    background-color: ~"[[setting:themecolor]]";
+    &:hover, &:focus {
+      color: ~"[[setting:themecolor]]";
+      background-color: ~"[[setting:themenavcolor]]";
+    }
+  }
+  &.active > a {
+    color: ~"[[setting:themetextcolor]]";
+    background-color: #fff;  // TODO: Pagecolour.
+    &:hover, &:focus {
+      color: inherit;
+      background-color: inherit;
+    }
   }
 }
 

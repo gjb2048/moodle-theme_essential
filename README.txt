@@ -201,6 +201,7 @@ New in 2.9.0.10
 - FIX: Availability dialogue messed up.
 - FIX: Editing button icon.
 - FIX: RTL fixes in alternative colours.
+- FIX: Tab colour fixes for default and alternative colours.
 - NEW: Fourth alternative colour scheme.
 
 New in 2.9.0.9
