@@ -75,6 +75,19 @@
       }
     }
   }
+  &.dir-rtl .breadcrumb-nav {
+    ul.breadcrumb.style1 {
+      li {
+        &:after {
+          border-right-color: ~"[[setting:alternativethemecolor3]]";;
+        }
+        &:hover:after {
+          border-right-color: ~"[[setting:alternativethemehovercolor3]]";
+        }
+      }
+    }
+  }
+
   a,
   a:visited {
     color: ~"[[setting:alternativethemeurlcolor3]]";
@@ -112,6 +125,9 @@
 
   #headerlogo {
     border-right-color: ~"[[setting:alternativethemecolor3]]";
+  }
+  &.dir-rtl #headerlogo {
+    border-left-color: ~"[[setting:alternativethemecolor3]]";
   }
 
   .breadcrumb-button {
@@ -229,9 +245,6 @@
         }
       }
     }
-    .nav > li > a {
-      border-left-color: ~"[[setting:alternativethemehovercolor3]]";
-    }
 
     .navbar-inner .usermenu {
       .dropdown {
@@ -265,6 +278,16 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+  &.dir-rtl .navbar {
+    .navbar-inner {
+      .nav {
+        border-left-color: ~"[[setting:alternativethemecolor3]]";
+        > li > a {
+          border-right-color: ~"[[setting:alternativethemecolor3]]";
         }
       }
     }
@@ -518,6 +541,9 @@
 
   .path-grade-report-grader table#fixed_column th {
     border-right-color: ~"[[setting:alternativethemecolor3]]";
+  }
+  &.dir-rtl .path-grade-report-grader table#fixed_column th {
+    border-left-color: ~"[[setting:alternativethemecolor3]]";
   }
 
   .back-to-top {

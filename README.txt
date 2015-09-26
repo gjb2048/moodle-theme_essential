@@ -200,6 +200,7 @@ New in 2.9.0.10
 - FIX: Tweak collapsed navbar menu.
 - FIX: Availability dialogue messed up.
 - FIX: Editing button icon.
+- FIX: RTL fixes in alternative colours.
 - NEW: Fourth alternative colour scheme.
 
 New in 2.9.0.9
