@@ -199,6 +199,7 @@ New in 2.9.0.10
 - FIX: Issue #550: Breadcrumb menu "eaten away" when tighter window.
 - FIX: Tweak collapsed navbar menu.
 - FIX: Availability dialogue messed up.
+- FIX: Editing button icon.
 - NEW: Fourth alternative colour scheme.
 
 New in 2.9.0.9
