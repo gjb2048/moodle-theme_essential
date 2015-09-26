@@ -12,6 +12,7 @@
 @import "essential/alternative/alternative1";
 @import "essential/alternative/alternative2";
 @import "essential/alternative/alternative3";
+@import "essential/alternative/alternative4";
 
 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.default {
   &:hover,
@@ -57,7 +58,18 @@
     background-image: linear-gradient(to bottom, ~"[[setting:alternativethemetextcolor3]]", ~"[[setting:alternativethemecolor3]]");
   }
 }
-
+.navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.alternative4 {
+  &:hover,
+  &:focus {
+    color: ~"[[setting:alternativethemenavcolor4]]";
+    background-color: ~"[[setting:alternativethemecolor4]]";
+    background-image: -moz-linear-gradient(top, ~"[[setting:alternativethemetextcolor4]]", ~"[[setting:alternativethemecolor4]]");
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(~"[[setting:alternativethemetextcolor4]]"), to(~"[[setting:alternativethemecolor4]]"));
+    background-image: -webkit-linear-gradient(top, ~"[[setting:alternativethemetextcolor4]]", ~"[[setting:alternativethemecolor4]]");
+    background-image: -o-linear-gradient(top, ~"[[setting:alternativethemetextcolor4]]", ~"[[setting:alternativethemecolor4]]");
+    background-image: linear-gradient(to bottom, ~"[[setting:alternativethemetextcolor4]]", ~"[[setting:alternativethemecolor4]]");
+  }
+}
 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a {
   &.alternative1 {
     i {
@@ -72,6 +84,11 @@
   &.alternative3 {
     i {
       background-color: ~"[[setting:alternativethemecolor3]]";
+    }
+  }
+  &.alternative4 {
+    i {
+      background-color: ~"[[setting:alternativethemecolor4]]";
     }
   }
 }

@@ -271,10 +271,10 @@ if (is_siteadmin()) {
     $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
 
-    $defaultalternativethemecolors = array('#a430d1', '#d15430', '#5dd130');
-    $defaultalternativethemehovercolors = array('#9929c4', '#c44c29', '#53c429');
+    $defaultalternativethemecolors = array('#a430d1', '#d15430', '#5dd130', '#006b94');
+    $defaultalternativethemehovercolors = array('#9929c4', '#c44c29', '#53c429', '#4090af');
 
-    foreach (range(1, 3) as $alternativethemenumber) {
+    foreach (range(1, 4) as $alternativethemenumber) {
         // Enables the user to select an alternative colours choice.
         $name = 'theme_essential/enablealternativethemecolors' . $alternativethemenumber;
         $title = get_string('enablealternativethemecolors', 'theme_essential', $alternativethemenumber);
@@ -327,7 +327,7 @@ if (is_siteadmin()) {
         $name = 'theme_essential/alternativethemeiconcolor' . $alternativethemenumber;
         $title = get_string('alternativethemeiconcolor', 'theme_essential', $alternativethemenumber);
         $description = get_string('alternativethemeiconcolordesc', 'theme_essential', $alternativethemenumber);
-        $default = '#30add1';
+        $default = $defaultalternativethemecolors[$alternativethemenumber - 1];
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
@@ -1334,7 +1334,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
 
-    foreach (range(1, 3) as $alternativethemenumber) {
+    foreach (range(1, 4) as $alternativethemenumber) {
         // Alternative theme slide caption text colour setting.
         $name = 'theme_essential/alternativethemeslidecaptiontextcolor' . $alternativethemenumber;
         $title = get_string('alternativethemeslidecaptiontextcolor', 'theme_essential', $alternativethemenumber);

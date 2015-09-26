@@ -302,7 +302,7 @@ class theme_essential_core_renderer extends core_renderer {
 
         if (!isguestuser()) {
             $alternativethemes = array();
-            foreach (range(1, 3) as $alternativethemenumber) {
+            foreach (range(1, 4) as $alternativethemenumber) {
                 if (\theme_essential\toolbox::get_setting('enablealternativethemecolors' . $alternativethemenumber)) {
                     $alternativethemes[] = $alternativethemenumber;
                 }

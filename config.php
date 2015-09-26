@@ -48,7 +48,8 @@ $THEME->sheets[] = 'fontawesome';
 
 if ((get_config('theme_essential', 'enablealternativethemecolors1')) ||
     (get_config('theme_essential', 'enablealternativethemecolors2')) ||
-    (get_config('theme_essential', 'enablealternativethemecolors3'))
+    (get_config('theme_essential', 'enablealternativethemecolors3')) ||
+    (get_config('theme_essential', 'enablealternativethemecolors4'))
 ) {
     $THEME->sheets[] = 'essential-alternative';
 }

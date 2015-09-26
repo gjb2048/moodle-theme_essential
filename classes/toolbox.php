@@ -397,7 +397,7 @@ class toolbox {
      */
     static protected function check_colours_switch() {
         $colours = \optional_param('essentialcolours', null, PARAM_ALPHANUM);
-        if (in_array($colours, array('default', 'alternative1', 'alternative2', 'alternative3'))) {
+        if (in_array($colours, array('default', 'alternative1', 'alternative2', 'alternative3', 'alternative4'))) {
             \set_user_preference('theme_essential_colours', $colours);
         }
     }
@@ -420,14 +420,14 @@ class toolbox {
     }
 
     /**
-     * Gets the theme colours the user has selected if enabled or the default if they have never changed
+     * Gets the theme colours the user has selected if enabled or the default if they have never changed.
      *
-     * @param string $default The default theme colors to use
-     * @return string The theme colours the user has selected
+     * @param string $default The default theme colors to use.
+     * @return string The theme colours the user has selected.
      */
     static public function get_colours($default = 'default') {
         $preference = \get_user_preferences('theme_essential_colours', $default);
-        foreach (range(1, 3) as $alternativethemenumber) {
+        foreach (range(1, 4) as $alternativethemenumber) {
             if ($preference == 'alternative' . $alternativethemenumber && self::get_setting('enablealternativethemecolors' . $alternativethemenumber)) {
                 return $preference;
             }
