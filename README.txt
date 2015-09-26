@@ -202,7 +202,8 @@ New in 2.9.0.10
 - FIX: Editing button icon.
 - FIX: RTL fixes in alternative colours.
 - FIX: Tab colour fixes for default and alternative colours.
-- NEW: Fourth alternative colour scheme.
+- FIX: Button colour fixes for default and alternative colours.
+- NEW: Fourth alternative colour scheme.  Thanks to Christian Niemczik for supporting and funding the work on the Essential Theme.
 
 New in 2.9.0.9
 ==============
