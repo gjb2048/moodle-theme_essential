@@ -198,6 +198,7 @@ New in 2.9.0.10
 - FIX: Issue #548: Slideshow: slidebuttoncolor does not have an effect.
 - FIX: Issue #550: Breadcrumb menu "eaten away" when tighter window.
 - FIX: Tweak collapsed navbar menu.
+- FIX: Availability dialogue messed up.
 
 New in 2.9.0.9
 ==============
