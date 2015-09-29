@@ -261,7 +261,9 @@ button,
 input.form-submit,
 input[type="button"],
 input[type="submit"],
-input[type="reset"] {
+input[type="reset"],
+#notice .singlebutton + .singlebutton input,
+.submit.buttons input[name=cancel] {
   color: [[setting:themetextcolor]];
 }
 button:focus,
@@ -269,16 +271,22 @@ input.form-submit:focus,
 input[type="button"]:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus,
+#notice .singlebutton + .singlebutton input:focus,
+.submit.buttons input[name=cancel]:focus,
 button:hover,
 input.form-submit:hover,
 input[type="button"]:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
+#notice .singlebutton + .singlebutton input:hover,
+.submit.buttons input[name=cancel]:hover,
 button:active,
 input.form-submit:active,
 input[type="button"]:active,
 input[type="submit"]:active,
-input[type="reset"]:active {
+input[type="reset"]:active,
+#notice .singlebutton + .singlebutton input:active,
+.submit.buttons input[name=cancel]:active {
   color: inherit;
 }
 /* @end */
