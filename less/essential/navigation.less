@@ -51,7 +51,7 @@
     #custom_menu_themecolours,
     #custom_menu_activitystream,
     #custom_menu {
-      display: inline;
+      display: inline-block;
       vertical-align: top;
     }
 
@@ -263,6 +263,20 @@
           left: auto;
           right: 10px;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: @navbarCollapseWidth) {
+  .navbar {
+    .navbar-inner {
+      #custom_menu_language,
+      #custom_menu_courses,
+      #custom_menu_themecolours,
+      #custom_menu_activitystream,
+      #custom_menu {
+        display: inline;
       }
     }
   }

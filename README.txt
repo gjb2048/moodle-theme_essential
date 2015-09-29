@@ -203,6 +203,7 @@ New in 2.9.0.10
 - FIX: RTL fixes in alternative colours.
 - FIX: Tab colour fixes for default and alternative colours.
 - FIX: Button colour fixes for default and alternative colours.
+- FIX: Collapsed menu layout.
 - NEW: Fourth alternative colour scheme.  Thanks to Christian Niemczik for supporting and funding the work on the Essential Theme.
 
 New in 2.9.0.9
