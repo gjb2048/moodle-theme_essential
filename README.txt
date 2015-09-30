@@ -190,7 +190,8 @@ can be really useful in visualising the issue along with any files you consider 
 
 New in 2.9.1
 ============
-- Stable version based upon 2.9.0.10.
+- FIX: Issue #552: Alternative colors: layer in mobile layout with wrong color.
+- NEW: Stable version based upon 2.9.0.10.
 
 New in 2.9.0.10
 ===============
