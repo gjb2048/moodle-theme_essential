@@ -21,14 +21,15 @@
  * @package     theme_essential
  * @copyright   2013 Julian Ridden
  * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @copyright   2015 Gareth J Barnard
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version = 2015062409; // YYYYMMDDVV.
-$plugin->maturity = MATURITY_BETA; // This version's maturity level.
-$plugin->release = '2.9.0.10 (Build: 2015062409) BETA';
+$plugin->version = 2015062410; // YYYYMMDDVV.
+$plugin->maturity = MATURITY_STABLE; // This version's maturity level.
+$plugin->release = '2.9.1 (Build: 2015062410)';
 $plugin->requires  = 2015051100.00; // 2.9 (Build: 20150511).
 $plugin->component = 'theme_essential';
 $plugin->dependencies = array();

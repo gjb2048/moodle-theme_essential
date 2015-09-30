@@ -1439,12 +1439,15 @@ class theme_essential_core_renderer extends core_renderer {
                        get_string('versionalerttext1', 'theme_essential').'<br />'.get_string('versionalerttext2', 'theme_essential');
             $result .= '</div>';
         }
-        // TODO: Remove when production version.
+
+        // Remove when production version.
+        /*
         $result .= '<div class="useralerts alert alert-error">';
         $result .= '<a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>';
         $result .= '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-warning fa-stack-1x fa-inverse"></i></span>';
         $result .= '<span class="title">Beta version</span><br />Development beta version for testing only, do not use on a production server.';
         $result .= '</div>';
+        */
 
         return $result;
     }
