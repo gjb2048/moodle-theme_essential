@@ -191,6 +191,7 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.9.1.1
 ==============
 - FIX: Issue #553: Section highlighter in topic course format.
+- FIX: Issue #554: Slide interval: settings are ignored.
 
 New in 2.9.1
 ============
