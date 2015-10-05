@@ -4,8 +4,21 @@
   border-bottom: 0px none;
 }
 
-#course-category-listings .item-actions.show .menu a {
-  padding: 0px 5px;
+#course-category-listings {
+  .item-actions.show .menu a {
+    padding: 0px 5px;
+  }
+  li {
+    // Tree item indenting to represent depth.
+    i.icon {margin-left:0;}
+    li i.icon {margin-left:1em;}
+    li li i.icon {margin-left:2em;}
+    li li li i.icon {margin-left:3em;}
+    li li li li i.icon {margin-left:4em;}
+    li li li li li i.icon {margin-left:4.5em;}
+    li li li li li li i.icon {margin-left:5em;}
+    li li li li li li li i.icon {margin-left:5.5em;}
+  }
 }
 
 div.mdl-align.title {
