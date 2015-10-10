@@ -188,6 +188,10 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
+New in 2.9.1.2
+==============
+- FIX: Issue #557: 'Undefined index' error appearing.
+
 New in 2.9.1.1
 ==============
 - FIX: Issue #553: Section highlighter in topic course format.
