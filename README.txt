@@ -191,15 +191,16 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.9.1.2
 ==============
 - FIX: Issue #557: 'Undefined index' error appearing.
+- FIX: Issue #558: Grade overview capability.
+- FIX: Issue #559: Check and adjust breadcrumb hover colours.
+- FIX: Issue #560: Social icon hover colour incorrect.
+- FIX: Issue #561: Site name compressed on small displays.
 
 New in 2.9.1.1
 ==============
 - FIX: Issue #553: Section highlighter in topic course format.
 - FIX: Issue #554: Slide interval: settings are ignored.
 - FIX: Issue #556: Course management: course (sub-)categories are not indented.
-- FIX: Issue #559: Check and adjust breadcrumb hover colours.
-- FIX: Issue #560: Social icon hover colour incorrect.
-- FIX: Issue #561: Site name compressed on small displays.
 - FIX: Editing pages legend text colour.
 
 New in 2.9.1

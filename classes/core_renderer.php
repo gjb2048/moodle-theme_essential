@@ -764,25 +764,23 @@ class theme_essential_core_renderer extends core_renderer {
             }
 
             // Output user grade links course sensitive, workaround for frontpage, selecting first enrolled course
-            if ($course->id == 1) {
-                $hascourses = enrol_get_my_courses(NULL, 'visible DESC,id ASC', 1);
-                foreach ($hascourses as $hascourse) {
-                    $reportcontext = context_course::instance($hascourse->id);
-                    if (has_capability('gradereport/user:view', $reportcontext) && $hascourse->visible) {
-                        $branchlabel = '<em><i class="fa fa-list-alt"></i>' . get_string('mygrades', 'theme_essential') . '</em>';
-                        $branchurl = new moodle_url('/grade/report/overview/index.php' , array('id' => $hascourse->id, 'userid' => $USER->id));
-                        $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
-                    }
-                }
-            } else if (has_capability('gradereport/user:view', $context)) {
+            if ($course->id == SITEID) {
                 $branchlabel = '<em><i class="fa fa-list-alt"></i>' . get_string('mygrades', 'theme_essential') . '</em>';
                 $branchurl = new moodle_url('/grade/report/overview/index.php' , array('id' => $course->id, 'userid' => $USER->id));
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
+            } else {
+                if (has_capability('gradereport/overview:view', $context)) {
+                    $branchlabel = '<em><i class="fa fa-list-alt"></i>' . get_string('mygrades', 'theme_essential') . '</em>';
+                    $branchurl = new moodle_url('/grade/report/overview/index.php' , array('id' => $course->id, 'userid' => $USER->id));
+                    $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
+                }
 
-                // In Course also output Course grade links
-                $branchlabel = '<em><i class="fa fa-list-alt"></i>' . get_string('coursegrades', 'theme_essential') . '</em>';
-                $branchurl = new moodle_url('/grade/report/user/index.php' , array('id' => $course->id, 'userid' => $USER->id));
-                $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
+                if (has_capability('gradereport/user:view', $context)) {
+                    // In Course also output Course grade links
+                    $branchlabel = '<em><i class="fa fa-list-alt"></i>' . get_string('coursegrades', 'theme_essential') . '</em>';
+                    $branchurl = new moodle_url('/grade/report/user/index.php' , array('id' => $course->id, 'userid' => $USER->id));
+                    $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
+                }
             }
 
             // Check if badges are enabled.
