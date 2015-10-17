@@ -762,8 +762,8 @@ a.logo {
 h1#title {
   color: [[setting:themetextcolor]];
 }
-#headerlogo {
-  border-right: 1px dotted [[setting:themecolor]];
+#page-header div.titlearea {
+  border-left: 1px dotted [[setting:themecolor]];
 }
 /* @group Social Buttons */
 button.website:hover,

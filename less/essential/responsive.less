@@ -12,13 +12,17 @@
 }
 
 @media (max-width: @navbarCollapseWidth) {
-    h1#title {
-        font-size: 2.5em;
-        line-height: 35px;
-    }
-    h1#smalltitle {
-        font-size: 1.8em;
-        line-height: 30px;
+    #page-header {
+        h1#smalltitle {
+            font-size: 1.8em;
+            line-height: 16px;
+        }
+        h2#subtitle {
+            line-height: 16px;
+        }
+        #headerlogo {
+            margin-left: 10px;
+        }
     }
     .navbar-inner {
         .brand {
@@ -128,13 +132,11 @@
         font-size: 13px !important;
         line-height: 18px;
     }
-    h1#title {
-        font-size: 2em;
-        line-height: 30px;
-    }
-    h1#smalltitle {
-        font-size: 1.5em;
-        line-height: 30px;
+    #page-header {
+        h1#smalltitle {
+            font-size: 1.5em;
+            line-height: 14px;
+        }
     }
     .row-fluid .desktop-first-column {
         margin-left: 0;
@@ -150,17 +152,10 @@
 }
 
 @media (max-width: 767px) {
-    body{
+    body {
         font-size: 12px !important;
         font-weight: 500;
         line-height: 16px;
-    }
-    h1#title {
-        font-size: 1.8em;
-        line-height: 30px;
-    }
-    h1#smalltitle {
-        font-size: 1.2em;
     }
     .row-fluid .desktop-first-column {
         clear: right;
@@ -172,21 +167,24 @@
 
     #page-header {
         height: auto;
-        h2#subtitle {
-            top: 0px;
-            line-height: 10px;
+        .ecol7 {
+            width: 90%;
         }
-        .icon-collapse {
+        h1#smalltitle {
+            font-size: 1.2em;
+            line-height: 14px;
+        }
+        h2#subtitle {
+            line-height: 14px;
+        }
+        #essentialicons {
             overflow: hidden;
-            margin-top: 40px;
             margin-right: 10px;
             float: right;
+            position: relative;
         }
         .btn-icon {
             display: block;
-        }
-        #headerlogo {
-            top: 0px;
         }
     }
 
@@ -224,6 +222,14 @@
 }
 
 @media (max-width: 480px) {
+    #page-header {
+        .ecol7 {
+            width: 80%;
+        }
+        h1#title {
+            font-size: 2em;
+        }
+    }
     // quiz.less in Essential and mod version.
     #page-mod-quiz-edit ul.slots {
         li.section li.activity .activityinstance {
@@ -231,14 +237,6 @@
         }
         .activityinstance span.instancename {
             width: 40%;
-        }
-    }
-}
-
-@media (max-width: 455px) {
-    #page-header {
-        .icon-collapse {
-            margin-top: -30px;
         }
     }
 }
