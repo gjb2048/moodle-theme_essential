@@ -195,6 +195,7 @@ New in 2.9.1.2
 - FIX: Issue #559: Check and adjust breadcrumb hover colours.
 - FIX: Issue #560: Social icon hover colour incorrect.
 - FIX: Issue #561: Site name compressed on small displays.
+- NEW: Optimised columns3 layout for Tablets.
 
 New in 2.9.1.1
 ==============

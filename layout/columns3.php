@@ -26,6 +26,12 @@
 
 require_once(\theme_essential\toolbox::get_include_file('additionaljs'));
 require_once(\theme_essential\toolbox::get_include_file('header'));
+
+if (core_useragent::get_device_type() == "tablet") {
+    $tablet = true;
+} else {
+    $tablet = false;
+}
 ?>
 
 <div id="page" class="container-fluid">
@@ -40,29 +46,42 @@ require_once(\theme_essential\toolbox::get_include_file('header'));
         <div id="page-content" class="row-fluid">
             <div id="<?php echo $regionbsid ?>" class="span9">
                 <div class="row-fluid">
-                    <?php if ($hasboringlayout) { ?>
-                    <section id="region-main" class="span8 pull-right">
-                        <?php } else { ?>
+                    <?php if ($tablet) { ?>
+                        <section id="region-main" class="span12">
+                    <?php } else if ($hasboringlayout) { ?>
+                        <section id="region-main" class="span8 pull-right">
+                    <?php } else { ?>
                         <section id="region-main" class="span8 desktop-first-column">
-                            <?php } ?>
-                            <?php if ($COURSE->id > 1) {
-                                echo $OUTPUT->heading(format_string($COURSE->fullname), 1, 'coursetitle');
-                                echo '<div class="bor"></div>';
-                            } ?>
-                            <?php echo $OUTPUT->course_content_header(); ?>
-                            <?php echo $OUTPUT->main_content(); ?>
-                            <?php if (empty($PAGE->layout_options['nocoursefooter'])) {
-                                echo $OUTPUT->course_content_footer();
-                            }?>
-                        </section>
-                        <?php if ($hasboringlayout) { ?>
-                            <?php echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column'); ?>
-                        <?php } else { ?>
-                            <?php echo $OUTPUT->blocks('side-pre', 'span4 pull-right'); ?>
-                        <?php } ?>
+                    <?php }
+                    if ($COURSE->id > 1) {
+                        echo $OUTPUT->heading(format_string($COURSE->fullname), 1, 'coursetitle');
+                        echo '<div class="bor"></div>';
+                    }
+                    echo $OUTPUT->course_content_header();
+                    echo $OUTPUT->main_content();
+                    if (empty($PAGE->layout_options['nocoursefooter'])) {
+                        echo $OUTPUT->course_content_footer();
+                    }
+                    ?>  </section> <?php
+                    if (!$tablet) {
+                        if ($hasboringlayout) {
+                            echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column');
+                        } else {
+                            echo $OUTPUT->blocks('side-pre', 'span4 pull-right');
+                        }
+                    } ?>
                 </div>
             </div>
-            <?php echo $OUTPUT->blocks('side-post', 'span3'); ?>
+            <?php
+            if ($tablet) {
+                ?> <div class="span3"><div class="row-fluid"> <?php
+                echo $OUTPUT->blocks('side-pre', '');
+                echo $OUTPUT->blocks('side-post', '');
+                ?> </div></div> <?php
+            } else {
+                echo $OUTPUT->blocks('side-post', 'span3');
+            }
+            ?>
         </div>
         <!-- End Main Regions -->
     </section>
