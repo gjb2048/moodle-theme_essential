@@ -5,7 +5,9 @@
   h1, h2, h3, h4, h5, h6,
   #adminsettings h3,
   .color,
-  h1#title,
+  #page-header h1#title,
+  #page-header h1#smalltitle,
+  #page-header h2#subtitle,
   select,
   textarea,
   input[type="text"],
@@ -106,6 +108,9 @@
     &.fa-warning {
       color: inherit;
     }
+  }
+  button.socialicon i {
+      color: @white;
   }
 
   a:before {
