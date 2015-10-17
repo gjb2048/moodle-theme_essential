@@ -1082,7 +1082,7 @@ class theme_essential_core_renderer extends core_renderer {
                 'onclick' => "window.open('" . \theme_essential\toolbox::get_setting($socialnetwork) . "')",
                 'title' => get_string($socialnetwork, 'theme_essential'),
             ));
-            $socialhtml .= html_writer::start_tag('i', array('class' => 'fa fa-' . $icon . ' fa-inverse'));
+            $socialhtml .= html_writer::start_tag('i', array('class' => 'fa fa-' . $icon));
             $socialhtml .= html_writer::end_tag('i');
             $socialhtml .= html_writer::start_span('sr-only') . html_writer::end_span();
             $socialhtml .= html_writer::end_tag('button');
