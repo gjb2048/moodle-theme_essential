@@ -19,8 +19,9 @@
  * Moodle's new Bootstrap theme engine
  *
  * @package     theme_essential
- * @copyright   2013 Julian Ridden
+ * @copyright   2015 Gareth J Barnard
  * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @copyright   2013 Julian Ridden
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -87,6 +88,15 @@ if (is_siteadmin()) {
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Floating submit buttons.
+    $name = 'theme_essential/floatingsubmitbuttons';
+    $title = get_string('floatingsubmitbuttons', 'theme_essential');
+    $description = get_string('floatingsubmitbuttonsdesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    //$setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Choose breadcrumbstyle

@@ -196,6 +196,7 @@ New in 2.9.1.2
 - FIX: Issue #560: Social icon hover colour incorrect.
 - FIX: Issue #561: Site name compressed on small displays.
 - FIX: Alternative colours icon bar.
+- NEW: Issue #484: Save Changes/Cancel button area.  Thanks to Christian Niemczik for supporting and funding the work on the Essential Theme.
 - NEW: Optimised columns3 layout for Tablets.
 
 New in 2.9.1.1

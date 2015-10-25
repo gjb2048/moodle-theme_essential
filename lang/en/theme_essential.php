@@ -19,8 +19,9 @@
  * Moodle's new Bootstrap theme engine
  *
  * @package     theme_essential
- * @copyright   2013 Julian Ridden
+ * @copyright   2015 Gareth J Barnard
  * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @copyright   2013 Julian Ridden
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -141,6 +142,9 @@ $string['siteicondesc'] = 'Do not have a logo? Enter the name of the icon you wi
 
 $string['layout'] = 'Use a standard course layout';
 $string['layoutdesc'] = 'This theme is designed to put both block columns on the side.  If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
+
+$string['floatingsubmitbuttons'] = 'Floating submit buttons';
+$string['floatingsubmitbuttonsdesc'] = 'Have a \'floating\' area that contains the buttons used when submitting a form on desktop devices.  This helps to reduce scrolling on some pages.  Not used on course enrolment or forum posts.';
 
 $string['oldnavbar'] = 'Use the old navbar position';
 $string['oldnavbardesc'] = 'Enable this option to use the old navbar position, placing it below the header.';

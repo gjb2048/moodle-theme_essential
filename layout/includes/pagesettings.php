@@ -27,7 +27,7 @@
 /* Default globals */
 global $CFG, $PAGE, $USER, $SITE, $COURSE;
 
-/* Group Body */
+// Body.
 $bodyclasses = array();
 
 if (\theme_essential\toolbox::get_setting('enablealternativethemecolors1') ||
@@ -93,7 +93,7 @@ if ($fontselect === '2') {
     $bodyfont = urlencode(\theme_essential\toolbox::get_setting('fontnamebody'));
 }
 
-/* Group Header */
+// Header.
 $hassocialnetworks = (
     \theme_essential\toolbox::get_setting('facebook') ||
     \theme_essential\toolbox::get_setting('twitter') ||
@@ -119,13 +119,18 @@ if ($hassocialnetworks || $hasmobileapps) {
 $oldnavbar = \theme_essential\toolbox::get_setting('oldnavbar');
 $haslogo = \theme_essential\toolbox::get_setting('logo');
 
-/* Group Content */
+// Layout.
 $hasboringlayout = \theme_essential\toolbox::get_setting('layout');
 if ($hasboringlayout) {
     $bodyclasses[] = 'hasboringlayout';
 }
 
-/* Group Report Page Title */
+// Floating submit buttons.
+if (\theme_essential\toolbox::get_setting('floatingsubmitbuttons')) {
+    $bodyclasses[] = 'floatingsubmit';
+}
+
+// Report Page Title.
 function essential_report_page_has_title() {
     global $PAGE;
     $hastitle = true;
@@ -140,7 +145,7 @@ function essential_report_page_has_title() {
     return $hastitle;
 }
 
-/* Group Page Footer Region */
+// Page Footer Region.
 function essential_has_footer_region() {
     global $PAGE;
     $hasregion = false;
@@ -158,7 +163,7 @@ function essential_has_footer_region() {
     return $hasregion;
 }
 
-/* Group Footer */
+// Footer.
 $hascopyright = \theme_essential\toolbox::get_setting('copyright', true);
 $hasfootnote = \theme_essential\toolbox::get_setting('footnote', 'format_html');
 
