@@ -69,91 +69,8 @@ click here to sponsor.
 </div></div>';
 
 // General.
-$string['genericsettings'] = 'General';
-$string['generalheadingsub'] = 'General settings';
-$string['generalheadingdesc'] = 'Configure the general settings for the theme here.';
-
-$string['customcss'] = 'Custom CSS';
-$string['customcssdesc'] = 'Whatever CSS rules you add to this text area will be reflected in every page, making for easier customization of this theme.';
-
-$string['footnote'] = 'Footnote';
-$string['footnotedesc'] = 'Whatever you add to this textarea will be displayed in the footer throughout your Moodle site.';
-
-$string['logo'] = 'Logo';
-$string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.
-                       <br>The image should be 65px high and any reasonable width that suits.
-                       <br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
-$string['credit'] = 'The Essential theme is developed, enhanced and maintained by ';
-
-// Font settings.
-$string['fontsettings'] = 'Font';
-$string['fontheadingsub'] = 'Font settings';
-$string['fontheadingdesc'] = 'Select and enter the fonts that you want to use in your Moodle environment.';
-$string['fontselect'] = 'Font type selector';
-$string['fontselectdesc'] = 'Choose from the list of available font types. Please save to show the options for your choice.';
-$string['fonttypestandard'] = 'Standard fonts';
-$string['fonttypegoogle'] = 'Google web fonts';
-$string['fonttypecustom'] = 'Custom font';
-$string['fontnameheading'] = 'Heading font';
-$string['fontnameheadingdesc'] = 'Enter the exact name of the font to use for headings.';
-$string['fontnamebody'] = 'Text font';
-$string['fontnamebodydesc'] = 'Enter the exact name of the font to use for all other text.';
-
-// Font files.
-$string['fontfiles'] = 'Font files';
-$string['fontfilesdesc'] = 'Upload your font files here.';
-$string['fontfilettfheading'] = 'Heading TTF font file';
-$string['fontfileotfheading'] = 'Heading OTF font file';
-$string['fontfilewoffheading'] = 'Heading WOFF font file';
-$string['fontfilewofftwoheading'] = 'Heading WOFF2 font file';
-$string['fontfileeotheading'] = 'Heading EOT font file';
-$string['fontfilesvgheading'] = 'Heading SVG font file';
-$string['fontfilettfbody'] = 'Body TTF font file';
-$string['fontfileotfbody'] = 'Body OTF font file';
-$string['fontfilewoffbody'] = 'Body WOFF font file';
-$string['fontfilewofftwobody'] = 'Body WOFF2 font file';
-$string['fontfileeotbody'] = 'Body EOT font file';
-$string['fontfilesvgbody'] = 'Body SVG font file';
-
-
-$string['fontcharacterset'] = 'Google font additional character set';
-$string['fontcharactersetdesc'] = 'Pick additional character sets for different languages.
-                                   Using many character sets can slow down your Moodle, so only select the character sets that you actually need.';
-$string['fontcharactersetlatinext'] = 'Latin Extended';
-$string['fontcharactersetcyrillic'] = 'Cyrillic';
-$string['fontcharactersetcyrillicext'] = 'Cyrillic Extended';
-$string['fontcharactersetgreek'] = 'Greek';
-$string['fontcharactersetgreekext'] = 'Greek Extended';
-$string['fontcharactersetvietnamese'] = 'Vietnamese';
-
-$string['copyright'] = 'Copyright';
-$string['copyrightdesc'] = 'The name of your organisation.';
-
-$string['profilebarcustomtitle'] = 'Profile bar custom block title';
-$string['profilebarcustomtitledesc'] = 'Title for custom profile bar block.';
-
-$string['contactinfo'] = 'Contact information';
-$string['contactinfodesc'] = 'Enter your contact information';
-
-$string['siteicon'] = 'Site icon';
-$string['siteicondesc'] = 'Do not have a logo? Enter the name of the icon you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "fa-". ';
-
-$string['layout'] = 'Use a standard course layout';
-$string['layoutdesc'] = 'This theme is designed to put both block columns on the side.  If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
-
-$string['oldnavbar'] = 'Use the old navbar position';
-$string['oldnavbardesc'] = 'Enable this option to use the old navbar position, placing it below the header.';
-
-$string['fitvids'] = 'Use FitVids';
-$string['fitvidsdesc'] = 'Enable FitVids (fitvidsjs.com) to make your embedded videos responsive.  If FitVids is on and you want a video to be excluded then add \'class="fitvidsignore"\' to the \'iframe\' tag in the HTML mode of the editor.  For example: \'iframe class="fitvidsignore" width="420" height="315" src="//www.youtube.com/embed/enmEmym85xc" frameborder="0" allowfullscreen=""></iframe\'.';
-
 $string['left'] = 'Left';
 $string['right'] = 'Right';
-
-$string['perfinfo'] = 'Performance information mode';
-$string['perfinfodesc'] = 'Many sites don\'t need the fully detailed performance info.  Especially when viewed by users.  When enabled, this shows a cleaned up minimal form with basic page load information.';
-$string['perf_max'] = 'Detailed';
-$string['perf_min'] = 'Minimal';
 
 $string['perfinfoheading'] = 'Performance Information';
 $string['extperfinfoheading'] = 'Extended Performance Information';
@@ -199,6 +116,37 @@ $string['readme_title'] = 'Essential read-me';
 $string['readme_desc'] = 'Please {$a->url} containing more information about the Essential theme.';
 $string['readme_click'] = 'click for README.txt';
 
+// General settings.
+$string['genericsettings'] = 'General';
+$string['generalheadingsub'] = 'General settings';
+$string['generalheadingdesc'] = 'Configure the general settings for the theme here.';
+
+$string['customcss'] = 'Custom CSS';
+$string['customcssdesc'] = 'Whatever CSS rules you add to this text area will be reflected in every page, making for easier customization of this theme.';
+
+$string['logo'] = 'Logo';
+$string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.
+                       <br>The image should be 65px high and any reasonable width that suits.
+                       <br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
+$string['credit'] = 'The Essential theme is developed, enhanced and maintained by ';
+
+$string['profilebarcustomtitle'] = 'Profile bar custom block title';
+$string['profilebarcustomtitledesc'] = 'Title for custom profile bar block.';
+
+$string['contactinfo'] = 'Contact information';
+$string['contactinfodesc'] = 'Enter your contact information';
+
+$string['siteicon'] = 'Site icon';
+$string['siteicondesc'] = 'Do not have a logo? Enter the name of the icon you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "fa-". ';
+
+$string['layout'] = 'Use a standard course layout';
+$string['layoutdesc'] = 'This theme is designed to put both block columns on the side.  If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
+
+$string['oldnavbar'] = 'Use the old navbar position';
+$string['oldnavbardesc'] = 'Enable this option to use the old navbar position, placing it below the header.';
+
+$string['fitvids'] = 'Use FitVids';
+$string['fitvidsdesc'] = 'Enable FitVids (fitvidsjs.com) to make your embedded videos responsive.  If FitVids is on and you want a video to be excluded then add \'class="fitvidsignore"\' to the \'iframe\' tag in the HTML mode of the editor.  For example: \'iframe class="fitvidsignore" width="420" height="315" src="//www.youtube.com/embed/enmEmym85xc" frameborder="0" allowfullscreen=""></iframe\'.';
 
 // Custom Menu.
 $string['mycoursesinfo'] = 'Enrolled courses menu';
@@ -539,8 +487,59 @@ $string['shortname'] = 'Site short name';
 $string['fullnamesummary'] = 'Full name and summary';
 $string['shortnamesummary'] = 'Short name and summary';
 
+// Font settings.
+$string['fontsettings'] = 'Font';
+$string['fontheadingsub'] = 'Font settings';
+$string['fontheadingdesc'] = 'Select and enter the fonts that you want to use in your Moodle environment.';
+$string['fontselect'] = 'Font type selector';
+$string['fontselectdesc'] = 'Choose from the list of available font types. Please save to show the options for your choice.';
+$string['fonttypestandard'] = 'Standard fonts';
+$string['fonttypegoogle'] = 'Google web fonts';
+$string['fonttypecustom'] = 'Custom font';
+$string['fontnameheading'] = 'Heading font';
+$string['fontnameheadingdesc'] = 'Enter the exact name of the font to use for headings.';
+$string['fontnamebody'] = 'Text font';
+$string['fontnamebodydesc'] = 'Enter the exact name of the font to use for all other text.';
+
+// Font files.
+$string['fontfiles'] = 'Font files';
+$string['fontfilesdesc'] = 'Upload your font files here.';
+$string['fontfilettfheading'] = 'Heading TTF font file';
+$string['fontfileotfheading'] = 'Heading OTF font file';
+$string['fontfilewoffheading'] = 'Heading WOFF font file';
+$string['fontfilewofftwoheading'] = 'Heading WOFF2 font file';
+$string['fontfileeotheading'] = 'Heading EOT font file';
+$string['fontfilesvgheading'] = 'Heading SVG font file';
+$string['fontfilettfbody'] = 'Body TTF font file';
+$string['fontfileotfbody'] = 'Body OTF font file';
+$string['fontfilewoffbody'] = 'Body WOFF font file';
+$string['fontfilewofftwobody'] = 'Body WOFF2 font file';
+$string['fontfileeotbody'] = 'Body EOT font file';
+$string['fontfilesvgbody'] = 'Body SVG font file';
+
+$string['fontcharacterset'] = 'Google font additional character set';
+$string['fontcharactersetdesc'] = 'Pick additional character sets for different languages.
+                                   Using many character sets can slow down your Moodle, so only select the character sets that you actually need.';
+$string['fontcharactersetlatinext'] = 'Latin Extended';
+$string['fontcharactersetcyrillic'] = 'Cyrillic';
+$string['fontcharactersetcyrillicext'] = 'Cyrillic Extended';
+$string['fontcharactersetgreek'] = 'Greek';
+$string['fontcharactersetgreekext'] = 'Greek Extended';
+$string['fontcharactersetvietnamese'] = 'Vietnamese';
+
 // Footer Settings.
 $string['footerheading'] = 'Footer';
+
+$string['copyright'] = 'Copyright';
+$string['copyrightdesc'] = 'The name of your organisation.';
+
+$string['footnote'] = 'Footnote';
+$string['footnotedesc'] = 'Whatever you add to this textarea will be displayed in the footer throughout your Moodle site.';
+
+$string['perfinfo'] = 'Performance information mode';
+$string['perfinfodesc'] = 'Many sites don\'t need the fully detailed performance info.  Especially when viewed by users.  When enabled, this shows a cleaned up minimal form with basic page load information.';
+$string['perf_max'] = 'Detailed';
+$string['perf_min'] = 'Minimal';
 
 // Mobile Apps.
 $string['mobileappsheading'] = 'Apps';
