@@ -197,6 +197,7 @@ New in 2.9.1.2
 - FIX: Issue #561: Site name compressed on small displays.
 - FIX: Issue #565: Alternative colors: Section highligther in week course format.
 - FIX: Alternative colours icon bar.
+- FIX: Only cancel buttons should have the theme text colour.
 - NEW: Issue #484: Save Changes/Cancel button area.  Thanks to Christian Niemczik for supporting and funding the work on the Essential Theme.
 - NEW: Optimised columns3 layout for Tablets.
 

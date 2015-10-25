@@ -247,7 +247,7 @@ ul.breadcrumb.style2 li a:hover {
 /* @end */
 /* @end */
 /* @group Buttons */
-button,
+button.btn-cancel,
 input.form-submit,
 input[type="button"],
 input[type="submit"],
@@ -256,21 +256,21 @@ input[type="reset"],
 .submit.buttons input[name=cancel] {
   color: [[setting:themetextcolor]];
 }
-button:focus,
+button.btn-cancel:focus,
 input.form-submit:focus,
 input[type="button"]:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus,
 #notice .singlebutton + .singlebutton input:focus,
 .submit.buttons input[name=cancel]:focus,
-button:hover,
+button.btn-cancel:hover,
 input.form-submit:hover,
 input[type="button"]:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 #notice .singlebutton + .singlebutton input:hover,
 .submit.buttons input[name=cancel]:hover,
-button:active,
+button.btn-cancel:active,
 input.form-submit:active,
 input[type="button"]:active,
 input[type="submit"]:active,
@@ -500,7 +500,6 @@ input[type="color"],
 }
 #page form .form-buttons #fgroup_id_buttonar,
 #page form table#form td.submit #fgroup_id_buttonar,
-#page form .form-buttons #fgroup_id_buttonar,
 #page form .path-admin .buttons #fgroup_id_buttonar,
 #page form #fitem_id_submitbutton #fgroup_id_buttonar,
 #page form .fp-content-center form + div #fgroup_id_buttonar,
