@@ -831,6 +831,9 @@ a.marketing-button:hover {
 .block.block_iconic_html .header .title h2 span.fa:before {
   color: [[setting:themeiconcolor]];
 }
+.jsenabled .block_settings .block_tree .tree_item.branch.loadingbranch:before {
+  color: [[setting:themeiconcolor]];
+}
 .block_rss_client .footer a {
   background-color: [[setting:themecolor]];
 }
