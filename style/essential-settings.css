@@ -20,15 +20,15 @@
 .block h3.main {
   color: [[setting:themetextcolor]];
 }
-p.tree_item.leaf a > i {
+p.tree_item.leaf a > i.fa {
   color: [[setting:themeiconcolor]];
 }
 p.tree_item.leaf a:hover,
 p.tree_item.leaf a:focus {
   color: [[setting:themehovercolor]];
 }
-p.tree_item.leaf a:hover > i,
-p.tree_item.leaf a:focus > i {
+p.tree_item.leaf a:hover > i.fa,
+p.tree_item.leaf a:focus > i.fa {
   color: inherit;
 }
 p.tree_item.branch {
@@ -200,7 +200,7 @@ p.tree_item.branch.emptybranch:focus:before {
   color: [[setting:themecolor]];
   background-color: [[setting:themehovercolor]];
 }
-.breadcrumb-button i {
+.breadcrumb-button i.fa {
   color: inherit;
 }
 /* @end */
@@ -294,15 +294,15 @@ input[type="reset"]:active,
 #essentialCarousel.carousel .carousel-control {
   color: [[setting:slidebuttoncolor]];
 }
-#essentialCarousel.carousel .carousel-control i {
+#essentialCarousel.carousel .carousel-control i.fa {
   color: inherit;
 }
 #essentialCarousel.carousel .carousel-control:hover,
 #essentialCarousel.carousel .carousel-control:focus {
   color: [[setting:slidebuttonhovercolor]];
 }
-#essentialCarousel.carousel .carousel-control:hover i,
-#essentialCarousel.carousel .carousel-control:focus i {
+#essentialCarousel.carousel .carousel-control:hover i.fa,
+#essentialCarousel.carousel .carousel-control:focus i.fa {
   color: inherit;
 }
 #essentialCarousel.carousel .carousel-indicators {
@@ -329,7 +329,7 @@ input[type="reset"]:active,
 .categoryicons .course_category_tree .category[data-categoryid]:hover > .info > .categoryname a {
   color: [[setting:themenavcolor]];
 }
-.categoryicons .course_category_tree .category[data-categoryid]:hover > .info > .categoryname a i {
+.categoryicons .course_category_tree .category[data-categoryid]:hover > .info > .categoryname a i.fa {
   color: inherit;
 }
 /* @end */
@@ -460,14 +460,14 @@ body.has_dock.essential-colours-alternative4 #dock .dockedtitle[disabled] {
 }
 /* @end */
 /* @group Edit Buttons */
-.menu a.menu-action > i,
-.course-item-actions a > i,
-.actions a > i {
+.menu a.menu-action > i.fa,
+.course-item-actions a > i.fa,
+.actions a > i.fa {
   color: [[setting:themeiconcolor]];
 }
-.menu a.menu-action:hover > i,
-.course-item-actions a:hover > i,
-.actions a:hover > i {
+.menu a.menu-action:hover > i.fa,
+.course-item-actions a:hover > i.fa,
+.actions a:hover > i.fa {
   color: [[setting:themehovercolor]];
 }
 .section-modchooser-link > a:before {
@@ -570,8 +570,8 @@ input[type="color"],
 .navbar .navbar-inner .nav > li > a {
   color: [[setting:themenavcolor]];
 }
-.navbar .navbar-inner .nav > li.dropdown a i,
-.navbar .navbar-inner .nav > li > a i {
+.navbar .navbar-inner .nav > li.dropdown a i.fa,
+.navbar .navbar-inner .nav > li > a i.fa {
   color: inherit;
 }
 .navbar .navbar-inner .nav > li.dropdown a:hover,
@@ -579,8 +579,8 @@ input[type="color"],
   color: [[setting:themecolor]];
   background-color: [[setting:themenavcolor]];
 }
-.navbar .navbar-inner .nav > li.dropdown a:hover i,
-.navbar .navbar-inner .nav > li > a:hover i {
+.navbar .navbar-inner .nav > li.dropdown a:hover i.fa,
+.navbar .navbar-inner .nav > li > a:hover i.fa {
   color: inherit;
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a {
@@ -595,21 +595,21 @@ input[type="color"],
   color: #ffffff;
   background-color: [[setting:themeurlcolor]];
 }
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:focus i,
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a.open i {
+.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:focus i.fa,
+.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a.open i.fa {
   color: #ffffff;
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:hover .dimmed_text {
   color: #eeeeee;
 }
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a i {
+.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a i.fa {
   color: [[setting:themeiconcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li.dropdown-submenu:hover > a {
   color: #ffffff;
   background-color: [[setting:themeurlcolor]];
 }
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li.dropdown-submenu:hover > a i {
+.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li.dropdown-submenu:hover > a i.fa {
   color: inherit;
 }
 .navbar .navbar-inner .nav li.dropdown.open > .dropdown-toggle,
@@ -618,9 +618,9 @@ input[type="color"],
   color: #ffffff;
   background-color: [[setting:themehovercolor]];
 }
-.navbar .navbar-inner .nav li.dropdown.open > .dropdown-toggle i,
-.navbar .navbar-inner .nav li.dropdown.active > .dropdown-toggle i,
-.navbar .navbar-inner .nav li.dropdown.open.active > .dropdown-toggle i {
+.navbar .navbar-inner .nav li.dropdown.open > .dropdown-toggle i.fa,
+.navbar .navbar-inner .nav li.dropdown.active > .dropdown-toggle i.fa,
+.navbar .navbar-inner .nav li.dropdown.open.active > .dropdown-toggle i.fa {
   color: inherit;
 }
 .navbar .navbar-inner .usermenu .dropdown img.userpicture {
@@ -692,10 +692,10 @@ body {
   background-repeat: [[setting:backgroundrepeat]];
   background-size: [[setting:backgroundsize]];
 }
-body i {
+body i.fa {
   color: [[setting:themeiconcolor]];
 }
-body i:hover {
+body i.fa:hover {
   color: [[setting:themehovercolor]];
 }
 .container-fluid {
@@ -861,7 +861,7 @@ a.marketing-button:hover {
 }
 /* @end */
 /* @group Home News Boxes */
-.service i {
+.service i.fa {
   color: [[setting:themecolor]];
 }
 /* @end */
@@ -873,11 +873,11 @@ a.marketing-button:hover {
   border-bottom: 3px solid [[setting:themecolor]];
 }
 #page-footer a,
-#page-footer a > i {
+#page-footer a > i.fa {
   color: [[setting:footerurlcolor]];
 }
 #page-footer a:hover,
-#page-footer a:hover > i {
+#page-footer a:hover > i.fa {
   color: [[setting:footerhovercolor]];
 }
 #page-footer .footnote {

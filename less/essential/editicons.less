@@ -13,7 +13,7 @@ i > img {
   display: inline;
 }
 
-.commands i {
+.commands i.fa {
   margin-left: 3px;
   margin-right: 3px;
 }
@@ -21,11 +21,11 @@ i > img {
 .menu a.menu-action,
 .course-item-actions a,
 .actions a {
-  > i {
+  > i.fa {
     width: 14px;
   }
   &.action-delete {
-    > i {
+    > i.fa {
       color: red;
     }
   }
@@ -40,14 +40,14 @@ i > img {
 a.action-icon,
 #studentheader,
 .heading_name_row a {
-  > i {
+  > i.fa {
     width: 14px;
     margin: 0px 3px;
   }
 }
 
-.menu a.menu-action:hover > i {
-  color: #FFF;
+.menu a.menu-action:hover > i.fa {
+  color: @white;
 }
 
 .section-modchooser-link {
@@ -113,7 +113,7 @@ a.action-icon,
 
 .moodle-actionmenu.show[data-enhanced] .menu a {
   padding: 0.2em;
-  i {
+  i.fa {
     margin-right: 5px;
   }
 }
