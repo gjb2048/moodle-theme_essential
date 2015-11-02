@@ -196,6 +196,7 @@ New in 2.9.1.2
 - FIX: Issue #560: Social icon hover colour incorrect.
 - FIX: Issue #561: Site name compressed on small displays.
 - FIX: Issue #565: Alternative colors: Section highligther in week course format.
+- FIX: Issue #567: Wrong icon appearing in RTL in collapsed tree items in sideblocks.
 - FIX: Issue #570: Using i tag alone to set FontAwesome icon colour causes conflict with italics.
 - FIX: Alternative colours icon bar.
 - FIX: Only cancel buttons should have the theme text colour.
