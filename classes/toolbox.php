@@ -156,7 +156,7 @@ class toolbox {
         $slideurl = self::get_setting('slide' . $i . 'url', false, $theme);
         $slideurltarget = self::get_setting('slide' . $i . 'target', false, $theme);
         $slidetitle = self::get_setting('slide' . $i, true, $theme);
-        $slidecaption = self::get_setting('slide' . $i . 'caption', true, $theme);
+        $slidecaption = self::get_setting('slide' . $i . 'caption', 'format_html', $theme);
         if ($captionoptions == 0) {
             $slideextraclass = ' side-caption';
         } else {

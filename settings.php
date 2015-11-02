@@ -1417,7 +1417,7 @@ if (is_siteadmin()) {
         $title = get_string('slidecaption', 'theme_essential');
         $description = get_string('slidecaptiondesc', 'theme_essential');
         $default = '';
-        $setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_TEXT);
+        $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $temp->add($setting);
 
