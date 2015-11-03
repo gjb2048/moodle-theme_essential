@@ -55,8 +55,8 @@
                 width: 100%;
             }
             &.collapse.in[style*="height: auto"] {
-                min-height: 768px;
-                //overflow: visible;  // Definitely killing the complete() function (line: 157 in bootstrap.js) being fired at the end of the transition.
+                min-height: 40px;
+                overflow: visible;  // Update: Very odd, seems to be ok when combined with 'min-height'.  Was killing the complete() function (line: 157 in bootstrap.js) being fired at the end of the transition.
             }
             &.in .nav {
                 .divider {
