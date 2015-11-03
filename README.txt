@@ -203,6 +203,7 @@ New in 2.9.1.2
 - FIX: Alternative colours icon bar.
 - FIX: Only cancel buttons should have the theme text colour.
 - FIX: Dropdown sub-menu hover colour, resulting in cleanup of dropdown menu LESS.
+- FIX: Alternative dropdown action menu colours.
 - NEW: Issue #484: Save Changes/Cancel button area.  Thanks to Christian Niemczik for supporting and funding the work on the Essential Theme.
 - NEW: Issue #571: Allow slide captions to be html.
 - NEW: Optimised columns3 layout for Tablets.

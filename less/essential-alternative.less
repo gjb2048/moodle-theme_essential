@@ -651,8 +651,26 @@
                     }
                 }
 
-                .actions a {
-                    color: ~"[[setting:alternativethemeurlcolor@{index}]]";
+                .actions {
+                    a {
+                        color: ~"[[setting:alternativethemeurlcolor@{index}]]";
+                        &:hover, &:focus, &:active {
+                            color: ~"[[setting:alternativethemehovercolor@{index}]]";
+                        }
+                    }
+                    .moodle-actionmenu[data-enhanced].show .menu a {
+                        color: ~"[[setting:alternativethemeurlcolor@{index}]]";
+                        &:hover, &:focus, &:active {
+                            color: ~"[[setting:alternativethemehovercolor@{index}]]";
+                        }
+                    }
+                    .moodle-actionmenu[data-enhanced].show .menu a:hover {
+                        color: ~"[[setting:themenavcolor]]";
+                        background-color: ~"[[setting:alternativethemecolor@{index}]]";
+                        .fa:before {
+                            color: ~"[[setting:alternativethemenavcolor@{index}]]";
+                        }
+                    }
                 }
 
                 .moodle-core-dragdrop-draghandle:before, .moodle-core-dragdrop-draghandle a {
@@ -670,21 +688,7 @@
                         }
                     }
                 }
-                .moodle-actionmenu[data-enhanced].show {
-                    .menu {
-                        background-color: @white; // TODO: Page background colour needs to be a setting.
-                        a {
-                            color: ~"[[setting:alternativethemeurlcolor@{index}]]";
-                            &:hover {
-                                color: @white; // TODO: Page background colour needs to be a setting.
-                                background-color: ~"[[setting:alternativethemeurlcolor@{index}]]";
-                                .fa:before {
-                                    color: @white; // TODO: Page background colour needs to be a setting.
-                                }
-                            }
-                        }
-                    }
-                }
+
                 #page {
                     form {
                         .form-buttons,
