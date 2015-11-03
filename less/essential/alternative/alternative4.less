@@ -186,12 +186,20 @@
       .nav > li.dropdown a,
       .nav > li > a {
         color: ~"[[setting:alternativethemenavcolor4]]";
-        i.fa {
-          color: inherit;
-        }
         &:hover {
           color: ~"[[setting:alternativethemecolor4]]";
           background-color: ~"[[setting:alternativethemenavcolor4]]";
+        }
+      }
+
+      .nav .dropdown-menu {
+        .dropdown-submenu  {
+          .dropdown-toggle:after {
+            border-left-color: ~"[[setting:alternativethemeiconcolor4]]";
+          }
+          &:hover .dropdown-toggle:after {
+            border-left-color: ~"[[setting:alternativethemenavcolor4]]";
+          }
         }
       }
 
@@ -221,9 +229,6 @@
               i.fa {
                 color: @white; // TODO: Page background colour needs to be a setting.
               }
-            }
-            i.fa {
-              color: ~"[[setting:alternativethemeiconcolor4]]";
             }
           }
           li.dropdown-submenu:hover > a {
@@ -689,53 +694,39 @@
   }
 }
 
-@media (max-width: 979px) {
+@media (max-width: @navbarCollapseWidth) {
   .essential-colours-alternative4 {
     .nav-collapse {
       background-color: ~"[[setting:alternativethemecolor4]]";
       .dropdown-menu > li > a,
       .dropdown-menu > li > a:visited {
         color: ~"[[setting:alternativethemenavcolor4]]";
-        i.fa {
-          color: inherit;
-          background-color: ~"[[setting:alternativethemenavcolor4]]";
-          border: 1px solid ~"[[setting:alternativethemenavcolor4]]";
-          border-radius: 3px;
-          margin-top: 2px;
-          vertical-align: middle;
+      }
+    }
+    .navbar {
+      .nav-collapse.in {
+        .nav, .nav .dropdown-menu {
+          .dropdown-submenu  {
+            .dropdown-toggle:after {
+              border-left-color: transparent;
+              border-top-color: ~"[[setting:alternativethemeiconcolor4]]";
+            }
+            &:hover .dropdown-toggle:after {
+              border-top-color: ~"[[setting:alternativethemenavcolor4]]";
+            }
+          }
+          .dropdown-submenu, .dropdown-submenu:hover {
+            &.open {
+              > a {
+                color: ~"[[setting:alternativethemenavcolor4]]";
+                background-color: ~"[[setting:alternativethemecolor4]]";
+                &.dropdown-toggle:after {
+                  border-top-color: ~"[[setting:alternativethemenavcolor4]]";
+                }
+              }
+            }
+          }
         }
-      }
-
-      /* @group Custom Menu */
-      .dropdown-menu > li > a:hover,
-      .dropdown-menu > li > a:focus,
-      .dropdown-submenu:hover > a,
-      .dropdown-submenu:focus > a {
-        color: ~"[[setting:alternativethemecolor4]]";
-        background-color: ~"[[setting:alternativethemenavcolor4]]";
-      }
-    }
-    .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a {
-      color: ~"[[setting:alternativethemecolor4]]";
-      &:hover, &:focus {
-        background-color: ~"[[setting:alternativethemecolor4]]";
-        color: ~"[[setting:alternativethemenavcolor4]]";
-      }
-    }
-    .navbar .navbar-inner .nav-collapse .nav > li.dropdown a {
-      &:hover, &:focus, &.open {
-        background-color: ~"[[setting:alternativethemecolor4]]";
-        color: ~"[[setting:alternativethemenavcolor4]]";
-      }
-    }
-    .navbar .navbar-inner {
-      .dropdown-menu > li > a:hover,
-      .dropdown-menu > li > a:focus,
-      .dropdown-submenu:hover > a,
-      .dropdown-submenu:focus > a {
-        color: ~"[[setting:alternativethemecolor4]]";
-        background-color: ~"[[setting:alternativethemenavcolor4]]";
-        background-image: none;
       }
     }
   }

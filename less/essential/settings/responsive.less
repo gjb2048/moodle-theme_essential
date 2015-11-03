@@ -1,6 +1,6 @@
 /* @group Responsive */
 
-@media (max-width: 979px) {
+@media (max-width: @navbarCollapseWidth) {
   .navbar {
     .navbar-inner {
       .nav-collapse {
@@ -11,8 +11,8 @@
             background-color: ~"[[setting:themecolor]]";
             .fa {
                 color: inherit;
-            }
           }
+        }
         }
         .nav li.dropdown ul.dropdown-menu {
           background-color: ~"[[setting:themenavcolor]]";

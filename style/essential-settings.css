@@ -556,7 +556,6 @@ input[type="color"],
 }
 /* @end */
 /* @group Navbar */
-/* @group Custom Menu */
 .navbar .navbar-inner .brand {
   color: [[setting:themenavcolor]];
 }
@@ -570,18 +569,27 @@ input[type="color"],
 .navbar .navbar-inner .nav > li > a {
   color: [[setting:themenavcolor]];
 }
-.navbar .navbar-inner .nav > li.dropdown a i.fa,
-.navbar .navbar-inner .nav > li > a i.fa {
-  color: inherit;
-}
 .navbar .navbar-inner .nav > li.dropdown a:hover,
-.navbar .navbar-inner .nav > li > a:hover {
+.navbar .navbar-inner .nav > li > a:hover,
+.navbar .navbar-inner .nav > li.dropdown a:focus,
+.navbar .navbar-inner .nav > li > a:focus {
   color: [[setting:themecolor]];
   background-color: [[setting:themenavcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown a:hover i.fa,
-.navbar .navbar-inner .nav > li > a:hover i.fa {
+.navbar .navbar-inner .nav > li > a:hover i.fa,
+.navbar .navbar-inner .nav > li.dropdown a:focus i.fa,
+.navbar .navbar-inner .nav > li > a:focus i.fa {
   color: inherit;
+}
+.navbar .navbar-inner .nav > li.dropdown > a > i.fa {
+  color: inherit;
+}
+.navbar .navbar-inner .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
+  border-left-color: [[setting:themeiconcolor]];
+}
+.navbar .navbar-inner .nav .dropdown-menu .dropdown-submenu:hover .dropdown-toggle:after {
+  border-left-color: [[setting:themenavcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a {
   color: [[setting:themeurlcolor]];
@@ -602,9 +610,6 @@ input[type="color"],
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:hover .dimmed_text {
   color: #eeeeee;
 }
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a i.fa {
-  color: [[setting:themeiconcolor]];
-}
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li.dropdown-submenu:hover > a {
   color: #ffffff;
   background-color: [[setting:themeurlcolor]];
@@ -617,11 +622,6 @@ input[type="color"],
 .navbar .navbar-inner .nav li.dropdown.open.active > .dropdown-toggle {
   color: #ffffff;
   background-color: [[setting:themehovercolor]];
-}
-.navbar .navbar-inner .nav li.dropdown.open > .dropdown-toggle i.fa,
-.navbar .navbar-inner .nav li.dropdown.active > .dropdown-toggle i.fa,
-.navbar .navbar-inner .nav li.dropdown.open.active > .dropdown-toggle i.fa {
-  color: inherit;
 }
 .navbar .navbar-inner .usermenu .dropdown img.userpicture {
   border: 1px solid [[setting:themenavcolor]];
@@ -649,7 +649,30 @@ input[type="color"],
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification img.profilepicture {
   box-shadow: 0 0 3px [[setting:themenavcolor]];
 }
-/* @end */
+@media (max-width: 979px) {
+  .navbar .nav-collapse.in .nav .dropdown-submenu .dropdown-toggle:after,
+  .navbar .nav-collapse.in .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
+    border-left-color: transparent;
+    border-top-color: [[setting:themeiconcolor]];
+  }
+  .navbar .nav-collapse.in .nav .dropdown-submenu:hover .dropdown-toggle:after,
+  .navbar .nav-collapse.in .nav .dropdown-menu .dropdown-submenu:hover .dropdown-toggle:after {
+    border-top-color: [[setting:themenavcolor]];
+  }
+  .navbar .nav-collapse.in .nav .dropdown-submenu.open > a,
+  .navbar .nav-collapse.in .nav .dropdown-menu .dropdown-submenu.open > a,
+  .navbar .nav-collapse.in .nav .dropdown-submenu:hover.open > a,
+  .navbar .nav-collapse.in .nav .dropdown-menu .dropdown-submenu:hover.open > a {
+    color: [[setting:themenavcolor]];
+    background-color: [[setting:themecolor]];
+  }
+  .navbar .nav-collapse.in .nav .dropdown-submenu.open > a.dropdown-toggle:after,
+  .navbar .nav-collapse.in .nav .dropdown-menu .dropdown-submenu.open > a.dropdown-toggle:after,
+  .navbar .nav-collapse.in .nav .dropdown-submenu:hover.open > a.dropdown-toggle:after,
+  .navbar .nav-collapse.in .nav .dropdown-menu .dropdown-submenu:hover.open > a.dropdown-toggle:after {
+    border-top-color: [[setting:themenavcolor]];
+  }
+}
 /* @end */
 /* @group Print Styling */
 @media print {
