@@ -206,6 +206,7 @@ New in 2.9.1.2
 - NEW: Issue #484: Save Changes/Cancel button area.  Thanks to Christian Niemczik for supporting and funding the work on the Essential Theme.
 - NEW: Issue #571: Allow slide captions to be html.
 - NEW: Optimised columns3 layout for Tablets.
+- NEW: Refactor Alternative LESS such that it is easier to maintain.
 
 
 New in 2.9.1.1
