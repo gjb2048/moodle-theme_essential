@@ -382,7 +382,7 @@ class theme_essential_core_renderer extends core_renderer {
         $archetypes = array();
 
         foreach ($modinfo->get_section_info_all() as $section => $thissection) {
-            if (($section > $course->numsections) or (empty($modinfo->sections[$section]))) {
+            if (((!empty($course->numsections)) and ($section > $course->numsections)) or (empty($modinfo->sections[$section]))) {
                 // This is a stealth section or is empty.
                 continue;
             }
