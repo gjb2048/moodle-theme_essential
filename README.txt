@@ -191,7 +191,7 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.9.1.2
 ==============
 - FIX: Issue #509: Show/Hide icon does not change.  Thanks to https://github.com/nzn-openapp.
-- FIX: Issue #530: Essential Custom Menu Hamburger Behaviour.
+- FIX: Issue #530: Essential Custom Menu Hamburger Behaviour.  Thanks to Lou K for information.
 - FIX: Issue #557: 'Undefined index' error appearing.
 - FIX: Issue #558: Grade overview capability.
 - FIX: Issue #559: Check and adjust breadcrumb hover colours.
@@ -210,7 +210,6 @@ New in 2.9.1.2
 - NEW: Issue #571: Allow slide captions to be html.
 - NEW: Optimised columns3 layout for Tablets.
 - NEW: Refactor Alternative LESS such that it is easier to maintain.
-
 
 New in 2.9.1.1
 ==============
