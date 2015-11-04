@@ -186,7 +186,7 @@ class toolbox {
         if ($captionoptions == 0) {
             $slide .= '<div class="container-fluid">';
             $slide .= '<div class="row-fluid">';
-        
+
             if ($slidetitle || $slidecaption) {
                 $slide .= '<div class="span5 the-side-caption">';
                 $slide .= '<div class="the-side-caption-content">';
@@ -616,6 +616,17 @@ class toolbox {
             $replacement = 'none';
         } else {
             $replacement = 'url(\'' . $logo . '\')';
+        }
+        $css = str_replace($tag, $replacement, $css);
+        return $css;
+    }
+
+    static public function set_logoheight($css, $logoheight) {
+        $tag = '[[setting:logoheight]]';
+        if (!($logoheight)) {
+            $replacement = '65px';
+        } else {
+            $replacement = $logoheight;
         }
         $css = str_replace($tag, $replacement, $css);
         return $css;
