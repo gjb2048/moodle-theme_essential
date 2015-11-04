@@ -54,6 +54,10 @@ if ((get_config('theme_essential', 'enablealternativethemecolors1')) ||
     $THEME->sheets[] = 'essential-alternative';
 }
 
+if(get_config('theme_essential', 'customscrollbars')) {
+    $THEME->sheets[] = 'essential-scrollbars';
+}
+
 $THEME->sheets[] = 'custom';
 
 $THEME->supportscssoptimisation = false;

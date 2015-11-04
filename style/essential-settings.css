@@ -784,8 +784,9 @@ img.profilepicture {
 #page-header {
   background: url('[[setting:headerbackground]]') repeat;
 }
-a.logo {
+#page-header a.logo {
   background-image: [[setting:logo]];
+  height: [[setting:logoheight]];
 }
 h1#title {
   color: [[setting:themetextcolor]];
@@ -1153,31 +1154,3 @@ h6 span {
 }
 /* @end */
 /* @end */
-/* @group Custom */
-/* @Group Scrollbar */
-body {
-  scrollbar-face-color: [[setting:themecolor]];
-  scrollbar-highlight-color: [[setting:themenavcolor]];
-  scrollbar-3dlight-color: [[setting:themenavcolor]];
-  scrollbar-darkshadow-color: [[setting:themecolor]];
-  scrollbar-track-color: [[setting:themenavcolor]];
-  scrollbar-arrow-color: [[setting:themetextcolor]];
-}
-::-webkit-scrollbar {
-  background-color: [[setting:themenavcolor]];
-}
-::-webkit-scrollbar-track {
-  background-color: [[setting:themenavcolor]];
-}
-::-webkit-scrollbar-track-piece {
-  background-color: [[setting:themenavcolor]];
-}
-::-webkit-scrollbar-thumb {
-  background-color: [[setting:themecolor]];
-  border: 0px;
-}
-::-webkit-scrollbar-corner {
-  background-color: [[setting:themecolor]];
-}
-/* @end Scrollbar */
-/* @end Custom */

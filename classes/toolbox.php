@@ -679,6 +679,17 @@ class toolbox {
         return $css;
     }
 
+    static public function set_logoheight($css, $logoheight) {
+        $tag = '[[setting:logoheight]]';
+        if (!($logoheight)) {
+            $replacement = '65px';
+        } else {
+            $replacement = $logoheight;
+        }
+        $css = str_replace($tag, $replacement, $css);
+        return $css;
+    }
+
     static public function set_pagewidth($css, $pagewidth) {
         $tag = '[[setting:pagewidth]]';
         $imagetag = '[[setting:pagewidthimage]]';
