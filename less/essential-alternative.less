@@ -5,10 +5,11 @@
  * @copyright   2013 Julian Ridden
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-// Import the bootstrap variables and mixins
+// Import the bootstrap we need.
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
-// Import the essential variables
+@import "bootstrap/type";
+// Import the essential variables.
 @import "essential/variables";
 
 .navbar .navbar-inner #custom_menu_themecolours .dropdown-menu > li > a.default {
@@ -142,6 +143,26 @@
                 }
                 a:hover:before {
                     color: ~"[[setting:alternativethemehovercolor@{index}]]";
+                }
+
+                a.dimmed,
+                a.dimmed:link,
+                a.dimmed:visited,
+                a.dimmed_text,
+                a.dimmed_text:link,
+                a.dimmed_text:visited,
+                .dimmed_text,
+                .dimmed_text a,
+                .dimmed_text a:link,
+                .dimmed_text a:visited,
+                .usersuspended,
+                .usersuspended a,
+                .usersuspended a:link,
+                .usersuspended a:visited,
+                .dimmed_category,
+                .dimmed_category a,
+                dimmed_category a:visited {
+                    .muted
                 }
 
                 #page-header {
