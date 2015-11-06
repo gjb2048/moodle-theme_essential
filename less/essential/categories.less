@@ -40,7 +40,16 @@
       margin: 0;
     }
     .category.dimmed_category {
-      border-color: #AAAAAA;
+      border-color: @grayLight;
+      i.fa {
+        color: inherit;
+      }
+    }
+    .category[data-categoryid].dimmed_category:hover {
+      background-color: @grayLight;
+      > .info > .categoryname a {
+        background-color: @grayLight;
+      }
     }
     .category {
       float: left;
@@ -90,7 +99,7 @@
         }
       }
     }
-    .fa {
+    i.fa {
       font-size: 140px;
       width: 100%;
     }
