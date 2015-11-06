@@ -576,15 +576,6 @@ input[type="color"],
   color: [[setting:themecolor]];
   background-color: [[setting:themenavcolor]];
 }
-.navbar .navbar-inner .nav > li.dropdown a:hover i.fa,
-.navbar .navbar-inner .nav > li > a:hover i.fa,
-.navbar .navbar-inner .nav > li.dropdown a:focus i.fa,
-.navbar .navbar-inner .nav > li > a:focus i.fa {
-  color: inherit;
-}
-.navbar .navbar-inner .nav > li.dropdown > a > i.fa {
-  color: inherit;
-}
 .navbar .navbar-inner .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
   border-left-color: [[setting:themeiconcolor]];
 }

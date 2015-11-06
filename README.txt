@@ -191,6 +191,7 @@ can be really useful in visualising the issue along with any files you consider 
 New in 2.9.1.3
 ==============
 - FIX: Issue #572: iOS home screen icons broken.
+- FIX: Issue #573: Wrong icon color in navbar (login icon).
 
 New in 2.9.1.2
 ==============
