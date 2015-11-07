@@ -194,6 +194,7 @@ New in 2.9.1.3
 - FIX: Issue #572: iOS home screen icons broken.
 - FIX: Issue #573: Wrong icon color in navbar (login icon).
 - FIX: Alternative colours dimmed text colour.
+- FIX: MDL-51921.
 
 New in 2.9.1.2
 ==============
