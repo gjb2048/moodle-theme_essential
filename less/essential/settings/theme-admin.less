@@ -167,10 +167,12 @@ h2.pagetitle {
 
 a.marketing-button,
 a.marketing-button:visited, {
+  color: ~"[[setting:themenavcolor]]";
   background-color: ~"[[setting:themecolor]]";
 }
 
 a.marketing-button:hover {
+  color: ~"[[setting:themenavcolor]]";
   background-color: ~"[[setting:themehovercolor]]";
 }
 
@@ -353,7 +355,7 @@ a.marketing-button:hover {
   }
   &.active > a {
     color: ~"[[setting:themetextcolor]]";
-    background-color: #fff;  // TODO: Pagecolour.
+    background-color: @white;  // TODO: Pagecolour.
     &:hover, &:focus {
       color: inherit;
       background-color: inherit;
@@ -441,7 +443,7 @@ table#user-grades {
     border-right-color: ~"[[setting:themecolor]]";
   }
   .grade_icons img {
-    background-color: #fff;
+    background-color: @white;
     padding: 3px;
     border-radius: 3px;
   }

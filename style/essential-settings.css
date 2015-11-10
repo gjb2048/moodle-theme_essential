@@ -828,9 +828,11 @@ h2.pagetitle {
 }
 a.marketing-button,
 a.marketing-button:visited {
+  color: [[setting:themenavcolor]];
   background-color: [[setting:themecolor]];
 }
 a.marketing-button:hover {
+  color: [[setting:themenavcolor]];
   background-color: [[setting:themehovercolor]];
 }
 /* @end */
@@ -976,7 +978,7 @@ a.marketing-button:hover {
 }
 .nav-tabs > li.active > a {
   color: [[setting:themetextcolor]];
-  background-color: #fff;
+  background-color: #ffffff;
 }
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
@@ -1056,7 +1058,7 @@ table#user-grades th.courseitem {
   border-right-color: [[setting:themecolor]];
 }
 .path-grade-report-grader .grade_icons img {
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 3px;
   border-radius: 3px;
 }

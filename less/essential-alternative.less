@@ -392,10 +392,12 @@
 
                 a.marketing-button,
                 a.marketing-button:visited {
+                    color: ~"[[setting:alternativethemenavcolor@{index}]]";
                     background-color: ~"[[setting:alternativethemecolor@{index}]]";
                 }
 
                 a.marketing-button:hover {
+                    color: ~"[[setting:alternativethemenavcolor@{index}]]";
                     background-color: ~"[[setting:alternativethemehovercolor@{index}]]";
                 }
 
@@ -583,7 +585,7 @@
                     }
                     &.active > a {
                         color: ~"[[setting:alternativethemetextcolor@{index}]]";
-                        background-color: #fff;  // TODO: Pagecolour.
+                        background-color: @white;  // TODO: Pagecolour.
                     }
                 }
 

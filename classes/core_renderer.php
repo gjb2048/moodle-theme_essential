@@ -1243,12 +1243,30 @@ class theme_essential_core_renderer extends core_renderer {
     }
 
     // Essential custom bits.
+    public function essential_marketing_button($spot) {
+        $o = '';
+        $url = \theme_essential\toolbox::get_setting('marketing'.$spot.'buttonurl');
+        if (!empty($url)) {
+            $url = '<a href="'.$url.'" ';
+            $url .= 'target="'.\theme_essential\toolbox::get_setting('marketing'.$spot.'target').'" class="marketing-button">';
+            $url .= \theme_essential\toolbox::get_setting('marketing'.$spot.'buttontext', true);
+            $url .= '</a>';
+        }
+        $edit = $this->essential_edit_button('theme_essential_frontpage');
+        if ((!empty($url)) || (!empty($edit))) {
+            $o = '<div class="marketing-buttons">'.$url.$edit.'</div>';
+        }
+
+        return $o;
+    }
+
     public function essential_edit_button($section) {
         global $CFG;
         if ($this->page->user_is_editing() && is_siteadmin()) {
             $url = preg_replace("(https?:)", "", $CFG->wwwroot . '/admin/settings.php?section=');
             return '<a class="btn btn-success" href="' . $url . $section . '">' . get_string('edit') . '</a>';
         }
+        return null;
     }
 
     public function get_title($location) {
