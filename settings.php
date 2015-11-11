@@ -979,10 +979,22 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Marketing Spot Image Height.
+    // Marketing Spot Height.
     $name = 'theme_essential/marketingheight';
     $title = get_string('marketingheight', 'theme_essential');
     $description = get_string('marketingheightdesc', 'theme_essential');
+    $default = 100;
+    $choices = array();
+    for($mhit = 50; $mhit <= 500; $mhit = $mhit + 5) {
+        $choices[$mhit] = $mhit;
+    }
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $temp->add($setting);
+
+    // Marketing Spot Image Height.
+    $name = 'theme_essential/marketingimageheight';
+    $title = get_string('marketingimageheight', 'theme_essential');
+    $description = get_string('marketingimageheightdesc', 'theme_essential');
     $default = 100;
     $choices = array(50 => '50', 100 => '100', 150 => '150', 200 => '200', 250 => '250', 300 => '300');
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);

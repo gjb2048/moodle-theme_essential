@@ -24,58 +24,77 @@
  * @copyright   2013 Julian Ridden
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
+$spot1image = \theme_essential\toolbox::get_setting('marketing1image');
+$spot2image = \theme_essential\toolbox::get_setting('marketing2image');
+$spot3image = \theme_essential\toolbox::get_setting('marketing3image');
+
+if ($spot1image || $spot2image || $spot3image) {
+    $additionalmarketingclasses = ' withimage';
+} else {
+    $additionalmarketingclasses = ' noimages';
+}
+
+$additionalmarketingcontentclasses = '';
+$spot1button = $OUTPUT->essential_marketing_button('1');
+$spot2button = $OUTPUT->essential_marketing_button('2');
+$spot3button = $OUTPUT->essential_marketing_button('3');
+if ($spot1button || $spot2button || $spot3button) {
+    $additionalmarketingcontentclasses = ' withbutton';
+}
+
 ?>
-<div class="row-fluid" id="marketing-spots">
+<div class="row-fluid<?php echo $additionalmarketingclasses; ?>" id="marketing-spots">
     <div class="row-fluid">
-        <!-- Advert #1 -->
+        <!-- Spot #1 -->
         <div class="marketing-spot span4">
-            <!-- Icon & title. Font Awesome icon used. -->
-            <h5><span><i
-                        class="fa fa-<?php echo \theme_essential\toolbox::get_setting('marketing1icon'); ?>"></i> <?php
-                        echo \theme_essential\toolbox::get_setting('marketing1', true);
-                        ?></span>
-            </h5>
-            <?php if (\theme_essential\toolbox::get_setting('marketing1image')) { ?>
-                <div class="marketing-image" id="marketing-image1"></div>
+            <div class="title"><h5><span>
+                <i class="fa fa-<?php echo \theme_essential\toolbox::get_setting('marketing1icon'); ?>"></i>
+                <?php echo \theme_essential\toolbox::get_setting('marketing1', true); ?>
+            </span></h5></div>
+            <?php if ($spot1image) { ?>
+                <div class="marketing-image-container"><div class="marketing-image" id="marketing-image1"></div></div>
+            <?php } ?>
+            <div class="content<?php echo $additionalmarketingcontentclasses; ?>">
                 <?php
-            }
-            echo \theme_essential\toolbox::get_setting('marketing1content', 'format_html');
-            ?>
-            <?php echo $OUTPUT->essential_marketing_button('1'); ?>
+                    echo \theme_essential\toolbox::get_setting('marketing1content', 'format_html');
+                    echo $spot1button;
+                ?>
+            </div>
         </div>
 
-        <!-- Advert #2 -->
+        <!-- Spot #2 -->
         <div class="marketing-spot span4">
-            <!-- Icon & title. Font Awesome icon used. -->
-            <h5><span><i
-                        class="fa fa-<?php echo \theme_essential\toolbox::get_setting('marketing2icon'); ?>"></i> <?php
-                        echo \theme_essential\toolbox::get_setting('marketing2', true);
-                        ?></span>
-            </h5>
-            <?php if (\theme_essential\toolbox::get_setting('marketing2image')) { ?>
-                <div class="marketing-image" id="marketing-image2"></div>
+            <div class="title"><h5><span>
+                <i class="fa fa-<?php echo \theme_essential\toolbox::get_setting('marketing2icon'); ?>"></i>
+                <?php echo \theme_essential\toolbox::get_setting('marketing2', true); ?>
+            </span></h5></div>
+            <?php if ($spot2image) { ?>
+                <div class="marketing-image-container"><div class="marketing-image" id="marketing-image2"></div></div>
+            <?php } ?>
+            <div class="content<?php echo $additionalmarketingcontentclasses; ?>">
                 <?php
-            }
-            echo \theme_essential\toolbox::get_setting('marketing2content', 'format_html');
-            ?>
-            <?php echo $OUTPUT->essential_marketing_button('2'); ?>
+                    echo \theme_essential\toolbox::get_setting('marketing2content', 'format_html');
+                    echo $spot2button;
+                ?>
+            </div>
         </div>
 
-        <!-- Advert #3 -->
+        <!-- Spot #3 -->
         <div class="marketing-spot span4">
-            <!-- Icon & title. Font Awesome icon used. -->
-            <h5><span><i
-                        class="fa fa-<?php echo \theme_essential\toolbox::get_setting('marketing3icon'); ?>"></i> <?php
-                        echo \theme_essential\toolbox::get_setting('marketing3', true);
-                        ?></span>
-            </h5>
-            <?php if (\theme_essential\toolbox::get_setting('marketing3image')) { ?>
-                <div class="marketing-image" id="marketing-image3"></div>
+            <div class="title"><h5><span>
+                <i class="fa fa-<?php echo \theme_essential\toolbox::get_setting('marketing3icon'); ?>"></i>
+                <?php echo \theme_essential\toolbox::get_setting('marketing3', true); ?>
+            </span></h5></div>
+            <?php if ($spot3image) { ?>
+                <div class="marketing-image-container"><div class="marketing-image" id="marketing-image3"></div></div>
+            <?php } ?>
+            <div class="content<?php echo $additionalmarketingcontentclasses; ?>">
                 <?php
-            }
-            echo \theme_essential\toolbox::get_setting('marketing3content', 'format_html');
-            ?>
-            <?php echo $OUTPUT->essential_marketing_button('3'); ?>
+                    echo \theme_essential\toolbox::get_setting('marketing3content', 'format_html');
+                    echo $spot3button;
+                ?>
+            </div>
         </div>
     </div>
 </div>

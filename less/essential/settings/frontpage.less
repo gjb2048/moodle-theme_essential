@@ -4,10 +4,35 @@
 
 #marketing-spots {
   overflow: hidden;
+
   .marketing-spot {
     h5 {
       color: ~"[[setting:themecolor]]";
     }
+
+    #marketing-image1 {
+      background-image: ~"[[setting:marketing1image]]";
+    }
+
+    #marketing-image2 {
+      background-image: ~"[[setting:marketing2image]]";
+    }
+
+    #marketing-image3 {
+      background-image: ~"[[setting:marketing3image]]";
+    }
+
+    .marketing-image {
+      height: ~"[[setting:marketingimageheight]]";
+      background-repeat: no-repeat;
+    }
+  }
+
+  &.withimage .marketing-spot {
+      min-height: ~"[[setting:marketingheightwithimage]]";
+  }
+  &.noimages .marketing-spot {
+      min-height: ~"[[setting:marketingheight]]";
   }
 }
 

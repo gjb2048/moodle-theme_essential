@@ -527,6 +527,25 @@ input[type="color"],
 #marketing-spots .marketing-spot h5 {
   color: [[setting:themecolor]];
 }
+#marketing-spots .marketing-spot #marketing-image1 {
+  background-image: [[setting:marketing1image]];
+}
+#marketing-spots .marketing-spot #marketing-image2 {
+  background-image: [[setting:marketing2image]];
+}
+#marketing-spots .marketing-spot #marketing-image3 {
+  background-image: [[setting:marketing3image]];
+}
+#marketing-spots .marketing-spot .marketing-image {
+  height: [[setting:marketingimageheight]];
+  background-repeat: no-repeat;
+}
+#marketing-spots.withimage .marketing-spot {
+  min-height: [[setting:marketingheightwithimage]];
+}
+#marketing-spots.noimages .marketing-spot {
+  min-height: [[setting:marketingheight]];
+}
 /* @end */
 /* @end */
 /* @group Header */
@@ -943,23 +962,6 @@ a.marketing-button:hover {
   color: [[setting:themeurlcolor]];
 }
 /* @end */
-/* @end */
-/* @group Marketing Spots */
-#marketing-image1 {
-  background-image: [[setting:marketing1image]];
-  background-repeat: no-repeat;
-}
-#marketing-image2 {
-  background-image: [[setting:marketing2image]];
-  background-repeat: no-repeat;
-}
-#marketing-image3 {
-  background-image: [[setting:marketing3image]];
-  background-repeat: no-repeat;
-}
-.marketing-image {
-  height: [[setting:marketingheight]];
-}
 /* @end */
 /* @group Profile Image */
 .socials img:hover {

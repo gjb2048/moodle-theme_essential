@@ -120,15 +120,13 @@
 #marketing-spots {
   overflow: hidden;
   .marketing-spot {
-    position: relative;
-    background: @white;
-    padding: 3px 10px;
-    border: 1px solid @grayLightish;
+    padding: 0px 0px;
     border-radius: 5px;
-    min-height: 214px;
-    h5 {
-      padding: 3px 0px 8px 0px;
-      margin: 3px 0px 4px 0px;
+    border: 1px solid @grayBright;
+    background: @white;
+    .title {
+      padding: 3px 0 8px;
+      margin: 3px 8px 4px;
       border-bottom: 1px solid @grayBright;
       text-transform: uppercase;
     }
@@ -137,37 +135,45 @@
       margin-top: 3px;
       margin-right: 8px;
     }
-    .marketing-image {
-      background-size: contain !important;
-      background-position: center top !important;
-      width: 100%;
-      margin-bottom: 5px;
+    .marketing-image-container {
+      padding-top: 3px;
+      padding-bottom: 3px;
+      .marketing-image {
+        background-size: contain !important;
+        background-position: center top !important;
+        width: 100%;
+        //margin-bottom: 5px;
+      }
     }
-    .marketing-button.responsive {
-      display: none;
+    .content {
+      padding: 3px;
+      position: relative;
+      &.withbutton {
+        padding-bottom: 33px;
+      }
+    }
+    .marketing-buttons {
+      position: absolute;
+      right: 2px;
+      bottom: 2px;
+      a.marketing-button {
+        display: inline-block;
+        padding: 4px 12px;
+        margin-left: 2px;
+        margin-right: 2px;
+        font-size: 14px;
+        line-height: 20px;
+        vertical-align: middle;
+        cursor: pointer;
+        border-radius: 3px;
+        border: 1px solid #d3d3d3;
+        &.responsive {
+          display: none;
+        }
+      }
     }
   }
 }
-
-a.marketing-button {
-  display: inline-block;
-  padding: 4px 12px;
-  margin-left: 2px;
-  margin-right: 2px;
-  font-size: 14px;
-  line-height: 20px;
-  vertical-align: middle;
-  cursor: pointer;
-  border-radius: 3px;
-  border: 1px solid #d3d3d3;
-}
-
-#marketing-spots .marketing-buttons {
-  position: absolute;
-  right: 2px;
-  bottom: 2px;
-}
-
 /* @end */
 
 /* @end */

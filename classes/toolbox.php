@@ -563,13 +563,28 @@ class toolbox {
         return $css;
     }
 
-    static public function set_marketingheight($css, $marketingheight) {
+    static public function set_marketingheight($css, $marketingheight, $marketingimageheight) {
         $tag = '[[setting:marketingheight]]';
-        $replacement = $marketingheight;
+        $mhreplacement = $marketingheight;
+        if (!($mhreplacement)) {
+            $mhreplacement = 100;
+        }
+        $css = str_replace($tag, $mhreplacement . 'px', $css);
+
+        $tag = '[[setting:marketingimageheight]]';
+        $mihreplacement = $marketingimageheight;
+        if (!($mihreplacement)) {
+            $mihreplacement = 100;
+        }
+        $css = str_replace($tag, $mihreplacement . 'px', $css);
+
+        $tag = '[[setting:marketingheightwithimage]]';
+        $replacement = $mhreplacement + $mihreplacement;
         if (!($replacement)) {
-            $replacement = 100;
+            $replacement = 200;
         }
         $css = str_replace($tag, $replacement . 'px', $css);
+
         return $css;
     }
 

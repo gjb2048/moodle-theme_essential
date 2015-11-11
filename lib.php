@@ -274,9 +274,10 @@ function theme_essential_process_css($css, $theme) {
     $pagebgstyle = \theme_essential\toolbox::get_setting('pagebackgroundstyle');
     $css = \theme_essential\toolbox::set_pagebackgroundstyle($css, $pagebgstyle);
 
-    // Set marketing image height.
+    // Set marketing height.
     $marketingheight = \theme_essential\toolbox::get_setting('marketingheight');
-    $css = \theme_essential\toolbox::set_marketingheight($css, $marketingheight);
+    $marketingimageheight = \theme_essential\toolbox::get_setting('marketingimageheight');
+    $css = \theme_essential\toolbox::set_marketingheight($css, $marketingheight, $marketingimageheight);
 
     // Set marketing images.
     $setting = 'marketing1image';
