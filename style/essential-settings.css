@@ -543,8 +543,14 @@ input[type="color"],
 #marketing-spots.withimage .marketing-spot {
   min-height: [[setting:marketingheightwithimage]];
 }
+#marketing-spots.withimage.withbutton .marketing-spot {
+  min-height: [[setting:marketingheightwithimagewithbutton]];
+}
 #marketing-spots.noimages .marketing-spot {
   min-height: [[setting:marketingheight]];
+}
+#marketing-spots.noimages.withbutton .marketing-spot {
+  min-height: [[setting:marketingheightwithbutton]];
 }
 /* @end */
 /* @end */

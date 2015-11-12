@@ -190,7 +190,7 @@ can be really useful in visualising the issue along with any files you consider 
 
 New in 2.9.1.3
 ==============
-- FIX: Issue #566: Tidy up Marketing spot mark-up and CSS.  WORK-IN-PROGRESS.
+- FIX: Issue #566: Tidy up Marketing spot mark-up and CSS.
 - FIX: Issue #569: Inactive category icon look all dimmed.
 - FIX: Issue #572: iOS home screen icons broken.
 - FIX: Issue #573: Wrong icon color in navbar (login icon).

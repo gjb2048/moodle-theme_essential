@@ -409,10 +409,10 @@ $string['marketingheading'] = 'Marketing spots';
 $string['marketinginfodesc'] = 'Enter the settings for your marketing spot.';
 $string['marketingheadingsub'] = 'Three locations on the front page to add information and links';
 
-$string['marketingheight'] = 'Height of marketing spot container';
-$string['marketingheightdesc'] = 'Specify the height of the marketing spot container.  Adjust this to suit your content.  If any spot has an image, then that will be added to this for all spots.';
-$string['marketingimageheight'] = 'Height of marketing images';
-$string['marketingimageheightdesc'] = 'If you want to display images in the Marketing boxes you can specify their height here.';
+$string['marketingheight'] = 'Height of marketing spot container (px)';
+$string['marketingheightdesc'] = 'Specify the height of the marketing spot container in pixels.  Adjust this to suit your content.  If any spot has an image or link, then that will be added to this for all spots.';
+$string['marketingimageheight'] = 'Height of marketing images (px)';
+$string['marketingimageheightdesc'] = 'If you want to display images in the marketing boxes you can specify their height in pixels here.';
 $string['marketingdesc'] = 'This theme provides the option of enabling three "marketing" or "ad" spots just under the slide show.  These allow you to easily identify core information to your users and provide direct links.';
 
 $string['togglemarketing'] = 'Toggle marketing spot display';

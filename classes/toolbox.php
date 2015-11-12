@@ -568,6 +568,9 @@ class toolbox {
             $mhreplacement = 100;
         }
         $css = str_replace($tag, $mhreplacement . 'px', $css);
+        $tag = '[[setting:marketingheightwithbutton]]';
+        $mhreplacement += 32;
+        $css = str_replace($tag, $mhreplacement . 'px', $css);
 
         $tag = '[[setting:marketingimageheight]]';
         $mihreplacement = $marketingimageheight;
@@ -581,6 +584,9 @@ class toolbox {
         if (!($replacement)) {
             $replacement = 200;
         }
+        $css = str_replace($tag, $replacement . 'px', $css);
+        $tag = '[[setting:marketingheightwithimagewithbutton]]';
+        $replacement += 32;
         $css = str_replace($tag, $replacement . 'px', $css);
 
         return $css;
@@ -599,7 +605,6 @@ class toolbox {
 
     static public function set_customcss($css, $customcss) {
         $tag = '[[setting:customcss]]';
-        $customcss = str_replace('themecredit', 'themepagefooter', $customcss);
         $replacement = $customcss;
         $css = str_replace($tag, $replacement, $css);
         return $css;
