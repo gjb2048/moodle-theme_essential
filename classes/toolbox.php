@@ -41,12 +41,16 @@ class toolbox {
         }
     }
 
+    static protected function get_theme_config() {
+        if (empty(self::$theme)) {
+            self::$theme = \theme_config::load('essential');
+        }
+        return self::$theme;
+    }
+
     static public function get_setting($setting, $format = false, $theme = null) {
         if (empty($theme)) {
-            if (empty(self::$theme)) {
-                self::$theme = \theme_config::load('essential');
-            }
-            $theme = self::$theme;
+            $theme = self::get_theme_config();
         }
 
         global $CFG;
@@ -149,10 +153,7 @@ class toolbox {
     static public function render_slide($i, $captionoptions, $theme = null) {
 
         if (empty($theme)) {
-            if (empty(self::$theme)) {
-                self::$theme = \theme_config::load('essential');
-            }
-            $theme = self::$theme;
+            $theme = self::get_theme_config();
         }
 
         $slideurl = self::get_setting('slide' . $i . 'url', false, $theme);
@@ -172,8 +173,8 @@ class toolbox {
         if ($slideimage) {
             $slideimage = $theme->setting_file_url('slide' . $i . 'image', 'slide' . $i . 'image');
         } else {
-            global $OUTPUT;
-            $slideimage = $OUTPUT->pix_url('default_slide', 'theme');
+            $theme = self::get_theme_config();
+            $slideimage = $theme->pix_url('default_slide', 'theme');
         }
 
         if ($slideurl) {
@@ -444,10 +445,7 @@ class toolbox {
             $familyreplacement = 'Verdana';
             $facereplacement = '';
         } else if (\theme_essential\toolbox::get_setting('fontselect') === '3') {
-            static $theme;
-            if (empty($theme)) {
-                $theme = \theme_config::load('essential');  // $theme needs to be us for child themes.
-            }
+            $theme = self::get_theme_config(); // $theme needs to be us for child themes.
 
             $fontfiles = array();
             $fontfileeot = $theme->setting_file_url('fontfileeot' . $type, 'fontfileeot' . $type);
@@ -521,12 +519,12 @@ class toolbox {
     }
 
     static public function set_headerbackground($css, $headerbackground) {
-        global $OUTPUT;
         $tag = '[[setting:headerbackground]]';
         if ($headerbackground) {
             $replacement = $headerbackground;
         } else {
-            $replacement = $OUTPUT->pix_url('bg/header', 'theme');
+            $theme = self::get_theme_config();
+            $replacement = $theme->pix_url('bg/header', 'theme');
         }
         $css = str_replace($tag, $replacement, $css);
         return $css;
