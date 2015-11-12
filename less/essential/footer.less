@@ -10,8 +10,10 @@
   padding-top: 10px;
 
   .copy {
-    padding: 10px;
+    padding-bottom: 5px;
     float: left;
+    width: 100%;
+    text-align: center;
   }
   .footerlinks {
     .footnote {
@@ -31,12 +33,6 @@
     }
   }
 
-  .span4 {
-    padding: 30px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
-
   hr {
     padding: 0px;
     border-bottom: 0px none;
@@ -50,8 +46,11 @@
   }
 
   .themecredit {
-    font-size: 8pt;
+    font-size: 7pt;
     text-align: center;
+    a, a:hover {
+      color: inherit;
+    }
   }
 }
 
@@ -79,11 +78,6 @@ body.path-admin-setting #page-footer {
 
 #page-footer {
   .block {
-    border: 0px none;
-    background-color: transparent;
-    width: 100%;
-    padding: 0px;
-
     .header {
       .title h2:before {
         background-color: transparent;
@@ -148,7 +142,6 @@ body.path-admin-setting #page-footer {
 
 /* @group Performance Information */
 .performanceinfo {
-  background-color: white;
   padding: 8px;
   border-radius: 6px;
   border-width: 1px;

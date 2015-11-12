@@ -198,6 +198,8 @@ New in 2.9.1.3
 - FIX: MDL-51921.
 - FIX: Missing header background.
 - FIX: Conflict with Collapsed Topics.
+- FIX: Tidy up footer blocks.
+- NEW: Footer block colours.
 
 New in 2.9.1.2
 ==============

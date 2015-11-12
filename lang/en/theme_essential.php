@@ -212,7 +212,7 @@ $string['colorheadingsub'] = 'Set the colours used in your theme';
 $string['colordesc'] = 'Here you can find various settings to change many of the colours found in this theme.';
 
 $string['footercolors'] = 'Footer colours';
-$string['footercolorsdesc'] = 'Change the colours on the page footers';
+$string['footercolorsdesc'] = 'Change the colours on the page footer.';
 
 $string['themecolor'] = 'Theme colour';
 $string['themecolordesc'] = 'What colour should your theme be.  This will change multiple components to produce the colour you wish across the Moodle site';
@@ -238,8 +238,16 @@ $string['footerurlcolor'] = 'Footer link colour';
 $string['footerurlcolordesc'] = 'Set the colour for your linked text in the footer.';
 $string['footerhovercolor'] = 'Footer link hover colour';
 $string['footerhovercolordesc'] = 'Set the colour for your linked text when hovered over in the footer.';
+$string['footerblockbackgroundcolour'] = 'Footer block background colour';
+$string['footerblockbackgroundcolourdesc'] = 'Set the colour for the block background in the footer.';
 $string['footerheadingcolor'] = 'Footer heading colour';
-$string['footerheadingcolordesc'] = 'Set the colour for block headings in the footer.';
+$string['footerheadingcolordesc'] = 'Set the colour for headings in the footer.';
+$string['footerblocktextcolour'] = 'Footer block text colour';
+$string['footerblocktextcolourdesc'] = 'Set the colour you want your block text to be in the footer.';
+$string['footerblockurlcolour'] = 'Footer block link colour';
+$string['footerblockurlcolourdesc'] = 'Set the colour for your linked block text in the footer.';
+$string['footerblockhovercolour'] = 'Footer block link hover colour';
+$string['footerblockhovercolourdesc'] = 'Set the colour for your linked block text when hovered over in the footer.';
 
 $string['headerbackground'] = 'Header background image';
 $string['headerbackgrounddesc'] = 'Upload your own background image.';
@@ -275,6 +283,28 @@ $string['alternativethemenavcolor'] = 'Navigation text colour {$a}';
 $string['alternativethemenavcolordesc'] = 'Set the alternative {$a} text colour for navigation.  Being the navigation bar and the breadcrumb fancy style.';
 $string['alternativethemehovercolor'] = 'Alternative theme hover colour {$a}';
 $string['alternativethemehovercolordesc'] = 'What colour should your theme hovers be for the alternative theme colours {$a}.';
+
+$string['alternativethemefootercolor'] = 'Footer background colour for the alternative theme colours {$a}';
+$string['alternativethemefootercolordesc'] = 'Set what colour the background of the Footer box should be for the alternative theme colours {$a}.';
+$string['alternativethemefootersepcolor'] = 'Footer separator colour for the alternative theme colours {$a}';
+$string['alternativethemefootersepcolordesc'] = 'Separators are lines used to separate content.  Set their colour here for the alternative theme colours {$a}.';
+$string['alternativethemefootertextcolor'] = 'Footer text colour for the alternative theme colours {$a}';
+$string['alternativethemefootertextcolordesc'] = 'Set the colour you want your text to be in the footer for the alternative theme colours {$a}.';
+$string['alternativethemefooterheadingcolor'] = 'Footer heading colour for the alternative theme colours {$a}';
+$string['alternativethemefooterheadingcolordesc'] = 'Set the colour for headings in the footer for the alternative theme colours {$a}.';
+$string['alternativethemefooterurlcolor'] = 'Footer link colour for the alternative theme colours {$a}';
+$string['alternativethemefooterurlcolordesc'] = 'Set the colour for your linked text in the footer for the alternative theme colours {$a}.';
+$string['alternativethemefooterhovercolor'] = 'Footer link hover colour for the alternative theme colours {$a}';
+$string['alternativethemefooterhovercolordesc'] = 'Set the colour for your linked text when hovered over in the footer for the alternative theme colours {$a}.';
+$string['alternativethemefooterblockbackgroundcolour'] = 'Footer block background colour for the alternative theme colours {$a}';
+$string['alternativethemefooterblockbackgroundcolourdesc'] = 'Set the colour for the block background in the footer for the alternative theme colours {$a}.';
+$string['alternativethemefooterblocktextcolour'] = 'Footer block text colour for the alternative theme colours {$a}';
+$string['alternativethemefooterblocktextcolourdesc'] = 'Set the colour you want your block text to be in the footer for the alternative theme colours {$a}.';
+$string['alternativethemefooterblockurlcolour'] = 'Footer block link colour for the alternative theme colours {$a}';
+$string['alternativethemefooterblockurlcolourdesc'] = 'Set the colour for your linked block text in the footer for the alternative theme colours {$a}.';
+$string['alternativethemefooterblockhovercolour'] = 'Footer block link hover colour for the alternative theme colours {$a}';
+$string['alternativethemefooterblockhovercolourdesc'] = 'Set the colour for your linked block text when hovered over in the footer for the alternative theme colours {$a}.';
+
 $string['alternativethemeslidecolors'] = 'Alternative theme slide colours';
 $string['alternativethemeslidecolorsdesc'] = 'Defines alternative theme slide colours that the user may select.';
 $string['alternativethemeslidecaptiontextcolor'] = 'Alternative theme slide caption text colour {$a}';

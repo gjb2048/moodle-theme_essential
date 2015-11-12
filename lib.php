@@ -177,15 +177,31 @@ function theme_essential_process_css($css, $theme) {
 
     // Set the footer colour.
     $footercolor = \theme_essential\toolbox::hex2rgba(\theme_essential\toolbox::get_setting('footercolor'), '0.95');
-    $css = \theme_essential\toolbox::set_color($css, $footercolor, '[[setting:footercolor]]', '#555555');
+    $css = \theme_essential\toolbox::set_color($css, $footercolor, '[[setting:footercolor]]', '#30add1');
 
     // Set the footer text colour.
     $footertextcolor = \theme_essential\toolbox::get_setting('footertextcolor');
-    $css = \theme_essential\toolbox::set_color($css, $footertextcolor, '[[setting:footertextcolor]]', '#bbbbbb');
+    $css = \theme_essential\toolbox::set_color($css, $footertextcolor, '[[setting:footertextcolor]]', '#ffffff');
 
-    // Set the footer heading colour.
+    // Set the footer block background colour.
+    $footerheadingcolor = \theme_essential\toolbox::get_setting('footerblockbackgroundcolour');
+    $css = \theme_essential\toolbox::set_color($css, $footerheadingcolor, '[[setting:footerblockbackgroundcolour]]', '#cccccc');
+
+    // Set the footer block heading colour.
     $footerheadingcolor = \theme_essential\toolbox::get_setting('footerheadingcolor');
     $css = \theme_essential\toolbox::set_color($css, $footerheadingcolor, '[[setting:footerheadingcolor]]', '#cccccc');
+
+    // Set the footer text colour.
+    $footertextcolor = \theme_essential\toolbox::get_setting('footerblocktextcolour');
+    $css = \theme_essential\toolbox::set_color($css, $footertextcolor, '[[setting:footerblocktextcolour]]', '#000000');
+
+    // Set the footer block URL colour.
+    $footerurlcolor = \theme_essential\toolbox::get_setting('footerblockurlcolour');
+    $css = \theme_essential\toolbox::set_color($css, $footerurlcolor, '[[setting:footerblockurlcolour]]', '#000000');
+
+    // Set the footer block hover colour.
+    $footerhovercolor = \theme_essential\toolbox::get_setting('footerblockhovercolour');
+    $css = \theme_essential\toolbox::set_color($css, $footerhovercolor, '[[setting:footerblockhovercolour]]', '#555555');
 
     // Set the footer separator colour.
     $footersepcolor = \theme_essential\toolbox::get_setting('footersepcolor');
@@ -193,11 +209,11 @@ function theme_essential_process_css($css, $theme) {
 
     // Set the footer URL colour.
     $footerurlcolor = \theme_essential\toolbox::get_setting('footerurlcolor');
-    $css = \theme_essential\toolbox::set_color($css, $footerurlcolor, '[[setting:footerurlcolor]]', '#217a94');
+    $css = \theme_essential\toolbox::set_color($css, $footerurlcolor, '[[setting:footerurlcolor]]', '#cccccc');
 
     // Set the footer hover colour.
     $footerhovercolor = \theme_essential\toolbox::get_setting('footerhovercolor');
-    $css = \theme_essential\toolbox::set_color($css, $footerhovercolor, '[[setting:footerhovercolor]]', '#30add1');
+    $css = \theme_essential\toolbox::set_color($css, $footerhovercolor, '[[setting:footerhovercolor]]', '#bbbbbb');
 
     // Set the slide header colour.
     $slideshowcolor = \theme_essential\toolbox::get_setting('slideshowcolor');
@@ -247,6 +263,29 @@ function theme_essential_process_css($css, $theme) {
                     \theme_essential\toolbox::get_setting('alternativethemenavcolor' . $alternative), $default);
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'hovercolor' . $alternative,
                     \theme_essential\toolbox::get_setting('alternativethemehovercolor' . $alternative), $defaulthover);
+
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'footercolor' . $alternative,
+                    \theme_essential\toolbox::get_setting('alternativethemefootercolor' . $alternative), '#30add1');
+
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'footertextcolor' . $alternative,
+                    \theme_essential\toolbox::get_setting('alternativethemefootertextcolor' . $alternative), '#30add1');
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'footerblockbackgroundcolour' . $alternative,
+                    \theme_essential\toolbox::get_setting('alternativethemefooterblockbackgroundcolour' . $alternative), '#cccccc');
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'footerblocktextcolour' . $alternative,
+                    \theme_essential\toolbox::get_setting('alternativethemefooterblocktextcolour' . $alternative), '#000000');
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'footerblockurlcolour' . $alternative,
+                    \theme_essential\toolbox::get_setting('alternativethemefooterblockurlcolour' . $alternative), '#000000');
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'footerblockhovercolour' . $alternative,
+                    \theme_essential\toolbox::get_setting('alternativethemefooterblockhovercolour' . $alternative), '#555555');
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'footerheadingcolor' . $alternative,
+                    \theme_essential\toolbox::get_setting('alternativethemefooterheadingcolor' . $alternative), '#cccccc');
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'footersepcolor' . $alternative,
+                    \theme_essential\toolbox::get_setting('alternativethemefootersepcolor' . $alternative), '#313131');
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'footerurlcolor' . $alternative,
+                    \theme_essential\toolbox::get_setting('alternativethemefooterurlcolor' . $alternative), '#cccccc');
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'footerhovercolor' . $alternative,
+                    \theme_essential\toolbox::get_setting('alternativethemefooterhovercolor' . $alternative), '#bbbbbb');
+
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'slidecaptiontextcolor' . $alternative,
                     \theme_essential\toolbox::get_setting('alternativethemeslidecaptiontextcolor' . $alternative), $default);
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'slidecaptionbackgroundcolor' . $alternative,

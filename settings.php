@@ -218,7 +218,7 @@ if (is_siteadmin()) {
     $name = 'theme_essential/footercolor';
     $title = get_string('footercolor', 'theme_essential');
     $description = get_string('footercolordesc', 'theme_essential');
-    $default = '#555555';
+    $default = '#30add1';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -228,17 +228,57 @@ if (is_siteadmin()) {
     $name = 'theme_essential/footertextcolor';
     $title = get_string('footertextcolor', 'theme_essential');
     $description = get_string('footertextcolordesc', 'theme_essential');
-    $default = '#bbbbbb';
+    $default = '#ffffff';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Footer Block Heading colour setting.
+    // Footer heading colour setting.
     $name = 'theme_essential/footerheadingcolor';
     $title = get_string('footerheadingcolor', 'theme_essential');
     $description = get_string('footerheadingcolordesc', 'theme_essential');
     $default = '#cccccc';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Footer block background colour setting.
+    $name = 'theme_essential/footerblockbackgroundcolour';
+    $title = get_string('footerblockbackgroundcolour', 'theme_essential');
+    $description = get_string('footerblockbackgroundcolourdesc', 'theme_essential');
+    $default = '#cccccc';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Footer block text colour setting.
+    $name = 'theme_essential/footerblocktextcolour';
+    $title = get_string('footerblocktextcolour', 'theme_essential');
+    $description = get_string('footerblocktextcolourdesc', 'theme_essential');
+    $default = '#000000';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Footer block URL colour setting.
+    $name = 'theme_essential/footerblockurlcolour';
+    $title = get_string('footerblockurlcolour', 'theme_essential');
+    $description = get_string('footerblockurlcolourdesc', 'theme_essential');
+    $default = '#000000';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Footer block URL hover colour setting.
+    $name = 'theme_essential/footerblockhovercolour';
+    $title = get_string('footerblockhovercolour', 'theme_essential');
+    $description = get_string('footerblockhovercolourdesc', 'theme_essential');
+    $default = '#555555';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -258,7 +298,7 @@ if (is_siteadmin()) {
     $name = 'theme_essential/footerurlcolor';
     $title = get_string('footerurlcolor', 'theme_essential');
     $description = get_string('footerurlcolordesc', 'theme_essential');
-    $default = '#217a94';
+    $default = '#cccccc';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -268,7 +308,7 @@ if (is_siteadmin()) {
     $name = 'theme_essential/footerhovercolor';
     $title = get_string('footerhovercolor', 'theme_essential');
     $description = get_string('footerhovercolordesc', 'theme_essential');
-    $default = '#30add1';
+    $default = '#bbbbbb';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -362,6 +402,106 @@ if (is_siteadmin()) {
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $temp->add($setting);
+
+    // Footer background colour setting.
+    $name = 'theme_essential/alternativethemefootercolor' . $alternativethemenumber;
+    $title = get_string('alternativethemefootercolor', 'theme_essential', $alternativethemenumber);
+    $description = get_string('alternativethemefootercolordesc', 'theme_essential', $alternativethemenumber);
+    $default = '#30add1';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Footer text colour setting.
+    $name = 'theme_essential/alternativethemefootertextcolor' . $alternativethemenumber;
+    $title = get_string('alternativethemefootertextcolor', 'theme_essential', $alternativethemenumber);
+    $description = get_string('alternativethemefootertextcolordesc', 'theme_essential', $alternativethemenumber);
+    $default = '#ffffff';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Footer heading colour setting.
+    $name = 'theme_essential/alternativethemefooterheadingcolor' . $alternativethemenumber;
+    $title = get_string('alternativethemefooterheadingcolor', 'theme_essential', $alternativethemenumber);
+    $description = get_string('alternativethemefooterheadingcolordesc', 'theme_essential', $alternativethemenumber);
+    $default = '#cccccc';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Footer block background colour setting.
+    $name = 'theme_essential/alternativethemefooterblockbackgroundcolour' . $alternativethemenumber;
+    $title = get_string('alternativethemefooterblockbackgroundcolour', 'theme_essential', $alternativethemenumber);
+    $description = get_string('alternativethemefooterblockbackgroundcolourdesc', 'theme_essential', $alternativethemenumber);
+    $default = '#cccccc';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Footer block text colour setting.
+    $name = 'theme_essential/alternativethemefooterblocktextcolour' . $alternativethemenumber;
+    $title = get_string('alternativethemefooterblocktextcolour', 'theme_essential', $alternativethemenumber);
+    $description = get_string('alternativethemefooterblocktextcolourdesc', 'theme_essential', $alternativethemenumber);
+    $default = '#000000';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Footer block URL colour setting.
+    $name = 'theme_essential/alternativethemefooterblockurlcolour' . $alternativethemenumber;
+    $title = get_string('alternativethemefooterblockurlcolour', 'theme_essential', $alternativethemenumber);
+    $description = get_string('alternativethemefooterblockurlcolourdesc', 'theme_essential', $alternativethemenumber);
+    $default = '#000000';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Footer block URL hover colour setting.
+    $name = 'theme_essential/alternativethemefooterblockhovercolour' . $alternativethemenumber;
+    $title = get_string('alternativethemefooterblockhovercolour', 'theme_essential', $alternativethemenumber);
+    $description = get_string('alternativethemefooterblockhovercolourdesc', 'theme_essential', $alternativethemenumber);
+    $default = '#555555';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Footer seperator colour setting.
+    $name = 'theme_essential/alternativethemefootersepcolor' . $alternativethemenumber;
+    $title = get_string('alternativethemefootersepcolor', 'theme_essential', $alternativethemenumber);
+    $description = get_string('alternativethemefootersepcolordesc', 'theme_essential', $alternativethemenumber);
+    $default = '#313131';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Footer URL colour setting.
+    $name = 'theme_essential/alternativethemefooterurlcolor' . $alternativethemenumber;
+    $title = get_string('alternativethemefooterurlcolor', 'theme_essential', $alternativethemenumber);
+    $description = get_string('alternativethemefooterurlcolordesc', 'theme_essential', $alternativethemenumber);
+    $default = '#cccccc';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Footer URL hover colour setting.
+    $name = 'theme_essential/alternativethemefooterhovercolor' . $alternativethemenumber;
+    $title = get_string('alternativethemefooterhovercolor', 'theme_essential', $alternativethemenumber);
+    $description = get_string('alternativethemefooterhovercolordesc', 'theme_essential', $alternativethemenumber);
+    $default = '#bbbbbb';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
     }
 
     $ADMIN->add('theme_essential', $temp);

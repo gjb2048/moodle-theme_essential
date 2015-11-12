@@ -29,20 +29,14 @@ if (empty($PAGE->layout_options['nofooter'])) { ?>
         <div class="container-fluid">
             <?php echo $OUTPUT->essential_edit_button('theme_essential_footer'); ?>
             <div class="row-fluid footerblocks">
-                <div class="span4 pull-left">
-                    <div class="column">
-                        <?php echo $OUTPUT->blocks('footer-left'); ?>
-                    </div>
+                <div class="footerblock span4">
+                    <?php echo $OUTPUT->blocks('footer-left'); ?>
                 </div>
-                <div class="span4 center">
-                    <div class="column">
-                        <?php echo $OUTPUT->blocks('footer-middle'); ?>
-                    </div>
+                <div class="footerblock span4">
+                    <?php echo $OUTPUT->blocks('footer-middle'); ?>
                 </div>
-                <div class="span4 pull-right">
-                    <div class="column">
-                        <?php echo $OUTPUT->blocks('footer-right'); ?>
-                    </div>
+                <div class="footerblock span4">
+                    <?php echo $OUTPUT->blocks('footer-right'); ?>
                 </div>
             </div>
             <div class="footerlinks row-fluid">

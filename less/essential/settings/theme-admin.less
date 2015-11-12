@@ -259,10 +259,10 @@ a.marketing-button:hover {
   .footnote {
     color: ~"[[setting:footertextcolor]]";
     a, a:visited {
-      color: ~"[[setting:footerurlcolor]]" !important;
+      color: ~"[[setting:footerurlcolor]]";
     }
     a:hover {
-      color: ~"[[setting:footerhovercolor]]" !important;
+      color: ~"[[setting:footerhovercolor]]";
     }
   }
   hr {
@@ -277,24 +277,39 @@ a.marketing-button:hover {
   }
 }
 
-#page-footer .block_html ul li:before,
-#greyboxright ul li:before {
-  background-color: ~"[[setting:themecolor]]";
-}
-
 /* @group Footer Block Formatting */
 
 #page-footer {
-  .block .header {
-    border-bottom: 1px solid ~"[[setting:footersepcolor]]";
-    .title {
-      h2 {
-        color: ~"[[setting:footerheadingcolor]]";
-        &:before {
-          color: ~"[[setting:themecolor]]";
-        }
+  .block {
+    background-color: ~"[[setting:footerblockbackgroundcolour]]";
+    color: ~"[[setting:footerblocktextcolour]]";
+    a, a > i.fa {
+      color: ~"[[setting:footerblockurlcolour]]";
+    }
+    a:hover, a:hover > i.fa {
+      color: ~"[[setting:footerblockhovercolour]]";
+    }
+    .icon {
+      color: ~"[[setting:footerblockurlcolour]]";
+    }
+    .moodle-core-dragdrop-draghandle {
+      &:before {
+        color: ~"[[setting:footerblockurlcolour]]";
       }
     }
+  }
+  .block .header {
+    border-bottom: 1px solid ~"[[setting:footersepcolor]]";
+    h2 {
+      color: inherit;
+    }
+  }
+  .header .title h2:before, &.block_iconic_html .header .title h2 span.fa:before {
+    color: inherit;
+  }
+  .block_html ul li:before,
+  #greyboxright ul li:before {
+    background-color: ~"[[setting:themecolor]]";
   }
   .block_login input[type="submit"] {
     background-color: ~"[[setting:themecolor]]";

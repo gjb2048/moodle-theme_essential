@@ -923,10 +923,10 @@ a.marketing-button:hover {
 }
 #page-footer .footnote a,
 #page-footer .footnote a:visited {
-  color: [[setting:footerurlcolor]] !important;
+  color: [[setting:footerurlcolor]];
 }
 #page-footer .footnote a:hover {
-  color: [[setting:footerhovercolor]] !important;
+  color: [[setting:footerhovercolor]];
 }
 #page-footer hr {
   border-top: 1px solid [[setting:footersepcolor]];
@@ -938,19 +938,38 @@ a.marketing-button:hover {
 #page-footer .tree_item.branch:before {
   color: [[setting:themeiconcolor]];
 }
-#page-footer .block_html ul li:before,
-#greyboxright ul li:before {
-  background-color: [[setting:themecolor]];
-}
 /* @group Footer Block Formatting */
+#page-footer .block {
+  background-color: [[setting:footerblockbackgroundcolour]];
+  color: [[setting:footerblocktextcolour]];
+}
+#page-footer .block a,
+#page-footer .block a > i.fa {
+  color: [[setting:footerblockurlcolour]];
+}
+#page-footer .block a:hover,
+#page-footer .block a:hover > i.fa {
+  color: [[setting:footerblockhovercolour]];
+}
+#page-footer .block .icon {
+  color: [[setting:footerblockurlcolour]];
+}
+#page-footer .block .moodle-core-dragdrop-draghandle:before {
+  color: [[setting:footerblockurlcolour]];
+}
 #page-footer .block .header {
   border-bottom: 1px solid [[setting:footersepcolor]];
 }
-#page-footer .block .header .title h2 {
-  color: [[setting:footerheadingcolor]];
+#page-footer .block .header h2 {
+  color: inherit;
 }
-#page-footer .block .header .title h2:before {
-  color: [[setting:themecolor]];
+#page-footer .header .title h2:before,
+#page-footer.block_iconic_html .header .title h2 span.fa:before {
+  color: inherit;
+}
+#page-footer .block_html ul li:before,
+#page-footer #greyboxright ul li:before {
+  background-color: [[setting:themecolor]];
 }
 #page-footer .block_login input[type="submit"] {
   background-color: [[setting:themecolor]];

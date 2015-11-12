@@ -501,8 +501,12 @@
                     border-top-color: ~"[[setting:alternativethemecolor@{index}]]";
                     .footnote {
                         a, a:visited {
-                            color: ~"[[setting:alternativethemeurlcolor@{index}]]" !important;
+                            color: ~"[[setting:alternativethemeurlcolor@{index}]]";
                         }
+                    }
+                    .block_html ul li:before,
+                    #greyboxright ul li:before {
+                        background-color: ~"[[setting:alternativethemecolor@{index}]]";
                     }
                     .block_login input[type="submit"] {
                         background-color: ~"[[setting:alternativethemecolor@{index}]]";
@@ -514,11 +518,82 @@
                         color: ~"[[setting:alternativethemeurlcolor@{index}]]";
                     }
                 }
+#page-footer {
+  background-color: ~"[[setting:alternativethemefootercolor@{index}]]";
+  color: ~"[[setting:alternativethemefootertextcolor@{index}]]";
+  border-top: 2px solid ~"[[setting:alternativethemecolor@{index}]]";
+  border-bottom: 3px solid ~"[[setting:alternativethemecolor@{index}]]";
+  a, a > i.fa {
+    color: ~"[[setting:alternativethemefooterurlcolor@{index}]]";
+  }
+  a:hover, a:hover > i.fa {
+    color: ~"[[setting:alternativethemefooterhovercolor@{index}]]";
+  }
+  .footnote {
+    color: ~"[[setting:alternativethemefootertextcolor@{index}]]";
+    a, a:visited {
+      color: ~"[[setting:alternativethemefooterurlcolor@{index}]]";
+    }
+    a:hover {
+      color: ~"[[setting:alternativethemefooterhovercolor@{index}]]";
+    }
+  }
+  hr {
+    border-top: 1px solid ~"[[setting:alternativethemefootersepcolor@{index}]]";
+  }
+  h4 {
+    border-bottom: 1px solid ~"[[setting:alternativethemefootersepcolor@{index}]]";
+    color: ~"[[setting:alternativethemefooterheadingcolor@{index}]]";
+  }
+  .tree_item.branch:before {
+    color: ~"[[setting:alternativethemeiconcolor@{index}]]";
+  }
+}
 
-                #page-footer .block_html ul li:before,
-                    #greyboxright ul li:before {
-                    background-color: ~"[[setting:alternativethemecolor@{index}]]";
-                }
+/* @group Footer Block Formatting */
+
+#page-footer {
+  .block {
+    background-color: ~"[[setting:alternativethemefooterblockbackgroundcolour@{index}]]";
+    color: ~"[[setting:alternativethemefooterblocktextcolour@{index}]]";
+    a, a > i.fa {
+      color: ~"[[setting:alternativethemefooterblockurlcolour@{index}]]";
+    }
+    a:hover, a:hover > i.fa {
+      color: ~"[[setting:alternativethemefooterblockhovercolour@{index}]]";
+    }
+    .icon {
+      color: ~"[[setting:alternativethemefooterblockurlcolour@{index}]]";
+    }
+    .moodle-core-dragdrop-draghandle {
+      &:before {
+        color: ~"[[setting:alternativethemefooterblockurlcolour@{index}]]";
+      }
+    }
+  }
+  .block .header {
+    border-bottom: 1px solid ~"[[setting:alternativethemefootersepcolor@{index}]]";
+    h2 {
+      color: inherit;
+    }
+  }
+  .header .title h2:before, &.block_iconic_html .header .title h2 span.fa:before {
+    color: inherit;
+  }
+  .block_html ul li:before,
+  #greyboxright ul li:before {
+    background-color: ~"[[setting:alternativethemecolor@{index}]]";
+  }
+  .block_login input[type="submit"] {
+    background-color: ~"[[setting:alternativethemecolor@{index}]]";
+    &:hover {
+      background-color: ~"[[setting:alternativethemehovercolor@{index}]]";
+    }
+  }
+  .block_rss_client .content a {
+    color: ~"[[setting:alternativethemeurlcolor@{index}]]";
+  }
+}
 
                 p.tree_item {
                     &.leaf a {
