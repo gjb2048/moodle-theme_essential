@@ -197,6 +197,7 @@ New in 2.9.1.3
 - FIX: Alternative colours dimmed text colour.
 - FIX: MDL-51921.
 - FIX: Missing header background.
+- FIX: Conflict with Collapsed Topics.
 
 New in 2.9.1.2
 ==============

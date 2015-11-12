@@ -7,8 +7,14 @@
  */
 // Import the bootstrap we need.
 @import "bootstrap/variables";
-@import "bootstrap/mixins";
-@import "bootstrap/type";
+
+//@import "bootstrap/mixins";
+// Opacity
+.opacity(@opacity) {
+  opacity: @opacity / 100;
+  filter: ~"alpha(opacity=@{opacity})";
+}
+
 // Import the essential variables.
 @import "essential/variables";
 
@@ -26,7 +32,7 @@
 
             /* @group Alternative colours @{index} */
 
-            .essential-colours-alternative@{index} {
+            body.essential-colours-alternative@{index} {
                 color: ~"[[setting:alternativethemetextcolor@{index}]]";
                 h1, h2, h3, h4, h5, h6,
                 #adminsettings h3,
@@ -162,7 +168,7 @@
                 .dimmed_category,
                 .dimmed_category a,
                 dimmed_category a:visited {
-                    .muted
+                    color: @grayLight;
                 }
 
                 #page-header {
@@ -748,16 +754,8 @@
                 }
             }
 
-            // Collapsed Topics.
-            .course-content ul.ctopics li.section .content .toggle a h3 {
-                color: inherit;
-                &:hover {
-                    color: inherit;
-                }
-            }
-
             @media (max-width: @navbarCollapseWidth) {
-                .essential-colours-alternative@{index} {
+                body.essential-colours-alternative@{index} {
                     .nav-collapse {
                         background-color: ~"[[setting:alternativethemecolor@{index}]]";
                         .dropdown-menu > li > a,
