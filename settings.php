@@ -129,7 +129,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Custom CSS file.
+    // Custom CSS.
     $name = 'theme_essential/customcss';
     $title = get_string('customcss', 'theme_essential');
     $description = get_string('customcssdesc', 'theme_essential');

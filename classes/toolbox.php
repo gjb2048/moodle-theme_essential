@@ -4,7 +4,9 @@ namespace theme_essential;
 
 class toolbox {
 
-    static protected $theme;
+    static protected $theme = null;
+    static protected $childtheme = null;
+    static protected $checkedchildtheme = false;
 
     // Moodle CSS file serving.
     static public function get_csswww() {
@@ -19,9 +21,10 @@ class toolbox {
 
             $syscontext = \context_system::instance();
             $itemid = \theme_get_revision();
-            $url = \moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php", "/$syscontext->id/theme_essential/style/$itemid/$moodlecss");
+            $url = \moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php",
+                            "/$syscontext->id/theme_essential/style/$itemid/$moodlecss");
             $url = preg_replace('|^https?://|i', '//', $url->out(false));
-            return '<link rel="stylesheet" href="'.$url.'">';
+            return '<link rel="stylesheet" href="' . $url . '">';
         } else {
             if (\right_to_left()) {
                 $moodlecssone = 'essential-rtl_ie9-blessed1.css';
@@ -33,11 +36,13 @@ class toolbox {
 
             $syscontext = \context_system::instance();
             $itemid = \theme_get_revision();
-            $urlone = \moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php", "/$syscontext->id/theme_essential/style/$itemid/$moodlecssone");
+            $urlone = \moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php",
+                            "/$syscontext->id/theme_essential/style/$itemid/$moodlecssone");
             $urlone = preg_replace('|^https?://|i', '//', $urlone->out(false));
-            $urltwo = \moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php", "/$syscontext->id/theme_essential/style/$itemid/$moodlecsstwo");
+            $urltwo = \moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php",
+                            "/$syscontext->id/theme_essential/style/$itemid/$moodlecsstwo");
             $urltwo = preg_replace('|^https?://|i', '//', $urltwo->out(false));
-            return '<link rel="stylesheet" href="'.$urlone.'"><link rel="stylesheet" href="'.$urltwo.'">';
+            return '<link rel="stylesheet" href="' . $urlone . '"><link rel="stylesheet" href="' . $urltwo . '">';
         }
     }
 
@@ -48,8 +53,28 @@ class toolbox {
         return self::$theme;
     }
 
+    static protected function get_child_theme_config() {
+        if (!self::$checkedchildtheme) {
+            global $PAGE;
+            if (in_array('essential', $PAGE->theme->parents)) {
+                $themename = $PAGE->theme->name;
+                self::$childtheme = \theme_config::load($themename);
+                self::$checkedchildtheme = true;
+            }
+        }
+        return self::$childtheme;
+    }
+
     static public function get_setting($setting, $format = false, $theme = null) {
         if (empty($theme)) {
+            $childtheme = self::get_child_theme_config();
+            if (!$childtheme) {
+                // Would use us but cannot have recursive static method calls in PHP.
+                $childsetting = self::get_child_setting($setting, $format, $childtheme); // Would use us but cannot have recursive static method calls in PHP.
+                if ($childsetting) {
+                    return $childsetting;
+                } // Else use the parent.
+            }
             $theme = self::get_theme_config();
         }
 
@@ -68,6 +93,45 @@ class toolbox {
         } else {
             return format_string($theme->settings->$setting);
         }
+    }
+
+    static private function get_child_setting($setting, $format = false, $childtheme = null) {
+        if (empty($childtheme)) {
+            $childtheme = self::get_theme_config();
+        }
+
+        global $CFG;
+        require_once($CFG->dirroot . '/lib/weblib.php');
+        if (empty($childtheme->settings->$setting)) {
+            return false;
+        } else if (!$format) {
+            return $childtheme->settings->$setting;
+        } else if ($format === 'format_text') {
+            return format_text($childtheme->settings->$setting, FORMAT_PLAIN);
+        } else if ($format === 'format_html') {
+            return format_text($childtheme->settings->$setting, FORMAT_HTML, array('trusted' => true, 'noclean' => true));
+        } else if ($format === 'format_file_url') {
+            return $childtheme->setting_file_url($setting, $setting);
+        } else {
+            return format_string($childtheme->settings->$setting);
+        }
+    }
+
+    static public function setting_file_url($setting, $filearea, $theme = null) {
+        if (empty($theme)) {
+            $childtheme = self::get_child_theme_config();
+            if (!$childtheme) {
+                $childsetting = self::get_setting($setting, 'format_file_url', $childtheme);
+                if ($childsetting) {
+                    return $childsetting;
+                }
+            } else {
+                $theme = self::get_theme_config();
+            }
+        }
+
+        $theme = self::get_theme_config();
+        return $theme->setting_file_url($setting, $filearea);
     }
 
     /**
@@ -96,7 +160,7 @@ class toolbox {
         } else if (!empty($CFG->themedir) and file_exists("$CFG->themedir/essential/layout/includes/$filename")) {
             return "$CFG->themedir/essential/layout/includes/$filename";
         } else {
-            return dirname(__FILE__)."$filename";
+            return dirname(__FILE__) . "$filename";
         }
     }
 
@@ -128,10 +192,10 @@ class toolbox {
             } else if (!empty($CFG->themedir) and file_exists("$CFG->themedir/essential/$folder")) {
                 $thefolder = "$CFG->themedir/essential/$folder";
             } else {
-                $thefolder = dirname(__FILE__)."$folder";
+                $thefolder = dirname(__FILE__) . "$folder";
             }
         }
-        foreach (glob($thefolder.'/*.php') as $filename) {
+        foreach (glob($thefolder . '/*.php') as $filename) {
             require_once $filename;
         }
     }
@@ -186,7 +250,7 @@ class toolbox {
         if ($captionoptions == 0) {
             $slide .= '<div class="container-fluid">';
             $slide .= '<div class="row-fluid">';
-        
+
             if ($slidetitle || $slidecaption) {
                 $slide .= '<div class="span5 the-side-caption">';
                 $slide .= '<div class="the-side-caption-content">';
@@ -207,7 +271,7 @@ class toolbox {
             $slide .= '</div>';
         } else {
             $nocaption = (!($slidetitle || $slidecaption)) ? ' nocaption' : '';
-            $slide .= '<div class="carousel-image-container'.$nocaption.'">';
+            $slide .= '<div class="carousel-image-container' . $nocaption . '">';
             $slide .= '<img src="' . $slideimage . '" alt="' . $slideimagealt . '" class="carousel-image"/>';
             $slide .= '</div>';
 
@@ -258,7 +322,7 @@ class toolbox {
         $links = array('previous' => '', 'next' => '');
         $back = $sectionno - 1;
         while ($back > 0 and empty($links['previous'])) {
-           if ($canviewhidden || $sections[$back]->uservisible) {
+            if ($canviewhidden || $sections[$back]->uservisible) {
                 $params = array('id' => 'previous_section');
                 if (!$sections[$back]->visible) {
                     $params['class'] = 'dimmed_text';
@@ -303,8 +367,8 @@ class toolbox {
         return $links;
     }
 
-    static public function print_single_section_page(&$that, &$courserenderer, $course, $sections, $mods, $modnames, $modnamesused,
-        $displaysection) {
+    static public function print_single_section_page(&$that, &$courserenderer, $course, $sections, $mods, $modnames,
+            $modnamesused, $displaysection) {
         global $PAGE;
 
         $modinfo = \get_fast_modinfo($course);
@@ -439,7 +503,7 @@ class toolbox {
     }
 
     static public function set_font($css, $type, $fontname) {
-        $familytag = '[[setting:' . $type .'font]]';
+        $familytag = '[[setting:' . $type . 'font]]';
         $facetag = '[[setting:fontfiles' . $type . ']]';
         if (empty($fontname)) {
             $familyreplacement = 'Verdana';
@@ -474,9 +538,9 @@ class toolbox {
             }
 
             if (!empty($fontfiles)) {
-                $familyreplacement = '"'.$fontname.'"';
+                $familyreplacement = '"' . $fontname . '"';
                 $facereplacement = '@font-face {' . PHP_EOL . 'font-family: "' . $fontname . '";' . PHP_EOL;
-                $facereplacement .= !empty($fontfileeot) ? "src: url('" . $fontfileeot . "');" . PHP_EOL : '';
+                $facereplacement .=!empty($fontfileeot) ? "src: url('" . $fontfileeot . "');" . PHP_EOL : '';
                 $facereplacement .= "src: ";
                 $facereplacement .= implode("," . PHP_EOL . " ", $fontfiles);
                 $facereplacement .= ";";
@@ -487,7 +551,7 @@ class toolbox {
                 $facereplacement = '';
             }
         } else {
-            $familyreplacement = '"'.$fontname.'"';
+            $familyreplacement = '"' . $fontname . '"';
             $facereplacement = '';
         }
 
@@ -695,4 +759,5 @@ class toolbox {
             return $properties;
         }
     }
+
 }

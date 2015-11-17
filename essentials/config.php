@@ -30,8 +30,9 @@ $THEME->parents = array('essential');
 
 $THEME->sheets[] = 'essentials';
 
-/* If you need all of the Essential settings values, then comment this ($THEME->parents_exclude_sheets)
+/* If you don't need all of the Essential settings values, then uncomment this ($THEME->parents_exclude_sheets)
    out and look at 'theme_essentials_process_css' in lib.php for more information. */
+/*
 $THEME->parents_exclude_sheets = array(
     'essential' => array(
         'essential-alternative',
@@ -39,6 +40,7 @@ $THEME->parents_exclude_sheets = array(
         'custom'
     )
 );
+*/
 
 $THEME->supportscssoptimisation = false;
 

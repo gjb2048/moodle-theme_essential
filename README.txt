@@ -200,6 +200,7 @@ New in 2.9.1.3
 - FIX: Conflict with Collapsed Topics.
 - FIX: Tidy up footer blocks.
 - NEW: Footer block colours.
+- NEW: Improved child theme support.
 
 New in 2.9.1.2
 ==============

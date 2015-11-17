@@ -50,6 +50,16 @@ clicking here to sponsor.
 <p>If you would like this theme customised or build a new theme from scratch, then I offer competitive rates.  Please contact me via \'www.gjbarnard.co.uk/contact/\' or \'gjbarnard at gmail dot com\' or \'about.me/gjbarnard\' to discuss your requirements.</p>
 </div></div>';
 
-// General.
+// General settings.
+$string['generalsettings'] = 'General';
+
+$string['logo'] = 'Essentials Logo';
+$string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.
+                       <br>The image should be 65px high and any reasonable width that suits.
+                       <br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
+$string['customcss'] = 'Essentials Custom CSS';
+$string['customcssdesc'] = 'Whatever CSS rules you add to this text area will be reflected in every page, making for easier customisation of this theme.';
+
+// Front page.
 $string['frontpagetitle'] = 'Essentials front page title.';
 $string['frontpagedetails'] = 'Essentials is a basic child theme of Essential to help you as a theme developer create your own child theme of Essential.';
