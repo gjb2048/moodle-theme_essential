@@ -1,4 +1,5 @@
 <?php
+
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -22,13 +23,17 @@
  * @copyright   2015 Gareth J Barnard
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 function theme_essentials_process_css($css, $theme) {
     /* Change to 'false' if you don't want to use Essential's settings and remove '$THEME->parents_exclude_sheets' in config.php.
-       If you want the alternative colours, then remove the overridden method 'custom_menu_themecolours' in the 'theme_essentials_core_renderer'
-       class in the 'core_renderer.php' file in the 'classes' folder. */
-    $usingessentialsettings = true;
+     *
+     * If you want to override any Essential setting with a separate version in this child theme, then define it in 'settings.php' with the
+     * same name bar the theme name prefix and 'theme_essential_process_css' will do the rest via 'toolbox.php'.  Please look at the examples
+     * already coded in 'settings.php'.
+     *  
+     * If you want the alternative colours, then remove the overridden method 'custom_menu_themecolours' in the 'theme_essentials_core_renderer'
+     * class in the 'core_renderer.php' file in the 'classes' folder. */
 
+    $usingessentialsettings = true;
     if ($usingessentialsettings) {
         global $CFG;
         if (file_exists("$CFG->dirroot/theme/essential/lib.php")) {
@@ -36,15 +41,14 @@ function theme_essentials_process_css($css, $theme) {
         } else if (!empty($CFG->themedir) and file_exists("$CFG->themedir/essential/lib.php")) {
             require_once("$CFG->themedir/essential/lib.php");
         } // else will just fail when cannot find theme_essential_process_css!
-        static $parenttheme;
+        static $parenttheme = null;
         if (empty($parenttheme)) {
-            $parenttheme = theme_config::load('essential'); 
+            $parenttheme = theme_config::load('essential');
         }
         $css = theme_essential_process_css($css, $parenttheme);
     }
 
     // If you have your own additional settings, then add them here.
-
     // Finally return processed CSS
     return $css;
 }

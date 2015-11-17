@@ -68,9 +68,9 @@ class toolbox {
     static public function get_setting($setting, $format = false, $theme = null) {
         if (empty($theme)) {
             $childtheme = self::get_child_theme_config();
-            if (!$childtheme) {
+            if ($childtheme) {
                 // Would use us but cannot have recursive static method calls in PHP.
-                $childsetting = self::get_child_setting($setting, $format, $childtheme); // Would use us but cannot have recursive static method calls in PHP.
+                $childsetting = self::get_child_setting($setting, $format, $childtheme);
                 if ($childsetting) {
                     return $childsetting;
                 } // Else use the parent.
@@ -120,7 +120,7 @@ class toolbox {
     static public function setting_file_url($setting, $filearea, $theme = null) {
         if (empty($theme)) {
             $childtheme = self::get_child_theme_config();
-            if (!$childtheme) {
+            if ($childtheme) {
                 $childsetting = self::get_setting($setting, 'format_file_url', $childtheme);
                 if ($childsetting) {
                     return $childsetting;
