@@ -24,6 +24,11 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 function theme_essentials_process_css($css, $theme) {
+    
+    $css .= '.essentialstheme { display: none; }';
+    //error_log('theme_essentials_process_css(): '.print_r($theme, true));
+    error_log('theme_essentials_process_css()');
+
     /* Change to 'false' if you don't want to use Essential's settings and remove '$THEME->parents_exclude_sheets' in config.php.
      *
      * If you want to override any Essential setting with a separate version in this child theme, then define it in 'settings.php' with the
@@ -41,11 +46,7 @@ function theme_essentials_process_css($css, $theme) {
         } else if (!empty($CFG->themedir) and file_exists("$CFG->themedir/essential/lib.php")) {
             require_once("$CFG->themedir/essential/lib.php");
         } // else will just fail when cannot find theme_essential_process_css!
-        static $parenttheme = null;
-        if (empty($parenttheme)) {
-            $parenttheme = theme_config::load('essential');
-        }
-        $css = theme_essential_process_css($css, $parenttheme);
+        $css = theme_essential_process_css($css, $theme);
     }
 
     // If you have your own additional settings, then add them here.

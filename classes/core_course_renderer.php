@@ -192,7 +192,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         }
         $content .= $contentimages. $contentfiles;
 
-        // display course contacts. See course_in_list::get_course_contacts()
+        // Display course contacts.  See course_in_list::get_course_contacts().
         if ($coursehascontacts) {
             $content .= html_writer::start_tag('ul', array('class' => 'teachers'));
             foreach ($course->get_course_contacts() as $userid => $coursecontact) {

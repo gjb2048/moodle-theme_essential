@@ -53,84 +53,97 @@ class toolbox {
         return self::$theme;
     }
 
-    static protected function get_child_theme_config() {
+    static private function get_child_theme_config() {
+        error_log('get_child_theme_config() 1');
         if (!self::$checkedchildtheme) {
+            error_log('get_child_theme_config() 2');
             global $PAGE;
             if (in_array('essential', $PAGE->theme->parents)) {
                 $themename = $PAGE->theme->name;
                 self::$childtheme = \theme_config::load($themename);
                 self::$checkedchildtheme = true;
             }
+            error_log('get_child_theme_config() name: ' . $PAGE->theme->name);
+            error_log('get_child_theme_config() parents: ' . print_r($PAGE->theme->parents, true));
         }
         return self::$childtheme;
     }
 
-    static public function get_setting($setting, $format = false, $theme = null) {
-        if (empty($theme)) {
-            $childtheme = self::get_child_theme_config();
-            if ($childtheme) {
-                // Would use us but cannot have recursive static method calls in PHP.
-                $childsetting = self::get_child_setting($setting, $format, $childtheme);
-                if ($childsetting) {
-                    return $childsetting;
-                } // Else use the parent.
-            }
-            $theme = self::get_theme_config();
-        }
-
-        global $CFG;
-        require_once($CFG->dirroot . '/lib/weblib.php');
-        if (empty($theme->settings->$setting)) {
-            return false;
-        } else if (!$format) {
-            return $theme->settings->$setting;
-        } else if ($format === 'format_text') {
-            return format_text($theme->settings->$setting, FORMAT_PLAIN);
-        } else if ($format === 'format_html') {
-            return format_text($theme->settings->$setting, FORMAT_HTML, array('trusted' => true, 'noclean' => true));
-        } else if ($format === 'format_file_url') {
-            return $theme->setting_file_url($setting, $setting);
-        } else {
-            return format_string($theme->settings->$setting);
-        }
+    static private function is_child_theme(\theme_config $theme) {
+        return (in_array('essential', $theme->parents));
     }
 
-    static private function get_child_setting($setting, $format = false, $childtheme = null) {
-        if (empty($childtheme)) {
-            $childtheme = self::get_theme_config();
+    static public function get_setting($setting, $format = false, $theme = null) {
+        if (empty($theme)) {
+            //error_log('get_setting theme setting: ' . $setting);
+            // Check to see if the child theme has the setting.
+            $childtheme = self::get_child_theme_config();
+            if ($childtheme) {
+                // If the property does not exist then will use the parent.
+                if (property_exists($childtheme->settings, $setting)) {
+                    // Would use us but cannot have recursive static method calls in PHP.
+                    $childsetting = self::get_the_setting($setting, $format, $childtheme);
+                    //error_log('Child theme setting 1: ' . $setting . ', value: ' . $childsetting);
+                    return $childsetting;
+                } // Else use the parent.
+            } else {
+                //error_log('No child theme: ' . $setting);
+            }
+            //error_log('Parent theme setting: ' . $setting);
+            $theme = self::get_theme_config();
+        } else {
+            // Mainly used when called from lib.php::theme_essential_process_css() when the value of $PAGE->theme can be fluid.
+            error_log('get_setting theme setting: ' . $setting);
+            if (self::is_child_theme($theme)) {
+                error_log('Child theme setting 1: ' . $setting);
+                if (property_exists($theme->settings, $setting)) {
+                    $childsetting = self::get_the_setting($setting, $format, $theme);
+                    error_log('Child theme setting 2: ' . $setting . ', value: ' . $childsetting);
+                    return $childsetting;
+                }
+                error_log('Parent theme setting 1: ' . $setting);
+                $theme = self::get_theme_config();
+            }
+            error_log('Parent theme setting 2: ' . $setting);
         }
 
+        return self::get_the_setting($setting, $format, $theme);
+    }
+
+    static private function get_the_setting($setting, $format, $thetheme) {
         global $CFG;
         require_once($CFG->dirroot . '/lib/weblib.php');
-        if (empty($childtheme->settings->$setting)) {
+        if (empty($thetheme->settings->$setting)) {
             return false;
         } else if (!$format) {
-            return $childtheme->settings->$setting;
+            return $thetheme->settings->$setting;
         } else if ($format === 'format_text') {
-            return format_text($childtheme->settings->$setting, FORMAT_PLAIN);
+            return format_text($thetheme->settings->$setting, FORMAT_PLAIN);
         } else if ($format === 'format_html') {
-            return format_text($childtheme->settings->$setting, FORMAT_HTML, array('trusted' => true, 'noclean' => true));
+            return format_text($thetheme->settings->$setting, FORMAT_HTML, array('trusted' => true, 'noclean' => true));
         } else if ($format === 'format_file_url') {
-            return $childtheme->setting_file_url($setting, $setting);
+            return $thetheme->setting_file_url($setting, $setting);
         } else {
-            return format_string($childtheme->settings->$setting);
+            return format_string($thetheme->settings->$setting);
         }
     }
 
     static public function setting_file_url($setting, $filearea, $theme = null) {
         if (empty($theme)) {
-            $childtheme = self::get_child_theme_config();
-            if ($childtheme) {
-                $childsetting = self::get_setting($setting, 'format_file_url', $childtheme);
-                if ($childsetting) {
-                    return $childsetting;
+            $theme = self::get_theme_config();
+        } else {
+            error_log('setting_file_url setting: ' . $setting);
+            if (self::is_child_theme($theme)) {
+                error_log('Child theme setting 1: ' . $setting);
+                if (!property_exists($theme->settings, $setting)) {
+                    $theme = self::get_theme_config();
+                    error_log('Parent theme setting 1: ' . $setting);
+                } else {
+                    error_log('Child theme setting 2: ' . $setting);
                 }
-            } else {
-                $theme = self::get_theme_config();
             }
         }
 
-        $theme = self::get_theme_config();
         return $theme->setting_file_url($setting, $filearea);
     }
 
