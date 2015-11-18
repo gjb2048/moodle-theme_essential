@@ -129,6 +129,23 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Custom favicon.
+    $name = 'theme_essential/favicon';
+    $title = get_string('favicon', 'theme_essential');
+    $description = get_string('favicondesc', 'theme_essential');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'favicon');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Custom scrollbars.
+    $name = 'theme_essential/customscrollbars';
+    $title = get_string('customscrollbars', 'theme_essential');
+    $description = get_string('customscrollbarsdesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     // Custom CSS file.
     $name = 'theme_essential/customcss';
     $title = get_string('customcss', 'theme_essential');
@@ -540,6 +557,14 @@ if (is_siteadmin()) {
     $description = get_string('logodesc', 'theme_essential');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'logo');
     $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Logo height setting.
+    $name = 'theme_essential/logoheight';
+    $title = get_string('logoheight', 'theme_essential');
+    $description = get_string('logoheightdesc', 'theme_essential');
+    $default = '65px';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
     $temp->add($setting);
 
     // Header title setting.

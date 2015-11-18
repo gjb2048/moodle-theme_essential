@@ -51,6 +51,8 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
             return $theme->setting_file_serve('headerbackground', $args, $forcedownload, $options);
         } else if ($filearea === 'pagebackground') {
             return $theme->setting_file_serve('pagebackground', $args, $forcedownload, $options);
+        } else if ($filearea === 'favicon') {
+            return $theme->setting_file_serve('favicon', $args, $forcedownload, $options);
         } else if (preg_match("/^fontfile(eot|otf|svg|ttf|woff|woff2)(heading|body)$/", $filearea)) { // http://www.regexr.com/.
             return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
         } else if (preg_match("/^(marketing|slide)[1-9][0-9]*image$/", $filearea)) {
@@ -300,6 +302,10 @@ function theme_essential_process_css($css, $theme) {
     // Set the background image for the logo.
     $logo = $theme->setting_file_url('logo', 'logo');
     $css = \theme_essential\toolbox::set_logo($css, $logo);
+
+    // Set the logo height.
+    $logoheight = \theme_essential\toolbox::get_setting('logoheight');
+    $css = \theme_essential\toolbox::set_logoheight($css, $logoheight);
 
     // Set the background image for the header.
     $headerbackground = $theme->setting_file_url('headerbackground', 'headerbackground');
