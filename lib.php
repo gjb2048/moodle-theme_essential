@@ -139,11 +139,6 @@ function theme_essential_send_cached_css($path, $filename, $lastmodified, $etag)
 }
 
 function theme_essential_process_css($css, $theme) {
-
-    $css .= '.essentialtheme { display: none; }';
-    //error_log('theme_essential_process_css(): '.print_r($theme, true));
-    error_log('theme_essential_process_css()');
-
     // Set the theme width.
     $pagewidth = \theme_essential\toolbox::get_setting('pagewidth', false, $theme);
     $css = \theme_essential\toolbox::set_pagewidth($css, $pagewidth);

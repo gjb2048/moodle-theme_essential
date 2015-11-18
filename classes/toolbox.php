@@ -54,17 +54,13 @@ class toolbox {
     }
 
     static private function get_child_theme_config() {
-        error_log('get_child_theme_config() 1');
         if (!self::$checkedchildtheme) {
-            error_log('get_child_theme_config() 2');
             global $PAGE;
             if (in_array('essential', $PAGE->theme->parents)) {
                 $themename = $PAGE->theme->name;
                 self::$childtheme = \theme_config::load($themename);
                 self::$checkedchildtheme = true;
             }
-            error_log('get_child_theme_config() name: ' . $PAGE->theme->name);
-            error_log('get_child_theme_config() parents: ' . print_r($PAGE->theme->parents, true));
         }
         return self::$childtheme;
     }
@@ -75,7 +71,6 @@ class toolbox {
 
     static public function get_setting($setting, $format = false, $theme = null) {
         if (empty($theme)) {
-            //error_log('get_setting theme setting: ' . $setting);
             // Check to see if the child theme has the setting.
             $childtheme = self::get_child_theme_config();
             if ($childtheme) {
@@ -83,28 +78,19 @@ class toolbox {
                 if (property_exists($childtheme->settings, $setting)) {
                     // Would use us but cannot have recursive static method calls in PHP.
                     $childsetting = self::get_the_setting($setting, $format, $childtheme);
-                    //error_log('Child theme setting 1: ' . $setting . ', value: ' . $childsetting);
                     return $childsetting;
                 } // Else use the parent.
-            } else {
-                //error_log('No child theme: ' . $setting);
             }
-            //error_log('Parent theme setting: ' . $setting);
             $theme = self::get_theme_config();
         } else {
             // Mainly used when called from lib.php::theme_essential_process_css() when the value of $PAGE->theme can be fluid.
-            error_log('get_setting theme setting: ' . $setting);
             if (self::is_child_theme($theme)) {
-                error_log('Child theme setting 1: ' . $setting);
                 if (property_exists($theme->settings, $setting)) {
                     $childsetting = self::get_the_setting($setting, $format, $theme);
-                    error_log('Child theme setting 2: ' . $setting . ', value: ' . $childsetting);
                     return $childsetting;
                 }
-                error_log('Parent theme setting 1: ' . $setting);
                 $theme = self::get_theme_config();
             }
-            error_log('Parent theme setting 2: ' . $setting);
         }
 
         return self::get_the_setting($setting, $format, $theme);
@@ -132,14 +118,9 @@ class toolbox {
         if (empty($theme)) {
             $theme = self::get_theme_config();
         } else {
-            error_log('setting_file_url setting: ' . $setting);
             if (self::is_child_theme($theme)) {
-                error_log('Child theme setting 1: ' . $setting);
                 if (!property_exists($theme->settings, $setting)) {
                     $theme = self::get_theme_config();
-                    error_log('Parent theme setting 1: ' . $setting);
-                } else {
-                    error_log('Child theme setting 2: ' . $setting);
                 }
             }
         }

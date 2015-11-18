@@ -25,10 +25,6 @@
  */
 function theme_essentials_process_css($css, $theme) {
     
-    $css .= '.essentialstheme { display: none; }';
-    //error_log('theme_essentials_process_css(): '.print_r($theme, true));
-    error_log('theme_essentials_process_css()');
-
     /* Change to 'false' if you don't want to use Essential's settings and remove '$THEME->parents_exclude_sheets' in config.php.
      *
      * If you want to override any Essential setting with a separate version in this child theme, then define it in 'settings.php' with the
