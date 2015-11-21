@@ -1475,14 +1475,12 @@ class theme_essential_core_renderer extends core_renderer {
      * Returns the url of the custom favicon.
      */
     public function favicon() {
-        $favicon = \theme_essential\toolbox::get_setting('favicon');
+        $favicon = \theme_essential\toolbox::get_setting('favicon', 'format_file_url');
 
-        if(empty($favicon)) {
+        if (empty($favicon)) {
             return $this->page->theme->pix_url('favicon', 'theme');
-        }
-        else {
-            $context = context_system::instance();
-            return moodle_url::make_pluginfile_url($context->id, 'theme_essential', 'favicon', theme_get_revision(), '', $favicon);
+        } else {
+            return $favicon;
         }
     }
 }

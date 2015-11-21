@@ -157,7 +157,7 @@ $string['fitvids'] = 'Use FitVids';
 $string['fitvidsdesc'] = 'Enable FitVids (fitvidsjs.com) to make your embedded videos responsive.  If FitVids is on and you want a video to be excluded then add \'class="fitvidsignore"\' to the \'iframe\' tag in the HTML mode of the editor.  For example: \'iframe class="fitvidsignore" width="420" height="315" src="//www.youtube.com/embed/enmEmym85xc" frameborder="0" allowfullscreen=""></iframe\'.';
 
 $string['favicon'] = 'Custom favicon';
-$string['favicondesc'] = 'Upload your own favicon. It should be a .ico file but other file types also work in some browsers.';
+$string['favicondesc'] = 'Upload your own favicon.  It should be an .ico file.';
 
 $string['customscrollbars'] = 'Custom scrollbars';
 $string['customscrollbarsdesc'] = 'Use custom scrollbars. This will replace the standard browser scrollbars.';

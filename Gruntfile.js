@@ -239,6 +239,17 @@ module.exports = function(grunt) {
                 src: 'less/fontawesome.less',
                 dest: 'style/fontawesome.css'
             },
+            scrollbars_p: {
+                options: {
+                    compress: false,
+                    cleancss: false,
+                    paths: "./less",
+                    report: 'min',
+                    sourceMap: false,
+                },
+                src: 'less/essential-scrollbars.less',
+                dest: 'style/essential-scrollbars.css'
+            },
             settings_p: {
                 options: {
                     compress: false,
@@ -377,6 +388,19 @@ module.exports = function(grunt) {
                 },
                 src: 'less/fontawesome.less',
                 dest: 'style/fontawesome.css'
+            },
+            scrollbars_d: {
+                options: {
+                    compress: false,
+                    cleancss: false,
+                    paths: "./less",
+                    report: 'min',
+                    sourceMap: true,
+                    sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
+                    sourceMapFilename: 'style/essential-scrollbars.treasure.map'
+                },
+                src: 'less/essential-scrollbars.less',
+                dest: 'style/essential-scrollbars.css'
             },
             settings_d: {
                 options: {
@@ -582,7 +606,7 @@ module.exports = function(grunt) {
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
 
-    grunt.registerTask("css", ["less:essential_"+build, "less:editor_"+build, "less:moodle_rtl_"+build, "less:settings_"+build, "less:bootstrap_pix_"+build, "less:moodle_pix_"+build, "less:essential_pix_"+build, "less:fontawesome_woff2_"+build, "less:fontawesome_no_woff2_"+build, "less:fontawesome_"+build, "less:alternative_"+build]);
+    grunt.registerTask("css", ["less:essential_"+build, "less:editor_"+build, "less:moodle_rtl_"+build, "less:scrollbars_"+build, "less:settings_"+build, "less:bootstrap_pix_"+build, "less:moodle_pix_"+build, "less:essential_pix_"+build, "less:fontawesome_woff2_"+build, "less:fontawesome_no_woff2_"+build, "less:fontawesome_"+build, "less:alternative_"+build]);
     if (build == 'd') {
         grunt.registerTask("compile", ["css", "replace:placeholder", "cssflip:rtl_"+build, "bless", 'cssmetrics', "decache"]);
     } else {
