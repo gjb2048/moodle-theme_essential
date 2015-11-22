@@ -6,6 +6,7 @@
 
 .frontpagetitle {
     font-size: 24px;
+    font-style: [[setting:frontpagetitlestyle]];
 }
 
 .frontpagedetails {

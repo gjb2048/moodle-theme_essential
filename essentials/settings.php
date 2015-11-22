@@ -35,6 +35,7 @@ $ADMIN->add('themes', new admin_category('theme_essentials', 'Essentials'));
 
 $generalsettings = new admin_settingpage('theme_essentials_general', get_string('generalsettings', 'theme_essentials'));
 
+// Overridden Essential settings.
 // Logo file setting.
 $name = 'theme_essentials/logo';
 $title = get_string('logo', 'theme_essentials');
@@ -49,6 +50,21 @@ $title = get_string('customcss', 'theme_essentials');
 $description = get_string('customcssdesc', 'theme_essentials');
 $default = '';
 $setting = new admin_setting_configtextarea($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$generalsettings->add($setting);
+
+// Essentials settings.
+// Front page title style.
+$name = 'theme_essentials/frontpagetitlestyle';
+$title = get_string('frontpagetitlestyle', 'theme_essentials');
+$description = get_string('frontpagetitlestyledesc', 'theme_essentials');
+$default = 'inherit';
+$setting = new admin_setting_configselect($name, $title, $description, $default,
+        array(
+    'inherit' => get_string('inherit', 'theme_essentials'),
+    'normal' => get_string('normal', 'theme_essentials'),
+    'italic' => get_string('italic', 'theme_essentials')
+));
 $setting->set_updatedcallback('theme_reset_all_caches');
 $generalsettings->add($setting);
 

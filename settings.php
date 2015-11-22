@@ -51,7 +51,7 @@ if (is_siteadmin()) {
             get_string('generalheadingsub', 'theme_essential'),
             format_text(get_string('generalheadingdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
-    // Page Background Image.
+    // Page background image.
     $name = 'theme_essential/pagebackground';
     $title = get_string('pagebackground', 'theme_essential');
     $description = get_string('pagebackgrounddesc', 'theme_essential');
@@ -59,7 +59,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Background Style.
+    // Background style.
     $name = 'theme_essential/pagebackgroundstyle';
     $title = get_string('pagebackgroundstyle', 'theme_essential');
     $description = get_string('pagebackgroundstyledesc', 'theme_essential');
@@ -68,7 +68,7 @@ if (is_siteadmin()) {
             array(
         'fixed' => get_string('backgroundstylefixed', 'theme_essential'),
         'tiled' => get_string('backgroundstyletiled', 'theme_essential'),
-        'stretch' => get_string('backgroundstylestretch', 'theme_essential'),
+        'stretch' => get_string('backgroundstylestretch', 'theme_essential')
     ));
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);

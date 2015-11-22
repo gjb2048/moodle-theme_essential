@@ -46,7 +46,19 @@ function theme_essentials_process_css($css, $theme) {
     }
 
     // If you have your own additional settings, then add them here.
+    $css = essentials_set_frontpagetitlestyle($css, \theme_essential\toolbox::get_setting('frontpagetitlestyle', false, $theme));
+
     // Finally return processed CSS
+    return $css;
+}
+function essentials_set_frontpagetitlestyle($css, $frontpagetitlestyle) {
+    $tag = '[[setting:frontpagetitlestyle]]';
+    if (!$frontpagetitlestyle) {
+        $replacement = 'inherit';
+    } else {
+        $replacement = $frontpagetitlestyle;
+    }
+    $css = str_replace($tag, $replacement, $css);
     return $css;
 }
 

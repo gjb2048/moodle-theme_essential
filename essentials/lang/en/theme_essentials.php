@@ -63,3 +63,8 @@ $string['customcssdesc'] = 'Whatever CSS rules you add to this text area will be
 // Front page.
 $string['frontpagetitle'] = 'Essentials front page title.';
 $string['frontpagedetails'] = 'Essentials is a basic child theme of Essential to help you as a theme developer create your own child theme of Essential.';
+$string['frontpagetitlestyle'] = 'Essentials front page title style';
+$string['frontpagetitlestyledesc'] = 'Change the style of the front page title.';
+$string['inherit'] = 'Inherit';
+$string['normal'] = 'Normal';
+$string['italic'] = 'Italic';
