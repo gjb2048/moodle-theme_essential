@@ -51,7 +51,7 @@ $footerregion = essential_has_footer_region(); // In pagesettings.php.
                         <section id="region-main" class="span9 desktop-first-column">
                     <?php }
                             if ($COURSE->id > 1) {
-                                echo \theme_essential\toolbox::get_setting(format_string($COURSE->fullname), 1, 'coursetitle');
+                                echo $OUTPUT->heading(format_string($COURSE->fullname), 1, 'coursetitle');;
                                 echo '<div class="bor"></div>';
                             }
                             echo $OUTPUT->course_content_header();

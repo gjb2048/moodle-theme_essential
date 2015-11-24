@@ -12,7 +12,7 @@ on sites where Moodle would potentially serve as a company homepage rather than 
 Cool things to know about the theme.
  - It attempts to load as many as possible icons from a font
  - Most of what you think are "graphics" are actually the [Awesome font](http://fortawesome.github.io/Font-Awesome/)
- - The slider on the frontpage of the demo site is completely customisable through theme settings
+ - The slider on the front page of the demo site is completely customisable through theme settings
  - I am really trying to push what [Bootstrap](http://twitter.github.io/bootstrap/) Grids can do. As such the theme is fully
    responsive.
  - The footer is all custom Moodle regions. This means blocks can be added. The footer of the demo site is full of HTML blocks in
@@ -199,6 +199,7 @@ New in 2.9.1.3
 - FIX: Missing header background.
 - FIX: Conflict with Collapsed Topics.
 - FIX: Tidy up footer blocks.
+- FIX: Coding fault in admin layout.
 - NEW: Footer block colours.
 - NEW: Improved child theme support.
 
