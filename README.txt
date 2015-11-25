@@ -200,6 +200,7 @@ New in 2.9.1.3
 - FIX: Conflict with Collapsed Topics.
 - FIX: Tidy up footer blocks.
 - FIX: Coding fault in admin layout.
+- NEW: Pull request #574: Custom favicon, Logo height and Turn off CSS styling of scrollbars settings - thanks to Mikhail Janowski for this.
 - NEW: Footer block colours.
 - NEW: Improved child theme support.
 
