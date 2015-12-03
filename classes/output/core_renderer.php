@@ -15,9 +15,6 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This is built using the bootstrapbase template to allow for new theme's using
- * Moodle's new Bootstrap theme engine
- *
  * @package     theme_essential
  * @copyright   2015 Gareth J Barnard
  * @copyright   2014 Gareth J Barnard, David Bezemer
@@ -115,7 +112,7 @@ class core_renderer extends \core_renderer {
      * @return string $notification
      */
     public function notification($message, $class = 'notifyproblem') {
-        $message = clean_text($message);
+        $message = \clean_text($message);
         $type = '';
 
         if ($class == 'notifyproblem') {
