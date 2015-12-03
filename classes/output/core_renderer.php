@@ -80,6 +80,11 @@ class core_renderer extends \core_renderer {
         return null;
     }
 
+
+    public function pix_url($imagename, $component = 'moodle') {
+        return end($this->themeconfig)->pix_url($imagename, $component);
+    }
+
     /**
      * This renders the breadcrumbs
      * @return string $breadcrumbs

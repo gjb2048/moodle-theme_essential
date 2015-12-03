@@ -88,6 +88,10 @@ class core_renderer_maintenance extends \core_renderer_maintenance {
         return null;
     }
 
+    public function pix_url($imagename, $component = 'moodle') {
+        return end($this->themeconfig)->pix_url($imagename, $component);
+    }
+
     /**
      * Renders notifications for maintenance scripts.
      *
