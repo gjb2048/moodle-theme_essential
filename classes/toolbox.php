@@ -4,9 +4,14 @@ namespace theme_essential;
 
 class toolbox {
 
-    static protected $theme = null;
-    static protected $childtheme = null;
-    static protected $checkedchildtheme = false;
+    static protected $corerenderer = null;
+
+    static public function set_core_renderer($core) {
+        // Set only once from the initial calling lib.php process_css function.  Must happen before parents.
+        if (null === self::$corerenderer) {
+            self::$corerenderer = $core;
+        }
+    }
 
     // Moodle CSS file serving.
     static public function get_csswww() {
@@ -46,86 +51,49 @@ class toolbox {
         }
     }
 
-    static protected function get_theme_config() {
-        if (empty(self::$theme)) {
-            self::$theme = \theme_config::load('essential');
-        }
-        return self::$theme;
-    }
+    /**
+     * Finds the given setting in the theme from the themes' configuration object.
+     * @param string $setting Setting name.
+     * @param string $format false|'format_text'|'format_html'.
+     * @param theme_config $theme null|theme_config object.
+     * @return any false|value of setting.
+     */
+    static public function get_setting($setting, $format = false) {
+        self::check_corerenderer();
+        $settingvalue = self::$corerenderer->get_setting($setting);
 
-    static private function get_child_theme_config() {
-        if (!self::$checkedchildtheme) {
-            global $PAGE;
-            if (in_array('essential', $PAGE->theme->parents)) {
-                $themename = $PAGE->theme->name;
-                self::$childtheme = \theme_config::load($themename);
-                self::$checkedchildtheme = true;
-            }
-        }
-        return self::$childtheme;
-    }
-
-    static private function is_child_theme(\theme_config $theme) {
-        return (in_array('essential', $theme->parents));
-    }
-
-    static public function get_setting($setting, $format = false, $theme = null) {
-        if (empty($theme)) {
-            // Check to see if the child theme has the setting.
-            $childtheme = self::get_child_theme_config();
-            if ($childtheme) {
-                // If the property does not exist then will use the parent.
-                if (property_exists($childtheme->settings, $setting)) {
-                    // Would use us but cannot have recursive static method calls in PHP.
-                    $childsetting = self::get_the_setting($setting, $format, $childtheme);
-                    return $childsetting;
-                } // Else use the parent.
-            }
-            $theme = self::get_theme_config();
-        } else {
-            // Mainly used when called from lib.php::theme_essential_process_css() when the value of $PAGE->theme can be fluid.
-            if (self::is_child_theme($theme)) {
-                if (property_exists($theme->settings, $setting)) {
-                    $childsetting = self::get_the_setting($setting, $format, $theme);
-                    return $childsetting;
-                }
-                $theme = self::get_theme_config();
-            }
-        }
-
-        return self::get_the_setting($setting, $format, $theme);
-    }
-
-    static private function get_the_setting($setting, $format, $thetheme) {
         global $CFG;
         require_once($CFG->dirroot . '/lib/weblib.php');
-        if (empty($thetheme->settings->$setting)) {
+        if (empty($settingvalue)) {
             return false;
         } else if (!$format) {
-            return $thetheme->settings->$setting;
+            return $settingvalue;
         } else if ($format === 'format_text') {
-            return format_text($thetheme->settings->$setting, FORMAT_PLAIN);
+            return format_text($settingvalue, FORMAT_PLAIN);
         } else if ($format === 'format_html') {
-            return format_text($thetheme->settings->$setting, FORMAT_HTML, array('trusted' => true, 'noclean' => true));
-        } else if ($format === 'format_file_url') {
-            return $thetheme->setting_file_url($setting, $setting);
+            return format_text($settingvalue, FORMAT_HTML, array('trusted' => true, 'noclean' => true));
         } else {
-            return format_string($thetheme->settings->$setting);
+            return format_string($settingvalue);
         }
     }
 
     static public function setting_file_url($setting, $filearea, $theme = null) {
-        if (empty($theme)) {
-            $theme = self::get_theme_config();
-        } else {
-            if (self::is_child_theme($theme)) {
-                if (!property_exists($theme->settings, $setting)) {
-                    $theme = self::get_theme_config();
-                }
-            }
-        }
+        self::check_corerenderer();
 
-        return $theme->setting_file_url($setting, $filearea);
+        return self::$corerenderer->setting_file_url($setting, $filearea);
+    }
+
+    static public function pix_url($imagename, $component) {
+        self::check_corerenderer();
+        return self::$corerenderer->pix_url($imagename, $component);
+    }
+
+    static private function check_corerenderer() {
+        if (empty(self::$corerenderer)) {
+            // Use $OUTPUT.
+            global $OUTPUT;
+            self::$corerenderer = $OUTPUT;
+        }
     }
 
     /**
@@ -210,14 +178,10 @@ class toolbox {
 
     static public function render_slide($i, $captionoptions, $theme = null) {
 
-        if (empty($theme)) {
-            $theme = self::get_theme_config();
-        }
-
-        $slideurl = self::get_setting('slide' . $i . 'url', false, $theme);
-        $slideurltarget = self::get_setting('slide' . $i . 'target', false, $theme);
-        $slidetitle = self::get_setting('slide' . $i, true, $theme);
-        $slidecaption = self::get_setting('slide' . $i . 'caption', 'format_html', $theme);
+        $slideurl = self::get_setting('slide' . $i . 'url');
+        $slideurltarget = self::get_setting('slide' . $i . 'target');
+        $slidetitle = self::get_setting('slide' . $i);
+        $slidecaption = self::get_setting('slide' . $i . 'caption', 'format_html');
         if ($captionoptions == 0) {
             $slideextraclass = ' side-caption';
         } else {
@@ -227,12 +191,11 @@ class toolbox {
         $slideimagealt = strip_tags($slidetitle);
 
         // Get slide image or fallback to default.
-        $slideimage = self::get_setting('slide' . $i . 'image', false, $theme);
+        $slideimage = self::get_setting('slide' . $i . 'image');
         if ($slideimage) {
-            $slideimage = $theme->setting_file_url('slide' . $i . 'image', 'slide' . $i . 'image');
+            $slideimage = self::setting_file_url('slide' . $i . 'image', 'slide' . $i . 'image');
         } else {
-            $theme = self::get_theme_config();
-            $slideimage = $theme->pix_url('default_slide', 'theme');
+            $slideimage = self::pix_url('default_slide', 'theme');
         }
 
         if ($slideurl) {
@@ -503,30 +466,29 @@ class toolbox {
             $familyreplacement = 'Verdana';
             $facereplacement = '';
         } else if (\theme_essential\toolbox::get_setting('fontselect') === '3') {
-            $theme = self::get_theme_config(); // $theme needs to be us for child themes.
 
             $fontfiles = array();
-            $fontfileeot = $theme->setting_file_url('fontfileeot' . $type, 'fontfileeot' . $type);
+            $fontfileeot = self::setting_file_url('fontfileeot' . $type, 'fontfileeot' . $type);
             if (!empty($fontfileeot)) {
                 $fontfiles[] = "url('" . $fontfileeot . "?#iefix') format('embedded-opentype')";
             }
-            $fontfilewoff = $theme->setting_file_url('fontfilewoff' . $type, 'fontfilewoff' . $type);
+            $fontfilewoff = self::setting_file_url('fontfilewoff' . $type, 'fontfilewoff' . $type);
             if (!empty($fontfilewoff)) {
                 $fontfiles[] = "url('" . $fontfilewoff . "') format('woff')";
             }
-            $fontfilewofftwo = $theme->setting_file_url('fontfilewofftwo' . $type, 'fontfilewofftwo' . $type);
+            $fontfilewofftwo = self::setting_file_url('fontfilewofftwo' . $type, 'fontfilewofftwo' . $type);
             if (!empty($fontfilewofftwo)) {
                 $fontfiles[] = "url('" . $fontfilewofftwo . "') format('woff2')";
             }
-            $fontfileotf = $theme->setting_file_url('fontfileotf' . $type, 'fontfileotf' . $type);
+            $fontfileotf = self::setting_file_url('fontfileotf' . $type, 'fontfileotf' . $type);
             if (!empty($fontfileotf)) {
                 $fontfiles[] = "url('" . $fontfileotf . "') format('opentype')";
             }
-            $fontfilettf = $theme->setting_file_url('fontfilettf' . $type, 'fontfilettf' . $type);
+            $fontfilettf = self::setting_file_url('fontfilettf' . $type, 'fontfilettf' . $type);
             if (!empty($fontfilettf)) {
                 $fontfiles[] = "url('" . $fontfilettf . "') format('truetype')";
             }
-            $fontfilesvg = $theme->setting_file_url('fontfilesvg' . $type, 'fontfilesvg' . $type);
+            $fontfilesvg = self::setting_file_url('fontfilesvg' . $type, 'fontfilesvg' . $type);
             if (!empty($fontfilesvg)) {
                 $fontfiles[] = "url('" . $fontfilesvg . "') format('svg')";
             }
@@ -581,8 +543,7 @@ class toolbox {
         if ($headerbackground) {
             $replacement = $headerbackground;
         } else {
-            $theme = self::get_theme_config();
-            $replacement = $theme->pix_url('bg/header', 'theme');
+            $replacement = self::pix_url('bg/header', 'theme');
         }
         $css = str_replace($tag, $replacement, $css);
         return $css;

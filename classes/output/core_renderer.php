@@ -24,9 +24,64 @@
  * @copyright   2013 Julian Ridden
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class theme_essential_core_renderer extends core_renderer {
+
+namespace theme_essential\output;
+
+use block_contents;
+use block_move_target;
+use coding_exception;
+use context_course;
+use custom_menu;
+use custom_menu_item;
+use html_writer;
+use moodle_page;
+use moodle_url;
+use pix_icon;
+use stdClass;
+
+class core_renderer extends \core_renderer {
     public $language = null;
-    protected $theme = null;
+    protected $themeconfig;
+
+    /**
+     * Constructor
+     *
+     * @param moodle_page $page the page we are doing output for.
+     * @param string $target one of rendering target constants
+     */
+    public function __construct(moodle_page $page, $target) {
+        parent::__construct($page, $target);
+        $this->themeconfig = array(\theme_config::load('essential'));
+    }
+
+    public function get_setting($setting) {
+        $tcr = array_reverse($this->themeconfig, true);
+
+        $settingvalue = false;
+        foreach($tcr as $tkey => $tconfig) {
+            if (property_exists($tconfig->settings, $setting)) {
+                $settingvalue = $tconfig->settings->$setting;
+                break;
+            }
+        }
+        return $settingvalue;
+    }
+
+    public function setting_file_url($setting, $filearea) {
+        $tcr = array_reverse($this->themeconfig, true);
+        $settingconfig = null;
+        foreach($tcr as $tkey => $tconfig) {
+            if (property_exists($tconfig->settings, $setting)) {
+                $settingconfig = $tconfig;
+                break;
+            }
+        }
+
+        if ($settingconfig) {
+            return $settingconfig->setting_file_url($setting, $filearea);
+        }
+        return null;
+    }
 
     /**
      * This renders the breadcrumbs

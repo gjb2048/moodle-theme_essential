@@ -22,7 +22,23 @@
  * @copyright   2015 Gareth J Barnard
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class theme_essentials_core_renderer extends theme_essential_core_renderer {
+namespace theme_essentials\output;
+
+use html_writer;
+
+class core_renderer extends \theme_essential\output\core_renderer {
+
+    /**
+     * Constructor
+     *
+     * @param moodle_page $page the page we are doing output for.
+     * @param string $target one of rendering target constants
+     */
+    public function __construct(\moodle_page $page, $target) {
+        parent::__construct($page, $target);
+        $this->themeconfig = array(\theme_config::load('essentials'));
+    }
+
     /**
      * This renders the breadcrumbs
      * @return string $breadcrumbs

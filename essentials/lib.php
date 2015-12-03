@@ -24,7 +24,10 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 function theme_essentials_process_css($css, $theme) {
-    
+    global $PAGE;
+    $outputus = $PAGE->get_renderer('theme_essentials', 'core');
+    \theme_essential\toolbox::set_core_renderer($outputus);
+
     /* Change to 'false' if you don't want to use Essential's settings and remove '$THEME->parents_exclude_sheets' in config.php.
      *
      * If you want to override any Essential setting with a separate version in this child theme, then define it in 'settings.php' with the
@@ -46,7 +49,7 @@ function theme_essentials_process_css($css, $theme) {
     }
 
     // If you have your own additional settings, then add them here.
-    $css = essentials_set_frontpagetitlestyle($css, \theme_essential\toolbox::get_setting('frontpagetitlestyle', false, $theme));
+    $css = essentials_set_frontpagetitlestyle($css, \theme_essential\toolbox::get_setting('frontpagetitlestyle'));
 
     // Finally return processed CSS
     return $css;
