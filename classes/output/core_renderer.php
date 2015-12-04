@@ -464,7 +464,7 @@ class core_renderer extends \core_renderer {
                 }
             }
         }
-        core_collator::asort($modfullnames);
+        \core_collator::asort($modfullnames);
 
         return $modfullnames;
     }
