@@ -36,7 +36,7 @@ class core_renderer extends \theme_essential\output\core_renderer {
      */
     public function __construct(\moodle_page $page, $target) {
         parent::__construct($page, $target);
-        $this->themeconfig = array(\theme_config::load('essentials'));
+        $this->themeconfig[] = \theme_config::load('essentials');  // Initialised by the Essential constructor.
     }
 
     /**

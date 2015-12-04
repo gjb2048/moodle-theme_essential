@@ -85,6 +85,8 @@ function theme_essentials_pluginfile($course, $cm, $context, $filearea, $args, $
     if ($context->contextlevel == CONTEXT_SYSTEM) {
         if ($filearea === 'logo') {
             return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
+        } else if (preg_match("/^(marketing|slide)[1-9][0-9]*image$/", $filearea)) {
+            return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
         } else {
             send_file_not_found();
         }

@@ -27,7 +27,20 @@ require_once(\theme_essential\toolbox::get_include_file('additionaljs'));
 require_once(\theme_essential\toolbox::get_include_file('header'));
 ?>
 <div id="page" class="container-fluid">
-
+    <section class="slideshow">
+        <!-- Start Slideshow -->
+        <?php
+        $toggleslideshow = \theme_essential\toolbox::get_setting('toggleslideshow');
+        if ($toggleslideshow == 1) {
+            require_once(\theme_essential\toolbox::get_include_file('slideshow'));
+        } else if ($toggleslideshow == 2 && !isloggedin()) {
+            require_once(\theme_essential\toolbox::get_include_file('slideshow'));
+        } else if ($toggleslideshow == 3 && isloggedin()) {
+            require_once(\theme_essential\toolbox::get_include_file('slideshow'));
+        }
+        ?>
+        <!-- End Slideshow -->
+    </section>
     <section role="main-content">
         <div id="page-content" class="row-fluid">
             <section id="<?php echo $regionbsid; ?>">
