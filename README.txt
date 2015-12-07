@@ -190,6 +190,8 @@ can be really useful in visualising the issue along with any files you consider 
 
 New in 2.9.1.4
 ==============
+- FIX: Issue #577: Color for icons on header not set properly.
+- NEW: Issue #576: Add setting to display a page editing menu/button on the header.  Thanks to Johannes Burk for this enhancement.
 - NEW: Improved child theme support.
 
 New in 2.9.1.3
