@@ -534,11 +534,11 @@ $string['fullnamesummary'] = 'Full name and summary';
 $string['shortnamesummary'] = 'Short name and summary';
 
 $string['editingmenu'] = 'Page editing switch';
-$string['editingmenudesc'] = 'Displays an button to switch editing of the current page on/off if the user is allowed to edit the page. Same functionality as the normal page editing button.';
+$string['editingmenudesc'] = 'Displays a button to switch the editing of the current page on/off if the user is allowed to edit the page.  The same functionality as the normal page editing button.';
 $string['displayeditingmenu'] = 'Display editing button';
 $string['displayeditingmenudesc'] = 'Displays a button with the same functionality as the default page editing button on the header.';
 $string['hidedefaulteditingbutton'] = 'Hide default page editing button';
-$string['hidedefaulteditingbuttondesc'] = 'Hides the default page editing button from any page. This setting only takes effect if the "Display editing button" setting is enabled.';
+$string['hidedefaulteditingbuttondesc'] = 'Hides the default page editing button from any page.  This setting only takes effect if the "Display editing button" setting is enabled.';
 
 // Font settings.
 $string['fontsettings'] = 'Font';
