@@ -645,6 +645,35 @@ class theme_essential_core_renderer extends core_renderer {
         return $html;
     }
 
+    public function custom_menu_editing() {
+        $html = '';
+        if (\theme_essential\toolbox::get_setting('displayeditingmenu')) {
+            if ($this->page->user_allowed_editing()) {
+                $menu = new custom_menu();
+                $url = $this->page->url;
+                $url->param('sesskey', sesskey());
+                if ($this->page->user_is_editing()) {
+                    $url->param('edit', 'off');
+                    $editstring = get_string('turneditingoff');
+                    $iconclass = 'fa-power-off fa fa-fw';
+                } else {
+                    $url->param('edit', 'on');
+                    $editstring = get_string('turneditingon');
+                    $iconclass = 'fa-edit fa fa-fw';
+                }
+                $edit = html_writer::tag('i', '', array('class' => $iconclass));
+                $menu->add($edit, $url, $editstring);
+                $html = $this->render_custom_menu($menu);
+
+                if (\theme_essential\toolbox::get_setting('hidedefaulteditingbutton')) {
+                    // unset button on page
+                    $this->page->set_button('');
+                }
+            }
+        }
+        return $html;
+    }
+
     /**
      * Outputs the user menu.
      * @return custom_menu object

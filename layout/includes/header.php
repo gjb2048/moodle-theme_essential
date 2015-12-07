@@ -144,6 +144,9 @@ echo $OUTPUT->doctype();
                         <div class="gotobottommenu">
                             <?php echo $OUTPUT->custom_menu_goto_bottom(); ?>
                         </div>
+                        <div id="custom_menu_editing" class="editingmenu">
+                            <?php echo $OUTPUT->custom_menu_editing(); ?>
+                        </div>
                     </div>
                         <div id='essentialmenus' class="nav-collapse collapse pull-<?php echo ($left) ? 'left' : 'right'; ?>">
                             <div id="custom_menu_language">

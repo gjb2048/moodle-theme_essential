@@ -668,6 +668,27 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    /* Editing Menu Settings */
+    $name = 'theme_essential/editingmenu';
+    $heading = get_string('editingmenu', 'theme_essential');
+    $information = get_string('editingmenudesc', 'theme_essential');
+    $setting = new admin_setting_heading($name, $heading, $information);
+    $temp->add($setting);
+
+    $name = 'theme_essential/displayeditingmenu';
+    $title = get_string('displayeditingmenu', 'theme_essential');
+    $description = get_string('displayeditingmenudesc', 'theme_essential');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+    $temp->add($setting);
+
+    $name = 'theme_essential/hidedefaulteditingbutton';
+    $title = get_string('hidedefaulteditingbutton', 'theme_essential');
+    $description = get_string('hidedefaulteditingbuttondesc', 'theme_essential');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+    $temp->add($setting);
+
     /* Social Network Settings */
     $temp->add(new admin_setting_heading('theme_essential_social', get_string('socialheadingsub', 'theme_essential'),
             format_text(get_string('socialdesc', 'theme_essential'), FORMAT_MARKDOWN)));
