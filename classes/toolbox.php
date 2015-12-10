@@ -199,52 +199,52 @@ class toolbox {
         }
 
         if ($slideurl) {
-            $slide = '<a href="' . $slideurl . '" target="' . $slideurltarget . '" class="item' . $slideextraclass . '">';
+            $slidecontent = '<a href="' . $slideurl . '" target="' . $slideurltarget . '" class="item' . $slideextraclass . '">';
         } else {
-            $slide = '<div class="item' . $slideextraclass . '">';
+            $slidecontent = '<div class="item' . $slideextraclass . '">';
         }
 
         if ($captionoptions == 0) {
-            $slide .= '<div class="container-fluid">';
-            $slide .= '<div class="row-fluid">';
+            $slidecontent .= '<div class="container-fluid">';
+            $slidecontent .= '<div class="row-fluid">';
 
             if ($slidetitle || $slidecaption) {
-                $slide .= '<div class="span5 the-side-caption">';
-                $slide .= '<div class="the-side-caption-content">';
-                $slide .= '<h4>' . $slidetitle . '</h4>';
-                $slide .= '<p>' . $slidecaption . '</p>';
-                $slide .= '</div>';
-                $slide .= '</div>';
-                $slide .= '<div class="span7">';
+                $slidecontent .= '<div class="span5 the-side-caption">';
+                $slidecontent .= '<div class="the-side-caption-content">';
+                $slidecontent .= '<h4>' . $slidetitle . '</h4>';
+                $slidecontent .= '<div>' . $slidecaption . '</div>';
+                $slidecontent .= '</div>';
+                $slidecontent .= '</div>';
+                $slidecontent .= '<div class="span7">';
             } else {
-                $slide .= '<div class="span10 offset1 nocaption">';
+                $slidecontent .= '<div class="span10 offset1 nocaption">';
             }
-            $slide .= '<div class="carousel-image-container">';
-            $slide .= '<img src="' . $slideimage . '" alt="' . $slideimagealt . '" class="carousel-image"/>';
-            $slide .= '</div>';
-            $slide .= '</div>';
+            $slidecontent .= '<div class="carousel-image-container">';
+            $slidecontent .= '<img src="' . $slideimage . '" alt="' . $slideimagealt . '" class="carousel-image">';
+            $slidecontent .= '</div>';
+            $slidecontent .= '</div>';
 
-            $slide .= '</div>';
-            $slide .= '</div>';
+            $slidecontent .= '</div>';
+            $slidecontent .= '</div>';
         } else {
             $nocaption = (!($slidetitle || $slidecaption)) ? ' nocaption' : '';
-            $slide .= '<div class="carousel-image-container' . $nocaption . '">';
-            $slide .= '<img src="' . $slideimage . '" alt="' . $slideimagealt . '" class="carousel-image"/>';
-            $slide .= '</div>';
+            $slidecontent .= '<div class="carousel-image-container' . $nocaption . '">';
+            $slidecontent .= '<img src="' . $slideimage . '" alt="' . $slideimagealt . '" class="carousel-image">';
+            $slidecontent .= '</div>';
 
             // Output title and caption if either is present
             if ($slidetitle || $slidecaption) {
-                $slide .= '<div class="carousel-caption">';
-                $slide .= '<div class="carousel-caption-inner">';
-                $slide .= '<h4>' . $slidetitle . '</h4>';
-                $slide .= '<p>' . $slidecaption . '</p>';
-                $slide .= '</div>';
-                $slide .= '</div>';
+                $slidecontent .= '<div class="carousel-caption">';
+                $slidecontent .= '<div class="carousel-caption-inner">';
+                $slidecontent .= '<h4>' . $slidetitle . '</h4>';
+                $slidecontent .= '<div>' . $slidecaption . '</div>';
+                $slidecontent .= '</div>';
+                $slidecontent .= '</div>';
             }
         }
-        $slide .= ($slideurl) ? '</a>' : '</div>';
+        $slidecontent .= ($slideurl) ? '</a>' : '</div>';
 
-        return $slide;
+        return $slidecontent;
     }
 
     static public function render_slide_controls($left) {
