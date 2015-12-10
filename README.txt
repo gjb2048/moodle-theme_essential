@@ -192,6 +192,7 @@ New in 2.9.1.4
 ==============
 - FIX: Issue #577: Color for icons on header not set properly.
 - FIX: Issue #578: Slide Show broken after upgrade from Moodle 2.8 to 2.9 - possible solution.
+- FIX: Issue #579: Message preview shows <br />.
 - FIX: Unread message menu margin.
 - NEW: Issue #576: Add setting to display a page editing menu/button on the header.  Thanks to Johannes Burk for this enhancement.
 - NEW: Improved child theme support.
