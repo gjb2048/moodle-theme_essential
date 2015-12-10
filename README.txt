@@ -196,6 +196,7 @@ New in 2.9.1.4
 - FIX: Unread message menu margin.
 - NEW: Issue #576: Add setting to display a page editing menu/button on the header.  Thanks to Johannes Burk for this enhancement.
 - NEW: Improved child theme support.
+- NEW: Start of PHPUnit tests.
 
 New in 2.9.1.3
 ==============
