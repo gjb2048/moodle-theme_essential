@@ -35,6 +35,13 @@ class theme_essential_toolbox_testcase extends advanced_testcase {
 
     protected function setUp() {
         set_config('theme', 'essential');
+        set_config('slide1url', 'https://about.me/gjbarnard', 'theme_essential');
+        set_config('slide1target', '_blank', 'theme_essential');
+        set_config('slide1', 'Test slide one', 'theme_essential');
+        set_config('slide1caption', '<p>Test of link in caption: <a href="https://about.me/gjbarnard" target="_blank">me.</a></p>', 'theme_essential');
+        set_config('slide2target', '_blank', 'theme_essential');
+        set_config('slide2', 'Test slide two', 'theme_essential');
+        set_config('slide2caption', '<p>Test of link in caption: <a href="https://about.me/gjbarnard" target="_blank">me.</a></p>', 'theme_essential');
         $this->resetAfterTest(true);
 
         global $PAGE;
@@ -56,6 +63,27 @@ class theme_essential_toolbox_testcase extends advanced_testcase {
         $withoutdirroot = str_replace($CFG->dirroot, '', $thefile);
 
         $this->assertEquals('/theme/essential/layout/includes/slideshow.php', $withoutdirroot);
+    }
+
+    public function test_render_slide() {
+        $theslide = \theme_essential\toolbox::render_slide(1, 0);
+        $thecontent = '<a href="https://about.me/gjbarnard" target="_blank" class="item side-caption active">';
+        $thecontent .= '<div class="container-fluid"><div class="row-fluid"><div class="span5 the-side-caption">';
+        $thecontent .= '<div class="the-side-caption-content"><h4>Test slide one</h4><div><p>Test of link in caption: me.</p>';
+        $thecontent .= '</div></div></div><div class="span7"><div class="carousel-image-container">';
+        $thecontent .= '<img src="http://www.example.com/moodle/theme/image.php/_s/essential/theme/1/default_slide" ';
+        $thecontent .= 'alt="Test slide one" class="carousel-image"></div></div></div></div></a>';
+        $this->assertEquals($thecontent, $theslide);
+
+        $theslide = \theme_essential\toolbox::render_slide(2, 0);
+        $thecontent = '<div class="item side-caption">';
+        $thecontent .= '<div class="container-fluid"><div class="row-fluid"><div class="span5 the-side-caption">';
+        $thecontent .= '<div class="the-side-caption-content"><h4>Test slide two</h4><div>';
+        $thecontent .= '<p>Test of link in caption: <a href="https://about.me/gjbarnard" target="_blank">me.</a></p>';
+        $thecontent .= '</div></div></div><div class="span7"><div class="carousel-image-container">';
+        $thecontent .= '<img src="http://www.example.com/moodle/theme/image.php/_s/essential/theme/1/default_slide" ';
+        $thecontent .= 'alt="Test slide two" class="carousel-image"></div></div></div></div></div>';
+        $this->assertEquals($thecontent, $theslide);
     }
 
     public function test_themeinfo() {

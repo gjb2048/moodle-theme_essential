@@ -176,12 +176,15 @@ class toolbox {
         return $noslides;
     }
 
-    static public function render_slide($i, $captionoptions, $theme = null) {
-
+    static public function render_slide($i, $captionoptions) {
         $slideurl = self::get_setting('slide' . $i . 'url');
         $slideurltarget = self::get_setting('slide' . $i . 'target');
         $slidetitle = self::get_setting('slide' . $i);
         $slidecaption = self::get_setting('slide' . $i . 'caption', 'format_html');
+        if ($slideurl) {
+            // Strip links from the caption to prevent link in a link.
+            $slidecaption = preg_replace('/<a href=\"(.*?)\">(.*?)<\/a>/', "\\2", $slidecaption);
+        }
         if ($captionoptions == 0) {
             $slideextraclass = ' side-caption';
         } else {

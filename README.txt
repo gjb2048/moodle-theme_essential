@@ -188,6 +188,11 @@ It is essential that you provide as much information as possible, the critical i
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
 
+New in 2.9.1.4.1
+================
+- FIX: Issue #578: Slide Show broken after upgrade from Moodle 2.8 to 2.9.
+- FIX: Core renderer coding fault.
+
 New in 2.9.1.4
 ==============
 - FIX: Issue #577: Color for icons on header not set properly.

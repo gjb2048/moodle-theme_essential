@@ -998,7 +998,7 @@ class core_renderer extends \core_renderer {
      * @param tabtree $tabtree
      * @return string
      */
-    public function render_tabtree(tabtree $tabtree) {
+    public function render_tabtree(\tabtree $tabtree) {
         if (empty($tabtree->subtree)) {
             return false;
         }
@@ -1021,7 +1021,7 @@ class core_renderer extends \core_renderer {
      * @param tabobject $tab
      * @return string HTML fragment
      */
-    public function render_tabobject(tabobject $tab) {
+    public function render_tabobject(\tabobject $tab) {
         if ($tab->selected or $tab->activated) {
             return html_writer::tag('li', html_writer::tag('a', $tab->text), array('class' => 'active'));
         } else if ($tab->inactive) {
