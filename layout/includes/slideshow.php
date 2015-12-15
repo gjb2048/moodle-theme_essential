@@ -50,15 +50,7 @@ if ($numberofslides) {
             <div id="essentialCarousel" class="carousel slide" data-interval="<?php echo $slideinterval;?>">
                 <?php echo $OUTPUT->essential_edit_button('theme_essential_slideshow');?>
                 <ol class="carousel-indicators">
-                    <?php
-                    for ($indicatorslideindex = 0; $indicatorslideindex < $numberofslides; $indicatorslideindex++) {
-                        echo '<li data-target="#essentialCarousel" data-slide-to="'.$indicatorslideindex.'"';
-                        if ($indicatorslideindex == 0) {
-                            echo 'class="active"';
-                        }
-                        echo '></li>';
-                    }
-                    ?>
+                    <?php echo \theme_essential\toolbox::render_indicators($numberofslides); ?>
                 </ol>
                 <div class="carousel-inner<?php echo $captionscenter.$captionsbelowclass;?>">
                     <?php for ($slideindex = 1; $slideindex <= $numberofslides; $slideindex++) {

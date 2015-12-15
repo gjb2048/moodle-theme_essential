@@ -65,6 +65,15 @@ class theme_essential_toolbox_testcase extends advanced_testcase {
         $this->assertEquals('/theme/essential/layout/includes/slideshow.php', $withoutdirroot);
     }
 
+    public function test_render_indicators() {
+        $theindicators = \theme_essential\toolbox::render_indicators(4);
+        $thecontent = '<li data-target="#essentialCarousel" data-slide-to="0" class="active"></li>';
+        $thecontent .= '<li data-target="#essentialCarousel" data-slide-to="1"></li>';
+        $thecontent .= '<li data-target="#essentialCarousel" data-slide-to="2"></li>';
+        $thecontent .= '<li data-target="#essentialCarousel" data-slide-to="3"></li>';
+        $this->assertEquals($thecontent, $theindicators);
+    }
+
     public function test_render_slide() {
         $theslide = \theme_essential\toolbox::render_slide(1, 0);
         $thecontent = '<a href="https://about.me/gjbarnard" target="_blank" class="item side-caption active">';

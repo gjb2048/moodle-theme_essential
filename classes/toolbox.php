@@ -176,11 +176,23 @@ class toolbox {
         return $noslides;
     }
 
-    static public function render_slide($i, $captionoptions) {
-        $slideurl = self::get_setting('slide' . $i . 'url');
-        $slideurltarget = self::get_setting('slide' . $i . 'target');
-        $slidetitle = self::get_setting('slide' . $i);
-        $slidecaption = self::get_setting('slide' . $i . 'caption', 'format_html');
+    static public function render_indicators($numberofslides) {
+        $indicators = '';
+        for ($indicatorslideindex = 0; $indicatorslideindex < $numberofslides; $indicatorslideindex++) {
+            $indicators .= '<li data-target="#essentialCarousel" data-slide-to="'.$indicatorslideindex.'"';
+                if ($indicatorslideindex == 0) {
+                    $indicators .= ' class="active"';
+                }
+            $indicators .= '></li>';
+        }
+        return $indicators;
+    }
+
+    static public function render_slide($slideno, $captionoptions) {
+        $slideurl = self::get_setting('slide' . $slideno . 'url');
+        $slideurltarget = self::get_setting('slide' . $slideno . 'target');
+        $slidetitle = self::get_setting('slide' . $slideno);
+        $slidecaption = self::get_setting('slide' . $slideno . 'caption', 'format_html');
         if ($slideurl) {
             // Strip links from the caption to prevent link in a link.
             $slidecaption = preg_replace('/<a href=\"(.*?)\">(.*?)<\/a>/', "\\2", $slidecaption);
@@ -190,13 +202,13 @@ class toolbox {
         } else {
             $slideextraclass = '';
         }
-        $slideextraclass .= ($i === 1) ? ' active' : '';
+        $slideextraclass .= ($slideno === 1) ? ' active' : '';
         $slideimagealt = strip_tags($slidetitle);
 
         // Get slide image or fallback to default.
-        $slideimage = self::get_setting('slide' . $i . 'image');
+        $slideimage = self::get_setting('slide' . $slideno . 'image');
         if ($slideimage) {
-            $slideimage = self::setting_file_url('slide' . $i . 'image', 'slide' . $i . 'image');
+            $slideimage = self::setting_file_url('slide' . $slideno . 'image', 'slide' . $slideno . 'image');
         } else {
             $slideimage = self::pix_url('default_slide', 'theme');
         }
