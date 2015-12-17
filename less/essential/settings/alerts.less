@@ -1,0 +1,51 @@
+/* @group Alerts */
+
+.alert {
+    .fa-info {
+        background-color: @infoText;
+    }
+    .fa-warning {
+        background-color: @errorText;
+    }
+    .fa-bullhorn {
+        background-color: @successText;
+    }
+    .fa-info, .fa-warning, .fa-bullhorn {
+        color: ~"[[setting:themenavcolor]]";
+        &:hover, &:focus {
+            color: ~"[[setting:themenavcolor]]";
+        }
+    }
+    &.alert-info a.close {
+        .fa {
+            color: @infoText;
+        }
+        &:hover, &:focus {
+            .fa {
+                color: @infoText;
+            }
+        }
+    }
+    &.alert-error a.close {
+        .fa {
+            color: @errorText;
+        }
+        &:hover, &:focus {
+            .fa {
+                color: @errorText;
+            }
+        }
+    }
+    &.alert-success a.close {
+        .fa {
+            color: @successText;
+        }
+        &:hover, &:focus {
+            .fa {
+                color: @successText;
+            }
+        }
+    }
+}
+
+/* @end */

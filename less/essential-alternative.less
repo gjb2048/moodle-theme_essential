@@ -131,7 +131,7 @@
                     color: ~"[[setting:alternativethemehovercolor@{index}]]";
                 }
 
-                i.fa {
+                .fa {
                     color: ~"[[setting:alternativethemeiconcolor@{index}]]";
                     &:hover {
                         color: ~"[[setting:alternativethemehovercolor@{index}]]";
@@ -405,6 +405,15 @@
                 a.marketing-button:hover {
                     color: ~"[[setting:alternativethemenavcolor@{index}]]";
                     background-color: ~"[[setting:alternativethemehovercolor@{index}]]";
+                }
+
+                .alert {
+                    .fa-info, .fa-warning, .fa-bullhorn {
+                        color: ~"[[setting:alternativethemenavcolor@{index}]]";
+                        &:hover, &:focus {
+                            color: ~"[[setting:alternativethemenavcolor@{index}]]";
+                        }
+                    }
                 }
 
                 #essentialCarousel.carousel {

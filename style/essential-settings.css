@@ -3,6 +3,51 @@
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+/* @group Alerts */
+.alert .fa-info {
+  background-color: #3a87ad;
+}
+.alert .fa-warning {
+  background-color: #b94a48;
+}
+.alert .fa-bullhorn {
+  background-color: #468847;
+}
+.alert .fa-info,
+.alert .fa-warning,
+.alert .fa-bullhorn {
+  color: [[setting:themenavcolor]];
+}
+.alert .fa-info:hover,
+.alert .fa-warning:hover,
+.alert .fa-bullhorn:hover,
+.alert .fa-info:focus,
+.alert .fa-warning:focus,
+.alert .fa-bullhorn:focus {
+  color: [[setting:themenavcolor]];
+}
+.alert.alert-info a.close .fa {
+  color: #3a87ad;
+}
+.alert.alert-info a.close:hover .fa,
+.alert.alert-info a.close:focus .fa {
+  color: #3a87ad;
+}
+.alert.alert-error a.close .fa {
+  color: #b94a48;
+}
+.alert.alert-error a.close:hover .fa,
+.alert.alert-error a.close:focus .fa {
+  color: #b94a48;
+}
+.alert.alert-success a.close .fa {
+  color: #468847;
+}
+.alert.alert-success a.close:hover .fa,
+.alert.alert-success a.close:focus .fa {
+  color: #468847;
+}
+/* @end */
 /* @group Blocks */
 .block .icon {
   color: [[setting:themeiconcolor]];
@@ -731,10 +776,10 @@ body {
   background-repeat: [[setting:backgroundrepeat]];
   background-size: [[setting:backgroundsize]];
 }
-body i.fa {
+body .fa {
   color: [[setting:themeiconcolor]];
 }
-body i.fa:hover {
+body .fa:hover {
   color: [[setting:themehovercolor]];
 }
 .container-fluid {

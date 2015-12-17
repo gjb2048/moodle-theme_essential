@@ -32,9 +32,9 @@ $enable2alert = \theme_essential\toolbox::get_setting('enable2alert');
 $enable3alert = \theme_essential\toolbox::get_setting('enable3alert');
 
 if ($enable1alert || $enable2alert || $enable3alert) {
-    $alertinfo = '<span class="fa-stack "><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-info fa-stack-1x fa-inverse"></i></span>';
-    $alerterror = '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-warning fa-stack-1x fa-inverse"></i></span>';
-    $alertsuccess = '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-bullhorn fa-stack-1x fa-inverse"></i></span>';
+    $alertinfo = '<span class="fa-stack"><i class="fa fa-info fa-stack-1x fa-inverse"></i></span>';
+    $alerterror = '<span class="fa-stack"><i class="fa fa-warning fa-stack-1x fa-inverse"></i></span>';
+    $alertsuccess = '<span class="fa-stack"><i class="fa fa-bullhorn fa-stack-1x fa-inverse"></i></span>';
 }
 ?>
 
