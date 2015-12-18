@@ -24,8 +24,8 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(\theme_essential\toolbox::get_include_file('additionaljs'));
-require_once(\theme_essential\toolbox::get_include_file('header'));
+require_once(\theme_essential\toolbox::get_tile_file('additionaljs'));
+require_once(\theme_essential\toolbox::get_tile_file('header'));
 
 $footerregion = essential_has_footer_region(); // In pagesettings.php.
 ?>
@@ -82,7 +82,7 @@ $footerregion = essential_has_footer_region(); // In pagesettings.php.
     </section>
 </div>
 
-<?php require_once(\theme_essential\toolbox::get_include_file('footer')); ?>
+<?php require_once(\theme_essential\toolbox::get_tile_file('footer')); ?>
 
 </body>
 </html>

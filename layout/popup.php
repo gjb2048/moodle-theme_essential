@@ -24,7 +24,7 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(\theme_essential\toolbox::get_include_file('additionaljs'));
+require_once(\theme_essential\toolbox::get_tile_file('additionaljs'));
 $fontselect = \theme_essential\toolbox::get_setting('fontselect');
 if ($fontselect === '2') {
     $fontcharacterset = '&subset=latin';

@@ -85,6 +85,20 @@ class core_renderer extends \core_renderer {
         return end($this->themeconfig)->pix_url($imagename, $component);
     }
 
+    public function get_tile_file($filename) {
+        global $CFG;
+        $themedir = $this->page->theme->dir;
+        $filename .= '.php';
+
+        if (file_exists("$CFG->dirroot/theme/essential/layout/tiles/$filename")) {
+            return "$CFG->dirroot/theme/essential/layout/tiles/$filename";
+        } else if (!empty($CFG->themedir) and file_exists("$CFG->themedir/essential/layout/tiles/$filename")) {
+            return "$CFG->themedir/essential/layout/tiles/$filename";
+        } else {
+            return dirname(__FILE__) . "$filename";
+        }
+    }
+
     /**
      * This renders the breadcrumbs
      * @return string $breadcrumbs

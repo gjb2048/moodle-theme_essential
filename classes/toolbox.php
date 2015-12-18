@@ -97,76 +97,20 @@ class toolbox {
     }
 
     /**
-     * Finds the given include file in the theme.  If it does not exist for the Essential child theme then the parent is checked.
+     * Finds the given tile file in the theme.
      * @param string $filename Filename without extension to get.
      * @return string Complete path of the file.
      */
-    static public function get_include_file($filename) {
-        global $CFG, $PAGE;
-        $themedir = $PAGE->theme->dir;
-        $filename .= '.php';
-        // Check only if a child of 'Essential' to prevent conflicts with other themes using the 'includes' folder....
-        if (in_array('essential', $PAGE->theme->parents)) {
-            $themename = $PAGE->theme->name;
-            if (file_exists("$themedir/layout/includes/$filename")) {
-                return "$themedir/layout/includes/$filename";
-            } else if (file_exists("$CFG->dirroot/theme/$themename/layout/includes/$filename")) {
-                return "$CFG->dirroot/theme/$themename/layout/includes/$filename";
-            } else if (!empty($CFG->themedir) and file_exists("$CFG->themedir/$themename/layout/includes/$filename")) {
-                return "$CFG->themedir/$themename/layout/includes/$filename";
-            }
-        }
-        // Check Essential.
-        if (file_exists("$CFG->dirroot/theme/essential/layout/includes/$filename")) {
-            return "$CFG->dirroot/theme/essential/layout/includes/$filename";
-        } else if (!empty($CFG->themedir) and file_exists("$CFG->themedir/essential/layout/includes/$filename")) {
-            return "$CFG->themedir/essential/layout/includes/$filename";
-        } else {
-            return dirname(__FILE__) . "$filename";
-        }
-    }
-
-    /**
-     * Includes the given folder for the theme in the caller.
-     * If it does not exist for the Essential child theme then the parent is checked.
-     * @param string $folder Folder to include relative to the theme root.
-     * @return void.
-     */
-    static public function include_folder($folder) {
-        global $CFG, $PAGE;
-        $themedir = $PAGE->theme->dir;
-        $thefolder = false;
-        // Check only if a child of 'Essential'.
-        if (in_array('essential', $PAGE->theme->parents)) {
-            $themename = $PAGE->theme->name;
-            if (file_exists("$themedir/$folder")) {
-                $thefolder = "$themedir/$folder";
-            } else if (file_exists("$CFG->dirroot/theme/$themename/$folder")) {
-                $thefolder = "$CFG->dirroot/theme/$themename/$folder";
-            } else if (!empty($CFG->themedir) and file_exists("$CFG->themedir/$themename/$folder")) {
-                $thefolder = "$CFG->themedir/$themename/$folder";
-            }
-        }
-        if (!$thefolder) {
-            // Check Essential.
-            if (file_exists("$CFG->dirroot/theme/essential/$folder")) {
-                $thefolder = "$CFG->dirroot/theme/essential/$folder";
-            } else if (!empty($CFG->themedir) and file_exists("$CFG->themedir/essential/$folder")) {
-                $thefolder = "$CFG->themedir/essential/$folder";
-            } else {
-                $thefolder = dirname(__FILE__) . "$folder";
-            }
-        }
-        foreach (glob($thefolder . '/*.php') as $filename) {
-            require_once $filename;
-        }
+    static public function get_tile_file($filename) {
+        self::check_corerenderer();
+        return self::$corerenderer->get_tile_file($filename);
     }
 
     static public function showslider() {
         global $CFG;
         $noslides = self::get_setting('numberofslides');
         if ($noslides && (intval($CFG->version) >= 2013111800)) {
-            $devicetype = \core_useragent::get_device_type(); // In moodlelib.php.
+            $devicetype = \core_useragent::get_device_type(); // In useragent.php.
             if (($devicetype == "mobile") && self::get_setting('hideonphone')) {
                 $noslides = false;
             } else if (($devicetype == "tablet") && self::get_setting('hideontablet')) {

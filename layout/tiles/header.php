@@ -15,34 +15,40 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Essentials is a basic child theme of Essential to help you as a theme
- * developer create your own child theme of Essential.
+ * This is built using the bootstrapbase template to allow for new theme's using
+ * Moodle's new Bootstrap theme engine
  *
- * @package     theme_essentials
- * @copyright   2015 Gareth J Barnard
+ * @package     theme_essential
+ * @copyright   2013 Julian Ridden
+ * @copyright   2014 Gareth J Barnard, David Bezemer
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(\theme_essential\toolbox::get_include_file('pagesettings'));
+require_once(\theme_essential\toolbox::get_tile_file('pagesettings'));
 
-$breadcrumbstyle = 2;
-
-echo $OUTPUT->doctype() ?>
+echo $OUTPUT->doctype();
+?>
 <html <?php echo $OUTPUT->htmlattributes(); ?> class="no-js">
-<!-- Essentials Header -->
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>"/>
-    <?php echo \theme_essential\toolbox::get_csswww(); ?>
-    <?php echo $OUTPUT->standard_head_html() ?>
+    <?php 
+    echo \theme_essential\toolbox::get_csswww();
+    echo $OUTPUT->standard_head_html();
+    ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google web fonts -->
-    <?php require_once(\theme_essential\toolbox::get_include_file('fonts')); ?>
+    <?php require_once(\theme_essential\toolbox::get_tile_file('fonts')); ?>
+    <!-- iOS Homescreen Icons -->
+    <?php require_once(\theme_essential\toolbox::get_tile_file('iosicons')); ?>
+    <!-- Start Analytics -->
+    <?php require_once(\theme_essential\toolbox::get_tile_file('analytics')); ?>
+    <!-- End Analytics -->
 </head>
 
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
 
-<?php echo $OUTPUT->standard_top_of_body_html() ?>
+<?php echo $OUTPUT->standard_top_of_body_html(); ?>
 
 <header role="banner">
     <div id="page-header" class="clearfix<?php echo ($oldnavbar) ? ' oldnavbar' : ''; ?>">
@@ -54,20 +60,21 @@ echo $OUTPUT->doctype() ?>
                     <?php if (!$haslogo) { ?>
                         <a class="textlogo" href="<?php echo preg_replace("(https?:)", "", $CFG->wwwroot); ?>">
                             <i id="headerlogo" class="fa fa-<?php echo \theme_essential\toolbox::get_setting('siteicon'); ?>"></i>
-                            <?php echo $OUTPUT->get_title('header'); ?>
+                            <div class="titlearea"><?php echo $OUTPUT->get_title('header'); ?></div>
                         </a>
                     <?php } else { ?>
                         <a class="logo" href="<?php echo preg_replace("(https?:)", "", $CFG->wwwroot); ?>" title="<?php print_string('home'); ?>"></a>
                     <?php } ?>
                 </div>
                 <?php if ($hassocialnetworks || $hasmobileapps) { ?>
-                <a class="btn btn-icon" data-toggle="collapse" data-target=".icon-collapse">
+                <a class="btn btn-icon" data-toggle="collapse" data-target="#essentialicons">
+                    <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
 
-                <div class="icon-collapse collapse pull-<?php echo ($left) ? 'right' : 'left'; ?>">
+                <div id='essentialicons' class="collapse pull-<?php echo ($left) ? 'right' : 'left'; ?>">
                     <?php
                     }
                     // If true, displays the heading and available social links; displays nothing if false.
@@ -94,8 +101,7 @@ echo $OUTPUT->doctype() ?>
                     <?php
                     }
                     // If true, displays the heading and available social links; displays nothing if false.
-                    if ($hasmobileapps) {
-                        ?>
+                    if ($hasmobileapps) { ?>
                         <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>" id="mobileapps">
                             <p id="socialheading"><?php echo get_string('mobileappsheading', 'theme_essential') ?></p>
                             <ul class="socials unstyled">
@@ -121,7 +127,7 @@ echo $OUTPUT->doctype() ?>
             <div class="container-fluid navbar-inner">
                 <div class="row-fluid">
                     <div class="custommenus pull-<?php echo ($left) ? 'left' : 'right'; ?>">
-                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target="#essentialmenus">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -138,8 +144,11 @@ echo $OUTPUT->doctype() ?>
                         <div class="gotobottommenu">
                             <?php echo $OUTPUT->custom_menu_goto_bottom(); ?>
                         </div>
+                        <div id="custom_menu_editing" class="editingmenu">
+                            <?php echo $OUTPUT->custom_menu_editing(); ?>
+                        </div>
                     </div>
-                        <div class="nav-collapse collapse pull-<?php echo ($left) ? 'left' : 'right'; ?>">
+                        <div id='essentialmenus' class="nav-collapse collapse pull-<?php echo ($left) ? 'left' : 'right'; ?>">
                             <div id="custom_menu_language">
                                 <?php echo $OUTPUT->custom_menu_language(); ?>
                             </div>
