@@ -63,6 +63,7 @@ click here to sponsor.
 <li>Guido Hornig, actXcellence <a href="//actxcellence.de" target="_blank">actxcellence.de</a></li>
 <li>Delvon Forrester, Esparanza co uk</li>
 <li>iZone</li>
+<li>Anis Jradah</li>
 </ul>
 </p>
 <h3>Customisation</h3>
@@ -133,7 +134,7 @@ $string['logodesc'] = 'Please upload your custom logo here if you want to add it
 $string['logoheight'] = 'Logo height';
 $string['logoheightdesc'] = 'The height of the logo image. This can be specified in px or em.';
 
-$string['credit'] = 'The Essential theme is developed, enhanced and maintained by ';
+$string['credit'] = 'The Essential theme for Moodle is developed, enhanced and maintained by ';
 
 $string['profilebarcustomtitle'] = 'Profile bar custom block title';
 $string['profilebarcustomtitledesc'] = 'Title for custom profile bar block.';
