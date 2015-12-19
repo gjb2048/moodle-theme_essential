@@ -48,21 +48,28 @@ class theme_essential_toolbox_testcase extends advanced_testcase {
         $this->outputus = $PAGE->get_renderer('theme_essential', 'core');
         \theme_essential\toolbox::set_core_renderer($this->outputus);
     }
-
-    public function test_get_includefile_header() {
-        $thefile = \theme_essential\toolbox::get_include_file('header');
+    public function test_get_tilefile_header() {
+        $thefile = \theme_essential\toolbox::get_tile_file('header');
         global $CFG;
         $withoutdirroot = str_replace($CFG->dirroot, '', $thefile);
 
-        $this->assertEquals('/theme/essential/layout/includes/header.php', $withoutdirroot);
+        $this->assertEquals('/theme/essential/layout/tiles/header.php', $withoutdirroot);
     }
 
-    public function test_get_includefile_slideshow() {
-        $thefile = \theme_essential\toolbox::get_include_file('slideshow');
+    public function test_get_tilefile_pagesettings() {
+        $thefile = \theme_essential\toolbox::get_tile_file('pagesettings');
         global $CFG;
         $withoutdirroot = str_replace($CFG->dirroot, '', $thefile);
 
-        $this->assertEquals('/theme/essential/layout/includes/slideshow.php', $withoutdirroot);
+        $this->assertEquals('/theme/essential/layout/tiles/pagesettings.php', $withoutdirroot);
+    }
+
+    public function test_get_tilefile_slideshow() {
+        $thefile = \theme_essential\toolbox::get_tile_file('slideshow');
+        global $CFG;
+        $withoutdirroot = str_replace($CFG->dirroot, '', $thefile);
+
+        $this->assertEquals('/theme/essential/layout/tiles/slideshow.php', $withoutdirroot);
     }
 
     public function test_render_indicators() {

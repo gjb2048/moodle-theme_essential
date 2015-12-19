@@ -95,7 +95,7 @@ class core_renderer extends \core_renderer {
         } else if (!empty($CFG->themedir) and file_exists("$CFG->themedir/essential/layout/tiles/$filename")) {
             return "$CFG->themedir/essential/layout/tiles/$filename";
         } else {
-            return dirname(__FILE__) . "$filename";
+            return dirname(__FILE__) . "/$filename";
         }
     }
 
