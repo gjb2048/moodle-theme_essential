@@ -55,7 +55,7 @@ if ($numberofslides) {
                 <div class="carousel-inner<?php echo $captionscenter.$captionsbelowclass;?>">
                     <?php for ($slideindex = 1; $slideindex <= $numberofslides; $slideindex++) {
                         echo \theme_essential\toolbox::render_slide($slideindex, $captionoptions);
-                    }
+}
 ?>
                 </div>
                 <?php echo \theme_essential\toolbox::render_slide_controls($left); ?>

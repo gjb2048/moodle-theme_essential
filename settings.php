@@ -43,8 +43,8 @@ if (is_siteadmin()) {
     $temp->add(new admin_setting_heading('theme_essential_generalsponsor',
             get_string('sponsor_title', 'theme_essential'),
             get_string('sponsor_desc', 'theme_essential') . get_string('paypal_desc', 'theme_essential',
-                    array('url' => $sponsor)) . get_string('flattr_desc', 'theme_essential', array('url' => $flattr)) . get_string('sponsor_desc2',
-                    'theme_essential')));
+                    array('url' => $sponsor)).get_string('flattr_desc', 'theme_essential',
+                    array('url' => $flattr)).get_string('sponsor_desc2', 'theme_essential')));
 
     $temp->add(new admin_setting_heading('theme_essential_generalheading',
             get_string('generalheadingsub', 'theme_essential'),
@@ -822,7 +822,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // iOS App url setting.
+    // The iOS App url setting.
     $name = 'theme_essential/ios';
     $title = get_string('iosurl', 'theme_essential');
     $description = get_string('iosdesc', 'theme_essential');
@@ -1335,11 +1335,11 @@ if (is_siteadmin()) {
     $name = 'theme_essential/alert2type';
     $title = get_string('alerttype', 'theme_essential');
     $description = get_string('alerttypedesc', 'theme_essential');
-    $alert_info = get_string('alert_info', 'theme_essential');
-    $alert_warning = get_string('alert_warning', 'theme_essential');
-    $alert_general = get_string('alert_general', 'theme_essential');
+    $alertinfo = get_string('alert_info', 'theme_essential');
+    $alertwarning = get_string('alert_warning', 'theme_essential');
+    $alertgeneral = get_string('alert_general', 'theme_essential');
     $default = 'info';
-    $choices = array('info' => $alert_info, 'error' => $alert_warning, 'success' => $alert_general);
+    $choices = array('info' => $alertinfo, 'error' => $alertwarning, 'success' => $alertgeneral);
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);

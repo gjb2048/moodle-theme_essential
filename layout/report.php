@@ -49,7 +49,7 @@ require_once(\theme_essential\toolbox::get_tile_file('header'));
                     ?>
                     </section>
                 </div>
-                <?php 
+                <?php
                 echo $OUTPUT->essential_blocks('side-pre', 'row-fluid', 'aside', 4);
                 ?>
             </div>

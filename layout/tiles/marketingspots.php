@@ -45,16 +45,20 @@ for ($mspot = 1; $mspot <= 3; $mspot++) {
     echo ($additionalmarketingclass) ? ' withimage' : ' noimages';
     echo ($additionalmarketingcontentclass) ? ' withbutton' : ''; ?>" id="marketing-spots">
     <div class="row-fluid">
-        <?php for($mspot = 1; $mspot <= 3; $mspot++) { ?>
-        <?php echo '<!-- Spot #'.$mspot.' -->'; ?>
+    <?php for ($mspot = 1; $mspot <= 3; $mspot++) {
+            echo '<!-- Spot #'.$mspot.' -->'; ?>
         <div class="marketing-spot span4">
             <div class="title"><h5><span>
                 <i class="fa fa-<?php echo \theme_essential\toolbox::get_setting('marketing'.$mspot.'icon'); ?>"></i>
                 <?php echo \theme_essential\toolbox::get_setting('marketing'.$mspot, true); ?>
             </span></h5></div>
             <?php if ($spotimage[$mspot]) { ?>
-                <div class="marketing-image-container"><div class="marketing-image" id="marketing-image<?php echo $mspot; ?>"></div></div>
-            <?php } ?>
+                <div class="marketing-image-container">
+                    <div class="marketing-image" id="marketing-image<?php echo $mspot; ?>"></div>
+                </div>
+            <?php
+}
+?>
             <div class="content<?php echo ($additionalmarketingcontentclass) ? ' withbutton' : ''; ?>">
                 <?php
                     echo \theme_essential\toolbox::get_setting('marketing'.$mspot.'content', 'format_html');
@@ -62,6 +66,8 @@ for ($mspot = 1; $mspot <= 3; $mspot++) {
                 ?>
             </div>
         </div>
-        <?php } ?>
+        <?php
+}
+?>
     </div>
 </div>

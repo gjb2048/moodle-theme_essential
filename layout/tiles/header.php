@@ -32,7 +32,7 @@ echo $OUTPUT->doctype();
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>"/>
-    <?php 
+    <?php
     echo \theme_essential\toolbox::get_csswww();
     echo $OUTPUT->standard_head_html();
     ?>
@@ -57,14 +57,18 @@ echo $OUTPUT->doctype();
                 <!-- HEADER: LOGO AREA -->
                 <div class="<?php echo $logoclass;
                 echo (!$left) ? ' pull-right' : ' pull-left'; ?>">
-                    <?php if (!$haslogo) { ?>
-                        <a class="textlogo" href="<?php echo preg_replace("(https?:)", "", $CFG->wwwroot); ?>">
-                            <i id="headerlogo" class="fa fa-<?php echo \theme_essential\toolbox::get_setting('siteicon'); ?>"></i>
-                            <div class="titlearea"><?php echo $OUTPUT->get_title('header'); ?></div>
-                        </a>
-                    <?php } else { ?>
-                        <a class="logo" href="<?php echo preg_replace("(https?:)", "", $CFG->wwwroot); ?>" title="<?php print_string('home'); ?>"></a>
-                    <?php } ?>
+                    <?php
+if (!$haslogo) {
+    echo '<a class="textlogo" href="';
+    echo preg_replace("(https?:)", "", $CFG->wwwroot);
+    echo ">";
+    echo '<i id="headerlogo" class="fa fa-'.\theme_essential\toolbox::get_setting('siteicon').'"></i>';
+    echo '<div class="titlearea">'.$OUTPUT->get_title('header').'</div>';
+    echo '</a>';
+} else {
+    echo '<a class="logo" href="'.preg_replace("(https?:)", "", $CFG->wwwroot).'" title="'.print_string('home').'"></a>';
+}
+?>
                 </div>
                 <?php if ($hassocialnetworks || $hasmobileapps) { ?>
                 <a class="btn btn-icon" data-toggle="collapse" data-target="#essentialicons">
@@ -75,8 +79,8 @@ echo $OUTPUT->doctype();
                 </a>
 
                 <div id='essentialicons' class="collapse pull-<?php echo ($left) ? 'right' : 'left'; ?>">
-                    <?php
-                    }
+<?php
+}
                     // If true, displays the heading and available social links; displays nothing if false.
                     if ($hassocialnetworks) {
                         ?>
@@ -118,7 +122,9 @@ echo $OUTPUT->doctype();
                     if ($hassocialnetworks || $hasmobileapps) {
                     ?>
                 </div>
-            <?php } ?>
+<?php
+}
+?>
             </div>
         </div>
     </div>
@@ -159,7 +165,9 @@ echo $OUTPUT->doctype();
                                 <div id="custom_menu_themecolours">
                                     <?php echo $OUTPUT->custom_menu_themecolours(); ?>
                                 </div>
-                            <?php } ?>
+<?php
+}
+?>
                             <div id="custom_menu">
                                 <?php echo $OUTPUT->custom_menu(); ?>
                             </div>

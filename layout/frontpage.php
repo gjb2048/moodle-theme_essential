@@ -65,9 +65,12 @@ if ($enable1alert || $enable2alert || $enable3alert) {
                 <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
                 <?php
                 $alert1icon = 'alert' . \theme_essential\toolbox::get_setting('alert1type');
-                echo $$alert1icon . '<span class="title">' . \theme_essential\toolbox::get_setting('alert1title', true) . '</span>' . \theme_essential\toolbox::get_setting('alert1text', true); ?>
+                echo $$alert1icon.'<span class="title">'.\theme_essential\toolbox::get_setting('alert1title', true);
+                echo '</span>'.\theme_essential\toolbox::get_setting('alert1text', true); ?>
             </div>
-        <?php } ?>
+<?php
+}
+?>
 
         <!-- Alert #2 -->
         <?php if ($enable2alert) { ?>
@@ -75,9 +78,12 @@ if ($enable1alert || $enable2alert || $enable3alert) {
                 <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
                 <?php
                 $alert2icon = 'alert' . \theme_essential\toolbox::get_setting('alert2type');
-                echo $$alert2icon . '<span class="title">' . \theme_essential\toolbox::get_setting('alert2title', true) . '</span>' . \theme_essential\toolbox::get_setting('alert2text', true); ?>
+                echo $$alert2icon.'<span class="title">'.\theme_essential\toolbox::get_setting('alert2title', true);
+                echo '</span>'.\theme_essential\toolbox::get_setting('alert2text', true); ?>
             </div>
-        <?php } ?>
+<?php
+}
+?>
 
         <!-- Alert #3 -->
         <?php if ($enable3alert) { ?>
@@ -85,9 +91,12 @@ if ($enable1alert || $enable2alert || $enable3alert) {
                 <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
                 <?php
                 $alert3icon = 'alert' . \theme_essential\toolbox::get_setting('alert3type');
-                echo $$alert3icon . '<span class="title">' . \theme_essential\toolbox::get_setting('alert3title', true) . '</span>' . \theme_essential\toolbox::get_setting('alert3text', true); ?>
+                echo $$alert3icon.'<span class="title">'.\theme_essential\toolbox::get_setting('alert3title', true);
+                echo '</span>' . \theme_essential\toolbox::get_setting('alert3text', true); ?>
             </div>
-        <?php } ?>
+<?php
+}
+?>
         <!-- End Alerts -->
 
         <!-- Start Frontpage Content -->
@@ -117,9 +126,9 @@ if ($enable1alert || $enable2alert || $enable3alert) {
                 ?>
                 <div class="bor"></div>
             </div>
-        <?php
-        }
-        ?>
+<?php
+}
+?>
         <!-- End Frontpage Content -->
 
         <!-- Start Marketing Spots -->
@@ -180,7 +189,9 @@ if ($enable1alert || $enable2alert || $enable3alert) {
                     <?php echo $OUTPUT->blocks('hidden-dock'); ?>
                 </div>
             </div>
-        <?php } ?>
+<?php
+}
+?>
 
     </section>
 </div>
