@@ -123,7 +123,7 @@ if (!$haslogo) {
                     ?>
                 </div>
 <?php
-}
+                    }
 ?>
             </div>
         </div>

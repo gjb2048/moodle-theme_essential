@@ -65,6 +65,7 @@ class theme_essential_corerenderer_testcase extends advanced_testcase {
     public function test_pix() {
         $ouricon = \theme_essential\toolbox::pix_url('essential_button', 'theme');
 
-        $this->assertEquals('http://www.example.com/moodle/theme/image.php/_s/essential/theme/1/essential_button', $ouricon->out(false));
+        $this->assertEquals('http://www.example.com/moodle/theme/image.php/_s/essential/theme/1/essential_button',
+            $ouricon->out(false));
     }
 }

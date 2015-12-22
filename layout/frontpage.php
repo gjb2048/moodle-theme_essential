@@ -127,7 +127,7 @@ if ($enable1alert || $enable2alert || $enable3alert) {
                 <div class="bor"></div>
             </div>
 <?php
-}
+        }
 ?>
         <!-- End Frontpage Content -->
 
@@ -159,16 +159,16 @@ if ($enable1alert || $enable2alert || $enable3alert) {
 
         <div id="page-content" class="row-fluid">
             <section id="<?php echo $regionbsid; ?>">
-                <?php if (\theme_essential\toolbox::get_setting('frontpageblocks')) { ?>
-                <section id="region-main" class="span9 pull-right">
-                    <?php } else { ?>
-                    <section id="region-main" class="span9 desktop-first-column">
-                        <?php } ?>
-                        <?php
-                        echo $OUTPUT->course_content_header();
-                        echo $OUTPUT->main_content();
-                        echo $OUTPUT->course_content_footer();
-                        ?>
+                <?php 
+                if (\theme_essential\toolbox::get_setting('frontpageblocks')) {
+                    echo '<section id="region-main" class="span9 pull-right">';
+                } else {
+                    echo '<section id="region-main" class="span9 desktop-first-column">';
+                }
+                echo $OUTPUT->course_content_header();
+                echo $OUTPUT->main_content();
+                echo $OUTPUT->course_content_footer();
+                    ?>
                     </section>
                     <?php
                     if (\theme_essential\toolbox::get_setting('frontpageblocks')) {
