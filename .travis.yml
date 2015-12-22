@@ -25,8 +25,8 @@ env:
   # Also ignore generated CSS files.
   - IGNORE_NAMES=*.txt,custom.css,b*.css,e*.css,f*.css,m*.css
  matrix:
-  - DB=pgsql PHPUNIT=true
-  - DB=mysqli PHPUNIT=true
+  - DB=pgsql
+  - DB=mysqli
 
 before_install:
   - cd ../..
@@ -37,7 +37,7 @@ before_install:
 install:
   - moodle-plugin-ci install
   - moodle-plugin-ci add-config '$CFG->phpunit_prefix = "phpu_";'
-  # - moodle-plugin-ci add-config '$CFG->phpunit_dataroot = $CFG->dataroot;'
+  - moodle-plugin-ci add-config '$CFG->phpunit_dataroot = "/home/travis/build/moodledata/phpunit_moodledata";'
   - moodle-plugin-ci add-config '$CFG->phpunit_dbtype = $CFG->dbtype;'
   - moodle-plugin-ci add-config '$CFG->phpunit_dblibrary = "native";'
   - moodle-plugin-ci add-config '$CFG->phpunit_dbhost    = $CFG->dbhost;'
