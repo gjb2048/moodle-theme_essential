@@ -159,7 +159,7 @@ if ($enable1alert || $enable2alert || $enable3alert) {
 
         <div id="page-content" class="row-fluid">
             <section id="<?php echo $regionbsid; ?>">
-                <?php 
+                <?php
                 if (\theme_essential\toolbox::get_setting('frontpageblocks')) {
                     echo '<section id="region-main" class="span9 pull-right">';
                 } else {

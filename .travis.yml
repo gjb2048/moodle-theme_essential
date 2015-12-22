@@ -36,9 +36,8 @@ before_install:
 
 install:
   - moodle-plugin-ci install
-  - moodle-plugin-ci add-config '$CFG->foo = "bar";'
   - moodle-plugin-ci add-config '$CFG->phpunit_prefix = "phpu_";'
-  - moodle-plugin-ci add-config '$CFG->phpunit_dataroot = $CFG->dataroot;'
+  # - moodle-plugin-ci add-config '$CFG->phpunit_dataroot = $CFG->dataroot;'
   - moodle-plugin-ci add-config '$CFG->phpunit_dbtype = $CFG->dbtype;'
   - moodle-plugin-ci add-config '$CFG->phpunit_dblibrary = "native";'
   - moodle-plugin-ci add-config '$CFG->phpunit_dbhost    = $CFG->dbhost;'
