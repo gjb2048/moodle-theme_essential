@@ -168,16 +168,14 @@ if ($enable1alert || $enable2alert || $enable3alert) {
                 echo $OUTPUT->course_content_header();
                 echo $OUTPUT->main_content();
                 echo $OUTPUT->course_content_footer();
-                    ?>
-                    </section>
-                    <?php
-                    if (\theme_essential\toolbox::get_setting('frontpageblocks')) {
-                        echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column');
-                    } else {
-                        echo $OUTPUT->blocks('side-pre', 'span3 pull-right');
-                    }
-                    ?>
-                </section>
+                echo '</section>';
+                if (\theme_essential\toolbox::get_setting('frontpageblocks')) {
+                    echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column');
+                } else {
+                    echo $OUTPUT->blocks('side-pre', 'span3 pull-right');
+                }
+                ?>
+            </section>
         </div>
 
         <!-- End Main Regions -->
