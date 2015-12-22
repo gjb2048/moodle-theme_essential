@@ -38,12 +38,12 @@ install:
   - moodle-plugin-ci install
   - moodle-plugin-ci add-config '$CFG->phpunit_prefix = "phpu_";'
   - moodle-plugin-ci add-config '$CFG->phpunit_dataroot = "/home/travis/build/moodledata/phpunit_moodledata";'
-  - moodle-plugin-ci add-config '$CFG->phpunit_dbtype = $CFG->dbtype;'
-  - moodle-plugin-ci add-config '$CFG->phpunit_dblibrary = "native";'
-  - moodle-plugin-ci add-config '$CFG->phpunit_dbhost    = $CFG->dbhost;'
-  - moodle-plugin-ci add-config '$CFG->phpunit_dbname    = $CFG->dbname;'
-  - moodle-plugin-ci add-config '$CFG->phpunit_dbuser    = $CFG->dbuser;'
-  - moodle-plugin-ci add-config '$CFG->phpunit_dbpass    = $CFG->dbpass;'
+  # - moodle-plugin-ci add-config '$CFG->phpunit_dbtype = $CFG->dbtype;'
+  # - moodle-plugin-ci add-config '$CFG->phpunit_dblibrary = "native";'
+  # - moodle-plugin-ci add-config '$CFG->phpunit_dbhost    = $CFG->dbhost;'
+  # - moodle-plugin-ci add-config '$CFG->phpunit_dbname    = $CFG->dbname;'
+  # - moodle-plugin-ci add-config '$CFG->phpunit_dbuser    = $CFG->dbuser;'
+  # - moodle-plugin-ci add-config '$CFG->phpunit_dbpass    = $CFG->dbpass;'
 
 script:
   - moodle-plugin-ci phplint

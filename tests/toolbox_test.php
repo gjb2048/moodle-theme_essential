@@ -85,9 +85,6 @@ class theme_essential_toolbox_testcase extends advanced_testcase {
 
     public function test_render_slide() {
         $theslide1 = \theme_essential\toolbox::render_slide(1, 0);
-		global $CFG;
-		error_log('DR:  '.$CFG->dataroot);
-		error_log('PDR: '.$CFG->phpunit_dataroot);
         $thecontent1 = '<a href="https://about.me/gjbarnard" target="_blank" class="item side-caption active">';
         $thecontent1 .= '<div class="container-fluid"><div class="row-fluid"><div class="span5 the-side-caption">';
         $thecontent1 .= '<div class="the-side-caption-content"><h4>Test slide one</h4><div><p>Test of link in caption: me.</p>';
