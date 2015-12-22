@@ -33,8 +33,50 @@ class theme_essential_toolbox_testcase extends advanced_testcase {
 
     protected $outputus;
 
-    protected function setUp() {
-        set_config('theme', 'essential');
+    protected function setup_renderer() {
+        global $PAGE;
+        $this->outputus = $PAGE->get_renderer('theme_essential', 'core');
+        \theme_essential\toolbox::set_core_renderer($this->outputus);
+    }
+
+    public function test_get_tilefile_header() {
+        $this->setup_renderer();
+        $thefile = \theme_essential\toolbox::get_tile_file('header');
+        global $CFG;
+        $withoutdirroot = str_replace($CFG->dirroot, '', $thefile);
+
+        $this->assertEquals('/theme/essential/layout/tiles/header.php', $withoutdirroot);
+    }
+
+    public function test_get_tilefile_pagesettings() {
+        $this->setup_renderer();
+        $thefile = \theme_essential\toolbox::get_tile_file('pagesettings');
+        global $CFG;
+        $withoutdirroot = str_replace($CFG->dirroot, '', $thefile);
+
+        $this->assertEquals('/theme/essential/layout/tiles/pagesettings.php', $withoutdirroot);
+    }
+
+    public function test_get_tilefile_slideshow() {
+        $this->setup_renderer();
+        $thefile = \theme_essential\toolbox::get_tile_file('slideshow');
+        global $CFG;
+        $withoutdirroot = str_replace($CFG->dirroot, '', $thefile);
+
+        $this->assertEquals('/theme/essential/layout/tiles/slideshow.php', $withoutdirroot);
+    }
+
+    public function test_render_indicators() {
+        $this->setup_renderer();
+        $theindicators = \theme_essential\toolbox::render_indicators(4);
+        $thecontent = '<li data-target="#essentialCarousel" data-slide-to="0" class="active"></li>';
+        $thecontent .= '<li data-target="#essentialCarousel" data-slide-to="1"></li>';
+        $thecontent .= '<li data-target="#essentialCarousel" data-slide-to="2"></li>';
+        $thecontent .= '<li data-target="#essentialCarousel" data-slide-to="3"></li>';
+        $this->assertEquals($thecontent, $theindicators);
+    }
+
+    public function test_render_slide() {
         set_config('slide1url', 'https://about.me/gjbarnard', 'theme_essential');
         set_config('slide1target', '_blank', 'theme_essential');
         set_config('slide1', 'Test slide one', 'theme_essential');
@@ -46,44 +88,8 @@ class theme_essential_toolbox_testcase extends advanced_testcase {
             'theme_essential');
         $this->resetAfterTest(true);
 
-        global $PAGE;
-        $this->outputus = $PAGE->get_renderer('theme_essential', 'core');
-        \theme_essential\toolbox::set_core_renderer($this->outputus);
-    }
-    public function test_get_tilefile_header() {
-        $thefile = \theme_essential\toolbox::get_tile_file('header');
-        global $CFG;
-        $withoutdirroot = str_replace($CFG->dirroot, '', $thefile);
+        $this->setup_renderer();
 
-        $this->assertEquals('/theme/essential/layout/tiles/header.php', $withoutdirroot);
-    }
-
-    public function test_get_tilefile_pagesettings() {
-        $thefile = \theme_essential\toolbox::get_tile_file('pagesettings');
-        global $CFG;
-        $withoutdirroot = str_replace($CFG->dirroot, '', $thefile);
-
-        $this->assertEquals('/theme/essential/layout/tiles/pagesettings.php', $withoutdirroot);
-    }
-
-    public function test_get_tilefile_slideshow() {
-        $thefile = \theme_essential\toolbox::get_tile_file('slideshow');
-        global $CFG;
-        $withoutdirroot = str_replace($CFG->dirroot, '', $thefile);
-
-        $this->assertEquals('/theme/essential/layout/tiles/slideshow.php', $withoutdirroot);
-    }
-
-    public function test_render_indicators() {
-        $theindicators = \theme_essential\toolbox::render_indicators(4);
-        $thecontent = '<li data-target="#essentialCarousel" data-slide-to="0" class="active"></li>';
-        $thecontent .= '<li data-target="#essentialCarousel" data-slide-to="1"></li>';
-        $thecontent .= '<li data-target="#essentialCarousel" data-slide-to="2"></li>';
-        $thecontent .= '<li data-target="#essentialCarousel" data-slide-to="3"></li>';
-        $this->assertEquals($thecontent, $theindicators);
-    }
-
-    public function test_render_slide() {
         $theslide1 = \theme_essential\toolbox::render_slide(1, 0);
         $thecontent1 = '<a href="https://about.me/gjbarnard" target="_blank" class="item side-caption active">';
         $thecontent1 .= '<div class="container-fluid"><div class="row-fluid"><div class="span5 the-side-caption">';
@@ -105,6 +111,10 @@ class theme_essential_toolbox_testcase extends advanced_testcase {
     }
 
     public function test_themeinfo() {
+        set_config('theme', 'essential');
+        $this->resetAfterTest(true);
+        $this->setup_renderer();
+
         global $PAGE, $CFG;
         $themedir = str_replace($CFG->dirroot, '', $PAGE->theme->dir);
 

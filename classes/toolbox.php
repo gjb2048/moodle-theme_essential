@@ -42,10 +42,8 @@ class toolbox {
 
     static public function set_core_renderer($core) {
         $us = self::get_instance();
-        // Set only once from the initial calling lib.php process_css function.  Must happen before parents.
-        if (null === $us->corerenderer) {
-            $us->corerenderer = $core;
-        }
+        // Set from the initial calling lib.php process_css function.  Must happen before parents.
+        $us->corerenderer = $core;
     }
 
     // Moodle CSS file serving.
