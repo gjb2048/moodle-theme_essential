@@ -46,6 +46,7 @@ namespace theme_essential\output;
 
 
 class core_renderer_maintenance extends \core_renderer_maintenance {
+    use core_renderer_toolbox;
     protected $themeconfig;
 
     /**
@@ -57,39 +58,6 @@ class core_renderer_maintenance extends \core_renderer_maintenance {
     public function __construct(\moodle_page $page, $target) {
         parent::__construct($page, $target);
         $this->themeconfig = array(\theme_config::load('essential'));
-    }
-
-    public function get_setting($setting) {
-        $tcr = array_reverse($this->themeconfig, true);
-
-        $settingvalue = false;
-        foreach($tcr as $tkey => $tconfig) {
-            if (property_exists($tconfig->settings, $setting)) {
-                $settingvalue = $tconfig->settings->$setting;
-                break;
-            }
-        }
-        return $settingvalue;
-    }
-
-    public function setting_file_url($setting, $filearea) {
-        $tcr = array_reverse($this->themeconfig, true);
-        $settingconfig = null;
-        foreach($tcr as $tkey => $tconfig) {
-            if (property_exists($tconfig->settings, $setting)) {
-                $settingconfig = $tconfig;
-                break;
-            }
-        }
-
-        if ($settingconfig) {
-            return $settingconfig->setting_file_url($setting, $filearea);
-        }
-        return null;
-    }
-
-    public function pix_url($imagename, $component = 'moodle') {
-        return end($this->themeconfig)->pix_url($imagename, $component);
     }
 
     /**

@@ -2,6 +2,7 @@ New in 2.9.1.5
 ================
 - FIX: Issue #583: Empty topic names cause breadcrumb double arrow.
 - FIX: Issue #585: Alert icons background.
+- FIX: Issue #586: Fatal error on maintenance page.
 - FIX: Space for active indicator in slide show.
 - NEW: Move the history to CHANGES.txt as per: https://docs.moodle.org/dev/Plugin_files#CHANGES.
 
