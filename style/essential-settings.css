@@ -333,7 +333,7 @@ input[type="reset"]:active,
   max-width: [[setting:pagewidth]];
 }
 #essentialCarousel.carousel .carousel-inner .carousel-caption h4,
-#essentialCarousel.carousel .carousel-inner .carousel-caption p {
+#essentialCarousel.carousel .carousel-inner .carousel-caption div {
   color: [[setting:slidecaptiontextcolor]];
 }
 #essentialCarousel.carousel .carousel-control {
