@@ -29,7 +29,7 @@ trait core_renderer_toolbox {
         $tcr = array_reverse($this->themeconfig, true);
 
         $settingvalue = false;
-        foreach($tcr as $tkey => $tconfig) {
+        foreach ($tcr as $tconfig) {
             if (property_exists($tconfig->settings, $setting)) {
                 $settingvalue = $tconfig->settings->$setting;
                 break;
@@ -41,7 +41,7 @@ trait core_renderer_toolbox {
     public function setting_file_url($setting, $filearea) {
         $tcr = array_reverse($this->themeconfig, true);
         $settingconfig = null;
-        foreach($tcr as $tkey => $tconfig) {
+        foreach ($tcr as $tconfig) {
             if (property_exists($tconfig->settings, $setting)) {
                 $settingconfig = $tconfig;
                 break;
@@ -61,7 +61,6 @@ trait core_renderer_toolbox {
 
     public function get_tile_file($filename) {
         global $CFG;
-        $themedir = $this->page->theme->dir;
         $filename .= '.php';
 
         if (file_exists("$CFG->dirroot/theme/essential/layout/tiles/$filename")) {

@@ -28,7 +28,7 @@ if (\theme_essential\toolbox::get_setting('analyticsenabled')) {
     $analytics = \theme_essential\toolbox::get_setting('analytics');
     if ($analytics === "piwik") {
         require_once(\theme_essential\toolbox::get_tile_file('piwik'));
-    } elseif ($analytics === "guniversal") {
+    } else if ($analytics === "guniversal") {
         require_once(\theme_essential\toolbox::get_tile_file('guniversal'));
     }
 }

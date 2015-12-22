@@ -37,7 +37,6 @@ function analytics_trackurl() {
             $cats = explode("/", $category->path);
             foreach (array_filter($cats) as $cat) {
                 if ($categorydepth = $DB->get_record("course_categories", array("id" => $cat))) {
-                    ;
                     $trackurl .= urlencode($categorydepth->name) . '/';
                 }
             }
@@ -65,22 +64,20 @@ function analytics_trackurl() {
 }
 
 function insert_analytics_tracking() {
-    global $PAGE, $OUTPUT;
+    global $PAGE;
     $trackingid = \theme_essential\toolbox::get_setting('analyticstrackingid');
     $trackadmin = \theme_essential\toolbox::get_setting('analyticstrackadmin');
     $cleanurl = \theme_essential\toolbox::get_setting('analyticscleanurl');
     $tracking = '';
 
     if ($cleanurl) {
-        $addition =
-            "{'hitType' : 'pageview',
+        $addition = "{'hitType' : 'pageview',
             'page' : " . analytics_trackurl() . ",
             'title' : '" . addslashes($PAGE->heading) . "'
             }";
     } else {
         $addition = "'pageview'";
     }
-
 
     if (!is_siteadmin() || $trackadmin) {
         $tracking = "
@@ -91,7 +88,6 @@ function insert_analytics_tracking() {
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
             ga('create', '" . $trackingid . "', {'siteSpeedSampleRate': 50});
             ga('send', " . $addition . ");
-
             </script>";
     }
     return $tracking;

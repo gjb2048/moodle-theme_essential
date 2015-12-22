@@ -616,7 +616,7 @@ $string['ios'] = 'iPhone/iPad (App Store)';
 $string['iosurl'] = 'iPhone/iPad (App Store) URL';
 $string['iosdesc'] = 'Provide an URL to your mobile App on the App Store.  If you do not have one of your own maybe consider linking to the official Moodle Mobile app (https://itunes.apple.com/en/app/moodle-mobile/id633359593).';
 
-// iOS Icons.
+// The iOS Icons.
 $string['iosicon'] = 'iOS home screen icons';
 $string['iosicondesc'] = 'The theme does provide a default icon for iOS and android home screens.  You can upload your custom icons if you wish.';
 

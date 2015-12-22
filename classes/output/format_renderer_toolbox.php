@@ -19,14 +19,22 @@
  * Moodle's new Bootstrap theme engine
  *
  * @package     theme_essential
- * @copyright   2015 Gareth J Barnard
- * @copyright   2014 Gareth J Barnard, David Bezemer
  * @copyright   2013 Julian Ridden
+ * @copyright   2014 Gareth J Barnard, David Bezemer
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once($CFG->dirroot . "/course/format/weeks/renderer.php");
+// Requires V2.6.1.1+ of Columns format.
+if (file_exists("$CFG->dirroot/course/format/columns/renderer.php")) {
+    include_once($CFG->dirroot . "/course/format/columns/renderer.php");
 
-class theme_essential_format_weeks_renderer extends format_weeks_renderer {
-    use \theme_essential\format_renderer_toolbox;
+    class theme_essential_format_columns_renderer extends format_columns_renderer {
+        public function get_nav_links($course, $sections, $sectionno) {
+            return \theme_essential\toolbox::get_nav_links($course, $sections, $sectionno);
+        }
+
+        public function print_single_section_page($course, $sections, $mods, $modnames, $modnamesused, $displaysection) {
+            return \theme_essential\toolbox::print_single_section_page($this, $this->courserenderer, $course, $sections, $mods, $modnames, $modnamesused, $displaysection);
+        }
+    }
 }

@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -54,7 +53,7 @@ if ((get_config('theme_essential', 'enablealternativethemecolors1')) ||
     $THEME->sheets[] = 'essential-alternative';
 }
 
-if(get_config('theme_essential', 'customscrollbars')) {
+if (get_config('theme_essential', 'customscrollbars')) {
     $THEME->sheets[] = 'essential-scrollbars';
 }
 
@@ -115,7 +114,7 @@ $THEME->layouts = array(
         'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-pre',
     ),
-    // part of course, typical for modules - default page layout if $cm specified in require_login().
+    // Part of course, typical for modules - default page layout if $cm specified in require_login().
     'incourse' => array(
         'file' => 'columns2.php',
         'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),

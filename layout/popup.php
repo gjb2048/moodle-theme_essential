@@ -41,7 +41,7 @@ echo $OUTPUT->doctype();
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
-    <?php 
+    <?php
     echo \theme_essential\toolbox::get_csswww();
     echo $OUTPUT->standard_head_html();
     ?>
@@ -61,7 +61,7 @@ echo $OUTPUT->doctype();
     // If on desktop, then hide the header/footer.
     $hideclass = '';
     $devicetype = core_useragent::get_device_type();
-    if($devicetype !== 'mobile' and $devicetype !== 'tablet') {
+    if ($devicetype !== 'mobile' and $devicetype !== 'tablet') {
         // We can not use the Bootstrap responsive css classes because popups are phone sized on desktop.
         $hideclass = 'hide';
     }

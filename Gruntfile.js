@@ -100,7 +100,7 @@
  * @package theme
  * @subpackage essential
  * @author G J Barnard - gjbarnard at gmail dot com and {@link http://moodle.org/user/profile.php?id=442195}
- * @author Based on code originally written by Joby Harding, Bas Brands, David Scotson and many other contributors. 
+ * @author Based on code originally written by Joby Harding, Bas Brands, David Scotson and many other contributors.
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -543,7 +543,7 @@ module.exports = function(grunt) {
                 }, {
                     removeUselessStrokeAndFill: false
                 }, {
-                    convertPathData: { 
+                    convertPathData: {
                         straightCurves: false
                    }
                 }]
@@ -606,12 +606,24 @@ module.exports = function(grunt) {
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
 
-    grunt.registerTask("css", ["less:essential_"+build, "less:editor_"+build, "less:moodle_rtl_"+build, "less:scrollbars_"+build, "less:settings_"+build, "less:bootstrap_pix_"+build, "less:moodle_pix_"+build, "less:essential_pix_"+build, "less:fontawesome_woff2_"+build, "less:fontawesome_no_woff2_"+build, "less:fontawesome_"+build, "less:alternative_"+build]);
+    grunt.registerTask("css", [
+        "less:essential_" + build,
+        "less:editor_" + build,
+        "less:moodle_rtl_" + build,
+        "less:scrollbars_" + build,
+        "less:settings_" + build,
+        "less:bootstrap_pix_" + build,
+        "less:moodle_pix_" + build,
+        "less:essential_pix_" + build,
+        "less:fontawesome_woff2_" + build,
+        "less:fontawesome_no_woff2_" + build,
+        "less:fontawesome_" + build,
+        "less:alternative_" + build]);
     if (build == 'd') {
-        grunt.registerTask("compile", ["css", "replace:placeholder", "cssflip:rtl_"+build, "bless", 'cssmetrics', "decache"]);
+        grunt.registerTask("compile", ["css", "replace:placeholder", "cssflip:rtl_" + build, "bless", 'cssmetrics', "decache"]);
     } else {
         grunt.loadNpmTasks('grunt-contrib-cssmin');
-        grunt.registerTask("compile", ["css", "cssflip:rtl_"+build, "cssmin:essential_p", "bless", 'cssmetrics', "decache"]);
+        grunt.registerTask("compile", ["css", "cssflip:rtl_" + build, "cssmin:essential_p", "bless", 'cssmetrics', "decache"]);
     }
     grunt.registerTask("copy:svg", ["copy:svg_core", "copy:svg_plugins"]);
     grunt.registerTask("replace:svg_colours", ["replace:svg_colours_core", "replace:svg_colours_plugins"]);

@@ -20,13 +20,30 @@
  *
  * @package     theme_essential
  * @copyright   2015 Gareth J Barnard
- * @copyright   2014 Gareth J Barnard, David Bezemer
- * @copyright   2013 Julian Ridden
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once($CFG->dirroot . "/course/format/weeks/renderer.php");
-
-class theme_essential_format_weeks_renderer extends format_weeks_renderer {
-    use \theme_essential\format_renderer_toolbox;
+if ($footerregion) {
+    echo '<section id="region-main" class="span12">';
+} else if (($hasboringlayout && $left) || (!$left)) {
+    echo '<section id="region-main" class="span9 pull-right">';
+} else {
+    echo '<section id="region-main" class="span9 desktop-first-column">';
+}
+if ($COURSE->id > 1) {
+    echo $OUTPUT->heading(format_string($COURSE->fullname), 1, 'coursetitle');;
+    echo '<div class="bor"></div>';
+}
+echo $OUTPUT->course_content_header();
+echo $OUTPUT->main_content();
+if (empty($PAGE->layout_options['nocoursefooter'])) {
+    echo $OUTPUT->course_content_footer();
+}
+echo '</section>';
+if (!$footerregion) {
+    if (($hasboringlayout && $left) || (!$left)) {
+        echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column');
+    } else {
+        echo $OUTPUT->blocks('side-pre', 'span3 pull-right');
+    }
 }

@@ -20,13 +20,18 @@
  *
  * @package     theme_essential
  * @copyright   2015 Gareth J Barnard
- * @copyright   2014 Gareth J Barnard, David Bezemer
- * @copyright   2013 Julian Ridden
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once($CFG->dirroot . "/course/format/weeks/renderer.php");
-
-class theme_essential_format_weeks_renderer extends format_weeks_renderer {
-    use \theme_essential\format_renderer_toolbox;
-}
+echo '<div id="page-navbar" class="clearfix row-fluid">';
+echo '<div class="breadcrumb-nav pull-';
+echo ($left) ? 'left' : 'right';
+echo '">';
+echo $OUTPUT->navbar();
+echo '</div>';
+echo '<nav class="breadcrumb-button pull-';
+echo ($left) ? 'right' : 'left';
+echo '">';
+echo $OUTPUT->page_heading_button();
+echo '</nav>';
+echo '</div>';

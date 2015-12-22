@@ -19,12 +19,11 @@
  * Moodle's new Bootstrap theme engine
  *
  * @package     theme_essential
- * @copyright   2013 Julian Ridden
+ * @copyright   2015 Gareth J Barnard
  * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @copyright   2013 Julian Ridden
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-//require_once($CFG->dirroot . "/course/renderer.php");
 
 class theme_essential_core_course_renderer extends core_course_renderer {
     protected $enablecategoryicon;
@@ -125,12 +124,12 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         $content .= html_writer::start_tag('div', array('class' => 'info'));
 
         $content .= html_writer::tag(($depth > 1) ? 'h4' : 'h3', $categoryname, array('class' => 'categoryname'));
-        $content .= html_writer::end_tag('div'); // .info
+        $content .= html_writer::end_tag('div'); // Class .info.
 
         // Add category content to the output.
         $content .= html_writer::tag('div', $categorycontent, array('class' => 'content'));
 
-        $content .= html_writer::end_tag('div'); // .category class.
+        $content .= html_writer::end_tag('div'); // Class .category.
         return $content;
     }
 
@@ -167,10 +166,10 @@ class theme_essential_core_course_renderer extends core_course_renderer {
             $content .= html_writer::start_tag('div', array('class' => $summaryclass));
             $content .= $chelper->get_course_formatted_summary($course,
                     array('overflowdiv' => true, 'noclean' => true, 'para' => false));
-            $content .= html_writer::end_tag('div'); // .summary
+            $content .= html_writer::end_tag('div'); // Class .summary.
         }
 
-        // display course overview files
+        //Display course overview files.
         $contentimages = $contentfiles = '';
         foreach ($course->get_course_overviewfiles() as $file) {
             $isimage = $file->is_valid_image();
@@ -204,10 +203,10 @@ class theme_essential_core_course_renderer extends core_course_renderer {
                             $coursecontact['username']);
                 $content .= html_writer::tag('li', $name);
             }
-            $content .= html_writer::end_tag('ul'); // .teachers
+            $content .= html_writer::end_tag('ul'); // Class .teachers.
         }
 
-        // display course category if necessary (for example in search results)
+        // Display course category if necessary (for example in search results).
         if ($chelper->get_show_courses() == self::COURSECAT_SHOW_COURSES_EXPANDED_WITH_CAT) {
             require_once($CFG->libdir. '/coursecatlib.php');
             if ($cat = coursecat::get($course->category, IGNORE_MISSING)) {
@@ -215,7 +214,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
                 $content .= get_string('category').': '.
                         html_writer::link(new moodle_url('/course/index.php', array('categoryid' => $cat->id)),
                                 $cat->get_formatted_name(), array('class' => $cat->visible ? '' : 'dimmed'));
-                $content .= html_writer::end_tag('div'); // .coursecat
+                $content .= html_writer::end_tag('div'); // Class .coursecat.
             }
         }
 

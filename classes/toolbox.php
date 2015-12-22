@@ -1,4 +1,27 @@
 <?php
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * This is built using the bootstrapbase template to allow for new theme's using
+ * Moodle's new Bootstrap theme engine
+ *
+ * @package     theme_essential
+ * @copyright   2015 Gareth J Barnard
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
 namespace theme_essential;
 
@@ -59,7 +82,7 @@ class toolbox {
             $urltwo = \moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php",
                             "/$syscontext->id/theme_essential/style/$itemid/$moodlecsstwo");
             $urltwo = preg_replace('|^https?://|i', '//', $urltwo->out(false));
-            return '<link rel="stylesheet" href="' . $urlone . '"><link rel="stylesheet" href="' . $urltwo . '">';
+            return '<link rel="stylesheet" href="'.$urlone . '"><link rel="stylesheet" href="'.$urltwo.'">';
         }
     }
 
@@ -148,10 +171,10 @@ class toolbox {
     }
 
     static public function render_slide($slideno, $captionoptions) {
-        $slideurl = self::get_setting('slide' . $slideno . 'url');
-        $slideurltarget = self::get_setting('slide' . $slideno . 'target');
-        $slidetitle = self::get_setting('slide' . $slideno);
-        $slidecaption = self::get_setting('slide' . $slideno . 'caption', 'format_html');
+        $slideurl = self::get_setting('slide'.$slideno.'url');
+        $slideurltarget = self::get_setting('slide'.$slideno.'target');
+        $slidetitle = self::get_setting('slide'.$slideno);
+        $slidecaption = self::get_setting('slide'.$slideno.'caption', 'format_html');
         if ($slideurl) {
             // Strip links from the caption to prevent link in a link.
             $slidecaption = preg_replace('/<a href=\"(.*?)\">(.*?)<\/a>/', "\\2", $slidecaption);
@@ -165,17 +188,17 @@ class toolbox {
         $slideimagealt = strip_tags($slidetitle);
 
         // Get slide image or fallback to default.
-        $slideimage = self::get_setting('slide' . $slideno . 'image');
+        $slideimage = self::get_setting('slide'.$slideno.'image');
         if ($slideimage) {
-            $slideimage = self::setting_file_url('slide' . $slideno . 'image', 'slide' . $slideno . 'image');
+            $slideimage = self::setting_file_url('slide'.$slideno.'image', 'slide'.$slideno.'image');
         } else {
             $slideimage = self::pix_url('default_slide', 'theme');
         }
 
         if ($slideurl) {
-            $slidecontent = '<a href="' . $slideurl . '" target="' . $slideurltarget . '" class="item' . $slideextraclass . '">';
+            $slidecontent = '<a href="'.$slideurl.'" target="'.$slideurltarget.'" class="item'.$slideextraclass.'">';
         } else {
-            $slidecontent = '<div class="item' . $slideextraclass . '">';
+            $slidecontent = '<div class="item'.$slideextraclass.'">';
         }
 
         if ($captionoptions == 0) {
@@ -185,8 +208,8 @@ class toolbox {
             if ($slidetitle || $slidecaption) {
                 $slidecontent .= '<div class="span5 the-side-caption">';
                 $slidecontent .= '<div class="the-side-caption-content">';
-                $slidecontent .= '<h4>' . $slidetitle . '</h4>';
-                $slidecontent .= '<div>' . $slidecaption . '</div>';
+                $slidecontent .= '<h4>'.$slidetitle.'</h4>';
+                $slidecontent .= '<div>'.$slidecaption.'</div>';
                 $slidecontent .= '</div>';
                 $slidecontent .= '</div>';
                 $slidecontent .= '<div class="span7">';
@@ -194,7 +217,7 @@ class toolbox {
                 $slidecontent .= '<div class="span10 offset1 nocaption">';
             }
             $slidecontent .= '<div class="carousel-image-container">';
-            $slidecontent .= '<img src="' . $slideimage . '" alt="' . $slideimagealt . '" class="carousel-image">';
+            $slidecontent .= '<img src="'.$slideimage.'" alt="'.$slideimagealt.'" class="carousel-image">';
             $slidecontent .= '</div>';
             $slidecontent .= '</div>';
 
@@ -202,16 +225,16 @@ class toolbox {
             $slidecontent .= '</div>';
         } else {
             $nocaption = (!($slidetitle || $slidecaption)) ? ' nocaption' : '';
-            $slidecontent .= '<div class="carousel-image-container' . $nocaption . '">';
-            $slidecontent .= '<img src="' . $slideimage . '" alt="' . $slideimagealt . '" class="carousel-image">';
+            $slidecontent .= '<div class="carousel-image-container'.$nocaption.'">';
+            $slidecontent .= '<img src="'.$slideimage.'" alt="'.$slideimagealt.'" class="carousel-image">';
             $slidecontent .= '</div>';
 
             // Output title and caption if either is present
             if ($slidetitle || $slidecaption) {
                 $slidecontent .= '<div class="carousel-caption">';
                 $slidecontent .= '<div class="carousel-caption-inner">';
-                $slidecontent .= '<h4>' . $slidetitle . '</h4>';
-                $slidecontent .= '<div>' . $slidecaption . '</div>';
+                $slidecontent .= '<h4>'.$slidetitle.'</h4>';
+                $slidecontent .= '<div>'.$slidecaption.'</div>';
                 $slidecontent .= '</div>';
                 $slidecontent .= '</div>';
             }
@@ -229,163 +252,12 @@ class toolbox {
             $faleft = $faright;
             $faright = $temp;
         }
-        $prev = '<a class="left carousel-control" href="#essentialCarousel" data-slide="prev"><i class="fa fa-chevron-circle-' . $faleft . '"></i></a>';
-        $next = '<a class="right carousel-control" href="#essentialCarousel" data-slide="next"><i class="fa fa-chevron-circle-' . $faright . '"></i></a>';
+        $prev = '<a class="left carousel-control" href="#essentialCarousel" data-slide="prev">';
+        $prev .= '<i class="fa fa-chevron-circle-'.$faleft.'"></i></a>';
+        $next = '<a class="right carousel-control" href="#essentialCarousel" data-slide="next">';
+        $next .= '<i class="fa fa-chevron-circle-'.$faright.'"></i></a>';
 
         return $prev . $next;
-    }
-
-    static public function get_nav_links($course, $sections, $sectionno) {
-        // FIXME: This is really evil and should by using the navigation API.
-        $course = \course_get_format($course)->get_course();
-        $left = 'left';
-        $right = 'right';
-        if (\right_to_left()) {
-            $temp = $left;
-            $left = $right;
-            $right = $temp;
-        }
-        $previousarrow = '<i class="fa fa-chevron-circle-' . $left . '"></i>';
-        $nextarrow = '<i class="fa fa-chevron-circle-' . $right . '"></i>';
-        $canviewhidden = \has_capability('moodle/course:viewhiddensections', \context_course::instance($course->id))
-                or ! $course->hiddensections;
-
-        $links = array('previous' => '', 'next' => '');
-        $back = $sectionno - 1;
-        while ($back > 0 and empty($links['previous'])) {
-            if ($canviewhidden || $sections[$back]->uservisible) {
-                $params = array('id' => 'previous_section');
-                if (!$sections[$back]->visible) {
-                    $params['class'] = 'dimmed_text';
-                }
-                $previouslink = \html_writer::start_tag('div', array('class' => 'nav_icon'));
-                $previouslink .= $previousarrow;
-                $previouslink .= \html_writer::end_tag('div');
-                $previouslink .= \html_writer::start_tag('span', array('class' => 'text'));
-                $previouslink .= \html_writer::start_tag('span', array('class' => 'nav_guide'));
-                $previouslink .= \get_string('previoussection', 'theme_essential');
-                $previouslink .= \html_writer::end_tag('span');
-                $previouslink .= \html_writer::empty_tag('br');
-                $previouslink .= \get_section_name($course, $sections[$back]);
-                $previouslink .= \html_writer::end_tag('span');
-                $links['previous'] = \html_writer::link(course_get_url($course, $back), $previouslink, $params);
-            }
-            $back--;
-        }
-
-        $forward = $sectionno + 1;
-        while ($forward <= $course->numsections and empty($links['next'])) {
-            if ($canviewhidden || $sections[$forward]->uservisible) {
-                $params = array('id' => 'next_section');
-                if (!$sections[$forward]->visible) {
-                    $params['class'] = 'dimmed_text';
-                }
-                $nextlink = \html_writer::start_tag('div', array('class' => 'nav_icon'));
-                $nextlink .= $nextarrow;
-                $nextlink .= \html_writer::end_tag('div');
-                $nextlink .= \html_writer::start_tag('span', array('class' => 'text'));
-                $nextlink .= \html_writer::start_tag('span', array('class' => 'nav_guide'));
-                $nextlink .= \get_string('nextsection', 'theme_essential');
-                $nextlink .= \html_writer::end_tag('span');
-                $nextlink .= \html_writer::empty_tag('br');
-                $nextlink .= \get_section_name($course, $sections[$forward]);
-                $nextlink .= \html_writer::end_tag('span');
-                $links['next'] = \html_writer::link(course_get_url($course, $forward), $nextlink, $params);
-            }
-            $forward++;
-        }
-
-        return $links;
-    }
-
-    static public function print_single_section_page(&$that, &$courserenderer, $course, $sections, $mods, $modnames,
-            $modnamesused, $displaysection) {
-        global $PAGE;
-
-        $modinfo = \get_fast_modinfo($course);
-        $course = \course_get_format($course)->get_course();
-
-        // Can we view the section in question?
-        if (!($sectioninfo = $modinfo->get_section_info($displaysection))) {
-            // This section doesn't exist
-            print_error('unknowncoursesection', 'error', null, $course->fullname);
-            return false;
-        }
-
-        if (!$sectioninfo->uservisible) {
-            if (!$course->hiddensections) {
-                echo $that->start_section_list();
-                echo $that->section_hidden($displaysection);
-                echo $that->end_section_list();
-            }
-            // Can't view this section.
-            return false;
-        }
-
-        // Copy activity clipboard..
-        echo $that->course_activity_clipboard($course, $displaysection);
-        $thissection = $modinfo->get_section_info(0);
-        if ($thissection->summary or ! empty($modinfo->sections[0]) or $PAGE->user_is_editing()) {
-            echo $that->start_section_list();
-            echo $that->section_header($thissection, $course, true, $displaysection);
-            echo $courserenderer->course_section_cm_list($course, $thissection, $displaysection);
-            echo $courserenderer->course_section_add_cm_control($course, 0, $displaysection);
-            echo $that->section_footer();
-            echo $that->end_section_list();
-        }
-
-        // Start single-section div
-        echo \html_writer::start_tag('div', array('class' => 'single-section'));
-
-        // The requested section page.
-        $thissection = $modinfo->get_section_info($displaysection);
-
-        // Title with section navigation links.
-        $sectionnavlinks = $that->get_nav_links($course, $modinfo->get_section_info_all(), $displaysection);
-
-        // Construct navigation links
-        $sectionnav = \html_writer::start_tag('nav', array('class' => 'section-navigation'));
-        $sectionnav .= $sectionnavlinks['previous'];
-        $sectionnav .= $sectionnavlinks['next'];
-        $sectionnav .= \html_writer::empty_tag('br', array('style' => 'clear:both'));
-        $sectionnav .= \html_writer::end_tag('nav');
-        $sectionnav .= \html_writer::tag('div', '', array('class' => 'bor'));
-
-        // Output Section Navigation
-        echo $sectionnav;
-
-        // Define the Section Title
-        $sectiontitle = '';
-        $sectiontitle .= \html_writer::start_tag('div', array('class' => 'section-title'));
-        // Title attributes
-        $titleattr = 'title';
-        if (!$thissection->visible) {
-            $titleattr .= ' dimmed_text';
-        }
-        $sectiontitle .= \html_writer::start_tag('h3', array('class' => $titleattr));
-        $sectiontitle .= \get_section_name($course, $displaysection);
-        $sectiontitle .= \html_writer::end_tag('h3');
-        $sectiontitle .= \html_writer::end_tag('div');
-
-        // Output the Section Title.
-        echo $sectiontitle;
-
-        // Now the list of sections..
-        echo $that->start_section_list();
-
-        echo $that->section_header($thissection, $course, true, $displaysection);
-
-        // Show completion help icon.
-        $completioninfo = new \completion_info($course);
-        echo $completioninfo->display_help_icon();
-
-        echo $courserenderer->course_section_cm_list($course, $thissection, $displaysection);
-        echo $courserenderer->course_section_add_cm_control($course, $displaysection, $displaysection);
-        echo $that->section_footer();
-        echo $that->end_section_list();
-
-        // Close single-section div.
-        echo \html_writer::end_tag('div');
     }
 
     /**
@@ -426,7 +298,8 @@ class toolbox {
     static public function get_colours($default = 'default') {
         $preference = \get_user_preferences('theme_essential_colours', $default);
         foreach (range(1, 4) as $alternativethemenumber) {
-            if ($preference == 'alternative' . $alternativethemenumber && self::get_setting('enablealternativethemecolors' . $alternativethemenumber)) {
+            if ($preference == 'alternative'.$alternativethemenumber &&
+                self::get_setting('enablealternativethemecolors'.$alternativethemenumber)) {
                 return $preference;
             }
         }
@@ -442,46 +315,45 @@ class toolbox {
         } else if (\theme_essential\toolbox::get_setting('fontselect') === '3') {
 
             $fontfiles = array();
-            $fontfileeot = self::setting_file_url('fontfileeot' . $type, 'fontfileeot' . $type);
+            $fontfileeot = self::setting_file_url('fontfileeot'.$type, 'fontfileeot'.$type);
             if (!empty($fontfileeot)) {
-                $fontfiles[] = "url('" . $fontfileeot . "?#iefix') format('embedded-opentype')";
+                $fontfiles[] = "url('".$fontfileeot."?#iefix') format('embedded-opentype')";
             }
-            $fontfilewoff = self::setting_file_url('fontfilewoff' . $type, 'fontfilewoff' . $type);
+            $fontfilewoff = self::setting_file_url('fontfilewoff'.$type, 'fontfilewoff'.$type);
             if (!empty($fontfilewoff)) {
-                $fontfiles[] = "url('" . $fontfilewoff . "') format('woff')";
+                $fontfiles[] = "url('".$fontfilewoff."') format('woff')";
             }
-            $fontfilewofftwo = self::setting_file_url('fontfilewofftwo' . $type, 'fontfilewofftwo' . $type);
+            $fontfilewofftwo = self::setting_file_url('fontfilewofftwo' . $type, 'fontfilewofftwo'.$type);
             if (!empty($fontfilewofftwo)) {
-                $fontfiles[] = "url('" . $fontfilewofftwo . "') format('woff2')";
+                $fontfiles[] = "url('".$fontfilewofftwo."') format('woff2')";
             }
-            $fontfileotf = self::setting_file_url('fontfileotf' . $type, 'fontfileotf' . $type);
+            $fontfileotf = self::setting_file_url('fontfileotf'.$type, 'fontfileotf'.$type);
             if (!empty($fontfileotf)) {
-                $fontfiles[] = "url('" . $fontfileotf . "') format('opentype')";
+                $fontfiles[] = "url('".$fontfileotf."') format('opentype')";
             }
-            $fontfilettf = self::setting_file_url('fontfilettf' . $type, 'fontfilettf' . $type);
+            $fontfilettf = self::setting_file_url('fontfilettf'.$type, 'fontfilettf'.$type);
             if (!empty($fontfilettf)) {
-                $fontfiles[] = "url('" . $fontfilettf . "') format('truetype')";
+                $fontfiles[] = "url('".$fontfilettf."') format('truetype')";
             }
-            $fontfilesvg = self::setting_file_url('fontfilesvg' . $type, 'fontfilesvg' . $type);
+            $fontfilesvg = self::setting_file_url('fontfilesvg'.$type, 'fontfilesvg'.$type);
             if (!empty($fontfilesvg)) {
-                $fontfiles[] = "url('" . $fontfilesvg . "') format('svg')";
+                $fontfiles[] = "url('".$fontfilesvg."') format('svg')";
             }
 
             if (!empty($fontfiles)) {
-                $familyreplacement = '"' . $fontname . '"';
-                $facereplacement = '@font-face {' . PHP_EOL . 'font-family: "' . $fontname . '";' . PHP_EOL;
-                $facereplacement .=!empty($fontfileeot) ? "src: url('" . $fontfileeot . "');" . PHP_EOL : '';
+                $familyreplacement = '"'.$fontname.'"';
+                $facereplacement = '@font-face {'.PHP_EOL.'font-family: "'.$fontname.'";'.PHP_EOL;
+                $facereplacement .= !empty($fontfileeot) ? "src: url('".$fontfileeot."');".PHP_EOL : '';
                 $facereplacement .= "src: ";
-                $facereplacement .= implode("," . PHP_EOL . " ", $fontfiles);
-                $facereplacement .= ";";
-                $facereplacement .= '' . PHP_EOL . "}";
+                $facereplacement .= implode(",".PHP_EOL." ", $fontfiles);
+                $facereplacement .= ";".PHP_EOL."}";
             } else {
                 // No files back to default.
                 $familyreplacement = 'Verdana';
                 $facereplacement = '';
             }
         } else {
-            $familyreplacement = '"' . $fontname . '"';
+            $familyreplacement = '"'.$fontname.'"';
             $facereplacement = '';
         }
 
@@ -502,7 +374,7 @@ class toolbox {
     }
 
     static public function set_alternativecolor($css, $type, $customcolor, $defaultcolor) {
-        $tag = '[[setting:alternativetheme' . $type . ']]';
+        $tag = '[[setting:alternativetheme'.$type.']]';
         if (!($customcolor)) {
             $replacement = $defaultcolor;
         } else {
@@ -528,7 +400,7 @@ class toolbox {
         if (!($pagebackground)) {
             $replacement = 'none';
         } else {
-            $replacement = 'url(\'' . $pagebackground . '\')';
+            $replacement = 'url(\''.$pagebackground.'\')';
         }
         $css = str_replace($tag, $replacement, $css);
         return $css;
@@ -560,37 +432,37 @@ class toolbox {
         if (!($mhreplacement)) {
             $mhreplacement = 100;
         }
-        $css = str_replace($tag, $mhreplacement . 'px', $css);
+        $css = str_replace($tag, $mhreplacement.'px', $css);
         $tag = '[[setting:marketingheightwithbutton]]';
         $mhreplacement += 32;
-        $css = str_replace($tag, $mhreplacement . 'px', $css);
+        $css = str_replace($tag, $mhreplacement.'px', $css);
 
         $tag = '[[setting:marketingimageheight]]';
         $mihreplacement = $marketingimageheight;
         if (!($mihreplacement)) {
             $mihreplacement = 100;
         }
-        $css = str_replace($tag, $mihreplacement . 'px', $css);
+        $css = str_replace($tag, $mihreplacement.'px', $css);
 
         $tag = '[[setting:marketingheightwithimage]]';
         $replacement = $mhreplacement + $mihreplacement;
         if (!($replacement)) {
             $replacement = 200;
         }
-        $css = str_replace($tag, $replacement . 'px', $css);
+        $css = str_replace($tag, $replacement.'px', $css);
         $tag = '[[setting:marketingheightwithimagewithbutton]]';
         $replacement += 32;
-        $css = str_replace($tag, $replacement . 'px', $css);
+        $css = str_replace($tag, $replacement.'px', $css);
 
         return $css;
     }
 
     static public function set_marketingimage($css, $marketingimage, $setting) {
-        $tag = '[[setting:' . $setting . ']]';
+        $tag = '[[setting:'.$setting.']]';
         if (!($marketingimage)) {
             $replacement = 'none';
         } else {
-            $replacement = 'url(\'' . $marketingimage . '\')';
+            $replacement = 'url(\''.$marketingimage.'\')';
         }
         $css = str_replace($tag, $replacement, $css);
         return $css;
@@ -608,7 +480,7 @@ class toolbox {
         if (!($logo)) {
             $replacement = 'none';
         } else {
-            $replacement = 'url(\'' . $logo . '\')';
+            $replacement = 'url(\''.$logo.'\')';
         }
         $css = str_replace($tag, $replacement, $css);
         return $css;
@@ -633,11 +505,11 @@ class toolbox {
             $replacement = '1200';
         }
         if ($replacement == "100") {
-            $css = str_replace($tag, $replacement . '%', $css);
-            $css = str_replace($imagetag, '90' . '%', $css);
+            $css = str_replace($tag, $replacement.'%', $css);
+            $css = str_replace($imagetag, '90'.'%', $css);
         } else {
-            $css = str_replace($tag, $replacement . 'px', $css);
-            $css = str_replace($imagetag, $replacement . 'px', $css);
+            $css = str_replace($tag, $replacement.'px', $css);
+            $css = str_replace($imagetag, $replacement.'px', $css);
         }
         return $css;
     }
@@ -699,5 +571,4 @@ class toolbox {
             return $properties;
         }
     }
-
 }

@@ -115,12 +115,14 @@ class core_renderer extends \core_renderer {
 
         $footer = $this->opencontainers->pop('header/footer');
 
-        // Provide some performance info if required
+        // Provide some performance info if required.
         $performanceinfo = '';
         if (defined('MDL_PERF') || (!empty($CFG->perfdebug) and $CFG->perfdebug > 7)) {
             $perf = get_performance_info();
             if (defined('MDL_PERFTOLOG') && !function_exists('register_shutdown_function')) {
+                // @codingStandardsIgnoreStart
                 error_log("PERF: " . $perf['txt']);
+                // @codingStandardsIgnoreEnd
             }
             if (defined('MDL_PERFTOFOOT') || debugging() || $CFG->perfdebug > 7) {
                 $performanceinfo = $this->performance_output($perf, \theme_essential\toolbox::get_setting('perfinfo'));
@@ -130,7 +132,8 @@ class core_renderer extends \core_renderer {
         $footer = str_replace($this->unique_performance_info_token, $performanceinfo, $footer);
         $footer = str_replace($this->unique_end_html_token, $this->page->requires->get_end_code(), $footer);
         $this->page->set_state(moodle_page::STATE_DONE);
-        $info = '<!-- Essential theme version: '.$this->page->theme->settings->version.', developed, enhanced and maintained by Gareth J Barnard: about.me/gjbarnard -->';
+        $info = '<!-- Essential theme version: '.$this->page->theme->settings->version.
+            ', developed, enhanced and maintained by Gareth J Barnard: about.me/gjbarnard -->';
 
         return $output . $footer . $info;
     }
@@ -194,7 +197,8 @@ class core_renderer extends \core_renderer {
             } else {
                 $url = '#cm_submenu_' . $submenucount;
             }
-            $content .= html_writer::start_tag('a', array('href' => $url, 'class' => 'dropdown-toggle', 'data-toggle' => 'dropdown', 'title' => $menunode->get_title()));
+            $content .= html_writer::start_tag('a', array('href' => $url, 'class' => 'dropdown-toggle',
+                'data-toggle' => 'dropdown', 'title' => $menunode->get_title()));
             $content .= $menunode->get_text();
             if ($level == 1) {
                 $content .= '<i class="fa fa-caret-right"></i>';
@@ -221,7 +225,8 @@ class core_renderer extends \core_renderer {
                 } else {
                     $url = '#';
                 }
-                $content .= html_writer::link($url, $menunode->get_text(), array('title' => $menunode->get_title(), 'class' => $class));
+                $content .= html_writer::link($url, $menunode->get_text(), array('title' => $menunode->get_title(),
+                    'class' => $class));
             }
             $content .= html_writer::end_tag('li');
         }
@@ -255,7 +260,8 @@ class core_renderer extends \core_renderer {
             }
             $this->language = $langmenu->add('<i class="fa fa-flag"></i>' . $currentlang, new moodle_url('#'), $strlang, 100);
             foreach ($langs as $langtype => $langname) {
-                $this->language->add('<i class="fa fa-language"></i>' . $langname, new moodle_url($this->page->url, array('lang' => $langtype)), $langname);
+                $this->language->add('<i class="fa fa-language"></i>' . $langname, new moodle_url($this->page->url,
+                    array('lang' => $langtype)), $langname);
             }
         }
         return $this->render_custom_menu($langmenu);
@@ -299,14 +305,16 @@ class core_renderer extends \core_renderer {
 
             // Retrieve courses and add them to the menu when they are visible
             $numcourses = 0;
-            if ($courses = enrol_get_my_courses(NULL, $sortorder . ' ASC')) {
+            if ($courses = enrol_get_my_courses(null, $sortorder . ' ASC')) {
                 foreach ($courses as $course) {
                     if ($course->visible) {
-                        $branch->add('<i class="fa fa-graduation-cap"></i>' . format_string($course->fullname), new moodle_url('/course/view.php?id=' . $course->id), format_string($course->shortname));
+                        $branch->add('<i class="fa fa-graduation-cap"></i>'.format_string($course->fullname),
+                            new moodle_url('/course/view.php?id=' . $course->id), format_string($course->shortname));
                         $numcourses += 1;
                     } else if (has_capability('moodle/course:viewhiddencourses', context_course::instance($course->id))) {
                         $branchtitle = format_string($course->shortname);
-                        $branchlabel = '<span class="dimmed_text"><i class="fa fa-eye-slash"></i>' . format_string($course->fullname) . '</span>';
+                        $branchlabel = '<span class="dimmed_text"><i class="fa fa-eye-slash"></i>'.
+                            format_string($course->fullname) . '</span>';
                         $branchurl = new moodle_url('/course/view.php', array('id' =>$course->id));
                         $branch->add($branchlabel, $branchurl, $branchtitle);
                         $numcourses += 1;
@@ -347,12 +355,15 @@ class core_renderer extends \core_renderer {
                     new moodle_url($this->page->url, array('essentialcolours' => 'default')), $defaultthemecolorslabel);
                 foreach ($alternativethemes as $alternativethemenumber) {
                     if (\theme_essential\toolbox::get_setting('alternativethemename' . $alternativethemenumber)) {
-                        $alternativethemeslabel = \theme_essential\toolbox::get_setting('alternativethemename' . $alternativethemenumber);
+                        $alternativethemeslabel =
+                            \theme_essential\toolbox::get_setting('alternativethemename'.$alternativethemenumber);
                     } else {
                         $alternativethemeslabel = get_string('alternativecolors', 'theme_essential', $alternativethemenumber);
                     }
-                    $branch->add('<i class="fa fa-square colours-alternative' . $alternativethemenumber . '"></i>' . $alternativethemeslabel,
-                        new moodle_url($this->page->url, array('essentialcolours' => 'alternative' . $alternativethemenumber)), $alternativethemeslabel);
+                    $branch->add('<i class="fa fa-square colours-alternative'.$alternativethemenumber.'"></i>'.
+                        $alternativethemeslabel,
+                        new moodle_url($this->page->url, array('essentialcolours' => 'alternative' . $alternativethemenumber)),
+                            $alternativethemeslabel);
                 }
             }
         }
@@ -364,7 +375,8 @@ class core_renderer extends \core_renderer {
      * @return custom_menu object
      */
     public function custom_menu_activitystream() {
-        if (($this->page->pagelayout != 'course') && ($this->page->pagelayout != 'incourse') && ($this->page->pagelayout != 'report')) {
+        if (($this->page->pagelayout != 'course') && ($this->page->pagelayout != 'incourse') &&
+            ($this->page->pagelayout != 'report')) {
             return '';
         }
 
@@ -388,10 +400,12 @@ class core_renderer extends \core_renderer {
                 foreach ($data as $modname => $modfullname) {
                     if ($modname === 'resources') {
                         $icon = $this->pix_icon('icon', '', 'mod_page', array('class' => 'icon'));
-                        $branch->add($icon.$modfullname, new moodle_url('/course/resources.php', array('id' => $this->page->course->id)));
+                        $branch->add($icon.$modfullname, new moodle_url('/course/resources.php',
+                            array('id' => $this->page->course->id)));
                     } else {
                         $icon = '<img src="'.$this->pix_url('icon', $modname) . '" class="icon" alt="" />';
-                        $branch->add($icon.$modfullname, new moodle_url('/mod/'.$modname.'/index.php', array('id' => $this->page->course->id)));
+                        $branch->add($icon.$modfullname, new moodle_url('/mod/'.$modname.'/index.php',
+                            array('id' => $this->page->course->id)));
                     }
                 }
                 return $this->render_custom_menu($activitystreammenu);
@@ -494,10 +508,11 @@ class core_renderer extends \core_renderer {
                     $messagecontent = html_writer::start_div('notification ' . $addclass);
                     $messagecontent .= html_writer::tag('i', '', array('class' => 'fa fa-info-circle icon'));
                     $messagecontent .= html_writer::start_span('msg-time');
-                    $messagecontent .= html_writer::tag('i', '', array('class' => 'fa fa-comment' . $iconadd));
+                    $messagecontent .= html_writer::tag('i', '', array('class' => 'fa fa-comment'.$iconadd));
                     $messagecontent .= $this->get_time_difference($message->date);
                     $messagecontent .= html_writer::end_span();
-                    $messagecontent .= html_writer::span(htmlspecialchars($message->text, ENT_COMPAT | ENT_HTML401, 'UTF-8'), 'notification-text');
+                    $messagecontent .= html_writer::span(htmlspecialchars($message->text, ENT_COMPAT | ENT_HTML401, 'UTF-8'),
+                        'notification-text');
                     $messagecontent .= html_writer::end_div();
                 } else {
                     if (!is_object($message->from) || !empty($message->from->deleted)) {
@@ -508,10 +523,11 @@ class core_renderer extends \core_renderer {
                     $senderpicture->size = 60;
 
                     $messagecontent = html_writer::start_div('message ' . $addclass);
-                    $messagecontent .= html_writer::start_span('msg-picture') . $this->render($senderpicture) . html_writer::end_span();
+                    $messagecontent .= html_writer::start_span('msg-picture').$this->render($senderpicture).
+                        html_writer::end_span();
                     $messagecontent .= html_writer::start_span('msg-body');
                     $messagecontent .= html_writer::start_span('msg-time');
-                    $messagecontent .= html_writer::tag('i', '', array('class' => 'fa fa-comments' . $iconadd));
+                    $messagecontent .= html_writer::tag('i', '', array('class' => 'fa fa-comments'.$iconadd));
                     $messagecontent .= $this->get_time_difference($message->date);
                     $messagecontent .= html_writer::end_span();
                     $messagecontent .= html_writer::span($message->from->firstname, 'msg-sender');
@@ -550,10 +566,11 @@ class core_renderer extends \core_renderer {
         if ($messagelist['newmessages'] < $maxmessages) {
             $maxmessages = 5 - $messagelist['newmessages'];
 
-            $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, timeread, fullmessageformat, notification, contexturl
-                               FROM {message_read}
-                               WHERE useridto = :userid
-                               ORDER BY timecreated DESC";
+            $readmessagesql =
+                "SELECT id, smallmessage, useridfrom, useridto, timecreated, timeread, fullmessageformat,notification, contexturl
+                FROM {message_read}
+                WHERE useridto = :userid
+                ORDER BY timecreated DESC";
 
             $messages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id), 0, $maxmessages);
 
@@ -582,7 +599,8 @@ class core_renderer extends \core_renderer {
             $messagecontent->type = 'notification';
             $messagecontent->url = new moodle_url($message->contexturl);
             if (empty($message->contexturl)) {
-                $messagecontent->url = new moodle_url('/message/index.php', array('user1' => $USER->id, 'viewing' => 'recentnotifications'));
+                $messagecontent->url = new moodle_url('/message/index.php', array('user1' => $USER->id,
+                    'viewing' => 'recentnotifications'));
             }
         } else {
             $messagecontent->type = 'message';
@@ -595,7 +613,8 @@ class core_renderer extends \core_renderer {
                 $messagecontent->text = $message->smallmessage;
             }
             $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom));
-            $messagecontent->url = new moodle_url('/message/index.php', array('user1' => $USER->id, 'user2' => $message->useridfrom));
+            $messagecontent->url = new moodle_url('/message/index.php', array('user1' => $USER->id,
+                'user2' => $message->useridfrom));
         }
 
         $options = new stdClass();
@@ -613,9 +632,9 @@ class core_renderer extends \core_renderer {
      * @param $created_time int
      * @return string
      */
-    private function get_time_difference($created_time) {
+    private function get_time_difference($createdtime) {
         // It returns the time difference in Seconds...
-        $time_difference = time() - $created_time;
+        $timedifference = time() - $createdtime;
 
         // To Calculate the time difference in Years...
         $years = 60 * 60 * 24 * 365;
@@ -632,30 +651,30 @@ class core_renderer extends \core_renderer {
         // To Calculate the time difference in Minutes...
         $minutes = 60;
 
-        if (intval($time_difference / $years) > 1) {
-            return get_string('ago', 'core_message', intval($time_difference / $years) . ' ' . get_string('years'));
-        } else if (intval($time_difference / $years) > 0) {
-            return get_string('ago', 'core_message', intval($time_difference / $years) . ' ' . get_string('year'));
-        } else if (intval($time_difference / $months) > 1) {
-            return get_string('ago', 'core_message', intval($time_difference / $months) . ' ' . get_string('months'));
-        } else if (intval(($time_difference / $months)) > 0) {
-            return get_string('ago', 'core_message', intval($time_difference / $months) . ' ' . get_string('month'));
-        } else if (intval(($time_difference / $days)) > 1) {
-            return get_string('ago', 'core_message', intval($time_difference / $days) . ' ' . get_string('days'));
-        } else if (intval(($time_difference / $days)) > 0) {
-            return get_string('ago', 'core_message', intval($time_difference / $days) . ' ' . get_string('day'));
-        } else if (intval(($time_difference / $hours)) > 1) {
-            return get_string('ago', 'core_message', intval($time_difference / $hours) . ' ' . get_string('hours'));
-        } else if (intval(($time_difference / $hours)) > 0) {
-            return get_string('ago', 'core_message', intval($time_difference / $hours) . ' ' . get_string('hour'));
-        } else if (intval(($time_difference / $minutes)) > 1) {
-            return get_string('ago', 'core_message', intval($time_difference / $minutes) . ' ' . get_string('minutes'));
-        } else if (intval(($time_difference / $minutes)) > 0) {
-            return get_string('ago', 'core_message', intval($time_difference / $minutes) . ' ' . get_string('minute'));
-        } else if (intval(($time_difference)) > 20) {
-            return get_string('ago', 'core_message', intval($time_difference) . ' ' . get_string('seconds'));
+        if (intval($timedifference / $years) > 1) {
+            return get_string('ago', 'core_message', intval($timedifference / $years).' '.get_string('years'));
+        } else if (intval($timedifference / $years) > 0) {
+            return get_string('ago', 'core_message', intval($timedifference / $years).' '.get_string('year'));
+        } else if (intval($timedifference / $months) > 1) {
+            return get_string('ago', 'core_message', intval($timedifference / $months).' '.get_string('months'));
+        } else if (intval(($timedifference / $months)) > 0) {
+            return get_string('ago', 'core_message', intval($timedifference / $months).' '.get_string('month'));
+        } else if (intval(($timedifference / $days)) > 1) {
+            return get_string('ago', 'core_message', intval($timedifference / $days).' '.get_string('days'));
+        } else if (intval(($timedifference / $days)) > 0) {
+            return get_string('ago', 'core_message', intval($timedifference / $days).' '.get_string('day'));
+        } else if (intval(($timedifference / $hours)) > 1) {
+            return get_string('ago', 'core_message', intval($timedifference / $hours).' '.get_string('hours'));
+        } else if (intval(($timedifference / $hours)) > 0) {
+            return get_string('ago', 'core_message', intval($timedifference / $hours).' '.get_string('hour'));
+        } else if (intval(($timedifference / $minutes)) > 1) {
+            return get_string('ago', 'core_message', intval($timedifference / $minutes).' '.get_string('minutes'));
+        } else if (intval(($timedifference / $minutes)) > 0) {
+            return get_string('ago', 'core_message', intval($timedifference / $minutes).' '.get_string('minute'));
+        } else if (intval(($timedifference)) > 20) {
+            return get_string('ago', 'core_message', intval($timedifference).' '.get_string('seconds'));
         } else {
-            return get_string('ago', 'core_message', get_string('few', 'theme_essential') . get_string('seconds'));
+            return get_string('ago', 'core_message', get_string('few', 'theme_essential').get_string('seconds'));
         }
     }
 
@@ -665,7 +684,8 @@ class core_renderer extends \core_renderer {
      */
     public function custom_menu_goto_bottom() {
         $html = '';
-        if (($this->page->pagelayout == 'course') || ($this->page->pagelayout == 'incourse') || ($this->page->pagelayout == 'admin')) { // Go to bottom.
+        if (($this->page->pagelayout == 'course') || ($this->page->pagelayout == 'incourse') ||
+            ($this->page->pagelayout == 'admin')) { // Go to bottom.
             $menu = new custom_menu();
             $gotobottom = html_writer::tag('i', '', array('class' => 'fa fa-arrow-circle-o-down'));
             $menu->add($gotobottom, new moodle_url('#region-main'), get_string('gotobottom', 'theme_essential'));
@@ -721,7 +741,7 @@ class core_renderer extends \core_renderer {
 
         if (!isloggedin()) {
             if ($this->page->pagelayout != 'login') {
-                $userpic = '<em><i class="fa fa-sign-in"></i>' . get_string('login') . '</em>';
+                $userpic = '<em><i class="fa fa-sign-in"></i>'.get_string('login').'</em>';
                 $usermenu .= html_writer::link($loginurl, $userpic, array('class' => 'loginurl'));
             }
         } else if (isguestuser()) {
@@ -729,12 +749,12 @@ class core_renderer extends \core_renderer {
             $userpic = parent::user_picture($USER, array('link' => false));
             $caret = '<i class="fa fa-caret-right"></i>';
             $userclass = array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown');
-            $usermenu .= html_writer::link($userurl, $userpic . get_string('guest') . $caret, $userclass);
+            $usermenu .= html_writer::link($userurl, $userpic.get_string('guest').$caret, $userclass);
 
             // Render direct logout link
             $usermenu .= html_writer::start_tag('ul', array('class' => 'dropdown-menu pull-right'));
-            $branchlabel = '<em><i class="fa fa-sign-out"></i>' . get_string('logout') . '</em>';
-            $branchurl = new moodle_url('/login/logout.php?sesskey=' . sesskey());
+            $branchlabel = '<em><i class="fa fa-sign-out"></i>'.get_string('logout').'</em>';
+            $branchurl = new moodle_url('/login/logout.php?sesskey='.sesskey());
             $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
 
             // Render Help Link
@@ -753,9 +773,9 @@ class core_renderer extends \core_renderer {
             $userclass = array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown');
 
             if (!empty($USER->alternatename)) {
-                $usermenu .= html_writer::link($userurl, $userpic . $USER->alternatename . $caret, $userclass);
+                $usermenu .= html_writer::link($userurl, $userpic.$USER->alternatename.$caret, $userclass);
             } else {
-                $usermenu .= html_writer::link($userurl, $userpic . $USER->firstname . $caret, $userclass);
+                $usermenu .= html_writer::link($userurl, $userpic.$USER->firstname.$caret, $userclass);
             }
 
             // Start dropdown menu items
@@ -763,22 +783,25 @@ class core_renderer extends \core_renderer {
 
             if (\core\session\manager::is_loggedinas()) {
                 $realuser = \core\session\manager::get_realuser();
-                $branchlabel = '<em><i class="fa fa-key"></i>' . fullname($realuser, true) . get_string('loggedinas', 'theme_essential') . fullname($USER, true) . '</em>';
+                $branchlabel = '<em><i class="fa fa-key"></i>'.fullname($realuser, true).
+                    get_string('loggedinas', 'theme_essential').fullname($USER, true).'</em>';
             } else {
-                $branchlabel = '<em><i class="fa fa-user"></i>' . fullname($USER, true) . '</em>';
+                $branchlabel = '<em><i class="fa fa-user"></i>'.fullname($USER, true).'</em>';
             }
             $branchurl = new moodle_url('/user/profile.php', array('id' => $USER->id));
             $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
 
             if (is_mnet_remote_user($USER) && $idprovider = $DB->get_record('mnet_host', array('id' => $USER->mnethostid))) {
-                $branchlabel = '<em><i class="fa fa-users"></i>' . get_string('loggedinfrom', 'theme_essential') . $idprovider->name . '</em>';
+                $branchlabel = '<em><i class="fa fa-users"></i>'.get_string('loggedinfrom', 'theme_essential').
+                    $idprovider->name.'</em>';
                 $branchurl = new moodle_url($idprovider->wwwroot);
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
 
             if (is_role_switched($course->id)) { // Has switched roles
                 $branchlabel = '<em><i class="fa fa-users"></i>' . get_string('switchrolereturn') . '</em>';
-                $branchurl = new moodle_url('/course/switchrole.php', array('id' => $course->id, 'sesskey' => sesskey(), 'switchrole' => 0, 'returnurl' => $this->page->url->out_as_local_url(false)));
+                $branchurl = new moodle_url('/course/switchrole.php', array('id' => $course->id, 'sesskey' => sesskey(),
+                    'switchrole' => 0, 'returnurl' => $this->page->url->out_as_local_url(false)));
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
 
@@ -789,32 +812,32 @@ class core_renderer extends \core_renderer {
 
             // Output Calendar link if user is allowed to edit own calendar entries
             if (has_capability('moodle/calendar:manageownentries', $context)) {
-                $branchlabel = '<em><i class="fa fa-calendar"></i>' . get_string('pluginname', 'block_calendar_month') . '</em>';
+                $branchlabel = '<em><i class="fa fa-calendar"></i>'.get_string('pluginname', 'block_calendar_month').'</em>';
                 $branchurl = new moodle_url('/calendar/view.php');
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
 
             // Check if messaging is enabled.
             if (!empty($CFG->messaging)) {
-                $branchlabel = '<em><i class="fa fa-envelope"></i>' . get_string('pluginname', 'block_messages') . '</em>';
+                $branchlabel = '<em><i class="fa fa-envelope"></i>'.get_string('pluginname', 'block_messages').'</em>';
                 $branchurl = new moodle_url('/message/index.php');
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
 
             // Check if user is allowed to manage files
             if (has_capability('moodle/user:manageownfiles', $context)) {
-                $branchlabel = '<em><i class="fa fa-file"></i>' . get_string('privatefiles', 'block_private_files') . '</em>';
+                $branchlabel = '<em><i class="fa fa-file"></i>'.get_string('privatefiles', 'block_private_files').'</em>';
                 $branchurl = new moodle_url('/user/files.php');
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
 
             // Check if user is allowed to view discussions
             if (has_capability('mod/forum:viewdiscussion', $context)) {
-                $branchlabel = '<em><i class="fa fa-list-alt"></i>' . get_string('forumposts', 'mod_forum') . '</em>';
+                $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('forumposts', 'mod_forum').'</em>';
                 $branchurl = new moodle_url('/mod/forum/user.php', array('id' => $USER->id));
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
 
-                $branchlabel = '<em><i class="fa fa-list"></i>' . get_string('discussions', 'mod_forum') . '</em>';
+                $branchlabel = '<em><i class="fa fa-list"></i>'.get_string('discussions', 'mod_forum').'</em>';
                 $branchurl = new moodle_url('/mod/forum/user.php', array('id' => $USER->id, 'mode' => 'discussions'));
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
 
@@ -823,34 +846,35 @@ class core_renderer extends \core_renderer {
 
             // Output user grade links course sensitive, workaround for frontpage, selecting first enrolled course
             if ($course->id == SITEID) {
-                $branchlabel = '<em><i class="fa fa-list-alt"></i>' . get_string('mygrades', 'theme_essential') . '</em>';
-                $branchurl = new moodle_url('/grade/report/overview/index.php' , array('id' => $course->id, 'userid' => $USER->id));
+                $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('mygrades', 'theme_essential').'</em>';
+                $branchurl = new moodle_url('/grade/report/overview/index.php', array('id' => $course->id, 'userid' => $USER->id));
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             } else {
                 if (has_capability('gradereport/overview:view', $context)) {
-                    $branchlabel = '<em><i class="fa fa-list-alt"></i>' . get_string('mygrades', 'theme_essential') . '</em>';
-                    $branchurl = new moodle_url('/grade/report/overview/index.php' , array('id' => $course->id, 'userid' => $USER->id));
+                    $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('mygrades', 'theme_essential').'</em>';
+                    $branchurl =
+                        new moodle_url('/grade/report/overview/index.php', array('id' => $course->id, 'userid' => $USER->id));
                     $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
                 }
 
                 if (has_capability('gradereport/user:view', $context)) {
                     // In Course also output Course grade links
-                    $branchlabel = '<em><i class="fa fa-list-alt"></i>' . get_string('coursegrades', 'theme_essential') . '</em>';
-                    $branchurl = new moodle_url('/grade/report/user/index.php' , array('id' => $course->id, 'userid' => $USER->id));
+                    $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('coursegrades', 'theme_essential').'</em>';
+                    $branchurl = new moodle_url('/grade/report/user/index.php', array('id' => $course->id, 'userid' => $USER->id));
                     $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
                 }
             }
 
             // Check if badges are enabled.
             if (!empty($CFG->enablebadges) && has_capability('moodle/badges:manageownbadges', $context)) {
-                $branchlabel = '<em><i class="fa fa-certificate"></i>' . get_string('badges') . '</em>';
+                $branchlabel = '<em><i class="fa fa-certificate"></i>'.get_string('badges').'</em>';
                 $branchurl = new moodle_url('/badges/mybadges.php');
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
             $usermenu .= html_writer::empty_tag('hr', array('class' => 'sep'));
 
             // Render direct logout link
-            $branchlabel = '<em><i class="fa fa-sign-out"></i>' . get_string('logout') . '</em>';
+            $branchlabel = '<em><i class="fa fa-sign-out"></i>'.get_string('logout').'</em>';
             if (\core\session\manager::is_loggedinas()) {
                 $branchurl = new moodle_url('/course/loginas.php', array('id' => $course->id, 'sesskey' => sesskey()));
             } else {
@@ -880,35 +904,38 @@ class core_renderer extends \core_renderer {
         if (!\theme_essential\toolbox::get_setting('helplinktype')) {
             return false;
         }
-        $branchlabel = '<em><i class="fa fa-question-circle"></i>' . get_string('help') . '</em>';
+        $branchlabel = '<em><i class="fa fa-question-circle"></i>'.get_string('help').'</em>';
         $branchurl = '';
         $target = '';
 
         if (\theme_essential\toolbox::get_setting('helplinktype') === '1') {
-            if (\theme_essential\toolbox::get_setting('helplink') && filter_var(\theme_essential\toolbox::get_setting('helplink'), FILTER_VALIDATE_EMAIL)) {
-                $branchurl = 'mailto:' . \theme_essential\toolbox::get_setting('helplink') . '?cc=' . $USER->email;
+            if (\theme_essential\toolbox::get_setting('helplink') &&
+                    filter_var(\theme_essential\toolbox::get_setting('helplink'), FILTER_VALIDATE_EMAIL)) {
+                $branchurl = 'mailto:' . \theme_essential\toolbox::get_setting('helplink').'?cc='.$USER->email;
             } else if ($CFG->supportemail && filter_var($CFG->supportemail, FILTER_VALIDATE_EMAIL)) {
-                $branchurl = 'mailto:' . $CFG->supportemail . '?cc=' . $USER->email;
+                $branchurl = 'mailto:'.$CFG->supportemail.'?cc='.$USER->email;
             } else {
                 if (is_siteadmin()) {
                     $branchurl = preg_replace("(https?:)", "", $CFG->wwwroot).'/admin/settings.php?section=theme_essential_header';
                 }
-                $branchlabel = '<em><i class="fa fa-exclamation-triangle red"></i>' . get_string('invalidemail') . '</em>';
+                $branchlabel = '<em><i class="fa fa-exclamation-triangle red"></i>'.get_string('invalidemail').'</em>';
             }
         }
 
         if (\theme_essential\toolbox::get_setting('helplinktype') === '2') {
-            if (\theme_essential\toolbox::get_setting('helplink') && filter_var(\theme_essential\toolbox::get_setting('helplink'), FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED)) {
+            if (\theme_essential\toolbox::get_setting('helplink') &&
+                    filter_var(\theme_essential\toolbox::get_setting('helplink'), FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED)) {
                 $branchurl = \theme_essential\toolbox::get_setting('helplink');
                 $target = '_blank';
-            } else if ((!\theme_essential\toolbox::get_setting('helplink')) && (filter_var($CFG->supportpage, FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED))) {
+            } else if ((!\theme_essential\toolbox::get_setting('helplink')) &&
+                (filter_var($CFG->supportpage, FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED))) {
                 $branchurl = $CFG->supportpage;
                 $target = '_blank';
             } else {
                 if (is_siteadmin()) {
                     $branchurl = preg_replace("(https?:)", "", $CFG->wwwroot).'/admin/settings.php?section=theme_essential_header';
                 }
-                $branchlabel = '<em><i class="fa fa-exclamation-triangle red"></i>' . get_string('invalidurl', 'error') . '</em>';
+                $branchlabel = '<em><i class="fa fa-exclamation-triangle red"></i>'.get_string('invalidurl', 'error').'</em>';
             }
 
         }
@@ -926,35 +953,36 @@ class core_renderer extends \core_renderer {
         global $USER, $CFG;
         $label = '<em><i class="fa fa-cog"></i>' . get_string('preferences') . '</em>';
         $preferences = html_writer::start_tag('li', array('class' => 'dropdown-submenu preferences'));
-        $preferences .= html_writer::link(new moodle_url('#'), $label, array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown'));
+        $preferences .= html_writer::link(new moodle_url('#'), $label,
+            array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown'));
         $preferences .= html_writer::start_tag('ul', array('class' => 'dropdown-menu'));
 
-        $branchlabel = '<em><i class="fa fa-user"></i>' . get_string('user', 'moodle') . '</em>';
+        $branchlabel = '<em><i class="fa fa-user"></i>'.get_string('user', 'moodle').'</em>';
         $branchurl = new moodle_url('/user/preferences.php', array('userid' => $USER->id));
         $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         // Check if user is allowed to edit profile
         if (has_capability('moodle/user:editownprofile', $context)) {
-            $branchlabel = '<em><i class="fa fa-info-circle"></i>' . get_string('editmyprofile') . '</em>';
+            $branchlabel = '<em><i class="fa fa-info-circle"></i>'.get_string('editmyprofile').'</em>';
             $branchurl = new moodle_url('/user/edit.php', array('id' => $USER->id));
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
         if (has_capability('moodle/user:changeownpassword', $context)) {
-            $branchlabel = '<em><i class="fa fa-key"></i>' . get_string('changepassword') . '</em>';
+            $branchlabel = '<em><i class="fa fa-key"></i>'.get_string('changepassword').'</em>';
             $branchurl = new moodle_url('/login/change_password.php');
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
         if (has_capability('moodle/user:editownmessageprofile', $context)) {
-            $branchlabel = '<em><i class="fa fa-comments"></i>' . get_string('message', 'message') . '</em>';
+            $branchlabel = '<em><i class="fa fa-comments"></i>'.get_string('message', 'message').'</em>';
             $branchurl = new moodle_url('/message/edit.php', array('id' => $USER->id));
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
         if ($CFG->enableblogs) {
-            $branchlabel = '<em><i class="fa fa-rss-square"></i>' . get_string('blog', 'blog') . '</em>';
+            $branchlabel = '<em><i class="fa fa-rss-square"></i>'.get_string('blog', 'blog').'</em>';
             $branchurl = new moodle_url('/blog/preferences.php');
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
         if ($CFG->enablebadges && has_capability('moodle/badges:manageownbadges', $context)) {
-            $branchlabel = '<em><i class="fa fa-certificate"></i>' . get_string('badgepreferences', 'theme_essential') . '</em>';
+            $branchlabel = '<em><i class="fa fa-certificate"></i>'.get_string('badgepreferences', 'theme_essential').'</em>';
             $branchurl = new moodle_url('/badges/preferences.php');
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
@@ -999,7 +1027,7 @@ class core_renderer extends \core_renderer {
             return html_writer::tag('li', html_writer::tag('a', $tab->text), array('class' => 'disabled'));
         } else {
             if (!($tab->link instanceof moodle_url)) {
-                // backward compartibility when link was passed as quoted string
+                // Backward compartibility when link was passed as quoted string.
                 $link = "<a href=\"$tab->link\" title=\"$tab->title\">$tab->text</a>";
             } else {
                 $link = html_writer::link($tab->link, $tab->text, array('title' => $tab->title));
@@ -1018,7 +1046,7 @@ class core_renderer extends \core_renderer {
             if (!isset($icon->attributes['alt'])) {
                 $icon->attributes['alt'] = '';
             }
-            $newicon = self::replace_moodle_icon($icon->pix, $icon->attributes['alt']) . parent::render_pix_icon($icon) . "</i>";
+            $newicon = self::replace_moodle_icon($icon->pix, $icon->attributes['alt']).parent::render_pix_icon($icon)."</i>";
             return $newicon;
         } else {
             return parent::render_pix_icon($icon);
@@ -1117,7 +1145,7 @@ class core_renderer extends \core_renderer {
             $icon = 'fa-edit';
         }
         return html_writer::tag('a', html_writer::start_tag('i', array('class' => $icon . ' fa fa-fw')) .
-            html_writer::end_tag('i') . $title, array('href' => $url, 'class' => 'btn ' . $btn, 'title' => $title));
+            html_writer::end_tag('i').$title, array('href' => $url, 'class' => 'btn '.$btn, 'title' => $title));
     }
 
     public function render_social_network($socialnetwork) {
@@ -1135,12 +1163,12 @@ class core_renderer extends \core_renderer {
             $socialhtml = html_writer::start_tag('li');
             $socialhtml .= html_writer::start_tag('button', array('type' => "button",
                 'class' => 'socialicon ' . $socialnetwork,
-                'onclick' => "window.open('" . \theme_essential\toolbox::get_setting($socialnetwork) . "')",
+                'onclick' => "window.open('".\theme_essential\toolbox::get_setting($socialnetwork)."')",
                 'title' => get_string($socialnetwork, 'theme_essential'),
             ));
-            $socialhtml .= html_writer::start_tag('i', array('class' => 'fa fa-' . $icon));
+            $socialhtml .= html_writer::start_tag('i', array('class' => 'fa fa-'.$icon));
             $socialhtml .= html_writer::end_tag('i');
-            $socialhtml .= html_writer::start_span('sr-only') . html_writer::end_span();
+            $socialhtml .= html_writer::start_span('sr-only').html_writer::end_span();
             $socialhtml .= html_writer::end_tag('button');
             $socialhtml .= html_writer::end_tag('li');
 
@@ -1180,7 +1208,8 @@ class core_renderer extends \core_renderer {
                 if ($editing) {
                     $attributes['class'] .= ' footer-edit';
                 }
-                $output = html_writer::tag($tag, $this->essential_blocks_for_region($displayregion, $footer, $editing), $attributes);
+                $output = html_writer::tag($tag,
+                    $this->essential_blocks_for_region($displayregion, $footer, $editing), $attributes);
             } else {
                 $output = html_writer::tag($tag, $this->blocks_for_region($displayregion), $attributes);
             }
@@ -1216,8 +1245,7 @@ class core_renderer extends \core_renderer {
                 $zones[] = $block->title;
             }
 
-            /*
-             * When editing we want all the blocks to be the same as side-pre / side-post so set by CSS:
+            /* When editing we want all the blocks to be the same as side-pre / side-post so set by CSS:
              *
              * aside.footer-edit .block {
              *     .footer-fluid-span(3);
@@ -1268,8 +1296,8 @@ class core_renderer extends \core_renderer {
                         $currentrow = $currentrequiredrow;
                     }
 
-                    // 'desktop-first-column' done in CSS with ':first-of-type' and ':nth-of-type'.
-                    // 'spanX' done in CSS with calculated special width class as fixed at 'span3' for all.
+                    // Class 'desktop-first-column' done in CSS with ':first-of-type' and ':nth-of-type'.
+                    // Class 'spanX' done in CSS with calculated special width class as fixed at 'span3' for all.
                     $bc->attributes['class'] .= ' span' . $span;
                 }
 
@@ -1279,7 +1307,7 @@ class core_renderer extends \core_renderer {
                 } else if ($bc instanceof block_move_target) {
                     $output .= $this->block_move_target($bc, $zones, $lastblock);
                 } else {
-                    throw new coding_exception('Unexpected type of thing (' . get_class($bc) . ') found in list of block contents.');
+                    throw new coding_exception('Unexpected type of thing ('.get_class($bc).') found in list of block contents.');
                 }
             }
             if (!$editing) {
@@ -1322,7 +1350,7 @@ class core_renderer extends \core_renderer {
         global $CFG;
         if ($this->page->user_is_editing() && is_siteadmin()) {
             $url = preg_replace("(https?:)", "", $CFG->wwwroot . '/admin/settings.php?section=');
-            return '<a class="btn btn-success" href="' . $url . $section . '">' . get_string('edit') . '</a>';
+            return '<a class="btn btn-success" href="'.$url.$section.'">'.get_string('edit').'</a>';
         }
         return null;
     }
@@ -1337,16 +1365,16 @@ class core_renderer extends \core_renderer {
                     return false;
                 break;
                 case 1:
-                    $title = '<a class="brand" href="' . $url . '">' . format_string($SITE->fullname, true,
-                                    array('context' => context_course::instance(SITEID))) . '</a>';
+                    $title = '<a class="brand" href="'.$url.'">'.format_string($SITE->fullname, true,
+                                    array('context' => context_course::instance(SITEID))).'</a>';
                     break;
                 case 2:
-                    $title = '<a class="brand" href="' . $url . '">' . format_string($SITE->shortname, true,
-                                    array('context' => context_course::instance(SITEID))) . '</a>';
+                    $title = '<a class="brand" href="'.$url.'">'.format_string($SITE->shortname, true,
+                                    array('context' => context_course::instance(SITEID))).'</a>';
                     break;
                 default:
-                    $title = '<a class="brand" href="' . $url . '">' . format_string($SITE->shortname, true,
-                                    array('context' => context_course::instance(SITEID))) . '</a>';
+                    $title = '<a class="brand" href="'.$url.'">' . format_string($SITE->shortname, true,
+                                    array('context' => context_course::instance(SITEID))).'</a>';
                     break;
             }
         } else if ($location === 'header') {
@@ -1355,22 +1383,22 @@ class core_renderer extends \core_renderer {
                     return false;
                     break;
                 case 1:
-                    $title = '<h1 id="title">' . format_string($SITE->fullname, true,
-                                    array('context' => context_course::instance(SITEID))) . '</h1>';
+                    $title = '<h1 id="title">'.format_string($SITE->fullname, true,
+                                    array('context' => context_course::instance(SITEID))).'</h1>';
                     break;
                 case 2:
-                    $title = '<h1 id="title">' . format_string($SITE->shortname, true,
-                                    array('context' => context_course::instance(SITEID))) . '</h1>';
+                    $title = '<h1 id="title">'.format_string($SITE->shortname, true,
+                                    array('context' => context_course::instance(SITEID))).'</h1>';
                     break;
                 case 3:
-                    $title = '<h1 id="smalltitle">' . format_string($SITE->fullname, true,
-                                    array('context' => context_course::instance(SITEID))) . '</h2>';
-                    $title .= '<h2 id="subtitle">' . strip_tags($SITE->summary) . '</h3>';
+                    $title = '<h1 id="smalltitle">'.format_string($SITE->fullname, true,
+                                    array('context' => context_course::instance(SITEID))).'</h2>';
+                    $title .= '<h2 id="subtitle">'.strip_tags($SITE->summary).'</h3>';
                     break;
                 case 4:
-                    $title = '<h1 id="smalltitle">' . format_string($SITE->shortname, true,
-                                    array('context' => context_course::instance(SITEID))) . '</h2>';
-                    $title .= '<h2 id="subtitle">' . strip_tags($SITE->summary) . '</h3>';
+                    $title = '<h1 id="smalltitle">'.format_string($SITE->shortname, true,
+                                    array('context' => context_course::instance(SITEID))).'</h2>';
+                    $title .= '<h2 id="subtitle">'.strip_tags($SITE->summary).'</h3>';
                     break;
                 default:
                     break;
@@ -1411,25 +1439,25 @@ class core_renderer extends \core_renderer {
         if ($colcount != 0) {
             $thespan = 12 / $colcount;
             if (isset($param['realtime'])) {
-                $html .= html_writer::start_tag('div', array('class' => 'span' . $thespan));
-                $html .= html_writer::tag('var', round($param['realtime'], 2) . ' ' . get_string('seconds'), array('id' => 'load'));
+                $html .= html_writer::start_tag('div', array('class' => 'span'.$thespan));
+                $html .= html_writer::tag('var', round($param['realtime'], 2).' '.get_string('seconds'), array('id' => 'load'));
                 $html .= html_writer::span(get_string('loadtime', 'theme_essential'));
                 $html .= html_writer::end_tag('div');
             }
             if (isset($param['memory_total'])) {
-                $html .= html_writer::start_tag('div', array('class' => 'span' . $thespan));
+                $html .= html_writer::start_tag('div', array('class' => 'span'.$thespan));
                 $html .= html_writer::tag('var', display_size($param['memory_total']), array('id' => 'memory'));
                 $html .= html_writer::span(get_string('memused', 'theme_essential'));
                 $html .= html_writer::end_tag('div');
             }
             if (isset($param['includecount'])) {
-                $html .= html_writer::start_tag('div', array('class' => 'span' . $thespan));
+                $html .= html_writer::start_tag('div', array('class' => 'span'.$thespan));
                 $html .= html_writer::tag('var', $param['includecount'], array('id' => 'included'));
                 $html .= html_writer::span(get_string('included', 'theme_essential'));
                 $html .= html_writer::end_tag('div');
             }
             if (isset($param['dbqueries'])) {
-                $html .= html_writer::start_tag('div', array('class' => 'span' . $thespan));
+                $html .= html_writer::start_tag('div', array('class' => 'span'.$thespan));
                 $html .= html_writer::tag('var', $param['dbqueries'], array('id' => 'dbqueries'));
                 $html .= html_writer::span(get_string('dbqueries', 'theme_essential'));
                 $html .= html_writer::end_tag('div');
@@ -1463,31 +1491,31 @@ class core_renderer extends \core_renderer {
             if ($colcountmax != 0) {
                 $thespanmax = 12 / $colcountmax;
                 if (isset($param['serverload'])) {
-                    $html .= html_writer::start_tag('div', array('class' => 'span' . $thespanmax));
+                    $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
                     $html .= html_writer::tag('var', $param['serverload'], array('id' => 'load'));
                     $html .= html_writer::span(get_string('serverload', 'theme_essential'));
                     $html .= html_writer::end_tag('div');
                 }
                 if (isset($param['memory_peak'])) {
-                    $html .= html_writer::start_tag('div', array('class' => 'span' . $thespanmax));
+                    $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
                     $html .= html_writer::tag('var', display_size($param['memory_peak']), array('id' => 'peakmemory'));
                     $html .= html_writer::span(get_string('peakmem', 'theme_essential'));
                     $html .= html_writer::end_tag('div');
                 }
                 if (isset($param['cachesused'])) {
-                    $html .= html_writer::start_tag('div', array('class' => 'span' . $thespanmax));
+                    $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
                     $html .= html_writer::tag('var', $param['cachesused'], array('id' => 'cache'));
                     $html .= html_writer::span(get_string('cachesused', 'theme_essential'));
                     $html .= html_writer::end_tag('div');
                 }
                 if (isset($param['sessionsize'])) {
-                    $html .= html_writer::start_tag('div', array('class' => 'span' . $thespanmax));
+                    $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
                     $html .= html_writer::tag('var', $param['sessionsize'], array('id' => 'session'));
                     $html .= html_writer::span(get_string('sessionsize', 'theme_essential'));
                     $html .= html_writer::end_tag('div');
                 }
                 if (isset($param['dbtime'])) {
-                    $html .= html_writer::start_tag('div', array('class' => 'span' . $thespanmax));
+                    $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
                     $html .= html_writer::tag('var', $param['dbtime'], array('id' => 'dbtime'));
                     $html .= html_writer::span(get_string('dbtime', 'theme_essential'));
                     $html .= html_writer::end_tag('div');
@@ -1511,20 +1539,13 @@ class core_renderer extends \core_renderer {
         if (($CFG->version < 2015051100.00) || ($CFG->version >= 2015060200.00)) {
             $result = '<div class="useralerts alert alert-error">';
             $result .= '<a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>';
-            $result .= '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-warning fa-stack-1x fa-inverse"></i></span>';
+            $result .= '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i>';
+            $result .= '<i class="fa fa-warning fa-stack-1x fa-inverse"></i></span>';
             $result .= '<span class="title">'.get_string('versionalerttitle', 'theme_essential').'</span><br />'.
-                       get_string('versionalerttext1', 'theme_essential').'<br />'.get_string('versionalerttext2', 'theme_essential');
+                get_string('versionalerttext1', 'theme_essential').'<br />'.
+                get_string('versionalerttext2', 'theme_essential');
             $result .= '</div>';
         }
-
-        // Remove when production version.
-        /*
-        $result .= '<div class="useralerts alert alert-error">';
-        $result .= '<a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>';
-        $result .= '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-warning fa-stack-1x fa-inverse"></i></span>';
-        $result .= '<span class="title">Beta version</span><br />Development beta version for testing only, do not use on a production server.';
-        $result .= '</div>';
-        */
 
         return $result;
     }

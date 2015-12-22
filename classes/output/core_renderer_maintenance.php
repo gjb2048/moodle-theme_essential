@@ -28,7 +28,7 @@
  * @copyright   2013 Julian Ridden
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
- 
+
 /**
  * Overridden core maintenance renderer.
  *

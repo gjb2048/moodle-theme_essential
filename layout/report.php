@@ -29,12 +29,7 @@ require_once(\theme_essential\toolbox::get_tile_file('header'));
 ?>
 
 <div id="page" class="container-fluid">
-    <div id="page-navbar" class="clearfix row-fluid">
-        <div
-            class="breadcrumb-nav pull-<?php echo ($left) ? 'left' : 'right'; ?>"><?php echo $OUTPUT->navbar(); ?></div>
-        <nav
-            class="breadcrumb-button pull-<?php echo ($left) ? 'right' : 'left'; ?>"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-    </div>
+    <?php require_once(\theme_essential\toolbox::get_tile_file('pagenavbar')); ?>
     <section role="main-content">
         <!-- Start Main Regions -->
         <div id="page-content" class="row-fluid">

@@ -5,6 +5,7 @@ New in 2.9.1.5
 - FIX: Issue #586: Fatal error on maintenance page.
 - FIX: Issue #587: Slidecaption with wrong color and not aligned.
 - FIX: Space for active indicator in slide show.
+- FIX: Various tidy ups from Travis CI report.
 - NEW: Move the history to CHANGES.txt as per: https://docs.moodle.org/dev/Plugin_files#CHANGES.
 - NEW: Travis CI: https://travis-ci.org/gjb2048/moodle-theme_essential.
 
