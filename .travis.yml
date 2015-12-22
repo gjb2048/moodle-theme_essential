@@ -42,7 +42,7 @@ before_script:
       if [ "$INSTALL" = 'true' -o "$PHPUNIT" = 'true' ];
       then
         # Copy generic configuration in place.
-        cp config-dist.php config.php ;
+        cp ../../config-dist.php ../../config.php ;
 
         # Create the moodledata directory.
         mkdir -p "$HOME"/roots/base
@@ -51,20 +51,20 @@ before_script:
         sed -i \
           -e "s%= 'moodle'%= 'travis_ci_test'%" \
           -e "s%= 'password'%= ''%" \
-          config.php ;
+          ../../config.php ;
 
         # The wwwroot and dataroot.
         sed -i \
           -e "s%http://example.com/moodle%http://localhost%" \
           -e "s%/home/example/moodledata%/home/travis/roots/base%" \
-          config.php ;
+          ../../config.php ;
 
         if [ "$DB" = 'pgsql' ];
         then
           # Postgres-specific setup.
           sed -i \
             -e "s%= 'username'%= 'postgres'%" \
-            config.php ;
+            ../../config.php ;
 
           psql -c 'CREATE DATABASE travis_ci_test;' -U postgres;
         fi
@@ -75,7 +75,7 @@ before_script:
           sed -i \
             -e "s%= 'pgsql'%= 'mysqli'%" \
             -e "s%= 'username'%= 'travis'%" \
-            config.php;
+            ../../config.php;
 
           mysql -u root -e 'SET GLOBAL innodb_file_format=barracuda;' ;
           mysql -u root -e 'SET GLOBAL innodb_file_per_table=ON;' ;
@@ -91,10 +91,10 @@ before_script:
           sed -i \
             -e "/require_once/i \\\$CFG->phpunit_dataroot = '\/home\/travis\/roots\/phpunit';" \
             -e "/require_once/i \\\$CFG->phpunit_prefix = 'p_';" \
-            config.php ;
+            ../../config.php ;
 
           # Initialise PHPUnit for Moodle.
-          php admin/tool/phpunit/cli/init.php
+          php ../../admin/tool/phpunit/cli/init.php
         fi
       fi
 
@@ -105,7 +105,7 @@ script:
     - >
       if [ "$PHPUNIT" = 'true' ];
       then
-        vendor/bin/phpunit;
+        ../../vendor/bin/phpunit;
       fi
 
   - moodle-plugin-ci phplint
