@@ -97,7 +97,7 @@ trait format_renderer_toolbox {
 
         // Can we view the section in question?
         if (!($sectioninfo = $modinfo->get_section_info($displaysection))) {
-            // This section doesn't exist
+            // This section doesn't exist.
             print_error('unknowncoursesection', 'error', null, $course->fullname);
             return false;
         }
@@ -124,7 +124,7 @@ trait format_renderer_toolbox {
             echo $this->end_section_list();
         }
 
-        // Start single-section div
+        // Start single-section div.
         echo \html_writer::start_tag('div', array('class' => 'single-section'));
 
         // The requested section page.
@@ -133,7 +133,7 @@ trait format_renderer_toolbox {
         // Title with section navigation links.
         $sectionnavlinks = $this->get_nav_links($course, $modinfo->get_section_info_all(), $displaysection);
 
-        // Construct navigation links
+        // Construct navigation links.
         $sectionnav = \html_writer::start_tag('nav', array('class' => 'section-navigation'));
         $sectionnav .= $sectionnavlinks['previous'];
         $sectionnav .= $sectionnavlinks['next'];
@@ -141,13 +141,13 @@ trait format_renderer_toolbox {
         $sectionnav .= \html_writer::end_tag('nav');
         $sectionnav .= \html_writer::tag('div', '', array('class' => 'bor'));
 
-        // Output Section Navigation
+        // Output Section Navigation.
         echo $sectionnav;
 
-        // Define the Section Title
+        // Define the Section Title.
         $sectiontitle = '';
         $sectiontitle .= \html_writer::start_tag('div', array('class' => 'section-title'));
-        // Title attributes
+        // Title attributes.
         $titleattr = 'title';
         if (!$thissection->visible) {
             $titleattr .= ' dimmed_text';
@@ -160,7 +160,7 @@ trait format_renderer_toolbox {
         // Output the Section Title.
         echo $sectiontitle;
 
-        // Now the list of sections..
+        // Now the list of sections.
         echo $this->start_section_list();
 
         echo $this->section_header($thissection, $course, true, $displaysection);

@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -101,10 +100,9 @@ if (is_siteadmin()) {
     $description = get_string('floatingsubmitbuttonsdesc', 'theme_essential');
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    //$setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Choose breadcrumbstyle
+    // Choose breadcrumbstyle.
     $name = 'theme_essential/breadcrumbstyle';
     $title = get_string('breadcrumbstyle', 'theme_essential');
     $description = get_string('breadcrumbstyledesc', 'theme_essential');
@@ -229,7 +227,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // This is the descriptor for the Footer
+    // This is the descriptor for the Footer.
     $name = 'theme_essential/footercolorinfo';
     $heading = get_string('footercolors', 'theme_essential');
     $information = get_string('footercolorsdesc', 'theme_essential');
@@ -631,7 +629,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Set terminology for dropdown course list
+    // Set terminology for dropdown course list.
     $name = 'theme_essential/mycoursetitle';
     $title = get_string('mycoursetitle', 'theme_essential');
     $description = get_string('mycoursetitledesc', 'theme_essential');
@@ -646,7 +644,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Helplink type
+    // Helplink type.
     $name = 'theme_essential/helplinktype';
     $title = get_string('helplinktype', 'theme_essential');
     $description = get_string('helplinktypedesc', 'theme_essential');
@@ -659,7 +657,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Helplink
+    // Helplink.
     $name = 'theme_essential/helplink';
     $title = get_string('helplink', 'theme_essential');
     $description = get_string('helplinkdesc', 'theme_essential');
@@ -833,14 +831,14 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // This is the descriptor for iOS Icons
+    // This is the descriptor for iOS Icons.
     $name = 'theme_essential/iosiconinfo';
     $heading = get_string('iosicon', 'theme_essential');
     $information = get_string('iosicondesc', 'theme_essential');
     $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
 
-    // iPhone Icon.
+    // The iPhone Icon.
     $name = 'theme_essential/iphoneicon';
     $title = get_string('iphoneicon', 'theme_essential');
     $description = get_string('iphoneicondesc', 'theme_essential');
@@ -848,7 +846,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // iPhone Retina Icon.
+    // The iPhone Retina Icon.
     $name = 'theme_essential/iphoneretinaicon';
     $title = get_string('iphoneretinaicon', 'theme_essential');
     $description = get_string('iphoneretinaicondesc', 'theme_essential');
@@ -856,7 +854,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // iPad Icon.
+    // The iPad Icon.
     $name = 'theme_essential/ipadicon';
     $title = get_string('ipadicon', 'theme_essential');
     $description = get_string('ipadicondesc', 'theme_essential');
@@ -864,7 +862,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // iPad Retina Icon.
+    // The iPad Retina Icon.
     $name = 'theme_essential/ipadretinaicon';
     $title = get_string('ipadretinaicon', 'theme_essential');
     $description = get_string('ipadretinaicondesc', 'theme_essential');
@@ -877,7 +875,7 @@ if (is_siteadmin()) {
 
     /* Font Settings */
     $temp = new admin_settingpage('theme_essential_font', get_string('fontsettings', 'theme_essential'));
-    // This is the descriptor for the font settings
+    // This is the descriptor for the font settings.
     $name = 'theme_essential/fontheading';
     $heading = get_string('fontheadingsub', 'theme_essential');
     $information = get_string('fontheadingdesc', 'theme_essential');
@@ -898,7 +896,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Heading font name
+    // Heading font name.
     $name = 'theme_essential/fontnameheading';
     $title = get_string('fontnameheading', 'theme_essential');
     $description = get_string('fontnameheadingdesc', 'theme_essential');
@@ -907,7 +905,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Text font name
+    // Text font name.
     $name = 'theme_essential/fontnamebody';
     $title = get_string('fontnamebody', 'theme_essential');
     $description = get_string('fontnamebodydesc', 'theme_essential');
@@ -917,7 +915,7 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
     if (get_config('theme_essential', 'fontselect') === "2") {
-        // Google Font Character Sets
+        // Google Font Character Sets.
         $name = 'theme_essential/fontcharacterset';
         $title = get_string('fontcharacterset', 'theme_essential');
         $description = get_string('fontcharactersetdesc', 'theme_essential');
@@ -941,7 +939,7 @@ if (is_siteadmin()) {
             $woff2 = false;
         }
 
-        // This is the descriptor for the font files
+        // This is the descriptor for the font files.
         $name = 'theme_essential/fontfiles';
         $heading = get_string('fontfiles', 'theme_essential');
         $information = get_string('fontfilesdesc', 'theme_essential');
@@ -1077,10 +1075,10 @@ if (is_siteadmin()) {
     $name = 'theme_essential/perfinfo';
     $title = get_string('perfinfo', 'theme_essential');
     $description = get_string('perfinfodesc', 'theme_essential');
-    $perf_max = get_string('perf_max', 'theme_essential');
-    $perf_min = get_string('perf_min', 'theme_essential');
+    $perfmax = get_string('perf_max', 'theme_essential');
+    $perfmin = get_string('perf_min', 'theme_essential');
     $default = 'min';
-    $choices = array('min' => $perf_min, 'max' => $perf_max);
+    $choices = array('min' => $perfmin, 'max' => $perfmax);
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -1114,7 +1112,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Frontpage Content
+    // Frontpage Content.
     $name = 'theme_essential/frontcontentarea';
     $title = get_string('frontcontentarea', 'theme_essential');
     $description = get_string('frontcontentareadesc', 'theme_essential');
@@ -1141,7 +1139,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Toggle Frontpage Middle Blocks
+    // Toggle Frontpage Middle Blocks.
     $name = 'theme_essential/frontpagemiddleblocks';
     $title = get_string('frontpagemiddleblocks', 'theme_essential');
     $description = get_string('frontpagemiddleblocksdesc', 'theme_essential');
@@ -1272,13 +1270,13 @@ if (is_siteadmin()) {
 
     $information = get_string('alertinfodesc', 'theme_essential');
 
-    // This is the descriptor for Alert One
+    // This is the descriptor for Alert One.
     $name = 'theme_essential/alert1info';
     $heading = get_string('alert1', 'theme_essential');
     $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
 
-    // Enable Alert
+    // Enable Alert.
     $name = 'theme_essential/enable1alert';
     $title = get_string('enablealert', 'theme_essential');
     $description = get_string('enablealertdesc', 'theme_essential');
@@ -1291,11 +1289,11 @@ if (is_siteadmin()) {
     $name = 'theme_essential/alert1type';
     $title = get_string('alerttype', 'theme_essential');
     $description = get_string('alerttypedesc', 'theme_essential');
-    $alert_info = get_string('alert_info', 'theme_essential');
-    $alert_warning = get_string('alert_warning', 'theme_essential');
-    $alert_general = get_string('alert_general', 'theme_essential');
+    $alertinfo = get_string('alert_info', 'theme_essential');
+    $alertwarning = get_string('alert_warning', 'theme_essential');
+    $alertgeneral = get_string('alert_general', 'theme_essential');
     $default = 'info';
-    $choices = array('info' => $alert_info, 'error' => $alert_warning, 'success' => $alert_general);
+    $choices = array('info' => $alertinfo, 'error' => $alertwarning, 'success' => $alertgeneral);
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -1318,13 +1316,13 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // This is the descriptor for Alert Two
+    // This is the descriptor for Alert Two.
     $name = 'theme_essential/alert2info';
     $heading = get_string('alert2', 'theme_essential');
     $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
 
-    // Enable Alert
+    // Enable Alert.
     $name = 'theme_essential/enable2alert';
     $title = get_string('enablealert', 'theme_essential');
     $description = get_string('enablealertdesc', 'theme_essential');
@@ -1364,13 +1362,13 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // This is the descriptor for Alert Three
+    // This is the descriptor for Alert Three.
     $name = 'theme_essential/alert3info';
     $heading = get_string('alert3', 'theme_essential');
     $setting = new admin_setting_heading($name, $heading, $information);
     $temp->add($setting);
 
-    // Enable Alert
+    // Enable Alert.
     $name = 'theme_essential/enable3alert';
     $title = get_string('enablealert', 'theme_essential');
     $description = get_string('enablealertdesc', 'theme_essential');
@@ -1383,11 +1381,11 @@ if (is_siteadmin()) {
     $name = 'theme_essential/alert3type';
     $title = get_string('alerttype', 'theme_essential');
     $description = get_string('alerttypedesc', 'theme_essential');
-    $alert_info = get_string('alert_info', 'theme_essential');
-    $alert_warning = get_string('alert_warning', 'theme_essential');
-    $alert_general = get_string('alert_general', 'theme_essential');
+    $alertinfo = get_string('alert_info', 'theme_essential');
+    $alertwarning = get_string('alert_warning', 'theme_essential');
+    $alertgeneral = get_string('alert_general', 'theme_essential');
     $default = 'info';
-    $choices = array('info' => $alert_info, 'error' => $alert_warning, 'success' => $alert_general);
+    $choices = array('info' => $alertinfo, 'error' => $alertwarning, 'success' => $alertgeneral);
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -1601,15 +1599,15 @@ if (is_siteadmin()) {
 
     $numberofslides = get_config('theme_essential', 'numberofslides');
     for ($i = 1; $i <= $numberofslides; $i++) {
-        // This is the descriptor for Slide One
-        $name = 'theme_essential/slide' . $i . 'info';
+        // This is the descriptor for Slide One.
+        $name = 'theme_essential/slide'.$i.'info';
         $heading = get_string('slideno', 'theme_essential', array('slide' => $i));
         $information = get_string('slidenodesc', 'theme_essential', array('slide' => $i));
         $setting = new admin_setting_heading($name, $heading, $information);
         $temp->add($setting);
 
         // Title.
-        $name = 'theme_essential/slide' . $i;
+        $name = 'theme_essential/slide'.$i;
         $title = get_string('slidetitle', 'theme_essential');
         $description = get_string('slidetitledesc', 'theme_essential');
         $default = '';
@@ -1618,15 +1616,15 @@ if (is_siteadmin()) {
         $temp->add($setting);
 
         // Image.
-        $name = 'theme_essential/slide' . $i . 'image';
+        $name = 'theme_essential/slide'.$i.'image';
         $title = get_string('slideimage', 'theme_essential');
         $description = get_string('slideimagedesc', 'theme_essential');
-        $setting = new admin_setting_configstoredfile($name, $title, $description, 'slide' . $i . 'image');
+        $setting = new admin_setting_configstoredfile($name, $title, $description, 'slide'.$i.'image');
         $setting->set_updatedcallback('theme_reset_all_caches');
         $temp->add($setting);
 
         // Caption text.
-        $name = 'theme_essential/slide' . $i . 'caption';
+        $name = 'theme_essential/slide'.$i.'caption';
         $title = get_string('slidecaption', 'theme_essential');
         $description = get_string('slidecaptiondesc', 'theme_essential');
         $default = '';
@@ -1635,7 +1633,7 @@ if (is_siteadmin()) {
         $temp->add($setting);
 
         // URL.
-        $name = 'theme_essential/slide' . $i . 'url';
+        $name = 'theme_essential/slide'.$i.'url';
         $title = get_string('slideurl', 'theme_essential');
         $description = get_string('slideurldesc', 'theme_essential');
         $default = '';
@@ -1644,7 +1642,7 @@ if (is_siteadmin()) {
         $temp->add($setting);
 
         // URL target.
-        $name = 'theme_essential/slide' . $i . 'target';
+        $name = 'theme_essential/slide'.$i.'target';
         $title = get_string('slideurltarget', 'theme_essential');
         $description = get_string('slideurltargetdesc', 'theme_essential');
         $target1 = get_string('slideurltargetself', 'theme_essential');
@@ -1674,7 +1672,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // We only want to output category icon options if the parent setting is enabled
+    // We only want to output category icon options if the parent setting is enabled.
     if (get_config('theme_essential', 'enablecategoryicon')) {
 
         // Default Icon Selector.
@@ -1696,7 +1694,7 @@ if (is_siteadmin()) {
 
         if (get_config('theme_essential', 'enablecustomcategoryicon')) {
 
-            // This is the descriptor for Custom Category Icons
+            // This is the descriptor for Custom Category Icons.
             $name = 'theme_essential/categoryiconinfo';
             $heading = get_string('categoryiconinfo', 'theme_essential');
             $information = get_string('categoryiconinfodesc', 'theme_essential');
@@ -1709,11 +1707,11 @@ if (is_siteadmin()) {
                 $defaultcategoryicon = 'folder-open';
             }
 
-            // Get all category IDs and their pretty names
+            // Get all category IDs and their pretty names.
             require_once($CFG->libdir . '/coursecatlib.php');
             $coursecats = coursecat::make_categories_list();
 
-            // Go through all categories and create the necessary settings
+            // Go through all categories and create the necessary settings.
             foreach ($coursecats as $key => $value) {
 
                 // Category Icons for each category.

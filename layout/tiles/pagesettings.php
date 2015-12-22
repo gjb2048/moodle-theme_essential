@@ -139,7 +139,8 @@ function essential_report_page_has_title() {
         case 'grade-report-overview-index':
             $hastitle = false;
             break;
-        default: break;
+        default:
+            break;
     }
 
     return $hastitle;
@@ -157,7 +158,8 @@ function essential_has_footer_region() {
         case 'mod-quiz-edit':
             $hasregion = true;
             break;
-        default: break;
+        default:
+            break;
     }
 
     return $hasregion;
@@ -166,4 +168,3 @@ function essential_has_footer_region() {
 // Footer.
 $hascopyright = \theme_essential\toolbox::get_setting('copyright', true);
 $hasfootnote = \theme_essential\toolbox::get_setting('footnote', 'format_html');
-

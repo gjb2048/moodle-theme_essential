@@ -303,7 +303,7 @@ class core_renderer extends \core_renderer {
                 $sortorder = 'sortorder';
             }
 
-            // Retrieve courses and add them to the menu when they are visible
+            // Retrieve courses and add them to the menu when they are visible.
             $numcourses = 0;
             if ($courses = enrol_get_my_courses(null, $sortorder . ' ASC')) {
                 foreach ($courses as $course) {
@@ -315,7 +315,7 @@ class core_renderer extends \core_renderer {
                         $branchtitle = format_string($course->shortname);
                         $branchlabel = '<span class="dimmed_text"><i class="fa fa-eye-slash"></i>'.
                             format_string($course->fullname) . '</span>';
-                        $branchurl = new moodle_url('/course/view.php', array('id' =>$course->id));
+                        $branchurl = new moodle_url('/course/view.php', array('id' => $course->id));
                         $branch->add($branchlabel, $branchurl, $branchtitle);
                         $numcourses += 1;
                     }
@@ -355,8 +355,8 @@ class core_renderer extends \core_renderer {
                     new moodle_url($this->page->url, array('essentialcolours' => 'default')), $defaultthemecolorslabel);
                 foreach ($alternativethemes as $alternativethemenumber) {
                     if (\theme_essential\toolbox::get_setting('alternativethemename' . $alternativethemenumber)) {
-                        $alternativethemeslabel =
-                            \theme_essential\toolbox::get_setting('alternativethemename'.$alternativethemenumber);
+                        $alternativethemeslabel = \theme_essential\toolbox::get_setting(
+                            'alternativethemename'.$alternativethemenumber);
                     } else {
                         $alternativethemeslabel = get_string('alternativecolors', 'theme_essential', $alternativethemenumber);
                     }
@@ -417,7 +417,6 @@ class core_renderer extends \core_renderer {
     private function get_course_activities() {
         // A copy of block_activity_modules.
         $course = $this->page->course;
-        $content = new stdClass();
         $modinfo = get_fast_modinfo($course);
         $course = course_get_format($course)->get_course();
         $modfullnames = array();
@@ -566,8 +565,8 @@ class core_renderer extends \core_renderer {
         if ($messagelist['newmessages'] < $maxmessages) {
             $maxmessages = 5 - $messagelist['newmessages'];
 
-            $readmessagesql =
-                "SELECT id, smallmessage, useridfrom, useridto, timecreated, timeread, fullmessageformat,notification, contexturl
+            $readmessagesql = "
+                SELECT id, smallmessage, useridfrom, useridto, timecreated, timeread, fullmessageformat,notification, contexturl
                 FROM {message_read}
                 WHERE useridto = :userid
                 ORDER BY timecreated DESC";
@@ -715,7 +714,7 @@ class core_renderer extends \core_renderer {
                 $html = $this->render_custom_menu($menu);
 
                 if (\theme_essential\toolbox::get_setting('hidedefaulteditingbutton')) {
-                    // unset button on page
+                    // Unset button on page.
                     $this->page->set_button('');
                 }
             }
@@ -728,12 +727,12 @@ class core_renderer extends \core_renderer {
      * @return custom_menu object
      */
     public function custom_menu_user() {
-        // die if executed during install
+        // Die if executed during install.
         if (during_initial_install()) {
             return false;
         }
 
-        global $USER, $CFG, $DB, $SESSION;
+        global $USER, $CFG, $DB;
         $loginurl = get_login_url();
 
         $usermenu = html_writer::start_tag('ul', array('class' => 'nav'));
@@ -751,13 +750,13 @@ class core_renderer extends \core_renderer {
             $userclass = array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown');
             $usermenu .= html_writer::link($userurl, $userpic.get_string('guest').$caret, $userclass);
 
-            // Render direct logout link
+            // Render direct logout link.
             $usermenu .= html_writer::start_tag('ul', array('class' => 'dropdown-menu pull-right'));
             $branchlabel = '<em><i class="fa fa-sign-out"></i>'.get_string('logout').'</em>';
             $branchurl = new moodle_url('/login/logout.php?sesskey='.sesskey());
             $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
 
-            // Render Help Link
+            // Render Help Link.
             $usermenu .= $this->theme_essential_render_helplink();
 
             $usermenu .= html_writer::end_tag('ul');
@@ -766,7 +765,7 @@ class core_renderer extends \core_renderer {
             $course = $this->page->course;
             $context = context_course::instance($course->id);
 
-            // Output Profile link
+            // Output Profile link.
             $userurl = new moodle_url('#');
             $userpic = parent::user_picture($USER, array('link' => false));
             $caret = '<i class="fa fa-caret-right"></i>';
@@ -778,7 +777,7 @@ class core_renderer extends \core_renderer {
                 $usermenu .= html_writer::link($userurl, $userpic.$USER->firstname.$caret, $userclass);
             }
 
-            // Start dropdown menu items
+            // Start dropdown menu items.
             $usermenu .= html_writer::start_tag('ul', array('class' => 'dropdown-menu pull-right'));
 
             if (\core\session\manager::is_loggedinas()) {
@@ -798,19 +797,19 @@ class core_renderer extends \core_renderer {
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
 
-            if (is_role_switched($course->id)) { // Has switched roles
-                $branchlabel = '<em><i class="fa fa-users"></i>' . get_string('switchrolereturn') . '</em>';
+            if (is_role_switched($course->id)) { // Has switched roles.
+                $branchlabel = '<em><i class="fa fa-users"></i>' . get_string('switchrolereturn').'</em>';
                 $branchurl = new moodle_url('/course/switchrole.php', array('id' => $course->id, 'sesskey' => sesskey(),
                     'switchrole' => 0, 'returnurl' => $this->page->url->out_as_local_url(false)));
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
 
-            // Add preferences submenu
+            // Add preferences submenu.
             $usermenu .= $this->theme_essential_render_preferences($context);
 
             $usermenu .= html_writer::empty_tag('hr', array('class' => 'sep'));
 
-            // Output Calendar link if user is allowed to edit own calendar entries
+            // Output Calendar link if user is allowed to edit own calendar entries.
             if (has_capability('moodle/calendar:manageownentries', $context)) {
                 $branchlabel = '<em><i class="fa fa-calendar"></i>'.get_string('pluginname', 'block_calendar_month').'</em>';
                 $branchurl = new moodle_url('/calendar/view.php');
@@ -824,14 +823,14 @@ class core_renderer extends \core_renderer {
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
 
-            // Check if user is allowed to manage files
+            // Check if user is allowed to manage files.
             if (has_capability('moodle/user:manageownfiles', $context)) {
                 $branchlabel = '<em><i class="fa fa-file"></i>'.get_string('privatefiles', 'block_private_files').'</em>';
                 $branchurl = new moodle_url('/user/files.php');
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
 
-            // Check if user is allowed to view discussions
+            // Check if user is allowed to view discussions.
             if (has_capability('mod/forum:viewdiscussion', $context)) {
                 $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('forumposts', 'mod_forum').'</em>';
                 $branchurl = new moodle_url('/mod/forum/user.php', array('id' => $USER->id));
@@ -844,7 +843,7 @@ class core_renderer extends \core_renderer {
                 $usermenu .= html_writer::empty_tag('hr', array('class' => 'sep'));
             }
 
-            // Output user grade links course sensitive, workaround for frontpage, selecting first enrolled course
+            // Output user grade links course sensitive, workaround for frontpage, selecting first enrolled course.
             if ($course->id == SITEID) {
                 $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('mygrades', 'theme_essential').'</em>';
                 $branchurl = new moodle_url('/grade/report/overview/index.php', array('id' => $course->id, 'userid' => $USER->id));
@@ -852,13 +851,13 @@ class core_renderer extends \core_renderer {
             } else {
                 if (has_capability('gradereport/overview:view', $context)) {
                     $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('mygrades', 'theme_essential').'</em>';
-                    $branchurl =
-                        new moodle_url('/grade/report/overview/index.php', array('id' => $course->id, 'userid' => $USER->id));
+                    $branchurl = new moodle_url('/grade/report/overview/index.php',
+                        array('id' => $course->id, 'userid' => $USER->id));
                     $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
                 }
 
                 if (has_capability('gradereport/user:view', $context)) {
-                    // In Course also output Course grade links
+                    // In Course also output Course grade links.
                     $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('coursegrades', 'theme_essential').'</em>';
                     $branchurl = new moodle_url('/grade/report/user/index.php', array('id' => $course->id, 'userid' => $USER->id));
                     $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
@@ -873,7 +872,7 @@ class core_renderer extends \core_renderer {
             }
             $usermenu .= html_writer::empty_tag('hr', array('class' => 'sep'));
 
-            // Render direct logout link
+            // Render direct logout link.
             $branchlabel = '<em><i class="fa fa-sign-out"></i>'.get_string('logout').'</em>';
             if (\core\session\manager::is_loggedinas()) {
                 $branchurl = new moodle_url('/course/loginas.php', array('id' => $course->id, 'sesskey' => sesskey()));
@@ -882,7 +881,7 @@ class core_renderer extends \core_renderer {
             }
             $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
 
-            // Render Help Link
+            // Render Help Link.
             $usermenu .= $this->theme_essential_render_helplink();
 
             $usermenu .= html_writer::end_tag('ul');
@@ -924,7 +923,8 @@ class core_renderer extends \core_renderer {
 
         if (\theme_essential\toolbox::get_setting('helplinktype') === '2') {
             if (\theme_essential\toolbox::get_setting('helplink') &&
-                    filter_var(\theme_essential\toolbox::get_setting('helplink'), FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED)) {
+                    filter_var(\theme_essential\toolbox::get_setting('helplink'),
+                        FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED)) {
                 $branchurl = \theme_essential\toolbox::get_setting('helplink');
                 $target = '_blank';
             } else if ((!\theme_essential\toolbox::get_setting('helplink')) &&
@@ -960,7 +960,7 @@ class core_renderer extends \core_renderer {
         $branchlabel = '<em><i class="fa fa-user"></i>'.get_string('user', 'moodle').'</em>';
         $branchurl = new moodle_url('/user/preferences.php', array('userid' => $USER->id));
         $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
-        // Check if user is allowed to edit profile
+        // Check if user is allowed to edit profile.
         if (has_capability('moodle/user:editownprofile', $context)) {
             $branchlabel = '<em><i class="fa fa-info-circle"></i>'.get_string('editmyprofile').'</em>';
             $branchurl = new moodle_url('/user/edit.php', array('id' => $USER->id));
@@ -1286,7 +1286,8 @@ class core_renderer extends \core_renderer {
                         if ($remainingblocks < $blocksperrow) {
                             $span = 12 / $remainingblocks;
                             if ($span < 1) {
-                                // Should not happen but a fail safe - block will be small so good for screen shots when this happens.
+                                // Should not happen but a fail safe.
+                                // Block will be small so good for screen shots when this happens.
                                 $span = 1;
                             }
                         }

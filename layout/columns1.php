@@ -37,13 +37,13 @@ require_once(\theme_essential\toolbox::get_tile_file('header'));
                 <?php if ($COURSE->id > 1) {
                     echo $OUTPUT->heading(format_string($COURSE->fullname), 1, 'coursetitle');
                     echo '<div class="bor"></div>';
-                }
+}
                 ?>
                 <?php echo $OUTPUT->course_content_header(); ?>
                 <?php echo $OUTPUT->main_content(); ?>
                 <?php if (empty($PAGE->layout_options['nocoursefooter'])) {
                     echo $OUTPUT->course_content_footer();
-                }
+}
                 ?>
             </section>
         </div>

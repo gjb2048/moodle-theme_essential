@@ -52,7 +52,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         if (!$this->enablecategoryicon) {
             return parent::coursecat_category($chelper, $coursecat, $depth);
         }
-        global $CFG, $OUTPUT;
+        global $CFG;
         // Open category tag.
         $classes = array('category');
         if (empty($coursecat->visible)) {
@@ -169,7 +169,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
             $content .= html_writer::end_tag('div'); // Class .summary.
         }
 
-        //Display course overview files.
+        // Display course overview files.
         $contentimages = $contentfiles = '';
         foreach ($course->get_course_overviewfiles() as $file) {
             $isimage = $file->is_valid_image();

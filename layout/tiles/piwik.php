@@ -80,7 +80,8 @@ function theme_essential_insert_analytics_tracking() {
         $cleanurl = \theme_essential\toolbox::get_setting('analyticscleanurl');
 
         if ($imagetrack) {
-            $addition = '<noscript><p><img src="//' . $siteurl . '/piwik.php?idsite=' . $siteid . '" style="border:0" alt="" /></p></noscript>';
+            $addition = '<noscript><p><img src="//'.$siteurl.'/piwik.php?idsite='.$siteid;
+            $addition .= '" style="border:0" alt="" /></p></noscript>';
         } else {
             $addition = '';
         }
@@ -103,19 +104,25 @@ function theme_essential_insert_analytics_tracking() {
         }
 
         if (!is_siteadmin() || $trackadmin) {
-            $tracking = "<script type='text/javascript'>
-                    var _paq = _paq || [];".$doctitle."
-                    _paq.push(['enableLinkTracking']);".$userid."
-                    _paq.push(['trackPageView']);
-                    (function(){
-                        var u=(('https:' == document.location.protocol) ? 'https' : 'http') + '://" . $siteurl . "/';
-                        _paq.push(['setSiteId', " . $siteid . "]);
-                        _paq.push(['setTrackerUrl', u+'piwik.php']);
-                        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.defer=true; g.async=true; g.src=u+'piwik.js';
-                        s.parentNode.insertBefore(g,s);
-                    })();
-                </script>
-                " . $addition;
+            $tracking = "
+<script type='text/javascript'>
+var _paq = _paq || [];".$doctitle."
+_paq.push(['enableLinkTracking']);".$userid."
+_paq.push(['trackPageView']);
+(function(){
+    var u=(('https:' == document.location.protocol) ? 'https' : 'http') + '://" . $siteurl . "/';
+    _paq.push(['setSiteId', " . $siteid . "]);
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    var d=document,
+        g=d.createElement('script'),
+        s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript';
+    g.defer=true;
+    g.async=true;
+    g.src=u+'piwik.js';
+    s.parentNode.insertBefore(g,s);
+})();
+</script>".$addition;
         }
     }
     return $tracking;

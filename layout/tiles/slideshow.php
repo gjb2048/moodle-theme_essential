@@ -31,7 +31,7 @@ if ($numberofslides) {
     $data = array('data' => array('slideinterval' => $slideinterval));
     $PAGE->requires->js_call_amd('theme_essential/carousel', 'init', $data);
 
-    $captionscenter = (\theme_essential\toolbox::get_setting('slidecaptioncentred'))? ' centred' : '';
+    $captionscenter = (\theme_essential\toolbox::get_setting('slidecaptioncentred')) ? ' centred' : '';
     $captionoptions = \theme_essential\toolbox::get_setting('slidecaptionoptions');
 
     switch($captionoptions) {
@@ -55,10 +55,12 @@ if ($numberofslides) {
                 <div class="carousel-inner<?php echo $captionscenter.$captionsbelowclass;?>">
                     <?php for ($slideindex = 1; $slideindex <= $numberofslides; $slideindex++) {
                         echo \theme_essential\toolbox::render_slide($slideindex, $captionoptions);
-                    } ?>
+                    }
+?>
                 </div>
                 <?php echo \theme_essential\toolbox::render_slide_controls($left); ?>
             </div>
         </div>
     </div>
-<?php } ?>
+<?php
+}

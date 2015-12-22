@@ -29,4 +29,3 @@ if ($fontselect === '2') { ?>
 echo $headingfont.'|'.$bodyfont.$fontcharacterset; ?>' rel='stylesheet' type='text/css'>
 <?php
 }
-?>

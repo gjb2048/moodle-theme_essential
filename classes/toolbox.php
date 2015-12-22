@@ -229,7 +229,7 @@ class toolbox {
             $slidecontent .= '<img src="'.$slideimage.'" alt="'.$slideimagealt.'" class="carousel-image">';
             $slidecontent .= '</div>';
 
-            // Output title and caption if either is present
+            // Output title and caption if either is present.
             if ($slidetitle || $slidecaption) {
                 $slidecontent .= '<div class="carousel-caption">';
                 $slidecontent .= '<div class="carousel-caption-inner">';
@@ -312,7 +312,7 @@ class toolbox {
         if (empty($fontname)) {
             $familyreplacement = 'Verdana';
             $facereplacement = '';
-        } else if (\theme_essential\toolbox::get_setting('fontselect') === '3') {
+        } else if (self::get_setting('fontselect') === '3') {
 
             $fontfiles = array();
             $fontfileeot = self::setting_file_url('fontfileeot'.$type, 'fontfileeot'.$type);

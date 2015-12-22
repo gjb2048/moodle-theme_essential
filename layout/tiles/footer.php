@@ -49,7 +49,7 @@ if (empty($PAGE->layout_options['nofooter'])) { ?>
 ?>
                 <?php if ($hasfootnote) {
                     echo '<div class="footnote span12">'.$hasfootnote.'</div>';
-                }
+}
 ?>
             </div>
             <div class="footerperformance row-fluid">
@@ -60,4 +60,3 @@ if (empty($PAGE->layout_options['nofooter'])) { ?>
     <a href="#top" class="back-to-top" ><i class="fa fa-angle-up "></i></a>
 <?php }
 echo $OUTPUT->standard_end_of_body_html();
-?>
