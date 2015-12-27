@@ -52,7 +52,6 @@ class toolbox {
         if (null === $us->corerenderer) {
             $us->corerenderer = $core;
         }
-        $us->corerenderer = $core;
     }
 
     // Moodle CSS file serving.
