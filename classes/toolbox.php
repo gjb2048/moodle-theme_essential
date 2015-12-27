@@ -40,9 +40,18 @@ class toolbox {
         return self::$instance;
     }
 
+    /**
+     * Sets the core_renderer class instance so that when purging all caches and 'theme_xxx_process_css' etc.
+     * the settings are correct.
+     * @param class core_renderer $core Child object of core_renderer class.
+     */
     static public function set_core_renderer($core) {
         $us = self::get_instance();
-        // Set from the initial calling lib.php process_css function.  Must happen before parents.
+        // Set only once from the initial calling lib.php process_css function so that subsequent parent calls do not override it.
+        // Must happen before parents.
+        if (null === $us->corerenderer) {
+            $us->corerenderer = $core;
+        }
         $us->corerenderer = $core;
     }
 
