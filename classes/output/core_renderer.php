@@ -41,6 +41,8 @@ class core_renderer extends \core_renderer {
     public $language = null;
     protected $themeconfig;
 
+    protected $essential = null; // Used for determining if this is a Essential or child of renderer.
+
     /**
      * Constructor
      *

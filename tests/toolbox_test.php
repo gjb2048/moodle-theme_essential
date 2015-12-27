@@ -33,9 +33,26 @@ class theme_essential_toolbox_testcase extends advanced_testcase {
 
     protected $outputus;
 
+    /**
+     * Set protected and private attributes for the purpose of testing.
+     *
+     * @param stdClass $obj The object.
+     * @param string $name Name of the method.
+     * @param any $value Value to set.
+     */
+    protected static function set_property($obj, $name, $value) {
+        // Ref: http://stackoverflow.com/questions/18558183/phpunit-mockbuilder-set-mock-object-internal-property ish.
+        $class = new \ReflectionClass($obj);
+        $property = $class->getProperty($name);
+        $property->setAccessible(true);
+        $property->setValue($obj, $value);
+    }
+
     protected function setup_renderer() {
         global $PAGE;
         $this->outputus = $PAGE->get_renderer('theme_essential', 'core');
+        $toolbox = \theme_essential\toolbox::get_instance();
+        self::set_property($toolbox, 'corerenderer', null);
         \theme_essential\toolbox::set_core_renderer($this->outputus);
     }
 
