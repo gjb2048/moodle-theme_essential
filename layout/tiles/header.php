@@ -57,7 +57,7 @@ echo $OUTPUT->doctype();
                 <!-- HEADER: LOGO AREA -->
                 <div class="<?php echo $logoclass;
                 echo (!$left) ? ' pull-right' : ' pull-left'; ?>">
-                    <?php
+<?php
 if (!$haslogo) {
     echo '<a class="textlogo" href="';
     echo preg_replace("(https?:)", "", $CFG->wwwroot);
@@ -66,7 +66,7 @@ if (!$haslogo) {
     echo '<div class="titlearea">'.$OUTPUT->get_title('header').'</div>';
     echo '</a>';
 } else {
-    echo '<a class="logo" href="'.preg_replace("(https?:)", "", $CFG->wwwroot).'" title="'.print_string('home').'"></a>';
+    echo '<a class="logo" href="'.preg_replace("(https?:)", "", $CFG->wwwroot).'" title="'.get_string('home').'"></a>';
 }
 ?>
                 </div>
