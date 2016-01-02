@@ -1,6 +1,7 @@
 New in 2.9.1.5.1
 ================
 - FIX: Issue #588: Breadcrumb hover colour conflict.
+- FIX: No closing speech mark in header.
 
 New in 2.9.1.5
 ==============

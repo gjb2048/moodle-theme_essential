@@ -61,7 +61,7 @@ echo $OUTPUT->doctype();
 if (!$haslogo) {
     echo '<a class="textlogo" href="';
     echo preg_replace("(https?:)", "", $CFG->wwwroot);
-    echo ">";
+    echo '">';
     echo '<i id="headerlogo" class="fa fa-'.\theme_essential\toolbox::get_setting('siteicon').'"></i>';
     echo '<div class="titlearea">'.$OUTPUT->get_title('header').'</div>';
     echo '</a>';
