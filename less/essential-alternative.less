@@ -75,16 +75,15 @@
                                 &:before {
                                     color: inherit;
                                 }
-                                &:hover, &:focus {
-                                    color: ~"[[setting:alternativethemenavcolor@{index}]]";
-                                }
                             }
                             &:after {
                                 border-left-color: ~"[[setting:alternativethemecolor@{index}]]";;
                             }
-                            &:hover {
-                                color: ~"[[setting:alternativethemenavcolor@{index}]]";
+                            &:hover, &:focus {
                                 background-color: ~"[[setting:alternativethemehovercolor@{index}]]";
+                                a, a:before {
+                                    color: ~"[[setting:alternativethemenavcolor@{index}]]";
+                                }
                             }
                             &:hover:after {
                                 border-left-color: ~"[[setting:alternativethemehovercolor@{index}]]";

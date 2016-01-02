@@ -258,7 +258,7 @@ p.tree_item.branch.emptybranch:focus:before {
   background-color: [[setting:themecolor]];
 }
 .breadcrumb-nav ul.breadcrumb.style1 li a {
-  color: [[setting:themenavcolor]];
+  color: inherit;
 }
 .breadcrumb-nav ul.breadcrumb.style1 li:after {
   border-left-color: [[setting:themecolor]];
@@ -266,8 +266,15 @@ p.tree_item.branch.emptybranch:focus:before {
 .breadcrumb-nav ul.breadcrumb.style1 li:first-of-type a:before {
   color: [[setting:themenavcolor]];
 }
-.breadcrumb-nav ul.breadcrumb.style1 li:hover {
+.breadcrumb-nav ul.breadcrumb.style1 li:hover,
+.breadcrumb-nav ul.breadcrumb.style1 li:focus {
   background-color: [[setting:themehovercolor]];
+}
+.breadcrumb-nav ul.breadcrumb.style1 li:hover a,
+.breadcrumb-nav ul.breadcrumb.style1 li:focus a,
+.breadcrumb-nav ul.breadcrumb.style1 li:hover a:before,
+.breadcrumb-nav ul.breadcrumb.style1 li:focus a:before {
+  color: [[setting:themecolor]];
 }
 .breadcrumb-nav ul.breadcrumb.style1 li:hover:after {
   border-left-color: [[setting:themehovercolor]];

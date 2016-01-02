@@ -28,24 +28,27 @@
       color: ~"[[setting:themenavcolor]]";
       background-color: ~"[[setting:themecolor]]";
       a {
-        color: ~"[[setting:themenavcolor]]";
+        color: inherit;
       }
-    }
-    li:after {
-      border-left-color: ~"[[setting:themecolor]]";
-    }
-    li:first-of-type {
-      a:before {
-        color: ~"[[setting:themenavcolor]]";
+      &:after {
+        border-left-color: ~"[[setting:themecolor]]";
       }
-    }
-    li:hover {
-      background-color: ~"[[setting:themehovercolor]]";
-    }
-    li:hover:after {
-      border-left-color: ~"[[setting:themehovercolor]]";
-      a {
-        color: ~"[[setting:themecolor]]";
+      &:first-of-type {
+        a:before {
+          color: ~"[[setting:themenavcolor]]";
+        }
+      }
+      &:hover, &:focus {
+        background-color: ~"[[setting:themehovercolor]]";
+        a, a:before {
+          color: ~"[[setting:themecolor]]";
+        }
+      }
+      &:hover:after {
+        border-left-color: ~"[[setting:themehovercolor]]";
+        a {
+          color: ~"[[setting:themecolor]]";
+        }
       }
     }
   }
