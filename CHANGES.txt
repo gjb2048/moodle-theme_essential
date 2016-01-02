@@ -1,5 +1,9 @@
-New in 2.9.1.5
+New in 2.9.1.5.1
 ================
+- FIX: Issue #588: Breadcrumb hover colour conflict.
+
+New in 2.9.1.5
+==============
 - FIX: Issue #583: Empty topic names cause breadcrumb double arrow.
 - FIX: Issue #585: Alert icons background.
 - FIX: Issue #586: Fatal error on maintenance page.
