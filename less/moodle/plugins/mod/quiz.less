@@ -6,7 +6,7 @@
     font-size: 0.7em;
 }
 
-// Attempt and review pages.
+// Attempt and review pages
 #page-mod-quiz-attempt #page .controls,
 #page-mod-quiz-summary #page .controls,
 #page-mod-quiz-review #page .controls {
@@ -139,6 +139,10 @@ body.jsenabled .questionflagcheckbox {
 }
 .path-mod-quiz .qnbutton.thispage .thispageholder {
     border: 1px solid #666;
+}
+
+.path-mod-quiz .qnbutton.flagged .trafficlight {
+    background: url([[pix:quiz|navflagged]]) no-repeat top right;
 }
 
 .path-mod-quiz .qnbutton.blocked,
@@ -305,7 +309,9 @@ table.quizattemptsummary .noreviewmessage {
 #page-mod-quiz-view .generalbox#feedback h3 {
     text-align: left;
 }
-
+#page-mod-quiz-view.dir-rtl .generalbox#feedback h3 {
+    text-align: center;
+}
 #page-mod-quiz-view .generalbox#feedback .overriddennotice {
     text-align: center;
     font-size: 0.7em;
@@ -500,7 +506,7 @@ table.quizreviewsummary td.cell {
 #page-mod-quiz-edit .totalpoints {
     display: block;
     float: right;
-    margin: -2.5em 0 0;
+    margin: -2.85em 0 0;
     padding: .2em;
 }
 
@@ -526,6 +532,7 @@ table.quizreviewsummary td.cell {
 #page-mod-quiz-edit .add-menu-outer {
     position: absolute;
     right: 0;
+    left: auto;
 }
 
 #page-mod-quiz-edit .slotnumber {
@@ -638,6 +645,10 @@ table.quizreviewsummary td.cell {
     position: relative;
     left: -20px;
     top: -7px;
+}
+#page-mod-quiz-edit.dir-rtl ul.slots li.section li.activity .page_split_join {
+    left: auto;
+    right: -20px;
 }
 
 #page-mod-quiz-edit ul.slots li.section li.activity .instancemaxmark.decimalplaces_0 {
@@ -984,6 +995,18 @@ table#categoryquestions {
     #page-mod-quiz-attempt .que,
     #page-mod-quiz-review .que {
         page-break-inside: avoid;
+    }
+}
+/* Ajustments for mobile devices */
+@media only screen and (max-width:565px) {
+    #page-mod-quiz-edit .rpcontainerclass {
+        margin-top: 3em;
+    }
+    #page-mod-quiz-edit .maxgrade {
+        margin-top: 0.1em;
+    }
+    #page-mod-quiz-edit .statusbar {
+        padding: 0;
     }
 }
 
