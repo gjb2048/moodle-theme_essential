@@ -8073,7 +8073,8 @@ a.ygtvspacer:hover {
 .dir-rtl .filepicker .fp-formset label {
   /*@noflip*/
   float: right;
-  text-align: right;
+  /*@noflip*/
+  text-align: left;
 }
 
 .dir-rtl .filepicker .fp-formset .controls {
