@@ -1,4 +1,279 @@
-@import url('essential-rtl_ie9-blessed1.css?z=1451756620685');
+@import url('essential-rtl_ie9-blessed1.css?z=1451846114050');
+
+.path-mod-choice .results .data {
+  white-space: normal;
+}
+
+.path-mod-lesson .firstpageoptions {
+  margin: auto;
+  min-width: 280px;
+  width: 60%;
+}
+
+.path-mod-lesson .centerpadded {
+  padding: 5px;
+  text-align: center;
+}
+
+.path-mod-wiki .wiki_headingtitle,
+.path-mod-wiki .midpad,
+.path-mod-wiki .wiki_headingtime {
+  text-align: inherit;
+}
+
+.path-mod-wiki .wiki_contentbox {
+  width: 100%;
+}
+
+.dropdown-menu > li > a {
+  padding: 3px 8px 3px 20px;
+}
+
+.path-mod-survey .surveytable > tbody > tr:nth-of-type(odd) {
+  background-color: transparent;
+}
+
+.path-mod-survey .surveytable > tbody > tr:nth-of-type(even) {
+  background-color: #f9f9f9;
+}
+
+.path-mod-survey .surveytable .rblock label {
+  text-align: center;
+}
+
+.path-mod-survey .resultgraph,
+.path-mod-survey .reportsummary,
+.path-mod-survey .studentreport,
+.path-mod-survey .reportbuttons,
+.path-mod-survey .centerpara {
+  text-align: center;
+}
+
+.nav .caret {
+  margin-right: 4px;
+}
+
+.nav .divider {
+  overflow: hidden;
+  width: 0;
+  height: 40px;
+  border-right: 1px solid #f2f2f2;
+  border-left: 1px solid #ffffff;
+}
+
+.navbar-inverse .nav .divider {
+  border-right-color: #111111;
+  border-left-color: #515151;
+}
+
+.dropdown-menu .divider {
+  width: auto;
+  height: 1px;
+  border-right: 0 none;
+  border-left: 0 none;
+}
+
+.usermenu .login {
+  color: #777777;
+  line-height: 40px;
+}
+
+.usermenu .login a {
+  color: #0070a8;
+}
+
+.usermenu .login a:hover,
+.usermenu .login a:focus {
+  color: #003d5c;
+  text-decoration: underline;
+}
+
+.usermenu .moodle-actionmenu .toggle-display {
+  display: block;
+  opacity: 1;
+  color: #777777;
+  line-height: 40px;
+  height: 40px;
+}
+
+.usermenu .moodle-actionmenu .toggle-display:hover {
+  color: #333333;
+}
+
+.usermenu .moodle-actionmenu .toggle-display .userbutton {
+  height: 40px;
+  line-height: 40px;
+}
+
+.usermenu .moodle-actionmenu .toggle-display .userbutton .avatars {
+  display: inline-block;
+  height: 36px;
+  width: 36px;
+  vertical-align: middle;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.usermenu .moodle-actionmenu .toggle-display .userbutton .avatars .avatar,
+.usermenu .moodle-actionmenu .toggle-display .userbutton .avatars img {
+  display: block;
+}
+
+.usermenu .moodle-actionmenu .toggle-display .userbutton .usertext {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1em;
+  color: inherit;
+}
+
+.usermenu .moodle-actionmenu .toggle-display .userbutton .usertext .meta,
+.usermenu .moodle-actionmenu .toggle-display .userbutton .usertext .role {
+  display: block;
+  font-size: 12px;
+}
+
+.usermenu .moodle-actionmenu .toggle-display .userbutton .usertext .meta .value,
+.usermenu .moodle-actionmenu .toggle-display .userbutton .usertext .role .value {
+  font-weight: bold;
+}
+
+.usermenu .moodle-actionmenu .toggle-display .userbutton .usertext .role {
+  font-weight: bold;
+}
+
+.usermenu .moodle-actionmenu .toggle-display .caret {
+  display: none;
+}
+
+.usermenu .moodle-actionmenu .menu .menu-action.icon img {
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.usermenu .moodle-actionmenu .menu .menu-action.icon:hover img {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.125);
+}
+
+.usermenu .moodle-actionmenu[data-enhanced] .menu .menu-action.icon img,
+.usermenu .moodle-actionmenu[data-enhanced] .menu .menu-action.icon:hover img {
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.navbar-inverse .usermenu .login {
+  color: #999999;
+}
+
+.navbar-inverse .usermenu .login a {
+  color: #999999;
+}
+
+.navbar-inverse .usermenu .login a:hover {
+  color: #ffffff;
+}
+
+.navbar-inverse .usermenu .moodle-actionmenu .toggle-display {
+  color: #999999;
+}
+
+.navbar-inverse .usermenu .moodle-actionmenu .userbutton .usertext {
+  color: #999999;
+}
+
+.navbar-inverse .usermenu .moodle-actionmenu .userbutton .usertext .meta {
+  color: #999999;
+}
+
+.navbar-inverse .usermenu .moodle-actionmenu .userbutton .usertext .meta .value {
+  color: #999999;
+}
+
+.navbar-inverse .usermenu .moodle-actionmenu:hover .usertext {
+  color: #ffffff;
+}
+
+.navbar-inverse .usermenu .moodle-actionmenu:hover .usertext .meta {
+  color: #999999;
+}
+
+.navbar-inverse .usermenu .moodle-actionmenu:hover .usertext .meta .value {
+  color: #ffffff;
+}
+
+.navbar-inverse .usermenu .moodle-actionmenu[data-enhanced] .toggle-display.textmenu .caret {
+  border-top-color: #ffffff;
+}
+
+.navbar-inverse .usermenu .moodle-actionmenu .menu .menu-action.icon img {
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.navbar-inverse .usermenu .moodle-actionmenu .menu .menu-action.icon:hover img {
+  background: #333;
+  border-radius: 4px;
+  box-shadow: 0px 0px 16px #ffffff;
+}
+
+.navbar-inverse .usermenu .moodle-actionmenu[data-enhanced] .menu .menu-action.icon img,
+.navbar-inverse .usermenu .moodle-actionmenu[data-enhanced] .menu .menu-action.icon:hover img {
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.jsenabled .usermenu .moodle-actionmenu .toggle-display {
+  display: block;
+}
+
+.jsenabled .usermenu .moodle-actionmenu .toggle-display.textmenu {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+.jsenabled .usermenu .moodle-actionmenu .toggle-display .caret {
+  display: inline-block;
+  position: relative;
+  top: 9px;
+}
+
+.jsenabled .usermenu .moodle-actionmenu > .menubar {
+  display: block;
+  margin: 0px 0px 2px 0px;
+}
+
+.jsenabled .usermenu .moodle-actionmenu > .menu {
+  min-width: 160px;
+}
+
+.jsenabled .usermenu .moodle-actionmenu > .menu .filler {
+  display: block;
+  *width: 100%;
+  height: 1px;
+  margin: 9px 1px;
+  *margin: -5px 0 5px;
+  overflow: hidden;
+  background-color: #e5e5e5;
+  border-bottom: 1px solid #ffffff;
+}
+
+.jsenabled .usermenu .moodle-actionmenu.show {
+  background-color: #e5e5e5;
+}
+
+.jsenabled .usermenu .moodle-actionmenu.show .menu {
+  padding: 5px 0;
+  margin: 2px 0 0;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
 
 .jsenabled .usermenu .moodle-actionmenu.show .menu:before {
   content: '';
@@ -587,9 +862,9 @@ table.flexible .table,
 
 .singlebutton div {
   display: inline-block;
-  margin-right: 5px;
   margin-left: 5px;
   margin-bottom: 5px;
+  margin-right: 5px;
 }
 
 #notice .buttons .singlebutton {
@@ -598,19 +873,6 @@ table.flexible .table,
 
 .continuebutton {
   text-align: center;
-}
-
-.btn-lineup {
-  margin: 0 5px 10px 0;
-}
-
-input[name="searchwikicontent"] + input[type="submit"],
-select + input[type="submit"],
-input[type="text"] + input[type="button"],
-input[type="password"] + input[type="submit"],
-input[type="text"] + button,
-input[type="text"] + input[type="submit"] {
-  margin: 0 5px 10px 0;
 }
 
 p.arrow_button {
@@ -651,8 +913,20 @@ p.arrow_button input {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
+}
+
+.btn-lineup {
+  margin: 0 5px 10px 0;
+}
+
+input[name="searchwikicontent"] + input[type="submit"],
+select + input[type="submit"],
+input[type="text"] + input[type="button"],
+input[type="password"] + input[type="submit"],
+input[type="text"] + button,
+input[type="text"] + input[type="submit"] {
+  margin: 0 5px 10px 0;
 }
 
 button,
@@ -841,7 +1115,10 @@ input[type="reset"] {
   margin: 0 5px 10px 0;
 }
 
-button.yui3-button.closebutton,
+button.yui3-button.closebutton {
+  background-position: 0 0;
+}
+
 button.yui3-button.closebutton:hover {
   background-position: 0 0;
 }
@@ -854,19 +1131,7 @@ input.fp-btn-choose {
   border-radius: 3px;
 }
 
-.user-enroller-panel .uep-search-results .user .options .enrol {
-  padding: 0 6px;
-  font-size: 10.5px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-
-.user-enroller-panel .uep-search-results .user .options .enrol .label,
-.user-enroller-panel .uep-search-results .user .options .enrol .badge {
-  top: 0;
-}
-
+.user-enroller-panel .uep-search-results .user .options .enrol,
 .user-enroller-panel .uep-search-results .cohort .options .enrol {
   padding: 0 6px;
   font-size: 10.5px;
@@ -875,7 +1140,9 @@ input.fp-btn-choose {
   border-radius: 3px;
 }
 
+.user-enroller-panel .uep-search-results .user .options .enrol .label,
 .user-enroller-panel .uep-search-results .cohort .options .enrol .label,
+.user-enroller-panel .uep-search-results .user .options .enrol .badge,
 .user-enroller-panel .uep-search-results .cohort .options .enrol .badge {
   top: 0;
 }
@@ -1718,7 +1985,6 @@ body.has_dock div#dock {
 }
 
 #dockeditempanel {
-  z-index: 12000;
   min-width: 200px;
   position: relative;
   right: 100%;
@@ -3820,6 +4086,34 @@ table caption {
   font-size: 24px;
   font-weight: bold;
   line-height: 42px;
+  text-align: right;
+}
+
+.dir-rtl table#explaincaps td,
+.dir-rtl table#defineroletable td,
+.dir-rtl table.grading-report td,
+.dir-rtl table#listdirectories td,
+.dir-rtl table.rolecaps td,
+.dir-rtl table.userenrolment td,
+.dir-rtl table#form td,
+.dir-rtl form#movecourses table td,
+.dir-rtl .forumheaderlist td,
+.dir-rtl table.flexible td,
+.dir-rtl .generaltable td,
+.dir-rtl .generaltable thead:first-child tr:first-child td,
+.dir-rtl table#explaincaps th,
+.dir-rtl table#defineroletable th,
+.dir-rtl table.grading-report th,
+.dir-rtl table#listdirectories th,
+.dir-rtl table.rolecaps th,
+.dir-rtl table.userenrolment th,
+.dir-rtl table#form th,
+.dir-rtl form#movecourses table th,
+.dir-rtl .forumheaderlist th,
+.dir-rtl table.flexible th,
+.dir-rtl .generaltable th,
+.dir-rtl .generaltable thead:first-child tr:first-child th {
+  /*@noflip*/
   text-align: right;
 }
 

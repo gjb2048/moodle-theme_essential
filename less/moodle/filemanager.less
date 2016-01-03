@@ -94,17 +94,19 @@
     .ie7-inline-block();
     float: left;
     height: 525px;
+    border-left: none;
     border-right: 1px solid #BBBBBB;
 }
 
 .file-picker .fp-repo-items {
     float: none;
     width: auto;
-    margin-left:181px;
+    margin-left: 181px;
+    margin-right: 0;
 }
 .moodle-dialogue-fullscreen .file-picker .fp-repo-items {
-    margin-left: 0px;
-    margin-right:0px;
+    margin-left: 0;
+    margin-right: 0;
     float: left;
 }
 
@@ -137,6 +139,39 @@
     width: 98%;
     height: 98%;
 }
+
+// TODO Really not sure if needed.
+.dir-rtl .file-picker .fp-toolbar {
+    padding: 4px;
+}
+.dir-rtl .file-picker .fp-list {
+    /*@noflip*/text-align: right;
+}
+.dir-rtl .file-picker .fp-repo-name {
+    display: inline;
+}
+.dir-rtl .file-picker .fp-pathbar {
+    /*@noflip*/text-align: right;
+    display: block;
+    border-top: none;
+}
+.dir-rtl .file-picker div.bd {
+    /*@noflip*/text-align: right;
+}
+.dir-rtl #filemenu .yuimenuitemlabel {
+    /*@noflip*/text-align: right;
+}
+.dir-rtl .filepicker .yui-layout-unit-left {
+    /*@noflip*/left: 500px;
+}
+.dir-rtl .filepicker .yui-layout-unit-center {
+    /*@noflip*/left: 0;
+}
+// File Manager
+.dir-rtl .filemanager-toolbar a {
+    padding: 0;
+}
+
 // Repositories on fp-repo-area (File Picker only)
 .file-picker .fp-list {
     list-style-type: none;
@@ -145,7 +180,11 @@
     width: 100%;
     margin: 0;
 }
-
+// TODO Looks needed.
+.dir-rtl .file-picker .fp-list {
+    /*@noflip*/text-align: right;
+    /*@noflip*/float: left;
+}
 .file-picker .fp-list .fp-repo a {
     display: block;
     padding: .5em .7em;
@@ -173,6 +212,7 @@
 .fp-toolbar div {
     display: block;
     float: left;
+    margin-left: 0;
     margin-right: 4px;
 }
 
@@ -200,6 +240,10 @@
 }
 .fp-repo-items fp-viewbar {
     margin: 4px;
+}
+// TODO Looks needed.
+.dir-rtl .fp-toolbar img {
+    vertical-align: -35%;
 }
 
 .fp-viewbar a {
@@ -241,7 +285,24 @@
 .file-picker .fp-clear-left {
     clear: left;
 }
-
+// TODO Not sure why these rules are here and not in core.css!
+// over ride hover rule from core.css
+.dir-rtl .fp-vb-details a:hover {
+    background: none;
+    border: 20px solid black;
+}
+.dir-rtl .fp-vb-details.checked a:hover {
+    background: none;
+    border: 40px solid black;
+}
+.dir-rtl .fp-vb-tree a:hover {
+    background: none;
+    border: 30px solid black;
+}
+.dir-rtl .fp-vb-tree.checked a:hover {
+    background: none;
+    border: 50px solid black;
+}
 .file-picker .fp-pathbar {
     display: table-row;
 }
@@ -254,8 +315,15 @@
     margin-left: 4px;
 }
 
+// TODO Not sure about this.
+.dir-rtl .fp-pathbar span {
+    /*@noflip*/display: inline-block;
+    /*@noflip*/float: right;
+    /*@noflip*/margin-left: 32px;
+}
 .fp-pathbar .fp-path-folder-name {
     margin-left: 32px;
+    margin-right: 0;
     line-height: 20px;
 }
 
@@ -321,7 +389,10 @@
     background-color: #FFFFFF;
     border-left: 0 solid #FFFFFF;
 }
-
+// TODO Does this need stating?
+.dir-rtl .file-picker .yui3-datatable-header {
+    /*@noflip*/text-align: right;
+}
 // Tree view (File Manager only)
 
 // first or middle sibling, no children
@@ -445,6 +516,7 @@ a.ygtvspacer:hover {
     margin-top: -7px;
     width: 24px;
     height: 24px;
+    margin-left: 0;
     margin-right: 10px;
     text-align: center;
     line-height: 24px;
@@ -456,6 +528,7 @@ a.ygtvspacer:hover {
     vertical-align: middle;
 }
 .fp-filename {
+    padding-left: 0;
     padding-right: 10px;
 }
 
@@ -819,7 +892,7 @@ a.ygtvspacer:hover {
     background-color: #FFFFFF!important;
     border-left: 0 solid #FFFFFF;
 }
-.filemanager .fp-filename-icon.fp-hasreferences .fp-reficons1 {
+.filemanager .fp-filename-icon.fp-hasreferences .fp-reficons1{
     height: 100%;
     width: 100%;
     position: absolute;
@@ -842,6 +915,7 @@ a.ygtvspacer:hover {
 .filemanager .fp-iconview .fp-folder.fp-hascontextmenu .fp-contextmenu {
     display: block;
     position: absolute;
+    left: inherit;
     right: 7px;
     bottom: 5px;
 }
@@ -850,6 +924,7 @@ a.ygtvspacer:hover {
     display: inline;
     position: absolute;
     left: 14px;
+    right: inherit;
     margin-right: -20px;
     top: 6px;
 }
@@ -1020,7 +1095,10 @@ a.ygtvspacer:hover {
     text-align: left;
     margin: 20px;
 }
-
+// TODO Need stating?
+.dir-rtl .filemanager .fp-mkdir-dlg p {
+    /*@noflip*/text-align: right;
+}
 // Confirm dialogue for delete (File Manager only)
 .filemanager.fp-dlg {
     text-align: center;
@@ -1040,6 +1118,20 @@ a.ygtvspacer:hover {
     text-align: left;
 }
 
+// TODO I think this is needed.
+// RTL Overrides
+.dir-rtl {
+    .file-picker .fp-toolbar {
+        .fp-tb-search input {
+            /*@noflip*/background-position: 208px 7px;
+            /*@noflip*/padding: 2px 30px 1px 3px;
+        }
+        div {
+            /*@noflip*/float: right;
+            /*@noflip*/margin-left:4px;
+        }
+    }
+}
 // Upload form for file picker.
 .fp-formset {
     max-width: 500px;
@@ -1065,6 +1157,7 @@ a.ygtvspacer:hover {
         }
         .controls {
             margin-left: 125px;
+            margin-right: 0;
             select {
                 width: 100%;
             }
@@ -1084,4 +1177,34 @@ a.ygtvspacer:hover {
 .fp-fileinfo .fp-value {
     display: inline-block;
     padding-left: 5px;
+    padding-right: 0;
+}
+
+// TODO Needed I think.
+.dir-rtl .fp-forminset {
+    max-width: 400px;
+    .control-group {
+        label.control-label {
+            /*@noflip*/float: right;
+            /*@noflip*/text-align: left;
+        }
+    }
+    .fp-select-buttons {
+        /*@noflip*/float: left;
+    }
+}
+
+.dir-rtl .fp-select .fp-thumbnail {
+    /*@noflip*/margin: 10px 0 0 0px;
+}
+
+.dir-rtl .filepicker .fp-formset {
+    label {
+        /*@noflip*/float: right;
+        text-align: left;
+    }
+    .controls {
+        /*@noflip*/margin-left: 0;
+        /*@noflip*/text-align: right;
+    }
 }

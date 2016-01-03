@@ -2,8 +2,11 @@
 /* COURSE CONTENT */
 .section_add_menus {
     text-align: right;
+    clear: both;
 }
-
+.section-modchooser {
+    clear: both;
+}
 .section_add_menus .horizontal div,
 .section_add_menus .horizontal form {
     display: inline;
@@ -35,6 +38,14 @@
     margin: 1em;
 }
 .section {
+    .side {
+        &.left {
+            float: left;
+        }
+        &.right {
+            float: right;
+        }
+    }
     .spinner {
         height: 16px;
         width: 16px;
@@ -124,11 +135,13 @@
 }
 
 .activity img.activityicon {
-    margin-left: 0px;
     margin-right: 6px;
     vertical-align: text-bottom;
 }
-
+.dir-rtl .section .activity img.activityicon {
+    margin-left: 6px;
+    margin-right: 0;
+}
 .section .activity .activityinstance,
 .section .activity .activityinstance div {
     display: inline-block;
@@ -138,8 +151,19 @@
         .activity {
             .contentwithoutlink,
             .activityinstance {
-                padding-left: 0;
                 padding-right: 200px;
+            }
+        }
+    }
+}
+
+.dir-rtl.editing {
+    .section {
+        .activity {
+            .contentwithoutlink,
+            .activityinstance {
+                padding-left: 200px;
+                padding-right: 0;
             }
         }
     }
@@ -243,10 +267,10 @@
     margin-top: 0;
 }
 .course-content ul li.section.hidden {
-    .sectionname,
+    .sectionname > span,
     .content > div,  /* All the divs but the activities which are in a UL. */
     .activity .activityinstance {
-        .opacity(50);
+        opacity: .5;
         margin-left: 10px;
         margin-right: 10px;
     }
@@ -306,7 +330,6 @@
     float: right;
     height: 20px;
     position: relative;
-    z-index: 1000;
 }
 
 #page-site-index .subscribelink {
@@ -360,6 +383,13 @@
     position: absolute;
     right: 22px;
     top: 3px;
+}
+// TODO Not sure about this.
+.dir-rtl.path-course-view .completionprogress {
+    float: none;
+}
+.dir-rtl.path-course-view li.activity form.togglecompletion .ajaxworking {
+    /*@noflip*/right: -22px;
 }
 
 li.section.hidden span.commands a.editing_hide,
@@ -598,7 +628,7 @@ span.editinstructions {
     font-size:75%;
 }
 
-.course_category_tree .category > .info > .categoryname {
+.course_category_tree .category > .info > .categoryname{
     background-repeat: no-repeat;
     padding:2px 18px;
     margin:3px;
@@ -627,6 +657,7 @@ span.editinstructions {
 }
 .course_category_tree .category > .content {
     padding-left:16px;
+    padding-right:0;
 }
 
 .course_category_tree .subcategories > .paging,
@@ -953,10 +984,12 @@ span.editinstructions {
             .smallicon {
                 width:12px;
                 margin-left:4px;
+                margin-right: 0;
                 vertical-align: inherit;
             }
         }
         .bulk-action-checkbox {
+            margin-left: 0;
             margin-right: -3px;
         }
         .category-listing > ul > .listitem:first-child {
@@ -1027,6 +1060,62 @@ span.editinstructions {
     display:inline-block;
     margin: 0 6px 0 0;
     cursor:pointer;
+}
+
+// TODO Not sure about this.
+.dir-rtl #course-category-listings {
+    #category-listing,
+    #course-listing {
+        /*@noflip*/float: right;
+        /*@noflip*/margin-left: 0;
+    }
+
+    #course-listing {
+        /*@noflip*/padding-right: 24px;
+        .listitem {
+            .idnumber {
+                color:#a1a1a8;
+                /*@noflip*/padding-right:2em;
+            }
+            .categoryname {
+                display:inline-block;
+                /*@noflip*/margin-right:1em;
+                /*@noflip*/margin-left:0;
+            }
+            .drag-handle {
+                /*@noflip*/margin: 0 6px 0 6px;
+            }
+            > div {
+                /*@noflip*/padding-left:1rem;
+            }
+        }
+        .bulk-action-checkbox {
+            vertical-align:middle;
+        }
+    }
+    #category-listing {
+        .listitem {
+            > div {
+                /*@noflip*/margin-right:0.5em;
+                /*@noflip*/margin-left: 0;
+            }
+        }
+    }
+    .detail-pair {
+        > * {
+            /*@noflip*/float: right;
+            /*@noflip*/margin-right: 0;
+        }
+        .pair-key {
+            span {
+                /*@noflip*/margin-right:0;
+                /*@noflip*/margin-left: 0;
+            }
+        }
+        .pair-value {
+            /*@noflip*/margin-right: 0.5em;
+        }
+    }
 }
 
 // Management header styling.

@@ -161,17 +161,6 @@ module.exports = function(grunt) { // jshint ignore:line
                 src: 'less/editor.less',
                 dest: 'style/editor.css'
             },
-            moodle_rtl_p: {
-                options: {
-                    compress: false,
-                    cleancss: false,
-                    paths: "./less",
-                    report: 'min',
-                    sourceMap: false,
-                },
-                src: 'less/moodle-rtl.less',
-                dest: 'style/moodle-rtl.css'
-            },
             bootstrap_pix_p: {
                 options: {
                     compress: false,
@@ -296,19 +285,6 @@ module.exports = function(grunt) { // jshint ignore:line
                 },
                 src: 'less/editor.less',
                 dest: 'style/editor.css'
-            },
-            moodle_rtl_d: {
-                options: {
-                    compress: false,
-                    cleancss: false,
-                    paths: "./less",
-                    report: 'min',
-                    sourceMap: true,
-                    sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'style/moodle-rtl.treasure.map'
-                },
-                src: 'less/moodle-rtl.less',
-                dest: 'style/moodle-rtl.css'
             },
             bootstrap_pix_d: {
                 options: {
@@ -482,7 +458,7 @@ module.exports = function(grunt) { // jshint ignore:line
                 files: [{
                     expand: true,
                     cwd: 'style',
-                    src: ['essential.css', 'essential-rtl.css', 'bootstrap-pix.css', 'moodle-pix.css', 'essential-pix.css', 'essential-alternative.css', 'editor.css', 'fontawesome-woff2.css', 'fontawesome-no-woff2.css', 'fontawesome.css', 'moodle-rtl.css'], // jshint ignore:line
+                    src: ['essential.css', 'essential-rtl.css', 'bootstrap-pix.css', 'moodle-pix.css', 'essential-pix.css', 'essential-alternative.css', 'editor.css', 'fontawesome-woff2.css', 'fontawesome-no-woff2.css', 'fontawesome.css'], // jshint ignore:line
                     dest: 'style',
                     ext: '.css'
                 }]
@@ -608,7 +584,6 @@ module.exports = function(grunt) { // jshint ignore:line
     grunt.registerTask("css", [
         "less:essential_" + build,
         "less:editor_" + build,
-        "less:moodle_rtl_" + build,
         "less:scrollbars_" + build,
         "less:settings_" + build,
         "less:bootstrap_pix_" + build,

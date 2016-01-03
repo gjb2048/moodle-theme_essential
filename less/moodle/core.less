@@ -211,6 +211,7 @@ a.autolink.glossary:hover {
 }
 .collapsible-actions .collapseexpand {
     padding-left: 20px;
+    padding-right: 0;
 }
 
 .yui-overlay .yui-widget-bd {
@@ -254,6 +255,7 @@ img.icon {
     height: 16px;
     vertical-align: text-bottom;
     width: 16px;
+    padding-left: 0;
     padding-right: 6px;
 }
 img.iconsmall {
@@ -265,6 +267,7 @@ img.iconsmall {
 img.iconhelp, .helplink img {
     height: 16px;
     padding-left: 3px;
+    padding-right: 0;
     vertical-align: text-bottom;
     width: 16px;
 }
@@ -277,7 +280,6 @@ h6 img.iconhelp, h6 img.icon {
   vertical-align: middle;
   padding: 4px;
 }
-
 img.iconlarge {
     height: 24px;
     width: 24px;
@@ -286,6 +288,7 @@ img.iconlarge {
 img.iconsort {
     vertical-align: text-bottom;
     padding-left: .3em;
+    padding-right: 0;
     margin-bottom: .15em;
 }
 
@@ -382,7 +385,10 @@ form.popupform div {
     font-weight: normal;
     font-size: 1em;
 }
-
+.dir-rtl .accesshide {
+    top: -30000px;
+    /*@noflip*/left: auto;
+}
 span.hide,
 div.hide {
     display: none;
@@ -463,7 +469,10 @@ a.skip:active {
 .groupmanagementtable #addselect_wrapper label {
     font-weight: normal;
 }
-
+// TODO Not sure about this.
+.dir-rtl .groupmanagementtable p {
+    /*@noflip*/text-align: right;
+}
 #group-usersummary {
     width: 14em;
 }
@@ -664,6 +673,7 @@ table.mod_index {
 .comment-delete {
     position: absolute;
     top: 0;
+    left: auto;
     right: 0;
     margin: .3em;
 }
@@ -798,71 +808,37 @@ ul#tag-cloud-list li {
     list-style: none;
 }
 span.flagged-tag,
-span.flagged-tag a {
+tr.flagged-tag,
+span.flagged-tag a,
+tr.flagged-tag a {
     color: @errorText;
 }
-table#tag-management-list {
-    text-align: left;
-    width: 100%;
-}
-table#tag-management-list td,
-table#tag-management-list th {
+.tag-management-table td,
+.tag-management-table th {
     vertical-align: middle;
-    text-align: left;
     padding: 4px;
 }
-.tag-management-form {
-    text-align: center;
+.tag-management-table tr td.tageditingon .displaytagname,
+.tag-management-table td .edittagname {
+    display: none;
 }
-#relatedtags-autocomplete-container {
-    margin-left: auto;
-    margin-right: auto;
-    min-height: 4.6em;
-    width: 100%;
-}
-#relatedtags-autocomplete {
+.tag-management-table tr td.tageditingon .edittagname {
+    display: inherit;
     position: relative;
-    display: block;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
 }
-#relatedtags-autocomplete .yui-ac-content {
-    position: absolute;
-    width: 420px;
-    left: 20%;
-    border: 1px solid @dropdownBorder;
-    background: @dropdownBackground;
-    overflow: hidden;
-    z-index: 9050;
+.tag-management-table tr td.tageditingon .edittagname .editinstructions {
+    margin-right: -300px;
+    margin-left: 0;
 }
-#relatedtags-autocomplete .ysearchquery {
-    position: absolute;
-    right: 10px;
-    color: #808080;
-    z-index: 10;
+.tag-management-table tr td .tagnameedit img {
+    opacity: 0.2;
 }
-#relatedtags-autocomplete .yui-ac-shadow {
-    position: absolute;
-    margin: .3em;
-    width: 100%;
-    background: #a0a0a0;
-    z-index: 9049;
+.tag-management-table tr:hover td .tagnameedit img,
+.tag-management-table tr td .tagnameedit:focus img {
+    opacity: 1;
 }
-#relatedtags-autocomplete ul {
-    padding: 0;
-    width: 100%;
-    margin: 0;
-    list-style-type: none;
-}
-#relatedtags-autocomplete li {
-    padding: 0 5px;
-    cursor: default;
-    white-space: nowrap;
-}
-#relatedtags-autocomplete li.yui-ac-highlight{
-    background: @dropdownLinkBackgroundHover;
-    color: @dropdownLinkColorHover;
+.tag-management-table tr:hover td.tageditingon .tagnameedit img {
+    opacity: 0.2;
 }
 h2.tag-heading,
 div#tag-description,
@@ -1096,6 +1072,8 @@ body.tag .managelink {
     .enrol_user_buttons {
         float: right;
         .enrolusersbutton {
+            margin-left: 1em;
+            margin-right: 0;
             display: inline;
             div,
             form {
@@ -1111,11 +1089,13 @@ body.tag .managelink {
         .fitem {
             display: inline-block;
             line-height: @baseLineHeight * 2;
+            margin-left: 0;
             margin-right: .3em;
             white-space: nowrap;
             label {
                 display: inline;
                 line-height: @baseLineHeight;
+                padding-left: 0;
                 padding-right: .3em;
             }
             :before,
@@ -1245,7 +1225,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
         padding-right: 3px;
     }
 }
-// Moodle Dialogue Settings (moodle-core-dialogue).
+/* Moodle Dialogue Settings (moodle-core-dialogue)  */
 .moodle-dialogue-base .moodle-dialogue-lightbox {
     background-color: #AAA;
 }
@@ -1274,7 +1254,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 .moodle-dialogue-base .moodle-dialogue {
     padding: 0;
     margin: 0;
-    background-color: none;
+    background: none;
     border: none;
     z-index: 600;
     outline: #000 dotted 0;
@@ -1311,6 +1291,8 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     font-weight: bold;
 }
 .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd .yui3-widget-buttons {
+    left: auto;
+    right: 0;
     padding: 5px;
 }
 .moodle-dialogue-base .closebutton {
@@ -1458,6 +1440,12 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     }
 }
 
+// TODO Not sure about this.
+// Question Bank - Question Chooser "Close" button.
+#page-question-edit.dir-rtl a.container-close {
+    /*@noflip*/right: auto;
+    /*@noflip*/left: 6px;
+}
 /**
  * Chooser Dialogues (moodle-core-chooserdialogue)
  *
@@ -1504,7 +1492,10 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     max-width: 20.3em;
     .box-shadow(inset 0 0 30px 0px #ccc);
 }
-
+// TODO Not sure about this.
+.dir-rtl.jschooser .choosercontainer #chooseform .alloptions {
+    /*@noflip*/max-width: 18.3em;
+}
 // Settings for option rows and option subtypes.
 .choosercontainer #chooseform .moduletypetitle,
 .choosercontainer #chooseform .option,
@@ -1541,9 +1532,9 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 }
 .choosercontainer #chooseform .nonoption {
     padding-left: 2.7em;
+    padding-right: 0;
     padding-top: 0.3em;
     padding-bottom: 0.1em;
-    padding-right: 0;
 }
 
 .choosercontainer #chooseform .subtype {
@@ -1571,7 +1562,13 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
     overflow-y: auto;
     line-height: 2em;
 }
-
+// TODO Not sure about this.
+.dir-rtl.jschooser .choosercontainer #chooseform .instruction,
+.dir-rtl.jschooser .choosercontainer #chooseform .typesummary {
+    /*@noflip*/left: 0;
+    /*@noflip*/right: 18.5em;
+    /*@noflip*/border-right: 1px solid grey;
+}
 // Selected option settings.
 .jschooser .choosercontainer #chooseform .instruction,
 .choosercontainer #chooseform .selected .typesummary {
@@ -1696,7 +1693,7 @@ ul.badges {
 .badges li {
     position: relative;
     display: inline-block;
-    padding-bottom: 2em;
+    padding-top: 1em;
     text-align: center;
     vertical-align: top;
     width: 150px;
@@ -1756,7 +1753,14 @@ ul.badges {
         }
     }
 }
+// TODO Not sure about this.
+.dir-rtl #badge-image {
+    /*@noflip*/float: right;
 
+    .expireimage {
+        /*@noflip*/left: 41px;
+    }
+}
 #badge-details {
     display: inline-block;
     width: 79%;
@@ -1874,8 +1878,6 @@ img#persona_signin {
     }
     .page-header-image {
         margin-bottom: 1em;
-        z-index: 1;
-
     }
     .page-header-headings {
         margin-top: 30px;
@@ -1905,7 +1907,29 @@ img#persona_signin {
     }
 }
 
-// Action menu component styles.
+// TODO Not sure about this.
+.dir-ltr .page-context-header {
+    .page-header-image {
+        /*@noflip*/float: left;
+        /*@noflip*/margin-right: 1em;
+    }
+
+    .header-button-group{
+        /*@noflip*/float: right;
+    }
+}
+
+.dir-rtl .page-context-header {
+    .page-header-image {
+        /*@noflip*/float: right;
+        /*@noflip*/margin-left: 1em;
+    }
+    .header-button-group {
+        /*@noflip*/float: left;
+    }
+}
+
+// Action menu component styles
 .moodle-actionmenu,
 .moodle-actionmenu > ul,
 .moodle-actionmenu > ul > li {
@@ -1916,6 +1940,14 @@ img#persona_signin {
     padding: 0;
     margin: 0;
     list-style-type: none;
+}
+
+.section_action_menu .moodle-actionmenu ul.menubar {
+    margin: 0;
+}
+
+.section_action_menu .moodle-actionmenu ul.menu {
+    margin: 0 10px 10px 0;
 }
 
 .moodle-actionmenu .toggle-display,
@@ -1936,6 +1968,7 @@ img#persona_signin {
         .toggle-display.textmenu {
             display: block;
             margin-left: 4px;
+            margin-right: initial;
             padding-left: 4px;
             padding-right: 4px;
 
@@ -1949,6 +1982,7 @@ img#persona_signin {
             .caret {
                 margin-top: 8px;
                 margin-left: 2px;
+                margin-right: initial;
                 border-top-color: @navbarLinkColor;
                 &:hover,
                 &:active {
@@ -1976,6 +2010,8 @@ img#persona_signin {
         display:block;
         position: absolute;
         text-align: left;
+        left: auto;
+        right: 0;
         background-color: @dropdownBackground;
         border: 1px solid @dropdownBorder;
         z-index:1000;
@@ -2064,6 +2100,16 @@ body.lockscroll {
   overflow: hidden;
 }
 
+// Was in rtl/core.less - now here for easier updates.
+.dir-rtl {
+    // Bootstrap sets right margin to 0. Fail.
+    // They set left margin to 25px so we will copy that.
+    ul {
+        /*@noflip*/margin-left: 0;
+        /*@noflip*/margin-right: 25px;
+    }
+}
+
 .progressbar_container {
     max-width: 500px;
     margin: 0 auto;
@@ -2081,4 +2127,12 @@ dd:after {
 }
 dd:after {
   clear: both;
+}
+
+// Active tabs with links should have a different
+// cursor to indicate they are clickable.
+.nav-tabs > .active > a[href],
+.nav-tabs > .active > a[href]:hover,
+.nav-tabs > .active > a[href]:focus {
+    cursor: pointer;
 }

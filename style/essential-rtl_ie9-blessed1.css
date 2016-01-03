@@ -1350,6 +1350,7 @@ a.autolink.glossary:hover {
 
 .collapsible-actions .collapseexpand {
   padding-right: 20px;
+  padding-left: 0;
 }
 
 .yui-overlay .yui-widget-bd {
@@ -1397,6 +1398,7 @@ img.icon {
   height: 16px;
   vertical-align: text-bottom;
   width: 16px;
+  padding-right: 0;
   padding-left: 6px;
 }
 
@@ -1411,6 +1413,7 @@ img.iconhelp,
 .helplink img {
   height: 16px;
   padding-right: 3px;
+  padding-left: 0;
   vertical-align: text-bottom;
   width: 16px;
 }
@@ -1440,6 +1443,7 @@ img.iconlarge {
 img.iconsort {
   vertical-align: text-bottom;
   padding-right: .3em;
+  padding-left: 0;
   margin-bottom: .15em;
 }
 
@@ -1560,6 +1564,12 @@ form.popupform div {
   font-size: 1em;
 }
 
+.dir-rtl .accesshide {
+  top: -30000px;
+  /*@noflip*/
+  left: auto;
+}
+
 span.hide,
 div.hide {
   display: none;
@@ -1654,6 +1664,11 @@ a.skip:active {
 .groupmanagementtable #removeselect_wrapper label,
 .groupmanagementtable #addselect_wrapper label {
   font-weight: normal;
+}
+
+.dir-rtl .groupmanagementtable p {
+  /*@noflip*/
+  text-align: right;
 }
 
 #group-usersummary {
@@ -1890,6 +1905,7 @@ table.mod_index {
 .comment-delete {
   position: absolute;
   top: 0;
+  right: auto;
   left: 0;
   margin: .3em;
 }
@@ -2068,82 +2084,44 @@ ul#tag-cloud-list li {
 }
 
 span.flagged-tag,
-span.flagged-tag a {
+tr.flagged-tag,
+span.flagged-tag a,
+tr.flagged-tag a {
   color: #b94a48;
 }
 
-table#tag-management-list {
-  text-align: right;
-  width: 100%;
-}
-
-table#tag-management-list td,
-table#tag-management-list th {
+.tag-management-table td,
+.tag-management-table th {
   vertical-align: middle;
-  text-align: right;
   padding: 4px;
 }
 
-.tag-management-form {
-  text-align: center;
+.tag-management-table tr td.tageditingon .displaytagname,
+.tag-management-table td .edittagname {
+  display: none;
 }
 
-#relatedtags-autocomplete-container {
-  margin-right: auto;
-  margin-left: auto;
-  min-height: 4.6em;
-  width: 100%;
-}
-
-#relatedtags-autocomplete {
+.tag-management-table tr td.tageditingon .edittagname {
+  display: inherit;
   position: relative;
-  display: block;
-  width: 60%;
-  margin-right: auto;
-  margin-left: auto;
 }
 
-#relatedtags-autocomplete .yui-ac-content {
-  position: absolute;
-  width: 420px;
-  right: 20%;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  background: #ffffff;
-  overflow: hidden;
-  z-index: 9050;
+.tag-management-table tr td.tageditingon .edittagname .editinstructions {
+  margin-left: -300px;
+  margin-right: 0;
 }
 
-#relatedtags-autocomplete .ysearchquery {
-  position: absolute;
-  left: 10px;
-  color: #808080;
-  z-index: 10;
+.tag-management-table tr td .tagnameedit img {
+  opacity: 0.2;
 }
 
-#relatedtags-autocomplete .yui-ac-shadow {
-  position: absolute;
-  margin: .3em;
-  width: 100%;
-  background: #a0a0a0;
-  z-index: 9049;
+.tag-management-table tr:hover td .tagnameedit img,
+.tag-management-table tr td .tagnameedit:focus img {
+  opacity: 1;
 }
 
-#relatedtags-autocomplete ul {
-  padding: 0;
-  width: 100%;
-  margin: 0;
-  list-style-type: none;
-}
-
-#relatedtags-autocomplete li {
-  padding: 0 5px;
-  cursor: default;
-  white-space: nowrap;
-}
-
-#relatedtags-autocomplete li.yui-ac-highlight {
-  background: #0070a8;
-  color: #ffffff;
+.tag-management-table tr:hover td.tageditingon .tagnameedit img {
+  opacity: 0.2;
 }
 
 h2.tag-heading,
@@ -2434,6 +2412,8 @@ body.tag .managelink {
 }
 
 #page-enrol-users .enrol_user_buttons .enrolusersbutton {
+  margin-right: 1em;
+  margin-left: 0;
   display: inline;
 }
 
@@ -2471,6 +2451,7 @@ body.tag .managelink {
 #page-enrol-users #filterform .fitem {
   display: inline-block;
   line-height: 40px;
+  margin-right: 0;
   margin-left: .3em;
   white-space: nowrap;
 }
@@ -2478,6 +2459,7 @@ body.tag .managelink {
 #page-enrol-users #filterform .fitem label {
   display: inline;
   line-height: 20px;
+  padding-right: 0;
   padding-left: .3em;
 }
 
@@ -2674,6 +2656,8 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
   padding-left: 3px;
 }
 
+/* Moodle Dialogue Settings (moodle-core-dialogue)  */
+
 .moodle-dialogue-base .moodle-dialogue-lightbox {
   background-color: #AAA;
 }
@@ -2708,7 +2692,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 .moodle-dialogue-base .moodle-dialogue {
   padding: 0;
   margin: 0;
-  background-color: none;
+  background: none;
   border: none;
   z-index: 600;
   outline: #000 dotted 0;
@@ -2762,6 +2746,8 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 }
 
 .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd .yui3-widget-buttons {
+  right: auto;
+  left: 0;
   padding: 5px;
 }
 
@@ -2934,6 +2920,13 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
   overflow: auto;
 }
 
+#page-question-edit.dir-rtl a.container-close {
+  /*@noflip*/
+  right: auto;
+  /*@noflip*/
+  left: 6px;
+}
+
 /**
  * Chooser Dialogues (moodle-core-chooserdialogue)
  *
@@ -2991,6 +2984,11 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
   box-shadow: inset 0 0 30px 0px #cccccc;
 }
 
+.dir-rtl.jschooser .choosercontainer #chooseform .alloptions {
+  /*@noflip*/
+  max-width: 18.3em;
+}
+
 .choosercontainer #chooseform .moduletypetitle,
 .choosercontainer #chooseform .option,
 .choosercontainer #chooseform .nonoption {
@@ -3031,9 +3029,9 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 
 .choosercontainer #chooseform .nonoption {
   padding-right: 2.7em;
+  padding-left: 0;
   padding-top: 0.3em;
   padding-bottom: 0.1em;
-  padding-left: 0;
 }
 
 .choosercontainer #chooseform .subtype {
@@ -3059,6 +3057,16 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
   overflow-x: hidden;
   overflow-y: auto;
   line-height: 2em;
+}
+
+.dir-rtl.jschooser .choosercontainer #chooseform .instruction,
+.dir-rtl.jschooser .choosercontainer #chooseform .typesummary {
+  /*@noflip*/
+  left: 0;
+  /*@noflip*/
+  right: 18.5em;
+  /*@noflip*/
+  border-right: 1px solid grey;
 }
 
 .jschooser .choosercontainer #chooseform .instruction,
@@ -3340,7 +3348,7 @@ ul.badges {
 .badges li {
   position: relative;
   display: inline-block;
-  padding-bottom: 2em;
+  padding-top: 1em;
   text-align: center;
   vertical-align: top;
   width: 150px;
@@ -3405,6 +3413,16 @@ ul.badges {
 
 #badge-image .singlebutton input {
   margin-right: 0px;
+}
+
+.dir-rtl #badge-image {
+  /*@noflip*/
+  float: right;
+}
+
+.dir-rtl #badge-image .expireimage {
+  /*@noflip*/
+  left: 41px;
 }
 
 #badge-details {
@@ -3543,7 +3561,6 @@ img#persona_signin {
 
 .page-context-header .page-header-image {
   margin-bottom: 1em;
-  z-index: 1;
 }
 
 .page-context-header .page-header-headings {
@@ -3571,6 +3588,30 @@ img#persona_signin {
   top: -0.4em;
 }
 
+.dir-ltr .page-context-header .page-header-image {
+  /*@noflip*/
+  float: left;
+  /*@noflip*/
+  margin-right: 1em;
+}
+
+.dir-ltr .page-context-header .header-button-group {
+  /*@noflip*/
+  float: right;
+}
+
+.dir-rtl .page-context-header .page-header-image {
+  /*@noflip*/
+  float: right;
+  /*@noflip*/
+  margin-left: 1em;
+}
+
+.dir-rtl .page-context-header .header-button-group {
+  /*@noflip*/
+  float: left;
+}
+
 .moodle-actionmenu,
 .moodle-actionmenu > ul,
 .moodle-actionmenu > ul > li {
@@ -3581,6 +3622,14 @@ img#persona_signin {
   padding: 0;
   margin: 0;
   list-style-type: none;
+}
+
+.section_action_menu .moodle-actionmenu ul.menubar {
+  margin: 0;
+}
+
+.section_action_menu .moodle-actionmenu ul.menu {
+  margin: 0 0 10px 10px;
 }
 
 .moodle-actionmenu .toggle-display,
@@ -3605,6 +3654,7 @@ img#persona_signin {
 .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu {
   display: block;
   margin-right: 4px;
+  margin-left: initial;
   padding-right: 4px;
   padding-left: 4px;
 }
@@ -3619,6 +3669,7 @@ img#persona_signin {
 .jsenabled .moodle-actionmenu[data-enhance] .toggle-display.textmenu .caret {
   margin-top: 8px;
   margin-right: 2px;
+  margin-left: initial;
   border-top-color: #777777;
 }
 
@@ -3644,6 +3695,8 @@ img#persona_signin {
   display: block;
   position: absolute;
   text-align: right;
+  right: auto;
+  left: 0;
   background-color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.2);
   z-index: 1000;
@@ -3818,6 +3871,13 @@ body.lockscroll {
   overflow: hidden;
 }
 
+.dir-rtl ul {
+  /*@noflip*/
+  margin-left: 0;
+  /*@noflip*/
+  margin-right: 25px;
+}
+
 .progressbar_container {
   max-width: 500px;
   margin: 0 auto;
@@ -3835,6 +3895,12 @@ dd:after {
 
 dd:after {
   clear: both;
+}
+
+.nav-tabs > .active > a[href],
+.nav-tabs > .active > a[href]:hover,
+.nav-tabs > .active > a[href]:focus {
+  cursor: pointer;
 }
 
 /* admin.less */
@@ -5238,6 +5304,11 @@ img.iconsmall {
 
 .section_add_menus {
   text-align: left;
+  clear: both;
+}
+
+.section-modchooser {
+  clear: both;
 }
 
 .section_add_menus .horizontal div,
@@ -5272,6 +5343,14 @@ img.iconsmall {
 
 .course-content ul.section {
   margin: 1em;
+}
+
+.section .side.left {
+  float: right;
+}
+
+.section .side.right {
+  float: left;
 }
 
 .section .spinner {
@@ -5353,9 +5432,13 @@ img.iconsmall {
 }
 
 .activity img.activityicon {
-  margin-right: 0px;
   margin-left: 6px;
   vertical-align: text-bottom;
+}
+
+.dir-rtl .section .activity img.activityicon {
+  margin-right: 6px;
+  margin-left: 0;
 }
 
 .section .activity .activityinstance,
@@ -5365,8 +5448,13 @@ img.iconsmall {
 
 .editing .section .activity .contentwithoutlink,
 .editing .section .activity .activityinstance {
-  padding-right: 0;
   padding-left: 200px;
+}
+
+.dir-rtl.editing .section .activity .contentwithoutlink,
+.dir-rtl.editing .section .activity .activityinstance {
+  padding-right: 200px;
+  padding-left: 0;
 }
 
 .editing_show + .editing_assign,
@@ -5484,11 +5572,10 @@ img.iconsmall {
   margin-top: 0;
 }
 
-.course-content ul li.section.hidden .sectionname,
+.course-content ul li.section.hidden .sectionname > span,
 .course-content ul li.section.hidden .content > div,
 .course-content ul li.section.hidden .activity .activityinstance {
-  opacity: 0.5;
-  filter: alpha(opacity=50);
+  opacity: .5;
   margin-right: 10px;
   margin-left: 10px;
 }
@@ -5545,7 +5632,6 @@ img.iconsmall {
   float: left;
   height: 20px;
   position: relative;
-  z-index: 1000;
 }
 
 #page-site-index .subscribelink {
@@ -5607,6 +5693,15 @@ img.iconsmall {
   position: absolute;
   left: 22px;
   top: 3px;
+}
+
+.dir-rtl.path-course-view .completionprogress {
+  float: none;
+}
+
+.dir-rtl.path-course-view li.activity form.togglecompletion .ajaxworking {
+  /*@noflip*/
+  right: -22px;
 }
 
 li.section.hidden span.commands a.editing_hide,
@@ -5973,6 +6068,7 @@ span.editinstructions {
 
 .course_category_tree .category > .content {
   padding-right: 16px;
+  padding-left: 0;
 }
 
 .course_category_tree .subcategories > .paging,
@@ -6327,10 +6423,12 @@ span.editinstructions {
 #course-category-listings #category-listing .course-count .smallicon {
   width: 12px;
   margin-right: 4px;
+  margin-left: 0;
   vertical-align: inherit;
 }
 
 #course-category-listings #category-listing .bulk-action-checkbox {
+  margin-right: 0;
   margin-left: -3px;
 }
 
@@ -6409,6 +6507,73 @@ span.editinstructions {
   display: inline-block;
   margin: 0 0 0 6px;
   cursor: pointer;
+}
+
+.dir-rtl #course-category-listings #category-listing,
+.dir-rtl #course-category-listings #course-listing {
+  /*@noflip*/
+  float: right;
+  /*@noflip*/
+  margin-left: 0;
+}
+
+.dir-rtl #course-category-listings #course-listing {
+  /*@noflip*/
+  padding-right: 24px;
+}
+
+.dir-rtl #course-category-listings #course-listing .listitem .idnumber {
+  color: #a1a1a8;
+  /*@noflip*/
+  padding-right: 2em;
+}
+
+.dir-rtl #course-category-listings #course-listing .listitem .categoryname {
+  display: inline-block;
+  /*@noflip*/
+  margin-right: 1em;
+  /*@noflip*/
+  margin-left: 0;
+}
+
+.dir-rtl #course-category-listings #course-listing .listitem .drag-handle {
+  /*@noflip*/
+  margin: 0 6px 0 6px;
+}
+
+.dir-rtl #course-category-listings #course-listing .listitem > div {
+  /*@noflip*/
+  padding-left: 1rem;
+}
+
+.dir-rtl #course-category-listings #course-listing .bulk-action-checkbox {
+  vertical-align: middle;
+}
+
+.dir-rtl #course-category-listings #category-listing .listitem > div {
+  /*@noflip*/
+  margin-right: 0.5em;
+  /*@noflip*/
+  margin-left: 0;
+}
+
+.dir-rtl #course-category-listings .detail-pair > * {
+  /*@noflip*/
+  float: right;
+  /*@noflip*/
+  margin-right: 0;
+}
+
+.dir-rtl #course-category-listings .detail-pair .pair-key span {
+  /*@noflip*/
+  margin-right: 0;
+  /*@noflip*/
+  margin-left: 0;
+}
+
+.dir-rtl #course-category-listings .detail-pair .pair-value {
+  /*@noflip*/
+  margin-right: 0.5em;
 }
 
 .coursecat-management-header {
@@ -6649,6 +6814,7 @@ span.editinstructions {
   *zoom: 1;
   float: right;
   height: 525px;
+  border-right: none;
   border-left: 1px solid #BBBBBB;
 }
 
@@ -6656,11 +6822,12 @@ span.editinstructions {
   float: none;
   width: auto;
   margin-right: 181px;
+  margin-left: 0;
 }
 
 .moodle-dialogue-fullscreen .file-picker .fp-repo-items {
-  margin-right: 0px;
-  margin-left: 0px;
+  margin-right: 0;
+  margin-left: 0;
   float: right;
 }
 
@@ -6698,12 +6865,63 @@ span.editinstructions {
   height: 98%;
 }
 
+.dir-rtl .file-picker .fp-toolbar {
+  padding: 4px;
+}
+
+.dir-rtl .file-picker .fp-list {
+  /*@noflip*/
+  text-align: right;
+}
+
+.dir-rtl .file-picker .fp-repo-name {
+  display: inline;
+}
+
+.dir-rtl .file-picker .fp-pathbar {
+  /*@noflip*/
+  text-align: right;
+  display: block;
+  border-top: none;
+}
+
+.dir-rtl .file-picker div.bd {
+  /*@noflip*/
+  text-align: right;
+}
+
+.dir-rtl #filemenu .yuimenuitemlabel {
+  /*@noflip*/
+  text-align: right;
+}
+
+.dir-rtl .filepicker .yui-layout-unit-left {
+  /*@noflip*/
+  left: 500px;
+}
+
+.dir-rtl .filepicker .yui-layout-unit-center {
+  /*@noflip*/
+  left: 0;
+}
+
+.dir-rtl .filemanager-toolbar a {
+  padding: 0;
+}
+
 .file-picker .fp-list {
   list-style-type: none;
   padding: 0;
   float: right;
   width: 100%;
   margin: 0;
+}
+
+.dir-rtl .file-picker .fp-list {
+  /*@noflip*/
+  text-align: right;
+  /*@noflip*/
+  float: left;
 }
 
 .file-picker .fp-list .fp-repo a {
@@ -6736,6 +6954,7 @@ span.editinstructions {
 .fp-toolbar div {
   display: block;
   float: right;
+  margin-right: 0;
   margin-left: 4px;
 }
 
@@ -6767,6 +6986,10 @@ span.editinstructions {
 
 .fp-repo-items fp-viewbar {
   margin: 4px;
+}
+
+.dir-rtl .fp-toolbar img {
+  vertical-align: -35%;
 }
 
 .fp-viewbar a {
@@ -6812,6 +7035,26 @@ span.editinstructions {
   clear: right;
 }
 
+.dir-rtl .fp-vb-details a:hover {
+  background: none;
+  border: 20px solid black;
+}
+
+.dir-rtl .fp-vb-details.checked a:hover {
+  background: none;
+  border: 40px solid black;
+}
+
+.dir-rtl .fp-vb-tree a:hover {
+  background: none;
+  border: 30px solid black;
+}
+
+.dir-rtl .fp-vb-tree.checked a:hover {
+  background: none;
+  border: 50px solid black;
+}
+
 .file-picker .fp-pathbar {
   display: table-row;
 }
@@ -6826,8 +7069,18 @@ span.editinstructions {
   margin-right: 4px;
 }
 
+.dir-rtl .fp-pathbar span {
+  /*@noflip*/
+  display: inline-block;
+  /*@noflip*/
+  float: right;
+  /*@noflip*/
+  margin-left: 32px;
+}
+
 .fp-pathbar .fp-path-folder-name {
   margin-right: 32px;
+  margin-left: 0;
   line-height: 20px;
 }
 
@@ -6903,6 +7156,11 @@ span.editinstructions {
 #filesskin .file-picker .yui3-datatable-even .yui3-datatable-cell {
   background-color: #FFFFFF;
   border-right: 0 solid #FFFFFF;
+}
+
+.dir-rtl .file-picker .yui3-datatable-header {
+  /*@noflip*/
+  text-align: right;
 }
 
 .file-picker .ygtvtn,
@@ -7022,6 +7280,7 @@ a.ygtvspacer:hover {
   margin-top: -7px;
   width: 24px;
   height: 24px;
+  margin-right: 0;
   margin-left: 10px;
   text-align: center;
   line-height: 24px;
@@ -7034,6 +7293,7 @@ a.ygtvspacer:hover {
 }
 
 .fp-filename {
+  padding-right: 0;
   padding-left: 10px;
 }
 
@@ -7478,6 +7738,7 @@ a.ygtvspacer:hover {
 .filemanager .fp-iconview .fp-folder.fp-hascontextmenu .fp-contextmenu {
   display: block;
   position: absolute;
+  right: inherit;
   left: 7px;
   bottom: 5px;
 }
@@ -7487,6 +7748,7 @@ a.ygtvspacer:hover {
   display: inline;
   position: absolute;
   right: 14px;
+  left: inherit;
   margin-left: -20px;
   top: 6px;
 }
@@ -7694,6 +7956,11 @@ a.ygtvspacer:hover {
   margin: 20px;
 }
 
+.dir-rtl .filemanager .fp-mkdir-dlg p {
+  /*@noflip*/
+  text-align: right;
+}
+
 .filemanager.fp-dlg {
   text-align: center;
 }
@@ -7711,6 +7978,20 @@ a.ygtvspacer:hover {
 
 .file-picker div.bd {
   text-align: right;
+}
+
+.dir-rtl .file-picker .fp-toolbar .fp-tb-search input {
+  /*@noflip*/
+  background-position: 208px 7px;
+  /*@noflip*/
+  padding: 2px 30px 1px 3px;
+}
+
+.dir-rtl .file-picker .fp-toolbar div {
+  /*@noflip*/
+  float: right;
+  /*@noflip*/
+  margin-left: 4px;
 }
 
 .fp-formset {
@@ -7743,6 +8024,7 @@ a.ygtvspacer:hover {
 
 .fp-forminset .control-group .controls {
   margin-right: 125px;
+  margin-left: 0;
 }
 
 .fp-forminset .control-group .controls select {
@@ -7764,6 +8046,41 @@ a.ygtvspacer:hover {
 .fp-fileinfo .fp-value {
   display: inline-block;
   padding-right: 5px;
+  padding-left: 0;
+}
+
+.dir-rtl .fp-forminset {
+  max-width: 400px;
+}
+
+.dir-rtl .fp-forminset .control-group label.control-label {
+  /*@noflip*/
+  float: right;
+  /*@noflip*/
+  text-align: left;
+}
+
+.dir-rtl .fp-forminset .fp-select-buttons {
+  /*@noflip*/
+  float: left;
+}
+
+.dir-rtl .fp-select .fp-thumbnail {
+  /*@noflip*/
+  margin: 10px 0 0 0px;
+}
+
+.dir-rtl .filepicker .fp-formset label {
+  /*@noflip*/
+  float: right;
+  text-align: right;
+}
+
+.dir-rtl .filepicker .fp-formset .controls {
+  /*@noflip*/
+  margin-left: 0;
+  /*@noflip*/
+  text-align: right;
 }
 
 /** Message **/
@@ -16149,279 +16466,4 @@ div#dock {
 .path-mod-choice .horizontal .choices .option {
   display: inline-block;
   padding: 10px;
-}
-
-.path-mod-choice .results .data {
-  white-space: normal;
-}
-
-.path-mod-lesson .firstpageoptions {
-  margin: auto;
-  min-width: 280px;
-  width: 60%;
-}
-
-.path-mod-lesson .centerpadded {
-  padding: 5px;
-  text-align: center;
-}
-
-.path-mod-wiki .wiki_headingtitle,
-.path-mod-wiki .midpad,
-.path-mod-wiki .wiki_headingtime {
-  text-align: inherit;
-}
-
-.path-mod-wiki .wiki_contentbox {
-  width: 100%;
-}
-
-.dropdown-menu > li > a {
-  padding: 3px 8px 3px 20px;
-}
-
-.path-mod-survey .surveytable > tbody > tr:nth-of-type(odd) {
-  background-color: transparent;
-}
-
-.path-mod-survey .surveytable > tbody > tr:nth-of-type(even) {
-  background-color: #f9f9f9;
-}
-
-.path-mod-survey .surveytable .rblock label {
-  text-align: center;
-}
-
-.path-mod-survey .resultgraph,
-.path-mod-survey .reportsummary,
-.path-mod-survey .studentreport,
-.path-mod-survey .reportbuttons,
-.path-mod-survey .centerpara {
-  text-align: center;
-}
-
-.nav .caret {
-  margin-right: 4px;
-}
-
-.nav .divider {
-  overflow: hidden;
-  width: 0;
-  height: 40px;
-  border-right: 1px solid #f2f2f2;
-  border-left: 1px solid #ffffff;
-}
-
-.navbar-inverse .nav .divider {
-  border-right-color: #111111;
-  border-left-color: #515151;
-}
-
-.dropdown-menu .divider {
-  width: auto;
-  height: 1px;
-  border-right: 0 none;
-  border-left: 0 none;
-}
-
-.usermenu .login {
-  color: #777777;
-  line-height: 40px;
-}
-
-.usermenu .login a {
-  color: #0070a8;
-}
-
-.usermenu .login a:hover,
-.usermenu .login a:focus {
-  color: #003d5c;
-  text-decoration: underline;
-}
-
-.usermenu .moodle-actionmenu .toggle-display {
-  display: block;
-  opacity: 1;
-  color: #777777;
-  line-height: 40px;
-  height: 40px;
-}
-
-.usermenu .moodle-actionmenu .toggle-display:hover {
-  color: #333333;
-}
-
-.usermenu .moodle-actionmenu .toggle-display .userbutton {
-  height: 40px;
-  line-height: 40px;
-}
-
-.usermenu .moodle-actionmenu .toggle-display .userbutton .avatars {
-  display: inline-block;
-  height: 36px;
-  width: 36px;
-  vertical-align: middle;
-  margin-left: 6px;
-  margin-right: 6px;
-}
-
-.usermenu .moodle-actionmenu .toggle-display .userbutton .avatars .avatar,
-.usermenu .moodle-actionmenu .toggle-display .userbutton .avatars img {
-  display: block;
-}
-
-.usermenu .moodle-actionmenu .toggle-display .userbutton .usertext {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 1em;
-  color: inherit;
-}
-
-.usermenu .moodle-actionmenu .toggle-display .userbutton .usertext .meta,
-.usermenu .moodle-actionmenu .toggle-display .userbutton .usertext .role {
-  display: block;
-  font-size: 12px;
-}
-
-.usermenu .moodle-actionmenu .toggle-display .userbutton .usertext .meta .value,
-.usermenu .moodle-actionmenu .toggle-display .userbutton .usertext .role .value {
-  font-weight: bold;
-}
-
-.usermenu .moodle-actionmenu .toggle-display .userbutton .usertext .role {
-  font-weight: bold;
-}
-
-.usermenu .moodle-actionmenu .toggle-display .caret {
-  display: none;
-}
-
-.usermenu .moodle-actionmenu .menu .menu-action.icon img {
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
-.usermenu .moodle-actionmenu .menu .menu-action.icon:hover img {
-  background: #fff;
-  border-radius: 4px;
-  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.125);
-}
-
-.usermenu .moodle-actionmenu[data-enhanced] .menu .menu-action.icon img,
-.usermenu .moodle-actionmenu[data-enhanced] .menu .menu-action.icon:hover img {
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
-.navbar-inverse .usermenu .login {
-  color: #999999;
-}
-
-.navbar-inverse .usermenu .login a {
-  color: #999999;
-}
-
-.navbar-inverse .usermenu .login a:hover {
-  color: #ffffff;
-}
-
-.navbar-inverse .usermenu .moodle-actionmenu .toggle-display {
-  color: #999999;
-}
-
-.navbar-inverse .usermenu .moodle-actionmenu .userbutton .usertext {
-  color: #999999;
-}
-
-.navbar-inverse .usermenu .moodle-actionmenu .userbutton .usertext .meta {
-  color: #999999;
-}
-
-.navbar-inverse .usermenu .moodle-actionmenu .userbutton .usertext .meta .value {
-  color: #999999;
-}
-
-.navbar-inverse .usermenu .moodle-actionmenu:hover .usertext {
-  color: #ffffff;
-}
-
-.navbar-inverse .usermenu .moodle-actionmenu:hover .usertext .meta {
-  color: #999999;
-}
-
-.navbar-inverse .usermenu .moodle-actionmenu:hover .usertext .meta .value {
-  color: #ffffff;
-}
-
-.navbar-inverse .usermenu .moodle-actionmenu[data-enhanced] .toggle-display.textmenu .caret {
-  border-top-color: #ffffff;
-}
-
-.navbar-inverse .usermenu .moodle-actionmenu .menu .menu-action.icon img {
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
-.navbar-inverse .usermenu .moodle-actionmenu .menu .menu-action.icon:hover img {
-  background: #333;
-  border-radius: 4px;
-  box-shadow: 0px 0px 16px #ffffff;
-}
-
-.navbar-inverse .usermenu .moodle-actionmenu[data-enhanced] .menu .menu-action.icon img,
-.navbar-inverse .usermenu .moodle-actionmenu[data-enhanced] .menu .menu-action.icon:hover img {
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
-.jsenabled .usermenu .moodle-actionmenu .toggle-display {
-  display: block;
-}
-
-.jsenabled .usermenu .moodle-actionmenu .toggle-display.textmenu {
-  padding-right: 8px;
-  padding-left: 8px;
-}
-
-.jsenabled .usermenu .moodle-actionmenu .toggle-display .caret {
-  display: inline-block;
-  position: relative;
-  top: 9px;
-}
-
-.jsenabled .usermenu .moodle-actionmenu > .menubar {
-  display: block;
-  margin: 0px 0px 2px 0px;
-}
-
-.jsenabled .usermenu .moodle-actionmenu > .menu {
-  min-width: 160px;
-}
-
-.jsenabled .usermenu .moodle-actionmenu > .menu .filler {
-  display: block;
-  *width: 100%;
-  height: 1px;
-  margin: 9px 1px;
-  *margin: -5px 0 5px;
-  overflow: hidden;
-  background-color: #e5e5e5;
-  border-bottom: 1px solid #ffffff;
-}
-
-.jsenabled .usermenu .moodle-actionmenu.show {
-  background-color: #e5e5e5;
-}
-
-.jsenabled .usermenu .moodle-actionmenu.show .menu {
-  padding: 5px 0;
-  margin: 2px 0 0;
-  background-clip: padding-box;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
