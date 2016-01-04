@@ -47,9 +47,9 @@ echo $OUTPUT->doctype();
     ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google web fonts -->
-    <?php require_once(dirname(__FILE__) . '/includes/fonts.php'); ?>
+    <?php require_once(\theme_essential\toolbox::get_tile_file('fonts')); ?>
     <!-- Start Analytics -->
-    <?php require_once(dirname(__FILE__) . '/includes/analytics.php'); ?>
+    <?php require_once(\theme_essential\toolbox::get_tile_file('analytics')); ?>
     <!-- End Analytics -->
 </head>
 

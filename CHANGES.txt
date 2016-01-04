@@ -3,6 +3,10 @@ New in 3.0.0.1
 - NEW: First alpha version for Moodle 3.0.  Using 'bootstrapbase' styles from 2015111601.02 3.0.1+ (Build: 20151231).
        NOTE: WORK IN PROGRESS - NOT FINISHED TO EVEN ALPHA YET - DO NOT USE / TEST / REPORT ISSUES WITH.
 
+New in 2.9.1.5.2
+================
+- FIX: Issue #589: Quiz grading.
+
 New in 2.9.1.5.1
 ================
 - FIX: Issue #588: Breadcrumb hover colour conflict.
