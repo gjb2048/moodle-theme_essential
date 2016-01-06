@@ -13059,6 +13059,7 @@ form {
 .mform fieldset.collapsible legend a.fheader {
   padding: 0 5px 0 20px;
   margin-left: -20px;
+  margin-right: 0;
 }
 .jsenabled .mform .collapsed .fcontainer {
   display: none;
@@ -13089,6 +13090,9 @@ form {
 }
 .mform .iconhelp {
   margin-left: 4px;
+}
+.dir-rtl .mform .iconhelp {
+  margin-right: 4px;
 }
 .mform .ftextarea #id_alltext {
   width: 100%;
@@ -13133,6 +13137,7 @@ form {
   margin: 0 .2em;
 }
 .singleselect label {
+  margin-left: 0;
   margin-right: .3em;
 }
 input#id_externalurl {
@@ -13166,6 +13171,13 @@ input#id_externalurl {
   padding-top: 5px;
   text-align: right;
 }
+.dir-rtl .form-item .form-label,
+.dir-rtl .mform .fitem div.fitemtitle {
+  /*@noflip*/
+  float: right;
+  /*@noflip*/
+  text-align: left;
+}
 .form-defaultinfo,
 .form-label .form-shortname {
   color: #999999;
@@ -13173,6 +13185,10 @@ input#id_externalurl {
 .form-label .form-shortname {
   font-size: 10.5px;
   display: block;
+}
+.dir-rtl .form-label .form-shortname {
+  /*@noflip*/
+  text-align: left;
 }
 .form-item .form-setting,
 .form-item .form-description,
@@ -13271,6 +13287,83 @@ div.backup-section + form:after,
   color: #333333;
   text-decoration: none;
 }
+.dir-rtl .mform .fitem .felement {
+  /*@noflip*/
+  margin-right: 30%;
+  /*@noflip*/
+  margin-left: auto;
+  /*@noflip*/
+  text-align: right;
+}
+.dir-rtl .mform .fitem .felement input[name=email],
+.dir-rtl .mform .fitem .felement input[name=email2],
+.dir-rtl .mform .fitem .felement input[name=url],
+.dir-rtl .mform .fitem .felement input[name=idnumber],
+.dir-rtl .mform .fitem .felement input[name=phone1],
+.dir-rtl .mform .fitem .felement input[name=phone2] {
+  /*@noflip*/
+  text-align: left;
+  /*@noflip*/
+  direction: ltr;
+}
+.dir-rtl #id_s__pathtodu,
+.dir-rtl #id_s__aspellpath,
+.dir-rtl #id_s__pathtodot,
+.dir-rtl #id_s__supportemail,
+.dir-rtl #id_s__supportpage,
+.dir-rtl #id_s__sessioncookie,
+.dir-rtl #id_s__sessioncookiepath,
+.dir-rtl #id_s__sessioncookiedomain,
+.dir-rtl #id_s__proxyhost,
+.dir-rtl #id_s__proxyuser,
+.dir-rtl #id_s__proxypassword,
+.dir-rtl #id_s__proxybypass,
+.dir-rtl #id_s__jabberhost,
+.dir-rtl #id_s__jabberserver,
+.dir-rtl #id_s__jabberusername,
+.dir-rtl #id_s__jabberpassword,
+.dir-rtl #id_s__additionalhtmlhead,
+.dir-rtl #id_s__additionalhtmltopofbody,
+.dir-rtl #id_s__additionalhtmlfooter,
+.dir-rtl #id_s__docroot,
+.dir-rtl #id_s__filter_tex_latexpreamble,
+.dir-rtl #id_s__filter_tex_latexbackground,
+.dir-rtl #id_s__filter_tex_pathlatex,
+.dir-rtl #id_s__filter_tex_pathdvips,
+.dir-rtl #id_s__filter_tex_pathconvert,
+.dir-rtl #id_s__blockedip,
+.dir-rtl #id_s__pathtoclam,
+.dir-rtl #id_s__quarantinedir,
+.dir-rtl #id_s__sitepolicy,
+.dir-rtl #id_s__sitepolicyguest,
+.dir-rtl #id_s__cronremotepassword,
+.dir-rtl #id_s__allowedip,
+.dir-rtl #id_s__blockedip,
+.dir-rtl #id_s_enrol_meta_nosyncroleids,
+.dir-rtl #id_s_enrol_ldap_host_url,
+.dir-rtl #id_s_enrol_ldap_ldapencoding,
+.dir-rtl #id_s_enrol_ldap_bind_dn,
+.dir-rtl #id_s_enrol_ldap_bind_pw,
+.dir-rtl #admin-emoticons .form-text,
+.dir-rtl #admin-role_mapping input[type=text],
+.dir-rtl #id_s_enrol_paypal_paypalbusiness,
+.dir-rtl #id_s_enrol_flatfile_location,
+#page-admin-setting-enrolsettingsflatfile.dir-rtl input[type=text],
+#page-admin-setting-enrolsettingsdatabase.dir-rtl input[type=text],
+#page-admin-auth-db.dir-rtl input[type=text] {
+  /*@noflip*/
+  direction: ltr;
+}
+#page-admin-setting-enrolsettingsflatfile.dir-rtl .informationbox {
+  /*@noflip*/
+  direction: ltr;
+  /*@noflip*/
+  text-align: left;
+}
+#page-admin-grade-edit-scale-edit.dir-rtl .error input#id_name {
+  /*@noflip*/
+  margin-right: 170px;
+}
 #page-grade-edit-outcome-course .courseoutcomes {
   margin-left: auto;
   margin-right: auto;
@@ -13300,6 +13393,7 @@ input[type="checkbox"] + label {
 input[type="radio"],
 input[type="checkbox"] {
   margin-top: -4px;
+  margin-left: auto;
   margin-right: 7px;
 }
 .singleselect {
@@ -13311,6 +13405,10 @@ input[type="checkbox"] {
 }
 .form-item .form-label label {
   margin-bottom: 0;
+}
+.dir-rtl .form-item .form-label label {
+  /*@noflip*/
+  text-align: left;
 }
 .felement.ffilepicker {
   margin-top: 5px;
@@ -13350,6 +13448,7 @@ fieldset.coursesearchbox label {
   body #region-main .mform:not(.unresponsive) .femptylabel .fitemtitle {
     display: inline-block;
     width: auto;
+    margin-left: 0;
     margin-right: 8px;
   }
   body #region-main .mform:not(.unresponsive) .femptylabel .felement {
@@ -13365,6 +13464,10 @@ fieldset.coursesearchbox label {
   }
   body #region-main .mform:not(.unresponsive) .fitem_fcheckbox .felement {
     padding: 6px;
+  }
+  body.dir-rtl #region-main .mform:not(.unresponsive) .fitem_fcheckbox .felement {
+    /*@noflip*/
+    float: right;
   }
 }
 @media (max-width: 1474px) {
@@ -13393,6 +13496,7 @@ fieldset.coursesearchbox label {
   .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .femptylabel .fitemtitle {
     display: inline-block;
     width: auto;
+    margin-left: 0;
     margin-right: 8px;
   }
   .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .femptylabel .felement {
@@ -13409,6 +13513,10 @@ fieldset.coursesearchbox label {
   .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .fitem_fcheckbox .felement {
     padding: 6px;
   }
+  .used-region-side-pre.used-region-side-post.dir-rtl #region-main .mform:not(.unresponsive) .fitem_fcheckbox .felement {
+    /*@noflip*/
+    float: right;
+  }
 }
 #fitem_id_availabilityconditionsjson *[aria-hidden=true] {
   display: none;
@@ -13422,6 +13530,7 @@ fieldset.coursesearchbox label {
   display: inline;
 }
 #fitem_id_availabilityconditionsjson .availability-group {
+  margin-left: 0;
   margin-right: 8px;
 }
 #fitem_id_availabilityconditionsjson .availability-item {
@@ -13429,6 +13538,7 @@ fieldset.coursesearchbox label {
 }
 #fitem_id_availabilityconditionsjson .availability-none {
   margin-left: 20px;
+  margin-right: 0;
   margin-bottom: 4px;
 }
 #fitem_id_availabilityconditionsjson .availability-plugincontrols {
@@ -13437,10 +13547,12 @@ fieldset.coursesearchbox label {
   border: 1px solid #eeeeee;
   border-radius: 4px;
   display: inline-block;
+  margin-left: 0;
   margin-right: 8px;
 }
 #fitem_id_availabilityconditionsjson .availability-eye,
 #fitem_id_availabilityconditionsjson .availability-delete {
+  margin-left: 0;
   margin-right: 8px;
 }
 #fitem_id_availabilityconditionsjson .availability-eye[aria-hidden=true] {
@@ -13453,6 +13565,7 @@ fieldset.coursesearchbox label {
 }
 #fitem_id_availabilityconditionsjson .availability-button {
   margin-left: 15px;
+  margin-right: 0;
 }
 #fitem_id_availabilityconditionsjson .availability-childlist > .availability-inner {
   display: inline-block;
@@ -13467,6 +13580,7 @@ fieldset.coursesearchbox label {
 }
 #fitem_id_availabilityconditionsjson .availability-connector {
   margin-left: 20px;
+  margin-right: 0;
   margin-bottom: 6px;
 }
 .mform .error .availability-field {
@@ -13492,6 +13606,7 @@ fieldset.coursesearchbox label {
 .availability-dialogue ul button {
   float: left;
   margin-left: 1em;
+  margin-right: 0;
   min-width: 140px;
   margin-top: 4px;
 }
@@ -13508,6 +13623,56 @@ fieldset.coursesearchbox label {
 textarea[cols],
 input[size] {
   width: auto;
+}
+.form-autocomplete-selection {
+  margin: 0.2em;
+  min-height: 21px;
+}
+.form-autocomplete-multiple [role=listitem] {
+  cursor: pointer;
+}
+.form-autocomplete-suggestions {
+  position: absolute;
+  background-color: white;
+  border: 2px solid #eeeeee;
+  border-radius: 3px;
+  min-width: 206px;
+  max-height: 20em;
+  overflow: auto;
+  margin: 0px;
+  padding: 0px;
+  margin-top: -0.2em;
+  z-index: 1;
+}
+.form-autocomplete-suggestions li {
+  list-style-type: none;
+  padding: 0.2em;
+  margin: 0;
+  cursor: pointer;
+  color: #333333;
+}
+.form-autocomplete-suggestions li:hover {
+  background-color: #00a3f4;
+  color: #ffffff;
+}
+.form-autocomplete-suggestions li[aria-selected=true] {
+  background-color: #e5e5e5;
+  color: #555555;
+}
+.form-autocomplete-downarrow {
+  color: #333333;
+  position: relative;
+  top: -0.3em;
+  left: -1.5em;
+  right: inherit;
+  cursor: pointer;
+}
+.form-autocomplete-selection:focus {
+  outline: none;
+}
+.form-autocomplete-selection [data-active-selection=true] {
+  padding: 0.5em;
+  font-size: large;
 }
 /* modules.less */
 select {

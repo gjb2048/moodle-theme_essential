@@ -88,6 +88,28 @@ Delvon Forrester, Esparanza co uk
 iZone
 Anis Jradah
 
+Essential for Moodle 3.0 kindly sponsored by
+--------------------------------------------
+Leila Hiret
+Vilar da Camara Neto
+Kees Koopman
+Matej Topolovec
+Mihai Bojonca
+V. Y. S. Cavalcanti
+Christian Kleinhanss
+Nadav Kavalerchik
+Francisco Gomez Gonzalez
+Lazar Ivanov
+Duval Arnaud
+Kai ner Maa Pitanta
+Gregory Reinert
+M van der Niet
+Floyd Saner
+Andreas Schenkel
+Gemma Lesterhuis
+Roy Bentley
+Duane Cox
+
 Customisation
 =============
 If you like this theme and would like me to customise it, transpose functionality to another theme or
