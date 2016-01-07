@@ -27,6 +27,12 @@
     li {
       color: ~"[[setting:themenavcolor]]";
       background-color: ~"[[setting:themecolor]]";
+      border-color: ~"[[setting:themecolor]]";
+      border-width: 1px;
+      border-style: solid;
+      &:before {
+        border-left-color: ~"[[setting:themenavcolor]]";
+      }
       a {
         color: inherit;
       }
@@ -39,13 +45,16 @@
         }
       }
       &:hover, &:focus {
-        background-color: ~"[[setting:themehovercolor]]";
+        background-color: ~"[[setting:themenavcolor]]";
+        &:before {
+          border-left-color: ~"[[setting:themecolor]]";
+        }
         a, a:before {
           color: ~"[[setting:themecolor]]";
         }
       }
       &:hover:after {
-        border-left-color: ~"[[setting:themehovercolor]]";
+        border-left-color: ~"[[setting:themenavcolor]]";
         a {
           color: ~"[[setting:themecolor]]";
         }

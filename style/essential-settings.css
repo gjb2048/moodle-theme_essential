@@ -256,6 +256,12 @@ p.tree_item.branch.emptybranch:focus:before {
 .breadcrumb-nav ul.breadcrumb.style1 li {
   color: [[setting:themenavcolor]];
   background-color: [[setting:themecolor]];
+  border-color: [[setting:themecolor]];
+  border-width: 1px;
+  border-style: solid;
+}
+.breadcrumb-nav ul.breadcrumb.style1 li:before {
+  border-left-color: [[setting:themenavcolor]];
 }
 .breadcrumb-nav ul.breadcrumb.style1 li a {
   color: inherit;
@@ -268,7 +274,11 @@ p.tree_item.branch.emptybranch:focus:before {
 }
 .breadcrumb-nav ul.breadcrumb.style1 li:hover,
 .breadcrumb-nav ul.breadcrumb.style1 li:focus {
-  background-color: [[setting:themehovercolor]];
+  background-color: [[setting:themenavcolor]];
+}
+.breadcrumb-nav ul.breadcrumb.style1 li:hover:before,
+.breadcrumb-nav ul.breadcrumb.style1 li:focus:before {
+  border-left-color: [[setting:themecolor]];
 }
 .breadcrumb-nav ul.breadcrumb.style1 li:hover a,
 .breadcrumb-nav ul.breadcrumb.style1 li:focus a,
@@ -277,7 +287,7 @@ p.tree_item.branch.emptybranch:focus:before {
   color: [[setting:themecolor]];
 }
 .breadcrumb-nav ul.breadcrumb.style1 li:hover:after {
-  border-left-color: [[setting:themehovercolor]];
+  border-left-color: [[setting:themenavcolor]];
 }
 .breadcrumb-nav ul.breadcrumb.style1 li:hover:after a {
   color: [[setting:themecolor]];

@@ -7,6 +7,7 @@
  */
 // Import the bootstrap we need.
 @import "bootstrap/variables";
+@import "fontawesome/variables";
 
 //@import "bootstrap/mixins";
 // Opacity
@@ -70,6 +71,10 @@
                         li {
                             color: ~"[[setting:alternativethemenavcolor@{index}]]";
                             background-color: ~"[[setting:alternativethemecolor@{index}]]";
+                            border-color: ~"[[setting:alternativethemecolor@{index}]]";
+                            &:before {
+                                border-left-color: ~"[[setting:alternativethemenavcolor@{index}]]";
+                            }
                             a {
                                 color: inherit;
                                 &:before {
@@ -79,21 +84,22 @@
                             &:after {
                                 border-left-color: ~"[[setting:alternativethemecolor@{index}]]";;
                             }
-                            &:hover, &:focus {
-                                background-color: ~"[[setting:alternativethemehovercolor@{index}]]";
-                                a, a:before {
+                            &:first-of-type {
+                                a:before {
                                     color: ~"[[setting:alternativethemenavcolor@{index}]]";
                                 }
                             }
-                            &:hover:after {
-                                border-left-color: ~"[[setting:alternativethemehovercolor@{index}]]";
-                            }
-                            &:first-of-type {
-                                &:hover, &:focus {
-                                    a:before {
-                                        color: ~"[[setting:alternativethemenavcolor@{index}]]";
-                                    }
+                            &:hover, &:focus {
+                                background-color: ~"[[setting:alternativethemenavcolor@{index}]]";
+                                &:before {
+                                    border-left-color: ~"[[setting:alternativethemecolor@{index}]]";
                                 }
+                                a, a:before {
+                                    color: ~"[[setting:alternativethemecolor@{index}]]";
+                                }
+                            }
+                            &:hover:after {
+                                border-left-color: ~"[[setting:alternativethemenavcolor@{index}]]";
                             }
                         }
                     }
@@ -130,16 +136,16 @@
                     color: ~"[[setting:alternativethemehovercolor@{index}]]";
                 }
 
-                .fa {
+                .@{fa-css-prefix} {
                     color: ~"[[setting:alternativethemeiconcolor@{index}]]";
                     &:hover {
                         color: ~"[[setting:alternativethemehovercolor@{index}]]";
                     }
-                    &.fa-warning {
+                    &.@{fa-css-prefix}-warning {
                         color: inherit;
                     }
                 }
-                button.socialicon i.fa {
+                button.socialicon i.@{fa-css-prefix} {
                     color: @white;
                 }
 
@@ -192,7 +198,7 @@
                 }
 
                 .breadcrumb-button {
-                    i.fa {
+                    i.@{fa-css-prefix} {
                         vertical-align: middle;
                         color: inherit;
                         &:hover {
@@ -258,7 +264,7 @@
                             > li > a {
                                 color: ~"[[setting:alternativethemenavcolor@{index}]]";
                                 border-left-color: ~"[[setting:alternativethemecolor@{index}]]";
-                                i.fa {
+                                i.@{fa-css-prefix} {
                                     color: inherit;
                                 }
                                 &:hover {
@@ -276,7 +282,7 @@
                                     &:focus, &.open {
                                         color: @white; // TODO: Page background colour needs to be a setting.
                                         background-color: ~"[[setting:alternativethemeurlcolor@{index}]]";
-                                        i.fa {
+                                        i.@{fa-css-prefix} {
                                             color: @white; // TODO: Page background colour needs to be a setting.
                                         }
                                     }
@@ -407,7 +413,7 @@
                 }
 
                 .alert {
-                    .fa-info, .fa-warning, .fa-bullhorn {
+                    .@{fa-css-prefix}-info, .@{fa-css-prefix}-warning, .@{fa-css-prefix}-bullhorn {
                         color: ~"[[setting:alternativethemenavcolor@{index}]]";
                         &:hover, &:focus {
                             color: ~"[[setting:alternativethemenavcolor@{index}]]";
@@ -435,7 +441,7 @@
                             &:focus {
                             color: ~"[[setting:alternativethemeslidebuttonhovercolor@{index}]]";
                         }
-                        i.fa {
+                        i.@{fa-css-prefix} {
                             color: ~"[[setting:alternativethemeslidebuttoncolor@{index}]]";
                             &:hover,
                                 &:focus {
@@ -501,7 +507,7 @@
                     color: ~"[[setting:alternativethemetextcolor@{index}]]";
                 }
 
-                .service i.fa {
+                .service i.@{fa-css-prefix} {
                     color: ~"[[setting:alternativethemeiconcolor@{index}]]";
                 }
 
@@ -531,10 +537,10 @@
                     color: ~"[[setting:alternativethemefootertextcolor@{index}]]";
                     border-top: 2px solid ~"[[setting:alternativethemecolor@{index}]]";
                     border-bottom: 3px solid ~"[[setting:alternativethemecolor@{index}]]";
-                    a, a > i.fa {
+                    a, a > i.@{fa-css-prefix} {
                         color: ~"[[setting:alternativethemefooterurlcolor@{index}]]";
                     }
-                    a:hover, a:hover > i.fa {
+                    a:hover, a:hover > i.@{fa-css-prefix} {
                         color: ~"[[setting:alternativethemefooterhovercolor@{index}]]";
                     }
                     .footnote {
@@ -564,10 +570,10 @@
                     .block {
                         background-color: ~"[[setting:alternativethemefooterblockbackgroundcolour@{index}]]";
                         color: ~"[[setting:alternativethemefooterblocktextcolour@{index}]]";
-                        a, a > i.fa {
+                        a, a > i.@{fa-css-prefix} {
                             color: ~"[[setting:alternativethemefooterblockurlcolour@{index}]]";
                         }
-                        a:hover, a:hover > i.fa {
+                        a:hover, a:hover > i.@{fa-css-prefix} {
                             color: ~"[[setting:alternativethemefooterblockhovercolour@{index}]]";
                         }
                         .icon {
@@ -585,7 +591,7 @@
                             color: inherit;
                         }
                     }
-                    .header .title h2:before, &.block_iconic_html .header .title h2 span.fa:before {
+                    .header .title h2:before, &.block_iconic_html .header .title h2 span.@{fa-css-prefix}:before {
                         color: inherit;
                     }
                     .block_html ul li:before,
@@ -605,12 +611,12 @@
 
                 p.tree_item {
                     &.leaf a {
-                        > i.fa {
+                        > i.@{fa-css-prefix} {
                             color: ~"[[setting:alternativethemeiconcolor@{index}]]";
                         }
                         &:hover, &:focus {
                             color: ~"[[setting:alternativethemehovercolor@{index}]]";
-                            > i.fa {
+                            > i.@{fa-css-prefix} {
                                 color: inherit;
                             }
                         }
@@ -646,7 +652,7 @@
                     border-color: ~"[[setting:alternativethemecolor@{index}]]";
                 }
 
-                .afmatter i.fa {
+                .afmatter i.@{fa-css-prefix} {
                     color: ~"[[setting:alternativethemeiconcolor@{index}]]";
                 }
 
@@ -731,7 +737,7 @@
                         background-color: ~"[[setting:alternativethemecolor@{index}]]";
                         > .info > .categoryname a {
                             color: ~"[[setting:alternativethemenavcolor@{index}]]";
-                            i.fa {
+                            i.@{fa-css-prefix} {
                                 color: inherit;
                             }
                         }
@@ -785,7 +791,7 @@
                     .moodle-actionmenu[data-enhanced].show .menu a:hover {
                         color: ~"[[setting:themenavcolor]]";
                         background-color: ~"[[setting:alternativethemecolor@{index}]]";
-                        .fa:before {
+                        .@{fa-css-prefix}:before {
                             color: ~"[[setting:alternativethemenavcolor@{index}]]";
                         }
                     }
@@ -797,11 +803,11 @@
                 .menu a.menu-action,
                 .course-item-actions a,
                 .actions a {
-                    > i.fa {
+                    > i.@{fa-css-prefix} {
                         color: ~"[[setting:alternativethemeiconcolor@{index}]]";
                     }
                     &:hover {
-                        > i.fa {
+                        > i.@{fa-css-prefix} {
                             color: ~"[[setting:alternativethemehovercolor@{index}]]";
                         }
                     }
