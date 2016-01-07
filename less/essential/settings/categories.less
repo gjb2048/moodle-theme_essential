@@ -7,13 +7,14 @@
  */
 
 /* @group Category Icons */
+@import "../../fontawesome/variables";
 
 .categoryicons .course_category_tree .category[data-categoryid] {
   &:hover {
     background-color: ~"[[setting:themecolor]]";
     > .info > .categoryname a {
       color: ~"[[setting:themenavcolor]]";
-      i.fa {
+      i.@{fa-css-prefix} {
         color: inherit;
       }
     }

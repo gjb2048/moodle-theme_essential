@@ -1,4 +1,5 @@
 /* @group Blocks */
+@import "../../fontawesome/variables";
 
 .block {
   .icon {
@@ -26,12 +27,12 @@
 
 p.tree_item {
   &.leaf a {
-    > i.fa {
+    > i.@{fa-css-prefix} {
       color: ~"[[setting:themeiconcolor]]";
     }
     &:hover, &:focus {
       color: ~"[[setting:themehovercolor]]";
-      > i.fa {
+      > i.@{fa-css-prefix} {
         color: inherit;
       }
     }

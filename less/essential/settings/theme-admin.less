@@ -6,6 +6,7 @@
   font-family: ~"[[setting:bodyfont]]"
 }
 
+@import "../../fontawesome/variables";
 body {
   color: ~"[[setting:themetextcolor]]";
   font-family: ~"[[setting:bodyfont]]";
@@ -13,11 +14,14 @@ body {
   background-attachment: ~"[[setting:backgroundattach]]";
   background-repeat: ~"[[setting:backgroundrepeat]]";
   background-size: ~"[[setting:backgroundsize]]";
-  .fa {
+  .@{fa-css-prefix} {
     color: ~"[[setting:themeiconcolor]]";
     &:hover {
       color: ~"[[setting:themehovercolor]]";
     }
+  }
+  .@{fa-css-prefix}-inverse {
+    color: @fa-inverse;
   }
 }
 
@@ -187,7 +191,7 @@ a.marketing-button:hover {
   a:hover {
     color: ~"[[setting:themehovercolor]]";
   }
-  .header .title h2:before, &.block_iconic_html .header .title h2 span.fa:before {
+  .header .title h2:before, &.block_iconic_html .header .title h2 span.@{fa-css-prefix}:before {
     color: ~"[[setting:themeiconcolor]]";
   }
 }
@@ -237,7 +241,7 @@ a.marketing-button:hover {
 
 /* @group Home News Boxes */
 
-.service i.fa {
+.service i.@{fa-css-prefix} {
   color: ~"[[setting:themecolor]]";
 }
 
@@ -250,10 +254,10 @@ a.marketing-button:hover {
   color: ~"[[setting:footertextcolor]]";
   border-top: 2px solid ~"[[setting:themecolor]]";
   border-bottom: 3px solid ~"[[setting:themecolor]]";
-  a, a > i.fa {
+  a, a > i.@{fa-css-prefix} {
     color: ~"[[setting:footerurlcolor]]";
   }
-  a:hover, a:hover > i.fa {
+  a:hover, a:hover > i.@{fa-css-prefix} {
     color: ~"[[setting:footerhovercolor]]";
   }
   .footnote {
@@ -283,10 +287,10 @@ a.marketing-button:hover {
   .block {
     background-color: ~"[[setting:footerblockbackgroundcolour]]";
     color: ~"[[setting:footerblocktextcolour]]";
-    a, a > i.fa {
+    a, a > i.@{fa-css-prefix} {
       color: ~"[[setting:footerblockurlcolour]]";
     }
-    a:hover, a:hover > i.fa {
+    a:hover, a:hover > i.@{fa-css-prefix} {
       color: ~"[[setting:footerblockhovercolour]]";
     }
     .icon {
@@ -304,7 +308,7 @@ a.marketing-button:hover {
       color: inherit;
     }
   }
-  .header .title h2:before, &.block_iconic_html .header .title h2 span.fa:before {
+  .header .title h2:before, &.block_iconic_html .header .title h2 span.@{fa-css-prefix}:before {
     color: inherit;
   }
   .block_html ul li:before,
@@ -489,7 +493,7 @@ h1, h2, h3, h4, h5, h6 {
   .moodle-actionmenu[data-enhanced].show .menu a:hover {
     color: ~"[[setting:themenavcolor]]";
     background-color: ~"[[setting:themecolor]]";
-    .fa:before {
+    .@{fa-css-prefix}:before {
       color: ~"[[setting:themenavcolor]]";
     }
   }

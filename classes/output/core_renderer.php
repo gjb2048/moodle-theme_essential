@@ -1539,7 +1539,7 @@ class core_renderer extends \core_renderer {
         global $CFG;
         $result = '';
 
-        if (($CFG->version < 2015051100.00) || ($CFG->version >= 2015060200.00)) {
+        if (($CFG->version < 2015111600.00) || ($CFG->version >= 2015120400.00)) {
             $result = '<div class="useralerts alert alert-error">';
             $result .= '<a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>';
             $result .= '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i>';

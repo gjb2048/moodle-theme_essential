@@ -1,5 +1,5 @@
 // The class gradetreebox matches the pages displaying the gradebook
-// "Categories and items" > "Simple view" and "Full view".
+// "Gradebook setup" > "Simple view" and "Full view".
 .gradetreebox {
     h4 {
         // Force back the base font-size to minimise width.
@@ -81,6 +81,27 @@
     }
 }
 
+// TODO Reduced but what is left has no flipped version in LTR.
+.dir-rtl {
+    #rubric-rubric.gradingform_rubric {
+        .addcriterion {
+            input {
+                /*@noflip*/padding-right: 26px;
+                /*@noflip*/padding-left: 10px;
+                /*@noflip*/background-position: right 8px top 8px;
+            }
+        }
+        .options {
+            .option {
+                .value {
+                    /*@noflip*/margin-left: 0px;
+                    /*@noflip*/margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
 #rubric-rubric {
     &.gradingform_rubric {
         #rubric-criteria {
@@ -103,7 +124,9 @@
                 }
                 .score {
                     position: relative;
+                    text-align: left;
                     float: left;
+                    margin-left: 0;
                     margin-right: 28px;
                     input {
                         margin-bottom: 0px;
@@ -122,6 +145,7 @@
                         input {
                             display: block;
                             position: absolute;
+                            left: auto;
                             right: 0;
                             bottom: 0;
                             height: 24px;
@@ -158,6 +182,7 @@
         }
         .addcriterion {
             margin-left: 5px;
+            margin-right: 0;
             .btn();
             padding: 0;
             input {
@@ -224,61 +249,79 @@
     .gradeitemdescription {
         font-weight: normal;
         padding-left: 24px;
+        padding-right: 0;
     }
     .column-weight {
         white-space: nowrap;
         &.level3 {
             padding-left: 37px;
+            padding-right: 0;
         }
         &.level4 {
             padding-left: 66px;
+            padding-right: 0;
         }
         &.level5 {
             padding-left: 95px;
+            padding-right: 0;
         }
         &.level6 {
             padding-left: 124px;
+            padding-right: 0;
         }
         &.level7 {
             padding-left: 153px;
+            padding-right: 0;
         }
         &.level8 {
             padding-left: 182px;
+            padding-right: 0;
         }
         &.level9 {
             padding-left: 211px;
+            padding-right: 0;
         }
         &.level10 {
             padding-left: 240px;
+            padding-right: 0;
         }
     }
     .column-range {
         &.level2 {
             padding-left: 37px;
+            padding-right: 0;
         }
         &.level3 {
             padding-left: 66px;
+            padding-right: 0;
         }
         &.level4 {
             padding-left: 95px;
+            padding-right: 0;
         }
         &.level5 {
             padding-left: 124px;
+            padding-right: 0;
         }
         &.level6 {
             padding-left: 153px;
+            padding-right: 0;
         }
         &.level7 {
             padding-left: 182px;
+            padding-right: 0;
         }
         &.level8 {
             padding-left: 211px;
+            padding-right: 0;
         }
         &.level9 {
             padding-left: 240px;
+            padding-right: 0;
         }
         &.level10 {
             padding-left: 269px;
+            padding-right: 0;
         }
     }
     &.generaltable {
@@ -287,6 +330,15 @@
         }
         .leveleven {
             background-color: @tableBackground;
+        }
+    }
+}
+
+// TODO Left RTL styles as needed.
+.dir-rtl {
+    &.path-grade-edit-tree .setup-grades {
+        .column-name h4 img.icon {
+            /*@noflip*/padding-left: 4px;
         }
     }
 }
@@ -338,10 +390,21 @@
     .gradeparent .sideonly.floating > .cell {
         padding-left: 5 + (@dockWidth + (@dockTitleMargin * 2));
     }
+
+    // TODO Left as RTL is not mirror flipped.
+    &.dir-rtl {
+        .gradeparent .sideonly.floating > .cell,
+        .gradeparent .sideonly.floating > .cell,
+        .gradeparent .sideonly.floating > .cell {
+            /*@noflip*/padding-left: 5px;
+            /*@noflip*/padding-right: 5 + (@dockWidth + (@dockTitleMargin * 2));
+        }
+    }
 }
 
 .content-only.path-grade-report-grader {
     .gradeparent table {
         margin-left: (@dockWidth + (@dockTitleMargin * 2));
+        margin-right: 0;
     }
 }

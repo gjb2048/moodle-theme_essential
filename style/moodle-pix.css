@@ -51,10 +51,7 @@
   background: url([[pix:i/ajaxloader]]) no-repeat;
 }
 .coursebox > .info > .coursename a {
-  background-image: url([[pix:moodle|i/course]]);
-}
-.dir-rtl .coursebox > .info > .categoryname a {
-  background-position: center right;
+  background-image: transparent;
 }
 .coursebox.remotehost > .info > .categoryname a {
   background-image: url([[pix:moodle|i/mnethost]]);

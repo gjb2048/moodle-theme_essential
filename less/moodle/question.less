@@ -350,6 +350,13 @@ body.path-question-type .fitem_fgroup .accesshide {
 #page-question-preview #techinfo {
     margin: 1em 0;
 }
+// TODO Leaving in non-flipped styles.
+// Overide for RTL layout.
+.dir-rtl #chooseqtype .instruction,
+.dir-rtl #chooseqtype .qtypesummary {
+    /*@noflip*/border-left: 0;
+    /*@noflip*/border-right: 1px solid grey;
+}
 
 // imported from quiz.css
 
@@ -447,6 +454,7 @@ body.path-question-type .fitem_fgroup .accesshide {
     position: static;
     width: 12.1em;
     float: right;
+    margin-left: 0;
     margin-right: 60px;
 }
 #page-mod-quiz-edit div.question div.content div.points br {

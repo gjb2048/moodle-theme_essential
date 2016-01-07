@@ -100,6 +100,7 @@ select {
         .content-mask,
         .options {
             margin-left: 48px;
+            margin-right: 0;
         }
         &.side {
             clear: both;
@@ -169,6 +170,18 @@ select {
     margin-left: 4px;
 }
 
+// TODO Not sure if need this?  Would Bootstrap automatically do this anyway?
+.dir-rtl {
+    .nav-tabs > li,
+    .nav-pills > li {
+        /*@noflip*/float: right;
+    }
+}
+.dir-rtl .navbar .brand {
+    /*@noflip*/padding: 10px 0 10px 20px;
+    /*@noflip*/float: right;
+}
+
 .navbar-inverse .logininfo a {
     color: @navbarInverseLinkColor;
 }
@@ -180,6 +193,24 @@ select {
 .navbar-fixed-top,
 .navbar-fixed-bottom {
     z-index: 4030;
+}
+
+// TODO Not sure if need this?  Would Bootstrap automatically do this anyway?
+// I'm sure I've seen these selectors elsewhere too.
+.dir-rtl .breadcrumb-button,
+.dir-rtl .navbar .btn-navbar {
+    /*@noflip*/float: left;
+}
+
+.dir-rtl .breadcrumb-button .singlebutton {
+    /*@noflip*/float: right;
+    /*@noflip*/margin-right: 4px;
+    /*@noflip*/margin-left: 0;
+}
+.dir-rtl .breadcrumb-button .singlebutton div,
+.dir-rtl .breadcrumb-button .singlebutton div input[type="submit"] {
+    /*@noflip*/margin-right: 5px;
+    /*@noflip*/margin-left: 0;
 }
 
 .ie .row-fluid .desktop-first-column {
@@ -241,6 +272,10 @@ div#dock {
         padding: 3px 20px 3px 8px;
     }
 }
+// TODO Needed?
+.dir-rtl .dropdown-submenu > .dropdown-menu {
+  .border-radius(6px 0px 6px 6px);
+}
 
 
 // Survey module
@@ -255,9 +290,21 @@ div#dock {
         text-align:center;
     }
 }
+// RTL overrides.
+// TODO I think this is needed.
+.dir-rtl {
+    &.path-mod-forum .forumheaderlist {
+        .discussion {
+            .lastpost {
+                /*@noflip*/text-align: left;
+            }
+        }
+    }
+}
 
 .nav .caret {
     margin-left: 4px;
+    margin-right: 0;
 }
 
 // Dividers
@@ -265,12 +312,11 @@ div#dock {
     .divider {
         overflow: hidden;
         width: 0;
-        height: 40px;
+        height: @navbarHeight;
         border-left: 1px solid @navbarBackground;
         border-right: 1px solid @navbarBackgroundHighlight;
     }
 }
-
 .navbar-inverse {
     .nav {
         .divider {
@@ -279,7 +325,6 @@ div#dock {
         }
     }
 }
-
 .dropdown-menu {
     .divider {
         width: auto;
@@ -546,22 +591,22 @@ div#dock {
     }
 }
 
-.usermenu {
-    float: right;
-    > .moodle-actionmenu {
-        > .menu {
-            &:before {
-                right: 9px;
+    .usermenu {
+        float: right;
+        > .moodle-actionmenu {
+            > .menu {
+                &:before {
+                    right: 9px;
+                }
+                &:after {
+                    right: 10px;
+                }
             }
-            &:after {
-                right: 10px;
+            > .menubar li a {
+                text-align: right;
             }
-        }
-        > .menubar li a {
-            text-align: right;
         }
     }
-}
 .dir-ltr.userloggedinas .usermenu .userbutton .avatars {
     .avatar {
         &.current {
@@ -577,7 +622,6 @@ div#dock {
         }
     }
 }
-
 
 .userloggedinas .usermenu .userbutton .avatars {
     .avatar {

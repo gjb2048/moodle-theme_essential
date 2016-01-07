@@ -3,6 +3,20 @@
 // Should probably be moved to relevant .less files
 // after 4095 selector issue is solved
 
+// TODO Leaving until otherwise knowledge helps.
+@media (min-width: 980px) {
+    .dir-rtl .navbar .nav.pull-right,
+    .dir-rtl .navbar .logininfo {
+        /*@noflip*/float: left;
+    }
+    .dir-rtl .navbar .nav {
+        float: right;
+        & > li {
+            /*@noflip*/float: right;
+        }
+    }
+}
+
 @media (min-width: 980px) and (max-width: 1199px) {
     // Wider form labels.
     .form-item .form-label,
@@ -42,23 +56,31 @@
     .file-picker .fp-repo-items {
         width: 100%;
         float: none;
+        margin-left: 0;
     }
     .file-picker .fp-login-form .fp-login-input label {
         text-align: left;
     }
-
     .file-picker .fp-content form td {
         display: block;
         width: 100%;
         text-align: left;
     }
-
     .fp-content .mdl-right {
         text-align: left;
     }
 
     .fp-repo-items .fp-navbar {
         border-top: 1px solid rgb(187, 187, 187);
+    }
+
+    .dir-rtl {
+        .userprofile dl.list dt,
+        .userprofile dl.list dd {
+            float: none;
+            text-align: right;
+            margin-right: 0;
+        }
     }
 
     .fp-formset div {
@@ -98,7 +120,27 @@
     .form-horizontal .controls {
         margin-left: @horizontalComponentOffset1200;
     }
+    // TODO No flipped LTR version.
+    .dir-rtl {
+        .form-item .form-setting,
+        .form-item .form-description,
+        .mform .fitem .felement,
+        .mform .fdescription.required,
+        .userprofile dl.list dd,
+        .form-horizontal .controls {
+            /*@noflip*/margin-right: (@horizontalComponentOffset1200 - 100px);
+        }
+        #page-mod-forum-search .c1 {
+            /*@noflip*/margin-right: @horizontalComponentOffset1200;
+        }
+        .form-item .form-label,
+        .mform .fitem div.fitemtitle,
+        .userprofile dl.list dt,
+        .form-horizontal .control-label {
+            width: (@horizontalComponentOffset1200 - 120px);
+        }
 
+    }
     .path-admin .buttons,
     .form-buttons {
         padding-left: @horizontalComponentOffset1200;
@@ -327,6 +369,35 @@
     }
 }
 
+// TODO These could be needed.
+.dir-rtl {
+    .dropdown-menu {
+        /*@noflip*/right: 0;
+        /*@noflip*/left: auto;
+        /*@noflip*/margin-right: 0;
+    }
+    .navbar .nav > li > .dropdown-menu:before {
+        /*@noflip*/right: 9px;
+        /*@noflip*/left: auto;
+    }
+    .navbar .nav > li > .dropdown-menu:after {
+        /*@noflip*/right: 10px;
+        /*@noflip*/left: auto;
+    }
+    .dropdown-submenu > a:after {
+        /*@noflip*/margin-right: 0;
+        /*@noflip*/margin-left: -10px;
+        /*@noflip*/float: left;
+        /*@noflip*/border-right-color: #ccc;
+        /*@noflip*/border-left-color: transparent;
+        /*@noflip*/border-width: 5px 5px 5px 0px;
+    }
+    .dropdown-submenu > .dropdown-menu {
+        /*@noflip*/right: 100%;
+        /*@noflip*/left: auto;
+    }
+}
+
 @media (max-width: 979px) {
     .nav-collapse {
          height: 0;
@@ -337,11 +408,14 @@
         .nav > li > a:focus,
         .dropdown-menu a:hover,
         .dropdown-menu a:focus,
-        .dropdown-submenu a:focus,
         .dropdown-submenu a:hover,
+        .dropdown-submenu a:focus,
         .dropdown-submenu a:active,
         .dropdown-menu > li > a:hover,
-        .dropdown-menu > li > a:focus {
+        .dropdown-menu > li > a:focus,
+        .dropdown-submenu:hover > a,
+        .dropdown-submenu:focus > a
+        {
             background-image: none;
             color: @grayDark;
         }
@@ -484,6 +558,69 @@
                     margin: 4px 1px;
                     border-top: 1px solid @navbarInverseBackground;
                     border-bottom: 1px solid lighten(@navbarInverseBackground, 25%);
+                }
+            }
+            .nav {
+                > li > a {
+                    &:hover,
+                    &:focus {
+                        color: @navbarInverseLinkColorHover;
+                    }
+                }
+            }
+            .dropdown-menu a {
+                &:hover,
+                &:focus {
+                    color: @navbarInverseLinkColorHover;
+                }
+                > li > a {
+                    &:hover,
+                    &:focus {
+                        color: @navbarInverseLinkColorHover;
+                    }
+                }
+            }
+            .dropdown-submenu a {
+                &:hover,
+                &:focus,
+                &:active {
+                    color: @navbarInverseLinkColorHover;
+                }
+            }
+        }
+    }
+
+    // TODO Not sure if needed.
+    .dir-rtl {
+        .navbar {
+            .nav-collapse.in {
+                > .nav {
+                    margin: 0;
+                    > li > a {
+                        /*@noflip*/padding-left: 0;
+                        /*@noflip*/padding-right: 20px;
+                    }
+                    .dropdown-menu {
+                        /*@noflip*/margin: 0 15px 0 0;
+                    }
+                }
+                .dropdown-menu {
+                    > li {
+                        > a {
+                            /*@noflip*/padding: 9px 15px;
+                        }
+                    }
+                }
+                .nav,
+                .nav .dropdown-menu {
+                    .dropdown-submenu {
+                        .dropdown-toggle {
+                            &:after {
+                                /*@noflip*/margin-left: 0;
+                                /*@noflip*/margin-right: 4px;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -651,11 +788,28 @@
             }
         }
     }
-   }
+}
+
 
 // File Picker.
 @media (max-width: 768px) {
     .fp-forminset .control-group .controls {
         margin-left: 0;
+    }
+    // TODO Not sure if needed.
+    .dir-rtl .fp-formset .control-group {
+        label.control-label {
+            /*@noflip*/text-align: right;
+            /*@noflip*/float: none;
+        }
+    }
+    .dir-rtl .fp-forminset .control-group {
+        label.control-label {
+            /*@noflip*/text-align: right;
+            /*@noflip*/float: none;
+        }
+        .controls {
+            /*@noflip*/margin-right: 0;
+        }
     }
 }

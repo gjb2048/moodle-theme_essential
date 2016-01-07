@@ -8100,6 +8100,7 @@ a.ygtvspacer:hover {
   font-size: 1em;
   font-weight: bold;
   clear: both;
+  word-wrap: break-word;
 }
 
 .message .author {
@@ -8135,6 +8136,10 @@ a.ygtvspacer:hover {
   text-align: center;
 }
 
+.message {
+  overflow: hidden;
+}
+
 .message .note {
   padding: 10px;
 }
@@ -8144,13 +8149,19 @@ table.message .searchresults td {
 }
 
 .message .contactselector {
+  width: auto;
   float: right;
 }
 
 @media screen and (min-width: 1000px) {
   .message .contactselector {
-    width: 24%;
+    float: right;
+    padding: 0 0 0 8px;
   }
+}
+
+.message .contactselector .singleselect {
+  width: 240px;
 }
 
 .message .contactselector .paging {
@@ -8158,47 +8169,89 @@ table.message .searchresults td {
   position: relative;
 }
 
-.message .message-contacts {
+.message .contactselector #message_participants {
+  max-width: 240px;
+}
+
+.message .contactselector .message-contacts {
   list-style-type: none;
   margin: 0;
 }
 
-.message .message-contacts li {
+.message .contactselector .message-contacts li {
   clear: both;
   position: relative;
   min-height: 23px;
+  padding: 2px;
 }
 
-.message .message-contacts li .pix {
-  right: 0;
-  left: auto;
-  position: absolute;
+.message .contactselector .message-contacts li:nth-child(odd) {
+  background: rgba(120, 120, 255, 0.1);
 }
 
-.message .message-contacts li .contact {
-  margin: 0 25px 0 24%;
+.message .contactselector .message-contacts li > div {
+  display: block;
+  height: 100%;
+}
+
+.message .contactselector .message-contacts li > div > * {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.message .contactselector .message-contacts li > div.pix {
+  position: relative;
+  float: right;
+}
+
+.message .contactselector .message-contacts li > div.link {
+  white-space: nowrap;
+  width: 60px;
+  position: relative;
+  float: left;
+  text-align: left;
+}
+
+.message .contactselector .message-contacts li > div.contact {
+  position: relative;
+  word-break: break-all;
+}
+
+.message .contactselector .message-contacts li > div.contact a {
+  line-height: 22px;
+}
+
+.message .message-contacts li {
   text-align: right;
 }
 
-.message .message-contacts li .contact.nolinks {
-  margin-left: 5px;
+.message .message-contacts li > div.pix {
+  float: right;
 }
 
-.message .message-contacts li .link {
+.message .message-contacts li > div.link {
   float: left;
-  max-width: 30%;
+  text-align: left;
+}
+
+.message .message-contacts li > div.contact {
+  margin: 0 24px 0 60px;
+}
+
+.message .message-contacts li > div.contact.nolinks {
+  margin: 0 24px 0 0;
 }
 
 .message .messagearea {
-  float: left;
+  float: none;
+  overflow: hidden;
   min-height: 200px;
 }
 
 @media screen and (min-width: 1000px) {
   .message .messagearea {
-    width: 74%;
     border-right: 1px solid #dddddd;
-    padding-right: 1%;
+    padding: 0 8px;
   }
 }
 
@@ -8242,12 +8295,12 @@ table.message .searchresults td {
 
   .message .messagearea .messagehistory .user:first-child {
     margin-right: 13%;
-    margin-left: 0%;
+    margin-left: 0;
   }
 
   .message .messagearea .messagehistory .user:last-child {
+    margin-right: 0;
     margin-left: 13%;
-    margin-right: 0%;
   }
 }
 
@@ -8262,9 +8315,15 @@ table.message .searchresults td {
   }
 
   .message .messagearea .messagehistory .user:last-child {
-    margin-right: 0%;
+    margin-right: 0;
     margin-left: 20%;
   }
+}
+
+.dir-rtl .message .messagearea .messagehistory .between,
+.dir-rtl .message .messagearea .messagehistory .user {
+  /*@noflip*/
+  float: right;
 }
 
 .message .messagearea .messagehistory .heading {
@@ -8273,16 +8332,18 @@ table.message .searchresults td {
 }
 
 .message .messagearea .messagehistory .left {
-  padding-bottom: 10px;
+  margin-bottom: 10px;
   width: 50%;
   float: right;
+  position: relative;
   clear: both;
 }
 
 .message .messagearea .messagehistory .right {
-  padding-bottom: 10px;
+  margin-bottom: 10px;
   width: 50%;
   float: left;
+  position: relative;
   clear: both;
 }
 
@@ -8312,6 +8373,27 @@ table.message .searchresults td {
   border-color: rgba(0, 0, 0, 0.15);
 }
 
+.message .messagearea .messagehistory .message {
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+.message .messagearea .messagehistory .right .message {
+  margin-right: 20px;
+  margin-left: 0;
+}
+
+.message .messagearea .messagehistory .messageactive {
+  background-color: #f5f5f5;
+}
+
+.message .messagearea .messagehistory .messagecontent .deleteicon {
+  width: 20px;
+  position: absolute;
+  top: -2px;
+  left: 0;
+}
+
 .message .messagearea .messagesend {
   padding-top: 20px;
   clear: both;
@@ -8319,6 +8401,7 @@ table.message .searchresults td {
 
 .message .messagearea .messagesend .messagesendbox {
   width: 100%;
+  box-sizing: border-box;
 }
 
 .message .messagearea .messagesend fieldset {
@@ -9022,6 +9105,14 @@ body.path-question-type .fitem_fgroup .accesshide {
   margin: 1em 0;
 }
 
+.dir-rtl #chooseqtype .instruction,
+.dir-rtl #chooseqtype .qtypesummary {
+  /*@noflip*/
+  border-left: 0;
+  /*@noflip*/
+  border-right: 1px solid grey;
+}
+
 #page-mod-quiz-edit .box.generalbox.questionbank {
   padding: 0.5em;
 }
@@ -9128,6 +9219,7 @@ body.path-question-type .fitem_fgroup .accesshide {
   position: static;
   width: 12.1em;
   float: left;
+  margin-right: 0;
   margin-left: 60px;
 }
 
@@ -9231,8 +9323,13 @@ body.path-question-type .mform fieldset.hidden {
   margin: 10px;
 }
 
+.userprofile .page-context-header {
+  margin-bottom: 10px;
+}
+
 .userprofile .description {
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 .userprofile .profile_tree {
@@ -9247,6 +9344,18 @@ body.path-question-type .mform fieldset.hidden {
 .userprofile .profile_tree section {
   display: inline-block;
   width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0 15px;
+  margin-bottom: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.userprofile .profile_tree section h3 {
+  font-size: 18px;
+  line-height: 20px;
 }
 
 .userprofile dl.list {
@@ -9287,19 +9396,36 @@ body.path-question-type .mform fieldset.hidden {
   clear: none;
 }
 
+#page-user-profile .node_category ul,
+.path-user .node_category ul {
+  margin-right: 0;
+  margin-left: 0;
+  list-style: none;
+}
+
 #page-user-profile .node_category li,
 .path-user .node_category li {
-  list-style-type: square;
+  margin-top: 5px;
 }
 
-#page-user-profile .node_category li.contentnode,
-.path-user .node_category li.contentnode {
-  list-style-type: none;
+#page-user-profile .node_category .editprofile,
+.path-user .node_category .editprofile,
+#page-user-profile .node_category .viewmore,
+.path-user .node_category .viewmore {
+  text-align: left;
 }
 
-#page-user-profile .node_category .contentnode,
-.path-user .node_category .contentnode {
-  margin-right: -25px;
+.dir-rtl .userprofile .node_category .editprofile,
+.dir-rtl .userprofile .node_category .viewmore {
+  /*@noflip*/
+  text-align: left;
+}
+
+.dir-rtl .userprofile dl dd {
+  /*@noflip*/
+  margin-left: 0;
+  /*@noflip*/
+  margin-right: 10px;
 }
 
 @media (max-width: 480px) {
@@ -9497,6 +9623,18 @@ body.path-question-type .mform fieldset.hidden {
   text-align: center;
   margin-right: auto;
   margin-left: auto;
+}
+
+/** Overide for RTL layout **/
+
+.dir-rtl .userlist table#participants {
+  /*@noflip*/
+  margin: 0 auto;
+}
+
+#page-my-index.dir-rtl .block h3 {
+  /*@noflip*/
+  text-align: right;
 }
 
 .profileeditor > .singleselect {
@@ -16185,189 +16323,4 @@ fieldset.coursesearchbox label {
     /*@noflip*/
     float: right;
   }
-}
-
-@media (max-width: 1474px) {
-  .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .fitem .fitemtitle {
-    display: block;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    text-align: right;
-    width: 100%;
-  }
-
-  .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .fitem .felement {
-    margin-right: 0;
-    width: 100%;
-    float: right;
-    padding-right: 0;
-    padding-left: 0;
-  }
-
-  .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .fitem .fstatic:empty {
-    display: none;
-  }
-
-  .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .fitem .fcheckbox > span,
-  .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .fitem .fradio > span,
-  .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .fitem .fgroup > span {
-    margin-top: 4px;
-  }
-
-  .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .femptylabel .fitemtitle {
-    display: inline-block;
-    width: auto;
-    margin-right: 0;
-    margin-left: 8px;
-  }
-
-  .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .femptylabel .felement {
-    display: inline-block;
-    margin-top: 4px;
-    padding-top: 5px;
-    width: auto;
-  }
-
-  .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .fitem_fcheckbox .fitemtitle,
-  .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .fitem_fcheckbox .felement {
-    display: inline-block;
-    width: auto;
-  }
-
-  .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .fitem_fcheckbox .felement {
-    padding: 6px;
-  }
-
-  .used-region-side-pre.used-region-side-post.dir-rtl #region-main .mform:not(.unresponsive) .fitem_fcheckbox .felement {
-    /*@noflip*/
-    float: right;
-  }
-}
-
-#fitem_id_availabilityconditionsjson *[aria-hidden=true] {
-  display: none;
-}
-
-#fitem_id_availabilityconditionsjson select,
-#fitem_id_availabilityconditionsjson input[type=text] {
-  position: relative;
-  top: 4px;
-}
-
-#fitem_id_availabilityconditionsjson label {
-  display: inline;
-}
-
-#fitem_id_availabilityconditionsjson .availability-group {
-  margin-right: 0;
-  margin-left: 8px;
-}
-
-#fitem_id_availabilityconditionsjson .availability-item {
-  margin-bottom: 6px;
-}
-
-#fitem_id_availabilityconditionsjson .availability-none {
-  margin-right: 20px;
-  margin-left: 0;
-  margin-bottom: 4px;
-}
-
-#fitem_id_availabilityconditionsjson .availability-plugincontrols {
-  padding: 2px 4px 0px 0px;
-  background: none repeat scroll 0% 0% #f5f5f5;
-  border: 1px solid #eeeeee;
-  border-radius: 4px;
-  display: inline-block;
-  margin-right: 0;
-  margin-left: 8px;
-}
-
-#fitem_id_availabilityconditionsjson .availability-eye,
-#fitem_id_availabilityconditionsjson .availability-delete {
-  margin-right: 0;
-  margin-left: 8px;
-}
-
-#fitem_id_availabilityconditionsjson .availability-eye[aria-hidden=true] {
-  display: inline;
-  visibility: hidden;
-}
-
-#fitem_id_availabilityconditionsjson .availability-list > .availability-eye img {
-  vertical-align: top;
-  margin-top: 12px;
-}
-
-#fitem_id_availabilityconditionsjson .availability-button {
-  margin-right: 15px;
-  margin-left: 0;
-}
-
-#fitem_id_availabilityconditionsjson .availability-childlist > .availability-inner {
-  display: inline-block;
-  background: #f5f5f5;
-  border: 1px solid #eeeeee;
-  border-radius: 4px;
-  padding: 6px;
-  margin-bottom: 6px;
-}
-
-#fitem_id_availabilityconditionsjson .availability-childlist .availability-childlist > .availability-inner {
-  background: white;
-}
-
-#fitem_id_availabilityconditionsjson .availability-connector {
-  margin-right: 20px;
-  margin-left: 0;
-  margin-bottom: 6px;
-}
-
-.mform .error .availability-field {
-  color: #333333;
-}
-
-.availability-dialogue .moodle-dialogue .moodle-dialogue-bd {
-  padding-right: 0;
-  padding-left: 0;
-  padding-bottom: 2px;
-}
-
-.availability-dialogue ul {
-  display: block;
-  margin: 0;
-}
-
-.availability-dialogue li {
-  display: block;
-  list-style-type: none;
-  padding: 0 0 4px;
-  clear: both;
-  border-bottom: 1px solid #eeeeee;
-  margin-bottom: 4px;
-}
-
-.availability-dialogue ul button {
-  float: right;
-  margin-right: 1em;
-  margin-left: 0;
-  min-width: 140px;
-  margin-top: 4px;
-}
-
-.availability-dialogue label {
-  margin-right: 170px;
-  margin-left: 1em;
-  margin-bottom: 0;
-}
-
-.availability-dialogue .availability-buttons button {
-  margin-right: 1em;
-  margin-left: 1em;
-  margin-top: 4px;
-}
-
-textarea[cols],
-input[size] {
-  width: auto;
 }

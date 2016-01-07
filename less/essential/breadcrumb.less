@@ -1,8 +1,9 @@
 /* @group Breadcrumb Button */
+@import "../fontawesome/variables";
 
 .breadcrumb-button {
   margin-top: 0px;
-  .fa {
+  .@{fa-css-prefix} {
     vertical-align: middle;
     color: inherit;
     &:hover {
@@ -65,8 +66,6 @@
       float: left;
       line-height: 28px;
       height: 28px;
-      border-top-left-radius: @baseBorderRadius;
-      border-bottom-left-radius: @baseBorderRadius;
       text-shadow: none;
       margin-bottom: 4px;
       a {
@@ -112,7 +111,8 @@
       margin-top: -14px;
       left: 100%;
       z-index: 100;
-      border-left: 14px solid white;
+      border-left-width: 14px;
+      border-left-style: solid;
       margin-left: 1px;
     }
     li:first-of-type {

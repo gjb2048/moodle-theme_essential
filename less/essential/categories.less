@@ -7,6 +7,7 @@
  */
 
 /* @group Category Icons */
+@import "../fontawesome/variables";
 
 .categoryicons {
   .course_category_tree .collapsible-actions {
@@ -41,7 +42,7 @@
     }
     .category.dimmed_category {
       border-color: @grayLight;
-      i.fa {
+      i.@{fa-css-prefix} {
         color: inherit;
       }
     }
@@ -91,7 +92,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         width: 176px;
-        > i.fa {
+        > i.@{fa-css-prefix} {
           padding-top: 6px;
         }
         > span {
@@ -99,7 +100,7 @@
         }
       }
     }
-    i.fa {
+    i.@{fa-css-prefix} {
       font-size: 140px;
       width: 100%;
     }
@@ -123,7 +124,7 @@
       }
     }
     .content {
-        .teachers .fa {
+        .teachers .@{fa-css-prefix} {
             display: inline;
             font-size: inherit;
         }
