@@ -799,6 +799,9 @@ body .fa {
 body .fa:hover {
   color: [[setting:themehovercolor]];
 }
+body .fa-inverse {
+  color: #ffffff;
+}
 .container-fluid {
   max-width: [[setting:pagewidth]];
 }
@@ -1091,21 +1094,26 @@ a.marketing-button:hover {
 /* @end */
 /* @group Performance Information */
 .performanceinfo {
-  border-color: [[setting:themeiconcolor]];
+  background-color: [[setting:footerblockbackgroundcolour]];
+  color: [[setting:footerblocktextcolour]];
+  border: 1px solid #e3e3e3;
 }
 .performanceinfo var {
   background-color: [[setting:themecolor]];
   color: [[setting:themenavcolor]];
 }
+.performanceinfo .span12 {
+  border-bottom-color: [[setting:footersepcolor]];
+}
 .performanceinfo h2 {
-  color: [[setting:themetextcolor]];
-  border-bottom-color: [[setting:themeiconcolor]];
+  color: [[setting:footerblocktextcolour]];
+  border-bottom-color: #EEE;
 }
 .performanceinfo h2:before {
   color: [[setting:themeiconcolor]];
 }
 .performanceinfo span {
-  color: [[setting:themetextcolor]];
+  color: [[setting:footerblocktextcolour]];
 }
 .performanceinfo #cache:before,
 .performanceinfo #load:before,

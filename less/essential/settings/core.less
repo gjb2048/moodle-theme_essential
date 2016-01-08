@@ -1,4 +1,5 @@
 /* @group Core */
+@import "../../fontawesome/variables";
 
 .moodle-actionmenu[data-enhanced].show {
   .menu {
@@ -8,7 +9,7 @@
       &:hover {
         color: @white; // TODO: Page background colour needs to be a setting.
         background-color: ~"[[setting:themeurlcolor]]";
-        .fa:before {
+        .@{fa-css-prefix}:before {
           color: @white; // TODO: Page background colour needs to be a setting.
         }
       }

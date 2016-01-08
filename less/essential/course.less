@@ -1,4 +1,5 @@
 /* @group Course */
+@import "../fontawesome/variables";
 
 .course-content ul li.section.main {
   border-bottom: 0px none;
@@ -69,10 +70,10 @@ body {  // Inside a body tag so will be more specific and override core plugin s
       .contentwithoutlink {
         padding-right: 100px;
       }
-      .editing_hide .fa-eye-slash:before {
+      .editing_hide .@{fa-css-prefix}-eye-slash:before {
         content: "\f06e";
       }
-      .editing_show .fa-eye:before {
+      .editing_show .@{fa-css-prefix}-eye:before {
         content: "\f070";
       }
     }
@@ -94,7 +95,7 @@ body {  // Inside a body tag so will be more specific and override core plugin s
         width: 100%;
         float: none;
     }
-    .teachers .fa {
+    .teachers .@{fa-css-prefix} {
         font-size: inherit;
     }
 }

@@ -1,4 +1,5 @@
 /* @group Responsive */
+@import "../../fontawesome/variables";
 
 @media (max-width: @navbarCollapseWidth) {
   .navbar {
@@ -9,7 +10,7 @@
           &:hover, &.open {
             color: ~"[[setting:themenavcolor]]";
             background-color: ~"[[setting:themecolor]]";
-            .fa {
+            .@{fa-css-prefix} {
                 color: inherit;
           }
         }

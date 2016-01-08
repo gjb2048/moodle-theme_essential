@@ -685,23 +685,26 @@
                 }
 
                 .performanceinfo {
-                    border-color: ~"[[setting:alternativethemeiconcolor@{index}]]";
+                    background-color: ~"[[setting:alternativethemefooterblockbackgroundcolour@{index}]]";
+                    color: ~"[[setting:alternativethemefooterblocktextcolour@{index}]]";
                     var {
                         background-color: ~"[[setting:alternativethemecolor@{index}]]";
-                        color: ~"[[setting:alternativethemenavcolor@{index}]]";
+                        color: ~"[[setting:alternativethemenavcolour@{index}]]";
+                    }
+                    .span12 {
+                        border-bottom-color: ~"[[setting:alternativethemefootersepcolor@{index}]]";
                     }
                     h2 {
-                        color: ~"[[setting:alternativethemetextcolor@{index}]]";
-                        border-bottom-color: ~"[[setting:alternativethemeiconcolor@{index}]]";
+                        color: ~"[[setting:alternativethemefooterblocktextcolour@{index}]]";
                         &:before {
                             color: ~"[[setting:alternativethemeiconcolor@{index}]]";
                         }
                     }
                     span {
-                        color: ~"[[setting:alternativethemetextcolor@{index}]]";
+                        color: ~"[[setting:alternativethemefooterblocktextcolour@{index}]]";
                     }
                     #cache:before, #load:before, #memory:before, #peakmemory:before, #session:before, #included:before, #dbqueries:before, #dbtime:before {
-                        color: ~"[[setting:alternativethemeiconcolor@{index}]]";
+                        color: ~"[[setting:alternativethemenavcolor@{index}]]";
                     }
                 }
 

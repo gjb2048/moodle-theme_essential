@@ -1,47 +1,48 @@
 /* @group Alerts */
+@import "../../fontawesome/variables";
 
 .alert {
-    .fa-info {
+    .@{fa-css-prefix}-info {
         background-color: @infoText;
     }
-    .fa-warning {
+    .@{fa-css-prefix}-warning {
         background-color: @errorText;
     }
-    .fa-bullhorn {
+    .@{fa-css-prefix}-bullhorn {
         background-color: @successText;
     }
-    .fa-info, .fa-warning, .fa-bullhorn {
+    .@{fa-css-prefix}-info, .@{fa-css-prefix}-warning, .@{fa-css-prefix}-bullhorn {
         color: ~"[[setting:themenavcolor]]";
         &:hover, &:focus {
             color: ~"[[setting:themenavcolor]]";
         }
     }
     &.alert-info a.close {
-        .fa {
+        .@{fa-css-prefix} {
             color: @infoText;
         }
         &:hover, &:focus {
-            .fa {
+            .@{fa-css-prefix} {
                 color: @infoText;
             }
         }
     }
     &.alert-error a.close {
-        .fa {
+        .@{fa-css-prefix} {
             color: @errorText;
         }
         &:hover, &:focus {
-            .fa {
+            .@{fa-css-prefix} {
                 color: @errorText;
             }
         }
     }
     &.alert-success a.close {
-        .fa {
+        .@{fa-css-prefix} {
             color: @successText;
         }
         &:hover, &:focus {
-            .fa {
+            .@{fa-css-prefix} {
                 color: @successText;
             }
         }

@@ -1,4 +1,6 @@
 /* @group Navbar */
+@import "../../fontawesome/variables";
+
 .navbar {
   .navbar-inner {
     .brand {
@@ -45,7 +47,7 @@
         &:focus, &.open {
           color: @white; // TODO: Page background colour needs to be a setting.
           background-color: ~"[[setting:themeurlcolor]]";
-          i.fa {
+          i.@{fa-css-prefix} {
             color: @white; // TODO: Page background colour needs to be a setting.
           }
         }
@@ -56,7 +58,7 @@
       &.dropdown-submenu:hover > a {
         color: @white; // TODO: Page background colour needs to be a setting.
         background-color: ~"[[setting:themeurlcolor]]";
-        i.fa {
+        i.@{fa-css-prefix} {
           color: inherit;
         }
       }
