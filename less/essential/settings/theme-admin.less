@@ -379,20 +379,25 @@ a.marketing-button:hover {
 /* @group Performance Information */
 
 .performanceinfo {
-  border-color: ~"[[setting:themeiconcolor]]";
+  background-color: ~"[[setting:footerblockbackgroundcolour]]";
+  color: ~"[[setting:footerblocktextcolour]]";
+  border: 1px solid darken(@wellBackground, 7%);
   var {
     background-color: ~"[[setting:themecolor]]";
     color: ~"[[setting:themenavcolor]]";
   }
+  .span12 {
+      border-bottom-color: ~"[[setting:footersepcolor]]";
+  }
   h2 {
-    color: ~"[[setting:themetextcolor]]";
-    border-bottom-color: ~"[[setting:themeiconcolor]]";
+    color: ~"[[setting:footerblocktextcolour]]";
+    border-bottom-color: #EEE;
     &:before {
       color: ~"[[setting:themeiconcolor]]";
     }
   }
   span {
-    color: ~"[[setting:themetextcolor]]";
+    color: ~"[[setting:footerblocktextcolour]]";
   }
   #cache:before, #load:before, #memory:before, #peakmemory:before, #session:before, #included:before, #dbqueries:before, #dbtime:before {
     color: ~"[[setting:themenavcolor]]";

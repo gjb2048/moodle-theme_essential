@@ -573,21 +573,24 @@ body.essential-colours-alternative4 .nav-tabs > li.active > a {
   background-color: #ffffff;
 }
 body.essential-colours-alternative4 .performanceinfo {
-  border-color: [[setting:alternativethemeiconcolor4]];
+  background-color: [[setting:alternativethemefooterblockbackgroundcolour4]];
+  color: [[setting:alternativethemefooterblocktextcolour4]];
 }
 body.essential-colours-alternative4 .performanceinfo var {
   background-color: [[setting:alternativethemecolor4]];
-  color: [[setting:alternativethemenavcolor4]];
+  color: [[setting:alternativethemenavcolour4]];
+}
+body.essential-colours-alternative4 .performanceinfo .span12 {
+  border-bottom-color: [[setting:alternativethemefootersepcolor4]];
 }
 body.essential-colours-alternative4 .performanceinfo h2 {
-  color: [[setting:alternativethemetextcolor4]];
-  border-bottom-color: [[setting:alternativethemeiconcolor4]];
+  color: [[setting:alternativethemefooterblocktextcolour4]];
 }
 body.essential-colours-alternative4 .performanceinfo h2:before {
   color: [[setting:alternativethemeiconcolor4]];
 }
 body.essential-colours-alternative4 .performanceinfo span {
-  color: [[setting:alternativethemetextcolor4]];
+  color: [[setting:alternativethemefooterblocktextcolour4]];
 }
 body.essential-colours-alternative4 .performanceinfo #cache:before,
 body.essential-colours-alternative4 .performanceinfo #load:before,
@@ -597,7 +600,7 @@ body.essential-colours-alternative4 .performanceinfo #session:before,
 body.essential-colours-alternative4 .performanceinfo #included:before,
 body.essential-colours-alternative4 .performanceinfo #dbqueries:before,
 body.essential-colours-alternative4 .performanceinfo #dbtime:before {
-  color: [[setting:alternativethemeiconcolor4]];
+  color: [[setting:alternativethemenavcolor4]];
 }
 body.essential-colours-alternative4 #page-mod-quiz-edit .questionbankwindow.block div.header {
   background-color: [[setting:alternativethemecolor4]];
@@ -1320,21 +1323,24 @@ body.essential-colours-alternative3 .nav-tabs > li.active > a {
   background-color: #ffffff;
 }
 body.essential-colours-alternative3 .performanceinfo {
-  border-color: [[setting:alternativethemeiconcolor3]];
+  background-color: [[setting:alternativethemefooterblockbackgroundcolour3]];
+  color: [[setting:alternativethemefooterblocktextcolour3]];
 }
 body.essential-colours-alternative3 .performanceinfo var {
   background-color: [[setting:alternativethemecolor3]];
-  color: [[setting:alternativethemenavcolor3]];
+  color: [[setting:alternativethemenavcolour3]];
+}
+body.essential-colours-alternative3 .performanceinfo .span12 {
+  border-bottom-color: [[setting:alternativethemefootersepcolor3]];
 }
 body.essential-colours-alternative3 .performanceinfo h2 {
-  color: [[setting:alternativethemetextcolor3]];
-  border-bottom-color: [[setting:alternativethemeiconcolor3]];
+  color: [[setting:alternativethemefooterblocktextcolour3]];
 }
 body.essential-colours-alternative3 .performanceinfo h2:before {
   color: [[setting:alternativethemeiconcolor3]];
 }
 body.essential-colours-alternative3 .performanceinfo span {
-  color: [[setting:alternativethemetextcolor3]];
+  color: [[setting:alternativethemefooterblocktextcolour3]];
 }
 body.essential-colours-alternative3 .performanceinfo #cache:before,
 body.essential-colours-alternative3 .performanceinfo #load:before,
@@ -1344,7 +1350,7 @@ body.essential-colours-alternative3 .performanceinfo #session:before,
 body.essential-colours-alternative3 .performanceinfo #included:before,
 body.essential-colours-alternative3 .performanceinfo #dbqueries:before,
 body.essential-colours-alternative3 .performanceinfo #dbtime:before {
-  color: [[setting:alternativethemeiconcolor3]];
+  color: [[setting:alternativethemenavcolor3]];
 }
 body.essential-colours-alternative3 #page-mod-quiz-edit .questionbankwindow.block div.header {
   background-color: [[setting:alternativethemecolor3]];
@@ -2067,21 +2073,24 @@ body.essential-colours-alternative2 .nav-tabs > li.active > a {
   background-color: #ffffff;
 }
 body.essential-colours-alternative2 .performanceinfo {
-  border-color: [[setting:alternativethemeiconcolor2]];
+  background-color: [[setting:alternativethemefooterblockbackgroundcolour2]];
+  color: [[setting:alternativethemefooterblocktextcolour2]];
 }
 body.essential-colours-alternative2 .performanceinfo var {
   background-color: [[setting:alternativethemecolor2]];
-  color: [[setting:alternativethemenavcolor2]];
+  color: [[setting:alternativethemenavcolour2]];
+}
+body.essential-colours-alternative2 .performanceinfo .span12 {
+  border-bottom-color: [[setting:alternativethemefootersepcolor2]];
 }
 body.essential-colours-alternative2 .performanceinfo h2 {
-  color: [[setting:alternativethemetextcolor2]];
-  border-bottom-color: [[setting:alternativethemeiconcolor2]];
+  color: [[setting:alternativethemefooterblocktextcolour2]];
 }
 body.essential-colours-alternative2 .performanceinfo h2:before {
   color: [[setting:alternativethemeiconcolor2]];
 }
 body.essential-colours-alternative2 .performanceinfo span {
-  color: [[setting:alternativethemetextcolor2]];
+  color: [[setting:alternativethemefooterblocktextcolour2]];
 }
 body.essential-colours-alternative2 .performanceinfo #cache:before,
 body.essential-colours-alternative2 .performanceinfo #load:before,
@@ -2091,7 +2100,7 @@ body.essential-colours-alternative2 .performanceinfo #session:before,
 body.essential-colours-alternative2 .performanceinfo #included:before,
 body.essential-colours-alternative2 .performanceinfo #dbqueries:before,
 body.essential-colours-alternative2 .performanceinfo #dbtime:before {
-  color: [[setting:alternativethemeiconcolor2]];
+  color: [[setting:alternativethemenavcolor2]];
 }
 body.essential-colours-alternative2 #page-mod-quiz-edit .questionbankwindow.block div.header {
   background-color: [[setting:alternativethemecolor2]];
@@ -2814,21 +2823,24 @@ body.essential-colours-alternative1 .nav-tabs > li.active > a {
   background-color: #ffffff;
 }
 body.essential-colours-alternative1 .performanceinfo {
-  border-color: [[setting:alternativethemeiconcolor1]];
+  background-color: [[setting:alternativethemefooterblockbackgroundcolour1]];
+  color: [[setting:alternativethemefooterblocktextcolour1]];
 }
 body.essential-colours-alternative1 .performanceinfo var {
   background-color: [[setting:alternativethemecolor1]];
-  color: [[setting:alternativethemenavcolor1]];
+  color: [[setting:alternativethemenavcolour1]];
+}
+body.essential-colours-alternative1 .performanceinfo .span12 {
+  border-bottom-color: [[setting:alternativethemefootersepcolor1]];
 }
 body.essential-colours-alternative1 .performanceinfo h2 {
-  color: [[setting:alternativethemetextcolor1]];
-  border-bottom-color: [[setting:alternativethemeiconcolor1]];
+  color: [[setting:alternativethemefooterblocktextcolour1]];
 }
 body.essential-colours-alternative1 .performanceinfo h2:before {
   color: [[setting:alternativethemeiconcolor1]];
 }
 body.essential-colours-alternative1 .performanceinfo span {
-  color: [[setting:alternativethemetextcolor1]];
+  color: [[setting:alternativethemefooterblocktextcolour1]];
 }
 body.essential-colours-alternative1 .performanceinfo #cache:before,
 body.essential-colours-alternative1 .performanceinfo #load:before,
@@ -2838,7 +2850,7 @@ body.essential-colours-alternative1 .performanceinfo #session:before,
 body.essential-colours-alternative1 .performanceinfo #included:before,
 body.essential-colours-alternative1 .performanceinfo #dbqueries:before,
 body.essential-colours-alternative1 .performanceinfo #dbtime:before {
-  color: [[setting:alternativethemeiconcolor1]];
+  color: [[setting:alternativethemenavcolor1]];
 }
 body.essential-colours-alternative1 #page-mod-quiz-edit .questionbankwindow.block div.header {
   background-color: [[setting:alternativethemecolor1]];

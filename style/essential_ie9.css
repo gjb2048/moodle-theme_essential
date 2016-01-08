@@ -1,4 +1,4 @@
-@import url('essential_ie9-blessed1.css?z=1452189957742');
+@import url('essential_ie9-blessed1.css?z=1452261785825');
 @media (max-width: 1474px) {
   .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .fitem .fitemtitle {
     display: block;
@@ -6373,6 +6373,7 @@ body.path-admin-setting #page-footer {
 }
 .performanceinfo .span3 {
   text-align: center;
+  margin-top: 10px;
 }
 .performanceinfo var {
   font-size: 1.2em;
@@ -6380,17 +6381,23 @@ body.path-admin-setting #page-footer {
   border-radius: 5px;
   white-space: nowrap;
 }
+.performanceinfo .span12 {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
 .performanceinfo h2 {
   font-size: 1.4em;
   line-height: 1.4em;
   text-transform: uppercase;
   font-weight: normal;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   border-bottom-width: 1px;
   border-bottom-style: solid;
   margin-top: 5px;
+  margin-bottom: 0;
 }
 .performanceinfo h2:before {
+  vertical-align: bottom;
   font-family: FontAwesome;
   font-size: 1.65em;
   margin-right: .3em;
