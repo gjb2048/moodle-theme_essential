@@ -1,4 +1,4 @@
-@import url('essential_ie9-blessed1.css?z=1452261785825');
+@import url('essential_ie9-blessed1.css?z=1452276690704');
 @media (max-width: 1474px) {
   .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .fitem .fitemtitle {
     display: block;
@@ -7190,6 +7190,9 @@ ul.socials li {
 /* @end */
 /* @end */
 /* @group Message */
+.message {
+  word-wrap: break-word;
+}
 .messagearea {
   padding-bottom: 60px;
 }

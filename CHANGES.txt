@@ -3,6 +3,7 @@ New in 3.0.0.1
 - NEW: First alpha version for Moodle 3.0.  Using 'bootstrapbase' styles from 2015111601.02 3.0.1+ (Build: 20151231).
        NOTE: WORK IN PROGRESS - NOT FINISHED TO EVEN ALPHA YET - DO NOT USE / TEST / REPORT ISSUES WITH.
 - FIX: Issue #575: fa-inverse does not work.
+- FIX: Issue #590: Message outlining incoming.
 - FIX: Performance information styling.
 - NEW: Improve breadcrumb style1.
 

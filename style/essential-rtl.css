@@ -24944,6 +24944,10 @@ ul.socials li {
 
 /* @group Message */
 
+.message {
+  word-wrap: break-word;
+}
+
 .messagearea {
   padding-bottom: 60px;
 }

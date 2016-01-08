@@ -20775,6 +20775,9 @@ ul.socials li {
 /* @end */
 /* @end */
 /* @group Message */
+.message {
+  word-wrap: break-word;
+}
 .messagearea {
   padding-bottom: 60px;
 }
