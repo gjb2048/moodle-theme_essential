@@ -9,6 +9,7 @@ New in 3.0.0.1
 - FIX: Gradebook floating last row.
 - FIX: General form tweaks.
 - NEW: Improve breadcrumb style1.
+- NEW: Dashed block areas during editing when drag and drop moving.
 
 New in 2.9.1.5.2
 ================

@@ -397,6 +397,17 @@ body.essential-colours-alternative4 .block .header .title h2:before {
 body.essential-colours-alternative4 .block .icon {
   color: [[setting:alternativethemeiconcolor4]];
 }
+body.essential-colours-alternative4.editing.used-region-side-pre #block-region-side-pre,
+body.essential-colours-alternative4.editing.used-region-side-post #block-region-side-post,
+body.essential-colours-alternative4.editing.used-region-home-left #block-region-home-left,
+body.essential-colours-alternative4.editing.used-region-home-middle #block-region-home-middle,
+body.essential-colours-alternative4.editing.used-region-home-right #block-region-home-right,
+body.essential-colours-alternative4.editing.used-region-footer-left #block-region-footer-left,
+body.essential-colours-alternative4.editing.used-region-footer-middle #block-region-footer-middle,
+body.essential-colours-alternative4.editing.used-region-footer-right #block-region-footer-right,
+body.essential-colours-alternative4.editing.used-region-hidden-dock #block-region-hidden-dock {
+  border-color: [[setting:alternativethemecolor4]];
+}
 body.essential-colours-alternative4.jsenabled .block_settings .block_tree .tree_item.branch.loadingbranch:before {
   color: [[setting:alternativethemeiconcolor4]];
 }
@@ -1151,6 +1162,17 @@ body.essential-colours-alternative3 .block .header .title h2:before {
 }
 body.essential-colours-alternative3 .block .icon {
   color: [[setting:alternativethemeiconcolor3]];
+}
+body.essential-colours-alternative3.editing.used-region-side-pre #block-region-side-pre,
+body.essential-colours-alternative3.editing.used-region-side-post #block-region-side-post,
+body.essential-colours-alternative3.editing.used-region-home-left #block-region-home-left,
+body.essential-colours-alternative3.editing.used-region-home-middle #block-region-home-middle,
+body.essential-colours-alternative3.editing.used-region-home-right #block-region-home-right,
+body.essential-colours-alternative3.editing.used-region-footer-left #block-region-footer-left,
+body.essential-colours-alternative3.editing.used-region-footer-middle #block-region-footer-middle,
+body.essential-colours-alternative3.editing.used-region-footer-right #block-region-footer-right,
+body.essential-colours-alternative3.editing.used-region-hidden-dock #block-region-hidden-dock {
+  border-color: [[setting:alternativethemecolor3]];
 }
 body.essential-colours-alternative3.jsenabled .block_settings .block_tree .tree_item.branch.loadingbranch:before {
   color: [[setting:alternativethemeiconcolor3]];
@@ -1907,6 +1929,17 @@ body.essential-colours-alternative2 .block .header .title h2:before {
 body.essential-colours-alternative2 .block .icon {
   color: [[setting:alternativethemeiconcolor2]];
 }
+body.essential-colours-alternative2.editing.used-region-side-pre #block-region-side-pre,
+body.essential-colours-alternative2.editing.used-region-side-post #block-region-side-post,
+body.essential-colours-alternative2.editing.used-region-home-left #block-region-home-left,
+body.essential-colours-alternative2.editing.used-region-home-middle #block-region-home-middle,
+body.essential-colours-alternative2.editing.used-region-home-right #block-region-home-right,
+body.essential-colours-alternative2.editing.used-region-footer-left #block-region-footer-left,
+body.essential-colours-alternative2.editing.used-region-footer-middle #block-region-footer-middle,
+body.essential-colours-alternative2.editing.used-region-footer-right #block-region-footer-right,
+body.essential-colours-alternative2.editing.used-region-hidden-dock #block-region-hidden-dock {
+  border-color: [[setting:alternativethemecolor2]];
+}
 body.essential-colours-alternative2.jsenabled .block_settings .block_tree .tree_item.branch.loadingbranch:before {
   color: [[setting:alternativethemeiconcolor2]];
 }
@@ -2661,6 +2694,17 @@ body.essential-colours-alternative1 .block .header .title h2:before {
 }
 body.essential-colours-alternative1 .block .icon {
   color: [[setting:alternativethemeiconcolor1]];
+}
+body.essential-colours-alternative1.editing.used-region-side-pre #block-region-side-pre,
+body.essential-colours-alternative1.editing.used-region-side-post #block-region-side-post,
+body.essential-colours-alternative1.editing.used-region-home-left #block-region-home-left,
+body.essential-colours-alternative1.editing.used-region-home-middle #block-region-home-middle,
+body.essential-colours-alternative1.editing.used-region-home-right #block-region-home-right,
+body.essential-colours-alternative1.editing.used-region-footer-left #block-region-footer-left,
+body.essential-colours-alternative1.editing.used-region-footer-middle #block-region-footer-middle,
+body.essential-colours-alternative1.editing.used-region-footer-right #block-region-footer-right,
+body.essential-colours-alternative1.editing.used-region-hidden-dock #block-region-hidden-dock {
+  border-color: [[setting:alternativethemecolor1]];
 }
 body.essential-colours-alternative1.jsenabled .block_settings .block_tree .tree_item.branch.loadingbranch:before {
   color: [[setting:alternativethemeiconcolor1]];
