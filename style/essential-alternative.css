@@ -78,6 +78,8 @@ body.essential-colours-alternative4 .breadcrumb-nav ul.breadcrumb.style1 li:hove
 body.essential-colours-alternative4 .breadcrumb-nav ul.breadcrumb.style1 li:focus:before {
   border-left-color: [[setting:alternativethemecolor4]];
 }
+body.essential-colours-alternative4 .breadcrumb-nav ul.breadcrumb.style1 li:hover span,
+body.essential-colours-alternative4 .breadcrumb-nav ul.breadcrumb.style1 li:focus span,
 body.essential-colours-alternative4 .breadcrumb-nav ul.breadcrumb.style1 li:hover a,
 body.essential-colours-alternative4 .breadcrumb-nav ul.breadcrumb.style1 li:focus a,
 body.essential-colours-alternative4 .breadcrumb-nav ul.breadcrumb.style1 li:hover a:before,
@@ -168,10 +170,13 @@ body.essential-colours-alternative4 .breadcrumb-button i.fa:hover {
 body.essential-colours-alternative4 .breadcrumb-button input[type="submit"] {
   color: [[setting:alternativethemenavcolor4]];
   background-color: [[setting:alternativethemecolor4]];
+  border-color: [[setting:alternativethemecolor4]];
 }
-body.essential-colours-alternative4 .breadcrumb-button input[type="submit"]:hover {
-  color: [[setting:alternativethemenavcolor4]];
-  background-color: [[setting:alternativethemehovercolor4]];
+body.essential-colours-alternative4 .breadcrumb-button input[type="submit"]:focus,
+body.essential-colours-alternative4 .breadcrumb-button input[type="submit"]:hover,
+body.essential-colours-alternative4 .breadcrumb-button input[type="submit"]:active {
+  color: [[setting:alternativethemecolor4]];
+  background-color: [[setting:alternativethemenavcolor4]];
 }
 body.essential-colours-alternative4 a.website:hover,
 body.essential-colours-alternative4 a.website:focus {
@@ -828,6 +833,8 @@ body.essential-colours-alternative3 .breadcrumb-nav ul.breadcrumb.style1 li:hove
 body.essential-colours-alternative3 .breadcrumb-nav ul.breadcrumb.style1 li:focus:before {
   border-left-color: [[setting:alternativethemecolor3]];
 }
+body.essential-colours-alternative3 .breadcrumb-nav ul.breadcrumb.style1 li:hover span,
+body.essential-colours-alternative3 .breadcrumb-nav ul.breadcrumb.style1 li:focus span,
 body.essential-colours-alternative3 .breadcrumb-nav ul.breadcrumb.style1 li:hover a,
 body.essential-colours-alternative3 .breadcrumb-nav ul.breadcrumb.style1 li:focus a,
 body.essential-colours-alternative3 .breadcrumb-nav ul.breadcrumb.style1 li:hover a:before,
@@ -918,10 +925,13 @@ body.essential-colours-alternative3 .breadcrumb-button i.fa:hover {
 body.essential-colours-alternative3 .breadcrumb-button input[type="submit"] {
   color: [[setting:alternativethemenavcolor3]];
   background-color: [[setting:alternativethemecolor3]];
+  border-color: [[setting:alternativethemecolor3]];
 }
-body.essential-colours-alternative3 .breadcrumb-button input[type="submit"]:hover {
-  color: [[setting:alternativethemenavcolor3]];
-  background-color: [[setting:alternativethemehovercolor3]];
+body.essential-colours-alternative3 .breadcrumb-button input[type="submit"]:focus,
+body.essential-colours-alternative3 .breadcrumb-button input[type="submit"]:hover,
+body.essential-colours-alternative3 .breadcrumb-button input[type="submit"]:active {
+  color: [[setting:alternativethemecolor3]];
+  background-color: [[setting:alternativethemenavcolor3]];
 }
 body.essential-colours-alternative3 a.website:hover,
 body.essential-colours-alternative3 a.website:focus {
@@ -1578,6 +1588,8 @@ body.essential-colours-alternative2 .breadcrumb-nav ul.breadcrumb.style1 li:hove
 body.essential-colours-alternative2 .breadcrumb-nav ul.breadcrumb.style1 li:focus:before {
   border-left-color: [[setting:alternativethemecolor2]];
 }
+body.essential-colours-alternative2 .breadcrumb-nav ul.breadcrumb.style1 li:hover span,
+body.essential-colours-alternative2 .breadcrumb-nav ul.breadcrumb.style1 li:focus span,
 body.essential-colours-alternative2 .breadcrumb-nav ul.breadcrumb.style1 li:hover a,
 body.essential-colours-alternative2 .breadcrumb-nav ul.breadcrumb.style1 li:focus a,
 body.essential-colours-alternative2 .breadcrumb-nav ul.breadcrumb.style1 li:hover a:before,
@@ -1668,10 +1680,13 @@ body.essential-colours-alternative2 .breadcrumb-button i.fa:hover {
 body.essential-colours-alternative2 .breadcrumb-button input[type="submit"] {
   color: [[setting:alternativethemenavcolor2]];
   background-color: [[setting:alternativethemecolor2]];
+  border-color: [[setting:alternativethemecolor2]];
 }
-body.essential-colours-alternative2 .breadcrumb-button input[type="submit"]:hover {
-  color: [[setting:alternativethemenavcolor2]];
-  background-color: [[setting:alternativethemehovercolor2]];
+body.essential-colours-alternative2 .breadcrumb-button input[type="submit"]:focus,
+body.essential-colours-alternative2 .breadcrumb-button input[type="submit"]:hover,
+body.essential-colours-alternative2 .breadcrumb-button input[type="submit"]:active {
+  color: [[setting:alternativethemecolor2]];
+  background-color: [[setting:alternativethemenavcolor2]];
 }
 body.essential-colours-alternative2 a.website:hover,
 body.essential-colours-alternative2 a.website:focus {
@@ -2328,6 +2343,8 @@ body.essential-colours-alternative1 .breadcrumb-nav ul.breadcrumb.style1 li:hove
 body.essential-colours-alternative1 .breadcrumb-nav ul.breadcrumb.style1 li:focus:before {
   border-left-color: [[setting:alternativethemecolor1]];
 }
+body.essential-colours-alternative1 .breadcrumb-nav ul.breadcrumb.style1 li:hover span,
+body.essential-colours-alternative1 .breadcrumb-nav ul.breadcrumb.style1 li:focus span,
 body.essential-colours-alternative1 .breadcrumb-nav ul.breadcrumb.style1 li:hover a,
 body.essential-colours-alternative1 .breadcrumb-nav ul.breadcrumb.style1 li:focus a,
 body.essential-colours-alternative1 .breadcrumb-nav ul.breadcrumb.style1 li:hover a:before,
@@ -2418,10 +2435,13 @@ body.essential-colours-alternative1 .breadcrumb-button i.fa:hover {
 body.essential-colours-alternative1 .breadcrumb-button input[type="submit"] {
   color: [[setting:alternativethemenavcolor1]];
   background-color: [[setting:alternativethemecolor1]];
+  border-color: [[setting:alternativethemecolor1]];
 }
-body.essential-colours-alternative1 .breadcrumb-button input[type="submit"]:hover {
-  color: [[setting:alternativethemenavcolor1]];
-  background-color: [[setting:alternativethemehovercolor1]];
+body.essential-colours-alternative1 .breadcrumb-button input[type="submit"]:focus,
+body.essential-colours-alternative1 .breadcrumb-button input[type="submit"]:hover,
+body.essential-colours-alternative1 .breadcrumb-button input[type="submit"]:active {
+  color: [[setting:alternativethemecolor1]];
+  background-color: [[setting:alternativethemenavcolor1]];
 }
 body.essential-colours-alternative1 a.website:hover,
 body.essential-colours-alternative1 a.website:focus {

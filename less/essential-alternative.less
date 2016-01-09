@@ -94,7 +94,7 @@
                                 &:before {
                                     border-left-color: ~"[[setting:alternativethemecolor@{index}]]";
                                 }
-                                a, a:before {
+                                span, a, a:before {
                                     color: ~"[[setting:alternativethemecolor@{index}]]";
                                 }
                             }
@@ -208,9 +208,10 @@
                     input[type="submit"] {
                         color: ~"[[setting:alternativethemenavcolor@{index}]]";
                         background-color: ~"[[setting:alternativethemecolor@{index}]]";
-                        &:hover {
-                            color: ~"[[setting:alternativethemenavcolor@{index}]]";
-                            background-color: ~"[[setting:alternativethemehovercolor@{index}]]";
+                        border-color: ~"[[setting:alternativethemecolor@{index}]]";
+                        &:focus, &:hover, &:active {
+                            color: ~"[[setting:alternativethemecolor@{index}]]";
+                            background-color: ~"[[setting:alternativethemenavcolor@{index}]]";
                         }
                     }
                 }

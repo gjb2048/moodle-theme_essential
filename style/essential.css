@@ -18040,8 +18040,8 @@ body {
   font-weight: 400;
   background-color: rgba(255, 255, 255, 0.6);
   background-size: cover;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 a {
   text-decoration: none;
@@ -18103,12 +18103,11 @@ ins {
 }
 .bor {
   height: 20px;
-  margin: 0px;
-  margin-bottom: 10px;
+  margin: 0 0 4px;
 }
 #page-admin-upgradesettings #page,
 .maintenance#page {
-  padding-top: 0px;
+  padding-top: 0;
 }
 #page-admin-plugins #page-content #region-main {
   overflow-x: auto;
@@ -18142,6 +18141,13 @@ body .chooserdialogue .moodle-dialogue-wrap .moodle-dialogue-bd {
 .resourcecontent .mediaplugin.mediaplugin_mp3 object {
   width: 600px;
   height: 25px;
+}
+/* @end */
+/* @group Admin */
+.form-item .form-setting .form-password .unmask,
+.form-item .form-setting .form-defaultinfo {
+  display: block;
+  word-wrap: break-word;
 }
 /* @end */
 /* @group Alerts */
@@ -18547,7 +18553,8 @@ aside.footer-edit div.block:nth-of-type(1) {
 }
 .breadcrumb-button input[type="submit"] {
   text-shadow: none;
-  border: 0px none;
+  border-width: 1px;
+  border-style: solid;
   margin: 0;
 }
 .breadcrumb-button input[type="submit"] > .singlebutton > form > div {
@@ -20036,7 +20043,7 @@ body.path-admin-setting #page-footer {
 /* @end */
 /* @group Forms */
 fieldset textarea[cols],
-fieldset .form-item .form-description {
+fieldset input[size] {
   width: 65.95744681%;
   *width: 65.90425532%;
 }
@@ -20046,8 +20053,7 @@ body#page-admin-setting-messageinbound_mailsettings fieldset select {
 }
 @media (max-width: 979px) {
   fieldset textarea[cols],
-  fieldset input[size],
-  fieldset .form-item .form-description {
+  fieldset input[size] {
     width: 48.93617021%;
     *width: 48.88297872%;
   }
@@ -20062,8 +20068,7 @@ body#page-admin-setting-messageinbound_mailsettings fieldset select {
 }
 @media (max-width: 767px) {
   fieldset textarea[cols],
-  fieldset input[size],
-  fieldset .form-item .form-description {
+  fieldset input[size] {
     width: 40.42553191%;
     *width: 40.37234043%;
   }
@@ -20078,8 +20083,7 @@ body#page-admin-setting-messageinbound_mailsettings fieldset select {
 }
 @media (max-width: 480px) {
   fieldset textarea[cols],
-  fieldset input[size],
-  fieldset .form-item .form-description {
+  fieldset input[size] {
     width: 23.40425532%;
     *width: 23.35106383%;
   }
@@ -20295,6 +20299,9 @@ input[type="checkbox"] {
 }
 select {
   max-width: 570px;
+}
+.form-description {
+  word-break: break-word;
 }
 /* @end */
 /* @group Forums */
@@ -20527,7 +20534,8 @@ select {
 #page-grade-report-grader-index .gradeparent .right_scroller .topscroll {
   min-height: 22px;
 }
-#page-grade-report-grader-index .gradeparent div.floater:first-of-type .cell:nth-child(odd) {
+#page-grade-report-grader-index .gradeparent div.floater:first-of-type .cell:nth-child(odd),
+#page-grade-report-grader-index .gradeparent div.floater.floating.lastrow .cell {
   background-color: #ffffff;
 }
 #page-grade-report-grader-index #page #page-content #region-main {

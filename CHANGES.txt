@@ -5,6 +5,9 @@ New in 3.0.0.1
 - FIX: Issue #575: fa-inverse does not work.
 - FIX: Issue #590: Message outlining incoming.
 - FIX: Performance information styling.
+- FIX: Breadcrumb button hover / focus / active.
+- FIX: Gradebook floating last row.
+- FIX: General form tweaks.
 - NEW: Improve breadcrumb style1.
 
 New in 2.9.1.5.2

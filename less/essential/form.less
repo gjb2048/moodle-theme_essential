@@ -1,7 +1,7 @@
 /* @group Forms */
 fieldset {
     textarea[cols],
-    .form-item .form-description {
+    input[size] {
         .fluid-span(8);
     }
 }
@@ -13,8 +13,7 @@ body#page-admin-setting-messageinbound_mailsettings fieldset select {
 @media (max-width: 979px) {
     fieldset {
         textarea[cols],
-        input[size],
-        .form-item .form-description {
+        input[size] {
             .fluid-span(6);
         }
     }
@@ -30,8 +29,7 @@ body#page-admin-setting-messageinbound_mailsettings fieldset select {
 @media (max-width: 767px) {
     fieldset {
         textarea[cols],
-        input[size],
-        .form-item .form-description {
+        input[size] {
             .fluid-span(5);
         }
     }
@@ -46,8 +44,7 @@ body#page-admin-setting-messageinbound_mailsettings fieldset select {
 @media (max-width: 480px) {
     fieldset {
         textarea[cols],
-        input[size],
-        .form-item .form-description {
+        input[size] {
             .fluid-span(3);
         }
     }
@@ -200,6 +197,10 @@ input[type="checkbox"] {
 
 select {
   max-width: 570px;
+}
+
+.form-description {
+    word-break: break-word;
 }
 
 /* @end */
