@@ -1,4 +1,4 @@
-@import url('essential_ie9-blessed1.css?z=1452357481256');
+@import url('essential_ie9-blessed1.css?z=1452363992592');
 @media (max-width: 1474px) {
   .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .fitem .fitemtitle {
     display: block;
@@ -4683,6 +4683,9 @@ p.tree_item.leaf a.action-delete > i.fa {
 .block_navigation.block li.type_unknown.depth_1 > .tree_item.branch:before {
   content: "\f015";
 }
+.block_navigation .block_tree .tree_item.hasicon .item-content-wrap {
+  display: inline !important;
+}
 .collapsed .tree_item.branch:before {
   font-family: FontAwesome;
   content: "\f07b";
@@ -5203,9 +5206,6 @@ aside.footer-edit div.block:nth-of-type(1) {
   text-decoration: none;
   padding-right: 3px;
   overflow: hidden;
-}
-.breadcrumb-nav ul.breadcrumb.style1 li a:hover {
-  text-decoration: underline;
 }
 .breadcrumb-nav ul.breadcrumb.style1 li .dimmed_text {
   font-style: italic;

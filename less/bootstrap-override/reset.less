@@ -98,6 +98,13 @@ table img {
   max-width: none;
 }
 
+// But this makes the theme selector image iffy!
+// This is a 'generaltable' unlike 'gradereport-grader-table', so see if this is fine for all.
+// TODO: See if need to be specific to 'gradereport-grader-table' only.
+table.generaltable img {
+  max-width: 100%;
+}
+
 // Prevent max-width from affecting Google Maps
 #map_canvas img,
 .google-maps img {

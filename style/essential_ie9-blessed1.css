@@ -8017,6 +8017,9 @@ img {
 table img {
   max-width: none;
 }
+table.generaltable img {
+  max-width: 100%;
+}
 #map_canvas img,
 .google-maps img {
   max-width: none;

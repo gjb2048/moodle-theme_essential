@@ -9782,6 +9782,10 @@ table img {
   max-width: none;
 }
 
+table.generaltable img {
+  max-width: 100%;
+}
+
 #map_canvas img,
 .google-maps img {
   max-width: none;
@@ -21900,6 +21904,10 @@ p.tree_item.leaf a.action-delete > i.fa {
   content: "\f015";
 }
 
+.block_navigation .block_tree .tree_item.hasicon .item-content-wrap {
+  display: inline !important;
+}
+
 .collapsed .tree_item.branch:before {
   font-family: FontAwesome;
   content: "\f07b";
@@ -22512,10 +22520,6 @@ aside.footer-edit div.block:nth-of-type(1) {
   text-decoration: none;
   padding-left: 3px;
   overflow: hidden;
-}
-
-.breadcrumb-nav ul.breadcrumb.style1 li a:hover {
-  text-decoration: underline;
 }
 
 .breadcrumb-nav ul.breadcrumb.style1 li .dimmed_text {
