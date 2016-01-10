@@ -22305,6 +22305,25 @@ aside.footer-edit div.block:nth-of-type(1) {
   margin: 0;
 }
 
+.breadcrumb-button .singlebutton {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.breadcrumb-button .singlebutton,
+.breadcrumb-button a {
+  float: left;
+}
+
+.dir-rtl .breadcrumb-button .singlebutton {
+  /*@noflip*/
+  margin-left: 0;
+  /*@noflip*/
+  margin-right: 0;
+  /*@noflip*/
+  float: left;
+}
+
 .breadcrumb-button a:not(.btn),
 .breadcrumb-button a:visited:not(.btn) {
   display: inline-block;
@@ -22477,7 +22496,6 @@ aside.footer-edit div.block:nth-of-type(1) {
 }
 
 .breadcrumb-nav {
-  width: 65%;
   margin: 0px;
   /* @group Breadcrumb Style None */
   /* @end */

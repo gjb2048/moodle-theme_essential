@@ -1,4 +1,4 @@
-@import url('essential_ie9-blessed1.css?z=1452444160407');
+@import url('essential_ie9-blessed1.css?z=1452451557106');
 @media (max-width: 1474px) {
   .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .fitem .fitemtitle {
     display: block;
@@ -5010,6 +5010,22 @@ aside.footer-edit div.block:nth-of-type(1) {
 .breadcrumb-button input[type="submit"] > .singlebutton > form > div {
   margin: 0;
 }
+.breadcrumb-button .singlebutton {
+  margin-left: 0;
+  margin-right: 0;
+}
+.breadcrumb-button .singlebutton,
+.breadcrumb-button a {
+  float: right;
+}
+.dir-rtl .breadcrumb-button .singlebutton {
+  /*@noflip*/
+  margin-left: 0;
+  /*@noflip*/
+  margin-right: 0;
+  /*@noflip*/
+  float: left;
+}
 .breadcrumb-button a:not(.btn),
 .breadcrumb-button a:visited:not(.btn) {
   display: inline-block;
@@ -5167,7 +5183,6 @@ aside.footer-edit div.block:nth-of-type(1) {
   background-color: transparent;
 }
 .breadcrumb-nav {
-  width: 65%;
   margin: 0px;
   /* @group Breadcrumb Style None */
   /* @end */
