@@ -1,4 +1,4 @@
-@import url('essential_ie9-blessed1.css?z=1452363992592');
+@import url('essential_ie9-blessed1.css?z=1452444160407');
 @media (max-width: 1474px) {
   .used-region-side-pre.used-region-side-post #region-main .mform:not(.unresponsive) .fitem .fitemtitle {
     display: block;
@@ -7323,7 +7323,6 @@ ul.socials li {
   display: block;
 }
 .navbar .navbar-inner .dropdown-menu {
-  z-index: 200;
   margin: 0px;
 }
 .navbar .navbar-inner .dropdown-menu > li > a,

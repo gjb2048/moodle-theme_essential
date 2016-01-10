@@ -4,6 +4,7 @@ New in 3.0.0.1
        NOTE: WORK IN PROGRESS - NOT FINISHED TO EVEN ALPHA YET - DO NOT USE / TEST / REPORT ISSUES WITH.
 - FIX: Issue #575: fa-inverse does not work.
 - FIX: Issue #590: Message outlining incoming.
+- FIX: Issue #592: Android menu issues.
 - FIX: Performance information styling.
 - FIX: Breadcrumb button hover / focus / active.
 - FIX: Gradebook floating last row.
