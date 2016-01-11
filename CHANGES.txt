@@ -1,8 +1,15 @@
 New in 2.9.1.6
 ================
 - FIX: Issue #590: Message outlining incoming.
+- FIX: Issue #592: Android menu issues.
 - FIX: Performance information styling.
+- FIX: Breadcrumb button hover / focus / active.
+- FIX: Gradebook floating last row.
+- FIX: General form tweaks.
+- FIX: MDL-51881.
 - NEW: Improve breadcrumb style1.
+- NEW: Dashed block areas during editing when drag and drop moving.
+- NEW: Improve pagenavbar.php and use in popup.php layout.
 
 New in 2.9.1.5.2
 ================

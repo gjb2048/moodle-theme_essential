@@ -6,10 +6,11 @@
     color: ~"[[setting:themenavcolor]]";
     background-color: ~"[[setting:themecolor]]";
     background-image: none;
+    border-color: ~"[[setting:themecolor]]";
 
-    &:hover {
+    &:focus, &:hover, &:active {
       color: ~"[[setting:themecolor]]";
-      background-color: ~"[[setting:themehovercolor]]";
+      background-color: ~"[[setting:themenavcolor]]";
     }
   }
   i.@{fa-css-prefix} {
@@ -50,7 +51,7 @@
         &:before {
           border-left-color: ~"[[setting:themecolor]]";
         }
-        a, a:before {
+        span, a, a:before {
           color: ~"[[setting:themecolor]]";
         }
       }

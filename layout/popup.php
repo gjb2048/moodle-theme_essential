@@ -92,11 +92,8 @@ echo $OUTPUT->doctype();
 <div id="page" class="container-fluid">
 
     <header id="page-header" class="clearfix">
-        <div id="page-navbar" class="clearfix">
-            <nav class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></nav>
-            <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
-        </div>
-        <?php echo $OUTPUT->page_heading(); ?>
+        <?php require_once(\theme_essential\toolbox::get_tile_file('pagenavbar'));
+        echo $OUTPUT->page_heading(); ?>
         <div id="course-header">
             <?php echo $OUTPUT->course_header(); ?>
         </div>

@@ -104,6 +104,18 @@ p.tree_item.branch.emptybranch:focus:before {
 .collapsed .tree_item.branch:before {
   color: [[setting:themeiconcolor]];
 }
+.editing.used-region-side-pre #block-region-side-pre,
+.editing.used-region-side-post #block-region-side-post,
+.editing.used-region-home-left #block-region-home-left,
+.editing.used-region-home-middle #block-region-home-middle,
+.editing.used-region-home-right #block-region-home-right,
+.editing.used-region-hidden-dock #block-region-hidden-dock {
+  border-color: [[setting:themecolor]];
+}
+.editing.used-region-footer-left #block-region-footer-left .editing.used-region-footer-middle #block-region-footer-middle,
+.editing.used-region-footer-right #block-region-footer-right {
+  border-color: [[setting:footertextcolor]];
+}
 /* @group Block Icons */
 .block_news_items .header .title h2:before {
   content: "\f0a1";
@@ -240,10 +252,13 @@ p.tree_item.branch.emptybranch:focus:before {
   color: [[setting:themenavcolor]];
   background-color: [[setting:themecolor]];
   background-image: none;
+  border-color: [[setting:themecolor]];
 }
-.breadcrumb-button input[type="submit"]:hover {
+.breadcrumb-button input[type="submit"]:focus,
+.breadcrumb-button input[type="submit"]:hover,
+.breadcrumb-button input[type="submit"]:active {
   color: [[setting:themecolor]];
-  background-color: [[setting:themehovercolor]];
+  background-color: [[setting:themenavcolor]];
 }
 .breadcrumb-button i.fa {
   color: inherit;
@@ -280,6 +295,8 @@ p.tree_item.branch.emptybranch:focus:before {
 .breadcrumb-nav ul.breadcrumb.style1 li:focus:before {
   border-left-color: [[setting:themecolor]];
 }
+.breadcrumb-nav ul.breadcrumb.style1 li:hover span,
+.breadcrumb-nav ul.breadcrumb.style1 li:focus span,
 .breadcrumb-nav ul.breadcrumb.style1 li:hover a,
 .breadcrumb-nav ul.breadcrumb.style1 li:focus a,
 .breadcrumb-nav ul.breadcrumb.style1 li:hover a:before,

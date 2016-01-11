@@ -12,13 +12,28 @@
   }
   input[type="submit"] {
     text-shadow: none;
-    border: 0px none;
+    border-width: 1px;
+    border-style: solid;
     margin: 0;
 
     > .singlebutton > form > div {
       margin: 0;
     }
   }
+  .singlebutton {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .singlebutton, a {
+    float: right;
+  }
+}
+
+
+.dir-rtl .breadcrumb-button .singlebutton {
+  /*@noflip*/margin-left: 0;
+  /*@noflip*/margin-right: 0;
+  /*@noflip*/float: left;
 }
 
 .breadcrumb-button {
@@ -37,7 +52,7 @@
 }
 
 .breadcrumb-nav {
-  width: 65%;
+  //width: 65%;
   margin: 0px;
 
   /* @group Breadcrumb Style None */
@@ -72,9 +87,6 @@
         text-decoration: none;
         padding-right: 3px;
         overflow: hidden;
-      }
-      a:hover {
-        text-decoration: underline;
       }
       .dimmed_text {
         font-style: italic;

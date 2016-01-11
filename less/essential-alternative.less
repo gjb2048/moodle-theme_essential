@@ -94,7 +94,7 @@
                                 &:before {
                                     border-left-color: ~"[[setting:alternativethemecolor@{index}]]";
                                 }
-                                a, a:before {
+                                span, a, a:before {
                                     color: ~"[[setting:alternativethemecolor@{index}]]";
                                 }
                             }
@@ -208,9 +208,10 @@
                     input[type="submit"] {
                         color: ~"[[setting:alternativethemenavcolor@{index}]]";
                         background-color: ~"[[setting:alternativethemecolor@{index}]]";
-                        &:hover {
-                            color: ~"[[setting:alternativethemenavcolor@{index}]]";
-                            background-color: ~"[[setting:alternativethemehovercolor@{index}]]";
+                        border-color: ~"[[setting:alternativethemecolor@{index}]]";
+                        &:focus, &:hover, &:active {
+                            color: ~"[[setting:alternativethemecolor@{index}]]";
+                            background-color: ~"[[setting:alternativethemenavcolor@{index}]]";
                         }
                     }
                 }
@@ -478,6 +479,23 @@
                     }
                     .icon {
                         color: ~"[[setting:alternativethemeiconcolor@{index}]]";
+                    }
+                }
+
+                &.editing {
+                    // Using 'used' instead of 'empty' as body class will be 'used' as soon as D&D starts.
+                    &.used-region-side-pre #block-region-side-pre,
+                    &.used-region-side-post #block-region-side-post,
+                    &.used-region-home-left #block-region-home-left,
+                    &.used-region-home-middle #block-region-home-middle,
+                    &.used-region-home-right #block-region-home-right,
+                    &.used-region-hidden-dock #block-region-hidden-dock {
+                        border-color: ~"[[setting:alternativethemecolor@{index}]]";
+                    }
+                    &.used-region-footer-left #block-region-footer-left,
+                    &.used-region-footer-middle #block-region-footer-middle,
+                    &.used-region-footer-right #block-region-footer-right {
+                        border-color: ~"[[setting:alternativethemefootertextcolor@{index}]]";
                     }
                 }
 
