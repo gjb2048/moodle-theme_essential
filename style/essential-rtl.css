@@ -23801,12 +23801,6 @@ i > img {
   color: red;
 }
 
-.menu a.menu-action,
-.course-item-actions a,
-.actions a {
-  margin: 0px 3px;
-}
-
 a.action-icon > i.fa,
 #studentheader > i.fa,
 .heading_name_row a > i.fa {
@@ -23874,7 +23868,8 @@ a.action-icon > i.fa,
 }
 
 .moodle-actionmenu.show[data-enhanced] .menu a {
-  padding: 0.2em;
+  padding-right: 0.35em;
+  padding-left: 0.35em;
 }
 
 .moodle-actionmenu.show[data-enhanced] .menu a i.fa {
@@ -25463,6 +25458,18 @@ body.format-topcoll .course-content ul.ctopics li.section .content .toggle a h3:
 
 #page-question-preview h1 {
   font-size: 1.5em;
+}
+
+.path-mod-quiz input[size] {
+  width: 91.4893617%;
+  *width: 91.43617021%;
+}
+
+@media (max-width: 1199px) {
+  .path-mod-quiz input[size] {
+    width: 91.4893617%;
+    *width: 91.43617021%;
+  }
 }
 
 .formulation input[type="text"],

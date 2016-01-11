@@ -109,11 +109,12 @@ p.tree_item.branch.emptybranch:focus:before {
 .editing.used-region-home-left #block-region-home-left,
 .editing.used-region-home-middle #block-region-home-middle,
 .editing.used-region-home-right #block-region-home-right,
-.editing.used-region-footer-left #block-region-footer-left,
-.editing.used-region-footer-middle #block-region-footer-middle,
-.editing.used-region-footer-right #block-region-footer-right,
 .editing.used-region-hidden-dock #block-region-hidden-dock {
   border-color: [[setting:themecolor]];
+}
+.editing.used-region-footer-left #block-region-footer-left .editing.used-region-footer-middle #block-region-footer-middle,
+.editing.used-region-footer-right #block-region-footer-right {
+  border-color: [[setting:footertextcolor]];
 }
 /* @group Block Icons */
 .block_news_items .header .title h2:before {
