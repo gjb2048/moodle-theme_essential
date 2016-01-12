@@ -220,5 +220,5 @@ A video showing many of the core features is available for viewing at https://ww
 
 Documentation
 =============
-As always, documentation is a work in progress. Available documentation is available at http://docs.moodle.org/29/en/Essential_theme
+As always, documentation is a work in progress. Available documentation is available at http://docs.moodle.org/30/en/Essential_theme
 If you have questions you can post them in the issue tracker at https://github.com/gjb2048/moodle-theme_essential/issues
