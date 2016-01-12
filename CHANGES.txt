@@ -13,6 +13,7 @@ New in 3.0.0.1
 - NEW: Improve breadcrumb style1.
 - NEW: Dashed block areas during editing when drag and drop moving.
 - NEW: Improve pagenavbar.php and use in popup.php layout.
+- NEW: Only apply footer block layout to assignment grading page.
 
 New in 2.9.1.5.2
 ================
