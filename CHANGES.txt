@@ -1,3 +1,7 @@
+New in 3.0.0.2
+==============
+- FIX: IE11 does not support 'initial' background size for tiled backgrounds.
+
 New in 3.0.0.1
 ==============
 - NEW: First beta version for Moodle 3.0.  Using 'bootstrapbase' styles from 2015111602.00 3.0.2 (Build: 20160111).

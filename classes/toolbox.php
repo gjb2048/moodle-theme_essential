@@ -443,7 +443,7 @@ class toolbox {
         $replacementsize = 'cover';
         if ($style === 'tiled') {
             $replacementrepeat = 'repeat';
-            $replacementsize = 'initial';
+            $replacementsize = 'auto';
         } else if ($style === 'stretch') {
             $replacementattach = 'scroll';
         }
