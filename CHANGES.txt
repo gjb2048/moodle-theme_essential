@@ -3,6 +3,8 @@ New in 2.9.1.6
 - FIX: Issue #590: Message outlining incoming.
 - FIX: Issue #592: Android menu issues.
 - FIX: Issue #593: InCourse page content should be on the right and blocks on the left, in RTL mode.
+- FIX: Issue #595: Navbar turn editing on / off button does not always work.
+       Should be complete, please report pages where does not work.
 - FIX: Performance information styling.
 - FIX: Breadcrumb button hover / focus / active.
 - FIX: Gradebook floating last row.
