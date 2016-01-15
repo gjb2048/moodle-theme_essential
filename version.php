@@ -19,6 +19,7 @@
  * Moodle's new Bootstrap theme engine
  *
  * @package     theme_essential
+ * @copyright   2016 Gareth J Barnard
  * @copyright   2015 Gareth J Barnard
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @copyright   2013 Julian Ridden
@@ -28,7 +29,7 @@
 defined('MOODLE_INTERNAL') || die;
 
 $plugin->version = 2016010201; // YYYYMMDDVV.
-$plugin->maturity = MATURITY_BETA; // This version's maturity level.
+$plugin->maturity = MATURITY_RC; // This version's maturity level.
 $plugin->release = '3.0.0.2 (Build: 2016010201)';
 $plugin->requires  = 2015111600.00; // 3.0 (Build: 20151116).
 $plugin->component = 'theme_essential';
