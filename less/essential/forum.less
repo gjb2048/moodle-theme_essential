@@ -46,16 +46,58 @@
   margin-bottom: 10px;
 }
 
+.path-mod-forum .forumsearch {
+    input,
+    .helptooltip {
+        margin: 0;
+    }
+}
+
 .forumsearch input[type="text"] {
-  font-size: 12px !important;
-  height: 15px;
-  width: 180px;
-  margin-right: 10px;
+  font-size: 12px;
+  height: 20px;
+  width: 100%;
 }
 
 .forumsearch input[type="submit"] {
-  font-size: 12px !important;
+  font-size: 12px;
   line-height: 15px;
+  margin-top: 2px;
 }
 
+@media(min-width: 768px) {
+  .forumsearch .invisiblefieldset {
+    position: relative;
+    width: 100%;
+    .helptooltip a {
+      position: absolute;
+      bottom: 2px;
+      right: 0;
+    }
+  }
+}
+
+@media(max-width: 767px) {
+  .forumsearch .invisiblefieldset {
+    input[type="text"] {
+      margin-right: 2px;
+      width: 310px;
+    }
+    input[type="submit"] {
+      line-height: 20px;
+      margin-top: 0px;
+    }
+    .helptooltip a {
+      margin-top: 7px;
+    }
+  }
+}
+
+@media(max-width: 480px) {
+  .forumsearch .invisiblefieldset {
+    input[type="text"] {
+      width: 120px;
+    }
+  }
+}
 /* @end */
