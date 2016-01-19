@@ -4,6 +4,7 @@ New in 3.0.0.2
        Should be complete, please report pages where does not work.
 - FIX: IE11 does not support 'initial' background size for tiled backgrounds.
 - FIX: Forum search area layout.
+- FIX: legend and header colour for course restore.
 
 New in 3.0.0.1
 ==============

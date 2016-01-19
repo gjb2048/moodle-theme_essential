@@ -48,6 +48,12 @@
   color: #468847;
 }
 /* @end */
+/* @group Backup-Restore */
+.backup-restore .backup-section > h2.header,
+.backup-restore .backup-section .backup-sub-section h3 {
+  color: [[setting:themetextcolor]];
+}
+/* @end */
 /* @group Blocks */
 .block .icon {
   color: [[setting:themeiconcolor]];
@@ -574,6 +580,7 @@ input[type="color"],
 .form-item .form-description,
 .form-defaultinfo,
 .form-label .form-shortname,
+.mform legend,
 .mform legend a {
   color: [[setting:themetextcolor]];
 }
