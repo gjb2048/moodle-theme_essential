@@ -12,6 +12,7 @@ New in 2.9.1.6
 - FIX: MDL-51881.
 - FIX: IE11 does not support 'initial' background size for tiled backgrounds.
 - FIX: Forum search area layout.
+- FIX: legend and header colour for course restore.
 - NEW: Improve breadcrumb style1.
 - NEW: Dashed block areas during editing when drag and drop moving.
 - NEW: Improve pagenavbar.php and use in popup.php layout.
