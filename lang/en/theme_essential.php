@@ -66,6 +66,30 @@ click here to sponsor.
 <li>Anis Jradah</li>
 </ul>
 </p>
+<p>
+<h3>Essential for Moodle 3.0 kindly sponsored by:</h3>
+<ul>
+<li>Leila Hiret</li>
+<li>Vilar da Camara Neto</li>
+<li>Kees Koopman</li>
+<li>Matej Topolovec</li>
+<li>Mihai Bojonca</li>
+<li>V. Y. S. Cavalcanti</li>
+<li>Christian Kleinhanss</li>
+<li>Nadav Kavalerchik</li>
+<li>Francisco Gomez Gonzalez</li>
+<li>Lazar Ivanov</li>
+<li>Duval Arnaud</li>
+<li>Kai ner Maa Pitanta</li>
+<li>Gregory Reinert</li>
+<li>M van der Niet</li>
+<li>Floyd Saner</li>
+<li>Andreas Schenkel</li>
+<li>Gemma Lesterhuis</li>
+<li>Roy Bentley</li>
+<li>Duane Cox</li>
+</ul>
+</p>
 <h3>Customisation</h3>
 <p>If you like this theme and would like me to customise it, transpose functionality to another theme or build a new theme from scratch, then I offer competitive rates.  Please contact me via \'www.gjbarnard.co.uk/contact/\' or \'gjbarnard at gmail dot com\' or \'about.me/gjbarnard\' to discuss your requirements.</p>
 </div></div>';
