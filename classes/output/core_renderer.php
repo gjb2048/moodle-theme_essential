@@ -1142,6 +1142,7 @@ class core_renderer extends \core_renderer {
             'docs' => 'question-circle',
             'generate' => 'gift',
             'i/marker' => 'lightbulb-o',
+            'i/delete' => 'times',
             'i/dragdrop' => 'arrows',
             'i/loading' => 'refresh fa-spin fa-2x',
             'i/loading_small' => 'refresh fa-spin',

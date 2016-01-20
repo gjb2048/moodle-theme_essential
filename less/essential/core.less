@@ -29,8 +29,15 @@ a:focus {
   display: none;
 }
 
-.moodle-actionmenu[data-enhanced].show .menu {
-  box-shadow: none;
+.moodle-actionmenu[data-enhanced].show {
+  white-space: nowrap;
+  .menu {
+    box-shadow: none;
+      .iconsmall,
+      .smallicon {
+        margin: 4px;
+      }
+  }
 }
 
 .sitetopic .section .activity:hover, .course-content .section .activity:hover {

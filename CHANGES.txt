@@ -7,6 +7,7 @@ New in 3.0.0.2
 - FIX: IE11 does not support 'initial' background size for tiled backgrounds.
 - FIX: Forum search area layout.
 - FIX: legend and header colour for course restore.
+- FIX: Course category management actions menu when AJAX load causes core icons to be used.
 
 New in 3.0.0.1
 ==============
