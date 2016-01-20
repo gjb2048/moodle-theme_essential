@@ -2,6 +2,7 @@ New in 3.0.0.2
 ==============
 - FIX: Issue #595: Navbar turn editing on / off button does not always work.
        Should be complete, please report pages where does not work.
+- FIX: Issue #596: Course category tile does not show sub-category course count.
 - FIX: IE11 does not support 'initial' background size for tiled backgrounds.
 - FIX: Forum search area layout.
 - FIX: legend and header colour for course restore.
