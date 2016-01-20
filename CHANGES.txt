@@ -8,6 +8,7 @@ New in 3.0.0.2
 - FIX: Forum search area layout.
 - FIX: legend and header colour for course restore.
 - FIX: Course category management actions menu when AJAX load causes core icons to be used.
+- NEW: Update to FontAwesome 4.5.0.
 
 New in 3.0.0.1
 ==============
