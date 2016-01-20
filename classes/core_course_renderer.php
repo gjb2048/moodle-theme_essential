@@ -92,8 +92,15 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         ));
 
         $coursescount = $coursecat->get_courses_count();
-        $content .= html_writer::tag('span', '(' . $coursescount . ')',
-            array('title' => get_string('numberofcourses'), 'class' => 'numberofcourse'));
+        if ($coursecat->get_children_count()) {
+            $childcoursescount = $this->get_children_courses_count($coursecat);
+            $coursescount = $coursescount.' - '.$childcoursescount;
+            $coursecounttitle = get_string('numberofcoursesandsubcatcourses', 'theme_essential');
+        } else {
+            $coursecounttitle = get_string('numberofcourses');
+        }
+        $content .= html_writer::tag('span', $coursescount,
+            array('title' => $coursecounttitle, 'class' => 'numberofcourse'));
 
         // Category name.
         $categoryname = html_writer::tag('span', $coursecat->get_formatted_name());
@@ -131,6 +138,24 @@ class theme_essential_core_course_renderer extends core_course_renderer {
 
         $content .= html_writer::end_tag('div'); // Class .category.
         return $content;
+    }
+
+    /**
+     * Returns the number of courses in the category and sub-categories.
+     *
+     * @param coursecat $coursecat
+     * @return int Count of courses
+     */
+    protected function get_children_courses_count($coursecat) {
+        $childcoursescount = 0;
+        $coursecatchildren = $coursecat->get_children();
+        foreach ($coursecatchildren as $coursecatchild) {
+            $childcoursescount += $coursecatchild->get_courses_count();
+            if ($coursecatchild->get_children_count()) {
+                $childcoursescount += $this->get_children_courses_count($coursecatchild);
+            }
+        }
+        return $childcoursescount;
     }
 
     /**

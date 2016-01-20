@@ -522,6 +522,8 @@ $string['enablecustomcategoryicondesc'] = 'If enabled below this section you wil
 $string['categoryiconinfo'] = 'Set custom category icons';
 $string['categoryiconinfodesc'] = 'Enter the name of the icon you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after "fa-".';
 
+$string['numberofcoursesandsubcatcourses'] = 'Number of courses - sub category courses';
+
 // Header Settings.
 $string['headerheading'] = 'Header';
 $string['headertitle'] = 'Header title';
