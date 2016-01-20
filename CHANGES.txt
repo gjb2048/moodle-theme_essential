@@ -6,6 +6,7 @@ New in 2.9.1.6
 - FIX: Issue #595: Navbar turn editing on / off button does not always work.
        Should be complete, please report pages where does not work.
 - FIX: Issue #596: Course category tile does not show sub-category course count.
+- FIX: Issue #597: .gitattributes: extend for binary files.
 - FIX: Performance information styling.
 - FIX: Breadcrumb button hover / focus / active.
 - FIX: Gradebook floating last row.
