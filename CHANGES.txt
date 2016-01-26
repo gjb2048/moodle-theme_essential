@@ -1,5 +1,6 @@
 New in 2.9.1.7
 ==============
+- NEW: Add return to section button on 'incourse' pages employing a named anchor to go directly there.
 
 New in 2.9.1.6
 ==============

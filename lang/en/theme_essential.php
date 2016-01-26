@@ -693,3 +693,7 @@ $string['nomessagesfound'] = 'No messages were found';
 
 // Preferences.
 $string['badgepreferences'] = 'Badge';
+
+// Incourse.
+$string['returntosection'] = 'Return to section {$a->section}';
+
