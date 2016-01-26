@@ -141,6 +141,47 @@ class core_renderer extends \core_renderer {
     }
 
     /**
+     * Returns course-specific information to be output immediately below content on any course page
+     * (for the current course)
+     *
+     * @param bool $onlyifnotcalledbefore output content only if it has not been output before
+     * @return string
+     */
+    public function course_content_footer($onlyifnotcalledbefore = false) {
+        if ($this->page->course->id == SITEID) {
+            // return immediately and do not include /course/lib.php if not necessary
+            return '';
+        }
+        static $functioncalled = false;
+        if ($functioncalled && $onlyifnotcalledbefore) {
+            // we have already output the content header
+            return '';
+        }
+        $functioncalled = true;
+
+        $markup = parent::course_content_footer($onlyifnotcalledbefore);
+
+        if ($this->page->pagelayout == 'incourse') {
+            if (is_object($this->page->cm)) {
+                $url = new moodle_url('/course/view.php');
+                $url->param('id', $this->page->course->id);
+                $url->param('sesskey', sesskey());
+                $title = get_string('returntosection', 'theme_essential', array('section' => $this->page->cm->sectionnum));
+
+                $markup .= html_writer::start_tag('div', array('class' => 'row-fluid'));
+                $markup .= html_writer::start_tag('div', array('class' => 'span12 text-center'));
+                $markup .= html_writer::tag('a', $title.html_writer::start_tag('i', array('class' => 'fa-sign-in fa fa-fw')).
+                    html_writer::end_tag('i'), array('href' => $url->out(false).'#section-'.$this->page->cm->sectionnum,
+                    'class' => 'btn btn-default', 'title' => $title));
+                $markup .= html_writer::end_tag('div');
+                $markup .= html_writer::end_tag('div');
+            }
+        }
+
+        return $markup;
+    }
+
+    /**
      * Defines the Moodle custom_menu
      * @param string $custommenuitems
      * @return render_custom_menu for $custommenu

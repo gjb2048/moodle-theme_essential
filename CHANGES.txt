@@ -9,6 +9,7 @@ New in 3.0.0.2
 - FIX: legend and header colour for course restore.
 - FIX: Course category management actions menu when AJAX load causes core icons to be used.
 - NEW: Update to FontAwesome 4.5.0.
+- NEW: Add return to section button on 'incourse' pages employing a named anchor to go directly there.
 
 New in 3.0.0.1
 ==============
