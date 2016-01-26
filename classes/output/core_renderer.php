@@ -65,15 +65,13 @@ class core_renderer extends \core_renderer {
                 $breadcrumbstyle = '1'; // Fancy style with no collapse.
             }
             $breadcrumbs = html_writer::start_tag('ul', array('class' => "breadcrumb style$breadcrumbstyle"));
-            $index = 1;
             foreach ($this->page->navbar->get_items() as $item) {
                 // Test for single space hide section name trick.
                 if ((strlen($item->text) == 1) && ($item->text[0] == ' ')) {
                     continue;
                 }
                 $item->hideicon = true;
-                $breadcrumbs .= html_writer::tag('li', $this->render($item), array('style' => 'z-index:' . (100 - $index) . ';'));
-                $index += 1;
+                $breadcrumbs .= html_writer::tag('li', $this->render($item));
             }
             $breadcrumbs .= html_writer::end_tag('ul');
         } else {
