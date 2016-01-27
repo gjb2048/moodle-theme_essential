@@ -161,15 +161,23 @@ class core_renderer extends \core_renderer {
 
         if ($this->page->pagelayout == 'incourse') {
             if (is_object($this->page->cm)) {
+                $courseformatsettings = \course_get_format($this->page->course)->get_format_options();
                 $url = new moodle_url('/course/view.php');
                 $url->param('id', $this->page->course->id);
                 $url->param('sesskey', sesskey());
+                $courseformatsettings = \course_get_format($this->page->course)->get_format_options();
+                if ((!empty($courseformatsettings['coursedisplay'])) && ($courseformatsettings['coursedisplay'] == \COURSE_DISPLAY_MULTIPAGE)) {
+                    $url->param('section', $this->page->cm->sectionnum);
+                    $href = $url->out(false);
+                } else {
+                    $href = $url->out(false).'#section-'.$this->page->cm->sectionnum;
+                }
                 $title = get_string('returntosection', 'theme_essential', array('section' => $this->page->cm->sectionnum));
 
                 $markup .= html_writer::start_tag('div', array('class' => 'row-fluid'));
                 $markup .= html_writer::start_tag('div', array('class' => 'span12 text-center'));
                 $markup .= html_writer::tag('a', $title.html_writer::start_tag('i', array('class' => 'fa-sign-in fa fa-fw')).
-                    html_writer::end_tag('i'), array('href' => $url->out(false).'#section-'.$this->page->cm->sectionnum,
+                    html_writer::end_tag('i'), array('href' => $href,
                     'class' => 'btn btn-default', 'title' => $title));
                 $markup .= html_writer::end_tag('div');
                 $markup .= html_writer::end_tag('div');
