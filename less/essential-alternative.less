@@ -139,6 +139,16 @@
                     color: ~"[[setting:alternativethemehovercolor@{index}]]";
                 }
 
+                button, .btn, a.btn {
+                    color: ~"[[setting:alternativethemetextcolor@{index}]]";
+                    &:hover, &:focus {
+                        color: ~"[[setting:alternativethemehovercolor@{index}]]";
+                        .fa {
+                            color: ~"[[setting:alternativethemehovercolor@{index}]]";
+                        }
+                    }
+                }
+
                 .@{fa-css-prefix} {
                     color: ~"[[setting:alternativethemeiconcolor@{index}]]";
                     &:hover {

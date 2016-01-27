@@ -176,9 +176,8 @@ class core_renderer extends \core_renderer {
 
                 $markup .= html_writer::start_tag('div', array('class' => 'row-fluid'));
                 $markup .= html_writer::start_tag('div', array('class' => 'span12 text-center'));
-                $markup .= html_writer::tag('a', $title.html_writer::start_tag('i', array('class' => 'fa-sign-in fa fa-fw')).
-                    html_writer::end_tag('i'), array('href' => $href,
-                    'class' => 'btn btn-default', 'title' => $title));
+                $markup .= html_writer::tag('a', $title.html_writer::tag('i', '', array('class' => 'fa-sign-in fa fa-fw')),
+                    array('href' => $href, 'class' => 'btn btn-default', 'title' => $title));
                 $markup .= html_writer::end_tag('div');
                 $markup .= html_writer::end_tag('div');
             }

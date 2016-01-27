@@ -826,6 +826,27 @@ body .fa:hover {
 body .fa-inverse {
   color: #ffffff;
 }
+body button,
+body .btn,
+body a.btn {
+  color: [[setting:themetextcolor]];
+}
+body button:hover,
+body .btn:hover,
+body a.btn:hover,
+body button:focus,
+body .btn:focus,
+body a.btn:focus {
+  color: [[setting:themehovercolor]];
+}
+body button:hover .fa,
+body .btn:hover .fa,
+body a.btn:hover .fa,
+body button:focus .fa,
+body .btn:focus .fa,
+body a.btn:focus .fa {
+  color: [[setting:themehovercolor]];
+}
 .container-fluid {
   max-width: [[setting:pagewidth]];
 }
