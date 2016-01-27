@@ -23,6 +23,15 @@ body {
   .@{fa-css-prefix}-inverse {
     color: @fa-inverse;
   }
+  button, .btn, a.btn {
+    color: ~"[[setting:themetextcolor]]";
+    &:hover, &:focus {
+      color: ~"[[setting:themehovercolor]]";
+      .fa {
+        color: ~"[[setting:themehovercolor]]";
+      }
+    }
+  }
 }
 
 .container-fluid {
