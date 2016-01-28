@@ -43,12 +43,16 @@ if ($enable1alert || $enable2alert || $enable3alert) {
         <!-- Start Slideshow -->
         <?php
         $toggleslideshow = \theme_essential\toolbox::get_setting('toggleslideshow');
-        if ($toggleslideshow == 1) {
+        if ($PAGE->user_is_editing() && ($toggleslideshow)) {
             require_once(\theme_essential\toolbox::get_tile_file('slideshow'));
-        } else if ($toggleslideshow == 2 && !isloggedin()) {
-            require_once(\theme_essential\toolbox::get_tile_file('slideshow'));
-        } else if ($toggleslideshow == 3 && isloggedin()) {
-            require_once(\theme_essential\toolbox::get_tile_file('slideshow'));
+        } else {
+            if ($toggleslideshow == 1) {
+                require_once(\theme_essential\toolbox::get_tile_file('slideshow'));
+            } else if ($toggleslideshow == 2 && !isloggedin()) {
+                require_once(\theme_essential\toolbox::get_tile_file('slideshow'));
+            } else if ($toggleslideshow == 3 && isloggedin()) {
+                require_once(\theme_essential\toolbox::get_tile_file('slideshow'));
+            }
         }
         ?>
         <!-- End Slideshow -->
@@ -101,21 +105,26 @@ if ($enable1alert || $enable2alert || $enable3alert) {
 
         <!-- Start Frontpage Content -->
         <?php
-        $showfrontcontent = false;
-        switch (\theme_essential\toolbox::get_setting('togglefrontcontent')) {
-            case 1:
-                $showfrontcontent = true;
-                break;
-            case 2:
-                if (!isloggedin()) {
+        $showfrontcontentsetting = \theme_essential\toolbox::get_setting('togglefrontcontent');
+        if ($PAGE->user_is_editing() && ($showfrontcontentsetting)) {
+            $showfrontcontent = true;
+        } else {
+            $showfrontcontent = false;
+            switch ($showfrontcontentsetting) {
+                case 1:
                     $showfrontcontent = true;
-                }
-                break;
-            case 3:
-                if (isloggedin()) {
-                    $showfrontcontent = true;
-                }
-                break;
+                    break;
+                case 2:
+                    if (!isloggedin()) {
+                        $showfrontcontent = true;
+                    }
+                    break;
+                case 3:
+                    if (isloggedin()) {
+                        $showfrontcontent = true;
+                    }
+                    break;
+            }
         }
         if ($showfrontcontent) { ?>
             <div class="frontpagecontent">
@@ -134,12 +143,16 @@ if ($enable1alert || $enable2alert || $enable3alert) {
         <!-- Start Marketing Spots -->
         <?php
         $togglemarketing = \theme_essential\toolbox::get_setting('togglemarketing');
-        if ($togglemarketing == 1) {
+        if ($PAGE->user_is_editing() && ($togglemarketing)) {
             require_once(\theme_essential\toolbox::get_tile_file('marketingspots'));
-        } else if ($togglemarketing == 2 && !isloggedin()) {
-            require_once(\theme_essential\toolbox::get_tile_file('marketingspots'));
-        } else if ($togglemarketing == 3 && isloggedin()) {
-            require_once(\theme_essential\toolbox::get_tile_file('marketingspots'));
+        } else {
+            if ($togglemarketing == 1) {
+                require_once(\theme_essential\toolbox::get_tile_file('marketingspots'));
+            } else if ($togglemarketing == 2 && !isloggedin()) {
+                require_once(\theme_essential\toolbox::get_tile_file('marketingspots'));
+            } else if ($togglemarketing == 3 && isloggedin()) {
+                require_once(\theme_essential\toolbox::get_tile_file('marketingspots'));
+            }
         }
         ?>
         <!-- End Marketing Spots -->
@@ -147,12 +160,16 @@ if ($enable1alert || $enable2alert || $enable3alert) {
         <!-- Start Middle Blocks -->
         <?php
         $frontpagemiddleblocks = \theme_essential\toolbox::get_setting('frontpagemiddleblocks');
-        if ($frontpagemiddleblocks == 1) {
+        if ($PAGE->user_is_editing() && ($frontpagemiddleblocks)) {
             require_once(\theme_essential\toolbox::get_tile_file('middleblocks'));
-        } else if ($frontpagemiddleblocks == 2 && !isloggedin()) {
-            require_once(\theme_essential\toolbox::get_tile_file('middleblocks'));
-        } else if ($frontpagemiddleblocks == 3 && isloggedin()) {
-            require_once(\theme_essential\toolbox::get_tile_file('middleblocks'));
+        } else {
+            if ($frontpagemiddleblocks == 1) {
+                require_once(\theme_essential\toolbox::get_tile_file('middleblocks'));
+            } else if ($frontpagemiddleblocks == 2 && !isloggedin()) {
+                require_once(\theme_essential\toolbox::get_tile_file('middleblocks'));
+            } else if ($frontpagemiddleblocks == 3 && isloggedin()) {
+                require_once(\theme_essential\toolbox::get_tile_file('middleblocks'));
+            }
         }
         ?>
         <!-- End Middle Blocks -->
