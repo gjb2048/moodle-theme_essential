@@ -1,6 +1,7 @@
 New in 2.9.1.7
 ==============
 - FIX: Issue #599: .gitattributes: missing *.gif binary line - thanks to Jordi Pujol-Ahulló.
+- FIX: Issue #603: Admins should always see "additional front page middle blocks" when editing is turned on.
 - FIX: Fancy breadcrumb z-index conflict with the Grid format.
 - FIX: Default button colour.
 - FIX: Favicon not showing.
