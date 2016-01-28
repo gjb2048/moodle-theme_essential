@@ -827,24 +827,24 @@ body .fa-inverse {
   color: #ffffff;
 }
 body button,
-body .btn,
-body a.btn {
+body .btn-default,
+body a.btn-default {
   color: [[setting:themetextcolor]];
 }
 body button:hover,
-body .btn:hover,
-body a.btn:hover,
+body .btn-default:hover,
+body a.btn-default:hover,
 body button:focus,
-body .btn:focus,
-body a.btn:focus {
+body .btn-default:focus,
+body a.btn-default:focus {
   color: [[setting:themehovercolor]];
 }
 body button:hover .fa,
-body .btn:hover .fa,
-body a.btn:hover .fa,
+body .btn-default:hover .fa,
+body a.btn-default:hover .fa,
 body button:focus .fa,
-body .btn:focus .fa,
-body a.btn:focus .fa {
+body .btn-default:focus .fa,
+body a.btn-default:focus .fa {
   color: [[setting:themehovercolor]];
 }
 .container-fluid {

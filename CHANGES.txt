@@ -1,3 +1,9 @@
+New in 3.0.0.3
+==============
+- FIX: Fancy breadcrumb z-index conflict with the Grid format.
+- FIX: Default button colour.
+- NEW: Add return to section button on 'incourse' pages employing a named anchor to go directly there.
+
 New in 3.0.0.2
 ==============
 - FIX: Issue #595: Navbar turn editing on / off button does not always work.
@@ -8,10 +14,7 @@ New in 3.0.0.2
 - FIX: Forum search area layout.
 - FIX: legend and header colour for course restore.
 - FIX: Course category management actions menu when AJAX load causes core icons to be used.
-- FIX: Fancy breadcrumb z-index conflict with the Grid format.
-- FIX: Default button colour.
 - NEW: Update to FontAwesome 4.5.0.
-- NEW: Add return to section button on 'incourse' pages employing a named anchor to go directly there.
 
 New in 3.0.0.1
 ==============
