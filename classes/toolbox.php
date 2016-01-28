@@ -114,6 +114,8 @@ class toolbox {
             return format_text($settingvalue, FORMAT_PLAIN);
         } else if ($format === 'format_html') {
             return format_text($settingvalue, FORMAT_HTML, array('trusted' => true, 'noclean' => true));
+        } else if ($format === 'format_file_url') {
+            return self::setting_file_url($setting, $setting);
         } else {
             return format_string($settingvalue);
         }
