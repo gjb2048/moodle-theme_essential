@@ -1,5 +1,8 @@
+New in 2.9.1.7
+==============
+
 New in 2.9.1.6
-================
+==============
 - FIX: Issue #590: Message outlining incoming.
 - FIX: Issue #592: Android menu issues.
 - FIX: Issue #593: InCourse page content should be on the right and blocks on the left, in RTL mode.
