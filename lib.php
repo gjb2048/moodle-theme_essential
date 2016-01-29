@@ -177,6 +177,26 @@ function theme_essential_process_css($css, $theme) {
     $themeiconcolor = \theme_essential\toolbox::get_setting('themeiconcolor');
     $css = \theme_essential\toolbox::set_color($css, $themeiconcolor, '[[setting:themeiconcolor]]', '#30add1');
 
+    // Set the theme default button text colour.
+    $themedefaultbuttontextcolour = \theme_essential\toolbox::get_setting('themedefaultbuttontextcolour');
+    $css = \theme_essential\toolbox::set_color($css, $themedefaultbuttontextcolour,
+        '[[setting:themedefaultbuttontextcolour]]', '#217a94');
+
+    // Set the theme default button text hover colour.
+    $themedefaultbuttontexthovercolour = \theme_essential\toolbox::get_setting('themedefaultbuttontexthovercolour');
+    $css = \theme_essential\toolbox::set_color($css, $themedefaultbuttontexthovercolour,
+        '[[setting:themedefaultbuttontexthovercolour]]', '#6a2a18');
+
+    // Set the theme default button background colour.
+    $themedefaultbuttonbackgroundcolour = \theme_essential\toolbox::get_setting('themedefaultbuttonbackgroundcolour');
+    $css = \theme_essential\toolbox::set_color($css, $themedefaultbuttonbackgroundcolour,
+        '[[setting:themedefaultbuttonbackgroundcolour]]', '#f0f8ff');
+
+    // Set the theme default button background hover colour.
+    $themedefaultbuttonbackgroundhovercolour = \theme_essential\toolbox::get_setting('themedefaultbuttonbackgroundhovercolour');
+    $css = \theme_essential\toolbox::set_color($css, $themedefaultbuttonbackgroundhovercolour,
+        '[[setting:themedefaultbuttonbackgroundhovercolour]]', '#f3fbff');
+
     // Set the theme navigation colour.
     $themenavcolor = \theme_essential\toolbox::get_setting('themenavcolor');
     $css = \theme_essential\toolbox::set_color($css, $themenavcolor, '[[setting:themenavcolor]]', '#ffffff');
@@ -260,64 +280,79 @@ function theme_essential_process_css($css, $theme) {
         foreach (range(1, 4) as $alternative) {
             $default = $defaultcolors[$alternative - 1];
             $defaulthover = $defaulthovercolors[$alternative - 1];
-            $css = \theme_essential\toolbox::set_alternativecolor($css, 'color' . $alternative,
-                            \theme_essential\toolbox::get_setting('alternativethemecolor' . $alternative), $default);
-            $css = \theme_essential\toolbox::set_alternativecolor($css, 'textcolor' . $alternative,
-                            \theme_essential\toolbox::get_setting('alternativethemetextcolor' . $alternative), $default);
-            $css = \theme_essential\toolbox::set_alternativecolor($css, 'urlcolor' . $alternative,
-                            \theme_essential\toolbox::get_setting('alternativethemeurlcolor' . $alternative), $default);
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'color'.$alternative,
+                \theme_essential\toolbox::get_setting('alternativethemecolor'.$alternative), $default);
+
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'textcolor'.$alternative,
+                \theme_essential\toolbox::get_setting('alternativethemetextcolor'.$alternative), $default);
+
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'urlcolor'.$alternative,
+                \theme_essential\toolbox::get_setting('alternativethemeurlcolor'.$alternative), $default);
+
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'defaultbuttontextcolour'.$alternative,
+                \theme_essential\toolbox::get_setting('alternativethemedefaultbuttontextcolour'.$alternative), '#217a94');
+
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'defaultbuttontexthovercolour'.$alternative,
+                \theme_essential\toolbox::get_setting('alternativethemedefaultbuttontexthovercolour'.$alternative),
+                '#6a2a18');
+
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'defaultbuttonbackgroundcolour'.$alternative,
+                \theme_essential\toolbox::get_setting('alternativethemedefaultbuttonbackgroundcolour'.$alternative), '#f0f8ff');
+
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'defaultbuttonbackgroundhovercolour'.$alternative,
+                \theme_essential\toolbox::get_setting('alternativethemedefaultbuttonbackgroundhovercolour'.$alternative),
+                '#f3fbff');
+
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'iconcolor' . $alternative,
-                            \theme_essential\toolbox::get_setting('alternativethemeiconcolor' . $alternative), $default);
+                \theme_essential\toolbox::get_setting('alternativethemeiconcolor' . $alternative), $default);
+
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'navcolor' . $alternative,
-                            \theme_essential\toolbox::get_setting('alternativethemenavcolor' . $alternative), $default);
+                \theme_essential\toolbox::get_setting('alternativethemenavcolor' . $alternative), $default);
+
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'hovercolor' . $alternative,
-                            \theme_essential\toolbox::get_setting('alternativethemehovercolor' . $alternative),
-                            $defaulthover);
+                \theme_essential\toolbox::get_setting('alternativethemehovercolor' . $alternative), $defaulthover);
 
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'footercolor' . $alternative,
-                            \theme_essential\toolbox::get_setting('alternativethemefootercolor' . $alternative),
-                            '#30add1');
+                \theme_essential\toolbox::get_setting('alternativethemefootercolor' . $alternative), '#30add1');
 
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'footertextcolor' . $alternative,
-                            \theme_essential\toolbox::get_setting('alternativethemefootertextcolor' . $alternative),
-                            '#30add1');
+                \theme_essential\toolbox::get_setting('alternativethemefootertextcolor' . $alternative), '#30add1');
+
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'footerblockbackgroundcolour' . $alternative,
-                            \theme_essential\toolbox::get_setting('alternativethemefooterblockbackgroundcolour' . $alternative),
-                            '#cccccc');
+                \theme_essential\toolbox::get_setting('alternativethemefooterblockbackgroundcolour' . $alternative), '#cccccc');
+
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'footerblocktextcolour' . $alternative,
-                            \theme_essential\toolbox::get_setting('alternativethemefooterblocktextcolour' . $alternative),
-                            '#000000');
+                \theme_essential\toolbox::get_setting('alternativethemefooterblocktextcolour' . $alternative), '#000000');
+
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'footerblockurlcolour' . $alternative,
-                            \theme_essential\toolbox::get_setting('alternativethemefooterblockurlcolour' . $alternative),
-                            '#000000');
+                \theme_essential\toolbox::get_setting('alternativethemefooterblockurlcolour' . $alternative), '#000000');
+
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'footerblockhovercolour' . $alternative,
-                            \theme_essential\toolbox::get_setting('alternativethemefooterblockhovercolour' . $alternative),
-                            '#555555');
+                \theme_essential\toolbox::get_setting('alternativethemefooterblockhovercolour' . $alternative), '#555555');
+
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'footerheadingcolor' . $alternative,
-                            \theme_essential\toolbox::get_setting('alternativethemefooterheadingcolor' . $alternative),
-                            '#cccccc');
+                \theme_essential\toolbox::get_setting('alternativethemefooterheadingcolor' . $alternative), '#cccccc');
+
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'footersepcolor' . $alternative,
-                            \theme_essential\toolbox::get_setting('alternativethemefootersepcolor' . $alternative),
-                            '#313131');
+                \theme_essential\toolbox::get_setting('alternativethemefootersepcolor' . $alternative), '#313131');
+
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'footerurlcolor' . $alternative,
-                            \theme_essential\toolbox::get_setting('alternativethemefooterurlcolor' . $alternative),
-                            '#cccccc');
+                \theme_essential\toolbox::get_setting('alternativethemefooterurlcolor' . $alternative), '#cccccc');
+
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'footerhovercolor' . $alternative,
-                            \theme_essential\toolbox::get_setting('alternativethemefooterhovercolor' . $alternative),
-                            '#bbbbbb');
+                \theme_essential\toolbox::get_setting('alternativethemefooterhovercolor' . $alternative), '#bbbbbb');
 
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'slidecaptiontextcolor' . $alternative,
-                            \theme_essential\toolbox::get_setting('alternativethemeslidecaptiontextcolor' . $alternative),
-                            $default);
+                \theme_essential\toolbox::get_setting('alternativethemeslidecaptiontextcolor' . $alternative), $default);
+
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'slidecaptionbackgroundcolor' . $alternative,
-                            \theme_essential\toolbox::get_setting('alternativethemeslidecaptionbackgroundcolor' . $alternative),
-                            $default);
+                \theme_essential\toolbox::get_setting('alternativethemeslidecaptionbackgroundcolor' . $alternative), $default);
+
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'slidebuttoncolor' . $alternative,
-                            \theme_essential\toolbox::get_setting('alternativethemeslidebuttoncolor' . $alternative),
-                            $default);
+                \theme_essential\toolbox::get_setting('alternativethemeslidebuttoncolor' . $alternative), $default);
+
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'slidebuttonhovercolor' . $alternative,
-                            \theme_essential\toolbox::get_setting('alternativethemeslidebuttonhovercolor' . $alternative),
-                            $defaulthover);
+                \theme_essential\toolbox::get_setting('alternativethemeslidebuttonhovercolor' . $alternative), $defaulthover);
         }
     }
 
