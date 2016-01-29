@@ -23,15 +23,6 @@ body {
   .@{fa-css-prefix}-inverse {
     color: @fa-inverse;
   }
-  button, .btn-default, a.btn-default {
-    color: ~"[[setting:themetextcolor]]";
-    &:hover, &:focus {
-      color: ~"[[setting:themehovercolor]]";
-      .fa {
-        color: ~"[[setting:themehovercolor]]";
-      }
-    }
-  }
 }
 
 .container-fluid {
@@ -166,27 +157,6 @@ h2.pagetitle {
   .subject {
     color: ~"[[setting:themetextcolor]]";
   }
-}
-
-/* @end */
-
-/* @group Buttons */
-
-.button {
-  a, a:visited {
-    background-color: ~"[[setting:themecolor]]";
-  }
-}
-
-a.marketing-button,
-a.marketing-button:visited, {
-  color: ~"[[setting:themenavcolor]]";
-  background-color: ~"[[setting:themecolor]]";
-}
-
-a.marketing-button:hover {
-  color: ~"[[setting:themenavcolor]]";
-  background-color: ~"[[setting:themehovercolor]]";
 }
 
 /* @end */

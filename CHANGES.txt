@@ -7,6 +7,7 @@ New in 3.0.0.3
 - FIX: Favicon not showing.
 - NEW: Add return to section button on 'incourse' pages employing a named anchor to go directly there.
 - NEW: Bigger forum discussion user picture.
+- NEW: Default button background colour settings.
 
 New in 3.0.0.2
 ==============
