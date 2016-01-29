@@ -26,24 +26,45 @@
   border-bottom-width: 1px;
 }
 
-.forumpost .picture img {
-  border-radius: 250px;
-  margin-right: 10px;
-}
 
-.forumpost .content .posting {
-  border-top: 1px dotted #ccc;
-  padding-top: 10px;
-}
+body {
+  .forumpost .row {
+    display: inline-block;
+    .left {
+      width: 76px;
+      height: 76px;
+    }
+    .content-mask, .options, .topic {
+      margin-left: 84px;
+    }
+    .options .commands {
+      margin-right: 4px;
+    }
+  }
 
-.forumpost .subject {
-  font-weight: normal;
-  font-size: 1.2em;
-  margin-bottom: -5px;
-}
+  .forumpost .picture img {
+    border-radius: 250px;
+    width: 72px;
+    height: 72px;
+    .userpicture {
+      margin: 3px;
+    }
+  }
 
-.forumpost .header {
-  margin-bottom: 10px;
+  .forumpost .content .posting {
+    border-top: 1px dotted #ccc;
+    padding-top: 10px;
+  }
+  .forumpost .subject {
+    font-weight: normal;
+    font-size: 1.2em;
+    margin-bottom: -5px;
+  }
+
+
+  .forumpost .header {
+    margin-bottom: 10px;
+  }
 }
 
 .path-mod-forum .forumsearch {
