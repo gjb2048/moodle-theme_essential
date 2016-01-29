@@ -332,37 +332,170 @@ ul.breadcrumb.style2 li a:hover {
 /* @end */
 /* @end */
 /* @group Buttons */
-button.btn-cancel,
-input.form-submit,
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-#notice .singlebutton + .singlebutton input,
-.submit.buttons input[name=cancel] {
-  color: [[setting:themetextcolor]];
+body button,
+body .btn-default,
+body a.btn-default,
+body button.btn-cancel,
+body input.form-submit,
+body input[type="button"],
+body input[type="submit"],
+body input[type="reset"],
+body #notice .singlebutton + .singlebutton input,
+body .submit.buttons input[name=cancel] {
+  color: [[setting:themedefaultbuttontextcolour]];
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  background-color: [[setting:themedefaultbuttonbackgroundcolour]];
+  background-image: -moz-linear-gradient(top, [[setting:themedefaultbuttonbackgroundcolour]], [[setting:themedefaultbuttonbackgroundhovercolour]]);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:themedefaultbuttonbackgroundcolour]]), to([[setting:themedefaultbuttonbackgroundhovercolour]]));
+  background-image: -webkit-linear-gradient(top, [[setting:themedefaultbuttonbackgroundcolour]], [[setting:themedefaultbuttonbackgroundhovercolour]]);
+  background-image: -o-linear-gradient(top, [[setting:themedefaultbuttonbackgroundcolour]], [[setting:themedefaultbuttonbackgroundhovercolour]]);
+  background-image: linear-gradient(to bottom, [[setting:themedefaultbuttonbackgroundcolour]], [[setting:themedefaultbuttonbackgroundhovercolour]]);
 }
-button.btn-cancel:focus,
-input.form-submit:focus,
-input[type="button"]:focus,
-input[type="submit"]:focus,
-input[type="reset"]:focus,
-#notice .singlebutton + .singlebutton input:focus,
-.submit.buttons input[name=cancel]:focus,
-button.btn-cancel:hover,
-input.form-submit:hover,
-input[type="button"]:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-#notice .singlebutton + .singlebutton input:hover,
-.submit.buttons input[name=cancel]:hover,
-button.btn-cancel:active,
-input.form-submit:active,
-input[type="button"]:active,
-input[type="submit"]:active,
-input[type="reset"]:active,
-#notice .singlebutton + .singlebutton input:active,
-.submit.buttons input[name=cancel]:active {
-  color: inherit;
+body button .fa,
+body .btn-default .fa,
+body a.btn-default .fa,
+body button.btn-cancel .fa,
+body input.form-submit .fa,
+body input[type="button"] .fa,
+body input[type="submit"] .fa,
+body input[type="reset"] .fa,
+body #notice .singlebutton + .singlebutton input .fa,
+body .submit.buttons input[name=cancel] .fa {
+  color: [[setting:themedefaultbuttontextcolour]];
+}
+body button:hover,
+body .btn-default:hover,
+body a.btn-default:hover,
+body button.btn-cancel:hover,
+body input.form-submit:hover,
+body input[type="button"]:hover,
+body input[type="submit"]:hover,
+body input[type="reset"]:hover,
+body #notice .singlebutton + .singlebutton input:hover,
+body .submit.buttons input[name=cancel]:hover,
+body button:focus,
+body .btn-default:focus,
+body a.btn-default:focus,
+body button.btn-cancel:focus,
+body input.form-submit:focus,
+body input[type="button"]:focus,
+body input[type="submit"]:focus,
+body input[type="reset"]:focus,
+body #notice .singlebutton + .singlebutton input:focus,
+body .submit.buttons input[name=cancel]:focus,
+body button:active,
+body .btn-default:active,
+body a.btn-default:active,
+body button.btn-cancel:active,
+body input.form-submit:active,
+body input[type="button"]:active,
+body input[type="submit"]:active,
+body input[type="reset"]:active,
+body #notice .singlebutton + .singlebutton input:active,
+body .submit.buttons input[name=cancel]:active,
+body button.active,
+body .btn-default.active,
+body a.btn-default.active,
+body button.btn-cancel.active,
+body input.form-submit.active,
+body input[type="button"].active,
+body input[type="submit"].active,
+body input[type="reset"].active,
+body #notice .singlebutton + .singlebutton input.active,
+body .submit.buttons input[name=cancel].active,
+body button.disabled,
+body .btn-default.disabled,
+body a.btn-default.disabled,
+body button.btn-cancel.disabled,
+body input.form-submit.disabled,
+body input[type="button"].disabled,
+body input[type="submit"].disabled,
+body input[type="reset"].disabled,
+body #notice .singlebutton + .singlebutton input.disabled,
+body .submit.buttons input[name=cancel].disabled,
+body button[disabled],
+body .btn-default[disabled],
+body a.btn-default[disabled],
+body button.btn-cancel[disabled],
+body input.form-submit[disabled],
+body input[type="button"][disabled],
+body input[type="submit"][disabled],
+body input[type="reset"][disabled],
+body #notice .singlebutton + .singlebutton input[disabled],
+body .submit.buttons input[name=cancel][disabled] {
+  color: [[setting:themedefaultbuttontexthovercolour]];
+  background-color: [[setting:themedefaultbuttonbackgroundhovercolour]];
+}
+body button:hover .fa,
+body .btn-default:hover .fa,
+body a.btn-default:hover .fa,
+body button.btn-cancel:hover .fa,
+body input.form-submit:hover .fa,
+body input[type="button"]:hover .fa,
+body input[type="submit"]:hover .fa,
+body input[type="reset"]:hover .fa,
+body #notice .singlebutton + .singlebutton input:hover .fa,
+body .submit.buttons input[name=cancel]:hover .fa,
+body button:focus .fa,
+body .btn-default:focus .fa,
+body a.btn-default:focus .fa,
+body button.btn-cancel:focus .fa,
+body input.form-submit:focus .fa,
+body input[type="button"]:focus .fa,
+body input[type="submit"]:focus .fa,
+body input[type="reset"]:focus .fa,
+body #notice .singlebutton + .singlebutton input:focus .fa,
+body .submit.buttons input[name=cancel]:focus .fa,
+body button:active .fa,
+body .btn-default:active .fa,
+body a.btn-default:active .fa,
+body button.btn-cancel:active .fa,
+body input.form-submit:active .fa,
+body input[type="button"]:active .fa,
+body input[type="submit"]:active .fa,
+body input[type="reset"]:active .fa,
+body #notice .singlebutton + .singlebutton input:active .fa,
+body .submit.buttons input[name=cancel]:active .fa,
+body button.active .fa,
+body .btn-default.active .fa,
+body a.btn-default.active .fa,
+body button.btn-cancel.active .fa,
+body input.form-submit.active .fa,
+body input[type="button"].active .fa,
+body input[type="submit"].active .fa,
+body input[type="reset"].active .fa,
+body #notice .singlebutton + .singlebutton input.active .fa,
+body .submit.buttons input[name=cancel].active .fa,
+body button.disabled .fa,
+body .btn-default.disabled .fa,
+body a.btn-default.disabled .fa,
+body button.btn-cancel.disabled .fa,
+body input.form-submit.disabled .fa,
+body input[type="button"].disabled .fa,
+body input[type="submit"].disabled .fa,
+body input[type="reset"].disabled .fa,
+body #notice .singlebutton + .singlebutton input.disabled .fa,
+body .submit.buttons input[name=cancel].disabled .fa,
+body button[disabled] .fa,
+body .btn-default[disabled] .fa,
+body a.btn-default[disabled] .fa,
+body button.btn-cancel[disabled] .fa,
+body input.form-submit[disabled] .fa,
+body input[type="button"][disabled] .fa,
+body input[type="submit"][disabled] .fa,
+body input[type="reset"][disabled] .fa,
+body #notice .singlebutton + .singlebutton input[disabled] .fa,
+body .submit.buttons input[name=cancel][disabled] .fa {
+  color: [[setting:themedefaultbuttontexthovercolour]];
+}
+a.marketing-button,
+a.marketing-button:visited {
+  color: [[setting:themenavcolor]];
+  background-color: [[setting:themecolor]];
+}
+a.marketing-button:hover {
+  color: [[setting:themenavcolor]];
+  background-color: [[setting:themehovercolor]];
 }
 /* @end */
 /* @group Carousel */
@@ -826,27 +959,6 @@ body .fa:hover {
 body .fa-inverse {
   color: #ffffff;
 }
-body button,
-body .btn-default,
-body a.btn-default {
-  color: [[setting:themetextcolor]];
-}
-body button:hover,
-body .btn-default:hover,
-body a.btn-default:hover,
-body button:focus,
-body .btn-default:focus,
-body a.btn-default:focus {
-  color: [[setting:themehovercolor]];
-}
-body button:hover .fa,
-body .btn-default:hover .fa,
-body a.btn-default:hover .fa,
-body button:focus .fa,
-body .btn-default:focus .fa,
-body a.btn-default:focus .fa {
-  color: [[setting:themehovercolor]];
-}
 .container-fluid {
   max-width: [[setting:pagewidth]];
 }
@@ -955,21 +1067,6 @@ h2.pagetitle {
 /* @group Forums */
 .forumpost .subject {
   color: [[setting:themetextcolor]];
-}
-/* @end */
-/* @group Buttons */
-.button a,
-.button a:visited {
-  background-color: [[setting:themecolor]];
-}
-a.marketing-button,
-a.marketing-button:visited {
-  color: [[setting:themenavcolor]];
-  background-color: [[setting:themecolor]];
-}
-a.marketing-button:hover {
-  color: [[setting:themenavcolor]];
-  background-color: [[setting:themehovercolor]];
 }
 /* @end */
 /* @group Blocks */

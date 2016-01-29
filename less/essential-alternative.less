@@ -139,16 +139,6 @@
                     color: ~"[[setting:alternativethemehovercolor@{index}]]";
                 }
 
-                button, .btn-default, a.btn-default {
-                    color: ~"[[setting:alternativethemetextcolor@{index}]]";
-                    &:hover, &:focus {
-                        color: ~"[[setting:alternativethemehovercolor@{index}]]";
-                        .fa {
-                            color: ~"[[setting:alternativethemehovercolor@{index}]]";
-                        }
-                    }
-                }
-
                 .@{fa-css-prefix} {
                     color: ~"[[setting:alternativethemeiconcolor@{index}]]";
                     &:hover {
@@ -221,10 +211,12 @@
                     input[type="submit"] {
                         color: ~"[[setting:alternativethemenavcolor@{index}]]";
                         background-color: ~"[[setting:alternativethemecolor@{index}]]";
+                        background-image: none;
                         border-color: ~"[[setting:alternativethemecolor@{index}]]";
                         &:focus, &:hover, &:active {
                             color: ~"[[setting:alternativethemecolor@{index}]]";
                             background-color: ~"[[setting:alternativethemenavcolor@{index}]]";
+                            background-image: none;
                         }
                     }
                 }
@@ -400,6 +392,7 @@
                     }
                 }
 
+                button, .btn-default, a.btn-default,
                 button.btn-cancel,
                 input.form-submit,
                 input[type="button"],
@@ -407,11 +400,24 @@
                 input[type="reset"],
                 #notice .singlebutton+.singlebutton input,
                 .submit.buttons input[name=cancel] {
-                    color: ~"[[setting:alternativethemetextcolor@{index}]]";
-                }
-                .button {
-                    a, a:visited {
-                        background-color: ~"[[setting:alternativethemecolor@{index}]]";
+                    color: ~"[[setting:alternativethemedefaultbuttontextcolour@{index}]]";
+                    .fa {
+                        color: ~"[[setting:alternativethemedefaultbuttontextcolour@{index}]]";
+                    }
+
+                    background-color: ~"[[setting:alternativethemedefaultbuttonbackgroundcolour@{index}]]";
+                    background-image: -moz-linear-gradient(top, ~"[[setting:alternativethemedefaultbuttonbackgroundcolour@{index}]]", ~"[[setting:alternativethemedefaultbuttonbackgroundhovercolour@{index}]]"); // FF 3.6+
+                    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(~"[[setting:alternativethemedefaultbuttonbackgroundcolour@{index}]]"), to(~"[[setting:alternativethemedefaultbuttonbackgroundhovercolour@{index}]]")); // Safari 4+, Chrome 2+
+                    background-image: -webkit-linear-gradient(top, ~"[[setting:alternativethemedefaultbuttonbackgroundcolour@{index}]]", ~"[[setting:alternativethemedefaultbuttonbackgroundhovercolour@{index}]]"); // Safari 5.1+, Chrome 10+
+                    background-image: -o-linear-gradient(top, ~"[[setting:alternativethemedefaultbuttonbackgroundcolour@{index}]]", ~"[[setting:alternativethemedefaultbuttonbackgroundhovercolour@{index}]]"); // Opera 11.10
+                    background-image: linear-gradient(to bottom, ~"[[setting:alternativethemedefaultbuttonbackgroundcolour@{index}]]", ~"[[setting:alternativethemedefaultbuttonbackgroundhovercolour@{index}]]"); // Standard, IE10
+
+                    &:hover, &:focus, &:active, &.active, &.disabled, &[disabled] {
+                        color: ~"[[setting:alternativethemedefaultbuttontexthovercolour@{index}]]";
+                        background-color: ~"[[setting:alternativethemedefaultbuttonbackgroundhovercolour@{index}]]";
+                        .fa {
+                            color: ~"[[setting:alternativethemedefaultbuttontexthovercolour@{index}]]";
+                        }
                     }
                 }
 

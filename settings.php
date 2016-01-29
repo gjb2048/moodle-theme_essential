@@ -197,7 +197,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Main theme Hover colour setting.
+    // Main theme hover colour setting.
     $name = 'theme_essential/themehovercolor';
     $title = get_string('themehovercolor', 'theme_essential');
     $description = get_string('themehovercolordesc', 'theme_essential');
@@ -212,6 +212,46 @@ if (is_siteadmin()) {
     $title = get_string('themeiconcolor', 'theme_essential');
     $description = get_string('themeiconcolordesc', 'theme_essential');
     $default = '#30add1';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Default button text colour setting.
+    $name = 'theme_essential/themedefaultbuttontextcolour';
+    $title = get_string('themedefaultbuttontextcolour', 'theme_essential');
+    $description = get_string('themedefaultbuttontextcolourdesc', 'theme_essential');
+    $default = '#217a94';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Default button text hover colour setting.
+    $name = 'theme_essential/themedefaultbuttontexthovercolour';
+    $title = get_string('themedefaultbuttontexthovercolour', 'theme_essential');
+    $description = get_string('themedefaultbuttontexthovercolourdesc', 'theme_essential');
+    $default = '#6a2a18';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Default button background colour setting.
+    $name = 'theme_essential/themedefaultbuttonbackgroundcolour';
+    $title = get_string('themedefaultbuttonbackgroundcolour', 'theme_essential');
+    $description = get_string('themedefaultbuttonbackgroundcolourdesc', 'theme_essential');
+    $default = '#f0f8ff';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Default button background hover colour setting.
+    $name = 'theme_essential/themedefaultbuttonbackgroundhovercolour';
+    $title = get_string('themedefaultbuttonbackgroundhovercolour', 'theme_essential');
+    $description = get_string('themedefaultbuttonbackgroundhovercolourdesc', 'theme_essential');
+    $default = '#f3fbff';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -393,7 +433,49 @@ if (is_siteadmin()) {
         $setting->set_updatedcallback('theme_reset_all_caches');
         $temp->add($setting);
 
-        // Icon colour setting.
+        // Alternative theme default button text colour setting.
+        $name = 'theme_essential/alternativethemedefaultbuttontextcolour' . $alternativethemenumber;
+        $title = get_string('alternativethemedefaultbuttontextcolour', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemedefaultbuttontextcolourdesc', 'theme_essential', $alternativethemenumber);
+        $default = '#217a94';
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        // Alternative theme default button text hover colour setting.
+        $name = 'theme_essential/alternativethemedefaultbuttontexthovercolour' . $alternativethemenumber;
+        $title = get_string('alternativethemedefaultbuttontexthovercolour', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemedefaultbuttontexthovercolourdesc', 'theme_essential',
+            $alternativethemenumber);
+        $default = '#6a2a18';
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        // Alternative theme default button background colour setting.
+        $name = 'theme_essential/alternativethemedefaultbuttonbackgroundcolour' . $alternativethemenumber;
+        $title = get_string('alternativethemedefaultbuttonbackgroundcolour', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemedefaultbuttonbackgroundcolourdesc', 'theme_essential', $alternativethemenumber);
+        $default = '#f0f8ff';
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        // Alternative theme default button background hover colour setting.
+        $name = 'theme_essential/alternativethemedefaultbuttonbackgroundhovercolour' . $alternativethemenumber;
+        $title = get_string('alternativethemedefaultbuttonbackgroundhovercolour', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemedefaultbuttonbackgroundhovercolourdesc', 'theme_essential',
+            $alternativethemenumber);
+        $default = '#f3fbff';
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        // Alternative themeIcon colour setting.
         $name = 'theme_essential/alternativethemeiconcolor' . $alternativethemenumber;
         $title = get_string('alternativethemeiconcolor', 'theme_essential', $alternativethemenumber);
         $description = get_string('alternativethemeiconcolordesc', 'theme_essential', $alternativethemenumber);

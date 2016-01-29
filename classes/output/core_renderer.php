@@ -181,12 +181,12 @@ class core_renderer extends \core_renderer {
      */
     public function course_content_footer($onlyifnotcalledbefore = false) {
         if ($this->page->course->id == SITEID) {
-            // return immediately and do not include /course/lib.php if not necessary
+            // Return immediately and do not include /course/lib.php if not necessary.
             return '';
         }
         static $functioncalled = false;
         if ($functioncalled && $onlyifnotcalledbefore) {
-            // we have already output the content header
+            // We have already output the content header.
             return '';
         }
         $functioncalled = true;
@@ -203,6 +203,10 @@ class core_renderer extends \core_renderer {
         return $markup;
     }
 
+    /**
+     * Generate the return to section X button code.
+     * @return markup.
+     */
     protected function return_to_section() {
         static $markup = null;
         if ($markup === null) {
@@ -211,7 +215,8 @@ class core_renderer extends \core_renderer {
             $url->param('id', $this->page->course->id);
             $url->param('sesskey', sesskey());
             $courseformatsettings = \course_get_format($this->page->course)->get_format_options();
-            if ((!empty($courseformatsettings['coursedisplay'])) && ($courseformatsettings['coursedisplay'] == \COURSE_DISPLAY_MULTIPAGE)) {
+            if ((!empty($courseformatsettings['coursedisplay'])) &&
+                ($courseformatsettings['coursedisplay'] == \COURSE_DISPLAY_MULTIPAGE)) {
                 $url->param('section', $this->page->cm->sectionnum);
                 $href = $url->out(false);
             } else {
