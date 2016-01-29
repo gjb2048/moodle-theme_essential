@@ -139,6 +139,40 @@ class core_renderer extends \core_renderer {
     }
 
     /**
+     * Outputs a heading
+     *
+     * @param string $text The text of the heading
+     * @param int $level The level of importance of the heading. Defaulting to 2
+     * @param string $classes A space-separated list of CSS classes. Defaulting to null
+     * @param string $id An optional ID
+     * @return string the HTML to output.
+     */
+    public function heading($text, $level = 2, $classes = null, $id = null) {
+        $heading = parent::heading($text, $level, $classes, $id);
+
+        if (($level == 2) && ($this->page->pagelayout == 'incourse') && (is_object($this->page->cm))) {
+            static $called = false;
+            if (!$called) {
+                $markup = html_writer::start_tag('div', array('class' => 'row-fluid'));
+
+                $markup .= html_writer::start_tag('div', array('class' => 'span8'));
+                $markup .= $heading;
+                $markup .= html_writer::end_tag('div');
+
+                $markup .= html_writer::start_tag('div', array('class' => 'span4 heading-rts'));
+                $markup .= $this->return_to_section();
+                $markup .= html_writer::end_tag('div');
+
+                $markup .= html_writer::end_tag('div');
+                $called = true;
+
+                return $markup;
+            }
+        }
+        return $heading;
+    }
+
+    /**
      * Returns course-specific information to be output immediately below content on any course page
      * (for the current course)
      *
@@ -158,29 +192,35 @@ class core_renderer extends \core_renderer {
         $functioncalled = true;
 
         $markup = parent::course_content_footer($onlyifnotcalledbefore);
+        if (($this->page->pagelayout == 'incourse') && (is_object($this->page->cm))) {
+            $markup .= html_writer::start_tag('div', array('class' => 'row-fluid'));
+            $markup .= html_writer::start_tag('div', array('class' => 'span12 text-center footer-rts'));
+            $markup .= $this->return_to_section();
+            $markup .= html_writer::end_tag('div');
+            $markup .= html_writer::end_tag('div');
+        }
 
-        if ($this->page->pagelayout == 'incourse') {
-            if (is_object($this->page->cm)) {
-                $courseformatsettings = \course_get_format($this->page->course)->get_format_options();
-                $url = new moodle_url('/course/view.php');
-                $url->param('id', $this->page->course->id);
-                $url->param('sesskey', sesskey());
-                $courseformatsettings = \course_get_format($this->page->course)->get_format_options();
-                if ((!empty($courseformatsettings['coursedisplay'])) && ($courseformatsettings['coursedisplay'] == \COURSE_DISPLAY_MULTIPAGE)) {
-                    $url->param('section', $this->page->cm->sectionnum);
-                    $href = $url->out(false);
-                } else {
-                    $href = $url->out(false).'#section-'.$this->page->cm->sectionnum;
-                }
-                $title = get_string('returntosection', 'theme_essential', array('section' => $this->page->cm->sectionnum));
+        return $markup;
+    }
 
-                $markup .= html_writer::start_tag('div', array('class' => 'row-fluid'));
-                $markup .= html_writer::start_tag('div', array('class' => 'span12 text-center'));
-                $markup .= html_writer::tag('a', $title.html_writer::tag('i', '', array('class' => 'fa-sign-in fa fa-fw')),
-                    array('href' => $href, 'class' => 'btn btn-default', 'title' => $title));
-                $markup .= html_writer::end_tag('div');
-                $markup .= html_writer::end_tag('div');
+    protected function return_to_section() {
+        static $markup = null;
+        if ($markup === null) {
+            $courseformatsettings = \course_get_format($this->page->course)->get_format_options();
+            $url = new moodle_url('/course/view.php');
+            $url->param('id', $this->page->course->id);
+            $url->param('sesskey', sesskey());
+            $courseformatsettings = \course_get_format($this->page->course)->get_format_options();
+            if ((!empty($courseformatsettings['coursedisplay'])) && ($courseformatsettings['coursedisplay'] == \COURSE_DISPLAY_MULTIPAGE)) {
+                $url->param('section', $this->page->cm->sectionnum);
+                $href = $url->out(false);
+            } else {
+                $href = $url->out(false).'#section-'.$this->page->cm->sectionnum;
             }
+            $title = get_string('returntosection', 'theme_essential', array('section' => $this->page->cm->sectionnum));
+
+            $markup = html_writer::tag('a', $title.html_writer::tag('i', '', array('class' => 'fa-sign-in fa fa-fw')),
+                array('href' => $href, 'class' => 'btn btn-default', 'title' => $title));
         }
 
         return $markup;
