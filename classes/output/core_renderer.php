@@ -849,6 +849,19 @@ class core_renderer extends \core_renderer {
     }
 
     /**
+     * Internal implementation of user image rendering.
+     *
+     * @param user_picture $userpicture
+     * @return string
+     */
+    protected function render_user_picture(\user_picture $userpicture) {
+        if ($this->page->pagetype == 'mod-forum-discuss') {
+            $userpicture->size = 1;
+        }
+        return parent::render_user_picture($userpicture);
+    }
+
+    /**
      * Outputs the user menu.
      * @return custom_menu object
      */

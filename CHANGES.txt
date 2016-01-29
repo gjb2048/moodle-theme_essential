@@ -6,6 +6,7 @@ New in 2.9.1.7
 - FIX: Default button colour.
 - FIX: Favicon not showing.
 - NEW: Add return to section button on 'incourse' pages employing a named anchor to go directly there.
+- NEW: Bigger forum discussion user picture.
 
 New in 2.9.1.6
 ==============
