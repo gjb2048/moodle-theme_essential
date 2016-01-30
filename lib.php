@@ -307,8 +307,8 @@ function theme_essential_process_css($css, $theme) {
                 \theme_essential\toolbox::get_setting('alternativethemedefaultbuttontexthovercolour'.$alternative),
                 '#ffffff');
 
-            $alternativethemedefaultbuttonbackgroundcolour =
-                \theme_essential\toolbox::get_setting('alternativethemedefaultbuttonbackgroundcolour'.$alternative);
+            $alternativethemedefaultbuttonbackgroundcolour = \theme_essential\toolbox::get_setting(
+                'alternativethemedefaultbuttonbackgroundcolour'.$alternative);
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'defaultbuttonbackgroundcolour'.$alternative,
                 $alternativethemedefaultbuttonbackgroundcolour,
                 '#30add1');
@@ -319,8 +319,8 @@ function theme_essential_process_css($css, $theme) {
                 \theme_essential\toolbox::hexadjust($alternativethemedefaultbuttonbackgroundcolour, 10),
                 '#30add1', '0.25');
 
-            $alternativethemedefaultbuttonbackgroundhovercolour = 
-                \theme_essential\toolbox::get_setting('alternativethemedefaultbuttonbackgroundhovercolour'.$alternative);
+            $alternativethemedefaultbuttonbackgroundhovercolour = \theme_essential\toolbox::get_setting(
+                'alternativethemedefaultbuttonbackgroundhovercolour'.$alternative);
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'defaultbuttonbackgroundhovercolour'.$alternative,
                 $alternativethemedefaultbuttonbackgroundhovercolour,
                 '#3ad4ff');
