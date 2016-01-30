@@ -393,25 +393,79 @@ class toolbox {
         return $css;
     }
 
-    static public function set_color($css, $themecolor, $tag, $default) {
+    static public function set_color($css, $themecolor, $tag, $defaultcolour, $alpha = null) {
         if (!($themecolor)) {
-            $replacement = $default;
+            $replacement = $defaultcolour;
         } else {
             $replacement = $themecolor;
+        }
+        if (!is_null($alpha)) {
+            $replacement = self::hex2rgba($replacement, $alpha);
         }
         $css = str_replace($tag, $replacement, $css);
         return $css;
     }
 
-    static public function set_alternativecolor($css, $type, $customcolor, $defaultcolor) {
+    static public function set_alternativecolor($css, $type, $customcolor, $defaultcolour, $alpha = null) {
         $tag = '[[setting:alternativetheme'.$type.']]';
         if (!($customcolor)) {
-            $replacement = $defaultcolor;
+            $replacement = $defaultcolour;
         } else {
             $replacement = $customcolor;
         }
+        if (!is_null($alpha)) {
+            $replacement = self::hex2rgba($replacement, $alpha);
+        }
         $css = str_replace($tag, $replacement, $css);
         return $css;
+    }
+
+    /**
+     * Returns the RGB for the given hex.
+     *
+     * @param string $hex
+     * @return array
+     */
+    static private function hex2rgb($hex) {
+        // From: http://bavotasan.com/2011/convert-hex-color-to-rgb-using-php/.
+        $hex = str_replace("#", "", $hex);
+
+        if (strlen($hex) == 3) {
+            $r = hexdec(substr($hex, 0, 1).substr($hex, 0, 1));
+            $g = hexdec(substr($hex, 1, 1).substr($hex, 1, 1));
+            $b = hexdec(substr($hex, 2, 1).substr($hex, 2, 1));
+        } else {
+            $r = hexdec(substr($hex, 0, 2));
+            $g = hexdec(substr($hex, 2, 2));
+            $b = hexdec(substr($hex, 4, 2));
+        }
+        $rgb = array('r' => $r, 'g' => $g, 'b' => $b);
+        return $rgb; // Returns the rgb as an array.
+    }
+
+    static public function hexadjust($hex, $percentage) {
+        $percentage = round($percentage / 100, 2);
+        $rgb = self::hex2rgb($hex);
+        $r = round($rgb['r'] - ($rgb['r'] * $percentage));
+        $g = round($rgb['g'] - ($rgb['g'] * $percentage));
+        $b = round($rgb['b'] - ($rgb['b'] * $percentage));
+
+        return '#'.str_pad(dechex(max(0, min(255, $r))), 2, '0', STR_PAD_LEFT)
+            .str_pad(dechex(max(0, min(255, $g))), 2, '0', STR_PAD_LEFT)
+            .str_pad(dechex(max(0, min(255, $b))), 2, '0', STR_PAD_LEFT);
+    }
+
+    /**
+     * Returns the RGBA for the given hex and alpha.
+     *
+     * @param string $hex
+     * @param string $alpha
+     * @return string
+     */
+    static private function hex2rgba($hex, $alpha) {
+        $rgba = self::hex2rgb($hex);
+        $rgba[] = $alpha;
+        return 'rgba('.implode(", ", $rgba).')'; // Returns the rgba values separated by commas.
     }
 
     static public function set_headerbackground($css, $headerbackground) {
@@ -542,28 +596,6 @@ class toolbox {
             $css = str_replace($imagetag, $replacement.'px', $css);
         }
         return $css;
-    }
-
-    /**
-     * Convert a colour hex string to an opacity supporting rgba one.
-     *
-     * @param string $hex Hex RGB string.
-     * @param float $opacity between 0.0 and 1.0.
-     * @return string.
-     */
-    static public function hex2rgba($hex, $opacity) {
-        $hex = str_replace("#", "", $hex);
-
-        if (strlen($hex) == 3) {
-            $r = hexdec(substr($hex, 0, 1) . substr($hex, 0, 1));
-            $g = hexdec(substr($hex, 1, 1) . substr($hex, 1, 1));
-            $b = hexdec(substr($hex, 2, 1) . substr($hex, 2, 1));
-        } else {
-            $r = hexdec(substr($hex, 0, 2));
-            $g = hexdec(substr($hex, 2, 2));
-            $b = hexdec(substr($hex, 4, 2));
-        }
-        return "rgba($r, $g, $b, $opacity)";
     }
 
     /**

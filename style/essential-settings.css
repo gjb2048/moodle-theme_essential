@@ -343,13 +343,13 @@ body input[type="reset"],
 body #notice .singlebutton + .singlebutton input,
 body .submit.buttons input[name=cancel] {
   color: [[setting:themedefaultbuttontextcolour]];
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  text-shadow: none;
   background-color: [[setting:themedefaultbuttonbackgroundcolour]];
-  background-image: -moz-linear-gradient(top, [[setting:themedefaultbuttonbackgroundcolour]], [[setting:themedefaultbuttonbackgroundhovercolour]]);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from([[setting:themedefaultbuttonbackgroundcolour]]), to([[setting:themedefaultbuttonbackgroundhovercolour]]));
-  background-image: -webkit-linear-gradient(top, [[setting:themedefaultbuttonbackgroundcolour]], [[setting:themedefaultbuttonbackgroundhovercolour]]);
-  background-image: -o-linear-gradient(top, [[setting:themedefaultbuttonbackgroundcolour]], [[setting:themedefaultbuttonbackgroundhovercolour]]);
-  background-image: linear-gradient(to bottom, [[setting:themedefaultbuttonbackgroundcolour]], [[setting:themedefaultbuttonbackgroundhovercolour]]);
+  background-image: -moz-linear-gradient(bottom, [[setting:themedefaultbuttonbackgroundcolourimage]], [[setting:themedefaultbuttonbackgroundcolourrgba]]);
+  background-image: -webkit-gradient(linear, 0 100%, 0 0, from([[setting:themedefaultbuttonbackgroundcolourimage]]), to([[setting:themedefaultbuttonbackgroundcolourrgba]]));
+  background-image: -webkit-linear-gradient(bottom, [[setting:themedefaultbuttonbackgroundcolourimage]], [[setting:themedefaultbuttonbackgroundcolourrgba]]);
+  background-image: -o-linear-gradient(bottom, [[setting:themedefaultbuttonbackgroundcolourimage]], [[setting:themedefaultbuttonbackgroundcolourrgba]]);
+  background-image: linear-gradient(to top, [[setting:themedefaultbuttonbackgroundcolourimage]], [[setting:themedefaultbuttonbackgroundcolourrgba]]);
 }
 body button .fa,
 body .btn-default .fa,
@@ -424,7 +424,13 @@ body input[type="reset"][disabled],
 body #notice .singlebutton + .singlebutton input[disabled],
 body .submit.buttons input[name=cancel][disabled] {
   color: [[setting:themedefaultbuttontexthovercolour]];
+  text-shadow: 0 1px 1px rgba(64, 64, 64, 0.75);
   background-color: [[setting:themedefaultbuttonbackgroundhovercolour]];
+  background-image: -moz-linear-gradient(bottom, [[setting:themedefaultbuttonbackgroundhovercolourimage]], [[setting:themedefaultbuttonbackgroundhovercolourrgba]]);
+  background-image: -webkit-gradient(linear, 0 100%, 0 0, from([[setting:themedefaultbuttonbackgroundhovercolourimage]]), to([[setting:themedefaultbuttonbackgroundhovercolourrgba]]));
+  background-image: -webkit-linear-gradient(bottom, [[setting:themedefaultbuttonbackgroundhovercolourimage]], [[setting:themedefaultbuttonbackgroundhovercolourrgba]]);
+  background-image: -o-linear-gradient(bottom, [[setting:themedefaultbuttonbackgroundhovercolourimage]], [[setting:themedefaultbuttonbackgroundhovercolourrgba]]);
+  background-image: linear-gradient(to top, [[setting:themedefaultbuttonbackgroundhovercolourimage]], [[setting:themedefaultbuttonbackgroundhovercolourrgba]]);
 }
 body button:hover .fa,
 body .btn-default:hover .fa,
