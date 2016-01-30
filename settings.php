@@ -221,7 +221,7 @@ if (is_siteadmin()) {
     $name = 'theme_essential/themedefaultbuttontextcolour';
     $title = get_string('themedefaultbuttontextcolour', 'theme_essential');
     $description = get_string('themedefaultbuttontextcolourdesc', 'theme_essential');
-    $default = '#217a94';
+    $default = '#ffffff';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -231,7 +231,7 @@ if (is_siteadmin()) {
     $name = 'theme_essential/themedefaultbuttontexthovercolour';
     $title = get_string('themedefaultbuttontexthovercolour', 'theme_essential');
     $description = get_string('themedefaultbuttontexthovercolourdesc', 'theme_essential');
-    $default = '#6a2a18';
+    $default = '#ffffff';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -241,7 +241,7 @@ if (is_siteadmin()) {
     $name = 'theme_essential/themedefaultbuttonbackgroundcolour';
     $title = get_string('themedefaultbuttonbackgroundcolour', 'theme_essential');
     $description = get_string('themedefaultbuttonbackgroundcolourdesc', 'theme_essential');
-    $default = '#f0f8ff';
+    $default = '#30add1';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -251,7 +251,7 @@ if (is_siteadmin()) {
     $name = 'theme_essential/themedefaultbuttonbackgroundhovercolour';
     $title = get_string('themedefaultbuttonbackgroundhovercolour', 'theme_essential');
     $description = get_string('themedefaultbuttonbackgroundhovercolourdesc', 'theme_essential');
-    $default = '#f3fbff';
+    $default = '#3ad4ff';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -437,7 +437,7 @@ if (is_siteadmin()) {
         $name = 'theme_essential/alternativethemedefaultbuttontextcolour' . $alternativethemenumber;
         $title = get_string('alternativethemedefaultbuttontextcolour', 'theme_essential', $alternativethemenumber);
         $description = get_string('alternativethemedefaultbuttontextcolourdesc', 'theme_essential', $alternativethemenumber);
-        $default = '#217a94';
+        $default = '#ffffff';
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
@@ -448,7 +448,7 @@ if (is_siteadmin()) {
         $title = get_string('alternativethemedefaultbuttontexthovercolour', 'theme_essential', $alternativethemenumber);
         $description = get_string('alternativethemedefaultbuttontexthovercolourdesc', 'theme_essential',
             $alternativethemenumber);
-        $default = '#6a2a18';
+        $default = '#ffffff';
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
@@ -458,7 +458,7 @@ if (is_siteadmin()) {
         $name = 'theme_essential/alternativethemedefaultbuttonbackgroundcolour' . $alternativethemenumber;
         $title = get_string('alternativethemedefaultbuttonbackgroundcolour', 'theme_essential', $alternativethemenumber);
         $description = get_string('alternativethemedefaultbuttonbackgroundcolourdesc', 'theme_essential', $alternativethemenumber);
-        $default = '#f0f8ff';
+        $default = '#30add1';
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
@@ -469,7 +469,7 @@ if (is_siteadmin()) {
         $title = get_string('alternativethemedefaultbuttonbackgroundhovercolour', 'theme_essential', $alternativethemenumber);
         $description = get_string('alternativethemedefaultbuttonbackgroundhovercolourdesc', 'theme_essential',
             $alternativethemenumber);
-        $default = '#f3fbff';
+        $default = '#3ad4ff';
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');

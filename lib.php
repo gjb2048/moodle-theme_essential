@@ -180,30 +180,40 @@ function theme_essential_process_css($css, $theme) {
     // Set the theme default button text colour.
     $themedefaultbuttontextcolour = \theme_essential\toolbox::get_setting('themedefaultbuttontextcolour');
     $css = \theme_essential\toolbox::set_color($css, $themedefaultbuttontextcolour,
-        '[[setting:themedefaultbuttontextcolour]]', '#217a94');
+        '[[setting:themedefaultbuttontextcolour]]', '#ffffff');
 
     // Set the theme default button text hover colour.
     $themedefaultbuttontexthovercolour = \theme_essential\toolbox::get_setting('themedefaultbuttontexthovercolour');
     $css = \theme_essential\toolbox::set_color($css, $themedefaultbuttontexthovercolour,
-        '[[setting:themedefaultbuttontexthovercolour]]', '#6a2a18');
+        '[[setting:themedefaultbuttontexthovercolour]]', '#ffffff');
 
     // Set the theme default button background colour.
     $themedefaultbuttonbackgroundcolour = \theme_essential\toolbox::get_setting('themedefaultbuttonbackgroundcolour');
     $css = \theme_essential\toolbox::set_color($css, $themedefaultbuttonbackgroundcolour,
-        '[[setting:themedefaultbuttonbackgroundcolour]]', '#f0f8ff');
+        '[[setting:themedefaultbuttonbackgroundcolour]]', '#30add1');
+    $css = \theme_essential\toolbox::set_color($css, $themedefaultbuttonbackgroundcolour,
+        '[[setting:themedefaultbuttonbackgroundcolourimage]]', '#30add1');
+    $css = \theme_essential\toolbox::set_color($css,
+        \theme_essential\toolbox::hexadjust($themedefaultbuttonbackgroundcolour, 10),
+        '[[setting:themedefaultbuttonbackgroundcolourrgba]]', '#30add1', '0.25');
 
     // Set the theme default button background hover colour.
     $themedefaultbuttonbackgroundhovercolour = \theme_essential\toolbox::get_setting('themedefaultbuttonbackgroundhovercolour');
     $css = \theme_essential\toolbox::set_color($css, $themedefaultbuttonbackgroundhovercolour,
-        '[[setting:themedefaultbuttonbackgroundhovercolour]]', '#f3fbff');
+        '[[setting:themedefaultbuttonbackgroundhovercolour]]', '#3ad4ff');
+    $css = \theme_essential\toolbox::set_color($css, $themedefaultbuttonbackgroundhovercolour,
+        '[[setting:themedefaultbuttonbackgroundhovercolourimage]]', '#3ad4ff');
+    $css = \theme_essential\toolbox::set_color($css,
+        \theme_essential\toolbox::hexadjust($themedefaultbuttonbackgroundhovercolour, 10),
+        '[[setting:themedefaultbuttonbackgroundhovercolourrgba]]', '#3ad4ff', '0.25');
 
     // Set the theme navigation colour.
     $themenavcolor = \theme_essential\toolbox::get_setting('themenavcolor');
     $css = \theme_essential\toolbox::set_color($css, $themenavcolor, '[[setting:themenavcolor]]', '#ffffff');
 
     // Set the footer colour.
-    $footercolor = \theme_essential\toolbox::hex2rgba(\theme_essential\toolbox::get_setting('footercolor'), '0.95');
-    $css = \theme_essential\toolbox::set_color($css, $footercolor, '[[setting:footercolor]]', '#30add1');
+    $footercolor = \theme_essential\toolbox::get_setting('footercolor');
+    $css = \theme_essential\toolbox::set_color($css, $footercolor, '[[setting:footercolor]]', '#30add1', '0.95');
 
     // Set the footer text colour.
     $footertextcolor = \theme_essential\toolbox::get_setting('footertextcolor');
@@ -290,18 +300,36 @@ function theme_essential_process_css($css, $theme) {
                 \theme_essential\toolbox::get_setting('alternativethemeurlcolor'.$alternative), $default);
 
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'defaultbuttontextcolour'.$alternative,
-                \theme_essential\toolbox::get_setting('alternativethemedefaultbuttontextcolour'.$alternative), '#217a94');
+                \theme_essential\toolbox::get_setting('alternativethemedefaultbuttontextcolour'.$alternative),
+                '#ffffff');
 
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'defaultbuttontexthovercolour'.$alternative,
                 \theme_essential\toolbox::get_setting('alternativethemedefaultbuttontexthovercolour'.$alternative),
-                '#6a2a18');
+                '#ffffff');
 
+            $alternativethemedefaultbuttonbackgroundcolour =
+                \theme_essential\toolbox::get_setting('alternativethemedefaultbuttonbackgroundcolour'.$alternative);
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'defaultbuttonbackgroundcolour'.$alternative,
-                \theme_essential\toolbox::get_setting('alternativethemedefaultbuttonbackgroundcolour'.$alternative), '#f0f8ff');
+                $alternativethemedefaultbuttonbackgroundcolour,
+                '#30add1');
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'defaultbuttonbackgroundcolourimage'.$alternative,
+                $alternativethemedefaultbuttonbackgroundcolour,
+                '#30add1');
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'defaultbuttonbackgroundcolourrgba'.$alternative,
+                \theme_essential\toolbox::hexadjust($alternativethemedefaultbuttonbackgroundcolour, 10),
+                '#30add1', '0.25');
 
+            $alternativethemedefaultbuttonbackgroundhovercolour = 
+                \theme_essential\toolbox::get_setting('alternativethemedefaultbuttonbackgroundhovercolour'.$alternative);
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'defaultbuttonbackgroundhovercolour'.$alternative,
-                \theme_essential\toolbox::get_setting('alternativethemedefaultbuttonbackgroundhovercolour'.$alternative),
-                '#f3fbff');
+                $alternativethemedefaultbuttonbackgroundhovercolour,
+                '#3ad4ff');
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'defaultbuttonbackgroundhovercolourimage'.$alternative,
+                $alternativethemedefaultbuttonbackgroundhovercolour,
+                '#3ad4ff');
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'defaultbuttonbackgroundhovercolourrgba'.$alternative,
+                \theme_essential\toolbox::hexadjust($alternativethemedefaultbuttonbackgroundhovercolour, 10),
+                '#3ad4ff', '0.25');
 
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'iconcolor' . $alternative,
                 \theme_essential\toolbox::get_setting('alternativethemeiconcolor' . $alternative), $default);
