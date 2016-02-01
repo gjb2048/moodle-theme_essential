@@ -9,6 +9,7 @@ New in 2.9.1.7
 - NEW: Add return to section button on 'incourse' pages employing a named anchor to go directly there.
 - NEW: Bigger forum discussion user picture.
 - NEW: Default button background colour settings.
+- NEW: Bootstrap 3 list group component.
 
 New in 2.9.1.6
 ==============
