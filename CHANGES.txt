@@ -1,6 +1,7 @@
 New in 2.9.1.8
 ==============
 - FIX: Issue #609: Block Editing button on Plugin overview pagechanges colour on hover.
+- FIX: Filemanager link colour.
 
 New in 2.9.1.7
 ==============

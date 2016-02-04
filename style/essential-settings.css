@@ -699,6 +699,34 @@ body.has_dock.essential-colours-alternative4 #dock .dockedtitle[disabled] {
   color: [[setting:themeiconcolor]];
 }
 /* @end */
+/* @group Filemanger */
+.filemanager a,
+.file-picker a,
+.filemanager a:visited,
+.file-picker a:visited {
+  color: [[setting:themeurlcolor]];
+}
+.filemanager a:hover,
+.file-picker a:hover,
+.filemanager a:visited:hover,
+.file-picker a:visited:hover,
+.filemanager a:focus,
+.file-picker a:focus,
+.filemanager a:visited:focus,
+.file-picker a:visited:focus {
+  color: [[setting:themehovercolor]];
+}
+.filemanager a:hover:before,
+.file-picker a:hover:before,
+.filemanager a:visited:hover:before,
+.file-picker a:visited:hover:before,
+.filemanager a:focus:before,
+.file-picker a:focus:before,
+.filemanager a:visited:focus:before,
+.file-picker a:visited:focus:before {
+  color: [[setting:themehovercolor]];
+}
+/* @end */
 /* @group Forms */
 select,
 textarea,
@@ -982,10 +1010,12 @@ a,
 a:visited {
   color: [[setting:themeurlcolor]];
 }
-a:hover {
+a:hover,
+a:focus {
   color: [[setting:themehovercolor]];
 }
-a:hover:before {
+a:hover:before,
+a:focus:before {
   color: [[setting:themehovercolor]];
 }
 a:before {
