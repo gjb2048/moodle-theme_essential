@@ -265,6 +265,7 @@ p.tree_item.branch.emptybranch:focus:before {
 .breadcrumb-button input[type="submit"]:active {
   color: [[setting:themecolor]];
   background-color: [[setting:themenavcolor]];
+  background-image: none;
 }
 .breadcrumb-button i.fa {
   color: inherit;
