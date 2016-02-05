@@ -422,6 +422,11 @@ function theme_essential_process_css($css, $theme) {
     $marketingimage = \theme_essential\toolbox::setting_file_url($setting, $setting);
     $css = \theme_essential\toolbox::set_marketingimage($css, $marketingimage, $setting);
 
+    // Set links underline.
+    $setting = 'underlinelinks';
+    $underlinelinks = \theme_essential\toolbox::get_setting($setting);
+    $css = \theme_essential\toolbox::set_underlinelinks($css, $underlinelinks, $setting);
+
     // Set custom CSS.
     $customcss = \theme_essential\toolbox::get_setting('customcss');
     $css = \theme_essential\toolbox::set_customcss($css, $customcss);

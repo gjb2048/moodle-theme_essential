@@ -1403,3 +1403,16 @@ h6 span {
 }
 /* @end */
 /* @end */
+
+.forumpost .maincontent a{
+  text-decoration: [[setting:underlinelinks]];
+} 
+.contentwithoutlink a{
+  text-decoration: [[setting:underlinelinks]];
+}
+.book_content a{
+  text-decoration: [[setting:underlinelinks]];
+}
+.generalbox a{
+  text-decoration: [[setting:underlinelinks]];
+}

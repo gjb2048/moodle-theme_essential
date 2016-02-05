@@ -552,6 +552,18 @@ class toolbox {
         return $css;
     }
 
+    static public function set_underlinelinks($css, $underlinelinks, $setting) {
+        $tag = '[[setting:'.$setting.']]';
+        $replacement = 'none';
+
+        if ($underlinelinks) {
+            $replacement = 'underline';
+        }
+        $css = str_replace($tag, $replacement, $css);
+        
+        return $css;
+    }
+
     static public function set_customcss($css, $customcss) {
         $tag = '[[setting:customcss]]';
         $replacement = $customcss;
