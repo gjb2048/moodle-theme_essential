@@ -1402,8 +1402,7 @@ h6 span {
   background-color: [[setting:themecolor]] !important;
 }
 /* @end */
-/* @end */
-
+/* @group Underlinelinks */
 .forumpost .maincontent a{
   text-decoration: [[setting:underlinelinks]];
 } 
@@ -1416,3 +1415,6 @@ h6 span {
 .generalbox a{
   text-decoration: [[setting:underlinelinks]];
 }
+/* @end */
+
+/* @end */
