@@ -64,7 +64,7 @@ click here to sponsor.
 <li>Delvon Forrester, Esparanza co uk</li>
 <li>iZone</li>
 <li>Anis Jradah</li>
-<li>Ute Hlasek</li>
+<li>Ute Hlasek, <a href="//hlasek-it.de/moodle" target="_blank">hlasek-it.de/moodle</a></li>
 </ul>
 </p>
 <h3>Customisation</h3>
