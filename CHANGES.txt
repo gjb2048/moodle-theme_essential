@@ -2,6 +2,7 @@ New in 3.0.0.4
 ==============
 - FIX: Issue #609: Block Editing button on Plugin overview pagechanges colour on hover.
 - FIX: Issue #614: Dashboard -> Site administration -> Appearance -> HTML settings overflow with fixed width set at normal.
+- FIX: Issue #615: Block login on frontpage.
 - FIX: Filemanager link colour.
 
 New in 3.0.0.3
