@@ -439,6 +439,47 @@
                         }
                     }
                 }
+                div.editor_atto_toolbar button {
+                    background: none;
+                }
+
+                #tinymce {
+                    color: ~"[[setting:alternativethemetextcolor@{index}]]";
+                    font-family: ~"[[setting:bodyfont]]";
+                    .container-fluid {
+                        max-width: ~"[[setting:pagewidth]]";
+                    }
+                    h1, h2 {
+                        font-family: ~"[[setting:headingfont]]";
+                    }
+                    h1, h2, h3, h4, h5, h6, #adminsettings h3 {
+                        color: ~"[[setting:alternativethemetextcolor@{index}]]";
+                    }
+
+                    a, a:visited {
+                        color: ~"[[setting:alternativethemeurlcolor@{index}]]";
+                    }
+
+                    a:hover {
+                        color: ~"[[setting:alternativethemehovercolor@{index}]]";
+                        &:before {
+                            color: ~"[[setting:alternativethemehovercolor@{index}]]";
+                        }
+                    }
+
+                    a:before {
+                        color: @icon-colour;
+                        display: inline-block;
+                        text-decoration: none;
+                    }
+
+                    .color {
+                        color: ~"[[setting:alternativethemetextcolor@{index}]]";
+                    }
+                }
+                .editor_atto_content_wrap {
+                    color: ~"[[setting:alternativethemetextcolor@{index}]]";
+                }
 
                 a.marketing-button,
                 a.marketing-button:visited {
