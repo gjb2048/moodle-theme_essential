@@ -1445,4 +1445,19 @@ h6 span {
   background-color: [[setting:themecolor]] !important;
 }
 /* @end */
+/* @group Underlinelinks */
+.forumpost .maincontent a{
+  text-decoration: [[setting:underlinelinks]];
+} 
+.contentwithoutlink a{
+  text-decoration: [[setting:underlinelinks]];
+}
+.book_content a{
+  text-decoration: [[setting:underlinelinks]];
+}
+.generalbox a{
+  text-decoration: [[setting:underlinelinks]];
+}
+/* @end */
+
 /* @end */

@@ -738,3 +738,6 @@ $string['badgepreferences'] = 'Badge';
 // Incourse.
 $string['returntosection'] = 'Return to section {$a->section}';
 
+// Underline links.
+$string['underlinelinks'] = 'Underline links';
+$string['underlinelinksdesc'] = 'Underline the links appearing in resources or activities (page, book, label, etc.).';
