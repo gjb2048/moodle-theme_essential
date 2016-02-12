@@ -155,9 +155,6 @@ $string['floatingsubmitbuttonsdesc'] = 'Have a \'floating\' area that contains t
 $string['oldnavbar'] = 'Use the old navbar position';
 $string['oldnavbardesc'] = 'Enable this option to use the old navbar position, placing it below the header.';
 
-$string['fitvids'] = 'Use FitVids';
-$string['fitvidsdesc'] = 'Enable FitVids (fitvidsjs.com) to make your embedded videos responsive.  If FitVids is on and you want a video to be excluded then add \'class="fitvidsignore"\' to the \'iframe\' tag in the HTML mode of the editor.  For example: \'iframe class="fitvidsignore" width="420" height="315" src="//www.youtube.com/embed/enmEmym85xc" frameborder="0" allowfullscreen=""></iframe\'.';
-
 $string['favicon'] = 'Custom favicon';
 $string['favicondesc'] = 'Upload your own favicon.  It should be an .ico file.';
 
@@ -217,6 +214,17 @@ $string['region-footer-left'] = 'Footer (Left)';
 $string['region-footer-middle'] = 'Footer (Middle)';
 $string['region-footer-right'] = 'Footer (Right)';
 $string['region-hidden-dock'] = 'Hidden from users';
+
+// Features.
+$string['featureheading'] = 'Features';
+$string['featureheadingsub'] = 'Set the features used in your theme';
+$string['featuredesc'] = 'Here you can find various settings to change many of the features found in this theme.';
+
+$string['coursecontentsearch'] = 'Course content search';
+$string['coursecontentsearchdesc'] = "Enable course content search on the 'Dashboard' page.  Only works when Essential is not in '\$CFG->themedir'.";
+
+$string['fitvids'] = 'Use FitVids';
+$string['fitvidsdesc'] = 'Enable FitVids (fitvidsjs.com) to make your embedded videos responsive.  If FitVids is on and you want a video to be excluded then add \'class="fitvidsignore"\' to the \'iframe\' tag in the HTML mode of the editor.  For example: \'iframe class="fitvidsignore" width="420" height="315" src="//www.youtube.com/embed/enmEmym85xc" frameborder="0" allowfullscreen=""></iframe\'.';
 
 // Colours.
 $string['colorheading'] = 'Colour';
@@ -714,3 +722,5 @@ $string['badgepreferences'] = 'Badge';
 // Incourse.
 $string['returntosection'] = 'Return to section {$a->section}';
 
+// Course content search.
+$string['findcoursecontent'] = 'Course content: ';

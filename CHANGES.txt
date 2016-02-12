@@ -6,6 +6,8 @@ New in 2.9.1.9
 - FIX: Issue #617: What is the 'message-index' layout?
 - FIX: Editor colours.
 - FIX: Duplicate line in 'Return to section....'.
+- FIX: Input focus colour.
+- NEW: Inspector Scourer.
 
 New in 2.9.1.8
 ==============

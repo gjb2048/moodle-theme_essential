@@ -132,6 +132,19 @@ class toolbox {
         return $us->pix_url($imagename, $component);
     }
 
+    /**
+     * States if course content search can be used.  Will not work if theme is in $CFG->themedir.
+     * @return boolean false|true if course content search can be used.
+     */
+    static public function course_content_search() {
+        $canwe = false;
+        global $CFG;
+        if ((self::get_setting('coursecontentsearch')) && (file_exists("$CFG->dirroot/theme/essential/"))) {
+            $canwe = true;
+        }
+        return $canwe;
+    }
+
     static private function check_corerenderer() {
         $us = self::get_instance();
         if (empty($us->corerenderer)) {
