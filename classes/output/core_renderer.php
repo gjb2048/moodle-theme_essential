@@ -210,7 +210,6 @@ class core_renderer extends \core_renderer {
     protected function return_to_section() {
         static $markup = null;
         if ($markup === null) {
-            $courseformatsettings = \course_get_format($this->page->course)->get_format_options();
             $url = new moodle_url('/course/view.php');
             $url->param('id', $this->page->course->id);
             $url->param('sesskey', sesskey());
