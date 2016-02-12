@@ -102,31 +102,6 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $temp->add($setting);
 
-    // Choose breadcrumbstyle.
-    $name = 'theme_essential/breadcrumbstyle';
-    $title = get_string('breadcrumbstyle', 'theme_essential');
-    $description = get_string('breadcrumbstyledesc', 'theme_essential');
-    $default = 1;
-    $choices = array(
-        1 => get_string('breadcrumbstyled', 'theme_essential'),
-        4 => get_string('breadcrumbstylednocollapse', 'theme_essential'),
-        2 => get_string('breadcrumbsimple', 'theme_essential'),
-        3 => get_string('breadcrumbthin', 'theme_essential'),
-        0 => get_string('nobreadcrumb', 'theme_essential')
-    );
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Fitvids.
-    $name = 'theme_essential/fitvids';
-    $title = get_string('fitvids', 'theme_essential');
-    $description = get_string('fitvidsdesc', 'theme_essential');
-    $default = true;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
     // Custom favicon.
     $name = 'theme_essential/favicon';
     $title = get_string('favicon', 'theme_essential');
@@ -161,6 +136,31 @@ if (is_siteadmin()) {
 
     $ADMIN->add('theme_essential', $temp);
 
+
+    /* Feature Settings */
+    $temp = new admin_settingpage('theme_essential_feature', get_string('featureheading', 'theme_essential'));
+    $temp->add(new admin_setting_heading('theme_essential_feature', get_string('featureheadingsub', 'theme_essential'),
+            format_text(get_string('featuredesc', 'theme_essential'), FORMAT_MARKDOWN)));
+
+    // Course content search.
+    $name = 'theme_essential/coursecontentsearch';
+    $title = get_string('coursecontentsearch', 'theme_essential');
+    $description = get_string('coursecontentsearchdesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Fitvids.
+    $name = 'theme_essential/fitvids';
+    $title = get_string('fitvids', 'theme_essential');
+    $description = get_string('fitvidsdesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $ADMIN->add('theme_essential', $temp);
 
     /* Colour Settings */
     $temp = new admin_settingpage('theme_essential_colour', get_string('colorheading', 'theme_essential'));
@@ -677,6 +677,16 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Header text colour setting.
+    $name = 'theme_essential/headertextcolor';
+    $title = get_string('headertextcolor', 'theme_essential');
+    $description = get_string('headertextcolordesc', 'theme_essential');
+    $default = '#217a94';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     // Header Background Image.
     $name = 'theme_essential/headerbackground';
     $title = get_string('headerbackground', 'theme_essential');
@@ -685,13 +695,19 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Header text colour setting.
-    $name = 'theme_essential/headertextcolor';
-    $title = get_string('headertextcolor', 'theme_essential');
-    $description = get_string('headertextcolordesc', 'theme_essential');
-    $default = '#217a94';
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    // Choose breadcrumbstyle.
+    $name = 'theme_essential/breadcrumbstyle';
+    $title = get_string('breadcrumbstyle', 'theme_essential');
+    $description = get_string('breadcrumbstyledesc', 'theme_essential');
+    $default = 1;
+    $choices = array(
+        1 => get_string('breadcrumbstyled', 'theme_essential'),
+        4 => get_string('breadcrumbstylednocollapse', 'theme_essential'),
+        2 => get_string('breadcrumbsimple', 'theme_essential'),
+        3 => get_string('breadcrumbthin', 'theme_essential'),
+        0 => get_string('nobreadcrumb', 'theme_essential')
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 

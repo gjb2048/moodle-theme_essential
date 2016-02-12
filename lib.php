@@ -157,6 +157,10 @@ function theme_essential_process_css($css, $theme) {
     $themecolor = \theme_essential\toolbox::get_setting('themecolor');
     $css = \theme_essential\toolbox::set_color($css, $themecolor, '[[setting:themecolor]]', '#30add1');
 
+    // Input focus colour.
+    $css = \theme_essential\toolbox::set_color($css, $themecolor, '[[setting:inputfocusbordercolor]]', '#30add1', '0.8');
+    $css = \theme_essential\toolbox::set_color($css, $themecolor, '[[setting:inputfocusshadowcolor]]', '#30add1', '0.6');
+
     // Set the theme text colour.
     $themetextcolor = \theme_essential\toolbox::get_setting('themetextcolor');
     $css = \theme_essential\toolbox::set_color($css, $themetextcolor, '[[setting:themetextcolor]]', '#047797');
@@ -290,8 +294,14 @@ function theme_essential_process_css($css, $theme) {
         foreach (range(1, 4) as $alternative) {
             $default = $defaultcolors[$alternative - 1];
             $defaulthover = $defaulthovercolors[$alternative - 1];
+            $alternativethemecolour = \theme_essential\toolbox::get_setting('alternativethemecolor'.$alternative);
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'color'.$alternative,
-                \theme_essential\toolbox::get_setting('alternativethemecolor'.$alternative), $default);
+                $alternativethemecolour, $default);
+
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'inputfocusbordercolor'.$alternative,
+                $alternativethemecolour, $default, '0.8');
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'inputfocusshadowcolor'.$alternative,
+                $alternativethemecolour, $default, '0.6');
 
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'textcolor'.$alternative,
                 \theme_essential\toolbox::get_setting('alternativethemetextcolor'.$alternative), $default);
