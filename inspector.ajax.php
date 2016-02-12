@@ -15,14 +15,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Helps moodle-course-categoryexpander to serve AJAX requests
+ * Serves the result of the AJAX search.
  *
- * @see core_course_renderer::coursecat_include_js()
- * @see core_course_renderer::coursecat_ajax()
- *
- * @package   core
- * @copyright 2013 Andrew Nicols
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     theme_essential
+ * @copyright   2016 Gareth J Barnard
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 define('AJAX_SCRIPT', true);
@@ -34,15 +31,8 @@ if ($CFG->forcelogin) {
 }
 
 $PAGE->set_context(context_system::instance());
-//$courserenderer = $PAGE->get_renderer('core', 'course');
-
-//echo json_encode($courserenderer->coursecat_ajax());
+$courserenderer = $PAGE->get_renderer('core', 'course');
 
 $term = required_param('term', PARAM_TEXT);
 
-$data = array(
-    array('id' => 'https://moodle30.chloe/mod/lesson/view.php?id=73', 'label' => 'Topics - Lesson Test', 'value' => 'Topics - Lesson Test'),
-    array('id' => 'https://moodle30.chloe/mod/scorm/view.php?id=69', 'label' => 'Topics - Scorm Test', 'value' => 'Topics - Scorm Test'),
-    array('id' => '#'.$term, 'label' => $term, 'value' => $term)
-);
-echo json_encode($data);
+echo json_encode($courserenderer->inspector_ajax($term));

@@ -245,4 +245,89 @@ class theme_essential_core_course_renderer extends core_course_renderer {
 
         return $content;
     }
+
+    /**
+     * Serves requests to /theme/essential/inspector.ajax.php
+     *
+     * @param string $term search term.
+     * @return array of results.
+     * @throws coding_exception
+     */
+    public function inspector_ajax($term) {
+        global $DB, $CFG;
+        require_once($CFG->libdir. '/coursecatlib.php');
+
+        /*
+        $data = array(
+            array('id' => 'https://moodle30.chloe/mod/lesson/view.php?id=73', 'label' => 'Topics - Lesson Test', 'value' => 'Topics - Lesson Test'),
+            array('id' => 'https://moodle30.chloe/mod/scorm/view.php?id=69', 'label' => 'Topics - Scorm Test', 'value' => 'Topics - Scorm Test'),
+            array('id' => '#'.$term, 'label' => $term, 'value' => $term)
+        );
+        */
+        $data = array();
+
+        $courses = enrol_get_my_courses();
+        $site = get_site();
+
+        if (array_key_exists($site->id,$courses)) {
+            unset($courses[$site->id]);
+        }
+
+        foreach ($courses as $c) {
+            if (isset($USER->lastcourseaccess[$c->id])) {
+                $courses[$c->id]->lastaccess = $USER->lastcourseaccess[$c->id];
+            } else {
+                $courses[$c->id]->lastaccess = 0;
+            }
+        }
+
+        // Get remote courses.
+        $remotecourses = array();
+        if (is_enabled_auth('mnet')) {
+            $remotecourses = get_my_remotecourses();
+        }
+        // Remote courses will have -ve remoteid as key, so it can be differentiated from normal courses.
+        foreach ($remotecourses as $id => $val) {
+            $remoteid = $val->remoteid * -1;
+            $val->id = $remoteid;
+            $courses[$remoteid] = $val;
+        }
+
+        foreach ($courses as $course) {
+            $modinfo = get_fast_modinfo($course);
+            //$sections = $modinfo->get_section_info_all();
+            foreach ($modinfo->get_section_info_all() as $section => $thissection) {
+                /*if ($section > $course->numsections) {
+                    // Activities inside this section are 'orphaned'.
+                    continue;
+                }*/
+				error_log('CS: '.print_r($thissection, true));
+                if (!$thissection->uservisible) {
+                    continue;
+                }
+                if (is_object($thissection)) {
+                    $thissection = $modinfo->get_section_info($thissection->section);
+                } else {
+                    $thissection = $modinfo->get_section_info($thissection);
+                }
+                if (!empty($modinfo->sections[$thissection->section])) {
+                    foreach ($modinfo->sections[$thissection->section] as $modnumber) {
+                        $mod = $modinfo->cms[$modnumber];
+                        if (!empty($mod->url)) {
+                            $instancename = $mod->get_formatted_name();
+                            // array('id' => 'https://moodle30.chloe/mod/scorm/view.php?id=69', 'label' => 'Topics - Scorm Test', 'value' => 'Topics - Scorm Test'),
+                            $label = $course->fullname.' - '.$instancename;
+                            if (stristr($label, $term)) {
+                                $data[] = array('id' => $mod->url->out(false), 'label' => $label, 'value' => $label);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        $data[] = array('id' => '#'.$term, 'label' => $term, 'value' => $term);
+
+        return $data;
+    }
 }
