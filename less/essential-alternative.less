@@ -66,6 +66,14 @@
                 .backup-restore .backup-section > h2.header,
                 .backup-restore .backup-section .backup-sub-section h3 {
                     color: ~"[[setting:alternativethemetextcolor@{index}]]";
+
+                    // Focus state.
+                    &:focus {
+                        border-color: ~"[[setting:alternativethemeinputfocusbordercolor@{index}]]";
+                        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px ~"[[setting:alternativethemeinputfocusshadowcolor@{index}]]";
+                        -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px ~"[[setting:alternativethemeinputfocusshadowcolor@{index}]]";
+                        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px ~"[[setting:alternativethemeinputfocusshadowcolor@{index}]]";
+                    }
                 }
 
                 .breadcrumb-nav {
@@ -497,6 +505,20 @@
                         color: ~"[[setting:alternativethemenavcolor@{index}]]";
                         &:hover, &:focus {
                             color: ~"[[setting:alternativethemenavcolor@{index}]]";
+                        }
+                    }
+                }
+
+                .ui-autocomplete {
+                    border-color: ~"[[setting:alternativethemecolor@{index}]]";
+                }
+
+                .ui-autocomplete {
+                    .ui-menu-item {
+                        color: ~"[[setting:alternativethemetextcolor@{index}]]";
+                        &:hover, &:focus {
+                            color: ~"[[setting:alternativethemenavcolor@{index}]]";
+                            background-color: ~"[[setting:alternativethemecolor@{index}]]";
                         }
                     }
                 }
