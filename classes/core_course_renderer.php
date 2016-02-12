@@ -262,7 +262,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         $courses = enrol_get_my_courses();
         $site = get_site();
 
-        if (array_key_exists($site->id,$courses)) {
+        if (array_key_exists($site->id, $courses)) {
             unset($courses[$site->id]);
         }
 
@@ -303,7 +303,8 @@ class theme_essential_core_course_renderer extends core_course_renderer {
                     $thissection = $modinfo->get_section_info($thissection);
                 }
                 if ((string) $thissection->name !== '') {
-                    $sectionname = format_string($thissection->name, true, array('context' => context_course::instance($course->id)));
+                    $sectionname = format_string($thissection->name, true,
+                        array('context' => context_course::instance($course->id)));
                 } else {
                     $sectionname = get_string('section') . ' ' . $thissection->section;
                 }
