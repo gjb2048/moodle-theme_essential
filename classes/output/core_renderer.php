@@ -472,6 +472,8 @@ class core_renderer extends \core_renderer {
             return '';
         }
 
+        $context = context_course::instance($this->page->course->id);
+
         if (!isguestuser()) {
             if (isset($this->page->course->id) && $this->page->course->id > 1) {
                 $activitystreammenu = new custom_menu();
@@ -483,10 +485,13 @@ class core_renderer extends \core_renderer {
                 $branchlabel = '<i class="fa fa-users"></i>'.$branchtitle;
                 $branchurl = new moodle_url('/user/index.php', array('id' => $this->page->course->id));
                 $branch->add($branchlabel, $branchurl, $branchtitle, 100003);
-                $branchtitle = get_string('grades');
-                $branchlabel = '<i class="fa fa-list-alt icon"></i>'.$branchtitle;
-                $branchurl = new moodle_url('/grade/report/index.php', array('id' => $this->page->course->id));
-                $branch->add($branchlabel, $branchurl, $branchtitle, 100004);
+                if (((has_capability('gradereport/overview:view', $context) || has_capability('gradereport/user:view', $context)) &&
+                        $this->page->course->showgrades) || has_capability('gradereport/grader:view', $context)) {
+                    $branchtitle = get_string('grades');
+                    $branchlabel = '<i class="fa fa-list-alt icon"></i>' . $branchtitle;
+                    $branchurl = new moodle_url('/grade/report/index.php', array('id' => $this->page->course->id));
+                    $branch->add($branchlabel, $branchurl, $branchtitle, 100004);
+                }
 
                 $data = $this->get_course_activities();
                 foreach ($data as $modname => $modfullname) {
@@ -1027,20 +1032,24 @@ class core_renderer extends \core_renderer {
                 $usermenu .= html_writer::empty_tag('hr', array('class' => 'sep'));
             }
 
-            // Output user grade links course sensitive, workaround for frontpage, selecting first enrolled course.
+            // Output user grade links, course sensitive where appropriate.
             if ($course->id == SITEID) {
                 $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('mygrades', 'theme_essential').'</em>';
-                $branchurl = new moodle_url('/grade/report/overview/index.php', array('id' => $course->id, 'userid' => $USER->id));
+                $branchurl = new moodle_url('/grade/report/overview/index.php', array('userid' => $USER->id));
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             } else {
                 if (has_capability('gradereport/overview:view', $context)) {
                     $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('mygrades', 'theme_essential').'</em>';
-                    $branchurl = new moodle_url('/grade/report/overview/index.php',
-                        array('id' => $course->id, 'userid' => $USER->id));
+                    if ($course->showgrades) {
+                        $params = array('id' => $course->id, 'userid' => $USER->id);
+                    } else {
+                        $params = array('userid' => $USER->id);
+                    }
+                    $branchurl = new moodle_url('/grade/report/overview/index.php', $params);
                     $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
                 }
 
-                if (has_capability('gradereport/user:view', $context)) {
+                if (has_capability('gradereport/user:view', $context) && $course->showgrades) {
                     // In Course also output Course grade links.
                     $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('coursegrades', 'theme_essential').'</em>';
                     $branchurl = new moodle_url('/grade/report/user/index.php', array('id' => $course->id, 'userid' => $USER->id));
