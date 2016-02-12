@@ -102,9 +102,24 @@
 }
 .ui-autocomplete {
   max-height: 240px;
+  max-width: 300px;
   overflow-y: auto;
   overflow-x: hidden;
   cursor: pointer;
+}
+.ui-autocomplete .ui-menu-item {
+  color: [[setting:themecolor]];
+}
+.ui-autocomplete .ui-menu-item:hover,
+.ui-autocomplete .ui-menu-item:focus {
+  color: [[setting:themenavcolor]];
+  background-color: [[setting:themecolor]];
+}
+.courseitemsearch p {
+  display: inline;
+}
+.courseitemsearch input {
+  margin-bottom: 4px;
 }
 /* @end */
 /* @group Backup-Restore */

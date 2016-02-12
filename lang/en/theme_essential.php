@@ -738,3 +738,6 @@ $string['badgepreferences'] = 'Badge';
 // Incourse.
 $string['returntosection'] = 'Return to section {$a->section}';
 
+// Course content search.
+$string['findcoursecontent'] = 'Course content: ';
+

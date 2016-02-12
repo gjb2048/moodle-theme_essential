@@ -257,13 +257,6 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         global $DB, $CFG;
         require_once($CFG->libdir. '/coursecatlib.php');
 
-        /*
-        $data = array(
-            array('id' => 'https://moodle30.chloe/mod/lesson/view.php?id=73', 'label' => 'Topics - Lesson Test', 'value' => 'Topics - Lesson Test'),
-            array('id' => 'https://moodle30.chloe/mod/scorm/view.php?id=69', 'label' => 'Topics - Scorm Test', 'value' => 'Topics - Scorm Test'),
-            array('id' => '#'.$term, 'label' => $term, 'value' => $term)
-        );
-        */
         $data = array();
 
         $courses = enrol_get_my_courses();
@@ -295,13 +288,12 @@ class theme_essential_core_course_renderer extends core_course_renderer {
 
         foreach ($courses as $course) {
             $modinfo = get_fast_modinfo($course);
-            //$sections = $modinfo->get_section_info_all();
+            $courseformat = course_get_format($course->id);
+            $course = $courseformat->get_course();
+            $courseformatsettings = $courseformat->get_format_options();
+            $sesskey = sesskey();
+
             foreach ($modinfo->get_section_info_all() as $section => $thissection) {
-                /*if ($section > $course->numsections) {
-                    // Activities inside this section are 'orphaned'.
-                    continue;
-                }*/
-				error_log('CS: '.print_r($thissection, true));
                 if (!$thissection->uservisible) {
                     continue;
                 }
@@ -310,13 +302,34 @@ class theme_essential_core_course_renderer extends core_course_renderer {
                 } else {
                     $thissection = $modinfo->get_section_info($thissection);
                 }
+                if ((string) $thissection->name !== '') {
+                    $sectionname = format_string($thissection->name, true, array('context' => context_course::instance($course->id)));
+                } else {
+                    $sectionname = get_string('section') . ' ' . $thissection->section;
+                }
+                if ($thissection->section <= $course->numsections) {
+                    // Do not link 'orphaned' sections.
+                    $courseurl = new moodle_url('/course/view.php');
+                    $courseurl->param('id', $course->id);
+                    $courseurl->param('sesskey', $sesskey);
+                    if ((!empty($courseformatsettings['coursedisplay'])) &&
+                        ($courseformatsettings['coursedisplay'] == COURSE_DISPLAY_MULTIPAGE)) {
+                        $courseurl->param('section', $thissection->section);
+                        $coursehref = $courseurl->out(false);
+                    } else {
+                        $coursehref = $courseurl->out(false).'#section-'.$thissection->section;
+                    }
+                    $label = $course->fullname.' - '.$sectionname;
+                    if (stristr($label, $term)) {
+                        $data[] = array('id' => $coursehref, 'label' => $label, 'value' => $label);
+                    }
+                }
                 if (!empty($modinfo->sections[$thissection->section])) {
                     foreach ($modinfo->sections[$thissection->section] as $modnumber) {
                         $mod = $modinfo->cms[$modnumber];
                         if (!empty($mod->url)) {
                             $instancename = $mod->get_formatted_name();
-                            // array('id' => 'https://moodle30.chloe/mod/scorm/view.php?id=69', 'label' => 'Topics - Scorm Test', 'value' => 'Topics - Scorm Test'),
-                            $label = $course->fullname.' - '.$instancename;
+                            $label = $course->fullname.' - '.$sectionname.' - '.$instancename;
                             if (stristr($label, $term)) {
                                 $data[] = array('id' => $mod->url->out(false), 'label' => $label, 'value' => $label);
                             }
@@ -325,8 +338,6 @@ class theme_essential_core_course_renderer extends core_course_renderer {
                 }
             }
         }
-
-        $data[] = array('id' => '#'.$term, 'label' => $term, 'value' => $term);
 
         return $data;
     }

@@ -60,8 +60,8 @@ if ($COURSE->id > 1) {
 }
 echo $OUTPUT->course_content_header();
 
-echo '<div class="row-fluid"><div class="span12">';
-echo '<input type="text" name="courseitemsearch" id="courseitemsearch" disabled="disabled"/>';
+echo '<div class="row-fluid"><div class="courseitemsearch span12">';
+echo '<p>'.get_string('findcoursecontent', 'theme_essential').'</p><input type="text" name="courseitemsearch" id="courseitemsearch" disabled="disabled">';
 echo '</div></div>';
 
 echo $OUTPUT->main_content();
