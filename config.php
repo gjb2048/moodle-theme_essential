@@ -96,12 +96,6 @@ $THEME->layouts = array(
         'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-pre',
     ),
-    // Standard layout with blocks, this is recommended for most pages with general information.
-    'message-index' => array(
-        'file' => 'columns2.php',
-        'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-pre',
-    ),
     // Main course page.
     'course' => array(
         'file' => 'columns3.php',
