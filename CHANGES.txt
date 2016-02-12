@@ -5,6 +5,7 @@ New in 3.0.0.5
 - FIX: Issue #616: TinyMCE font family setting overridden by theme.
 - FIX: Issue #617: What is the 'message-index' layout?
 - FIX: Editor colours.
+- FIX: Duplicate line in 'Return to section....'.
 
 New in 3.0.0.4
 ==============
