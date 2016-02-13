@@ -25,10 +25,13 @@
 
 require_once(\theme_essential\toolbox::get_tile_file('additionaljs'));
 
-// TODO: Need to check if works when theme is in $CFG->themedir.
-$essentialsearch = new moodle_url('/theme/essential/inspector.ajax.php');
-$inspectorscourerdata = array('data' => array('theme' => $essentialsearch->out(false)));
-$PAGE->requires->js_call_amd('theme_essential/inspector_scourer', 'init', $inspectorscourerdata);
+$coursecontentsearch = \theme_essential\toolbox::course_content_search();
+if ($coursecontentsearch) {
+    $essentialsearch = new moodle_url('/theme/essential/inspector.ajax.php');
+    $essentialsearch->param('sesskey', sesskey());
+    $inspectorscourerdata = array('data' => array('theme' => $essentialsearch->out(false)));
+    $PAGE->requires->js_call_amd('theme_essential/inspector_scourer', 'init', $inspectorscourerdata);
+}
 
 require_once(\theme_essential\toolbox::get_tile_file('header'));
 
@@ -60,9 +63,12 @@ if ($COURSE->id > 1) {
 }
 echo $OUTPUT->course_content_header();
 
-echo '<div class="row-fluid"><div class="courseitemsearch span12">';
-echo '<p>'.get_string('findcoursecontent', 'theme_essential').'</p><input type="text" name="courseitemsearch" id="courseitemsearch" disabled="disabled">';
-echo '</div></div>';
+if ($coursecontentsearch) {
+    echo '<div class="row-fluid"><div class="courseitemsearch span12">';
+    echo '<p>'.get_string('findcoursecontent', 'theme_essential').
+        '</p><input type="text" name="courseitemsearch" id="courseitemsearch" disabled="disabled">';
+    echo '</div></div>';
+}
 
 echo $OUTPUT->main_content();
 if (empty($PAGE->layout_options['nocoursefooter'])) {

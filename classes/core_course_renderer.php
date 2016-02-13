@@ -254,8 +254,8 @@ class theme_essential_core_course_renderer extends core_course_renderer {
      * @throws coding_exception
      */
     public function inspector_ajax($term) {
-        global $DB, $CFG;
-        require_once($CFG->libdir. '/coursecatlib.php');
+        global $CFG, $USER;
+        //require_once($CFG->libdir. '/coursecatlib.php');
 
         $data = array();
 
@@ -306,7 +306,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
                     $sectionname = format_string($thissection->name, true,
                         array('context' => context_course::instance($course->id)));
                 } else {
-                    $sectionname = get_string('section') . ' ' . $thissection->section;
+                    $sectionname = $courseformat->get_section_name($thissection->section);
                 }
                 if ($thissection->section <= $course->numsections) {
                     // Do not link 'orphaned' sections.

@@ -26,11 +26,16 @@ define('AJAX_SCRIPT', true);
 
 require_once(dirname(__dir__) . '/../config.php');
 
-require_login();
+// Might be overkill but would probably stop DOS attack from lots of DB reads.
+require_sesskey();
+
+if ($CFG->forcelogin) {
+    require_login();
+}
+
+$term = required_param('term', PARAM_TEXT);
 
 $PAGE->set_context(context_system::instance());
 $courserenderer = $PAGE->get_renderer('core', 'course');
-
-$term = required_param('term', PARAM_TEXT);
 
 echo json_encode($courserenderer->inspector_ajax($term));

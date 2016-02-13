@@ -6,6 +6,7 @@ New in 3.0.0.5
 - FIX: Issue #617: What is the 'message-index' layout?
 - FIX: Editor colours.
 - FIX: Duplicate line in 'Return to section....'.
+- FIX: Input focus colour.
 - NEW: Inspector Scourer.
 
 New in 3.0.0.4
