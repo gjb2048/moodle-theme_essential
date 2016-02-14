@@ -432,8 +432,8 @@ module.exports = function(grunt) { // jshint ignore:line
             decache: {
                 cmd: 'php "' + decachephp + '"',
                 callback: function(error) {
-                    // exec will output error messages
-                    // just add one to confirm success.
+                    // The exec process will output error messages.
+                    // Just add one to confirm success.
                     if (!error) {
                         grunt.log.writeln("Moodle theme cache reset.");
                     }
@@ -476,8 +476,8 @@ module.exports = function(grunt) { // jshint ignore:line
                     'style/essential-rtl_ie9.css': 'style/essential-rtl.css'
                 }
             }
-         },
-         cssmin: {
+        },
+        cssmin: {
             essential_p: {
                 files: [{
                     expand: true,
@@ -497,42 +497,42 @@ module.exports = function(grunt) { // jshint ignore:line
         },
         copy: {
             svg_core: {
-                 expand: true,
-                 cwd:  'pix_core_originals/',
-                 src:  '**',
-                 dest: 'pix_core/',
+                expand: true,
+                cwd:  'pix_core_originals/',
+                src:  '**',
+                dest: 'pix_core/',
             },
             svg_plugins: {
-                 expand: true,
-                 cwd:  'pix_plugins_originals/',
-                 src:  '**',
-                 dest: 'pix_plugins/',
+                expand: true,
+                cwd:  'pix_plugins_originals/',
+                src:  '**',
+                dest: 'pix_plugins/',
             }
         },
         replace: {
             svg_colours_core: {
                 src: 'pix_core/**/*.svg',
-                    overwrite: true,
-                    replacements: [{
-                        from: '#999999',
-                        to: svgcolour
-                    }]
+                overwrite: true,
+                replacements: [{
+                    from: '#999999',
+                    to: svgcolour
+                }]
             },
             svg_colours_plugins: {
                 src: 'pix_plugins/**/*.svg',
-                    overwrite: true,
-                    replacements: [{
-                        from: '#999999',
-                        to: svgcolour
-                    }]
+                overwrite: true,
+                replacements: [{
+                    from: '#999999',
+                    to: svgcolour
+                }]
             },
             placeholder: {
                 src: 'style/essential.css',
-                    overwrite: true,
-                    replacements: [{
-                        from: '/* Essential placeholder */',
-                        to: 'div#page::before { content: "Development version - recomplile LESS with \'grunt compile -build=p\' for production CSS."; font-size: 2em; margin-top: 24px; margin-bottom: 24px; line-height: 42px; text-align: center; }' // jshint ignore:line
-                    }]
+                overwrite: true,
+                replacements: [{
+                    from: '/* Essential placeholder */',
+                    to: 'div#page::before { content: "Development version - recomplile LESS with \'grunt compile -build=p\' for production CSS."; font-size: 2em; margin-top: 24px; margin-bottom: 24px; line-height: 42px; text-align: center; }' // jshint ignore:line
+                }]
             }
         },
         svgmin: {
@@ -544,7 +544,7 @@ module.exports = function(grunt) { // jshint ignore:line
                 }, {
                     convertPathData: {
                         straightCurves: false
-                   }
+                    }
                 }]
             },
             dist: {

@@ -86,15 +86,15 @@ if (!$tablet) {
                 </div>
             </div>
             <?php
-            if ($tablet) {
+if ($tablet) {
                 ?> <div class="span3"><div class="row-fluid"> <?php
-                echo $OUTPUT->blocks('side-pre', '');
-                echo $OUTPUT->blocks('side-post', '');
-                ?> </div></div> <?php
-            } else {
-                echo $OUTPUT->blocks('side-post', 'span3');
-            }
-            ?>
+    echo $OUTPUT->blocks('side-pre', 'span6');
+    echo $OUTPUT->blocks('side-post', 'span6');
+?> </div></div> <?php
+} else {
+    echo $OUTPUT->blocks('side-post', 'span3');
+}
+?>
         </div>
         <!-- End Main Regions -->
     </section>
