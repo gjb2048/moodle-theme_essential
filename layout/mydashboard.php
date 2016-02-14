@@ -88,8 +88,8 @@ if (!$tablet) {
             <?php
 if ($tablet) {
                 ?> <div class="span3"><div class="row-fluid"> <?php
-    echo $OUTPUT->blocks('side-pre', 'span6');
-    echo $OUTPUT->blocks('side-post', 'span6');
+    echo $OUTPUT->blocks('side-pre', '');
+    echo $OUTPUT->blocks('side-post', '');
 ?> </div></div> <?php
 } else {
     echo $OUTPUT->blocks('side-post', 'span3');
