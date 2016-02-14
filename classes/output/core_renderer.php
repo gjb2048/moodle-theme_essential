@@ -1040,10 +1040,9 @@ class core_renderer extends \core_renderer {
             } else {
                 if (has_capability('gradereport/overview:view', $context)) {
                     $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('mygrades', 'theme_essential').'</em>';
+                    $params = array('userid' => $USER->id);
                     if ($course->showgrades) {
-                        $params = array('id' => $course->id, 'userid' => $USER->id);
-                    } else {
-                        $params = array('userid' => $USER->id);
+                        $params['id'] = $course->id;
                     }
                     $branchurl = new moodle_url('/grade/report/overview/index.php', $params);
                     $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));

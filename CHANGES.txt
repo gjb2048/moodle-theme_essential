@@ -4,6 +4,7 @@ New in 3.0.0.5
 - FIX: Issue #615: Block login on frontpage.
 - FIX: Issue #616: TinyMCE font family setting overridden by theme.
 - FIX: Issue #617: What is the 'message-index' layout?
+- FIX: Issue #618: Gradebook links are displayed when reports cannot be viewed.  Thanks to Tony Butler for the patch #619.
 - FIX: Editor colours.
 - FIX: Duplicate line in 'Return to section....'.
 - FIX: Input focus colour.
