@@ -255,7 +255,6 @@ class theme_essential_core_course_renderer extends core_course_renderer {
      */
     public function inspector_ajax($term) {
         global $CFG, $USER;
-        //require_once($CFG->libdir. '/coursecatlib.php');
 
         $data = array();
 

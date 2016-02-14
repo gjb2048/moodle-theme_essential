@@ -205,9 +205,9 @@ class toolbox {
         $indicators = '';
         for ($indicatorslideindex = 0; $indicatorslideindex < $numberofslides; $indicatorslideindex++) {
             $indicators .= '<li data-target="#essentialCarousel" data-slide-to="'.$indicatorslideindex.'"';
-                if ($indicatorslideindex == 0) {
-                    $indicators .= ' class="active"';
-                }
+            if ($indicatorslideindex == 0) {
+                $indicators .= ' class="active"';
+            }
             $indicators .= '></li>';
         }
         return $indicators;

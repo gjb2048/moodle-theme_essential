@@ -64,11 +64,12 @@ if (is_siteadmin()) {
     $description = get_string('pagebackgroundstyledesc', 'theme_essential');
     $default = 'fixed';
     $setting = new admin_setting_configselect($name, $title, $description, $default,
-            array(
-        'fixed' => get_string('backgroundstylefixed', 'theme_essential'),
-        'tiled' => get_string('backgroundstyletiled', 'theme_essential'),
-        'stretch' => get_string('backgroundstylestretch', 'theme_essential')
-    ));
+        array(
+            'fixed' => get_string('backgroundstylefixed', 'theme_essential'),
+            'tiled' => get_string('backgroundstyletiled', 'theme_essential'),
+            'stretch' => get_string('backgroundstylestretch', 'theme_essential')
+        )
+    );
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -77,7 +78,8 @@ if (is_siteadmin()) {
     $title = get_string('pagewidth', 'theme_essential');
     $description = get_string('pagewidthdesc', 'theme_essential');
     $default = 1200;
-    $choices = array(960 => get_string('fixedwidthnarrow', 'theme_essential'),
+    $choices = array(
+        960 => get_string('fixedwidthnarrow', 'theme_essential'),
         1200 => get_string('fixedwidthnormal', 'theme_essential'),
         1400 => get_string('fixedwidthwide', 'theme_essential'),
         100 => get_string('variablewidth', 'theme_essential'));
@@ -132,7 +134,7 @@ if (is_siteadmin()) {
     $readme = html_writer::link($readme, get_string('readme_click', 'theme_essential'), array('target' => '_blank'));
 
     $temp->add(new admin_setting_heading('theme_essential_generalreadme', get_string('readme_title', 'theme_essential'),
-            get_string('readme_desc', 'theme_essential', array('url' => $readme))));
+        get_string('readme_desc', 'theme_essential', array('url' => $readme))));
 
     $ADMIN->add('theme_essential', $temp);
 
@@ -140,7 +142,7 @@ if (is_siteadmin()) {
     /* Feature Settings */
     $temp = new admin_settingpage('theme_essential_feature', get_string('featureheading', 'theme_essential'));
     $temp->add(new admin_setting_heading('theme_essential_feature', get_string('featureheadingsub', 'theme_essential'),
-            format_text(get_string('featuredesc', 'theme_essential'), FORMAT_MARKDOWN)));
+        format_text(get_string('featuredesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
     // Course content search.
     $name = 'theme_essential/coursecontentsearch';
@@ -165,7 +167,7 @@ if (is_siteadmin()) {
     /* Colour Settings */
     $temp = new admin_settingpage('theme_essential_colour', get_string('colorheading', 'theme_essential'));
     $temp->add(new admin_setting_heading('theme_essential_colour', get_string('colorheadingsub', 'theme_essential'),
-            format_text(get_string('colordesc', 'theme_essential'), FORMAT_MARKDOWN)));
+        format_text(get_string('colordesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
     // Main theme colour setting.
     $name = 'theme_essential/themecolor';
@@ -671,7 +673,7 @@ if (is_siteadmin()) {
     $choices = array(
         0 => get_string('notitle', 'theme_essential'),
         1 => get_string('fullname', 'theme_essential'),
-        2 => get_string('shortname', 'theme_essential'),
+        2 => get_string('shortname', 'theme_essential')
     );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -787,7 +789,7 @@ if (is_siteadmin()) {
 
     /* Social Network Settings */
     $temp->add(new admin_setting_heading('theme_essential_social', get_string('socialheadingsub', 'theme_essential'),
-            format_text(get_string('socialdesc', 'theme_essential'), FORMAT_MARKDOWN)));
+        format_text(get_string('socialdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
     // Website url setting.
     $name = 'theme_essential/website';
@@ -890,8 +892,8 @@ if (is_siteadmin()) {
 
     /* Apps Settings */
     $temp->add(new admin_setting_heading('theme_essential_mobileapps',
-            get_string('mobileappsheadingsub', 'theme_essential'),
-            format_text(get_string('mobileappsdesc', 'theme_essential'), FORMAT_MARKDOWN)));
+        get_string('mobileappsheadingsub', 'theme_essential'),
+        format_text(get_string('mobileappsdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
     // Android App url setting.
     $name = 'theme_essential/android';
@@ -988,7 +990,7 @@ if (is_siteadmin()) {
     $choices = array(
         1 => get_string('fonttypestandard', 'theme_essential'),
         2 => get_string('fonttypegoogle', 'theme_essential'),
-        3 => get_string('fonttypecustom', 'theme_essential'),
+        3 => get_string('fonttypecustom', 'theme_essential')
     );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -1019,14 +1021,15 @@ if (is_siteadmin()) {
         $description = get_string('fontcharactersetdesc', 'theme_essential');
         $default = 'latin-ext';
         $setting = new admin_setting_configmulticheckbox($name, $title, $description, $default,
-                array(
-            'latin-ext' => get_string('fontcharactersetlatinext', 'theme_essential'),
-            'cyrillic' => get_string('fontcharactersetcyrillic', 'theme_essential'),
-            'cyrillic-ext' => get_string('fontcharactersetcyrillicext', 'theme_essential'),
-            'greek' => get_string('fontcharactersetgreek', 'theme_essential'),
-            'greek-ext' => get_string('fontcharactersetgreekext', 'theme_essential'),
-            'vietnamese' => get_string('fontcharactersetvietnamese', 'theme_essential'),
-        ));
+            array(
+                'latin-ext' => get_string('fontcharactersetlatinext', 'theme_essential'),
+                'cyrillic' => get_string('fontcharactersetcyrillic', 'theme_essential'),
+                'cyrillic-ext' => get_string('fontcharactersetcyrillicext', 'theme_essential'),
+                'greek' => get_string('fontcharactersetgreek', 'theme_essential'),
+                'greek-ext' => get_string('fontcharactersetgreekext', 'theme_essential'),
+                'vietnamese' => get_string('fontcharactersetvietnamese', 'theme_essential')
+            )
+        );
         $setting->set_updatedcallback('theme_reset_all_caches');
         $temp->add($setting);
     } else if (get_config('theme_essential', 'fontselect') === "3") {
@@ -1194,7 +1197,7 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
     $temp->add(new admin_setting_heading('theme_essential_frontcontent',
-            get_string('frontcontentheading', 'theme_essential'), ''));
+        get_string('frontcontentheading', 'theme_essential'), ''));
 
     // Toggle Frontpage Content.
     $name = 'theme_essential/togglefrontcontent';
@@ -1254,8 +1257,8 @@ if (is_siteadmin()) {
 
     /* Marketing Spot Settings */
     $temp->add(new admin_setting_heading('theme_essential_marketing',
-            get_string('marketingheadingsub', 'theme_essential'),
-            format_text(get_string('marketingdesc', 'theme_essential'), FORMAT_MARKDOWN)));
+        get_string('marketingheadingsub', 'theme_essential'),
+        format_text(get_string('marketingdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
     // Toggle Marketing Spots.
     $name = 'theme_essential/togglemarketing';
@@ -1364,7 +1367,7 @@ if (is_siteadmin()) {
 
     /* User Alerts */
     $temp->add(new admin_setting_heading('theme_essential_alerts', get_string('alertsheadingsub', 'theme_essential'),
-            format_text(get_string('alertsdesc', 'theme_essential'), FORMAT_MARKDOWN)));
+        format_text(get_string('alertsdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
     $information = get_string('alertinfodesc', 'theme_essential');
 
@@ -1511,8 +1514,8 @@ if (is_siteadmin()) {
     /* Slideshow Widget Settings */
     $temp = new admin_settingpage('theme_essential_slideshow', get_string('slideshowheading', 'theme_essential'));
     $temp->add(new admin_setting_heading('theme_essential_slideshow',
-            get_string('slideshowheadingsub', 'theme_essential'),
-            format_text(get_string('slideshowdesc', 'theme_essential'), FORMAT_MARKDOWN)));
+        get_string('slideshowheadingsub', 'theme_essential'),
+        format_text(get_string('slideshowdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
     // Toggle Slideshow.
     $name = 'theme_essential/toggleslideshow';
@@ -1608,7 +1611,7 @@ if (is_siteadmin()) {
     $choices = array(
         0 => get_string('slidecaptionbeside', 'theme_essential'),
         1 => get_string('slidecaptionontop', 'theme_essential'),
-        2 => get_string('slidecaptionunderneath', 'theme_essential'),
+        2 => get_string('slidecaptionunderneath', 'theme_essential')
     );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -1758,8 +1761,8 @@ if (is_siteadmin()) {
     /* Category Settings */
     $temp = new admin_settingpage('theme_essential_categoryicon', get_string('categoryiconheading', 'theme_essential'));
     $temp->add(new admin_setting_heading('theme_essential_categoryicon',
-            get_string('categoryiconheadingsub', 'theme_essential'),
-            format_text(get_string('categoryicondesc', 'theme_essential'), FORMAT_MARKDOWN)));
+        get_string('categoryiconheadingsub', 'theme_essential'),
+        format_text(get_string('categoryicondesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
     // Category Icons.
     $name = 'theme_essential/enablecategoryicon';
@@ -1830,8 +1833,8 @@ if (is_siteadmin()) {
     /* Analytics Settings */
     $temp = new admin_settingpage('theme_essential_analytics', get_string('analytics', 'theme_essential'));
     $temp->add(new admin_setting_heading('theme_essential_analytics',
-            get_string('analyticsheadingsub', 'theme_essential'),
-            format_text(get_string('analyticsdesc', 'theme_essential'), FORMAT_MARKDOWN)));
+        get_string('analyticsheadingsub', 'theme_essential'),
+        format_text(get_string('analyticsdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
     $name = 'theme_essential/analyticsenabled';
     $title = get_string('analyticsenabled', 'theme_essential');
@@ -1848,7 +1851,7 @@ if (is_siteadmin()) {
     $default = 'piwik';
     $choices = array(
         'piwik' => $piwik,
-        'guniversal' => $guniversal,
+        'guniversal' => $guniversal
     );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $temp->add($setting);

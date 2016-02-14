@@ -81,9 +81,9 @@ if (!$haslogo) {
                 <div id='essentialicons' class="collapse pull-<?php echo ($left) ? 'right' : 'left'; ?>">
 <?php
 }
-                    // If true, displays the heading and available social links; displays nothing if false.
-                    if ($hassocialnetworks) {
-                        ?>
+// If true, displays the heading and available social links; displays nothing if false.
+if ($hassocialnetworks) {
+?>
                         <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>" id="socialnetworks">
                             <p id="socialheading"><?php echo get_string('socialnetworks', 'theme_essential') ?></p>
                             <ul class="socials unstyled">
@@ -103,9 +103,9 @@ if (!$haslogo) {
                             </ul>
                         </div>
                     <?php
-                    }
+}
                     // If true, displays the heading and available social links; displays nothing if false.
-                    if ($hasmobileapps) { ?>
+if ($hasmobileapps) { ?>
                         <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>" id="mobileapps">
                             <p id="socialheading"><?php echo get_string('mobileappsheading', 'theme_essential') ?></p>
                             <ul class="socials unstyled">
@@ -118,12 +118,12 @@ if (!$haslogo) {
                             </ul>
                         </div>
                     <?php
-                    }
-                    if ($hassocialnetworks || $hasmobileapps) {
-                    ?>
+}
+if ($hassocialnetworks || $hasmobileapps) {
+?>
                 </div>
 <?php
-                    }
+}
 ?>
             </div>
         </div>

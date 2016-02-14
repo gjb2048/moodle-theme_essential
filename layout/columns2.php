@@ -40,10 +40,10 @@ $footerregion = essential_has_footer_region(); // In pagesettings.php.
                     <?php require_once(\theme_essential\toolbox::get_tile_file('twocolumncontent')); ?>
                 </div>
                 <?php
-                if ($footerregion) {
-                    echo $OUTPUT->essential_blocks('side-pre', 'row-fluid', 'aside', 4);
-                }
-                ?>
+if ($footerregion) {
+    echo $OUTPUT->essential_blocks('side-pre', 'row-fluid', 'aside', 4);
+}
+?>
             </div>
         </div>
         <!-- End Main Regions -->

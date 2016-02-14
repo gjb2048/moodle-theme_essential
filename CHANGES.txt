@@ -8,6 +8,7 @@ New in 3.0.0.5
 - FIX: Editor colours.
 - FIX: Duplicate line in 'Return to section....'.
 - FIX: Input focus colour.
+- FIX: TravisCI Code Checker complaints.
 - NEW: Inspector Scourer.
 
 New in 3.0.0.4
