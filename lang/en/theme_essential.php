@@ -226,6 +226,9 @@ $string['coursecontentsearchdesc'] = "Enable course content search on the 'Dashb
 $string['fitvids'] = 'Use FitVids';
 $string['fitvidsdesc'] = 'Enable FitVids (fitvidsjs.com) to make your embedded videos responsive.  If FitVids is on and you want a video to be excluded then add \'class="fitvidsignore"\' to the \'iframe\' tag in the HTML mode of the editor.  For example: \'iframe class="fitvidsignore" width="420" height="315" src="//www.youtube.com/embed/enmEmym85xc" frameborder="0" allowfullscreen=""></iframe\'.';
 
+$string['returntosectionfeature'] = 'Return to section';
+$string['returntosectionfeaturedesc'] = "Enable return to section feature within course modules.";
+
 // Colours.
 $string['colorheading'] = 'Colour';
 $string['colorheadingsub'] = 'Set the colours used in your theme';

@@ -10,6 +10,7 @@ New in 2.9.1.9
 - FIX: Input focus colour.
 - FIX: TravisCI Code Checker complaints.
 - NEW: Inspector Scourer.
+- NEW: 'Return to section....' feature setting.
 
 New in 2.9.1.8
 ==============
