@@ -146,20 +146,8 @@ $string['contactinfodesc'] = 'Enter your contact information';
 $string['siteicon'] = 'Site icon';
 $string['siteicondesc'] = 'Do not have a logo? Enter the name of the icon you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "fa-". ';
 
-$string['layout'] = 'Use a standard course layout';
-$string['layoutdesc'] = 'This theme is designed to put both block columns on the side.  If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
-
-$string['floatingsubmitbuttons'] = 'Floating submit buttons';
-$string['floatingsubmitbuttonsdesc'] = 'Have a \'floating\' area that contains the buttons used when submitting a form on desktop devices.  This helps to reduce scrolling on some pages.  Not used on course enrolment or forum posts.';
-
-$string['oldnavbar'] = 'Use the old navbar position';
-$string['oldnavbardesc'] = 'Enable this option to use the old navbar position, placing it below the header.';
-
 $string['favicon'] = 'Custom favicon';
 $string['favicondesc'] = 'Upload your own favicon.  It should be an .ico file.';
-
-$string['customscrollbars'] = 'Custom scrollbars';
-$string['customscrollbarsdesc'] = 'Use custom scrollbars. This will replace the standard browser scrollbars.';
 
 // Custom Menu.
 $string['mycoursesinfo'] = 'Enrolled courses menu';
@@ -220,11 +208,20 @@ $string['featureheading'] = 'Features';
 $string['featureheadingsub'] = 'Set the features used in your theme';
 $string['featuredesc'] = 'Here you can find various settings to change many of the features found in this theme.';
 
+$string['customscrollbars'] = 'Custom scrollbars';
+$string['customscrollbarsdesc'] = 'Use custom scrollbars. This will replace the standard browser scrollbars.';
+
 $string['coursecontentsearch'] = 'Course content search';
 $string['coursecontentsearchdesc'] = "Enable course content search on the 'Dashboard' page.  Only works when Essential is not in '\$CFG->themedir'.";
 
 $string['fitvids'] = 'Use FitVids';
 $string['fitvidsdesc'] = 'Enable FitVids (fitvidsjs.com) to make your embedded videos responsive.  If FitVids is on and you want a video to be excluded then add \'class="fitvidsignore"\' to the \'iframe\' tag in the HTML mode of the editor.  For example: \'iframe class="fitvidsignore" width="420" height="315" src="//www.youtube.com/embed/enmEmym85xc" frameborder="0" allowfullscreen=""></iframe\'.';
+
+$string['floatingsubmitbuttons'] = 'Floating submit buttons';
+$string['floatingsubmitbuttonsdesc'] = 'Have a \'floating\' area that contains the buttons used when submitting a form on desktop devices.  This helps to reduce scrolling on some pages.  Not used on course enrolment or forum posts.';
+
+$string['layout'] = 'Use a standard course layout';
+$string['layoutdesc'] = 'This theme is designed to put both block columns on the side.  If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
 
 $string['returntosectionfeature'] = 'Return to section';
 $string['returntosectionfeaturedesc'] = "Enable return to section feature within course modules.";
@@ -563,6 +560,9 @@ $string['fullname'] = 'Site full name';
 $string['shortname'] = 'Site short name';
 $string['fullnamesummary'] = 'Full name and summary';
 $string['shortnamesummary'] = 'Short name and summary';
+
+$string['oldnavbar'] = 'Use the old navbar position';
+$string['oldnavbardesc'] = 'Enable this option to use the old navbar position, placing it below the header.';
 
 $string['editingmenu'] = 'Page editing switch';
 $string['editingmenudesc'] = 'Displays a button to switch the editing of the current page on/off if the user is allowed to edit the page.  The same functionality as the normal page editing button.';

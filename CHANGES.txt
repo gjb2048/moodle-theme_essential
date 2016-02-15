@@ -12,6 +12,7 @@ New in 2.9.1.9
 - FIX: TravisCI Code Checker complaints.
 - NEW: Inspector Scourer.
 - NEW: 'Return to section....' feature setting.
+- NEW: Features settings page to tidy things up a bit.
 
 New in 2.9.1.8
 ==============
