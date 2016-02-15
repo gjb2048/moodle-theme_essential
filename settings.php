@@ -476,7 +476,7 @@ if (is_siteadmin()) {
         $temp->add($setting);
 
         // Alternative theme default button background hover colour setting.
-        $name = 'theme_essential/alternativethemedefaultbuttonbackgroundhovercolour' . $alternativethemenumber;
+        $name = 'theme_essential/alternativethemedefbuttonbackgroundhvrcolour' . $alternativethemenumber;
         $title = get_string('alternativethemedefaultbuttonbackgroundhovercolour', 'theme_essential', $alternativethemenumber);
         $description = get_string('alternativethemedefaultbuttonbackgroundhovercolourdesc', 'theme_essential',
             $alternativethemenumber);
