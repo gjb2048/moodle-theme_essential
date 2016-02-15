@@ -87,37 +87,11 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Custom or standard layout.
-    $name = 'theme_essential/layout';
-    $title = get_string('layout', 'theme_essential');
-    $description = get_string('layoutdesc', 'theme_essential');
-    $default = false;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Floating submit buttons.
-    $name = 'theme_essential/floatingsubmitbuttons';
-    $title = get_string('floatingsubmitbuttons', 'theme_essential');
-    $description = get_string('floatingsubmitbuttonsdesc', 'theme_essential');
-    $default = true;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $temp->add($setting);
-
     // Custom favicon.
     $name = 'theme_essential/favicon';
     $title = get_string('favicon', 'theme_essential');
     $description = get_string('favicondesc', 'theme_essential');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'favicon');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Custom scrollbars.
-    $name = 'theme_essential/customscrollbars';
-    $title = get_string('customscrollbars', 'theme_essential');
-    $description = get_string('customscrollbarsdesc', 'theme_essential');
-    $default = true;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -153,11 +127,37 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Custom scrollbars.
+    $name = 'theme_essential/customscrollbars';
+    $title = get_string('customscrollbars', 'theme_essential');
+    $description = get_string('customscrollbarsdesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     // Fitvids.
     $name = 'theme_essential/fitvids';
     $title = get_string('fitvids', 'theme_essential');
     $description = get_string('fitvidsdesc', 'theme_essential');
     $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Floating submit buttons.
+    $name = 'theme_essential/floatingsubmitbuttons';
+    $title = get_string('floatingsubmitbuttons', 'theme_essential');
+    $description = get_string('floatingsubmitbuttonsdesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $temp->add($setting);
+
+    // Custom or standard layout.
+    $name = 'theme_essential/layout';
+    $title = get_string('layout', 'theme_essential');
+    $description = get_string('layoutdesc', 'theme_essential');
+    $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);

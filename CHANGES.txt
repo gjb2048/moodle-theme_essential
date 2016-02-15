@@ -12,6 +12,7 @@ New in 3.0.0.5
 - FIX: TravisCI Code Checker complaints.
 - NEW: Inspector Scourer.
 - NEW: 'Return to section....' feature setting.
+- NEW: Features settings page to tidy things up a bit.
 
 New in 3.0.0.4
 ==============
