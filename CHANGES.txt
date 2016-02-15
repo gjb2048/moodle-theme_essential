@@ -10,6 +10,7 @@ New in 3.0.0.5
 - FIX: Input focus colour.
 - FIX: TravisCI Code Checker complaints.
 - NEW: Inspector Scourer.
+- NEW: 'Return to section....' feature setting.
 
 New in 3.0.0.4
 ==============

@@ -150,7 +150,8 @@ class core_renderer extends \core_renderer {
     public function heading($text, $level = 2, $classes = null, $id = null) {
         $heading = parent::heading($text, $level, $classes, $id);
 
-        if (($level == 2) && ($this->page->pagelayout == 'incourse') && (is_object($this->page->cm))) {
+        if (($level == 2) && ($this->page->pagelayout == 'incourse') && (is_object($this->page->cm)) &&
+            (\theme_essential\toolbox::get_setting('returntosectionfeature'))) {
             static $called = false;
             if (!$called) {
                 $markup = html_writer::start_tag('div', array('class' => 'row-fluid'));
@@ -192,7 +193,8 @@ class core_renderer extends \core_renderer {
         $functioncalled = true;
 
         $markup = parent::course_content_footer($onlyifnotcalledbefore);
-        if (($this->page->pagelayout == 'incourse') && (is_object($this->page->cm))) {
+        if (($this->page->pagelayout == 'incourse') && (is_object($this->page->cm)) &&
+            (\theme_essential\toolbox::get_setting('returntosectionfeature'))) {
             $markup .= html_writer::start_tag('div', array('class' => 'row-fluid'));
             $markup .= html_writer::start_tag('div', array('class' => 'span12 text-center footer-rts'));
             $markup .= $this->return_to_section();
