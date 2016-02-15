@@ -162,6 +162,15 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Return to section.
+    $name = 'theme_essential/returntosectionfeature';
+    $title = get_string('returntosectionfeature', 'theme_essential');
+    $description = get_string('returntosectionfeaturedesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     $ADMIN->add('theme_essential', $temp);
 
     /* Colour Settings */
