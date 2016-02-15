@@ -330,7 +330,7 @@ function theme_essential_process_css($css, $theme) {
                 '#30add1', '0.25');
 
             $alternativethemedefaultbuttonbackgroundhovercolour = \theme_essential\toolbox::get_setting(
-                'alternativethemedefaultbuttonbackgroundhovercolour'.$alternative);
+                'alternativethemedefbuttonbackgroundhvrcolour'.$alternative);
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'defaultbuttonbackgroundhovercolour'.$alternative,
                 $alternativethemedefaultbuttonbackgroundhovercolour,
                 '#3ad4ff');
