@@ -12,6 +12,7 @@ New in 3.0.0.5
 - FIX: Input focus colour.
 - FIX: TravisCI Code Checker complaints.
 - FIX: MDL-52249 - Nested navigation dropdowns don't work on small screens - M3.0 only.
+- FIX: MDL-52342 - Hiding section adds gaps to the activity chooser.
 - NEW: Inspector Scourer.
 - NEW: 'Return to section....' feature setting.
 - NEW: Features settings page to tidy things up a bit.
