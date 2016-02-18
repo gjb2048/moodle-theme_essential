@@ -12,6 +12,7 @@ New in 2.9.1.9
 - FIX: Input focus colour.
 - FIX: TravisCI Code Checker complaints.
 - FIX: MDL-52342 - Hiding section adds gaps to the activity chooser.
+- FIX: MDL-52879 - Unable to delete last (only) question in a quiz.
 - NEW: Inspector Scourer.
 - NEW: 'Return to section....' feature setting.
 - NEW: Features settings page to tidy things up a bit.
