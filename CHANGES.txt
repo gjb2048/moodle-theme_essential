@@ -6,7 +6,7 @@ New in 3.0.0.5
 - FIX: Issue #617: What is the 'message-index' layout?
 - FIX: Issue #618: Gradebook links are displayed when reports cannot be viewed.  Thanks to Tony Butler for the patch #619.
 - FIX: Issue #620: 'alternativethemedefaultbuttonbackgroundhovercolourX' setting name too long for 'name' attribute in 'config_plugins' table.
-- FIX: Issue #621: Cloze question input box width when taking quiz but not preview.  WORK IN PROGREESS.
+- FIX: Issue #621: Cloze question input box width when taking quiz but not preview.
 - FIX: Editor colours.
 - FIX: Duplicate line in 'Return to section....'.
 - FIX: Input focus colour.
@@ -14,6 +14,7 @@ New in 3.0.0.5
 - FIX: MDL-52249 - Nested navigation dropdowns don't work on small screens - M3.0 only.
 - FIX: MDL-52342 - Hiding section adds gaps to the activity chooser.
 - FIX: MDL-52879 - Unable to delete last (only) question in a quiz.
+- FIX: Question text width on 1200px+ resolutions when editing a quiz.
 - NEW: Issue #621: Section names on 'Return to section X'.  Grateful thanks to 'Mihai Bojonca, TCM International Institute, Inc.' for funding this enhancement.
 - NEW: Inspector Scourer.
 - NEW: 'Return to section....' feature setting.
