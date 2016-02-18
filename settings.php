@@ -28,6 +28,12 @@ $settings = null;
 
 defined('MOODLE_INTERNAL') || die;
 if (is_siteadmin()) {
+    global $CFG;
+    if (file_exists("{$CFG->dirroot}/theme/essential/essential_admin_setting_configinteger.php")) {
+        require_once($CFG->dirroot . '/theme/essential/essential_admin_setting_configinteger.php');
+    } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/essential/essential_admin_setting_configinteger.php")) {
+        require_once($CFG->themedir . '/essential/essential_admin_setting_configinteger.php');
+    }
 
     $ADMIN->add('themes', new admin_category('theme_essential', 'Essential'));
 
@@ -168,7 +174,16 @@ if (is_siteadmin()) {
     $description = get_string('returntosectionfeaturedesc', 'theme_essential');
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Return to section name text limit.
+    $name = 'theme_essential/returntosectiontextlimitfeature';
+    $title = get_string('returntosectiontextlimitfeature', 'theme_essential');
+    $default = 15;
+    $lower = 5;
+    $upper = 40;
+    $description = get_string('returntosectiontextlimitfeaturedesc', 'theme_essential', array('lower' => $lower, 'upper' => $upper));
+    $setting = new essential_admin_setting_configinteger($name, $title, $description, $default, $lower, $upper);
     $temp->add($setting);
 
     $ADMIN->add('theme_essential', $temp);

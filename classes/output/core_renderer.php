@@ -215,7 +215,18 @@ class core_renderer extends \core_renderer {
             $url = new moodle_url('/course/view.php');
             $url->param('id', $this->page->course->id);
             $url->param('sesskey', sesskey());
-            $courseformatsettings = \course_get_format($this->page->course)->get_format_options();
+            $courseformat = \course_get_format($this->page->course);
+            $courseformatsettings = $courseformat->get_format_options();
+
+            $sectionname = $courseformat->get_section_name($this->page->cm->sectionnum);
+            $sectionnamelen = mb_strlen($sectionname);
+            if ($sectionnamelen !== false) {
+                $sectionnamelimit = \theme_essential\toolbox::get_setting('returntosectiontextlimitfeature');
+                if (($sectionnamelimit) && ($sectionnamelen > $sectionnamelimit)) {
+                    $sectionname = substr($sectionname, 0, $sectionnamelimit).'...';
+                }
+            }
+
             if ((!empty($courseformatsettings['coursedisplay'])) &&
                 ($courseformatsettings['coursedisplay'] == \COURSE_DISPLAY_MULTIPAGE)) {
                 $url->param('section', $this->page->cm->sectionnum);
@@ -223,7 +234,7 @@ class core_renderer extends \core_renderer {
             } else {
                 $href = $url->out(false).'#section-'.$this->page->cm->sectionnum;
             }
-            $title = get_string('returntosection', 'theme_essential', array('section' => $this->page->cm->sectionnum));
+            $title = get_string('returntosection', 'theme_essential', array('section' => $sectionname));
 
             $markup = html_writer::tag('a', $title.html_writer::tag('i', '', array('class' => 'fa-sign-in fa fa-fw')),
                 array('href' => $href, 'class' => 'btn btn-default', 'title' => $title));
