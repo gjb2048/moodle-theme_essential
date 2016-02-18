@@ -250,6 +250,9 @@ $string['layoutdesc'] = 'This theme is designed to put both block columns on the
 $string['returntosectionfeature'] = 'Return to section';
 $string['returntosectionfeaturedesc'] = "Enable return to section feature within course modules.";
 
+$string['returntosectiontextlimitfeature'] = 'Return to section name text limit';
+$string['returntosectiontextlimitfeaturedesc'] = 'Length limit for the \'name\' of the section on the button between {$a->lower} and {$a->upper} characters.';
+
 // Colours.
 $string['colorheading'] = 'Colour';
 $string['colorheadingsub'] = 'Set the colours used in your theme';
@@ -747,7 +750,11 @@ $string['nomessagesfound'] = 'No messages were found';
 $string['badgepreferences'] = 'Badge';
 
 // Incourse.
-$string['returntosection'] = 'Return to section {$a->section}';
+$string['returntosection'] = 'Return to: {$a->section}';
 
 // Course content search.
 $string['findcoursecontent'] = 'Course content: ';
+
+// essential_admin_setting_configinteger.
+$string['asconfigintlower'] = '{$a->value} is less than the lower range limit of {$a->lower}';
+$string['asconfigintupper'] = '{$a->value} is greater than the upper range limit of {$a->upper}';

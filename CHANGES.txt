@@ -14,6 +14,7 @@ New in 3.0.0.5
 - FIX: MDL-52249 - Nested navigation dropdowns don't work on small screens - M3.0 only.
 - FIX: MDL-52342 - Hiding section adds gaps to the activity chooser.
 - FIX: MDL-52879 - Unable to delete last (only) question in a quiz.
+- NEW: Issue #621: Section names on 'Return to section X'.  Grateful thanks to 'Mihai Bojonca, TCM International Institute, Inc.' for funding this enhancement.
 - NEW: Inspector Scourer.
 - NEW: 'Return to section....' feature setting.
 - NEW: Features settings page to tidy things up a bit.
