@@ -15,6 +15,7 @@ New in 3.0.0.5
 - FIX: MDL-52342 - Hiding section adds gaps to the activity chooser.
 - FIX: MDL-52879 - Unable to delete last (only) question in a quiz.
 - FIX: Question text width on 1200px+ resolutions when editing a quiz.
+- FIX: Changes for Grid format issue #24.
 - NEW: Issue #613: Section names on 'Return to section X'.  Grateful thanks to 'Mihai Bojonca, TCM International Institute, Inc.' for funding this enhancement.
 - NEW: Inspector Scourer.
 - NEW: 'Return to section....' feature setting.

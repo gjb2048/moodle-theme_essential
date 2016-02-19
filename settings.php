@@ -182,7 +182,8 @@ if (is_siteadmin()) {
     $default = 15;
     $lower = 5;
     $upper = 40;
-    $description = get_string('returntosectiontextlimitfeaturedesc', 'theme_essential', array('lower' => $lower, 'upper' => $upper));
+    $description = get_string('returntosectiontextlimitfeaturedesc', 'theme_essential',
+        array('lower' => $lower, 'upper' => $upper));
     $setting = new essential_admin_setting_configinteger($name, $title, $description, $default, $lower, $upper);
     $temp->add($setting);
 
