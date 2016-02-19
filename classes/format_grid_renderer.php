@@ -44,8 +44,8 @@ if (file_exists("$CFG->dirroot/course/format/grid/renderer.php")) {
                     return $this->topic0attop;
                 }
             }
-            $courseformat = \course_get_format($course);
-            return $courseformat->get_summary_visibility($course->id)->showsummary == 1;
+            // Grid format fix #24 not implemented.  Assume section 0 is at the top.
+            return 1;
         }
 
         public function get_nav_links($course, $sections, $sectionno) {
