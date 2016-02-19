@@ -27,6 +27,11 @@ namespace theme_essential;
 
 trait format_renderer_toolbox {
     public function get_nav_links($course, $sections, $sectionno) {
+        return $this->get_nav_links_content($course, $sections, $sectionno);
+    }
+
+    // Implemented this way to avoid duplication as reported by 'PHP Copy/Paste Detector - phpcpd'.
+    protected function get_nav_links_content($course, $sections, $sectionno, $buffer = 0) {
         // FIXME: This is really evil and should by using the navigation API.
         $course = \course_get_format($course)->get_course();
         $left = 'left';
@@ -43,7 +48,7 @@ trait format_renderer_toolbox {
 
         $links = array('previous' => '', 'next' => '');
         $back = $sectionno - 1;
-        while ($back > 0 and empty($links['previous'])) {
+        while ($back > $buffer and empty($links['previous'])) {
             if ($canviewhidden || $sections[$back]->uservisible) {
                 $params = array('id' => 'previous_section');
                 if (!$sections[$back]->visible) {
@@ -90,6 +95,11 @@ trait format_renderer_toolbox {
     }
 
     public function print_single_section_page($course, $sections, $mods, $modnames, $modnamesused, $displaysection) {
+        $this->print_single_section_page_content($course, $sections, $mods, $modnames, $modnamesused, $displaysection);
+    }
+
+    protected function print_single_section_page_content($course, $sections, $mods, $modnames, $modnamesused, $displaysection,
+        $showsectionzero = 1) {
         global $PAGE;
 
         $modinfo = \get_fast_modinfo($course);
@@ -114,14 +124,16 @@ trait format_renderer_toolbox {
 
         // Copy activity clipboard..
         echo $this->course_activity_clipboard($course, $displaysection);
-        $thissection = $modinfo->get_section_info(0);
-        if ($thissection->summary or ! empty($modinfo->sections[0]) or $PAGE->user_is_editing()) {
-            echo $this->start_section_list();
-            echo $this->section_header($thissection, $course, true, $displaysection);
-            echo $this->courserenderer->course_section_cm_list($course, $thissection, $displaysection);
-            echo $this->courserenderer->course_section_add_cm_control($course, 0, $displaysection);
-            echo $this->section_footer();
-            echo $this->end_section_list();
+        if ($showsectionzero) {
+            $thissection = $modinfo->get_section_info(0);
+            if ($thissection->summary or ! empty($modinfo->sections[0]) or $PAGE->user_is_editing()) {
+                echo $this->start_section_list();
+                echo $this->section_header($thissection, $course, true, $displaysection);
+                echo $this->courserenderer->course_section_cm_list($course, $thissection, $displaysection);
+                echo $this->courserenderer->course_section_add_cm_control($course, 0, $displaysection);
+                echo $this->section_footer();
+                echo $this->end_section_list();
+            }
         }
 
         // Start single-section div.
