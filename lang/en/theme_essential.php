@@ -159,7 +159,7 @@ $string['logodesc'] = 'Please upload your custom logo here if you want to add it
 $string['logoheight'] = 'Logo height';
 $string['logoheightdesc'] = 'The height of the logo image. This can be specified in px or em.';
 
-$string['credit'] = 'The Essential theme for Moodle is developed, enhanced and maintained by ';
+$string['credit'] = 'The Essential theme for Moodle is developed by ';
 
 $string['profilebarcustomtitle'] = 'Profile bar custom block title';
 $string['profilebarcustomtitledesc'] = 'Title for custom profile bar block.';
