@@ -1,6 +1,7 @@
 New in 3.0.0.6
 ==============
 - FIX: Coursebox tidy up.
+- FIX: Primary button hover.
 
 New in 3.0.0.5
 ==============
