@@ -1933,4 +1933,16 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
     $ADMIN->add('theme_essential', $temp);
+
+    /* Style guide */
+    if (file_exists("{$CFG->dirroot}/theme/essential/essential_admin_setting_styleguide.php")) {
+        require_once($CFG->dirroot . '/theme/essential/essential_admin_setting_styleguide.php');
+    } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/essential/essential_admin_setting_styleguide.php")) {
+        require_once($CFG->themedir . '/essential/essential_admin_setting_styleguide.php');
+    }
+    $temp = new admin_settingpage('theme_essential_styleguide', get_string('styleguide', 'theme_essential'));
+    $temp->add(new essential_admin_setting_styleguide('theme_essential_styleguide',
+        get_string('styleguidesub', 'theme_essential'),
+        format_text(get_string('styleguidedesc', 'theme_essential'), FORMAT_MARKDOWN)));
+    $ADMIN->add('theme_essential', $temp);
 }

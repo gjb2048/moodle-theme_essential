@@ -2,6 +2,7 @@ New in 2.9.1.10
 ===============
 - FIX: Coursebox tidy up.
 - FIX: Primary button hover.
+- NEW: Style guide settings page.
 
 New in 2.9.1.9
 ==============
