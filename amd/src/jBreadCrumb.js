@@ -162,7 +162,7 @@ define(['jquery', 'core/log'], function($, log) {
   return {
     init: function() {
       $(document).ready(function($) {
-        $('.breadcrumb').jBreadCrumb();
+        $('.breadcrumb.style1').jBreadCrumb();
       });
       log.debug('Essential jBreadCrumb AMD init');
     }
