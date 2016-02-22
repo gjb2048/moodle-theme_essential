@@ -181,12 +181,14 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         }
         $content = '';
 
+        $coursehassummary = $course->has_summary();
         $coursehascontacts = $course->has_course_contacts();
+        $courseoverviewfiles = $course->get_course_overviewfiles();
         // Display course summary.
-        if ($course->has_summary()) {
+        if ($coursehassummary) {
             $summaryclass = 'summary';
-            if ($coursehascontacts == false) {
-                $summaryclass .= ' noteachers';
+            if (($coursehascontacts == false) && (empty($courseoverviewfiles))) {
+                $summaryclass .= ' fullsummarywidth';
             }
             $content .= html_writer::start_tag('div', array('class' => $summaryclass));
             $content .= $chelper->get_course_formatted_summary($course,
@@ -196,7 +198,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
 
         // Display course overview files.
         $contentimages = $contentfiles = '';
-        foreach ($course->get_course_overviewfiles() as $file) {
+        foreach ($courseoverviewfiles as $file) {
             $isimage = $file->is_valid_image();
             $url = file_encode_url("$CFG->wwwroot/pluginfile.php",
                     '/'. $file->get_contextid(). '/'. $file->get_component(). '/'.
@@ -218,7 +220,15 @@ class theme_essential_core_course_renderer extends core_course_renderer {
 
         // Display course contacts.  See course_in_list::get_course_contacts().
         if ($coursehascontacts) {
-            $content .= html_writer::start_tag('ul', array('class' => 'teachers'));
+            $teacherclass = 'teachers';
+            if ((!empty($courseoverviewfiles)) && (!$coursehassummary)) {
+                $teacherclass .= ' courseboxright';
+            } else if ((empty($courseoverviewfiles)) && (!$coursehassummary)) {
+                $teacherclass .= ' fullsummarywidth';
+            } else if ((!empty($courseoverviewfiles)) && ($coursehassummary)) {
+                $teacherclass .= ' fullsummarywidth';
+            }
+            $content .= html_writer::start_tag('ul', array('class' => $teacherclass));
             foreach ($course->get_course_contacts() as $userid => $coursecontact) {
                 $faiconsetting = \theme_essential\toolbox::get_setting('courselistteachericon');
                 $faiconsettinghtml = (empty($faiconsetting)) ? '' : '<i class="fa fa-'.$faiconsetting.'"></i> ';
