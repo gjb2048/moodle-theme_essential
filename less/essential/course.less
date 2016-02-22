@@ -95,15 +95,26 @@ body {  // Inside a body tag so will be more specific and override core plugin s
 }
 
 .coursebox .content {
-    .summary.noteachers { // Class 'noteachers' is an Essential special in the overridded core_course_renderer.php.
-        width: 100%;
-        float: none;
+    .summary, .courseimage, .teachers {
+        // Class 'fullsummarywidth' is an Essential special in the overridded core_course_renderer.php.
+        &.fullsummarywidth {
+            width: 100%;
+            float: none;
+        }
     }
     .teachers .@{fa-css-prefix} {
         font-size: inherit;
     }
+    .teachers.courseboxright {
+         // Class 'courseboxright' is an Essential special in the overridded core_course_renderer.php.
+        float: right;
+        clear: right;
+    }
+    .courseimage img {
+        max-width: 100%;
+        max-height: none;
+    }
 }
-
 /* @group Course Resource */
 
 // mod_resource css.
