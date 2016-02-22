@@ -712,6 +712,11 @@ $string['analyticsuseuseriddesc'] = 'Enable use of User ID in tracking.';
 $string['analyticspiwik'] = 'Piwik';
 $string['analyticsguniversal'] = 'Google Universal Analytics';
 
+// Style guide.
+$string['styleguide'] = 'Style guide';
+$string['styleguidesub'] = 'Bootstrap V2.3.2 sytle guide';
+$string['styleguidedesc'] = 'Content licensed under \'Creative Commons Attribution 3.0 Unported (CC BY 3.0)\' license.';
+
 // Alerts.
 $string['alertsheading'] = 'User alerts';
 $string['alertsheadingsub'] = 'Display important messages to your users on the front page';
