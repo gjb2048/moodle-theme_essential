@@ -16,6 +16,7 @@ php:
 matrix:
  allow_failures:
   - php: 7.0
+ fast_finish: true
 
 env:
  global:
@@ -29,9 +30,17 @@ env:
   - DB=mysqli
 
 before_install:
+# This disables XDebug which should speed up the build.  One reason to remove this
+# line is if you are trying to generate code coverage with PHPUnit.
+  - phpenv config-rm xdebug.ini
+# Currently we are inside of the clone of your repository.  We move up two
+# directories to build the project.
   - cd ../..
+# Update Composer.
   - composer selfupdate
+# Install this project into a directory called "ci".
   - composer create-project -n --no-dev moodlerooms/moodle-plugin-ci ci ^1
+# Update the $PATH so scripts from this project can be called easily.
   - export PATH="$(cd ci/bin; pwd):$(cd ci/vendor/bin; pwd):$PATH"
 
 install:
