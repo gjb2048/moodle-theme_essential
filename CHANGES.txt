@@ -1,5 +1,6 @@
 New in 3.0.0.6
 ==============
+- FIX: Issue #623: label is inline.
 - FIX: Coursebox tidy up.
 - FIX: Primary button hover.
 - FIX: TravisCI issues.
