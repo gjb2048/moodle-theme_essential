@@ -3,6 +3,7 @@ New in 2.9.1.10
 - FIX: Issue #623: label is inline.
 - FIX: Coursebox tidy up.
 - FIX: Primary button hover.
+- FIX: Bootstrap button styling.
 - FIX: TravisCI issues.
 - NEW: Style guide settings page.
 
