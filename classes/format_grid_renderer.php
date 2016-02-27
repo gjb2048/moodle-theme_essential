@@ -34,10 +34,9 @@ if (file_exists("$CFG->dirroot/course/format/grid/renderer.php")) {
         /**
          * Backwards compatibility method to get 'topic0attop' attribute value.
          *
-         * @param stdClass $course The course entry from DB
          * @return boolean Value of topic0attop.
          */
-        private function get_topic0attop($course) {
+        private function get_topic0attop() {
             if (property_exists($this, 'topic0attop')) {
                 $reflectionproperty = new ReflectionProperty($this, 'topic0attop');
                 if ($reflectionproperty->isProtected()) {
@@ -49,7 +48,7 @@ if (file_exists("$CFG->dirroot/course/format/grid/renderer.php")) {
         }
 
         public function get_nav_links($course, $sections, $sectionno) {
-            if (!$this->get_topic0attop($course)) {
+            if (!$this->get_topic0attop()) {
                 $buffer = -1;
             } else {
                 $buffer = 0;

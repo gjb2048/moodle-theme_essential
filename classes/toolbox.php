@@ -121,7 +121,7 @@ class toolbox {
         }
     }
 
-    static public function setting_file_url($setting, $filearea, $theme = null) {
+    static public function setting_file_url($setting, $filearea) {
         $us = self::check_corerenderer();
 
         return $us->setting_file_url($setting, $filearea);
