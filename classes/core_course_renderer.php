@@ -264,7 +264,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
      * @throws coding_exception
      */
     public function inspector_ajax($term) {
-        global $CFG, $USER;
+        global $USER;
 
         $data = array();
 
