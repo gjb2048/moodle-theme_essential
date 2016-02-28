@@ -7,6 +7,7 @@ New in 3.0.0.6
 - FIX: Bootstrap button styling.
 - FIX: TravisCI issues.
 - FIX: Ensure that the editor gets the custom font-face declarations.
+- FIX: Disabled and active button styling.
 - NEW: Style guide settings page.
 
 New in 3.0.0.5
