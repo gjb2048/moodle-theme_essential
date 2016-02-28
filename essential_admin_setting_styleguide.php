@@ -3150,7 +3150,6 @@ class essential_admin_setting_styleguide extends admin_setting {
         $return .= '</div>';
         $return .= '<pre class="prettyprint linenums">';
         $return .= '&lt;button class="btn btn-large btn-block btn-primary" type="button"&gt;Block level button&lt;';
-        $return .= '<pre class="prettyprint linenums">';
         $return .= '/button&gt;'.PHP_EOL;
         $return .= '&lt;button class="btn btn-large btn-block" type="button"&gt;Block level button&lt;/button&gt;'.PHP_EOL;
         $return .= '</pre>';
