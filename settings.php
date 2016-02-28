@@ -460,6 +460,16 @@ if (is_siteadmin()) {
         $setting->set_updatedcallback('theme_reset_all_caches');
         $temp->add($setting);
 
+        // Alternative theme link hover colour setting.
+        $name = 'theme_essential/alternativethemehovercolor' . $alternativethemenumber;
+        $title = get_string('alternativethemehovercolor', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemehovercolordesc', 'theme_essential', $alternativethemenumber);
+        $default = $defaultalternativethemehovercolors[$alternativethemenumber - 1];
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
         // Alternative theme default button text colour setting.
         $name = 'theme_essential/alternativethemedefaultbuttontextcolour' . $alternativethemenumber;
         $title = get_string('alternativethemedefaultbuttontextcolour', 'theme_essential', $alternativethemenumber);
@@ -502,7 +512,7 @@ if (is_siteadmin()) {
         $setting->set_updatedcallback('theme_reset_all_caches');
         $temp->add($setting);
 
-        // Alternative themeIcon colour setting.
+        // Alternative theme icon colour setting.
         $name = 'theme_essential/alternativethemeiconcolor' . $alternativethemenumber;
         $title = get_string('alternativethemeiconcolor', 'theme_essential', $alternativethemenumber);
         $description = get_string('alternativethemeiconcolordesc', 'theme_essential', $alternativethemenumber);
@@ -517,16 +527,6 @@ if (is_siteadmin()) {
         $title = get_string('alternativethemenavcolor', 'theme_essential', $alternativethemenumber);
         $description = get_string('alternativethemenavcolordesc', 'theme_essential', $alternativethemenumber);
         $default = '#ffffff';
-        $previewconfig = null;
-        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
-        $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
-
-        // User theme hover colour setting.
-        $name = 'theme_essential/alternativethemehovercolor' . $alternativethemenumber;
-        $title = get_string('alternativethemehovercolor', 'theme_essential', $alternativethemenumber);
-        $description = get_string('alternativethemehovercolordesc', 'theme_essential', $alternativethemenumber);
-        $default = $defaultalternativethemehovercolors[$alternativethemenumber - 1];
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
