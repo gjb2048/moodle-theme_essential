@@ -7,6 +7,7 @@
  */
 // Import the bootstrap we need.
 @import "bootstrap/variables";
+@import "bootstrap-override/variables";
 @import "fontawesome/variables";
 
 @import "bootstrap/mixins";
@@ -451,6 +452,21 @@
                     .buttonBackground(@btnBackground, @btnBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));
                     &:hover, &:focus {
                         background-image: none;
+                    }
+
+                    &.active,
+                    &:active {
+                        background-image: none;
+                        outline: 0;
+                        .box-shadow(~"inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)");
+                    }
+
+                    &.disabled,
+                    &[disabled] {
+                        cursor: default;
+                        background-image: none;
+                        .opacity(65);
+                        .box-shadow(none);
                     }
                 }
                 .btn-primary {
