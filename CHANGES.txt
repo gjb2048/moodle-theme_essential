@@ -5,6 +5,7 @@ New in 3.0.0.6
 - FIX: Primary button hover.
 - FIX: Bootstrap button styling.
 - FIX: TravisCI issues.
+- FIX: Ensure that the editor gets the custom font-face declarations.
 - NEW: Style guide settings page.
 
 New in 3.0.0.5
