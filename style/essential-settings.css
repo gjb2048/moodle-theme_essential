@@ -741,13 +741,21 @@ body.has_dock.essential-colours-alternative4 #dock .dockedtitle[disabled] {
   color: [[setting:themetextcolor]];
 }
 #tinymce a,
-#tinymce a:visited {
+#tinymce a:visited,
+#tinymce .btn-link,
+#tinymce .btn-link:visited {
   color: [[setting:themeurlcolor]];
 }
-#tinymce a:hover {
+#tinymce a:hover,
+#tinymce a:focus,
+#tinymce .btn-link:hover,
+#tinymce .btn-link:focus {
   color: [[setting:themehovercolor]];
 }
-#tinymce a:hover:before {
+#tinymce a:hover:before,
+#tinymce a:focus:before,
+#tinymce .btn-link:hover:before,
+#tinymce .btn-link:focus:before {
   color: [[setting:themehovercolor]];
 }
 #tinymce a:before {
@@ -1097,15 +1105,21 @@ h6,
   color: [[setting:themetextcolor]];
 }
 a,
-a:visited {
+a:visited,
+.btn-link,
+.btn-link:visited {
   color: [[setting:themeurlcolor]];
 }
 a:hover,
-a:focus {
+a:focus,
+.btn-link:hover,
+.btn-link:focus {
   color: [[setting:themehovercolor]];
 }
 a:hover:before,
-a:focus:before {
+a:focus:before,
+.btn-link:hover:before,
+.btn-link:focus:before {
   color: [[setting:themehovercolor]];
 }
 a:before {
