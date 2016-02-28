@@ -67,7 +67,7 @@ if (floatval($CFG->version) >= 2013111803.02) { // 2.6.3+ (Build: 20140522) whic
     $THEME->javascripts_footer[] = 'dock';
 }
 
-$THEME->editor_sheets = array('editor');
+$THEME->editor_sheets = array('editor', 'custom');
 
 $THEME->plugins_exclude_sheets = array('mod' => array('quiz'));
 
