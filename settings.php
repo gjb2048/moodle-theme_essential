@@ -1945,7 +1945,13 @@ if (is_siteadmin()) {
         get_string('styleguidesub', 'theme_essential'),
         get_string('styleguidedesc', 'theme_essential',
             array(
-                'licenseurl' => html_writer::link('http://creativecommons.org/licenses/by/3.0/', 'CC BY 3.0',
+                'origcodelicenseurl' => html_writer::link('http://www.apache.org/licenses/LICENSE-2.0', 'Apache License v2.0',
+                    array('target' => '_blank')),
+                'thiscodelicenseurl' => html_writer::link('http://www.gnu.org/copyleft/gpl.html', 'GPLv3',
+                    array('target' => '_blank')),
+                'compatible' => html_writer::link('http://www.gnu.org/licenses/license-list.en.html#apache2', 'compatible',
+                    array('target' => '_blank')),
+                'contentlicenseurl' => html_writer::link('http://creativecommons.org/licenses/by/3.0/', 'CC BY 3.0',
                     array('target' => '_blank')),
                 'globalsettings' => html_writer::link('http://getbootstrap.com/2.3.2/scaffolding.html#global', 'Global settings',
                     array('target' => '_blank'))
