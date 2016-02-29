@@ -22,7 +22,22 @@
  * @copyright  &copy; 2016-onwards G J Barnard.
  * @author     G J Barnard - gjbarnard at gmail dot com and {@link http://moodle.org/user/profile.php?id=442195}
  * @license    PHP Code: http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
- * @license    HTML Code: http://www.apache.org/licenses/LICENSE-2.0 Apache License v2.0.
+ * @license    Source HTML Code: http://www.apache.org/licenses/LICENSE-2.0 Apache License v2.0:
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * Which is a compatible license, see: http://www.gnu.org/licenses/license-list.en.html#apache2.
+ *
  * @license    Content: http://creativecommons.org/licenses/by/3.0/ Creative Commons Attribution 3.0 Unported (CC BY 3.0).
  *
  * Content source reference: http://getbootstrap.com/2.3.2/base-css.html.
