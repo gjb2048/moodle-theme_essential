@@ -1943,6 +1943,14 @@ if (is_siteadmin()) {
     $temp = new admin_settingpage('theme_essential_styleguide', get_string('styleguide', 'theme_essential'));
     $temp->add(new essential_admin_setting_styleguide('theme_essential_styleguide',
         get_string('styleguidesub', 'theme_essential'),
-        format_text(get_string('styleguidedesc', 'theme_essential'), FORMAT_MARKDOWN)));
+        get_string('styleguidedesc', 'theme_essential',
+            array(
+                'licenseurl' => html_writer::link('http://creativecommons.org/licenses/by/3.0/', 'CC BY 3.0',
+                    array('target' => '_blank')),
+                'globalsettings' => html_writer::link('http://getbootstrap.com/2.3.2/scaffolding.html#global', 'Global settings',
+                    array('target' => '_blank'))
+            )
+        )
+    ));
     $ADMIN->add('theme_essential', $temp);
 }
