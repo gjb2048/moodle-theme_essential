@@ -1,4 +1,4 @@
-New in 3.0.0.6
+New in 3.0.1
 ==============
 - FIX: Issue #623: label is inline.
 - FIX: Issue #625: .btn-link class needs settings.
