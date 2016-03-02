@@ -7391,13 +7391,6 @@ class essential_admin_setting_styleguide extends admin_setting {
 
         $return .= '</div>';
 
-        //$return .= '<script type="text/javascript">';
-        //$return .= '/* <![CDATA[ */';
-        //$return .= '$("[data-toggle=tooltip]").tooltip();';
-        //$return .= '$("[data-toggle=popover]").popover();';
-        //$return .= '/* ]]> */';
-        //$return .= '</script>';
-
         return $return;
     }
 
