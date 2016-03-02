@@ -102,6 +102,8 @@ class essential_admin_setting_styleguide extends admin_setting {
             $bc->content .= '</ul>';
             $defaultregion = $PAGE->blocks->get_default_region();
             $PAGE->blocks->add_fake_block($bc, $defaultregion);
+
+            $PAGE->requires->js_call_amd('theme_essential/styleguide', 'init');
         }
 
         parent::__construct($name, $visiblename, $description, '');
@@ -7388,6 +7390,13 @@ class essential_admin_setting_styleguide extends admin_setting {
         $return .= '</section>';
 
         $return .= '</div>';
+
+        //$return .= '<script type="text/javascript">';
+        //$return .= '/* <![CDATA[ */';
+        //$return .= '$("[data-toggle=tooltip]").tooltip();';
+        //$return .= '$("[data-toggle=popover]").popover();';
+        //$return .= '/* ]]> */';
+        //$return .= '</script>';
 
         return $return;
     }

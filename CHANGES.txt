@@ -1,5 +1,9 @@
-New in 3.0.1
+New in 3.0.1.1
 ==============
+- FIX: Style guide settings tooltips and popups.
+
+New in 3.0.1
+============
 - FIX: Issue #623: label is inline.
 - FIX: Issue #625: .btn-link class needs settings.
 - FIX: Coursebox tidy up.
