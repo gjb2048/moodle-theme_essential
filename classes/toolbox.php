@@ -156,15 +156,26 @@ class toolbox {
                 // Use $PAGE->theme->name as will be accurate than $CFG->theme when using URL theme changes.
                 // Core 'allowthemechangeonurl' setting.
                 global $PAGE;
-                $corerenderer = $PAGE->get_renderer('theme_'.$PAGE->theme->name, 'core');
+                $corerenderer = null;
+                try {
+                    $corerenderer = $PAGE->get_renderer('theme_'.$PAGE->theme->name, 'core');
+                } catch (\coding_exception $ce) {
+                    // Specialised renderer may not exist in theme.  This is not a coding fault.  We just need to cope.
+                    $corerenderer = null;
+                }
                 // Fallback check.
-                if (property_exists($corerenderer, 'essential')) {
+                if (($corerenderer != null) && (property_exists($corerenderer, 'essential'))) {
                     $us->corerenderer = $corerenderer;
                 } else {
                     // Probably during theme switch, '$CFG->theme' will be accurrate.
                     global $CFG;
-                    $corerenderer = $PAGE->get_renderer('theme_'.$CFG->theme, 'core');
-                    if (property_exists($corerenderer, 'essential')) {
+                    try {
+                        $corerenderer = $PAGE->get_renderer('theme_'.$CFG->theme, 'core');
+                    } catch (\coding_exception $ce) {
+                        // Specialised renderer may not exist in theme.  This is not a coding fault.  We just need to cope.
+                        $corerenderer = null;
+                    }
+                    if (($corerenderer != null) && (property_exists($corerenderer, 'essential'))) {
                         $us->corerenderer = $corerenderer;
                     } else {
                         // Last resort.  Hopefully will be fine on next page load for Child themes.
