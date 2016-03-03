@@ -1,5 +1,6 @@
 New in 2.9.1.11
 ===============
+- FIX: Issue #627: Request for an unknown renderer.
 - FIX: Style guide settings tooltips and popups.
 
 New in 2.9.1.10
