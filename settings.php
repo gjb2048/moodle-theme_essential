@@ -24,9 +24,9 @@
  * @copyright   2013 Julian Ridden
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-$settings = null;
 
 defined('MOODLE_INTERNAL') || die;
+$settings = null;
 if (is_siteadmin()) {
     global $CFG;
     if (file_exists("{$CFG->dirroot}/theme/essential/essential_admin_setting_configinteger.php")) {
@@ -37,7 +37,7 @@ if (is_siteadmin()) {
 
     $ADMIN->add('themes', new admin_category('theme_essential', 'Essential'));
 
-    /* Generic Settings */
+    // Generic Settings.
     $temp = new admin_settingpage('theme_essential_generic', get_string('genericsettings', 'theme_essential'));
 
     $sponsor = new moodle_url('http://moodle.org/user/profile.php?id=442195');
@@ -47,14 +47,14 @@ if (is_siteadmin()) {
     $flattr = html_writer::link($flattr, get_string('flattr_click', 'theme_essential'), array('target' => '_blank'));
 
     $temp->add(new admin_setting_heading('theme_essential_generalsponsor',
-            get_string('sponsor_title', 'theme_essential'),
-            get_string('sponsor_desc', 'theme_essential') . get_string('paypal_desc', 'theme_essential',
-                    array('url' => $sponsor)).get_string('flattr_desc', 'theme_essential',
-                    array('url' => $flattr)).get_string('sponsor_desc2', 'theme_essential')));
+        get_string('sponsor_title', 'theme_essential'),
+        get_string('sponsor_desc', 'theme_essential') . get_string('paypal_desc', 'theme_essential',
+            array('url' => $sponsor)).get_string('flattr_desc', 'theme_essential',
+            array('url' => $flattr)).get_string('sponsor_desc2', 'theme_essential')));
 
     $temp->add(new admin_setting_heading('theme_essential_generalheading',
-            get_string('generalheadingsub', 'theme_essential'),
-            format_text(get_string('generalheadingdesc', 'theme_essential'), FORMAT_MARKDOWN)));
+        get_string('generalheadingsub', 'theme_essential'),
+        format_text(get_string('generalheadingdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
     // Page background image.
     $name = 'theme_essential/pagebackground';
@@ -1934,7 +1934,7 @@ if (is_siteadmin()) {
 
     $ADMIN->add('theme_essential', $temp);
 
-    /* Style guide */
+    // Style guide.
     if (file_exists("{$CFG->dirroot}/theme/essential/essential_admin_setting_styleguide.php")) {
         require_once($CFG->dirroot . '/theme/essential/essential_admin_setting_styleguide.php');
     } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/essential/essential_admin_setting_styleguide.php")) {
@@ -1946,6 +1946,8 @@ if (is_siteadmin()) {
         get_string('styleguidedesc', 'theme_essential',
             array(
                 'origcodelicenseurl' => html_writer::link('http://www.apache.org/licenses/LICENSE-2.0', 'Apache License v2.0',
+                    array('target' => '_blank')),
+                'holderlicenseurl' => html_writer::link('https://github.com/imsky/holder#license', 'MIT',
                     array('target' => '_blank')),
                 'thiscodelicenseurl' => html_writer::link('http://www.gnu.org/copyleft/gpl.html', 'GPLv3',
                     array('target' => '_blank')),
