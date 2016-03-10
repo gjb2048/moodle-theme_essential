@@ -42,7 +42,7 @@ class core_renderer extends \core_renderer {
     protected $themeconfig;
 
     protected $essential = null; // Used for determining if this is a Essential or child of renderer.
-    private static $moodleiconreplacement = null;
+    public static $moodleiconreplacement = null;
 
     /**
      * Constructor
