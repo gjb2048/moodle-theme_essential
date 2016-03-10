@@ -1247,11 +1247,12 @@ class core_renderer extends \core_renderer {
     */
 
     public function render_pix_icon(pix_icon $icon) {
-        if (self::replace_moodle_icon($icon->pix)) {
-            if (!isset($icon->attributes['alt'])) {
-                $icon->attributes['alt'] = '';
-            }
-            $newicon = self::replace_moodle_icon($icon->pix, $icon->attributes['alt']).parent::render_pix_icon($icon)."</i>";
+        $alttext = isset($icon->attributes['alt']) ? $icon->attributes['alt'] : '';
+        $replacement = self::replace_moodle_icon($icon->pix, $alttext);
+
+        if ($replacement) {
+            $icon->attributes['alt'] = $alttext;
+            $newicon = $replacement . parent::render_pix_icon($icon)."</i>";
             return $newicon;
         } else {
             return parent::render_pix_icon($icon);
