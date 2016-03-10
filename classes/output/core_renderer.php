@@ -42,7 +42,7 @@ class core_renderer extends \core_renderer {
     protected $themeconfig;
 
     protected $essential = null; // Used for determining if this is a Essential or child of renderer.
-    private static $moodle_icon_replacement = null;
+    private static $moodleiconreplacement = null;
 
     /**
      * Constructor
@@ -1261,8 +1261,8 @@ class core_renderer extends \core_renderer {
     }
 
     private static function replace_moodle_icon($icon, $alt = false) {
-        if (array_key_exists($icon, self::$moodle_icon_replacement)) {
-            return "<i class=\"fa fa-".(self::$moodle_icon_replacement[$icon])." icon\" title=\"$alt\">";
+        if (array_key_exists($icon, self::$moodleiconreplacement)) {
+            return "<i class=\"fa fa-".(self::$moodleiconreplacement[$icon])." icon\" title=\"$alt\">";
         } else {
             return false;
         }
@@ -1714,9 +1714,9 @@ class core_renderer extends \core_renderer {
 }
 
 // Initialise the static replacements array. Since this is static, this may not be
-// performed together with the declaration of `$moodle_icon_replacement` :( .
+// performed together with the declaration of `$moodleiconreplacement` :( .
 // (cf. http://php.net/manual/en/language.oop5.static.php#language.oop5.static.properties)
-\theme_essential\output\core_renderer::$moodle_icon_replacement = array(
+\theme_essential\output\core_renderer::$moodleiconreplacement = array(
     'add' => 'plus',
     'book' => 'book',
     'chapter' => 'file',
