@@ -42,6 +42,7 @@ class core_renderer extends \core_renderer {
     protected $themeconfig;
 
     protected $essential = null; // Used for determining if this is a Essential or child of renderer.
+    public static $moodleiconreplacement = null;
 
     /**
      * Constructor
@@ -1247,11 +1248,12 @@ class core_renderer extends \core_renderer {
     */
 
     public function render_pix_icon(pix_icon $icon) {
-        if (self::replace_moodle_icon($icon->pix)) {
-            if (!isset($icon->attributes['alt'])) {
-                $icon->attributes['alt'] = '';
-            }
-            $newicon = self::replace_moodle_icon($icon->pix, $icon->attributes['alt']).parent::render_pix_icon($icon)."</i>";
+        $alttext = isset($icon->attributes['alt']) ? $icon->attributes['alt'] : '';
+        $replacement = self::replace_moodle_icon($icon->pix, $alttext);
+
+        if ($replacement) {
+            $icon->attributes['alt'] = $alttext;
+            $newicon = $replacement . parent::render_pix_icon($icon)."</i>";
             return $newicon;
         } else {
             return parent::render_pix_icon($icon);
@@ -1259,70 +1261,8 @@ class core_renderer extends \core_renderer {
     }
 
     private static function replace_moodle_icon($icon, $alt = false) {
-        $icons = array(
-            'add' => 'plus',
-            'book' => 'book',
-            'chapter' => 'file',
-            'docs' => 'question-circle',
-            'generate' => 'gift',
-            'i/marker' => 'lightbulb-o',
-            'i/delete' => 'times-circle',
-            'i/dragdrop' => 'arrows',
-            'i/loading' => 'refresh fa-spin fa-2x',
-            'i/loading_small' => 'refresh fa-spin',
-            'i/backup' => 'cloud-download',
-            'i/checkpermissions' => 'user',
-            'i/edit' => 'pencil',
-            'i/enrolusers' => 'user-plus',
-            'i/filter' => 'filter',
-            'i/grades' => 'table',
-            'i/group' => 'group',
-            'i/groupn' => 'user',
-            'i/groupv' => 'user-plus',
-            'i/groups' => 'user-secret',
-            'i/hide' => 'eye',
-            'i/import' => 'upload',
-            'i/move_2d' => 'arrows',
-            'i/navigationitem' => 'file',
-            'i/outcomes' => 'magic',
-            'i/preview' => 'search',
-            'i/publish' => 'globe',
-            'i/reload' => 'refresh',
-            'i/report' => 'list-alt',
-            'i/restore' => 'cloud-upload',
-            'i/return' => 'repeat',
-            'i/roles' => 'user',
-            'i/cohort' => 'users',
-            'i/scales' => 'signal',
-            'i/settings' => 'cogs',
-            'i/show' => 'eye-slash',
-            'i/switchrole' => 'random',
-            'i/user' => 'user',
-            'i/users' => 'user',
-            't/right' => 'arrow-right',
-            't/left' => 'arrow-left',
-            't/edit_menu' => 'cogs',
-            'i/withsubcat' => 'indent',
-            'i/permissions' => 'key',
-            'i/assignroles' => 'lock',
-            't/assignroles' => 'lock',
-            't/cohort' => 'users',
-            't/delete' => 'times-circle',
-            't/edit' => 'cog',
-            't/hide' => 'eye',
-            't/show' => 'eye-slash',
-            't/up' => 'arrow-up',
-            't/down' => 'arrow-down',
-            't/copy' => 'copy',
-            't/block_to_dock' => 'caret-square-o-left',
-            't/sort' => 'sort',
-            't/sort_asc' => 'sort-asc',
-            't/sort_desc' => 'sort-desc',
-            't/grades' => 'th-list',
-            't/preview' => 'search'
-        );
-        if (array_key_exists($icon, $icons)) {
-            return "<i class=\"fa fa-$icons[$icon] icon\" title=\"$alt\">";
+        if (array_key_exists($icon, self::$moodleiconreplacement)) {
+            return "<i class=\"fa fa-".(self::$moodleiconreplacement[$icon])." icon\" title=\"$alt\">";
         } else {
             return false;
         }
@@ -1772,3 +1712,69 @@ class core_renderer extends \core_renderer {
         }
     }
 }
+
+// Initialise the static replacements array. Since this is static, this may not be
+// performed together with the declaration of `$moodleiconreplacement` :( .
+// (cf. http://php.net/manual/en/language.oop5.static.php#language.oop5.static.properties)
+\theme_essential\output\core_renderer::$moodleiconreplacement = array(
+    'add' => 'plus',
+    'book' => 'book',
+    'chapter' => 'file',
+    'docs' => 'question-circle',
+    'generate' => 'gift',
+    'i/marker' => 'lightbulb-o',
+    'i/delete' => 'times-circle',
+    'i/dragdrop' => 'arrows',
+    'i/loading' => 'refresh fa-spin fa-2x',
+    'i/loading_small' => 'refresh fa-spin',
+    'i/backup' => 'cloud-download',
+    'i/checkpermissions' => 'user',
+    'i/edit' => 'pencil',
+    'i/enrolusers' => 'user-plus',
+    'i/filter' => 'filter',
+    'i/grades' => 'table',
+    'i/group' => 'group',
+    'i/groupn' => 'user',
+    'i/groupv' => 'user-plus',
+    'i/groups' => 'user-secret',
+    'i/hide' => 'eye',
+    'i/import' => 'upload',
+    'i/move_2d' => 'arrows',
+    'i/navigationitem' => 'file',
+    'i/outcomes' => 'magic',
+    'i/preview' => 'search',
+    'i/publish' => 'globe',
+    'i/reload' => 'refresh',
+    'i/report' => 'list-alt',
+    'i/restore' => 'cloud-upload',
+    'i/return' => 'repeat',
+    'i/roles' => 'user',
+    'i/cohort' => 'users',
+    'i/scales' => 'signal',
+    'i/settings' => 'cogs',
+    'i/show' => 'eye-slash',
+    'i/switchrole' => 'random',
+    'i/user' => 'user',
+    'i/users' => 'user',
+    't/right' => 'arrow-right',
+    't/left' => 'arrow-left',
+    't/edit_menu' => 'cogs',
+    'i/withsubcat' => 'indent',
+    'i/permissions' => 'key',
+    'i/assignroles' => 'lock',
+    't/assignroles' => 'lock',
+    't/cohort' => 'users',
+    't/delete' => 'times-circle',
+    't/edit' => 'cog',
+    't/hide' => 'eye',
+    't/show' => 'eye-slash',
+    't/up' => 'arrow-up',
+    't/down' => 'arrow-down',
+    't/copy' => 'copy',
+    't/block_to_dock' => 'caret-square-o-left',
+    't/sort' => 'sort',
+    't/sort_asc' => 'sort-asc',
+    't/sort_desc' => 'sort-desc',
+    't/grades' => 'th-list',
+    't/preview' => 'search'
+);
