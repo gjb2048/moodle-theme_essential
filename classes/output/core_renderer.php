@@ -1247,19 +1247,7 @@ class core_renderer extends \core_renderer {
     */
 
     public function render_pix_icon(pix_icon $icon) {
-        if (self::replace_moodle_icon($icon->pix)) {
-            if (!isset($icon->attributes['alt'])) {
-                $icon->attributes['alt'] = '';
-            }
-            $newicon = self::replace_moodle_icon($icon->pix, $icon->attributes['alt']).parent::render_pix_icon($icon)."</i>";
-            return $newicon;
-        } else {
-            return parent::render_pix_icon($icon);
-        }
-    }
-
-    private static function replace_moodle_icon($icon, $alt = false) {
-        $icons = array(
+        static $icons = array(
             'add' => 'plus',
             'book' => 'book',
             'chapter' => 'file',
@@ -1321,13 +1309,18 @@ class core_renderer extends \core_renderer {
             't/grades' => 'th-list',
             't/preview' => 'search'
         );
-        if (array_key_exists($icon, $icons)) {
-            return "<i class=\"fa fa-$icons[$icon] icon\" title=\"$alt\">";
+        if (array_key_exists($icon->pix, $icons)) {
+            $pix = $icon->pix;
+            if (empty($icon->attributes['alt'])) {
+                return "<i class=\"fa fa-$icons[$pix] icon\">".parent::render_pix_icon($icon)."</i>";
+            } else {
+                $alt = $icon->attributes['alt'];
+                return "<i class=\"fa fa-$icons[$pix] icon\" title=\"$alt\">".parent::render_pix_icon($icon)."</i>";
+            }
         } else {
-            return false;
+            return parent::render_pix_icon($icon);
         }
     }
-
 
     /**
      * Returns HTML to display a "Turn editing on/off" button in a form.
