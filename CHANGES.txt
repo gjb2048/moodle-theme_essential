@@ -2,6 +2,7 @@ New in 3.0.1.1
 ==============
 - FIX: Issue #627: Request for an unknown renderer.
 - FIX: Style guide settings tooltips and popups.
+- FIX: MDL-52936 - Fix link hover bug on iOS.
 - NEW: Issue #632: View StyleGuide without logging on.
 
 New in 3.0.1
