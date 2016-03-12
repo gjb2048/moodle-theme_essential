@@ -1312,10 +1312,10 @@ class core_renderer extends \core_renderer {
         if (array_key_exists($icon->pix, $icons)) {
             $pix = $icons[$icon->pix];
             if (empty($icon->attributes['alt'])) {
-                return '<span class="fa fa-'.$pix.' icon" aria-hidden="true">'.parent::render_pix_icon($icon).'</span>';
+                return '<span class="fa fa-'.$pix.' icon" aria-hidden="true"></span>';
             } else {
                 $alt = $icon->attributes['alt'];
-                return '<span class="fa fa-'.$pix.' icon" title="'.$alt.'" aria-hidden="true">'.parent::render_pix_icon($icon).'</span>';
+                return '<span class="fa fa-'.$pix.' icon" title="'.$alt.'" aria-hidden="true"></span>';
             }
         } else {
             return parent::render_pix_icon($icon);
