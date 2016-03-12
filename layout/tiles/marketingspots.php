@@ -49,7 +49,7 @@ for ($mspot = 1; $mspot <= 3; $mspot++) {
             echo '<!-- Spot #'.$mspot.' -->'; ?>
         <div class="marketing-spot span4">
             <div class="title"><h5><span>
-                <i class="fa fa-<?php echo \theme_essential\toolbox::get_setting('marketing'.$mspot.'icon'); ?>"></i>
+                <span aria-hidden="true" class="fa fa-<?php echo \theme_essential\toolbox::get_setting('marketing'.$mspot.'icon'); ?>"></span>
                 <?php echo \theme_essential\toolbox::get_setting('marketing'.$mspot, true); ?>
             </span></h5></div>
             <?php if ($spotimage[$mspot]) { ?>

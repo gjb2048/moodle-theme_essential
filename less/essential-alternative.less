@@ -157,7 +157,7 @@
                         color: inherit;
                     }
                 }
-                button.socialicon i.@{fa-css-prefix} {
+                button.socialicon .@{fa-css-prefix} {
                     color: @white;
                 }
 
@@ -222,7 +222,7 @@
                 }
 
                 .breadcrumb-button {
-                    i.@{fa-css-prefix} {
+                    .@{fa-css-prefix} {
                         vertical-align: middle;
                         color: inherit;
                         &:hover {
@@ -291,7 +291,7 @@
                             > li > a {
                                 color: ~"[[setting:alternativethemenavcolor@{index}]]";
                                 border-left-color: ~"[[setting:alternativethemecolor@{index}]]";
-                                i.@{fa-css-prefix} {
+                                .@{fa-css-prefix} {
                                     color: inherit;
                                 }
                                 &:hover {
@@ -309,7 +309,7 @@
                                     &:focus, &.open {
                                         color: @white; // TODO: Page background colour needs to be a setting.
                                         background-color: ~"[[setting:alternativethemeurlcolor@{index}]]";
-                                        i.@{fa-css-prefix} {
+                                        .@{fa-css-prefix} {
                                             color: @white; // TODO: Page background colour needs to be a setting.
                                         }
                                     }
@@ -384,6 +384,9 @@
                             }
                         }
                     }
+                    .@{fa-css-prefix} {
+                        color: inherit;
+                    }
                 }
                 &.dir-rtl .navbar {
                     .navbar-inner {
@@ -422,7 +425,7 @@
                 #notice .singlebutton+.singlebutton input,
                 .submit.buttons input[name=cancel] {
                     color: ~"[[setting:alternativethemedefaultbuttontextcolour@{index}]]";
-                    .fa {
+                    .@{fa-css-prefix} {
                         color: ~"[[setting:alternativethemedefaultbuttontextcolour@{index}]]";
                     }
 
@@ -443,7 +446,7 @@
                         background-image: -webkit-linear-gradient(bottom, ~"[[setting:alternativethemedefaultbuttonbackgroundhovercolourimage@{index}]]", ~"[[setting:alternativethemedefaultbuttonbackgroundhovercolourrgba@{index}]]"); // Safari 5.1+, Chrome 10+
                         background-image: -o-linear-gradient(bottom, ~"[[setting:alternativethemedefaultbuttonbackgroundhovercolourimage@{index}]]", ~"[[setting:alternativethemedefaultbuttonbackgroundhovercolourrgba@{index}]]"); // Opera 11.10
                         background-image: linear-gradient(to top, ~"[[setting:alternativethemedefaultbuttonbackgroundhovercolourimage@{index}]]", ~"[[setting:alternativethemedefaultbuttonbackgroundhovercolourrgba@{index}]]"); // Standard, IE10
-                        .fa {
+                        .@{fa-css-prefix} {
                             color: ~"[[setting:alternativethemedefaultbuttontexthovercolour@{index}]]";
                         }
                     }
@@ -606,7 +609,7 @@
                             &:focus {
                             color: ~"[[setting:alternativethemeslidebuttonhovercolor@{index}]]";
                         }
-                        i.@{fa-css-prefix} {
+                        .@{fa-css-prefix} {
                             color: ~"[[setting:alternativethemeslidebuttoncolor@{index}]]";
                             &:hover,
                                 &:focus {
@@ -689,7 +692,7 @@
                     color: ~"[[setting:alternativethemetextcolor@{index}]]";
                 }
 
-                .service i.@{fa-css-prefix} {
+                .service .@{fa-css-prefix} {
                     color: ~"[[setting:alternativethemeiconcolor@{index}]]";
                 }
 
@@ -719,10 +722,10 @@
                     color: ~"[[setting:alternativethemefootertextcolor@{index}]]";
                     border-top: 2px solid ~"[[setting:alternativethemecolor@{index}]]";
                     border-bottom: 3px solid ~"[[setting:alternativethemecolor@{index}]]";
-                    a, a > i.@{fa-css-prefix} {
+                    a, a > .@{fa-css-prefix} {
                         color: ~"[[setting:alternativethemefooterurlcolor@{index}]]";
                     }
-                    a:hover, a:hover > i.@{fa-css-prefix} {
+                    a:hover, a:hover > .@{fa-css-prefix} {
                         color: ~"[[setting:alternativethemefooterhovercolor@{index}]]";
                     }
                     .footnote {
@@ -752,10 +755,10 @@
                     .block {
                         background-color: ~"[[setting:alternativethemefooterblockbackgroundcolour@{index}]]";
                         color: ~"[[setting:alternativethemefooterblocktextcolour@{index}]]";
-                        a, a > i.@{fa-css-prefix} {
+                        a, a > .@{fa-css-prefix} {
                             color: ~"[[setting:alternativethemefooterblockurlcolour@{index}]]";
                         }
-                        a:hover, a:hover > i.@{fa-css-prefix} {
+                        a:hover, a:hover > .@{fa-css-prefix} {
                             color: ~"[[setting:alternativethemefooterblockhovercolour@{index}]]";
                         }
                         .icon {
@@ -793,12 +796,12 @@
 
                 p.tree_item {
                     &.leaf a {
-                        > i.@{fa-css-prefix} {
+                        > .@{fa-css-prefix} {
                             color: ~"[[setting:alternativethemeiconcolor@{index}]]";
                         }
                         &:hover, &:focus {
                             color: ~"[[setting:alternativethemehovercolor@{index}]]";
-                            > i.@{fa-css-prefix} {
+                            > .@{fa-css-prefix} {
                                 color: inherit;
                             }
                         }
@@ -834,7 +837,7 @@
                     border-color: ~"[[setting:alternativethemecolor@{index}]]";
                 }
 
-                .afmatter i.@{fa-css-prefix} {
+                .afmatter .@{fa-css-prefix} {
                     color: ~"[[setting:alternativethemeiconcolor@{index}]]";
                 }
 
@@ -922,7 +925,7 @@
                         background-color: ~"[[setting:alternativethemecolor@{index}]]";
                         > .info > .categoryname a {
                             color: ~"[[setting:alternativethemenavcolor@{index}]]";
-                            i.@{fa-css-prefix} {
+                            .@{fa-css-prefix} {
                                 color: inherit;
                             }
                         }
@@ -988,11 +991,11 @@
                 .menu a.menu-action,
                 .course-item-actions a,
                 .actions a {
-                    > i.@{fa-css-prefix} {
+                    > .@{fa-css-prefix} {
                         color: ~"[[setting:alternativethemeiconcolor@{index}]]";
                     }
                     &:hover {
-                        > i.@{fa-css-prefix} {
+                        > .@{fa-css-prefix} {
                             color: ~"[[setting:alternativethemehovercolor@{index}]]";
                         }
                     }

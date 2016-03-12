@@ -1,7 +1,7 @@
 /* @group Edit Buttons */
 @import "../fontawesome/variables";
 
-i > img {
+.@{fa-css-prefix} > img {
   display: none;
   visibility: hidden;
 }
@@ -14,7 +14,7 @@ i > img {
   display: inline;
 }
 
-.commands i.@{fa-css-prefix} {
+.commands .@{fa-css-prefix} {
   margin-left: 3px;
   margin-right: 3px;
 }
@@ -22,11 +22,11 @@ i > img {
 .menu a.menu-action,
 .course-item-actions a,
 .actions a {
-  > i.@{fa-css-prefix} {
+  > .@{fa-css-prefix} {
     width: 15px;
   }
   &.action-delete {
-    > i.@{fa-css-prefix} {
+    > .@{fa-css-prefix} {
       color: red;
     }
   }
@@ -35,13 +35,13 @@ i > img {
 a.action-icon,
 #studentheader,
 .heading_name_row a {
-  > i.@{fa-css-prefix} {
+  > .@{fa-css-prefix} {
     width: 14px;
     margin: 0px 3px;
   }
 }
 
-.menu a.menu-action:hover > i.@{fa-css-prefix} {
+.menu a.menu-action:hover > .@{fa-css-prefix} {
   color: @white;
 }
 
@@ -108,7 +108,7 @@ a.action-icon,
 
 .moodle-actionmenu.show[data-enhanced] .menu a {
   padding: 0.2em;
-  i.@{fa-css-prefix} {
+  .@{fa-css-prefix} {
     margin-right: 5px;
   }
 }
