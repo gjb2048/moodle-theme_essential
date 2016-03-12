@@ -42,7 +42,7 @@
     }
     .category.dimmed_category {
       border-color: @grayLight;
-      i.@{fa-css-prefix} {
+      .@{fa-css-prefix} {
         color: inherit;
       }
     }
@@ -95,17 +95,15 @@
         overflow: hidden;
         text-overflow: ellipsis;
         width: 176px;
-        > i.@{fa-css-prefix} {
+        > .@{fa-css-prefix} {
+          font-size: 140px;
           padding-top: 6px;
+          width: 100%;
         }
         > span {
           font-size: 18px;
         }
       }
-    }
-    i.@{fa-css-prefix} {
-      font-size: 140px;
-      width: 100%;
     }
     .category[data-categoryid] {
       border: 1px solid @grayLightish;

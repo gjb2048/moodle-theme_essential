@@ -41,8 +41,8 @@ trait format_renderer_toolbox {
             $left = $right;
             $right = $temp;
         }
-        $previousarrow = '<i class="fa fa-chevron-circle-' . $left . '"></i>';
-        $nextarrow = '<i class="fa fa-chevron-circle-' . $right . '"></i>';
+        $previousarrow = '<span aria-hidden="true" class="fa fa-chevron-circle-' . $left . '"></span>';
+        $nextarrow = '<span aria-hidden="true" class="fa fa-chevron-circle-' . $right . '"></span>';
         $canviewhidden = \has_capability('moodle/course:viewhiddensections', \context_course::instance($course->id))
                 or ! $course->hiddensections;
 

@@ -5,6 +5,7 @@ New in 3.0.1.1
 - FIX: Issue #634: Improve icon replacement performance.
 - FIX: Style guide settings tooltips and popups.
 - FIX: MDL-52936 - Fix link hover bug on iOS.
+- FIX: Apply 'aria-hidden="true"' to FontAwesome icons as much as possible.  Still a few 'content' CSS attributes to consider.
 - NEW: Issue #632: View StyleGuide without logging on.
 
 New in 3.0.1
