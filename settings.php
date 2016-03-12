@@ -26,8 +26,24 @@
  */
 
 defined('MOODLE_INTERNAL') || die;
-$settings = null;
-if (is_siteadmin()) {
+$settings = null; // unsets the default $settings object initialised by Moodle.
+
+// Create own category and define pages
+$ADMIN->add('themes', new admin_category('theme_essential', 'Essential'));
+$essentialsettingsgeneric = new admin_settingpage('theme_essential_generic', get_string('genericsettings', 'theme_essential'));
+$essentialsettingsfeature = new admin_settingpage('theme_essential_feature', get_string('featureheading', 'theme_essential'));
+$essentialsettingscolour = new admin_settingpage('theme_essential_colour', get_string('colorheading', 'theme_essential'));
+$essentialsettingsheader = new admin_settingpage('theme_essential_header', get_string('headerheading', 'theme_essential'));
+$essentialsettingsfont = new admin_settingpage('theme_essential_font', get_string('fontsettings', 'theme_essential'));
+$essentialsettingsfooter = new admin_settingpage('theme_essential_footer', get_string('footerheading', 'theme_essential'));
+$essentialsettingsfrontpage = new admin_settingpage('theme_essential_frontpage', get_string('frontpageheading', 'theme_essential'));
+$essentialsettingsslideshow = new admin_settingpage('theme_essential_slideshow', get_string('slideshowheading', 'theme_essential'));
+$essentialsettingscategoryicon = new admin_settingpage('theme_essential_categoryicon', get_string('categoryiconheading', 'theme_essential'));
+$essentialsettingsanalytics = new admin_settingpage('theme_essential_analytics', get_string('analytics', 'theme_essential'));
+$essentialsettingsstyleguide = new admin_settingpage('theme_essential_styleguide', get_string('styleguide', 'theme_essential'));
+
+// Initialise individual settings only if admin pages require them.
+if ($ADMIN->fulltree) {
     global $CFG;
     if (file_exists("{$CFG->dirroot}/theme/essential/essential_admin_setting_configinteger.php")) {
         require_once($CFG->dirroot . '/theme/essential/essential_admin_setting_configinteger.php');
@@ -35,24 +51,20 @@ if (is_siteadmin()) {
         require_once($CFG->themedir . '/essential/essential_admin_setting_configinteger.php');
     }
 
-    $ADMIN->add('themes', new admin_category('theme_essential', 'Essential'));
-
     // Generic Settings.
-    $temp = new admin_settingpage('theme_essential_generic', get_string('genericsettings', 'theme_essential'));
-
     $sponsor = new moodle_url('http://moodle.org/user/profile.php?id=442195');
     $sponsor = html_writer::link($sponsor, get_string('paypal_click', 'theme_essential'), array('target' => '_blank'));
 
     $flattr = new moodle_url('https://flattr.com/profile/gjb2048');
     $flattr = html_writer::link($flattr, get_string('flattr_click', 'theme_essential'), array('target' => '_blank'));
 
-    $temp->add(new admin_setting_heading('theme_essential_generalsponsor',
+    $essentialsettingsgeneric->add(new admin_setting_heading('theme_essential_generalsponsor',
         get_string('sponsor_title', 'theme_essential'),
         get_string('sponsor_desc', 'theme_essential') . get_string('paypal_desc', 'theme_essential',
             array('url' => $sponsor)).get_string('flattr_desc', 'theme_essential',
             array('url' => $flattr)).get_string('sponsor_desc2', 'theme_essential')));
 
-    $temp->add(new admin_setting_heading('theme_essential_generalheading',
+    $essentialsettingsgeneric->add(new admin_setting_heading('theme_essential_generalheading',
         get_string('generalheadingsub', 'theme_essential'),
         format_text(get_string('generalheadingdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
@@ -62,7 +74,7 @@ if (is_siteadmin()) {
     $description = get_string('pagebackgrounddesc', 'theme_essential');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'pagebackground');
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsgeneric->add($setting);
 
     // Background style.
     $name = 'theme_essential/pagebackgroundstyle';
@@ -77,7 +89,7 @@ if (is_siteadmin()) {
         )
     );
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsgeneric->add($setting);
 
     // Fixed or Variable Width.
     $name = 'theme_essential/pagewidth';
@@ -91,7 +103,7 @@ if (is_siteadmin()) {
         100 => get_string('variablewidth', 'theme_essential'));
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsgeneric->add($setting);
 
     // Custom favicon.
     $name = 'theme_essential/favicon';
@@ -99,7 +111,7 @@ if (is_siteadmin()) {
     $description = get_string('favicondesc', 'theme_essential');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'favicon');
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsgeneric->add($setting);
 
     // Custom CSS file.
     $name = 'theme_essential/customcss';
@@ -108,20 +120,17 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtextarea($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsgeneric->add($setting);
 
     $readme = new moodle_url('/theme/essential/README.txt');
     $readme = html_writer::link($readme, get_string('readme_click', 'theme_essential'), array('target' => '_blank'));
 
-    $temp->add(new admin_setting_heading('theme_essential_generalreadme', get_string('readme_title', 'theme_essential'),
+    $essentialsettingsgeneric->add(new admin_setting_heading('theme_essential_generalreadme', get_string('readme_title', 'theme_essential'),
         get_string('readme_desc', 'theme_essential', array('url' => $readme))));
-
-    $ADMIN->add('theme_essential', $temp);
 
 
     /* Feature Settings */
-    $temp = new admin_settingpage('theme_essential_feature', get_string('featureheading', 'theme_essential'));
-    $temp->add(new admin_setting_heading('theme_essential_feature', get_string('featureheadingsub', 'theme_essential'),
+    $essentialsettingsfeature->add(new admin_setting_heading('theme_essential_feature', get_string('featureheadingsub', 'theme_essential'),
         format_text(get_string('featuredesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
     // Course content search.
@@ -131,7 +140,7 @@ if (is_siteadmin()) {
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfeature->add($setting);
 
     // Custom scrollbars.
     $name = 'theme_essential/customscrollbars';
@@ -140,7 +149,7 @@ if (is_siteadmin()) {
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfeature->add($setting);
 
     // Fitvids.
     $name = 'theme_essential/fitvids';
@@ -149,7 +158,7 @@ if (is_siteadmin()) {
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfeature->add($setting);
 
     // Floating submit buttons.
     $name = 'theme_essential/floatingsubmitbuttons';
@@ -157,7 +166,7 @@ if (is_siteadmin()) {
     $description = get_string('floatingsubmitbuttonsdesc', 'theme_essential');
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $temp->add($setting);
+    $essentialsettingsfeature->add($setting);
 
     // Custom or standard layout.
     $name = 'theme_essential/layout';
@@ -166,7 +175,7 @@ if (is_siteadmin()) {
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfeature->add($setting);
 
     // Return to section.
     $name = 'theme_essential/returntosectionfeature';
@@ -174,7 +183,7 @@ if (is_siteadmin()) {
     $description = get_string('returntosectionfeaturedesc', 'theme_essential');
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $temp->add($setting);
+    $essentialsettingsfeature->add($setting);
 
     // Return to section name text limit.
     $name = 'theme_essential/returntosectiontextlimitfeature';
@@ -185,13 +194,10 @@ if (is_siteadmin()) {
     $description = get_string('returntosectiontextlimitfeaturedesc', 'theme_essential',
         array('lower' => $lower, 'upper' => $upper));
     $setting = new essential_admin_setting_configinteger($name, $title, $description, $default, $lower, $upper);
-    $temp->add($setting);
-
-    $ADMIN->add('theme_essential', $temp);
+    $essentialsettingsfeature->add($setting);
 
     /* Colour Settings */
-    $temp = new admin_settingpage('theme_essential_colour', get_string('colorheading', 'theme_essential'));
-    $temp->add(new admin_setting_heading('theme_essential_colour', get_string('colorheadingsub', 'theme_essential'),
+    $essentialsettingscolour->add(new admin_setting_heading('theme_essential_colour', get_string('colorheadingsub', 'theme_essential'),
         format_text(get_string('colordesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
     // Main theme colour setting.
@@ -202,7 +208,7 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingscolour->add($setting);
 
     // Main theme text colour setting.
     $name = 'theme_essential/themetextcolor';
@@ -212,7 +218,7 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingscolour->add($setting);
 
     // Main theme link colour setting.
     $name = 'theme_essential/themeurlcolor';
@@ -222,7 +228,7 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingscolour->add($setting);
 
     // Main theme hover colour setting.
     $name = 'theme_essential/themehovercolor';
@@ -232,7 +238,7 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingscolour->add($setting);
 
     // Icon colour setting.
     $name = 'theme_essential/themeiconcolor';
@@ -242,7 +248,7 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingscolour->add($setting);
 
     // Default button text colour setting.
     $name = 'theme_essential/themedefaultbuttontextcolour';
@@ -252,7 +258,7 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingscolour->add($setting);
 
     // Default button text hover colour setting.
     $name = 'theme_essential/themedefaultbuttontexthovercolour';
@@ -262,7 +268,7 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingscolour->add($setting);
 
     // Default button background colour setting.
     $name = 'theme_essential/themedefaultbuttonbackgroundcolour';
@@ -272,7 +278,7 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingscolour->add($setting);
 
     // Default button background hover colour setting.
     $name = 'theme_essential/themedefaultbuttonbackgroundhovercolour';
@@ -282,7 +288,7 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingscolour->add($setting);
 
     // Navigation colour setting.
     $name = 'theme_essential/themenavcolor';
@@ -292,14 +298,14 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingscolour->add($setting);
 
     // This is the descriptor for the Footer.
     $name = 'theme_essential/footercolorinfo';
     $heading = get_string('footercolors', 'theme_essential');
     $information = get_string('footercolorsdesc', 'theme_essential');
     $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
+    $essentialsettingscolour->add($setting);
 
     // Footer background colour setting.
     $name = 'theme_essential/footercolor';
@@ -309,7 +315,7 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingscolour->add($setting);
 
     // Footer text colour setting.
     $name = 'theme_essential/footertextcolor';
@@ -319,7 +325,7 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingscolour->add($setting);
 
     // Footer heading colour setting.
     $name = 'theme_essential/footerheadingcolor';
@@ -329,7 +335,7 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingscolour->add($setting);
 
     // Footer block background colour setting.
     $name = 'theme_essential/footerblockbackgroundcolour';
@@ -339,7 +345,7 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingscolour->add($setting);
 
     // Footer block text colour setting.
     $name = 'theme_essential/footerblocktextcolour';
@@ -349,7 +355,7 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingscolour->add($setting);
 
     // Footer block URL colour setting.
     $name = 'theme_essential/footerblockurlcolour';
@@ -359,7 +365,7 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingscolour->add($setting);
 
     // Footer block URL hover colour setting.
     $name = 'theme_essential/footerblockhovercolour';
@@ -369,7 +375,7 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingscolour->add($setting);
 
     // Footer Seperator colour setting.
     $name = 'theme_essential/footersepcolor';
@@ -379,7 +385,7 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingscolour->add($setting);
 
     // Footer URL colour setting.
     $name = 'theme_essential/footerurlcolor';
@@ -389,7 +395,7 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingscolour->add($setting);
 
     // Footer URL hover colour setting.
     $name = 'theme_essential/footerhovercolor';
@@ -399,14 +405,14 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingscolour->add($setting);
 
     // This is the descriptor for the user theme colours.
     $name = 'theme_essential/alternativethemecolorsinfo';
     $heading = get_string('alternativethemecolors', 'theme_essential');
     $information = get_string('alternativethemecolorsdesc', 'theme_essential');
     $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
+    $essentialsettingscolour->add($setting);
 
     $defaultalternativethemecolors = array('#a430d1', '#d15430', '#5dd130', '#006b94');
     $defaultalternativethemehovercolors = array('#9929c4', '#c44c29', '#53c429', '#4090af');
@@ -419,7 +425,7 @@ if (is_siteadmin()) {
         $default = false;
         $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscolour->add($setting);
 
         // User theme colour name.
         $name = 'theme_essential/alternativethemename' . $alternativethemenumber;
@@ -428,7 +434,7 @@ if (is_siteadmin()) {
         $default = get_string('alternativecolors', 'theme_essential', $alternativethemenumber);
         $setting = new admin_setting_configtext($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscolour->add($setting);
 
         // User theme colour setting.
         $name = 'theme_essential/alternativethemecolor' . $alternativethemenumber;
@@ -438,7 +444,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscolour->add($setting);
 
         // Alternative theme text colour setting.
         $name = 'theme_essential/alternativethemetextcolor' . $alternativethemenumber;
@@ -448,7 +454,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscolour->add($setting);
 
         // Alternative theme link colour setting.
         $name = 'theme_essential/alternativethemeurlcolor' . $alternativethemenumber;
@@ -458,7 +464,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscolour->add($setting);
 
         // Alternative theme link hover colour setting.
         $name = 'theme_essential/alternativethemehovercolor' . $alternativethemenumber;
@@ -468,7 +474,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscolour->add($setting);
 
         // Alternative theme default button text colour setting.
         $name = 'theme_essential/alternativethemedefaultbuttontextcolour' . $alternativethemenumber;
@@ -478,7 +484,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscolour->add($setting);
 
         // Alternative theme default button text hover colour setting.
         $name = 'theme_essential/alternativethemedefaultbuttontexthovercolour' . $alternativethemenumber;
@@ -489,7 +495,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscolour->add($setting);
 
         // Alternative theme default button background colour setting.
         $name = 'theme_essential/alternativethemedefaultbuttonbackgroundcolour' . $alternativethemenumber;
@@ -499,7 +505,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscolour->add($setting);
 
         // Alternative theme default button background hover colour setting.
         $name = 'theme_essential/alternativethemedefbuttonbackgroundhvrcolour' . $alternativethemenumber;
@@ -510,7 +516,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscolour->add($setting);
 
         // Alternative theme icon colour setting.
         $name = 'theme_essential/alternativethemeiconcolor' . $alternativethemenumber;
@@ -520,7 +526,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscolour->add($setting);
 
         // Alternative theme nav colour setting.
         $name = 'theme_essential/alternativethemenavcolor' . $alternativethemenumber;
@@ -530,7 +536,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscolour->add($setting);
 
         // Footer background colour setting.
         $name = 'theme_essential/alternativethemefootercolor' . $alternativethemenumber;
@@ -540,7 +546,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscolour->add($setting);
 
         // Footer text colour setting.
         $name = 'theme_essential/alternativethemefootertextcolor' . $alternativethemenumber;
@@ -550,7 +556,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscolour->add($setting);
 
         // Footer heading colour setting.
         $name = 'theme_essential/alternativethemefooterheadingcolor' . $alternativethemenumber;
@@ -560,7 +566,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscolour->add($setting);
 
         // Footer block background colour setting.
         $name = 'theme_essential/alternativethemefooterblockbackgroundcolour' . $alternativethemenumber;
@@ -571,7 +577,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscolour->add($setting);
 
         // Footer block text colour setting.
         $name = 'theme_essential/alternativethemefooterblocktextcolour' . $alternativethemenumber;
@@ -582,7 +588,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscolour->add($setting);
 
         // Footer block URL colour setting.
         $name = 'theme_essential/alternativethemefooterblockurlcolour' . $alternativethemenumber;
@@ -592,7 +598,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscolour->add($setting);
 
         // Footer block URL hover colour setting.
         $name = 'theme_essential/alternativethemefooterblockhovercolour' . $alternativethemenumber;
@@ -603,7 +609,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscolour->add($setting);
 
         // Footer seperator colour setting.
         $name = 'theme_essential/alternativethemefootersepcolor' . $alternativethemenumber;
@@ -613,7 +619,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscolour->add($setting);
 
         // Footer URL colour setting.
         $name = 'theme_essential/alternativethemefooterurlcolor' . $alternativethemenumber;
@@ -623,7 +629,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscolour->add($setting);
 
         // Footer URL hover colour setting.
         $name = 'theme_essential/alternativethemefooterhovercolor' . $alternativethemenumber;
@@ -633,13 +639,10 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscolour->add($setting);
     }
 
-    $ADMIN->add('theme_essential', $temp);
-
     /* Header Settings */
-    $temp = new admin_settingpage('theme_essential_header', get_string('headerheading', 'theme_essential'));
 
     // New or old navbar.
     $name = 'theme_essential/oldnavbar';
@@ -648,7 +651,7 @@ if (is_siteadmin()) {
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // Default Site icon setting.
     $name = 'theme_essential/siteicon';
@@ -656,7 +659,7 @@ if (is_siteadmin()) {
     $description = get_string('siteicondesc', 'theme_essential');
     $default = 'laptop';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // Logo file setting.
     $name = 'theme_essential/logo';
@@ -664,7 +667,7 @@ if (is_siteadmin()) {
     $description = get_string('logodesc', 'theme_essential');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'logo');
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // Logo height setting.
     $name = 'theme_essential/logoheight';
@@ -672,7 +675,7 @@ if (is_siteadmin()) {
     $description = get_string('logoheightdesc', 'theme_essential');
     $default = '65px';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // Header title setting.
     $name = 'theme_essential/headertitle';
@@ -688,7 +691,7 @@ if (is_siteadmin()) {
     );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // Navbar title setting.
     $name = 'theme_essential/navbartitle';
@@ -702,7 +705,7 @@ if (is_siteadmin()) {
     );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // Header text colour setting.
     $name = 'theme_essential/headertextcolor';
@@ -712,7 +715,7 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // Header Background Image.
     $name = 'theme_essential/headerbackground';
@@ -720,7 +723,7 @@ if (is_siteadmin()) {
     $description = get_string('headerbackgrounddesc', 'theme_essential');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'headerbackground');
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // Choose breadcrumbstyle.
     $name = 'theme_essential/breadcrumbstyle';
@@ -736,14 +739,14 @@ if (is_siteadmin()) {
     );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     /* Course Menu Settings */
     $name = 'theme_essential/mycoursesinfo';
     $heading = get_string('mycoursesinfo', 'theme_essential');
     $information = get_string('mycoursesinfodesc', 'theme_essential');
     $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // Toggle courses display in custommenu.
     $name = 'theme_essential/displaymycourses';
@@ -752,7 +755,7 @@ if (is_siteadmin()) {
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // Set terminology for dropdown course list.
     $name = 'theme_essential/mycoursetitle';
@@ -767,7 +770,7 @@ if (is_siteadmin()) {
     );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // Helplink type.
     $name = 'theme_essential/helplinktype';
@@ -780,7 +783,7 @@ if (is_siteadmin()) {
     );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // Helplink.
     $name = 'theme_essential/helplink';
@@ -789,31 +792,31 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     /* Editing Menu Settings */
     $name = 'theme_essential/editingmenu';
     $heading = get_string('editingmenu', 'theme_essential');
     $information = get_string('editingmenudesc', 'theme_essential');
     $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     $name = 'theme_essential/displayeditingmenu';
     $title = get_string('displayeditingmenu', 'theme_essential');
     $description = get_string('displayeditingmenudesc', 'theme_essential');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     $name = 'theme_essential/hidedefaulteditingbutton';
     $title = get_string('hidedefaulteditingbutton', 'theme_essential');
     $description = get_string('hidedefaulteditingbuttondesc', 'theme_essential');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     /* Social Network Settings */
-    $temp->add(new admin_setting_heading('theme_essential_social', get_string('socialheadingsub', 'theme_essential'),
+    $essentialsettingsheader->add(new admin_setting_heading('theme_essential_social', get_string('socialheadingsub', 'theme_essential'),
         format_text(get_string('socialdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
     // Website url setting.
@@ -823,7 +826,7 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // Facebook url setting.
     $name = 'theme_essential/facebook';
@@ -832,7 +835,7 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // Flickr url setting.
     $name = 'theme_essential/flickr';
@@ -841,7 +844,7 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // Twitter url setting.
     $name = 'theme_essential/twitter';
@@ -850,7 +853,7 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // Google+ url setting.
     $name = 'theme_essential/googleplus';
@@ -859,7 +862,7 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // LinkedIn url setting.
     $name = 'theme_essential/linkedin';
@@ -868,7 +871,7 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // Pinterest url setting.
     $name = 'theme_essential/pinterest';
@@ -877,7 +880,7 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // Instagram url setting.
     $name = 'theme_essential/instagram';
@@ -886,7 +889,7 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // YouTube url setting.
     $name = 'theme_essential/youtube';
@@ -895,7 +898,7 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // Skype url setting.
     $name = 'theme_essential/skype';
@@ -904,7 +907,7 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // VKontakte url setting.
     $name = 'theme_essential/vk';
@@ -913,10 +916,10 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     /* Apps Settings */
-    $temp->add(new admin_setting_heading('theme_essential_mobileapps',
+    $essentialsettingsheader->add(new admin_setting_heading('theme_essential_mobileapps',
         get_string('mobileappsheadingsub', 'theme_essential'),
         format_text(get_string('mobileappsdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
@@ -927,7 +930,7 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // Windows App url setting.
     $name = 'theme_essential/windows';
@@ -936,7 +939,7 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // Windows PhoneApp url setting.
     $name = 'theme_essential/winphone';
@@ -945,7 +948,7 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // The iOS App url setting.
     $name = 'theme_essential/ios';
@@ -954,14 +957,14 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // This is the descriptor for iOS Icons.
     $name = 'theme_essential/iosiconinfo';
     $heading = get_string('iosicon', 'theme_essential');
     $information = get_string('iosicondesc', 'theme_essential');
     $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // The iPhone Icon.
     $name = 'theme_essential/iphoneicon';
@@ -969,7 +972,7 @@ if (is_siteadmin()) {
     $description = get_string('iphoneicondesc', 'theme_essential');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'iphoneicon');
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // The iPhone Retina Icon.
     $name = 'theme_essential/iphoneretinaicon';
@@ -977,7 +980,7 @@ if (is_siteadmin()) {
     $description = get_string('iphoneretinaicondesc', 'theme_essential');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'iphoneretinaicon');
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // The iPad Icon.
     $name = 'theme_essential/ipadicon';
@@ -985,7 +988,7 @@ if (is_siteadmin()) {
     $description = get_string('ipadicondesc', 'theme_essential');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'ipadicon');
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsheader->add($setting);
 
     // The iPad Retina Icon.
     $name = 'theme_essential/ipadretinaicon';
@@ -993,19 +996,16 @@ if (is_siteadmin()) {
     $description = get_string('ipadretinaicondesc', 'theme_essential');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'ipadretinaicon');
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $ADMIN->add('theme_essential', $temp);
+    $essentialsettingsheader->add($setting);
 
 
     /* Font Settings */
-    $temp = new admin_settingpage('theme_essential_font', get_string('fontsettings', 'theme_essential'));
     // This is the descriptor for the font settings.
     $name = 'theme_essential/fontheading';
     $heading = get_string('fontheadingsub', 'theme_essential');
     $information = get_string('fontheadingdesc', 'theme_essential');
     $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
+    $essentialsettingsfont->add($setting);
 
     // Font Selector.
     $name = 'theme_essential/fontselect';
@@ -1019,7 +1019,7 @@ if (is_siteadmin()) {
     );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfont->add($setting);
 
     // Heading font name.
     $name = 'theme_essential/fontnameheading';
@@ -1028,7 +1028,7 @@ if (is_siteadmin()) {
     $default = 'Verdana';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfont->add($setting);
 
     // Text font name.
     $name = 'theme_essential/fontnamebody';
@@ -1037,7 +1037,7 @@ if (is_siteadmin()) {
     $default = 'Verdana';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfont->add($setting);
 
     if (get_config('theme_essential', 'fontselect') === "2") {
         // Google Font Character Sets.
@@ -1056,7 +1056,7 @@ if (is_siteadmin()) {
             )
         );
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsfont->add($setting);
     } else if (get_config('theme_essential', 'fontselect') === "3") {
 
         if (floatval($CFG->version) >= 2014111005.01) { // 2.8.5+ (Build: 20150313) which has MDL-49074 integrated into it.
@@ -1070,7 +1070,7 @@ if (is_siteadmin()) {
         $heading = get_string('fontfiles', 'theme_essential');
         $information = get_string('fontfilesdesc', 'theme_essential');
         $setting = new admin_setting_heading($name, $heading, $information);
-        $temp->add($setting);
+        $essentialsettingsfont->add($setting);
 
         // Heading Fonts.
         // TTF Font.
@@ -1079,7 +1079,7 @@ if (is_siteadmin()) {
         $description = '';
         $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfilettfheading');
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsfont->add($setting);
 
         // OTF Font.
         $name = 'theme_essential/fontfileotfheading';
@@ -1087,7 +1087,7 @@ if (is_siteadmin()) {
         $description = '';
         $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfileotfheading');
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsfont->add($setting);
 
         // WOFF Font.
         $name = 'theme_essential/fontfilewoffheading';
@@ -1095,7 +1095,7 @@ if (is_siteadmin()) {
         $description = '';
         $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfilewoffheading');
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsfont->add($setting);
 
         if ($woff2) {
             // WOFF2 Font.
@@ -1104,7 +1104,7 @@ if (is_siteadmin()) {
             $description = '';
             $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfilewofftwoheading');
             $setting->set_updatedcallback('theme_reset_all_caches');
-            $temp->add($setting);
+            $essentialsettingsfont->add($setting);
         }
 
         // EOT Font.
@@ -1113,7 +1113,7 @@ if (is_siteadmin()) {
         $description = '';
         $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfileweotheading');
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsfont->add($setting);
 
         // SVG Font.
         $name = 'theme_essential/fontfilesvgheading';
@@ -1121,7 +1121,7 @@ if (is_siteadmin()) {
         $description = '';
         $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfilesvgheading');
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsfont->add($setting);
 
         // Body fonts.
         // TTF Font.
@@ -1130,7 +1130,7 @@ if (is_siteadmin()) {
         $description = '';
         $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfilettfbody');
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsfont->add($setting);
 
         // OTF Font.
         $name = 'theme_essential/fontfileotfbody';
@@ -1138,7 +1138,7 @@ if (is_siteadmin()) {
         $description = '';
         $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfileotfbody');
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsfont->add($setting);
 
         // WOFF Font.
         $name = 'theme_essential/fontfilewoffbody';
@@ -1146,7 +1146,7 @@ if (is_siteadmin()) {
         $description = '';
         $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfilewoffbody');
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsfont->add($setting);
 
         if ($woff2) {
             // WOFF2 Font.
@@ -1155,7 +1155,7 @@ if (is_siteadmin()) {
             $description = '';
             $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfilewofftwobody');
             $setting->set_updatedcallback('theme_reset_all_caches');
-            $temp->add($setting);
+            $essentialsettingsfont->add($setting);
         }
 
         // EOT Font.
@@ -1164,7 +1164,7 @@ if (is_siteadmin()) {
         $description = '';
         $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfileweotbody');
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsfont->add($setting);
 
         // SVG Font.
         $name = 'theme_essential/fontfilesvgbody';
@@ -1172,13 +1172,10 @@ if (is_siteadmin()) {
         $description = '';
         $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfilesvgbody');
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsfont->add($setting);
     }
 
-    $ADMIN->add('theme_essential', $temp);
-
     /* Footer Settings */
-    $temp = new admin_settingpage('theme_essential_footer', get_string('footerheading', 'theme_essential'));
 
     // Copyright setting.
     $name = 'theme_essential/copyright';
@@ -1186,7 +1183,7 @@ if (is_siteadmin()) {
     $description = get_string('copyrightdesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $temp->add($setting);
+    $essentialsettingsfooter->add($setting);
 
     // Footnote setting.
     $name = 'theme_essential/footnote';
@@ -1195,7 +1192,7 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfooter->add($setting);
 
     // Performance Information Display.
     $name = 'theme_essential/perfinfo';
@@ -1207,11 +1204,9 @@ if (is_siteadmin()) {
     $choices = array('min' => $perfmin, 'max' => $perfmax);
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfooter->add($setting);
 
-    $ADMIN->add('theme_essential', $temp);
-
-    $temp = new admin_settingpage('theme_essential_frontpage', get_string('frontpageheading', 'theme_essential'));
+    /* Frontpage Settings */
 
     $name = 'theme_essential/courselistteachericon';
     $title = get_string('courselistteachericon', 'theme_essential');
@@ -1219,9 +1214,9 @@ if (is_siteadmin()) {
     $default = 'graduation-cap';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
-    $temp->add(new admin_setting_heading('theme_essential_frontcontent',
+    $essentialsettingsfrontpage->add(new admin_setting_heading('theme_essential_frontcontent',
         get_string('frontcontentheading', 'theme_essential'), ''));
 
     // Toggle Frontpage Content.
@@ -1236,7 +1231,7 @@ if (is_siteadmin()) {
     $choices = array(1 => $alwaysdisplay, 2 => $displaybeforelogin, 3 => $displayafterlogin, 0 => $dontdisplay);
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
     // Frontpage Content.
     $name = 'theme_essential/frontcontentarea';
@@ -1245,13 +1240,13 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
     $name = 'theme_essential_frontpageblocksheading';
     $heading = get_string('frontpageblocksheading', 'theme_essential');
     $information = '';
     $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
     // Frontpage Block alignment.
     $name = 'theme_essential/frontpageblocks';
@@ -1263,7 +1258,7 @@ if (is_siteadmin()) {
     $choices = array(1 => $left, 0 => $right);
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
     // Toggle Frontpage Middle Blocks.
     $name = 'theme_essential/frontpagemiddleblocks';
@@ -1277,11 +1272,11 @@ if (is_siteadmin()) {
     $choices = array(1 => $alwaysdisplay, 2 => $displaybeforelogin, 3 => $displayafterlogin, 0 => $dontdisplay);
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
 
     /* Marketing Spot Settings */
-    $temp->add(new admin_setting_heading('theme_essential_marketing',
+    $essentialsettingsfrontpage->add(new admin_setting_heading('theme_essential_marketing',
         get_string('marketingheadingsub', 'theme_essential'),
         format_text(get_string('marketingdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
@@ -1297,7 +1292,7 @@ if (is_siteadmin()) {
     $choices = array(1 => $alwaysdisplay, 2 => $displaybeforelogin, 3 => $displayafterlogin, 0 => $dontdisplay);
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
     // Marketing Spot Height.
     $name = 'theme_essential/marketingheight';
@@ -1309,7 +1304,7 @@ if (is_siteadmin()) {
         $choices[$mhit] = $mhit;
     }
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
     // Marketing Spot Image Height.
     $name = 'theme_essential/marketingimageheight';
@@ -1318,7 +1313,7 @@ if (is_siteadmin()) {
     $default = 100;
     $choices = array(50 => '50', 100 => '100', 150 => '150', 200 => '200', 250 => '250', 300 => '300');
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
     foreach (range(1, 3) as $marketingspotnumber) {
         // This is the descriptor for Marketing Spot in $marketingspotnumber.
@@ -1326,7 +1321,7 @@ if (is_siteadmin()) {
         $heading = get_string('marketing' . $marketingspotnumber, 'theme_essential');
         $information = get_string('marketinginfodesc', 'theme_essential');
         $setting = new admin_setting_heading($name, $heading, $information);
-        $temp->add($setting);
+        $essentialsettingsfrontpage->add($setting);
 
         // Marketing Spot.
         $name = 'theme_essential/marketing' . $marketingspotnumber;
@@ -1335,7 +1330,7 @@ if (is_siteadmin()) {
         $default = '';
         $setting = new admin_setting_configtext($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsfrontpage->add($setting);
 
         $name = 'theme_essential/marketing' . $marketingspotnumber . 'icon';
         $title = get_string('marketingicon', 'theme_essential');
@@ -1343,7 +1338,7 @@ if (is_siteadmin()) {
         $default = 'star';
         $setting = new admin_setting_configtext($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsfrontpage->add($setting);
 
         $name = 'theme_essential/marketing' . $marketingspotnumber . 'image';
         $title = get_string('marketingimage', 'theme_essential');
@@ -1351,7 +1346,7 @@ if (is_siteadmin()) {
         $setting = new admin_setting_configstoredfile($name, $title, $description,
                 'marketing' . $marketingspotnumber . 'image');
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsfrontpage->add($setting);
 
         $name = 'theme_essential/marketing' . $marketingspotnumber . 'content';
         $title = get_string('marketingcontent', 'theme_essential');
@@ -1359,7 +1354,7 @@ if (is_siteadmin()) {
         $default = '';
         $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsfrontpage->add($setting);
 
         $name = 'theme_essential/marketing' . $marketingspotnumber . 'buttontext';
         $title = get_string('marketingbuttontext', 'theme_essential');
@@ -1367,7 +1362,7 @@ if (is_siteadmin()) {
         $default = '';
         $setting = new admin_setting_configtext($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsfrontpage->add($setting);
 
         $name = 'theme_essential/marketing' . $marketingspotnumber . 'buttonurl';
         $title = get_string('marketingbuttonurl', 'theme_essential');
@@ -1375,7 +1370,7 @@ if (is_siteadmin()) {
         $default = '';
         $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsfrontpage->add($setting);
 
         $name = 'theme_essential/marketing' . $marketingspotnumber . 'target';
         $title = get_string('marketingurltarget', 'theme_essential');
@@ -1387,11 +1382,11 @@ if (is_siteadmin()) {
         $choices = array('_self' => $target1, '_blank' => $target2, '_parent' => $target3);
         $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsfrontpage->add($setting);
     }
 
     /* User Alerts */
-    $temp->add(new admin_setting_heading('theme_essential_alerts', get_string('alertsheadingsub', 'theme_essential'),
+    $essentialsettingsfrontpage->add(new admin_setting_heading('theme_essential_alerts', get_string('alertsheadingsub', 'theme_essential'),
         format_text(get_string('alertsdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
     $information = get_string('alertinfodesc', 'theme_essential');
@@ -1400,7 +1395,7 @@ if (is_siteadmin()) {
     $name = 'theme_essential/alert1info';
     $heading = get_string('alert1', 'theme_essential');
     $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
     // Enable Alert.
     $name = 'theme_essential/enable1alert';
@@ -1409,7 +1404,7 @@ if (is_siteadmin()) {
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
     // Alert Type.
     $name = 'theme_essential/alert1type';
@@ -1422,7 +1417,7 @@ if (is_siteadmin()) {
     $choices = array('info' => $alertinfo, 'error' => $alertwarning, 'success' => $alertgeneral);
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
     // Alert Title.
     $name = 'theme_essential/alert1title';
@@ -1431,7 +1426,7 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
     // Alert Text.
     $name = 'theme_essential/alert1text';
@@ -1440,13 +1435,13 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtextarea($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
     // This is the descriptor for Alert Two.
     $name = 'theme_essential/alert2info';
     $heading = get_string('alert2', 'theme_essential');
     $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
     // Enable Alert.
     $name = 'theme_essential/enable2alert';
@@ -1455,7 +1450,7 @@ if (is_siteadmin()) {
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
     // Alert Type.
     $name = 'theme_essential/alert2type';
@@ -1468,7 +1463,7 @@ if (is_siteadmin()) {
     $choices = array('info' => $alertinfo, 'error' => $alertwarning, 'success' => $alertgeneral);
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
     // Alert Title.
     $name = 'theme_essential/alert2title';
@@ -1477,7 +1472,7 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
     // Alert Text.
     $name = 'theme_essential/alert2text';
@@ -1486,13 +1481,13 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtextarea($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
     // This is the descriptor for Alert Three.
     $name = 'theme_essential/alert3info';
     $heading = get_string('alert3', 'theme_essential');
     $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
     // Enable Alert.
     $name = 'theme_essential/enable3alert';
@@ -1501,7 +1496,7 @@ if (is_siteadmin()) {
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
     // Alert Type.
     $name = 'theme_essential/alert3type';
@@ -1514,7 +1509,7 @@ if (is_siteadmin()) {
     $choices = array('info' => $alertinfo, 'error' => $alertwarning, 'success' => $alertgeneral);
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
     // Alert Title.
     $name = 'theme_essential/alert3title';
@@ -1523,7 +1518,7 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsfrontpage->add($setting);
 
     // Alert Text.
     $name = 'theme_essential/alert3text';
@@ -1532,13 +1527,10 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_configtextarea($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $ADMIN->add('theme_essential', $temp);
+    $essentialsettingsfrontpage->add($setting);
 
     /* Slideshow Widget Settings */
-    $temp = new admin_settingpage('theme_essential_slideshow', get_string('slideshowheading', 'theme_essential'));
-    $temp->add(new admin_setting_heading('theme_essential_slideshow',
+    $essentialsettingsslideshow->add(new admin_setting_heading('theme_essential_slideshow',
         get_string('slideshowheadingsub', 'theme_essential'),
         format_text(get_string('slideshowdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
@@ -1554,7 +1546,7 @@ if (is_siteadmin()) {
     $choices = array(1 => $alwaysdisplay, 2 => $displaybeforelogin, 3 => $displayafterlogin, 0 => $dontdisplay);
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsslideshow->add($setting);
 
     // Number of slides.
     $name = 'theme_essential/numberofslides';
@@ -1579,7 +1571,7 @@ if (is_siteadmin()) {
         15 => '15',
         16 => '16'
     );
-    $temp->add(new admin_setting_configselect($name, $title, $description, $default, $choices));
+    $essentialsettingsslideshow->add(new admin_setting_configselect($name, $title, $description, $default, $choices));
 
     // Hide slideshow on phones.
     $name = 'theme_essential/hideontablet';
@@ -1588,7 +1580,7 @@ if (is_siteadmin()) {
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsslideshow->add($setting);
 
     // Hide slideshow on tablet.
     $name = 'theme_essential/hideonphone';
@@ -1597,7 +1589,7 @@ if (is_siteadmin()) {
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsslideshow->add($setting);
 
     // Slide interval.
     $name = 'theme_essential/slideinterval';
@@ -1606,7 +1598,7 @@ if (is_siteadmin()) {
     $default = '5000';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsslideshow->add($setting);
 
     // Slide caption text colour setting.
     $name = 'theme_essential/slidecaptiontextcolor';
@@ -1616,7 +1608,7 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsslideshow->add($setting);
 
     // Slide caption background colour setting.
     $name = 'theme_essential/slidecaptionbackgroundcolor';
@@ -1626,7 +1618,7 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsslideshow->add($setting);
 
     // Show caption options.
     $name = 'theme_essential/slidecaptionoptions';
@@ -1640,7 +1632,7 @@ if (is_siteadmin()) {
     );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsslideshow->add($setting);
 
     // Show caption centred.
     $name = 'theme_essential/slidecaptioncentred';
@@ -1649,7 +1641,7 @@ if (is_siteadmin()) {
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsslideshow->add($setting);
 
     // Slide button colour setting.
     $name = 'theme_essential/slidebuttoncolor';
@@ -1659,7 +1651,7 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsslideshow->add($setting);
 
     // Slide button hover colour setting.
     $name = 'theme_essential/slidebuttonhovercolor';
@@ -1669,14 +1661,14 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingsslideshow->add($setting);
 
     // This is the descriptor for the user theme slide colours.
     $name = 'theme_essential/alternativethemeslidecolorsinfo';
     $heading = get_string('alternativethemeslidecolors', 'theme_essential');
     $information = get_string('alternativethemeslidecolorsdesc', 'theme_essential');
     $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
+    $essentialsettingsslideshow->add($setting);
 
     foreach (range(1, 4) as $alternativethemenumber) {
         // Alternative theme slide caption text colour setting.
@@ -1688,7 +1680,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsslideshow->add($setting);
 
         // Alternative theme slide caption background colour setting.
         $name = 'theme_essential/alternativethemeslidecaptionbackgroundcolor' . $alternativethemenumber;
@@ -1699,7 +1691,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsslideshow->add($setting);
 
         // Alternative theme slide button colour setting.
         $name = 'theme_essential/alternativethemeslidebuttoncolor' . $alternativethemenumber;
@@ -1709,7 +1701,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsslideshow->add($setting);
 
         // Alternative theme slide button hover colour setting.
         $name = 'theme_essential/alternativethemeslidebuttonhovercolor' . $alternativethemenumber;
@@ -1720,7 +1712,7 @@ if (is_siteadmin()) {
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsslideshow->add($setting);
     }
 
     $numberofslides = get_config('theme_essential', 'numberofslides');
@@ -1730,7 +1722,7 @@ if (is_siteadmin()) {
         $heading = get_string('slideno', 'theme_essential', array('slide' => $i));
         $information = get_string('slidenodesc', 'theme_essential', array('slide' => $i));
         $setting = new admin_setting_heading($name, $heading, $information);
-        $temp->add($setting);
+        $essentialsettingsslideshow->add($setting);
 
         // Title.
         $name = 'theme_essential/slide'.$i;
@@ -1739,7 +1731,7 @@ if (is_siteadmin()) {
         $default = '';
         $setting = new admin_setting_configtext($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsslideshow->add($setting);
 
         // Image.
         $name = 'theme_essential/slide'.$i.'image';
@@ -1747,7 +1739,7 @@ if (is_siteadmin()) {
         $description = get_string('slideimagedesc', 'theme_essential');
         $setting = new admin_setting_configstoredfile($name, $title, $description, 'slide'.$i.'image');
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsslideshow->add($setting);
 
         // Caption text.
         $name = 'theme_essential/slide'.$i.'caption';
@@ -1756,7 +1748,7 @@ if (is_siteadmin()) {
         $default = '';
         $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsslideshow->add($setting);
 
         // URL.
         $name = 'theme_essential/slide'.$i.'url';
@@ -1765,7 +1757,7 @@ if (is_siteadmin()) {
         $default = '';
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsslideshow->add($setting);
 
         // URL target.
         $name = 'theme_essential/slide'.$i.'target';
@@ -1778,14 +1770,11 @@ if (is_siteadmin()) {
         $choices = array('_self' => $target1, '_blank' => $target2, '_parent' => $target3);
         $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingsslideshow->add($setting);
     }
 
-    $ADMIN->add('theme_essential', $temp);
-
     /* Category Settings */
-    $temp = new admin_settingpage('theme_essential_categoryicon', get_string('categoryiconheading', 'theme_essential'));
-    $temp->add(new admin_setting_heading('theme_essential_categoryicon',
+    $essentialsettingscategoryicon->add(new admin_setting_heading('theme_essential_categoryicon',
         get_string('categoryiconheadingsub', 'theme_essential'),
         format_text(get_string('categoryicondesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
@@ -1796,7 +1785,7 @@ if (is_siteadmin()) {
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $essentialsettingscategoryicon->add($setting);
 
     // We only want to output category icon options if the parent setting is enabled.
     if (get_config('theme_essential', 'enablecategoryicon')) {
@@ -1808,7 +1797,7 @@ if (is_siteadmin()) {
         $default = 'folder-open';
         $setting = new admin_setting_configtext($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscategoryicon->add($setting);
 
         // Category Icons.
         $name = 'theme_essential/enablecustomcategoryicon';
@@ -1816,7 +1805,7 @@ if (is_siteadmin()) {
         $description = get_string('enablecustomcategoryicondesc', 'theme_essential');
         $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
         $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+        $essentialsettingscategoryicon->add($setting);
 
         if (get_config('theme_essential', 'enablecustomcategoryicon')) {
 
@@ -1825,7 +1814,7 @@ if (is_siteadmin()) {
             $heading = get_string('categoryiconinfo', 'theme_essential');
             $information = get_string('categoryiconinfodesc', 'theme_essential');
             $setting = new admin_setting_heading($name, $heading, $information);
-            $temp->add($setting);
+            $essentialsettingscategoryicon->add($setting);
 
             // Get the default category icon.
             $defaultcategoryicon = get_config('theme_essential', 'defaultcategoryicon');
@@ -1847,17 +1836,14 @@ if (is_siteadmin()) {
                 $default = $defaultcategoryicon;
                 $setting = new admin_setting_configtext($name . $key, $title, $description, $default);
                 $setting->set_updatedcallback('theme_reset_all_caches');
-                $temp->add($setting);
+                $essentialsettingscategoryicon->add($setting);
             }
             unset($coursecats);
         }
     }
 
-    $ADMIN->add('theme_essential', $temp);
-
     /* Analytics Settings */
-    $temp = new admin_settingpage('theme_essential_analytics', get_string('analytics', 'theme_essential'));
-    $temp->add(new admin_setting_heading('theme_essential_analytics',
+    $essentialsettingsanalytics->add(new admin_setting_heading('theme_essential_analytics',
         get_string('analyticsheadingsub', 'theme_essential'),
         format_text(get_string('analyticsdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
@@ -1866,7 +1852,7 @@ if (is_siteadmin()) {
     $description = get_string('analyticsenableddesc', 'theme_essential');
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $temp->add($setting);
+    $essentialsettingsanalytics->add($setting);
 
     $name = 'theme_essential/analytics';
     $title = get_string('analytics', 'theme_essential');
@@ -1879,7 +1865,7 @@ if (is_siteadmin()) {
         'guniversal' => $guniversal
     );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $temp->add($setting);
+    $essentialsettingsanalytics->add($setting);
 
     if (get_config('theme_essential', 'analytics') === 'piwik') {
         $name = 'theme_essential/analyticssiteid';
@@ -1887,35 +1873,35 @@ if (is_siteadmin()) {
         $description = get_string('analyticssiteiddesc', 'theme_essential');
         $default = '1';
         $setting = new admin_setting_configtext($name, $title, $description, $default);
-        $temp->add($setting);
+        $essentialsettingsanalytics->add($setting);
 
         $name = 'theme_essential/analyticsimagetrack';
         $title = get_string('analyticsimagetrack', 'theme_essential');
         $description = get_string('analyticsimagetrackdesc', 'theme_essential');
         $default = true;
         $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-        $temp->add($setting);
+        $essentialsettingsanalytics->add($setting);
 
         $name = 'theme_essential/analyticssiteurl';
         $title = get_string('analyticssiteurl', 'theme_essential');
         $description = get_string('analyticssiteurldesc', 'theme_essential');
         $default = '';
         $setting = new admin_setting_configtext($name, $title, $description, $default);
-        $temp->add($setting);
+        $essentialsettingsanalytics->add($setting);
 
         $name = 'theme_essential/analyticsuseuserid';
         $title = get_string('analyticsuseuserid', 'theme_essential');
         $description = get_string('analyticsuseuseriddesc', 'theme_essential');
         $default = false;
         $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-        $temp->add($setting);
+        $essentialsettingsanalytics->add($setting);
     } else if (get_config('theme_essential', 'analytics') === 'guniversal') {
         $name = 'theme_essential/analyticstrackingid';
         $title = get_string('analyticstrackingid', 'theme_essential');
         $description = get_string('analyticstrackingiddesc', 'theme_essential');
         $default = 'UA-XXXXXXXX-X';
         $setting = new admin_setting_configtext($name, $title, $description, $default);
-        $temp->add($setting);
+        $essentialsettingsanalytics->add($setting);
     }
 
     $name = 'theme_essential/analyticstrackadmin';
@@ -1923,16 +1909,14 @@ if (is_siteadmin()) {
     $description = get_string('analyticstrackadmindesc', 'theme_essential');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $temp->add($setting);
+    $essentialsettingsanalytics->add($setting);
 
     $name = 'theme_essential/analyticscleanurl';
     $title = get_string('analyticscleanurl', 'theme_essential');
     $description = get_string('analyticscleanurldesc', 'theme_essential');
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $temp->add($setting);
-
-    $ADMIN->add('theme_essential', $temp);
+    $essentialsettingsanalytics->add($setting);
 
     // Style guide.
     if (file_exists("{$CFG->dirroot}/theme/essential/essential_admin_setting_styleguide.php")) {
@@ -1940,8 +1924,7 @@ if (is_siteadmin()) {
     } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/essential/essential_admin_setting_styleguide.php")) {
         require_once($CFG->themedir . '/essential/essential_admin_setting_styleguide.php');
     }
-    $temp = new admin_settingpage('theme_essential_styleguide', get_string('styleguide', 'theme_essential'));
-    $temp->add(new essential_admin_setting_styleguide('theme_essential_styleguide',
+    $essentialsettingsstyleguide->add(new essential_admin_setting_styleguide('theme_essential_styleguide',
         get_string('styleguidesub', 'theme_essential'),
         get_string('styleguidedesc', 'theme_essential',
             array(
@@ -1960,5 +1943,19 @@ if (is_siteadmin()) {
             )
         )
     ));
-    $ADMIN->add('theme_essential', $temp);
 }
+
+
+// Add pages to admin menu
+$ADMIN->add('theme_essential', $essentialsettingsgeneric);
+$ADMIN->add('theme_essential', $essentialsettingsfeature);
+$ADMIN->add('theme_essential', $essentialsettingscolour);
+$ADMIN->add('theme_essential', $essentialsettingsheader);
+$ADMIN->add('theme_essential', $essentialsettingsfont);
+$ADMIN->add('theme_essential', $essentialsettingsfooter);
+$ADMIN->add('theme_essential', $essentialsettingsfrontpage);
+$ADMIN->add('theme_essential', $essentialsettingsslideshow);
+$ADMIN->add('theme_essential', $essentialsettingscategoryicon);
+$ADMIN->add('theme_essential', $essentialsettingsanalytics);
+$ADMIN->add('theme_essential', $essentialsettingsstyleguide);
+
