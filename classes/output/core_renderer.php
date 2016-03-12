@@ -306,7 +306,7 @@ class core_renderer extends \core_renderer {
                 'data-toggle' => 'dropdown', 'title' => $menunode->get_title()));
             $content .= $menunode->get_text();
             if ($level == 1) {
-                $content .= '<i class="fa fa-caret-right"></i>';
+                $content .= $this->getfontawesomemarkup('caret-right');
             }
             $content .= '</a>';
             $content .= '<ul class="dropdown-menu">';
@@ -363,9 +363,9 @@ class core_renderer extends \core_renderer {
             } else {
                 $currentlang = $strlang;
             }
-            $this->language = $langmenu->add('<i class="fa fa-flag"></i>' . $currentlang, new moodle_url('#'), $strlang, 100);
+            $this->language = $langmenu->add($this->getfontawesomemarkup('flag').$currentlang, new moodle_url('#'), $strlang, 100);
             foreach ($langs as $langtype => $langname) {
-                $this->language->add('<i class="fa fa-language"></i>' . $langname, new moodle_url($this->page->url,
+                $this->language->add($this->getfontawesomemarkup('language').$langname, new moodle_url($this->page->url,
                     array('lang' => $langtype)), $langname);
             }
         }
@@ -393,7 +393,7 @@ class core_renderer extends \core_renderer {
             } else {
                 $branchtitle = get_string('mycourses', 'theme_essential');
             }
-            $branchlabel = '<i class="fa fa-briefcase"></i>' . $branchtitle;
+            $branchlabel = $this->getfontawesomemarkup('briefcase').$branchtitle;
             $branchurl = new moodle_url('');
             $branchsort = 200;
 
@@ -413,12 +413,12 @@ class core_renderer extends \core_renderer {
             if ($courses = enrol_get_my_courses(null, $sortorder . ' ASC')) {
                 foreach ($courses as $course) {
                     if ($course->visible) {
-                        $branch->add('<i class="fa fa-graduation-cap"></i>'.format_string($course->fullname),
+                        $branch->add('<span class="fa fa-graduation-cap"></span>'.format_string($course->fullname),
                             new moodle_url('/course/view.php?id=' . $course->id), format_string($course->shortname));
                         $numcourses += 1;
                     } else if (has_capability('moodle/course:viewhiddencourses', context_course::instance($course->id))) {
                         $branchtitle = format_string($course->shortname);
-                        $branchlabel = '<span class="dimmed_text"><i class="fa fa-eye-slash"></i>'.
+                        $branchlabel = '<span class="dimmed_text">'.$this->getfontawesomemarkup('slash').
                             format_string($course->fullname) . '</span>';
                         $branchurl = new moodle_url('/course/view.php', array('id' => $course->id));
                         $branch->add($branchlabel, $branchurl, $branchtitle);
@@ -450,13 +450,13 @@ class core_renderer extends \core_renderer {
             }
             if (!empty($alternativethemes)) {
                 $branchtitle = get_string('themecolors', 'theme_essential');
-                $branchlabel = '<i class="fa fa-th-large"></i>' . $branchtitle;
+                $branchlabel = $this->getfontawesomemarkup('th-large'). $branchtitle;
                 $branchurl = new moodle_url('#');
                 $branchsort = 300;
                 $branch = $colourmenu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 
                 $defaultthemecolorslabel = get_string('defaultcolors', 'theme_essential');
-                $branch->add('<i class="fa fa-square colours-default"></i>' . $defaultthemecolorslabel,
+                $branch->add($this->getfontawesomemarkup('square', array('colours-default')).$defaultthemecolorslabel,
                     new moodle_url($this->page->url, array('essentialcolours' => 'default')), $defaultthemecolorslabel);
                 foreach ($alternativethemes as $alternativethemenumber) {
                     if (\theme_essential\toolbox::get_setting('alternativethemename' . $alternativethemenumber)) {
@@ -465,7 +465,7 @@ class core_renderer extends \core_renderer {
                     } else {
                         $alternativethemeslabel = get_string('alternativecolors', 'theme_essential', $alternativethemenumber);
                     }
-                    $branch->add('<i class="fa fa-square colours-alternative'.$alternativethemenumber.'"></i>'.
+                    $branch->add($this->getfontawesomemarkup('square', array('colours-alternative'.$alternativethemenumber)).
                         $alternativethemeslabel,
                         new moodle_url($this->page->url, array('essentialcolours' => 'alternative' . $alternativethemenumber)),
                             $alternativethemeslabel);
@@ -491,17 +491,17 @@ class core_renderer extends \core_renderer {
             if (isset($this->page->course->id) && $this->page->course->id > 1) {
                 $activitystreammenu = new custom_menu();
                 $branchtitle = get_string('thiscourse', 'theme_essential');
-                $branchlabel = '<i class="fa fa-book"></i>'.$branchtitle;
+                $branchlabel = $this->getfontawesomemarkup('book').$branchtitle;
                 $branchurl = new moodle_url('#');
                 $branch = $activitystreammenu->add($branchlabel, $branchurl, $branchtitle, 10002);
                 $branchtitle = get_string('people', 'theme_essential');
-                $branchlabel = '<i class="fa fa-users"></i>'.$branchtitle;
+                $branchlabel = $this->getfontawesomemarkup('users').$branchtitle;
                 $branchurl = new moodle_url('/user/index.php', array('id' => $this->page->course->id));
                 $branch->add($branchlabel, $branchurl, $branchtitle, 100003);
                 if (((has_capability('gradereport/overview:view', $context) || has_capability('gradereport/user:view', $context)) &&
                         $this->page->course->showgrades) || has_capability('gradereport/grader:view', $context)) {
                     $branchtitle = get_string('grades');
-                    $branchlabel = '<i class="fa fa-list-alt icon"></i>' . $branchtitle;
+                    $branchlabel = $this->getfontawesomemarkup('list-alt', array('icon')).$branchtitle;
                     $branchurl = new moodle_url('/grade/report/index.php', array('id' => $this->page->course->id));
                     $branch->add($branchlabel, $branchurl, $branchtitle, 100004);
                 }
@@ -941,19 +941,19 @@ class core_renderer extends \core_renderer {
 
         if (!isloggedin()) {
             if ($this->page->pagelayout != 'login') {
-                $userpic = '<em><i class="fa fa-sign-in"></i>'.get_string('login').'</em>';
+                $userpic = '<em>'.$this->getfontawesomemarkup('sign-in').get_string('login').'</em>';
                 $usermenu .= html_writer::link($loginurl, $userpic, array('class' => 'loginurl'));
             }
         } else if (isguestuser()) {
             $userurl = new moodle_url('#');
             $userpic = parent::user_picture($USER, array('link' => false));
-            $caret = '<i class="fa fa-caret-right"></i>';
+            $caret = $this->getfontawesomemarkup('caret-right');
             $userclass = array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown');
             $usermenu .= html_writer::link($userurl, $userpic.get_string('guest').$caret, $userclass);
 
             // Render direct logout link.
             $usermenu .= html_writer::start_tag('ul', array('class' => 'dropdown-menu pull-right'));
-            $branchlabel = '<em><i class="fa fa-sign-out"></i>'.get_string('logout').'</em>';
+            $branchlabel = '<em>'.$this->getfontawesomemarkup('sign-out').get_string('logout').'</em>';
             $branchurl = new moodle_url('/login/logout.php');
             $branchurl->param('sesskey', sesskey());
             $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
@@ -970,7 +970,7 @@ class core_renderer extends \core_renderer {
             // Output Profile link.
             $userurl = new moodle_url('#');
             $userpic = parent::user_picture($USER, array('link' => false));
-            $caret = '<i class="fa fa-caret-right"></i>';
+            $caret = $this->getfontawesomemarkup('caret-right');
             $userclass = array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown');
 
             if (!empty($USER->alternatename)) {
@@ -984,23 +984,23 @@ class core_renderer extends \core_renderer {
 
             if (\core\session\manager::is_loggedinas()) {
                 $realuser = \core\session\manager::get_realuser();
-                $branchlabel = '<em><i class="fa fa-key"></i>'.fullname($realuser, true).
+                $branchlabel = '<em>'.$this->getfontawesomemarkup('key').fullname($realuser, true).
                     get_string('loggedinas', 'theme_essential').fullname($USER, true).'</em>';
             } else {
-                $branchlabel = '<em><i class="fa fa-user"></i>'.fullname($USER, true).'</em>';
+                $branchlabel = '<em>'.$this->getfontawesomemarkup('user').fullname($USER, true).'</em>';
             }
             $branchurl = new moodle_url('/user/profile.php', array('id' => $USER->id));
             $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
 
             if (is_mnet_remote_user($USER) && $idprovider = $DB->get_record('mnet_host', array('id' => $USER->mnethostid))) {
-                $branchlabel = '<em><i class="fa fa-users"></i>'.get_string('loggedinfrom', 'theme_essential').
+                $branchlabel = '<em>'.$this->getfontawesomemarkup('users').get_string('loggedinfrom', 'theme_essential').
                     $idprovider->name.'</em>';
                 $branchurl = new moodle_url($idprovider->wwwroot);
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
 
             if (is_role_switched($course->id)) { // Has switched roles.
-                $branchlabel = '<em><i class="fa fa-users"></i>' . get_string('switchrolereturn').'</em>';
+                $branchlabel = '<em>'.$this->getfontawesomemarkup('users').get_string('switchrolereturn').'</em>';
                 $branchurl = new moodle_url('/course/switchrole.php', array('id' => $course->id, 'sesskey' => sesskey(),
                     'switchrole' => 0, 'returnurl' => $this->page->url->out_as_local_url(false)));
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
@@ -1013,32 +1013,32 @@ class core_renderer extends \core_renderer {
 
             // Output Calendar link if user is allowed to edit own calendar entries.
             if (has_capability('moodle/calendar:manageownentries', $context)) {
-                $branchlabel = '<em><i class="fa fa-calendar"></i>'.get_string('pluginname', 'block_calendar_month').'</em>';
+                $branchlabel = '<em>'.$this->getfontawesomemarkup('calendar').get_string('pluginname', 'block_calendar_month').'</em>';
                 $branchurl = new moodle_url('/calendar/view.php');
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
 
             // Check if messaging is enabled.
             if (!empty($CFG->messaging)) {
-                $branchlabel = '<em><i class="fa fa-envelope"></i>'.get_string('pluginname', 'block_messages').'</em>';
+                $branchlabel = '<em>'.$this->getfontawesomemarkup('envelope').get_string('pluginname', 'block_messages').'</em>';
                 $branchurl = new moodle_url('/message/index.php');
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
 
             // Check if user is allowed to manage files.
             if (has_capability('moodle/user:manageownfiles', $context)) {
-                $branchlabel = '<em><i class="fa fa-file"></i>'.get_string('privatefiles', 'block_private_files').'</em>';
+                $branchlabel = '<em>'.$this->getfontawesomemarkup('file').get_string('privatefiles', 'block_private_files').'</em>';
                 $branchurl = new moodle_url('/user/files.php');
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
 
             // Check if user is allowed to view discussions.
             if (has_capability('mod/forum:viewdiscussion', $context)) {
-                $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('forumposts', 'mod_forum').'</em>';
+                $branchlabel = '<em>'.$this->getfontawesomemarkup('list-alt').get_string('forumposts', 'mod_forum').'</em>';
                 $branchurl = new moodle_url('/mod/forum/user.php', array('id' => $USER->id));
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
 
-                $branchlabel = '<em><i class="fa fa-list"></i>'.get_string('discussions', 'mod_forum').'</em>';
+                $branchlabel = '<em>'.$this->getfontawesomemarkup('list').get_string('discussions', 'mod_forum').'</em>';
                 $branchurl = new moodle_url('/mod/forum/user.php', array('id' => $USER->id, 'mode' => 'discussions'));
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
 
@@ -1047,12 +1047,12 @@ class core_renderer extends \core_renderer {
 
             // Output user grade links, course sensitive where appropriate.
             if ($course->id == SITEID) {
-                $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('mygrades', 'theme_essential').'</em>';
+                $branchlabel = '<em>'.$this->getfontawesomemarkup('list-alt').get_string('mygrades', 'theme_essential').'</em>';
                 $branchurl = new moodle_url('/grade/report/overview/index.php', array('userid' => $USER->id));
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             } else {
                 if (has_capability('gradereport/overview:view', $context)) {
-                    $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('mygrades', 'theme_essential').'</em>';
+                    $branchlabel = '<em>'.$this->getfontawesomemarkup('list-alt').get_string('mygrades', 'theme_essential').'</em>';
                     $params = array('userid' => $USER->id);
                     if ($course->showgrades) {
                         $params['id'] = $course->id;
@@ -1063,7 +1063,7 @@ class core_renderer extends \core_renderer {
 
                 if (has_capability('gradereport/user:view', $context) && $course->showgrades) {
                     // In Course also output Course grade links.
-                    $branchlabel = '<em><i class="fa fa-list-alt"></i>'.get_string('coursegrades', 'theme_essential').'</em>';
+                    $branchlabel = '<em>'.$this->getfontawesomemarkup('list-alt').get_string('coursegrades', 'theme_essential').'</em>';
                     $branchurl = new moodle_url('/grade/report/user/index.php', array('id' => $course->id, 'userid' => $USER->id));
                     $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
                 }
@@ -1071,14 +1071,14 @@ class core_renderer extends \core_renderer {
 
             // Check if badges are enabled.
             if (!empty($CFG->enablebadges) && has_capability('moodle/badges:manageownbadges', $context)) {
-                $branchlabel = '<em><i class="fa fa-certificate"></i>'.get_string('badges').'</em>';
+                $branchlabel = '<em>'.$this->getfontawesomemarkup('certificate').get_string('badges').'</em>';
                 $branchurl = new moodle_url('/badges/mybadges.php');
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
             $usermenu .= html_writer::empty_tag('hr', array('class' => 'sep'));
 
             // Render direct logout link.
-            $branchlabel = '<em><i class="fa fa-sign-out"></i>'.get_string('logout').'</em>';
+            $branchlabel = '<em>'.$this->getfontawesomemarkup('signout').get_string('logout').'</em>';
             if (\core\session\manager::is_loggedinas()) {
                 $branchurl = new moodle_url('/course/loginas.php', array('id' => $course->id, 'sesskey' => sesskey()));
             } else {
@@ -1108,7 +1108,7 @@ class core_renderer extends \core_renderer {
         if (!\theme_essential\toolbox::get_setting('helplinktype')) {
             return false;
         }
-        $branchlabel = '<em><i class="fa fa-question-circle"></i>'.get_string('help').'</em>';
+        $branchlabel = '<em>'.$this->getfontawesomemarkup('question-circle').get_string('help').'</em>';
         $branchurl = '';
         $target = '';
 
@@ -1122,7 +1122,7 @@ class core_renderer extends \core_renderer {
                 if (is_siteadmin()) {
                     $branchurl = preg_replace("(https?:)", "", $CFG->wwwroot).'/admin/settings.php?section=theme_essential_header';
                 }
-                $branchlabel = '<em><i class="fa fa-exclamation-triangle red"></i>'.get_string('invalidemail').'</em>';
+                $branchlabel = '<em>'.$this->getfontawesomemarkup('exclamation-triangle', array('red')).get_string('invalidemail').'</em>';
             }
         }
 
@@ -1140,7 +1140,7 @@ class core_renderer extends \core_renderer {
                 if (is_siteadmin()) {
                     $branchurl = preg_replace("(https?:)", "", $CFG->wwwroot).'/admin/settings.php?section=theme_essential_header';
                 }
-                $branchlabel = '<em><i class="fa fa-exclamation-triangle red"></i>'.get_string('invalidurl', 'error').'</em>';
+                $branchlabel = '<em>'.$this->getfontawesomemarkup('exclamation-triangle', array('red')).get_string('invalidurl', 'error').'</em>';
             }
 
         }
@@ -1156,38 +1156,38 @@ class core_renderer extends \core_renderer {
      */
     protected function theme_essential_render_preferences($context) {
         global $USER, $CFG;
-        $label = '<em><i class="fa fa-cog"></i>' . get_string('preferences') . '</em>';
+        $label = '<em>'.$this->getfontawesomemarkup('cog').get_string('preferences').'</em>';
         $preferences = html_writer::start_tag('li', array('class' => 'dropdown-submenu preferences'));
         $preferences .= html_writer::link(new moodle_url('#'), $label,
             array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown'));
         $preferences .= html_writer::start_tag('ul', array('class' => 'dropdown-menu'));
 
-        $branchlabel = '<em><i class="fa fa-user"></i>'.get_string('user', 'moodle').'</em>';
+        $branchlabel = '<em>'.$this->getfontawesomemarkup('user').get_string('user', 'moodle').'</em>';
         $branchurl = new moodle_url('/user/preferences.php', array('userid' => $USER->id));
         $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         // Check if user is allowed to edit profile.
         if (has_capability('moodle/user:editownprofile', $context)) {
-            $branchlabel = '<em><i class="fa fa-info-circle"></i>'.get_string('editmyprofile').'</em>';
+            $branchlabel = '<em'.$this->getfontawesomemarkup('info-circle').get_string('editmyprofile').'</em>';
             $branchurl = new moodle_url('/user/edit.php', array('id' => $USER->id));
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
         if (has_capability('moodle/user:changeownpassword', $context)) {
-            $branchlabel = '<em><i class="fa fa-key"></i>'.get_string('changepassword').'</em>';
+            $branchlabel = '<em>'.$this->getfontawesomemarkup('key').get_string('changepassword').'</em>';
             $branchurl = new moodle_url('/login/change_password.php');
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
         if (has_capability('moodle/user:editownmessageprofile', $context)) {
-            $branchlabel = '<em><i class="fa fa-comments"></i>'.get_string('message', 'message').'</em>';
+            $branchlabel = '<em>'.$this->getfontawesomemarkup('comments').get_string('message', 'message').'</em>';
             $branchurl = new moodle_url('/message/edit.php', array('id' => $USER->id));
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
         if ($CFG->enableblogs) {
-            $branchlabel = '<em><i class="fa fa-rss-square"></i>'.get_string('blog', 'blog').'</em>';
+            $branchlabel = '<em>'.$this->getfontawesomemarkup('rss-square').get_string('blog', 'blog').'</em>';
             $branchurl = new moodle_url('/blog/preferences.php');
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
         if ($CFG->enablebadges && has_capability('moodle/badges:manageownbadges', $context)) {
-            $branchlabel = '<em><i class="fa fa-certificate"></i>'.get_string('badgepreferences', 'theme_essential').'</em>';
+            $branchlabel = '<em>'.$this->getfontawesomemarkup('certificate').get_string('badgepreferences', 'theme_essential').'</em>';
             $branchurl = new moodle_url('/badges/preferences.php');
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
@@ -1310,12 +1310,14 @@ class core_renderer extends \core_renderer {
             't/preview' => 'search'
         );
         if (array_key_exists($icon->pix, $icons)) {
-            $pix = $icon->pix;
+            $pix = $icons[$icon->pix];
+            /* Note: MUST have the 'i' tag instead of 'span' and the embedded icon even though it is not displayed otherwise
+               the editing action menu will break! */
             if (empty($icon->attributes['alt'])) {
-                return "<i class=\"fa fa-$icons[$pix] icon\">".parent::render_pix_icon($icon)."</i>";
+                return '<i class="fa fa-'.$pix.' icon" aria-hidden="true">'.parent::render_pix_icon($icon).'</i>';
             } else {
                 $alt = $icon->attributes['alt'];
-                return "<i class=\"fa fa-$icons[$pix] icon\" title=\"$alt\">".parent::render_pix_icon($icon)."</i>";
+                return '<i class="fa fa-'.$pix.' icon" title="'.$alt.'" aria-hidden="true">'.parent::render_pix_icon($icon).'</i>';
             }
         } else {
             return parent::render_pix_icon($icon);
@@ -1518,6 +1520,88 @@ class core_renderer extends \core_renderer {
         return $output;
     }
 
+    /**
+     * Produces a header for a block.
+     *
+     * @param block_contents $bc.
+     * @return string.
+     */
+    protected function block_header(block_contents $bc) {
+        $title = '';
+        if ($bc->title) {
+            $attributes = array();
+            if ($bc->blockinstanceid) {
+                $attributes['id'] = 'instance-'.$bc->blockinstanceid.'-header';
+            }
+            static $icons = array(
+                'activity_modules' => 'puzzle-piece',
+                'admin_bookmarks' => 'bookmark',
+                'adminblock' => 'th-large',
+                'blog_menu' => 'book',
+                'blog_tags' => 'tags',
+                'book_toc' => 'book',
+                'calendar_month' => 'calendar',
+                'calendar_upcoming' => 'calendar',
+                'comments' => 'comments',
+                'community' => 'globe',
+                'completionstatus' => 'tachometer',
+                'course_badges' => 'trophy',
+                'course_list' => 'desktop',
+                'feedback' => 'thumbs-o-up',
+                'flickr' => 'flickr',
+                'glossary_random' => 'lightbulb-o',
+                'html' => 'list-alt',
+                'iconic_html' => '', // It decides.
+                'login' => 'user',
+                'messages' => 'envelope',
+                'mentees' => 'tags',
+                'navigation' => 'sitemap',
+                'news_items' => 'bullhorn',
+                'myprofile' => 'user',
+                'online_users' => 'users',
+                'participants' => 'users',
+                'private_files' => 'folder-o',
+                'quiz_navblock' => 'code-fork',
+                'quiz_results' => 'bar-chart',
+                'recent_activity' => 'clock-o',
+                'rss_client' => 'rss',
+                'search_forums' => 'comments-o',
+                'section_links' => 'bookmark',
+                'selfcompletion' => 'tachometer',
+                'settings' => 'cogs',
+                'style_guide' => 'paint-brush',
+                'tags' => 'tags',
+                'theme_selector' => 'paint-brush',
+                'twitter_search' => 'twitter',
+                'youtube' => 'youtube'
+            );
+            if (array_key_exists($bc->attributes['data-block'], $icons)) {
+                $theicon = $icons[$bc->attributes['data-block']];
+            } else {
+                $theicon = 'reorder';
+            }
+            if (!empty($theicon)) {
+                $title = html_writer::tag('h2', $this->getfontawesomemarkup($theicon).$bc->title, $attributes);
+            } else {
+                $title = html_writer::tag('h2', $bc->title, $attributes);
+            }
+        }
+
+        $blockid = null;
+        if (isset($bc->attributes['id'])) {
+            $blockid = $bc->attributes['id'];
+        }
+        $controlshtml = $this->block_controls($bc->controls, $blockid);
+
+        $output = '';
+        if ($title || $controlshtml) {
+            $output .= html_writer::tag('div', html_writer::tag('div',
+                html_writer::tag('div', '', array('class' => 'block_action')).$title.$controlshtml, array('class' => 'title')),
+                array('class' => 'header'));
+        }
+        return $output;
+    }
+
     public function standard_footer_html() {
         $output = parent::standard_footer_html();
         $output .= html_writer::start_tag('div', array ('class' => 'themecredit')).
@@ -1642,25 +1726,29 @@ class core_renderer extends \core_renderer {
             $thespan = 12 / $colcount;
             if (isset($param['realtime'])) {
                 $html .= html_writer::start_tag('div', array('class' => 'span'.$thespan));
-                $html .= html_writer::tag('var', round($param['realtime'], 2).' '.get_string('seconds'), array('id' => 'load'));
+                $html .= html_writer::tag('var', $this->getfontawesomemarkup('clock-o').
+                    round($param['realtime'], 2).' '.get_string('seconds'), array('id' => 'load'));
                 $html .= html_writer::span(get_string('loadtime', 'theme_essential'));
                 $html .= html_writer::end_tag('div');
             }
             if (isset($param['memory_total'])) {
                 $html .= html_writer::start_tag('div', array('class' => 'span'.$thespan));
-                $html .= html_writer::tag('var', display_size($param['memory_total']), array('id' => 'memory'));
+                $html .= html_writer::tag('var', $this->getfontawesomemarkup('tachometer').
+                    display_size($param['memory_total']), array('id' => 'memory'));
                 $html .= html_writer::span(get_string('memused', 'theme_essential'));
                 $html .= html_writer::end_tag('div');
             }
             if (isset($param['includecount'])) {
                 $html .= html_writer::start_tag('div', array('class' => 'span'.$thespan));
-                $html .= html_writer::tag('var', $param['includecount'], array('id' => 'included'));
+                $html .= html_writer::tag('var', $this->getfontawesomemarkup('stackoverflow').
+                    $param['includecount'], array('id' => 'included'));
                 $html .= html_writer::span(get_string('included', 'theme_essential'));
                 $html .= html_writer::end_tag('div');
             }
             if (isset($param['dbqueries'])) {
                 $html .= html_writer::start_tag('div', array('class' => 'span'.$thespan));
-                $html .= html_writer::tag('var', $param['dbqueries'], array('id' => 'dbqueries'));
+                $html .= html_writer::tag('var', $this->getfontawesomemarkup('trello').
+                    $param['dbqueries'], array('id' => 'dbqueries'));
                 $html .= html_writer::span(get_string('dbqueries', 'theme_essential'));
                 $html .= html_writer::end_tag('div');
             }
@@ -1694,31 +1782,36 @@ class core_renderer extends \core_renderer {
                 $thespanmax = 12 / $colcountmax;
                 if (isset($param['serverload'])) {
                     $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
-                    $html .= html_writer::tag('var', $param['serverload'], array('id' => 'load'));
+                    $html .= html_writer::tag('var', $this->getfontawesomemarkup('clock-o').
+                        $param['serverload'], array('id' => 'load'));
                     $html .= html_writer::span(get_string('serverload', 'theme_essential'));
                     $html .= html_writer::end_tag('div');
                 }
                 if (isset($param['memory_peak'])) {
                     $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
-                    $html .= html_writer::tag('var', display_size($param['memory_peak']), array('id' => 'peakmemory'));
+                    $html .= html_writer::tag('var', $this->getfontawesomemarkup('tachometer').
+                        display_size($param['memory_peak']), array('id' => 'peakmemory'));
                     $html .= html_writer::span(get_string('peakmem', 'theme_essential'));
                     $html .= html_writer::end_tag('div');
                 }
                 if (isset($param['cachesused'])) {
                     $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
-                    $html .= html_writer::tag('var', $param['cachesused'], array('id' => 'cache'));
+                    $html .= html_writer::tag('var', $this->getfontawesomemarkup('paw').
+                        $param['cachesused'], array('id' => 'cache'));
                     $html .= html_writer::span(get_string('cachesused', 'theme_essential'));
                     $html .= html_writer::end_tag('div');
                 }
                 if (isset($param['sessionsize'])) {
                     $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
-                    $html .= html_writer::tag('var', $param['sessionsize'], array('id' => 'session'));
+                    $html .= html_writer::tag('var', $this->getfontawesomemarkup('tachometer').
+                        $param['sessionsize'], array('id' => 'session'));
                     $html .= html_writer::span(get_string('sessionsize', 'theme_essential'));
                     $html .= html_writer::end_tag('div');
                 }
                 if (isset($param['dbtime'])) {
                     $html .= html_writer::start_tag('div', array('class' => 'span'.$thespanmax));
-                    $html .= html_writer::tag('var', $param['dbtime'], array('id' => 'dbtime'));
+                    $html .= html_writer::tag('var', $this->getfontawesomemarkup('trello').
+                        $param['dbtime'], array('id' => 'dbtime'));
                     $html .= html_writer::span(get_string('dbtime', 'theme_essential'));
                     $html .= html_writer::end_tag('div');
                 }
@@ -1731,6 +1824,13 @@ class core_renderer extends \core_renderer {
         return $html;
     }
 
+    private function getfontawesomemarkup($theicon, $classes = array(), $attributes = array()) {
+        $classes[] = 'fa fa-'.$theicon;
+        $attributes['aria-hidden'] = 'true';
+        $attributes['class'] = implode(' ', $classes);
+        return html_writer::tag('span', '', $attributes);
+    }
+
     /**
      * Returns the alert markup if outside of the Moodle version supported as can cause issues.
      */
@@ -1740,9 +1840,9 @@ class core_renderer extends \core_renderer {
 
         if (($CFG->version < 2015111600.00) || ($CFG->version >= 2015120400.00)) {
             $result = '<div class="useralerts alert alert-error">';
-            $result .= '<a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>';
-            $result .= '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i>';
-            $result .= '<i class="fa fa-warning fa-stack-1x fa-inverse"></i></span>';
+            $result .= '<a class="close" data-dismiss="alert" href="#">'.$this->getfontawesomemarkup('times-circle').'</a>';
+            $result .= '<span class="fa-stack">'.$this->getfontawesomemarkup('square', array('fa-stack-2x'));
+            $result .= $this->getfontawesomemarkup('warning', array('fa-stack-1x', 'fa-inverse')).'</span>';
             $result .= '<span class="title">'.get_string('versionalerttitle', 'theme_essential').'</span><br />'.
                 get_string('versionalerttext1', 'theme_essential').'<br />'.
                 get_string('versionalerttext2', 'theme_essential');

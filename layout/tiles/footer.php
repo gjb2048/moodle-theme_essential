@@ -57,6 +57,6 @@ if (empty($PAGE->layout_options['nofooter'])) { ?>
             </div>
         </div>
     </footer>
-    <a href="#top" class="back-to-top" ><i class="fa fa-angle-up "></i></a>
+    <a href="#top" class="back-to-top" ><span aria-hidden="true" class="fa fa-angle-up "></span></a>
 <?php }
 echo $OUTPUT->standard_end_of_body_html();

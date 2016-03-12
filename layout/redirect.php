@@ -48,7 +48,7 @@ echo $OUTPUT->doctype();
         <div id="page-content" class="row-fluid text-center">
             <section id="region-main" class="span12">
                 <?php echo $OUTPUT->main_content(); ?>
-                <i class="fa fa-refresh fa-spin fa-2x" style="margin-bottom: 10px;"></i>
+                <span aria-hidden="true" class="fa fa-refresh fa-spin fa-2x" style="margin-bottom: 10px;"></span>
             </section>
         </div>
 
