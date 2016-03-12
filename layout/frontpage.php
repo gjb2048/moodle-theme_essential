@@ -33,9 +33,9 @@ $enable2alert = \theme_essential\toolbox::get_setting('enable2alert');
 $enable3alert = \theme_essential\toolbox::get_setting('enable3alert');
 
 if ($enable1alert || $enable2alert || $enable3alert) {
-    $alertinfo = '<span class="fa-stack"><i class="fa fa-info fa-stack-1x fa-inverse"></i></span>';
-    $alerterror = '<span class="fa-stack"><i class="fa fa-warning fa-stack-1x fa-inverse"></i></span>';
-    $alertsuccess = '<span class="fa-stack"><i class="fa fa-bullhorn fa-stack-1x fa-inverse"></i></span>';
+    $alertinfo = '<span class="fa-stack"><span aria-hidden="true" class="fa fa-info fa-stack-1x fa-inverse"></span></span>';
+    $alerterror = '<span class="fa-stack"><span aria-hidden="true" class="fa fa-warning fa-stack-1x fa-inverse"></span></span>';
+    $alertsuccess = '<span class="fa-stack"><span aria-hidden="true" class="fa fa-bullhorn fa-stack-1x fa-inverse"></span></span>';
 }
 ?>
 
@@ -67,7 +67,7 @@ if ($PAGE->user_is_editing() && ($toggleslideshow)) {
         <!-- Alert #1 -->
         <?php if ($enable1alert) { ?>
             <div class="useralerts alert alert-<?php echo \theme_essential\toolbox::get_setting('alert1type'); ?>">
-                <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
+                <a class="close" data-dismiss="alert" href="#"><span aria-hidden="true" class="fa fa-times-circle"></span></a>
                 <?php
                 $alert1icon = 'alert' . \theme_essential\toolbox::get_setting('alert1type');
                 echo $$alert1icon.'<span class="title">'.\theme_essential\toolbox::get_setting('alert1title', true);
@@ -80,7 +80,7 @@ if ($PAGE->user_is_editing() && ($toggleslideshow)) {
         <!-- Alert #2 -->
         <?php if ($enable2alert) { ?>
             <div class="useralerts alert alert-<?php echo \theme_essential\toolbox::get_setting('alert2type'); ?>">
-                <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
+                <a class="close" data-dismiss="alert" href="#"><span aria-hidden="true" class="fa fa-times-circle"></span></a>
                 <?php
                 $alert2icon = 'alert' . \theme_essential\toolbox::get_setting('alert2type');
                 echo $$alert2icon.'<span class="title">'.\theme_essential\toolbox::get_setting('alert2title', true);
@@ -93,7 +93,7 @@ if ($PAGE->user_is_editing() && ($toggleslideshow)) {
         <!-- Alert #3 -->
         <?php if ($enable3alert) { ?>
             <div class="useralerts alert alert-<?php echo \theme_essential\toolbox::get_setting('alert3type'); ?>">
-                <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
+                <a class="close" data-dismiss="alert" href="#"><span aria-hidden="true" class="fa fa-times-circle"></span></a>
                 <?php
                 $alert3icon = 'alert' . \theme_essential\toolbox::get_setting('alert3type');
                 echo $$alert3icon.'<span class="title">'.\theme_essential\toolbox::get_setting('alert3title', true);

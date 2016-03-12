@@ -86,11 +86,11 @@
 }
 
 p.tree_item.leaf a {
-  > i.@{fa-css-prefix} {
+  > .@{fa-css-prefix} {
     width: 14px;
   }
   &.action-delete {
-    > i.@{fa-css-prefix} {
+    > .@{fa-css-prefix} {
       color: red;
     }
   }
@@ -226,11 +226,9 @@ p.tree_item.leaf a {
   border-bottom: 1px solid #EEE;
   padding-left: 0px;
 
-  h2:before {
-    font-family: FontAwesome;
+  .@{fa-css-prefix} {
     font-size: 1.65em;
     margin-right: .3em;
-    content: "\f0c9";
   }
 }
 
@@ -238,7 +236,7 @@ p.tree_item.leaf a {
   padding-right: 0px;
   content: none;
 }
-.block.block_iconic_html .header .title h2 span.@{fa-css-prefix} {
+.block.block_iconic_html .header .title h2 .@{fa-css-prefix} {
   padding-right: 0px !important;
   &:before {
     margin-right: .3em;
@@ -275,9 +273,6 @@ p.tree_item.leaf a {
         background: #f9f9f9;
       }
     }
-  }
-  .header .title h2:before {
-    content: "\f09e";
   }
   .footer {
     text-align: right;
@@ -324,11 +319,6 @@ p.tree_item.leaf a {
 /* @group Login Block */
 
 .block_login {
-  .header .title h2:before {
-    content: "\f007";
-    font-family: FontAwesome;
-    float: left;
-  }
   .content {
     .footer {
       padding: 0;
@@ -393,16 +383,6 @@ p.tree_item.leaf a {
   }
 }
 
-/* @end */
-
-/* @group Style guide fake block */
-
-.block_style_guide {
-  .header .title h2:before {
-    content: "\f1fc";
-    font-family: FontAwesome;
-  }
-}
 /* @end */
 
 /* @group Footer blocks - copied from Shoelace */

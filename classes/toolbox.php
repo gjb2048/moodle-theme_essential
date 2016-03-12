@@ -307,9 +307,9 @@ class toolbox {
             $faright = $temp;
         }
         $prev = '<a class="left carousel-control" href="#essentialCarousel" data-slide="prev">';
-        $prev .= '<i class="fa fa-chevron-circle-'.$faleft.'"></i></a>';
+        $prev .= '<span aria-hidden="true" class="fa fa-chevron-circle-'.$faleft.'"></span></a>';
         $next = '<a class="right carousel-control" href="#essentialCarousel" data-slide="next">';
-        $next .= '<i class="fa fa-chevron-circle-'.$faright.'"></i></a>';
+        $next .= '<span aria-hidden="true" class="fa fa-chevron-circle-'.$faright.'"></span></a>';
 
         return $prev . $next;
     }

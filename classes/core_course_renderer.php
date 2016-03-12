@@ -120,7 +120,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
             }
         }
         if (!empty($val)) {
-            $icon = html_writer::tag('i', '', array('class' => 'fa fa-' . $val));
+            $icon = html_writer::tag('span', '', array('aria-hidden' => 'true', 'class' => 'fa fa-'.$val));
         } else {
             $icon = '';
         }
@@ -231,7 +231,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
             $content .= html_writer::start_tag('ul', array('class' => $teacherclass));
             foreach ($course->get_course_contacts() as $userid => $coursecontact) {
                 $faiconsetting = \theme_essential\toolbox::get_setting('courselistteachericon');
-                $faiconsettinghtml = (empty($faiconsetting)) ? '' : '<i class="fa fa-'.$faiconsetting.'"></i> ';
+                $faiconsettinghtml = (empty($faiconsetting)) ? '' : '<span aria-hidden="true" class="fa fa-'.$faiconsetting.'"></span> ';
                 $name = $faiconsettinghtml.$coursecontact['rolename'].': '.
                         html_writer::link(new moodle_url('/user/view.php',
                                 array('id' => $userid, 'course' => SITEID)),
