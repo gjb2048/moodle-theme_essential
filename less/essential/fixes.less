@@ -11,8 +11,6 @@ a[name="lastused"] {
   z-index: 300;
 }
 
-/* @end */
-
 // Correctly span the main element when no blocks are present in side-pre on frontpage
 .empty-region-side-pre #region-bs-main-and-pre #region-main.span9 {
   width: 100%;
@@ -59,3 +57,10 @@ body.ie {
 audio {
   max-width: 100%;
 }
+
+body.pagelayout-course .course-content ul li.section {
+    padding-top: @navbarHeight;
+    margin-top: -@navbarHeight;
+}
+
+/* @end */
