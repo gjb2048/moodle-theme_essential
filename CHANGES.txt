@@ -1,6 +1,7 @@
 New in 2.9.1.11
 ===============
 - FIX: Issue #627: Request for an unknown renderer.
+- FIX: Issue #629: Hidden resources have low contrast.
 - FIX: Issue #633: Increase performance of administration settings pages.  Thanks to 'Jan Dagefoerde' for the initial patch.
 - FIX: Issue #634: Improve icon replacement performance.
 - FIX: Issue #635: Course table of contents block navigation when static navbar.  Thanks to 'Mary Evans' for:
