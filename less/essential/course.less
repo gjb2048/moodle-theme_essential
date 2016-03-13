@@ -36,6 +36,18 @@ div.mdl-align.title {
   border-radius: 5px;
 }
 
+.course-content ul li.section.hidden {
+    .sectionname > span,
+    .content > div,  /* All the divs but the activities which are in a UL. */
+    .activity .activityinstance {
+        opacity: 1;
+        color: @grayLight;
+    }
+    .sectionname > span a {
+        color: inherit;
+    }
+}
+
 body {  // Inside a body tag so will be more specific and override core plugin styles that come afterwards without the use of 'important' and can then override again in pre-processed theme setting style if needed.
     .course-content ul.topics li.section {
         padding-bottom: 20px;
