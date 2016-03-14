@@ -1078,7 +1078,7 @@ class core_renderer extends \core_renderer {
             $usermenu .= html_writer::empty_tag('hr', array('class' => 'sep'));
 
             // Render direct logout link.
-            $branchlabel = '<em>'.$this->getfontawesomemarkup('signout').get_string('logout').'</em>';
+            $branchlabel = '<em>'.$this->getfontawesomemarkup('sign-out').get_string('logout').'</em>';
             if (\core\session\manager::is_loggedinas()) {
                 $branchurl = new moodle_url('/course/loginas.php', array('id' => $course->id, 'sesskey' => sesskey()));
             } else {
