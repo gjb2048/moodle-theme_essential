@@ -56,50 +56,89 @@ class essential_admin_setting_styleguide extends admin_setting {
         $this->nosave = true;
 
         global $PAGE;
-        if (($PAGE->bodyid == 'page-admin-setting-' . $name) || ($PAGE->bodyid == 'page-theme-'.$PAGE->theme->name.'-pages-styleguide')) {
+        if (($PAGE->bodyid == 'page-admin-setting-' . $name) ||
+            ($PAGE->bodyid == 'page-theme-'.$PAGE->theme->name.'-pages-styleguide')) {
             $bc = new block_contents();
             $bc->title = get_string('styleguide', 'theme_essential');
             $bc->attributes['class'] = 'block block_style_guide';
             $bc->attributes['data-block'] = 'style_guide';
             $bc->content = '<ul class="nav nav-list">';
-            $bc->content .= '<li><a href="#gridSystem"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Grid system</a></li>';
-            $bc->content .= '<li><a href="#fluidGridSystem"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Fluid grid system</a></li>';
-            $bc->content .= '<li><a href="#layouts"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Layouts</a></li>';
-            $bc->content .= '<li><a href="#responsive"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Responsive design</a></li>';
-            $bc->content .= '<li><a href="#typography"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Typography</a></li>';
-            $bc->content .= '<li><a href="#code"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Code</a></li>';
-            $bc->content .= '<li><a href="#tables"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Tables</a></li>';
-            $bc->content .= '<li><a href="#forms"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Forms</a></li>';
-            $bc->content .= '<li><a href="#buttons"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Buttons</a></li>';
-            $bc->content .= '<li><a href="#images"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Images</a></li>';
-            $bc->content .= '<li><a href="#dropdowns"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Dropdowns</a></li>';
-            $bc->content .= '<li><a href="#buttonGroups"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Button groups</a></li>';
-            $bc->content .= '<li><a href="#buttonDropdowns"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Button dropdowns</a></li>';
-            $bc->content .= '<li><a href="#navs"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Navs</a></li>';
-            $bc->content .= '<li><a href="#navbar"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Navbar</a></li>';
-            $bc->content .= '<li><a href="#breadcrumbs"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Breadcrumbs</a></li>';
-            $bc->content .= '<li><a href="#pagination"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Pagination</a></li>';
-            $bc->content .= '<li><a href="#labels-badges"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Labels and badges</a></li>';
-            $bc->content .= '<li><a href="#typography"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Typography</a></li>';
-            $bc->content .= '<li><a href="#thumbnails"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Thumbnails</a></li>';
-            $bc->content .= '<li><a href="#alerts"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Alerts</a></li>';
-            $bc->content .= '<li><a href="#progress"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Progress bars</a></li>';
-            $bc->content .= '<li><a href="#media"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Media object</a></li>';
-            $bc->content .= '<li><a href="#misc"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Misc</a></li>';
-            $bc->content .= '<li><a href="#overview"><span aria-hidden="true" class="fa fa-hand-o-right"></span> JavaScript overview</a></li>';
-            $bc->content .= '<li><a href="#transitions"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Transitions</a></li>';
-            $bc->content .= '<li><a href="#modals"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Modal</a></li>';
-            $bc->content .= '<li><a href="#dropdowns"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Dropdown</a></li>';
-            $bc->content .= '<li><a href="#scrollspy"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Scrollspy</a></li>';
-            $bc->content .= '<li><a href="#tabs"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Tab</a></li>';
-            $bc->content .= '<li><a href="#tooltips"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Tooltip</a></li>';
-            $bc->content .= '<li><a href="#popovers"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Popover</a></li>';
-            $bc->content .= '<li><a href="#alerts"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Alert</a></li>';
-            $bc->content .= '<li><a href="#buttons"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Button</a></li>';
-            $bc->content .= '<li><a href="#collapse"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Collapse</a></li>';
-            $bc->content .= '<li><a href="#carousel"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Carousel</a></li>';
-            $bc->content .= '<li><a href="#typeahead"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Typeahead</a></li>';
-            $bc->content .= '<li><a href="#affix"><span aria-hidden="true" class="fa fa-hand-o-right"></span> Affix</a></li>';
+            $bc->content .= '<li><a href="#gridSystem"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Grid system</a></li>';
+            $bc->content .= '<li><a href="#fluidGridSystem"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Fluid grid system</a></li>';
+            $bc->content .= '<li><a href="#layouts"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Layouts</a></li>';
+            $bc->content .= '<li><a href="#responsive"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Responsive design</a></li>';
+            $bc->content .= '<li><a href="#typography"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Typography</a></li>';
+            $bc->content .= '<li><a href="#code"><span aria-hidden="true" class="fa fa-hand-o-right">'.'
+                </span> Code</a></li>';
+            $bc->content .= '<li><a href="#tables"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Tables</a></li>';
+            $bc->content .= '<li><a href="#forms"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Forms</a></li>';
+            $bc->content .= '<li><a href="#buttons"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Buttons</a></li>';
+            $bc->content .= '<li><a href="#images"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Images</a></li>';
+            $bc->content .= '<li><a href="#dropdowns"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Dropdowns</a></li>';
+            $bc->content .= '<li><a href="#buttonGroups"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Button groups</a></li>';
+            $bc->content .= '<li><a href="#buttonDropdowns"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Button dropdowns</a></li>';
+            $bc->content .= '<li><a href="#navs"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Navs</a></li>';
+            $bc->content .= '<li><a href="#navbar"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Navbar</a></li>';
+            $bc->content .= '<li><a href="#breadcrumbs"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Breadcrumbs</a></li>';
+            $bc->content .= '<li><a href="#pagination"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Pagination</a></li>';
+            $bc->content .= '<li><a href="#labels-badges"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Labels and badges</a></li>';
+            $bc->content .= '<li><a href="#typography"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Typography</a></li>';
+            $bc->content .= '<li><a href="#thumbnails"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Thumbnails</a></li>';
+            $bc->content .= '<li><a href="#alerts"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Alerts</a></li>';
+            $bc->content .= '<li><a href="#progress"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Progress bars</a></li>';
+            $bc->content .= '<li><a href="#media"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Media object</a></li>';
+            $bc->content .= '<li><a href="#misc"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Misc</a></li>';
+            $bc->content .= '<li><a href="#overview"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> JavaScript overview</a></li>';
+            $bc->content .= '<li><a href="#transitions"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Transitions</a></li>';
+            $bc->content .= '<li><a href="#modals"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Modal</a></li>';
+            $bc->content .= '<li><a href="#dropdowns"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Dropdown</a></li>';
+            $bc->content .= '<li><a href="#scrollspy"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Scrollspy</a></li>';
+            $bc->content .= '<li><a href="#tabs"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Tab</a></li>';
+            $bc->content .= '<li><a href="#tooltips"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Tooltip</a></li>';
+            $bc->content .= '<li><a href="#popovers"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Popover</a></li>';
+            $bc->content .= '<li><a href="#alerts"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Alert</a></li>';
+            $bc->content .= '<li><a href="#buttons"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Button</a></li>';
+            $bc->content .= '<li><a href="#collapse"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Collapse</a></li>';
+            $bc->content .= '<li><a href="#carousel"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Carousel</a></li>';
+            $bc->content .= '<li><a href="#typeahead"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Typeahead</a></li>';
+            $bc->content .= '<li><a href="#affix"><span aria-hidden="true" class="fa fa-hand-o-right">'.
+                '</span> Affix</a></li>';
             $bc->content .= '</ul>';
             $defaultregion = $PAGE->blocks->get_default_region();
             $PAGE->blocks->add_fake_block($bc, $defaultregion);

@@ -1013,7 +1013,8 @@ class core_renderer extends \core_renderer {
 
             // Output Calendar link if user is allowed to edit own calendar entries.
             if (has_capability('moodle/calendar:manageownentries', $context)) {
-                $branchlabel = '<em>'.$this->getfontawesomemarkup('calendar').get_string('pluginname', 'block_calendar_month').'</em>';
+                $branchlabel = '<em>'.$this->getfontawesomemarkup('calendar').
+                    get_string('pluginname', 'block_calendar_month').'</em>';
                 $branchurl = new moodle_url('/calendar/view.php');
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
@@ -1063,7 +1064,8 @@ class core_renderer extends \core_renderer {
 
                 if (has_capability('gradereport/user:view', $context) && $course->showgrades) {
                     // In Course also output Course grade links.
-                    $branchlabel = '<em>'.$this->getfontawesomemarkup('list-alt').get_string('coursegrades', 'theme_essential').'</em>';
+                    $branchlabel = '<em>'.$this->getfontawesomemarkup('list-alt').
+                        get_string('coursegrades', 'theme_essential').'</em>';
                     $branchurl = new moodle_url('/grade/report/user/index.php', array('id' => $course->id, 'userid' => $USER->id));
                     $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
                 }
@@ -1122,7 +1124,8 @@ class core_renderer extends \core_renderer {
                 if (is_siteadmin()) {
                     $branchurl = preg_replace("(https?:)", "", $CFG->wwwroot).'/admin/settings.php?section=theme_essential_header';
                 }
-                $branchlabel = '<em>'.$this->getfontawesomemarkup('exclamation-triangle', array('red')).get_string('invalidemail').'</em>';
+                $branchlabel = '<em>'.$this->getfontawesomemarkup('exclamation-triangle', array('red')).
+                    get_string('invalidemail').'</em>';
             }
         }
 
@@ -1140,7 +1143,8 @@ class core_renderer extends \core_renderer {
                 if (is_siteadmin()) {
                     $branchurl = preg_replace("(https?:)", "", $CFG->wwwroot).'/admin/settings.php?section=theme_essential_header';
                 }
-                $branchlabel = '<em>'.$this->getfontawesomemarkup('exclamation-triangle', array('red')).get_string('invalidurl', 'error').'</em>';
+                $branchlabel = '<em>'.$this->getfontawesomemarkup('exclamation-triangle', array('red')).
+                    get_string('invalidurl', 'error').'</em>';
             }
 
         }
@@ -1187,7 +1191,8 @@ class core_renderer extends \core_renderer {
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
         if ($CFG->enablebadges && has_capability('moodle/badges:manageownbadges', $context)) {
-            $branchlabel = '<em>'.$this->getfontawesomemarkup('certificate').get_string('badgepreferences', 'theme_essential').'</em>';
+            $branchlabel = '<em>'.$this->getfontawesomemarkup('certificate').
+                get_string('badgepreferences', 'theme_essential').'</em>';
             $branchurl = new moodle_url('/badges/preferences.php');
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
@@ -1482,13 +1487,13 @@ class core_renderer extends \core_renderer {
                         // Break...
                         $output .= html_writer::end_tag('div');
                         $output .= html_writer::start_tag('div', array('class' => 'row-fluid'));
-                        // Recalculate span if needed...
+                        // Recalculate 'span' if needed...
                         $remainingblocks = $blockcount - ($currentblockcount - 1);
                         if ($remainingblocks < $blocksperrow) {
                             $span = 12 / $remainingblocks;
                             if ($span < 1) {
-                                // Should not happen but a fail safe.
-                                // Block will be small so good for screen shots when this happens.
+                                /* Should not happen but a fail safe.
+                                   Block will be small so good for screen shots when this happens. */
                                 $span = 1;
                             }
                         }
@@ -1606,10 +1611,8 @@ class core_renderer extends \core_renderer {
         $output = parent::standard_footer_html();
         $output .= html_writer::start_tag('div', array ('class' => 'themecredit')).
             get_string('credit', 'theme_essential',
-                array('name' => html_writer::link('https://moodle.org/plugins/theme_essential', 'Essential',
-                    array('target' => '_blank')))).
-            html_writer::link('//about.me/gjbarnard', 'Gareth J Barnard', array('target' => '_blank')).
-            html_writer::end_tag('div');
+            array('name' => html_writer::link('https://moodle.org/plugins/theme_essential', 'Essential', array('target' => '_blank')))).
+            html_writer::link('//about.me/gjbarnard', 'Gareth J Barnard', array('target' => '_blank')).html_writer::end_tag('div');
 
         return $output;
     }
