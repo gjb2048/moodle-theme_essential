@@ -339,7 +339,7 @@ class toolbox {
         \user_preference_allow_ajax_update('theme_essential_colours', PARAM_ALPHANUM);
         $page->requires->yui_module(
                 'moodle-theme_essential-coloursswitcher', 'M.theme_essential.initColoursSwitcher',
-                array(array('div' => '.dropdown-menu'))
+                array(array('div' => '#custom_menu_themecolours .dropdown-menu'))
         );
     }
 
