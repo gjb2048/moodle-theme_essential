@@ -13,6 +13,7 @@ New in 3.0.1.1
 - FIX: Add 'speak: none' to FontAwesome icons for accessibility.
 - FIX: Footer doesn't stay at bottom code fix when no footer.
 - FIX: Alternative colour border colours.
+- FIX: Narrow page width and page header.
 - NEW: Improve efficiency of colour switcher.
 - NEW: Issue #632: View StyleGuide without logging on.
 
