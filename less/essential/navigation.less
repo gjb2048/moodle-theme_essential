@@ -5,12 +5,14 @@
 
 .navbar {
   margin-bottom: 0px;
-  position: fixed;
   width: 100%;
-  top: 0px;
-  right: 0px;
   background-image: none;
   z-index: 200;
+
+  &.affix {
+    top: 0px;
+    right: 0px;
+  }
 
   .navbar-inner {
     .reset-filter();
@@ -299,14 +301,9 @@ a {
 }
 /* @end */
 
-.navbar.oldnavbar,
 .pagelayout-secure .navbar,
 .pagelayout-popup .navbar {
   position: relative;
-}
-
-.navbar.oldnavbar.affix {
-  position: fixed;
 }
 
 /* @end */
