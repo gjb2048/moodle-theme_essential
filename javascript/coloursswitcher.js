@@ -17,8 +17,9 @@ YUI.add('moodle-theme_essential-coloursswitcher', function (Y) {
          */
         initializer: function (config) {
             var i, s;
-            // Attach events to the links to change colours scheme so we can do it with
-            // JavaScript without refreshing the page.
+            /* Attach events to the links to change colours scheme so we can do it with
+               JavaScript without refreshing the page. */
+            Y.log('Colour switcher on: ' + config.div);
             for (i in SCHEMES) {
                 s = SCHEMES[i];
                 // Check if this is the current colour.
