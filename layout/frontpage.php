@@ -43,18 +43,18 @@ if ($enable1alert || $enable2alert || $enable3alert) {
     <section class="slideshow">
         <!-- Start Slideshow -->
         <?php
-$toggleslideshow = \theme_essential\toolbox::get_setting('toggleslideshow');
-if ($PAGE->user_is_editing() && ($toggleslideshow)) {
-    require_once(\theme_essential\toolbox::get_tile_file('slideshow'));
-} else {
-    if ($toggleslideshow == 1) {
-        require_once(\theme_essential\toolbox::get_tile_file('slideshow'));
-    } else if ($toggleslideshow == 2 && !isloggedin()) {
-        require_once(\theme_essential\toolbox::get_tile_file('slideshow'));
-    } else if ($toggleslideshow == 3 && isloggedin()) {
-        require_once(\theme_essential\toolbox::get_tile_file('slideshow'));
-    }
-}
+        $toggleslideshow = \theme_essential\toolbox::get_setting('toggleslideshow');
+        if ($PAGE->user_is_editing() && ($toggleslideshow)) {
+            require_once(\theme_essential\toolbox::get_tile_file('slideshow'));
+        } else {
+            if ($toggleslideshow == 1) {
+                require_once(\theme_essential\toolbox::get_tile_file('slideshow'));
+            } else if ($toggleslideshow == 2 && !isloggedin()) {
+                require_once(\theme_essential\toolbox::get_tile_file('slideshow'));
+            } else if ($toggleslideshow == 3 && isloggedin()) {
+                require_once(\theme_essential\toolbox::get_tile_file('slideshow'));
+            }
+        }
 ?>
         <!-- End Slideshow -->
     </section>
@@ -106,55 +106,55 @@ if ($PAGE->user_is_editing() && ($toggleslideshow)) {
 
         <!-- Start Frontpage Content -->
         <?php
-$showfrontcontentsetting = \theme_essential\toolbox::get_setting('togglefrontcontent');
-if ($PAGE->user_is_editing() && ($showfrontcontentsetting)) {
-    $showfrontcontent = true;
-} else {
-    $showfrontcontent = false;
-    switch ($showfrontcontentsetting) {
-        case 1:
+        $showfrontcontentsetting = \theme_essential\toolbox::get_setting('togglefrontcontent');
+        if ($PAGE->user_is_editing() && ($showfrontcontentsetting)) {
             $showfrontcontent = true;
-            break;
-        case 2:
-            if (!isloggedin()) {
-                $showfrontcontent = true;
+        } else {
+            $showfrontcontent = false;
+            switch ($showfrontcontentsetting) {
+                case 1:
+                    $showfrontcontent = true;
+                    break;
+                case 2:
+                    if (!isloggedin()) {
+                        $showfrontcontent = true;
+                    }
+                    break;
+                case 3:
+                    if (isloggedin()) {
+                        $showfrontcontent = true;
+                    }
+                    break;
             }
-            break;
-        case 3:
-            if (isloggedin()) {
-                $showfrontcontent = true;
-            }
-            break;
-    }
-}
-if ($showfrontcontent) { ?>
+        }
+        if ($showfrontcontent) { ?>
             <div class="frontpagecontent">
                 <div class="bor"></div>
                 <?php
-    echo \theme_essential\toolbox::get_setting('frontcontentarea', 'format_html');
-    echo $OUTPUT->essential_edit_button('theme_essential_frontpage');
+                echo \theme_essential\toolbox::get_setting('frontcontentarea', 'format_html');
+                echo $OUTPUT->essential_edit_button('theme_essential_frontpage');
                 ?>
                 <div class="bor"></div>
             </div>
 <?php
-}
+        }
 ?>
         <!-- End Frontpage Content -->
 
         <!-- Start Marketing Spots -->
         <?php
-$togglemarketing = \theme_essential\toolbox::get_setting('togglemarketing');
-if ($PAGE->user_is_editing() && ($togglemarketing)) {
-    require_once(\theme_essential\toolbox::get_tile_file('marketingspots'));
-} else {
-    if ($togglemarketing == 1) {
-        require_once(\theme_essential\toolbox::get_tile_file('marketingspots'));
-    } else if ($togglemarketing == 2 && !isloggedin()) {
-        require_once(\theme_essential\toolbox::get_tile_file('marketingspots'));
-    } else if ($togglemarketing == 3 && isloggedin()) {
-        require_once(\theme_essential\toolbox::get_tile_file('marketingspots'));
-    }
-}
+        $togglemarketing = \theme_essential\toolbox::get_setting('togglemarketing');
+        if ($PAGE->user_is_editing() && ($togglemarketing)) {
+            require_once(\theme_essential\toolbox::get_tile_file('marketingspots'));
+        } else {
+            if ($togglemarketing == 1) {
+                require_once(\theme_essential\toolbox::get_tile_file('marketingspots'));
+            } else if ($togglemarketing == 2 && !isloggedin()) {
+                require_once(\theme_essential\toolbox::get_tile_file('marketingspots'));
+            } else if ($togglemarketing == 3 && isloggedin()) {
+                require_once(\theme_essential\toolbox::get_tile_file('marketingspots'));
+            }
+        }
 ?>
 <!-- End Marketing Spots -->
 

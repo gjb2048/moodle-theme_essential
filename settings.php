@@ -108,8 +108,8 @@ if ($ADMIN->fulltree) {
     $readme = new moodle_url('/theme/essential/README.txt');
     $readme = html_writer::link($readme, get_string('readme_click', 'theme_essential'), array('target' => '_blank'));
 
-    $essentialsettingsgeneric->add(new admin_setting_heading('theme_essential_generalreadme', get_string('readme_title', 'theme_essential'),
-        get_string('readme_desc', 'theme_essential', array('url' => $readme))));
+    $essentialsettingsgeneric->add(new admin_setting_heading('theme_essential_generalreadme',
+        get_string('readme_title', 'theme_essential'), get_string('readme_desc', 'theme_essential', array('url' => $readme))));
 }
 $ADMIN->add('theme_essential', $essentialsettingsgeneric);
 
@@ -123,7 +123,8 @@ if ($ADMIN->fulltree) {
         require_once($CFG->themedir . '/essential/essential_admin_setting_configinteger.php');
     }
 
-    $essentialsettingsfeature->add(new admin_setting_heading('theme_essential_feature', get_string('featureheadingsub', 'theme_essential'),
+    $essentialsettingsfeature->add(new admin_setting_heading('theme_essential_feature',
+        get_string('featureheadingsub', 'theme_essential'),
         format_text(get_string('featuredesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
     // Course content search.
@@ -194,7 +195,8 @@ $ADMIN->add('theme_essential', $essentialsettingsfeature);
 // Colour settings.
 $essentialsettingscolour = new admin_settingpage('theme_essential_colour', get_string('colorheading', 'theme_essential'));
 if ($ADMIN->fulltree) {
-    $essentialsettingscolour->add(new admin_setting_heading('theme_essential_colour', get_string('colorheadingsub', 'theme_essential'),
+    $essentialsettingscolour->add(new admin_setting_heading('theme_essential_colour',
+        get_string('colorheadingsub', 'theme_essential'),
         format_text(get_string('colordesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
     // Main theme colour setting.
@@ -816,7 +818,8 @@ if ($ADMIN->fulltree) {
     $essentialsettingsheader->add($setting);
 
     // Social network settings.
-    $essentialsettingsheader->add(new admin_setting_heading('theme_essential_social', get_string('socialheadingsub', 'theme_essential'),
+    $essentialsettingsheader->add(new admin_setting_heading('theme_essential_social',
+        get_string('socialheadingsub', 'theme_essential'),
         format_text(get_string('socialdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
     // Website URL setting.
@@ -1396,7 +1399,8 @@ if ($ADMIN->fulltree) {
     }
 
     // User alerts.
-    $essentialsettingsfrontpage->add(new admin_setting_heading('theme_essential_alerts', get_string('alertsheadingsub', 'theme_essential'),
+    $essentialsettingsfrontpage->add(new admin_setting_heading('theme_essential_alerts',
+        get_string('alertsheadingsub', 'theme_essential'),
         format_text(get_string('alertsdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
     $information = get_string('alertinfodesc', 'theme_essential');
@@ -1790,7 +1794,8 @@ if ($ADMIN->fulltree) {
 $ADMIN->add('theme_essential', $essentialsettingsslideshow);
 
 // Category settings.
-$essentialsettingscategoryicon = new admin_settingpage('theme_essential_categoryicon', get_string('categoryiconheading', 'theme_essential'));
+$essentialsettingscategoryicon = new admin_settingpage('theme_essential_categoryicon',
+    get_string('categoryiconheading', 'theme_essential'));
 if ($ADMIN->fulltree) {
     $essentialsettingscategoryicon->add(new admin_setting_heading('theme_essential_categoryicon',
         get_string('categoryiconheadingsub', 'theme_essential'),
