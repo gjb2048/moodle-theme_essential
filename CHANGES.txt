@@ -12,6 +12,7 @@ New in 2.9.1.11
 - FIX: Apply 'aria-hidden="true"' to FontAwesome icons as much as possible.  Still a few 'content' CSS attributes to consider.
 - FIX: Add 'speak: none' to FontAwesome icons for accessibility.
 - FIX: Footer doesn't stay at bottom code fix when no footer.
+- FIX: Alternative colour border colours.
 - NEW: Improve efficiency of colour switcher.
 - NEW: Issue #632: View StyleGuide without logging on.
 
