@@ -51,6 +51,11 @@ echo $OUTPUT->doctype();
 <?php echo $OUTPUT->standard_top_of_body_html(); ?>
 
 <header role="banner">
+<?php
+if (!$oldnavbar) {
+    require_once(\theme_essential\toolbox::get_tile_file('navbar'));
+}
+?>
     <div id="page-header" class="clearfix<?php echo ($oldnavbar) ? ' oldnavbar' : ''; ?>">
         <div class="container-fluid">
             <div class="row-fluid">
@@ -128,56 +133,9 @@ if ($hassocialnetworks || $hasmobileapps) {
             </div>
         </div>
     </div>
-    <nav role="navigation">
-        <div id='essentialnavbar' class="navbar<?php echo ($oldnavbar) ? ' oldnavbar' : ''; ?> moodle-has-zindex">
-            <div class="container-fluid navbar-inner">
-                <div class="row-fluid">
-                    <div class="custommenus pull-<?php echo ($left) ? 'left' : 'right'; ?>">
-                        <a class="btn btn-navbar" data-toggle="collapse" data-target="#essentialmenus">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </a>
-                        <?php echo $OUTPUT->get_title('navbar'); ?>
-                    <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>">
-                        <div class="usermenu">
-                            <?php echo $OUTPUT->custom_menu_user(); ?>
-                        </div>
-                        <div class="messagemenu">
-                            <?php echo $OUTPUT->custom_menu_messages(); ?>
-                        </div>
-                        <div class="gotobottommenu">
-                            <?php echo $OUTPUT->custom_menu_goto_bottom(); ?>
-                        </div>
-                        <div id="custom_menu_editing" class="editingmenu">
-                            <?php echo $OUTPUT->custom_menu_editing(); ?>
-                        </div>
-                    </div>
-                        <div id='essentialmenus' class="nav-collapse collapse pull-<?php echo ($left) ? 'left' : 'right'; ?>">
-                            <div id="custom_menu_language">
-                                <?php echo $OUTPUT->custom_menu_language(); ?>
-                            </div>
-                            <div id="custom_menu_courses">
-                                <?php echo $OUTPUT->custom_menu_courses(); ?>
-                            </div>
-                            <?php if ($colourswitcher) { ?>
-                                <div id="custom_menu_themecolours">
-                                    <?php echo $OUTPUT->custom_menu_themecolours(); ?>
-                                </div>
 <?php
+if ($oldnavbar) {
+    require_once(\theme_essential\toolbox::get_tile_file('navbar'));
 }
 ?>
-                            <div id="custom_menu">
-                                <?php echo $OUTPUT->custom_menu(); ?>
-                            </div>
-                            <div id="custom_menu_activitystream">
-                                <?php echo $OUTPUT->custom_menu_activitystream(); ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
 </header>
