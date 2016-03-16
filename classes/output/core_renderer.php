@@ -1171,7 +1171,7 @@ class core_renderer extends \core_renderer {
         $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         // Check if user is allowed to edit profile.
         if (has_capability('moodle/user:editownprofile', $context)) {
-            $branchlabel = '<em'.$this->getfontawesomemarkup('info-circle').get_string('editmyprofile').'</em>';
+            $branchlabel = '<em>'.$this->getfontawesomemarkup('info-circle').get_string('editmyprofile').'</em>';
             $branchurl = new moodle_url('/user/edit.php', array('id' => $USER->id));
             $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
         }
