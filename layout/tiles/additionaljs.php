@@ -28,6 +28,9 @@ $PAGE->requires->js_call_amd('theme_essential/footer', 'init');
 if (\theme_essential\toolbox::not_lte_ie9()) {
     $PAGE->requires->js_call_amd('theme_essential/affix', 'init');
     $breadcrumbstyle = \theme_essential\toolbox::get_setting('breadcrumbstyle');
+    if ($PAGE->pagelayout == 'course') {
+        $PAGE->requires->js_call_amd('theme_essential/course_navigation', 'init');
+    }
     if ($breadcrumbstyle == '1') {
         $PAGE->requires->js_call_amd('theme_essential/jBreadCrumb', 'init');
     }
