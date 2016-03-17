@@ -14,6 +14,7 @@ define(['jquery', 'jqueryui', 'core/log'], function($, jqui, log) {
 
                 $("#courseitemsearch").autocomplete({
                     source: data.theme,
+                    appendTo: "#courseitemsearchresults",
                     minLength: 2,
                     select: function(event, ui) {
                         var url = ui.item.id;

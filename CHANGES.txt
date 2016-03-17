@@ -2,6 +2,7 @@ New in 2.9.1.11
 ===============
 - FIX: Issue #351: Footer doesn't stay at bottom.
 - FIX: Issue #627: Request for an unknown renderer.
+- FIX: Issue #628: Course content search dialog does not show up properly on RTL mode.
 - FIX: Issue #629: Hidden resources have low contrast.
 - FIX: Issue #633: Increase performance of administration settings pages.  Thanks to 'Jan Dagefoerde' for the initial patch.
 - FIX: Issue #634: Improve icon replacement performance.
