@@ -740,6 +740,9 @@ input[type="color"]:focus,
   background-color: [[setting:themecolor]];
   border-top: 1px solid [[setting:themeiconcolor]];
 }
+body#page-grade-grading-pick #region-main form #fgroup_id_buttonar label {
+  color: [[setting:themenavcolor]];
+}
 /* @end */
 /* @group Frontpage */
 /* @group Marketing Spots */
