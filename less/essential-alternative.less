@@ -890,6 +890,12 @@
                     #cache:before, #load:before, #memory:before, #peakmemory:before, #session:before, #included:before, #dbqueries:before, #dbtime:before {
                         color: ~"[[setting:alternativethemenavcolor@{index}]]";
                     }
+                    span.@{fa-css-prefix} {
+                        color: inherit;
+                        &:hover, &:focus {
+                            color: inherit;
+                        }
+                    }
                 }
 
                 #page-mod-quiz-edit .questionbankwindow.block div.header {
