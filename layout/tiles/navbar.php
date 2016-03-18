@@ -24,8 +24,8 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 ?>
-    <nav role="navigation">
-        <div id='essentialnavbar' class="navbar moodle-has-zindex">
+    <nav id="essentialnavbar" role="navigation"<?php echo ($oldnavbar) ? ' class="oldnavbar"' : ''; ?>>
+        <div class="navbar">
             <div class="container-fluid navbar-inner">
                 <div class="row-fluid">
                     <div class="custommenus pull-<?php echo ($left) ? 'left' : 'right'; ?>">
