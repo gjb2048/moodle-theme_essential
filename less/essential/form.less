@@ -111,40 +111,54 @@ body#page-admin-setting-messageinbound_mailsettings fieldset select {
 }
 
 body {
-  &.desktopdevice.floatingsubmit {
-    #region-main {
-      form {
-        table#form td.submit,
-        .form-buttons,
-        .path-admin .buttons,
-        #fitem_id_submitbutton,
-        .fp-content-center form+div,
-        div.backup-section+form,
-        #fgroup_id_buttonar {
-          position: fixed;
-          left: 35%;
-          bottom: 30px;
+    &.desktopdevice.floatingsubmit {
+        #region-main {
+            form {
+                table#form td.submit,
+                .form-buttons,
+                .path-admin .buttons,
+                #fitem_id_submitbutton,
+                .fp-content-center form+div,
+                div.backup-section+form,
+                #fgroup_id_buttonar {
+                    position: fixed;
+                    left: 35%;
+                    bottom: 30px;
+                }
+            }
         }
-      }
-    }
-    &#page-enrol-index, &#page-mod-forum-post {
-      #region-main {
-        form {
-          table#form td.submit,
-          .form-buttons,
-          .path-admin .buttons,
-          #fitem_id_submitbutton,
-          .fp-content-center form+div,
-          div.backup-section+form,
-          #fgroup_id_buttonar {
-            position: inherit;
-            left: inherit;
-            bottom: inherit;
-          }
+        &#page-enrol-index, &#page-mod-forum-post, &#page-grade-grading-pick {
+            #region-main {
+                form {
+                    table#form td.submit,
+                    .form-buttons,
+                    .path-admin .buttons,
+                    #fitem_id_submitbutton,
+                    .fp-content-center form+div,
+                    div.backup-section+form,
+                    #fgroup_id_buttonar {
+                        position: inherit;
+                        left: inherit;
+                        bottom: inherit;
+                    }
+                }
+            }
         }
-      }
     }
-  }
+    &#page-grade-grading-pick {
+        #region-main {
+            form {
+                #fgroup_id_buttonar {
+                    width: 90%;
+                    fieldset input[size] {
+                        width: inherit;
+                        background-image: none;
+                        background-color: @white;
+                    }
+                }
+            }
+        }
+    }
 }
 
 #page-mod-assign-view.jsenabled .gradingoptionsform .fitem_actionbuttons {
