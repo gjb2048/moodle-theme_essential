@@ -9,6 +9,8 @@ New in 3.0.1.1
 - FIX: Issue #635: Course table of contents block navigation when static navbar.  Thanks to 'Mary Evans' for:
                    https://www.servermule.com.au/help/bootstrap-anchors-fixed-nav/ reference.
 - FIX: Issue #640: Edit profile style not set properly.
+- FIX: Issue #641: Floating rows in the gradebook position after page scroll are wrong.
+- FIX: Issue #642: Advanced Grading creating template form issue.
 - FIX: Style guide settings tooltips and popups.
 - FIX: MDL-52936 - Fix link hover bug on iOS.
 - FIX: Apply 'aria-hidden="true"' to FontAwesome icons as much as possible.  Still a few 'content' CSS attributes to consider.
