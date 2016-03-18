@@ -48,7 +48,6 @@
     display: block;
     float: left;
     height: 65px;
-    margin: 5px;
     width: 100%;
     background-size: contain;
     background-position: left center;
@@ -91,10 +90,12 @@
 }
 
 // Narrow page width with custom menu items can make the navigation bar big.
-.pagewidthnarrow.custommenuitems {
-  header .navbar-inner {
-    height: 80px;
-    max-height: 80px;
+@media(min-width: @navbarCollapseDesktopWidth) {
+  .pagewidthnarrow.custommenuitems {
+    header .navbar-inner {
+      height: @navbarHeight * 2;
+      max-height: @navbarHeight * 2;
+    }
   }
 }
 
