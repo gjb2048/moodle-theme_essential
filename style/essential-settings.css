@@ -778,6 +778,8 @@ input[type="color"]:focus,
 /* @end */
 /* @group Header */
 #page-header {
+  height: [[setting:logoheight]];
+  max-height: [[setting:logoheight]];
   color: [[setting:headertextcolor]];
 }
 #page-header h1#title {
@@ -803,6 +805,12 @@ input[type="color"]:focus,
 }
 /* @end */
 /* @group Navbar */
+#essentialnavbar.oldnavbar {
+  top: [[setting:logoheight]];
+}
+#essentialnavbar.affix.oldnavbar {
+  top: 0;
+}
 .navbar .navbar-inner .brand {
   color: [[setting:themenavcolor]];
 }

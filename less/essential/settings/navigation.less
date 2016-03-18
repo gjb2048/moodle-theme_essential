@@ -1,6 +1,16 @@
 /* @group Navbar */
 @import "../../fontawesome/variables";
 
+#essentialnavbar {
+  &.oldnavbar {
+    top: ~"[[setting:logoheight]]";
+  }
+
+  &.affix.oldnavbar {
+    top: 0;
+  }
+}
+
 .navbar {
   .navbar-inner {
     .brand {
