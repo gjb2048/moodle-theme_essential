@@ -6,8 +6,7 @@ New in 3.0.1.1
 - FIX: Issue #629: Hidden resources have low contrast.
 - FIX: Issue #633: Increase performance of administration settings pages.  Thanks to 'Jan Dagefoerde' for the initial patch.
 - FIX: Issue #634: Improve icon replacement performance.
-- FIX: Issue #635: Course table of contents block navigation when static navbar.  Thanks to 'Mary Evans' for:
-                   https://www.servermule.com.au/help/bootstrap-anchors-fixed-nav/ reference.
+- FIX: Issue #635: Course table of contents block navigation when static navbar.
 - FIX: Issue #640: Edit profile style not set properly.
 - FIX: Issue #641: Floating rows in the gradebook position after page scroll are wrong.
 - FIX: Issue #642: Advanced Grading creating template form issue.
