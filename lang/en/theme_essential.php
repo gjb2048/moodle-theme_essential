@@ -156,6 +156,9 @@ $string['logodesc'] = 'Please upload your custom logo here if you want to add it
                        <br>The image should be the same height as the Logo height setting below and any reasonable width that suits.
                        <br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
 
+$string['logowidth'] = 'Logo width';
+$string['logowidthdesc'] = 'The width of the logo image. This can be specified in px or em.';
+
 $string['logoheight'] = 'Logo height';
 $string['logoheightdesc'] = 'The height of the logo image. This can be specified in px or em.';
 

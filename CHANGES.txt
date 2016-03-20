@@ -17,8 +17,11 @@ New in 3.0.1.1
 - FIX: Footer doesn't stay at bottom code fix when no footer.
 - FIX: Alternative colour border colours.
 - FIX: Narrow page width and page header.
+- FIX: Tidy the header.
 - NEW: Improve efficiency of colour switcher.
 - NEW: Issue #632: View StyleGuide without logging on.
+- NEW: Add logo width setting.
+- NEW: Hide title area when showing social icons when collapsed.
 
 New in 3.0.1
 ============

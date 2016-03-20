@@ -24,7 +24,7 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 ?>
-    <nav id="essentialnavbar" role="navigation"<?php echo ($oldnavbar) ? ' class="oldnavbar"' : ''; ?>>
+    <nav id="essentialnavbar" role="navigation" class="moodle-has-zindex<?php echo ($oldnavbar) ? ' oldnavbar' : '';  echo ($haslogo) ? ' logo' : ' nologo';?>">
         <div class="navbar">
             <div class="container-fluid navbar-inner">
                 <div class="row-fluid">

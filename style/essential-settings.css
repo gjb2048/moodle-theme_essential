@@ -781,9 +781,16 @@ body#page-grade-grading-pick #region-main form #fgroup_id_buttonar label {
 /* @end */
 /* @group Header */
 #page-header {
+  color: [[setting:headertextcolor]];
+  background: url('[[setting:headerbackground]]') repeat;
+}
+#page-header.logo {
   height: [[setting:logoheight]];
   max-height: [[setting:logoheight]];
-  color: [[setting:headertextcolor]];
+}
+#page-header.nologo {
+  height: 52px;
+  max-height: 52px;
 }
 #page-header h1#title {
   color: [[setting:headertextcolor]];
@@ -800,16 +807,47 @@ body#page-grade-grading-pick #region-main form #fgroup_id_buttonar label {
 #page-header .btn-icon .icon-bar {
   background-color: [[setting:themecolor]];
 }
+#page-header a.logo {
+  background-image: [[setting:logo]];
+  height: [[setting:logoheight]];
+  width: [[setting:logowidth]];
+}
+#page-header div.titlearea {
+  border-left: 1px dotted [[setting:themecolor]];
+}
+@media (min-width: 980px) {
+  #page-header.nologo {
+    height: 57px;
+    max-height: 57px;
+  }
+}
+/* @end */
+/* @group Social Buttons */
+button.website:hover,
+button.website:focus {
+  background-color: [[setting:themecolor]];
+}
 .socials {
   margin: 0px;
 }
 .socials p {
   color: [[setting:headertextcolor]];
 }
+#mobileapps {
+  border-right: 1px dotted [[setting:themecolor]];
+}
 /* @end */
 /* @group Navbar */
-#essentialnavbar.oldnavbar {
+#essentialnavbar.oldnavbar.logo {
   top: [[setting:logoheight]];
+}
+#essentialnavbar.oldnavbar.nologo {
+  top: 52px;
+}
+@media (min-width: 980px) {
+  #essentialnavbar.oldnavbar.nologo {
+    top: 57px;
+  }
 }
 #essentialnavbar.affix.oldnavbar {
   top: 0;
@@ -1021,27 +1059,6 @@ a:before:hover {
 img.userpicture,
 img.profilepicture {
   box-shadow: 0px 0px 3px [[setting:themecolor]];
-}
-/* @end */
-/* @end */
-/* @group Header */
-#page-header {
-  background: url('[[setting:headerbackground]]') repeat;
-}
-#page-header a.logo {
-  background-image: [[setting:logo]];
-  height: [[setting:logoheight]];
-}
-h1#title {
-  color: [[setting:themetextcolor]];
-}
-#page-header div.titlearea {
-  border-left: 1px dotted [[setting:themecolor]];
-}
-/* @group Social Buttons */
-button.website:hover,
-button.website:focus {
-  background-color: [[setting:themecolor]];
 }
 /* @end */
 /* @end */
