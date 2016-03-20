@@ -110,11 +110,6 @@ $hasmobileapps = (\theme_essential\toolbox::get_setting('ios') ||
     \theme_essential\toolbox::get_setting('android')
 );
 
-$logoclass = 'ecol12';
-if ($hassocialnetworks || $hasmobileapps) {
-    $logoclass = 'ecol7';
-}
-
 $oldnavbar = \theme_essential\toolbox::get_setting('oldnavbar');
 $haslogo = \theme_essential\toolbox::get_setting('logo');
 

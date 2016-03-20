@@ -398,9 +398,10 @@ function theme_essential_process_css($css, $theme) {
     $logo = \theme_essential\toolbox::setting_file_url('logo', 'logo');
     $css = \theme_essential\toolbox::set_logo($css, $logo);
 
-    // Set the logo height.
+    // Set the logo width and height.
+    $logowidth = \theme_essential\toolbox::get_setting('logowidth');
     $logoheight = \theme_essential\toolbox::get_setting('logoheight');
-    $css = \theme_essential\toolbox::set_logoheight($css, $logoheight);
+    $css = \theme_essential\toolbox::set_logodimensions($css, $logowidth, $logoheight);
 
     // Set the background image for the header.
     $headerbackground = \theme_essential\toolbox::setting_file_url('headerbackground', 'headerbackground');

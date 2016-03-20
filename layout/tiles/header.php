@@ -56,12 +56,11 @@ if (!$oldnavbar) {
     require_once(\theme_essential\toolbox::get_tile_file('navbar'));
 }
 ?>
-    <div id="page-header" class="clearfix<?php echo ($oldnavbar) ? ' oldnavbar' : ''; ?>">
+    <div id="page-header" class="clearfix<?php echo ($oldnavbar) ? ' oldnavbar' : ''; echo ($haslogo) ? ' logo' : ' nologo'; ?>">
         <div class="container-fluid">
             <div class="row-fluid">
                 <!-- HEADER: LOGO AREA -->
-                <div class="<?php echo $logoclass;
-                echo (!$left) ? ' pull-right' : ' pull-left'; ?>">
+                <div class="<?php echo (!$left) ? 'pull-right' : 'pull-left'; ?>">
 <?php
 if (!$haslogo) {
     echo '<a class="textlogo" href="';
@@ -76,7 +75,7 @@ if (!$haslogo) {
 ?>
                 </div>
                 <?php if ($hassocialnetworks || $hasmobileapps) { ?>
-                <a class="btn btn-icon" data-toggle="collapse" data-target="#essentialicons">
+                <a class="btn btn-icon collapsed" data-toggle="collapse" data-target="#essentialicons">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
