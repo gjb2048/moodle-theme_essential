@@ -30,7 +30,7 @@
     }
   }
   &.oldnavbar .btn-icon {
-    top: 14px;
+    top: 10px;
   }
   #essentialicons {
     overflow: visible;
@@ -47,8 +47,6 @@
   a.logo {
     display: block;
     float: left;
-    height: 65px;
-    width: 100%;
     background-size: contain;
     background-position: left center;
     background-repeat: no-repeat;
@@ -57,12 +55,22 @@
   div.titlearea {
     margin-left: 80px;
     padding-left: 10px;
+    height: 52px;
+    width: 100%;
   }
+  
+  h1, h2 {
+    margin: 0;
+  }
+
   h1#title {
     font-size: 3em;
+    padding-top: 4px;
+    line-height: 40px;
   }
   h1#smalltitle {
     font-size: 2em;
+    padding-top: 12px;
     line-height: 20px;
   }
   h2#subtitle {
@@ -79,6 +87,18 @@
     font-size: 4.5em;
     padding-right: 10px;
     margin-right: 10px;
+  }
+}
+
+@media(min-width: 768px) {
+  #page-header div.titlearea {
+    display: block !important;
+  }
+}
+
+@media (min-width: @navbarCollapseDesktopWidth) {
+  #page-header div.titlearea {
+    height: 57px;
   }
 }
 
@@ -105,7 +125,8 @@
 
 #socialnetworks,
 #mobileapps {
-  margin-right: 10px;
+  margin-right: 5px;
+  padding-right: 5px;
 }
 
 .socials {
@@ -191,11 +212,8 @@ ul.socials {
 #socialheading {
   text-align: right;
   letter-spacing: .2em;
-  padding: 0px;
-  margin: 0px;
-  margin-top: 8px;
+  padding: 0;
+  margin: 2px 0 0;
 }
-
-/* @end */
 
 /* @end */

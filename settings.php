@@ -671,6 +671,14 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 
+    // Logo width setting.
+    $name = 'theme_essential/logowidth';
+    $title = get_string('logowidth', 'theme_essential');
+    $description = get_string('logowidthdesc', 'theme_essential');
+    $default = '65px';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $essentialsettingsheader->add($setting);
+
     // Logo height setting.
     $name = 'theme_essential/logoheight';
     $title = get_string('logoheight', 'theme_essential');

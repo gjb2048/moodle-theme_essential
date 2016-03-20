@@ -594,7 +594,15 @@ class toolbox {
         return $css;
     }
 
-    static public function set_logoheight($css, $logoheight) {
+    static public function set_logodimensions($css, $logowidth, $logoheight) {
+        $tag = '[[setting:logowidth]]';
+        if (!($logowidth)) {
+            $replacement = '65px';
+        } else {
+            $replacement = $logowidth;
+        }
+        $css = str_replace($tag, $replacement, $css);
+
         $tag = '[[setting:logoheight]]';
         if (!($logoheight)) {
             $replacement = '65px';
@@ -602,6 +610,7 @@ class toolbox {
             $replacement = $logoheight;
         }
         $css = str_replace($tag, $replacement, $css);
+
         return $css;
     }
 

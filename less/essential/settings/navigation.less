@@ -3,9 +3,22 @@
 
 #essentialnavbar {
   &.oldnavbar {
-    top: ~"[[setting:logoheight]]";
+    &.logo {
+      top: ~"[[setting:logoheight]]";
+    }
+    &.nologo {
+      top: 52px;
+    }
   }
+}
 
+@media (min-width: @navbarCollapseDesktopWidth) {
+  #essentialnavbar.oldnavbar.nologo {
+    top: 57px;
+  }
+}
+
+#essentialnavbar {
   &.affix.oldnavbar {
     top: 0;
   }

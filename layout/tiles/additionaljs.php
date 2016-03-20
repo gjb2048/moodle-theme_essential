@@ -24,6 +24,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+$PAGE->requires->js_call_amd('theme_essential/header', 'init');
 $PAGE->requires->js_call_amd('theme_essential/footer', 'init');
 if (\theme_essential\toolbox::not_lte_ie9()) {
     if (\theme_essential\toolbox::get_setting('oldnavbar')) {
