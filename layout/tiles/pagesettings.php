@@ -30,6 +30,10 @@ global $CFG, $PAGE, $USER, $SITE, $COURSE;
 // Body.
 $bodyclasses = array();
 
+if (isloggedin()) {
+    $bodyclasses[] = 'loggedin';
+}
+
 if (\theme_essential\toolbox::get_setting('enablealternativethemecolors1') ||
     \theme_essential\toolbox::get_setting('enablealternativethemecolors2') ||
     \theme_essential\toolbox::get_setting('enablealternativethemecolors3') ||
