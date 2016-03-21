@@ -36,13 +36,6 @@
         <licenseversion>2.0</licenseversion>
     </library>
     <library>
-        <location>javascript/coloursswitcher.js</location>
-        <name>Colour Switcher from Splash theme</name>
-        <license>GPL</license>
-        <version>2014041400</version>
-        <licenseversion>3.0</licenseversion>
-    </library>
-    <library>
         <location>amd/src/fitvids.js</location>
         <name>FitVids auto video sizer</name>
         <license>WTFPL</license>

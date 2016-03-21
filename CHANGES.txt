@@ -23,6 +23,7 @@ New in 2.9.1.11
 - NEW: Add logo width setting.
 - NEW: Hide title area when showing social icons when collapsed.
 - NEW: Bigger user picture when using the old navbar position and at the top.
+- NEW: Refactor ColoursSwitcher into jQuery and optimise.
 
 New in 2.9.1.10
 ===============
