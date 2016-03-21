@@ -60,7 +60,7 @@ $THEME->sheets[] = 'custom';
 
 $THEME->supportscssoptimisation = false;
 
-$THEME->javascripts_footer = array('essential', 'coloursswitcher');
+$THEME->javascripts_footer = array('essential');
 if (floatval($CFG->version) >= 2013111803.02) { // 2.6.3+ (Build: 20140522) which has MDL-43995 integrated into it.
     $THEME->enable_dock = true;
     $THEME->javascripts_footer[] = 'dock';

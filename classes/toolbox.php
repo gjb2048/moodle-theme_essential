@@ -337,10 +337,8 @@ class toolbox {
     static public function initialise_colourswitcher(\moodle_page $page) {
         self::check_colours_switch();
         \user_preference_allow_ajax_update('theme_essential_colours', PARAM_ALPHANUM);
-        $page->requires->yui_module(
-                'moodle-theme_essential-coloursswitcher', 'M.theme_essential.initColoursSwitcher',
-                array(array('div' => '#custom_menu_themecolours .dropdown-menu'))
-        );
+        $page->requires->js_call_amd('theme_essential/coloursswitcher', 'init',
+            array(array('div' => '#custom_menu_themecolours .dropdown-menu')));
     }
 
     /**
