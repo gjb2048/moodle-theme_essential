@@ -2,7 +2,6 @@
 @import "../fontawesome/variables";
 
 #page-header {
-  margin-top: 40px;
   border-bottom: 1px solid #DDD;
   .row-fluid [class*="span"] {
     padding-right: 5px;
@@ -12,7 +11,7 @@
     float: right;
     padding: 7px 10px;
     position: absolute;
-    top: 45px;
+    top: 56px;
     right: 10px;
     background-image: none;
     background-color: #ededed;
@@ -31,7 +30,7 @@
     }
   }
   &.oldnavbar .btn-icon {
-    top: 4px;
+    top: 10px;
   }
   #essentialicons {
     overflow: visible;
@@ -48,9 +47,6 @@
   a.logo {
     display: block;
     float: left;
-    height: 65px;
-    margin: 5px;
-    width: 100%;
     background-size: contain;
     background-position: left center;
     background-repeat: no-repeat;
@@ -59,12 +55,22 @@
   div.titlearea {
     margin-left: 80px;
     padding-left: 10px;
+    height: 52px;
+    width: 100%;
   }
+  
+  h1, h2 {
+    margin: 0;
+  }
+
   h1#title {
     font-size: 3em;
+    padding-top: 4px;
+    line-height: 40px;
   }
   h1#smalltitle {
     font-size: 2em;
+    padding-top: 12px;
     line-height: 20px;
   }
   h2#subtitle {
@@ -84,6 +90,18 @@
   }
 }
 
+@media(min-width: 768px) {
+  #page-header div.titlearea {
+    display: block !important;
+  }
+}
+
+@media (min-width: @navbarCollapseDesktopWidth) {
+  #page-header div.titlearea {
+    height: 57px;
+  }
+}
+
 #page-header.oldnavbar,
 .pagelayout-maintenance #page-header,
 #page-admin-upgradesettings #page-header,
@@ -92,15 +110,11 @@
 }
 
 // Narrow page width with custom menu items can make the navigation bar big.
-.pagewidthnarrow.custommenuitems {
-  header .navbar-inner {
-    height: 80px;
-    max-height: 80px;
-  }
-  #page-header {
-    margin-top: 80px;
-    &.oldnavbar {
-      margin-top: 0px;
+@media(min-width: @navbarCollapseDesktopWidth) {
+  .pagewidthnarrow.custommenuitems {
+    header .navbar-inner {
+      height: @navbarHeight * 2;
+      max-height: @navbarHeight * 2;
     }
   }
 }
@@ -111,7 +125,8 @@
 
 #socialnetworks,
 #mobileapps {
-  margin-right: 10px;
+  margin-right: 5px;
+  padding-right: 5px;
 }
 
 .socials {
@@ -132,8 +147,11 @@ body button {
     text-align: center;
     background-image: none;
     min-width: 29px;
-    i.@{fa-css-prefix} {
+    .@{fa-css-prefix} {
       color: @white;
+    }
+    &:hover, &:focus {
+      background-image: none;
     }
   }
   &.facebook:hover, &.facebook:focus {
@@ -194,11 +212,14 @@ ul.socials {
 #socialheading {
   text-align: right;
   letter-spacing: .2em;
-  padding: 0px;
-  margin: 0px;
-  margin-top: 8px;
+  padding: 0;
+  margin: 2px 0 0;
 }
 
-/* @end */
+@media (min-width: 768px) {
+  .loggedin #page-header.oldnavbar #essentialicons {
+    right: 132px;
+  }
+}
 
 /* @end */

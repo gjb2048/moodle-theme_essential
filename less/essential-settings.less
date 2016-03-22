@@ -6,9 +6,11 @@
 
 // Import the bootstrap variables.
 @import "bootstrap/variables";
+@import "bootstrap-override/variables";
 // Import the essential variables.
-@import "essential/variables";
+@import "essential/settings/variables";
 @import "essential/settings/alerts";
+@import "essential/settings/autocomplete";
 @import "essential/settings/backup-restore";
 @import "essential/settings/blocks";
 @import "essential/settings/breadcrumb";
@@ -19,6 +21,8 @@
 @import "essential/settings/course";
 @import "essential/settings/dock";
 @import "essential/settings/editicons";
+@import "essential/settings/editor"; // Not sure why this is needed despite $THEME->editor_sheets in config.php.
+@import "essential/settings/filemanager";
 @import "essential/settings/form";
 @import "essential/settings/frontpage";
 @import "essential/settings/header";

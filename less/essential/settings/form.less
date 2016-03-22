@@ -23,6 +23,14 @@ input[type="color"],
 .mform legend,
 .mform legend a {
   color: ~"[[setting:themetextcolor]]";
+
+  // Focus state.
+  &:focus {
+    border-color: ~"[[setting:inputfocusbordercolor]]";
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px ~"[[setting:inputfocusshadowcolor]]";
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px ~"[[setting:inputfocusshadowcolor]]";
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px ~"[[setting:inputfocusshadowcolor]]";
+  }
 }
 
 #page {
@@ -53,6 +61,20 @@ input[type="color"],
       border-top: 1px solid ~"[[setting:themeiconcolor]]";
     }
   }
+}
+
+body {
+    &#page-grade-grading-pick {
+        #region-main {
+            form {
+                #fgroup_id_buttonar {
+                    label {
+                        color: ~"[[setting:themenavcolor]]";
+                    }
+                }
+            }
+        }
+    }
 }
 
 /* @end */

@@ -33,11 +33,11 @@ h1, h2, h3, h4, h5, h6, #adminsettings h3 {
   color: ~"[[setting:themetextcolor]]";
 }
 
-a, a:visited {
+a, a:visited, .btn-link, .btn-link:visited {
   color: ~"[[setting:themeurlcolor]]";
 }
 
-a:hover {
+a:hover, a:focus, .btn-link:hover, .btn-link:focus {
   color: ~"[[setting:themehovercolor]]";
   &:before {
     color: ~"[[setting:themehovercolor]]";
@@ -66,34 +66,6 @@ a:before {
 img.userpicture,
 img.profilepicture {
   box-shadow: 0px 0px 3px ~"[[setting:themecolor]]";
-}
-
-/* @end */
-
-/* @end */
-
-/* @group Header */
-
-#page-header {
-  background: url(~"'[[setting:headerbackground]]'") repeat;
-  a.logo {
-    background-image: ~"[[setting:logo]]";
-    height: ~"[[setting:logoheight]]";
-  }
-}
-
-h1#title {
-  color: ~"[[setting:themetextcolor]]";
-}
-
-#page-header div.titlearea {
-  border-left: 1px dotted ~"[[setting:themecolor]]";
-}
-
-/* @group Social Buttons */
-
-button.website:hover, button.website:focus {
-  background-color: ~"[[setting:themecolor]]";
 }
 
 /* @end */
@@ -161,27 +133,6 @@ h2.pagetitle {
 
 /* @end */
 
-/* @group Buttons */
-
-.button {
-  a, a:visited {
-    background-color: ~"[[setting:themecolor]]";
-  }
-}
-
-a.marketing-button,
-a.marketing-button:visited, {
-  color: ~"[[setting:themenavcolor]]";
-  background-color: ~"[[setting:themecolor]]";
-}
-
-a.marketing-button:hover {
-  color: ~"[[setting:themenavcolor]]";
-  background-color: ~"[[setting:themehovercolor]]";
-}
-
-/* @end */
-
 /* @group Blocks */
 
 .block {
@@ -191,7 +142,7 @@ a.marketing-button:hover {
   a:hover {
     color: ~"[[setting:themehovercolor]]";
   }
-  .header .title h2:before, &.block_iconic_html .header .title h2 span.@{fa-css-prefix}:before {
+  .header .title h2:before, &.block_iconic_html .header .title h2 .@{fa-css-prefix}:before {
     color: ~"[[setting:themeiconcolor]]";
   }
 }
@@ -241,7 +192,7 @@ a.marketing-button:hover {
 
 /* @group Home News Boxes */
 
-.service i.@{fa-css-prefix} {
+.service .@{fa-css-prefix} {
   color: ~"[[setting:themecolor]]";
 }
 
@@ -254,10 +205,10 @@ a.marketing-button:hover {
   color: ~"[[setting:footertextcolor]]";
   border-top: 2px solid ~"[[setting:themecolor]]";
   border-bottom: 3px solid ~"[[setting:themecolor]]";
-  a, a > i.@{fa-css-prefix} {
+  a, a > .@{fa-css-prefix} {
     color: ~"[[setting:footerurlcolor]]";
   }
-  a:hover, a:hover > i.@{fa-css-prefix} {
+  a:hover, a:hover > .@{fa-css-prefix} {
     color: ~"[[setting:footerhovercolor]]";
   }
   .footnote {
@@ -287,10 +238,10 @@ a.marketing-button:hover {
   .block {
     background-color: ~"[[setting:footerblockbackgroundcolour]]";
     color: ~"[[setting:footerblocktextcolour]]";
-    a, a > i.@{fa-css-prefix} {
+    a, a > .@{fa-css-prefix} {
       color: ~"[[setting:footerblockurlcolour]]";
     }
-    a:hover, a:hover > i.@{fa-css-prefix} {
+    a:hover, a:hover > .@{fa-css-prefix} {
       color: ~"[[setting:footerblockhovercolour]]";
     }
     .icon {

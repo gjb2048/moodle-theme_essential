@@ -24,9 +24,17 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+$PAGE->requires->js_call_amd('theme_essential/header', 'init');
+$PAGE->requires->js_call_amd('theme_essential/footer', 'init');
 if (\theme_essential\toolbox::not_lte_ie9()) {
-    $PAGE->requires->js_call_amd('theme_essential/affix', 'init');
+    if (\theme_essential\toolbox::get_setting('oldnavbar')) {
+        // Only need this to change the classes when scrolling when the navbar is in the old position.
+        $PAGE->requires->js_call_amd('theme_essential/affix', 'init');
+    }
     $breadcrumbstyle = \theme_essential\toolbox::get_setting('breadcrumbstyle');
+    if ($PAGE->pagelayout == 'course') {
+        $PAGE->requires->js_call_amd('theme_essential/course_navigation', 'init');
+    }
     if ($breadcrumbstyle == '1') {
         $PAGE->requires->js_call_amd('theme_essential/jBreadCrumb', 'init');
     }

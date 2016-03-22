@@ -48,6 +48,26 @@
   color: #468847;
 }
 /* @end */
+/* @group Autocomplete */
+.ui-autocomplete {
+  background-color: #ffffff;
+  border-color: [[setting:themecolor]];
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.ui-autocomplete-loading {
+  background: #ffffff url('[[pix:i/loading_small]]') right center no-repeat;
+}
+.ui-autocomplete .ui-menu-item {
+  color: [[setting:themetextcolor]];
+}
+.ui-autocomplete .ui-menu-item:hover,
+.ui-autocomplete .ui-menu-item:focus {
+  color: [[setting:themenavcolor]];
+  background-color: [[setting:themecolor]];
+}
+/* @end */
 /* @group Backup-Restore */
 .backup-restore .backup-section > h2.header,
 .backup-restore .backup-section .backup-sub-section h3 {
@@ -71,15 +91,15 @@
 .block h3.main {
   color: [[setting:themetextcolor]];
 }
-p.tree_item.leaf a > i.fa {
+p.tree_item.leaf a > .fa {
   color: [[setting:themeiconcolor]];
 }
 p.tree_item.leaf a:hover,
 p.tree_item.leaf a:focus {
   color: [[setting:themehovercolor]];
 }
-p.tree_item.leaf a:hover > i.fa,
-p.tree_item.leaf a:focus > i.fa {
+p.tree_item.leaf a:hover > .fa,
+p.tree_item.leaf a:focus > .fa {
   color: inherit;
 }
 p.tree_item.branch {
@@ -122,136 +142,6 @@ p.tree_item.branch.emptybranch:focus:before {
 .editing.used-region-footer-right #block-region-footer-right {
   border-color: [[setting:footertextcolor]];
 }
-/* @group Block Icons */
-.block_news_items .header .title h2:before {
-  content: "\f0a1";
-  font-family: FontAwesome;
-}
-.block_navigation .header .title h2:before {
-  content: "\f0e8";
-  font-family: FontAwesome;
-}
-.block_calendar_upcoming .header .title h2:before,
-.block_calendar_month .header .title h2:before {
-  content: "\f073";
-  font-family: FontAwesome;
-}
-.block_course_list .header .title h2:before {
-  content: "\f108";
-  font-family: FontAwesome;
-}
-.block_completionstatus .header .title h2:before,
-.block_selfcompletion .header .title h2:before {
-  content: "\f0e4";
-  font-family: FontAwesome;
-}
-.block_blog_menu .header .title h2:before {
-  content: "\f02d";
-  font-family: FontAwesome;
-}
-.block_quiz_results .header .title h2:before {
-  content: "\f080";
-  font-family: FontAwesome;
-}
-.block_quiz_navblock .header .title h2:before {
-  content: "\f126";
-  font-family: FontAwesome;
-}
-.block_glossary_random .header .title h2:before {
-  content: "\f0eb";
-  font-family: FontAwesome;
-}
-.block_book_toc .header .title h2:before {
-  content: "\f02d";
-  font-family: FontAwesome;
-}
-.block_participants .header .title h2:before,
-.block_online_users .header .title h2:before {
-  content: "\f0c0";
-  font-family: FontAwesome;
-}
-.block_html .header .title h2:before {
-  content: "\f022";
-  font-family: FontAwesome;
-}
-.block_section_links .header .title h2:before {
-  content: "\f02e";
-  font-family: FontAwesome;
-}
-.block_activity_modules .header .title h2:before {
-  content: "\f12e";
-  font-family: FontAwesome;
-}
-.block_comments .header .title h2:before {
-  content: "\f075";
-  font-family: FontAwesome;
-}
-.block_settings .header .title h2:before {
-  content: "\f085";
-  font-family: FontAwesome;
-}
-.block_admin_bookmarks .header .title h2:before {
-  content: "\f02e";
-  font-family: FontAwesome;
-}
-.block_blog_tags .header .title h2:before,
-.block_tags .header .title h2:before {
-  content: "\f02c";
-  font-family: FontAwesome;
-}
-.block_private_files .header .title h2:before {
-  content: "\f114";
-  font-family: FontAwesome;
-}
-.block_block_mentees .header .title h2:before {
-  content: "\f0c0";
-  font-family: FontAwesome;
-}
-.block_messages .header .title h2:before {
-  content: "\f0e0";
-  font-family: FontAwesome;
-}
-.block_community .header .title h2:before {
-  content: "\f0ac";
-  font-family: FontAwesome;
-}
-.block_recent_activity .header .title h2:before {
-  content: "\f017";
-  font-family: FontAwesome;
-}
-.block_search_forums .header .title h2:before {
-  content: "\f0e6";
-  font-family: FontAwesome;
-}
-.block_myprofile .header .title h2:before {
-  content: "\f007";
-  font-family: FontAwesome;
-}
-.block_adminblock .header .title h2:before {
-  content: "\f009";
-  font-family: FontAwesome;
-}
-.block_feedback .header .title h2:before {
-  content: "\f087";
-  font-family: FontAwesome;
-}
-.block_flickr .header .title h2:before {
-  content: "\f03e";
-  font-family: FontAwesome;
-}
-.block_youtube .header .title h2:before {
-  content: "\f145";
-  font-family: FontAwesome;
-}
-.block_course_badges .header .title h2:before {
-  content: "\f091";
-  font-family: FontAwesome;
-}
-.block_twitter_search .header .title h2:before {
-  content: "\f099";
-  font-family: FontAwesome;
-}
-/* @end */
 /* @end */
 /* @group Breadcrumb Button */
 .breadcrumb-button input[type="submit"] {
@@ -265,8 +155,9 @@ p.tree_item.branch.emptybranch:focus:before {
 .breadcrumb-button input[type="submit"]:active {
   color: [[setting:themecolor]];
   background-color: [[setting:themenavcolor]];
+  background-image: none;
 }
-.breadcrumb-button i.fa {
+.breadcrumb-button .fa {
   color: inherit;
 }
 /* @end */
@@ -332,37 +223,176 @@ ul.breadcrumb.style2 li a:hover {
 /* @end */
 /* @end */
 /* @group Buttons */
-button.btn-cancel,
-input.form-submit,
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-#notice .singlebutton + .singlebutton input,
-.submit.buttons input[name=cancel] {
-  color: [[setting:themetextcolor]];
+body button,
+body .btn-default,
+body a.btn-default,
+body button.btn-cancel,
+body input.form-submit,
+body input[type="button"],
+body input[type="submit"],
+body input[type="reset"],
+body #notice .singlebutton + .singlebutton input,
+body .submit.buttons input[name=cancel] {
+  color: [[setting:themedefaultbuttontextcolour]];
+  text-shadow: none;
+  background-color: [[setting:themedefaultbuttonbackgroundcolour]];
+  background-image: -moz-linear-gradient(bottom, [[setting:themedefaultbuttonbackgroundcolourimage]], [[setting:themedefaultbuttonbackgroundcolourrgba]]);
+  background-image: -webkit-gradient(linear, 0 100%, 0 0, from([[setting:themedefaultbuttonbackgroundcolourimage]]), to([[setting:themedefaultbuttonbackgroundcolourrgba]]));
+  background-image: -webkit-linear-gradient(bottom, [[setting:themedefaultbuttonbackgroundcolourimage]], [[setting:themedefaultbuttonbackgroundcolourrgba]]);
+  background-image: -o-linear-gradient(bottom, [[setting:themedefaultbuttonbackgroundcolourimage]], [[setting:themedefaultbuttonbackgroundcolourrgba]]);
+  background-image: linear-gradient(to top, [[setting:themedefaultbuttonbackgroundcolourimage]], [[setting:themedefaultbuttonbackgroundcolourrgba]]);
 }
-button.btn-cancel:focus,
-input.form-submit:focus,
-input[type="button"]:focus,
-input[type="submit"]:focus,
-input[type="reset"]:focus,
-#notice .singlebutton + .singlebutton input:focus,
-.submit.buttons input[name=cancel]:focus,
-button.btn-cancel:hover,
-input.form-submit:hover,
-input[type="button"]:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-#notice .singlebutton + .singlebutton input:hover,
-.submit.buttons input[name=cancel]:hover,
-button.btn-cancel:active,
-input.form-submit:active,
-input[type="button"]:active,
-input[type="submit"]:active,
-input[type="reset"]:active,
-#notice .singlebutton + .singlebutton input:active,
-.submit.buttons input[name=cancel]:active {
-  color: inherit;
+body button .fa,
+body .btn-default .fa,
+body a.btn-default .fa,
+body button.btn-cancel .fa,
+body input.form-submit .fa,
+body input[type="button"] .fa,
+body input[type="submit"] .fa,
+body input[type="reset"] .fa,
+body #notice .singlebutton + .singlebutton input .fa,
+body .submit.buttons input[name=cancel] .fa {
+  color: [[setting:themedefaultbuttontextcolour]];
+}
+body button:hover,
+body .btn-default:hover,
+body a.btn-default:hover,
+body button.btn-cancel:hover,
+body input.form-submit:hover,
+body input[type="button"]:hover,
+body input[type="submit"]:hover,
+body input[type="reset"]:hover,
+body #notice .singlebutton + .singlebutton input:hover,
+body .submit.buttons input[name=cancel]:hover,
+body button:focus,
+body .btn-default:focus,
+body a.btn-default:focus,
+body button.btn-cancel:focus,
+body input.form-submit:focus,
+body input[type="button"]:focus,
+body input[type="submit"]:focus,
+body input[type="reset"]:focus,
+body #notice .singlebutton + .singlebutton input:focus,
+body .submit.buttons input[name=cancel]:focus,
+body button:active,
+body .btn-default:active,
+body a.btn-default:active,
+body button.btn-cancel:active,
+body input.form-submit:active,
+body input[type="button"]:active,
+body input[type="submit"]:active,
+body input[type="reset"]:active,
+body #notice .singlebutton + .singlebutton input:active,
+body .submit.buttons input[name=cancel]:active,
+body button.active,
+body .btn-default.active,
+body a.btn-default.active,
+body button.btn-cancel.active,
+body input.form-submit.active,
+body input[type="button"].active,
+body input[type="submit"].active,
+body input[type="reset"].active,
+body #notice .singlebutton + .singlebutton input.active,
+body .submit.buttons input[name=cancel].active,
+body button.disabled,
+body .btn-default.disabled,
+body a.btn-default.disabled,
+body button.btn-cancel.disabled,
+body input.form-submit.disabled,
+body input[type="button"].disabled,
+body input[type="submit"].disabled,
+body input[type="reset"].disabled,
+body #notice .singlebutton + .singlebutton input.disabled,
+body .submit.buttons input[name=cancel].disabled,
+body button[disabled],
+body .btn-default[disabled],
+body a.btn-default[disabled],
+body button.btn-cancel[disabled],
+body input.form-submit[disabled],
+body input[type="button"][disabled],
+body input[type="submit"][disabled],
+body input[type="reset"][disabled],
+body #notice .singlebutton + .singlebutton input[disabled],
+body .submit.buttons input[name=cancel][disabled] {
+  color: [[setting:themedefaultbuttontexthovercolour]];
+  text-shadow: 0 1px 1px rgba(64, 64, 64, 0.75);
+  background-color: [[setting:themedefaultbuttonbackgroundhovercolour]];
+  background-image: -moz-linear-gradient(bottom, [[setting:themedefaultbuttonbackgroundhovercolourimage]], [[setting:themedefaultbuttonbackgroundhovercolourrgba]]);
+  background-image: -webkit-gradient(linear, 0 100%, 0 0, from([[setting:themedefaultbuttonbackgroundhovercolourimage]]), to([[setting:themedefaultbuttonbackgroundhovercolourrgba]]));
+  background-image: -webkit-linear-gradient(bottom, [[setting:themedefaultbuttonbackgroundhovercolourimage]], [[setting:themedefaultbuttonbackgroundhovercolourrgba]]);
+  background-image: -o-linear-gradient(bottom, [[setting:themedefaultbuttonbackgroundhovercolourimage]], [[setting:themedefaultbuttonbackgroundhovercolourrgba]]);
+  background-image: linear-gradient(to top, [[setting:themedefaultbuttonbackgroundhovercolourimage]], [[setting:themedefaultbuttonbackgroundhovercolourrgba]]);
+}
+body button:hover .fa,
+body .btn-default:hover .fa,
+body a.btn-default:hover .fa,
+body button.btn-cancel:hover .fa,
+body input.form-submit:hover .fa,
+body input[type="button"]:hover .fa,
+body input[type="submit"]:hover .fa,
+body input[type="reset"]:hover .fa,
+body #notice .singlebutton + .singlebutton input:hover .fa,
+body .submit.buttons input[name=cancel]:hover .fa,
+body button:focus .fa,
+body .btn-default:focus .fa,
+body a.btn-default:focus .fa,
+body button.btn-cancel:focus .fa,
+body input.form-submit:focus .fa,
+body input[type="button"]:focus .fa,
+body input[type="submit"]:focus .fa,
+body input[type="reset"]:focus .fa,
+body #notice .singlebutton + .singlebutton input:focus .fa,
+body .submit.buttons input[name=cancel]:focus .fa,
+body button:active .fa,
+body .btn-default:active .fa,
+body a.btn-default:active .fa,
+body button.btn-cancel:active .fa,
+body input.form-submit:active .fa,
+body input[type="button"]:active .fa,
+body input[type="submit"]:active .fa,
+body input[type="reset"]:active .fa,
+body #notice .singlebutton + .singlebutton input:active .fa,
+body .submit.buttons input[name=cancel]:active .fa,
+body button.active .fa,
+body .btn-default.active .fa,
+body a.btn-default.active .fa,
+body button.btn-cancel.active .fa,
+body input.form-submit.active .fa,
+body input[type="button"].active .fa,
+body input[type="submit"].active .fa,
+body input[type="reset"].active .fa,
+body #notice .singlebutton + .singlebutton input.active .fa,
+body .submit.buttons input[name=cancel].active .fa,
+body button.disabled .fa,
+body .btn-default.disabled .fa,
+body a.btn-default.disabled .fa,
+body button.btn-cancel.disabled .fa,
+body input.form-submit.disabled .fa,
+body input[type="button"].disabled .fa,
+body input[type="submit"].disabled .fa,
+body input[type="reset"].disabled .fa,
+body #notice .singlebutton + .singlebutton input.disabled .fa,
+body .submit.buttons input[name=cancel].disabled .fa,
+body button[disabled] .fa,
+body .btn-default[disabled] .fa,
+body a.btn-default[disabled] .fa,
+body button.btn-cancel[disabled] .fa,
+body input.form-submit[disabled] .fa,
+body input[type="button"][disabled] .fa,
+body input[type="submit"][disabled] .fa,
+body input[type="reset"][disabled] .fa,
+body #notice .singlebutton + .singlebutton input[disabled] .fa,
+body .submit.buttons input[name=cancel][disabled] .fa {
+  color: [[setting:themedefaultbuttontexthovercolour]];
+}
+a.marketing-button,
+a.marketing-button:visited {
+  color: [[setting:themenavcolor]];
+  background-color: [[setting:themecolor]];
+}
+a.marketing-button:hover {
+  color: [[setting:themenavcolor]];
+  background-color: [[setting:themehovercolor]];
 }
 /* @end */
 /* @group Carousel */
@@ -379,15 +409,15 @@ input[type="reset"]:active,
 #essentialCarousel.carousel .carousel-control {
   color: [[setting:slidebuttoncolor]];
 }
-#essentialCarousel.carousel .carousel-control i.fa {
+#essentialCarousel.carousel .carousel-control .fa {
   color: inherit;
 }
 #essentialCarousel.carousel .carousel-control:hover,
 #essentialCarousel.carousel .carousel-control:focus {
   color: [[setting:slidebuttonhovercolor]];
 }
-#essentialCarousel.carousel .carousel-control:hover i.fa,
-#essentialCarousel.carousel .carousel-control:focus i.fa {
+#essentialCarousel.carousel .carousel-control:hover .fa,
+#essentialCarousel.carousel .carousel-control:focus .fa {
   color: inherit;
 }
 #essentialCarousel.carousel .carousel-indicators {
@@ -414,7 +444,7 @@ input[type="reset"]:active,
 .categoryicons .course_category_tree .category[data-categoryid]:hover > .info > .categoryname a {
   color: [[setting:themenavcolor]];
 }
-.categoryicons .course_category_tree .category[data-categoryid]:hover > .info > .categoryname a i.fa {
+.categoryicons .course_category_tree .category[data-categoryid]:hover > .info > .categoryname a .fa {
   color: inherit;
 }
 /* @end */
@@ -545,18 +575,97 @@ body.has_dock.essential-colours-alternative4 #dock .dockedtitle[disabled] {
 }
 /* @end */
 /* @group Edit Buttons */
-.menu a.menu-action > i.fa,
-.course-item-actions a > i.fa,
-.actions a > i.fa {
+.menu a.menu-action > .fa,
+.course-item-actions a > .fa,
+.actions a > .fa {
   color: [[setting:themeiconcolor]];
 }
-.menu a.menu-action:hover > i.fa,
-.course-item-actions a:hover > i.fa,
-.actions a:hover > i.fa {
+.menu a.menu-action:hover > .fa,
+.course-item-actions a:hover > .fa,
+.actions a:hover > .fa {
   color: [[setting:themehovercolor]];
 }
 .section-modchooser-link > a:before {
   color: [[setting:themeiconcolor]];
+}
+/* @end */
+/* @Group Editor */
+#tinymce {
+  color: [[setting:themetextcolor]];
+  font-family: [[setting:bodyfont]];
+}
+#tinymce .container-fluid {
+  max-width: [[setting:pagewidth]];
+}
+#tinymce h1,
+#tinymce h2 {
+  font-family: [[setting:headingfont]];
+}
+#tinymce h1,
+#tinymce h2,
+#tinymce h3,
+#tinymce h4,
+#tinymce h5,
+#tinymce h6,
+#tinymce #adminsettings h3 {
+  color: [[setting:themetextcolor]];
+}
+#tinymce a,
+#tinymce a:visited,
+#tinymce .btn-link,
+#tinymce .btn-link:visited {
+  color: [[setting:themeurlcolor]];
+}
+#tinymce a:hover,
+#tinymce a:focus,
+#tinymce .btn-link:hover,
+#tinymce .btn-link:focus {
+  color: [[setting:themehovercolor]];
+}
+#tinymce a:hover:before,
+#tinymce a:focus:before,
+#tinymce .btn-link:hover:before,
+#tinymce .btn-link:focus:before {
+  color: [[setting:themehovercolor]];
+}
+#tinymce a:before {
+  color: [[setting:themeiconcolor]];
+  display: inline-block;
+  text-decoration: none;
+}
+#tinymce .color {
+  color: [[setting:themecolor]];
+}
+body .editor_atto_content_wrap {
+  color: [[setting:themetextcolor]];
+}
+/* @end */
+/* @group Filemanger */
+.filemanager a,
+.file-picker a,
+.filemanager a:visited,
+.file-picker a:visited {
+  color: [[setting:themeurlcolor]];
+}
+.filemanager a:hover,
+.file-picker a:hover,
+.filemanager a:visited:hover,
+.file-picker a:visited:hover,
+.filemanager a:focus,
+.file-picker a:focus,
+.filemanager a:visited:focus,
+.file-picker a:visited:focus {
+  color: [[setting:themehovercolor]];
+}
+.filemanager a:hover:before,
+.file-picker a:hover:before,
+.filemanager a:visited:hover:before,
+.file-picker a:visited:hover:before,
+.filemanager a:focus:before,
+.file-picker a:focus:before,
+.filemanager a:visited:focus:before,
+.file-picker a:visited:focus:before {
+  color: [[setting:themehovercolor]];
 }
 /* @end */
 /* @group Forms */
@@ -584,6 +693,33 @@ input[type="color"],
 .mform legend a {
   color: [[setting:themetextcolor]];
 }
+select:focus,
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus,
+.form-item .form-description:focus,
+.form-defaultinfo:focus,
+.form-label .form-shortname:focus,
+.mform legend:focus,
+.mform legend a:focus {
+  border-color: [[setting:inputfocusbordercolor]];
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px [[setting:inputfocusshadowcolor]];
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px [[setting:inputfocusshadowcolor]];
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px [[setting:inputfocusshadowcolor]];
+}
 #page form .form-buttons #fgroup_id_buttonar,
 #page form table#form td.submit #fgroup_id_buttonar,
 #page form .path-admin .buttons #fgroup_id_buttonar,
@@ -603,6 +739,9 @@ input[type="color"],
 #region-main form #fgroup_id_buttonar {
   background-color: [[setting:themecolor]];
   border-top: 1px solid [[setting:themeiconcolor]];
+}
+body#page-grade-grading-pick #region-main form #fgroup_id_buttonar label {
+  color: [[setting:themenavcolor]];
 }
 /* @end */
 /* @group Frontpage */
@@ -643,6 +782,15 @@ input[type="color"],
 /* @group Header */
 #page-header {
   color: [[setting:headertextcolor]];
+  background: url('[[setting:headerbackground]]') repeat;
+}
+#page-header.logo {
+  height: [[setting:logoheight]];
+  max-height: [[setting:logoheight]];
+}
+#page-header.nologo {
+  height: 52px;
+  max-height: 52px;
 }
 #page-header h1#title {
   color: [[setting:headertextcolor]];
@@ -659,14 +807,51 @@ input[type="color"],
 #page-header .btn-icon .icon-bar {
   background-color: [[setting:themecolor]];
 }
+#page-header a.logo {
+  background-image: [[setting:logo]];
+  height: [[setting:logoheight]];
+  width: [[setting:logowidth]];
+}
+#page-header div.titlearea {
+  border-left: 1px dotted [[setting:themecolor]];
+}
+@media (min-width: 980px) {
+  #page-header.nologo {
+    height: 57px;
+    max-height: 57px;
+  }
+}
+/* @end */
+/* @group Social Buttons */
+button.website:hover,
+button.website:focus {
+  background-color: [[setting:themecolor]];
+}
 .socials {
   margin: 0px;
 }
 .socials p {
   color: [[setting:headertextcolor]];
 }
+#mobileapps {
+  border-right: 1px dotted [[setting:themecolor]];
+}
 /* @end */
 /* @group Navbar */
+#essentialnavbar.oldnavbar.logo {
+  top: [[setting:logoheight]];
+}
+#essentialnavbar.oldnavbar.nologo {
+  top: 52px;
+}
+@media (min-width: 980px) {
+  #essentialnavbar.oldnavbar.nologo {
+    top: 57px;
+  }
+}
+#essentialnavbar.affix.oldnavbar {
+  top: 0;
+}
 .navbar .navbar-inner .brand {
   color: [[setting:themenavcolor]];
 }
@@ -688,7 +873,7 @@ input[type="color"],
   background-color: [[setting:themenavcolor]];
 }
 .navbar .navbar-inner .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
-  border-left-color: [[setting:themeiconcolor]];
+  border-left-color: inherit;
 }
 .navbar .navbar-inner .nav .dropdown-menu .dropdown-submenu:hover .dropdown-toggle:after {
   border-left-color: [[setting:themenavcolor]];
@@ -705,8 +890,8 @@ input[type="color"],
   color: #ffffff;
   background-color: [[setting:themeurlcolor]];
 }
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:focus i.fa,
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a.open i.fa {
+.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:focus .fa,
+.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a.open .fa {
   color: #ffffff;
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:hover .dimmed_text {
@@ -716,7 +901,7 @@ input[type="color"],
   color: #ffffff;
   background-color: [[setting:themeurlcolor]];
 }
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li.dropdown-submenu:hover > a i.fa {
+.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li.dropdown-submenu:hover > a .fa {
   color: inherit;
 }
 .navbar .navbar-inner .nav li.dropdown.open > .dropdown-toggle,
@@ -839,13 +1024,21 @@ h6,
   color: [[setting:themetextcolor]];
 }
 a,
-a:visited {
+a:visited,
+.btn-link,
+.btn-link:visited {
   color: [[setting:themeurlcolor]];
 }
-a:hover {
+a:hover,
+a:focus,
+.btn-link:hover,
+.btn-link:focus {
   color: [[setting:themehovercolor]];
 }
-a:hover:before {
+a:hover:before,
+a:focus:before,
+.btn-link:hover:before,
+.btn-link:focus:before {
   color: [[setting:themehovercolor]];
 }
 a:before {
@@ -866,27 +1059,6 @@ a:before:hover {
 img.userpicture,
 img.profilepicture {
   box-shadow: 0px 0px 3px [[setting:themecolor]];
-}
-/* @end */
-/* @end */
-/* @group Header */
-#page-header {
-  background: url('[[setting:headerbackground]]') repeat;
-}
-#page-header a.logo {
-  background-image: [[setting:logo]];
-  height: [[setting:logoheight]];
-}
-h1#title {
-  color: [[setting:themetextcolor]];
-}
-#page-header div.titlearea {
-  border-left: 1px dotted [[setting:themecolor]];
-}
-/* @group Social Buttons */
-button.website:hover,
-button.website:focus {
-  background-color: [[setting:themecolor]];
 }
 /* @end */
 /* @end */
@@ -936,21 +1108,6 @@ h2.pagetitle {
   color: [[setting:themetextcolor]];
 }
 /* @end */
-/* @group Buttons */
-.button a,
-.button a:visited {
-  background-color: [[setting:themecolor]];
-}
-a.marketing-button,
-a.marketing-button:visited {
-  color: [[setting:themenavcolor]];
-  background-color: [[setting:themecolor]];
-}
-a.marketing-button:hover {
-  color: [[setting:themenavcolor]];
-  background-color: [[setting:themehovercolor]];
-}
-/* @end */
 /* @group Blocks */
 .block a {
   color: [[setting:themeurlcolor]];
@@ -959,7 +1116,7 @@ a.marketing-button:hover {
   color: [[setting:themehovercolor]];
 }
 .block .header .title h2:before,
-.block.block_iconic_html .header .title h2 span.fa:before {
+.block.block_iconic_html .header .title h2 .fa:before {
   color: [[setting:themeiconcolor]];
 }
 .jsenabled .block_settings .block_tree .tree_item.branch.loadingbranch:before {
@@ -995,7 +1152,7 @@ a.marketing-button:hover {
 }
 /* @end */
 /* @group Home News Boxes */
-.service i.fa {
+.service .fa {
   color: [[setting:themecolor]];
 }
 /* @end */
@@ -1007,11 +1164,11 @@ a.marketing-button:hover {
   border-bottom: 3px solid [[setting:themecolor]];
 }
 #page-footer a,
-#page-footer a > i.fa {
+#page-footer a > .fa {
   color: [[setting:footerurlcolor]];
 }
 #page-footer a:hover,
-#page-footer a:hover > i.fa {
+#page-footer a:hover > .fa {
   color: [[setting:footerhovercolor]];
 }
 #page-footer .footnote {
@@ -1040,11 +1197,11 @@ a.marketing-button:hover {
   color: [[setting:footerblocktextcolour]];
 }
 #page-footer .block a,
-#page-footer .block a > i.fa {
+#page-footer .block a > .fa {
   color: [[setting:footerblockurlcolour]];
 }
 #page-footer .block a:hover,
-#page-footer .block a:hover > i.fa {
+#page-footer .block a:hover > .fa {
   color: [[setting:footerblockhovercolour]];
 }
 #page-footer .block .icon {

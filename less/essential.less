@@ -11,7 +11,7 @@
 @import "moodle/plugins/mod/quiz";
 
 // Import the bootstrap variables.
-@import "bootstrap-override/variables.less";
+@import "bootstrap-override/variables";
 // Old Moodle stuff from base theme.
 // Massive, needs broken up.
 @import "moodle/core";
@@ -75,11 +75,14 @@
 @import "moodle/expendable";
 
 // Essential styles.
+@import "essential/variables";
 // Start with core.
 @import "essential/core";
 // Import the essential styles.
+@import "essential/accessibility";
 @import "essential/admin";
 @import "essential/alert";
+@import "essential/autocomplete";
 @import "essential/blocks";
 @import "essential/breadcrumb";
 @import "essential/button";
@@ -98,6 +101,7 @@
 @import "essential/greybox";
 @import "essential/header";
 @import "essential/message";
+@import "essential/modules";
 @import "essential/navigation";
 @import "essential/plugins";
 @import "essential/question";
@@ -107,5 +111,9 @@
 @import "essential/print";
 @import "essential/responsive";
 @import "essential/fixes";
+
+// Selected Bootstrap3 styles.
+@import "bootstrap3/variables";
+@import "bootstrap3/list-group";
 
 /* Essential placeholder */

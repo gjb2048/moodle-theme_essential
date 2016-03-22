@@ -1,6 +1,29 @@
 /* @group Navbar */
 @import "../../fontawesome/variables";
 
+#essentialnavbar {
+  &.oldnavbar {
+    &.logo {
+      top: ~"[[setting:logoheight]]";
+    }
+    &.nologo {
+      top: 52px;
+    }
+  }
+}
+
+@media (min-width: @navbarCollapseDesktopWidth) {
+  #essentialnavbar.oldnavbar.nologo {
+    top: 57px;
+  }
+}
+
+#essentialnavbar {
+  &.affix.oldnavbar {
+    top: 0;
+  }
+}
+
 .navbar {
   .navbar-inner {
     .brand {
@@ -29,7 +52,7 @@
     .nav .dropdown-menu {
       .dropdown-submenu  {
         .dropdown-toggle:after {
-          border-left-color: ~"[[setting:themeiconcolor]]";
+          border-left-color: inherit;
         }
         &:hover .dropdown-toggle:after {
           border-left-color: ~"[[setting:themenavcolor]]";
@@ -47,7 +70,7 @@
         &:focus, &.open {
           color: @white; // TODO: Page background colour needs to be a setting.
           background-color: ~"[[setting:themeurlcolor]]";
-          i.@{fa-css-prefix} {
+          .@{fa-css-prefix} {
             color: @white; // TODO: Page background colour needs to be a setting.
           }
         }
@@ -58,7 +81,7 @@
       &.dropdown-submenu:hover > a {
         color: @white; // TODO: Page background colour needs to be a setting.
         background-color: ~"[[setting:themeurlcolor]]";
-        i.@{fa-css-prefix} {
+        .@{fa-css-prefix} {
           color: inherit;
         }
       }

@@ -64,6 +64,7 @@ click here to sponsor.
 <li>Delvon Forrester, Esparanza co uk</li>
 <li>iZone</li>
 <li>Anis Jradah</li>
+<li>Ute Hlasek, <a href="//hlasek-it.de/moodle" target="_blank">hlasek-it.de/moodle</a></li>
 </ul>
 </p>
 <p>
@@ -155,10 +156,13 @@ $string['logodesc'] = 'Please upload your custom logo here if you want to add it
                        <br>The image should be the same height as the Logo height setting below and any reasonable width that suits.
                        <br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
 
+$string['logowidth'] = 'Logo width';
+$string['logowidthdesc'] = 'The width of the logo image. This can be specified in px or em.';
+
 $string['logoheight'] = 'Logo height';
 $string['logoheightdesc'] = 'The height of the logo image. This can be specified in px or em.';
 
-$string['credit'] = 'The Essential theme for Moodle is developed, enhanced and maintained by ';
+$string['credit'] = 'The {$a->name} theme for Moodle is developed by ';
 
 $string['profilebarcustomtitle'] = 'Profile bar custom block title';
 $string['profilebarcustomtitledesc'] = 'Title for custom profile bar block.';
@@ -169,23 +173,8 @@ $string['contactinfodesc'] = 'Enter your contact information';
 $string['siteicon'] = 'Site icon';
 $string['siteicondesc'] = 'Do not have a logo? Enter the name of the icon you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "fa-". ';
 
-$string['layout'] = 'Use a standard course layout';
-$string['layoutdesc'] = 'This theme is designed to put both block columns on the side.  If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
-
-$string['floatingsubmitbuttons'] = 'Floating submit buttons';
-$string['floatingsubmitbuttonsdesc'] = 'Have a \'floating\' area that contains the buttons used when submitting a form on desktop devices.  This helps to reduce scrolling on some pages.  Not used on course enrolment or forum posts.';
-
-$string['oldnavbar'] = 'Use the old navbar position';
-$string['oldnavbardesc'] = 'Enable this option to use the old navbar position, placing it below the header.';
-
-$string['fitvids'] = 'Use FitVids';
-$string['fitvidsdesc'] = 'Enable FitVids (fitvidsjs.com) to make your embedded videos responsive.  If FitVids is on and you want a video to be excluded then add \'class="fitvidsignore"\' to the \'iframe\' tag in the HTML mode of the editor.  For example: \'iframe class="fitvidsignore" width="420" height="315" src="//www.youtube.com/embed/enmEmym85xc" frameborder="0" allowfullscreen=""></iframe\'.';
-
 $string['favicon'] = 'Custom favicon';
 $string['favicondesc'] = 'Upload your own favicon.  It should be an .ico file.';
-
-$string['customscrollbars'] = 'Custom scrollbars';
-$string['customscrollbarsdesc'] = 'Use custom scrollbars. This will replace the standard browser scrollbars.';
 
 // Custom Menu.
 $string['mycoursesinfo'] = 'Enrolled courses menu';
@@ -241,6 +230,32 @@ $string['region-footer-middle'] = 'Footer (Middle)';
 $string['region-footer-right'] = 'Footer (Right)';
 $string['region-hidden-dock'] = 'Hidden from users';
 
+// Features.
+$string['featureheading'] = 'Features';
+$string['featureheadingsub'] = 'Set the features used in your theme';
+$string['featuredesc'] = 'Here you can find various settings to change many of the features found in this theme.';
+
+$string['customscrollbars'] = 'Custom scrollbars';
+$string['customscrollbarsdesc'] = 'Use custom scrollbars. This will replace the standard browser scrollbars.';
+
+$string['coursecontentsearch'] = 'Course content search';
+$string['coursecontentsearchdesc'] = "Enable course content search on the 'Dashboard' page.  Only works when Essential is not in '\$CFG->themedir'.";
+
+$string['fitvids'] = 'Use FitVids';
+$string['fitvidsdesc'] = 'Enable FitVids (fitvidsjs.com) to make your embedded videos responsive.  If FitVids is on and you want a video to be excluded then add \'class="fitvidsignore"\' to the \'iframe\' tag in the HTML mode of the editor.  For example: \'iframe class="fitvidsignore" width="420" height="315" src="//www.youtube.com/embed/enmEmym85xc" frameborder="0" allowfullscreen=""></iframe\'.';
+
+$string['floatingsubmitbuttons'] = 'Floating submit buttons';
+$string['floatingsubmitbuttonsdesc'] = 'Have a \'floating\' area that contains the buttons used when submitting a form on desktop devices.  This helps to reduce scrolling on some pages.  Not used on course enrolment or forum posts.';
+
+$string['layout'] = 'Use a standard course layout';
+$string['layoutdesc'] = 'This theme is designed to put both block columns on the side.  If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
+
+$string['returntosectionfeature'] = 'Return to section';
+$string['returntosectionfeaturedesc'] = "Enable return to section feature within course modules.";
+
+$string['returntosectiontextlimitfeature'] = 'Return to section name text limit';
+$string['returntosectiontextlimitfeaturedesc'] = 'Length limit for the \'name\' of the section on the button between {$a->lower} and {$a->upper} characters.';
+
 // Colours.
 $string['colorheading'] = 'Colour';
 $string['colorheadingsub'] = 'Set the colours used in your theme';
@@ -258,6 +273,14 @@ $string['themeurlcolor'] = 'Link colour';
 $string['themeurlcolordesc'] = 'Set the colour for your linked text.';
 $string['themehovercolor'] = 'Theme hover colour';
 $string['themehovercolordesc'] = 'What colour should your theme hovers be. This is used for links, menus, etc.';
+$string['themedefaultbuttontextcolour'] = 'Default button text colour';
+$string['themedefaultbuttontextcolourdesc'] = 'Set the text colour for all default buttons.';
+$string['themedefaultbuttontexthovercolour'] = 'Default button text hover colour';
+$string['themedefaultbuttontexthovercolourdesc'] = 'Set the text hover colour for all default buttons.';
+$string['themedefaultbuttonbackgroundcolour'] = 'Default button background colour';
+$string['themedefaultbuttonbackgroundcolourdesc'] = 'Set the background colour for all default buttons.';
+$string['themedefaultbuttonbackgroundhovercolour'] = 'Default button background hover colour';
+$string['themedefaultbuttonbackgroundhovercolourdesc'] = 'Set the background hover colour for all default buttons.';
 $string['themeiconcolor'] = 'Icon colour';
 $string['themeiconcolordesc'] = 'Set the colour for all icons.';
 $string['themenavcolor'] = 'Navigation text colour';
@@ -312,6 +335,14 @@ $string['alternativethemetextcolor'] = 'Alternative text colour {$a}';
 $string['alternativethemetextcolordesc'] = 'Set the colour for your alternative text {$a}.';
 $string['alternativethemeurlcolor'] = 'Alternative link colour {$a}';
 $string['alternativethemeurlcolordesc'] = 'Set the colour for your alternative linked text {$a}.';
+$string['alternativethemedefaultbuttontextcolour'] = 'Default button text colour {$a}';
+$string['alternativethemedefaultbuttontextcolourdesc'] = 'Set the text colour for all default buttons {$a}.';
+$string['alternativethemedefaultbuttontexthovercolour'] = 'Default button hover text colour {$a}';
+$string['alternativethemedefaultbuttontexthovercolourdesc'] = 'Set the hover text colour for all default buttons {$a}.';
+$string['alternativethemedefaultbuttonbackgroundcolour'] = 'Default button background colour {$a}';
+$string['alternativethemedefaultbuttonbackgroundcolourdesc'] = 'Set the background colour for all default buttons {$a}.';
+$string['alternativethemedefaultbuttonbackgroundhovercolour'] = 'Default button background hover colour {$a}';
+$string['alternativethemedefaultbuttonbackgroundhovercolourdesc'] = 'Set the background hover colour for all default buttons {$a}.';
 $string['alternativethemeiconcolor'] = 'Alternative icon colour {$a}';
 $string['alternativethemeiconcolordesc'] = 'Set the alternative {$a} colour for all icons.';
 $string['alternativethemenavcolor'] = 'Navigation text colour {$a}';
@@ -560,6 +591,9 @@ $string['shortname'] = 'Site short name';
 $string['fullnamesummary'] = 'Full name and summary';
 $string['shortnamesummary'] = 'Short name and summary';
 
+$string['oldnavbar'] = 'Use the old navbar position';
+$string['oldnavbardesc'] = 'Enable this option to use the old navbar position, placing it below the header.';
+
 $string['editingmenu'] = 'Page editing switch';
 $string['editingmenudesc'] = 'Displays a button to switch the editing of the current page on/off if the user is allowed to edit the page.  The same functionality as the normal page editing button.';
 $string['displayeditingmenu'] = 'Display editing button';
@@ -681,6 +715,11 @@ $string['analyticsuseuseriddesc'] = 'Enable use of User ID in tracking.';
 $string['analyticspiwik'] = 'Piwik';
 $string['analyticsguniversal'] = 'Google Universal Analytics';
 
+// Style guide.
+$string['styleguide'] = 'Style guide';
+$string['styleguidesub'] = 'Bootstrap V2.3.2 Style guide';
+$string['styleguidedesc'] = 'Original documentation code \'{$a->origcodelicenseurl}\' licensed.  Holder.js is \'{$a->holderlicenseurl}\' licensed.  Additional code \'{$a->thiscodelicenseurl}\' licensed, which is a \'{$a->compatible}\' license.  Content \'{$a->contentlicenseurl}\' licensed.  The documentation has been formatted for Moodle output with addition of FontAwesome icons where appropriate.  Additional CSS can be found in the file \'essential_admin_setting_styleguide.php\' under the comment \'// Beyond docs.css.\'.  The \'{$a->globalsettings}\' section has been removed.';
+
 // Alerts.
 $string['alertsheading'] = 'User alerts';
 $string['alertsheadingsub'] = 'Display important messages to your users on the front page';
@@ -717,3 +756,13 @@ $string['nomessagesfound'] = 'No messages were found';
 
 // Preferences.
 $string['badgepreferences'] = 'Badge';
+
+// Incourse.
+$string['returntosection'] = 'Return to: {$a->section}';
+
+// Course content search.
+$string['findcoursecontent'] = 'Course content: ';
+
+// essential_admin_setting_configinteger.
+$string['asconfigintlower'] = '{$a->value} is less than the lower range limit of {$a->lower}';
+$string['asconfigintupper'] = '{$a->value} is greater than the upper range limit of {$a->upper}';

@@ -114,12 +114,14 @@ class toolbox {
             return format_text($settingvalue, FORMAT_PLAIN);
         } else if ($format === 'format_html') {
             return format_text($settingvalue, FORMAT_HTML, array('trusted' => true, 'noclean' => true));
+        } else if ($format === 'format_file_url') {
+            return self::setting_file_url($setting, $setting);
         } else {
             return format_string($settingvalue);
         }
     }
 
-    static public function setting_file_url($setting, $filearea, $theme = null) {
+    static public function setting_file_url($setting, $filearea) {
         $us = self::check_corerenderer();
 
         return $us->setting_file_url($setting, $filearea);
@@ -128,6 +130,19 @@ class toolbox {
     static public function pix_url($imagename, $component) {
         $us = self::check_corerenderer();
         return $us->pix_url($imagename, $component);
+    }
+
+    /**
+     * States if course content search can be used.  Will not work if theme is in $CFG->themedir.
+     * @return boolean false|true if course content search can be used.
+     */
+    static public function course_content_search() {
+        $canwe = false;
+        global $CFG;
+        if ((self::get_setting('coursecontentsearch')) && (file_exists("$CFG->dirroot/theme/essential/"))) {
+            $canwe = true;
+        }
+        return $canwe;
     }
 
     static private function check_corerenderer() {
@@ -141,15 +156,26 @@ class toolbox {
                 // Use $PAGE->theme->name as will be accurate than $CFG->theme when using URL theme changes.
                 // Core 'allowthemechangeonurl' setting.
                 global $PAGE;
-                $corerenderer = $PAGE->get_renderer('theme_'.$PAGE->theme->name, 'core');
+                $corerenderer = null;
+                try {
+                    $corerenderer = $PAGE->get_renderer('theme_'.$PAGE->theme->name, 'core');
+                } catch (\coding_exception $ce) {
+                    // Specialised renderer may not exist in theme.  This is not a coding fault.  We just need to cope.
+                    $corerenderer = null;
+                }
                 // Fallback check.
-                if (property_exists($corerenderer, 'essential')) {
+                if (($corerenderer != null) && (property_exists($corerenderer, 'essential'))) {
                     $us->corerenderer = $corerenderer;
                 } else {
                     // Probably during theme switch, '$CFG->theme' will be accurrate.
                     global $CFG;
-                    $corerenderer = $PAGE->get_renderer('theme_'.$CFG->theme, 'core');
-                    if (property_exists($corerenderer, 'essential')) {
+                    try {
+                        $corerenderer = $PAGE->get_renderer('theme_'.$CFG->theme, 'core');
+                    } catch (\coding_exception $ce) {
+                        // Specialised renderer may not exist in theme.  This is not a coding fault.  We just need to cope.
+                        $corerenderer = null;
+                    }
+                    if (($corerenderer != null) && (property_exists($corerenderer, 'essential'))) {
                         $us->corerenderer = $corerenderer;
                     } else {
                         // Last resort.  Hopefully will be fine on next page load for Child themes.
@@ -190,9 +216,9 @@ class toolbox {
         $indicators = '';
         for ($indicatorslideindex = 0; $indicatorslideindex < $numberofslides; $indicatorslideindex++) {
             $indicators .= '<li data-target="#essentialCarousel" data-slide-to="'.$indicatorslideindex.'"';
-                if ($indicatorslideindex == 0) {
-                    $indicators .= ' class="active"';
-                }
+            if ($indicatorslideindex == 0) {
+                $indicators .= ' class="active"';
+            }
             $indicators .= '></li>';
         }
         return $indicators;
@@ -281,9 +307,9 @@ class toolbox {
             $faright = $temp;
         }
         $prev = '<a class="left carousel-control" href="#essentialCarousel" data-slide="prev">';
-        $prev .= '<i class="fa fa-chevron-circle-'.$faleft.'"></i></a>';
+        $prev .= '<span aria-hidden="true" class="fa fa-chevron-circle-'.$faleft.'"></span></a>';
         $next = '<a class="right carousel-control" href="#essentialCarousel" data-slide="next">';
-        $next .= '<i class="fa fa-chevron-circle-'.$faright.'"></i></a>';
+        $next .= '<span aria-hidden="true" class="fa fa-chevron-circle-'.$faright.'"></span></a>';
 
         return $prev . $next;
     }
@@ -311,10 +337,8 @@ class toolbox {
     static public function initialise_colourswitcher(\moodle_page $page) {
         self::check_colours_switch();
         \user_preference_allow_ajax_update('theme_essential_colours', PARAM_ALPHANUM);
-        $page->requires->yui_module(
-                'moodle-theme_essential-coloursswitcher', 'M.theme_essential.initColoursSwitcher',
-                array(array('div' => '.dropdown-menu'))
-        );
+        $page->requires->js_call_amd('theme_essential/coloursswitcher', 'init',
+            array(array('div' => '#custom_menu_themecolours .dropdown-menu')));
     }
 
     /**
@@ -391,25 +415,79 @@ class toolbox {
         return $css;
     }
 
-    static public function set_color($css, $themecolor, $tag, $default) {
+    static public function set_color($css, $themecolor, $tag, $defaultcolour, $alpha = null) {
         if (!($themecolor)) {
-            $replacement = $default;
+            $replacement = $defaultcolour;
         } else {
             $replacement = $themecolor;
+        }
+        if (!is_null($alpha)) {
+            $replacement = self::hex2rgba($replacement, $alpha);
         }
         $css = str_replace($tag, $replacement, $css);
         return $css;
     }
 
-    static public function set_alternativecolor($css, $type, $customcolor, $defaultcolor) {
+    static public function set_alternativecolor($css, $type, $customcolor, $defaultcolour, $alpha = null) {
         $tag = '[[setting:alternativetheme'.$type.']]';
         if (!($customcolor)) {
-            $replacement = $defaultcolor;
+            $replacement = $defaultcolour;
         } else {
             $replacement = $customcolor;
         }
+        if (!is_null($alpha)) {
+            $replacement = self::hex2rgba($replacement, $alpha);
+        }
         $css = str_replace($tag, $replacement, $css);
         return $css;
+    }
+
+    /**
+     * Returns the RGB for the given hex.
+     *
+     * @param string $hex
+     * @return array
+     */
+    static private function hex2rgb($hex) {
+        // From: http://bavotasan.com/2011/convert-hex-color-to-rgb-using-php/.
+        $hex = str_replace("#", "", $hex);
+
+        if (strlen($hex) == 3) {
+            $r = hexdec(substr($hex, 0, 1).substr($hex, 0, 1));
+            $g = hexdec(substr($hex, 1, 1).substr($hex, 1, 1));
+            $b = hexdec(substr($hex, 2, 1).substr($hex, 2, 1));
+        } else {
+            $r = hexdec(substr($hex, 0, 2));
+            $g = hexdec(substr($hex, 2, 2));
+            $b = hexdec(substr($hex, 4, 2));
+        }
+        $rgb = array('r' => $r, 'g' => $g, 'b' => $b);
+        return $rgb; // Returns the rgb as an array.
+    }
+
+    static public function hexadjust($hex, $percentage) {
+        $percentage = round($percentage / 100, 2);
+        $rgb = self::hex2rgb($hex);
+        $r = round($rgb['r'] - ($rgb['r'] * $percentage));
+        $g = round($rgb['g'] - ($rgb['g'] * $percentage));
+        $b = round($rgb['b'] - ($rgb['b'] * $percentage));
+
+        return '#'.str_pad(dechex(max(0, min(255, $r))), 2, '0', STR_PAD_LEFT)
+            .str_pad(dechex(max(0, min(255, $g))), 2, '0', STR_PAD_LEFT)
+            .str_pad(dechex(max(0, min(255, $b))), 2, '0', STR_PAD_LEFT);
+    }
+
+    /**
+     * Returns the RGBA for the given hex and alpha.
+     *
+     * @param string $hex
+     * @param string $alpha
+     * @return string
+     */
+    static private function hex2rgba($hex, $alpha) {
+        $rgba = self::hex2rgb($hex);
+        $rgba[] = $alpha;
+        return 'rgba('.implode(", ", $rgba).')'; // Returns the rgba values separated by commas.
     }
 
     static public function set_headerbackground($css, $headerbackground) {
@@ -514,7 +592,15 @@ class toolbox {
         return $css;
     }
 
-    static public function set_logoheight($css, $logoheight) {
+    static public function set_logodimensions($css, $logowidth, $logoheight) {
+        $tag = '[[setting:logowidth]]';
+        if (!($logowidth)) {
+            $replacement = '65px';
+        } else {
+            $replacement = $logowidth;
+        }
+        $css = str_replace($tag, $replacement, $css);
+
         $tag = '[[setting:logoheight]]';
         if (!($logoheight)) {
             $replacement = '65px';
@@ -522,6 +608,7 @@ class toolbox {
             $replacement = $logoheight;
         }
         $css = str_replace($tag, $replacement, $css);
+
         return $css;
     }
 
@@ -540,28 +627,6 @@ class toolbox {
             $css = str_replace($imagetag, $replacement.'px', $css);
         }
         return $css;
-    }
-
-    /**
-     * Convert a colour hex string to an opacity supporting rgba one.
-     *
-     * @param string $hex Hex RGB string.
-     * @param float $opacity between 0.0 and 1.0.
-     * @return string.
-     */
-    static public function hex2rgba($hex, $opacity) {
-        $hex = str_replace("#", "", $hex);
-
-        if (strlen($hex) == 3) {
-            $r = hexdec(substr($hex, 0, 1) . substr($hex, 0, 1));
-            $g = hexdec(substr($hex, 1, 1) . substr($hex, 1, 1));
-            $b = hexdec(substr($hex, 2, 1) . substr($hex, 2, 1));
-        } else {
-            $r = hexdec(substr($hex, 0, 2));
-            $g = hexdec(substr($hex, 2, 2));
-            $b = hexdec(substr($hex, 4, 2));
-        }
-        return "rgba($r, $g, $b, $opacity)";
     }
 
     /**

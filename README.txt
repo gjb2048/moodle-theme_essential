@@ -87,6 +87,7 @@ Guido Hornig, actXcellence http://actxcellence.de
 Delvon Forrester, Esparanza co uk
 iZone
 Anis Jradah
+Ute Hlasek, https://hlasek-it.de/moodle
 
 Essential for Moodle 3.0 kindly sponsored by
 --------------------------------------------

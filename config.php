@@ -60,13 +60,13 @@ $THEME->sheets[] = 'custom';
 
 $THEME->supportscssoptimisation = false;
 
-$THEME->javascripts_footer = array('essential', 'coloursswitcher');
+$THEME->javascripts_footer = array('essential');
 if (floatval($CFG->version) >= 2013111803.02) { // 2.6.3+ (Build: 20140522) which has MDL-43995 integrated into it.
     $THEME->enable_dock = true;
     $THEME->javascripts_footer[] = 'dock';
 }
 
-$THEME->editor_sheets = array('editor');
+$THEME->editor_sheets = array('editor', 'custom');
 
 $THEME->plugins_exclude_sheets = array('mod' => array('quiz'));
 
@@ -96,12 +96,6 @@ $THEME->layouts = array(
         'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-pre',
     ),
-    // Standard layout with blocks, this is recommended for most pages with general information.
-    'message-index' => array(
-        'file' => 'columns2.php',
-        'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-pre',
-    ),
     // Main course page.
     'course' => array(
         'file' => 'columns3.php',
@@ -127,7 +121,7 @@ $THEME->layouts = array(
     ),
     // My dashboard page.
     'mydashboard' => array(
-        'file' => 'columns3.php',
+        'file' => 'mydashboard.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-post',
     ),

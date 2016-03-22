@@ -1,16 +1,38 @@
 /* @group Navbar */
 @import "../fontawesome/variables";
 
-/* @group Custom Menu */
+#page-header {
+  margin-top: @navbarHeight;
+  &.oldnavbar {
+    margin-top: 0;
+    margin-bottom: @navbarHeight;
+  }
+}
+
+#essentialnavbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 200;
+}
+
+@media(min-width: @navbarCollapseDesktopWidth) {
+  .pagewidthnarrow {
+    #page-header {
+      margin-top: @navbarHeight * 2;
+      &.oldnavbar {
+        margin-top: 0;
+        margin-bottom: @navbarHeight * 2;
+      }
+    }
+  }
+}
 
 .navbar {
   margin-bottom: 0px;
-  position: fixed;
   width: 100%;
-  top: 0px;
-  right: 0px;
   background-image: none;
-  z-index: 200;
 
   .navbar-inner {
     .reset-filter();
@@ -119,7 +141,7 @@
         margin-right: 0px;
       }
     }
-    .nav > li > a i.@{fa-css-prefix} {
+    .nav > li > a .@{fa-css-prefix} {
       color: inherit;
     }
 
@@ -152,6 +174,7 @@
           max-height: 20px;
           border-radius: 4px;
           margin-right: 2px;
+          background-color: @white;
         }
         a.dropdown-toggle {
           padding: 9px 15px;
@@ -163,7 +186,7 @@
         }
         ul.dropdown-menu {
           margin: 0px;
-          i.@{fa-css-prefix} {
+          .@{fa-css-prefix} {
             margin-right: 5px;
             width: 15px;
           }
@@ -191,7 +214,7 @@
             overflow: hidden;
             > .message {
               padding: 5px 10px;
-              i.@{fa-css-prefix} {
+              .@{fa-css-prefix} {
                 margin: 0px 5px;
               }
               .msg-picture {
@@ -269,6 +292,9 @@
       }
     }
   }
+  .@{fa-css-prefix} {
+    color: inherit;
+  }
 }
 
 @media (max-width: @navbarCollapseWidth) {
@@ -285,6 +311,32 @@
   }
 }
 
+.pagelayout-secure .navbar,
+.pagelayout-popup .navbar {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .loggedin #essentialnavbar.oldnavbar.affix-top .navbar .navbar-inner .custommenus .usermenu ul.nav .dropdown > .dropdown-toggle {
+    font-size: 12px;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 0;
+    text-align: center;
+    width: 100px;
+    max-width: 100px;
+    img.userpicture {
+      position: absolute;
+      top: -50px;
+      right: 32px;
+      width: 64px;
+      height: 64px;
+      max-width: 64px;
+      max-height: 64px;
+    }
+  }
+}
+
 /* @end */
 
 /* @group Theme Colours Menu */
@@ -294,16 +346,4 @@ a {
     border-radius: 2px;
   }
 }
-/* @end */
-
-.navbar.oldnavbar,
-.pagelayout-secure .navbar,
-.pagelayout-popup .navbar {
-  position: relative;
-}
-
-.navbar.oldnavbar.affix {
-  position: fixed;
-}
-
 /* @end */

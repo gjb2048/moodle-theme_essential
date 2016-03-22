@@ -1,3 +1,84 @@
+New in 3.0.1.1
+==============
+- FIX: Issue #351: Footer doesn't stay at bottom.
+- FIX: Issue #627: Request for an unknown renderer.
+- FIX: Issue #628: Course content search dialog does not show up properly on RTL mode.
+- FIX: Issue #629: Hidden resources have low contrast.
+- FIX: Issue #633: Increase performance of administration settings pages.  Thanks to 'Jan Dagefoerde' for the initial patch.
+- FIX: Issue #634: Improve icon replacement performance.
+- FIX: Issue #635: Course table of contents block navigation when static navbar.
+- FIX: Issue #640: Edit profile style not set properly.
+- FIX: Issue #641: Floating rows in the gradebook position after page scroll are wrong.
+- FIX: Issue #642: Advanced Grading creating template form issue.
+- FIX: Style guide settings tooltips and popups.
+- FIX: MDL-52936 - Fix link hover bug on iOS.
+- FIX: Apply 'aria-hidden="true"' to FontAwesome icons as much as possible.  Still a few 'content' CSS attributes to consider.
+- FIX: Add 'speak: none' to FontAwesome icons for accessibility.
+- FIX: Footer doesn't stay at bottom code fix when no footer.
+- FIX: Alternative colour border colours.
+- FIX: Narrow page width and page header.
+- FIX: Tidy the header.
+- NEW: Improve efficiency of colour switcher.
+- NEW: Issue #632: View StyleGuide without logging on.
+- NEW: Add logo width setting.
+- NEW: Hide title area when showing social icons when collapsed.
+- NEW: Bigger user picture when using the old navbar position and at the top.
+- NEW: Refactor ColoursSwitcher into jQuery and optimise.
+
+New in 3.0.1
+============
+- FIX: Issue #623: label is inline.
+- FIX: Issue #625: .btn-link class needs settings.
+- FIX: Coursebox tidy up.
+- FIX: Primary button hover.
+- FIX: Bootstrap button styling.
+- FIX: TravisCI issues.
+- FIX: Ensure that the editor gets the custom font-face declarations.
+- FIX: Disabled and active button styling.
+- FIX: MDL-52371 - Activity Chooser - alignment of strings that need line wrap.
+- NEW: Style guide settings page.
+
+New in 3.0.0.5
+==============
+- FIX: Issue #614: Dashboard -> Site administration -> Appearance -> HTML settings overflow with fixed width set at normal.
+- FIX: Issue #615: Block login on frontpage.
+- FIX: Issue #616: TinyMCE font family setting overridden by theme.
+- FIX: Issue #617: What is the 'message-index' layout?
+- FIX: Issue #618: Gradebook links are displayed when reports cannot be viewed.  Thanks to Tony Butler for the patch #619.
+- FIX: Issue #620: 'alternativethemedefaultbuttonbackgroundhovercolourX' setting name too long for 'name' attribute in 'config_plugins' table.
+- FIX: Issue #621: Cloze question input box width when taking quiz but not preview.
+- FIX: Editor colours.
+- FIX: Duplicate line in 'Return to section....'.
+- FIX: Input focus colour.
+- FIX: TravisCI Code Checker complaints.
+- FIX: MDL-52249 - Nested navigation dropdowns don't work on small screens - M3.0 only.
+- FIX: MDL-52342 - Hiding section adds gaps to the activity chooser.
+- FIX: MDL-52879 - Unable to delete last (only) question in a quiz.
+- FIX: Question text width on 1200px+ resolutions when editing a quiz.
+- FIX: Changes for Grid format issue #24.
+- NEW: Issue #613: Section names on 'Return to section X'.  Grateful thanks to 'Mihai Bojonca, TCM International Institute, Inc.' for funding this enhancement.
+- NEW: Inspector Scourer.
+- NEW: 'Return to section....' feature setting.
+- NEW: Features settings page to tidy things up a bit.
+
+New in 3.0.0.4
+==============
+- FIX: Issue #609: Block Editing button on Plugin overview pagechanges colour on hover.
+- FIX: Filemanager link colour.
+
+New in 3.0.0.3
+==============
+- FIX: Issue #599: .gitattributes: missing *.gif binary line - thanks to Jordi Pujol-Ahulló.
+- FIX: Issue #602: <audio> elements can overflow to the right on small, older phones.
+- FIX: Issue #603: Admins should always see "additional front page middle blocks" when editing is turned on.
+- FIX: Fancy breadcrumb z-index conflict with the Grid format.
+- FIX: Default button colour.
+- FIX: Favicon not showing.
+- NEW: Add return to section button on 'incourse' pages employing a named anchor to go directly there.
+- NEW: Bigger forum discussion user picture.
+- NEW: Default button background colour settings.
+- NEW: Bootstrap 3 list group component.
+
 New in 3.0.0.2
 ==============
 - FIX: Issue #595: Navbar turn editing on / off button does not always work.

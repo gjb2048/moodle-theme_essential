@@ -24,12 +24,41 @@
  * @copyright   2013 Julian Ridden
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 // Check if GRID is installed before trying to override it.
 if (file_exists("$CFG->dirroot/course/format/grid/renderer.php")) {
     include_once($CFG->dirroot . "/course/format/grid/renderer.php");
 
     class theme_essential_format_grid_renderer extends format_grid_renderer {
         use \theme_essential\format_renderer_toolbox;
+
+        /**
+         * Backwards compatibility method to get 'topic0attop' attribute value.
+         *
+         * @return boolean Value of topic0attop.
+         */
+        private function get_topic0attop() {
+            if (property_exists($this, 'topic0attop')) {
+                $reflectionproperty = new ReflectionProperty($this, 'topic0attop');
+                if ($reflectionproperty->isProtected()) {
+                    return $this->topic0attop;
+                }
+            }
+            // Grid format fix #24 not implemented.  Assume section 0 is at the top.
+            return 1;
+        }
+
+        public function get_nav_links($course, $sections, $sectionno) {
+            if (!$this->get_topic0attop()) {
+                $buffer = -1;
+            } else {
+                $buffer = 0;
+            }
+            return $this->get_nav_links_content($course, $sections, $sectionno, $buffer);
+        }
+
+        public function print_single_section_page($course, $sections, $mods, $modnames, $modnamesused, $displaysection) {
+            $this->print_single_section_page_content($course, $sections, $mods, $modnames, $modnamesused, $displaysection,
+                $this->get_topic0attop($course));
+        }
     }
 }

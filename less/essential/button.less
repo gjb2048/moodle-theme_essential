@@ -4,7 +4,26 @@
 .btn-warning,
 .btn-info,
 .btn-danger {
-  color: @white !important;
+    color: @white !important;
+}
+
+.heading-rts {
+    margin-top: 18px;
+    .btn {
+        float: right;
+    }
+}
+
+.footer-rts {
+    margin-bottom: 4px;
+}
+
+body {
+    .btn {
+        &:hover, &:focus {
+            background-image: none;
+        }
+    }
 }
 
 /* @end */
