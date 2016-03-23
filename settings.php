@@ -766,7 +766,7 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
-    
+
     // Toggle hidden courses display in custommenu.
     $name = 'theme_essential/displayhiddenmycourses';
     $title = get_string('displayhiddenmycourses', 'theme_essential');
@@ -775,7 +775,7 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     // Set terminology for dropdown course list.
     $name = 'theme_essential/mycoursetitle';
     $title = get_string('mycoursetitle', 'theme_essential');
