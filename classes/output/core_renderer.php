@@ -410,13 +410,14 @@ class core_renderer extends \core_renderer {
 
             // Retrieve courses and add them to the menu when they are visible.
             $numcourses = 0;
+            $hasdisplayhiddenmycourses = \theme_essential\toolbox::get_setting('displayhiddenmycourses');
             if ($courses = enrol_get_my_courses(null, $sortorder . ' ASC')) {
                 foreach ($courses as $course) {
                     if ($course->visible) {
                         $branch->add('<span class="fa fa-graduation-cap"></span>'.format_string($course->fullname),
                             new moodle_url('/course/view.php?id=' . $course->id), format_string($course->shortname));
                         $numcourses += 1;
-                    } else if (has_capability('moodle/course:viewhiddencourses', context_course::instance($course->id))) {
+                    } else if (has_capability('moodle/course:viewhiddencourses', context_course::instance($course->id)) && $hasdisplayhiddenmycourses) {
                         $branchtitle = format_string($course->shortname);
                         $branchlabel = '<span class="dimmed_text">'.$this->getfontawesomemarkup('slash').
                             format_string($course->fullname) . '</span>';
