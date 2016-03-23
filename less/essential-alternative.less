@@ -8,6 +8,7 @@
 // Import the bootstrap we need.
 @import "bootstrap/variables";
 @import "bootstrap-override/variables";
+@import "essential/variables";
 @import "fontawesome/variables";
 
 @import "bootstrap/mixins";
@@ -144,16 +145,22 @@
                     color: ~"[[setting:alternativethemeurlcolor@{index}]]";
                 }
 
-                a:hover, a:focus {
+                a:focus, a:hover {
                     color: ~"[[setting:alternativethemehovercolor@{index}]]";
                 }
 
                 .@{fa-css-prefix} {
                     color: ~"[[setting:alternativethemeiconcolor@{index}]]";
-                    &:hover {
+                    &:focus, &:hover {
                         color: ~"[[setting:alternativethemehovercolor@{index}]]";
                     }
                     &.@{fa-css-prefix}-warning {
+                        color: inherit;
+                    }
+                }
+                .dimmed .@{fa-css-prefix} {
+                    color: inherit;
+                    &:focus, &:hover {
                         color: inherit;
                     }
                 }
@@ -161,11 +168,16 @@
                     color: @white;
                 }
 
-                a:before {
-                    color: ~"[[setting:alternativethemeiconcolor@{index}]]";
-                }
-                a:hover:before {
-                    color: ~"[[setting:alternativethemehovercolor@{index}]]";
+                a {
+                    &:before {
+                        color: ~"[[setting:alternativethemeiconcolor@{index}]]";
+                    }
+                    &:hover:before {
+                        color: ~"[[setting:alternativethemehovercolor@{index}]]";
+                    }
+                    &.dimmed:before {
+                        color: inherit;
+                    }
                 }
 
                 a.dimmed,
@@ -1051,6 +1063,9 @@
                             }
                         }
                     }
+                }
+                &.path-admin .buttons input[type="submit"] {
+                    background-image: inherit;
                 }
             }
 

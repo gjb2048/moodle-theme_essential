@@ -16,12 +16,18 @@ body {
   background-size: ~"[[setting:backgroundsize]]";
   .@{fa-css-prefix} {
     color: ~"[[setting:themeiconcolor]]";
-    &:hover {
+    &:focus, &:hover {
       color: ~"[[setting:themehovercolor]]";
     }
   }
   .@{fa-css-prefix}-inverse {
     color: @fa-inverse;
+  }
+  .dimmed .@{fa-css-prefix} {
+    color: inherit;
+    &:focus, &:hover {
+      color: inherit;
+    }
   }
 }
 
@@ -44,12 +50,17 @@ a:hover, a:focus, .btn-link:hover, .btn-link:focus {
   }
 }
 
-a:before {
-  color: ~"[[setting:themeiconcolor]]";
-  display: inline-block;
-  text-decoration: none;
-  &:hover {
-    color: ~"[[setting:themehovercolor]]";
+a {
+  &:before {
+    color: ~"[[setting:themeiconcolor]]";
+    display: inline-block;
+    text-decoration: none;
+    &:hover {
+      color: ~"[[setting:themehovercolor]]";
+    }
+  }
+  &.dimmed:before {
+    color: inherit;
   }
 }
 

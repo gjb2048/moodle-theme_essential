@@ -419,7 +419,7 @@ class core_renderer extends \core_renderer {
                         $numcourses += 1;
                     } else if (has_capability('moodle/course:viewhiddencourses', context_course::instance($course->id)) && $hasdisplayhiddenmycourses) {
                         $branchtitle = format_string($course->shortname);
-                        $branchlabel = '<span class="dimmed_text">'.$this->getfontawesomemarkup('slash').
+                        $branchlabel = '<span class="dimmed_text">'.$this->getfontawesomemarkup('eye-slash').
                             format_string($course->fullname) . '</span>';
                         $branchurl = new moodle_url('/course/view.php', array('id' => $course->id));
                         $branch->add($branchlabel, $branchurl, $branchtitle);

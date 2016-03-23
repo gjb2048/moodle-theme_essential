@@ -18,8 +18,12 @@ New in 2.9.1.11
 - FIX: Alternative colour border colours.
 - FIX: Narrow page width and page header.
 - FIX: Tidy the header.
-- NEW: Improve efficiency of colour switcher.
+- FIX: Admin submit button hover on alternative colour schemes.
+- FIX: Dimmed icon colours.
+- FIX: Hidden course summary box colours to be dimmed.
 - NEW: Issue #632: View StyleGuide without logging on.
+- NEW: Issue #645: Add setting to toggle display of hidden courses in Custom Menu.  Thanks to Mathieu Pelletier for this code.
+- NEW: Improve efficiency of colour switcher.
 - NEW: Add logo width setting.
 - NEW: Hide title area when showing social icons when collapsed.
 - NEW: Bigger user picture when using the old navbar position and at the top.
