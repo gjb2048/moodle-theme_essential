@@ -1005,11 +1005,19 @@ body {
 body .fa {
   color: [[setting:themeiconcolor]];
 }
+body .fa:focus,
 body .fa:hover {
   color: [[setting:themehovercolor]];
 }
 body .fa-inverse {
   color: #ffffff;
+}
+body .dimmed .fa {
+  color: inherit;
+}
+body .dimmed .fa:focus,
+body .dimmed .fa:hover {
+  color: inherit;
 }
 .container-fluid {
   max-width: [[setting:pagewidth]];
@@ -1048,6 +1056,9 @@ a:before {
 }
 a:before:hover {
   color: [[setting:themehovercolor]];
+}
+a.dimmed:before {
+  color: inherit;
 }
 .color {
   color: [[setting:themecolor]];

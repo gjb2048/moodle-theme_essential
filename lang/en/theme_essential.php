@@ -180,9 +180,9 @@ $string['favicondesc'] = 'Upload your own favicon.  It should be an .ico file.';
 $string['mycoursesinfo'] = 'Enrolled courses menu';
 $string['mycoursesinfodesc'] = 'Displays a dynamic list of enrolled courses to the user.';
 $string['displaymycourses'] = 'Display enrolled courses';
-$string['displaymycoursesdesc'] = 'Display enrolled courses for users in the Custom Menu';
+$string['displaymycoursesdesc'] = 'Display enrolled courses for users in the \'Custom Menu\'.';
 $string['displayhiddenmycourses'] = 'Display hidden courses';
-$string['displayhiddenmycoursesdesc'] = 'Display hidden courses for users in the Custom Menu if they have permission to view hidden courses';
+$string['displayhiddenmycoursesdesc'] = 'Display hidden courses for users in the \'Custom Menu\' if they have permission to view hidden courses';
 
 $string['mycoursetitle'] = 'Terminology';
 $string['mycoursetitledesc'] = 'Change the terminology for the "My Courses" link in the drop down menu';
