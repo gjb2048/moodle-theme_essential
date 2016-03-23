@@ -116,8 +116,8 @@ $string['flattr_click'] = 'sponsor via Flattr';
 
 // Readme.
 $string['readme_title'] = 'Essential read-me';
-$string['readme_desc'] = 'Please {$a->url} containing more information about the Essential theme.';
-$string['readme_click'] = 'click for README.txt';
+$string['readme_desc'] = 'Please {$a->url} file, which contains more information about the Essential theme including customisation.';
+$string['readme_click'] = 'click here for the README.txt';
 
 // General settings.
 $string['genericsettings'] = 'General';
