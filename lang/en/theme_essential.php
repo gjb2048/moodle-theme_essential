@@ -152,9 +152,7 @@ $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this text area will be reflected in every page, making for easier customisation of this theme.';
 
 $string['logo'] = 'Logo';
-$string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.
-                       <br>The image should be the same height as the Logo height setting below and any reasonable width that suits.
-                       <br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
+$string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.<br>The image should be the same height as the Logo height setting below and any reasonable width that suits.<br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
 
 $string['logowidth'] = 'Logo width';
 $string['logowidthdesc'] = 'The width of the logo image. This can be specified in px or em.';
@@ -608,10 +606,10 @@ $string['fontsettings'] = 'Font';
 $string['fontheadingsub'] = 'Font settings';
 $string['fontheadingdesc'] = 'Select and enter the fonts that you want to use in your Moodle environment.';
 $string['fontselect'] = 'Font type selector';
-$string['fontselectdesc'] = 'Choose from the list of available font types. Please save to show the options for your choice.';
-$string['fonttypestandard'] = 'Standard fonts';
+$string['fontselectdesc'] = 'Choose from the list of available font defining mechanisms:<ul><li>\'User fonts\' are where the font is already installed at the users machine and you just specify its name.</li><li>\'Google web fonts\' are where you find a font on \'{$a->googlewebfonts}\' and specify its name.</li><li>\'Custom fonts\' are where you specify the name and upload the font files for the font.</li></ul>Please save to show the options for your choice.';
+$string['fonttypeuser'] = 'User fonts';
 $string['fonttypegoogle'] = 'Google web fonts';
-$string['fonttypecustom'] = 'Custom font';
+$string['fonttypecustom'] = 'Custom fonts';
 $string['fontnameheading'] = 'Heading font';
 $string['fontnameheadingdesc'] = 'Enter the exact name of the font to use for headings.';
 $string['fontnamebody'] = 'Text font';
