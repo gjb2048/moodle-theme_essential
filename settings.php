@@ -1040,12 +1040,13 @@ if ($ADMIN->fulltree) {
     $essentialsettingsfont->add($setting);
 
     // Font selector.
+    $gws = html_writer::link('//www.google.com/fonts', get_string('fonttypegoogle', 'theme_essential'), array('target' => '_blank'));
     $name = 'theme_essential/fontselect';
     $title = get_string('fontselect', 'theme_essential');
-    $description = get_string('fontselectdesc', 'theme_essential');
+    $description = get_string('fontselectdesc', 'theme_essential', array('googlewebfonts' => $gws));
     $default = 1;
     $choices = array(
-        1 => get_string('fonttypestandard', 'theme_essential'),
+        1 => get_string('fonttypeuser', 'theme_essential'),
         2 => get_string('fonttypegoogle', 'theme_essential'),
         3 => get_string('fonttypecustom', 'theme_essential')
     );

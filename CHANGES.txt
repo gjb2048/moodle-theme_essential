@@ -1,5 +1,6 @@
 New in 2.9.1.12
 ===============
+- FIX: Font serving instructions.  See: https://moodle.org/mod/forum/discuss.php?d=330553.
 
 New in 2.9.1.11
 ===============
