@@ -1,6 +1,7 @@
 New in 2.9.1.12
 ===============
 - FIX: Font serving instructions.  See: https://moodle.org/mod/forum/discuss.php?d=330553.
+- FIX: Invalid CSS attribute value in carousel.less.
 
 New in 2.9.1.11
 ===============
