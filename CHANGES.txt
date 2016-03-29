@@ -1,6 +1,7 @@
 New in 3.0.1.2
 ==============
 - FIX: Font serving instructions.  See: https://moodle.org/mod/forum/discuss.php?d=330553.
+- FIX: Invalid CSS attribute value in carousel.less.
 
 New in 3.0.1.1
 ==============
