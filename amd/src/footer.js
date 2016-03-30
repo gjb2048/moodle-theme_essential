@@ -30,6 +30,7 @@ define(['jquery', 'core/log'], function($, log) {
                         log.debug('Calculated footer offset: ' + theOffset + '.');
                         log.debug('Old document height: ' + documentHeight + '.');
                         footer.offset({ top: theOffset, left: 0});
+                        footer.css('left', 0); // Negate the effect of the dock.
                         var newOffset = footer.offset().top;
                         log.debug('New footer offset: ' + newOffset + '.');
                         log.debug('New document height: ' + $(document).height() + '.');
