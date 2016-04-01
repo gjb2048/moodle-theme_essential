@@ -4,6 +4,7 @@ New in 3.0.1.2
 - FIX: Font serving instructions.  See: https://moodle.org/mod/forum/discuss.php?d=330553.
 - FIX: Invalid CSS attribute value in carousel.less.
 - FIX: Footer position when using docking and footer is not at the bottom.
+- FIX/NEW: Issue #646: Implement MDL-53147 from M3.1 - 'Reading message screen broken when reading one message and have another unread'.
 
 New in 3.0.1.1
 ==============
