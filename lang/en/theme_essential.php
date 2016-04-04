@@ -250,6 +250,9 @@ $string['floatingsubmitbuttonsdesc'] = 'Have a \'floating\' area that contains t
 $string['layout'] = 'Use a standard course layout';
 $string['layoutdesc'] = 'This theme is designed to put both block columns on the side.  If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
 
+$string['categoryincoursebreadcrumbfeature'] = 'Categories in the course breadcrumb';
+$string['categoryincoursebreadcrumbfeaturedesc'] = 'Show the category links in the breadcrumb of the course.';
+
 $string['returntosectionfeature'] = 'Return to section';
 $string['returntosectionfeaturedesc'] = "Enable return to section feature within course modules.";
 

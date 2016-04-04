@@ -171,6 +171,14 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsfeature->add($setting);
 
+    // Categories in the course breadcrumb.
+    $name = 'theme_essential/categoryincoursebreadcrumbfeature';
+    $title = get_string('categoryincoursebreadcrumbfeature', 'theme_essential');
+    $description = get_string('categoryincoursebreadcrumbfeaturedesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $essentialsettingsfeature->add($setting);
+
     // Return to section.
     $name = 'theme_essential/returntosectionfeature';
     $title = get_string('returntosectionfeature', 'theme_essential');
