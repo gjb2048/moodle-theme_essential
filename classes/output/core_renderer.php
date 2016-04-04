@@ -64,10 +64,19 @@ class core_renderer extends \core_renderer {
             if ($breadcrumbstyle == '4') {
                 $breadcrumbstyle = '1'; // Fancy style with no collapse.
             }
+
+            $showcategories = true;
+            if ($this->page->pagelayout == 'course') {
+                $showcategories = \theme_essential\toolbox::get_setting('categoryincoursebreadcrumbfeature');
+            }
+
             $breadcrumbs = html_writer::start_tag('ul', array('class' => "breadcrumb style$breadcrumbstyle"));
             foreach ($this->page->navbar->get_items() as $item) {
                 // Test for single space hide section name trick.
                 if ((strlen($item->text) == 1) && ($item->text[0] == ' ')) {
+                    continue;
+                }
+                if ((!$showcategories) && ($item->type == \navigation_node::TYPE_CATEGORY)) {
                     continue;
                 }
                 $item->hideicon = true;

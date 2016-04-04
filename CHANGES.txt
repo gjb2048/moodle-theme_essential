@@ -5,6 +5,7 @@ New in 2.9.1.12
 - FIX: Invalid CSS attribute value in carousel.less.
 - FIX: Footer position when using docking and footer is not at the bottom.
 - FIX: MDL-53489 - Quiz editing: if you put in a very long heading, the page layout breaks.
+- NEW: Issue #647: Navigation bar in course: without course category links.  Thanks to Christian Niemczik for supporting and funding the work on the Essential Theme.
 
 New in 2.9.1.11
 ===============
