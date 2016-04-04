@@ -66,7 +66,7 @@ class core_renderer extends \core_renderer {
             }
 
             $showcategories = true;
-            if ($this->page->pagelayout == 'course') {
+            if (($this->page->pagelayout == 'course') || ($this->page->pagelayout == 'incourse')) {
                 $showcategories = \theme_essential\toolbox::get_setting('categoryincoursebreadcrumbfeature');
             }
 
