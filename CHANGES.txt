@@ -7,6 +7,8 @@ New in 2.9.1.12
 - FIX: MDL-53489 - Quiz editing: if you put in a very long heading, the page layout breaks.
 - NEW: Issue #647: Navigation bar in course: without course category links.  Thanks to Christian Niemczik for supporting and funding the work on the Essential Theme.
 - NEW: Have the 'This course' menu appear on other course related pages.
+- NEW: Tidy up licenses.
+- NEW: Tidy up Font Awesome CSS as WOFF2 support was only an issue in M2.8.
 
 New in 2.9.1.11
 ===============
