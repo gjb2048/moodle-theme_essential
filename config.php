@@ -15,19 +15,16 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This is built using the bootstrapbase template to allow for new theme's using
- * Moodle's new Bootstrap theme engine
+ * Essential is a clean and customizable theme.
  *
  * @package     theme_essential
- * @copyright   2013 Julian Ridden
+ * @copyright   2016 Gareth J Barnard
+ * @copyright   2015 Gareth J Barnard
  * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @copyright   2013 Julian Ridden
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 $THEME->name = 'essential';
-
-// The only thing you need to change in this file when copying it to
-// create a new theme is the name above. You also need to change the name
-// in version.php and lang/en/theme_essential.php as well.
 
 $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
@@ -37,11 +34,6 @@ $THEME->sheets[] = 'bootstrap-pix';
 $THEME->sheets[] = 'moodle-pix';
 $THEME->sheets[] = 'essential-pix';
 $THEME->sheets[] = 'essential-settings';
-if (floatval($CFG->version) >= 2014111005.01) { // 2.8.5+ (Build: 20150313) which has MDL-49074 integrated into it.
-    $THEME->sheets[] = 'fontawesome-woff2';
-} else {
-    $THEME->sheets[] = 'fontawesome-no-woff2';
-}
 $THEME->sheets[] = 'fontawesome';
 
 if ((get_config('theme_essential', 'enablealternativethemecolors1')) ||
@@ -61,10 +53,8 @@ $THEME->sheets[] = 'custom';
 $THEME->supportscssoptimisation = false;
 
 $THEME->javascripts_footer = array('essential');
-if (floatval($CFG->version) >= 2013111803.02) { // 2.6.3+ (Build: 20140522) which has MDL-43995 integrated into it.
-    $THEME->enable_dock = true;
-    $THEME->javascripts_footer[] = 'dock';
-}
+$THEME->enable_dock = true;
+$THEME->javascripts_footer[] = 'dock';
 
 $THEME->editor_sheets = array('editor', 'custom');
 

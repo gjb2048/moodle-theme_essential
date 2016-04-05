@@ -15,13 +15,16 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Essential is a clean and customizable theme.
+ *
  * Analytics
  *
- * This module provides extensive analytics on a platform of choice
- * Currently support Google Analytics and Piwik
+ * This module provides extensive analytics on a platform of choice,
+ * currently support Google Analytics and Piwik
  *
- * @package    local_analytics
- * @copyright  David Bezemer <info@davidbezemer.nl>, www.davidbezemer.nl
+ * @package    theme_essential
+ * @copyright  2016 Gareth J Barnard
+ * @copyright  2014 David Bezemer <info@davidbezemer.nl>, www.davidbezemer.nl
  * @author     David Bezemer <info@davidbezemer.nl>, Bas Brands <bmbrands@gmail.com>, Gavin Henrick <gavin@lts.ie>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

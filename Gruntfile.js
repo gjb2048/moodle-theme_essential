@@ -194,28 +194,6 @@ module.exports = function(grunt) { // jshint ignore:line
                 src: 'less/essential-pix.less',
                 dest: 'style/essential-pix.css'
             },
-            fontawesome_woff2_p: {
-                options: {
-                    compress: false,
-                    cleancss: false,
-                    paths: "./less",
-                    report: 'min',
-                    sourceMap: false,
-                },
-                src: 'less/fontawesome-woff2.less',
-                dest: 'style/fontawesome-woff2.css'
-            },
-            fontawesome_no_woff2_p: {
-                options: {
-                    compress: false,
-                    cleancss: false,
-                    paths: "./less",
-                    report: 'min',
-                    sourceMap: false,
-                },
-                src: 'less/fontawesome-no-woff2.less',
-                dest: 'style/fontawesome-no-woff2.css'
-            },
             fontawesome_p: {
                 options: {
                     compress: false,
@@ -544,6 +522,9 @@ module.exports = function(grunt) { // jshint ignore:line
             files: ['**/amd/src/*.js']
         },
         uglify: {
+            options: {
+                preserveComments: 'some'
+            },
             dynamic_mappings: {
                 files: grunt.file.expandMapping(
                     ['**/src/*.js', '!**/node_modules/**'],
@@ -589,8 +570,6 @@ module.exports = function(grunt) { // jshint ignore:line
         "less:bootstrap_pix_" + build,
         "less:moodle_pix_" + build,
         "less:essential_pix_" + build,
-        "less:fontawesome_woff2_" + build,
-        "less:fontawesome_no_woff2_" + build,
         "less:fontawesome_" + build,
         "less:alternative_" + build]);
     if (build == 'd') {

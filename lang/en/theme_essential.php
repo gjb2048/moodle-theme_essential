@@ -15,10 +15,10 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This is built using the bootstrapbase template to allow for new theme's using
- * Moodle's new Bootstrap theme engine
+ * Essential is a clean and customizable theme.
  *
  * @package     theme_essential
+ * @copyright   2016 Gareth J Barnard
  * @copyright   2015 Gareth J Barnard
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @copyright   2013 Julian Ridden
@@ -92,7 +92,7 @@ click here to sponsor.
 </ul>
 </p>
 <h3>Customisation</h3>
-<p>If you like this theme and would like me to customise it, transpose functionality to another theme or build a new theme from scratch, then I offer competitive rates.  Please contact me via \'www.gjbarnard.co.uk/contact/\' or \'gjbarnard at gmail dot com\' or \'about.me/gjbarnard\' to discuss your requirements.</p>
+<p>If you like this theme and would like me to customise it, transpose functionality to another theme, build a new theme from scratch or create a child theme then I offer competitive rates.  Please contact me via \'www.gjbarnard.co.uk/contact/\' or \'gjbarnard at gmail dot com\' or \'about.me/gjbarnard\' to discuss your requirements.</p>
 </div></div>';
 
 // General.

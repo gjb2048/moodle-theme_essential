@@ -15,6 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Essential is a clean and customizable theme.
+ *
  * Overridden core maintenance renderer.
  *
  * This renderer gets used instead of the standard core_renderer during maintenance
@@ -23,6 +25,7 @@
  * bootstrap look and feel.
  *
  * @package     theme_essential
+ * @copyright   2016 Gareth J Barnard
  * @copyright   2015 Gareth J Barnard
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @copyright   2013 Julian Ridden

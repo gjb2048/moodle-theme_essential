@@ -113,9 +113,9 @@ Duane Cox
 
 Customisation
 =============
-If you like this theme and would like me to customise it, transpose functionality to another theme or
-build a new theme from scratch, then I offer competitive rates.  Please contact me via 'www.gjbarnard.co.uk/contact/'
-or 'gjbarnard at gmail dot com' or 'about.me/gjbarnard' to discuss your requirements.
+If you like this theme and would like me to customise it, transpose functionality to another theme, build a new theme from scratch
+or create a child theme then I offer competitive rates.  Please contact me via 'www.gjbarnard.co.uk/contact/' or
+'gjbarnard at gmail dot com' or 'about.me/gjbarnard' to discuss your requirements.
 
 Required version of Moodle
 ==========================

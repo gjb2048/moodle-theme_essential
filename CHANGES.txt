@@ -8,6 +8,8 @@ New in 3.0.1.2
 - FIX/NEW: Issue #646: Implement MDL-53147 from M3.1 - 'Reading message screen broken when reading one message and have another unread'.
 - NEW: Issue #647: Navigation bar in course: without course category links.  Thanks to Christian Niemczik for supporting and funding the work on the Essential Theme.
 - NEW: Have the 'This course' menu appear on other course related pages.
+- NEW: Tidy up licenses.
+- NEW: Tidy up Font Awesome CSS as WOFF2 support was only an issue in M2.8.
 
 New in 3.0.1.1
 ==============

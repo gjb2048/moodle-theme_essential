@@ -1,3 +1,12 @@
+/**
+ * Essential is a clean and customizable theme.
+ *
+ * @package     theme_essential
+ * @copyright   2016 Gareth J Barnard
+ * @copyright   2015 Gareth J Barnard
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
 /* jshint ignore:start */
 define(['jquery', 'theme_essential/bootstrap', 'theme_essential/holder', 'core/log'], function($, bootstrap, holder, log) {
 
