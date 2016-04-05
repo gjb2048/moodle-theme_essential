@@ -490,15 +490,11 @@ class core_renderer extends \core_renderer {
      * @return custom_menu object
      */
     public function custom_menu_activitystream() {
-        if (($this->page->pagelayout != 'course') && ($this->page->pagelayout != 'incourse') &&
-            ($this->page->pagelayout != 'report')) {
-            return '';
-        }
-
-        $context = context_course::instance($this->page->course->id);
-
         if (!isguestuser()) {
-            if (isset($this->page->course->id) && $this->page->course->id > 1) {
+            if ((($this->page->pagelayout == 'course') || ($this->page->pagelayout == 'incourse') ||
+                ($this->page->pagelayout == 'report') || ($this->page->pagelayout == 'admin') ||
+                ($this->page->pagelayout == 'standard')) &&
+                ((!empty($this->page->course->id) && $this->page->course->id > 1))) {
                 $activitystreammenu = new custom_menu();
                 $branchtitle = get_string('thiscourse', 'theme_essential');
                 $branchlabel = $this->getfontawesomemarkup('book').$branchtitle;
@@ -508,6 +504,7 @@ class core_renderer extends \core_renderer {
                 $branchlabel = $this->getfontawesomemarkup('users').$branchtitle;
                 $branchurl = new moodle_url('/user/index.php', array('id' => $this->page->course->id));
                 $branch->add($branchlabel, $branchurl, $branchtitle, 100003);
+                $context = context_course::instance($this->page->course->id);
                 if (((has_capability('gradereport/overview:view', $context) || has_capability('gradereport/user:view', $context)) &&
                         $this->page->course->showgrades) || has_capability('gradereport/grader:view', $context)) {
                     $branchtitle = get_string('grades');
