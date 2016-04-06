@@ -660,6 +660,13 @@ $ADMIN->add('theme_essential', $essentialsettingscolour);
 // Header settings.
 $essentialsettingsheader = new admin_settingpage('theme_essential_header', get_string('headerheading', 'theme_essential'));
 if ($ADMIN->fulltree) {
+    global $CFG;
+    if (file_exists("{$CFG->dirroot}/theme/essential/essential_admin_setting_configtext.php")) {
+        require_once($CFG->dirroot . '/theme/essential/essential_admin_setting_configtext.php');
+    } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/essential/essential_admin_setting_configtext.php")) {
+        require_once($CFG->themedir . '/essential/essential_admin_setting_configtext.php');
+    }
+
     // New or old navbar.
     $name = 'theme_essential/oldnavbar';
     $title = get_string('oldnavbar', 'theme_essential');
@@ -690,7 +697,9 @@ if ($ADMIN->fulltree) {
     $title = get_string('logowidth', 'theme_essential');
     $description = get_string('logowidthdesc', 'theme_essential');
     $default = '65px';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $regex = '/\b(\d)(\d*)(px|em)\b/';
+    $logodimerror = get_string('logodimerror', 'theme_essential');
+    $setting = new essential_admin_setting_configtext($name, $title, $description, $default, $regex, $logodimerror);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 
@@ -699,7 +708,8 @@ if ($ADMIN->fulltree) {
     $title = get_string('logoheight', 'theme_essential');
     $description = get_string('logoheightdesc', 'theme_essential');
     $default = '65px';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting = new essential_admin_setting_configtext($name, $title, $description, $default, $regex, $logodimerror);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 
     // Header title setting.
@@ -1100,13 +1110,6 @@ if ($ADMIN->fulltree) {
         $setting->set_updatedcallback('theme_reset_all_caches');
         $essentialsettingsfont->add($setting);
     } else if (get_config('theme_essential', 'fontselect') === "3") {
-
-        if (floatval($CFG->version) >= 2014111005.01) { // 2.8.5+ (Build: 20150313) which has MDL-49074 integrated into it.
-            $woff2 = true;
-        } else {
-            $woff2 = false;
-        }
-
         // This is the descriptor for the font files.
         $name = 'theme_essential/fontfiles';
         $heading = get_string('fontfiles', 'theme_essential');
@@ -1139,15 +1142,13 @@ if ($ADMIN->fulltree) {
         $setting->set_updatedcallback('theme_reset_all_caches');
         $essentialsettingsfont->add($setting);
 
-        if ($woff2) {
-            // WOFF2 font.
-            $name = 'theme_essential/fontfilewofftwoheading';
-            $title = get_string('fontfilewofftwoheading', 'theme_essential');
-            $description = '';
-            $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfilewofftwoheading');
-            $setting->set_updatedcallback('theme_reset_all_caches');
-            $essentialsettingsfont->add($setting);
-        }
+        // WOFF2 font.
+        $name = 'theme_essential/fontfilewofftwoheading';
+        $title = get_string('fontfilewofftwoheading', 'theme_essential');
+        $description = '';
+        $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfilewofftwoheading');
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $essentialsettingsfont->add($setting);
 
         // EOT font.
         $name = 'theme_essential/fontfileeotheading';
