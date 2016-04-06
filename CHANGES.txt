@@ -6,6 +6,7 @@ New in 3.0.1.2
 - FIX: Footer position when using docking and footer is not at the bottom.
 - FIX: MDL-53489 - Quiz editing: if you put in a very long heading, the page layout breaks.
 - FIX: Improve logo setting description.
+- FIX: Missing '$setting->set_updatedcallback('theme_reset_all_caches');' on logo width setting.
 - FIX/NEW: Issue #646: Implement MDL-53147 from M3.1 - 'Reading message screen broken when reading one message and have another unread'.
 - NEW: Issue #647: Navigation bar in course: without course category links.  Thanks to Christian Niemczik for supporting and funding the work on the Essential Theme.
 - NEW: Have the 'This course' menu appear on other course related pages.

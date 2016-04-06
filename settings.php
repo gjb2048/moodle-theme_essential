@@ -691,6 +691,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('logowidthdesc', 'theme_essential');
     $default = '65px';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 
     // Logo height setting.
