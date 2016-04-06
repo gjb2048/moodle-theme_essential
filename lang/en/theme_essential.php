@@ -128,13 +128,13 @@ $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this text area will be reflected in every page, making for easier customisation of this theme.';
 
 $string['logo'] = 'Logo';
-$string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.<br>The image should be the same height as the Logo height setting below and any reasonable width that suits.<br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
+$string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.<br>The image should be the same width and height as the \'Logo width\' and \'Logo height\' settings below.<br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
 
 $string['logowidth'] = 'Logo width';
-$string['logowidthdesc'] = 'The width of the logo image. This can be specified in px or em.';
+$string['logowidthdesc'] = 'The width of the logo image.  This can be specified in \'px\' or \'em\', e.g. \'96px\'.';
 
 $string['logoheight'] = 'Logo height';
-$string['logoheightdesc'] = 'The height of the logo image. This can be specified in px or em.';
+$string['logoheightdesc'] = 'The height of the logo image.  This can be specified in \'px\' or \'em\', e.g. \'24px\'.';
 
 $string['credit'] = 'The {$a->name} theme for Moodle is developed by ';
 
