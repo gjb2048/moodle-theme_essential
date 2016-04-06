@@ -12,6 +12,7 @@ New in 3.0.1.2
 - NEW: Have the 'This course' menu appear on other course related pages.
 - NEW: Tidy up licenses.
 - NEW: Tidy up Font Awesome CSS as WOFF2 support was only an issue in M2.8.
+- NEW: Logo dimension validation.
 
 New in 3.0.1.1
 ==============
