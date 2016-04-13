@@ -961,11 +961,10 @@ class core_renderer extends \core_renderer {
             $userclass = array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown');
             $usermenu .= html_writer::link($userurl, $userpic.get_string('guest').$caret, $userclass);
 
-            // Render direct logout link.
+            // Render direct login link.
             $usermenu .= html_writer::start_tag('ul', array('class' => 'dropdown-menu pull-right'));
-            $branchlabel = '<em>'.$this->getfontawesomemarkup('sign-out').get_string('logout').'</em>';
-            $branchurl = new moodle_url('/login/logout.php');
-            $branchurl->param('sesskey', sesskey());
+            $branchlabel = '<em>'.$this->getfontawesomemarkup('sign-in').get_string('login').'</em>';
+            $branchurl = new moodle_url('/login/index.php');
             $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
 
             // Render Help Link.
