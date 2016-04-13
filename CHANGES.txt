@@ -1,6 +1,7 @@
 New in 2.9.1.12
 ===============
 - FIX: Issue #642: Advanced Grading creating template form issue.
+- FIX: Issue #649: Guest access confusing.
 - FIX: Font serving instructions.  See: https://moodle.org/mod/forum/discuss.php?d=330553.
 - FIX: Invalid CSS attribute value in carousel.less.
 - FIX: Footer position when using docking and footer is not at the bottom.
