@@ -492,11 +492,31 @@ class toolbox {
 
     static public function set_headerbackground($css, $headerbackground) {
         $tag = '[[setting:headerbackground]]';
+
+        $headerbackgroundstyle = self::get_setting('headerbackgroundstyle');
+        $replacement = '#page-header {';
+        $replacement .= 'background-image: url(\'';
         if ($headerbackground) {
-            $replacement = $headerbackground;
+            $replacement .= $headerbackground;
         } else {
-            $replacement = self::pix_url('bg/header', 'theme');
+            $replacement .= self::pix_url('bg/header', 'theme');
+            $headerbackgroundstyle = 'tiled';
         }
+        $replacement .= '\');';
+
+        if ($headerbackground) {
+            $replacement .= 'background-size: contain;';
+        }
+
+        if ($headerbackgroundstyle == 'tiled') {
+            $replacement .= 'background-repeat: repeat;';
+        } else {
+            $replacement .= 'background-repeat: no-repeat;';
+            $replacement .= 'background-position: center;';
+        }
+
+        $replacement .= '}';
+
         $css = str_replace($tag, $replacement, $css);
         return $css;
     }

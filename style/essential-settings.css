@@ -782,7 +782,6 @@ body#page-grade-grading-pick #region-main form #fgroup_id_buttonar label {
 /* @group Header */
 #page-header {
   color: [[setting:headertextcolor]];
-  background: url('[[setting:headerbackground]]') repeat;
 }
 #page-header.logo {
   height: [[setting:logoheight]];
