@@ -148,6 +148,14 @@ $string['genericsettings'] = 'General';
 $string['generalheadingsub'] = 'General settings';
 $string['generalheadingdesc'] = 'Configure the general settings for the theme here.';
 
+$string['pagebackground'] = 'Page background image';
+$string['pagebackgrounddesc'] = 'Upload your own background image. Select the style of the image below.';
+$string['pagebackgroundstyle'] = 'Page background style';
+$string['pagebackgroundstyledesc'] = 'Select the style for the uploaded image.';
+$string['stylefixed'] = 'Fixed';
+$string['styletiled'] = 'Tiled';
+$string['stylestretch'] = 'Stretch';
+
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this text area will be reflected in every page, making for easier customisation of this theme.';
 
@@ -169,9 +177,6 @@ $string['profilebarcustomtitledesc'] = 'Title for custom profile bar block.';
 
 $string['contactinfo'] = 'Contact information';
 $string['contactinfodesc'] = 'Enter your contact information';
-
-$string['siteicon'] = 'Site icon';
-$string['siteicondesc'] = 'Do not have a logo? Enter the name of the icon you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "fa-". ';
 
 $string['favicon'] = 'Custom favicon';
 $string['favicondesc'] = 'Upload your own favicon.  It should be an .ico file.';
@@ -311,18 +316,6 @@ $string['footerblockurlcolour'] = 'Footer block link colour';
 $string['footerblockurlcolourdesc'] = 'Set the colour for your linked block text in the footer.';
 $string['footerblockhovercolour'] = 'Footer block link hover colour';
 $string['footerblockhovercolourdesc'] = 'Set the colour for your linked block text when hovered over in the footer.';
-
-$string['headerbackground'] = 'Header background image';
-$string['headerbackgrounddesc'] = 'Upload your own background image.';
-$string['headertextcolor'] = 'Header text colour';
-$string['headertextcolordesc'] = 'Set the text colour for the header.';
-$string['pagebackground'] = 'Page background image';
-$string['pagebackgrounddesc'] = 'Upload your own background image. Select the style of the image below.';
-$string['pagebackgroundstyle'] = 'Page background style';
-$string['pagebackgroundstyledesc'] = 'Select the style for the uploaded image.';
-$string['backgroundstylefixed'] = 'Fixed';
-$string['backgroundstyletiled'] = 'Tiled';
-$string['backgroundstylestretch'] = 'Stretch';
 
 // Alternate Colour Switcher.
 $string['themecolors'] = 'Theme colours';
@@ -598,6 +591,21 @@ $string['shortnamesummary'] = 'Short name and summary';
 
 $string['oldnavbar'] = 'Use the old navbar position';
 $string['oldnavbardesc'] = 'Enable this option to use the old navbar position, placing it below the header.';
+
+$string['usesiteicon'] = 'Use site icon';
+$string['usesiteicondesc'] = 'Use the site icon if there is no logo.';
+
+$string['siteicon'] = 'Site icon';
+$string['siteicondesc'] = 'Do not have a logo? Enter the name of the icon you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "fa-".';
+
+$string['headertextcolor'] = 'Header text colour';
+$string['headertextcolordesc'] = 'Set the text colour for the header.';
+
+$string['headerbackground'] = 'Header background image';
+$string['headerbackgrounddesc'] = 'Upload your own background image.';
+
+$string['headerbackgroundstyle'] = 'Header background style';
+$string['headerbackgroundstyledesc'] = 'Select the style for the header background.';
 
 $string['editingmenu'] = 'Page editing switch';
 $string['editingmenudesc'] = 'Displays a button to switch the editing of the current page on/off if the user is allowed to edit the page.  The same functionality as the normal page editing button.';

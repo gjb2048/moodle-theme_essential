@@ -66,9 +66,9 @@ if ($ADMIN->fulltree) {
     $default = 'fixed';
     $setting = new admin_setting_configselect($name, $title, $description, $default,
         array(
-            'fixed' => get_string('backgroundstylefixed', 'theme_essential'),
-            'tiled' => get_string('backgroundstyletiled', 'theme_essential'),
-            'stretch' => get_string('backgroundstylestretch', 'theme_essential')
+            'fixed' => get_string('stylefixed', 'theme_essential'),
+            'tiled' => get_string('styletiled', 'theme_essential'),
+            'stretch' => get_string('stylestretch', 'theme_essential')
         )
     );
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -676,12 +676,37 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 
+    // Use the site icon if there is no logo.
+    $name = 'theme_essential/usesiteicon';
+    $title = get_string('usesiteicon', 'theme_essential');
+    $description = get_string('usesiteicondesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingsheader->add($setting);
+
     // Default Site icon setting.
     $name = 'theme_essential/siteicon';
     $title = get_string('siteicon', 'theme_essential');
     $description = get_string('siteicondesc', 'theme_essential');
     $default = 'laptop';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $essentialsettingsheader->add($setting);
+
+    // Header title setting.
+    $name = 'theme_essential/headertitle';
+    $title = get_string('headertitle', 'theme_essential');
+    $description = get_string('headertitledesc', 'theme_essential');
+    $default = '1';
+    $choices = array(
+        0 => get_string('notitle', 'theme_essential'),
+        1 => get_string('fullname', 'theme_essential'),
+        2 => get_string('shortname', 'theme_essential'),
+        3 => get_string('fullnamesummary', 'theme_essential'),
+        4 => get_string('shortnamesummary', 'theme_essential')
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 
     // Logo file setting.
@@ -709,22 +734,6 @@ if ($ADMIN->fulltree) {
     $description = get_string('logoheightdesc', 'theme_essential');
     $default = '65px';
     $setting = new essential_admin_setting_configtext($name, $title, $description, $default, $regex, $logodimerror);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $essentialsettingsheader->add($setting);
-
-    // Header title setting.
-    $name = 'theme_essential/headertitle';
-    $title = get_string('headertitle', 'theme_essential');
-    $description = get_string('headertitledesc', 'theme_essential');
-    $default = '1';
-    $choices = array(
-        0 => get_string('notitle', 'theme_essential'),
-        1 => get_string('fullname', 'theme_essential'),
-        2 => get_string('shortname', 'theme_essential'),
-        3 => get_string('fullnamesummary', 'theme_essential'),
-        4 => get_string('shortnamesummary', 'theme_essential')
-    );
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 
@@ -757,6 +766,20 @@ if ($ADMIN->fulltree) {
     $title = get_string('headerbackground', 'theme_essential');
     $description = get_string('headerbackgrounddesc', 'theme_essential');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'headerbackground');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingsheader->add($setting);
+
+    // Background style.
+    $name = 'theme_essential/headerbackgroundstyle';
+    $title = get_string('headerbackgroundstyle', 'theme_essential');
+    $description = get_string('headerbackgroundstyledesc', 'theme_essential');
+    $default = 'tiled';
+    $setting = new admin_setting_configselect($name, $title, $description, $default,
+        array(
+            'fixed' => get_string('stylefixed', 'theme_essential'),
+            'tiled' => get_string('styletiled', 'theme_essential')
+        )
+    );
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 
