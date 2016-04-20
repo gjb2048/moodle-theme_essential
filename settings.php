@@ -1214,15 +1214,13 @@ if ($ADMIN->fulltree) {
         $setting->set_updatedcallback('theme_reset_all_caches');
         $essentialsettingsfont->add($setting);
 
-        if ($woff2) {
-            // WOFF2 font.
-            $name = 'theme_essential/fontfilewofftwobody';
-            $title = get_string('fontfilewofftwobody', 'theme_essential');
-            $description = '';
-            $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfilewofftwobody');
-            $setting->set_updatedcallback('theme_reset_all_caches');
-            $essentialsettingsfont->add($setting);
-        }
+        // WOFF2 font.
+        $name = 'theme_essential/fontfilewofftwobody';
+        $title = get_string('fontfilewofftwobody', 'theme_essential');
+        $description = '';
+        $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfilewofftwobody');
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $essentialsettingsfont->add($setting);
 
         // EOT font.
         $name = 'theme_essential/fontfileeotbody';
