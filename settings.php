@@ -663,8 +663,10 @@ if ($ADMIN->fulltree) {
     global $CFG;
     if (file_exists("{$CFG->dirroot}/theme/essential/essential_admin_setting_configtext.php")) {
         require_once($CFG->dirroot . '/theme/essential/essential_admin_setting_configtext.php');
+        require_once($CFG->dirroot . '/theme/essential/essential_admin_setting_configradio.php');
     } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/essential/essential_admin_setting_configtext.php")) {
         require_once($CFG->themedir . '/essential/essential_admin_setting_configtext.php');
+        require_once($CFG->themedir . '/essential/essential_admin_setting_configradio.php');
     }
 
     // New or old navbar.
@@ -795,7 +797,7 @@ if ($ADMIN->fulltree) {
         3 => get_string('breadcrumbthin', 'theme_essential'),
         0 => get_string('nobreadcrumb', 'theme_essential')
     );
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting = new essential_admin_setting_configradio($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 

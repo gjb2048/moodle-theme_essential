@@ -16,6 +16,7 @@ New in 2.9.1.12
 - NEW: Logo dimension validation.
 - NEW: Update to FontAwesome 4.6.1.
 - NEW: Add 'usesiteicon' setting to allow the site icon not to be shown if desired.
+- NEW: Add radio button selection for breadcrumb style.
 
 New in 2.9.1.11
 ===============
