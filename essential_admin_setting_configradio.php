@@ -25,19 +25,28 @@
  */
 
 class essential_admin_setting_configradio extends admin_setting {
-    /** @var array Array of choices value=>label */
-    public $choices;
+    /** @var array Array of choices value => label */
+    protected $choices;
+    /** @var array Array of images value => image name in theme */
+    protected $images;
+    /** @var boolean false = vertical and true = horizontal */
+    protected $inline;
 
     /**
      * Constructor
-     * @param string $name unique ascii name, either 'mysetting' for settings that in config, or 'myplugin/mysetting' for ones in config_plugins.
-     * @param string $visiblename localised
-     * @param string $description long localised info
+     * @param string $name Unique ascii name, either 'mysetting' for settings that in config or
+     *                     'myplugin/mysetting' for ones in config_plugins.
+     * @param string $visiblename Localised.
+     * @param string $description Long localised info
      * @param string|int $defaultsetting
-     * @param array $choices array of $value=>$label for each selection
+     * @param array $choices array of $value => $label for each selection.
+     * @param array $inline boolean false = vertical and true = horizontal.
+     * @param array $images array of $value => image name in theme for each selection.
      */
-    public function __construct($name, $visiblename, $description, $defaultsetting, $choices) {
+    public function __construct($name, $visiblename, $description, $defaultsetting, $choices, $inline = true, $images = array()) {
         $this->choices = $choices;
+        $this->inline = $inline;
+        $this->images = $images;
         parent::__construct($name, $visiblename, $description, $defaultsetting);
     }
 
@@ -135,11 +144,24 @@ class essential_admin_setting_configradio extends admin_setting {
         }
 
         $radiohtml = '';
+        $first = true;
         foreach ($this->choices as $key => $value) {
             // The string cast is needed because key may be integer - 0 is equal to most strings!
             $checked = ((string)$key == $data ? ' checked="checked"' : '');
-            $radiohtml .= '<input type="radio" id="'.$this->get_id().'_'.$key.'" name="'.$this->get_full_name().'" value="'.$key.'" '.$checked.' />'
-                .'<label for="'.$this->get_id().'_'.$key.'">'.$value.'</label>';
+
+            if ((!$this->inline) && (!$first)) {
+                $radiohtml .= '<br />';
+            }
+            $radiohtml .= '<input type="radio" id="'.$this->get_id().'_'.$key.'" name="'.$this->get_full_name().'" value="'.$key.'" '.$checked.' />';
+            if (array_key_exists($key, $this->images)) {
+                global $OUTPUT;
+                $radiohtml .= '<label for="'.$this->get_id().'_'.$key.'" title="'.$value.'">'.
+                    '<img class="img-responsive" src="'.$OUTPUT->pix_url($this->images[$key], $this->plugin).'" alt="'.$value.'">'.
+                    '</label>';
+            } else {
+                $radiohtml .= '<label for="'.$this->get_id().'_'.$key.'">'.$value.'</label>';
+            }
+            $first = false;
         }
         return array($radiohtml, $warning);
     }

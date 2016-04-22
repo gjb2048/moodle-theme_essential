@@ -797,7 +797,13 @@ if ($ADMIN->fulltree) {
         3 => get_string('breadcrumbthin', 'theme_essential'),
         0 => get_string('nobreadcrumb', 'theme_essential')
     );
-    $setting = new essential_admin_setting_configradio($name, $title, $description, $default, $choices);
+    $images = array(
+        1 => 'breadcrumbstyled',
+        4 => 'breadcrumbstylednocollapse',
+        2 => 'breadcrumbsimple',
+        3 => 'breadcrumbthin'
+    );
+    $setting = new essential_admin_setting_configradio($name, $title, $description, $default, $choices, false, $images);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 
