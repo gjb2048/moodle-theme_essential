@@ -25,15 +25,7 @@
  */
 
 require_once(\theme_essential\toolbox::get_tile_file('additionaljs'));
-$fontselect = \theme_essential\toolbox::get_setting('fontselect');
-if ($fontselect === '2') {
-    $fontcharacterset = '&subset=latin';
-    if (\theme_essential\toolbox::get_setting('fontcharacterset')) {
-        $fontcharacterset = '&subset=latin,'.\theme_essential\toolbox::get_setting('fontcharacterset');
-    }
-    $headingfont = urlencode(\theme_essential\toolbox::get_setting('fontnameheading'));
-    $bodyfont = urlencode(\theme_essential\toolbox::get_setting('fontnamebody'));
-}
+require_once(\theme_essential\toolbox::get_tile_file('pagesettings'));
 
 echo $OUTPUT->doctype();
 ?>
@@ -53,7 +45,7 @@ echo $OUTPUT->doctype();
     <!-- End Analytics -->
 </head>
 
-<body <?php echo $OUTPUT->body_attributes(); ?>>
+<body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html(); ?>
 
