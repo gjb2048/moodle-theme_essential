@@ -144,14 +144,10 @@ class essential_admin_setting_configradio extends admin_setting {
         }
 
         $radiohtml = '';
-        $first = true;
         foreach ($this->choices as $key => $value) {
             // The string cast is needed because key may be integer - 0 is equal to most strings!
             $checked = ((string)$key == $data ? ' checked="checked"' : '');
 
-            if ((!$this->inline) && (!$first)) {
-                $radiohtml .= '<br />';
-            }
             $radiohtml .= '<input type="radio" id="'.$this->get_id().'_'.$key.'" name="'.$this->get_full_name().'" value="'.$key.'" '.$checked.' />';
             if (array_key_exists($key, $this->images)) {
                 global $OUTPUT;
@@ -161,7 +157,9 @@ class essential_admin_setting_configradio extends admin_setting {
             } else {
                 $radiohtml .= '<label for="'.$this->get_id().'_'.$key.'">'.$value.'</label>';
             }
-            $first = false;
+            if (!$this->inline) {
+                $radiohtml .= '<br>';
+            }
         }
         return array($radiohtml, $warning);
     }
