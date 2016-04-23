@@ -20,6 +20,8 @@ New in 2.9.1.12
 - NEW: Add 'usesiteicon' setting to allow the site icon not to be shown if desired.
 - NEW: Add radio button selection for breadcrumb style.
 - NEW: Add image and direction capability to radio button selection for breadcrumb style.
+- NEW: Add radio button image selection for 'oldnavbar' setting.
+- NEW: Add radio button image selection for 'slidecaptionoptions' setting.
 
 New in 2.9.1.11
 ===============

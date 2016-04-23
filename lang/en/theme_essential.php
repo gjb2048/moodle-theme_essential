@@ -231,7 +231,7 @@ $string['floatingsubmitbuttons'] = 'Floating submit buttons';
 $string['floatingsubmitbuttonsdesc'] = 'Have a \'floating\' area that contains the buttons used when submitting a form on desktop devices.  This helps to reduce scrolling on some pages.  Not used on course enrolment or forum posts.';
 
 $string['layout'] = 'Use a standard course layout';
-$string['layoutdesc'] = 'This theme is designed to put both block columns on the side.  If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
+$string['layoutdesc'] = 'This theme is designed to put both block columns on the side.  If you prefer the standard Moodle course layout you can check this box and be returned to the old three column layout.';
 
 $string['categoryincoursebreadcrumbfeature'] = 'Categories in the course breadcrumb';
 $string['categoryincoursebreadcrumbfeaturedesc'] = 'Show the category links in the breadcrumb of the course.';
@@ -367,7 +367,7 @@ $string['courselistteachericondesc'] = 'Name of the icon you wish to use or empt
 
 $string['frontcontentheading'] = 'Front page content area';
 $string['frontcontent'] = 'Enable front page content area';
-$string['frontcontentdesc'] = 'If enabled this adds a custom content area between the Slide show and the Marketing boxes for your own custom content.';
+$string['frontcontentdesc'] = 'If enabled this adds a custom content area between the \'Slide show\' and the \'Marketing boxes\' for your own custom content.';
 $string['frontcontentarea'] = 'Front page content area contents';
 $string['frontcontentareadesc'] = 'Whatever is typed into this box will display across the full width of the page in between the slide show and the Marketing spots.';
 
@@ -567,6 +567,8 @@ $string['shortnamesummary'] = 'Short name and summary';
 
 $string['oldnavbar'] = 'Use the old navbar position';
 $string['oldnavbardesc'] = 'Enable this option to use the old navbar position, placing it below the header.';
+$string['navbarabove'] = 'Navbar above the header';
+$string['navbarbelow'] = 'Navbar below the header';
 
 $string['usesiteicon'] = 'Use site icon';
 $string['usesiteicondesc'] = 'Use the site icon if there is no logo.';

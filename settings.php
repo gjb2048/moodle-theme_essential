@@ -673,8 +673,16 @@ if ($ADMIN->fulltree) {
     $name = 'theme_essential/oldnavbar';
     $title = get_string('oldnavbar', 'theme_essential');
     $description = get_string('oldnavbardesc', 'theme_essential');
-    $default = false;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $default = 0;
+    $choices = array(
+        0 => get_string('navbarabove', 'theme_essential'),
+        1 => get_string('navbarbelow', 'theme_essential')
+    );
+    $images = array(
+        0 => 'navbarabove',
+        1 => 'navbarbelow'
+    );
+    $setting = new essential_admin_setting_configradio($name, $title, $description, $default, $choices, false, $images);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 
@@ -1717,13 +1725,18 @@ if ($ADMIN->fulltree) {
     $name = 'theme_essential/slidecaptionoptions';
     $title = get_string('slidecaptionoptions', 'theme_essential');
     $description = get_string('slidecaptionoptionsdesc', 'theme_essential');
-    $default = '0';
+    $default = 0;
     $choices = array(
         0 => get_string('slidecaptionbeside', 'theme_essential'),
         1 => get_string('slidecaptionontop', 'theme_essential'),
         2 => get_string('slidecaptionunderneath', 'theme_essential')
     );
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $images = array(
+        0 => 'beside',
+        1 => 'on_top',
+        2 => 'underneath'
+    );
+    $setting = new essential_admin_setting_configradio($name, $title, $description, $default, $choices, false, $images);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsslideshow->add($setting);
 
