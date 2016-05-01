@@ -73,7 +73,9 @@ class core_renderer extends \core_renderer {
                 $showcategories = \theme_essential\toolbox::get_setting('categoryincoursebreadcrumbfeature');
             }
 
-            $breadcrumbs = html_writer::start_tag('ul', array('class' => "breadcrumb style$breadcrumbstyle"));
+            $breadcrumbs = html_writer::tag('span', get_string('pagepath'), array('class' => 'accesshide', 'id' => 'navbar-label'));
+            $breadcrumbs .= html_writer::start_tag('nav', array('aria-labelledby' => 'navbar-label'));
+            $breadcrumbs .= html_writer::start_tag('ul', array('class' => "breadcrumb style$breadcrumbstyle"));
             foreach ($this->page->navbar->get_items() as $item) {
                 // Test for single space hide section name trick.
                 if ((strlen($item->text) == 1) && ($item->text[0] == ' ')) {
@@ -86,8 +88,9 @@ class core_renderer extends \core_renderer {
                 $breadcrumbs .= html_writer::tag('li', $this->render($item));
             }
             $breadcrumbs .= html_writer::end_tag('ul');
+            $breadcrumbs .= html_writer::end_tag('nav');
         } else {
-            $breadcrumbs = html_writer::tag('p', '&nbsp;');
+            $breadcrumbs = '';
         }
         return $breadcrumbs;
     }

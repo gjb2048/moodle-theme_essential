@@ -1,5 +1,6 @@
 New in 2.9.1.13
 ===============
+- FIX: MDL-53855 - Navbar should be in exactly one nav region, and that should be labelled.
 
 New in 2.9.1.12
 ===============
