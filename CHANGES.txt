@@ -1,6 +1,7 @@
 New in 3.0.1.3
 ==============
 - FIX: MDL-53855 - Navbar should be in exactly one nav region, and that should be labelled.
+- FIX: Issue #662: Site pages indent.
 
 New in 3.0.1.2
 ==============
