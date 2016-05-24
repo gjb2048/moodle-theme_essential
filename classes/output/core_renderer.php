@@ -415,7 +415,7 @@ class core_renderer extends \core_renderer {
             $branch = $coursemenu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 
             $hometext = get_string('myhome');
-            $homelabel = html_writer::tag('i', '', array('class' => 'fa fa-home')).html_writer::tag('span', ' '.$hometext);
+            $homelabel = html_writer::tag('span', '', array('class' => 'fa fa-home')).html_writer::tag('span', ' '.$hometext);
             $branch->add($homelabel, new moodle_url('/my/index.php'), $hometext);
 
             // Get 'My courses' sort preference from admin config.

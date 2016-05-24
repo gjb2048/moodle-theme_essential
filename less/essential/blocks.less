@@ -124,8 +124,13 @@ p.tree_item.leaf a {
   }
 }
 
-.block_navigation .block_tree .tree_item.hasicon .item-content-wrap {
-  display: inline !important;
+.block_navigation.block .block_tree .tree_item {
+    &.hasicon .item-content-wrap {
+        display: inline !important;
+    }
+    &.branch {
+        padding-left: 0;
+    }
 }
 
 .collapsed .tree_item.branch:before {
