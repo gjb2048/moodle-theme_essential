@@ -1597,10 +1597,9 @@ class core_renderer extends \core_renderer {
             } else {
                 $theicon = 'reorder';
             }
+            $title = html_writer::tag('h2', $bc->title, $attributes);
             if (!empty($theicon)) {
-                $title = html_writer::tag('h2', $this->getfontawesomemarkup($theicon).$bc->title, $attributes);
-            } else {
-                $title = html_writer::tag('h2', $bc->title, $attributes);
+                $title = $this->getfontawesomemarkup($theicon).$title;
             }
         }
 
@@ -1839,11 +1838,11 @@ class core_renderer extends \core_renderer {
         return $html;
     }
 
-    private function getfontawesomemarkup($theicon, $classes = array(), $attributes = array()) {
+    private function getfontawesomemarkup($theicon, $classes = array(), $attributes = array(), $content = '') {
         $classes[] = 'fa fa-'.$theicon;
         $attributes['aria-hidden'] = 'true';
         $attributes['class'] = implode(' ', $classes);
-        return html_writer::tag('span', '', $attributes);
+        return html_writer::tag('span', $content, $attributes);
     }
 
     /**
