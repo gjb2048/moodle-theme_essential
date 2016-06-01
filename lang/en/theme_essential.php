@@ -530,6 +530,51 @@ $string['website'] = 'Website';
 $string['websiteurl'] = 'Website URL';
 $string['websitedesc'] = 'Enter the URL of your own website. (i.e http://about.me/gjbarnard)';
 
+
+// Category Course Title Image.
+$string['categoryctiheading'] = 'Category course title images';
+$string['categoryctiheadingsub'] = 'Use images to represent your categories in a course';
+$string['categoryctidesc'] = 'If enabled this will allow you to set images for each category.';
+
+$string['enablecategorycti'] = 'Enable category course title images';
+$string['enablecategoryctidesc'] = 'If enabled you will be able to select category course title images after clicking "Save changes".';
+
+$string['categoryctiinfo'] = '{$a->category} settings';
+$string['categoryctiinfodesc'] = 'Category course title image settings for: {$a->category}.';
+
+$string['categoryctimage'] = 'Category \'{$a->category}\' course title image file';
+$string['categoryctimagedesc'] = 'Image file for the course title in category \'{$a->category}\'.';
+
+$string['categoryctimageurl'] = 'Category \'{$a->category}\' course title image URL';
+$string['categoryctimageurldesc'] = 'Image URL for the course title in category \'{$a->category}\'.  If the file is uploaded then that will override this.';
+
+$string['categoryctiheight'] = 'Category \'{$a->category}\' course title image height';
+$string['categoryctiheightdesc'] = 'Image height for the course title in category \'{$a->category}\' between {$a->lower} and {$a->upper} pixels.  Do not postfix with \'px\', only enter the number.';
+
+$string['categoryctitextcolour'] = 'Category \'{$a->category}\' course title text colour';
+$string['categoryctitextcolourdesc'] = 'Text colour for the course title in category \'{$a->category}\'.';
+
+$string['categoryctitextbackgroundcolour'] = 'Category \'{$a->category}\' course title text background colour';
+$string['categoryctitextbackgroundcolourdesc'] = 'Text background colour for the course title in category \'{$a->category}\'.';
+
+$string['categoryctitextbackgroundopacity'] = 'Category \'{$a->category}\' course title text background opacity';
+$string['categoryctitextbackgroundopacitydesc'] = 'Text background opacity for the course title in category \'{$a->category}\'.';
+
+$string['ctioverride'] = 'Overriding category images in a course';
+$string['ctioverridedesc'] = 'If you wish to override the category course title image in a course when this is enabled with the \'enablecategorycti\' setting, then edit the course summary in the course settings and add an image.  Then edit in HTML mode, remove the surrounding \'p\' tags and \'br\' tag, then remove the \'style\', \'width\' and \'height\' attributes and any \'classes\' added by the text editor on the \'img\' tag.  Then add the class \'categorycti\'.  To specifiy the height (px) and the contained title text colour, background colour and opacity, use the following attributes: \'ctih\', \'ctit\', \'ctib\' and \'ctio\' respectively, for example:<br/><br/>&lt;img src=&quot;https://mymoodleinstall.me/pluginfile.php/493/course/section/237/myimage.jpg&quot; alt=&quot;Replacement image&quot; class=&quot;categorycti&quot; ctih=&quot;250&quot; ctit=&quot;#afafaf&quot; ctib=&quot;#222222&quot; ctio=&quot;0.5&quot;&gt;<br/><br/>This image will not be shown in the summary itself when viewing the list of courses.';
+
+$string['ctioverrideheight'] = 'Default overridden course title image height';
+$string['ctioverrideheightdesc'] = 'Default overridden image height for the course title between {$a->lower} and {$a->upper} pixels.  Do not postfix with \'px\', only enter the number.';
+
+$string['ctioverridetextcolour'] = 'Default overridden course title text colour';
+$string['ctioverridetextcolourdesc'] = 'Default overridden text colour for the course title.';
+
+$string['ctioverridetextbackgroundcolour'] = 'Default overridden course title text background colour';
+$string['ctioverridetextbackgroundcolourdesc'] = 'Default overridden text background colour for the course title.';
+
+$string['ctioverridetextbackgroundopacity'] = 'Default overridden course title text background opacity';
+$string['ctioverridetextbackgroundopacitydesc'] = 'Default overridden text background opacity for the course title.';
+
 // Category Icons.
 $string['categoryiconheading'] = 'Category icons';
 $string['categoryiconheadingsub'] = 'Use icons to represent your categories';
