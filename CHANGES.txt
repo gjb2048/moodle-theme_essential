@@ -4,6 +4,7 @@ New in 2.9.1.13
 - FIX: MDL-53855 - Navbar should be in exactly one nav region, and that should be labelled.
 - FIX: Issue #662: Site pages indent.
 - FIX: Issue #664: Broken Alt-text in blocks.
+- NEW: Tidy up administration block.
 
 New in 2.9.1.12
 ===============
