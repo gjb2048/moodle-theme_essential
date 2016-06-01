@@ -442,6 +442,70 @@ class toolbox {
         return $css;
     }
 
+    static private function get_categories() {
+        global $CFG;
+        include_once($CFG->libdir . '/coursecatlib.php');
+
+        $cid = array();
+        $categories = \coursecat::get(0)->get_children();
+
+        self::traverse_categories($categories, $cid);
+
+        return $cid;
+    }
+
+    static private function traverse_categories($categories, &$cid) {
+        foreach ($categories as $category) {
+            $cid[] = $category->id;
+            $catchildren = \coursecat::get($category->id)->get_children();
+            if ($catchildren) {
+                self::traverse_categories($catchildren, $cid);
+            }
+        }
+    }
+
+    static public function get_current_category() {
+        $us = self::check_corerenderer();
+
+        return $us->get_current_category();
+    }
+
+    static public function set_categorycoursetitleimages($css) {
+        $tag = '[[setting:categorycoursetitle]]';
+        $replacement = '';
+
+        if (self::get_setting('enablecategorycti')) {
+            $categories = self::get_categories();
+
+            foreach ($categories as $cid) {
+                $image = self::get_setting('categoryct'.$cid.'image');
+                $imageurl = false;
+                if ($image) {
+                    $imageurl = self::setting_file_url('categoryct'.$cid.'image', 'categoryct'.$cid.'image');
+                } else {
+                    $imageurlsetting = self::get_setting('categoryctimageurl'.$cid);
+                    if ($imageurlsetting) {
+                        $imageurl = $imageurlsetting;
+                    }
+                }
+                if ($imageurl) {
+                    $replacement .= '.categorycti-'.$cid.' {';
+                    $replacement .= 'background-image: url(\''.$imageurl.'\');';
+                    $replacement .= 'height: '.self::get_setting('categorycti'.$cid.'height').'px;';
+                    $replacement .= '}';
+                    $replacement .= '.categorycti-'.$cid.' .coursetitle {';
+                    $replacement .= 'color: '.self::get_setting('categorycti'.$cid.'textcolour').';';
+                    $replacement .= 'background-color: '.self::get_setting('categorycti'.$cid.'textbackgroundcolour').';';
+                    $replacement .= 'opacity: '.self::get_setting('categorycti'.$cid.'textbackgroundopactity').';';
+                    $replacement .= '}';
+                }
+            }
+        }
+
+        $css = str_replace($tag, $replacement, $css);
+        return $css;
+    }
+
     /**
      * Returns the RGB for the given hex.
      *

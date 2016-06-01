@@ -37,9 +37,8 @@ require_once(\theme_essential\toolbox::get_tile_file('header'));
                 <div class="row-fluid">
                     <section id="region-main" class="span12">
 <?php
-if (($COURSE->id > 1) && (essential_report_page_has_title() == true)) {
-    echo $OUTPUT->heading(format_string($COURSE->fullname), 1, 'coursetitle');
-    echo '<div class="bor"></div>';
+if (essential_report_page_has_title() == true) {
+    echo $OUTPUT->course_title();
 }
 echo $OUTPUT->course_content_header();
 echo $OUTPUT->main_content();

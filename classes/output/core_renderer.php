@@ -189,6 +189,146 @@ class core_renderer extends \core_renderer {
     }
 
     /**
+     * Outputs the course title.
+     *
+     * @return string the HTML to output.
+     */
+    public function course_title() {
+        $content = '';
+        if ($this->page->course->id > 1) {
+            $enablecategorycti = $this->get_setting('enablecategorycti');
+            $override = false;
+            if ($enablecategorycti) {
+                // Is there an override?
+                if (strpos($this->page->course->summary, 'categorycti') !== false) {
+                    $context = \context_course::instance($this->page->course->id);
+                    $summary = file_rewrite_pluginfile_urls($this->page->course->summary, 'pluginfile.php',
+                        $context->id, 'course', 'summary', null);
+
+                    $matches = array();
+                    if (preg_match_all("/<img[^>]*>/", $summary, $matches) !== false) {
+                        foreach ($matches[0] as $imgmatches) {
+                            if (strpos($imgmatches, 'categorycti') !== false) {
+                                $imgparts = array();
+                                if (preg_match_all("/(src|ctih|ctit|ctib|ctio)=\"([^\"]*)\"/", $imgmatches, $imgparts) !== false) {
+                                    $imgvalues = array('ctih' => '200', 'ctit' => '#ffffff', 'ctib' => '#222222',
+                                        'ctio' => '0.8');
+                                    $ctihs = $this->get_setting('ctioverrideheight');
+                                    $ctits = $this->get_setting('ctioverridetextcolour');
+                                    $ctibs = $this->get_setting('ctioverridetextbackgroundcolour');
+                                    $ctios = $this->get_setting('ctioverridetextbackgroundopacity');
+                                    if ($ctihs) {
+                                        $imgvalues['ctih'] = $ctihs;
+                                    }
+                                    if ($ctits) {
+                                        $imgvalues['ctit'] = $ctits;
+                                    }
+                                    if ($ctibs) {
+                                        $imgvalues['ctib'] = $ctibs;
+                                    }
+                                    if ($ctios) {
+                                        $imgvalues['ctio'] = $ctios;
+                                    }
+                                    // Index '1' is the 'key' and index '2' is the value.  Index '0' is them combined.
+                                    foreach ($imgparts[1] as $imgpartskey => $imgpartsvalue) {
+                                        $imgvalues[$imgpartsvalue] = $imgparts[2][$imgpartskey];
+                                    }
+                                    $override = true;
+                                    $content .= '<div class="categorycti" style="height: '.$imgvalues['ctih'].'px;';
+                                    $content .= ' background-image: url('.$imgvalues['src'].');">';
+                                    /* This is a level 1 h1 header so no need to call 'heading' method for return to section
+                                       and also parent version does not support addition of the style attribute. */
+                                    $content .= '<h1 class="coursetitle" style="color: '.$imgvalues['ctit'].'; background-color: ';
+                                    $content .= $imgvalues['ctib'].'; opacity: '.$imgvalues['ctio'].';">';
+                                    $content .= format_string($this->page->course->fullname).'</h1>';
+                                    // Closing 'div' is below because $enablecategorycti would be true.
+                                }
+                                break;
+                            }
+                        }
+                    }
+                }
+                // If the override did not exist or was not ok, then see if there is a category image.
+                if ($override == false) {
+                    $imagecatid = $this->get_categorycti_catid();
+                    if ($imagecatid) {
+                        $content .= '<div class=\'categorycti categorycti-'.$imagecatid.'\' >';
+                    } else {
+                        $enablecategorycti = false;
+                    }
+                }
+            }
+            if ($override == false) {
+                $content .= $this->heading(format_string($this->page->course->fullname), 1, 'coursetitle');
+            }
+            if ($enablecategorycti) {
+                $content .= '</div>';
+            }
+
+            $content .= '<div class="bor"></div>';
+        }
+
+        return $content;
+    }
+
+    /**
+     * Gets the current category.
+     *
+     * @return int Category id.
+     */
+    protected function get_current_category() {
+        $catid = 0;
+
+        if (is_array($this->page->categories)) {
+            $catids = array_keys($this->page->categories);
+            $catid = reset($catids);
+        } else if (!empty($$this->page->course->category)) {
+            $catid = $this->page->course->category;
+        }
+
+        return $catid;
+    }
+
+    /**
+     * Gets the category course title image category id for the given category or 0 if not found.
+     * Walks up the parent tree if the current category does not have an image.
+     *
+     * @return int Category id.
+     */
+    protected function get_categorycti_catid() {
+        $catid = 0;
+        $currentcatid = $this->get_current_category();
+
+        if ($currentcatid) {
+            $image = $this->get_setting('categoryct'.$currentcatid.'image');
+            if ($image) {
+                $catid = $currentcatid;
+            } else {
+                $imageurl = $this->get_setting('categoryctimageurl'.$currentcatid);
+                if ($imageurl) {
+                    $catid = $currentcatid;
+                } else {
+                    $parents = array_reverse(\coursecat::get($currentcatid)->get_parents());
+                    foreach ($parents as $parent) {
+                        $image = $this->get_setting('categoryct'.$parent.'image');
+                        if ($image) {
+                            $catid = $parent;
+                            break;
+                        }
+                        $imageurl = $this->get_setting('categoryctimageurl'.$parent);
+                        if ($imageurl) {
+                            $catid = $parent;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        return $catid;
+    }
+
+    /**
      * Returns course-specific information to be output immediately below content on any course page
      * (for the current course)
      *

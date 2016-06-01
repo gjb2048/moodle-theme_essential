@@ -56,10 +56,7 @@ if ($tablet) {
 } else {
     echo '<section id="region-main" class="span8 desktop-first-column">';
 }
-if ($COURSE->id > 1) {
-    echo $OUTPUT->heading(format_string($COURSE->fullname), 1, 'coursetitle');;
-    echo '<div class="bor"></div>';
-}
+echo $OUTPUT->course_title();
 echo $OUTPUT->course_content_header();
 
 if ($coursecontentsearch) {

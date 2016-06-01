@@ -30,10 +30,7 @@ if ($footerregion) {
 } else {
     echo '<section id="region-main" class="span9">';
 }
-if ($COURSE->id > 1) {
-    echo $OUTPUT->heading(format_string($COURSE->fullname), 1, 'coursetitle');;
-    echo '<div class="bor"></div>';
-}
+echo $OUTPUT->course_title();
 echo $OUTPUT->course_content_header();
 echo $OUTPUT->main_content();
 if (empty($PAGE->layout_options['nocoursefooter'])) {

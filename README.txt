@@ -197,6 +197,19 @@ WOFF2 font support will automatically kick in if you are running Moodle 2.8.5+ (
 are and the settings do not appear on the font setting page when using 'Custom font' for 'fontselect', then perform a
 'Purge all caches'.
 
+Category course title image in a course
+=======================================
+If you wish to override the category course title image in a course when this is enabled, then edit the course summary in the course
+settings and add an image.  Then edit in HTML mode, remove the surrounding 'p' tags and 'br' tag, then remove the 'style', 'width' and
+'height' attributes and any 'classes' added by the text editor on the 'img' tag.  Then add the class 'categorycti'.  To specifiy
+the height (px) and the contained title text colour, background colour and opacity, use the following attributes: 'ctih', 'ctit',
+'ctib' and ctio respectively, for example:
+
+<img src="https://mymoodleinstall.mr/pluginfile.php/493/course/section/237/myimage.jpg" alt="Replacement image" class="categorycti"
+ ctih="250" ctit="#afafaf" ctib="#222222" ctio="0.5">
+
+This image will not be shown in the summary itself when viewing the list of courses.
+
 Reporting issues
 ================
 Before reporting an issue, please ensure that you are running the latest version for your release of Moodle.  It is essential

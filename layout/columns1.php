@@ -34,11 +34,7 @@ require_once(\theme_essential\toolbox::get_tile_file('header'));
         <!-- Start Main Regions -->
         <div id="page-content" class="row-fluid">
             <section id="region-main" class="span12">
-                <?php if ($COURSE->id > 1) {
-                    echo $OUTPUT->heading(format_string($COURSE->fullname), 1, 'coursetitle');
-                    echo '<div class="bor"></div>';
-}
-                ?>
+                <?php echo $OUTPUT->course_title(); ?>
                 <?php echo $OUTPUT->course_content_header(); ?>
                 <?php echo $OUTPUT->main_content(); ?>
                 <?php if (empty($PAGE->layout_options['nocoursefooter'])) {
