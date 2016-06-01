@@ -1,5 +1,6 @@
 New in 3.0.1.3
 ==============
+- FIX: MDL-52800 - RTL styling for in place editable tooltip.
 - FIX: MDL-53855 - Navbar should be in exactly one nav region, and that should be labelled.
 - FIX: Issue #662: Site pages indent.
 - FIX: Issue #664: Broken Alt-text in blocks.
