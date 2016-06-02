@@ -2,6 +2,7 @@ New in 2.9.1.13
 ===============
 - FIX: MDL-52815 - Groups and members dropdowns overlapping on mobile devices.
 - FIX: MDL-53855 - Navbar should be in exactly one nav region, and that should be labelled.
+- FIX: Issue #659: Links with anchors don't work with the "flexsections" course format.  Thanks to Jay Knight for his input.
 - FIX: Issue #662: Site pages indent.
 - FIX: Issue #664: Broken Alt-text in blocks.
 - NEW: Tidy up administration block.
