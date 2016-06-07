@@ -43,10 +43,10 @@
 
   #page-footer {
     .footerblocks {
-      margin-top: 10;
+      margin-top: 10px;
       > .footerblock,
       .block-region.yui3-dd-drop-active-valid {
-        min-height: 300;
+        min-height: 300px;
       }
     }
   }
@@ -63,7 +63,7 @@
     &.empty-region-footer-middle #block-region-footer-middle, &.used-region-footer-middle #block-region-footer-middle,
     &.empty-region-footer-right #block-region-footer-right, &.used-region-footer-right #block-region-footer-right,
     &.empty-region-hidden-dock #block-region-hidden-dock, &.used-region-hidden-dock #block-region-hidden-dock {
-        min-height: 200;
+        min-height: 200px;
     }
 
     // Using 'used' instead of 'empty' as body class will be 'used' as soon as D&D starts.
@@ -200,10 +200,10 @@ p.tree_item.leaf a {
 
 .hidden-blocks {
   background: #ffe1e1;
-  padding: 10;
+  padding: 10px;
   border: 1px solid #EEE;
   border-radius: 5px;
-  margin: 10 0 10 0;
+  margin: 10px 0 10px 0;
 
   h4 {
     text-align: left;
@@ -216,8 +216,8 @@ p.tree_item.leaf a {
 
   .block {
     float: right;
-    width: 250;
-    margin-left: 10;
+    width: 250px;
+    margin-left: 10px;
   }
 }
 
@@ -292,7 +292,7 @@ p.tree_item.leaf a {
     padding-top: 5px;
     a {
       color: @white;
-      width: 100;
+      width: 100px;
       padding: 4px 12px;
       font-size: 1em;
       border-radius: 5px;
@@ -316,10 +316,10 @@ p.tree_item.leaf a {
   .content {
     padding: 5px;
     text-align: center;
-    min-height: 80;
+    min-height: 80px;
     img.profilepicture {
-      width: 70;
-      height: 70;
+      width: 70px;
+      height: 70px;
       padding: 3px;
       margin-bottom: 5px;
       float: left;
@@ -366,12 +366,12 @@ p.tree_item.leaf a {
       cursor: pointer;
       display: inline-block;
       font-size: 13px;
-      line-height: 20;
+      line-height: 20px;
       padding: 4px 12px;
       text-align: center;
       text-shadow: none;
       vertical-align: middle;
-      margin: 10 0;
+      margin: 10px 0;
       width: 100%;
     }
     form input[type="submit"]:hover,
@@ -409,8 +409,8 @@ aside.footer-edit .block {
     .footer-fluid-span(3, @fluidGridColumnWidth, @fluidGridGutterWidth);
     display: block;
     float: left;
-    min-height: 240;
-    max-height: 240;
+    min-height: 240px;
+    max-height: 240px;
     overflow-y: scroll;
     margin-left: @fluidGridGutterWidth;
     .box-sizing(border-box);
@@ -424,7 +424,7 @@ aside.footer-edit .block {
     }
 }
 
-@media (min-width: 1200) {
+@media (min-width: 1200px) {
     aside.footer-edit .block {
         .footer-fluid-span(3, @fluidGridColumnWidth1200, @fluidGridGutterWidth1200);
         margin-left: @fluidGridGutterWidth1200;
