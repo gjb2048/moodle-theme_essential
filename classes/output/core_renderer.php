@@ -238,9 +238,9 @@ class core_renderer extends \core_renderer {
                                     $content .= ' background-image: url('.$imgvalues['src'].');">';
                                     /* This is a level 1 h1 header so no need to call 'heading' method for return to section
                                        and also parent version does not support addition of the style attribute. */
-                                    $content .= '<h1 class="coursetitle" style="color: '.$imgvalues['ctit'].'; background-color: ';
+                                    $content .= '<div class="coursetitle" style="color: '.$imgvalues['ctit'].'; background-color: ';
                                     $content .= $imgvalues['ctib'].'; opacity: '.$imgvalues['ctio'].';">';
-                                    $content .= format_string($this->page->course->fullname).'</h1>';
+                                    $content .= $this->context_header().'</div>';
                                     // Closing 'div' is below because $enablecategorycti would be true.
                                 }
                                 break;
@@ -259,7 +259,7 @@ class core_renderer extends \core_renderer {
                 }
             }
             if ($override == false) {
-                $content .= $this->heading(format_string($this->page->course->fullname), 1, 'coursetitle');
+                $content .= '<div class="coursetitle">'.$this->context_header().'</div>';
             }
             if ($enablecategorycti) {
                 $content .= '</div>';
