@@ -6,6 +6,7 @@ New in 2.9.1.13
 - FIX: Issue #662: Site pages indent.
 - FIX: Issue #664: Broken Alt-text in blocks.
 - FIX: Issue #668: Course page header missing enrolled user info.
+- FIX: Integer setting default and validation.
 - NEW: Tidy up administration block.
 - NEW: Category and course 'course title' images.  Thanks to Murdoch University, Perth, WA for supporting this enhancement.
 
