@@ -443,13 +443,19 @@ class toolbox {
     }
 
     static private function get_categories() {
-        global $CFG;
+        global $CFG, $DB;
         include_once($CFG->libdir . '/coursecatlib.php');
 
+        $result = $DB->get_records('course_categories', null, '', 'id');
         $cid = array();
-        $categories = \coursecat::get(0)->get_children();
-
-        self::traverse_categories($categories, $cid);
+        if ($result) {
+            foreach ($result as $key => $value) {
+                $cid[] = $key;
+            }
+        } else {
+            $categories = \coursecat::get(0, IGNORE_MISSING, true)->get_children();
+            self::traverse_categories($categories, $cid);
+        }
 
         return $cid;
     }
@@ -457,7 +463,7 @@ class toolbox {
     static private function traverse_categories($categories, &$cid) {
         foreach ($categories as $category) {
             $cid[] = $category->id;
-            $catchildren = \coursecat::get($category->id)->get_children();
+            $catchildren = \coursecat::get($category->id, IGNORE_MISSING, true)->get_children();
             if ($catchildren) {
                 self::traverse_categories($catchildren, $cid);
             }
