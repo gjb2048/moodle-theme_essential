@@ -1,3 +1,7 @@
+New in 3.0.1.4
+==============
+- FIX: Integer setting default and validation.
+
 New in 3.0.1.3
 ==============
 - FIX: MDL-52800 - RTL styling for in place editable tooltip.

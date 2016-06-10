@@ -51,21 +51,35 @@ class essential_admin_setting_configinteger extends admin_setting_configtext {
         parent::__construct($name, $visiblename, $description, $defaultsetting, PARAM_INT);
     }
 
+    public function write_setting($data) {
+        // Trim any spaces to avoid spaces typo.
+        $data = trim($data);
+        if ($data === '') {
+            // Override parent behaviour and set to default if empty string.
+            $data = $this->get_defaultsetting();
+        }
+        return parent::write_setting($data);
+    }
+
     /**
      * Validate data before storage
      * @param string data
      * @return mixed true if ok string if error found
      */
     public function validate($data) {
-        $validated = parent::validate($data); // Pass parent validation first.
+        if (!is_number($data)) {
+            $validated = get_string('asconfigintnan', 'theme_essential', array('value' => $data));
+        } else {
+            $validated = parent::validate($data); // Pass parent validation first.
 
-        if ($validated == true) {
-            if ($data < $this->lower) {
-                $validated = get_string('asconfigintlower', 'theme_essential', array('value' => $data, 'lower' => $this->lower));
-            } else if ($data > $this->upper) {
-                $validated = get_string('asconfigintupper', 'theme_essential', array('value' => $data, 'upper' => $this->upper));
-            } else {
-                $validated = true;
+            if ($validated == true) {
+                if ($data < $this->lower) {
+                    $validated = get_string('asconfigintlower', 'theme_essential', array('value' => $data, 'lower' => $this->lower));
+                } else if ($data > $this->upper) {
+                     $validated = get_string('asconfigintupper', 'theme_essential', array('value' => $data, 'upper' => $this->upper));
+                } else {
+                    $validated = true;
+                }
             }
         }
 
