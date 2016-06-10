@@ -1,6 +1,7 @@
 New in 3.0.1.4
 ==============
 - FIX: Integer setting default and validation.
+- FIX: Select setting default.
 
 New in 3.0.1.3
 ==============

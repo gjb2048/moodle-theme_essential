@@ -35,6 +35,13 @@ $ADMIN->add('themes', new admin_category('theme_essential', 'Essential'));
 $essentialsettingsgeneric = new admin_settingpage('theme_essential_generic', get_string('genericsettings', 'theme_essential'));
 // Initialise individual settings only if admin pages require them.
 if ($ADMIN->fulltree) {
+    global $CFG;
+    if (file_exists("{$CFG->dirroot}/theme/essential/essential_admin_setting_configselect.php")) {
+        require_once($CFG->dirroot . '/theme/essential/essential_admin_setting_configselect.php');
+    } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/essential/essential_admin_setting_configselect.php")) {
+        require_once($CFG->themedir . '/essential/essential_admin_setting_configselect.php');
+    }
+
     $sponsor = new moodle_url('http://moodle.org/user/profile.php?id=442195');
     $sponsor = html_writer::link($sponsor, get_string('paypal_click', 'theme_essential'), array('target' => '_blank'));
 
@@ -64,7 +71,7 @@ if ($ADMIN->fulltree) {
     $title = get_string('pagebackgroundstyle', 'theme_essential');
     $description = get_string('pagebackgroundstyledesc', 'theme_essential');
     $default = 'fixed';
-    $setting = new admin_setting_configselect($name, $title, $description, $default,
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default,
         array(
             'fixed' => get_string('stylefixed', 'theme_essential'),
             'tiled' => get_string('styletiled', 'theme_essential'),
@@ -84,7 +91,7 @@ if ($ADMIN->fulltree) {
         1200 => get_string('fixedwidthnormal', 'theme_essential'),
         1400 => get_string('fixedwidthwide', 'theme_essential'),
         100 => get_string('variablewidth', 'theme_essential'));
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsgeneric->add($setting);
 
@@ -715,7 +722,7 @@ if ($ADMIN->fulltree) {
         3 => get_string('fullnamesummary', 'theme_essential'),
         4 => get_string('shortnamesummary', 'theme_essential')
     );
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 
@@ -757,7 +764,7 @@ if ($ADMIN->fulltree) {
         1 => get_string('fullname', 'theme_essential'),
         2 => get_string('shortname', 'theme_essential')
     );
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 
@@ -784,7 +791,7 @@ if ($ADMIN->fulltree) {
     $title = get_string('headerbackgroundstyle', 'theme_essential');
     $description = get_string('headerbackgroundstyledesc', 'theme_essential');
     $default = 'tiled';
-    $setting = new admin_setting_configselect($name, $title, $description, $default,
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default,
         array(
             'fixed' => get_string('stylefixed', 'theme_essential'),
             'tiled' => get_string('styletiled', 'theme_essential')
@@ -851,7 +858,7 @@ if ($ADMIN->fulltree) {
         'class' => get_string('myclasses', 'theme_essential'),
         'module' => get_string('mymodules', 'theme_essential')
     );
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 
@@ -864,7 +871,7 @@ if ($ADMIN->fulltree) {
         2 => get_string('url'),
         0 => get_string('none')
     );
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 
@@ -1108,7 +1115,7 @@ if ($ADMIN->fulltree) {
         2 => get_string('fonttypegoogle', 'theme_essential'),
         3 => get_string('fonttypecustom', 'theme_essential')
     );
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsfont->add($setting);
 
@@ -1288,7 +1295,7 @@ if ($ADMIN->fulltree) {
     $perfmin = get_string('perf_min', 'theme_essential');
     $default = 'min';
     $choices = array('min' => $perfmin, 'max' => $perfmax);
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsfooter->add($setting);
 
@@ -1322,7 +1329,7 @@ if ($ADMIN->fulltree) {
     $dontdisplay = get_string('dontdisplay', 'theme_essential');
     $default = 0;
     $choices = array(1 => $alwaysdisplay, 2 => $displaybeforelogin, 3 => $displayafterlogin, 0 => $dontdisplay);
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsfrontpage->add($setting);
 
@@ -1349,7 +1356,7 @@ if ($ADMIN->fulltree) {
     $right = get_string('right', 'theme_essential');
     $default = 1;
     $choices = array(1 => $left, 0 => $right);
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsfrontpage->add($setting);
 
@@ -1363,7 +1370,7 @@ if ($ADMIN->fulltree) {
     $dontdisplay = get_string('dontdisplay', 'theme_essential');
     $default = 0;
     $choices = array(1 => $alwaysdisplay, 2 => $displaybeforelogin, 3 => $displayafterlogin, 0 => $dontdisplay);
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsfrontpage->add($setting);
 
@@ -1383,7 +1390,7 @@ if ($ADMIN->fulltree) {
     $dontdisplay = get_string('dontdisplay', 'theme_essential');
     $default = 1;
     $choices = array(1 => $alwaysdisplay, 2 => $displaybeforelogin, 3 => $displayafterlogin, 0 => $dontdisplay);
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsfrontpage->add($setting);
 
@@ -1396,7 +1403,7 @@ if ($ADMIN->fulltree) {
     for ($mhit = 50; $mhit <= 500; $mhit = $mhit + 2) {
         $choices[$mhit] = $mhit;
     }
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
     $essentialsettingsfrontpage->add($setting);
 
     // Marketing spot image height.
@@ -1405,7 +1412,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('marketingimageheightdesc', 'theme_essential');
     $default = 100;
     $choices = array(50 => '50', 100 => '100', 150 => '150', 200 => '200', 250 => '250', 300 => '300');
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
     $essentialsettingsfrontpage->add($setting);
 
     foreach (range(1, 3) as $marketingspotnumber) {
@@ -1473,7 +1480,7 @@ if ($ADMIN->fulltree) {
         $target3 = get_string('marketingurltargetparent', 'theme_essential');
         $default = '_blank';
         $choices = array('_self' => $target1, '_blank' => $target2, '_parent' => $target3);
-        $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+        $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $essentialsettingsfrontpage->add($setting);
     }
@@ -1509,7 +1516,7 @@ if ($ADMIN->fulltree) {
     $alertgeneral = get_string('alert_general', 'theme_essential');
     $default = 'info';
     $choices = array('info' => $alertinfo, 'error' => $alertwarning, 'success' => $alertgeneral);
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsfrontpage->add($setting);
 
@@ -1555,7 +1562,7 @@ if ($ADMIN->fulltree) {
     $alertgeneral = get_string('alert_general', 'theme_essential');
     $default = 'info';
     $choices = array('info' => $alertinfo, 'error' => $alertwarning, 'success' => $alertgeneral);
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsfrontpage->add($setting);
 
@@ -1601,7 +1608,7 @@ if ($ADMIN->fulltree) {
     $alertgeneral = get_string('alert_general', 'theme_essential');
     $default = 'info';
     $choices = array('info' => $alertinfo, 'error' => $alertwarning, 'success' => $alertgeneral);
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsfrontpage->add($setting);
 
@@ -1645,7 +1652,7 @@ if ($ADMIN->fulltree) {
     $dontdisplay = get_string('dontdisplay', 'theme_essential');
     $default = 1;
     $choices = array(1 => $alwaysdisplay, 2 => $displaybeforelogin, 3 => $displayafterlogin, 0 => $dontdisplay);
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsslideshow->add($setting);
 
@@ -1672,7 +1679,7 @@ if ($ADMIN->fulltree) {
         15 => '15',
         16 => '16'
     );
-    $essentialsettingsslideshow->add(new admin_setting_configselect($name, $title, $description, $default, $choices));
+    $essentialsettingsslideshow->add(new essential_admin_setting_configselect($name, $title, $description, $default, $choices));
 
     // Hide slideshow on phones.
     $name = 'theme_essential/hideontablet';
@@ -1874,7 +1881,7 @@ if ($ADMIN->fulltree) {
         $target3 = get_string('slideurltargetparent', 'theme_essential');
         $default = '_blank';
         $choices = array('_self' => $target1, '_blank' => $target2, '_parent' => $target3);
-        $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+        $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $essentialsettingsslideshow->add($setting);
     }
@@ -1963,7 +1970,7 @@ if ($ADMIN->fulltree) {
         $title = get_string('ctioverridetextbackgroundopacity', 'theme_essential');
         $description = get_string('ctioverridetextbackgroundopacitydesc', 'theme_essential');
         $default = '0.8';
-        $setting = new admin_setting_configselect($name, $title, $description, $default, $opactitychoices);
+        $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $opactitychoices);
         $essentialsettingscategorycti->add($setting);
 
         // Get all category IDs and their pretty names.
@@ -2032,7 +2039,7 @@ if ($ADMIN->fulltree) {
             $title = get_string('categoryctitextbackgroundopacity', 'theme_essential', array('category' => $value));
             $description = get_string('categoryctitextbackgroundopacitydesc', 'theme_essential', array('category' => $value));
             $default = '0.8';
-            $setting = new admin_setting_configselect($name, $title, $description, $default, $opactitychoices);
+            $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $opactitychoices);
             $essentialsettingscategorycti->add($setting);
         }
     }
@@ -2139,7 +2146,7 @@ if ($ADMIN->fulltree) {
         'piwik' => $piwik,
         'guniversal' => $guniversal
     );
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
     $essentialsettingsanalytics->add($setting);
 
     if (get_config('theme_essential', 'analytics') === 'piwik') {
