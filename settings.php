@@ -1938,7 +1938,6 @@ if ($ADMIN->fulltree) {
         $default = '#ffffff';
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
-        $setting->set_updatedcallback('theme_reset_all_caches');
         $essentialsettingscategorycti->add($setting);
 
         // Overridden course title text background colour setting.
@@ -1948,7 +1947,6 @@ if ($ADMIN->fulltree) {
         $default = '#c51230';
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
-        $setting->set_updatedcallback('theme_reset_all_caches');
         $essentialsettingscategorycti->add($setting);
 
         $opactitychoices = array(
@@ -2012,6 +2010,7 @@ if ($ADMIN->fulltree) {
             $description = get_string('categoryctiheightdesc', 'theme_essential',
                 array('category' => $value, 'lower' => $lower, 'upper' => $upper));
             $setting = new essential_admin_setting_configinteger($name, $title, $description, $default, $lower, $upper);
+            $setting->set_updatedcallback('theme_reset_all_caches');
             $essentialsettingscategorycti->add($setting);
 
             // Category course title text colour setting.
@@ -2040,6 +2039,7 @@ if ($ADMIN->fulltree) {
             $description = get_string('categoryctitextbackgroundopacitydesc', 'theme_essential', array('category' => $value));
             $default = '0.8';
             $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $opactitychoices);
+            $setting->set_updatedcallback('theme_reset_all_caches');
             $essentialsettingscategorycti->add($setting);
         }
     }
