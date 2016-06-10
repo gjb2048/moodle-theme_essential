@@ -7,6 +7,7 @@ New in 2.9.1.13
 - FIX: Issue #664: Broken Alt-text in blocks.
 - FIX: Issue #668: Course page header missing enrolled user info.
 - FIX: Integer setting default and validation.
+- FIX: Select setting default.
 - NEW: Tidy up administration block.
 - NEW: Category and course 'course title' images.  Thanks to Murdoch University, Perth, WA for supporting this enhancement.
 
