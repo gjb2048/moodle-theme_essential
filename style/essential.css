@@ -21796,6 +21796,7 @@ table#greyboxleft h2 {
 }
 #page-header #essentialicons {
   overflow: visible;
+  background-image: none;
 }
 #page-header h2.main,
 #page-header #pageheading {

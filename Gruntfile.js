@@ -172,17 +172,6 @@ module.exports = function(grunt) { // jshint ignore:line
                 src: 'less/bootstrap-pix.less',
                 dest: 'style/bootstrap-pix.css'
             },
-            essential_pix_p: {
-                options: {
-                    compress: false,
-                    cleancss: false,
-                    paths: "./less",
-                    report: 'min',
-                    sourceMap: false,
-                },
-                src: 'less/essential-pix.less',
-                dest: 'style/essential-pix.css'
-            },
             fontawesome_p: {
                 options: {
                     compress: false,
@@ -227,7 +216,7 @@ module.exports = function(grunt) { // jshint ignore:line
                 src: 'less/essential-alternative.less',
                 dest: 'style/essential-alternative.css'
             },
-            essential_d: { // Flipped.
+            essential_d: {
                 options: {
                     compress: false,
                     cleancss: false,
@@ -265,19 +254,6 @@ module.exports = function(grunt) { // jshint ignore:line
                 },
                 src: 'less/bootstrap-pix.less',
                 dest: 'style/bootstrap-pix.css'
-            },
-            essential_pix_d: {
-                options: {
-                    compress: false,
-                    cleancss: false,
-                    paths: "./less",
-                    report: 'min',
-                    sourceMap: true,
-                    sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'style/essential-pix.treasure.map'
-                },
-                src: 'less/essential-pix.less',
-                dest: 'style/essential-pix.css'
             },
             fontawesome_woff2_d: {
                 options: {
@@ -513,7 +489,6 @@ module.exports = function(grunt) { // jshint ignore:line
         "less:scrollbars_" + build,
         "less:settings_" + build,
         "less:bootstrap_pix_" + build,
-        "less:essential_pix_" + build,
         "less:fontawesome_" + build,
         "less:alternative_" + build]);
     if (build == 'd') {
