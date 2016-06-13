@@ -28,8 +28,10 @@ $THEME->name = 'essential';
 
 $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
-$THEME->parents = array();
+$THEME->parents = array('bootstrapbase');
+$THEME->parents_exclude_sheets = array('bootstrapbase' => array('moodle', 'editor'));
 
+$THEME->sheets[] = 'essential';
 $THEME->sheets[] = 'bootstrap-pix';
 $THEME->sheets[] = 'moodle-pix';
 $THEME->sheets[] = 'essential-pix';
@@ -57,8 +59,6 @@ $THEME->enable_dock = true;
 $THEME->javascripts_footer[] = 'dock';
 
 $THEME->editor_sheets = array('editor', 'custom');
-
-$THEME->plugins_exclude_sheets = array('mod' => array('quiz'));
 
 $addregions = array();
 if (get_config('theme_essential', 'frontpagemiddleblocks') > 0) {

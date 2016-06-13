@@ -1,31 +1,17 @@
 /*
  * @package     theme_essential
- * @copyright   2013 Julian Ridden
+ * @copyright   2016 Gareth J Barnard, David Bezemer
  * @copyright   2014 Gareth J Barnard, David Bezemer
+ * @copyright   2013 Julian Ridden
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-// Import plugin styles that are excluded in the config.php file as they need to be before the Moodle bootstrap changes to them.
-// This only needs to happen with styles that have an issue.  It also allows us to have our own version of them to strip out
-// any dir-rtl styles that would be flipped, remove IE6 styles, be able to maintain the styles on a 1-1 merge and deal with any issues.
-@import "moodle/plugins/mod/quiz";
-
 // Import the bootstrap variables.
 @import "bootstrap-override/variables";
-// Old Moodle stuff from base theme.
-// Massive, needs broken up.
-@import "moodle/core";
-@import "moodle/admin";
-@import "moodle/calendar";
-@import "moodle/course";
-@import "moodle/filemanager";
-@import "moodle/message";
-@import "moodle/question";
-@import "moodle/user";
-// Upstream Bootstrap.
-@import "bootstrap-override/bootstrap";
-// Override Bootstrap defaults.
-@import "moodle/bootstrapoverride";
+@import "../../bootstrapbase/less/moodle.less";
+
+// Moodle fixes.
+@import "moodle-fixes/moodle-fixes";
 
 // Set image location.  Now in bootstrap-override/sprites.less included in bootstrap-pix.less.
 @iconSpritePath: ~"";
@@ -43,36 +29,6 @@
 // Calculated with => @linkColor: darken(#08c, 7%);
 @linkColor: #0070a8;
 @linkColorHover: darken(@linkColor, 15%);
-
-// Roll back nameclashes.
-@import "moodle/undo";
-
-// New Moodle stuff that builds on Bootstrap.
-@import "moodle/blocks";
-@import "moodle/forms";
-@import "moodle/modules";
-@import "moodle/chat";
-@import "moodle/reports";
-@import "moodle/backup-restore";
-@import "moodle/tables";
-@import "moodle/buttons";
-@import "moodle/grade";
-@import "moodle/dock";
-
-// Styles for mustache templates.
-@import "moodle/templates";
-
-// The following responsive imports are copied in
-// from "bootstrap/responsive".
-@import "bootstrap-override/responsive";  // Get the correct variables.less file.
-@import "moodle/responsive";
-
-// Anything below this line is considered expendable,
-// so it doesn't matter if it doesn't show up in ie < 9
-// though at current time (2013-03-13) the whole file is
-// picked up in IE8, and IE9 fails at some point during the
-// responsive section, cutting off the last 400 selectors.
-@import "moodle/expendable";
 
 // Essential styles.
 @import "essential/variables";
