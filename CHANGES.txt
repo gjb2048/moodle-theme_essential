@@ -9,6 +9,7 @@ New in 2.9.1.13
 - FIX: Integer setting default and validation.
 - FIX: Select setting default.
 - FIX: Invisible parent categories with an image for a course that is in a visible category with no image.
+- FIX: Ensure radio button default is set on first use.
 - NEW: Tidy up administration block.
 - NEW: Category and course 'course title' images.  Thanks to Murdoch University, Perth, WA for supporting this enhancement.
 

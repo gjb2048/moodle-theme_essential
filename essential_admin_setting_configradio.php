@@ -131,6 +131,9 @@ class essential_admin_setting_configradio extends admin_setting {
         if (is_null($current)) {
             // First run.
             $warning = '';
+            if ((!is_null($default)) and (empty($data))) {
+                $data = $default;
+            }
         } else if (empty($current) and (array_key_exists('', $this->choices) or array_key_exists(0, $this->choices))) {
             // No warning.
             $warning = '';
