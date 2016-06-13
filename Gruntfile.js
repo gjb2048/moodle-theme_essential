@@ -65,8 +65,8 @@
  *               Done here as core Gruntfile.js currently *nix only.
  *
  * grunt svg                 Change the colour of the SVGs in pix_core by
- *                           text replacing #999999 with a new hex colour.
- *                           Note this requires the SVGs to be #999999 to
+ *                           text replacing #999 with a new hex colour.
+ *                           Note this requires the SVGs to be #999 to
  *                           start with or the replace will do nothing
  *                           so should usually be preceded by copying
  *                           a fresh set of the original SVGs.
@@ -135,7 +135,7 @@ module.exports = function(grunt) { // jshint ignore:line
 
     var decachephp = '../../admin/cli/purge_caches.php';
 
-    var svgcolour = grunt.option('svgcolour') || '#999999';
+    var svgcolour = grunt.option('svgcolour') || '#999';
 
     grunt.initConfig({
         less: {
@@ -415,7 +415,7 @@ module.exports = function(grunt) { // jshint ignore:line
                 src: 'pix_core/**/*.svg',
                 overwrite: true,
                 replacements: [{
-                    from: '#999999',
+                    from: '#999',
                     to: svgcolour
                 }]
             },
@@ -423,7 +423,7 @@ module.exports = function(grunt) { // jshint ignore:line
                 src: 'pix_plugins/**/*.svg',
                 overwrite: true,
                 replacements: [{
-                    from: '#999999',
+                    from: '#999',
                     to: svgcolour
                 }]
             },
