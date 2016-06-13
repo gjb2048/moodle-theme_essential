@@ -19015,9 +19015,21 @@ input[type="reset"] .caret {
   border-top-color: #ffffff;
   border-bottom-color: #ffffff;
 }
+/* Moodle fixes begin */
+/* Moodle fixes blocks begin */
+.block_settings .block_tree .fa[aria-hidden="true"] {
+  display: inline-block;
+}
+.block_settings .block_tree p.hasicon {
+  text-indent: 0;
+}
+/* Moodle fixes blocks end */
+/* Moodle fixes forms begin */
 .dir-rtl .mform fieldset.collapsible legend a.fheader {
   margin-right: 0;
 }
+/* Moodle fixes forms end */
+/* Moodle fixes end */
 /* @group Core */
 body {
   line-height: 20px;
@@ -19276,11 +19288,11 @@ body .chooserdialogue .moodle-dialogue-wrap .moodle-dialogue-bd {
   border-radius: 6px;
 }
 .editing #page-footer .footerblocks {
-  margin-top: 10;
+  margin-top: 10px;
 }
 .editing #page-footer .footerblocks > .footerblock,
 .editing #page-footer .footerblocks .block-region.yui3-dd-drop-active-valid {
-  min-height: 300;
+  min-height: 300px;
 }
 .editing.empty-region-side-pre #block-region-side-pre,
 .editing.used-region-side-pre #block-region-side-pre,
@@ -19300,7 +19312,7 @@ body .chooserdialogue .moodle-dialogue-wrap .moodle-dialogue-bd {
 .editing.used-region-footer-right #block-region-footer-right,
 .editing.empty-region-hidden-dock #block-region-hidden-dock,
 .editing.used-region-hidden-dock #block-region-hidden-dock {
-  min-height: 200;
+  min-height: 200px;
 }
 .editing.used-region-side-pre #block-region-side-pre,
 .editing.used-region-side-post #block-region-side-post,
@@ -19411,10 +19423,10 @@ p.tree_item.leaf a.action-delete > .fa {
 }
 .hidden-blocks {
   background: #ffe1e1;
-  padding: 10;
+  padding: 10px;
   border: 1px solid #EEE;
   border-radius: 5px;
-  margin: 10 0 10 0;
+  margin: 10px 0 10px 0;
 }
 .hidden-blocks h4 {
   text-align: left;
@@ -19426,8 +19438,8 @@ p.tree_item.leaf a.action-delete > .fa {
 }
 .hidden-blocks .block {
   float: right;
-  width: 250;
-  margin-left: 10;
+  width: 250px;
+  margin-left: 10px;
 }
 .block .header .title h2,
 .block h3.main {
@@ -19494,7 +19506,7 @@ p.tree_item.leaf a.action-delete > .fa {
 }
 .block_rss_client .footer a {
   color: #ffffff;
-  width: 100;
+  width: 100px;
   padding: 4px 12px;
   font-size: 1em;
   border-radius: 5px;
@@ -19512,11 +19524,11 @@ p.tree_item.leaf a.action-delete > .fa {
 .block_myprofile .content {
   padding: 5px;
   text-align: center;
-  min-height: 80;
+  min-height: 80px;
 }
 .block_myprofile .content img.profilepicture {
-  width: 70;
-  height: 70;
+  width: 70px;
+  height: 70px;
   padding: 3px;
   margin-bottom: 5px;
   float: left;
@@ -19556,12 +19568,12 @@ p.tree_item.leaf a.action-delete > .fa {
   cursor: pointer;
   display: inline-block;
   font-size: 13px;
-  line-height: 20;
+  line-height: 20px;
   padding: 4px 12px;
   text-align: center;
   text-shadow: none;
   vertical-align: middle;
-  margin: 10 0;
+  margin: 10px 0;
   width: 100%;
 }
 .block_login .content form input[type="submit"]:hover,
@@ -19590,8 +19602,8 @@ aside.footer-edit .block {
   *width: 23.35106383%;
   display: block;
   float: left;
-  min-height: 240;
-  max-height: 240;
+  min-height: 240px;
+  max-height: 240px;
   overflow-y: scroll;
   margin-left: 2.12765957%;
   -webkit-box-sizing: border-box;
@@ -19605,7 +19617,7 @@ aside.footer-edit .block {
     margin-left: 2.76243094%;
   }
 }
-@media (min-width: 1200) {
+@media (min-width: 1200px) {
   aside.footer-edit .block {
     width: 23.07692308%;
     *width: 23.02373159%;
@@ -20463,6 +20475,29 @@ body .course-content ul.topics li.section .content {
   margin-left: 20px;
   margin-right: 20px;
 }
+.categorycti {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 10px;
+}
+.categorycti .coursetitle {
+  margin: 0 10px;
+  padding: 10px;
+}
+.coursebox .summary .categorycti {
+  display: none;
+}
+.page-context-header .page-header-headings {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.page-context-header .page-header-headings h1 {
+  margin: 0;
+}
+.categorycti .page-context-header .page-header-headings h1 {
+  color: inherit;
+}
 .coursebox > .info > .coursename a {
   background-position: left 0;
   padding-left: 0;
@@ -21059,28 +21094,28 @@ body.path-admin-setting #page-footer {
 }
 /* @end */
 /* @group Performance Information */
-.performanceinfo {
+#page-footer .performanceinfo {
   padding: 8px;
   border-radius: 6px;
   border-width: 1px;
   border-style: solid;
   margin-top: 5px;
 }
-.performanceinfo .span3 {
+#page-footer .performanceinfo .span3 {
   text-align: center;
   margin-top: 10px;
 }
-.performanceinfo var {
+#page-footer .performanceinfo var {
   font-size: 1.2em;
   padding: 5px;
   border-radius: 5px;
   white-space: nowrap;
 }
-.performanceinfo .span12 {
+#page-footer .performanceinfo .span12 {
   border-bottom-width: 1px;
   border-bottom-style: solid;
 }
-.performanceinfo h2 {
+#page-footer .performanceinfo h2 {
   font-size: 1.4em;
   line-height: 1.4em;
   text-transform: uppercase;
@@ -21091,18 +21126,18 @@ body.path-admin-setting #page-footer {
   margin-top: 5px;
   margin-bottom: 0;
 }
-.performanceinfo h2:before {
+#page-footer .performanceinfo h2:before {
   vertical-align: bottom;
   font-family: FontAwesome;
   font-size: 1.65em;
   margin-right: .3em;
   content: "\f05a";
 }
-.performanceinfo span {
+#page-footer .performanceinfo span {
   display: block;
   margin-top: 5px;
 }
-.performanceinfo span.fa {
+#page-footer .performanceinfo span.fa {
   color: inherit;
   display: inline;
   margin-top: 0;
@@ -21110,8 +21145,8 @@ body.path-admin-setting #page-footer {
   font-size: 1em;
   font-weight: 100;
 }
-.performanceinfo span.fa:hover,
-.performanceinfo span.fa:focus {
+#page-footer .performanceinfo span.fa:hover,
+#page-footer .performanceinfo span.fa:focus {
   color: inherit;
 }
 /* @end */
