@@ -1992,7 +1992,7 @@ class core_renderer extends \core_renderer {
         global $CFG;
         $result = '';
 
-        if (($CFG->version < 2015111600.00) || ($CFG->version >= 2015120400.00)) {
+        if (($CFG->version < 2016052300.00) || ($CFG->version >= 2016111400.00)) {
             $result = '<div class="useralerts alert alert-error">';
             $result .= '<a class="close" data-dismiss="alert" href="#">'.$this->getfontawesomemarkup('times-circle').'</a>';
             $result .= '<span class="fa-stack">'.$this->getfontawesomemarkup('square', array('fa-stack-2x'));
