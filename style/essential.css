@@ -19017,9 +19017,11 @@ input[type="reset"] .caret {
 }
 /* Moodle fixes begin */
 /* Moodle fixes blocks begin */
+.block_navigation .block_tree .fa[aria-hidden="true"],
 .block_settings .block_tree .fa[aria-hidden="true"] {
   display: inline-block;
 }
+.block_navigation .block_tree p.hasicon,
 .block_settings .block_tree p.hasicon {
   text-indent: 0;
 }

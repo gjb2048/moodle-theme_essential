@@ -3,11 +3,15 @@
 // @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
 
 /* Moodle fixes blocks begin */
-.block_settings .block_tree .fa[aria-hidden="true"] {
-    display: inline-block;
+.block_navigation, .block_settings {
+    .block_tree .fa[aria-hidden="true"] {
+        display: inline-block;
+    }
 }
-.block_settings .block_tree p.hasicon {
-    text-indent: 0;
+.block_navigation, .block_settings {
+    .block_tree p.hasicon {
+        text-indent: 0;
+    }
 }
 
 /* Moodle fixes blocks end */
