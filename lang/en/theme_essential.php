@@ -397,7 +397,10 @@ $string['frontcontentareadesc'] = 'Whatever is typed into this box will display 
 
 $string['frontpageblocksheading'] = 'Front page blocks';
 $string['frontpageblocks'] = 'Front page blocks alignment';
-$string['frontpageblocksdesc'] = 'Here you can determine if the standard Moodle blocks on the frontpage align to the left or the right.';
+$string['frontpageblocksdesc'] = 'Here you can determine if the standard Moodle blocks on the frontpage align before or after the content.';
+$string['beforecontent'] = 'Before content';
+$string['aftercontent'] = 'After content';
+
 $string['frontpagemiddleblocks'] = 'Enable additional front page middle blocks';
 $string['frontpagemiddleblocksdesc'] = 'If enabled this will display three additional block locations just under the marketing spots.';
 
