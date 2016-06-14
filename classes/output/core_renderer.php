@@ -121,8 +121,7 @@ class core_renderer extends \core_renderer {
         // JS to animate the form.
         $this->page->requires->js_call_amd('core/search-input', 'init', array($id));
 
-        $searchicon = html_writer::tag('span', '',
-            array('class' => 'fa fa-search', 'aria-hidden' => 'true', 'title' => get_string('search', 'search')));
+        $searchicon = $this->getfontawesomemarkup('search', array(), array('title' => get_string('search', 'search')));
         $searchicon = html_writer::tag('div', $searchicon, array('role' => 'button', 'tabindex' => 0));
         $formattrs = array('class' => 'search-input-form', 'action' => $CFG->wwwroot . '/search/index.php');
         $inputattrs = array('type' => 'text', 'name' => 'q', 'placeholder' => get_string('search', 'search'),
@@ -772,7 +771,7 @@ class core_renderer extends \core_renderer {
         $totalmessages = count($messages['messages']);
 
         if (empty($totalmessages)) {
-            $messagemenuicon = html_writer::tag('i', '', array('class' => 'fa fa-envelope-o'));
+            $messagemenuicon = $this->getfontawesomemarkup('envelope-o');
             $messagetitle = get_string('nomessagesfound', 'theme_essential');
             $messagemenutext = html_writer::span($messagemenuicon);
             $messagemenu->add(
@@ -784,9 +783,9 @@ class core_renderer extends \core_renderer {
         } else {
 
             if (empty($messages['newmessages'])) {
-                $messagemenuicon = html_writer::tag('i', '', array('class' => 'fa fa-envelope-o'));
+                $messagemenuicon = $this->getfontawesomemarkup('envelope-o');
             } else {
-                $messagemenuicon = html_writer::tag('i', '', array('class' => 'fa fa-envelope'));
+                $messagemenuicon = $this->getfontawesomemarkup('envelope');
             }
             $messagetitle = get_string('unreadmessages', 'message', $messages['newmessages']);
 
@@ -808,9 +807,9 @@ class core_renderer extends \core_renderer {
                 }
                 if ($message->type === 'notification') {
                     $messagecontent = html_writer::start_div('notification ' . $addclass);
-                    $messagecontent .= html_writer::tag('i', '', array('class' => 'fa fa-info-circle icon'));
+                    $messagecontent .= $this->getfontawesomemarkup('info-circle', array('icon'));
                     $messagecontent .= html_writer::start_span('msg-time');
-                    $messagecontent .= html_writer::tag('i', '', array('class' => 'fa fa-comment'.$iconadd));
+                    $messagecontent .= $this->getfontawesomemarkup('comment'.$iconadd);
                     $messagecontent .= $this->get_time_difference($message->date);
                     $messagecontent .= html_writer::end_span();
                     $messagecontent .= html_writer::span(htmlspecialchars($message->text, ENT_COMPAT | ENT_HTML401, 'UTF-8'),
@@ -829,7 +828,7 @@ class core_renderer extends \core_renderer {
                         html_writer::end_span();
                     $messagecontent .= html_writer::start_span('msg-body');
                     $messagecontent .= html_writer::start_span('msg-time');
-                    $messagecontent .= html_writer::tag('i', '', array('class' => 'fa fa-comments'.$iconadd));
+                    $messagecontent .= $this->getfontawesomemarkup('comments'.$iconadd);
                     $messagecontent .= $this->get_time_difference($message->date);
                     $messagecontent .= html_writer::end_span();
                     $messagecontent .= html_writer::span($message->from->firstname, 'msg-sender');
@@ -989,7 +988,7 @@ class core_renderer extends \core_renderer {
         if (($this->page->pagelayout == 'course') || ($this->page->pagelayout == 'incourse') ||
             ($this->page->pagelayout == 'admin')) { // Go to bottom.
             $menu = new custom_menu();
-            $gotobottom = html_writer::tag('i', '', array('class' => 'fa fa-arrow-circle-o-down'));
+            $gotobottom = $this->getfontawesomemarkup('arrow-circle-o-down');
             $menu->add($gotobottom, new moodle_url('#region-main'), get_string('gotobottom', 'theme_essential'));
             $html = $this->render_custom_menu($menu);
         }
@@ -1084,12 +1083,12 @@ class core_renderer extends \core_renderer {
                     $url->param('sesskey', sesskey());
                     if ($this->page->user_is_editing()) {
                         $editstring = get_string('turneditingoff');
-                        $iconclass = 'fa-power-off fa fa-fw';
+                        $iconclass = 'power-off';
                     } else {
                         $editstring = get_string('turneditingon');
-                        $iconclass = 'fa-edit fa fa-fw';
+                        $iconclass = 'edit';
                     }
-                    $edit = html_writer::tag('i', '', array('class' => $iconclass));
+                    $edit = $this->getfontawesomemarkup($iconclass, array('fa-fw'));
                     $menu->add($edit, $url, $editstring);
                     $html = $this->render_custom_menu($menu);
 
@@ -1542,8 +1541,8 @@ class core_renderer extends \core_renderer {
             $title = get_string('turneditingon');
             $icon = 'fa-edit';
         }
-        return html_writer::tag('a', html_writer::start_tag('i', array('class' => $icon . ' fa fa-fw')) .
-            html_writer::end_tag('i').$title, array('href' => $url, 'class' => 'btn '.$btn, 'title' => $title));
+        $icon = $this->getfontawesomemarkup($icon, array('fa-fw'));
+        return html_writer::tag('a', $icon.$title, array('href' => $url, 'class' => 'btn '.$btn, 'title' => $title));
     }
 
     public function render_social_network($socialnetwork) {
@@ -1564,8 +1563,7 @@ class core_renderer extends \core_renderer {
                 'onclick' => "window.open('".\theme_essential\toolbox::get_setting($socialnetwork)."')",
                 'title' => get_string($socialnetwork, 'theme_essential'),
             ));
-            $socialhtml .= html_writer::start_tag('i', array('class' => 'fa fa-'.$icon));
-            $socialhtml .= html_writer::end_tag('i');
+            $socialhtml .= $this->getfontawesomemarkup($icon);
             $socialhtml .= html_writer::start_span('sr-only').html_writer::end_span();
             $socialhtml .= html_writer::end_tag('button');
             $socialhtml .= html_writer::end_tag('li');

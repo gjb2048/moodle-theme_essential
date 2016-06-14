@@ -3,14 +3,20 @@
 // @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
 
 /* Moodle fixes search begin */
-.search-input-wrapper {
+.navbar .search-input-wrapper {
     width: 18px;
     > div {
-        margin: 10px 0 12px;
+        margin: 10px 0 11px;
         padding-left: 1px;
     }
-    &.expanded > div {
-        margin: 12px 0 10px;
+    &.expanded {
+        width: 160px;
+        > div {
+            margin: 11px 0 10px;
+        }
+    }
+    > form {
+        margin: 6px 0 3px 25px;
     }
 }
 /* Moodle fixes search end */

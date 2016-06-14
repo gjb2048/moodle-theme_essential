@@ -19032,15 +19032,21 @@ input[type="reset"] .caret {
 }
 /* Moodle fixes forms end */
 /* Moodle fixes search begin */
-.search-input-wrapper {
+.navbar .search-input-wrapper {
   width: 18px;
 }
-.search-input-wrapper > div {
-  margin: 10px 0 12px;
+.navbar .search-input-wrapper > div {
+  margin: 10px 0 11px;
   padding-left: 1px;
 }
-.search-input-wrapper.expanded > div {
-  margin: 12px 0 10px;
+.navbar .search-input-wrapper.expanded {
+  width: 160px;
+}
+.navbar .search-input-wrapper.expanded > div {
+  margin: 11px 0 10px;
+}
+.navbar .search-input-wrapper > form {
+  margin: 6px 0 3px 25px;
 }
 /* Moodle fixes search end */
 /* Moodle fixes end */
