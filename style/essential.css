@@ -19031,6 +19031,18 @@ input[type="reset"] .caret {
   margin-right: 0;
 }
 /* Moodle fixes forms end */
+/* Moodle fixes search begin */
+.search-input-wrapper {
+  width: 18px;
+}
+.search-input-wrapper > div {
+  margin: 10px 0 12px;
+  padding-left: 1px;
+}
+.search-input-wrapper.expanded > div {
+  margin: 12px 0 10px;
+}
+/* Moodle fixes search end */
 /* Moodle fixes end */
 /* @group Core */
 body {
@@ -22141,10 +22153,7 @@ ul.socials li {
 .navbar .navbar-inner .custommenus {
   width: 100%;
 }
-.navbar .navbar-inner .messagemenu,
-.navbar .navbar-inner .usermenu,
-.navbar .navbar-inner .gotobottommenu,
-.navbar .navbar-inner .editingmenu {
+.navbar .navbar-inner .navbarrightitem {
   float: right;
 }
 .navbar .navbar-inner .usermenu .dropdown img.userpicture {
@@ -22540,6 +22549,15 @@ body.format-topcoll .course-content ul.ctopics li.section .content .toggle a h3:
   }
 }
 /* End group scaffolding.less */
+/* @group Search */
+.search-input-wrapper > div .fa {
+  padding: 3px 2px 2px 2px;
+}
+.search-input-wrapper > div .fa:focus,
+.search-input-wrapper > div .fa:hover {
+  border-radius: 4px;
+}
+/* @group End Search */
 /* @group Tabs */
 .nav > .disabled > a {
   color: #595959;

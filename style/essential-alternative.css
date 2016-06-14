@@ -313,13 +313,16 @@ body.essential-colours-alternative4 .navbar .navbar-inner .dropdown-menu {
   border: 1px solid [[setting:alternativethemecolor4]];
 }
 body.essential-colours-alternative4 .navbar .navbar-inner .nav > li.dropdown a,
-body.essential-colours-alternative4 .navbar .navbar-inner .nav > li > a {
+body.essential-colours-alternative4 .navbar .navbar-inner .nav > li > a,
+body.essential-colours-alternative4 .navbar .navbar-inner .search-input-wrapper > div .fa {
   color: [[setting:alternativethemenavcolor4]];
 }
 body.essential-colours-alternative4 .navbar .navbar-inner .nav > li.dropdown a:focus,
 body.essential-colours-alternative4 .navbar .navbar-inner .nav > li > a:focus,
+body.essential-colours-alternative4 .navbar .navbar-inner .search-input-wrapper > div .fa:focus,
 body.essential-colours-alternative4 .navbar .navbar-inner .nav > li.dropdown a:hover,
-body.essential-colours-alternative4 .navbar .navbar-inner .nav > li > a:hover {
+body.essential-colours-alternative4 .navbar .navbar-inner .nav > li > a:hover,
+body.essential-colours-alternative4 .navbar .navbar-inner .search-input-wrapper > div .fa:hover {
   color: [[setting:alternativethemecolor4]];
   background-color: [[setting:alternativethemenavcolor4]];
 }
@@ -1668,13 +1671,16 @@ body.essential-colours-alternative3 .navbar .navbar-inner .dropdown-menu {
   border: 1px solid [[setting:alternativethemecolor3]];
 }
 body.essential-colours-alternative3 .navbar .navbar-inner .nav > li.dropdown a,
-body.essential-colours-alternative3 .navbar .navbar-inner .nav > li > a {
+body.essential-colours-alternative3 .navbar .navbar-inner .nav > li > a,
+body.essential-colours-alternative3 .navbar .navbar-inner .search-input-wrapper > div .fa {
   color: [[setting:alternativethemenavcolor3]];
 }
 body.essential-colours-alternative3 .navbar .navbar-inner .nav > li.dropdown a:focus,
 body.essential-colours-alternative3 .navbar .navbar-inner .nav > li > a:focus,
+body.essential-colours-alternative3 .navbar .navbar-inner .search-input-wrapper > div .fa:focus,
 body.essential-colours-alternative3 .navbar .navbar-inner .nav > li.dropdown a:hover,
-body.essential-colours-alternative3 .navbar .navbar-inner .nav > li > a:hover {
+body.essential-colours-alternative3 .navbar .navbar-inner .nav > li > a:hover,
+body.essential-colours-alternative3 .navbar .navbar-inner .search-input-wrapper > div .fa:hover {
   color: [[setting:alternativethemecolor3]];
   background-color: [[setting:alternativethemenavcolor3]];
 }
@@ -3023,13 +3029,16 @@ body.essential-colours-alternative2 .navbar .navbar-inner .dropdown-menu {
   border: 1px solid [[setting:alternativethemecolor2]];
 }
 body.essential-colours-alternative2 .navbar .navbar-inner .nav > li.dropdown a,
-body.essential-colours-alternative2 .navbar .navbar-inner .nav > li > a {
+body.essential-colours-alternative2 .navbar .navbar-inner .nav > li > a,
+body.essential-colours-alternative2 .navbar .navbar-inner .search-input-wrapper > div .fa {
   color: [[setting:alternativethemenavcolor2]];
 }
 body.essential-colours-alternative2 .navbar .navbar-inner .nav > li.dropdown a:focus,
 body.essential-colours-alternative2 .navbar .navbar-inner .nav > li > a:focus,
+body.essential-colours-alternative2 .navbar .navbar-inner .search-input-wrapper > div .fa:focus,
 body.essential-colours-alternative2 .navbar .navbar-inner .nav > li.dropdown a:hover,
-body.essential-colours-alternative2 .navbar .navbar-inner .nav > li > a:hover {
+body.essential-colours-alternative2 .navbar .navbar-inner .nav > li > a:hover,
+body.essential-colours-alternative2 .navbar .navbar-inner .search-input-wrapper > div .fa:hover {
   color: [[setting:alternativethemecolor2]];
   background-color: [[setting:alternativethemenavcolor2]];
 }
@@ -4378,13 +4387,16 @@ body.essential-colours-alternative1 .navbar .navbar-inner .dropdown-menu {
   border: 1px solid [[setting:alternativethemecolor1]];
 }
 body.essential-colours-alternative1 .navbar .navbar-inner .nav > li.dropdown a,
-body.essential-colours-alternative1 .navbar .navbar-inner .nav > li > a {
+body.essential-colours-alternative1 .navbar .navbar-inner .nav > li > a,
+body.essential-colours-alternative1 .navbar .navbar-inner .search-input-wrapper > div .fa {
   color: [[setting:alternativethemenavcolor1]];
 }
 body.essential-colours-alternative1 .navbar .navbar-inner .nav > li.dropdown a:focus,
 body.essential-colours-alternative1 .navbar .navbar-inner .nav > li > a:focus,
+body.essential-colours-alternative1 .navbar .navbar-inner .search-input-wrapper > div .fa:focus,
 body.essential-colours-alternative1 .navbar .navbar-inner .nav > li.dropdown a:hover,
-body.essential-colours-alternative1 .navbar .navbar-inner .nav > li > a:hover {
+body.essential-colours-alternative1 .navbar .navbar-inner .nav > li > a:hover,
+body.essential-colours-alternative1 .navbar .navbar-inner .search-input-wrapper > div .fa:hover {
   color: [[setting:alternativethemecolor1]];
   background-color: [[setting:alternativethemenavcolor1]];
 }
