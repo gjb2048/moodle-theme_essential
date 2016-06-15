@@ -1,5 +1,6 @@
 New in 3.0.1.5
 ==============
+- FIX: Cautionary inclusion of coursecatlib.
 
 New in 3.0.1.4
 ==============
