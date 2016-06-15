@@ -7,36 +7,25 @@
                 margin-top: 0;
             }
             div.questioncontrols {
-                float: right;
                 width: 60px;
                 position: absolute;
-                right: 0.3em;
                 top: 0.2em;
                 display: block;
-                text-align: right;
                 background-color: transparent;
             }
         }
     }
     div.quizpage .pagecontent {
-      width: 100%;
-    }
-    .pagecontrols .singlebutton {
-        margin-left: 1.4em;
-    }
-    .addpage {
-        margin-right: 0em;
+        width: 100%;
     }
     div.quizcontents {
-        clear: left;
         display: block;
-        float: left;
         width: 67%;
     }
     .questionbankwindow.block div.header {
         border-radius: 6px;
         .title h2 {
-            margin-bottom: 0px;
+            margin-bottom: 0;
         }
     }
     .reorder div.question div.content .questionpreview .@{fa-css-prefix} {
@@ -48,6 +37,50 @@
 
     ul.slots li.section li.activity img.iconsmall {
         display: none;
+    }
+}
+
+.dir-ltr#page-mod-quiz-edit {
+    div.question {
+        div.content {
+            div.questioncontrols {
+                float: right;
+                right: 0.3em;
+                text-align: right;
+            }
+        }
+    }
+    .pagecontrols .singlebutton {
+        margin-left: 1.4em;
+    }
+    .addpage {
+        margin-right: 0;
+    }
+    div.quizcontents {
+        clear: left;
+        float: left;
+    }
+}
+
+.dir-rtl#page-mod-quiz-edit {
+    div.question {
+        div.content {
+            div.questioncontrols {
+                float: left;
+                left: 0.3em;
+                text-align: left;
+            }
+        }
+    }
+    .pagecontrols .singlebutton {
+        margin-right: 1.4em;
+    }
+    .addpage {
+        margin-left: 0;
+    }
+    div.quizcontents {
+        clear: right;
+        float: right;
     }
 }
 
@@ -69,14 +102,14 @@
 }
 
 #page-question-preview {
-  h1 {
-    font-size: 1.5em;
-  }
+    h1 {
+        font-size: 1.5em;
+    }
 }
 
 .formulation input[type="text"],
 .formulation select {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 /* @end Quiz */
