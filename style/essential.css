@@ -20462,7 +20462,7 @@ table.calendarmonth.calendartable {
   margin-right: -8px;
 }
 .dir-rtl #essentialCarousel.carousel .carousel-indicators {
-  padding-left: 5px;
+  padding-right: 5px;
   left: 5px;
   right: auto;
 }
@@ -20706,6 +20706,7 @@ div.mdl-align.title {
 }
 body .course-content ul.topics li.section {
   padding-bottom: 20px;
+  margin: 0;
 }
 body .course-content ul.topics li.section .content {
   margin-left: 20px;
@@ -21810,7 +21811,7 @@ body#page-grade-grading-pick #region-main form #fgroup_id_buttonar fieldset inpu
 .mform fieldset.collapsible legend a.fheader {
   background-repeat: no-repeat;
 }
-.dir-rtl .mform fieldset.collapsible legend a.fheader {
+.dir-ltr .mform fieldset.collapsible legend a.fheader {
   margin-left: 0;
 }
 .dir-rtl .mform fieldset.collapsible legend a.fheader {
@@ -22781,11 +22782,11 @@ ul.socials li {
 .dir-ltr .navbar .navbar-inner .nav > li > a .fa-caret-right:before {
   margin-left: 5px;
   margin-right: 3px;
-  /*@replace: "\f0d9"*/
   content: "\f0da";
 }
 .dir-ltr .navbar .navbar-inner .nav > li.dropdown a:hover .fa-caret-right:before,
 .dir-ltr .navbar .navbar-inner .nav > li > a:hover .fa-caret-right:before {
+  content: "\f0d7";
   margin-right: 0;
 }
 .dir-ltr .navbar .navbar-inner .nav > li.dropdown.open a .fa-caret-right:before {
@@ -22851,6 +22852,13 @@ ul.socials li {
 .dir-rtl .navbar .navbar-inner .dropdown-submenu > a {
   padding: 3px 15px 3px 25px;
 }
+.dir-rtl .navbar .navbar-inner .dropdown-submenu > .dropdown-menu {
+  left: 100%;
+  right: auto;
+  -webkit-border-radius: 0 6px 6px 6px;
+  -moz-border-radius: 0 6px 6px 6px;
+  border-radius: 0 6px 6px 6px;
+}
 .dir-rtl .navbar .navbar-inner .nav > li.dropdown a .fa-caret-right:before,
 .dir-rtl .navbar .navbar-inner .nav > li > a .fa-caret-right:before {
   margin-right: 5px;
@@ -22859,6 +22867,7 @@ ul.socials li {
 }
 .dir-rtl .navbar .navbar-inner .nav > li.dropdown a:hover .fa-caret-right:before,
 .dir-rtl .navbar .navbar-inner .nav > li > a:hover .fa-caret-right:before {
+  content: "\f0d7";
   margin-left: 0;
 }
 .dir-rtl .navbar .navbar-inner .nav > li.dropdown.open a .fa-caret-right:before {

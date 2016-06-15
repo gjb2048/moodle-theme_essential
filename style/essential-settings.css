@@ -1067,7 +1067,8 @@ a.dimmed:before {
 }
 /* @group Custom */
 .bor {
-  background: url([[pix:theme|bg/dot]]) repeat-x;
+  background-image: url([[pix:theme|bg/dot]]);
+  background-repeat: repeat-x;
 }
 img.userpicture,
 img.profilepicture {

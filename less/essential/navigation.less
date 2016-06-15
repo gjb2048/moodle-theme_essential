@@ -85,9 +85,9 @@
         }
 
         .dropdown-menu > li > a:hover,
-            .dropdown-menu > li > a:focus,
-            .dropdown-submenu:hover > a,
-            .dropdown-submenu:focus > a {
+        .dropdown-menu > li > a:focus,
+        .dropdown-submenu:hover > a,
+        .dropdown-submenu:focus > a {
             background-image: none;
             text-decoration: none;
         }
@@ -272,10 +272,11 @@
             .@{fa-css-prefix}-caret-right:before {
                 margin-left: 5px;
                 margin-right: 3px;
-                /*@replace: "\f0d9"*/content: "\f0da";
+                content: "\f0da";
             }
             &:hover {
                 .@{fa-css-prefix}-caret-right:before {
+                    content: "\f0d7";
                     margin-right: 0;
                 }
             }
@@ -373,6 +374,12 @@
         .dropdown-submenu > a {
             padding: 3px 15px 3px 25px;
         }
+        
+        .dropdown-submenu > .dropdown-menu {
+            left: 100%;
+            right: auto;
+            .border-radius(0 @borderRadiusLarge @borderRadiusLarge @borderRadiusLarge);
+        }
 
         .nav > li.dropdown a,
         .nav > li > a {
@@ -383,6 +390,7 @@
             }
             &:hover {
                 .@{fa-css-prefix}-caret-right:before {
+                    content: "\f0d7";
                     margin-left: 0;
                 }
             }

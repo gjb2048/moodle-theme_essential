@@ -131,9 +131,11 @@
                     ul.breadcrumb.style1 {
                         li {
                             &:after {
-                                border-right-color: ~"[[setting:alternativethemecolor@{index}]]";;
+                                border-left-color: transparent;
+                                border-right-color: ~"[[setting:alternativethemecolor@{index}]]";
                             }
                             &:hover:after {
+                                border-left-color: transparent;
                                 border-right-color: ~"[[setting:alternativethemehovercolor@{index}]]";
                             }
                         }
@@ -232,7 +234,7 @@
                     border-right: 1px dotted ~"[[setting:alternativethemecolor@{index}]]";
                 }
 
-                #headerlogo {
+                &.dir-ltr #headerlogo {
                     border-right-color: ~"[[setting:alternativethemecolor@{index}]]";
                 }
                 &.dir-rtl #headerlogo {
@@ -411,8 +413,10 @@
                     .navbar-inner {
                         .nav {
                             border-left-color: ~"[[setting:alternativethemecolor@{index}]]";
+                            border-right-color: transparent;
                             > li > a {
                                 border-right-color: ~"[[setting:alternativethemecolor@{index}]]";
+                                border-right-color: transparent;
                             }
                         }
                     }
@@ -934,7 +938,7 @@
                     background-color: ~"[[setting:alternativethemecolor@{index}]]";
                 }
 
-                .path-grade-report-grader table#fixed_column th {
+                &.dir-ltr .path-grade-report-grader table#fixed_column th {
                     border-right-color: ~"[[setting:alternativethemecolor@{index}]]";
                 }
                 &.dir-rtl .path-grade-report-grader table#fixed_column th {

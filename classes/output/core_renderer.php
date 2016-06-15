@@ -43,6 +43,7 @@ class core_renderer extends \core_renderer {
     use core_renderer_toolbox;
     public $language = null;
     protected $themeconfig;
+    protected $left;
 
     protected $essential = null; // Used for determining if this is a Essential or child of renderer.
 
@@ -55,6 +56,7 @@ class core_renderer extends \core_renderer {
     public function __construct(moodle_page $page, $target) {
         parent::__construct($page, $target);
         $this->themeconfig = array(\theme_config::load('essential'));
+        $this->left = !\right_to_left();
     }
 
     /**
@@ -432,7 +434,7 @@ class core_renderer extends \core_renderer {
             }
             $title = get_string('returntosection', 'theme_essential', array('section' => $sectionname));
 
-            $markup = html_writer::tag('a', $title.html_writer::tag('i', '', array('class' => 'fa-sign-in fa fa-fw')),
+            $markup = html_writer::tag('a', $title.$this->getfontawesomemarkup('sign-in', array('fa-fw')),
                 array('href' => $href, 'class' => 'btn btn-default', 'title' => $title));
         }
 
@@ -596,7 +598,7 @@ class core_renderer extends \core_renderer {
             $branch = $coursemenu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 
             $hometext = get_string('myhome');
-            $homelabel = html_writer::tag('span', '', array('class' => 'fa fa-home')).html_writer::tag('span', ' '.$hometext);
+            $homelabel = $this->getfontawesomemarkup('home').html_writer::tag('span', ' '.$hometext);
             $branch->add($homelabel, new moodle_url('/my/index.php'), $hometext);
 
             // Get 'My courses' sort preference from admin config.
@@ -610,7 +612,7 @@ class core_renderer extends \core_renderer {
             if ($courses = enrol_get_my_courses(null, $sortorder . ' ASC')) {
                 foreach ($courses as $course) {
                     if ($course->visible) {
-                        $branch->add('<span class="fa fa-graduation-cap"></span>'.format_string($course->fullname),
+                        $branch->add($this->getfontawesomemarkup('graduation-cap').format_string($course->fullname),
                             new moodle_url('/course/view.php?id=' . $course->id), format_string($course->shortname));
                         $numcourses += 1;
                     } else if (has_capability('moodle/course:viewhiddencourses', context_course::instance($course->id)) && $hasdisplayhiddenmycourses) {
@@ -1146,7 +1148,11 @@ class core_renderer extends \core_renderer {
             $usermenu .= html_writer::link($userurl, $userpic.get_string('guest').$caret, $userclass);
 
             // Render direct login link.
-            $usermenu .= html_writer::start_tag('ul', array('class' => 'dropdown-menu pull-right'));
+            $classes = 'dropdown-menu';
+            if ($this->left) {
+                $classes .= ' pull-right';
+            }
+            $usermenu .= html_writer::start_tag('ul', array('class' => $classes));
             $branchlabel = '<em>'.$this->getfontawesomemarkup('sign-in').get_string('login').'</em>';
             $branchurl = new moodle_url('/login/index.php');
             $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
@@ -1173,7 +1179,11 @@ class core_renderer extends \core_renderer {
             }
 
             // Start dropdown menu items.
-            $usermenu .= html_writer::start_tag('ul', array('class' => 'dropdown-menu pull-right'));
+            $classes = 'dropdown-menu';
+            if ($this->left) {
+                $classes .= ' pull-right';
+            }
+            $usermenu .= html_writer::start_tag('ul', array('class' => $classes));
 
             if (\core\session\manager::is_loggedinas()) {
                 $realuser = \core\session\manager::get_realuser();
@@ -1536,12 +1546,12 @@ class core_renderer extends \core_renderer {
             $url->param('edit', 'off');
             $btn = 'btn-danger';
             $title = get_string('turneditingoff');
-            $icon = 'fa-power-off';
+            $icon = 'power-off';
         } else {
             $url->param('edit', 'on');
             $btn = 'btn-success';
             $title = get_string('turneditingon');
-            $icon = 'fa-edit';
+            $icon = 'edit';
         }
         $icon = $this->getfontawesomemarkup($icon, array('fa-fw'));
         return html_writer::tag('a', $icon.$title, array('href' => $url, 'class' => 'btn '.$btn, 'title' => $title));
@@ -2035,8 +2045,8 @@ class core_renderer extends \core_renderer {
         if (($CFG->version < 2016052300.00) || ($CFG->version >= 2016111400.00)) {
             $result = '<div class="useralerts alert alert-error">';
             $result .= '<a class="close" data-dismiss="alert" href="#">'.$this->getfontawesomemarkup('times-circle').'</a>';
-            $result .= '<span class="fa-stack">'.$this->getfontawesomemarkup('square', array('fa-stack-2x'));
-            $result .= $this->getfontawesomemarkup('warning', array('fa-stack-1x', 'fa-inverse')).'</span>';
+            $result .= $this->getfontawesomemarkup('stack', array(), array(), $this->getfontawesomemarkup('square',
+                array('fa-stack-2x')).$this->getfontawesomemarkup('warning', array('fa-stack-1x', 'fa-inverse')));
             $result .= '<span class="title">'.get_string('versionalerttitle', 'theme_essential').'</span><br />'.
                 get_string('versionalerttext1', 'theme_essential').'<br />'.
                 get_string('versionalerttext2', 'theme_essential');
