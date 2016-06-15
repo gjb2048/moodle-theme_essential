@@ -22,8 +22,15 @@ body#page-admin-setting-messageinbound_mailsettings fieldset select {
     }
 }
 
-.form-item .form-label, .mform .fitem div.fitemtitle {
-  text-align: right;
+.dir-ltr {
+    .form-item .form-label, .mform .fitem div.fitemtitle {
+        text-align: right;
+    }
+}
+.dir-rtl {
+    .form-item .form-label, .mform .fitem div.fitemtitle {
+        text-align: left;
+    }
 }
 
 @media (max-width: 767px) {
@@ -35,9 +42,6 @@ body#page-admin-setting-messageinbound_mailsettings fieldset select {
     }
     body#page-admin-setting-messageinbound_mailsettings fieldset select {
         .fluid-span(5);
-    }
-    .form-item .form-label, .mform .fitem div.fitemtitle {
-        text-align: left;
     }
 }
 
@@ -54,60 +58,60 @@ body#page-admin-setting-messageinbound_mailsettings fieldset select {
 }
 
 .form-item .form-label .form-overridden {
-  font-size: 1em;
-  font-family: monospace;
+    font-size: 1em;
+    font-family: monospace;
 }
 
 #region-main {
-  form {
-    .form-buttons {
-      width: 400px;
-      border-radius: @baseBorderRadius * 2;
-      input {
-        margin: 0px;
-      }
+    form {
+        .form-buttons {
+            width: 400px;
+            border-radius: @baseBorderRadius * 2;
+            input {
+                margin: 0px;
+            }
+        }
+        table#form td.submit,
+        .form-buttons,
+        .path-admin .buttons,
+        #fitem_id_submitbutton,
+        .fp-content-center form+div,
+        div.backup-section+form,
+        #fgroup_id_buttonar {
+            width: 30%;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            z-index: 101;
+            padding: 10px;
+            border-radius: @baseBorderRadius;
+            .felement {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            //#id_previous,
+            //#id_cancel {
+            //margin-left: 0px;
+            //float: left;
+            //}
+            //#id_next,
+            //#id_submitbutton,
+            //#id_submitbutton2 {
+            //float: right;
+            //margin-right: 0px;
+            //}
+            > .fgroup {
+                margin: 0px;
+                padding-top: 15px;
+            }
+            input[type=submit] {
+                .btn-primary;
+            }
+        }
+        .fdescription.required {
+            color: orangered;
+        }
     }
-    table#form td.submit,
-    .form-buttons,
-    .path-admin .buttons,
-    #fitem_id_submitbutton,
-    .fp-content-center form+div,
-    div.backup-section+form,
-    #fgroup_id_buttonar {
-      width: 30%;
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-      z-index: 101;
-      padding: 10px;
-      border-radius: @baseBorderRadius;
-      .felement {
-        margin-left: auto;
-        margin-right: auto;
-      }
-      #id_previous,
-      #id_cancel {
-        //margin-left: 0px;
-        //float: left;
-      }
-      #id_next,
-      #id_submitbutton,
-      #id_submitbutton2 {
-        //float: right;
-        //margin-right: 0px;
-      }
-      > .fgroup {
-        margin: 0px;
-        padding-top: 15px;
-      }
-      input[type=submit] {
-        .btn-primary;
-      }
-    }
-    .fdescription.required {
-      color: orangered;
-    }
-  }
 }
 
 body {
@@ -164,8 +168,13 @@ body {
 }
 
 .mform fieldset.collapsible legend a.fheader {
-  margin-left: 0px;
-  background-repeat: no-repeat;
+    background-repeat: no-repeat;
+}
+.dir-rtl .mform fieldset.collapsible legend a.fheader {
+    margin-left: 0;
+}
+.dir-rtl .mform fieldset.collapsible legend a.fheader {
+    margin-right: 0;
 }
 
 .mform fieldset {
@@ -177,38 +186,57 @@ body {
 // Checkbox labels. Bootstrap puts the associated checkbox inside the label.
 // Moodle puts it beside the label, so we need to make it inline-block
 // to keep it on the same horizontal level.
-input[type="radio"] + label,
-input[type="checkbox"] + label {
-  padding-right: 0.4em;
+.dir-ltr {
+    input[type="radio"],
+    input[type="checkbox"] {
+        margin-right: auto;
+        + label {
+            padding-right: 0.4em;        
+        }
+    }
 }
-
-input[type="radio"],
-input[type="checkbox"] {
-  margin-right: auto;
+.dir-rtl {
+    input[type="radio"],
+    input[type="checkbox"] {
+        margin-left: auto;
+        + label {
+            padding-left: 0.4em;        
+        }
+    }
 }
 
 .path-mod-forum .forumheaderlist {
-  .author, .lastpost {
-    white-space: normal !important;  // Override mod style.css that comes afterwards, yuck '!important' :(.
-  }
+    .author, .lastpost {
+        white-space: normal !important;  // Override mod style.css that comes afterwards, yuck '!important' :(.
+    }
 }
 
-.form-item .form-setting .form-colourpicker.defaultsnext {
-  margin-right: 0;
+.dir-ltr .form-item .form-setting .form-colourpicker.defaultsnext {
+    margin-right: 0;
+}
+.dir-rtl .form-item .form-setting .form-colourpicker.defaultsnext {
+    margin-left: 0;
 }
 
 .availability-dialogue {
-  ul button {
-    margin-right: 1em;
-  }
-  label {
-    margin-left: 0;
-    margin-right: 0;
-  }
+    label {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+.dir-ltr .availability-dialogue {
+    ul button {
+        margin-right: 1em;
+    }
+}
+.dir-rtl .availability-dialogue {
+    ul button {
+        margin-left: 1em;
+    }
 }
 
 select {
-  max-width: 570px;
+    max-width: 570px;
 }
 
 .form-description {

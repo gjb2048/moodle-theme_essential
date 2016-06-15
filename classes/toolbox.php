@@ -298,18 +298,11 @@ class toolbox {
         return $slidecontent;
     }
 
-    static public function render_slide_controls($left) {
-        $faleft = 'left';
-        $faright = 'right';
-        if (!$left) {
-            $temp = $faleft;
-            $faleft = $faright;
-            $faright = $temp;
-        }
+    static public function render_slide_controls() {
         $prev = '<a class="left carousel-control" href="#essentialCarousel" data-slide="prev">';
-        $prev .= '<span aria-hidden="true" class="fa fa-chevron-circle-'.$faleft.'"></span></a>';
+        $prev .= '<span aria-hidden="true" class="fa fa-chevron-circle-left"></span></a>';
         $next = '<a class="right carousel-control" href="#essentialCarousel" data-slide="next">';
-        $next .= '<span aria-hidden="true" class="fa fa-chevron-circle-'.$faright.'"></span></a>';
+        $next .= '<span aria-hidden="true" class="fa fa-chevron-circle-right"></span></a>';
 
         return $prev . $next;
     }

@@ -23,7 +23,7 @@
         li li li li li li li i.icon {margin-left:5.5em;}
         .menu li i.icon {
             // Do not affect the menu icon. 
-           margin-left: 0;
+            margin-left: 0;
         }
     }
 }
@@ -40,7 +40,7 @@
         li li li li li li li i.icon {margin-right:5.5em;}
         .menu li i.icon {
             // Do not affect the menu icon. 
-           margin-right: 0;
+            margin-right: 0;
         }
     }
 }
@@ -72,7 +72,8 @@ div.mdl-align.title {
     }
 }
 
-body {  // Inside a body tag so will be more specific and override core plugin styles that come afterwards without the use of 'important' and can then override again in pre-processed theme setting style if needed.
+// Inside a body tag so will be more specific and override core plugin styles that come afterwards without the use of 'important' and can then override again in pre-processed theme setting style if needed.
+body {
     .course-content ul.topics li.section {
         padding-bottom: 20px;
         .content {
@@ -220,14 +221,14 @@ body {  // Inside a body tag so will be more specific and override core plugin s
 }
 .dir-ltr .coursebox .content {
     .teachers.courseboxright {
-         // Class 'courseboxright' is an Essential special in the overridded core_course_renderer.php.
+        // Class 'courseboxright' is an Essential special in the overridded core_course_renderer.php.
         float: right;
         clear: right;
     }
 }
 .dir-rtl .coursebox .content {
     .teachers.courseboxright {
-         // Class 'courseboxright' is an Essential special in the overridded core_course_renderer.php.
+        // Class 'courseboxright' is an Essential special in the overridded core_course_renderer.php.
         float: left;
         clear: left;
     }
