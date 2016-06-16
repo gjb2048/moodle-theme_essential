@@ -11,6 +11,7 @@ New in 2.9.1.13
 - FIX: Invisible parent categories with an image for a course that is in a visible category with no image.
 - FIX: Ensure radio button default is set on first use.
 - FIX: Cautionary inclusion of coursecatlib.
+- FIX: Hidden courses / resources on the breadcrumb.  Ref: https://moodle.org/mod/forum/discuss.php?d=334838.
 - NEW: Tidy up administration block.
 - NEW: Category and course 'course title' images.  Thanks to Murdoch University, Perth, WA for supporting this enhancement.
 
