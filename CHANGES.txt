@@ -1,6 +1,7 @@
 New in 3.0.1.5
 ==============
 - FIX: Cautionary inclusion of coursecatlib.
+- FIX: Hidden courses / resources on the breadcrumb.  Ref: https://moodle.org/mod/forum/discuss.php?d=334838.
 
 New in 3.0.1.4
 ==============
