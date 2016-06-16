@@ -3,81 +3,81 @@
 /* @group Core */
 
 *,p {
-  font-family: ~"[[setting:bodyfont]]"
+    font-family: ~"[[setting:bodyfont]]"
 }
 
 @import "../../fontawesome/variables";
 body {
-  color: ~"[[setting:themetextcolor]]";
-  font-family: ~"[[setting:bodyfont]]";
-  background-image: ~"[[setting:pagebackground]]";
-  background-attachment: ~"[[setting:backgroundattach]]";
-  background-repeat: ~"[[setting:backgroundrepeat]]";
-  background-size: ~"[[setting:backgroundsize]]";
-  .@{fa-css-prefix} {
-    color: ~"[[setting:themeiconcolor]]";
-    &:focus, &:hover {
-      color: ~"[[setting:themehovercolor]]";
+    color: ~"[[setting:themetextcolor]]";
+    font-family: ~"[[setting:bodyfont]]";
+    background-image: ~"[[setting:pagebackground]]";
+    background-attachment: ~"[[setting:backgroundattach]]";
+    background-repeat: ~"[[setting:backgroundrepeat]]";
+    background-size: ~"[[setting:backgroundsize]]";
+    .@{fa-css-prefix} {
+        color: ~"[[setting:themeiconcolor]]";
+        &:focus, &:hover {
+            color: ~"[[setting:themehovercolor]]";
+        }
     }
-  }
-  .@{fa-css-prefix}-inverse {
-    color: @fa-inverse;
-  }
-  .dimmed .@{fa-css-prefix} {
-    color: inherit;
-    &:focus, &:hover {
-      color: inherit;
+    .@{fa-css-prefix}-inverse {
+        color: @fa-inverse;
     }
-  }
+    .dimmed .@{fa-css-prefix} {
+        color: inherit;
+        &:focus, &:hover {
+            color: inherit;
+        }
+    }
 }
 
 .container-fluid {
-  max-width: ~"[[setting:pagewidth]]";
+    max-width: ~"[[setting:pagewidth]]";
 }
 
 h1, h2, h3, h4, h5, h6, #adminsettings h3 {
-  color: ~"[[setting:themetextcolor]]";
+    color: ~"[[setting:themetextcolor]]";
 }
 
 a, a:visited, .btn-link, .btn-link:visited {
-  color: ~"[[setting:themeurlcolor]]";
+    color: ~"[[setting:themeurlcolor]]";
 }
 
 a:hover, a:focus, .btn-link:hover, .btn-link:focus {
-  color: ~"[[setting:themehovercolor]]";
-  &:before {
     color: ~"[[setting:themehovercolor]]";
-  }
+    &:before {
+        color: ~"[[setting:themehovercolor]]";
+    }
 }
 
 a {
-  &:before {
-    color: ~"[[setting:themeiconcolor]]";
-    display: inline-block;
-    text-decoration: none;
-    &:hover {
-      color: ~"[[setting:themehovercolor]]";
+    &:before {
+        color: ~"[[setting:themeiconcolor]]";
+        display: inline-block;
+        text-decoration: none;
+        &:hover {
+            color: ~"[[setting:themehovercolor]]";
+        }
     }
-  }
-  &.dimmed:before {
-    color: inherit;
-  }
+    &.dimmed:before {
+        color: inherit;
+    }
 }
 
 .color {
-  color: ~"[[setting:themecolor]]";
+    color: ~"[[setting:themecolor]]";
 }
 
 /* @group Custom */
 
 .bor {
-  background-image: url(~"[[pix:theme|bg/dot]]");
-  background-repeat: repeat-x;
+    background-image: url(~"[[pix:theme|bg/dot]]");
+    background-repeat: repeat-x;
 }
 
 img.userpicture,
 img.profilepicture {
-  box-shadow: 0px 0px 3px ~"[[setting:themecolor]]";
+    box-shadow: 0px 0px 3px ~"[[setting:themecolor]]";
 }
 
 /* @end */
@@ -86,26 +86,25 @@ img.profilepicture {
 
 /* @group Theme Colours Menu */
 a {
-  .colours-default {
-    color: ~"[[setting:themecolor]]" !important;
-  }
-  .colours-alternative1 {
-    color: ~"[[setting:alternativethemecolor1]]" !important;
-  }
-  .colours-alternative2 {
-    color: ~"[[setting:alternativethemecolor2]]" !important;
-  }
-  .colours-alternative3 {
-    color: ~"[[setting:alternativethemecolor3]]" !important;
-  }
-  .colours-alternative4 {
-    color: ~"[[setting:alternativethemecolor4]]" !important;
-  }
+    .colours-default {
+        color: ~"[[setting:themecolor]]" !important;
+    }
+    .colours-alternative1 {
+        color: ~"[[setting:alternativethemecolor1]]" !important;
+    }
+    .colours-alternative2 {
+        color: ~"[[setting:alternativethemecolor2]]" !important;
+    }
+    .colours-alternative3 {
+        color: ~"[[setting:alternativethemecolor3]]" !important;
+    }
+    .colours-alternative4 {
+        color: ~"[[setting:alternativethemecolor4]]" !important;
+    }
 }
 /* @end */
 
-/* @group Navbar
- */
+/* @group Navbar */
 
 .navbar, .navbar-inner {
   background-color: ~"[[setting:themecolor]]";
@@ -113,24 +112,23 @@ a {
 
 /* @end */
 
-/* @group Course
- */
+/* @group Course */
 
 .course-content ul li.section.main {
-  background: url(~"[[pix:theme|bg/dot]]") bottom repeat-x;
-  &.current {
-    box-shadow: 4px 4px 8px 2px ~"[[setting:themecolor]]";
-    border-style: solid;
-    border-width: 1px;
-  }
+    background: url(~"[[pix:theme|bg/dot]]") bottom repeat-x;
+    &.current {
+        box-shadow: 4px 4px 8px 2px ~"[[setting:themecolor]]";
+        border-style: solid;
+        border-width: 1px;
+    }
 }
 
 h2.pagetitle {
-  background: url(~"[[pix:theme|bg/dot]]") left center repeat-x;
+    background: url(~"[[pix:theme|bg/dot]]") left center repeat-x;
 }
 
 .firstword {
-  color: ~"[[setting:themetextcolor]]" !important;
+    color: ~"[[setting:themetextcolor]]" !important;
 }
 
 /* @end */
@@ -138,9 +136,9 @@ h2.pagetitle {
 /* @group Forums */
 
 .forumpost {
-  .subject {
-    color: ~"[[setting:themetextcolor]]";
-  }
+    .subject {
+        color: ~"[[setting:themetextcolor]]";
+    }
 }
 
 /* @end */
@@ -148,15 +146,15 @@ h2.pagetitle {
 /* @group Blocks */
 
 .block {
-  a {
-    color: ~"[[setting:themeurlcolor]]";
-  }
-  a:hover {
-    color: ~"[[setting:themehovercolor]]";
-  }
-  .header .title h2:before, &.block_iconic_html .header .title h2 .@{fa-css-prefix}:before {
-    color: ~"[[setting:themeiconcolor]]";
-  }
+    a {
+        color: ~"[[setting:themeurlcolor]]";
+    }
+    a:hover {
+        color: ~"[[setting:themehovercolor]]";
+    }
+    .header .title h2:before, &.block_iconic_html .header .title h2 .@{fa-css-prefix}:before {
+        color: ~"[[setting:themeiconcolor]]";
+    }
 }
 
 .jsenabled .block_settings .block_tree .tree_item.branch.loadingbranch:before {
@@ -164,26 +162,26 @@ h2.pagetitle {
 }
 
 .block_rss_client .footer a {
-  background-color: ~"[[setting:themecolor]]";
-  &:hover {
-    background-color: ~"[[setting:themehovercolor]]";
-  }
+    background-color: ~"[[setting:themecolor]]";
+    &:hover {
+        background-color: ~"[[setting:themehovercolor]]";
+    }
 }
 
 .block_login {
-  .content {
-    .footer a {
-      background-color: ~"[[setting:themecolor]]";
-      font-family: ~"[[setting:bodyfont]]";
-      &:hover {
-        backgroundcolor: ~"[[setting:themehovercolor]]";
-      }
+    .content {
+        .footer a {
+            background-color: ~"[[setting:themecolor]]";
+            font-family: ~"[[setting:bodyfont]]";
+            &:hover {
+                backgroundcolor: ~"[[setting:themehovercolor]]";
+            }
+        }
+        form input[type="submit"] {
+            background-color: ~"[[setting:themecolor]]";
+            font-family: ~"[[setting:bodyfont]]";
+        }
     }
-    form input[type="submit"] {
-      background-color: ~"[[setting:themecolor]]";
-      font-family: ~"[[setting:bodyfont]]";
-    }
-  }
 }
 
 /* @end */
@@ -193,7 +191,7 @@ h2.pagetitle {
 #frontpage-course-list,
 #frontpage-category-combo,
 #frontpage-category-names {
-  background: url(~"[[pix:theme|bg/dot]]") left top repeat-x;
+    background: url(~"[[pix:theme|bg/dot]]") left top repeat-x;
 }
 
 #page-site-index h2.headingblock:before {
@@ -205,7 +203,7 @@ h2.pagetitle {
 /* @group Home News Boxes */
 
 .service .@{fa-css-prefix} {
-  color: ~"[[setting:themecolor]]";
+    color: ~"[[setting:themecolor]]";
 }
 
 /* @end */
@@ -213,80 +211,80 @@ h2.pagetitle {
 /* @group Footer */
 
 #page-footer {
-  background-color: ~"[[setting:footercolor]]";
-  color: ~"[[setting:footertextcolor]]";
-  border-top: 2px solid ~"[[setting:themecolor]]";
-  border-bottom: 3px solid ~"[[setting:themecolor]]";
-  a, a > .@{fa-css-prefix} {
-    color: ~"[[setting:footerurlcolor]]";
-  }
-  a:hover, a:hover > .@{fa-css-prefix} {
-    color: ~"[[setting:footerhovercolor]]";
-  }
-  .footnote {
+    background-color: ~"[[setting:footercolor]]";
     color: ~"[[setting:footertextcolor]]";
-    a, a:visited {
-      color: ~"[[setting:footerurlcolor]]";
+    border-top: 2px solid ~"[[setting:themecolor]]";
+    border-bottom: 3px solid ~"[[setting:themecolor]]";
+    a, a > .@{fa-css-prefix} {
+        color: ~"[[setting:footerurlcolor]]";
     }
-    a:hover {
-      color: ~"[[setting:footerhovercolor]]";
+    a:hover, a:hover > .@{fa-css-prefix} {
+        color: ~"[[setting:footerhovercolor]]";
     }
-  }
-  hr {
-    border-top: 1px solid ~"[[setting:footersepcolor]]";
-  }
-  h4 {
-    border-bottom: 1px solid ~"[[setting:footersepcolor]]";
-    color: ~"[[setting:footerheadingcolor]]";
-  }
-  .tree_item.branch:before {
-    color: ~"[[setting:themeiconcolor]]";
-  }
+    .footnote {
+        color: ~"[[setting:footertextcolor]]";
+        a, a:visited {
+            color: ~"[[setting:footerurlcolor]]";
+        }
+        a:hover {
+            color: ~"[[setting:footerhovercolor]]";
+        }
+    }
+    hr {
+        border-top: 1px solid ~"[[setting:footersepcolor]]";
+    }
+    h4 {
+        border-bottom: 1px solid ~"[[setting:footersepcolor]]";
+        color: ~"[[setting:footerheadingcolor]]";
+    }
+    .tree_item.branch:before {
+        color: ~"[[setting:themeiconcolor]]";
+    }
 }
 
 /* @group Footer Block Formatting */
 
 #page-footer {
-  .block {
-    background-color: ~"[[setting:footerblockbackgroundcolour]]";
-    color: ~"[[setting:footerblocktextcolour]]";
-    a, a > .@{fa-css-prefix} {
-      color: ~"[[setting:footerblockurlcolour]]";
+    .block {
+        background-color: ~"[[setting:footerblockbackgroundcolour]]";
+        color: ~"[[setting:footerblocktextcolour]]";
+        a, a > .@{fa-css-prefix} {
+            color: ~"[[setting:footerblockurlcolour]]";
+        }
+        a:hover, a:hover > .@{fa-css-prefix} {
+            color: ~"[[setting:footerblockhovercolour]]";
+        }
+        .icon {
+            color: ~"[[setting:footerblockurlcolour]]";
+        }
+        .moodle-core-dragdrop-draghandle {
+            &:before {
+                color: ~"[[setting:footerblockurlcolour]]";
+            }
+        }
     }
-    a:hover, a:hover > .@{fa-css-prefix} {
-      color: ~"[[setting:footerblockhovercolour]]";
+    .block .header {
+        border-bottom: 1px solid ~"[[setting:footersepcolor]]";
+        h2 {
+            color: inherit;
+        }
     }
-    .icon {
-      color: ~"[[setting:footerblockurlcolour]]";
+    .header .title h2:before, &.block_iconic_html .header .title h2 span.@{fa-css-prefix}:before {
+        color: inherit;
     }
-    .moodle-core-dragdrop-draghandle {
-      &:before {
-        color: ~"[[setting:footerblockurlcolour]]";
-      }
+    .block_html ul li:before,
+    #greyboxright ul li:before {
+        background-color: ~"[[setting:themecolor]]";
     }
-  }
-  .block .header {
-    border-bottom: 1px solid ~"[[setting:footersepcolor]]";
-    h2 {
-      color: inherit;
+    .block_login input[type="submit"] {
+        background-color: ~"[[setting:themecolor]]";
+        &:hover {
+            background-color: ~"[[setting:themehovercolor]]";
+        }
     }
-  }
-  .header .title h2:before, &.block_iconic_html .header .title h2 span.@{fa-css-prefix}:before {
-    color: inherit;
-  }
-  .block_html ul li:before,
-  #greyboxright ul li:before {
-    background-color: ~"[[setting:themecolor]]";
-  }
-  .block_login input[type="submit"] {
-    background-color: ~"[[setting:themecolor]]";
-    &:hover {
-      background-color: ~"[[setting:themehovercolor]]";
+    .block_rss_client .content a {
+        color: ~"[[setting:themeurlcolor]]";
     }
-  }
-  .block_rss_client .content a {
-    color: ~"[[setting:themeurlcolor]]";
-  }
 }
 
 /* @end */
@@ -296,7 +294,7 @@ h2.pagetitle {
 /* @group Profile Image */
 
 .socials img:hover {
-  box-shadow: 0px 0px 10px 0px ~"[[setting:themecolor]]";
+    box-shadow: 0px 0px 10px 0px ~"[[setting:themecolor]]";
 }
 
 /* @end */
@@ -304,37 +302,37 @@ h2.pagetitle {
 /* @group Tabs */
 
 .nav-tabs > li {
-  > a {
-    color: ~"[[setting:themenavcolor]]";
-    background-color: ~"[[setting:themecolor]]";
-    &:hover, &:focus {
-      color: ~"[[setting:themecolor]]";
-      background-color: ~"[[setting:themenavcolor]]";
+    > a {
+        color: ~"[[setting:themenavcolor]]";
+        background-color: ~"[[setting:themecolor]]";
+        &:hover, &:focus {
+            color: ~"[[setting:themecolor]]";
+            background-color: ~"[[setting:themenavcolor]]";
+        }
     }
-  }
-  &.active > a {
-    color: ~"[[setting:themetextcolor]]";
-    background-color: @white;  // TODO: Pagecolour.
-    &:hover, &:focus {
-      color: inherit;
-      background-color: inherit;
+    &.active > a {
+        color: ~"[[setting:themetextcolor]]";
+        background-color: @white;  // TODO: Pagecolour.
+        &:hover, &:focus {
+            color: inherit;
+            background-color: inherit;
+        }
     }
-  }
 }
 
 @media (max-width: @navbarCollapseWidth) {
-  .nav-collapse {
-    background-color: ~"[[setting:themecolor]]";
-    border: 1px solid ~"[[setting:themecolor]]";
-    .nav > li >, .dropdown-menu {
-      a {
-        &:hover, &:focus {
-          color: ~"[[setting:themecolor]]";
-          background-color: ~"[[setting:themenavcolor]]";
+    .nav-collapse {
+        background-color: ~"[[setting:themecolor]]";
+        border: 1px solid ~"[[setting:themecolor]]";
+        .nav > li >, .dropdown-menu {
+            a {
+                &:hover, &:focus {
+                    color: ~"[[setting:themecolor]]";
+                    background-color: ~"[[setting:themenavcolor]]";
+                }
+            }
         }
-      }
     }
-  }
 }
 
 /* @end */
@@ -342,29 +340,29 @@ h2.pagetitle {
 /* @group Performance Information */
 
 .performanceinfo {
-  background-color: ~"[[setting:footerblockbackgroundcolour]]";
-  color: ~"[[setting:footerblocktextcolour]]";
-  border: 1px solid darken(@wellBackground, 7%);
-  var {
-    background-color: ~"[[setting:themecolor]]";
-    color: ~"[[setting:themenavcolor]]";
-  }
-  .span12 {
-      border-bottom-color: ~"[[setting:footersepcolor]]";
-  }
-  h2 {
+    background-color: ~"[[setting:footerblockbackgroundcolour]]";
     color: ~"[[setting:footerblocktextcolour]]";
-    border-bottom-color: #EEE;
-    &:before {
-      color: ~"[[setting:themeiconcolor]]";
+    border: 1px solid darken(@wellBackground, 7%);
+    var {
+        background-color: ~"[[setting:themecolor]]";
+        color: ~"[[setting:themenavcolor]]";
     }
-  }
-  span {
-    color: ~"[[setting:footerblocktextcolour]]";
-  }
-  #cache:before, #load:before, #memory:before, #peakmemory:before, #session:before, #included:before, #dbqueries:before, #dbtime:before {
-    color: ~"[[setting:themenavcolor]]";
-  }
+    .span12 {
+        border-bottom-color: ~"[[setting:footersepcolor]]";
+    }
+    h2 {
+        color: ~"[[setting:footerblocktextcolour]]";
+        border-bottom-color: #EEE;
+        &:before {
+            color: ~"[[setting:themeiconcolor]]";
+        }
+    }
+    span {
+        color: ~"[[setting:footerblocktextcolour]]";
+    }
+    #cache:before, #load:before, #memory:before, #peakmemory:before, #session:before, #included:before, #dbqueries:before, #dbtime:before {
+        color: ~"[[setting:themenavcolor]]";
+    }
 }
 
 /* @end */
@@ -397,20 +395,20 @@ h2.pagetitle {
 /* @group Gradebook */
 
 table#user-grades {
-  th.item, th.categoryitem, th.courseitem {
-    border-bottom-color: ~"[[setting:themecolor]]";
-  }
+    th.item, th.categoryitem, th.courseitem {
+        border-bottom-color: ~"[[setting:themecolor]]";
+    }
 }
 
 .path-grade-report-grader {
-  table#fixed_column th {
-    border-right-color: ~"[[setting:themecolor]]";
-  }
-  .grade_icons img {
-    background-color: @white;
-    padding: 3px;
-    border-radius: 3px;
-  }
+    table#fixed_column th {
+        border-right-color: ~"[[setting:themecolor]]";
+    }
+    .grade_icons img {
+        background-color: @white;
+        padding: 3px;
+        border-radius: 3px;
+    }
 }
 
 /* @end */
@@ -418,10 +416,10 @@ table#user-grades {
 /* @group Back To Top */
 
 .back-to-top a {
-  color: ~"[[setting:themecolor]]" !important;
-  &:hover {
-    color: ~"[[setting:themehovercolor]]" !important;
-  }
+    color: ~"[[setting:themecolor]]" !important;
+    &:hover {
+        color: ~"[[setting:themehovercolor]]" !important;
+    }
 }
 
 /* @end */
@@ -434,37 +432,37 @@ h1, h2, h3, h4, h5, h6,
 #socialheading,
 .forumpost .subject,
 .block_login label {
-  font-family: ~"[[setting:headingfont]]";
+    font-family: ~"[[setting:headingfont]]";
 }
 
 h1, h2, h3, h4, h5, h6 {
-  span {
-    font-family: inherit;
-  }
+    span {
+        font-family: inherit;
+    }
 }
 /* @end */
 
 /* @group Editicons */
 .actions {
-  a {
-    color: ~"[[setting:themeurlcolor]]";
-    &:hover, &:focus, &:active {
-      color: ~"[[setting:themehovercolor]]";
+    a {
+        color: ~"[[setting:themeurlcolor]]";
+        &:hover, &:focus, &:active {
+            color: ~"[[setting:themehovercolor]]";
+        }
     }
-  }
-  .moodle-actionmenu[data-enhanced].show .menu a {
-    color: ~"[[setting:themeurlcolor]]";
-    &:hover, &:focus, &:active {
-      color: ~"[[setting:themehovercolor]]";
+    .moodle-actionmenu[data-enhanced].show .menu a {
+        color: ~"[[setting:themeurlcolor]]";
+        &:hover, &:focus, &:active {
+            color: ~"[[setting:themehovercolor]]";
+        }
     }
-  }
-  .moodle-actionmenu[data-enhanced].show .menu a:hover {
-    color: ~"[[setting:themenavcolor]]";
-    background-color: ~"[[setting:themecolor]]";
-    .@{fa-css-prefix}:before {
-      color: ~"[[setting:themenavcolor]]";
+    .moodle-actionmenu[data-enhanced].show .menu a:hover {
+        color: ~"[[setting:themenavcolor]]";
+        background-color: ~"[[setting:themecolor]]";
+        .@{fa-css-prefix}:before {
+            color: ~"[[setting:themenavcolor]]";
+        }
     }
-  }
 }
 
 /* @end */
@@ -472,11 +470,11 @@ h1, h2, h3, h4, h5, h6 {
 /* @group Chat */
 
 #chat-input-area {
-  table.generaltable {
-    td.cell {
-      background-color: ~"[[setting:themecolor]]" !important;
+    table.generaltable {
+        td.cell {
+            background-color: ~"[[setting:themecolor]]" !important;
+        }
     }
-  }
 }
 
 /* @end */

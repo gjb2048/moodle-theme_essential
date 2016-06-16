@@ -1093,15 +1093,13 @@ a .colours-alternative4 {
   color: [[setting:alternativethemecolor4]] !important;
 }
 /* @end */
-/* @group Navbar
- */
+/* @group Navbar */
 .navbar,
 .navbar-inner {
   background-color: [[setting:themecolor]];
 }
 /* @end */
-/* @group Course
- */
+/* @group Course */
 .course-content ul li.section.main {
   background: url([[pix:theme|bg/dot]]) bottom repeat-x;
 }
