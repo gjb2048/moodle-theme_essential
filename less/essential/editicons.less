@@ -2,116 +2,155 @@
 @import "../fontawesome/variables";
 
 .@{fa-css-prefix} > img {
-  display: none;
-  visibility: hidden;
+    display: none;
+    visibility: hidden;
 }
 
 .actions .moodle-actionmenu[data-enhanced].show .menu a {
-  text-decoration: none !important;
+    text-decoration: none !important;
 }
 
 #page-mod-glossary-view .commands img {
-  display: inline;
+    display: inline;
 }
 
 .commands .@{fa-css-prefix} {
-  margin-left: 3px;
-  margin-right: 3px;
+    margin-left: 3px;
+    margin-right: 3px;
 }
 
 .menu a.menu-action,
 .course-item-actions a,
 .actions a {
-  > .@{fa-css-prefix} {
-    width: 15px;
-  }
-  &.action-delete {
     > .@{fa-css-prefix} {
-      color: red;
+        width: 15px;
     }
-  }
+    &.action-delete {
+        > .@{fa-css-prefix} {
+            color: red;
+        }
+    }
 }
 
 a.action-icon,
 #studentheader,
 .heading_name_row a {
-  > .@{fa-css-prefix} {
-    width: 14px;
-    margin: 0px 3px;
-  }
+    > .@{fa-css-prefix} {
+        width: 14px;
+        margin: 0px 3px;
+    }
 }
 
 .menu a.menu-action:hover > .@{fa-css-prefix} {
-  color: @white;
+    color: @white;
 }
 
 .section-modchooser-link {
-  img {
-    display: none;
-  }
+    img {
+        display: none;
+    }
 
-  > a:before {
-    font-family: 'FontAwesome';
-    content: "\f067";
-    margin-right: 3px;
-  }
+    > a:before {
+        font-family: 'FontAwesome';
+        content: "\f067";
+    }
 
-  > a:hover:before {
-    text-decoration: none;
-  }
+    > a:hover:before {
+        text-decoration: none;
+    }
+}
+.dir-ltr .section-modchooser-link {
+    > a:before {
+        margin-right: 3px;
+    }
+}
+.dir-rtl .section-modchooser-link {
+    > a:before {
+        margin-left: 3px;
+    }
 }
 
 .editing_title {
-  img {
-    display: none !important;
-  }
+    img {
+        display: none !important;
+    }
 
-  &:before {
-    font-family: 'FontAwesome';
-    content: "\f040 ";
-    margin-right: 5px;
-  }
+    &:before {
+        font-family: 'FontAwesome';
+        content: "\f040 ";
+    }
+}
+.dir-ltr .editing_title {
+    &:before {
+        margin-right: 5px;
+    }
+}
+.dir-rtl .editing_title {
+    &:before {
+        margin-left: 5px;
+    }
 }
 
 .moodle-core-dragdrop-draghandle:before {
-  font-family: 'FontAwesome';
-  content: "\f047";
-  margin-right: 5px;
-  cursor: move;
+    font-family: 'FontAwesome';
+    content: "\f047";
+    cursor: move;
+}
+.dir-ltr .moodle-core-dragdrop-draghandle:before {
+    margin-right: 5px;
+}
+.dir-rtl .moodle-core-dragdrop-draghandle:before {
+    margin-left: 5px;
 }
 
 .course-content .section .moodle-core-dragdrop-draghandle {
-  &:before {
-    font-family: 'FontAwesome';
-    content: "\f07d";
-    font-size: 1.4em;
-    padding-left: 5px;
-    padding-right: 5px;
-    margin-right: 0px;
-    cursor: n-resize;
-  }
-  img {
-    display: none;
-  }
+    &:before {
+        font-family: 'FontAwesome';
+        content: "\f07d";
+        font-size: 1.4em;
+        padding-left: 5px;
+        padding-right: 5px;
+        cursor: n-resize;
+    }
+    img {
+        display: none;
+    }
+}
+.dir-ltr .course-content .section .moodle-core-dragdrop-draghandle {
+    &:before {
+        margin-right: 0;
+    }
+}
+.dir-rtl .course-content .section .moodle-core-dragdrop-draghandle {
+    &:before {
+        margin-left: 0;
+    }
 }
 
 .section .summary {
-  > a:before {
-    font-family: 'FontAwesome';
-    content: "\f013";
-    margin-right: 5px;
-  }
-  .iconsmall.edit {
-    display: none;
-  }
+    > a:before {
+        font-family: 'FontAwesome';
+        content: "\f013";
+        margin-right: 5px;
+    }
+    .iconsmall.edit {
+        display: none;
+    }
 }
 
 .moodle-actionmenu.show[data-enhanced] .menu a {
-  padding-left: 0.35em;
-  padding-right: 0.35em;
-  .@{fa-css-prefix} {
-    margin-right: 5px;
-  }
+    padding-left: 0.35em;
+    padding-right: 0.35em;
+}
+.dir-ltr .moodle-actionmenu.show[data-enhanced] .menu a {
+    .@{fa-css-prefix} {
+        margin-right: 5px;
+    }
+}
+.dir-rtl .moodle-actionmenu.show[data-enhanced] .menu a {
+    .@{fa-css-prefix} {
+        margin-left: 5px;
+    }
 }
 
 /* @end */

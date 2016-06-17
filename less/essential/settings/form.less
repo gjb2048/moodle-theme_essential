@@ -22,45 +22,45 @@ input[type="color"],
 .form-label .form-shortname,
 .mform legend,
 .mform legend a {
-  color: ~"[[setting:themetextcolor]]";
+    color: ~"[[setting:themetextcolor]]";
 
-  // Focus state.
-  &:focus {
-    border-color: ~"[[setting:inputfocusbordercolor]]";
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px ~"[[setting:inputfocusshadowcolor]]";
-    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px ~"[[setting:inputfocusshadowcolor]]";
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px ~"[[setting:inputfocusshadowcolor]]";
-  }
+    // Focus state.
+    &:focus {
+        border-color: ~"[[setting:inputfocusbordercolor]]";
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px ~"[[setting:inputfocusshadowcolor]]";
+        -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px ~"[[setting:inputfocusshadowcolor]]";
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px ~"[[setting:inputfocusshadowcolor]]";
+    }
 }
 
 #page {
-  form {
-    .form-buttons,
-    table#form td.submit,
-    .path-admin .buttons,
-    #fitem_id_submitbutton,
-    .fp-content-center
-    form+div,
-    div.backup-section+form,
-    #fgroup_id_buttonar,
-    fieldset:last-of-type.hidden {
-      #fgroup_id_buttonar {
-        background-color: ~"[[setting:themecolor]]";
-      }
+    form {
+        .form-buttons,
+        table#form td.submit,
+        .path-admin .buttons,
+        #fitem_id_submitbutton,
+        .fp-content-center
+        form+div,
+        div.backup-section+form,
+        #fgroup_id_buttonar,
+        fieldset:last-of-type.hidden {
+            #fgroup_id_buttonar {
+                background-color: ~"[[setting:themecolor]]";
+            }
+        }
+        #fitem_id_submitbutton {
+            background-color: ~"[[setting:themecolor]]";
+        }
     }
-    #fitem_id_submitbutton {
-        background-color: ~"[[setting:themecolor]]";
-    }
-  }
 }
 
 #page, #region-main {
-  form {
-    .form-buttons, #fgroup_id_buttonar {
-      background-color: ~"[[setting:themecolor]]";
-      border-top: 1px solid ~"[[setting:themeiconcolor]]";
+    form {
+        .form-buttons, #fgroup_id_buttonar {
+            background-color: ~"[[setting:themecolor]]";
+            border-top: 1px solid ~"[[setting:themeiconcolor]]";
+        }
     }
-  }
 }
 
 body {

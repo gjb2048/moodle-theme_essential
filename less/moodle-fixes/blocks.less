@@ -1,0 +1,23 @@
+// @package     theme_essential.
+// @copyright   2016 Gareth J Barnard.
+// @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
+
+/* Moodle fixes blocks begin */
+.block_navigation, .block_settings {
+    .block_tree .fa[aria-hidden="true"] {
+        display: inline-block;
+    }
+}
+.block_navigation, .block_settings {
+    .block_tree p.hasicon {
+        text-indent: 0;
+    }
+}
+.dir-rtl .block_navigation .block_tree ul {
+    margin: 0;
+}
+.dir-rtl .block_settings .block_tree p.hasicon {
+    padding-right: 0;
+}
+
+/* Moodle fixes blocks end */

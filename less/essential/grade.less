@@ -1,45 +1,71 @@
 /* @group Gradebook */
 
 #page-grade-report-grader-index {
-  .generaltable {
-    th.user {
-      padding-right: 45px;
-      img.userpicture {
-        float: left;
-      }
+    .generaltable {
+        .heading.r1,
+        .heading_name_row.r1 {
+            > th {
+                vertical-align: middle;
+            }
+        }
     }
-    .heading.r1,
-    .heading_name_row.r1 {
-      > th {
-        padding-right: 35px;
-        vertical-align: middle;
-      }
+    h1 {
+        clear: none;
     }
-  }
-  h1 {
-    clear: none;
-  }
 
-  .gradeparent {
-    div:nth-of-type(2):not(.topscroll) {
-      &.right_scroller {
-        padding-top: 22px;
-      }
+    .gradeparent {
+        div:nth-of-type(2):not(.topscroll) {
+            &.right_scroller {
+                padding-top: 22px;
+            }
+        }
+        .right_scroller {
+            .topscroll {
+                min-height: 22px;
+            }
+        }
+        div.floater:first-of-type .cell:nth-child(odd), div.floater.floating.lastrow .cell {
+            background-color: @paginationBackground;
+        }
     }
-    .right_scroller {
-      .topscroll {
-        min-height: 22px;
-      }
-    }
-    div.floater:first-of-type .cell:nth-child(odd), div.floater.floating.lastrow .cell {
-        background-color: @paginationBackground;
-    }
-  }
 
-  #page #page-content #region-main {
-    overflow-x: visible;
-    width: auto;
-  }
+    #page #page-content #region-main {
+        overflow-x: visible;
+        width: auto;
+    }
 }
 
+.dir-ltr#page-grade-report-grader-index {
+    .generaltable {
+        th.user {
+            padding-right: 45px;
+            img.userpicture {
+                float: left;
+            }
+        }
+        .heading.r1,
+        .heading_name_row.r1 {
+            > th {
+                padding-right: 35px;
+            }
+        }
+    }
+}
+
+.dir-rtl#page-grade-report-grader-index {
+    .generaltable {
+        th.user {
+            padding-left: 45px;
+            img.userpicture {
+                float: right;
+            }
+        }
+        .heading.r1,
+        .heading_name_row.r1 {
+            > th {
+                padding-left: 35px;
+            }
+        }
+    }
+}
 /* @end */

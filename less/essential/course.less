@@ -2,38 +2,60 @@
 @import "../fontawesome/variables";
 
 .course-content ul li.section.main {
-  border-bottom: 0px none;
+    border-bottom: 0 none;
 }
 
 #course-category-listings {
-  .item-actions.show .menu a {
-    padding: 0px 5px;
-  }
-  li {
-    // Tree item indenting to represent depth.
-    i.icon {margin-left:0;}
-    li i.icon {margin-left:1em;}
-    li li i.icon {margin-left:2em;}
-    li li li i.icon {margin-left:3em;}
-    li li li li i.icon {margin-left:4em;}
-    li li li li li i.icon {margin-left:4.5em;}
-    li li li li li li i.icon {margin-left:5em;}
-    li li li li li li li i.icon {margin-left:5.5em;}
-    .menu li i.icon {
-       // Do not affect the menu icon. 
-       margin-left:0;
+    .item-actions.show .menu a {
+        padding: 0 5px;
     }
-  }
+}
+.dir-ltr #course-category-listings {
+    li {
+        // Tree item indenting to represent depth.
+        i.icon {margin-left:0;}
+        li i.icon {margin-left:1em;}
+        li li i.icon {margin-left:2em;}
+        li li li i.icon {margin-left:3em;}
+        li li li li i.icon {margin-left:4em;}
+        li li li li li i.icon {margin-left:4.5em;}
+        li li li li li li i.icon {margin-left:5em;}
+        li li li li li li li i.icon {margin-left:5.5em;}
+        .menu li i.icon {
+            // Do not affect the menu icon. 
+            margin-left: 0;
+        }
+    }
+}
+.dir-rtl #course-category-listings {
+    li {
+        // Tree item indenting to represent depth.
+        i.icon {margin-right:0;}
+        li i.icon {margin-right:1em;}
+        li li i.icon {margin-right:2em;}
+        li li li i.icon {margin-right:3em;}
+        li li li li i.icon {margin-right:4em;}
+        li li li li li i.icon {margin-right:4.5em;}
+        li li li li li li i.icon {margin-right:5em;}
+        li li li li li li li i.icon {margin-right:5.5em;}
+        .menu li i.icon {
+            // Do not affect the menu icon. 
+            margin-right: 0;
+        }
+    }
 }
 
 div.mdl-align.title {
-  text-align: left;
-  border-bottom: 1px solid #e1e1e1;
-  margin-bottom: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e1e1e1;
+    margin-bottom: 15px;
+}
+.dir-rtl div.mdl-align.title {
+    text-align: right;
 }
 
 .course-content ul li.section.main.current {
-  border-radius: 5px;
+    border-radius: 5px;
 }
 
 .course-content ul li.section.hidden {
@@ -50,9 +72,11 @@ div.mdl-align.title {
     }
 }
 
-body {  // Inside a body tag so will be more specific and override core plugin styles that come afterwards without the use of 'important' and can then override again in pre-processed theme setting style if needed.
+// Inside a body tag so will be more specific and override core plugin styles that come afterwards without the use of 'important' and can then override again in pre-processed theme setting style if needed.
+body {
     .course-content ul.topics li.section {
         padding-bottom: 20px;
+        margin: 0;
         .content {
             margin-left: 20px;
             margin-right: 20px;
@@ -88,51 +112,96 @@ body {  // Inside a body tag so will be more specific and override core plugin s
 }
 
 .coursebox > .info > .coursename a {
-  background-position: left 0;
-  padding-left: 0;
-  &:before {
-    display: inline-block;
-    font-family: FontAwesome;
-    content: "\f278";
-    margin-right: 5px;
-    text-decoration: none;
-  }
+    background-image: none;
+    &:before {
+        display: inline-block;
+        font-family: FontAwesome;
+        content: "\f278";
+        text-decoration: none;
+    }
+}
+.dir-ltr .coursebox > .info > .coursename a {
+    background-position: left 0;
+    padding-left: 0;
+    &:before {
+        margin-right: 5px;
+    }
+}
+.dir-rtl .coursebox > .info > .coursename a {
+    background-position: right 0;
+    padding-right: 0;
+    &:before {
+        margin-left: 5px;
+    }
 }
 
-.listitem-category {
-  .icon {
-    margin-right: 5px;
-    margin-left: 3px;
-  }
+.dir-ltr .listitem-category {
+    .icon {
+        margin-right: 5px;
+        margin-left: 3px;
+    }
+}
+.dir-rtl .listitem-category {
+    .icon {
+        margin-left: 5px;
+        margin-right: 3px;
+    }
 }
 
 .editing {
-  .section {
-    .activity {
-      .activityinstance {
-        padding-right: 180px;
-      }
-      .contentwithoutlink {
-        padding-right: 100px;
-      }
-      .editing_hide .@{fa-css-prefix}-eye-slash:before {
-        content: "\f06e";
-      }
-      .editing_show .@{fa-css-prefix}-eye:before {
-        content: "\f070";
-      }
+    .section {
+        .activity {
+            .editing_hide .@{fa-css-prefix}-eye-slash:before {
+                content: "\f06e";
+            }
+            .editing_show .@{fa-css-prefix}-eye:before {
+                content: "\f070";
+            }
+        }
     }
-  }
+}
+.dir-ltr.editing {
+    .section {
+        .activity {
+            .activityinstance {
+                padding-right: 180px;
+            }
+            .contentwithoutlink {
+                padding-right: 100px;
+            }
+        }
+    }
+}
+.dir-rtl.editing {
+    .section {
+        .activity {
+            .activityinstance {
+                padding-left: 180px;
+            }
+            .contentwithoutlink {
+                padding-left: 100px;
+            }
+        }
+    }
 }
 
-.modeditingmenu.editing {
-  .section {
-    .activity {
-      .activityinstance {
-        padding-right: 80px;
-      }
+.dir-ltr .modeditingmenu.editing {
+    .section {
+        .activity {
+            .activityinstance {
+                padding-right: 80px;
+            }
+        }
     }
-  }
+}
+.dir-rtl .modeditingmenu.editing {
+    .section {
+        .activity {
+            .activityinstance {
+                padding-left: 80px;
+            }
+        }
+    }
 }
 
 .coursebox .content {
@@ -146,14 +215,23 @@ body {  // Inside a body tag so will be more specific and override core plugin s
     .teachers .@{fa-css-prefix} {
         font-size: inherit;
     }
-    .teachers.courseboxright {
-         // Class 'courseboxright' is an Essential special in the overridded core_course_renderer.php.
-        float: right;
-        clear: right;
-    }
     .courseimage img {
         max-width: 100%;
         max-height: none;
+    }
+}
+.dir-ltr .coursebox .content {
+    .teachers.courseboxright {
+        // Class 'courseboxright' is an Essential special in the overridded core_course_renderer.php.
+        float: right;
+        clear: right;
+    }
+}
+.dir-rtl .coursebox .content {
+    .teachers.courseboxright {
+        // Class 'courseboxright' is an Essential special in the overridded core_course_renderer.php.
+        float: left;
+        clear: left;
     }
 }
 /* @group Course Resource */
@@ -168,65 +246,106 @@ body {  // Inside a body tag so will be more specific and override core plugin s
 /* @group Course Footer */
 
 .section-navigation {
-  padding: 2em 0;
-  line-height: 1.5;
-  clear: both;
+    padding: 2em 0;
+    line-height: 1.5;
+    clear: both;
 
-  a {
-    font-style: normal;
-    text-decoration: none;
-  }
+    a {
+        font-style: normal;
+        text-decoration: none;
+    }
 }
 
 #previous_section,
 #next_section {
-  width: 50%;
-  display: block;
+    width: 50%;
+    display: block;
 }
 
 #next_section {
-  text-align: right;
-  float: right;
-  .nav_icon {
-    float: right;
-    margin-left: 0.3em;
-    border-left: 1px solid #eee;
-    font-size: 2em;
-  }
+    .nav_icon {
+        font-size: 2em;
+    }
 
-  .text {
-    width: 74.05%;
+    .text {
+        width: 74.05%;
+    }
+}
+.dir-ltr #next_section {
+    text-align: right;
     float: right;
-  }
+    .nav_icon {
+        float: right;
+        margin-left: 0.3em;
+        border-left: 1px solid #eee;
+    }
+
+    .text {
+        float: right;
+    }
+}
+.dir-rtl #next_section {
+    text-align: left;
+    float: left;
+    .nav_icon {
+        float: left;
+        margin-right: 0.3em;
+        border-right: 1px solid #eee;
+    }
+
+    .text {
+        float: left;
+    }
 }
 
 #previous_section {
-  float: left;
-  text-align: left;
+    .nav_icon {
+        font-size: 2em;
+    }
 
-  .nav_icon {
+    .text {
+        width: 74.05%;
+    }
+}
+.dir-ltr #previous_section {
     float: left;
-    margin-right: 0.3em;
-    border-right: 1px solid #eee;
-    font-size: 2em;
-  }
+    text-align: left;
 
-  .text {
-    width: 74.05%;
-    float: left;
-  }
+    .nav_icon {
+        float: left;
+        margin-right: 0.3em;
+        border-right: 1px solid #eee;
+    }
+
+    .text {
+        float: left;
+    }
+}
+.dir-rtl #previous_section {
+    float: right;
+    text-align: right;
+
+    .nav_icon {
+        float: right;
+        margin-left: 0.3em;
+        border-left: 1px solid #eee;
+    }
+
+    .text {
+        float: right;
+    }
 }
 
 .nav_guide {
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-style: normal;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-style: normal;
 }
 
 .nav_icon {
-  padding: 0.3em;
-  width: 8.3%;
-  text-align: center;
+    padding: 0.3em;
+    width: 8.3%;
+    text-align: center;
 }
 
 /* @end */

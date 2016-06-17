@@ -6,12 +6,11 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 // Import the bootstrap we need.
-@import "bootstrap/variables";
 @import "bootstrap-override/variables";
 @import "essential/variables";
 @import "fontawesome/variables";
 
-@import "bootstrap/mixins";
+@import "../../bootstrapbase/less/bootstrap/mixins";
 // Opacity
 .opacity(@opacity) {
     opacity: @opacity / 100;
@@ -132,9 +131,11 @@
                     ul.breadcrumb.style1 {
                         li {
                             &:after {
-                                border-right-color: ~"[[setting:alternativethemecolor@{index}]]";;
+                                border-left-color: transparent;
+                                border-right-color: ~"[[setting:alternativethemecolor@{index}]]";
                             }
                             &:hover:after {
+                                border-left-color: transparent;
                                 border-right-color: ~"[[setting:alternativethemehovercolor@{index}]]";
                             }
                         }
@@ -233,7 +234,7 @@
                     border-right: 1px dotted ~"[[setting:alternativethemecolor@{index}]]";
                 }
 
-                #headerlogo {
+                &.dir-ltr #headerlogo {
                     border-right-color: ~"[[setting:alternativethemecolor@{index}]]";
                 }
                 &.dir-rtl #headerlogo {
@@ -286,7 +287,8 @@
                         }
 
                         .nav > li.dropdown a,
-                        .nav > li > a {
+                        .nav > li > a,
+                        .search-input-wrapper > div .fa {
                             color: ~"[[setting:alternativethemenavcolor@{index}]]";
                             &:focus, &:hover {
                                 color: ~"[[setting:alternativethemecolor@{index}]]";
@@ -411,8 +413,10 @@
                     .navbar-inner {
                         .nav {
                             border-left-color: ~"[[setting:alternativethemecolor@{index}]]";
+                            border-right-color: transparent;
                             > li > a {
                                 border-right-color: ~"[[setting:alternativethemecolor@{index}]]";
+                                border-right-color: transparent;
                             }
                         }
                     }
@@ -934,7 +938,7 @@
                     background-color: ~"[[setting:alternativethemecolor@{index}]]";
                 }
 
-                .path-grade-report-grader table#fixed_column th {
+                &.dir-ltr .path-grade-report-grader table#fixed_column th {
                     border-right-color: ~"[[setting:alternativethemecolor@{index}]]";
                 }
                 &.dir-rtl .path-grade-report-grader table#fixed_column th {
@@ -1083,6 +1087,107 @@
                 }
                 &.path-admin .buttons input[type="submit"] {
                     background-image: inherit;
+                }
+
+                &.path-grade-report .gradeparent {
+                    tr:nth-of-type(even) .cell,
+                    .floater .cell,
+                    .avg {
+                        color: ~"[[setting:alternativethemestripetextcolour@{index}]]";
+                        background-color: ~"[[setting:alternativethemestripebackgroundcolour@{index}]]";
+                        a, a:hover, a:focus, a:visited, .fa {
+                            color: inherit;
+                        }
+                    }
+                }
+
+                &#page-grade-report-grader-index .gradeparent div.floater:first-of-type .cell:nth-child(even) {
+                    color: ~"[[setting:alternativethemestripetextcolour@{index}]]";
+                    a, a:hover, a:focus, a:visited {
+                        color: ~"[[setting:alternativethemestripetextcolour@{index}]]";
+                    }
+                }
+
+                &#page-grade-report-grader-index .gradeparent div.floater:first-of-type .cell:nth-child(odd) {
+                    a, a:visited {
+                        color: ~"[[setting:alternativethemeurlcolor@{index}]]";
+                    }
+                    a:hover, a:focus {
+                        color: ~"[[setting:alternativethemehovercolor@{index}]]";
+                    }
+                }
+
+                &.path-grade-report .gradeparent .avg.lastrow,
+                &#page-grade-report-grader-index .gradeparent div.floater.floating.lastrow .cell {
+                    color: ~"[[setting:alternativethemetextcolor@{index}]]";
+                }
+
+                &.path-grade-report-grader .gradeparent .user.cell .userpicture {
+                    background-color: #fff;
+                }
+
+                table#explaincaps,
+                table#defineroletable,
+                table.grading-report,
+                table#listdirectories,
+                table.rolecaps,
+                table.userenrolment,
+                table#form,
+                form#movecourses table,
+                #page-admin-course-index .editcourse,
+                .forumheaderlist,
+                table.flexible,
+                .generaltable {
+                    tbody {
+                        > tr:nth-child(odd) > td,
+                        > tr:nth-child(odd) > th {
+                            color: ~"[[setting:alternativethemestripetextcolour@{index}]]";
+                            background-color: ~"[[setting:alternativethemestripebackgroundcolour@{index}]]";
+                            a, a:hover, a:focus, a:visited {
+                                color: inherit;
+                            }
+                        }
+                    }
+                }
+
+                &#page-admin-plugins #plugins-control-panel {
+                    tbody {
+                        > tr:nth-child(odd) > td,
+                        > tr:hover > td {
+                            &.displayname .plugindir,
+                            &.notes .requiredby,
+                            &.pluginname .componentname,
+                            &.requires .requires-ok,
+                            &.settings a,
+                            &.uninstall a,
+                            &.version .versionnumber {
+                                color: ~"[[setting:alternativethemestripetextcolour@{index}]]";
+                            }
+                        }
+                    }
+                }
+
+                #categoryquestions > tbody > tr:nth-of-type(even) {
+                    color: ~"[[setting:alternativethemestripetextcolour@{index}]]";
+                    background-color: ~"[[setting:alternativethemestripebackgroundcolour@{index}]]";
+                }
+
+                .user-enroller-panel .uep-search-results .users,
+                .user-enroller-panel .uep-search-results .cohorts,
+                table.grading-report,
+                .forumheaderlist,
+                .generaltable,
+                table.flexible,
+                .category_subcategories,
+                table#modules,
+                table#permissions {
+                    tbody {
+                        tr:hover > td,
+                        tr:hover > th {
+                            color: ~"[[setting:alternativethemestripetextcolour@{index}]]";
+                            background-color: ~"[[setting:alternativethemestripebackgroundcolour@{index}]]";
+                        }
+                    }
                 }
             }
 

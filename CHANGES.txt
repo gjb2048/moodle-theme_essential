@@ -1,3 +1,10 @@
+New in 3.1.0.1
+==============
+- FIX: Carousel slides in correct direction for RTL.
+- NEW: Theme table stripe text and background colour settings.
+- NEW: FontAwesome 4.6.3.
+
+
 New in 3.0.1.5
 ==============
 - FIX: Cautionary inclusion of coursecatlib.

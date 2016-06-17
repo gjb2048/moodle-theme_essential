@@ -2,21 +2,21 @@
 @import "../../fontawesome/variables";
 
 .breadcrumb-button {
-  input[type="submit"] {
-    color: ~"[[setting:themenavcolor]]";
-    background-color: ~"[[setting:themecolor]]";
-    background-image: none;
-    border-color: ~"[[setting:themecolor]]";
+    input[type="submit"] {
+        color: ~"[[setting:themenavcolor]]";
+        background-color: ~"[[setting:themecolor]]";
+        background-image: none;
+        border-color: ~"[[setting:themecolor]]";
 
-    &:focus, &:hover, &:active {
-      color: ~"[[setting:themecolor]]";
-      background-color: ~"[[setting:themenavcolor]]";
-      background-image: none;
+        &:focus, &:hover, &:active {
+            color: ~"[[setting:themecolor]]";
+            background-color: ~"[[setting:themenavcolor]]";
+            background-image: none;
+        }
     }
-  }
-  .@{fa-css-prefix} {
-    color: inherit;
-  }
+    .@{fa-css-prefix} {
+        color: inherit;
+    }
 }
 
 /* @end */
@@ -24,70 +24,70 @@
 /* @group Breadcrumb */
 
 .breadcrumb-nav {
-  /* @group Breadcrumb Style Fancy */
+    /* @group Breadcrumb Style Fancy */
 
-  ul.breadcrumb.style1 {
-    li {
-      color: ~"[[setting:themenavcolor]]";
-      background-color: ~"[[setting:themecolor]]";
-      border-color: ~"[[setting:themecolor]]";
-      border-width: 1px;
-      border-style: solid;
-      &:before {
-        border-left-color: ~"[[setting:themenavcolor]]";
-      }
-      a {
-        color: inherit;
-      }
-      &:after {
-        border-left-color: ~"[[setting:themecolor]]";
-      }
-      &:first-of-type {
-        a:before {
-          color: ~"[[setting:themenavcolor]]";
+    ul.breadcrumb.style1 {
+        li {
+            color: ~"[[setting:themenavcolor]]";
+            background-color: ~"[[setting:themecolor]]";
+            border-color: ~"[[setting:themecolor]]";
+            border-width: 1px;
+            border-style: solid;
+            &:before {
+                border-left-color: ~"[[setting:themenavcolor]]";
+            }
+            a {
+                color: inherit;
+            }
+            &:after {
+                border-left-color: ~"[[setting:themecolor]]";
+            }
+            &:first-of-type {
+                a:before {
+                    color: ~"[[setting:themenavcolor]]";
+                }
+            }
+            &:hover, &:focus {
+                background-color: ~"[[setting:themenavcolor]]";
+                &:before {
+                    border-left-color: ~"[[setting:themecolor]]";
+                }
+                span, a, a:before {
+                    color: ~"[[setting:themecolor]]";
+                }
+            }
+            &:hover:after {
+                border-left-color: ~"[[setting:themenavcolor]]";
+                a {
+                    color: ~"[[setting:themecolor]]";
+                }
+            }
         }
-      }
-      &:hover, &:focus {
-        background-color: ~"[[setting:themenavcolor]]";
-        &:before {
-          border-left-color: ~"[[setting:themecolor]]";
-        }
-        span, a, a:before {
-          color: ~"[[setting:themecolor]]";
-        }
-      }
-      &:hover:after {
-        border-left-color: ~"[[setting:themenavcolor]]";
-        a {
-          color: ~"[[setting:themecolor]]";
-        }
-      }
     }
-  }
 }
 
 .dir-rtl .breadcrumb-nav {
-  ul.breadcrumb.style1 {
-    li:after {
-      border-right-color: ~"[[setting:themecolor]]";
+    ul.breadcrumb.style1 {
+        li:after {
+            border-right-color: ~"[[setting:themecolor]]";
+        }
+        li:hover:after {
+            border-right-color: ~"[[setting:themenavcolor]]";
+        }
     }
-    li:hover:after {
-      border-right-color: ~"[[setting:themenavcolor]]";
-    }
-  }
 }
 /* @end */
 
 /* @group Breadcrumb Style Simple */
 ul.breadcrumb.style2 {
-  li {
-    a {
-      color: ~"[[setting:themetextcolor]]";
+    li {
+        a {
+            color: ~"[[setting:themetextcolor]]";
+        }
+        a:hover {
+            color: ~"[[setting:themehovercolor]]";
+        }
     }
-    a:hover {
-      color: ~"[[setting:themehovercolor]]";
-    }
-  }
 }
 
 /* @end */

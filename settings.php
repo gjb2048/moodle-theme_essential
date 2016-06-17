@@ -317,6 +317,26 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingscolour->add($setting);
 
+    // Theme stripe text colour setting.
+    $name = 'theme_essential/themestripetextcolour';
+    $title = get_string('themestripetextcolour', 'theme_essential');
+    $description = get_string('themestripetextcolourdesc', 'theme_essential');
+    $default = '#ffffff';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingscolour->add($setting);
+
+    // Theme stripe background colour setting.
+    $name = 'theme_essential/themestripebackgroundcolour';
+    $title = get_string('themestripebackgroundcolour', 'theme_essential');
+    $description = get_string('themestripebackgroundcolourdesc', 'theme_essential');
+    $default = '#ff9a34';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingscolour->add($setting);
+
     // This is the descriptor for the footer.
     $name = 'theme_essential/footercolorinfo';
     $heading = get_string('footercolors', 'theme_essential');
@@ -550,6 +570,26 @@ if ($ADMIN->fulltree) {
         $title = get_string('alternativethemenavcolor', 'theme_essential', $alternativethemenumber);
         $description = get_string('alternativethemenavcolordesc', 'theme_essential', $alternativethemenumber);
         $default = '#ffffff';
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $essentialsettingscolour->add($setting);
+
+        // Alternative theme stripe text colour setting.
+        $name = 'theme_essential/alternativethemestripetextcolour' . $alternativethemenumber;
+        $title = get_string('alternativethemestripetextcolour', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemestripetextcolourdesc', 'theme_essential', $alternativethemenumber);
+        $default = '#ffffff';
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $essentialsettingscolour->add($setting);
+
+        // Alternative theme stripe background colour setting.
+        $name = 'theme_essential/alternativethemestripebackgroundcolour' . $alternativethemenumber;
+        $title = get_string('alternativethemestripebackgroundcolour', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemestripebackgroundcolourdesc', 'theme_essential', $alternativethemenumber);
+        $default = '#ff9a34';
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
@@ -1352,10 +1392,10 @@ if ($ADMIN->fulltree) {
     $name = 'theme_essential/frontpageblocks';
     $title = get_string('frontpageblocks', 'theme_essential');
     $description = get_string('frontpageblocksdesc', 'theme_essential');
-    $left = get_string('left', 'theme_essential');
-    $right = get_string('right', 'theme_essential');
+    $before = get_string('beforecontent', 'theme_essential');
+    $after = get_string('aftercontent', 'theme_essential');
     $default = 1;
-    $choices = array(1 => $left, 0 => $right);
+    $choices = array(1 => $before, 0 => $after);
     $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsfrontpage->add($setting);

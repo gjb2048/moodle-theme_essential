@@ -1,207 +1,289 @@
 /* @group Footer */
 
 #page-footer {
-  margin: 0px;
-  padding: 0px;
-  border: 0;
-  font-size: 1em;
-  text-align: left;
-  width: 100%;
-  padding-top: 10px;
-
-  .copy {
-    padding-bottom: 5px;
-    float: left;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 1em;
     width: 100%;
-    text-align: center;
-  }
-  .footerlinks {
-    .footnote {
-      float: left;
-      color: @white;
-      margin-left: 0px;
-      a:hover {
-        text-decoration: none;
-      }
-    }
-    .helplink {
-      float: right;
-      padding-right: 20px;
-      a {
-        color: orange !important;
-      }
-    }
-  }
+    padding-top: 10px;
 
-  hr {
-    padding: 0px;
-    border-bottom: 0px none;
-    margin-top: 0px;
-  }
-
-  h4 {
-    font-size: 1.2em;
-    padding-bottom: 6px;
-    margin-bottom: 4px;
-  }
-
-  .themecredit {
-    font-size: 7pt;
-    text-align: center;
-    a, a:hover {
-      color: inherit;
+    .copy {
+        padding-bottom: 5px;
+        width: 100%;
+        text-align: center;
     }
-  }
+    .footerlinks {
+        .footnote {
+            color: @white;
+            a:hover {
+                text-decoration: none;
+            }
+        }
+        .helplink {
+            a {
+                color: orange !important;
+            }
+        }
+    }
+
+    hr {
+        padding: 0;
+        border-bottom: 0 none;
+        margin-top: 0;
+    }
+
+    h4 {
+        font-size: 1.2em;
+        padding-bottom: 6px;
+        margin-bottom: 4px;
+    }
+
+    .themecredit {
+        font-size: 7pt;
+        text-align: center;
+        a, a:hover {
+            color: inherit;
+        }
+    }
+}
+
+.dir-ltr #page-footer {
+    text-align: left;
+
+    .copy {
+        float: left;
+    }
+    .footerlinks {
+        .footnote {
+            float: left;
+            margin-left: 0;
+        }
+        .helplink {
+            float: right;
+            padding-right: 20px;
+        }
+    }
+}
+
+.dir-rtl #page-footer {
+    text-align: right;
+
+    .copy {
+        float: right;
+    }
+    .footerlinks {
+        .footnote {
+            float: right;
+            margin-right: 0;
+        }
+        .helplink {
+            float: left;
+            padding-left: 20px;
+        }
+    }
 }
 
 #page-footer ul,
 #greyboxright ul {
-  list-style-type: none !important;
-  margin: 0px;
-  margin-top: 0px;
-  margin-bottom: 10px;
-  li {
-    padding: 0px;
-  }
+    list-style-type: none !important;
+    margin: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+    li {
+        padding: 0;
+    }
 }
 
 .footerlinks {
-  line-height: 15px;
+    line-height: 15px;
 }
 
 body.path-admin-setting #page-footer {
-  // Ensure the height is sufficient for the floating buttons.
-  min-height: 101px;
+    // Ensure the height is sufficient for the floating buttons.
+    min-height: 101px;
 }
 
 /* @group Footer Block Formatting */
 
 #page-footer {
-  .block {
-    .header {
-      .title h2:before {
-        background-color: transparent;
-        padding-left: 0px;
-        font-size: 1.2em;
-        padding-bottom: 0px;
-        margin-bottom: 0px;
-        text-transform: none;
-        font-weight: normal;
-      }
-      .block_action {
-        display: none !important;
-      }
+    .block {
+        .header {
+            .title h2:before {
+                background-color: transparent;
+                font-size: 1.2em;
+                padding-bottom: 0;
+                margin-bottom: 0;
+                text-transform: none;
+                font-weight: normal;
+            }
+            .block_action {
+                display: none !important;
+            }
+        }
     }
-  }
+}
+.dir-ltr #page-footer {
+    .block {
+        .header {
+            .title h2:before {
+                padding-left: 0;
+            }
+        }
+    }
+}
+.dir-rtl #page-footer {
+    .block {
+        .header {
+            .title h2:before {
+                padding-right: 0;
+            }
+        }
+    }
 }
 
 #page-footer .eventskey,
 #page-footer .calendar_filters {
-  display: none;
+    display: none;
 }
 
 #page-footer img.profilepicture,
 #page-footer .myprofileitem.picture {
-  float: left;
-  width: 90px;
-  height: 90px;
+    width: 90px;
+    height: 90px;
+}
+
+.dir-ltr {
+    #page-footer img.profilepicture,
+    #page-footer .myprofileitem.picture {
+        float: left;
+    }
+}
+.dir-rtl {
+    #page-footer img.profilepicture,
+    #page-footer .myprofileitem.picture {
+        float: right;
+    }
 }
 
 #page-footer .myprofileitem {
-  &.picture {
-    margin-right: 20px;
-  }
-
-  &.fullname {
-    margin-top: 10px;
-  }
+    &.fullname {
+        margin-top: 10px;
+    }
+}
+.dir-ltr #page-footer .myprofileitem {
+    &.picture {
+        margin-right: 20px;
+    }
+}
+.dir-rtl #page-footer .myprofileitem {
+    &.picture {
+        margin-left: 20px;
+    }
 }
 
 #page-footer .block_login {
-  .footer a,
-  .footer a:visited {
-    color: @white;
-  }
+    .footer a,
+    .footer a:visited {
+        color: @white;
+    }
 }
 
 #page-footer .block_rss_client {
-  li:before {
-    display: none;
-  }
+    li:before {
+        display: none;
+    }
 
-  .content {
-    padding-top: 10px;
-  }
+    .content {
+        padding-top: 10px;
+    }
 
-  .content li:hover {
-    background-color: transparent;
-  }
+    .content li:hover {
+        background-color: transparent;
+    }
 }
 
 /* @end */
 
 /* @group Performance Information */
-.performanceinfo {
-  padding: 8px;
-  border-radius: 6px;
-  border-width: 1px;
-  border-style: solid;
-  margin-top: 5px;
-
-  .span3 {
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  var {
-    font-size: 1.2em;
-    padding: 5px;
-    border-radius: 5px;
-    white-space: nowrap;
-  }
-
-  .span12 {
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-  }
-
-  h2 {
-    font-size: 1.4em;
-    line-height: 1.4em;
-    text-transform: uppercase;
-    font-weight: normal;
-    padding-bottom: 5px;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
+#page-footer .performanceinfo {
+    padding: 8px;
+    border-radius: 6px;
+    border-width: 1px;
+    border-style: solid;
     margin-top: 5px;
-    margin-bottom: 0;
-    &:before {
-      vertical-align: bottom;
-      font-family: FontAwesome;
-      font-size: 1.65em;
-      margin-right: .3em;
-      content: "\f05a";
-    }
-  }
 
-  span {
-    display: block;
-    margin-top: 5px;
-  }
-
-  span.@{fa-css-prefix} {
-    color: inherit;
-    display: inline;
-    margin-top: 0;
-    margin-right: .3em;
-    font-size: 1em;
-    font-weight: 100;
-    &:hover, &:focus {
-      color: inherit;
+    .span3 {
+        text-align: center;
+        margin-top: 10px;
     }
-  }
+
+    var {
+        font-size: 1.2em;
+        padding: 5px;
+        border-radius: 5px;
+        white-space: nowrap;
+    }
+
+    .span12 {
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+    }
+
+    h2 {
+        font-size: 1.4em;
+        line-height: 1.4em;
+        text-transform: uppercase;
+        font-weight: normal;
+        padding-bottom: 5px;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        margin-top: 5px;
+        margin-bottom: 0;
+        &:before {
+            vertical-align: bottom;
+            font-family: FontAwesome;
+            font-size: 1.65em;
+            content: "\f05a";
+        }
+    }
+
+    span {
+        display: block;
+        margin-top: 5px;
+    }
+
+    span.@{fa-css-prefix} {
+        color: inherit;
+        display: inline;
+        margin-top: 0;
+        font-size: 1em;
+        font-weight: 100;
+        &:hover, &:focus {
+            color: inherit;
+        }
+    }
 }
-
+.dir-ltr #page-footer .performanceinfo {
+    h2 {
+        &:before {
+            margin-right: .3em;
+        }
+    }
+    span.@{fa-css-prefix} {
+        margin-right: .3em;
+    }
+}
+.dir-rtl #page-footer .performanceinfo {
+    h2 {
+        &:before {
+            margin-left: .3em;
+        }
+    }
+    span.@{fa-css-prefix} {
+        margin-left: .3em;
+    }
+}
 /* @end */
 
 /* @end */

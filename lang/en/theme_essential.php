@@ -295,6 +295,10 @@ $string['themeiconcolor'] = 'Icon colour';
 $string['themeiconcolordesc'] = 'Set the colour for all icons.';
 $string['themenavcolor'] = 'Navigation text colour';
 $string['themenavcolordesc'] = 'Set the text colour for navigation.  Being the navigation bar and the breadcrumb fancy style.';
+$string['themestripetextcolour'] = 'Stripe text colour';
+$string['themestripetextcolourdesc'] = 'Set the text colour for stripes in tables.';
+$string['themestripebackgroundcolour'] = 'Stripe background colour';
+$string['themestripebackgroundcolourdesc'] = 'Set the background colour for stripes in tables.';
 
 $string['footercolor'] = 'Footer background colour';
 $string['footercolordesc'] = 'Set what colour the background of the Footer box should be.';
@@ -347,6 +351,10 @@ $string['alternativethemenavcolor'] = 'Navigation text colour {$a}';
 $string['alternativethemenavcolordesc'] = 'Set the alternative {$a} text colour for navigation.  Being the navigation bar and the breadcrumb fancy style.';
 $string['alternativethemehovercolor'] = 'Alternative theme hover colour {$a}';
 $string['alternativethemehovercolordesc'] = 'What colour should your theme hovers be for the alternative theme colours {$a}.';
+$string['alternativethemestripetextcolour'] = 'Alternative stripe text colour {$a}';
+$string['alternativethemestripetextcolourdesc'] = 'Set the alternative {$a} text colour for stripes in tables.';
+$string['alternativethemestripebackgroundcolour'] = 'Alternative stripe background colour {$a}';
+$string['alternativethemestripebackgroundcolourdesc'] = 'Set the alternative {$a} background colour for stripes in tables.';
 
 $string['alternativethemefootercolor'] = 'Footer background colour for the alternative theme colours {$a}';
 $string['alternativethemefootercolordesc'] = 'Set what colour the background of the Footer box should be for the alternative theme colours {$a}.';
@@ -397,7 +405,10 @@ $string['frontcontentareadesc'] = 'Whatever is typed into this box will display 
 
 $string['frontpageblocksheading'] = 'Front page blocks';
 $string['frontpageblocks'] = 'Front page blocks alignment';
-$string['frontpageblocksdesc'] = 'Here you can determine if the standard Moodle blocks on the frontpage align to the left or the right.';
+$string['frontpageblocksdesc'] = 'Here you can determine if the standard Moodle blocks on the frontpage align before or after the content.';
+$string['beforecontent'] = 'Before content';
+$string['aftercontent'] = 'After content';
+
 $string['frontpagemiddleblocks'] = 'Enable additional front page middle blocks';
 $string['frontpagemiddleblocksdesc'] = 'If enabled this will display three additional block locations just under the marketing spots.';
 

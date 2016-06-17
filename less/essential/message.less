@@ -5,29 +5,47 @@
 }
 
 .messagearea {
-  padding-bottom: 60px;
-  #fitem_id_message {
-    .fitemtitle {
-      width: auto;
-      max-width: 20%;
-
+    padding-bottom: 60px;
+    #fitem_id_message {
+        .fitemtitle {
+            width: auto;
+            max-width: 20%;
+        }
+        .felement.ftextarea {
+            width: 70%;
+        }
     }
-    .felement.ftextarea {
-      float: left;
-      margin-left: 25px;
-      width: 70%;
+}
+.dir-ltr .messagearea {
+    #fitem_id_message {
+        .felement.ftextarea {
+            float: left;
+            margin-left: 25px;
+        }
     }
-  }
-  #fitem_id_submitbutton {
-    .felement.fsubmit {
-      margin-left: 0px;
+    #fitem_id_submitbutton {
+        .felement.fsubmit {
+            margin-left: 0;
+        }
     }
-  }
+}
+.dir-rtl .messagearea {
+    #fitem_id_message {
+        .felement.ftextarea {
+            float: right;
+            margin-right: 25px;
+        }
+    }
+    #fitem_id_submitbutton {
+        .felement.fsubmit {
+            margin-right: 0;
+        }
+    }
 }
 
 
 .message .contactselector .singleselect {
-  width: 100%;
+    width: 100%;
 }
 
 /* @end */

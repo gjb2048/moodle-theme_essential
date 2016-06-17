@@ -2,70 +2,70 @@
 @import "../../fontawesome/variables";
 
 .block {
-  .icon {
-    color: ~"[[setting:themeiconcolor]]";
-  }
-  .moodle-core-dragdrop-draghandle {
-    &:before {
-      color: ~"[[setting:themeiconcolor]]";
+    .icon {
+        color: ~"[[setting:themeiconcolor]]";
     }
-  }
-  .menu {
-    a.menu-action {
-      color: ~"[[setting:themeurlcolor]]";
+    .moodle-core-dragdrop-draghandle {
+        &:before {
+            color: ~"[[setting:themeiconcolor]]";
+        }
     }
-    a.menu-action:hover {
-      color: ~"[[setting:themehovercolor]]";
+    .menu {
+        a.menu-action {
+            color: ~"[[setting:themeurlcolor]]";
+        }
+        a.menu-action:hover {
+            color: ~"[[setting:themehovercolor]]";
+        }
     }
-  }
 }
 
 .block .header .title h2,
 .block h3.main {
-  color: ~"[[setting:themetextcolor]]";
+    color: ~"[[setting:themetextcolor]]";
 }
 
 p.tree_item {
-  &.leaf a {
-    > .@{fa-css-prefix} {
-      color: ~"[[setting:themeiconcolor]]";
-    }
-    &:hover, &:focus {
-      color: ~"[[setting:themehovercolor]]";
-      > .@{fa-css-prefix} {
-        color: inherit;
-      }
-    }
-  }
-  &.branch {
-    color: ~"[[setting:themeurlcolor]]";
-    &:before {
-      color: ~"[[setting:themeiconcolor]]";
-    }
-    &:hover, &:focus {
-      color: ~"[[setting:themehovercolor]]";
-      &:before {
-        color: inherit;
-      }
-      a {
-        color: inherit;
-      }
-    }
-    &.emptybranch {
-      &:before {
-        color: ~"[[setting:themeiconcolor]]";
-      }
-      &:hover, &:focus {
-        &:before {
-          color: ~"[[setting:themehovercolor]]";
+    &.leaf a {
+        > .@{fa-css-prefix} {
+            color: ~"[[setting:themeiconcolor]]";
         }
-      }
+        &:hover, &:focus {
+            color: ~"[[setting:themehovercolor]]";
+            > .@{fa-css-prefix} {
+                color: inherit;
+            }
+        }
     }
-  }
+    &.branch {
+        color: ~"[[setting:themeurlcolor]]";
+        &:before {
+            color: ~"[[setting:themeiconcolor]]";
+        }
+        &:hover, &:focus {
+            color: ~"[[setting:themehovercolor]]";
+            &:before {
+                color: inherit;
+            }
+            a {
+                color: inherit;
+            }
+        }
+        &.emptybranch {
+            &:before {
+                color: ~"[[setting:themeiconcolor]]";
+            }
+            &:hover, &:focus {
+                &:before {
+                    color: ~"[[setting:themehovercolor]]";
+                }
+            }
+        }
+    }
 }
 
 .collapsed .tree_item.branch:before {
-  color: ~"[[setting:themeiconcolor]]";
+    color: ~"[[setting:themeiconcolor]]";
 }
 
 .editing {
