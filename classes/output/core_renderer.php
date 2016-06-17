@@ -1502,20 +1502,21 @@ class core_renderer extends \core_renderer {
             'i/permissions' => 'key',
             'i/assignroles' => 'lock',
             't/assignroles' => 'lock',
-            't/cohort' => 'users',
-            't/delete' => 'times-circle',
-            't/edit' => 'cog',
-            't/hide' => 'eye',
-            't/show' => 'eye-slash',
-            't/up' => 'arrow-up',
-            't/down' => 'arrow-down',
-            't/copy' => 'copy',
             't/block_to_dock' => 'caret-square-o-left',
+            't/cohort' => 'users',
+            't/copy' => 'copy',
+            't/delete' => 'times-circle',
+            't/down' => 'arrow-down',
+            't/edit' => 'cog',
+            't/editstring' => 'pencil-square-o',
+            't/grades' => 'th-list',
+            't/hide' => 'eye',
+            't/preview' => 'search',
+            't/show' => 'eye-slash',
             't/sort' => 'sort',
             't/sort_asc' => 'sort-asc',
             't/sort_desc' => 'sort-desc',
-            't/grades' => 'th-list',
-            't/preview' => 'search'
+            't/up' => 'arrow-up'
         );
         if (array_key_exists($icon->pix, $icons)) {
             $pix = $icons[$icon->pix];

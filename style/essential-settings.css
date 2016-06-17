@@ -990,6 +990,221 @@ button.website:focus {
   }
 }
 /* @end */
+/* @group Tables */
+.path-grade-report .gradeparent tr:nth-of-type(even) .cell,
+.path-grade-report .gradeparent .floater .cell,
+.path-grade-report .gradeparent .avg {
+  color: [[setting:themestripetextcolour]];
+  background-color: [[setting:themestripebackgroundcolour]];
+}
+.path-grade-report .gradeparent tr:nth-of-type(even) .cell a,
+.path-grade-report .gradeparent .floater .cell a,
+.path-grade-report .gradeparent .avg a,
+.path-grade-report .gradeparent tr:nth-of-type(even) .cell a:hover,
+.path-grade-report .gradeparent .floater .cell a:hover,
+.path-grade-report .gradeparent .avg a:hover,
+.path-grade-report .gradeparent tr:nth-of-type(even) .cell a:focus,
+.path-grade-report .gradeparent .floater .cell a:focus,
+.path-grade-report .gradeparent .avg a:focus,
+.path-grade-report .gradeparent tr:nth-of-type(even) .cell a:visited,
+.path-grade-report .gradeparent .floater .cell a:visited,
+.path-grade-report .gradeparent .avg a:visited,
+.path-grade-report .gradeparent tr:nth-of-type(even) .cell .fa,
+.path-grade-report .gradeparent .floater .cell .fa,
+.path-grade-report .gradeparent .avg .fa {
+  color: inherit;
+}
+#page-grade-report-grader-index .gradeparent div.floater:first-of-type .cell:nth-child(even) {
+  color: [[setting:themestripetextcolour]];
+}
+#page-grade-report-grader-index .gradeparent div.floater:first-of-type .cell:nth-child(even) a,
+#page-grade-report-grader-index .gradeparent div.floater:first-of-type .cell:nth-child(even) a:hover,
+#page-grade-report-grader-index .gradeparent div.floater:first-of-type .cell:nth-child(even) a:focus,
+#page-grade-report-grader-index .gradeparent div.floater:first-of-type .cell:nth-child(even) a:visited {
+  color: [[setting:themestripetextcolour]];
+}
+#page-grade-report-grader-index .gradeparent div.floater:first-of-type .cell:nth-child(odd) a,
+#page-grade-report-grader-index .gradeparent div.floater:first-of-type .cell:nth-child(odd) a:visited {
+  color: [[setting:themeurlcolor]];
+}
+#page-grade-report-grader-index .gradeparent div.floater:first-of-type .cell:nth-child(odd) a:hover,
+#page-grade-report-grader-index .gradeparent div.floater:first-of-type .cell:nth-child(odd) a:focus {
+  color: [[setting:themehovercolor]];
+}
+.path-grade-report .gradeparent .avg.lastrow,
+#page-grade-report-grader-index .gradeparent div.floater.floating.lastrow .cell {
+  color: [[setting:themetextcolor]];
+}
+.path-grade-report-grader .gradeparent .user.cell .userpicture {
+  background-color: #fff;
+}
+table#explaincaps tbody > tr:nth-child(odd) > td,
+table#defineroletable tbody > tr:nth-child(odd) > td,
+table.grading-report tbody > tr:nth-child(odd) > td,
+table#listdirectories tbody > tr:nth-child(odd) > td,
+table.rolecaps tbody > tr:nth-child(odd) > td,
+table.userenrolment tbody > tr:nth-child(odd) > td,
+table#form tbody > tr:nth-child(odd) > td,
+form#movecourses table tbody > tr:nth-child(odd) > td,
+#page-admin-course-index .editcourse tbody > tr:nth-child(odd) > td,
+.forumheaderlist tbody > tr:nth-child(odd) > td,
+table.flexible tbody > tr:nth-child(odd) > td,
+.generaltable tbody > tr:nth-child(odd) > td,
+table#explaincaps tbody > tr:nth-child(odd) > th,
+table#defineroletable tbody > tr:nth-child(odd) > th,
+table.grading-report tbody > tr:nth-child(odd) > th,
+table#listdirectories tbody > tr:nth-child(odd) > th,
+table.rolecaps tbody > tr:nth-child(odd) > th,
+table.userenrolment tbody > tr:nth-child(odd) > th,
+table#form tbody > tr:nth-child(odd) > th,
+form#movecourses table tbody > tr:nth-child(odd) > th,
+#page-admin-course-index .editcourse tbody > tr:nth-child(odd) > th,
+.forumheaderlist tbody > tr:nth-child(odd) > th,
+table.flexible tbody > tr:nth-child(odd) > th,
+.generaltable tbody > tr:nth-child(odd) > th {
+  color: [[setting:themestripetextcolour]];
+  background-color: [[setting:themestripebackgroundcolour]];
+}
+table#explaincaps tbody > tr:nth-child(odd) > td a,
+table#defineroletable tbody > tr:nth-child(odd) > td a,
+table.grading-report tbody > tr:nth-child(odd) > td a,
+table#listdirectories tbody > tr:nth-child(odd) > td a,
+table.rolecaps tbody > tr:nth-child(odd) > td a,
+table.userenrolment tbody > tr:nth-child(odd) > td a,
+table#form tbody > tr:nth-child(odd) > td a,
+form#movecourses table tbody > tr:nth-child(odd) > td a,
+#page-admin-course-index .editcourse tbody > tr:nth-child(odd) > td a,
+.forumheaderlist tbody > tr:nth-child(odd) > td a,
+table.flexible tbody > tr:nth-child(odd) > td a,
+.generaltable tbody > tr:nth-child(odd) > td a,
+table#explaincaps tbody > tr:nth-child(odd) > th a,
+table#defineroletable tbody > tr:nth-child(odd) > th a,
+table.grading-report tbody > tr:nth-child(odd) > th a,
+table#listdirectories tbody > tr:nth-child(odd) > th a,
+table.rolecaps tbody > tr:nth-child(odd) > th a,
+table.userenrolment tbody > tr:nth-child(odd) > th a,
+table#form tbody > tr:nth-child(odd) > th a,
+form#movecourses table tbody > tr:nth-child(odd) > th a,
+#page-admin-course-index .editcourse tbody > tr:nth-child(odd) > th a,
+.forumheaderlist tbody > tr:nth-child(odd) > th a,
+table.flexible tbody > tr:nth-child(odd) > th a,
+.generaltable tbody > tr:nth-child(odd) > th a,
+table#explaincaps tbody > tr:nth-child(odd) > td a:hover,
+table#defineroletable tbody > tr:nth-child(odd) > td a:hover,
+table.grading-report tbody > tr:nth-child(odd) > td a:hover,
+table#listdirectories tbody > tr:nth-child(odd) > td a:hover,
+table.rolecaps tbody > tr:nth-child(odd) > td a:hover,
+table.userenrolment tbody > tr:nth-child(odd) > td a:hover,
+table#form tbody > tr:nth-child(odd) > td a:hover,
+form#movecourses table tbody > tr:nth-child(odd) > td a:hover,
+#page-admin-course-index .editcourse tbody > tr:nth-child(odd) > td a:hover,
+.forumheaderlist tbody > tr:nth-child(odd) > td a:hover,
+table.flexible tbody > tr:nth-child(odd) > td a:hover,
+.generaltable tbody > tr:nth-child(odd) > td a:hover,
+table#explaincaps tbody > tr:nth-child(odd) > th a:hover,
+table#defineroletable tbody > tr:nth-child(odd) > th a:hover,
+table.grading-report tbody > tr:nth-child(odd) > th a:hover,
+table#listdirectories tbody > tr:nth-child(odd) > th a:hover,
+table.rolecaps tbody > tr:nth-child(odd) > th a:hover,
+table.userenrolment tbody > tr:nth-child(odd) > th a:hover,
+table#form tbody > tr:nth-child(odd) > th a:hover,
+form#movecourses table tbody > tr:nth-child(odd) > th a:hover,
+#page-admin-course-index .editcourse tbody > tr:nth-child(odd) > th a:hover,
+.forumheaderlist tbody > tr:nth-child(odd) > th a:hover,
+table.flexible tbody > tr:nth-child(odd) > th a:hover,
+.generaltable tbody > tr:nth-child(odd) > th a:hover,
+table#explaincaps tbody > tr:nth-child(odd) > td a:focus,
+table#defineroletable tbody > tr:nth-child(odd) > td a:focus,
+table.grading-report tbody > tr:nth-child(odd) > td a:focus,
+table#listdirectories tbody > tr:nth-child(odd) > td a:focus,
+table.rolecaps tbody > tr:nth-child(odd) > td a:focus,
+table.userenrolment tbody > tr:nth-child(odd) > td a:focus,
+table#form tbody > tr:nth-child(odd) > td a:focus,
+form#movecourses table tbody > tr:nth-child(odd) > td a:focus,
+#page-admin-course-index .editcourse tbody > tr:nth-child(odd) > td a:focus,
+.forumheaderlist tbody > tr:nth-child(odd) > td a:focus,
+table.flexible tbody > tr:nth-child(odd) > td a:focus,
+.generaltable tbody > tr:nth-child(odd) > td a:focus,
+table#explaincaps tbody > tr:nth-child(odd) > th a:focus,
+table#defineroletable tbody > tr:nth-child(odd) > th a:focus,
+table.grading-report tbody > tr:nth-child(odd) > th a:focus,
+table#listdirectories tbody > tr:nth-child(odd) > th a:focus,
+table.rolecaps tbody > tr:nth-child(odd) > th a:focus,
+table.userenrolment tbody > tr:nth-child(odd) > th a:focus,
+table#form tbody > tr:nth-child(odd) > th a:focus,
+form#movecourses table tbody > tr:nth-child(odd) > th a:focus,
+#page-admin-course-index .editcourse tbody > tr:nth-child(odd) > th a:focus,
+.forumheaderlist tbody > tr:nth-child(odd) > th a:focus,
+table.flexible tbody > tr:nth-child(odd) > th a:focus,
+.generaltable tbody > tr:nth-child(odd) > th a:focus,
+table#explaincaps tbody > tr:nth-child(odd) > td a:visited,
+table#defineroletable tbody > tr:nth-child(odd) > td a:visited,
+table.grading-report tbody > tr:nth-child(odd) > td a:visited,
+table#listdirectories tbody > tr:nth-child(odd) > td a:visited,
+table.rolecaps tbody > tr:nth-child(odd) > td a:visited,
+table.userenrolment tbody > tr:nth-child(odd) > td a:visited,
+table#form tbody > tr:nth-child(odd) > td a:visited,
+form#movecourses table tbody > tr:nth-child(odd) > td a:visited,
+#page-admin-course-index .editcourse tbody > tr:nth-child(odd) > td a:visited,
+.forumheaderlist tbody > tr:nth-child(odd) > td a:visited,
+table.flexible tbody > tr:nth-child(odd) > td a:visited,
+.generaltable tbody > tr:nth-child(odd) > td a:visited,
+table#explaincaps tbody > tr:nth-child(odd) > th a:visited,
+table#defineroletable tbody > tr:nth-child(odd) > th a:visited,
+table.grading-report tbody > tr:nth-child(odd) > th a:visited,
+table#listdirectories tbody > tr:nth-child(odd) > th a:visited,
+table.rolecaps tbody > tr:nth-child(odd) > th a:visited,
+table.userenrolment tbody > tr:nth-child(odd) > th a:visited,
+table#form tbody > tr:nth-child(odd) > th a:visited,
+form#movecourses table tbody > tr:nth-child(odd) > th a:visited,
+#page-admin-course-index .editcourse tbody > tr:nth-child(odd) > th a:visited,
+.forumheaderlist tbody > tr:nth-child(odd) > th a:visited,
+table.flexible tbody > tr:nth-child(odd) > th a:visited,
+.generaltable tbody > tr:nth-child(odd) > th a:visited {
+  color: inherit;
+}
+#page-admin-plugins #plugins-control-panel tbody > tr:nth-child(odd) > td.displayname .plugindir,
+#page-admin-plugins #plugins-control-panel tbody > tr:hover > td.displayname .plugindir,
+#page-admin-plugins #plugins-control-panel tbody > tr:nth-child(odd) > td.notes .requiredby,
+#page-admin-plugins #plugins-control-panel tbody > tr:hover > td.notes .requiredby,
+#page-admin-plugins #plugins-control-panel tbody > tr:nth-child(odd) > td.pluginname .componentname,
+#page-admin-plugins #plugins-control-panel tbody > tr:hover > td.pluginname .componentname,
+#page-admin-plugins #plugins-control-panel tbody > tr:nth-child(odd) > td.requires .requires-ok,
+#page-admin-plugins #plugins-control-panel tbody > tr:hover > td.requires .requires-ok,
+#page-admin-plugins #plugins-control-panel tbody > tr:nth-child(odd) > td.settings a,
+#page-admin-plugins #plugins-control-panel tbody > tr:hover > td.settings a,
+#page-admin-plugins #plugins-control-panel tbody > tr:nth-child(odd) > td.uninstall a,
+#page-admin-plugins #plugins-control-panel tbody > tr:hover > td.uninstall a,
+#page-admin-plugins #plugins-control-panel tbody > tr:nth-child(odd) > td.version .versionnumber,
+#page-admin-plugins #plugins-control-panel tbody > tr:hover > td.version .versionnumber {
+  color: [[setting:themestripetextcolour]];
+}
+#categoryquestions > tbody > tr:nth-of-type(even) {
+  color: [[setting:themestripetextcolour]];
+  background-color: [[setting:themestripebackgroundcolour]];
+}
+.user-enroller-panel .uep-search-results .users tbody tr:hover > td,
+.user-enroller-panel .uep-search-results .cohorts tbody tr:hover > td,
+table.grading-report tbody tr:hover > td,
+.forumheaderlist tbody tr:hover > td,
+.generaltable tbody tr:hover > td,
+table.flexible tbody tr:hover > td,
+.category_subcategories tbody tr:hover > td,
+table#modules tbody tr:hover > td,
+table#permissions tbody tr:hover > td,
+.user-enroller-panel .uep-search-results .users tbody tr:hover > th,
+.user-enroller-panel .uep-search-results .cohorts tbody tr:hover > th,
+table.grading-report tbody tr:hover > th,
+.forumheaderlist tbody tr:hover > th,
+.generaltable tbody tr:hover > th,
+table.flexible tbody tr:hover > th,
+.category_subcategories tbody tr:hover > th,
+table#modules tbody tr:hover > th,
+table#permissions tbody tr:hover > th {
+  color: [[setting:themestripetextcolour]];
+  background-color: [[setting:themestripebackgroundcolour]];
+}
+/* @end */
 /* @group Settings */
 /* @group Core */
 *,

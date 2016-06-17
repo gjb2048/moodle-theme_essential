@@ -19903,7 +19903,6 @@ aside.footer-edit .block {
 }
 .breadcrumb-nav ul.breadcrumb.style1 li .dimmed_text {
   font-style: italic;
-  color: #595959;
 }
 .breadcrumb-nav ul.breadcrumb.style1 li span {
   margin-right: 4px;
@@ -19969,7 +19968,6 @@ aside.footer-edit .block {
 }
 .breadcrumb-nav ul.breadcrumb.style1 li:hover .dimmed_text {
   text-decoration: none;
-  color: #595959;
 }
 .breadcrumb-nav ul.breadcrumb.style2 {
   width: 100%;

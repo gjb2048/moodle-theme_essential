@@ -1,5 +1,8 @@
 The "Essential" Moodle Theme
 ============================
+![image1](pix/screenshot.jpg "Essential Screenshot")
+
+[![Build Status](https://travis-ci.org/gjb2048/moodle-theme_essential.svg?branch=master_bsb)](https://travis-ci.org/gjb2048/moodle-theme_essential)
 
 With 2.5 now released Julian thought it time to take the opportunity to build a new theme that would push the new theme engine
 to it's limits a bit. With that in mind he introduced the new "Essential" theme.  Now Julian has left us for Canvassian
@@ -89,27 +92,9 @@ iZone
 Anis Jradah
 Ute Hlasek, https://hlasek-it.de/moodle
 
-Essential for Moodle 3.0 kindly sponsored by
+Essential for Moodle 3.1 kindly sponsored by
 --------------------------------------------
-Leila Hiret
-Vilar da Camara Neto
-Kees Koopman
-Matej Topolovec
-Mihai Bojonca
-V. Y. S. Cavalcanti
-Christian Kleinhanss
-Nadav Kavalerchik
-Francisco Gomez Gonzalez
-Lazar Ivanov
-Duval Arnaud
-Kai ner Maa Pitanta
-Gregory Reinert
-M van der Niet
-Floyd Saner
-Andreas Schenkel
-Gemma Lesterhuis
-Roy Bentley
-Duane Cox
+TBL
 
 Customisation
 =============
@@ -119,11 +104,11 @@ or create a child theme then I offer competitive rates.  Please contact me via '
 
 Required version of Moodle
 ==========================
-This version works with Moodle version 2015111600.00 3.0 (Build: 20151116) and above within the 3.0 branch until the
+This version works with Moodle 3.1 version 2016052300.00 (Build: 20160523) and above within the 3.1 branch until the
 next release.
 
 Please ensure that your hardware and software complies with 'Requirements' in 'Installing Moodle' on
-'docs.moodle.org/30/en/Installing_Moodle'.
+'docs.moodle.org/31/en/Installing_Moodle'.
 
 Installation
 ============
