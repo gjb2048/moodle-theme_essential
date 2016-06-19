@@ -3,6 +3,7 @@ New in 3.1.0.2
 - FIX: Issue #674: M31 beta: Breadcrumbs should be right aligned and flipped in RTL mode.
 - FIX: Issue #675: M31 beta: Left align "return to course" button, in RTL mode.
 - FIX: Issue #676: M31 beta: Tree nodes in Navigation block have no right margin, in RTL mode.
+- FIX: Issue #677: M31b: Tree nodes on Navigation block have redundant 21px right padding, in RTL mode.
 
 New in 3.1.0.1
 ==============
