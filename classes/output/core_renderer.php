@@ -1274,10 +1274,8 @@ class core_renderer extends \core_renderer {
                 $branchurl = 'mailto:' . \theme_essential\toolbox::get_setting('helplink').'?cc='.$USER->email;
             } else if ($CFG->supportemail && filter_var($CFG->supportemail, FILTER_VALIDATE_EMAIL)) {
                 $branchurl = 'mailto:'.$CFG->supportemail.'?cc='.$USER->email;
-            } else {
-                if (is_siteadmin()) {
-                    $branchurl = preg_replace("(https?:)", "", $CFG->wwwroot).'/admin/settings.php?section=theme_essential_header';
-                }
+            } else if (is_siteadmin()) {
+                $branchurl = preg_replace("(https?:)", "", $CFG->wwwroot).'/admin/settings.php?section=theme_essential_header';
                 $branchlabel = '<em>'.$this->getfontawesomemarkup('exclamation-triangle', array('red')).
                     get_string('invalidemail').'</em>';
             }
@@ -1293,16 +1291,17 @@ class core_renderer extends \core_renderer {
                 (filter_var($CFG->supportpage, FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED))) {
                 $branchurl = $CFG->supportpage;
                 $target = '_blank';
-            } else {
-                if (is_siteadmin()) {
-                    $branchurl = preg_replace("(https?:)", "", $CFG->wwwroot).'/admin/settings.php?section=theme_essential_header';
-                }
+            } else if (is_siteadmin()) {
+                $branchurl = preg_replace("(https?:)", "", $CFG->wwwroot).'/admin/settings.php?section=theme_essential_header';
                 $branchlabel = '<em>'.$this->getfontawesomemarkup('exclamation-triangle', array('red')).
                     get_string('invalidurl', 'error').'</em>';
             }
 
         }
 
+        if (empty($branchurl)) {
+            return false;
+        }
         return html_writer::tag('li', html_writer::link($branchurl, $branchlabel, array('target' => $target)));
     }
 
