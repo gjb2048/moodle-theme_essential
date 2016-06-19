@@ -212,13 +212,21 @@ class core_renderer extends \core_renderer {
             if (!$called) {
                 $markup = html_writer::start_tag('div', array('class' => 'row-fluid'));
 
-                $markup .= html_writer::start_tag('div', array('class' => 'span8'));
-                $markup .= $heading;
-                $markup .= html_writer::end_tag('div');
+                if ($this->left) {
+                    $markup .= html_writer::start_tag('div', array('class' => 'span8'));
+                    $markup .= $heading;
+                    $markup .= html_writer::end_tag('div');
+                }
 
                 $markup .= html_writer::start_tag('div', array('class' => 'span4 heading-rts'));
                 $markup .= $this->return_to_section();
                 $markup .= html_writer::end_tag('div');
+
+                if (!$this->left) {
+                    $markup .= html_writer::start_tag('div', array('class' => 'span8'));
+                    $markup .= $heading;
+                    $markup .= html_writer::end_tag('div');
+                }
 
                 $markup .= html_writer::end_tag('div');
                 $called = true;

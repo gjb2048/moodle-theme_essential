@@ -1,6 +1,7 @@
 New in 3.1.0.2
 ==============
 - FIX: Issue #674: M31 beta: Breadcrumbs should be right aligned and flipped in RTL mode.
+- FIX: Issue #675: M31 beta: Left align "return to course" button, in RTL mode.
 
 New in 3.1.0.1
 ==============
