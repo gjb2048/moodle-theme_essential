@@ -1,6 +1,7 @@
 New in 3.0.1.6
 ==============
 - FIX: Issue #679: Guest user menu show missing support email error.
+- FIX: User menu setting header.
 
 New in 3.0.1.5
 ==============

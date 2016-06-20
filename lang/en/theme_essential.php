@@ -181,7 +181,7 @@ $string['contactinfodesc'] = 'Enter your contact information';
 $string['favicon'] = 'Custom favicon';
 $string['favicondesc'] = 'Upload your own favicon.  It should be an .ico file.';
 
-// Custom Menu.
+// Custom Menus.
 $string['mycoursesinfo'] = 'Enrolled courses menu';
 $string['mycoursesinfodesc'] = 'Displays a dynamic list of enrolled courses to the user.';
 $string['displaymycourses'] = 'Display enrolled courses';
@@ -209,6 +209,8 @@ $string['helplink'] = 'Help link';
 $string['helplinkdesc'] = 'If you chose URL above fill in the complete URL to your help site (must include http:// or https://). If you chose Email address fill in your email address.';
 
 $string['few'] = 'A few ';
+$string['usermenu'] = 'User menu';
+$string['usermenudesc'] = 'The menu for the user.';
 $string['loggedinas'] = ' logged in as ';
 $string['loggedinfrom'] = 'Logged in from ';
 
