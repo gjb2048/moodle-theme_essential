@@ -33,8 +33,6 @@ $THEME->parents_exclude_sheets = array('bootstrapbase' => array('moodle', 'edito
 
 $THEME->sheets[] = 'essential';
 $THEME->sheets[] = 'bootstrap-pix';
-$THEME->sheets[] = 'moodle-pix';
-$THEME->sheets[] = 'essential-pix';
 $THEME->sheets[] = 'essential-settings';
 $THEME->sheets[] = 'fontawesome';
 

@@ -255,32 +255,6 @@ module.exports = function(grunt) { // jshint ignore:line
                 src: 'less/bootstrap-pix.less',
                 dest: 'style/bootstrap-pix.css'
             },
-            fontawesome_woff2_d: {
-                options: {
-                    compress: false,
-                    cleancss: false,
-                    paths: "./less",
-                    report: 'min',
-                    sourceMap: true,
-                    sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'style/fontawesome-woff2.treasure.map'
-                },
-                src: 'less/fontawesome-woff2.less',
-                dest: 'style/fontawesome-woff2.css'
-            },
-            fontawesome_no_woff2_d: {
-                options: {
-                    compress: false,
-                    cleancss: false,
-                    paths: "./less",
-                    report: 'min',
-                    sourceMap: true,
-                    sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'style/fontawesome-no-woff2.treasure.map'
-                },
-                src: 'less/fontawesome-no-woff2.less',
-                dest: 'style/fontawesome-no-woff2.css'
-            },
             fontawesome_d: {
                 options: {
                     compress: false,
@@ -359,7 +333,7 @@ module.exports = function(grunt) { // jshint ignore:line
                 files: [{
                     expand: true,
                     cwd: 'style',
-                    src: ['essential.css', 'essential-rtl.css', 'bootstrap-pix.css', 'essential-pix.css', 'essential-alternative.css', 'editor.css', 'fontawesome-woff2.css', 'fontawesome-no-woff2.css', 'fontawesome.css'], // jshint ignore:line
+                    src: ['essential.css', 'bootstrap-pix.css', 'essential-alternative.css', 'editor.css', 'fontawesome.css'], // jshint ignore:line
                     dest: 'style',
                     ext: '.css'
                 }]
