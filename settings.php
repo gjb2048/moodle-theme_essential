@@ -902,6 +902,13 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 
+    // User menu settings.
+    $name = 'theme_essential/usermenu';
+    $heading = get_string('usermenu', 'theme_essential');
+    $information = get_string('usermenudesc', 'theme_essential');
+    $setting = new admin_setting_heading($name, $heading, $information);
+    $essentialsettingsheader->add($setting);
+
     // Helplink type.
     $name = 'theme_essential/helplinktype';
     $title = get_string('helplinktype', 'theme_essential');
