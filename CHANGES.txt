@@ -2,6 +2,7 @@ New in 3.0.1.6
 ==============
 - FIX: Issue #679: Guest user menu show missing support email error.
 - FIX: User menu setting header.
+- NEW: My courses options.  Thanks to "Linnaeus University" for funding this enhancement.
 
 New in 3.0.1.5
 ==============

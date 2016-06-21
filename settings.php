@@ -555,6 +555,16 @@ if ($ADMIN->fulltree) {
         $setting->set_updatedcallback('theme_reset_all_caches');
         $essentialsettingscolour->add($setting);
 
+        // Enrolled and not accessed course background colour.
+        $name = 'theme_essential/alternativethememycoursesorderenrolbackcolour'.$alternativethemenumber;
+        $title = get_string('alternativethememycoursesorderenrolbackcolour', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethememycoursesorderenrolbackcolourdesc', 'theme_essential', $alternativethemenumber);
+        $default = '#a3ebff';
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $essentialsettingscolour->add($setting);
+
         // Footer background colour setting.
         $name = 'theme_essential/alternativethemefootercolor' . $alternativethemenumber;
         $title = get_string('alternativethemefootercolor', 'theme_essential', $alternativethemenumber);
@@ -847,6 +857,45 @@ if ($ADMIN->fulltree) {
     // No need for callback as CSS not changed.
     $essentialsettingsheader->add($setting);
 
+    // My courses order.
+    $name = 'theme_essential/mycoursesorder';
+    $title = get_string('mycoursesorder', 'theme_essential');
+    $description = get_string('mycoursesorderdesc', 'theme_essential');
+    $default = 1;
+    $choices = array(
+        1 => get_string('mycoursesordersort', 'theme_essential'),
+        2 => get_string('mycoursesorderid', 'theme_essential'),
+        3 => get_string('mycoursesorderlast', 'theme_essential')
+    );
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
+    // No need for callback as CSS not changed.
+    $essentialsettingsheader->add($setting);
+
+    // Course ID order.
+    $name = 'theme_essential/mycoursesorderidorder';
+    $title = get_string('mycoursesorderidorder', 'theme_essential');
+    $description = get_string('mycoursesorderidorderdesc', 'theme_essential');
+    $default = 1;
+    $choices = array(
+        1 => get_string('mycoursesorderidasc', 'theme_essential'),
+        2 => get_string('mycoursesorderiddes', 'theme_essential')
+    );
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
+    // No need for callback as CSS not changed.
+    $essentialsettingsheader->add($setting);
+
+    // Max courses.
+    $name = 'theme_essential/mycoursesmax';
+    $title = get_string('mycoursesmax', 'theme_essential');
+    $default = 0;
+    $lower = 0;
+    $upper = 20;
+    $description = get_string('mycoursesmaxdesc', 'theme_essential',
+        array('lower' => $lower, 'upper' => $upper));
+    $setting = new essential_admin_setting_configinteger($name, $title, $description, $default, $lower, $upper);
+    // No need for callback as CSS not changed.
+    $essentialsettingsheader->add($setting);
+
     // Set terminology for dropdown course list.
     $name = 'theme_essential/mycoursetitle';
     $title = get_string('mycoursetitle', 'theme_essential');
@@ -859,6 +908,16 @@ if ($ADMIN->fulltree) {
         'module' => get_string('mymodules', 'theme_essential')
     );
     $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingsheader->add($setting);
+
+    // Enrolled and not accessed course background colour.
+    $name = 'theme_essential/mycoursesorderenrolbackcolour';
+    $title = get_string('mycoursesorderenrolbackcolour', 'theme_essential');
+    $description = get_string('mycoursesorderenrolbackcolourdesc', 'theme_essential');
+    $default = '#a3ebff';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 

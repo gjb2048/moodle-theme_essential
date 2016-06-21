@@ -60,6 +60,12 @@
       }
     }
 
+    #custom_menu_courses {
+      .dropdown-menu > li > a > span.onlyenrolled {
+        background-color: ~"[[setting:mycoursesorderenrolbackcolour]]";
+      }
+    }
+
     .nav > li.dropdown ul.dropdown-menu > li {
       > a {
         color: ~"[[setting:themeurlcolor]]";
@@ -83,6 +89,19 @@
         background-color: ~"[[setting:themeurlcolor]]";
         .@{fa-css-prefix} {
           color: inherit;
+        }
+      }
+    }
+
+    #custom_menu_courses {
+      .nav > li.dropdown ul.dropdown-menu > li {
+        > a {
+          &:hover > span {
+            background-color: ~"[[setting:themeurlcolor]]";
+          }
+          &:focus > span, &.open > span {
+            background-color: ~"[[setting:themeurlcolor]]";
+          }
         }
       }
     }

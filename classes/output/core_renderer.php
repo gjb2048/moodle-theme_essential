@@ -331,10 +331,10 @@ class core_renderer extends \core_renderer {
     }
 
     /**
-     * Returns course-specific information to be output immediately below content on any course page
+     * Returns course-specific information to be output immediately below content on any course page.
      * (for the current course)
      *
-     * @param bool $onlyifnotcalledbefore output content only if it has not been output before
+     * @param bool $onlyifnotcalledbefore output content only if it has not been output before.
      * @return string
      */
     public function course_content_footer($onlyifnotcalledbefore = false) {
@@ -529,6 +529,32 @@ class core_renderer extends \core_renderer {
         return $this->render_custom_menu($langmenu);
     }
 
+    protected static function timeaccesscompare($a, $b) {
+        // timeaccess is lastaccess entry and timestart an enrol entry.
+        if ((!empty($a->timeaccess)) && (!empty($b->timeaccess))) {
+            // Both last access.
+            if ($a->timeaccess == $b->timeaccess) {
+                return 0;
+            }
+            return ($a->timeaccess > $b->timeaccess) ? -1 : 1;
+        } else if ((!empty($a->timestart)) && (!empty($b->timestart))) {
+            // Both enrol.
+            if ($a->timestart == $b->timestart) {
+                return 0;
+            }
+            return ($a->timestart > $b->timestart) ? -1 : 1;
+        }
+
+        // Must be comparing an enrol with a last access.
+        // -1 is to say that 'a' comes before 'b'.
+        if (!empty($a->timestart)) {
+            // 'a' is the enrol entry.
+            return -1;
+        }
+        // 'b' must be the enrol entry.
+        return 1;
+    }
+
     /**
      * Outputs the courses menu
      * @return custom_menu object
@@ -540,15 +566,25 @@ class core_renderer extends \core_renderer {
 
         $hasdisplaymycourses = \theme_essential\toolbox::get_setting('displaymycourses');
         if (isloggedin() && !isguestuser() && $hasdisplaymycourses) {
+            $mycoursesorder = \theme_essential\toolbox::get_setting('mycoursesorder');
+            if (!$mycoursesorder) {
+                $mycoursesorder = 1;
+            }
+
+            $lateststring = '';
+            if ($mycoursesorder == 3) {
+                $lateststring = 'latest';
+            }
+
             $mycoursetitle = \theme_essential\toolbox::get_setting('mycoursetitle');
             if ($mycoursetitle == 'module') {
-                $branchtitle = get_string('mymodules', 'theme_essential');
+                $branchtitle = get_string('my'.$lateststring.'modules', 'theme_essential');
             } else if ($mycoursetitle == 'unit') {
-                $branchtitle = get_string('myunits', 'theme_essential');
+                $branchtitle = get_string('my'.$lateststring.'units', 'theme_essential');
             } else if ($mycoursetitle == 'class') {
-                $branchtitle = get_string('myclasses', 'theme_essential');
+                $branchtitle = get_string('my'.$lateststring.'classes', 'theme_essential');
             } else {
-                $branchtitle = get_string('mycourses', 'theme_essential');
+                $branchtitle = get_string('my'.$lateststring.'courses', 'theme_essential');
             }
             $branchlabel = $this->getfontawesomemarkup('briefcase').$branchtitle;
             $branchurl = new moodle_url('');
@@ -557,36 +593,117 @@ class core_renderer extends \core_renderer {
             $branch = $coursemenu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 
             $hometext = get_string('myhome');
-            $homelabel = html_writer::tag('span', '', array('class' => 'fa fa-home')).html_writer::tag('span', ' '.$hometext);
+            $homelabel = html_writer::tag('span', $this->getfontawesomemarkup('home').html_writer::tag('span', ' '.$hometext));
             $branch->add($homelabel, new moodle_url('/my/index.php'), $hometext);
-
-            // Get 'My courses' sort preference from admin config.
-            if (!$sortorder = $CFG->navsortmycoursessort) {
-                $sortorder = 'sortorder';
-            }
 
             // Retrieve courses and add them to the menu when they are visible.
             $numcourses = 0;
             $hasdisplayhiddenmycourses = \theme_essential\toolbox::get_setting('displayhiddenmycourses');
-            if ($courses = enrol_get_my_courses(null, $sortorder . ' ASC')) {
+
+            $courses = array();
+            if (($mycoursesorder == 1) || ($mycoursesorder == 2)) {
+                $direction = 'ASC';
+                if ($mycoursesorder == 1) {
+                    // Get 'My courses' sort preference from admin config.
+                    if (!$sortorder = $CFG->navsortmycoursessort) {
+                        $sortorder = 'sortorder';
+                    }
+                } else if ($mycoursesorder == 2) {
+                    $sortorder = 'id';
+                    $mycoursesorderidorder = \theme_essential\toolbox::get_setting('mycoursesorderidorder');
+                    if ($mycoursesorderidorder == 2) {
+                        $direction = 'DESC';
+                    }
+                }
+                $courses = enrol_get_my_courses(null, $sortorder.' '.$direction);
+            } else if ($mycoursesorder == 3) {
+                /*
+                 * To test:
+                 * 1. As an administrator...
+                 * 2. Create a test user to be a student.
+                 * 3. Create a course with a start time before the current and enrol the student.
+                 * 4. Log in as the student and access the course.
+                 * 5. Log back in as an administrator and create a second course and enrol the student.
+                 * 6. Log back in as the student and navigate to the dashboard.
+                 * 7. Confirm that the second course is listed before the first on the menu.
+                 */
+                // Get the list of enrolled courses as before but as for us, ignore 'navsortmycoursessort'.
+                $courses = enrol_get_my_courses(null, 'sortorder ASC');
+                if ($courses) {
+                    // We have something to work with.  Get the last accessed information for the user and populate.
+                    global $DB, $USER;
+                    $lastaccess = $DB->get_records('user_lastaccess', array('userid' => $USER->id), '', 'courseid, timeaccess');
+                    if ($lastaccess) {
+                        foreach ($courses as $course) {
+                            if (!empty($lastaccess[$course->id])) {
+                                $course->timeaccess = $lastaccess[$course->id]->timeaccess;
+                            }
+                        }
+                    }
+                    // Determine if we need to query the enrolment and user enrolment tables.
+                    $enrolquery = false;
+                    foreach ($courses as $course) {
+                        if (empty($course->timeaccess)) {
+                            $enrolquery = true;
+                            break;
+                        }
+                    }
+                    if ($enrolquery) {
+                        // We do.
+                        $params = array('userid' => $USER->id);
+                        $sql = "SELECT e.courseid, ue.timestart
+                            FROM {enrol} e
+                            JOIN {user_enrolments} ue ON (ue.enrolid = e.id AND ue.userid = :userid)";
+                        $enrolments = $DB->get_records_sql($sql, $params, 0, 0);
+                        if ($enrolments) {
+                            // We don't need to worry about timeend etc. as our course list will be valid for the user from above.
+                            foreach ($courses as $course) {
+                                if (empty($course->timeaccess)) {
+                                    $course->timestart = $enrolments[$course->id]->timestart;
+                                }
+                            }
+                        }
+                    }
+                    uasort($courses, array($this, 'timeaccesscompare'));
+                }
+            }
+
+            if ($courses) {
+                $mycoursesmax = \theme_essential\toolbox::get_setting('mycoursesmax');
+                if (!$mycoursesmax) {
+                    $mycoursesmax = PHP_INT_MAX;
+                }
                 foreach ($courses as $course) {
                     if ($course->visible) {
-                        $branch->add('<span class="fa fa-graduation-cap"></span>'.format_string($course->fullname),
-                            new moodle_url('/course/view.php?id=' . $course->id), format_string($course->shortname));
+                        $branchtitle = format_string($course->shortname);
+                        $branchurl = new moodle_url('/course/view.php', array('id' => $course->id));
+                        $enrolledclass = '';
+                        if (!empty($course->timestart)) {
+                            $enrolledclass .= ' class="onlyenrolled"';
+                        }
+                        $branchlabel = '<span'.$enrolledclass.'>'.$this->getfontawesomemarkup('graduation-cap').format_string($course->fullname).'</span>';
+                        $branch->add($branchlabel, $branchurl, $branchtitle);
                         $numcourses += 1;
                     } else if (has_capability('moodle/course:viewhiddencourses', context_course::instance($course->id)) && $hasdisplayhiddenmycourses) {
                         $branchtitle = format_string($course->shortname);
-                        $branchlabel = '<span class="dimmed_text">'.$this->getfontawesomemarkup('eye-slash').
-                            format_string($course->fullname) . '</span>';
+                        $enrolledclass = '';
+                        if (!empty($course->timestart)) {
+                            $enrolledclass .= ' onlyenrolled';
+                        }
+                        $branchlabel = '<span class="dimmed_text'.$enrolledclass.'">'.$this->getfontawesomemarkup('eye-slash').
+                            format_string($course->fullname).'</span>';
                         $branchurl = new moodle_url('/course/view.php', array('id' => $course->id));
                         $branch->add($branchlabel, $branchurl, $branchtitle);
                         $numcourses += 1;
+                    }
+                    if ($numcourses == $mycoursesmax) {
+                        break;
                     }
                 }
             }
             if ($numcourses == 0 || empty($courses)) {
                 $noenrolments = get_string('noenrolments', 'theme_essential');
-                $branch->add('<em>' . $noenrolments . '</em>', new moodle_url('#'), $noenrolments);
+                $branch->add('<em>'.$noenrolments.'</em>', new moodle_url('#'), $noenrolments);
             }
         }
         return $this->render_custom_menu($coursemenu);
