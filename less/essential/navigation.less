@@ -107,6 +107,18 @@
             margin: 0;
         }
 
+        #custom_menu_courses {
+            .dropdown-menu > li > a,
+            .dropdown-submenu > a {
+                margin: 0;
+                padding: 0;
+                > span {
+                    display: block;
+                    padding: 3px 25px 3px 15px;
+                }
+            }
+        }
+
         .dropdown-menu > li > a:hover .@{fa-css-prefix} {
             color: @dropdownLinkColorHover;
         }

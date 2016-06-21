@@ -181,20 +181,38 @@ $string['contactinfodesc'] = 'Enter your contact information';
 $string['favicon'] = 'Custom favicon';
 $string['favicondesc'] = 'Upload your own favicon.  It should be an .ico file.';
 
-// Custom Menus.
-$string['mycoursesinfo'] = 'Enrolled courses menu';
+// Courses menu.
+$string['mycoursesinfo'] = 'Courses menu';
 $string['mycoursesinfodesc'] = 'Displays a dynamic list of enrolled courses to the user.';
-$string['displaymycourses'] = 'Display enrolled courses';
-$string['displaymycoursesdesc'] = 'Display enrolled courses for users in the \'Custom Menu\'.';
+$string['displaymycourses'] = 'Display courses';
+$string['displaymycoursesdesc'] = 'Display enrolled courses for users on the \'Navbar\'.';
 $string['displayhiddenmycourses'] = 'Display hidden courses';
-$string['displayhiddenmycoursesdesc'] = 'Display hidden courses for users in the \'Custom Menu\' if they have permission to view hidden courses';
+$string['displayhiddenmycoursesdesc'] = 'Display hidden courses for users in the \'Courses menu\' if they have permission to view hidden courses';
+
+$string['mycoursesorder'] = 'Courses order';
+$string['mycoursesorderdesc'] = 'State how the courses should be ordered.  The course sort order can be is set by the core navigation setting \'navsortmycoursessort\'.';
+$string['mycoursesordersort'] = 'Course sort order';
+$string['mycoursesorderid'] = 'Course ID';
+$string['mycoursesorderlast'] = 'Last accessed time or enrolment start time if never accessed';
+$string['mycoursesorderidorder'] = 'Course ID order';
+$string['mycoursesorderidorderdesc'] = 'Course ID order for when \'Course ID\' is set as the \'Course sort order\'.';
+$string['mycoursesorderidasc'] = 'Ascending';
+$string['mycoursesorderiddes'] = 'Descending';
+$string['mycoursesmax'] = 'Max courses';
+$string['mycoursesmaxdesc'] = 'State up to how many courses should be listed between {$a->lower} and {$a->upper} where \'{$a->lower}\' represents all.';
+$string['mycoursesorderenrolbackcolour'] = 'Enrolled and not accessed course background colour';
+$string['mycoursesorderenrolbackcolourdesc'] = 'The background colour for enrolled but not accessed courses.  For ehen \'mycoursesorder\' is set to \'Last accessed...\'.';
 
 $string['mycoursetitle'] = 'Terminology';
-$string['mycoursetitledesc'] = 'Change the terminology for the "My Courses" link in the drop down menu';
+$string['mycoursetitledesc'] = 'Change the terminology for the "My courses" menu title.  When \'mycoursesorder\' is set to \'Last accessed...\' then the word \'latest\' will be added.';
 $string['mycourses'] = 'My courses';
+$string['mylatestcourses'] = 'My latest courses';
 $string['myunits'] = 'My units';
+$string['mylatestunits'] = 'My latest units';
 $string['mymodules'] = 'My modules';
+$string['mylatestmodules'] = 'My latest modules';
 $string['myclasses'] = 'My classes';
+$string['mylatestclasses'] = 'My latest classes';
 $string['allcourses'] = 'All courses';
 $string['allunits'] = 'All units';
 $string['allmodules'] = 'All modules';
@@ -203,6 +221,7 @@ $string['noenrolments'] = 'You have no current enrolments';
 $string['thiscourse'] = 'This course';
 $string['people'] = 'People';
 
+// User menu.
 $string['helplinktype'] = 'Enable help link in menu';
 $string['helplinktypedesc'] = 'Choose whether you want to enable a help option in the user menu, you can choose to either provide an URL that will be opened in a new window or an email address.';
 $string['helplink'] = 'Help link';
@@ -357,6 +376,9 @@ $string['alternativethemestripetextcolour'] = 'Alternative stripe text colour {$
 $string['alternativethemestripetextcolourdesc'] = 'Set the alternative {$a} text colour for stripes in tables.';
 $string['alternativethemestripebackgroundcolour'] = 'Alternative stripe background colour {$a}';
 $string['alternativethemestripebackgroundcolourdesc'] = 'Set the alternative {$a} background colour for stripes in tables.';
+
+$string['alternativethememycoursesorderenrolbackcolour'] = 'Alternative {$a} enrolled and not accessed course background colour';
+$string['alternativethememycoursesorderenrolbackcolourdesc'] = 'Set alternative {$a} background colour for enrolled but not accessed courses.  For ehen \'mycoursesorder\' is set to \'Last accessed...\'.';
 
 $string['alternativethemefootercolor'] = 'Footer background colour for the alternative theme colours {$a}';
 $string['alternativethemefootercolordesc'] = 'Set what colour the background of the Footer box should be for the alternative theme colours {$a}.';

@@ -223,6 +223,11 @@ function theme_essential_process_css($css, $theme) {
     $themestripebackgroundcolour = \theme_essential\toolbox::get_setting('themestripebackgroundcolour');
     $css = \theme_essential\toolbox::set_color($css, $themestripebackgroundcolour, '[[setting:themestripebackgroundcolour]]', '#ff9a34');
 
+    // Enrolled and not accessed course background colour.
+    $mycoursesorderenrolbackcolour = \theme_essential\toolbox::get_setting('mycoursesorderenrolbackcolour');
+    $css = \theme_essential\toolbox::set_color($css, $mycoursesorderenrolbackcolour,
+        '[[setting:mycoursesorderenrolbackcolour]]', '#a3ebff');
+
     // Set the footer colour.
     $footercolor = \theme_essential\toolbox::get_setting('footercolor');
     $css = \theme_essential\toolbox::set_color($css, $footercolor, '[[setting:footercolor]]', '#30add1', '0.95');
@@ -363,6 +368,11 @@ function theme_essential_process_css($css, $theme) {
 
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'stripebackgroundcolour' . $alternative,
                 \theme_essential\toolbox::get_setting('alternativethemestripebackgroundcolour' . $alternative), '#ff9a34');
+
+            $alternativethememycoursesorderenrolbackcolour = \theme_essential\toolbox::get_setting(
+                'alternativethememycoursesorderenrolbackcolour'.$alternative);
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'mycoursesorderenrolbackcolour'.$alternative,
+                $alternativethememycoursesorderenrolbackcolour, '#a3ebff');
 
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'footercolor' . $alternative,
                 \theme_essential\toolbox::get_setting('alternativethemefootercolor' . $alternative), '#30add1');
