@@ -877,6 +877,9 @@ button.website:focus {
 .navbar .navbar-inner .nav .dropdown-menu .dropdown-submenu:hover .dropdown-toggle:after {
   border-left-color: [[setting:themenavcolor]];
 }
+.navbar .navbar-inner #custom_menu_courses .dropdown-menu > li > a > span.onlyenrolled {
+  background-color: [[setting:mycoursesorderenrolbackcolour]];
+}
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a {
   color: [[setting:themeurlcolor]];
 }
@@ -902,6 +905,13 @@ button.website:focus {
 }
 .navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li.dropdown-submenu:hover > a .fa {
   color: inherit;
+}
+.navbar .navbar-inner #custom_menu_courses .nav > li.dropdown ul.dropdown-menu > li > a:hover > span {
+  background-color: [[setting:themeurlcolor]];
+}
+.navbar .navbar-inner #custom_menu_courses .nav > li.dropdown ul.dropdown-menu > li > a:focus > span,
+.navbar .navbar-inner #custom_menu_courses .nav > li.dropdown ul.dropdown-menu > li > a.open > span {
+  background-color: [[setting:themeurlcolor]];
 }
 .navbar .navbar-inner .nav li.dropdown.open > .dropdown-toggle,
 .navbar .navbar-inner .nav li.dropdown.active > .dropdown-toggle,

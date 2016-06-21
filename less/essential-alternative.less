@@ -305,6 +305,12 @@
                             }
                         }
 
+                        #custom_menu_courses {
+                            .dropdown-menu > li > a > span.onlyenrolled {
+                                background-color: ~"[[setting:alternativethememycoursesorderenrolbackcolour@{index}]]";
+                            }
+                        }
+
                         .nav {
                             border-right-color: ~"[[setting:alternativethemecolor@{index}]]";
                             > li > a {
@@ -338,6 +344,20 @@
                                 }
                             }
                         }
+
+                        #custom_menu_courses {
+                            .nav > li.dropdown ul.dropdown-menu > li {
+                                > a {
+                                    &:hover > span {
+                                        background-color: ~"[[setting:alternativethemeurlcolor@{index}]]";
+                                    }
+                                    &:focus > span, &.open > span {
+                                        background-color: ~"[[setting:alternativethemeurlcolor@{index}]]";
+                                    }
+                                }
+                            }
+                        }
+
                         .dropdown-menu > li > a:hover,
                             .dropdown-menu > li > a:focus,
                             .dropdown-submenu:hover > a,
