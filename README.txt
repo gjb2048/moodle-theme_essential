@@ -94,7 +94,22 @@ Ute Hlasek, https://hlasek-it.de/moodle
 
 Essential for Moodle 3.1 kindly sponsored by
 --------------------------------------------
-TBL
+ClassroomRevolution, LLC -- Moodle Partner  
+James Braastad
+Caleb Elcock
+Nadav Kavalerchik
+Gemma Lesterhuis
+Mihai Bojonca, TCM International Institute
+Guido Hornig, lern.link
+Floyd Saner
+Nigel Barnett
+Donald Schwartz
+Joseph Thibault
+Kees Koopman
+Samuli Koskinen
+Dan Raij
+Gregory Reinert
+Toshimi Hatanaka
 
 Customisation
 =============
