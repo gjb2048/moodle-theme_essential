@@ -1475,6 +1475,7 @@ class core_renderer extends \core_renderer {
             'i/loading_small' => 'refresh fa-spin',
             'i/backup' => 'cloud-download',
             'i/checkpermissions' => 'user',
+            'i/competencies' => 'wifi fa-flip-vertical',
             'i/edit' => 'pencil',
             'i/enrolusers' => 'user-plus',
             'i/filter' => 'filter',

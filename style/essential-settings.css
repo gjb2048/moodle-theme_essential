@@ -1164,19 +1164,33 @@ table.flexible tbody > tr:nth-child(odd) > th a:visited,
   color: inherit;
 }
 #page-admin-plugins #plugins-control-panel tbody > tr:nth-child(odd) > td.displayname .plugindir,
+#plugins-check-page #plugins-check tbody > tr:nth-child(odd) > td.displayname .plugindir,
 #page-admin-plugins #plugins-control-panel tbody > tr:hover > td.displayname .plugindir,
+#plugins-check-page #plugins-check tbody > tr:hover > td.displayname .plugindir,
 #page-admin-plugins #plugins-control-panel tbody > tr:nth-child(odd) > td.notes .requiredby,
+#plugins-check-page #plugins-check tbody > tr:nth-child(odd) > td.notes .requiredby,
 #page-admin-plugins #plugins-control-panel tbody > tr:hover > td.notes .requiredby,
+#plugins-check-page #plugins-check tbody > tr:hover > td.notes .requiredby,
 #page-admin-plugins #plugins-control-panel tbody > tr:nth-child(odd) > td.pluginname .componentname,
+#plugins-check-page #plugins-check tbody > tr:nth-child(odd) > td.pluginname .componentname,
 #page-admin-plugins #plugins-control-panel tbody > tr:hover > td.pluginname .componentname,
+#plugins-check-page #plugins-check tbody > tr:hover > td.pluginname .componentname,
 #page-admin-plugins #plugins-control-panel tbody > tr:nth-child(odd) > td.requires .requires-ok,
+#plugins-check-page #plugins-check tbody > tr:nth-child(odd) > td.requires .requires-ok,
 #page-admin-plugins #plugins-control-panel tbody > tr:hover > td.requires .requires-ok,
+#plugins-check-page #plugins-check tbody > tr:hover > td.requires .requires-ok,
 #page-admin-plugins #plugins-control-panel tbody > tr:nth-child(odd) > td.settings a,
+#plugins-check-page #plugins-check tbody > tr:nth-child(odd) > td.settings a,
 #page-admin-plugins #plugins-control-panel tbody > tr:hover > td.settings a,
+#plugins-check-page #plugins-check tbody > tr:hover > td.settings a,
 #page-admin-plugins #plugins-control-panel tbody > tr:nth-child(odd) > td.uninstall a,
+#plugins-check-page #plugins-check tbody > tr:nth-child(odd) > td.uninstall a,
 #page-admin-plugins #plugins-control-panel tbody > tr:hover > td.uninstall a,
+#plugins-check-page #plugins-check tbody > tr:hover > td.uninstall a,
 #page-admin-plugins #plugins-control-panel tbody > tr:nth-child(odd) > td.version .versionnumber,
-#page-admin-plugins #plugins-control-panel tbody > tr:hover > td.version .versionnumber {
+#plugins-check-page #plugins-check tbody > tr:nth-child(odd) > td.version .versionnumber,
+#page-admin-plugins #plugins-control-panel tbody > tr:hover > td.version .versionnumber,
+#plugins-check-page #plugins-check tbody > tr:hover > td.version .versionnumber {
   color: [[setting:themestripetextcolour]];
 }
 #categoryquestions > tbody > tr:nth-of-type(even) {

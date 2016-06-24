@@ -1,3 +1,10 @@
+New in 3.1.0.3
+==============
+- FIX: SVG version of 'Cogs' for 'Settings' cog.
+- FIX: Plugins check table text colour.
+- FIX: Noticeboard format user picture.
+- NEW: Competancies icon.
+
 New in 3.1.0.2
 ==============
 - FIX: Issue #674: M31 beta: Breadcrumbs should be right aligned and flipped in RTL mode.
