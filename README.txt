@@ -95,6 +95,7 @@ Ute Hlasek, https://hlasek-it.de/moodle
 Essential for Moodle 3.1 kindly sponsored by
 --------------------------------------------
 ClassroomRevolution, LLC -- Moodle Partner  
+Fernando Oliveira
 James Braastad
 Caleb Elcock
 Nadav Kavalerchik

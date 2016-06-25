@@ -24,10 +24,17 @@
  */
 
 echo '<div id="page-navbar" class="clearfix row-fluid">';
-echo '<div class="breadcrumb-nav span9">';
-echo $OUTPUT->navbar();
-echo '</div>';
+if ($left) {
+    echo '<div class="breadcrumb-nav span9">';
+    echo $OUTPUT->navbar();
+    echo '</div>';
+}
 echo '<nav class="breadcrumb-button span3">';
 echo $OUTPUT->page_heading_button();
 echo '</nav>';
+if (!$left) {
+    echo '<div class="breadcrumb-nav span9">';
+    echo $OUTPUT->navbar();
+    echo '</div>';
+}
 echo '</div>';

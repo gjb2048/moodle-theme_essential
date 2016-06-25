@@ -1,3 +1,7 @@
+New in 3.1.0.4
+==============
+- FIX: Issue #681: Breadcrumbs should be right aligned in RTL mode.
+
 New in 3.1.0.3
 ==============
 - FIX: SVG version of 'Cogs' for 'Settings' cog.
