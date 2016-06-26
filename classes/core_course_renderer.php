@@ -105,15 +105,13 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         // Category name.
         $categoryname = html_writer::tag('span', $coursecat->get_formatted_name());
 
-        $categoryiconnum = 'categoryicon' . $coursecat->id;
-
         // Do a settings check to output our icon for the category.
         if (\theme_essential\toolbox::get_setting('enablecategoryicon')) {
-            if (\theme_essential\toolbox::get_setting($categoryiconnum) &&
-                \theme_essential\toolbox::get_setting('enablecustomcategoryicon')
-            ) {
+            $customcategoryicon = \theme_essential\toolbox::get_setting('categoryicon'.$coursecat->id);
+            if ($customcategoryicon &&
+                \theme_essential\toolbox::get_setting('enablecustomcategoryicon')) {
                 // User has set a value for the category.
-                $val = \theme_essential\toolbox::get_setting($categoryiconnum);
+                $val = $customcategoryicon;
             } else {
                 // User hasn't set a value for the category, get the default.
                 $val = \theme_essential\toolbox::get_setting('defaultcategoryicon');
