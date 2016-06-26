@@ -308,9 +308,7 @@ class core_renderer extends \core_renderer {
                 if ($imageurl) {
                     $catid = $currentcatid;
                 } else {
-                    global $CFG;
-                    require_once($CFG->libdir . '/coursecatlib.php');
-                    $parents = array_reverse(\coursecat::get($currentcatid, IGNORE_MISSING, true)->get_parents());
+                    $parents = \theme_essential\toolbox::get_categories_list()[$currentcatid]->parents;
                     foreach ($parents as $parent) {
                         $image = $this->get_setting('categoryct'.$parent.'image');
                         if ($image) {

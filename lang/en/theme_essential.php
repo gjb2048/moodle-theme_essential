@@ -581,11 +581,17 @@ $string['websitedesc'] = 'Enter the URL of your own website. (i.e http://about.m
 
 // Category Course Title Image.
 $string['categoryctiheading'] = 'Category course title images';
+$string['categoryctiheadingcs'] = 'Category course title images configuration';
 $string['categoryctiheadingsub'] = 'Use images to represent your categories in a course';
 $string['categoryctidesc'] = 'If enabled this will allow you to set images for each category.';
 
 $string['enablecategorycti'] = 'Enable category course title images';
 $string['enablecategoryctidesc'] = 'If enabled you will be able to select category course title images after clicking "Save changes".';
+
+$string['enablecategoryctics'] = 'Enable category course title image category setting pages';
+$string['enablecategorycticsdesc'] = 'If enabled each top level category will get its own setting page.';
+
+$string['categoryctiheadingcategory'] = 'Category course title images for: {$a->category}';
 
 $string['categoryctiinfo'] = '{$a->category} settings';
 $string['categoryctiinfodesc'] = 'Category course title image settings for: {$a->category}.';
