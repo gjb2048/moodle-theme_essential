@@ -110,6 +110,7 @@ Kees Koopman
 Samuli Koskinen
 Dan Raij
 Gregory Reinert
+Jan Willem Knopper
 Toshimi Hatanaka
 
 Customisation
