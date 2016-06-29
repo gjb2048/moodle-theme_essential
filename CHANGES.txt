@@ -1,3 +1,6 @@
+New in 3.1.0.5
+==============
+
 New in 3.1.0.4
 ==============
 - FIX: Issue #681: Breadcrumbs should be right aligned in RTL mode.
