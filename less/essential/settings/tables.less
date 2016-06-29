@@ -53,7 +53,8 @@ table.flexible,
         > tr:nth-child(odd) > th {
             color: ~"[[setting:themestripetextcolour]]";
             background-color: ~"[[setting:themestripebackgroundcolour]]";
-            a, a:hover, a:focus, a:visited {
+            > a:not(.btn), > a:not(.btn):hover, > a:not(.btn):focus, > a:not(.btn):visited,
+            a.toggle-display, a.toggle-display:hover, a.toggle-display:focus, a.toggle-display:visited {
                 color: inherit;
             }
         }
@@ -93,7 +94,7 @@ table.flexible,
 table#modules,
 table#permissions {
     tbody {
-        tr:hover > td,
+        tr:hover > td, tr:hover > td > a:not(.btn),
         tr:hover > th {
             color: ~"[[setting:themestripetextcolour]]";
             background-color: ~"[[setting:themestripebackgroundcolour]]";

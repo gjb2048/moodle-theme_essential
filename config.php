@@ -50,6 +50,8 @@ if (get_config('theme_essential', 'customscrollbars')) {
 
 $THEME->sheets[] = 'custom';
 
+$THEME->plugins_exclude_sheets = array('mod' => array('assign'));
+
 $THEME->supportscssoptimisation = false;
 
 $THEME->javascripts_footer = array('essential');
