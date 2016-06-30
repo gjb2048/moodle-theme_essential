@@ -1,6 +1,7 @@
 New in 3.1.0.5
 ==============
 - FIX: Mod assign styles very tricky to override so exluding and including own changed copy despite potential maintenance issues.
+- FIX: Button font.
 
 New in 3.1.0.4
 ==============
