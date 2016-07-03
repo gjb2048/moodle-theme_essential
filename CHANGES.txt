@@ -1,8 +1,10 @@
 New in 3.1.0.5
 ==============
 - FIX: Issue #684: Navigation block: English tree item icons should be right aligned in RTL mode.
+- FIX: Issue #685: Blocks should be right aligned under content in admin page layout, on RTL mode.
 - FIX: Mod assign styles very tricky to override so exluding and including own changed copy despite potential maintenance issues.
 - FIX: Button font.
+- FIX: Content first three column layout in RTL.
 
 New in 3.1.0.4
 ==============
