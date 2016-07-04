@@ -1,5 +1,5 @@
 /* jshint ignore:start */
-define(['jquery', 'theme_essential/bootstrap', 'core/log'], function($, bootstrap, log) {
+define(['jquery', 'theme_bootstrapbase/bootstrap', 'core/log'], function($, bootstrap, log) {
 
   "use strict"; // jshint ;_;
 

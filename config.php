@@ -58,12 +58,6 @@ $THEME->javascripts_footer = array('essential');
 $THEME->enable_dock = true;
 $THEME->javascripts_footer[] = 'dock';
 
-$THEME->parents_exclude_javascripts = array(
-    'bootstrapbase' => array(
-        'moodlebootstrap'
-    )
-); // Exclude the parent JS for Bootstrap.
-
 $THEME->editor_sheets = array('editor', 'custom');
 
 $addregions = array();

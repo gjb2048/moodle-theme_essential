@@ -634,7 +634,7 @@ class core_renderer extends \core_renderer {
                 $branchtitle = get_string('my'.$lateststring.'courses', 'theme_essential');
             }
             $branchlabel = $this->getfontawesomemarkup('briefcase').$branchtitle;
-            $branchurl = new moodle_url('');
+            $branchurl = new moodle_url('#');
             $branchsort = 200;
 
             $branch = $coursemenu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
