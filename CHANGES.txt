@@ -26,6 +26,7 @@ New in 3.1.0.2
 - FIX: Issue #677: M31b: Tree nodes on Navigation block have redundant 21px right padding, in RTL mode.
 - FIX: Issue #678: Gradebook sticky headers broken, in RTL mode.
 - FIX: Issue #679: Guest user menu show missing support email error.
+- FIX: Issue #686: Two enrolments in a course with latest courses.
 - FIX: User menu setting header.
 - NEW: My courses options.  Thanks to "Linnaeus University" for funding this enhancement.
 
