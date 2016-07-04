@@ -651,15 +651,27 @@ class core_renderer extends \core_renderer {
                     if ($enrolquery) {
                         // We do.
                         $params = array('userid' => $USER->id);
-                        $sql = "SELECT e.courseid, ue.timestart
+                        $sql = "SELECT ue.id, e.courseid, ue.timestart
                             FROM {enrol} e
                             JOIN {user_enrolments} ue ON (ue.enrolid = e.id AND ue.userid = :userid)";
                         $enrolments = $DB->get_records_sql($sql, $params, 0, 0);
                         if ($enrolments) {
+                            // Sort out any multiple enrolments on the same course.
+                            $userenrolments = array();
+                            foreach ($enrolments as $enrolment) {
+                                if (!empty($userenrolments[$enrolment->courseid])) {
+                                    if ($userenrolments[$enrolment->courseid] < $enrolment->timestart) {
+                                        // Replace.
+                                        $userenrolments[$enrolment->courseid] = $enrolment->timestart;
+                                    }
+                                } else {
+                                    $userenrolments[$enrolment->courseid] = $enrolment->timestart;
+                                }
+                            }
                             // We don't need to worry about timeend etc. as our course list will be valid for the user from above.
                             foreach ($courses as $course) {
                                 if (empty($course->timeaccess)) {
-                                    $course->timestart = $enrolments[$course->id]->timestart;
+                                    $course->timestart = $userenrolments[$course->id];
                                 }
                             }
                         }
