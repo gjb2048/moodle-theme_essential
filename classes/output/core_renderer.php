@@ -651,10 +651,10 @@ class core_renderer extends \core_renderer {
             if (($mycoursesorder == 1) || ($mycoursesorder == 2)) {
                 $direction = 'ASC';
                 if ($mycoursesorder == 1) {
-            // Get 'My courses' sort preference from admin config.
-            if (!$sortorder = $CFG->navsortmycoursessort) {
-                $sortorder = 'sortorder';
-            }
+                    // Get 'My courses' sort preference from admin config.
+                    if (!$sortorder = $CFG->navsortmycoursessort) {
+                        $sortorder = 'sortorder';
+                    }
                 } else if ($mycoursesorder == 2) {
                     $sortorder = 'id';
                     $mycoursesorderidorder = \theme_essential\toolbox::get_setting('mycoursesorderidorder');
@@ -757,8 +757,8 @@ class core_renderer extends \core_renderer {
                     }
                     if ($numcourses == $mycoursesmax) {
                         break;
+                    }
                 }
-            }
             }
             if ($numcourses == 0 || empty($courses)) {
                 $noenrolments = get_string('noenrolments', 'theme_essential');
