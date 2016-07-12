@@ -5,6 +5,7 @@ New in 3.1.0.5
 - FIX: Issue #687: Dropdown menus don't stay open.
 - FIX: Issue #688: FA block icons are not right aligned using Firefox, in RTL mode.
 - FIX: Issue #690: Google fonts not working in quiz with Javascript Security.
+- FIX: Issue #691: Cyrillic support for truncated return to section names.  Fixed by Evgeny Logunow.
 - FIX: Mod assign styles very tricky to override so exluding and including own changed copy despite potential maintenance issues.
 - FIX: Button font.
 - FIX: Content first three column layout in RTL.
