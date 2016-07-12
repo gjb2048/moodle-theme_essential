@@ -4,6 +4,7 @@ New in 3.0.1.6
 - FIX: Issue #686: Two enrolments in a course with latest courses.
 - FIX: Issue #690: Google fonts not working in quiz with Javascript Security.
 - FIX: Issue #691: Cyrillic support for truncated return to section names.  Fixed by Evgeny Logunow.
+- FIX: Issue #693: Pixelated user picture.
 - FIX: User menu setting header.
 - NEW: My courses options.  Thanks to "Linnaeus University" for funding this enhancement.
 
