@@ -1277,7 +1277,7 @@ class core_renderer extends \core_renderer {
             }
         } else if (isguestuser()) {
             $userurl = new moodle_url('#');
-            $userpic = parent::user_picture($USER, array('link' => false));
+            $userpic = parent::user_picture($USER, array('link' => false, 'size' => 64));
             $caret = $this->getfontawesomemarkup('caret-right');
             $userclass = array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown');
             $usermenu .= html_writer::link($userurl, $userpic.get_string('guest').$caret, $userclass);
@@ -1303,7 +1303,7 @@ class core_renderer extends \core_renderer {
 
             // Output Profile link.
             $userurl = new moodle_url('#');
-            $userpic = parent::user_picture($USER, array('link' => false));
+            $userpic = parent::user_picture($USER, array('link' => false, 'size' => 64));
             $caret = $this->getfontawesomemarkup('caret-right');
             $userclass = array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown');
 
