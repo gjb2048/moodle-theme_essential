@@ -124,15 +124,27 @@ p.tree_item.leaf a {
 
     &:before {
         font-family: FontAwesome;
+    }
+    &[aria-expanded="false"]:before {
+        content: "\f07b";
+    }
+    &[aria-expanded="true"]:before {
         content: "\f07c";
     }
     &.emptybranch:before {
-        font-family: FontAwesome;
         content: "\f114";
     }
     img.smallicon.navicon {
         display: none;
     }
+}
+
+.dir-ltr .tree_item.branch:before {
+    margin-right: 5px;
+}
+
+.dir-rtl .tree_item.branch:before {
+    margin-left: 5px;
 }
 
 .dir-ltr .tree_item.branch {
@@ -179,19 +191,6 @@ p.tree_item.leaf a {
     &.branch {
         padding-right: 0;
     }
-}
-
-.collapsed .tree_item.branch:before {
-    font-family: FontAwesome;
-    content: "\f07b";
-}
-
-.dir-ltr .collapsed .tree_item.branch:before {
-    margin-right: 5px;
-}
-
-.dir-rtl .collapsed .tree_item.branch:before {
-    margin-left: 5px;
 }
 
 .dir-ltr.jsenabled .block_settings .block_tree .tree_item {
