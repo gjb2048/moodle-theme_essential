@@ -27,7 +27,9 @@
 $PAGE->requires->js_call_amd('theme_essential/header', 'init');
 $PAGE->requires->js_call_amd('theme_essential/footer', 'init');
 if (\theme_essential\toolbox::not_lte_ie9()) {
-    if (\theme_essential\toolbox::get_setting('oldnavbar')) {
+    $oldnavbar = \theme_essential\toolbox::get_setting('oldnavbar');
+    $PAGE->requires->js_call_amd('theme_essential/navbar', 'init', array('data' => array('oldnavbar' => $oldnavbar)));
+    if ($oldnavbar) {
         // Only need this to change the classes when scrolling when the navbar is in the old position.
         $PAGE->requires->js_call_amd('theme_essential/affix', 'init');
     }
