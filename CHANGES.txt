@@ -8,6 +8,7 @@ New in 3.1.0.5
 - FIX: Issue #691: Cyrillic support for truncated return to section names.  Fixed by Evgeny Logunow.
 - FIX: Issue #693: Pixelated user picture.
 - FIX: Issue #694: Folder state in blocks and icons.
+- FIX: Issue #695: Large logo, old navbar position and affix.
 - FIX: Mod assign styles very tricky to override so exluding and including own changed copy despite potential maintenance issues.
 - FIX: Button font.
 - FIX: Content first three column layout in RTL.

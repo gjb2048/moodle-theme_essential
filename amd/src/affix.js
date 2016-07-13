@@ -17,10 +17,23 @@ define(['jquery', 'theme_bootstrapbase/bootstrap', 'core/log'], function($, boot
   return {
     init: function() {
       $(document).ready(function($) {
-        $('#essentialnavbar').affix({
+        var $essentialnavbar = $('#essentialnavbar');
+        var offset = $essentialnavbar.offset().top;
+        log.debug('Essential affix AMD offset: ' + offset);
+        var pageheaderHeight = $('#page-header').height();
+        log.debug('Essential affix AMD pageheaderHeight: ' + pageheaderHeight);
+        $essentialnavbar.affix({
           offset: {
             top: function() {
-              return $('#essentialnavbar').height();
+              var wst = $(window).scrollTop();
+              log.debug('Essential affix AMD wst: ' + wst);
+              var diff = pageheaderHeight - wst;
+              log.debug('Essential affix AMD diff: ' + diff);
+              if (diff < 0) {
+                  diff = 0;
+              }
+              $essentialnavbar.css('top', diff + 'px');
+              return offset;
             }
           }
         });
