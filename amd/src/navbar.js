@@ -17,9 +17,9 @@ define(['jquery', 'core/log'], function($, log) {
         init: function(data) {
             $(document).ready(function($) {
                 if (data.oldnavbar) {
-                    $('#page-header').css('margin-bottom', $('#essentialnavbar').height() + 'px');
+                    $('#page-header').css('margin-bottom', $('#essentialnavbar .navbar-inner').height() + 'px');
                 } else {
-                    $('#page-header').css('margin-top', $('#essentialnavbar').height() + 'px');
+                    $('#page-header').css('margin-top', $('#essentialnavbar .navbar-inner').height() + 'px');
                 }
             });
             log.debug('Essential navbar AMD init: ' + data.oldnavbar);
