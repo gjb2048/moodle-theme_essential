@@ -10,6 +10,7 @@ New in 2.9.1.13
 - FIX: Issue #686: Two enrolments in a course with latest courses.
 - FIX: Issue #690: Google fonts not working in quiz with Javascript Security.
 - FIX: Issue #691: Cyrillic support for truncated return to section names.  Fixed by Evgeny Logunow.
+- FIX: Issue #692: Page background and 'beside' carousel text clash.
 - FIX: Issue #693: Pixelated user picture.
 - FIX: Issue #695: Large logo, old navbar position and affix.
 - FIX: Issue #696: Double height navbar blocks content.
