@@ -12,6 +12,7 @@ New in 2.9.1.13
 - FIX: Issue #691: Cyrillic support for truncated return to section names.  Fixed by Evgeny Logunow.
 - FIX: Issue #693: Pixelated user picture.
 - FIX: Issue #695: Large logo, old navbar position and affix.
+- FIX: Issue #696: Double height navbar blocks content.
 - FIX: Integer setting default and validation.
 - FIX: Select setting default.
 - FIX: Invisible parent categories with an image for a course that is in a visible category with no image.
