@@ -6,6 +6,7 @@ New in 3.1.0.5
 - FIX: Issue #688: FA block icons are not right aligned using Firefox, in RTL mode.
 - FIX: Issue #690: Google fonts not working in quiz with Javascript Security.
 - FIX: Issue #691: Cyrillic support for truncated return to section names.  Fixed by Evgeny Logunow.
+- FIX: Issue #692: Page background and 'beside' carousel text clash.
 - FIX: Issue #693: Pixelated user picture.
 - FIX: Issue #694: Folder state in blocks and icons.
 - FIX: Issue #695: Large logo, old navbar position and affix.

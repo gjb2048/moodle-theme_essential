@@ -406,6 +406,13 @@ a.marketing-button:hover {
 #essentialCarousel.carousel .carousel-inner .carousel-caption div {
   color: [[setting:slidecaptiontextcolor]];
 }
+#essentialCarousel.carousel .carousel-inner.pagebackground .the-side-caption-content {
+  background-color: [[setting:slidecaptionbackgroundcolor]];
+}
+#essentialCarousel.carousel .carousel-inner.pagebackground .the-side-caption-content h4,
+#essentialCarousel.carousel .carousel-inner.pagebackground .the-side-caption-content div {
+  color: [[setting:slidecaptiontextcolor]];
+}
 #essentialCarousel.carousel .carousel-control {
   color: [[setting:slidebuttoncolor]];
 }

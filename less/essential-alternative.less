@@ -642,6 +642,15 @@
                                 color: ~"[[setting:alternativethemeslidecaptiontextcolor@{index}]]";
                             }
                         }
+                        // Caption for text when there is a background image.
+                        &.pagebackground {
+                            .the-side-caption-content {
+                                background-color: ~"[[setting:alternativethemeslidecaptionbackgroundcolor@{index}]]";
+                                h4, div {
+                                    color: ~"[[setting:alternativethemeslidecaptiontextcolor@{index}]]";
+                                }
+                            }
+                        }
                     }
                     // Left/right controls for nav.
                     .carousel-control {

@@ -38,14 +38,21 @@ if ($numberofslides) {
     $captionoptions = \theme_essential\toolbox::get_setting('slidecaptionoptions');
 
     switch($captionoptions) {
+        case 0:
+            if (\theme_essential\toolbox::get_setting('pagebackground')) {
+                $captionsclass = ' pagebackground';
+            } else {
+                $captionsclass = '';
+            }
+        break;
         case 1:
-            $captionsbelowclass = ' ontop';
+            $captionsclass = ' ontop';
         break;
         case 2:
-            $captionsbelowclass = ' below';
+            $captionsclass = ' below';
         break;
         default:
-            $captionsbelowclass = '';
+            $captionsclass = '';
     }
     ?>
     <div class="row-fluid">
@@ -55,7 +62,7 @@ if ($numberofslides) {
                 <ol class="carousel-indicators">
                     <?php echo \theme_essential\toolbox::render_indicators($numberofslides); ?>
                 </ol>
-                <div class="carousel-inner<?php echo $captionscenter.$captionsbelowclass;?>">
+                <div class="carousel-inner<?php echo $captionscenter.$captionsclass;?>">
                     <?php
                     if ($left) {
                         for ($slideindex = 1; $slideindex <= $numberofslides; $slideindex++) {
