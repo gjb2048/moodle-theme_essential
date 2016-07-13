@@ -22,7 +22,7 @@ define(['jquery', 'core/log'], function($, log) {
                     $('#page-header').css('margin-top', $('#essentialnavbar').height() + 'px');
                 }
             });
-            log.debug('Essential navbar AMD init: ' + data);
+            log.debug('Essential navbar AMD init: ' + data.oldnavbar);
         }
     }
 });
