@@ -1,5 +1,6 @@
 New in 2.9.1.14
 ===============
+- FIX: Issue #697: Floating gradebook headers do not account for navbar height.
 
 New in 2.9.1.13
 ===============
