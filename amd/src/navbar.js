@@ -9,21 +9,21 @@
 /* jshint ignore:start */
 define(['jquery', 'core/log'], function($, log) {
 
-  "use strict"; // jshint ;_;
+    "use strict"; // jshint ;_;
 
-  log.debug('Essential navbar AMD');
+    log.debug('Essential navbar AMD');
 
-  return {
-    init: function(data) {
-      $(document).ready(function($) {
-        if (data.oldnavbar) {
-            $('#page-header').css('margin-bottom', $('#essentialnavbar').height() + 'px');
-        } else {
-            $('#page-header').css('margin-top', $('#essentialnavbar').height() + 'px');
+    return {
+        init: function(data) {
+            $(document).ready(function($) {
+                if (data.oldnavbar) {
+                    $('#page-header').css('margin-bottom', $('#essentialnavbar').height() + 'px');
+                } else {
+                    $('#page-header').css('margin-top', $('#essentialnavbar').height() + 'px');
+                }
+            });
+            log.debug('Essential navbar AMD init: ' + data);
         }
-      });
-      log.debug('Essential navbar AMD init: ' + data);
     }
-  }
 });
 /* jshint ignore:end */
