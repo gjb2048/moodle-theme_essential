@@ -17,26 +17,28 @@ define(['jquery', 'theme_essential/bootstrap', 'core/log'], function($, boot, lo
     return {
         init: function() {
             $(document).ready(function($) {
-                var $essentialnavbar = $('#essentialnavbar');
-                var offset = $essentialnavbar.offset().top;
-                log.debug('Essential affix AMD offset: ' + offset);
-                var pageheaderHeight = $('#page-header').height();
-                log.debug('Essential affix AMD pageheaderHeight: ' + pageheaderHeight);
-                $essentialnavbar.affix({
-                    offset: {
-                        top: function() {
-                            var wst = $(window).scrollTop();
-                            log.debug('Essential affix AMD wst: ' + wst);
-                            var diff = pageheaderHeight - wst;
-                            log.debug('Essential affix AMD diff: ' + diff);
-                            if (diff < 0) {
-                                diff = 0;
+                if ($('#essentialnavbar').length) {
+                    var $essentialnavbar = $('#essentialnavbar');
+                    var offset = $essentialnavbar.offset().top;
+                    log.debug('Essential affix AMD offset: ' + offset);
+                    var pageheaderHeight = $('#page-header').height();
+                    log.debug('Essential affix AMD pageheaderHeight: ' + pageheaderHeight);
+                    $essentialnavbar.affix({
+                        offset: {
+                            top: function() {
+                                var wst = $(window).scrollTop();
+                                log.debug('Essential affix AMD wst: ' + wst);
+                                var diff = pageheaderHeight - wst;
+                                log.debug('Essential affix AMD diff: ' + diff);
+                                if (diff < 0) {
+                                    diff = 0;
+                                }
+                                $essentialnavbar.css('top', diff + 'px');
+                                return offset;
                             }
-                            $essentialnavbar.css('top', diff + 'px');
-                            return offset;
                         }
-                    }
-                });
+                    });
+                }
             });
             log.debug('Essential affix AMD init');
         }

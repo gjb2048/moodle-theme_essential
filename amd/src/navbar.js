@@ -16,10 +16,12 @@ define(['jquery', 'core/log'], function($, log) {
     return {
         init: function(data) {
             $(document).ready(function($) {
-                if (data.oldnavbar) {
-                    $('#page-header').css('margin-bottom', $('#essentialnavbar .navbar-inner').height() + 'px');
-                } else {
-                    $('#page-header').css('margin-top', $('#essentialnavbar .navbar-inner').height() + 'px');
+                if ($('#essentialnavbar').length) {
+                    if (data.oldnavbar) {
+                        $('#page-header').css('margin-bottom', $('#essentialnavbar .navbar-inner').height() + 'px');
+                    } else {
+                        $('#page-header').css('margin-top', $('#essentialnavbar .navbar-inner').height() + 'px');
+                    }
                 }
             });
             log.debug('Essential navbar AMD init: ' + data.oldnavbar);
