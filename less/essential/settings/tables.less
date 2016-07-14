@@ -58,6 +58,9 @@ table.flexible,
                 color: inherit;
             }
         }
+        > tr:nth-child(odd) > td h3 {
+            color: inherit;
+        }
     }
 }
 
@@ -94,7 +97,9 @@ table.flexible,
 table#modules,
 table#permissions {
     tbody {
-        tr:hover > td, tr:hover > td > a:not(.btn),
+        tr:hover > td, 
+        tr:hover > td > a:not(.btn),
+        tr:hover > td > h3,
         tr:hover > th {
             color: ~"[[setting:themestripetextcolour]]";
             background-color: ~"[[setting:themestripebackgroundcolour]]";
