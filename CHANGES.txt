@@ -1,6 +1,7 @@
 New in 2.9.1.14
 ===============
 - FIX: Issue #697: Floating gradebook headers do not account for navbar height.
+- FIX: Theme selector images not responsive.
 
 New in 2.9.1.13
 ===============
