@@ -43,11 +43,10 @@ if (core_useragent::get_device_type() == "tablet") {
 
 <div id="page" class="container-fluid">
     <?php require_once(\theme_essential\toolbox::get_tile_file('pagenavbar')); ?>
-    <section role="main-content">
-        <!-- Start Main Regions -->
-        <div id="page-content" class="row-fluid">
-            <div id="<?php echo $regionbsid ?>" class="span9">
-                <div class="row-fluid">
+    <!-- Start Main Regions -->
+    <div id="page-content" class="row-fluid">
+        <div id="<?php echo $regionbsid ?>" class="span9">
+            <div class="row-fluid">
 <?php
 if ($tablet) {
     echo '<section id="region-main" class="span12">';
@@ -79,21 +78,20 @@ if (!$tablet) {
     }
 }
 ?>
-                </div>
             </div>
-            <?php
-            if ($tablet) {
-                ?> <div class="span3"><div class="row-fluid"> <?php
+        </div>
+        <?php
+        if ($tablet) {
+            ?> <div class="span3"><div class="row-fluid"> <?php
     echo $OUTPUT->blocks('side-pre', '');
     echo $OUTPUT->blocks('side-post', '');
 ?> </div></div> <?php
-            } else {
-                echo $OUTPUT->blocks('side-post', 'span3');
-            }
+        } else {
+            echo $OUTPUT->blocks('side-post', 'span3');
+        }
 ?>
-        </div>
-        <!-- End Main Regions -->
-    </section>
+    </div>
+    <!-- End Main Regions -->
 </div>
 
 <?php require_once(\theme_essential\toolbox::get_tile_file('footer')); ?>
