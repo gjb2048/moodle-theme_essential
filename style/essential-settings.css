@@ -1047,7 +1047,7 @@ button.website:focus {
   color: [[setting:themetextcolor]];
 }
 .path-grade-report-grader .gradeparent .user.cell .userpicture {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 table#explaincaps tbody > tr:nth-child(odd) > td,
 table#defineroletable tbody > tr:nth-child(odd) > td,
