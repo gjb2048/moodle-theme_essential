@@ -30,12 +30,11 @@ require_once(\theme_essential\toolbox::get_tile_file('header'));
 
 <div id="page" class="container-fluid">
     <?php require_once(\theme_essential\toolbox::get_tile_file('pagenavbar')); ?>
-    <section role="main-content">
-        <!-- Start Main Regions -->
-        <div id="page-content" class="row-fluid">
-            <div id="<?php echo $regionbsid ?>" class="span12">
-                <div class="row-fluid">
-                    <section id="region-main" class="span12">
+    <!-- Start Main Regions -->
+    <div id="page-content" class="row-fluid">
+        <div id="<?php echo $regionbsid ?>" class="span12">
+            <div class="row-fluid">
+                <section id="region-main" class="span12">
 <?php
 if (essential_report_page_has_title() == true) {
     echo $OUTPUT->course_title();
@@ -46,15 +45,14 @@ if (empty($PAGE->layout_options['nocoursefooter'])) {
     echo $OUTPUT->course_content_footer();
 }
 ?>
-                    </section>
-                </div>
+                </section>
+            </div>
 <?php
 echo $OUTPUT->essential_blocks('side-pre', 'row-fluid', 'aside', 4);
 ?>
-            </div>
         </div>
-        <!-- End Main Regions -->
-    </section>
+    </div>
+    <!-- End Main Regions -->
 </div>
 
 <?php require_once(\theme_essential\toolbox::get_tile_file('footer')); ?>

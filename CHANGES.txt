@@ -1,6 +1,7 @@
 New in 3.0.1.7
 ==============
 - FIX: Issue #697: Floating gradebook headers do not account for navbar height.
+- FIX: Issue #698: Accessibility: role=main-content ("Role must be one of the valid ARIA roles").
 - FIX: Theme selector images not responsive.
 - FIX: Fixed height header when no logo for header background image now that the navbar calculates height in the old position.
 
