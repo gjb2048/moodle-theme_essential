@@ -59,17 +59,13 @@ echo $OUTPUT->doctype();
     </div>
 </header>
 
-<section role="main-content">
-    <div id="page" class="container-fluid maintenance">
-
-        <div id="page-content" class="row-fluid">
-            <section id="region-main" class="span12">
-                <?php echo $OUTPUT->main_content(); ?>
-            </section>
-        </div>
-
+<div id="page" class="container-fluid maintenance">
+    <div id="page-content" class="row-fluid">
+        <section id="region-main" class="span12">
+            <?php echo $OUTPUT->main_content(); ?>
+        </section>
     </div>
-</section>
+</div>
 
 <footer id="page-footer">
     <div class="container-fluid maintenance">

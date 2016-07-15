@@ -57,19 +57,17 @@ echo $OUTPUT->doctype();
 </header>
 
 <div id="page" class="container-fluid">
-    <section role="main-content">
-        <div id="page-content" class="row-fluid">
-            <div id="region-bs-main-and-pre" class="span9">
-                <div class="row-fluid">
-                    <section id="region-main" class="span8 pull-right">
-                        <?php echo $OUTPUT->main_content(); ?>
-                    </section>
-                    <?php echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column'); ?>
-                </div>
+    <div id="page-content" class="row-fluid">
+        <div id="region-bs-main-and-pre" class="span9">
+            <div class="row-fluid">
+                <section id="region-main" class="span8 pull-right">
+                    <?php echo $OUTPUT->main_content(); ?>
+                </section>
+                <?php echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column'); ?>
             </div>
-            <?php echo $OUTPUT->blocks('side-post', 'span3'); ?>
         </div>
-    </section>
+        <?php echo $OUTPUT->blocks('side-post', 'span3'); ?>
+    </div>
 </div>
 
 <footer>

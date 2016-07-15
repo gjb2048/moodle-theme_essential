@@ -58,7 +58,7 @@ if ($enable1alert || $enable2alert || $enable3alert) {
         <!-- End Slideshow -->
     </section>
 
-    <section role="main-content">
+    <section>
         <!-- Start Main Regions -->
 
         <!-- Start Alerts -->

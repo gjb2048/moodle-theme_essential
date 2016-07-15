@@ -41,18 +41,14 @@ echo $OUTPUT->doctype();
 <body <?php echo $OUTPUT->body_attributes(); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html(); ?>
-<section role="main-content">
-    <div id="page" class="container-fluid maintenance">
-
-        <div id="page-content" class="row-fluid text-center">
-            <section id="region-main" class="span12">
-                <?php echo $OUTPUT->main_content(); ?>
-                <span aria-hidden="true" class="fa fa-refresh fa-spin fa-2x" style="margin-bottom: 10px;"></span>
-            </section>
-        </div>
-
+<div id="page" class="container-fluid maintenance">
+    <div id="page-content" class="row-fluid text-center">
+        <section id="region-main" class="span12">
+            <?php echo $OUTPUT->main_content(); ?>
+            <span aria-hidden="true" class="fa fa-refresh fa-spin fa-2x" style="margin-bottom: 10px;"></span>
+        </section>
     </div>
-</section>
+</div>
 <?php echo $OUTPUT->standard_end_of_body_html(); ?>
 </body>
 </html>

@@ -29,19 +29,17 @@ require_once(\theme_essential\toolbox::get_tile_file('header'));
 ?>
 
 <div id="page" class="container-fluid">
-    <section role="main-content">
-        <!-- Start Main Regions -->
-        <div id="page-content" class="row-fluid">
-            <section id="region-main" class="span12">
-                <?php
-                echo $OUTPUT->course_content_header();
-                echo $OUTPUT->main_content();
-                echo $OUTPUT->course_content_footer();
-                ?>
-            </section>
-        </div>
-        <!-- End Main Regions -->
-    </section>
+    <!-- Start Main Regions -->
+    <div id="page-content" class="row-fluid">
+        <section id="region-main" class="span12">
+            <?php
+            echo $OUTPUT->course_content_header();
+            echo $OUTPUT->main_content();
+            echo $OUTPUT->course_content_footer();
+            ?>
+        </section>
+    </div>
+    <!-- End Main Regions -->
 </div>
 
 <?php require_once(\theme_essential\toolbox::get_tile_file('footer')); ?>
