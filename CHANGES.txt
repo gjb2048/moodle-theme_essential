@@ -7,6 +7,7 @@ New in 3.1.0.6
 - FIX: Theme selector images not responsive.
 - FIX: Fixed height header when no logo for header background image now that the navbar calculates height in the old position.
 - FIX: Theme selector table odd rows text colour - M3.1.
+- FIX: Hover on dialog close button when using an alternative colour scheme.
 
 New in 3.1.0.5
 ==============
