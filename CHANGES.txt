@@ -4,6 +4,7 @@ New in 2.9.1.14
 - FIX: Issue #698: Accessibility: role=main-content ("Role must be one of the valid ARIA roles").
 - FIX: Theme selector images not responsive.
 - FIX: Fixed height header when no logo for header background image now that the navbar calculates height in the old position.
+- FIX: Hover on dialog close button when using an alternative colour scheme.
 
 New in 2.9.1.13
 ===============
