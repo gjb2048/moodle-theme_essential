@@ -1968,12 +1968,12 @@ class core_renderer extends \core_renderer {
                 case 3:
                     $title = '<h1 id="smalltitle">'.format_string($SITE->fullname, true,
                                     array('context' => context_course::instance(SITEID))).'</h2>';
-                    $title .= '<h2 id="subtitle">'.strip_tags($SITE->summary).'</h3>';
+                    $title .= '<h2 id="subtitle">'.format_text($SITE->summary).'</h3>';
                     break;
                 case 4:
                     $title = '<h1 id="smalltitle">'.format_string($SITE->shortname, true,
                                     array('context' => context_course::instance(SITEID))).'</h2>';
-                    $title .= '<h2 id="subtitle">'.strip_tags($SITE->summary).'</h3>';
+                    $title .= '<h2 id="subtitle">'.format_text($SITE->summary).'</h3>';
                     break;
                 default:
                     break;
