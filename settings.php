@@ -38,8 +38,10 @@ if ($ADMIN->fulltree) {
     global $CFG;
     if (file_exists("{$CFG->dirroot}/theme/essential/essential_admin_setting_configselect.php")) {
         require_once($CFG->dirroot . '/theme/essential/essential_admin_setting_configselect.php');
+        require_once($CFG->dirroot . '/theme/essential/essential_admin_setting_configinteger.php');
     } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/essential/essential_admin_setting_configselect.php")) {
         require_once($CFG->themedir . '/essential/essential_admin_setting_configselect.php');
+        require_once($CFG->themedir . '/essential/essential_admin_setting_configinteger.php');
     }
 
     $sponsor = new moodle_url('http://moodle.org/user/profile.php?id=442195');
@@ -93,6 +95,28 @@ if ($ADMIN->fulltree) {
         100 => get_string('variablewidth', 'theme_essential'));
     $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingsgeneric->add($setting);
+
+    // Page top blocks per row.
+    $name = 'theme_essential/pagetopblocksperrow';
+    $title = get_string('pagetopblocksperrow', 'theme_essential');
+    $default = 1;
+    $lower = 1;
+    $upper = 4;
+    $description = get_string('pagetopblocksperrowdesc', 'theme_essential',
+        array('lower' => $lower, 'upper' => $upper));
+    $setting = new essential_admin_setting_configinteger($name, $title, $description, $default, $lower, $upper);
+    $essentialsettingsgeneric->add($setting);
+
+    // Page bottom blocks per row.
+    $name = 'theme_essential/pagebottomblocksperrow';
+    $title = get_string('pagebottomblocksperrow', 'theme_essential');
+    $default = 4;
+    $lower = 1;
+    $upper = 4;
+    $description = get_string('pagebottomblocksperrowdesc', 'theme_essential',
+        array('lower' => $lower, 'upper' => $upper));
+    $setting = new essential_admin_setting_configinteger($name, $title, $description, $default, $lower, $upper);
     $essentialsettingsgeneric->add($setting);
 
     // Custom favicon.
@@ -1426,7 +1450,7 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsfrontpage->add($setting);
 
-    // Toggle frontpage middle blocks.
+    // Toggle frontpage home (was middle) blocks.
     $name = 'theme_essential/frontpagemiddleblocks';
     $title = get_string('frontpagemiddleblocks', 'theme_essential');
     $description = get_string('frontpagemiddleblocksdesc', 'theme_essential');
@@ -1440,6 +1464,30 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsfrontpage->add($setting);
 
+    // Home blocks per row.
+    $name = 'theme_essential/frontpagehomeblocksperrow';
+    $title = get_string('frontpagehomeblocksperrow', 'theme_essential');
+    $default = 3;
+    $lower = 1;
+    $upper = 4;
+    $description = get_string('frontpagehomeblocksperrowdesc', 'theme_essential',
+        array('lower' => $lower, 'upper' => $upper));
+    $setting = new essential_admin_setting_configinteger($name, $title, $description, $default, $lower, $upper);
+    $essentialsettingsfrontpage->add($setting);
+
+    // Toggle frontpage page top blocks.
+    $name = 'theme_essential/fppagetopblocks';
+    $title = get_string('fppagetopblocks', 'theme_essential');
+    $description = get_string('fppagetopblocksdesc', 'theme_essential');
+    $alwaysdisplay = get_string('alwaysdisplay', 'theme_essential');
+    $displaybeforelogin = get_string('displaybeforelogin', 'theme_essential');
+    $displayafterlogin = get_string('displayafterlogin', 'theme_essential');
+    $dontdisplay = get_string('dontdisplay', 'theme_essential');
+    $default = 3;
+    $choices = array(1 => $alwaysdisplay, 2 => $displaybeforelogin, 3 => $displayafterlogin, 0 => $dontdisplay);
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingsfrontpage->add($setting);
 
     // Marketing spot settings.
     $essentialsettingsfrontpage->add(new admin_setting_heading('theme_essential_marketing',

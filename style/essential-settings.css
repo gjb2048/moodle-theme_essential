@@ -135,6 +135,7 @@ p.tree_item.branch.emptybranch:focus:before {
 .editing.used-region-home-left #block-region-home-left,
 .editing.used-region-home-middle #block-region-home-middle,
 .editing.used-region-home-right #block-region-home-right,
+.editing.used-region-page-top #block-region-page-top,
 .editing.used-region-hidden-dock #block-region-hidden-dock {
   border-color: [[setting:themecolor]];
 }

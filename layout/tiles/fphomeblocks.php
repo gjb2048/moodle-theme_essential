@@ -19,31 +19,7 @@
  *
  * @package     theme_essential
  * @copyright   2016 Gareth J Barnard
- * @copyright   2015 Gareth J Barnard
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-if ($pagebottomregion) {
-    echo '<div class="span12">';
-} else if ($hasboringlayout) {
-    echo '<div class="span9 pull-right">';
-} else {
-    echo '<div class="span9">';
-}
-echo $OUTPUT->essential_blocks('page-top', 'row-fluid', 'aside', \theme_essential\toolbox::get_setting('pagetopblocksperrow'));
-echo '<section id="region-main">';
-echo $OUTPUT->course_title();
-echo $OUTPUT->course_content_header();
-echo $OUTPUT->main_content();
-if (empty($PAGE->layout_options['nocoursefooter'])) {
-    echo $OUTPUT->course_content_footer();
-}
-echo '</section>';
-echo '</div>';
-if (!$pagebottomregion) {
-    if ($hasboringlayout) {
-        echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column');
-    } else {
-        echo $OUTPUT->blocks('side-pre', 'span3');
-    }
-}
+echo $OUTPUT->essential_blocks('home', 'row-fluid', 'aside', \theme_essential\toolbox::get_setting('frontpagehomeblocksperrow'));
