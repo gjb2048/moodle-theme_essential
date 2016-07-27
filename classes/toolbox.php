@@ -223,6 +223,46 @@ class toolbox {
         return $catlist;
     }
 
+    // Report Page Title.
+    static public function report_page_has_title() {
+        global $PAGE;
+        $hastitle = true;
+
+        switch ($PAGE->pagetype) {
+            case 'grade-report-overview-index':
+                $hastitle = false;
+                break;
+            default:
+                break;
+        }
+
+        return $hastitle;
+    }
+
+    // Page Bottom Region.
+    static public function has_page_bottom_region() {
+        global $PAGE;
+        $hasregion = false;
+
+        switch ($PAGE->pagetype) {
+            case 'admin-plugins':
+            case 'course-management':
+            case 'mod-quiz-edit':
+                $hasregion = true;
+                break;
+            case 'mod-assign-view':
+                // Only apply to 'grading' page.
+                if (optional_param('action', '', PARAM_TEXT) == 'grading') {
+                    $hasregion = true;
+                }
+                break;
+            default:
+                break;
+        }
+
+        return $hasregion;
+    }
+
     static public function showslider() {
         global $CFG;
         $noslides = self::get_setting('numberofslides');

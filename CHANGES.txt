@@ -12,6 +12,7 @@ New in 3.1.0.6
 - FIX: Notification templates location and tidy up.
 - FIX: Missing forum icons.
 - FIX: Revert to default grey SVG icons.
+- NEW: Issue #606: Allowing blocks placed at the top of the content column.  Gratefully funded by: Servei de Recursos Educatius <http://www.sre.urv.cat>, Universitat Rovira i Virgili.
 
 New in 3.1.0.5
 ==============

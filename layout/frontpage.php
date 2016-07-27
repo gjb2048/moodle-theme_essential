@@ -157,22 +157,22 @@ if ($enable1alert || $enable2alert || $enable3alert) {
 ?>
 <!-- End Marketing Spots -->
 
-<!-- Start Middle Blocks -->
+<!-- Start Page Top was Middle Blocks -->
 <?php
-$frontpagemiddleblocks = \theme_essential\toolbox::get_setting('frontpagemiddleblocks');
-if ($PAGE->user_is_editing() && ($frontpagemiddleblocks)) {
-    require_once(\theme_essential\toolbox::get_tile_file('middleblocks'));
+$frontpagehomeblocks = \theme_essential\toolbox::get_setting('frontpagemiddleblocks');
+if ($PAGE->user_is_editing() && ($frontpagehomeblocks)) {
+    require_once(\theme_essential\toolbox::get_tile_file('fphomeblocks'));
 } else {
-    if ($frontpagemiddleblocks == 1) {
-        require_once(\theme_essential\toolbox::get_tile_file('middleblocks'));
-    } else if ($frontpagemiddleblocks == 2 && !isloggedin()) {
-        require_once(\theme_essential\toolbox::get_tile_file('middleblocks'));
-    } else if ($frontpagemiddleblocks == 3 && isloggedin()) {
-        require_once(\theme_essential\toolbox::get_tile_file('middleblocks'));
+    if ($frontpagehomeblocks == 1) {
+        require_once(\theme_essential\toolbox::get_tile_file('fphomeblocks'));
+    } else if ($frontpagehomeblocks == 2 && !isloggedin()) {
+        require_once(\theme_essential\toolbox::get_tile_file('fphomeblocks'));
+    } else if ($frontpagehomeblocks == 3 && isloggedin()) {
+        require_once(\theme_essential\toolbox::get_tile_file('fphomeblocks'));
     }
 }
 ?>
-<!-- End Middle Blocks -->
+<!-- End Page Top was Middle Blocks -->
 
         <div id="page-content" class="row-fluid">
             <section id="<?php echo $regionbsid; ?>">
@@ -182,15 +182,29 @@ if (!$left) {
     $frontpageblocks = !$frontpageblocks;
 }
 if ($frontpageblocks) {
-    echo '<section id="region-main" class="span9 pull-right">';
+    echo '<div class="span9 pull-right">';
 } else {
-    echo '<section id="region-main" class="span9 desktop-first-column">';
+    echo '<div class="span9 desktop-first-column">';
 }
+$fppagetopblocks = \theme_essential\toolbox::get_setting('fppagetopblocks');
+if ($PAGE->user_is_editing() && ($fppagetopblocks)) {
+    require_once(\theme_essential\toolbox::get_tile_file('fppagetopblocks'));
+} else {
+    if ($fppagetopblocks == 1) {
+        require_once(\theme_essential\toolbox::get_tile_file('fppagetopblocks'));
+    } else if ($fppagetopblocks == 2 && !isloggedin()) {
+        require_once(\theme_essential\toolbox::get_tile_file('fppagetopblocks'));
+    } else if ($fppagetopblocks == 3 && isloggedin()) {
+        require_once(\theme_essential\toolbox::get_tile_file('fppagetopblocks'));
+    }
+}
+echo '<section id="region-main">';
 echo $OUTPUT->course_content_header();
 echo $OUTPUT->main_content();
 echo $OUTPUT->course_content_footer();
 echo '</section>';
-if ($frontpageblocks) {
+echo '</div>';
+if (\theme_essential\toolbox::get_setting('frontpageblocks')) {
     echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column');
 } else {
     echo $OUTPUT->blocks('side-pre', 'span3 pull-right');

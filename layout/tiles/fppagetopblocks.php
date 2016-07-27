@@ -19,16 +19,7 @@
  *
  * @package     theme_essential
  * @copyright   2016 Gareth J Barnard
- * @copyright   2014 Gareth J Barnard, David Bezemer
- * @copyright   2013 Julian Ridden
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-?>
 
-<div class="row-fluid" id="middle-blocks">
-    <?php
-    echo $OUTPUT->blocks('home-left', 'span4 pull-left');
-    echo $OUTPUT->blocks('home-middle', 'span4 center');
-    echo $OUTPUT->blocks('home-right', 'span4 pull-right');
-    ?>
-</div>
+echo $OUTPUT->essential_blocks('page-top', 'row-fluid', 'aside', \theme_essential\toolbox::get_setting('pagetopblocksperrow'));

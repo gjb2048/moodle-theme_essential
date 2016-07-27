@@ -60,24 +60,26 @@ $THEME->javascripts_footer[] = 'dock';
 
 $THEME->editor_sheets = array('editor', 'custom');
 
-$addregions = array();
+$fpaddregions = array();
 if (get_config('theme_essential', 'frontpagemiddleblocks') > 0) {
-    $addregions = array('home-left', 'home-middle', 'home-right');
+    $fpaddregions[] = 'home';
 }
-
+if (get_config('theme_essential', 'fppagetopblocks') > 0) {
+    $fpaddregions[] = 'page-top';
+}
 
 $THEME->layouts = array(
     // Most backwards compatible layout without the blocks - this is the layout used by default.
     'base' => array(
         'file' => 'columns1.php',
         'regions' => array('footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => '',
+        'defaultregion' => 'footer-middle',
     ),
     // Front page.
     'frontpage' => array(
         'file' => 'frontpage.php',
         'regions' => array_merge(array('side-pre', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
-                $addregions),
+                $fpaddregions),
         'defaultregion' => 'side-pre',
     ),
     // Standard layout with blocks, this is recommended for most pages with general information.
@@ -89,12 +91,12 @@ $THEME->layouts = array(
     // Main course page.
     'course' => array(
         'file' => 'columns3.php',
-        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
+        'regions' => array('side-pre', 'page-top', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-post',
     ),
     'coursecategory' => array(
         'file' => 'columns2.php',
-        'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),
+        'regions' => array('side-pre', 'page-top', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-pre',
     ),
     // Part of course, typical for modules - default page layout if $cm specified in require_login().

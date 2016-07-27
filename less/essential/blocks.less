@@ -82,6 +82,7 @@
     &.empty-region-home-left #block-region-home-left, &.used-region-home-left #block-region-home-left,
     &.empty-region-home-middle #block-region-home-middle, &.used-region-home-middle #block-region-home-middle,
     &.empty-region-home-right #block-region-home-right, &.used-region-home-right #block-region-home-right,
+    &.empty-region-page-top #block-region-page-top, &.used-region-page-top #block-region-page-top,
     &.empty-region-footer-left #block-region-footer-left, &.used-region-footer-left #block-region-footer-left,
     &.empty-region-footer-middle #block-region-footer-middle, &.used-region-footer-middle #block-region-footer-middle,
     &.empty-region-footer-right #block-region-footer-right, &.used-region-footer-right #block-region-footer-right,
@@ -95,6 +96,7 @@
     &.used-region-home-left #block-region-home-left,
     &.used-region-home-middle #block-region-home-middle,
     &.used-region-home-right #block-region-home-right,
+    &.empty-region-page-top #block-region-page-top, &.used-region-page-top #block-region-page-top,
     &.used-region-footer-left #block-region-footer-left,
     &.used-region-footer-middle #block-region-footer-middle,
     &.used-region-footer-right #block-region-footer-right,
@@ -104,8 +106,10 @@
     }
 }
 
-#middle-blocks {
-    margin: 15px 0;
+.pagelayout-frontpage {
+    .frontpagecontent, #marketing-spots {
+        margin-bottom: 20px;
+    }
 }
 
 p.tree_item.leaf a {
@@ -532,67 +536,67 @@ p.tree_item.leaf a {
 }
 /* @end */
 
-/* @group Footer blocks - copied from Shoelace */
+/* @group Row blocks - copied and improved from Shoelace - using two instead of four blocks per row when editing. */
 
-.footer-fluid-span (@columns, @fluidGridColumnWidth, @fluidGridGutterWidth) {
+.rowblock-fluid-span (@columns, @fluidGridColumnWidth, @fluidGridGutterWidth) {
     width: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1));
     *width: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) - (.5 / @gridRowWidth * 100 * 1%);
 }
 
-aside.footer-edit .block {
-    .footer-fluid-span(3, @fluidGridColumnWidth, @fluidGridGutterWidth);
+aside.rowblock-edit .block {
+    .rowblock-fluid-span(6, @fluidGridColumnWidth, @fluidGridGutterWidth);
     display: block;
     min-height: 240px;
     max-height: 240px;
     overflow-y: scroll;
     .box-sizing(border-box);
 }
-.dir-ltr aside.footer-edit .block {
+.dir-ltr aside.rowblock-edit .block {
     float: left;
     margin-left: @fluidGridGutterWidth;
 }
-.dir-rtl aside.footer-edit .block {
+.dir-rtl aside.rowblock-edit .block {
     float: right;
     margin-right: @fluidGridGutterWidth;
 }
 
 // MDL-44074.
 @media (min-width: 768px) and (max-width: 979px) {
-    aside.footer-edit .block {
-        .footer-fluid-span(3, @fluidGridColumnWidth768, @fluidGridGutterWidth768);
+    aside.rowblock-edit .block {
+        .rowblock-fluid-span(6, @fluidGridColumnWidth768, @fluidGridGutterWidth768);
     }
-    .dir-ltr aside.footer-edit .block {
+    .dir-ltr aside.rowblock-edit .block {
         margin-left: @fluidGridGutterWidth768;
     }
-    .dir-rtl aside.footer-edit .block {
+    .dir-rtl aside.rowblock-edit .block {
         margin-right: @fluidGridGutterWidth768;
     }
 }
 
 @media (min-width: 1200px) {
-    aside.footer-edit .block {
-        .footer-fluid-span(3, @fluidGridColumnWidth1200, @fluidGridGutterWidth1200);
+    aside.rowblock-edit .block {
+        .rowblock-fluid-span(6, @fluidGridColumnWidth1200, @fluidGridGutterWidth1200);
     }
-    .dir-ltr aside.footer-edit .block {
+    .dir-ltr aside.rowblock-edit .block {
         margin-left: @fluidGridGutterWidth1200;
     }
-    .dir-rtl aside.footer-edit .block {
+    .dir-rtl aside.rowblock-edit .block {
         margin-right: @fluidGridGutterWidth1200;
     }
 }
 
 // Eliminates need for 'desktop-first-column' but does not work in IE8.
 // Info on: http://www.w3schools.com/cssref/sel_first-of-type.asp
-.dir-ltr aside.footer-blocks div.row-fluid div.block:first-of-type {
+.dir-ltr aside.rowblock-blocks div.row-fluid div.block:first-of-type {
     margin-left: 0;
 }
-.dir-rtl aside.footer-blocks div.row-fluid div.block:first-of-type {
+.dir-rtl aside.rowblock-blocks div.row-fluid div.block:first-of-type {
     margin-right: 0;
 }
 
 // Support multiple rows when editing otherwise above works, see: http://www.w3schools.com/cssref/sel_nth-of-type.asp
-.footer-nth(@index) {
-    .dir-ltr aside.footer-edit div.block:nth-of-type(@{index}) {
+.rowblock-nth(@index) {
+    aside.rowblock-edit div.block:nth-of-type(@{index}) {
         margin-left: 0;
     }
     .dir-rtl aside.footer-edit div.block:nth-of-type(@{index}) {
@@ -600,12 +604,12 @@ aside.footer-edit .block {
     }
 }
 
-.footer-nthX (@index) when (@index > 0) {
-    .footer-nth(@index);
-    .footer-nthX(@index - 4);
+.rowblock-nthX (@index) when (@index > 0) {
+    .rowblock-nth(@index);
+    .rowblock-nthX(@index - 2);
 }
 
-.footer-nthX(37); // Ten rows.
+.rowblock-nthX(37); // Ten rows.
 
 .dir-rtl aside.footer-blocks .block {
     float: right;
