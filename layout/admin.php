@@ -27,7 +27,7 @@
 require_once(\theme_essential\toolbox::get_tile_file('additionaljs'));
 require_once(\theme_essential\toolbox::get_tile_file('header'));
 
-$footerregion = essential_has_footer_region(); // In pagesettings.php.
+$pagebottomregion = \theme_essential\toolbox::has_page_bottom_region();
 ?>
 
 <div id="page" class="container-fluid">
@@ -40,8 +40,8 @@ $footerregion = essential_has_footer_region(); // In pagesettings.php.
                 <?php require_once(\theme_essential\toolbox::get_tile_file('twocolumncontent')); ?>
             </div>
             <?php
-            if ($footerregion) {
-                echo $OUTPUT->essential_blocks('side-pre', 'row-fluid', 'aside', 4);
+            if ($pagebottomregion) {
+                echo $OUTPUT->essential_blocks('side-pre', 'row-fluid', 'aside', \theme_essential\toolbox::get_setting('pagebottomblocksperrow'));
             }
 ?>
         </div>

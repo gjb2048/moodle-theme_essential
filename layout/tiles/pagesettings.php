@@ -128,46 +128,6 @@ if (\theme_essential\toolbox::get_setting('floatingsubmitbuttons')) {
     $bodyclasses[] = 'floatingsubmit';
 }
 
-// Report Page Title.
-function essential_report_page_has_title() {
-    global $PAGE;
-    $hastitle = true;
-
-    switch ($PAGE->pagetype) {
-        case 'grade-report-overview-index':
-            $hastitle = false;
-            break;
-        default:
-            break;
-    }
-
-    return $hastitle;
-}
-
-// Page Footer Region.
-function essential_has_footer_region() {
-    global $PAGE;
-    $hasregion = false;
-
-    switch ($PAGE->pagetype) {
-        case 'admin-plugins':
-        case 'course-management':
-        case 'mod-quiz-edit':
-            $hasregion = true;
-            break;
-        case 'mod-assign-view':
-            // Only apply to 'grading' page.
-            if (optional_param('action', '', PARAM_TEXT) == 'grading') {
-                $hasregion = true;
-            }
-            break;
-        default:
-            break;
-    }
-
-    return $hasregion;
-}
-
 // Footer.
 $hascopyright = \theme_essential\toolbox::get_setting('copyright', true);
 $hasfootnote = \theme_essential\toolbox::get_setting('footnote', 'format_html');

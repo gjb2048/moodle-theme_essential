@@ -23,13 +23,15 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-if ($footerregion) {
-    echo '<section id="region-main" class="span12">';
+if ($pagebottomregion) {
+    echo '<div class="span12">';
 } else if ($hasboringlayout) {
-    echo '<section id="region-main" class="span9 pull-right">';
+    echo '<div class="span9 pull-right">';
 } else {
-    echo '<section id="region-main" class="span9">';
+    echo '<div class="span9">';
 }
+echo $OUTPUT->essential_blocks('page-top', 'row-fluid', 'aside', \theme_essential\toolbox::get_setting('pagetopblocksperrow'));
+echo '<section id="region-main">';
 echo $OUTPUT->course_title();
 echo $OUTPUT->course_content_header();
 echo $OUTPUT->main_content();
@@ -37,7 +39,8 @@ if (empty($PAGE->layout_options['nocoursefooter'])) {
     echo $OUTPUT->course_content_footer();
 }
 echo '</section>';
-if (!$footerregion) {
+echo '</div>';
+if (!$pagebottomregion) {
     if ($hasboringlayout) {
         echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column');
     } else {
