@@ -135,7 +135,7 @@ module.exports = function(grunt) { // jshint ignore:line
 
     var decachephp = '../../admin/cli/purge_caches.php';
 
-    var svgcolour = grunt.option('svgcolour') || '#30add1';
+    var svgcolour = grunt.option('svgcolour') || '#999';
 
     grunt.initConfig({
         less: {

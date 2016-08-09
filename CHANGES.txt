@@ -10,6 +10,8 @@ New in 3.1.0.6
 - FIX: Theme selector table odd rows text colour - M3.1.
 - FIX: Hover on dialog close button when using an alternative colour scheme.
 - FIX: Notification templates location and tidy up.
+- FIX: Missing forum icons.
+- FIX: Revert to default grey SVG icons.
 
 New in 3.1.0.5
 ==============

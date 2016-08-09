@@ -1595,6 +1595,7 @@ class core_renderer extends \core_renderer {
             'chapter' => 'file',
             'docs' => 'question-circle',
             'generate' => 'gift',
+            'help' => 'question-circle-o',
             'i/marker' => 'lightbulb-o',
             'i/delete' => 'times-circle',
             'i/dragdrop' => 'arrows',
