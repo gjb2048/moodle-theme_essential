@@ -83,7 +83,6 @@
         #custom_menu_language {
             ul.dropdown-menu {
                 max-height: 384px;
-                overflow-y: auto;
             }
         }
 
@@ -129,16 +128,6 @@
         .nav > li.dropdown a,
         .nav > li > a {
             text-shadow: none;
-            &:hover {
-                .@{fa-css-prefix}-caret-right:before {
-                    content: "\f0d7";
-                }
-            }
-        }
-        .nav > li.dropdown.open a {
-            .@{fa-css-prefix}-caret-right:before {
-                content: "\f0d7";
-            }
         }
         .nav > li > a .@{fa-css-prefix} {
             color: inherit;
@@ -285,9 +274,9 @@
         .nav > li.dropdown a,
         .nav > li > a {
             .@{fa-css-prefix}-caret-right:before {
+                content: "\f0da";
                 margin-left: 5px;
                 margin-right: 3px;
-                content: "\f0da";
             }
             &:hover {
                 .@{fa-css-prefix}-caret-right:before {
@@ -298,10 +287,10 @@
         }
         .nav > li.dropdown.open a {
             .@{fa-css-prefix}-caret-right:before {
+                content: "\f0d7";
                 margin-right: 0;
             }
         }
-
         .navbarrightitem {
             float: right;
         }
@@ -412,6 +401,7 @@
         }
         .nav > li.dropdown.open a {
             .@{fa-css-prefix}-caret-right:before {
+                content: "\f0d7";
                 margin-left: 0;
             }
         }

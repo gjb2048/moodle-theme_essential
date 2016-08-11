@@ -1,0 +1,28 @@
+// @package     theme_essential.
+// @copyright   2016 Gareth J Barnard.
+// @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
+
+/* Moodle fixes responsive begin */
+.dir-ltr {
+    .dropdown-submenu > a:after {
+        border-width: 5px 5px 5px 0;
+    }
+}
+.dir-rtl {
+    .dropdown-menu {
+        right: auto;
+        left: 0;
+    }
+    .navbar .nav > li > .dropdown-menu:before {
+        left: 9px;
+        right: auto;
+    }
+    .navbar .nav > li > .dropdown-menu:after {
+        left: 10px;
+        right: auto;
+    }
+    .dropdown-submenu > a:after {
+        border-width: 5px 0 5px 5px;
+    }
+}
+/* Moodle fixes responsive end */

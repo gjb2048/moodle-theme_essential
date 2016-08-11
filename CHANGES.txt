@@ -3,7 +3,7 @@ New in 3.1.0.6
 - FIX: Issue #697: Floating gradebook headers do not account for navbar height.
 - FIX: Issue #698: Accessibility: role=main-content ("Role must be one of the valid ARIA roles").
 - FIX: Issue #699: Assignment grading toolbar missing.
-- FIX: Issue #700: Header height.
+- FIX: Issue #700: Header height - M3.1.
 - FIX: Issue #702: Header title - Fullname and summary option - language span tags.
 - FIX: Issue #707: Marketing setting header.
 - FIX: Two column layout in RTL - M3.1.
@@ -14,6 +14,7 @@ New in 3.1.0.6
 - FIX: Notification templates location and tidy up.
 - FIX: Missing forum icons.
 - FIX: Revert to default grey SVG icons.
+- FIX: Navbar and menus LTR / RTL icons - M3.1.
 - NEW: Issue #606: Allowing blocks placed at the top of the content column.  Gratefully funded by: Servei de Recursos Educatius <http://www.sre.urv.cat>, Universitat Rovira i Virgili.
 - NEW: Display block region names when editing.
 

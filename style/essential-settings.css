@@ -888,12 +888,6 @@ button.website:focus {
   color: [[setting:themecolor]];
   background-color: [[setting:themenavcolor]];
 }
-.navbar .navbar-inner .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
-  border-left-color: inherit;
-}
-.navbar .navbar-inner .nav .dropdown-menu .dropdown-submenu:hover .dropdown-toggle:after {
-  border-left-color: [[setting:themenavcolor]];
-}
 .navbar .navbar-inner #custom_menu_courses .dropdown-menu > li > a > span.onlyenrolled {
   background-color: [[setting:mycoursesorderenrolbackcolour]];
 }
@@ -962,10 +956,21 @@ button.website:focus {
 .navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification img.profilepicture {
   box-shadow: 0 0 3px [[setting:themenavcolor]];
 }
+.dir-ltr .navbar .navbar-inner .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
+  border-left-color: inherit;
+}
+.dir-ltr .navbar .navbar-inner .nav .dropdown-menu .dropdown-submenu:hover .dropdown-toggle:after {
+  border-left-color: [[setting:themenavcolor]];
+}
+.dir-rtl .navbar .navbar-inner .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
+  border-right-color: inherit;
+}
+.dir-rtl .navbar .navbar-inner .nav .dropdown-menu .dropdown-submenu:hover .dropdown-toggle:after {
+  border-right-color: [[setting:themenavcolor]];
+}
 @media (max-width: 979px) {
   .navbar .nav-collapse.in .nav .dropdown-submenu .dropdown-toggle:after,
   .navbar .nav-collapse.in .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
-    border-left-color: transparent;
     border-top-color: [[setting:themeiconcolor]];
   }
   .navbar .nav-collapse.in .nav .dropdown-submenu:hover .dropdown-toggle:after,
@@ -984,6 +989,14 @@ button.website:focus {
   .navbar .nav-collapse.in .nav .dropdown-submenu:hover.open > a.dropdown-toggle:after,
   .navbar .nav-collapse.in .nav .dropdown-menu .dropdown-submenu:hover.open > a.dropdown-toggle:after {
     border-top-color: [[setting:themenavcolor]];
+  }
+  .dir-ltr .navbar .nav-collapse.in .nav .dropdown-submenu .dropdown-toggle:after,
+  .dir-ltr .navbar .nav-collapse.in .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
+    border-left-color: transparent;
+  }
+  .dir-rtl .navbar .nav-collapse.in .nav .dropdown-submenu .dropdown-toggle:after,
+  .dir-rtl .navbar .nav-collapse.in .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
+    border-right-color: transparent;
   }
 }
 /* @end */
