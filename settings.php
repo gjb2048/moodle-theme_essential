@@ -1491,7 +1491,7 @@ if ($ADMIN->fulltree) {
 
     // Marketing spot settings.
     $essentialsettingsfrontpage->add(new admin_setting_heading('theme_essential_marketing',
-        get_string('marketingheadingsub', 'theme_essential'),
+        get_string('marketingheading', 'theme_essential'),
         format_text(get_string('marketingdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
     // Toggle marketing spots.
