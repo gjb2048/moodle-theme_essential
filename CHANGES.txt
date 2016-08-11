@@ -3,6 +3,7 @@ New in 2.9.1.14
 - FIX: Issue #697: Floating gradebook headers do not account for navbar height.
 - FIX: Issue #698: Accessibility: role=main-content ("Role must be one of the valid ARIA roles").
 - FIX: Issue #702: Header title - Fullname and summary option - language span tags.
+- FIX: Issue #703: Group images are not well displayed.
 - FIX: Issue #707: Marketing setting header.
 - FIX: Theme selector images not responsive.
 - FIX: Fixed height header when no logo for header background image now that the navbar calculates height in the old position.
