@@ -37,9 +37,26 @@
         height: ~"[[setting:logoheight]]";
         width: ~"[[setting:logowidth]]";
     }
+}
 
+.dir-ltr #page-header {
     div.titlearea {
         border-left: 1px dotted ~"[[setting:themecolor]]";
+    }
+}
+
+.dir-rtl #page-header {
+    div.titlearea {
+        border-right: 1px dotted ~"[[setting:themecolor]]";
+    }
+}
+
+@media (min-width: @navbarCollapseDesktopWidth) {
+    #page-header {
+        &.nologo {
+            height: 64px;
+            max-height: 64px;
+        }
     }
 }
 
@@ -58,8 +75,12 @@ button.website:hover, button.website:focus {
     }
 }
 
-#mobileapps {
+.dir-ltr #mobileapps {
     border-right: 1px dotted ~"[[setting:themecolor]]";
+}
+
+.dir-rtl #mobileapps {
+    border-left: 1px dotted ~"[[setting:themecolor]]";
 }
 
 /* @end */
