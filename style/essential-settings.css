@@ -826,8 +826,17 @@ body#page-grade-grading-pick #region-main form #fgroup_id_buttonar label {
   height: [[setting:logoheight]];
   width: [[setting:logowidth]];
 }
-#page-header div.titlearea {
+.dir-ltr #page-header div.titlearea {
   border-left: 1px dotted [[setting:themecolor]];
+}
+.dir-rtl #page-header div.titlearea {
+  border-right: 1px dotted [[setting:themecolor]];
+}
+@media (min-width: 980px) {
+  #page-header.nologo {
+    height: 64px;
+    max-height: 64px;
+  }
 }
 /* @end */
 /* @group Social Buttons */
@@ -841,8 +850,33 @@ button.website:focus {
 .socials p {
   color: [[setting:headertextcolor]];
 }
-#mobileapps {
+#page-header.logo #socialnetworks,
+#page-header.logo #mobileapps {
+  height: [[setting:logoheight]];
+  max-height: [[setting:logoheight]];
+}
+#page-header.nologo #socialnetworks,
+#page-header.nologo #mobileapps {
+  height: 52px;
+  max-height: 52px;
+}
+@media (min-width: 980px) {
+  #page-header.logo #socialnetworks,
+  #page-header.logo #mobileapps {
+    height: [[setting:logoheight]];
+    max-height: [[setting:logoheight]];
+  }
+  #page-header.nologo #socialnetworks,
+  #page-header.nologo #mobileapps {
+    height: 64px;
+    max-height: 64px;
+  }
+}
+.dir-ltr #mobileapps {
   border-right: 1px dotted [[setting:themecolor]];
+}
+.dir-rtl #mobileapps {
+  border-left: 1px dotted [[setting:themecolor]];
 }
 /* @end */
 /* @group Navbar */
@@ -854,7 +888,7 @@ button.website:focus {
 }
 @media (min-width: 980px) {
   #essentialnavbar.oldnavbar.nologo {
-    top: 57px;
+    top: 64px;
   }
 }
 #essentialnavbar.affix.oldnavbar {
