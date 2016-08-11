@@ -49,12 +49,14 @@ if (core_useragent::get_device_type() == "tablet") {
             <div class="row-fluid">
 <?php
 if ($tablet) {
-    echo '<section id="region-main" class="span12">';
+    echo '<div class="span12">';
 } else if ($hasboringlayout) {
-    echo '<section id="region-main" class="span8 pull-right">';
+    echo '<div class="span8 pull-right">';
 } else {
-    echo '<section id="region-main" class="span8 desktop-first-column">';
+    echo '<div class="span8 desktop-first-column">';
 }
+echo $OUTPUT->essential_blocks('page-top', 'row-fluid', 'aside', \theme_essential\toolbox::get_setting('pagetopblocksperrow'));
+echo '<section id="region-main">';
 echo $OUTPUT->course_title();
 echo $OUTPUT->course_content_header();
 
@@ -70,11 +72,12 @@ if (empty($PAGE->layout_options['nocoursefooter'])) {
     echo $OUTPUT->course_content_footer();
 }
 echo '</section>';
+echo '</div>';
 if (!$tablet) {
     if ($hasboringlayout) {
-        echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column');
+        echo $OUTPUT->essential_blocks('side-pre', 'span4 desktop-first-column');
     } else {
-        echo $OUTPUT->blocks('side-pre', 'span4 pull-right');
+        echo $OUTPUT->essential_blocks('side-pre', 'span4 pull-right');
     }
 }
 ?>
@@ -83,11 +86,11 @@ if (!$tablet) {
         <?php
         if ($tablet) {
             ?> <div class="span3"><div class="row-fluid"> <?php
-    echo $OUTPUT->blocks('side-pre', '');
-    echo $OUTPUT->blocks('side-post', '');
+    echo $OUTPUT->essential_blocks('side-pre', '');
+    echo $OUTPUT->essential_blocks('side-post', '');
 ?> </div></div> <?php
         } else {
-            echo $OUTPUT->blocks('side-post', 'span3');
+            echo $OUTPUT->essential_blocks('side-post', 'span3');
         }
 ?>
     </div>

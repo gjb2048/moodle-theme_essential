@@ -1746,24 +1746,31 @@ class core_renderer extends \core_renderer {
             'data-droptarget' => '1'
         );
 
+        $regioncontent = '';
+        $editing = $this->page->user_is_editing();
+        if ($editing) {
+            $regioncontent .= html_writer::tag('span', get_string('region-'.$displayregion, 'theme_essential'),
+                array('class' => 'regionname'));
+        }
+
         if ($this->page->blocks->region_has_content($displayregion, $this)) {
             if ($blocksperrow > 0) {
                 $attributes['class'] .= ' rowblock-blocks';
-                $editing = $this->page->user_is_editing();
                 if ($editing) {
                     $attributes['class'] .= ' rowblock-edit';
                 }
-                $output = html_writer::tag($tag,
-                    $this->essential_blocks_for_region($displayregion, $blocksperrow, $editing), $attributes);
+                $regioncontent .= $this->essential_blocks_for_region($displayregion, $blocksperrow, $editing);
+                $output = html_writer::tag($tag, $regioncontent, $attributes);
             } else {
-                $output = html_writer::tag($tag, $this->blocks_for_region($displayregion), $attributes);
+                $regioncontent .= $this->blocks_for_region($displayregion);
+                $output = html_writer::tag($tag, $regioncontent, $attributes);
             }
         } else {
-            if ($this->page->user_is_editing()) {
+            if ($editing) {
                 if ($blocksperrow > 0) {
                     $attributes['class'] .= ' rowblock-blocks rowblock-edit';
                 }
-                $output = html_writer::tag($tag, '', $attributes);
+                $output = html_writer::tag($tag, $regioncontent, $attributes);
             } else {
                 $output = '';
             }

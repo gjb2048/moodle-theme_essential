@@ -205,9 +205,9 @@ echo $OUTPUT->course_content_footer();
 echo '</section>';
 echo '</div>';
 if (\theme_essential\toolbox::get_setting('frontpageblocks')) {
-    echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column');
+    echo $OUTPUT->essential_blocks('side-pre', 'span3 desktop-first-column');
 } else {
-    echo $OUTPUT->blocks('side-pre', 'span3 pull-right');
+    echo $OUTPUT->essential_blocks('side-pre', 'span3 pull-right');
 }
 ?>
             </section>
@@ -219,7 +219,7 @@ if (\theme_essential\toolbox::get_setting('frontpageblocks')) {
             <div class="hidden-blocks">
                 <div class="row-fluid">
                     <h4><?php echo get_string('visibleadminonly', 'theme_essential'); ?></h4>
-                    <?php echo $OUTPUT->blocks('hidden-dock'); ?>
+                    <?php echo $OUTPUT->essential_blocks('hidden-dock'); ?>
                 </div>
             </div>
 <?php

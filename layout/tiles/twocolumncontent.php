@@ -42,8 +42,8 @@ echo '</section>';
 echo '</div>';
 if (!$pagebottomregion) {
     if ((($hasboringlayout) && ($left)) || ((!$hasboringlayout) && (!$left))) {
-        echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column');
+        echo $OUTPUT->essential_blocks('side-pre', 'span3 desktop-first-column');
     } else {
-        echo $OUTPUT->blocks('side-pre', 'span3');
+        echo $OUTPUT->essential_blocks('side-pre', 'span3');
     }
 }
