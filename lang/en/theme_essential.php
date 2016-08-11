@@ -514,7 +514,7 @@ $string['slideurltargetparent'] = 'Parent frame';
 // Marketing Spots.
 $string['marketingheading'] = 'Marketing spots';
 $string['marketinginfodesc'] = 'Enter the settings for your marketing spot.';
-$string['marketingheadingsub'] = 'Three locations on the front page to add information and links';
+$string['marketingheadingsub'] = 'Three locations on the front page to add information and links.'; // Legacy only.
 
 $string['marketingheight'] = 'Height of marketing spot container (px)';
 $string['marketingheightdesc'] = 'Specify the height of the marketing spot container in pixels.  Adjust this to suit your content.  If any spot has an image or link, then that will be added to this for all spots.';
