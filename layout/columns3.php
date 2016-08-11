@@ -60,9 +60,9 @@ echo '</section>';
 echo '</div>';
 if (!$tablet) {
     if ($hasboringlayout) {
-        echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column');
+        echo $OUTPUT->essential_blocks('side-pre', 'span4 desktop-first-column');
     } else {
-        echo $OUTPUT->blocks('side-pre', 'span4 pull-right');
+        echo $OUTPUT->essential_blocks('side-pre', 'span4 pull-right');
     }
 }
 ?>
@@ -71,8 +71,8 @@ if (!$tablet) {
             <?php
             if ($tablet) {
                 ?> <div class="span3"><div class="row-fluid"> <?php
-    echo $OUTPUT->blocks('side-pre', '');
-    echo $OUTPUT->blocks('side-post', '');
+    echo $OUTPUT->essential_blocks('side-pre', '');
+    echo $OUTPUT->essential_blocks('side-post', '');
 ?> </div></div> <?php
             } else {
                 echo $OUTPUT->blocks('side-post', 'span3');

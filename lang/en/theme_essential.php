@@ -133,9 +133,9 @@ $string['styletiled'] = 'Tiled';
 $string['stylestretch'] = 'Stretch';
 
 $string['pagetopblocksperrow'] = 'Page top blocks per row';
-$string['pagetopblocksperrowdesc'] = 'State up to how many blocks per row between {$a->lower} and {$a->upper} for pages with \'Page top blocks\'.  Current pages are: Courses, Course Category and Frontpage.';
+$string['pagetopblocksperrowdesc'] = 'State up to how many blocks per row between {$a->lower} and {$a->upper} for pages with \'Page top blocks\'.  Current pages are: Admin, Course, Course Category, Dashboard, Frontpage, My Public.';
 $string['pagebottomblocksperrow'] = 'Page bottom blocks per row';
-$string['pagebottomblocksperrowdesc'] = 'State up to how many blocks per row between {$a->lower} and {$a->upper} for pages with \'Page bottom blocks\'.  Current pages are: Admin plugins, Course management, Grading and Quiz edit.';
+$string['pagebottomblocksperrowdesc'] = 'State up to how many blocks per row between {$a->lower} and {$a->upper} for pages with \'Page bottom blocks\'.  Current pages are: Admin, Course management, Grading and Quiz edit.';
 
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this text area will be reflected in every page, making for easier customisation of this theme.';
