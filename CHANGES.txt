@@ -6,6 +6,7 @@ New in 3.1.0.6
 - FIX: Issue #700: Header height - M3.1.
 - FIX: Issue #702: Header title - Fullname and summary option - language span tags.
 - FIX: Issue #703: Group images are not well displayed.
+- FIX: Issue #704: Vertical space between the header title and header subtitle is to small.
 - FIX: Issue #707: Marketing setting header.
 - FIX: Two column layout in RTL - M3.1.
 - FIX: Theme selector images not responsive.
