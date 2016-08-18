@@ -1250,6 +1250,8 @@ class core_renderer extends \core_renderer {
     protected function render_user_picture(\user_picture $userpicture) {
         if ($this->page->pagetype == 'mod-forum-discuss') {
             $userpicture->size = 1;
+        } else if ((empty($userpicture->size)) || ($userpicture->size != 64)) {
+            $userpicture->size = 72;
         }
         return parent::render_user_picture($userpicture);
     }
