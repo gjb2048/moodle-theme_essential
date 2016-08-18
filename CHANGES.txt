@@ -1,5 +1,6 @@
 New in 2.9.1.15
 ===============
+- FIX: Issue #710: Wrong profile image used.
 
 New in 2.9.1.14
 ===============
