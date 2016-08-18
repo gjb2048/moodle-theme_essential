@@ -61,9 +61,11 @@ echo $OUTPUT->doctype();
     <div id="page-content" class="row-fluid">
         <div id="region-bs-main-and-pre" class="span9">
             <div class="row-fluid">
-                <section id="region-main" class="span8 pull-right">
-                    <?php echo $OUTPUT->main_content(); ?>
-                </section>
+                <div id="content" class="span8 pull-right">
+                    <section id="region-main">
+                        <?php echo $OUTPUT->main_content(); ?>
+                    </section>
+                </div>
                 <?php echo $OUTPUT->essential_blocks('side-pre', 'span4 desktop-first-column'); ?>
             </div>
         </div>
