@@ -290,13 +290,85 @@ body.has_dock {
         width: 300px;
     }
     &.empty-region-side-pre:not(.has-region-side-post) {
-        #region-bs-main-and-pre {
+        #main-and-pre {
             width: 100%;
         }
     }
     &.empty-region-side-pre.empty-region-side-post {
-        #region-bs-main-and-pre {
+        #main-and-pre, #main-and-pre #content {
             width: 100%;
+        }
+    }
+    &.docked-region-side-pre {
+        #main-and-pre #content {
+            width: 100%;
+            #region-main {
+                width: auto;
+            }
+        }
+    }
+    &.used-region-side-pre.docked-region-side-post {
+        #main-and-pre {
+            width: 100%;
+            #content {
+                .fluid-span(9);
+            }
+            #block-region-side-pre {
+                .fluid-span(3);
+            }
+        }
+    }
+    &.jsenabled {
+        &.docked-region-side-pre {
+            &.empty-region-side-pre {
+                &.used-region-side-post {
+                    #region-main {
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .fluid-span (@columns) {
+        .fluid-span-full(@columns, @fluidGridColumnWidth1200, @fluidGridGutterWidth1200);
+    }
+    body.has_dock.used-region-side-pre.docked-region-side-post {
+        #main-and-pre {
+            #content {
+                .fluid-span(9);
+            }
+            #block-region-side-pre {
+                .fluid-span(3);
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+    .fluid-span (@columns) {
+        .fluid-span-full(@columns, @fluidGridColumnWidth768, @fluidGridGutterWidth768);
+    }
+    body.has_dock.used-region-side-pre.docked-region-side-post {
+        #main-and-pre {
+            #content {
+                .fluid-span(9);
+            }
+            #block-region-side-pre {
+                .fluid-span(3);
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    body.has_dock.used-region-side-pre.docked-region-side-post {
+        #main-and-pre {
+            #content, #block-region-side-pre {
+                width: 100%;
+            }
         }
     }
 }

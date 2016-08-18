@@ -42,11 +42,11 @@ if (core_useragent::get_device_type() == "tablet") {
             <div class="row-fluid">
 <?php
 if ($tablet) {
-    echo '<div class="span12">';
+    echo '<div id="content" class="span12">';
 } else if ((($hasboringlayout) && ($left)) || ((!$hasboringlayout) && (!$left))) {
-    echo '<div class="span8 pull-right">';
+    echo '<div id="content" class="span8 pull-right">';
 } else {
-    echo '<div class="span8 desktop-first-column">';
+    echo '<div id="content" class="span8 desktop-first-column">';
 }
 echo $OUTPUT->essential_blocks('page-top', 'row-fluid', 'aside', \theme_essential\toolbox::get_setting('pagetopblocksperrow'));
 echo '<section id="region-main">';

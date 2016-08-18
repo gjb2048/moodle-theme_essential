@@ -182,9 +182,9 @@ if (!$left) {
     $frontpageblocks = !$frontpageblocks;
 }
 if ($frontpageblocks) {
-    echo '<div class="span9 pull-right">';
+    echo '<div id="content" class="span9 pull-right">';
 } else {
-    echo '<div class="span9 desktop-first-column">';
+    echo '<div id="content" class="span9 desktop-first-column">';
 }
 $fppagetopblocks = \theme_essential\toolbox::get_setting('fppagetopblocks');
 if ($PAGE->user_is_editing() && ($fppagetopblocks)) {
