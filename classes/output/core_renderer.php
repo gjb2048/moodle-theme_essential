@@ -1751,7 +1751,7 @@ class core_renderer extends \core_renderer {
         $regioncontent = '';
         $editing = $this->page->user_is_editing();
         if ($editing) {
-            $regioncontent .= html_writer::tag('span', get_string('region-'.$displayregion, 'theme_essential'),
+            $regioncontent .= html_writer::tag('span', html_writer::tag('span', get_string('region-'.$displayregion, 'theme_essential')),
                 array('class' => 'regionname'));
         }
 
