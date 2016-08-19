@@ -1179,6 +1179,11 @@
                                 color: inherit;
                             }
                         }
+                        > tr:nth-child(odd) > td {
+                            .@{fa-css-prefix}, .@{fa-css-prefix}:hover, .@{fa-css-prefix}:focus {
+                                color: ~"[[setting:alternativethemestripetextcolour@{index}]]";
+                            }
+                        }
                     }
                 }
 

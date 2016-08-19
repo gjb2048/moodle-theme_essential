@@ -58,6 +58,16 @@ table.flexible,
                 color: inherit;
             }
         }
+        > tr:nth-child(odd) > td {
+            .@{fa-css-prefix}, .@{fa-css-prefix}:hover, .@{fa-css-prefix}:focus {
+                color: ~"[[setting:themestripetextcolour]]";
+            }
+            img {
+                &.userpicture, &.profilepicture {
+                    background-color: rgba(255, 255, 255, 0.8);
+                }
+            }
+        }
         > tr:nth-child(odd) > td h3 {
             color: inherit;
         }
