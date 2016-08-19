@@ -8,6 +8,7 @@ New in 2.9.1.15
 - FIX: Issue #716: Information alert close difficult to see.
 - FIX: Issue #718: Affix top offset height when reload down page.
 - FIX: Issue #720: Block titles when editing and a page background are difficult to see.
+- FIX: Table tidy up.
 
 New in 2.9.1.14
 ===============
