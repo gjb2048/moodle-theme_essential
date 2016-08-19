@@ -19,8 +19,6 @@ define(['jquery', 'theme_bootstrapbase/bootstrap', 'core/log'], function($, boot
             $(document).ready(function($) {
                 if ($('#essentialnavbar').length) {
                     var $essentialnavbar = $('#essentialnavbar');
-                    var offset = $essentialnavbar.offset().top;
-                    log.debug('Essential affix AMD offset: ' + offset);
                     var pageheaderHeight = $('#page-header').height();
                     log.debug('Essential affix AMD pageheaderHeight: ' + pageheaderHeight);
                     $essentialnavbar.affix({
@@ -34,7 +32,7 @@ define(['jquery', 'theme_bootstrapbase/bootstrap', 'core/log'], function($, boot
                                     diff = 0;
                                 }
                                 $essentialnavbar.css('top', diff + 'px');
-                                return offset;
+                                return pageheaderHeight;
                             }
                         }
                     });

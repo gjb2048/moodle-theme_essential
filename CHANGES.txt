@@ -2,6 +2,7 @@ New in 3.1.0.7
 ==============
 - FIX: Issue #710: Wrong profile image used.
 - FIX: Issue #711: Space when blocks are docked.
+- FIX: Issue #718: Affix top offset height when reload down page..
 
 New in 3.1.0.6
 ==============
