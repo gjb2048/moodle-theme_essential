@@ -9,6 +9,7 @@ New in 3.0.1.8
 - FIX: Issue #717: Notifications hover.
 - FIX: Issue #718: Affix top offset height when reload down page.
 - FIX: Issue #720: Block titles when editing and a page background are difficult to see.
+- FIX: Table tidy up.
 
 New in 3.0.1.7
 ==============
