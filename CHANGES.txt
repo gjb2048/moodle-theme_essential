@@ -4,6 +4,7 @@ New in 3.0.1.8
 - FIX: Issue #711: Space when blocks are docked.
 - FIX: Issue #712: My Courses overflow.
 - FIX: Issue #714: Enrol users page needs tidying up.
+- FIX: Issue #715: Grading status page 'Grade' button and file submission line.
 - FIX: Issue #716: Information alert close difficult to see.
 - FIX: Issue #717: Notifications hover.
 - FIX: Issue #718: Affix top offset height when reload down page.
