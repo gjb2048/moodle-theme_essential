@@ -9,6 +9,7 @@ New in 3.1.0.7
 - FIX: Issue #717: Notifications hover.
 - FIX: Issue #718: Affix top offset height when reload down page.
 - FIX: Issue #720: Block titles when editing and a page background are difficult to see.
+- FIX: Issue #721: Notification template close inconsistent with alerts on frontpage.
 - FIX: Table tidy up.
 
 New in 3.1.0.6
