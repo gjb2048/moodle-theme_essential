@@ -137,6 +137,21 @@ body {
     height: 25px;
 }
 
+// Table icons.
+.userenrolment .unassignrolelink,
+.generaltable {
+    img {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: @baseBorderRadius;
+        padding: 2px;
+    }
+}
+.generaltable {
+    img[src$="spacer"] {
+        background-color: transparent;
+    }
+}
+
 // User enrolment page.
 .userenrolment {
     img {
@@ -147,11 +162,6 @@ body {
     }
     .unassignrolelink {
         vertical-align: text-bottom;
-        img {
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: @baseBorderRadius;
-            padding: 2px;
-        }
     }
     .col_userdetails, .col_lastcourseaccess {
         padding: 6px;

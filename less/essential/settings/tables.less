@@ -71,6 +71,9 @@ table.flexible,
         > tr:nth-child(odd) > td h3 {
             color: inherit;
         }
+        > tr.dimmed_text > td a {
+            color: inherit;
+        }
     }
 }
 
@@ -108,6 +111,10 @@ table#modules,
 table#permissions {
     > tbody {
         tr:hover > td, 
+        tr:hover > td a:not(.btn),
+        tr:hover > td a:not(.btn):hover,
+        tr:hover > td a:not(.btn):focus,
+        tr:hover > td a:not(.btn):visited, 
         tr:hover > td > h3,
         tr:hover > th {
             color: ~"[[setting:themestripetextcolour]]";
