@@ -2,7 +2,8 @@ New in 3.0.1.8
 ==============
 - FIX: Issue #710: Wrong profile image used.
 - FIX: Issue #711: Space when blocks are docked.
-- FIX: Issue #718: Affix top offset height when reload down page..
+- FIX: Issue #716: Information alert close difficult to see.
+- FIX: Issue #718: Affix top offset height when reload down page.
 
 New in 3.0.1.7
 ==============
