@@ -136,4 +136,31 @@ body { // Inside a body tag so will be more specific and override core plugin st
     height: 25px;
 }
 
+// User enrolment page.
+.userenrolment {
+    img {
+        &.userpicture, &.profilepicture {
+            height: 44px;
+            width: 44px;
+        }
+    }
+    .unassignrolelink {
+        vertical-align: text-bottom;
+        img {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: @baseBorderRadius;
+            padding: 2px;
+        }
+    }
+    .col_userdetails, .col_lastcourseaccess {
+        padding: 6px;
+    }
+}
+
+#page-enrol-users .enrol_user_buttons {
+    float: none;
+    margin-top: 4px;
+    text-align: right;
+}
+
 /* @end */
