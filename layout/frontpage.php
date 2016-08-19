@@ -66,7 +66,7 @@ if ($enable1alert || $enable2alert || $enable3alert) {
         <!-- Alert #1 -->
         <?php if ($enable1alert) { ?>
             <div class="useralerts alert alert-<?php echo \theme_essential\toolbox::get_setting('alert1type'); ?>">
-                <a class="close" data-dismiss="alert" href="#"><span aria-hidden="true" class="fa fa-times-circle"></span></a>
+                <button type="button" class="close" data-dismiss="alert"><span class="fa fa-times-circle" aria-hidden="true"></span></button>
                 <?php
                 $alert1icon = 'alert' . \theme_essential\toolbox::get_setting('alert1type');
                 echo $$alert1icon.'<span class="title">'.\theme_essential\toolbox::get_setting('alert1title', true);
@@ -79,7 +79,7 @@ if ($enable1alert || $enable2alert || $enable3alert) {
         <!-- Alert #2 -->
         <?php if ($enable2alert) { ?>
             <div class="useralerts alert alert-<?php echo \theme_essential\toolbox::get_setting('alert2type'); ?>">
-                <a class="close" data-dismiss="alert" href="#"><span aria-hidden="true" class="fa fa-times-circle"></span></a>
+                <button type="button" class="close" data-dismiss="alert"><span class="fa fa-times-circle" aria-hidden="true"></span></button>
                 <?php
                 $alert2icon = 'alert' . \theme_essential\toolbox::get_setting('alert2type');
                 echo $$alert2icon.'<span class="title">'.\theme_essential\toolbox::get_setting('alert2title', true);
@@ -92,7 +92,7 @@ if ($enable1alert || $enable2alert || $enable3alert) {
         <!-- Alert #3 -->
         <?php if ($enable3alert) { ?>
             <div class="useralerts alert alert-<?php echo \theme_essential\toolbox::get_setting('alert3type'); ?>">
-                <a class="close" data-dismiss="alert" href="#"><span aria-hidden="true" class="fa fa-times-circle"></span></a>
+                <button type="button" class="close" data-dismiss="alert"><span class="fa fa-times-circle" aria-hidden="true"></span></button>
                 <?php
                 $alert3icon = 'alert' . \theme_essential\toolbox::get_setting('alert3type');
                 echo $$alert3icon.'<span class="title">'.\theme_essential\toolbox::get_setting('alert3title', true);
