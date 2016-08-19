@@ -4,6 +4,7 @@ New in 2.9.1.15
 - FIX: Issue #711: Space when blocks are docked.
 - FIX: Issue #712: My Courses overflow.
 - FIX: Issue #714: Enrol users page needs tidying up.
+- FIX: Issue #715: Grading status page 'Grade' button and file submission line.
 - FIX: Issue #716: Information alert close difficult to see.
 - FIX: Issue #718: Affix top offset height when reload down page.
 - FIX: Issue #720: Block titles when editing and a page background are difficult to see.
