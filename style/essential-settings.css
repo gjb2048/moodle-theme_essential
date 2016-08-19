@@ -26,25 +26,25 @@
 .alert .fa-bullhorn:focus {
   color: [[setting:themenavcolor]];
 }
-.alert.alert-info a.close .fa {
+.alert.alert-info .close .fa {
   color: #3a87ad;
 }
-.alert.alert-info a.close:hover .fa,
-.alert.alert-info a.close:focus .fa {
+.alert.alert-info .close:hover .fa,
+.alert.alert-info .close:focus .fa {
   color: #3a87ad;
 }
-.alert.alert-error a.close .fa {
+.alert.alert-error .close .fa {
   color: #b94a48;
 }
-.alert.alert-error a.close:hover .fa,
-.alert.alert-error a.close:focus .fa {
+.alert.alert-error .close:hover .fa,
+.alert.alert-error .close:focus .fa {
   color: #b94a48;
 }
-.alert.alert-success a.close .fa {
+.alert.alert-success .close .fa {
   color: #468847;
 }
-.alert.alert-success a.close:hover .fa,
-.alert.alert-success a.close:focus .fa {
+.alert.alert-success .close:hover .fa,
+.alert.alert-success .close:focus .fa {
   color: #468847;
 }
 /* @end */
