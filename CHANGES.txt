@@ -1,5 +1,6 @@
 New in 2.9.1.16
 ===============
+- FIX: Issue #724: Main content does not expand.
 
 New in 2.9.1.15
 ===============
