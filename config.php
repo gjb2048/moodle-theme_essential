@@ -113,7 +113,7 @@ $THEME->layouts = array(
     ),
     // My dashboard page.
     'mydashboard' => array(
-        'file' => 'mydashboard.php',
+        'file' => 'columns3.php',
         'regions' => array('side-pre', 'page-top', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-post',
     ),
