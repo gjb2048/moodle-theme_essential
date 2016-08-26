@@ -45,12 +45,12 @@ if (core_useragent::get_device_type() == "tablet") {
     <?php require_once(\theme_essential\toolbox::get_tile_file('pagenavbar')); ?>
     <!-- Start Main Regions -->
     <div id="page-content" class="row-fluid">
-        <div id="<?php echo $regionbsid ?>" class="span9">
+        <div id="<?php echo $regionbsid ?>" class="span9<?php echo (!$left) ? ' pull-right' : ''; ?>">
             <div class="row-fluid">
 <?php
 if ($tablet) {
     echo '<div id="content" class="span12">';
-} else if ($hasboringlayout) {
+} else if ((($hasboringlayout) && ($left)) || ((!$hasboringlayout) && (!$left))) {
     echo '<div id="content" class="span8 pull-right">';
 } else {
     echo '<div id="content" class="span8 desktop-first-column">';
@@ -74,7 +74,7 @@ if (empty($PAGE->layout_options['nocoursefooter'])) {
 echo '</section>';
 echo '</div>';
 if (!$tablet) {
-    if ($hasboringlayout) {
+    if ((($hasboringlayout) && ($left)) || ((!$hasboringlayout) && (!$left))) {
         echo $OUTPUT->essential_blocks('side-pre', 'span4 desktop-first-column');
     } else {
         echo $OUTPUT->essential_blocks('side-pre', 'span4 pull-right');
@@ -85,12 +85,16 @@ if (!$tablet) {
         </div>
         <?php
         if ($tablet) {
-            ?> <div class="span3"><div class="row-fluid"> <?php
+            ?> <div class="span3<?php echo (!$left) ? ' desktop-first-column' : ''; ?>"><div class="row-fluid"> <?php
     echo $OUTPUT->essential_blocks('side-pre', '');
     echo $OUTPUT->essential_blocks('side-post', '');
 ?> </div></div> <?php
         } else {
-            echo $OUTPUT->essential_blocks('side-post', 'span3');
+            $postclass = 'span3';
+            if (!$left) {
+                $postclass .= ' desktop-first-column';
+            }
+            echo $OUTPUT->essential_blocks('side-post', $postclass);
         }
 ?>
     </div>
