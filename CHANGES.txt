@@ -4,6 +4,7 @@ New in 3.1.0.8
 - FIX: Issue #724: Main content does not expand.
 - FIX: Issue #726: New "page top" block region is not properly margined in RTL mode.
 - FIX: Issue #727: MyDashboard layout not flipping in RTL.
+- FIX: Remove MyDashboard layout to avoid duplicated code.
 - NEW: Issue #713: Grading page has no navigation.
 
 New in 3.1.0.7
