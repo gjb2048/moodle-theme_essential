@@ -2,6 +2,7 @@ New in 3.0.1.9
 ==============
 - FIX: Issue #722: Assignment grading page lacking styling.
 - FIX: Issue #724: Main content does not expand.
+- FIX: Issue #726: New "page top" block region is not properly margined in RTL mode.
 
 New in 3.0.1.8
 ==============
