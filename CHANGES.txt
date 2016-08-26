@@ -1,6 +1,7 @@
 New in 3.1.0.8
 ==============
 - FIX: Issue #724: Main content does not expand.
+- NEW: Issue #713: Grading page has no navigation.
 
 New in 3.1.0.7
 ==============

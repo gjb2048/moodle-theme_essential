@@ -13,12 +13,61 @@
 }
 
 .path-mod-assign {
+    [data-region=grading-navigation] {
+        padding: 0;
+    }
+
     [data-region=grading-navigation-panel] {
+        height: 100px;
         position: relative;
+        [data-region=user-info] h4 {
+            margin-top: 0;
+            img {
+                margin-top: 0;
+            }
+        }
+    }
+    
+    [data-region=review-panel], [data-region=grade-panel] {
+        top: 100px;
     }
 
     [data-region=grade-actions], [data-region=grade-actions-panel] {
         background-color: @white;
+    }
+}
+
+@media (max-width: 767px) {
+    .path-mod-assign {
+        [data-region=grading-navigation-panel] {
+            height: auto;
+        }
+        [data-region=review-panel], [data-region=grade-panel] {
+            top: 0;
+        }
+        [data-region=user-info], [data-region=assignment-info] {
+            display: inline !important;
+            width: 50%;
+        }
+        [data-region=user-selector] .alignment {
+            width: 100%;
+        }
+    }
+    .dir-ltr.path-mod-assign {
+        [data-region=user-info] {
+            float: left;
+        }
+        [data-region=assignment-info] {
+            float: right;
+        }
+    }
+    .dir-rtl.path-mod-assign {
+        [data-region=user-info] {
+            float: right;
+        }
+        [data-region=assignment-info] {
+            float: left;
+        }
     }
 }
 
