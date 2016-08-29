@@ -109,7 +109,7 @@ $THEME->layouts = array(
     // Server administration scripts.
     'admin' => array(
         'file' => 'admin.php',
-        'regions' => array('side-pre', 'page-top', 'footer-left', 'footer-middle', 'footer-right'),
+        'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-pre',
     ),
     // My dashboard page.
