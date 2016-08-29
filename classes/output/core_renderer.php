@@ -1760,45 +1760,48 @@ class core_renderer extends \core_renderer {
      * @return string HTML.
      */
     public function essential_blocks($region, $classes = array(), $tag = 'aside', $blocksperrow = 0) {
-        $displayregion = $this->page->apply_theme_region_manipulations($region);
-        $classes = (array) $classes;
-        $classes[] = 'block-region';
+        if ($this->page->blocks->is_known_region($region)) {
+            $classes = (array) $classes;
+            $classes[] = 'block-region';
 
-        $attributes = array(
-            'id' => 'block-region-' . preg_replace('#[^a-zA-Z0-9_\-]+#', '-', $displayregion),
-            'class' => join(' ', $classes),
-            'data-blockregion' => $displayregion,
-            'data-droptarget' => '1'
-        );
+            $attributes = array(
+                'id' => 'block-region-' . preg_replace('#[^a-zA-Z0-9_\-]+#', '-', $region),
+                'class' => join(' ', $classes),
+                'data-blockregion' => $region,
+                'data-droptarget' => '1'
+            );
 
-        $regioncontent = '';
-        $editing = $this->page->user_is_editing();
-        if ($editing) {
-            $regioncontent .= html_writer::tag('span', html_writer::tag('span', get_string('region-'.$displayregion, 'theme_essential')),
-                array('class' => 'regionname'));
-        }
+            $regioncontent = '';
+            $editing = $this->page->user_is_editing();
+            if ($editing) {
+                $regioncontent .= html_writer::tag('span', html_writer::tag('span', get_string('region-'.$region, 'theme_essential')),
+                    array('class' => 'regionname'));
+            }
 
-        if ($this->page->blocks->region_has_content($displayregion, $this)) {
-            if ($blocksperrow > 0) {
-                $attributes['class'] .= ' rowblock-blocks';
-                if ($editing) {
-                    $attributes['class'] .= ' rowblock-edit';
+            if ($this->page->blocks->region_has_content($region, $this)) {
+                if ($blocksperrow > 0) {
+                    $attributes['class'] .= ' rowblock-blocks';
+                    if ($editing) {
+                        $attributes['class'] .= ' rowblock-edit';
+                    }
+                    $regioncontent .= $this->essential_blocks_for_region($region, $blocksperrow, $editing);
+                    $output = html_writer::tag($tag, $regioncontent, $attributes);
+                } else {
+                    $regioncontent .= $this->blocks_for_region($region);
+                    $output = html_writer::tag($tag, $regioncontent, $attributes);
                 }
-                $regioncontent .= $this->essential_blocks_for_region($displayregion, $blocksperrow, $editing);
-                $output = html_writer::tag($tag, $regioncontent, $attributes);
             } else {
-                $regioncontent .= $this->blocks_for_region($displayregion);
-                $output = html_writer::tag($tag, $regioncontent, $attributes);
+                if ($editing) {
+                    if ($blocksperrow > 0) {
+                        $attributes['class'] .= ' rowblock-blocks rowblock-edit';
+                    }
+                    $output = html_writer::tag($tag, $regioncontent, $attributes);
+                } else {
+                    $output = '';
+                }
             }
         } else {
-            if ($editing) {
-                if ($blocksperrow > 0) {
-                    $attributes['class'] .= ' rowblock-blocks rowblock-edit';
-                }
-                $output = html_writer::tag($tag, $regioncontent, $attributes);
-            } else {
-                $output = '';
-            }
+            $output = '';
         }
 
         return $output;

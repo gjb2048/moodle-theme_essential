@@ -58,23 +58,6 @@
     }
 }
 
-.editing {
-    .block-region.yui3-dd-drop-active-valid {
-        border: 1px dashed darken(@wellBackground, 7%);
-        .border-radius(@borderRadiusLarge);
-    }
-
-    #page-footer {
-        .footerblocks {
-            margin-top: 10px;
-            > .footerblock,
-            .block-region.yui3-dd-drop-active-valid {
-                min-height: 300px;
-            }
-        }
-    }
-}
-
 // Correctly span the main element when no blocks are present.
 .empty-region-side-pre:not(.editing) #main-and-pre #content, .empty-region-side-post:not(.editing) #main-and-pre {
     width: 100%;
@@ -145,6 +128,16 @@
     &.empty-region-hidden-dock #block-region-hidden-dock, &.used-region-hidden-dock #block-region-hidden-dock {
         min-height: 200px;
         border-width: 2px;
+        border-style: dashed;
+    }
+
+    // Only show dashed when drag and drop.
+    &.empty-region-side-pre.pagelayout-admin #block-region-side-pre,
+    &.used-region-side-pre.pagelayout-admin #block-region-side-pre {
+        border-style: none;
+    }
+    &.empty-region-side-pre.pagelayout-admin #block-region-side-pre.yui3-dd-drop-active-valid,
+    &.used-region-side-pre.pagelayout-admin #block-region-side-pre.yui3-dd-drop-active-valid {
         border-style: dashed;
     }
 
