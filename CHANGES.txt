@@ -1,5 +1,6 @@
 New in 3.0.1.9
 ==============
+- FIX: Issue #320: Group editing icons do not update on click to reflect new group status.
 - FIX: Issue #700: Header height.
 - FIX: Issue #722: Assignment grading page lacking styling.
 - FIX: Issue #724: Main content does not expand.
