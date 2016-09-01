@@ -5,7 +5,7 @@ The "Essential" Moodle Theme
 [![Build Status](https://travis-ci.org/gjb2048/moodle-theme_essential.svg?branch=master)](https://travis-ci.org/gjb2048/moodle-theme_essential)
 
 With 2.5 now released Julian thought it time to take the opportunity to build a new theme that would push the new theme engine
-to it's limits a bit. With that in mind he introduced the new "Essential" theme.  Now Julian has left us for Canvassian
+to it's limits a bit.  With that in mind he introduced the new "Essential" theme.  Now Julian has left us for Canvassian
 adventures, David and Gareth took over development and maintenance.  And now David has left for pastures new, Gareth continues
 to maintain and make improvements.
 
@@ -15,35 +15,31 @@ on sites where Moodle would potentially serve as a company homepage rather than 
 Cool things to know about the theme.
  - It attempts to load as many as possible icons from a font
  - Most of what you think are "graphics" are actually the [Awesome font](http://fortawesome.github.io/Font-Awesome/)
- - The slider on the front page of the demo site is completely customisable through theme settings
- - I am really trying to push what [Bootstrap](http://twitter.github.io/bootstrap/) Grids can do. As such the theme is fully
+ - The slider on the front page is completely customisable through theme settings.
+ - I am really trying to push what [Bootstrap](http://twitter.github.io/bootstrap/) Grids can do.  As such the theme is fully
    responsive.
- - The footer is all custom Moodle regions. This means blocks can be added. The footer of the demo site is full of HTML blocks in
-   this instance
- - The Theme uses [Google web fonts](http://www.google.com/fonts/) to give it that extra bit of shazam!
- - Social Network icons appear at the top of the page dynamically based on theme settings
- - The entire colour scheme can be modified with theme settings
- - The homepage main area is just a label. The theme will ship with custom classes that you can set for tables and links to modify
-   their formatting.  No knowledge of code is needed as you can use the text editor to do this. Documentation will be provided
-   outlining what the additional classes are.
+ - The footer is all custom Moodle regions.  This means blocks can be added.
+ - The theme can use [Google web fonts](http://www.google.com/fonts/) to give it that extra bit of shazam!
+ - Social network icons appear at the top of the page dynamically based on theme settings.
+ - The entire colour scheme can be modified with theme settings.
 
-Original Author
-===============
+Developed and maintained by
+===========================
+Gareth J Barnard MSc. BSc(Hons)(Sndw). MBCS. CEng. CITP. PGCE.
+Moodle profile | http://moodle.org/user/profile.php?id=442195
+Web profile | http://about.me/gjbarnard
+
+Original Developer
+==================
 Julian Ridden
 Moodle profile: https://moodle.org/user/profile.php?id=39680
 Web profile:    http://au.linkedin.com/in/eduridden/
 
-Previous Authors
-================
+Previous Developer
+==================
 David Bezemer
 Moodle profile | https://moodle.org/user/profile.php?id=1416592
 Web profile | http://www.davidbezemer.nl
-
-Maintained by
-=============
-G J Barnard MSc. BSc(Hons)(Sndw). MBCS. CEng. CITP. PGCE.
-Moodle profile | http://moodle.org/user/profile.php?id=442195
-Web profile | http://about.me/gjbarnard
 
 Free Software
 =============
@@ -66,7 +62,7 @@ Moodle community benefits.
 Support
 =======
 As Essential is licensed under the GNU GPLv3 License it comes with NO support.  If you would like support from
-me then I'm happy to provide it for a fee (please see my contact details above).  Otherwise, the 'Themes' forum:
+me (Gareth) then I'm happy to provide it for a fee (please see my contact details above).  Otherwise, the 'Themes' forum:
 moodle.org/mod/forum/view.php?id=46 is an excellent place to ask questions.
 
 Sponsorships
@@ -74,7 +70,7 @@ Sponsorships
 This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider sponsoring
 by:
 
-PayPal - Please contact me via my 'Moodle profile' (above) for details as I am an individual and therefore am unable to have
+PayPal - Please contact me (Gareth) via my 'Moodle profile' (above) for details as I am an individual and therefore am unable to have
 'buy me now' buttons under their terms.
 
 Flattr - https://flattr.com/profile/gjb2048
@@ -236,5 +232,5 @@ A video showing many of the core features is available for viewing at https://ww
 
 Documentation
 =============
-As always, documentation is a work in progress. Available documentation is available at http://docs.moodle.org/30/en/Essential_theme
+As always, documentation is a work in progress. Available documentation is available at http://docs.moodle.org/31/en/Essential_theme
 If you have questions you can post them in the issue tracker at https://github.com/gjb2048/moodle-theme_essential/issues
