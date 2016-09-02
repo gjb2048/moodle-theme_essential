@@ -48,7 +48,7 @@ form#movecourses table,
 .forumheaderlist,
 table.flexible,
 .generaltable {
-    > tbody {
+    tbody {
         > tr:nth-child(odd) > td,
         > tr:nth-child(odd) > th {
             color: ~"[[setting:themestripetextcolour]]";
@@ -73,6 +73,17 @@ table.flexible,
         }
         > tr.dimmed_text > td a {
             color: inherit;
+        }
+    }
+}
+
+.submissionsummarytable .generaltable table.ygtvtable {
+    tbody {
+        > tr:nth-child(odd) > td {
+            color: inherit;
+            .ygtvspacer {
+                background-color: inherit;
+            }
         }
     }
 }
