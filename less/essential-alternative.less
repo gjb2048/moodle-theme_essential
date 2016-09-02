@@ -1126,7 +1126,7 @@
                         color: ~"[[setting:alternativethemestripetextcolour@{index}]]";
                         background-color: ~"[[setting:alternativethemestripebackgroundcolour@{index}]]";
                         a, a:hover, a:focus, a:visited, .@{fa-css-prefix} {
-                            color: inherit;
+                            color: ~"[[setting:themestripeurlcolour@{index}]]";
                         }
                     }
                 }
@@ -1175,7 +1175,7 @@
                             background-color: ~"[[setting:alternativethemestripebackgroundcolour@{index}]]";
                             > a:not(.btn), > a:not(.btn):hover, > a:not(.btn):focus, > a:not(.btn):visited,
                             a.toggle-display, a.toggle-display:hover, a.toggle-display:focus, a.toggle-display:visited {
-                                color: inherit;
+                                color:  ~"[[setting:themestripeurlcolour@{index}]]";
                             }
                         }
                         > tr:nth-child(odd) > td {

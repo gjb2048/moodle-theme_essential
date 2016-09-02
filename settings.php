@@ -361,6 +361,16 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingscolour->add($setting);
 
+    // Theme stripe url colour setting.
+    $name = 'theme_essential/themestripeurlcolour';
+    $title = get_string('themestripeurlcolour', 'theme_essential');
+    $description = get_string('themestripeurlcolourdesc', 'theme_essential');
+    $default = '#943b21';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingscolour->add($setting);
+
     // This is the descriptor for the footer.
     $name = 'theme_essential/footercolorinfo';
     $heading = get_string('footercolors', 'theme_essential');
@@ -614,6 +624,16 @@ if ($ADMIN->fulltree) {
         $title = get_string('alternativethemestripebackgroundcolour', 'theme_essential', $alternativethemenumber);
         $description = get_string('alternativethemestripebackgroundcolourdesc', 'theme_essential', $alternativethemenumber);
         $default = '#ff9a34';
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $essentialsettingscolour->add($setting);
+
+        // Theme stripe url colour setting.
+        $name = 'theme_essential/alternativethemestripeurlcolour' . $alternativethemenumber;
+        $title = get_string('alternativethemestripeurlcolour', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemestripeurlcolourdesc', 'theme_essential', $alternativethemenumber);
+        $default = '#943b21';
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
