@@ -1,3 +1,6 @@
+New in 3.0.1.10
+===============
+
 New in 3.0.1.9
 ==============
 - FIX: Issue #320: Group editing icons do not update on click to reflect new group status.
