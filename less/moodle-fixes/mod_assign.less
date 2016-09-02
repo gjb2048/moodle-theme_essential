@@ -537,8 +537,8 @@
 }
 
 .path-mod-assign [data-region="review-panel"].collapsed {
-    left: calc(30px - 70%);
-    right: calc(100% - 30px);
+    left: ~"calc(30px - 70%)";
+    right: ~"calc(100% - 30px)";
     -webkit-transition: right 0.5s, left 0.5s;
        -moz-transition: right 0.5s, left 0.5s;
             transition: right 0.5s, left 0.5s;
@@ -563,7 +563,7 @@
     position: absolute;
     left: 30px;
     right: 0;
-    width: calc(100% - 30px);
+    width: ~"calc(100% - 30px)";
     overflow: auto;
     -webkit-transition: width 0.5s, right 0.5s, left 0.5s;
        -moz-transition: width 0.5s, right 0.5s, left 0.5s;
@@ -595,8 +595,8 @@
 }
 
 .path-mod-assign [data-region="grade-panel"].collapsed {
-    left: calc(100% - 30px);
-    right: calc(30px - 100%);
+    left: ~"calc(100% - 30px)";
+    right: ~"calc(30px - 100%)";
     visibility: hidden;
     -webkit-transition: right 0.5s, left 0.5s, visibility 0s 0.5s;
        -moz-transition: right 0.5s, left 0.5s, visibility 0s 0.5s;
@@ -891,7 +891,7 @@
 
 .path-mod-assign #page-content [data-region="grade-panel"] .mform:not(.unresponsive) .fcontainer .fitem.popout .felement {
     padding: 10px 15px 15px;
-    height: calc(100% - 54px);
+    height: ~"calc(100% - 54px)";
     overflow: auto;
 }
 

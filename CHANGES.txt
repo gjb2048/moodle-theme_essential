@@ -1,5 +1,6 @@
 New in 3.1.0.9
 ==============
+- FIX: Issue #737: Rubric pop-out on assignment grading page doesn't use full height.
 
 New in 3.1.0.8
 ==============
