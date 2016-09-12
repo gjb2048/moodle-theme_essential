@@ -160,6 +160,19 @@ class core_renderer extends \core_renderer {
         return $notification;
     }
 
+    public function standard_top_of_body_html() {
+        $output = parent::standard_top_of_body_html();
+
+$mform = new alert_modal_form();
+$output .= $this->header();
+$output .= $this->box_start('generalbox');
+$output .= $mform->display();
+$output .= $this->box_end();
+$output .= $this->footer();
+
+        return $output;
+    }
+
     /**
      * Outputs the page's footer
      * @return string HTML fragment
