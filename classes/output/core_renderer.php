@@ -160,19 +160,6 @@ class core_renderer extends \core_renderer {
         return $notification;
     }
 
-    public function standard_top_of_body_html() {
-        $output = parent::standard_top_of_body_html();
-
-$mform = new alert_modal_form();
-$output .= $this->header();
-$output .= $this->box_start('generalbox');
-$output .= $mform->display();
-$output .= $this->box_end();
-$output .= $this->footer();
-
-        return $output;
-    }
-
     /**
      * Outputs the page's footer
      * @return string HTML fragment
@@ -181,6 +168,18 @@ $output .= $this->footer();
         global $CFG;
 
         $output = $this->container_end_all(true);
+        $output .= '<h3>Page url: '.$this->page->url.'</h3>';
+        $output .= '<form action="'.$this->page->url.'" method="post">';
+        $output .= 'Information<br>';
+        $output .= '<input type="submit" name="this" value="This">';
+        $output .= '<input type="submit" name="that" value="That">';
+        $output .= '</form>';
+
+        if (isset($_POST['this'])) {
+            $output .= '<h3>This pressed.</h3>';
+        } else if (isset($_POST['that'])) {
+            $output .= '<h3>That pressed.</h3>';
+        }
 
         $footer = $this->opencontainers->pop('header/footer');
 
