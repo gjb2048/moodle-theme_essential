@@ -169,16 +169,27 @@ class core_renderer extends \core_renderer {
 
         $output = $this->container_end_all(true);
         $output .= '<h3>Page url: '.$this->page->url.'</h3>';
-        $output .= '<form action="'.$this->page->url.'" method="post">';
-        $output .= 'Information<br>';
-        $output .= '<input type="submit" name="this" value="This">';
-        $output .= '<input type="submit" name="that" value="That">';
-        $output .= '</form>';
-
-        if (isset($_POST['this'])) {
-            $output .= '<h3>This pressed.</h3>';
-        } else if (isset($_POST['that'])) {
-            $output .= '<h3>That pressed.</h3>';
+        if (isset($_POST['understand'])) {
+            $output .= '<h3>\'I understand\' pressed.</h3>';
+        } else if (isset($_POST['later'])) {
+            $output .= '<h3>\'Remind me later\' pressed.</h3>';
+        } else {
+            $output .= '<a href="#alertx" role="button" class="btn" data-toggle="modal">Launch alert modal</a>';
+            $output .= '<div id="alertx" class="modal hide fade" data-show="true">';
+            $output .= '<div class="modal-header">';
+            $output .= '<h3>Alert header</h3>';
+            $output .= '</div>';
+            $output .= '<div class="modal-body">';
+            $output .= '<p>Alert information</p>';
+            $output .= '<p>Note: \'data-show="true"\' does not seem to work so need a button.  Need to solve this with AMD JS invocation.</p>';
+            $output .= '</div>';
+            $output .= '<div class="modal-footer">';
+            $output .= '<form action="'.$this->page->url.'" method="post">';
+            $output .= '<input type="submit" name="understand" value="I understand" class="pull-left">';
+            $output .= '<input type="submit" name="later" value="Remind me later">';
+            $output .= '</form>';
+            $output .= '</div>';
+            $output .= '</div>';
         }
 
         $footer = $this->opencontainers->pop('header/footer');
