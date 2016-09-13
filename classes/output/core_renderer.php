@@ -165,40 +165,62 @@ class core_renderer extends \core_renderer {
      * @return string HTML fragment
      */
     public function footer() {
-        global $CFG, $USER;
+        global $CFG, $USER, $DB;
 
         $output = $this->container_end_all(true);
-        $output .= '<h3>Alert info:</h3>';
-        if ((isset($_POST['understand'])) || (isset($_POST['later']))) {
-            if (isset($_POST['understand'])) {
-                $output .= '<h3>\'I understand\' pressed.</h3>';
+
+        // For us only, output on frontpage so that can use other pages without testing alert.
+        if ($this->page->pagelayout == 'frontpage') {
+            $output .= '<h3>Alert info:</h3>';
+            $table = 'theme_essential';
+            if ((isset($_POST['understand'])) || (isset($_POST['later']))) {
+                if (isset($_POST['understand'])) {
+                    $output .= '<h3>\'I understand\' pressed.</h3>';
+                    $astate = 1;
+                } else {
+                    $output .= '<h3>\'Remind me later\' pressed.</h3>';
+                    $astate = 2;
+                }
+                $uid = optional_param('userid', $USER->id, PARAM_INT);
+                $aid = optional_param('alertid', 0, PARAM_INT);
+                $output .= '<p>User id: '.$uid.'.</p>';
+                $output .= '<p>Alert id: '.$aid.'.</p>';
+                $erecord = array('alertid' => $aid, 'userid' => $uid);
+                if ($DB->record_exists($table, $erecord)) {
+                    $DB->set_field($table, 'state', $astate, $erecord);
+                } else {
+                    $record = new \stdClass;
+                    $record->alertid = $aid;
+                    $record->userid = $uid;
+                    $record->state = $astate;
+                    $DB->insert_record($table, $record, false);
+                }
             } else {
-                $output .= '<h3>\'Remind me later\' pressed.</h3>';
+                $output .= '<div id="alertx" class="modal hide fade" data-show="true">';
+                $output .= '<div class="modal-header">';
+                $output .= '<h3>Alert header</h3>';
+                $output .= '</div>';
+                $output .= '<div class="modal-body">';
+                $output .= '<p>Alert information</p>';
+                $output .= '<p>Note: \'data-show="true"\' does not seem to work so need a button.  Solving this with AMD JS invocation.</p>';
+                $output .= '</div>';
+                $output .= '<div class="modal-footer">';
+                $output .= '<form action="'.$this->page->url.'" method="post">';
+                $output .= '<input type="submit" name="understand" value="I understand" class="pull-left">';
+                $output .= '<input type="submit" name="later" value="Remind me later">';
+                $output .= '<input type="hidden" name="userid" value="'.$USER->id.'">';
+                $output .= '<input type="hidden" name="alertid" value="10">';
+                $output .= '</form>';
+                $output .= '</div>';
+                $output .= '</div>';
+                $this->page->requires->js_call_amd('theme_essential/alert', 'init', array('data' => array('alertid' => 'alertx')));
+                $output .= '<p>Alert shown.</p>';
             }
-            $uid = optional_param('userid', $USER->id, PARAM_INT);
-            $aid = optional_param('alertid', 0, PARAM_INT);
-            $output .= '<p>User id: '.$uid.'.</p>';
-            $output .= '<p>Alert id: '.$aid.'.</p>';
-        } else {
-            $output .= '<div id="alertx" class="modal hide fade" data-show="true">';
-            $output .= '<div class="modal-header">';
-            $output .= '<h3>Alert header</h3>';
-            $output .= '</div>';
-            $output .= '<div class="modal-body">';
-            $output .= '<p>Alert information</p>';
-            $output .= '<p>Note: \'data-show="true"\' does not seem to work so need a button.  Solving this with AMD JS invocation.</p>';
-            $output .= '</div>';
-            $output .= '<div class="modal-footer">';
-            $output .= '<form action="'.$this->page->url.'" method="post">';
-            $output .= '<input type="submit" name="understand" value="I understand" class="pull-left">';
-            $output .= '<input type="submit" name="later" value="Remind me later">';
-            $output .= '<input type="hidden" name="userid" value="'.$USER->id.'">';
-            $output .= '<input type="hidden" name="alertid" value="10">';
-            $output .= '</form>';
-            $output .= '</div>';
-            $output .= '</div>';
-            $this->page->requires->js_call_amd('theme_essential/alert', 'init', array('data' => array('alertid' => 'alertx')));
-            $output .= '<p>Alert shown.</p>';
+            $erecord = array('alertid' => 10, 'userid' => $USER->id);
+            if ($DB->record_exists($table, $erecord)) {
+                $record = $DB->get_record($table, $erecord);
+                $output .= '<p>Alert record: '.print_r($record, true).'.</p>';
+            }
         }
 
         $footer = $this->opencontainers->pop('header/footer');

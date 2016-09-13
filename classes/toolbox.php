@@ -784,4 +784,14 @@ class toolbox {
             return $properties;
         }
     }
+
+    /**
+     * Observer that monitors user deleted event and delete user subscriptions.
+     *
+     * @param \core\event\user_deleted $event the event object.
+     */
+    public static function user_deleted(\core\event\user_deleted $event) {
+        $userid = $event->objectid;
+        error_log('Essential toolbox, user '.$userid.' deleted.');
+    }
 }

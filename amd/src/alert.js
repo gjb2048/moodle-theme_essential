@@ -20,7 +20,7 @@ define(['jquery', 'theme_bootstrapbase/bootstrap', 'core/log'], function($, bs, 
                     $('#' + data.alertid).modal('show');
                 }
             });
-            log.debug('Essential Alert AMD init: '+ data.alertid + '.');
+            log.debug('Essential Alert AMD init: ' + data.alertid + '.');
         }
     }
 });
