@@ -203,6 +203,8 @@ class core_renderer extends \core_renderer {
                 $output .= '<div class="modal-body">';
                 $output .= '<p>Alert information</p>';
                 $output .= '<p>Note: \'data-show="true"\' does not seem to work so need a button.  Solving this with AMD JS invocation.</p>';
+                $output .= '<p>Multi-lang:</p>';
+                $output .= '<p>'.format_text('<span lang="en" class="multilang">English</span><span lang="en_ar" class="multilang">Pirate English</span>').'</p>';
                 $output .= '</div>';
                 $output .= '<div class="modal-footer">';
                 $output .= '<form action="'.$this->page->url.'" method="post">';
