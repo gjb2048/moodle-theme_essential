@@ -364,9 +364,11 @@ class toolbox {
     }
 
     static public function render_slide_controls() {
-        $prev = '<a class="left carousel-control" href="#essentialCarousel" data-slide="prev">';
+        $strprev = get_string('prev');
+        $strnext = get_string('next');
+        $prev = '<a class="left carousel-control" href="#essentialCarousel" data-slide="prev" aria-label="'.$strprev.'">';
         $prev .= '<span aria-hidden="true" class="fa fa-chevron-circle-left"></span></a>';
-        $next = '<a class="right carousel-control" href="#essentialCarousel" data-slide="next">';
+        $next = '<a class="right carousel-control" href="#essentialCarousel" data-slide="next" aria-label="'.$strnext.'">';
         $next .= '<span aria-hidden="true" class="fa fa-chevron-circle-right"></span></a>';
 
         return $prev . $next;
