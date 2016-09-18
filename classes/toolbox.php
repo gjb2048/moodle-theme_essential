@@ -371,9 +371,11 @@ class toolbox {
             $faleft = $faright;
             $faright = $temp;
         }
-        $prev = '<a class="left carousel-control" href="#essentialCarousel" data-slide="prev">';
+        $strprev = get_string('prev');
+        $strnext = get_string('next');
+        $prev = '<a class="left carousel-control" href="#essentialCarousel" data-slide="prev" aria-label="'.$strprev.'">';
         $prev .= '<span aria-hidden="true" class="fa fa-chevron-circle-'.$faleft.'"></span></a>';
-        $next = '<a class="right carousel-control" href="#essentialCarousel" data-slide="next">';
+        $next = '<a class="right carousel-control" href="#essentialCarousel" data-slide="next" aria-label="'.$strnext.'">';
         $next .= '<span aria-hidden="true" class="fa fa-chevron-circle-'.$faright.'"></span></a>';
 
         return $prev . $next;
