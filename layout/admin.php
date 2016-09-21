@@ -31,7 +31,7 @@ $pagebottomregion = \theme_essential\toolbox::has_page_bottom_region();
 ?>
 
 <div id="page" class="container-fluid">
-    <?php require_once(\theme_essential\toolbox::get_tile_file('pagenavbar')); ?>
+    <?php require_once(\theme_essential\toolbox::get_tile_file('pagetopheader')); ?>
     <?php echo $OUTPUT->version_alert(); ?>
     <!-- Start Main Regions -->
     <div id="page-content" class="row-fluid">
