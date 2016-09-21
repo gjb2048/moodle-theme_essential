@@ -3,6 +3,7 @@ New in 3.1.0.9
 - FIX: Issue #737: Rubric pop-out on assignment grading page doesn't use full height.
 - FIX: Issue #740: Rubric in assignment view styling.
 - FIX: Issue #753: Accessibility: missing aria-label attribute in "back-to-top" element.  Thanks to Nadav Kavalerchik.
+- FIX: Issue #754: Accessibility: missing aria-label attribute in "prev"/"next" elements.
 - NEW: Issue #738: Fixes #736 add extra urlcolor for stripes.
 
 New in 3.1.0.8
