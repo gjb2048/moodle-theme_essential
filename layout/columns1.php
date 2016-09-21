@@ -29,7 +29,7 @@ require_once(\theme_essential\toolbox::get_tile_file('header'));
 ?>
 
 <div id="page" class="container-fluid">
-    <?php require_once(\theme_essential\toolbox::get_tile_file('pagenavbar')); ?>
+    <?php require_once(\theme_essential\toolbox::get_tile_file('pagetopheader')); ?>
     <!-- Start Main Regions -->
     <div id="page-content" class="row-fluid">
         <section id="region-main" class="span12">

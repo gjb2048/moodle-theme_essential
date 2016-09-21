@@ -1,6 +1,7 @@
 New in 3.0.1.10
 ===============
 - FIX: Issue #739: FontAwesome icons on incorrect side for RTL in Firefox.
+- FIX: Issue #747: Profile picture in user profile missing.
 - FIX: Issue #753: Accessibility: missing aria-label attribute in "back-to-top" element.  Thanks to Nadav Kavalerchik.
 - FIX: Issue #754: Accessibility: missing aria-label attribute in "prev"/"next" elements.
 
