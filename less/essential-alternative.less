@@ -1126,7 +1126,7 @@
                         color: ~"[[setting:alternativethemestripetextcolour@{index}]]";
                         background-color: ~"[[setting:alternativethemestripebackgroundcolour@{index}]]";
                         a, a:hover, a:focus, a:visited, .@{fa-css-prefix} {
-                            color: ~"[[setting:themestripeurlcolour@{index}]]";
+                            color: ~"[[setting:alternativethemestripeurlcolour@{index}]]";
                         }
                     }
                 }
@@ -1134,7 +1134,7 @@
                 &#page-grade-report-grader-index .gradeparent div.floater:first-of-type .cell:nth-child(even) {
                     color: ~"[[setting:alternativethemestripetextcolour@{index}]]";
                     a, a:hover, a:focus, a:visited {
-                        color: ~"[[setting:alternativethemestripetextcolour@{index}]]";
+                        color: ~"[[setting:alternativethemestripeurlcolour@{index}]]";
                     }
                 }
 
@@ -1175,7 +1175,7 @@
                             background-color: ~"[[setting:alternativethemestripebackgroundcolour@{index}]]";
                             > a:not(.btn), > a:not(.btn):hover, > a:not(.btn):focus, > a:not(.btn):visited,
                             a.toggle-display, a.toggle-display:hover, a.toggle-display:focus, a.toggle-display:visited {
-                                color:  ~"[[setting:themestripeurlcolour@{index}]]";
+                                color:  ~"[[setting:alternativethemestripeurlcolour@{index}]]";
                             }
                         }
                         > tr:nth-child(odd) > td {
@@ -1195,10 +1195,12 @@
                             &.notes .requiredby,
                             &.pluginname .componentname,
                             &.requires .requires-ok,
-                            &.settings a,
-                            &.uninstall a,
                             &.version .versionnumber {
                                 color: ~"[[setting:alternativethemestripetextcolour@{index}]]";
+                            }
+                            &.settings a,
+                            &.uninstall a {
+                                color: ~"[[setting:alternativethemestripeurlcolour@{index}]]";
                             }
                         }
                     }
@@ -1219,9 +1221,13 @@
                 table#modules,
                 table#permissions {
                     tbody {
-                        tr:hover > td, tr:hover > td > a:not(.btn),
+                        tr:hover > td,
                         tr:hover > th {
                             color: ~"[[setting:alternativethemestripetextcolour@{index}]]";
+                            background-color: ~"[[setting:alternativethemestripebackgroundcolour@{index}]]";
+                        }
+                        tr:hover > td > a:not(.btn) {
+                            color: ~"[[setting:alternativethemestripeurlcolour@{index}]]";
                             background-color: ~"[[setting:alternativethemestripebackgroundcolour@{index}]]";
                         }
                     }

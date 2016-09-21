@@ -1056,7 +1056,7 @@ button.website:focus {
 .path-grade-report .gradeparent tr:nth-of-type(even) .cell .fa,
 .path-grade-report .gradeparent .floater .cell .fa,
 .path-grade-report .gradeparent .avg .fa {
-  color: inherit;
+  color: [[setting:themestripeurlcolour]];
 }
 #page-grade-report-grader-index .gradeparent div.floater:first-of-type .cell:nth-child(even) {
   color: [[setting:themestripetextcolour]];
@@ -1065,7 +1065,7 @@ button.website:focus {
 #page-grade-report-grader-index .gradeparent div.floater:first-of-type .cell:nth-child(even) a:hover,
 #page-grade-report-grader-index .gradeparent div.floater:first-of-type .cell:nth-child(even) a:focus,
 #page-grade-report-grader-index .gradeparent div.floater:first-of-type .cell:nth-child(even) a:visited {
-  color: [[setting:themestripetextcolour]];
+  color: [[setting:themestripeurlcolour]];
 }
 #page-grade-report-grader-index .gradeparent div.floater:first-of-type .cell:nth-child(odd) a,
 #page-grade-report-grader-index .gradeparent div.floater:first-of-type .cell:nth-child(odd) a:visited {
@@ -1301,7 +1301,7 @@ form#movecourses table tbody > tr:nth-child(odd) > th a.toggle-display:visited,
 .forumheaderlist tbody > tr:nth-child(odd) > th a.toggle-display:visited,
 table.flexible tbody > tr:nth-child(odd) > th a.toggle-display:visited,
 .generaltable tbody > tr:nth-child(odd) > th a.toggle-display:visited {
-  color: inherit;
+  color: [[setting:themestripeurlcolour]];
 }
 table#explaincaps tbody > tr:nth-child(odd) > td .fa,
 table#defineroletable tbody > tr:nth-child(odd) > td .fa,
@@ -1417,6 +1417,12 @@ table.flexible tbody > tr.dimmed_text > td a,
 #plugins-check-page #plugins-check tbody > tr:nth-child(odd) > td.requires .requires-ok,
 #page-admin-plugins #plugins-control-panel tbody > tr:hover > td.requires .requires-ok,
 #plugins-check-page #plugins-check tbody > tr:hover > td.requires .requires-ok,
+#page-admin-plugins #plugins-control-panel tbody > tr:nth-child(odd) > td.version .versionnumber,
+#plugins-check-page #plugins-check tbody > tr:nth-child(odd) > td.version .versionnumber,
+#page-admin-plugins #plugins-control-panel tbody > tr:hover > td.version .versionnumber,
+#plugins-check-page #plugins-check tbody > tr:hover > td.version .versionnumber {
+  color: [[setting:themestripetextcolour]];
+}
 #page-admin-plugins #plugins-control-panel tbody > tr:nth-child(odd) > td.settings a,
 #plugins-check-page #plugins-check tbody > tr:nth-child(odd) > td.settings a,
 #page-admin-plugins #plugins-control-panel tbody > tr:hover > td.settings a,
@@ -1424,12 +1430,8 @@ table.flexible tbody > tr.dimmed_text > td a,
 #page-admin-plugins #plugins-control-panel tbody > tr:nth-child(odd) > td.uninstall a,
 #plugins-check-page #plugins-check tbody > tr:nth-child(odd) > td.uninstall a,
 #page-admin-plugins #plugins-control-panel tbody > tr:hover > td.uninstall a,
-#plugins-check-page #plugins-check tbody > tr:hover > td.uninstall a,
-#page-admin-plugins #plugins-control-panel tbody > tr:nth-child(odd) > td.version .versionnumber,
-#plugins-check-page #plugins-check tbody > tr:nth-child(odd) > td.version .versionnumber,
-#page-admin-plugins #plugins-control-panel tbody > tr:hover > td.version .versionnumber,
-#plugins-check-page #plugins-check tbody > tr:hover > td.version .versionnumber {
-  color: [[setting:themestripetextcolour]];
+#plugins-check-page #plugins-check tbody > tr:hover > td.uninstall a {
+  color: [[setting:themestripeurlcolour]];
 }
 #categoryquestions > tbody > tr:nth-of-type(even) {
   color: [[setting:themestripetextcolour]];
@@ -1444,6 +1446,27 @@ table.flexible > tbody tr:hover > td,
 .category_subcategories > tbody tr:hover > td,
 table#modules > tbody tr:hover > td,
 table#permissions > tbody tr:hover > td,
+.user-enroller-panel .uep-search-results .users > tbody tr:hover > td > h3,
+.user-enroller-panel .uep-search-results .cohorts > tbody tr:hover > td > h3,
+table.grading-report > tbody tr:hover > td > h3,
+.forumheaderlist > tbody tr:hover > td > h3,
+.generaltable > tbody tr:hover > td > h3,
+table.flexible > tbody tr:hover > td > h3,
+.category_subcategories > tbody tr:hover > td > h3,
+table#modules > tbody tr:hover > td > h3,
+table#permissions > tbody tr:hover > td > h3,
+.user-enroller-panel .uep-search-results .users > tbody tr:hover > th,
+.user-enroller-panel .uep-search-results .cohorts > tbody tr:hover > th,
+table.grading-report > tbody tr:hover > th,
+.forumheaderlist > tbody tr:hover > th,
+.generaltable > tbody tr:hover > th,
+table.flexible > tbody tr:hover > th,
+.category_subcategories > tbody tr:hover > th,
+table#modules > tbody tr:hover > th,
+table#permissions > tbody tr:hover > th {
+  color: [[setting:themestripetextcolour]];
+  background-color: [[setting:themestripebackgroundcolour]];
+}
 .user-enroller-panel .uep-search-results .users > tbody tr:hover > td a:not(.btn),
 .user-enroller-panel .uep-search-results .cohorts > tbody tr:hover > td a:not(.btn),
 table.grading-report > tbody tr:hover > td a:not(.btn),
@@ -1479,26 +1502,8 @@ table.grading-report > tbody tr:hover > td a:not(.btn):visited,
 table.flexible > tbody tr:hover > td a:not(.btn):visited,
 .category_subcategories > tbody tr:hover > td a:not(.btn):visited,
 table#modules > tbody tr:hover > td a:not(.btn):visited,
-table#permissions > tbody tr:hover > td a:not(.btn):visited,
-.user-enroller-panel .uep-search-results .users > tbody tr:hover > td > h3,
-.user-enroller-panel .uep-search-results .cohorts > tbody tr:hover > td > h3,
-table.grading-report > tbody tr:hover > td > h3,
-.forumheaderlist > tbody tr:hover > td > h3,
-.generaltable > tbody tr:hover > td > h3,
-table.flexible > tbody tr:hover > td > h3,
-.category_subcategories > tbody tr:hover > td > h3,
-table#modules > tbody tr:hover > td > h3,
-table#permissions > tbody tr:hover > td > h3,
-.user-enroller-panel .uep-search-results .users > tbody tr:hover > th,
-.user-enroller-panel .uep-search-results .cohorts > tbody tr:hover > th,
-table.grading-report > tbody tr:hover > th,
-.forumheaderlist > tbody tr:hover > th,
-.generaltable > tbody tr:hover > th,
-table.flexible > tbody tr:hover > th,
-.category_subcategories > tbody tr:hover > th,
-table#modules > tbody tr:hover > th,
-table#permissions > tbody tr:hover > th {
-  color: [[setting:themestripetextcolour]];
+table#permissions > tbody tr:hover > td a:not(.btn):visited {
+  color: [[setting:themestripeurlcolour]];
   background-color: [[setting:themestripebackgroundcolour]];
 }
 /* @end */

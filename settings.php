@@ -365,7 +365,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_essential/themestripeurlcolour';
     $title = get_string('themestripeurlcolour', 'theme_essential');
     $description = get_string('themestripeurlcolourdesc', 'theme_essential');
-    $default = '#943b21';
+    $default = '#25849f';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -487,6 +487,9 @@ if ($ADMIN->fulltree) {
 
     $defaultalternativethemecolors = array('#a430d1', '#d15430', '#5dd130', '#006b94');
     $defaultalternativethemehovercolors = array('#9929c4', '#c44c29', '#53c429', '#4090af');
+    $defaultalternativethemestripetextcolors = array('#bdfdb7', '#c3fdd0', '#9f5bfb', '#ff1ebd');
+    $defaultalternativethemestripebackgroundcolors = array('#c1009f', '#bc2800', '#b4b2fd', '#0336b4');
+    $defaultalternativethemestripeurlcolors = array('#bef500', '#30af67', '#ffe9a6', '#ffab00');
 
     foreach (range(1, 4) as $alternativethemenumber) {
         // Enables the user to select an alternative colours choice.
@@ -613,7 +616,7 @@ if ($ADMIN->fulltree) {
         $name = 'theme_essential/alternativethemestripetextcolour' . $alternativethemenumber;
         $title = get_string('alternativethemestripetextcolour', 'theme_essential', $alternativethemenumber);
         $description = get_string('alternativethemestripetextcolourdesc', 'theme_essential', $alternativethemenumber);
-        $default = '#ffffff';
+        $default = $defaultalternativethemestripetextcolors[$alternativethemenumber - 1];
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
@@ -623,7 +626,7 @@ if ($ADMIN->fulltree) {
         $name = 'theme_essential/alternativethemestripebackgroundcolour' . $alternativethemenumber;
         $title = get_string('alternativethemestripebackgroundcolour', 'theme_essential', $alternativethemenumber);
         $description = get_string('alternativethemestripebackgroundcolourdesc', 'theme_essential', $alternativethemenumber);
-        $default = '#ff9a34';
+        $default = $defaultalternativethemestripebackgroundcolors[$alternativethemenumber - 1];
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
@@ -633,7 +636,7 @@ if ($ADMIN->fulltree) {
         $name = 'theme_essential/alternativethemestripeurlcolour' . $alternativethemenumber;
         $title = get_string('alternativethemestripeurlcolour', 'theme_essential', $alternativethemenumber);
         $description = get_string('alternativethemestripeurlcolourdesc', 'theme_essential', $alternativethemenumber);
-        $default = '#943b21';
+        $default = $defaultalternativethemestripeurlcolors[$alternativethemenumber - 1];
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');

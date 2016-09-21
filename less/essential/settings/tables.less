@@ -14,7 +14,7 @@
 #page-grade-report-grader-index .gradeparent div.floater:first-of-type .cell:nth-child(even) {
     color: ~"[[setting:themestripetextcolour]]";
     a, a:hover, a:focus, a:visited {
-        color: ~"[[setting:themestripetextcolour]]";
+        color: ~"[[setting:themestripeurlcolour]]";
     }
 }
 
@@ -97,10 +97,12 @@ table.flexible,
             &.notes .requiredby,
             &.pluginname .componentname,
             &.requires .requires-ok,
-            &.settings a,
-            &.uninstall a,
             &.version .versionnumber {
                 color: ~"[[setting:themestripetextcolour]]";
+            }
+            &.settings a,
+            &.uninstall a {
+                color: ~"[[setting:themestripeurlcolour]]";
             }
         }
     }
@@ -122,13 +124,16 @@ table#modules,
 table#permissions {
     > tbody {
         tr:hover > td, 
-        tr:hover > td a:not(.btn),
-        tr:hover > td a:not(.btn):hover,
-        tr:hover > td a:not(.btn):focus,
-        tr:hover > td a:not(.btn):visited, 
         tr:hover > td > h3,
         tr:hover > th {
             color: ~"[[setting:themestripetextcolour]]";
+            background-color: ~"[[setting:themestripebackgroundcolour]]";
+        }
+        tr:hover > td a:not(.btn),
+        tr:hover > td a:not(.btn):hover,
+        tr:hover > td a:not(.btn):focus,
+        tr:hover > td a:not(.btn):visited {
+            color: ~"[[setting:themestripeurlcolour]]";
             background-color: ~"[[setting:themestripebackgroundcolour]]";
         }
     }
