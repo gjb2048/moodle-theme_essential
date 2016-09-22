@@ -645,10 +645,10 @@ aside.rowblock-blocks div.row-fluid div.block:first-of-type {
 
 // Support multiple rows when editing otherwise above works, see: http://www.w3schools.com/cssref/sel_nth-of-type.asp
 .rowblock-nth(@index) {
-    aside.rowblock-edit div.block:nth-of-type(@{index}) {
+    .dir-ltr aside.rowblock-edit div.block:nth-of-type(@{index}) {
         margin-left: 0;
     }
-    .dir-rtl aside.footer-edit div.block:nth-of-type(@{index}) {
+    .dir-rtl aside.rowblock-edit div.block:nth-of-type(@{index}) {
         margin-right: 0;
     }
 }
