@@ -6,7 +6,8 @@ New in 3.1.0.9
 - FIX: Issue #748: "Page Top" blocks area, in edit mode, display blocks one under the other, in RTL mode.
 - FIX: Issue #749: Course item action edit menu has redundant padding, in RTL mode.
 - FIX: Issue #753: Accessibility: missing aria-label attribute in "back-to-top" element.  Thanks to Nadav Kavalerchik.
-- FIX: Issue #754: Accessibility: missing aria-label attribute in "prev"/"next" elements.
+- FIX: Issue #754: Accessibility: missing aria-label attribute in "prev"/"next" elements.  Thanks to Nadav Kavalerchik.
+- FIX: Issue #755: Accessibility: missing aria-label attribute in "socialicon" elements.  Thanks to Nadav Kavalerchik.
 - FIX: Issue #757: Custom icon colour doesn't seem to apply correctly to icons in drop-downs.
 - FIX: Issue #763: Custom EOT files don't work.
 - FIX: Issue #765: Link font family is wrong.
