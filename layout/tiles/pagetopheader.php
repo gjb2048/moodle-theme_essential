@@ -24,7 +24,7 @@
  */
 
 echo '<div id="page-top-header" class="clearfix">';
-echo $OUTPUT->context_header();
+echo $OUTPUT->page_top_header();
 echo '<div id="page-navbar" class="clearfix row-fluid">';
 if ($left) {
     echo '<div class="breadcrumb-nav span9">';
