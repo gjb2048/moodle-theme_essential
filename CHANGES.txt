@@ -4,6 +4,7 @@ New in 2.9.1.17
 - FIX: Issue #747: Profile picture in user profile missing.
 - FIX: Issue #753: Accessibility: missing aria-label attribute in "back-to-top" element.  Thanks to Nadav Kavalerchik.
 - FIX: Issue #754: Accessibility: missing aria-label attribute in "prev"/"next" elements.
+- FIX: Issue #763: Custom EOT files don't work.
 
 New in 2.9.1.16
 ===============
