@@ -1736,7 +1736,7 @@ class core_renderer extends \core_renderer {
                 'class' => 'socialicon ' . $socialnetwork,
                 'onclick' => "window.open('".\theme_essential\toolbox::get_setting($socialnetwork)."')",
                 'title' => get_string($socialnetwork, 'theme_essential'),
-                'aria-label' => $socialnetwork,
+                'aria-label' => get_string($socialnetwork, 'theme_essential'),
             ));
             $socialhtml .= $this->getfontawesomemarkup($icon);
             $socialhtml .= html_writer::start_span('sr-only').html_writer::end_span();
