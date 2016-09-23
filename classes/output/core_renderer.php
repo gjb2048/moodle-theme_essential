@@ -1676,7 +1676,7 @@ class core_renderer extends \core_renderer {
                 'class' => 'socialicon ' . $socialnetwork,
                 'onclick' => "window.open('".\theme_essential\toolbox::get_setting($socialnetwork)."')",
                 'title' => get_string($socialnetwork, 'theme_essential'),
-                'aria-label' => $socialnetwork,
+                'aria-label' => get_string($socialnetwork, 'theme_essential'),
             ));
             $socialhtml .= html_writer::start_tag('i', array('class' => 'fa fa-'.$icon));
             $socialhtml .= html_writer::end_tag('i');
