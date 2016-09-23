@@ -1732,11 +1732,12 @@ class core_renderer extends \core_renderer {
                 $icon = 'windows';
             }
             $socialhtml = html_writer::start_tag('li');
+            $socialnetworklabel = get_string($socialnetwork, 'theme_essential');
             $socialhtml .= html_writer::start_tag('button', array('type' => "button",
                 'class' => 'socialicon ' . $socialnetwork,
                 'onclick' => "window.open('".\theme_essential\toolbox::get_setting($socialnetwork)."')",
-                'title' => get_string($socialnetwork, 'theme_essential'),
-                'aria-label' => get_string($socialnetwork, 'theme_essential'),
+                'title' => $socialnetworklabel,
+                'aria-label' => $socialnetworklabel,
             ));
             $socialhtml .= $this->getfontawesomemarkup($icon);
             $socialhtml .= html_writer::start_span('sr-only').html_writer::end_span();
