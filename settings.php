@@ -1353,7 +1353,7 @@ if ($ADMIN->fulltree) {
         $name = 'theme_essential/fontfileeotheading';
         $title = get_string('fontfileeotheading', 'theme_essential');
         $description = '';
-        $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfileweotheading');
+        $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfileeotheading');
         $setting->set_updatedcallback('theme_reset_all_caches');
         $essentialsettingsfont->add($setting);
 
@@ -1402,7 +1402,7 @@ if ($ADMIN->fulltree) {
         $name = 'theme_essential/fontfileeotbody';
         $title = get_string('fontfileeotbody', 'theme_essential');
         $description = '';
-        $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfileweotbody');
+        $setting = new admin_setting_configstoredfile($name, $title, $description, 'fontfileeotbody');
         $setting->set_updatedcallback('theme_reset_all_caches');
         $essentialsettingsfont->add($setting);
 
