@@ -2,6 +2,7 @@ New in 3.1.0.9
 ==============
 - FIX: Issue #737: Rubric pop-out on assignment grading page doesn't use full height.
 - FIX: Issue #740: Rubric in assignment view styling.
+- FIX: Issue #746: Category icon tiles sometimes don't line up.
 - FIX: Issue #747: Profile picture in user profile missing.
 - FIX: Issue #748: "Page Top" blocks area, in edit mode, display blocks one under the other, in RTL mode.
 - FIX: Issue #749: Course item action edit menu has redundant padding, in RTL mode.

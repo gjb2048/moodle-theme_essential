@@ -52,3 +52,6 @@ if ($PAGE->pagelayout == 'mydashboard') {
         $PAGE->requires->js_call_amd('theme_essential/inspector_scourer', 'init', $inspectorscourerdata);
     }
 }
+if ($PAGE->pagelayout == 'coursecategory') {
+    $PAGE->requires->js_call_amd('theme_essential/course_category', 'init', array());
+}
