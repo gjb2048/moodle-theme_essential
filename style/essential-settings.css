@@ -223,7 +223,7 @@ p.tree_item.branch.emptybranch:focus:before {
 /* @end */
 /* @group Breadcrumb Style Simple */
 ul.breadcrumb.style2 li a {
-  color: [[setting:themetextcolor]];
+  color: [[setting:themeurlcolor]];
 }
 ul.breadcrumb.style2 li a:hover {
   color: [[setting:themehovercolor]];
