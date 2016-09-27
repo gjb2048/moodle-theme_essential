@@ -15,6 +15,7 @@ New in 3.1.0.9
 - FIX: Issue #765: Link font family is wrong.
 - FIX: Breadcrumb style two fixes.
 - NEW: Issue #738: Fixes #736 add extra urlcolor for stripes.
+- NEW: Improvements to 'essential_edit_button' for child themes.
 
 New in 3.1.0.8
 ==============

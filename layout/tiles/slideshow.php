@@ -58,7 +58,7 @@ if ($numberofslides) {
     <div class="row-fluid">
         <div class="span12">
             <div id="essentialCarousel" class="carousel slide" data-interval="<?php echo $slideinterval;?>">
-                <?php echo $OUTPUT->essential_edit_button('theme_essential_slideshow');?>
+                <?php echo $OUTPUT->essential_edit_button('slideshow');?>
                 <ol class="carousel-indicators">
                     <?php echo \theme_essential\toolbox::render_indicators($numberofslides); ?>
                 </ol>
