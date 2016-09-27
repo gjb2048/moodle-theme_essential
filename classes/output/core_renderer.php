@@ -1965,7 +1965,7 @@ class core_renderer extends \core_renderer {
             $url .= \theme_essential\toolbox::get_setting('marketing'.$spot.'buttontext', true);
             $url .= '</a>';
         }
-        $edit = $this->essential_edit_button('theme_essential_frontpage');
+        $edit = $this->essential_edit_button('frontpage');
         if ((!empty($url)) || (!empty($edit))) {
             $o = '<div class="marketing-buttons">'.$url.$edit.'</div>';
         }
@@ -1973,13 +1973,51 @@ class core_renderer extends \core_renderer {
         return $o;
     }
 
-    public function essential_edit_button($section) {
+    /**
+     * Generates the edit button markup.
+     *
+     * Ensure that the 'essential_edit_button_settingspage' method has the 'keys' and values for the sections
+     * in the settings.php file of the theme that the layout and tile files call this method for.
+     *
+     * @param string $sectionkey settings section key.
+     * @return string or null of not needed.
+     */
+    public function essential_edit_button($sectionkey) {
         global $CFG;
         if ($this->page->user_is_editing() && is_siteadmin()) {
+            $themesectionkey = $this->essential_edit_button_settingspage($sectionkey);
             $url = preg_replace("(https?:)", "", $CFG->wwwroot . '/admin/settings.php?section=');
-            return '<a class="btn btn-success" href="'.$url.$section.'">'.get_string('edit').'</a>';
+            return '<a class="btn btn-success" href="'.$url.$themesectionkey.'">'.get_string('edit').'</a>';
         }
         return null;
+    }
+
+
+    /**
+     * Finds the setting section for the given section key.
+     *
+     * This must match the ones in the settings.php file of the theme that the layout and tile files
+     * call the 'essential_edit_button' method for.
+     *
+     * @param string $sectionkey settings section key.
+     * @return string or false if not found.
+     */
+    protected function essential_edit_button_settingspage($sectionkey) {
+        $themesectionkey = false;
+
+        switch ($sectionkey) {
+            case 'frontpage':
+                $themesectionkey = 'theme_essential_frontpage';
+            break;
+            case 'footer':
+                $themesectionkey = 'theme_essential_footer';
+            break;
+            case 'slideshow':
+                $themesectionkey = 'theme_essential_slideshow';
+            break;
+        }
+
+        return $themesectionkey;
     }
 
     public function get_title($location) {
