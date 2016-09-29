@@ -80,6 +80,10 @@ if (($PAGE->pagelayout == 'course') && (get_config('core', 'modeditingmenu'))) {
     $bodyclasses[] = 'modeditingmenu';
 }
 
+if (($PAGE->pagelayout == 'login') && (\theme_essential\toolbox::get_setting('loginbackground'))) {
+    $bodyclasses[] = 'loginbackground';
+}
+
 $regionbsid = 'main-and-pre';
 $left = true;
 if (right_to_left()) {

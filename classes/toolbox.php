@@ -661,6 +661,30 @@ class toolbox {
         return $css;
     }
 
+    static public function set_loginbackground($css, $loginbackground) {
+        $tag = '[[setting:loginbackground]]';
+        if (!($loginbackground)) {
+            $replacement = 'none';
+        } else {
+            $replacement = 'url(\''.$loginbackground.'\')';
+        }
+        $css = str_replace($tag, $replacement, $css);
+        return $css;
+    }
+
+    static public function set_loginbackgroundstyle($css, $style, $opacity) {
+        $tagopacity = '[[setting:loginbackgroundopacity]]';
+        $tagsize = '[[setting:loginbackgroundstyle]]';
+        $replacementsize = 'cover';
+        if ($style === 'stretch') {
+            $replacementsize = '100% 100%';
+        }
+
+        $css = str_replace($tagopacity, $opacity, $css);
+        $css = str_replace($tagsize, $replacementsize, $css);
+        return $css;
+    }
+
     static public function set_marketingheight($css, $marketingheight, $marketingimageheight) {
         $tag = '[[setting:marketingheight]]';
         $mhreplacement = $marketingheight;

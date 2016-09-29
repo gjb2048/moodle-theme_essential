@@ -42,6 +42,10 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
         $theme = theme_config::load('essential');
     }
     if ($context->contextlevel == CONTEXT_SYSTEM) {
+        // By default, theme files must be cache-able by both browsers and proxies.  From 'More' theme.
+        if (!array_key_exists('cacheability', $options)) {
+            $options['cacheability'] = 'public';
+        }
         if ($filearea === 'logo') {
             return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
         } else if ($filearea === 'style') {
@@ -65,6 +69,8 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
             return $theme->setting_file_serve('ipadicon', $args, $forcedownload, $options);
         } else if ($filearea === 'ipadretinaicon') {
             return $theme->setting_file_serve('ipadretinaicon', $args, $forcedownload, $options);
+        } else if ($filearea === 'loginbackground') {
+            return $theme->setting_file_serve('loginbackground', $args, $forcedownload, $options);
         } else {
             send_file_not_found();
         }
@@ -424,6 +430,15 @@ function theme_essential_process_css($css, $theme) {
     // Set the background style for the page.
     $pagebgstyle = \theme_essential\toolbox::get_setting('pagebackgroundstyle');
     $css = \theme_essential\toolbox::set_pagebackgroundstyle($css, $pagebgstyle);
+
+    // Set the background image for the login page.
+    $loginbackground = \theme_essential\toolbox::setting_file_url('loginbackground', 'loginbackground');
+    $css = \theme_essential\toolbox::set_loginbackground($css, $loginbackground);
+
+    // Set the background style for the login page.
+    $loginbgstyle = \theme_essential\toolbox::get_setting('loginbackgroundstyle');
+    $loginbgopacity = \theme_essential\toolbox::get_setting('loginbackgroundopacity');
+    $css = \theme_essential\toolbox::set_loginbackgroundstyle($css, $loginbgstyle, $loginbgopacity);
 
     // Set marketing height.
     $marketingheight = \theme_essential\toolbox::get_setting('marketingheight');

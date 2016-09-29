@@ -1071,6 +1071,16 @@ body .dimmed .fa:focus,
 body .dimmed .fa:hover {
   color: inherit;
 }
+body.loginbackground {
+  background-image: [[setting:loginbackground]];
+  background-size: [[setting:loginbackgroundstyle]];
+}
+body.loginbackground #page-header {
+  background-image: none;
+}
+body.loginbackground #page-content {
+  opacity: [[setting:loginbackgroundopacity]];
+}
 .container-fluid {
   max-width: [[setting:pagewidth]];
 }

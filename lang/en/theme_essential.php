@@ -128,9 +128,10 @@ $string['pagebackground'] = 'Page background image';
 $string['pagebackgrounddesc'] = 'Upload your own background image.  Select the style of the image below.';
 $string['pagebackgroundstyle'] = 'Page background style';
 $string['pagebackgroundstyledesc'] = 'Select the style for the uploaded image.';
+$string['stylecover'] = 'Cover';
 $string['stylefixed'] = 'Fixed';
-$string['styletiled'] = 'Tiled';
 $string['stylestretch'] = 'Stretch';
+$string['styletiled'] = 'Tiled';
 
 $string['pagetopblocksperrow'] = 'Page top blocks per row';
 $string['pagetopblocksperrowdesc'] = 'State up to how many blocks per row between {$a->lower} and {$a->upper} for pages with \'Page top blocks\'.  Current pages are: Admin, Course, Course Category, Dashboard, Frontpage, My Public.';
@@ -266,6 +267,13 @@ $string['returntosectionfeaturedesc'] = "Enable return to section feature within
 
 $string['returntosectiontextlimitfeature'] = 'Return to section name text limit';
 $string['returntosectiontextlimitfeaturedesc'] = 'Length limit for the \'name\' of the section on the button between {$a->lower} and {$a->upper} characters.';
+
+$string['loginbackground'] = 'Login background image';
+$string['loginbackgrounddesc'] = 'Upload your own login background image.  Select the style of the image below.';
+$string['loginbackgroundstyle'] = 'Login background style';
+$string['loginbackgroundstyledesc'] = 'Select the style for the uploaded image.';
+$string['loginbackgroundopacity'] = 'Login box background opacity when there is a background image';
+$string['loginbackgroundopacitydesc'] = 'Lofin background opacity for the login box when there is a background image.';
 
 // Colours.
 $string['colorheading'] = 'Colour';
