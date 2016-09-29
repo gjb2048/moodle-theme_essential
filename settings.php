@@ -229,7 +229,51 @@ if ($ADMIN->fulltree) {
     $setting = new essential_admin_setting_configinteger($name, $title, $description, $default, $lower, $upper);
     $essentialsettingsfeature->add($setting);
 
-    $essentialsettingsfeature->add(new admin_setting_heading('theme_essential_featurereadme',
+    // Login background image.
+    $name = 'theme_essential/loginbackground';
+    $title = get_string('loginbackground', 'theme_essential');
+    $description = get_string('loginbackgrounddesc', 'theme_essential');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'loginbackground');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingsfeature->add($setting);
+
+    // Login background style.
+    $name = 'theme_essential/loginbackgroundstyle';
+    $title = get_string('loginbackgroundstyle', 'theme_essential');
+    $description = get_string('loginbackgroundstyledesc', 'theme_essential');
+    $default = 'cover';
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default,
+        array(
+            'cover' => get_string('stylecover', 'theme_essential'),
+            'stretch' => get_string('stylestretch', 'theme_essential')
+        )
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingsfeature->add($setting);
+
+        $opactitychoices = array(
+            '0.0' => '0.0',
+            '0.1' => '0.1',
+            '0.2' => '0.2',
+            '0.3' => '0.3',
+            '0.4' => '0.4',
+            '0.5' => '0.5',
+            '0.6' => '0.6',
+            '0.7' => '0.7',
+            '0.8' => '0.8',
+            '0.9' => '0.9',
+            '1.0' => '1.0'
+        );
+
+        // Overridden course title text background opacity setting.
+        $name = 'theme_essential/loginbackgroundopacity';
+        $title = get_string('loginbackgroundopacity', 'theme_essential');
+        $description = get_string('loginbackgroundopacitydesc', 'theme_essential');
+        $default = '0.8';
+        $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $opactitychoices);
+        $essentialsettingsfeature->add($setting);
+
+        $essentialsettingsfeature->add(new admin_setting_heading('theme_essential_featurereadme',
         get_string('readme_title', 'theme_essential'), get_string('readme_desc', 'theme_essential', array('url' => $readme))));
 }
 $ADMIN->add('theme_essential', $essentialsettingsfeature);

@@ -31,6 +31,17 @@ body {
   }
 }
 
+body.loginbackground {
+    background-image: ~"[[setting:loginbackground]]";
+    background-size: ~"[[setting:loginbackgroundstyle]]";
+    #page-header {
+        background-image: none;
+    }
+    #page-content {
+        opacity: ~"[[setting:loginbackgroundopacity]]";
+    }
+}
+
 .container-fluid {
   max-width: ~"[[setting:pagewidth]]";
 }
