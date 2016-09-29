@@ -16,6 +16,7 @@ New in 3.1.0.9
 - FIX: Issue #768: Display right arrow in dropdown-submenu.
 - FIX: Breadcrumb style two fixes.
 - NEW: Issue #738: Fixes #736 add extra urlcolor for stripes.
+- NEW: Issue #766: Login page background image.  Gratefully funded by Gemma Lesterhuis.
 - NEW: Improvements to 'essential_edit_button' for child themes.
 
 New in 3.1.0.8
