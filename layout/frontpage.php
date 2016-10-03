@@ -204,7 +204,7 @@ echo $OUTPUT->main_content();
 echo $OUTPUT->course_content_footer();
 echo '</section>';
 echo '</div>';
-if (\theme_essential\toolbox::get_setting('frontpageblocks')) {
+if ($frontpageblocks) {
     echo $OUTPUT->essential_blocks('side-pre', 'span3 desktop-first-column');
 } else {
     echo $OUTPUT->essential_blocks('side-pre', 'span3 pull-right');
