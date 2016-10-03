@@ -461,7 +461,7 @@ class core_renderer extends \core_renderer {
             $courseformatsettings = $courseformat->get_format_options();
 
             $sectionname = $courseformat->get_section_name($this->page->cm->sectionnum);
-            $sectionnamelen = mb_strlen($sectionname);
+            $sectionnamelen = \core_text::strlen($sectionname);
             if ($sectionnamelen !== false) {
                 $sectionnamelimit = \theme_essential\toolbox::get_setting('returntosectiontextlimitfeature');
                 if (($sectionnamelimit) && ($sectionnamelen > $sectionnamelimit)) {
