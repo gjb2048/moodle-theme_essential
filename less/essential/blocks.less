@@ -492,7 +492,7 @@ aside.rowblock-blocks div.row-fluid {
     display: flex;
     // Eliminates need for 'desktop-first-column' but does not work in IE8.
     // Info on: http://www.w3schools.com/cssref/sel_first-of-type.asp
-    div.block:first-of-type {
+    .dir-ltr & div.block:first-of-type, .dir-rtl & div.block:last-of-type {
         margin-left: 0;
     }
 }
