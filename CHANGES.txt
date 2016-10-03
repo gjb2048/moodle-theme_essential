@@ -10,6 +10,7 @@ New in 3.0.1.10
 - FIX: Issue #763: Custom EOT files don't work.
 - FIX: Issue #765: Link font family is wrong.
 - FIX: Row block empty space.
+- FIX: Temporary patch until MDL-55185 is rectified in core.
 - NEW: Issue #766: Login page background image.  Gratefully funded by Gemma Lesterhuis.
 - NEW: Improvements to 'essential_edit_button' for child themes.
 
