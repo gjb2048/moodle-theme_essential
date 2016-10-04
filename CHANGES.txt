@@ -6,6 +6,7 @@ New in 3.0.1.10
 - FIX: Issue #753: Accessibility: missing aria-label attribute in "back-to-top" element.  Thanks to Nadav Kavalerchik.
 - FIX: Issue #754: Accessibility: missing aria-label attribute in "prev"/"next" elements.  Thanks to Nadav Kavalerchik.
 - FIX: Issue #755: Accessibility: missing aria-label attribute in "socialicon" elements.  Thanks to Nadav Kavalerchik.
+- FIX: Issue #761: Activity item padding when editing in RTL.
 - FIX: Issue #762: Course fullname repeated above and below breadcrumbs.
 - FIX: Issue #763: Custom EOT files don't work.
 - FIX: Issue #765: Link font family is wrong.
