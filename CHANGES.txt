@@ -1,3 +1,6 @@
+New in 3.0.1.11
+===============
+
 New in 3.0.1.10
 ===============
 - FIX: Issue #739: FontAwesome icons on incorrect side for RTL in Firefox.
