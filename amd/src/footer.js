@@ -29,8 +29,7 @@ define(['jquery', 'core/log'], function($, log) {
                             var copy = $('footer .copy');
                             theOffset = (copy.offset().top + copy.outerHeight()) - footerOffset;
                             log.debug('Calculated footer copyright offset: ' + theOffset + '.');
-                        } else {
-                            if ($('footer .footerperformance').length) {
+                        } else if ($('footer .footerperformance').length) {
                                 var footerperformance = $('footer .footerperformance');
                                 theOffset = footerperformance.offset().top - footerOffset;
                                 log.debug('Calculated footer performance offset: ' + theOffset + '.');
