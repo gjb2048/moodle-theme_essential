@@ -1,5 +1,6 @@
 New in 2.9.1.18
 ===============
+- FIX: Row block and course category flex issues.
 
 New in 2.9.1.17
 ===============
