@@ -30,9 +30,11 @@ define(['jquery', 'core/log'], function($, log) {
                             theOffset = (copy.offset().top + copy.outerHeight()) - footerOffset;
                             log.debug('Calculated footer copyright offset: ' + theOffset + '.');
                         } else {
-                            var footerperformance = $('footer .footerperformance');
-                            theOffset = footerperformance.offset().top - footerOffset;
-                            log.debug('Calculated footer performance offset: ' + theOffset + '.');
+                            if ($('footer .footerperformance').length) {
+                                var footerperformance = $('footer .footerperformance');
+                                theOffset = footerperformance.offset().top - footerOffset;
+                                log.debug('Calculated footer performance offset: ' + theOffset + '.');
+                            }
                         }
                         theOffset = documentHeight - theOffset;
                         log.debug('Old footer offset: ' + footerOffset + '.');
