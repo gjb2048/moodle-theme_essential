@@ -1,5 +1,6 @@
 New in 3.0.1.11
 ===============
+- FIX: Row block and course category flex issues.
 
 New in 3.0.1.10
 ===============
