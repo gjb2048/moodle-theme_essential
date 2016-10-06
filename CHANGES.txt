@@ -1,6 +1,7 @@
 New in 3.0.1.11
 ===============
 - FIX: Row block and course category flex issues.
+- REFIX: Action menu items for blocks when narrow page width.
 - FIX/NEW: Improve footer.js and by doing so fix issue with popup layout.
 
 New in 3.0.1.10
