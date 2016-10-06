@@ -1,6 +1,7 @@
 New in 3.1.1.1
 ==============
 - FIX: Row block and course category flex issues.
+- FIX/NEW: Improve footer.js and by doing so fix issue with popup layout.
 
 New in 3.1.1.0
 ==============
