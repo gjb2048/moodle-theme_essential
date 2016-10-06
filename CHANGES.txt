@@ -1,6 +1,7 @@
 New in 2.9.1.18
 ===============
 - FIX: Row block and course category flex issues.
+- FIX/NEW: Improve footer.js and by doing so fix issue with popup layout.
 
 New in 2.9.1.17
 ===============
