@@ -1,5 +1,6 @@
 New in 2.9.1.18
 ===============
+- REFIX: Issue #747: Profile picture in user profile missing.
 - FIX: Row block and course category flex issues.
 - REFIX: Action menu items for blocks when narrow page width.
 - FIX/NEW: Improve footer.js and by doing so fix issue with popup layout.
