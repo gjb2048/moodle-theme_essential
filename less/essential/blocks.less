@@ -36,11 +36,11 @@
 }
 
 // Correctly span the main element when no blocks are present.
-.empty-region-side-pre:not(.editing) #main-and-pre #content, .empty-region-side-post:not(.editing) #main-and-pre {
+.empty-region-side-pre #main-and-pre #content, .empty-region-side-post #main-and-pre {
     width: 100%;
 }
 
-.empty-region-side-post.used-region-side-pre:not(.editing) {
+.empty-region-side-post.used-region-side-pre {
     #main-and-pre {
         #content {
             .fluid-span(9);
@@ -55,7 +55,7 @@
     .fluid-span (@columns) {
         .fluid-span-full(@columns, @fluidGridColumnWidth1200, @fluidGridGutterWidth1200);
     }
-    .empty-region-side-post.used-region-side-pre:not(.editing) {
+    .empty-region-side-post.used-region-side-pre {
         #main-and-pre {
             #content {
                 .fluid-span(9);
@@ -71,7 +71,7 @@
     .fluid-span (@columns) {
         .fluid-span-full(@columns, @fluidGridColumnWidth768, @fluidGridGutterWidth768);
     }
-    .empty-region-side-post.used-region-side-pre:not(.editing) {
+    .empty-region-side-post.used-region-side-pre {
         #main-and-pre {
             #content {
                 .fluid-span(9);
@@ -84,7 +84,7 @@
 }
 
 @media (max-width: 767px) {
-    .empty-region-side-post.used-region-side-pre:not(.editing) {
+    .empty-region-side-post.used-region-side-pre {
         #main-and-pre {
             #content, #block-region-side-pre {
                 width: 100%;
@@ -94,33 +94,26 @@
 }
 
 .editing {
-    // Give space to 'empty' regions.
-    &.empty-region-side-pre #block-region-side-pre, &.used-region-side-pre #block-region-side-pre,
-    &.empty-region-side-post #block-region-side-post, &.used-region-side-post #block-region-side-post,
-    &.empty-region-home #block-region-home, &.used-region-home #block-region-home,
-    &.empty-region-page-top #block-region-page-top, &.used-region-page-top #block-region-page-top,
-    &.empty-region-footer-left #block-region-footer-left, &.used-region-footer-left #block-region-footer-left,
-    &.empty-region-footer-middle #block-region-footer-middle, &.used-region-footer-middle #block-region-footer-middle,
-    &.empty-region-footer-right #block-region-footer-right, &.used-region-footer-right #block-region-footer-right,
-    &.empty-region-hidden-dock #block-region-hidden-dock, &.used-region-hidden-dock #block-region-hidden-dock {
+    // Show the regions when used or drag and drop.
+    &.used-region-side-pre #block-region-side-pre,
+    &.used-region-side-post #block-region-side-post,
+    &.used-region-home #block-region-home,
+    &.used-region-page-top #block-region-page-top,
+    &.used-region-footer-left #block-region-footer-left,
+    &.used-region-footer-middle #block-region-footer-middle,
+    &.used-region-footer-right #block-region-footer-right,
+    &.used-region-hidden-dock #block-region-hidden-dock {
         min-height: 200px;
         border-width: 2px;
         border-style: dashed;
     }
 
     // Only show dashed when drag and drop.
-    &.empty-region-side-pre.pagelayout-admin #block-region-side-pre,
     &.used-region-side-pre.pagelayout-admin #block-region-side-pre {
         border-style: none;
     }
-    &.empty-region-side-pre.pagelayout-admin #block-region-side-pre.yui3-dd-drop-active-valid,
     &.used-region-side-pre.pagelayout-admin #block-region-side-pre.yui3-dd-drop-active-valid {
         border-style: dashed;
-    }
-
-    // Show empty regions when editing.
-    &.empty-region-side-pre #block-region-side-pre, &.empty-region-side-post #block-region-side-post {
-        display: block;
     }
 }
 
