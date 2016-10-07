@@ -245,7 +245,7 @@ class core_renderer extends \core_renderer {
     public function page_top_header() {
         $html = '';
         // This is where we output the user information that would otherwise be missing on the page.
-        if ($this->page->context->contextlevel == CONTEXT_USER) {
+        if (($this->page->pagelayout == 'mypublic') && ($this->page->context->contextlevel == CONTEXT_USER)) {
             $html = $this->context_header();
         }
 
