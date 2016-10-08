@@ -17,6 +17,15 @@ a:focus {
   text-decoration: none;
 }
 
+// Accessibility: Skip block link, for keyboard-only users.
+.skiplinks .skip:focus {
+    position: absolute;
+    top: 0;
+    background-color: @white;
+    z-index: 201; // 1 more than for #essentialnavbar in navigation.less.
+    padding: 8px;
+}
+
 .text_to_html {
   display: inline;
   clear: none;
