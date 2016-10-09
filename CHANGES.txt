@@ -4,6 +4,7 @@ New in 3.0.1.11
 - FIX: Issue #751: 3 block regions displaying in Edit mode for a 2-column layout.
 - FIX: Issue #771: "Skip to main content" link is hidden by main fixed navbar.
 - FIX: Row block and course category flex issues.
+- FIX: Disabled elements in tables.
 - REFIX: Action menu items for blocks when narrow page width.
 - FIX/NEW: Improve footer.js and by doing so fix issue with popup layout.
 
