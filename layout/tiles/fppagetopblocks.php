@@ -22,4 +22,4 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-echo $OUTPUT->essential_blocks('page-top', 'row-fluid', 'aside', \theme_essential\toolbox::get_setting('pagetopblocksperrow'));
+echo $OUTPUT->essential_blocks('page-top', 'row-fluid', 'aside', 'pagetopblocksperrow');

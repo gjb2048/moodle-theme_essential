@@ -40,7 +40,7 @@ $pagebottomregion = \theme_essential\toolbox::has_page_bottom_region();
             </div>
             <?php
             if ($pagebottomregion) {
-                echo $OUTPUT->essential_blocks('side-pre', 'row-fluid', 'aside', \theme_essential\toolbox::get_setting('pagebottomblocksperrow'));
+                echo $OUTPUT->essential_blocks('side-pre', 'row-fluid', 'aside', 'pagebottomblocksperrow');
             }
 ?>
         </div>

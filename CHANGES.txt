@@ -6,6 +6,7 @@ New in 3.0.1.11
 - FIX: Row block and course category flex issues.
 - FIX: Disabled elements in tables.
 - REFIX: Action menu items for blocks when narrow page width.
+- NEW: Issue #770: Create 'top-block' region with optionality setting.
 - FIX/NEW: Improve footer.js and by doing so fix issue with popup layout.
 
 New in 3.0.1.10

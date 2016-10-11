@@ -1714,14 +1714,23 @@ class core_renderer extends \core_renderer {
      * @param string $region The region to get HTML for.
      * @param array $classes array of classes for the tag.
      * @param string $tag Tag to use.
-     * @param int $blocksperrow if > 0 then this is a row block region specifying the number of blocks per row, max of '4'.
+     * @param boolean/string/int $blocksperrowsetting If not false or an int for the blocks per row,
+     *                                                then use the setting name to get the blocks per row.
      * @return string HTML.
      */
-    public function essential_blocks($region, $classes = array(), $tag = 'aside', $blocksperrow = 0) {
+    public function essential_blocks($region, $classes = array(), $tag = 'aside', $blocksperrowsetting = false) {
         if ($this->page->blocks->is_known_region($region)) {
             $classes = (array) $classes;
             $classes[] = 'block-region';
-
+            if ($blocksperrowsetting !== false) {
+                if (is_int($blocksperrowsetting)) {
+                    $blocksperrow = $blocksperrowsetting;
+                } else {
+                    $blocksperrow = \theme_essential\toolbox::get_setting($blocksperrowsetting);
+                }
+            } else {
+                $blocksperrow = false;
+            }
             $attributes = array(
                 'id' => 'block-region-' . preg_replace('#[^a-zA-Z0-9_\-]+#', '-', $region),
                 'class' => join(' ', $classes),
@@ -1737,7 +1746,7 @@ class core_renderer extends \core_renderer {
             }
 
             if ($this->page->blocks->region_has_content($region, $this)) {
-                if ($blocksperrow > 0) {
+                if ($blocksperrow !== false) {
                     $attributes['class'] .= ' rowblock-blocks';
                     if ($editing) {
                         $attributes['class'] .= ' rowblock-edit';
@@ -1750,7 +1759,7 @@ class core_renderer extends \core_renderer {
                 }
             } else {
                 if ($editing) {
-                    if ($blocksperrow > 0) {
+                    if ($blocksperrow !== false) {
                         $attributes['class'] .= ' rowblock-blocks rowblock-edit';
                     }
                     $output = html_writer::tag($tag, $regioncontent, $attributes);
