@@ -810,9 +810,11 @@ $essentialsettingsheader = new admin_settingpage('theme_essential_header', get_s
 if ($ADMIN->fulltree) {
     global $CFG;
     if (file_exists("{$CFG->dirroot}/theme/essential/essential_admin_setting_configtext.php")) {
+        require_once($CFG->dirroot . '/theme/essential/essential_admin_setting_configinteger.php');
         require_once($CFG->dirroot . '/theme/essential/essential_admin_setting_configtext.php');
         require_once($CFG->dirroot . '/theme/essential/essential_admin_setting_configradio.php');
     } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/essential/essential_admin_setting_configtext.php")) {
+        require_once($CFG->themedir . '/essential/essential_admin_setting_configinteger.php');
         require_once($CFG->themedir . '/essential/essential_admin_setting_configtext.php');
         require_once($CFG->themedir . '/essential/essential_admin_setting_configradio.php');
     }
@@ -961,6 +963,24 @@ if ($ADMIN->fulltree) {
     );
     $setting = new essential_admin_setting_configradio($name, $title, $description, $default, $choices, false, $images);
     $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingsheader->add($setting);
+
+    // Header block.
+    $name = 'theme_essential/haveheaderblock';
+    $title = get_string('haveheaderblock', 'theme_essential');
+    $description = get_string('haveheaderblockdesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+    $essentialsettingsheader->add($setting);
+
+    $name = 'theme_essential/headerblocksperrow';
+    $title = get_string('headerblocksperrow', 'theme_essential');
+    $default = 4;
+    $lower = 1;
+    $upper = 4;
+    $description = get_string('headerblocksperrowdesc', 'theme_essential',
+        array('lower' => $lower, 'upper' => $upper));
+    $setting = new essential_admin_setting_configinteger($name, $title, $description, $default, $lower, $upper);
     $essentialsettingsheader->add($setting);
 
     // Course menu settings.

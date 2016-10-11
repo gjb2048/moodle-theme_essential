@@ -120,6 +120,7 @@
     // Show the regions when used or drag and drop.
     &.used-region-side-pre #block-region-side-pre,
     &.used-region-side-post #block-region-side-post,
+    &.used-region-header #block-region-header,
     &.used-region-home #block-region-home,
     &.used-region-page-top #block-region-page-top,
     &.used-region-footer-left #block-region-footer-left,
@@ -597,7 +598,7 @@ aside.rowblock-edit .block {
     display: block;
     min-height: 240px;
     max-height: 240px;
-    overflow-y: scroll;
+    overflow-y: auto;
     .box-sizing(border-box);
 }
 .dir-ltr aside.rowblock-edit .block {

@@ -22,4 +22,4 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-echo $OUTPUT->essential_blocks('home', 'row-fluid', 'aside', \theme_essential\toolbox::get_setting('frontpagehomeblocksperrow'));
+echo $OUTPUT->essential_blocks('home', 'row-fluid', 'aside', 'frontpagehomeblocksperrow');

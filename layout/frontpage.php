@@ -37,8 +37,10 @@ if ($enable1alert || $enable2alert || $enable3alert) {
     $alertsuccess = '<span class="fa-stack"><span aria-hidden="true" class="fa fa-bullhorn fa-stack-1x fa-inverse"></span></span>';
 }
 ?>
-
 <div id="page" class="container-fluid">
+    <?php
+    echo $OUTPUT->essential_blocks('header', 'row-fluid', 'aside', 'headerblocksperrow');
+?>
     <section class="slideshow">
         <!-- Start Slideshow -->
         <?php

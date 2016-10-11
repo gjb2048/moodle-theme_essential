@@ -129,6 +129,17 @@ $string['displaybeforelogin'] = 'Show before login only';
 $string['displayafterlogin'] = 'Show after login only';
 $string['dontdisplay'] = 'Never show';
 
+// Regions.
+$string['region-side-post'] = 'Right';
+$string['region-side-pre'] = 'Left';
+$string['region-header'] = 'Header';
+$string['region-home'] = 'Home';
+$string['region-page-top'] = 'Page top';
+$string['region-footer-left'] = 'Footer (Left)';
+$string['region-footer-middle'] = 'Footer (Middle)';
+$string['region-footer-right'] = 'Footer (Right)';
+$string['region-hidden-dock'] = 'Hidden from users';
+
 // Sponsor.
 $string['sponsor_title'] = 'Sponsor Essential';
 $string['sponsor_desc'] = 'Please sponsor via PayPal by contacting me via my \'';
@@ -252,16 +263,6 @@ $string['breadcrumbstylednocollapse'] = 'Fancy with no collapse';
 $string['breadcrumbsimple'] = 'Simple';
 $string['breadcrumbthin'] = 'Thin';
 $string['nobreadcrumb'] = 'Hide';
-
-// Regions.
-$string['region-side-post'] = 'Right';
-$string['region-side-pre'] = 'Left';
-$string['region-home'] = 'Home';
-$string['region-page-top'] = 'Page top';
-$string['region-footer-left'] = 'Footer (Left)';
-$string['region-footer-middle'] = 'Footer (Middle)';
-$string['region-footer-right'] = 'Footer (Right)';
-$string['region-hidden-dock'] = 'Hidden from users';
 
 // Features.
 $string['featureheading'] = 'Features';
@@ -721,6 +722,11 @@ $string['displayeditingmenu'] = 'Display editing button';
 $string['displayeditingmenudesc'] = 'Displays a button with the same functionality as the default page editing button on the header.';
 $string['hidedefaulteditingbutton'] = 'Hide default page editing button';
 $string['hidedefaulteditingbuttondesc'] = 'Hides the default page editing button from any page.  This setting only takes effect if the "Display editing button" setting is enabled.';
+
+$string['haveheaderblock'] = 'Header block region';
+$string['haveheaderblockdesc'] = 'Have a header block region just below the breadcrumb.';
+$string['headerblocksperrow'] = 'Header blocks per row';
+$string['headerblocksperrowdesc'] = 'State up to how many blocks per row between {$a->lower} and {$a->upper} for pages with the \'Header block region\'.';
 
 // Font settings.
 $string['fontsettings'] = 'Font';

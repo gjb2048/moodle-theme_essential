@@ -60,6 +60,7 @@ $THEME->javascripts_footer[] = 'dock';
 
 $THEME->editor_sheets = array('editor', 'custom');
 
+$baseregions = array('footer-left', 'footer-middle', 'footer-right');
 $fpaddregions = array();
 if (get_config('theme_essential', 'frontpagemiddleblocks') > 0) {
     $fpaddregions[] = 'home';
@@ -67,12 +68,17 @@ if (get_config('theme_essential', 'frontpagemiddleblocks') > 0) {
 if (get_config('theme_essential', 'fppagetopblocks') > 0) {
     $fpaddregions[] = 'page-top';
 }
+if (get_config('theme_essential', 'haveheaderblock') > 0) {
+    $baseregions[] = 'header';
+    $fpaddregions[] = 'header';
+}
+$standardregions = array_merge(array('side-pre', 'page-top'), $baseregions);
 
 $THEME->layouts = array(
     // Most backwards compatible layout without the blocks - this is the layout used by default.
     'base' => array(
         'file' => 'columns1.php',
-        'regions' => array('footer-left', 'footer-middle', 'footer-right'),
+        'regions' => $baseregions,
         'defaultregion' => 'footer-middle',
     ),
     // Front page.
@@ -85,42 +91,42 @@ $THEME->layouts = array(
     // Standard layout with blocks, this is recommended for most pages with general information.
     'standard' => array(
         'file' => 'columns2.php',
-        'regions' => array('side-pre', 'page-top', 'footer-left', 'footer-middle', 'footer-right'),
+        'regions' => $standardregions,
         'defaultregion' => 'side-pre',
     ),
     // Main course page.
     'course' => array(
         'file' => 'columns3.php',
-        'regions' => array('side-pre', 'side-post', 'page-top', 'footer-left', 'footer-middle', 'footer-right'),
+        'regions' => array_merge($standardregions, array('side-post')),
         'defaultregion' => 'side-post',
     ),
     'coursecategory' => array(
         'file' => 'columns2.php',
-        'regions' => array('side-pre', 'page-top', 'footer-left', 'footer-middle', 'footer-right'),
+        'regions' => $standardregions,
         'defaultregion' => 'side-pre',
     ),
     // Part of course, typical for modules - default page layout if $cm specified in require_login().
     'incourse' => array(
         'file' => 'columns2.php',
-        'regions' => array('side-pre', 'page-top', 'footer-left', 'footer-middle', 'footer-right'),
+        'regions' => $standardregions,
         'defaultregion' => 'side-pre',
     ),
     // Server administration scripts.
     'admin' => array(
         'file' => 'admin.php',
-        'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),
+        'regions' => array_merge($baseregions, array('side-pre')),
         'defaultregion' => 'side-pre',
     ),
     // My dashboard page.
     'mydashboard' => array(
         'file' => 'columns3.php',
-        'regions' => array('side-pre', 'page-top', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
+        'regions' => array_merge($standardregions, array('side-post')),
         'defaultregion' => 'side-post',
     ),
     // My public page.
     'mypublic' => array(
         'file' => 'columns3.php',
-        'regions' => array('side-pre', 'side-post', 'page-top', 'footer-left', 'footer-middle', 'footer-right'),
+        'regions' => array_merge($standardregions, array('side-post')),
         'defaultregion' => 'side-post',
     ),
     'login' => array(
@@ -158,7 +164,7 @@ $THEME->layouts = array(
     // Should display the content and basic headers only.
     'print' => array(
         'file' => 'columns1.php',
-        'regions' => array('footer-left', 'footer-middle', 'footer-right'),
+        'regions' => $baseregions,
         'defaultregion' => '',
         'options' => array('nofooter' => true),
     ),
@@ -171,7 +177,7 @@ $THEME->layouts = array(
     // The pagelayout used for reports.
     'report' => array(
         'file' => 'report.php',
-        'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),
+        'regions' => array_merge($baseregions, array('side-pre')),
         'defaultregion' => 'side-pre',
     ),
     // The pagelayout used for safebrowser and securewindow.
