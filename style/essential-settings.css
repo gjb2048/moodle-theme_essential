@@ -881,40 +881,40 @@ button.website:focus {
   color: [[setting:themecolor]];
   background-color: [[setting:themenavcolor]];
 }
-.navbar .navbar-inner #custom_menu_courses .dropdown-menu > li > a > span.onlyenrolled {
+.navbar .navbar-inner #custom_menu_courses .dropdown-menu li > a > span.onlyenrolled {
   background-color: [[setting:mycoursesorderenrolbackcolour]];
 }
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a {
+.navbar .navbar-inner .nav > li.dropdown .dropdown-menu li > a {
   color: [[setting:themeurlcolor]];
 }
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:hover {
+.navbar .navbar-inner .nav > li.dropdown .dropdown-menu li > a:hover {
   color: #ffffff;
   background-color: [[setting:themeurlcolor]];
 }
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:focus,
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a.open {
+.navbar .navbar-inner .nav > li.dropdown .dropdown-menu li > a:focus,
+.navbar .navbar-inner .nav > li.dropdown .dropdown-menu li > a.open {
   color: #ffffff;
   background-color: [[setting:themeurlcolor]];
 }
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:focus .fa,
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a.open .fa {
+.navbar .navbar-inner .nav > li.dropdown .dropdown-menu li > a:focus .fa,
+.navbar .navbar-inner .nav > li.dropdown .dropdown-menu li > a.open .fa {
   color: #ffffff;
 }
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li > a:hover .dimmed_text {
+.navbar .navbar-inner .nav > li.dropdown .dropdown-menu li > a:hover .dimmed_text {
   color: #eeeeee;
 }
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li.dropdown-submenu:hover > a {
+.navbar .navbar-inner .nav > li.dropdown .dropdown-menu li.dropdown-submenu:hover > a {
   color: #ffffff;
   background-color: [[setting:themeurlcolor]];
 }
-.navbar .navbar-inner .nav > li.dropdown ul.dropdown-menu > li.dropdown-submenu:hover > a .fa {
+.navbar .navbar-inner .nav > li.dropdown .dropdown-menu li.dropdown-submenu:hover > a .fa {
   color: inherit;
 }
-.navbar .navbar-inner #custom_menu_courses .nav > li.dropdown ul.dropdown-menu > li > a:hover > span {
+.navbar .navbar-inner #custom_menu_courses .nav > li.dropdown .dropdown-menu li > a:hover > span {
   background-color: [[setting:themeurlcolor]];
 }
-.navbar .navbar-inner #custom_menu_courses .nav > li.dropdown ul.dropdown-menu > li > a:focus > span,
-.navbar .navbar-inner #custom_menu_courses .nav > li.dropdown ul.dropdown-menu > li > a.open > span {
+.navbar .navbar-inner #custom_menu_courses .nav > li.dropdown .dropdown-menu li > a:focus > span,
+.navbar .navbar-inner #custom_menu_courses .nav > li.dropdown .dropdown-menu li > a.open > span {
   background-color: [[setting:themeurlcolor]];
 }
 .navbar .navbar-inner .nav li.dropdown.open > .dropdown-toggle,
@@ -926,27 +926,27 @@ button.website:focus {
 .navbar .navbar-inner .usermenu .dropdown img.userpicture {
   border: 1px solid [[setting:themenavcolor]];
 }
-.navbar .navbar-inner .usermenu .dropdown ul.dropdown-menu {
+.navbar .navbar-inner .usermenu .dropdown .dropdown-menu {
   border: 1px solid [[setting:themecolor]];
 }
-.navbar .navbar-inner .usermenu .dropdown ul.dropdown-menu hr.sep {
+.navbar .navbar-inner .usermenu .dropdown .dropdown-menu hr.sep {
   border-bottom: 1px dotted [[setting:themecolor]];
 }
-.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu {
+.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu {
   border: 1px solid [[setting:themecolor]];
 }
-.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a {
+.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a {
   border-top: 1px dotted [[setting:themecolor]];
 }
-.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message,
-.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification {
+.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a:hover .message,
+.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a:hover .notification {
   color: #ffffff;
   background-color: [[setting:themehovercolor]];
 }
-.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message img.userpicture,
-.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification img.userpicture,
-.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .message img.profilepicture,
-.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu li > a:hover .notification img.profilepicture {
+.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a:hover .message img.userpicture,
+.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a:hover .notification img.userpicture,
+.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a:hover .message img.profilepicture,
+.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a:hover .notification img.profilepicture {
   box-shadow: 0 0 3px [[setting:themenavcolor]];
 }
 .dir-ltr .navbar .navbar-inner .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
@@ -1002,19 +1002,19 @@ button.website:focus {
 /* @end */
 /* @group Responsive */
 @media (max-width: 979px) {
-  .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a {
+  .navbar .navbar-inner .nav-collapse .nav > li.dropdown .dropdown-menu li > a {
     color: [[setting:themecolor]];
   }
-  .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a:hover,
-  .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a.open {
+  .navbar .navbar-inner .nav-collapse .nav > li.dropdown .dropdown-menu li > a:hover,
+  .navbar .navbar-inner .nav-collapse .nav > li.dropdown .dropdown-menu li > a.open {
     color: [[setting:themenavcolor]];
     background-color: [[setting:themecolor]];
   }
-  .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a:hover .fa,
-  .navbar .navbar-inner .nav-collapse .nav > li.dropdown ul.dropdown-menu > li > a.open .fa {
+  .navbar .navbar-inner .nav-collapse .nav > li.dropdown .dropdown-menu li > a:hover .fa,
+  .navbar .navbar-inner .nav-collapse .nav > li.dropdown .dropdown-menu li > a.open .fa {
     color: inherit;
   }
-  .navbar .navbar-inner .nav-collapse .nav li.dropdown ul.dropdown-menu {
+  .navbar .navbar-inner .nav-collapse .nav li.dropdown .dropdown-menu {
     background-color: [[setting:themenavcolor]];
     color: [[setting:themecolor]];
   }

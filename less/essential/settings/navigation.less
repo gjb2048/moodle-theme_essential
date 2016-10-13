@@ -51,12 +51,12 @@
         }
 
         #custom_menu_courses {
-            .dropdown-menu > li > a > span.onlyenrolled {
+            .dropdown-menu li > a > span.onlyenrolled {
                 background-color: ~"[[setting:mycoursesorderenrolbackcolour]]";
            }
         }
 
-        .nav > li.dropdown ul.dropdown-menu > li {
+        .nav > li.dropdown .dropdown-menu li {
             > a {
                 color: ~"[[setting:themeurlcolor]]";
                 &:hover {
@@ -84,7 +84,7 @@
         }
 
         #custom_menu_courses {
-            .nav > li.dropdown ul.dropdown-menu > li {
+            .nav > li.dropdown .dropdown-menu li {
                 > a {
                     &:hover > span {
                         background-color: ~"[[setting:themeurlcolor]]";
@@ -110,7 +110,7 @@
                 img.userpicture {
                     border: 1px solid ~"[[setting:themenavcolor]]";
                 }
-                ul.dropdown-menu {
+                .dropdown-menu {
                     border: 1px solid ~"[[setting:themecolor]]";
                     hr.sep {
                         border-bottom: 1px dotted ~"[[setting:themecolor]]";
@@ -121,7 +121,7 @@
 
         .messagemenu {
             ul.nav {
-                ul.dropdown-menu {
+                .dropdown-menu {
                     border: 1px solid ~"[[setting:themecolor]]";
                     li > a {
                         border-top: 1px dotted ~"[[setting:themecolor]]";

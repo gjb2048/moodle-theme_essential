@@ -32,6 +32,17 @@
     }
 }
 
+div.dropdown-menu > ul {
+    list-style: inherit;
+    margin: 0;
+    max-height: 384px;
+    overflow-y: auto;
+    white-space: nowrap;
+    li a {
+        display: block;
+    }
+}
+
 .navbar {
     margin-bottom: 0;
     width: 100%;
@@ -64,7 +75,7 @@
         }
 
         ul.nav li.dropdown:hover {
-            > ul.dropdown-menu {
+            > .dropdown-menu {
                 display: block;
             }
         }
@@ -80,13 +91,13 @@
 
         #custom_menu_activitystream,
         #custom_menu_language {
-            ul.dropdown-menu {
+            .dropdown-menu {
                 max-height: 384px;
             }
         }
 
-        .dropdown-menu > li > a:hover,
-        .dropdown-menu > li > a:focus,
+        .dropdown-menu li > a:hover,
+        .dropdown-menu li > a:focus,
         .dropdown-submenu:hover > a,
         .dropdown-submenu:focus > a {
             background-image: none;
@@ -109,7 +120,7 @@
         }
 
         #custom_menu_courses {
-            .dropdown-menu > li > a,
+            .dropdown-menu li > a,
             .dropdown-submenu > a {
                 margin: 0;
                 padding: 0;
@@ -120,7 +131,7 @@
             }
         }
 
-        .dropdown-menu > li > a:hover .@{fa-css-prefix} {
+        .dropdown-menu li > a:hover .@{fa-css-prefix} {
             color: @dropdownLinkColorHover;
         }
 
@@ -132,7 +143,7 @@
             color: inherit;
         }
 
-        .nav > li.dropdown ul.dropdown-menu > li > a {
+        .nav > li.dropdown .dropdown-menu li > a {
             &:hover, &.open {
                 > .dimmed_text .@{fa-css-prefix} {
                     color: @grayLighter;
@@ -158,7 +169,7 @@
                 a.dropdown-toggle {
                     padding: 9px 15px;
                 }
-                ul.dropdown-menu {
+                .dropdown-menu {
                     margin: 0;
                     .@{fa-css-prefix} {
                         width: 15px;
@@ -174,7 +185,7 @@
 
         .messagemenu {
             ul.nav {
-                ul.dropdown-menu {
+                .dropdown-menu {
                     margin: 0;
                     li > a {
                         padding: 0;
@@ -262,7 +273,7 @@
             margin-right: 5px;
         }
 
-        .dropdown-menu > li > a,
+        .dropdown-menu li > a,
         .dropdown-submenu > a {
             padding: 3px 25px 3px 15px;
         }
@@ -301,7 +312,7 @@
                         padding: 3px 25px 3px 15px;
                     }
                 }
-                ul.dropdown-menu {
+                .dropdown-menu {
                     .@{fa-css-prefix} {
                         margin-right: 5px;
                     }
@@ -314,7 +325,7 @@
                 > li > a > .@{fa-css-prefix} {
                     margin-left: 5px;
                 }
-                ul.dropdown-menu {
+                .dropdown-menu {
                     left: auto;
                     right: 10px;
                     li > a {
@@ -346,8 +357,8 @@
                         }
                     }
                 }
-                ul.dropdown-menu:before,
-                    ul.dropdown-menu:after {
+                .dropdown-menu:before,
+                .dropdown-menu:after {
                     left: auto;
                     right: 10px;
                 }
@@ -416,7 +427,7 @@
                         padding: 3px 15px 3px 25px;
                     }
                 }
-                ul.dropdown-menu {
+                .dropdown-menu {
                     .@{fa-css-prefix} {
                         margin-left: 5px;
                     }
@@ -429,7 +440,7 @@
                 > li > a > .@{fa-css-prefix} {
                     margin-right: 5px;
                 }
-                ul.dropdown-menu {
+                .dropdown-menu {
                     right: auto;
                     left: 10px;
                     li > a {
@@ -461,8 +472,8 @@
                         }
                     }
                 }
-                ul.dropdown-menu:before,
-                    ul.dropdown-menu:after {
+                .dropdown-menu:before,
+                .dropdown-menu:after {
                     left: 10px;
                     right: auto;
                 }
