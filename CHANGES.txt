@@ -5,6 +5,7 @@ New in 3.1.1.1
 - FIX: Issue #771: "Skip to main content" link is hidden by main fixed navbar.
 - FIX: Row block and course category flex issues.
 - FIX: Disabled elements in tables.
+- FIX: MDL-56198 - Improve grading info responsiveness.
 - REFIX: Action menu items for blocks when narrow page width.
 - NEW: Issue #770: Create 'top-block' region with optionality setting.
 - FIX/NEW: Improve footer.js and by doing so fix issue with popup layout.
