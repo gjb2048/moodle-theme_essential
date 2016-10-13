@@ -69,17 +69,10 @@ p.tree_item {
 }
 
 .editing {
-    &.used-region-side-pre #block-region-side-pre,
-    &.used-region-side-post #block-region-side-post,
-    &.used-region-header #block-region-header,
-    &.used-region-home #block-region-home,
-    &.used-region-page-top #block-region-page-top,
-    &.used-region-hidden-dock #block-region-hidden-dock {
+    #page .block-region.yui3-dd-drop-active-valid {
         border-color: ~"[[setting:themecolor]]";
     }
-    &.used-region-footer-left #block-region-footer-left,
-    &.used-region-footer-middle #block-region-footer-middle,
-    &.used-region-footer-right #block-region-footer-right {
+    #page-footer .block-region.yui3-dd-drop-active-valid {
         border-color: ~"[[setting:footertextcolor]]";
     }
 }
