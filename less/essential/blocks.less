@@ -106,14 +106,22 @@
     white-space: normal;
 }
 
-.editing .regionname {
-    display: block;
-    margin: 2px 0;
-    text-align: center;
-    span {
-        background-color: rgba(255, 255, 255, 0.5);
-        border-radius: @baseBorderRadius;
-        padding: 2px;
+.editing .block-region {
+    padding-top: 24px;
+    position: relative;
+    .regionname {
+        display: block;
+        left: 0;
+        margin: 2px 0;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 100%;
+        span {
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: @baseBorderRadius;
+            padding: 2px;
+        }
     }
 }
 
