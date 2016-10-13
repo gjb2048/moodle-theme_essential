@@ -32,6 +32,17 @@
     }
 }
 
+div.dropdown-menu > ul {
+    list-style: inherit;
+    margin: 0;
+    max-height: 384px;
+    overflow-y: auto;
+    white-space: nowrap;
+    li a {
+        display: block;
+    }
+}
+
 .navbar {
     margin-bottom: 0px;
     width: 100%;
@@ -67,7 +78,7 @@
         }
 
         ul.nav li.dropdown:hover {
-            > ul.dropdown-menu {
+            > .dropdown-menu {
                 display: block;
             }
         }
@@ -83,16 +94,16 @@
 
         #custom_menu_activitystream,
         #custom_menu_language {
-            ul.dropdown-menu {
+            .dropdown-menu {
                 max-height: 384px;
                 overflow-y: auto;
             }
         }
 
-        .dropdown-menu > li > a:hover,
-            .dropdown-menu > li > a:focus,
-            .dropdown-submenu:hover > a,
-            .dropdown-submenu:focus > a {
+        .dropdown-menu li > a:hover,
+        .dropdown-menu li > a:focus,
+        .dropdown-submenu:hover > a,
+        .dropdown-submenu:focus > a {
             background-image: none;
             text-decoration: none;
         }
@@ -109,16 +120,16 @@
         }
 
         .dropdown-menu {
-            margin: 0px;
+            margin: 0;
         }
 
-        .dropdown-menu > li > a,
+        .dropdown-menu li > a,
         .dropdown-submenu > a {
             padding: 3px 25px 3px 15px;
         }
 
         #custom_menu_courses {
-            .dropdown-menu > li > a,
+            .dropdown-menu li > a,
             .dropdown-submenu > a {
                 margin: 0;
                 padding: 0;
@@ -129,7 +140,7 @@
             }
         }
 
-        .dropdown-menu > li > a:hover .@{fa-css-prefix} {
+        .dropdown-menu li > a:hover .@{fa-css-prefix} {
             color: @dropdownLinkColorHover;
         }
 
@@ -159,7 +170,7 @@
             color: inherit;
         }
 
-        .nav > li.dropdown ul.dropdown-menu > li > a {
+        .nav > li.dropdown .dropdown-menu li > a {
             &:hover, &.open {
                 > .dimmed_text .@{fa-css-prefix} {
                     color: @grayLighter;
@@ -198,15 +209,15 @@
                         padding: 3px 25px 3px 15px;
                     }
                 }
-                ul.dropdown-menu {
-                    margin: 0px;
+                .dropdown-menu {
+                    margin: 0;
                     .@{fa-css-prefix} {
                         margin-right: 5px;
                         width: 15px;
                     }
                     hr.sep {
-                        margin: 0px;
-                        height: 0px;
+                        margin: 0;
+                        height: 0;
                         border: none;
                     }
                 }
@@ -218,12 +229,12 @@
                 > li > a > .@{fa-css-prefix} {
                     margin-left: 5px;
                 }
-                ul.dropdown-menu {
+                .dropdown-menu {
                     left: auto;
                     right: 10px;
-                    margin: 0px;
+                    margin: 0;
                     li > a {
-                        padding: 0px;
+                        padding: 0;
                         background: @white;
                         overflow: hidden;
                         > .message {
@@ -298,8 +309,8 @@
                         }
                     }
                 }
-                ul.dropdown-menu:before,
-                    ul.dropdown-menu:after {
+                .dropdown-menu:before,
+                .dropdown-menu:after {
                     left: auto;
                     right: 10px;
                 }

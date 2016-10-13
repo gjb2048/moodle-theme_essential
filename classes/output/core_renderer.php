@@ -502,11 +502,13 @@ class core_renderer extends \core_renderer {
                 $content .= $this->getfontawesomemarkup('caret-right');
             }
             $content .= '</a>';
-            $content .= '<ul class="dropdown-menu">';
+            $content .= '<div class="dropdown-menu">';
+            $content .= '<ul>';
             foreach ($menunode->get_children() as $menunode) {
                 $content .= $this->render_custom_menu_item($menunode, 0);
             }
             $content .= '</ul>';
+            $content .= '</div>';
         } else {
             // Also, if the node's text matches '####', add a class so we can treat it as a divider.
             $content = '';
