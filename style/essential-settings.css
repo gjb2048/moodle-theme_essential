@@ -130,17 +130,10 @@ p.tree_item.branch.emptybranch:focus:before {
 .collapsed .tree_item.branch:before {
   color: [[setting:themeiconcolor]];
 }
-.editing.used-region-side-pre #block-region-side-pre,
-.editing.used-region-side-post #block-region-side-post,
-.editing.used-region-header #block-region-header,
-.editing.used-region-home #block-region-home,
-.editing.used-region-page-top #block-region-page-top,
-.editing.used-region-hidden-dock #block-region-hidden-dock {
+.editing #page .block-region.yui3-dd-drop-active-valid {
   border-color: [[setting:themecolor]];
 }
-.editing.used-region-footer-left #block-region-footer-left,
-.editing.used-region-footer-middle #block-region-footer-middle,
-.editing.used-region-footer-right #block-region-footer-right {
+.editing #page-footer .block-region.yui3-dd-drop-active-valid {
   border-color: [[setting:footertextcolor]];
 }
 /* @end */

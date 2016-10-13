@@ -8,6 +8,7 @@ New in 3.0.1.11
 - FIX: Disabled elements in tables.
 - REFIX: Action menu items for blocks when narrow page width.
 - NEW: Issue #770: Create 'top-block' region with optionality setting.
+- NEW: Issue #775: Only show dotted lines on regions when Drag and Drop.
 - FIX/NEW: Improve footer.js and by doing so fix issue with popup layout.
 
 New in 3.0.1.10
