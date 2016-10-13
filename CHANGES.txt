@@ -3,6 +3,7 @@ New in 2.9.1.18
 - REFIX: Issue #747: Profile picture in user profile missing.
 - FIX: Issue #751: 3 block regions displaying in Edit mode for a 2-column layout.
 - FIX: Issue #771: "Skip to main content" link is hidden by main fixed navbar.
+- FIX: Issue #773: Scroll in the drop down menus.
 - FIX: Issue #774: Participants List missing alternate user names - Alternative settings.
 - FIX: Issue #776: Block editing labels can move.
 - FIX: Row block and course category flex issues.
