@@ -30,13 +30,13 @@ if (empty($PAGE->layout_options['nofooter'])) { ?>
             <?php echo $OUTPUT->essential_edit_button('footer'); ?>
             <div class="row-fluid footerblocks">
                 <div class="footerblock span4">
-                    <?php echo $OUTPUT->blocks('footer-left'); ?>
+                    <?php echo $OUTPUT->essential_blocks('footer-left'); ?>
                 </div>
                 <div class="footerblock span4">
-                    <?php echo $OUTPUT->blocks('footer-middle'); ?>
+                    <?php echo $OUTPUT->essential_blocks('footer-middle'); ?>
                 </div>
                 <div class="footerblock span4">
-                    <?php echo $OUTPUT->blocks('footer-right'); ?>
+                    <?php echo $OUTPUT->essential_blocks('footer-right'); ?>
                 </div>
             </div>
             <div class="footerlinks row-fluid">
