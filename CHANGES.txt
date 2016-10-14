@@ -1,3 +1,6 @@
+New in 3.1.1.2
+==============
+
 New in 3.1.1.1
 ==============
 - REFIX: Issue #747: Profile picture in user profile missing.
