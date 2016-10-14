@@ -1,3 +1,7 @@
+New in 3.0.1.12
+===============
+- FIX: Tidy up Bootstrap override LESS.
+
 New in 3.0.1.11
 ===============
 - REFIX: Issue #747: Profile picture in user profile missing.
