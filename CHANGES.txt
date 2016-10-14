@@ -1,5 +1,6 @@
 New in 3.1.1.2
 ==============
+- FIX: Bootstrap override LESS not working.
 
 New in 3.1.1.1
 ==============
