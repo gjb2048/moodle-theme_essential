@@ -1,5 +1,6 @@
 New in 3.0.1.12
 ===============
+- FIX: Issue #777: Re: Scroll in the drop down menus #773 - Custom menu sub-menus no longer accessible.
 - FIX: Tidy up Bootstrap override LESS.
 
 New in 3.0.1.11

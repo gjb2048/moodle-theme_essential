@@ -54,8 +54,10 @@
         .dropdown-toggle:after {
           border-left-color: inherit;
         }
-        &:hover .dropdown-toggle:after {
-          border-left-color: ~"[[setting:themenavcolor]]";
+        &:focus, &:hover {
+          .dropdown-toggle:after {
+            border-left-color: ~"[[setting:themenavcolor]]";
+          }
         }
       }
     }
@@ -162,8 +164,10 @@
             border-left-color: transparent;
             border-top-color: ~"[[setting:themeiconcolor]]";
           }
-          &:hover .dropdown-toggle:after {
-            border-top-color: ~"[[setting:themenavcolor]]";
+          &:focus, &:hover {
+            .dropdown-toggle:after {
+              border-top-color: ~"[[setting:themenavcolor]]";
+            }
           }
         }
         .dropdown-submenu, .dropdown-submenu:hover {
