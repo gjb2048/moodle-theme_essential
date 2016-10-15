@@ -299,8 +299,10 @@
                                 .dropdown-toggle:after {
                                     border-left-color: inherit;
                                 }
-                                &:focus, &:hover .dropdown-toggle:after {
-                                    border-left-color: ~"[[setting:alternativethemenavcolor@{index}]]";
+                                &:focus, &:hover {
+                                    .dropdown-toggle:after {
+                                        border-left-color: ~"[[setting:alternativethemenavcolor@{index}]]";
+                                    }
                                 }
                             }
                         }
@@ -1127,8 +1129,10 @@
                                         border-left-color: transparent;
                                         border-top-color: ~"[[setting:alternativethemeiconcolor@{index}]]";
                                     }
-                                    &:hover .dropdown-toggle:after {
-                                        border-top-color: ~"[[setting:alternativethemenavcolor@{index}]]";
+                                    &:focus, &:hover {
+                                        .dropdown-toggle:after {
+                                            border-top-color: ~"[[setting:alternativethemenavcolor@{index}]]";
+                                        }
                                     }
                                 }
                                 .dropdown-submenu, .dropdown-submenu:hover {

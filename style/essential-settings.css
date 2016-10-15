@@ -903,6 +903,7 @@ button.website:focus {
 .navbar .navbar-inner .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
   border-left-color: inherit;
 }
+.navbar .navbar-inner .nav .dropdown-menu .dropdown-submenu:focus .dropdown-toggle:after,
 .navbar .navbar-inner .nav .dropdown-menu .dropdown-submenu:hover .dropdown-toggle:after {
   border-left-color: [[setting:themenavcolor]];
 }
@@ -980,6 +981,8 @@ button.website:focus {
     border-left-color: transparent;
     border-top-color: [[setting:themeiconcolor]];
   }
+  .navbar .nav-collapse.in .nav .dropdown-submenu:focus .dropdown-toggle:after,
+  .navbar .nav-collapse.in .nav .dropdown-menu .dropdown-submenu:focus .dropdown-toggle:after,
   .navbar .nav-collapse.in .nav .dropdown-submenu:hover .dropdown-toggle:after,
   .navbar .nav-collapse.in .nav .dropdown-menu .dropdown-submenu:hover .dropdown-toggle:after {
     border-top-color: [[setting:themenavcolor]];

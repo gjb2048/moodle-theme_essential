@@ -1,5 +1,6 @@
 New in 2.9.1.19
 ===============
+- FIX: Issue #777: Re: Scroll in the drop down menus #773 - Custom menu sub-menus no longer accessible.
 - FIX: Tidy up Bootstrap override LESS.
 
 New in 2.9.1.18
