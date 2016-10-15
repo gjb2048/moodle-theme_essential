@@ -41,6 +41,10 @@ div.dropdown-menu > ul {
     li a {
         display: block;
     }
+    #custom_menu & {
+        max-height: none;
+        overflow-y: visible;
+    }
 }
 
 .navbar {
@@ -115,7 +119,7 @@ div.dropdown-menu > ul {
             }
         }
 
-        .dropdown-menu {
+        .dropdown > .dropdown-menu {
             margin: 0;
         }
 
@@ -381,7 +385,7 @@ div.dropdown-menu > ul {
             margin-left: 5px;
         }
 
-        .dropdown-menu > li > a,
+        .dropdown-menu li > a,
         .dropdown-submenu > a {
             padding: 3px 15px 3px 25px;
         }

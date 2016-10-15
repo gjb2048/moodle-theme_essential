@@ -949,16 +949,11 @@ button.website:focus {
 .navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a:hover .notification img.profilepicture {
   box-shadow: 0 0 3px [[setting:themenavcolor]];
 }
-.dir-ltr .navbar .navbar-inner .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
+.navbar-inner .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
   border-left-color: [[setting:themeiconcolor]];
 }
-.dir-ltr .navbar .navbar-inner .nav .dropdown-menu .dropdown-submenu:hover .dropdown-toggle:after {
-  border-left-color: [[setting:themenavcolor]];
-}
-.dir-rtl .navbar .navbar-inner .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
-  border-left-color: [[setting:themeiconcolor]];
-}
-.dir-rtl .navbar .navbar-inner .nav .dropdown-menu .dropdown-submenu:hover .dropdown-toggle:after {
+.navbar-inner .nav .dropdown-menu .dropdown-submenu:focus .dropdown-toggle:after,
+.navbar-inner .nav .dropdown-menu .dropdown-submenu:hover .dropdown-toggle:after {
   border-left-color: [[setting:themenavcolor]];
 }
 @media (max-width: 979px) {
@@ -966,6 +961,8 @@ button.website:focus {
   .navbar .nav-collapse.in .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
     border-top-color: [[setting:themeiconcolor]];
   }
+  .navbar .nav-collapse.in .nav .dropdown-submenu:focus .dropdown-toggle:after,
+  .navbar .nav-collapse.in .nav .dropdown-menu .dropdown-submenu:focus .dropdown-toggle:after,
   .navbar .nav-collapse.in .nav .dropdown-submenu:hover .dropdown-toggle:after,
   .navbar .nav-collapse.in .nav .dropdown-menu .dropdown-submenu:hover .dropdown-toggle:after {
     border-top-color: [[setting:themenavcolor]];
