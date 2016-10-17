@@ -1997,14 +1997,18 @@ class core_renderer extends \core_renderer {
      * in the settings.php file of the theme that the layout and tile files call this method for.
      *
      * @param string $sectionkey settings section key.
+     * @param string $buttontext optional button text.
      * @return string or null of not needed.
      */
-    public function essential_edit_button($sectionkey) {
+    public function essential_edit_button($sectionkey, $buttontext = null) {
         global $CFG;
         if ($this->page->user_is_editing() && is_siteadmin()) {
             $themesectionkey = $this->essential_edit_button_settingspage($sectionkey);
+            if (is_null($buttontext)) {
+                $buttontext = get_string('edit');
+            }
             $url = preg_replace("(https?:)", "", $CFG->wwwroot . '/admin/settings.php?section=');
-            return '<a class="btn btn-success" href="'.$url.$themesectionkey.'">'.get_string('edit').'</a>';
+            return '<a class="btn btn-success" href="'.$url.$themesectionkey.'">'.$buttontext.'</a>';
         }
         return null;
     }

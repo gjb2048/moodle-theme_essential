@@ -102,6 +102,12 @@ if ($enable1alert || $enable2alert || $enable3alert) {
             </div>
 <?php
 }
+
+if ($PAGE->user_is_editing()) {
+    echo '<div class="alerteditbutton">';
+    echo $OUTPUT->essential_edit_button('frontpage', get_string('alert_edit', 'theme_essential'));
+    echo '</div>';
+}
 ?>
         <!-- End Alerts -->
 
