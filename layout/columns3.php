@@ -26,12 +26,6 @@
 
 require_once(\theme_essential\toolbox::get_tile_file('additionaljs'));
 require_once(\theme_essential\toolbox::get_tile_file('header'));
-
-if (core_useragent::get_device_type() == "tablet") {
-    $tablet = true;
-} else {
-    $tablet = false;
-}
 ?>
 
 <div id="page" class="container-fluid">

@@ -1,6 +1,7 @@
 New in 3.0.1.13
 ===============
 - FIX: Issue #783: MDL-51633 and MDL-56368.
+- FIX: Blocks on tablets when one region is empty.
 - NEW: Issue #778: Add a button to the front page to add alert settings.  Sponsored by Chipping Campden School.
 
 New in 3.0.1.12

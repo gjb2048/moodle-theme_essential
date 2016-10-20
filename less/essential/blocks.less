@@ -35,27 +35,13 @@
   }
 }
 
-// Correctly span the main element when no blocks are present.
-.empty-region-side-pre #main-and-pre #content, .empty-region-side-post #main-and-pre {
-    width: 100%;
-}
-
-.empty-region-side-post.used-region-side-pre {
-    #main-and-pre {
-        #content {
-            .fluid-span(9);
-        }
-        #block-region-side-pre {
-            .fluid-span(3);
-        }
+body:not(.tabletdevice) {
+    // Correctly span the main element when no blocks are present.
+    &.empty-region-side-pre #main-and-pre #content, &.empty-region-side-post #main-and-pre {
+        width: 100%;
     }
-}
 
-@media (min-width: 1200px) {
-    .fluid-span (@columns) {
-        .fluid-span-full(@columns, @fluidGridColumnWidth1200, @fluidGridGutterWidth1200);
-    }
-    .empty-region-side-post.used-region-side-pre {
+    &.empty-region-side-post.used-region-side-pre {
         #main-and-pre {
             #content {
                 .fluid-span(9);
@@ -65,29 +51,45 @@
             }
         }
     }
-}
 
-@media (min-width: 768px) and (max-width: 979px) {
-    .fluid-span (@columns) {
-        .fluid-span-full(@columns, @fluidGridColumnWidth768, @fluidGridGutterWidth768);
-    }
-    .empty-region-side-post.used-region-side-pre {
-        #main-and-pre {
-            #content {
-                .fluid-span(9);
-            }
-            #block-region-side-pre {
-                .fluid-span(3);
+    @media (min-width: 1200px) {
+        .fluid-span (@columns) {
+            .fluid-span-full(@columns, @fluidGridColumnWidth1200, @fluidGridGutterWidth1200);
+        }
+        &.empty-region-side-post.used-region-side-pre {
+            #main-and-pre {
+                #content {
+                    .fluid-span(9);
+                }
+                #block-region-side-pre {
+                    .fluid-span(3);
+                }
             }
         }
     }
-}
 
-@media (max-width: 767px) {
-    .empty-region-side-post.used-region-side-pre {
-        #main-and-pre {
-            #content, #block-region-side-pre {
-                width: 100%;
+    @media (min-width: 768px) and (max-width: 979px) {
+        .fluid-span (@columns) {
+            .fluid-span-full(@columns, @fluidGridColumnWidth768, @fluidGridGutterWidth768);
+        }
+        &.empty-region-side-post.used-region-side-pre {
+            #main-and-pre {
+                #content {
+                    .fluid-span(9);
+                }
+                #block-region-side-pre {
+                    .fluid-span(3);
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        &.empty-region-side-post.used-region-side-pre {
+            #main-and-pre {
+                #content, #block-region-side-pre {
+                    width: 100%;
+                }
             }
         }
     }
