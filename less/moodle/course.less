@@ -57,21 +57,7 @@
             vertical-align: text-bottom;
         }
 
-        .editing_move {
-            // Move the move icon to the start of the line.
-            position: absolute;
-            left: 0;
-            right: auto;
-            top: 0;
-        }
-
-        .mod-indent-outer {
-            // Add appropriate padding such that nothing overlaps the
-            // absolute positioned move icon.
-            padding-left: 32px;
-        }
-
-        // The command block for each activity.S
+        // The command block for each activity.
         .actions {
             position: absolute;
             right: 0;
@@ -149,6 +135,20 @@
 .editing {
     .section {
         .activity {
+            .editing_move {
+                /* Move the move icon to the start of the line */
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            .mod-indent-outer {
+                /**
+                * Add appropriate padding such that nothing overlaps the
+                * absolute positioned move icon.
+                */
+                padding-left: 32px;
+                padding-right: 0;
+            }
             .contentwithoutlink,
             .activityinstance {
                 padding-right: 200px;
