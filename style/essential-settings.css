@@ -780,6 +780,26 @@ body#page-grade-grading-pick #region-main form #fgroup_id_buttonar label {
 }
 /* @end */
 /* @end */
+/* @group Grade */
+.path-grade-report-user .user-grade.generaltable .leveleven,
+.path-grade-report-user .user-grade.generaltable .levelodd {
+  color: [[setting:themetextcolor]];
+}
+.path-grade-report-user .user-grade.generaltable .leveleven a,
+.path-grade-report-user .user-grade.generaltable .levelodd a,
+.path-grade-report-user .user-grade.generaltable .leveleven a:visited,
+.path-grade-report-user .user-grade.generaltable .levelodd a:visited {
+  color: [[setting:themeurlcolor]];
+}
+.path-grade-report-user .user-grade.generaltable .leveleven a:hover,
+.path-grade-report-user .user-grade.generaltable .levelodd a:hover,
+.path-grade-report-user .user-grade.generaltable .leveleven a:focus,
+.path-grade-report-user .user-grade.generaltable .levelodd a:focus,
+.path-grade-report-user .user-grade.generaltable .leveleven a:active,
+.path-grade-report-user .user-grade.generaltable .levelodd a:active {
+  color: [[setting:themehovercolor]];
+}
+/* @end */
 /* @group Header */
 #page-header {
   color: [[setting:headertextcolor]];
