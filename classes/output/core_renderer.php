@@ -1190,8 +1190,10 @@ class core_renderer extends \core_renderer {
                 if (strpos($pagetype, 'admin-setting') !== false) {
                     $pagetype = 'admin-setting'; // Deal with all setting page types.
                 } else if ((strpos($pagetype, 'mod') !== false) &&
-                    ((strpos($pagetype, 'edit') !== false) || (strpos($pagetype, 'view') !== false))) {
-                    $pagetype = 'mod-edit-view'; // Deal with all mod edit / view page types.
+                    ((strpos($pagetype, 'edit') !== false) ||
+                    (strpos($pagetype, 'view') !== false) ||
+                    (strpos($pagetype, 'mod') !== false))) {
+                    $pagetype = 'mod-edit-view'; // Deal with all mod edit / view / mod page types.
                 } else if (strpos($pagetype, 'mod-data-field') !== false) {
                     $pagetype = 'mod-data-field'; // Deal with all mod data field page types.
                 } else if (strpos($pagetype, 'mod-lesson') !== false) {
