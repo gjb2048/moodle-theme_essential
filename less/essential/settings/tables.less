@@ -53,14 +53,24 @@ table.flexible,
         > tr:nth-child(odd) > th {
             color: ~"[[setting:themestripetextcolour]]";
             background-color: ~"[[setting:themestripebackgroundcolour]]";
-            a:not(.btn), a:not(.btn):hover, a:not(.btn):focus, a:not(.btn):visited,
-            a.toggle-display, a.toggle-display:hover, a.toggle-display:focus, a.toggle-display:visited {
+            a:not(.btn):not([role="menuitem"]), 
+            a:not(.btn):not([role="menuitem"]):hover,
+            a:not(.btn):not([role="menuitem"]):focus,
+            a:not(.btn):not([role="menuitem"]):visited,
+            a.toggle-display,
+            a.toggle-display:visited,
+            a.toggle-display:hover,
+            a.toggle-display:focus,
+            a.toggle-display:active {
                 color: ~"[[setting:themestripeurlcolour]]";
             }
         }
         > tr:nth-child(odd) > td {
             .@{fa-css-prefix}, .@{fa-css-prefix}:hover, .@{fa-css-prefix}:focus {
                 color: ~"[[setting:themestripetextcolour]]";
+            }
+            a[role="menuitem"] .@{fa-css-prefix}, .@{fa-css-prefix}:hover, .@{fa-css-prefix}:focus {
+                color: inherit;
             }
             img {
                 &.userpicture, &.profilepicture {
@@ -123,16 +133,17 @@ table.flexible,
 table#modules,
 table#permissions {
     > tbody {
-        tr:hover > td, 
+        tr:hover > td,
         tr:hover > td > h3,
         tr:hover > th {
             color: ~"[[setting:themestripetextcolour]]";
             background-color: ~"[[setting:themestripebackgroundcolour]]";
         }
-        tr:hover > td a:not(.btn),
-        tr:hover > td a:not(.btn):hover,
-        tr:hover > td a:not(.btn):focus,
-        tr:hover > td a:not(.btn):visited {
+        tr:hover > td a:not(.btn):not([role="menuitem"]),
+        tr:hover > td a:not(.btn):not([role="menuitem"]):visited,
+        tr:hover > td a:not(.btn):not([role="menuitem"]):hover,
+        tr:hover > td a:not(.btn):not([role="menuitem"]):focus,
+        tr:hover > td a:not(.btn):not([role="menuitem"]):active {
             color: ~"[[setting:themestripeurlcolour]]";
             background-color: ~"[[setting:themestripebackgroundcolour]]";
         }
