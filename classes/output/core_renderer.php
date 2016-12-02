@@ -465,7 +465,7 @@ class core_renderer extends \core_renderer {
             if ($sectionnamelen !== false) {
                 $sectionnamelimit = \theme_essential\toolbox::get_setting('returntosectiontextlimitfeature');
                 if (($sectionnamelimit) && ($sectionnamelen > $sectionnamelimit)) {
-                    $sectionname = mb_substr($sectionname, 0, $sectionnamelimit, 'UTF-8').'...';
+                    $sectionname = \core_text::substr($sectionname, 0, $sectionnamelimit).'...';
                 }
             }
 
