@@ -1,3 +1,6 @@
+New in 3.0.1.14
+===============
+
 New in 3.0.1.13
 ===============
 - FIX: Issue #780: Certain grades not appearing in gradebook.
