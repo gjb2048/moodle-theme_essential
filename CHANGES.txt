@@ -1,5 +1,6 @@
 New in 2.9.1.21
 ===============
+- NEW: Update to FontAwesome 4.7.0.
 
 New in 2.9.1.20
 ===============
