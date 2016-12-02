@@ -1,5 +1,6 @@
 New in 3.0.1.14
 ===============
+- NEW: Update to FontAwesome 4.7.0.
 
 New in 3.0.1.13
 ===============
