@@ -683,11 +683,11 @@ class core_renderer extends \core_renderer {
             $branchurl = new moodle_url('#');
             $branchsort = 200;
 
-            $branch = $coursemenu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+            $coursemenubranch = $coursemenu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 
             $hometext = get_string('myhome');
             $homelabel = html_writer::tag('span', $this->getfontawesomemarkup('home').html_writer::tag('span', ' '.$hometext));
-            $branch->add($homelabel, new moodle_url('/my/index.php'), $hometext);
+            $coursemenubranch->add($homelabel, new moodle_url('/my/index.php'), $hometext);
 
             // Retrieve courses and add them to the menu when they are visible.
             $numcourses = 0;
@@ -778,40 +778,88 @@ class core_renderer extends \core_renderer {
                 if (!$mycoursesmax) {
                     $mycoursesmax = PHP_INT_MAX;
                 }
-                foreach ($courses as $course) {
-                    if ($course->visible) {
-                        $branchtitle = format_string($course->shortname);
-                        $branchurl = new moodle_url('/course/view.php', array('id' => $course->id));
-                        $enrolledclass = '';
-                        if (!empty($course->timestart)) {
-                            $enrolledclass .= ' class="onlyenrolled"';
+                $mycoursescatsubmenu = \theme_essential\toolbox::get_setting('mycoursescatsubmenu');
+                $mycoursescatsubmenucats = array();
+                //error_log(print_r($courses, true));
+                $categoriestoplist = false;
+                if ($mycoursescatsubmenu) {
+                    $categorieslist = \theme_essential\toolbox::get_categories_list();
+                    //error_log(print_r($categorieslist, true));
+                    foreach ($categorieslist as $category) {
+                        if (empty($categoriestoplist[$category->id])) {
+                            $categoriestoplist[$category->id] = new \stdClass;
+                            if (!empty($category->parents)) {
+                                // Sub-category and the last entry in the array is the top.
+                                $categoriestoplist[$category->id]->topid = $category->parents[(count($category->parents) - 1)];
+                            } else {
+                                // We are a top level category.
+                                $categoriestoplist[$category->id]->topid = $category->id;
+                                $categoriestoplist[$category->id]->name = $categorieslist[$category->id]->name;
+                            }
                         }
-                        $branchlabel = '<span'.$enrolledclass.'>'.$this->getfontawesomemarkup('graduation-cap').format_string($course->fullname).'</span>';
-                        $branch->add($branchlabel, $branchurl, $branchtitle);
-                        $numcourses += 1;
-                    } else if (has_capability('moodle/course:viewhiddencourses', context_course::instance($course->id)) && $hasdisplayhiddenmycourses) {
-                        $branchtitle = format_string($course->shortname);
-                        $enrolledclass = '';
-                        if (!empty($course->timestart)) {
-                            $enrolledclass .= ' onlyenrolled';
-                        }
-                        $branchlabel = '<span class="dimmed_text'.$enrolledclass.'">'.$this->getfontawesomemarkup('eye-slash').
-                            format_string($course->fullname) . '</span>';
-                        $branchurl = new moodle_url('/course/view.php', array('id' => $course->id));
-                        $branch->add($branchlabel, $branchurl, $branchtitle);
-                        $numcourses += 1;
                     }
-                    if ($numcourses == $mycoursesmax) {
+                    //error_log(print_r($categoriestoplist, true));
+                }
+                foreach ($courses as $course) {
+                    if (!$mycoursescatsubmenu) {
+                        if ($this->custom_menu_courses_add_course($coursemenubranch, $course, $hasdisplayhiddenmycourses)) {
+                            $numcourses += 1;
+                        }
+                    } else {
+                        if (empty($mycoursescatsubmenucats[$course->category])) {
+                            $cattext = $categoriestoplist[$categoriestoplist[$course->category]->topid]->name;
+                            $catlabel = html_writer::tag('span', $this->getfontawesomemarkup('home').html_writer::tag('span', ' '.$cattext));
+                            $mycoursescatsubmenucats[$course->category] = $coursemenubranch->add($catlabel, new moodle_url('#'), $cattext);
+                        }
+                        if ($this->custom_menu_courses_add_course($mycoursescatsubmenucats[$course->category], $course, $hasdisplayhiddenmycourses)) {
+                            $numcourses += 1;
+                        }
+                    }
+                    if (($numcourses == $mycoursesmax) && (!$mycoursescatsubmenu)) {
                         break;
                     }
                 }
             }
-            if ($numcourses == 0 || empty($courses)) {
+            if ($numcourses == 0) {
                 $noenrolments = get_string('noenrolments', 'theme_essential');
-                $branch->add('<em>' . $noenrolments . '</em>', new moodle_url('#'), $noenrolments);
+                $coursemenubranch->add('<em>' . $noenrolments . '</em>', new moodle_url('#'), $noenrolments);
             }
         }
         return $this->render_custom_menu($coursemenu);
+    }
+
+    /**
+     * Renders menu items for the custom_menu
+     * @param custom_menu_item $branch Menu branch to add the course to.
+     * @param stdClass $course Course to use.
+     * @param boodlean $hasdisplayhiddenmycourses Display hidden courses.
+     * @return boolean $courseadded if the course was added to the branch.
+     */
+    public function custom_menu_courses_add_course($branch, $course, $hasdisplayhiddenmycourses) {
+        $courseadded = false;
+        if ($course->visible) {
+            $branchtitle = format_string($course->shortname);
+            $branchurl = new moodle_url('/course/view.php', array('id' => $course->id));
+            $enrolledclass = '';
+            if (!empty($course->timestart)) {
+                $enrolledclass .= ' class="onlyenrolled"';
+            }
+            $branchlabel = '<span'.$enrolledclass.'>'.$this->getfontawesomemarkup('graduation-cap').format_string($course->fullname).'</span>';
+            $branch->add($branchlabel, $branchurl, $branchtitle);
+            $courseadded = true;
+       } else if (has_capability('moodle/course:viewhiddencourses', context_course::instance($course->id)) && $hasdisplayhiddenmycourses) {
+            $branchtitle = format_string($course->shortname);
+            $enrolledclass = '';
+            if (!empty($course->timestart)) {
+                $enrolledclass .= ' onlyenrolled';
+            }
+            $branchlabel = '<span class="dimmed_text'.$enrolledclass.'">'.$this->getfontawesomemarkup('eye-slash').
+                format_string($course->fullname) . '</span>';
+            $branchurl = new moodle_url('/course/view.php', array('id' => $course->id));
+            $branch->add($branchlabel, $branchurl, $branchtitle);
+            $courseadded = true;
+        }
+        return $courseadded;
     }
 
     /**
