@@ -945,6 +945,15 @@ if ($ADMIN->fulltree) {
     // No need for callback as CSS not changed.
     $essentialsettingsheader->add($setting);
 
+    // Toggle category course sub-menu.
+    $name = 'theme_essential/mycoursescatsubmenu';
+    $title = get_string('mycoursescatsubmenu', 'theme_essential');
+    $description = get_string('mycoursescatsubmenudesc', 'theme_essential');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingsheader->add($setting);
+
     // My courses order.
     $name = 'theme_essential/mycoursesorder';
     $title = get_string('mycoursesorder', 'theme_essential');

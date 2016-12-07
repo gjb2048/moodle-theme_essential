@@ -181,6 +181,8 @@ $string['displaymycourses'] = 'Display courses';
 $string['displaymycoursesdesc'] = 'Display enrolled courses for users on the \'Navbar\'.';
 $string['displayhiddenmycourses'] = 'Display hidden courses';
 $string['displayhiddenmycoursesdesc'] = 'Display hidden courses for users in the \'Courses menu\' if they have permission to view hidden courses';
+$string['mycoursescatsubmenu'] = 'Category and course sub-menu';
+$string['mycoursescatsubmenudesc'] = 'Organise courses into a sub-menu based upon the top level category they are in.  When \'enablecategoryicon\' is \'false\' then the category icon used will be the theme default, when \'true\' then will be either the value of \'defaultcategoryicon\' or the category\'s itself if \'enablecustomcategoryicon\' is true.  The \'mycoursesmax\' setting will still apply but on a per-category level.';
 
 $string['mycoursesorder'] = 'Courses order';
 $string['mycoursesorderdesc'] = 'State how the courses should be ordered.  The course sort order can be is set by the core navigation setting \'navsortmycoursessort\'.';
