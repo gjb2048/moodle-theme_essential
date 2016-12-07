@@ -26,7 +26,7 @@
  */
 
 /**
- * Toolbox unit tests for the Shoehorn theme.
+ * Toolbox unit tests for the Essential theme.
  * @group theme_essential
  */
 class theme_essential_toolbox_testcase extends advanced_testcase {
@@ -54,6 +54,55 @@ class theme_essential_toolbox_testcase extends advanced_testcase {
         $toolbox = \theme_essential\toolbox::get_instance();
         self::set_property($toolbox, 'corerenderer', null);
         \theme_essential\toolbox::set_core_renderer($this->outputus);
+    }
+
+    public function test_get_categories_list() {
+        $this->resetAfterTest(true);
+        $numcats = 20;
+        $categories = array();
+        $resultarray = array();
+        $resultcat = new stdClass();
+        $resultcat->id = 1;
+        $resultcat->name = 'Miscellaneous';
+        $resultcat->depth = 1;
+        $resultcat->path = '/1';
+        $resultcat->parents = array();
+        $resultcat->namechunks = array('Miscellaneous');
+        $resultarray[0] = $resultcat;
+        for ($cat = 1; $cat <= $numcats; $cat++) {
+            $categories[$cat] = $this->getDataGenerator()->create_category(array('name' => 'Category '.$cat));
+            $resultcat = new stdClass();
+            $resultcat->id = $categories[$cat]->id;
+            $resultcat->name = 'Category '.$cat;
+            $resultcat->depth = 1;
+            $resultcat->path = '/'.$categories[$cat]->id;
+            $resultcat->parents = array();
+            $resultcat->namechunks = array('Category '.$cat);
+            $resultarray[$cat] = $resultcat;
+
+            $subcat = $cat + $numcats;
+            $categories[$subcat] = $this->getDataGenerator()->create_category(array('name' => 'Subcategory '.$subcat, 'parent' => $categories[$cat]->id));
+            $resultsubcat = new stdClass();
+            $resultsubcat->id = $categories[$subcat]->id;
+            $resultsubcat->name = 'Subcategory '.$subcat;
+            $resultsubcat->depth = 2;
+            $resultsubcat->path = '/'.$categories[$cat]->id.'/'.$categories[$subcat]->id;
+            $resultsubcat->parents = array($categories[$subcat]->id, $categories[$cat]->id);
+            $resultsubcat->namechunks = array('Category '.$cat, 'Subcategory '.$subcat);
+            $resultarray[$subcat] = $resultsubcat;
+        }
+
+        $beforecalltime = microtime();
+        print(' - toolbox::get_categories_list() - Before: '.$beforecalltime);
+        $resultcats = \theme_essential\toolbox::get_categories_list();
+        $aftercalltime = microtime();
+        print(' - toolbox::get_categories_list() - After: '.$aftercalltime.' - diff: '.($aftercalltime - $beforecalltime).' - ');
+
+        // Starts at zero for 'Miscellaneous' category and does two assertions for cat and sub cat.
+        for ($rescat = 0; $rescat <= $numcats; $rescat++) {
+            $this->assertEquals(array_pop($resultarray), array_pop($resultcats));
+            $this->assertEquals(array_pop($resultarray), array_pop($resultcats));
+        }
     }
 
     public function test_get_tilefile_header() {

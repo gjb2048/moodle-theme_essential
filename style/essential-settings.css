@@ -956,13 +956,6 @@ button.website:focus {
 .navbar .navbar-inner .nav > li.dropdown .dropdown-menu li.dropdown-submenu:hover > a .fa {
   color: inherit;
 }
-.navbar .navbar-inner #custom_menu_courses .nav > li.dropdown .dropdown-menu li > a:hover > span {
-  background-color: [[setting:themeurlcolor]];
-}
-.navbar .navbar-inner #custom_menu_courses .nav > li.dropdown .dropdown-menu li > a:focus > span,
-.navbar .navbar-inner #custom_menu_courses .nav > li.dropdown .dropdown-menu li > a.open > span {
-  background-color: [[setting:themeurlcolor]];
-}
 .navbar .navbar-inner .nav li.dropdown.open > .dropdown-toggle,
 .navbar .navbar-inner .nav li.dropdown.active > .dropdown-toggle,
 .navbar .navbar-inner .nav li.dropdown.open.active > .dropdown-toggle {
