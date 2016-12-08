@@ -779,12 +779,15 @@ class core_renderer extends \core_renderer {
                     $mycoursesmax = PHP_INT_MAX;
                 }
                 $mycoursescatsubmenu = \theme_essential\toolbox::get_setting('mycoursescatsubmenu');
-                $mycoursescatsubmenucats = array();
-                //error_log(print_r($courses, true));
-                $categoriestoplist = false;
                 if ($mycoursescatsubmenu) {
+                    $enablecategoryicon = \theme_essential\toolbox::get_setting('enablecategoryicon');
+                    $defaultcategoryicon = \theme_essential\toolbox::get_setting('defaultcategoryicon');
+                    $enablecustomcategoryicon = \theme_essential\toolbox::get_setting('enablecustomcategoryicon');
+                    $mycoursescatsubmenucats = array();
+                    $mycoursescatsubmenucatsnumcourses = array();
+                    $categoriestoplist = false;
+
                     $categorieslist = \theme_essential\toolbox::get_categories_list();
-                    //error_log(print_r($categorieslist, true));
                     foreach ($categorieslist as $category) {
                         if (empty($categoriestoplist[$category->id])) {
                             $categoriestoplist[$category->id] = new \stdClass;
@@ -798,25 +801,44 @@ class core_renderer extends \core_renderer {
                             }
                         }
                     }
-                    //error_log(print_r($categoriestoplist, true));
                 }
                 foreach ($courses as $course) {
                     if (!$mycoursescatsubmenu) {
                         if ($this->custom_menu_courses_add_course($coursemenubranch, $course, $hasdisplayhiddenmycourses)) {
                             $numcourses += 1;
                         }
-                    } else {
-                        if (empty($mycoursescatsubmenucats[$course->category])) {
-                            $cattext = $categoriestoplist[$categoriestoplist[$course->category]->topid]->name;
-                            $catlabel = html_writer::tag('span', $this->getfontawesomemarkup('home').html_writer::tag('span', ' '.$cattext));
-                            $mycoursescatsubmenucats[$course->category] = $coursemenubranch->add($catlabel, new moodle_url('#'), $cattext);
+                        if ($numcourses == $mycoursesmax) {
+                            break;
                         }
-                        if ($this->custom_menu_courses_add_course($mycoursescatsubmenucats[$course->category], $course, $hasdisplayhiddenmycourses)) {
-                            $numcourses += 1;
+                    } else {
+                        if (empty($mycoursescatsubmenucats[$categoriestoplist[$course->category]->topid])) {
+                            $cattext = $categoriestoplist[$categoriestoplist[$course->category]->topid]->name;
+                            $caticon = '';
+                            if ($enablecategoryicon) {
+                                if ($enablecustomcategoryicon) {
+                                    $caticon = \theme_essential\toolbox::get_setting('categoryicon'.$categoriestoplist[$course->category]->topid);
+                                } else {
+                                    $caticon = $defaultcategoryicon;
+                                }
+                            } else {
+                                $caticon = 'folder-open';
+                            }
+                            $catlabel = html_writer::tag('span', $this->getfontawesomemarkup($caticon).html_writer::tag('span', ' '.$cattext));
+                            $mycoursescatsubmenucats[$categoriestoplist[$course->category]->topid] = $coursemenubranch->add($catlabel, new moodle_url('#'), $cattext);
+                            $mycoursescatsubmenucatsnumcourses[$categoriestoplist[$course->category]->topid] = 0;
+                        }
+                        if ($mycoursescatsubmenucatsnumcourses[$categoriestoplist[$course->category]->topid] < $mycoursesmax) {
+                            // Only add if we are within the course limit.
+                            if ($this->custom_menu_courses_add_course($mycoursescatsubmenucats[$categoriestoplist[$course->category]->topid], $course, $hasdisplayhiddenmycourses)) {
+                                $mycoursescatsubmenucatsnumcourses[$categoriestoplist[$course->category]->topid] += 1;
+                            }
                         }
                     }
-                    if (($numcourses == $mycoursesmax) && (!$mycoursescatsubmenu)) {
-                        break;
+                }
+                if ($mycoursescatsubmenu) {
+                    // Tally.
+                    foreach ($mycoursescatsubmenucatsnumcourses as $catcoursenum) {
+                        $numcourses += $catcoursenum;
                     }
                 }
             }
@@ -847,7 +869,7 @@ class core_renderer extends \core_renderer {
             $branchlabel = '<span'.$enrolledclass.'>'.$this->getfontawesomemarkup('graduation-cap').format_string($course->fullname).'</span>';
             $branch->add($branchlabel, $branchurl, $branchtitle);
             $courseadded = true;
-       } else if (has_capability('moodle/course:viewhiddencourses', context_course::instance($course->id)) && $hasdisplayhiddenmycourses) {
+        } else if (has_capability('moodle/course:viewhiddencourses', context_course::instance($course->id)) && $hasdisplayhiddenmycourses) {
             $branchtitle = format_string($course->shortname);
             $enrolledclass = '';
             if (!empty($course->timestart)) {
