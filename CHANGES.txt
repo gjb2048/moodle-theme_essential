@@ -2,6 +2,7 @@ New in 3.1.1.5
 ==============
 - FIX: Alternative colour scheme primary button text colour.
 - NEW: Update to FontAwesome 4.7.0.
+- NEW: Add 'Category and course sub-menu' functionality - 'mycoursescatsubmenu' 'Header' setting under 'Courses menu'.
 
 New in 3.1.1.4
 ==============
