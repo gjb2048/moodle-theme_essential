@@ -829,7 +829,8 @@ class core_renderer extends \core_renderer {
                         }
                         if ($mycoursescatsubmenucatsnumcourses[$categoriestoplist[$course->category]->topid] < $mycoursesmax) {
                             // Only add if we are within the course limit.
-                            if ($this->custom_menu_courses_add_course($mycoursescatsubmenucats[$categoriestoplist[$course->category]->topid], $course, $hasdisplayhiddenmycourses)) {
+                            if ($this->custom_menu_courses_add_course($mycoursescatsubmenucats[$categoriestoplist[$course->category]->topid],
+                                    $course, $hasdisplayhiddenmycourses)) {
                                 $mycoursescatsubmenucatsnumcourses[$categoriestoplist[$course->category]->topid] += 1;
                             }
                         }

@@ -78,7 +78,7 @@ class theme_essential_toolbox_testcase extends advanced_testcase {
             $resultcat->path = '/'.$categories[$cat]->id;
             $resultcat->parents = array();
             $resultcat->namechunks = array('Category '.$cat);
-            $resultarray[$cat]= $resultcat;
+            $resultarray[$cat] = $resultcat;
 
             $subcat = $cat + $numcats;
             $categories[$subcat] = $this->getDataGenerator()->create_category(array('name' => 'Subcategory '.$subcat, 'parent' => $categories[$cat]->id));
@@ -89,7 +89,7 @@ class theme_essential_toolbox_testcase extends advanced_testcase {
             $resultsubcat->path = '/'.$categories[$cat]->id.'/'.$categories[$subcat]->id;
             $resultsubcat->parents = array($categories[$subcat]->id, $categories[$cat]->id);
             $resultsubcat->namechunks = array('Category '.$cat, 'Subcategory '.$subcat);
-            $resultarray[$subcat]= $resultsubcat;
+            $resultarray[$subcat] = $resultsubcat;
         }
 
         $beforecalltime = microtime();
