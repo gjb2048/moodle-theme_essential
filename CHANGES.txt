@@ -1,3 +1,6 @@
+New in 3.1.1.6
+==============
+
 New in 3.1.1.5
 ==============
 - FIX: Alternative colour scheme primary button text colour.
