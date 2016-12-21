@@ -292,7 +292,7 @@ class toolbox {
     static public function render_slide($slideno, $captionoptions) {
         $slideurl = self::get_setting('slide'.$slideno.'url');
         $slideurltarget = self::get_setting('slide'.$slideno.'target');
-        $slidetitle = self::get_setting('slide'.$slideno);
+        $slidetitle = format_string(self::get_setting('slide'.$slideno));
         $slidecaption = self::get_setting('slide'.$slideno.'caption', 'format_html');
         if ($slideurl) {
             // Strip links from the caption to prevent link in a link.
