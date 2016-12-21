@@ -1,5 +1,6 @@
 New in 3.1.1.6
 ==============
+- FIX: Course category multi-lang, ref: https://moodle.org/mod/forum/discuss.php?d=344426#p1389008.
 
 New in 3.1.1.5
 ==============

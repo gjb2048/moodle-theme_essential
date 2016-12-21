@@ -812,7 +812,7 @@ class core_renderer extends \core_renderer {
                         }
                     } else {
                         if (empty($mycoursescatsubmenucats[$categoriestoplist[$course->category]->topid])) {
-                            $cattext = $categoriestoplist[$categoriestoplist[$course->category]->topid]->name;
+                            $cattext = format_string($categoriestoplist[$categoriestoplist[$course->category]->topid]->name);
                             $caticon = '';
                             if ($enablecategoryicon) {
                                 if ($enablecustomcategoryicon) {

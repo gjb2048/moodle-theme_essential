@@ -2251,7 +2251,7 @@ if (get_config('theme_essential', 'enablecategorycti')) {
     foreach ($coursecats as $key => $value) {
         if (($value->depth == 1) && ($enablecategoryctics)) {
             $essentialsettingscategoryctimenu = new admin_settingpage('theme_essential_categorycti_'.$value->id,
-                get_string('categoryctiheadingcategory', 'theme_essential', array('category' => $value->namechunks[0])));
+                get_string('categoryctiheadingcategory', 'theme_essential', array('category' => format_string($value->namechunks[0]))));
         }
 
         if ($ADMIN->fulltree) {
