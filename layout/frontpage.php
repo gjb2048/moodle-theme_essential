@@ -165,7 +165,7 @@ if ($PAGE->user_is_editing()) {
 ?>
 <!-- End Marketing Spots -->
 
-<!-- Start Page Top was Middle Blocks -->
+<!-- Start Header blocks was Middle blocks -->
 <?php
 $frontpagehomeblocks = \theme_essential\toolbox::get_setting('frontpagemiddleblocks');
 if ($PAGE->user_is_editing() && ($frontpagehomeblocks)) {
@@ -180,7 +180,7 @@ if ($PAGE->user_is_editing() && ($frontpagehomeblocks)) {
     }
 }
 ?>
-<!-- End Page Top was Middle Blocks -->
+<!-- End Header blocks was Middle blocks -->
 
         <div id="page-content" class="row-fluid">
             <section id="<?php echo $regionbsid; ?>">
