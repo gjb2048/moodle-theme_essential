@@ -42,7 +42,9 @@ if ($tablet) {
 } else {
     echo '<div id="content" class="span8 desktop-first-column">';
 }
-echo $OUTPUT->essential_blocks('page-top', 'row-fluid', 'aside', 'pagetopblocksperrow');
+if (\theme_essential\toolbox::get_setting('pagetopblocks')) {
+    echo $OUTPUT->essential_blocks('page-top', 'row-fluid', 'aside', 'pagetopblocksperrow');
+}
 echo '<section id="region-main">';
 echo $OUTPUT->course_title();
 echo $OUTPUT->course_content_header();

@@ -168,8 +168,10 @@ $string['stylefixed'] = 'Fixed';
 $string['stylestretch'] = 'Stretch';
 $string['styletiled'] = 'Tiled';
 
+$string['pagetopblocks'] = 'Enable additional page \'Page top\' blocks';
+$string['pagetopblocksdesc'] = 'If enabled this will display an additional block location beside the side blocks and above the content area on all pages except the \'Front page\' which has its own setting.  Note: The number of blocks per row depends on the setting \'pagetopblocksperrow\'.';
 $string['pagetopblocksperrow'] = 'Page top blocks per row';
-$string['pagetopblocksperrowdesc'] = 'State up to how many blocks per row between {$a->lower} and {$a->upper} for pages with \'Page top blocks\'.  Current pages are: Admin, Course, Course Category, Dashboard, Frontpage, My Public.';
+$string['pagetopblocksperrowdesc'] = 'State up to how many blocks per row between {$a->lower} and {$a->upper} for pages with \'Page top blocks\'.  Current pages are: Course, Course Category, Dashboard, My Public and Print.';
 $string['pagebottomblocksperrow'] = 'Page bottom blocks per row';
 $string['pagebottomblocksperrowdesc'] = 'State up to how many blocks per row between {$a->lower} and {$a->upper} for pages with \'Page bottom blocks\'.  Current pages are: Admin, Course management, Grading and Quiz edit.';
 
@@ -455,9 +457,11 @@ $string['aftercontent'] = 'After content';
 $string['frontpagemiddleblocks'] = 'Enable additional front page \'Home\' (was \'Middle\') blocks';
 $string['frontpagemiddleblocksdesc'] = 'If enabled this will display an additional block location just under the marketing spots.';
 $string['frontpagehomeblocksperrow'] = 'Home (was \'Middle\') blocks per row';
-$string['frontpagehomeblocksperrowdesc'] = 'State up to how many blocks per row between {$a->lower} and {$a->upper} for the \'Home blocks\'.';
+$string['frontpagehomeblocksperrowdesc'] = 'State up to how many blocks per row between {$a->lower} and {$a->upper} for the \'Home blocks\' block region.';
 $string['fppagetopblocks'] = 'Enable additional front page \'Page top\' blocks';
-$string['fppagetopblocksdesc'] = 'If enabled this will display an additional block location beside the side blocks and above the content area.  Note: The number of blocks per row depends on the setting \'pagetopblocksperrow\'.';
+$string['fppagetopblocksdesc'] = 'If enabled this will display an additional block location beside the side blocks and above the content area.  Note: The number of blocks per row depends on the setting \'fppagetopblocksperrow\'.';
+$string['fppagetopblocksperrow'] = 'Page top blocks per row';
+$string['fppagetopblocksperrowdesc'] = 'State up to how many blocks per row between {$a->lower} and {$a->upper} for the \'Page top\' block region on the front page.';
 
 // Slideshow.
 $string['slideshowheading'] = 'Slide show';

@@ -97,6 +97,15 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsgeneric->add($setting);
 
+    // Toggle page top blocks.
+    $name = 'theme_essential/pagetopblocks';
+    $title = get_string('pagetopblocks', 'theme_essential');
+    $description = get_string('pagetopblocksdesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingsgeneric->add($setting);
+
     // Page top blocks per row.
     $name = 'theme_essential/pagetopblocksperrow';
     $title = get_string('pagetopblocksperrow', 'theme_essential');
@@ -1623,6 +1632,17 @@ if ($ADMIN->fulltree) {
     $choices = array(1 => $alwaysdisplay, 2 => $displaybeforelogin, 3 => $displayafterlogin, 0 => $dontdisplay);
     $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingsfrontpage->add($setting);
+
+    // Page top blocks per row.
+    $name = 'theme_essential/fppagetopblocksperrow';
+    $title = get_string('fppagetopblocksperrow', 'theme_essential');
+    $default = 3;
+    $lower = 1;
+    $upper = 4;
+    $description = get_string('fppagetopblocksperrowdesc', 'theme_essential',
+        array('lower' => $lower, 'upper' => $upper));
+    $setting = new essential_admin_setting_configinteger($name, $title, $description, $default, $lower, $upper);
     $essentialsettingsfrontpage->add($setting);
 
     // Marketing spot settings.
