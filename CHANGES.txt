@@ -2,6 +2,7 @@ New in 3.0.1.15
 ===============
 - FIX: Issue #798: Slider title needs to support multi-lang filter.
 - FIX: Course category multi-lang, ref: https://moodle.org/mod/forum/discuss.php?d=344426#p1389008.
+- NEW: Issue #734: Unable to disable the new "page top" block region.
 
 New in 3.0.1.14
 ===============
