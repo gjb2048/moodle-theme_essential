@@ -1,0 +1,28 @@
+// @package     theme_essential.
+// @copyright   2016 Gareth J Barnard.
+// @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
+
+/* Moodle fixes message begin */
+
+.message .message-contacts li > {
+    div.pix, div.contact {
+        display: inline-block;
+    }
+}
+
+.dir-ltr .message .message-contacts li > div.contact,
+.dir-ltr .message .message-contacts li > div.contact.nolinks {
+    margin-left: 12px;
+}
+
+.dir-rtl .message .message-contacts li > div.contact,
+.dir-rtl .message .message-contacts li > div.contact.nolinks {
+    margin-right: 12px;
+}
+
+.dir-ltr, .dir-rtl {
+    .message .message-contacts li > div.pix {
+        float: none;
+    }
+}
+/* Moodle fixes message end */

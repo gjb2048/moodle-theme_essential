@@ -1,5 +1,6 @@
 New in 3.1.1.7
 ==============
+- FIX: Issue #799: Message avatar overlap.
 
 New in 3.1.1.6
 ==============
