@@ -1,6 +1,7 @@
 New in 2.9.1.22
 ===============
 - FIX: Issue #798: Slider title needs to support multi-lang filter.
+- FIX: Issue #799: Message avatar overlap.
 - FIX: Course category multi-lang, ref: https://moodle.org/mod/forum/discuss.php?d=344426#p1389008.
 - NEW: Issue #734: Unable to disable the new "page top" block region.
 
