@@ -25,6 +25,8 @@
 
 namespace theme_essential;
 
+defined('MOODLE_INTERNAL') || die;
+
 class toolbox {
 
     protected $corerenderer = null;
@@ -809,5 +811,158 @@ class toolbox {
         } else {
             return $properties;
         }
+    }
+
+    static public function compile_properties($themename, $array = true) {
+        global $CFG, $DB;
+
+        $props = array();
+        $themeprops = $DB->get_records('config_plugins', array('plugin' => 'theme_'.$themename));
+
+        if ($array) {
+            $props['moodle_version'] = $CFG->version;
+
+            foreach ($themeprops as $themeprop) {
+                $props[$themeprop->name] = $themeprop->value;
+            }
+        } else {
+            $data = new \stdClass();
+            $data->id = 0;
+            $data->value = $CFG->version;
+            $props['moodle_version'] = $data;
+            foreach ($themeprops as $themeprop) {
+                $data = new \stdClass();
+                $data->id = $themeprop->id;
+                $data->value = $themeprop->value;
+                $props[$themeprop->name] = $data;
+            }
+        }
+
+        return $props;
+    }
+
+    static public function put_properties($themename, $props) {
+        global $DB;
+
+        $report = get_string('putpropertiereport', 'theme_essential').PHP_EOL;
+        $report .= 'Moodle '.get_string('putpropertieversion', 'theme_essential').' '.$props['moodle_version'].'.'.PHP_EOL;
+        unset($props['moodle_version']);
+        $report .= ucfirst($themename).' '.get_string('putpropertieversion', 'theme_essential').' '.$props['version'].'.'.PHP_EOL.PHP_EOL;
+        unset($props['version']);
+
+        // Get the current properties as a reference.
+        $currentprops = self::compile_properties($themename, false);
+
+        // Pre-process files - using 'theme_essential_pluginfile' in lib.php as a reference.
+        // TODO: refactor into one method for both this and that.
+        $filestoreport = '';
+        $preprocessfilesettings = array('logo', 'headerbackground', 'pagebackground', 'favicon', 'iphoneicon',
+            'iphoneretinaicon', 'ipadicon', 'ipadretinaicon', 'loginbackground');
+        $fonttypes = array('eot', 'otf', 'svg', 'ttf', 'woff', 'woff2');
+        foreach ($fonttypes as $fonttype) {
+            $preprocessfilesettings[] = 'fontfile'.$fonttype.'heading';
+            $preprocessfilesettings[] = 'fontfile'.$fonttype.'body';
+        }
+        // Only 3 marketing spots and no setting for the number.
+        $preprocessfilesettings = array_merge($preprocessfilesettings, array('marketing1image', 'marketing2image', 'marketing3image'));
+
+        // Slide show.
+        for ($propslide = 1; $propslide <= $props['numberofslides']; $propslide++) {
+            $preprocessfilesettings[] = 'slide'.$propslide.'image';
+        }
+
+        // Process the file properties.
+        foreach ($preprocessfilesettings as $preprocessfilesetting) {
+            self::put_prop_file_preprocess($preprocessfilesetting, $props, $filestoreport);
+            unset($currentprops[$preprocessfilesetting]);
+        }
+
+        // Course title images are complex and related to the category id of the installation, so ignore!
+        if ((!empty($props['enablecategorycti'])) || (!empty($props['enablecategoryctics']))) {
+            $report .= get_string('putpropertiesignorecti', 'theme_essential').PHP_EOL.PHP_EOL;
+        }
+        $ctikeys = array(
+            'enablecategorycti',
+            'enablecategoryctics',
+            'ctioverrideheight',
+            'ctioverridetextcolour',
+            'ctioverridetextbackgroundcolour',
+            'ctioverridetextbackgroundopacity');
+        foreach ($ctikeys as $ctikey) {
+            unset($props[$ctikey]);
+            unset($currentprops[$ctikey]);
+        }
+        $propskeys = array_keys($props);
+        foreach ($propskeys as $propkey) {
+            if (preg_match('#^categoryct#', $propkey) === 1) {
+                unset($props[$propkey]);
+            }
+        }
+        $currentpropkeys = array_keys($currentprops);
+        foreach ($currentpropkeys as $currentpropkey) {
+            if (preg_match('#^categoryct#', $currentpropkey) === 1) {
+                unset($currentprops[$currentpropkey]);
+            }
+        }
+
+        if ($filestoreport) {
+            $report .= get_string('putpropertiesreportfiles', 'theme_essential').PHP_EOL.$filestoreport.PHP_EOL;
+        }
+
+        // Need to ignore and report on any unknown settings.
+        $report .= get_string('putpropertiessettingsreport', 'theme_essential').PHP_EOL;
+        $changedprops = array();
+        $changed = '';
+        $unchanged = '';
+        $added = '';
+        $ignored = '';
+        $settinglog = '';
+        foreach ($props as $propkey => $propvalue) {
+            $settinglog = '\''.$propkey.'\' '.get_string('putpropertiesvalue', 'theme_essential').' \''.$propvalue.'\'';
+            if (array_key_exists($propkey, $currentprops)) {
+                if ($propvalue != $currentprops[$propkey]->value) {
+                    $changedprops[] = $propkey;
+                    $settinglog .= ' '.get_string('putpropertiesfrom', 'theme_essential').' \''.$currentprops[$propkey]->value.'\'';
+                    $changed .= $settinglog.'.'.PHP_EOL;
+                    $DB->update_record('config_plugins', array('id' => $currentprops[$propkey]->id, 'value' => $propvalue), true);
+                } else {
+                    $unchanged .= $settinglog.'.'.PHP_EOL;
+                }
+            } else if (preg_match('#^slide#', $propkey) === 1) {
+                $DB->insert_record('config_plugins', array(
+                    'plugin' => 'theme_'.$themename, 'name' => $propkey, 'value' => $propvalue), true);
+                $added .= $settinglog.'.'.PHP_EOL;
+            } else {
+                $ignored .= $settinglog.'.'.PHP_EOL;
+            }
+        }
+
+        if (!empty($changed)) {
+            $report .= get_string('putpropertieschanged', 'theme_essential').PHP_EOL.$changed.PHP_EOL;
+        }
+        if (!empty($added)) {
+            $report .= get_string('putpropertiesadded', 'theme_essential').PHP_EOL.$added.PHP_EOL;
+        }
+        if (!empty($unchanged)) {
+            $report .= get_string('putpropertiesunchanged', 'theme_essential').PHP_EOL.$unchanged.PHP_EOL;
+        }
+        if (!empty($ignored)) {
+            $report .= get_string('putpropertiesignored', 'theme_essential').PHP_EOL.$ignored.PHP_EOL;
+        }
+
+        if (!empty($changedprops)) {
+            // We need the 'id's for the records.
+            global $DB;
+        }
+
+        return $report;
+    }
+
+    static private function put_prop_file_preprocess($key, &$props, &$filestoreport) {
+        if (!empty($props[$key])) {
+            $filestoreport .= '\''.$key.'\' '.get_string('putpropertiesvalue', 'theme_essential').' \''.
+                \core_text::substr($props[$key], 1).'\'.'.PHP_EOL;
+        }
+        unset($props[$key]);
     }
 }

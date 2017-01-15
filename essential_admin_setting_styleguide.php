@@ -42,6 +42,9 @@
  *
  * Content source reference: http://getbootstrap.com/2.3.2/base-css.html.
  */
+
+defined('MOODLE_INTERNAL') || die;
+
 class essential_admin_setting_styleguide extends admin_setting {
 
     /**

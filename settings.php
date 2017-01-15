@@ -1340,7 +1340,8 @@ if ($ADMIN->fulltree) {
     $essentialsettingsfont->add($setting);
 
     // Font selector.
-    $gws = html_writer::link('//www.google.com/fonts', get_string('fonttypegoogle', 'theme_essential'), array('target' => '_blank'));
+    $gws = html_writer::link('//www.google.com/fonts',
+        get_string('fonttypegoogle', 'theme_essential'), array('target' => '_blank'));
     $name = 'theme_essential/fontselect';
     $title = get_string('fontselect', 'theme_essential');
     $description = get_string('fontselectdesc', 'theme_essential', array('googlewebfonts' => $gws));
@@ -2271,7 +2272,8 @@ if (get_config('theme_essential', 'enablecategorycti')) {
     foreach ($coursecats as $key => $value) {
         if (($value->depth == 1) && ($enablecategoryctics)) {
             $essentialsettingscategoryctimenu = new admin_settingpage('theme_essential_categorycti_'.$value->id,
-                get_string('categoryctiheadingcategory', 'theme_essential', array('category' => format_string($value->namechunks[0]))));
+                get_string('categoryctiheadingcategory', 'theme_essential',
+                    array('category' => format_string($value->namechunks[0]))));
         }
 
         if ($ADMIN->fulltree) {
@@ -2505,6 +2507,45 @@ if ($ADMIN->fulltree) {
         get_string('readme_title', 'theme_essential'), get_string('readme_desc', 'theme_essential', array('url' => $readme))));
 }
 $ADMIN->add('theme_essential', $essentialsettingsanalytics);
+
+// Properties.
+$essentialsettingsprops = new admin_settingpage('theme_essential_props', get_string('properties', 'theme_essential'));
+if ($ADMIN->fulltree) {
+    if (file_exists("{$CFG->dirroot}/theme/essential/essential_admin_setting_getprops.php")) {
+        require_once($CFG->dirroot . '/theme/essential/essential_admin_setting_getprops.php');
+        require_once($CFG->dirroot . '/theme/essential/essential_admin_setting_putprops.php');
+    } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/essential/essential_admin_setting_getprops.php")) {
+        require_once($CFG->themedir . '/essential/essential_admin_setting_getprops.php');
+        require_once($CFG->themedir . '/essential/essential_admin_setting_putprops.php');
+    }
+
+    $essentialsettingsprops->add(new admin_setting_heading('theme_essential_props',
+        get_string('propertiessub', 'theme_essential'),
+        format_text(get_string('propertiesdesc', 'theme_essential'), FORMAT_MARKDOWN)));
+
+    $essentialexportprops = optional_param('theme_essential_props_saveprops', 0, PARAM_INT);
+    $essentialprops = \theme_essential\toolbox::compile_properties('essential');
+    $essentialsettingsprops->add(new essential_admin_setting_getprops('theme_essential_getprops',
+        get_string('propertiesproperty', 'theme_essential'),
+        get_string('propertiesvalue', 'theme_essential'),
+        $essentialprops,
+        'theme_essential_props',
+        get_string('propertiesreturn', 'theme_essential'),
+        get_string('propertiesexport', 'theme_essential'),
+        $essentialexportprops
+    ));
+
+    $setting = new essential_admin_setting_putprops('theme_essential_putprops',
+        get_string('putpropertiesname', 'theme_essential'),
+        get_string('putpropertiesdesc', 'theme_essential'),
+        'essential',
+        '\theme_essential\toolbox::put_properties'
+    );
+    $setting->set_updatedcallback('purge_all_caches');
+    $essentialsettingsprops->add($setting);
+
+}
+$ADMIN->add('theme_essential', $essentialsettingsprops);
 
 // Style guide.
 $essentialsettingsstyleguide = new admin_settingpage('theme_essential_styleguide', get_string('styleguide', 'theme_essential'));

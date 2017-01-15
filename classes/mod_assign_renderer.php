@@ -22,6 +22,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+defined('MOODLE_INTERNAL') || die;
+
 use \mod_assign\output\grading_app;
 
 class theme_essential_mod_assign_renderer extends mod_assign_renderer {

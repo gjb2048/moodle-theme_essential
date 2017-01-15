@@ -24,6 +24,8 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+defined('MOODLE_INTERNAL') || die;
+
 if ($fontselect === '2') { ?>
     <link href='//fonts.googleapis.com/css?family=<?php
     echo $headingfont.'|'.$bodyfont.$fontcharacterset; ?>' rel='stylesheet' type='text/css'>

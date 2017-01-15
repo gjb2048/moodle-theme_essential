@@ -23,6 +23,8 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+defined('MOODLE_INTERNAL') || die;
+
 echo '<div id="page-top-header" class="clearfix">';
 echo '<div id="page-navbar" class="clearfix row-fluid">';
 if ($left) {
