@@ -27,6 +27,8 @@
 
 namespace theme_essential\output;
 
+defined('MOODLE_INTERNAL') || die;
+
 use block_contents;
 use block_move_target;
 use coding_exception;
@@ -1116,7 +1118,7 @@ class core_renderer extends \core_renderer {
                 $message->smallmessage = html_to_text($message->smallmessage);
             }
             if (strlen($message->smallmessage) > 18) {
-                $messagecontent->text = substr($message->smallmessage, 0, 15) . '...';
+                $messagecontent->text = \core_text::substr($message->smallmessage, 0, 15) . '...';
             } else {
                 $messagecontent->text = $message->smallmessage;
             }

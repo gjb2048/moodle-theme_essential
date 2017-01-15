@@ -22,4 +22,6 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+defined('MOODLE_INTERNAL') || die;
+
 echo $OUTPUT->essential_blocks('home', 'row-fluid', 'aside', 'frontpagehomeblocksperrow');

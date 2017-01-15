@@ -24,6 +24,8 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+defined('MOODLE_INTERNAL') || die;
+
 if (\theme_essential\toolbox::get_setting('analyticsenabled')) {
     $analytics = \theme_essential\toolbox::get_setting('analytics');
     if ($analytics === "piwik") {

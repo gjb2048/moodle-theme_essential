@@ -25,6 +25,8 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+defined('MOODLE_INTERNAL') || die;
+
 // Requires V2.6.1.1+ of Columns format.
 if (file_exists("$CFG->dirroot/course/format/columns/renderer.php")) {
     include_once($CFG->dirroot . "/course/format/columns/renderer.php");

@@ -24,6 +24,8 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+defined('MOODLE_INTERNAL') || die;
+
 $PAGE->requires->js_call_amd('theme_essential/header', 'init');
 $PAGE->requires->js_call_amd('theme_essential/footer', 'init');
 if (\theme_essential\toolbox::not_lte_ie9()) {

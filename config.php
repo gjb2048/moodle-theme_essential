@@ -24,6 +24,9 @@
  * @copyright   2013 Julian Ridden
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
+defined('MOODLE_INTERNAL') || die;
+
 $THEME->name = 'essential';
 
 $THEME->doctype = 'html5';

@@ -25,6 +25,8 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+defined('MOODLE_INTERNAL') || die;
+
 class theme_essential_core_course_renderer extends core_course_renderer {
     protected $enablecategoryicon;
 

@@ -27,6 +27,8 @@
 
 namespace theme_essential\output;
 
+defined('MOODLE_INTERNAL') || die;
+
 trait core_renderer_toolbox {
     public function get_setting($setting) {
         $tcr = array_reverse($this->themeconfig, true);

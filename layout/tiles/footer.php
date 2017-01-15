@@ -24,6 +24,8 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+defined('MOODLE_INTERNAL') || die;
+
 if (empty($PAGE->layout_options['nofooter'])) { ?>
     <footer role="contentinfo" id="page-footer">
         <div class="container-fluid">
