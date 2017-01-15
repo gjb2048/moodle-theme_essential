@@ -25,6 +25,8 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+defined('MOODLE_INTERNAL') || die;
+
 // Requires V2.6.1.3+ of the Collapsed Topics format.
 if (file_exists("$CFG->dirroot/course/format/topcoll/renderer.php")) {
 

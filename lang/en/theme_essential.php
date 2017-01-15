@@ -833,6 +833,29 @@ $string['analyticsuseuseriddesc'] = 'Enable use of User ID in tracking.';
 $string['analyticspiwik'] = 'Piwik';
 $string['analyticsguniversal'] = 'Google Universal Analytics';
 
+// Properties.
+$string['properties'] = 'Properties';
+$string['propertiessub'] = 'The properties';
+$string['propertiesdesc'] = 'List of properties.';
+$string['propertiesproperty'] = 'Property';
+$string['propertiesvalue'] = 'Value';
+$string['propertiesexport'] = 'Export properties as a JSON string';
+$string['propertiesreturn'] = 'Return';
+$string['putpropertiesname'] = 'Put properties - Experimental!';
+$string['putpropertiesdesc'] = 'Paste the JSON string and \'Save changes\'.  Warning!  Does not valiate setting values and performs a \'Purge all caches\'.';
+
+$string['putpropertiereport'] = 'Report:';
+$string['putpropertieversion'] = 'version:';
+$string['putpropertiesignorecti'] = 'Ignoring all course title image settings.';
+$string['putpropertiesreportfiles'] = 'Remember to upload the following files to their settings:';
+$string['putpropertiessettingsreport'] = 'Settings report:';
+$string['putpropertiesvalue'] = '->';
+$string['putpropertiesfrom'] = 'from';
+$string['putpropertieschanged'] = 'Changed:';
+$string['putpropertiesunchanged'] = 'Unchanged:';
+$string['putpropertiesadded'] = 'Added:';
+$string['putpropertiesignored'] = 'Ignored:';
+
 // Style guide.
 $string['styleguide'] = 'Style guide';
 $string['styleguidesub'] = 'Bootstrap V2.3.2 Style guide';

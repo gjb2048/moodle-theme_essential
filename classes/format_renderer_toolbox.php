@@ -25,6 +25,8 @@
 
 namespace theme_essential;
 
+defined('MOODLE_INTERNAL') || die;
+
 trait format_renderer_toolbox {
     public function get_nav_links($course, $sections, $sectionno) {
         return $this->get_nav_links_content($course, $sections, $sectionno);

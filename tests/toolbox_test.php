@@ -25,6 +25,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+defined('MOODLE_INTERNAL') || die;
+
 /**
  * Toolbox unit tests for the Essential theme.
  * @group theme_essential
@@ -81,7 +83,8 @@ class theme_essential_toolbox_testcase extends advanced_testcase {
             $resultarray[$cat] = $resultcat;
 
             $subcat = $cat + $numcats;
-            $categories[$subcat] = $this->getDataGenerator()->create_category(array('name' => 'Subcategory '.$subcat, 'parent' => $categories[$cat]->id));
+            $categories[$subcat] = $this->getDataGenerator()->create_category(
+                array('name' => 'Subcategory '.$subcat, 'parent' => $categories[$cat]->id));
             $resultsubcat = new stdClass();
             $resultsubcat->id = $categories[$subcat]->id;
             $resultsubcat->name = 'Subcategory '.$subcat;
