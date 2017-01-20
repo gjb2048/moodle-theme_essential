@@ -35,16 +35,16 @@
 div.dropdown-menu > ul {
     list-style: inherit;
     margin: 0;
-    max-height: 384px;
-    overflow-y: auto;
     white-space: nowrap;
     li a {
         display: block;
     }
-    #custom_menu &, #custom_menu_courses & {
-        max-height: none;
-        overflow-y: visible;
-    }
+}
+
+.dropdownmenuscroll div.dropdown-menu > ul,
+.dropdownsubmenuscroll li.dropdown-submenu > ul {
+    max-height: 384px;
+    overflow-y: auto;
 }
 
 .navbar {
@@ -87,11 +87,7 @@ div.dropdown-menu > ul {
             }
         }
 
-        #custom_menu_language,
-        #custom_menu_courses,
-        #custom_menu_themecolours,
-        #custom_menu_activitystream,
-        #custom_menu {
+        .custom_menu {
             display: inline-block;
             vertical-align: top;
         }
@@ -320,11 +316,7 @@ div.dropdown-menu > ul {
 @media (max-width: @navbarCollapseWidth) {
     .navbar {
         .navbar-inner {
-            #custom_menu_language,
-            #custom_menu_courses,
-            #custom_menu_themecolours,
-            #custom_menu_activitystream,
-            #custom_menu {
+            .custom_menu {
                 display: inline;
             }
         }

@@ -190,6 +190,8 @@ $string['logoheightdesc'] = 'The height of the logo image.  This can be specifie
 $string['logodimerror'] = ' is invalid.  Please state \'px\' or \'em\' immediately after the unit value and nothing before the unit value.';
 
 $string['credit'] = 'The {$a->name} theme for Moodle is developed by ';
+$string['download'] = 'Go to the download page';
+$string['aboutme'] = 'About me';
 
 $string['profilebarcustomtitle'] = 'Profile bar custom block title';
 $string['profilebarcustomtitledesc'] = 'Title for custom profile bar block.';
@@ -691,6 +693,11 @@ $string['oldnavbar'] = 'Use the old navbar position';
 $string['oldnavbardesc'] = 'Enable this option to use the old navbar position, placing it below the header.';
 $string['navbarabove'] = 'Navbar above the header';
 $string['navbarbelow'] = 'Navbar below the header';
+
+$string['dropdownmenuscroll'] = 'Scrollbars on the dropdown menus';
+$string['dropdownmenuscrolldesc'] = 'Have a scrollbar on the dropdown menu where the height of the menu is limited.';
+$string['dropdownmenumaxheight'] = 'Dropdown menu maximum height';
+$string['dropdownmenumaxheightdesc'] = 'Dropdown menu maximum height when scrollbars are enabled.  Between {$a->lower} and {$a->upper} pixels.';
 
 $string['usesiteicon'] = 'Use site icon';
 $string['usesiteicondesc'] = 'Use the site icon if there is no logo.';

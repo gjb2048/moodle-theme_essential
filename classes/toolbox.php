@@ -98,7 +98,6 @@ class toolbox {
      * Finds the given setting in the theme from the themes' configuration object.
      * @param string $setting Setting name.
      * @param string $format false|'format_text'|'format_html'.
-     * @param theme_config $theme null|theme_config object.
      * @return any false|value of setting.
      */
     static public function get_setting($setting, $format = false) {
@@ -761,6 +760,18 @@ class toolbox {
             $replacement = '65px';
         } else {
             $replacement = $logoheight;
+        }
+        $css = str_replace($tag, $replacement, $css);
+
+        return $css;
+    }
+
+    static public function set_integer($css, $setting, $integer, $default) {
+        $tag = '[[setting:'.$setting.']]';
+        if (!($integer)) {
+            $replacement = $default;
+        } else {
+            $replacement = $integer;
         }
         $css = str_replace($tag, $replacement, $css);
 
