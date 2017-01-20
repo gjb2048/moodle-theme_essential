@@ -1,6 +1,7 @@
 New in 3.1.1.7
 ==============
 - FIX: Issue #799: Message avatar overlap.
+- FIX: Issue #802: My courses scroll not working.
 - FIX: Issue #803: Embedded pdf files not displaying in IE 11.
 - NEW: Properties.
 

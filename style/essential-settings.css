@@ -1100,6 +1100,10 @@ button.website:focus {
     border-right-color: transparent;
   }
 }
+.dropdownmenuscroll div.dropdown-menu > ul,
+.dropdownsubmenuscroll li.dropdown-submenu > ul {
+  max-height: [[setting:dropdownmenumaxheight]]px;
+}
 /* @end */
 /* @group Print Styling */
 @media print {

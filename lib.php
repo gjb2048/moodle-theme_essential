@@ -447,6 +447,10 @@ function theme_essential_process_css($css, $theme) {
     $logoheight = \theme_essential\toolbox::get_setting('logoheight');
     $css = \theme_essential\toolbox::set_logodimensions($css, $logowidth, $logoheight);
 
+    // Set the dropdown menu maximum height.
+    $dropdownmenumaxheight = \theme_essential\toolbox::get_setting('dropdownmenumaxheight');
+    $css = \theme_essential\toolbox::set_integer($css, 'dropdownmenumaxheight', $dropdownmenumaxheight, 384);
+
     // Set the background image for the header.
     $headerbackground = \theme_essential\toolbox::setting_file_url('headerbackground', 'headerbackground');
     $css = \theme_essential\toolbox::set_headerbackground($css, $headerbackground);

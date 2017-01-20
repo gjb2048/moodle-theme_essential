@@ -845,6 +845,26 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 
+    // Scrollbars on the dropdown menus.
+    $name = 'theme_essential/dropdownmenuscroll';
+    $title = get_string('dropdownmenuscroll', 'theme_essential');
+    $description = get_string('dropdownmenuscrolldesc', 'theme_essential');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $essentialsettingsheader->add($setting);
+
+    // Dropdown menu maximum height.
+    $name = 'theme_essential/dropdownmenumaxheight';
+    $title = get_string('dropdownmenumaxheight', 'theme_essential');
+    $default = 384;
+    $lower = 100;
+    $upper = 800;
+    $description = get_string('dropdownmenumaxheightdesc', 'theme_essential',
+        array('lower' => $lower, 'upper' => $upper));
+    $setting = new essential_admin_setting_configinteger($name, $title, $description, $default, $lower, $upper);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingsheader->add($setting);
+
     // Use the site icon if there is no logo.
     $name = 'theme_essential/usesiteicon';
     $title = get_string('usesiteicon', 'theme_essential');
