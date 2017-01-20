@@ -54,25 +54,15 @@ defined('MOODLE_INTERNAL') || die;
                         </div>
                     </div>
                         <div id='essentialmenus' class="nav-collapse collapse pull-<?php echo ($left) ? 'left' : 'right'; ?>">
-                            <div id="custom_menu_language">
-                                <?php echo $OUTPUT->custom_menu_language(); ?>
-                            </div>
-                            <div id="custom_menu_courses">
-                                <?php echo $OUTPUT->custom_menu_courses(); ?>
-                            </div>
-                            <?php if ($colourswitcher) { ?>
-                                <div id="custom_menu_themecolours">
-                                    <?php echo $OUTPUT->custom_menu_themecolours(); ?>
-                                </div>
-<?php
-}
-?>
-                            <div id="custom_menu">
-                                <?php echo $OUTPUT->custom_menu(); ?>
-                            </div>
-                            <div id="custom_menu_activitystream">
-                                <?php echo $OUTPUT->custom_menu_activitystream(); ?>
-                            </div>
+                            <?php
+                            echo $OUTPUT->custom_menu_language();
+                            echo $OUTPUT->custom_menu_courses();
+                            if ($colourswitcher) {
+                                echo $OUTPUT->custom_menu_themecolours();
+                            }
+                            echo $OUTPUT->custom_menu();
+                            echo $OUTPUT->custom_menu_activitystream();
+                            ?>
                         </div>
                     </div>
                 </div>
