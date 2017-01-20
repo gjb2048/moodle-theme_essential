@@ -1,25 +1,27 @@
 /* jshint ignore:start */
 define(['jquery', 'core/log'], function($, log) {
 
-  "use strict"; // jshint ;_;
+    "use strict"; // jshint ;_;
 
-  log.debug('Essential fitvids AMD');
+    log.debug('Essential fitvids AMD');
 
 
-/*jshint browser:true */
-/*!
- * FitVids 1.1.2
- *
- * Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
- * Credit to Thierry Koblentz - http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
- * Released under the WTFPL license - http://sam.zoy.org/wtfpl/
- *
- */
+    /*jshint browser:true */
+    /*!
+     * FitVids 1.1.
+     *
+     * Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
+     * Credit to Thierry Koblentz - http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
+     * Released under the WTFPL license - http://sam.zoy.org/wtfpl/
+     *
+     * Adapted to AMD for Moodle by Gareth J Barnard.
+     *
+     */
 
     $.fn.fitVids = function( options ) {
         var settings = {
             customSelector: null,
-            ignore: null
+            ignore: "object[type='application/pdf']"
         };
 
         if(!document.getElementById('fit-vids-style')) {
@@ -56,8 +58,8 @@ define(['jquery', 'core/log'], function($, log) {
             }
 
             var $allVideos = $(this).find(selectors.join(','));
-            $allVideos = $allVideos.not("object object"); // SwfObj conflict patch
-            $allVideos = $allVideos.not(ignoreList); // Disable FitVids on this video.
+            $allVideos = $allVideos.not("object object"); // SwfObj conflict patch.
+            $allVideos = $allVideos.not(ignoreList); // Disable FitVids on these.
 
             $allVideos.each(function(){
                 var $this = $(this);
@@ -102,13 +104,13 @@ define(['jquery', 'core/log'], function($, log) {
         });
     };
 
-  return {
-    init: function() {
-      $(document).ready(function($) {
-        $('#page').fitVids();
-      });
-      log.debug('Essential fitvids AMD init');
+    return {
+        init: function() {
+            $(document).ready(function($) {
+                $('#page').fitVids();
+            });
+            log.debug('Essential fitvids AMD init');
+        }
     }
-  }
 });
 /* jshint ignore:end */
