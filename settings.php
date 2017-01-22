@@ -2543,7 +2543,7 @@ if ($ADMIN->fulltree) {
         get_string('propertiessub', 'theme_essential'),
         format_text(get_string('propertiesdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
-    $essentialexportprops = optional_param('theme_essential_props_saveprops', 0, PARAM_INT);
+    $essentialexportprops = optional_param('theme_essential_getprops_saveprops', 0, PARAM_INT);
     $essentialprops = \theme_essential\toolbox::compile_properties('essential');
     $essentialsettingsprops->add(new essential_admin_setting_getprops('theme_essential_getprops',
         get_string('propertiesproperty', 'theme_essential'),

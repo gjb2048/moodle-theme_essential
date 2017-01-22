@@ -20,7 +20,7 @@
  * @package    theme
  * @subpackage essential
  * @copyright  &copy; 2017-onwards G J Barnard.
- * @author     G J Barnard - gjbarnard at gmail dot com and {@link http://moodle.org/user/profile.php?id=442195}
+ * @author     G J Barnard - {@link http://moodle.org/user/profile.php?id=442195}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -66,24 +66,32 @@ class essential_admin_setting_putprops extends admin_setting_configtextarea {
     }
 
     /**
-     * Validate data before storage
-     * @param string data
-     * @return mixed true if ok string if error found
+     * Validate data before storage.
+     * @param string data.
+     * @return mixed true if alright, string if error found.
      */
     public function validate($data) {
         $validated = parent::validate($data); // Pass parent validation first.
 
         if ($validated == true) {
-            $props = json_decode($data, true);
-            if ($props === null) {
-                if (function_exists('json_last_error_msg')) {
-                    $validated = json_last_error_msg();
+            if (!empty($data)) {
+                // Only attempt decode if we have the start of a JSON string, otherwise will certainly be the saved report.
+                if ($data[0] == '{') {
+                    $props = json_decode($data, true);
+                    if ($props === null) {
+                        if (function_exists('json_last_error_msg')) {
+                            $validated = json_last_error_msg();
+                        } else {
+                            // Fall back to numeric error for older PHP version.
+                            $validated = json_last_error();
+                        }
+                    } else {
+                        $this->report = call_user_func($this->callable, $this->themename, $props);
+                    }
                 } else {
-                    // Fall back to numeric error for older PHP version.
-                    $validated = json_last_error();
+                    // Keep what we have.
+                    $this->report = $data;
                 }
-            } else {
-                $this->report = call_user_func($this->callable, $this->themename, $props);
             }
         }
 
