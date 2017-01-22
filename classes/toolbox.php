@@ -839,6 +839,14 @@ class toolbox {
 
         if ($array) {
             $props['moodle_version'] = $CFG->version;
+            // Put the theme version next so that it will be at the top of the table.
+            foreach ($themeprops as $themeprop) {
+                if ($themeprop->name == 'version') {
+                    $props['theme_version'] = $themeprop->value;
+                    unset($themeprops[$themeprop->id]);
+                    break;
+                }
+            }
 
             foreach ($themeprops as $themeprop) {
                 $props[$themeprop->name] = $themeprop->value;
@@ -848,6 +856,18 @@ class toolbox {
             $data->id = 0;
             $data->value = $CFG->version;
             $props['moodle_version'] = $data;
+            // Convert 'version' to 'theme_version'.
+            foreach ($themeprops as $themeprop) {
+                if ($themeprop->name == 'version') {
+                    $data = new \stdClass();
+                    $data->id = $themeprop->id;
+                    $data->name = 'theme_version';
+                    $data->value = $themeprop->value;
+                    $props['theme_version'] = $data;
+                    unset($themeprops[$themeprop->id]);
+                    break;
+                }
+            }
             foreach ($themeprops as $themeprop) {
                 $data = new \stdClass();
                 $data->id = $themeprop->id;
@@ -862,14 +882,23 @@ class toolbox {
     static public function put_properties($themename, $props) {
         global $DB;
 
-        $report = get_string('putpropertiereport', 'theme_essential').PHP_EOL;
-        $report .= 'Moodle '.get_string('putpropertieversion', 'theme_essential').' '.$props['moodle_version'].'.'.PHP_EOL;
-        unset($props['moodle_version']);
-        $report .= ucfirst($themename).' '.get_string('putpropertieversion', 'theme_essential').' '.$props['version'].'.'.PHP_EOL.PHP_EOL;
-        unset($props['version']);
-
-        // Get the current properties as a reference.
+        // Get the current properties as a reference and for theme version information.
         $currentprops = self::compile_properties($themename, false);
+
+        // Build the report.
+        $report = get_string('putpropertyreport', 'theme_essential').PHP_EOL;
+        $report .= get_string('putpropertyproperties', 'theme_essential').' \'Moodle\' '.
+            get_string('putpropertyversion', 'theme_essential').' '.$props['moodle_version'].'.'.PHP_EOL;
+        unset($props['moodle_version']);
+        $report .= get_string('putpropertyour', 'theme_essential').' \'Moodle\' '.
+            get_string('putpropertyversion', 'theme_essential').' '.$currentprops['moodle_version']->value.'.'.PHP_EOL;
+        unset($currentprops['moodle_version']);
+        $report .= get_string('putpropertyproperties', 'theme_essential').' \''.ucfirst($themename).'\' '.
+            get_string('putpropertyversion', 'theme_essential').' '.$props['theme_version'].'.'.PHP_EOL;
+        unset($props['theme_version']);
+        $report .= get_string('putpropertyour', 'theme_essential').' \''.ucfirst($themename).'\' '.
+            get_string('putpropertyversion', 'theme_essential').' '.$currentprops['theme_version']->value.'.'.PHP_EOL.PHP_EOL;
+        unset($currentprops['theme_version']);
 
         // Pre-process files - using 'theme_essential_pluginfile' in lib.php as a reference.
         // TODO: refactor into one method for both this and that.
@@ -929,7 +958,6 @@ class toolbox {
 
         // Need to ignore and report on any unknown settings.
         $report .= get_string('putpropertiessettingsreport', 'theme_essential').PHP_EOL;
-        $changedprops = array();
         $changed = '';
         $unchanged = '';
         $added = '';
@@ -939,7 +967,6 @@ class toolbox {
             $settinglog = '\''.$propkey.'\' '.get_string('putpropertiesvalue', 'theme_essential').' \''.$propvalue.'\'';
             if (array_key_exists($propkey, $currentprops)) {
                 if ($propvalue != $currentprops[$propkey]->value) {
-                    $changedprops[] = $propkey;
                     $settinglog .= ' '.get_string('putpropertiesfrom', 'theme_essential').' \''.$currentprops[$propkey]->value.'\'';
                     $changed .= $settinglog.'.'.PHP_EOL;
                     $DB->update_record('config_plugins', array('id' => $currentprops[$propkey]->id, 'value' => $propvalue), true);
@@ -966,11 +993,6 @@ class toolbox {
         }
         if (!empty($ignored)) {
             $report .= get_string('putpropertiesignored', 'theme_essential').PHP_EOL.$ignored.PHP_EOL;
-        }
-
-        if (!empty($changedprops)) {
-            // We need the 'id's for the records.
-            global $DB;
         }
 
         return $report;

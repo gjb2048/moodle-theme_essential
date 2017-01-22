@@ -92,7 +92,7 @@ click here to sponsor.
 </ul>
 </p>
 <h3>Customisation</h3>
-<p>If you like this theme and would like me to customise it, transpose functionality to another theme, build a new theme from scratch or create a child theme then I offer competitive rates.  Please contact me via \'www.gjbarnard.co.uk/contact/\' or \'gjbarnard at gmail dot com\' or \'about.me/gjbarnard\' to discuss your requirements.</p>
+<p>If you like this theme and would like me to customise it, transpose functionality to another theme, build a new theme from scratch or create a child theme then I offer competitive rates.  Please contact me via \'http://moodle.org/user/profile.php?id=442195\' to discuss your requirements.</p>
 </div></div>';
 
 // General.
@@ -851,8 +851,10 @@ $string['propertiesreturn'] = 'Return';
 $string['putpropertiesname'] = 'Put properties - Experimental!';
 $string['putpropertiesdesc'] = 'Paste the JSON string and \'Save changes\'.  Warning!  Does not valiate setting values and performs a \'Purge all caches\'.';
 
-$string['putpropertiereport'] = 'Report:';
-$string['putpropertieversion'] = 'version:';
+$string['putpropertyreport'] = 'Report:';
+$string['putpropertyversion'] = 'version:';
+$string['putpropertyproperties'] = 'Properties';
+$string['putpropertyour'] = 'Our';
 $string['putpropertiesignorecti'] = 'Ignoring all course title image settings.';
 $string['putpropertiesreportfiles'] = 'Remember to upload the following files to their settings:';
 $string['putpropertiessettingsreport'] = 'Settings report:';

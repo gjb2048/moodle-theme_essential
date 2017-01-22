@@ -99,7 +99,7 @@
  *
  * @package theme
  * @subpackage essential
- * @author G J Barnard - gjbarnard at gmail dot com and {@link http://moodle.org/user/profile.php?id=442195}
+ * @author G J Barnard - {@link http://moodle.org/user/profile.php?id=442195}
  * @author Based on code originally written by Joby Harding, Bas Brands, David Scotson and many other contributors.
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
