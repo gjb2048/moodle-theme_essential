@@ -20,7 +20,7 @@
  * @package     theme_essential
  * @copyright   2016 Gareth J Barnard
  * @copyright   2015 Gareth J Barnard in respect to modifications of the Bootstrap theme.
- * @author      G J Barnard - gjbarnard at gmail dot com and {@link http://moodle.org/user/profile.php?id=442195}
+ * @author      G J Barnard - {@link http://moodle.org/user/profile.php?id=442195}
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
