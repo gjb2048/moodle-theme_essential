@@ -1,5 +1,8 @@
 The "Essential" Moodle Theme
 ============================
+![image1](pix/screenshot.jpg "Essential Screenshot")
+
+[![Build Status](https://travis-ci.org/gjb2048/moodle-theme_essential.svg?branch=master)](https://travis-ci.org/gjb2048/moodle-theme_essential)
 
 With 2.5 now released Julian thought it time to take the opportunity to build a new theme that would push the new theme engine
 to it's limits a bit.  With that in mind he introduced the new "Essential" theme.  Now Julian has left us for Canvassian
@@ -11,66 +14,65 @@ on sites where Moodle would potentially serve as a company homepage rather than 
 
 Cool things to know about the theme.
  - It attempts to load as many as possible icons from a font
- - Most of what you think are "graphics" are actually the [Awesome font](http://fortawesome.github.io/Font-Awesome/)
+ - Most of what you think are "graphics" are actually the [Awesome font](fontawesome.io)
  - The slider on the front page is completely customisable through theme settings.
- - I am really trying to push what [Bootstrap](http://twitter.github.io/bootstrap/) Grids can do.  As such the theme is fully
+ - I am really trying to push what [Bootstrap](twitter.github.io/bootstrap/) Grids can do.  As such the theme is fully
    responsive.
  - The footer is all custom Moodle regions.  This means blocks can be added.
- - The theme can use [Google web fonts](http://www.google.com/fonts/) to give it that extra bit of shazam!
+ - The theme can use [Google web fonts](fonts.google.com) to give it that extra bit of shazam!
  - Social network icons appear at the top of the page dynamically based on theme settings.
  - The entire colour scheme can be modified with theme settings.
 
 Developed and maintained by
 ===========================
 Gareth J Barnard MSc. BSc(Hons)(Sndw). MBCS. CEng. CITP. PGCE.
-Moodle profile | http://moodle.org/user/profile.php?id=442195
-Web profile | http://about.me/gjbarnard
+Moodle profile: moodle.org/user/profile.php?id=442195
+Web profile:    about.me/gjbarnard
 
 Original Developer
 ==================
 Julian Ridden
-Moodle profile: https://moodle.org/user/profile.php?id=39680
-Web profile:    http://au.linkedin.com/in/eduridden/
+Moodle profile: moodle.org/user/profile.php?id=39680
+Web profile:    au.linkedin.com/in/eduridden/
 
 Previous Developer
 ==================
 David Bezemer
-Moodle profile | https://moodle.org/user/profile.php?id=1416592
-Web profile | http://www.davidbezemer.nl
+Moodle profile: moodle.org/user/profile.php?id=1416592
+Web profile:    www.davidbezemer.nl
 
 Free Software
 =============
 The Essential theme is 'free' software under the terms of the GNU GPLv3 License, please see 'COPYING.txt'.
 
 It can be obtained for free from:
-http://moodle.org/plugins/view.php?plugin=theme_essential
+moodle.org/plugins/view.php?plugin=theme_essential
 and
-https://github.com/gjb2048/moodle-theme_essential/releases
+github.com/gjb2048/moodle-theme_essential/releases
 
 You have all the rights granted to you by the GPLv3 license.  If you are unsure about anything, then the
-FAQ - http://www.gnu.org/licenses/gpl-faq.html - is a good place to look.
+FAQ - www.gnu.org/licenses/gpl-faq.html - is a good place to look.
 
 If you reuse any of the code then I kindly ask that you make reference to the theme.
 
 If you make improvements or bug fixes then I would appreciate if you would send them back to me by forking from
-https://github.com/gjb2048/moodle-theme_essential and doing a 'Pull Request' so that the rest of the
-Moodle community benefits.
+github.com/gjb2048/moodle-theme_essential and doing a 'Pull Request' so that the rest of the Moodle community benefits.
 
 Support
 =======
 As Essential is licensed under the GNU GPLv3 License it comes with NO support.  If you would like support from
-me (Gareth) then I'm happy to provide it for a fee (please see my contact details above).  Otherwise, the 'Themes' forum:
-moodle.org/mod/forum/view.php?id=46 is an excellent place to ask questions.
+me (Gareth) then I'm happy to provide it for a fee.  Please contact me via my 'Moodle profile' in 'Developed and maintained by'
+above.  Otherwise, the 'Themes' forum: moodle.org/mod/forum/view.php?id=46 is an alternative.
 
 Sponsorships
 ============
 This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider sponsoring
 by:
 
-PayPal - Please contact me (Gareth) via my 'Moodle profile' (above) for details as I am an individual and therefore am unable to have
-'buy me now' buttons under their terms.
+PayPal - Please contact me (Gareth) via my 'Moodle profile' in 'Developed and maintained by' above for details as I am an individual
+and therefore am unable to have 'buy me now' buttons under their terms.
 
-Flattr - https://flattr.com/profile/gjb2048
+Flattr - flattr.com/profile/gjb2048
 
 Sponsorships help to facilitate maintenance and allow me to provide you with more and better features.  Without your support the theme
 cannot be maintained.
@@ -109,8 +111,8 @@ Toshimi Hatanaka
 Customisation
 =============
 If you like this theme and would like me to customise it, transpose functionality to another theme, build a new theme from scratch
-or create a child theme then I offer competitive rates.  Please contact me via 'www.gjbarnard.co.uk/contact/' or
-'gjbarnard at gmail dot com' or 'about.me/gjbarnard' to discuss your requirements.
+or create a child theme then I offer competitive rates.  Please contact me via my 'Moodle profile' in 'Developed and maintained by'
+above to discuss your requirements.
 
 Required version of Moodle
 ==========================
@@ -173,24 +175,17 @@ to do so:
 
 CSlider
 =======
-The original version of Essential used 'CSlider' - 
-  http://tympanus.net/codrops/2012/03/15/parallax-content-slider-with-css3-and-jquery/.
+The original version of Essential used 'CSlider' - tympanus.net/codrops/2012/03/15/parallax-content-slider-with-css3-and-jquery/.
 
-It has been removed because of licencing issues: https://github.com/gjb2048/moodle-theme_essential/issues/61
+It has been removed because of licencing issues: github.com/gjb2048/moodle-theme_essential/issues/61
 
 Please do not request that it be put back.  The licence that CSlider has is incompatible with GPLv3 and therefore cannot be a part
 of or redistributed with the theme.
 
 Videos and FitVids
 ==================
-Essential uses FitVids.js - http://fitvidsjs.com/ - to make embedded videos responsive.  If you do not want this feature for a
+Essential uses FitVids.js - fitvidsjs.com - to make embedded videos responsive.  If you do not want this feature for a
 particular video, then please add the class 'fitvidsignore' to the video element.
-
-WOFF2 Font Support
-==================
-WOFF2 font support will automatically kick in if you are running Moodle 2.8.5+ (Build: 20150313) - 2014111005.01 or above.  If you
-are and the settings do not appear on the font setting page when using 'Custom font' for 'fontselect', then perform a
-'Purge all caches'.
 
 Category course title image in a course
 =======================================
@@ -200,8 +195,10 @@ settings and add an image.  Then edit in HTML mode, remove the surrounding 'p' t
 the height (px) and the contained title text colour, background colour and opacity, use the following attributes: 'ctih', 'ctit',
 'ctib' and ctio respectively, for example:
 
-<img src="https://mymoodleinstall.mr/pluginfile.php/493/course/section/237/myimage.jpg" alt="Replacement image" class="categorycti"
+~~~~
+<img src="mymoodleinstall.mr/pluginfile.php/493/course/section/237/myimage.jpg" alt="Replacement image" class="categorycti"
  ctih="250" ctit="#afafaf" ctib="#222222" ctio="0.5">
+~~~~
 
 This image will not be shown in the summary itself when viewing the list of courses.
 
@@ -212,8 +209,7 @@ that you are operating the required version of Moodle as stated at the top - thi
 functionality that is out of its control.
 
 When reporting an issue you can post in the theme's forum on Moodle.org (currently 'moodle.org/mod/forum/view.php?id=46')
-or check the issue list https://github.com/gjb2048/moodle-theme_essential/issues and if the problem does not exist, create an
-issue.
+or check the issue list github.com/gjb2048/moodle-theme_essential/issues and if the problem does not exist, create an issue.
 
 It is essential that you provide as much information as possible, the critical information being the contents of the theme's 
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
@@ -225,9 +221,9 @@ Please look in CHANGES.txt.
 
 See the theme in Action
 =======================
-A video showing many of the core features is available for viewing at https://www.youtube.com/watch?v=grhmR5PmWtA
+A video showing many of the core features is available for viewing at www.youtube.com/watch?v=grhmR5PmWtA
 
 Documentation
 =============
-As always, documentation is a work in progress. Available documentation is available at http://docs.moodle.org/31/en/Essential_theme
-If you have questions you can post them in the issue tracker at https://github.com/gjb2048/moodle-theme_essential/issues
+As always, documentation is a work in progress.  Available documentation is available at docs.moodle.org/31/en/Essential_theme
+If you have questions you can post them in the issue tracker at github.com/gjb2048/moodle-theme_essential/issues
