@@ -1271,15 +1271,14 @@ class core_renderer extends \core_renderer {
         if (\theme_essential\toolbox::get_setting('displayeditingmenu')) {
             if ($this->page->user_allowed_editing()) {
                 $menu = new custom_menu();
-                $buttontoadd = true; // Only set to false when cannot determine what the URL / params should be for a page type.
                 $pagetype = $this->page->pagetype;
                 if (strpos($pagetype, 'admin-setting') !== false) {
                     $pagetype = 'admin-setting'; // Deal with all setting page types.
-                } else if ((strpos($pagetype, 'mod') !== false) &&
+                } else if ((strpos($pagetype, 'mod-') !== false) &&
                     ((strpos($pagetype, 'edit') !== false) ||
                     (strpos($pagetype, 'view') !== false) ||
-                    (strpos($pagetype, 'mod') !== false))) {
-                    $pagetype = 'mod-edit-view'; // Deal with all mod edit / view / mod page types.
+                    (strpos($pagetype, '-mod') !== false))) {
+                    $pagetype = 'mod-edit-view'; // Deal with all mod edit / view / -mod page types.
                 } else if (strpos($pagetype, 'mod-data-field') !== false) {
                     $pagetype = 'mod-data-field'; // Deal with all mod data field page types.
                 } else if (strpos($pagetype, 'mod-lesson') !== false) {
@@ -1310,7 +1309,12 @@ class core_renderer extends \core_renderer {
                     case 'course-search':
                     case 'mod-resource-mod':
                     case 'tag-search':
-                        $buttontoadd = false;
+                        $url = new moodle_url('/tag/search.php');
+                        if ($this->page->user_is_editing()) {
+                            $url->param('edit', 'off');
+                        } else {
+                            $url->param('edit', 'on');
+                        }
                     break;
                     case 'mod-data-field':
                     case 'mod-edit-view':
@@ -1352,24 +1356,18 @@ class core_renderer extends \core_renderer {
                         }
                     break;
                 }
-                if ($buttontoadd) {
-                    $url->param('sesskey', sesskey());
-                    if ($this->page->user_is_editing()) {
-                        $editstring = get_string('turneditingoff');
-                        $iconclass = 'power-off';
-                    } else {
-                        $editstring = get_string('turneditingon');
-                        $iconclass = 'edit';
-                    }
-                    $edit = $this->getfontawesomemarkup($iconclass, array('fa-fw'));
-                    $menu->add($edit, $url, $editstring);
-                    $html = $this->render_custom_menu($menu);
 
-                    if (\theme_essential\toolbox::get_setting('hidedefaulteditingbutton')) {
-                        // Unset button on page.
-                        $this->page->set_button('');
-                    }
+                $url->param('sesskey', sesskey());
+                if ($this->page->user_is_editing()) {
+                    $editstring = get_string('turneditingoff');
+                    $iconclass = 'power-off';
+                } else {
+                    $editstring = get_string('turneditingon');
+                    $iconclass = 'edit';
                 }
+                $edit = $this->getfontawesomemarkup($iconclass, array('fa-fw'));
+                $menu->add($edit, $url, $editstring);
+                $html = $this->render_custom_menu($menu);
             }
         }
         return $html;
@@ -1814,20 +1812,32 @@ class core_renderer extends \core_renderer {
      */
 
     public function edit_button(moodle_url $url) {
-        $url->param('sesskey', sesskey());
-        if ($this->page->user_is_editing()) {
-            $url->param('edit', 'off');
-            $btn = 'btn-danger';
-            $title = get_string('turneditingoff');
-            $icon = 'power-off';
-        } else {
-            $url->param('edit', 'on');
-            $btn = 'btn-success';
-            $title = get_string('turneditingon');
-            $icon = 'edit';
+        $havebutton = true;
+        $html = '';
+        if ($this->page->user_allowed_editing()) {
+            if ((\theme_essential\toolbox::get_setting('displayeditingmenu')) &&
+                (\theme_essential\toolbox::get_setting('hidedefaulteditingbutton'))) {
+                // No button.
+                $havebutton = false;
+            }
+            if ($havebutton) {
+                $url->param('sesskey', sesskey());
+                if ($this->page->user_is_editing()) {
+                    $url->param('edit', 'off');
+                    $btn = 'btn-danger';
+                    $title = get_string('turneditingoff');
+                    $icon = 'power-off';
+                } else {
+                    $url->param('edit', 'on');
+                    $btn = 'btn-success';
+                    $title = get_string('turneditingon');
+                    $icon = 'edit';
+                }
+                $icon = $this->getfontawesomemarkup($icon, array('fa-fw'));
+                $html .= html_writer::tag('a', $icon.$title, array('href' => $url, 'class' => 'btn '.$btn, 'title' => $title));
+            }
         }
-        $icon = $this->getfontawesomemarkup($icon, array('fa-fw'));
-        return html_writer::tag('a', $icon.$title, array('href' => $url, 'class' => 'btn '.$btn, 'title' => $title));
+        return $html;
     }
 
     public function render_social_network($socialnetwork) {
