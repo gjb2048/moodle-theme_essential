@@ -1,5 +1,6 @@
 New in 2.9.1.23
 ===============
+- FIX: Issue #804: 'Hide default page editing button' hides anything that could be in that place.
 
 New in 2.9.1.22
 ===============
