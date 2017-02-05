@@ -450,6 +450,12 @@ a.marketing-button:hover {
 }
 /* @end */
 /* @group Core */
+img.userpicture,
+img.profilepicture {
+  border-color: [[setting:themecolor]];
+  border-radius: [[setting:userimageborderradius]]px;
+  box-shadow: 0px 0px 3px [[setting:themecolor]];
+}
 .moodle-actionmenu[data-enhanced].show .menu {
   background-color: #ffffff;
 }
@@ -1035,7 +1041,7 @@ button.website:focus {
   background-color: [[setting:themehovercolor]];
 }
 .navbar .navbar-inner .usermenu .dropdown img.userpicture {
-  border: 1px solid [[setting:themenavcolor]];
+  border-radius: [[setting:usermenuuserimageborderradius]]px;
 }
 .navbar .navbar-inner .usermenu .dropdown .dropdown-menu {
   border: 1px solid [[setting:themecolor]];
@@ -1501,30 +1507,30 @@ table.flexible tbody > tr:nth-child(odd) > td .fa:focus,
 .generaltable tbody > tr:nth-child(odd) > td .fa:focus {
   color: inherit;
 }
-table#explaincaps tbody > tr:nth-child(odd) > td img.userpicture,
-table#defineroletable tbody > tr:nth-child(odd) > td img.userpicture,
-table.grading-report tbody > tr:nth-child(odd) > td img.userpicture,
-table#listdirectories tbody > tr:nth-child(odd) > td img.userpicture,
-table.rolecaps tbody > tr:nth-child(odd) > td img.userpicture,
-table.userenrolment tbody > tr:nth-child(odd) > td img.userpicture,
-table#form tbody > tr:nth-child(odd) > td img.userpicture,
-form#movecourses table tbody > tr:nth-child(odd) > td img.userpicture,
-#page-admin-course-index .editcourse tbody > tr:nth-child(odd) > td img.userpicture,
-.forumheaderlist tbody > tr:nth-child(odd) > td img.userpicture,
-table.flexible tbody > tr:nth-child(odd) > td img.userpicture,
-.generaltable tbody > tr:nth-child(odd) > td img.userpicture,
-table#explaincaps tbody > tr:nth-child(odd) > td img.profilepicture,
-table#defineroletable tbody > tr:nth-child(odd) > td img.profilepicture,
-table.grading-report tbody > tr:nth-child(odd) > td img.profilepicture,
-table#listdirectories tbody > tr:nth-child(odd) > td img.profilepicture,
-table.rolecaps tbody > tr:nth-child(odd) > td img.profilepicture,
-table.userenrolment tbody > tr:nth-child(odd) > td img.profilepicture,
-table#form tbody > tr:nth-child(odd) > td img.profilepicture,
-form#movecourses table tbody > tr:nth-child(odd) > td img.profilepicture,
-#page-admin-course-index .editcourse tbody > tr:nth-child(odd) > td img.profilepicture,
-.forumheaderlist tbody > tr:nth-child(odd) > td img.profilepicture,
-table.flexible tbody > tr:nth-child(odd) > td img.profilepicture,
-.generaltable tbody > tr:nth-child(odd) > td img.profilepicture {
+table#explaincaps tbody > tr > td img.userpicture,
+table#defineroletable tbody > tr > td img.userpicture,
+table.grading-report tbody > tr > td img.userpicture,
+table#listdirectories tbody > tr > td img.userpicture,
+table.rolecaps tbody > tr > td img.userpicture,
+table.userenrolment tbody > tr > td img.userpicture,
+table#form tbody > tr > td img.userpicture,
+form#movecourses table tbody > tr > td img.userpicture,
+#page-admin-course-index .editcourse tbody > tr > td img.userpicture,
+.forumheaderlist tbody > tr > td img.userpicture,
+table.flexible tbody > tr > td img.userpicture,
+.generaltable tbody > tr > td img.userpicture,
+table#explaincaps tbody > tr > td img.profilepicture,
+table#defineroletable tbody > tr > td img.profilepicture,
+table.grading-report tbody > tr > td img.profilepicture,
+table#listdirectories tbody > tr > td img.profilepicture,
+table.rolecaps tbody > tr > td img.profilepicture,
+table.userenrolment tbody > tr > td img.profilepicture,
+table#form tbody > tr > td img.profilepicture,
+form#movecourses table tbody > tr > td img.profilepicture,
+#page-admin-course-index .editcourse tbody > tr > td img.profilepicture,
+.forumheaderlist tbody > tr > td img.profilepicture,
+table.flexible tbody > tr > td img.profilepicture,
+.generaltable tbody > tr > td img.profilepicture {
   background-color: rgba(255, 255, 255, 0.8);
 }
 table#explaincaps tbody > tr:nth-child(odd) > td h3,
@@ -1765,10 +1771,6 @@ a.dimmed:before {
 .bor {
   background-image: url([[pix:theme|bg/dot]]);
   background-repeat: repeat-x;
-}
-img.userpicture,
-img.profilepicture {
-  box-shadow: 0px 0px 3px [[setting:themecolor]];
 }
 /* @end */
 /* @end */

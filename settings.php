@@ -128,6 +128,18 @@ if ($ADMIN->fulltree) {
     $setting = new essential_admin_setting_configinteger($name, $title, $description, $default, $lower, $upper);
     $essentialsettingsgeneric->add($setting);
 
+    // User image border radius.
+    $name = 'theme_essential/userimageborderradius';
+    $title = get_string('userimageborderradius', 'theme_essential');
+    $default = 90;
+    $lower = 0;
+    $upper = 90;
+    $description = get_string('userimageborderradiusdesc', 'theme_essential',
+        array('lower' => $lower, 'upper' => $upper));
+    $setting = new essential_admin_setting_configinteger($name, $title, $description, $default, $lower, $upper);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingsgeneric->add($setting);
+
     // Custom favicon.
     $name = 'theme_essential/favicon';
     $title = get_string('favicon', 'theme_essential');
@@ -842,6 +854,18 @@ if ($ADMIN->fulltree) {
         1 => 'navbarbelow'
     );
     $setting = new essential_admin_setting_configradio($name, $title, $description, $default, $choices, false, $images);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingsheader->add($setting);
+
+    // User menu user image border radius.
+    $name = 'theme_essential/usermenuuserimageborderradius';
+    $title = get_string('usermenuuserimageborderradius', 'theme_essential');
+    $default = 4;
+    $lower = 0;
+    $upper = 90;
+    $description = get_string('usermenuuserimageborderradiusdesc', 'theme_essential',
+        array('lower' => $lower, 'upper' => $upper));
+    $setting = new essential_admin_setting_configinteger($name, $title, $description, $default, $lower, $upper);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 

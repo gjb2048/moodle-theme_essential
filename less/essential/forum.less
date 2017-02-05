@@ -1,15 +1,19 @@
 /* @group Forums */
 
-.forumheaderlist .picture img {
-    border-radius: 250px;
-    width: 35px;
-    height: 35px;
+.forumheaderlist .picture {
+    a {
+        display: inline-block;
+    }
+    img {
+        width: 35px;
+        height: 35px;
+    }
 }
 .dir-ltr .forumheaderlist .picture img {
-    margin-right: 10px;
+    margin-right: 0;
 }
 .dir-rtl .forumheaderlist .picture img {
-    margin-left: 10px;
+    margin-left: 0;
 }
 
 .forumpost,
@@ -45,16 +49,17 @@ body {
     .forumpost .row {
         display: inline-block;
         .left {
-            width: 76px;
+            width: 80px;
         }
     }
 
-    .forumpost .picture img {
-        border-radius: 250px;
-        width: 72px;
-        height: 72px;
-        .userpicture {
-            margin: 3px;
+    .forumpost .picture {
+        a {
+            display: inline-block;
+        }
+        img {
+            width: 72px;
+            height: 72px;
         }
     }
 
@@ -74,25 +79,36 @@ body {
     }
 }
 body.dir-ltr {
-    .forumpost .row {
-        .content-mask, .options, .topic {
-            margin-left: 84px;
+    .forumpost {
+        .picture img.userpicture {
+            margin-right: 3px;
         }
-        .options .commands {
-            margin-right: 4px;
+        .row {
+            .content-mask, .options, .topic {
+                margin-left: 84px;
+            }
+            .options .commands {
+                margin-right: 4px;
+            }
         }
     }
 }
 body.dir-rtl {
-    .forumpost .row {
-        .content-mask, .options, .topic {
-            margin-right: 84px;
+    .forumpost {
+        .picture img.userpicture {
+            margin-left: 3px;
         }
-        .options .commands {
-            margin-left: 4px;
+        .row {
+            .content-mask, .options, .topic {
+                margin-right: 84px;
+            }
+            .options .commands {
+                margin-left: 4px;
+            }
         }
     }
 }
+
 .path-mod-forum .forumsearch {
     input,
     .helptooltip {
