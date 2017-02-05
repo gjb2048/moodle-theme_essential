@@ -204,8 +204,17 @@
                             background-color: ~"[[setting:alternativethemecolor@{index}]]";
                         }
                     }
+                }
+
+                &.dir-ltr #page-header {
                     div.titlearea {
                         border-left: 1px dotted ~"[[setting:alternativethemecolor@{index}]]";
+                    }
+                }
+
+                &.dir-rtl #page-header {
+                    div.titlearea {
+                        border-right: 1px dotted ~"[[setting:alternativethemecolor@{index}]]";
                     }
                 }
 
@@ -213,7 +222,7 @@
                     border-right: 1px dotted ~"[[setting:alternativethemecolor@{index}]]";
                 }
 
-                #headerlogo {
+                &.dir-ltr #headerlogo {
                     border-right-color: ~"[[setting:alternativethemecolor@{index}]]";
                 }
                 &.dir-rtl #headerlogo {
@@ -245,6 +254,12 @@
                     &:hover, &:focus {
                         background-color: ~"[[setting:alternativethemecolor@{index}]]";
                     }
+                }
+
+                img.userpicture,
+                img.profilepicture {
+                    border-color: ~"[[setting:alternativethemecolor@{index}]]";
+                    box-shadow: 0px 0px 3px ~"[[setting:alternativethemecolor@{index}]]";
                 }
 
                 .navbar {
@@ -360,7 +375,7 @@
                     .navbar-inner .usermenu {
                         .dropdown {
                             img.userpicture {
-                                border: 1px solid ~"[[setting:alternativethemenavcolor@{index}]]";
+                                border-color: transparent;
                             }
                             .dropdown-menu {
                                 border: 1px solid ~"[[setting:alternativethemecolor@{index}]]";
@@ -934,7 +949,7 @@
                     background-color: ~"[[setting:alternativethemecolor@{index}]]";
                 }
 
-                .path-grade-report-grader table#fixed_column th {
+                &.dir-ltr .path-grade-report-grader table#fixed_column th {
                     border-right-color: ~"[[setting:alternativethemecolor@{index}]]";
                 }
                 &.dir-rtl .path-grade-report-grader table#fixed_column th {

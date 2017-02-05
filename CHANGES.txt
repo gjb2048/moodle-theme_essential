@@ -2,6 +2,9 @@ New in 3.0.1.16
 ===============
 - FIX: Issue #804: 'Hide default page editing button' hides anything that could be in that place.
 - FIX: Issue #805: Suspended user odd rows.
+- FIX: RTL header dotted separator appearing twice.
+- FIX: Forum table user image link height.
+- NEW: User image border radius settings.
 
 New in 3.0.1.15
 ===============
