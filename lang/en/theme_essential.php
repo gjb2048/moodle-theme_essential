@@ -151,9 +151,6 @@ $string['pagetopblocksperrowdesc'] = 'State up to how many blocks per row betwee
 $string['pagebottomblocksperrow'] = 'Page bottom blocks per row';
 $string['pagebottomblocksperrowdesc'] = 'State up to how many blocks per row between {$a->lower} and {$a->upper} for pages with \'Page bottom blocks\'.  Current pages are: Admin, Course management, Grading and Quiz edit.';
 
-$string['customcss'] = 'Custom CSS';
-$string['customcssdesc'] = 'Whatever CSS rules you add to this text area will be reflected in every page, making for easier customisation of this theme.';
-
 $string['logo'] = 'Logo';
 $string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.<br>The image should be the same width and height as the \'Logo width\' and \'Logo height\' settings below.<br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
 
@@ -175,8 +172,14 @@ $string['profilebarcustomtitledesc'] = 'Title for custom profile bar block.';
 $string['contactinfo'] = 'Contact information';
 $string['contactinfodesc'] = 'Enter your contact information';
 
+$string['userimageborderradius'] = 'User picture border radius';
+$string['userimageborderradiusdesc'] = 'Specify the border radius between {$a->lower} and {$a->upper} pixels of the user picture throughout the site execept the header which uses the setting \'usermenuuserimageborderradius\'.';
+
 $string['favicon'] = 'Custom favicon';
 $string['favicondesc'] = 'Upload your own favicon.  It should be an .ico file.';
+
+$string['customcss'] = 'Custom CSS';
+$string['customcssdesc'] = 'Whatever CSS rules you add to this text area will be reflected in every page, making for easier customisation of this theme.';
 
 // Courses menu.
 $string['mycoursesinfo'] = 'Courses menu';
@@ -221,6 +224,8 @@ $string['thiscourse'] = 'This course';
 $string['people'] = 'People';
 
 // User menu.
+$string['usermenuuserimageborderradius'] = 'User menu picture border radius';
+$string['usermenuuserimageborderradiusdesc'] = 'Specify the border radius between {$a->lower} and {$a->upper} pixels of the user picture on the user menu.';
 $string['helplinktype'] = 'Enable help link in menu';
 $string['helplinktypedesc'] = 'Choose whether you want to enable a help option in the user menu, you can choose to either provide an URL that will be opened in a new window or an email address.';
 $string['helplink'] = 'Help link';

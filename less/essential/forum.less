@@ -1,10 +1,14 @@
 /* @group Forums */
 
-.forumheaderlist .picture img {
-    border-radius: 250px;
-    width: 35px;
+.forumheaderlist .picture {
+  a {
+    display: inline-block;
+  }
+  img {
     height: 35px;
-    margin-right: 10px;
+    margin-right: 0;
+    width: 35px;
+  }
 }
 
 .forumpost,
@@ -33,7 +37,7 @@ body {
   .forumpost .row {
     display: inline-block;
     .left {
-      width: 76px;
+      width: 80px;
     }
     .content-mask, .options, .topic {
       margin-left: 84px;
@@ -43,12 +47,16 @@ body {
     }
   }
 
-  .forumpost .picture img {
-    border-radius: 250px;
-    width: 72px;
-    height: 72px;
-    .userpicture {
-      margin: 3px;
+  .forumpost .picture {
+    a {
+      display: inline-block;
+    }
+    img {
+      height: 72px;
+      width: 72px;
+      &.userpicture {
+        margin-right: 3px;
+      }
     }
   }
 

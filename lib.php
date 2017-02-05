@@ -446,6 +446,14 @@ function theme_essential_process_css($css, $theme) {
     $loginbgopacity = \theme_essential\toolbox::get_setting('loginbackgroundopacity');
     $css = \theme_essential\toolbox::set_loginbackgroundstyle($css, $loginbgstyle, $loginbgopacity);
 
+    // Set the user image border radius.
+    $userimageborderradius = \theme_essential\toolbox::get_setting('userimageborderradius');
+    $css = \theme_essential\toolbox::set_integer($css, 'userimageborderradius', $userimageborderradius, 90);
+
+    // Set the user menu user image border radius.
+    $usermenuuserimageborderradius = \theme_essential\toolbox::get_setting('usermenuuserimageborderradius');
+    $css = \theme_essential\toolbox::set_integer($css, 'usermenuuserimageborderradius', $usermenuuserimageborderradius, 4);
+
     // Set marketing height.
     $marketingheight = \theme_essential\toolbox::get_setting('marketingheight');
     $marketingimageheight = \theme_essential\toolbox::get_setting('marketingimageheight');
