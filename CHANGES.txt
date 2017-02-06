@@ -7,6 +7,7 @@ New in 3.1.1.8
 - FIX: RTL header dotted separator appearing twice.
 - FIX: User image table even row background.
 - FIX: Forum table user image link height.
+- FIX: Environment table help icon spacing.
 - NEW: User image border radius settings.
 
 New in 3.1.1.7
