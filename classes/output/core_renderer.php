@@ -1766,12 +1766,12 @@ class core_renderer extends \core_renderer {
                     $url->param('edit', 'off');
                     $btn = 'btn-danger';
                     $title = get_string('turneditingoff');
-                    $icon = 'fa-power-off';
+                    $icon = 'power-off';
                 } else {
                     $url->param('edit', 'on');
                     $btn = 'btn-success';
                     $title = get_string('turneditingon');
-                    $icon = 'fa-edit';
+                    $icon = 'edit';
                 }
                 $icon = $this->getfontawesomemarkup($icon, array('fa-fw'));
                 $html .= html_writer::tag('a', $icon.$title, array('href' => $url, 'class' => 'btn '.$btn, 'title' => $title));
