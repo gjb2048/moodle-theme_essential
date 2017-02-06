@@ -1,3 +1,6 @@
+New in 3.0.1.16
+===============
+
 New in 3.0.1.15
 ===============
 - FIX: Issue #798: Slider title needs to support multi-lang filter.
