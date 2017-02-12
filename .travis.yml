@@ -8,19 +8,16 @@ cache:
 
 php:
  # Only run the lowest and highest supported versions to reduce the load on travis-ci.org.
- - 5.4
- # - 5.5
- # - 5.6
+ - 5.6
  - 7.0
 
 matrix:
  allow_failures:
-  - php: 7.0
  fast_finish: true
 
 env:
  global:
-  - MOODLE_BRANCH=MOODLE_31_STABLE
+  - MOODLE_BRANCH=MOODLE_32_STABLE
   - IGNORE_PATHS=amd/build,amd/src/carousel.js,amd/src/fitvids.js,amd/src/jBreadCrumb.js
   # Ignore custom.css until CSSlint can be instructed to ignore lines for '[[setting:customcss]]'.
   # Also ignore generated CSS files.
