@@ -1,3 +1,7 @@
+New in 3.2.0.1
+==============
+- UPD: Core and plugin pix.
+
 New in 3.1.1.8
 ==============
 - FIX: Issue #794: Hidden grade items in user report not clear as such.
