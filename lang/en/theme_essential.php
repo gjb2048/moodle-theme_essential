@@ -68,27 +68,8 @@ click here to sponsor.
 </ul>
 </p>
 <p>
-<h3>Essential for Moodle 3.0 kindly sponsored by:</h3>
+<h3>Essential for Moodle 3.2 kindly sponsored by:</h3>
 <ul>
-<li>Leila Hiret</li>
-<li>Vilar da Camara Neto</li>
-<li>Kees Koopman</li>
-<li>Matej Topolovec</li>
-<li>Mihai Bojonca</li>
-<li>V. Y. S. Cavalcanti</li>
-<li>Christian Kleinhanss</li>
-<li>Nadav Kavalerchik</li>
-<li>Francisco Gomez Gonzalez</li>
-<li>Lazar Ivanov</li>
-<li>Duval Arnaud</li>
-<li>Kai ner Maa Pitanta</li>
-<li>Gregory Reinert</li>
-<li>M van der Niet</li>
-<li>Floyd Saner</li>
-<li>Andreas Schenkel</li>
-<li>Gemma Lesterhuis</li>
-<li>Roy Bentley</li>
-<li>Duane Cox</li>
 </ul>
 </p>
 <h3>Customisation</h3>
@@ -923,8 +904,9 @@ $string['versionalerttext1'] = 'Theme not designed for Moodle version.';
 $string['versionalerttext2'] = 'Unexpected issues may occur, please get the correct theme version for your Moodle version.';
 
 // Message Menu.
-$string['unreadnewnotification'] = 'New notification';
 $string['nomessagesfound'] = 'No messages were found';
+$string['unreadmessages'] = 'Unread messages ({$a})';
+$string['unreadnewnotification'] = 'New notification';
 
 // Preferences.
 $string['badgepreferences'] = 'Badge';

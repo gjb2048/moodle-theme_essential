@@ -1058,7 +1058,7 @@ class core_renderer extends \core_renderer {
             } else {
                 $messagemenuicon = $this->getfontawesomemarkup('envelope');
             }
-            $messagetitle = get_string('unreadmessages', 'message', $messages['newmessages']);
+            $messagetitle = get_string('unreadmessages', 'theme_essential', $messages['newmessages']);
 
             $messagemenutext = html_writer::tag('span', $messages['newmessages']) . $messagemenuicon;
             $messagesubmenu = $messagemenu->add(

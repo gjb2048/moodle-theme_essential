@@ -2,6 +2,7 @@ New in 3.2.0.1
 ==============
 - UPD: Core and plugin pix.
 - UPD: TravisCI.
+- UPD: Unread messages language string.
 
 New in 3.1.1.8
 ==============
