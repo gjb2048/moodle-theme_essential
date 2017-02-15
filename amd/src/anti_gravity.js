@@ -31,9 +31,9 @@ define(['jquery', 'core/log'], function(jQuery, log) {
             return false;
         });
 
-        jQuery("a[href='#region-main']").click(function(e) {
+        jQuery('a[href="\\#region-main"]').click(function(e) {
             e.preventDefault();
-            var target = jQuery('#region-main');
+            var target = jQuery("#region-main");
             jQuery('html, body').animate({scrollTop : target.height()}, duration);
             return false;
         });

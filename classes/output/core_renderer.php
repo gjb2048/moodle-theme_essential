@@ -580,7 +580,7 @@ class core_renderer extends \core_renderer {
                     $url = $menunode->get_url();
                     $class = $url->get_param('essentialcolours');
                 } else {
-                    $url = '#';
+                    $url = $this->page->url;
                 }
                 $content .= html_writer::link($url, $menunode->get_text(), array('title' => $menunode->get_title(),
                     'class' => $class));
@@ -615,7 +615,7 @@ class core_renderer extends \core_renderer {
             } else {
                 $currentlang = $strlang;
             }
-            $this->language = $langmenu->add($this->getfontawesomemarkup('flag').$currentlang, new moodle_url('#'), $strlang, 100);
+            $this->language = $langmenu->add($this->getfontawesomemarkup('flag').$currentlang, $this->page->url, $strlang, 100);
             foreach ($langs as $langtype => $langname) {
                 $this->language->add($this->getfontawesomemarkup('language').$langname, new moodle_url($this->page->url,
                     array('lang' => $langtype)), $langname);
@@ -682,7 +682,7 @@ class core_renderer extends \core_renderer {
                 $branchtitle = get_string('my'.$lateststring.'courses', 'theme_essential');
             }
             $branchlabel = $this->getfontawesomemarkup('briefcase').$branchtitle;
-            $branchurl = new moodle_url('#');
+            $branchurl = $this->page->url;
             $branchsort = 200;
 
             $coursemenubranch = $coursemenu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
@@ -826,7 +826,7 @@ class core_renderer extends \core_renderer {
                                 $caticon = 'folder-open';
                             }
                             $catlabel = html_writer::tag('span', $this->getfontawesomemarkup($caticon).html_writer::tag('span', ' '.$cattext));
-                            $mycoursescatsubmenucats[$categoriestoplist[$course->category]->topid] = $coursemenubranch->add($catlabel, new moodle_url('#'), $cattext);
+                            $mycoursescatsubmenucats[$categoriestoplist[$course->category]->topid] = $coursemenubranch->add($catlabel, $this->page->url, $cattext);
                             $mycoursescatsubmenucatsnumcourses[$categoriestoplist[$course->category]->topid] = 0;
                         }
                         if ($mycoursescatsubmenucatsnumcourses[$categoriestoplist[$course->category]->topid] < $mycoursesmax) {
@@ -847,7 +847,7 @@ class core_renderer extends \core_renderer {
             }
             if ($numcourses == 0) {
                 $noenrolments = get_string('noenrolments', 'theme_essential');
-                $coursemenubranch->add('<em>' . $noenrolments . '</em>', new moodle_url('#'), $noenrolments);
+                $coursemenubranch->add('<em>' . $noenrolments . '</em>', $this->page->url, $noenrolments);
             }
             return $this->render_the_custom_menu($coursemenu, 'custom_menu_courses', $mycoursescatsubmenu);
         }
@@ -906,7 +906,7 @@ class core_renderer extends \core_renderer {
             if (!empty($alternativethemes)) {
                 $branchtitle = get_string('themecolors', 'theme_essential');
                 $branchlabel = $this->getfontawesomemarkup('th-large'). $branchtitle;
-                $branchurl = new moodle_url('#');
+                $branchurl = $this->page->url;
                 $branchsort = 300;
                 $branch = $colourmenu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 
@@ -943,7 +943,7 @@ class core_renderer extends \core_renderer {
                 $activitystreammenu = new custom_menu();
                 $branchtitle = get_string('thiscourse', 'theme_essential');
                 $branchlabel = $this->getfontawesomemarkup('book').$branchtitle;
-                $branchurl = new moodle_url('#');
+                $branchurl = $this->page->url;
                 $branch = $activitystreammenu->add($branchlabel, $branchurl, $branchtitle, 10002);
                 $branchtitle = get_string('people', 'theme_essential');
                 $branchlabel = $this->getfontawesomemarkup('users').$branchtitle;
@@ -1410,7 +1410,7 @@ class core_renderer extends \core_renderer {
                 $usermenu .= html_writer::link($loginurl, $userpic, array('class' => 'loginurl'));
             }
         } else if (isguestuser()) {
-            $userurl = new moodle_url('#');
+            $userurl = $this->page->url;
             $userpic = parent::user_picture($USER, array('link' => false, 'size' => 64));
             $caret = $this->getfontawesomemarkup('caret-right');
             $userclass = array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown');
@@ -1436,7 +1436,7 @@ class core_renderer extends \core_renderer {
             $context = context_course::instance($course->id);
 
             // Output Profile link.
-            $userurl = new moodle_url('#');
+            $userurl = $this->page->url;
             $userpic = parent::user_picture($USER, array('link' => false, 'size' => 64));
             $caret = $this->getfontawesomemarkup('caret-right');
             $userclass = array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown');
@@ -1633,7 +1633,7 @@ class core_renderer extends \core_renderer {
         global $USER, $CFG;
         $label = '<em>'.$this->getfontawesomemarkup('cog').get_string('preferences').'</em>';
         $preferences = html_writer::start_tag('li', array('class' => 'dropdown-submenu preferences'));
-        $preferences .= html_writer::link(new moodle_url('#'), $label,
+        $preferences .= html_writer::link($this->page->url, $label,
             array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown'));
         $preferences .= html_writer::start_tag('ul', array('class' => 'dropdown-menu'));
 
@@ -2398,9 +2398,9 @@ class core_renderer extends \core_renderer {
         global $CFG;
         $result = '';
 
-        if (($CFG->version < 2016052300.00) || ($CFG->version >= 2016111400.00)) {
+        if (($CFG->version < 2016120500.00) || ($CFG->version >= 2016122200.00)) {
             $result = '<div class="useralerts alert alert-error">';
-            $result .= '<a class="close" data-dismiss="alert" href="#">'.$this->getfontawesomemarkup('times-circle').'</a>';
+            $result .= '<a class="close" data-dismiss="alert" href="'.$this->page->url.'">'.$this->getfontawesomemarkup('times-circle').'</a>';
             $result .= $this->getfontawesomemarkup('stack', array(), array(), $this->getfontawesomemarkup('square',
                 array('fa-stack-2x')).$this->getfontawesomemarkup('warning', array('fa-stack-1x', 'fa-inverse')));
             $result .= '<span class="title">'.get_string('versionalerttitle', 'theme_essential').'</span><br />'.

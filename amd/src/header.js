@@ -17,12 +17,12 @@ define(['jquery', 'core/log'], function($, log) {
     return {
         init: function() {
             $(document).ready(function($) {
-                if (($('#page-header .titlearea').length) && ($('#essentialicons').length)) {
-                    var titlearea = $('#page-header .titlearea');
-                    $('#essentialicons').on('hide', function() {
+                if (($("#page-header .titlearea").length) && ($("#essentialicons").length)) {
+                    var titlearea = $("#page-header .titlearea");
+                    $("#essentialicons").on('hide', function() {
                         titlearea.fadeIn();
                     });
-                    $('#essentialicons').on('show', function() {
+                    $("#essentialicons").on('show', function() {
                         titlearea.fadeOut();
                     });
                 }

@@ -16,11 +16,11 @@ define(['jquery', 'core/log'], function($, log) {
     return {
         init: function(data) {
             $(document).ready(function($) {
-                if ($('#essentialnavbar').length) {
+                if ($("#essentialnavbar").length) {
                     if (data.oldnavbar) {
-                        $('#page-header').css('margin-bottom', $('#essentialnavbar .navbar-inner').height() + 'px');
+                        $("#page-header").css('margin-bottom', $("#essentialnavbar .navbar-inner").height() + 'px');
                     } else {
-                        $('#page-header').css('margin-top', $('#essentialnavbar .navbar-inner').height() + 'px');
+                        $("#page-header").css('margin-top', $("#essentialnavbar .navbar-inner").height() + 'px');
                     }
                 }
             });

@@ -107,7 +107,7 @@ define(['jquery', 'core/log'], function($, log) {
     return {
         init: function() {
             $(document).ready(function($) {
-                $('#page').fitVids();
+                $("#page").fitVids();
             });
             log.debug('Essential fitvids AMD init');
         }

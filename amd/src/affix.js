@@ -17,9 +17,9 @@ define(['jquery', 'theme_bootstrapbase/bootstrap', 'core/log'], function($, boot
     return {
         init: function() {
             $(document).ready(function($) {
-                if ($('#essentialnavbar').length) {
-                    var $essentialnavbar = $('#essentialnavbar');
-                    var pageheaderHeight = $('#page-header').height();
+                if ($("#essentialnavbar").length) {
+                    var $essentialnavbar = $("#essentialnavbar");
+                    var pageheaderHeight = $("#page-header").height();
                     log.debug('Essential affix AMD pageheaderHeight: ' + pageheaderHeight);
                     $essentialnavbar.affix({
                         offset: {
