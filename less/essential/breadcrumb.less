@@ -28,13 +28,6 @@
         float: right;
     }
 }
-
-
-.dir-rtl .breadcrumb-button {
-    .singlebutton, a {
-        float: left;
-    }
-}
 /* @end */
 
 /* @group Breadcrumb */
@@ -184,7 +177,7 @@
     /* @end */
 }
 
-.dir-ltr .breadcrumb-nav {
+.breadcrumb-nav {
     ul.breadcrumb.style1 {
         float: left;
         margin-right: -@baseBorderRadius;
@@ -245,6 +238,10 @@
             }
         }
         li:after {
+            /*rtl:raw:
+            content: "\f137";
+            */
+            /*rtl:remove*/
             content: "\f138";
         }
         li:last-child:after {
@@ -270,90 +267,5 @@
     /* @end */
 }
 
-.dir-rtl .breadcrumb-nav {
-    ul.breadcrumb.style1 {
-        float: right;
-        margin-right: -@baseBorderRadius;
-        li {
-            padding: 0 20px 0 0;
-            float: right;
-            a {
-                padding-left: 3px;
-            }
-            span {
-                margin-left: 4px;
-            }
-        }
-        li:after {
-            right: 100%;
-            border-right-width: 14px;
-            border-right-style: solid;
-        }
-        li:before {
-            right: 100%;
-            border-right-width: 14px;
-            border-right-style: solid;
-            margin-right: 1px;
-        }
-        li:first-of-type {
-            padding-right: 34px;
-            border-top-right-radius: @baseBorderRadius;
-            border-bottom-right-radius: @baseBorderRadius;
-            a {
-                margin-right: -25px;
-            }
-            a:before {
-                margin-left: 5px;
-            }
-        }
-        .last,
-        li:last-of-type {
-            padding-left: 10px;
-            border-top-left-radius: @baseBorderRadius;
-            border-bottom-left-radius: @baseBorderRadius;
-        }
-    }
-    /* @end */
-
-    /* @group Breadcrumb Style Simple */
-    ul.breadcrumb.style2 {
-        li {
-            float: right;
-            a {
-                margin-left: 3px;
-            }
-        }
-        li:first-of-type {
-            border-top-right-radius: 4px;
-            border-bottom-right-radius: 4px;
-            a {
-                padding-right: 5px;
-            }
-        }
-        li:after {
-            content: "\f137";
-        }
-        li:last-child:after {
-            content: "";
-            padding-left: 5px;
-        }
-        li:last-of-type {
-            border-top-left-radius: 4px;
-            border-bottom-left-radius: 4px;
-        }
-    }
-
-    /* @end */
-
-    /* @group Breadcrumb Style Thin */
-
-    ul.breadcrumb.style3 {
-        li {
-            float: right;
-        }
-    }
-
-    /* @end */
-}
 
 /* @end */

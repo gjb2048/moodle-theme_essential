@@ -18,6 +18,7 @@
  * Essential is a clean and customizable theme.
  *
  * @package     theme_essential
+ * @copyright   2017 Gareth J Barnard
  * @copyright   2016 Gareth J Barnard
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @copyright   2013 Julian Ridden
@@ -61,7 +62,7 @@ if (!$oldnavbar) {
         <div class="container-fluid">
             <div class="row-fluid">
                 <!-- HEADER: LOGO AREA -->
-                <div class="<?php echo (!$left) ? 'pull-right' : 'pull-left'; ?>">
+                <div class="pull-left">
 <?php
 if (!$haslogo) {
     $usesiteicon = \theme_essential\toolbox::get_setting('usesiteicon');
@@ -97,7 +98,7 @@ if (!$haslogo) {
 // If true, displays the heading and available social links; displays nothing if false.
 if ($hassocialnetworks) {
 ?>
-                        <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>" id="socialnetworks">
+                        <div class="pull-right" id="socialnetworks">
                             <p id="socialheading"><?php echo get_string('socialnetworks', 'theme_essential') ?></p>
                             <ul class="socials unstyled">
                                 <?php
@@ -119,7 +120,7 @@ if ($hassocialnetworks) {
 }
                     // If true, displays the heading and available social links; displays nothing if false.
 if ($hasmobileapps) { ?>
-                        <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>" id="mobileapps">
+                        <div class="pull-right" id="mobileapps">
                             <p id="socialheading"><?php echo get_string('mobileappsheading', 'theme_essential') ?></p>
                             <ul class="socials unstyled">
                                 <?php

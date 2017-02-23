@@ -89,6 +89,8 @@ Ute Hlasek, https://hlasek-it.de/moodle
 
 Essential for Moodle 3.2 kindly sponsored by
 --------------------------------------------
+If you are a valued sponsor and have not already told me, please could you state if you would like a credit here and if so what
+would you like.  Please contact via my 'Moodle profile' above.
 
 Customisation
 =============

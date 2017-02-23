@@ -18,21 +18,15 @@
 }
 
 #page-site-index h2.headingblock:before {
+    content: "\f0b1";
     display: block;
+    float: left;
     font-family: FontAwesome;
     font-size: .85em;
     height: 1.3em;
+    margin-right: .2em;
     text-align: center;
     width: 1.5em;
-    content: "\f0b1";
-}
-.dir-ltr#page-site-index h2.headingblock:before {
-    float: left;
-    margin-right: .2em;
-}
-.dir-rtl#page-site-index h2.headingblock:before {
-    float: right;
-    margin-left: .2em;
 }
 
 #page-site-index #site-news-forum h2.headingblock:before {
@@ -76,20 +70,13 @@
     margin-bottom: 0;
 }
 
-.dir-ltr .useralerts [class^="fa-stack"] {
+.useralerts [class^="fa-stack"] {
     margin-right: 5px;
 }
-.dir-rtl .useralerts [class^="fa-stack"] {
-    margin-left: 5px;
-}
 
-.dir-ltr .useralerts .title {
+.useralerts .title {
     font-weight: bold;
     margin-right: 10px;
-}
-.dir-rtl .useralerts .title {
-    font-weight: bold;
-    margin-left: 10px;
 }
 
 /* @end */
@@ -97,13 +84,6 @@
 /* @group Back to Top */
 
 .back-to-top {
-    position: fixed;
-    top: 85%;
-    display: none;
-    text-align: center;
-    font: 9px;
-    text-transform: uppercase;
-    text-decoration: none;
     -webkit-transition: all .3s ease 0s;
     -moz-transition: all .3s ease 0s;
     -o-transition: all .3s ease 0s;
@@ -112,8 +92,16 @@
     -webkit-box-shadow: 0 0 1px @white;
     -moz-box-shadow: 0 0 1px @white;
     box-shadow: 0 0 1px @white;
-    padding: 5px 12px;
     color: @white;
+    display: none;
+    font: 9px;
+    padding: 5px 12px;
+    position: fixed;
+    right: 15px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    top: 85%;
     [class^="icon-"] {
         font-size: 3em;
     }
@@ -125,12 +113,6 @@
         color: @white !important;
     }
 }
-.dir-ltr .back-to-top {
-    right: 15px;
-}
-.dir-rtl .back-to-top {
-    left: 15px;
-}
 /* @end */
 
 /* @group Marketing Spots */
@@ -138,18 +120,18 @@
 #marketing-spots {
     overflow: hidden;
     .marketing-spot {
-        padding: 0px 0px;
+        background: @white;
         border-radius: 5px;
         border: 1px solid @grayBright;
-        background: @white;
+        padding: 0;
         .title {
-            padding: 3px 0 8px;
-            margin: 3px 8px 4px;
             border-bottom: 1px solid @grayBright;
+            padding: 3px 0 8px;
             text-transform: uppercase;
         }
         .@{fa-css-prefix} {
             font-size: 1.2em;
+            margin-right: 8px;
             margin-top: 3px;
         }
         .marketing-image-container {
@@ -159,7 +141,6 @@
                 background-size: contain !important;
                 background-position: center top !important;
                 width: 100%;
-                //margin-bottom: 5px;
             }
         }
         .content {
@@ -169,49 +150,35 @@
                 padding-bottom: 32px;
             }
         }
+        .content, .title {
+            margin: 3px 8px 4px;
+        }
         .marketing-buttons {
-            position: absolute;
             bottom: 2px;
+            position: absolute;
+            right: 2px;
             a.marketing-button {
-                display: inline-block;
-                padding: 4px 12px;
-                margin-left: 2px;
-                margin-right: 2px;
-                font-size: 14px;
-                line-height: 20px;
-                vertical-align: middle;
-                cursor: pointer;
                 border-radius: 3px;
                 border: 1px solid #d3d3d3;
+                cursor: pointer;
+                display: inline-block;
+                font-size: 14px;
+                line-height: 20px;
+                margin-left: 2px;
+                margin-right: 2px;
+                padding: 4px 12px;
+                vertical-align: middle;
                 &.responsive {
                     display: none;
                 }
             }
         }
     }
-}
-
-.dir-ltr #marketing-spots {
-    .marketing-spot {
-        .@{fa-css-prefix} {
-            margin-right: 8px;
-        }
-        .marketing-buttons {
-            right: 2px;
-        }
+    > div {
+        display: flex;
     }
 }
 
-.dir-rtl #marketing-spots {
-    .marketing-spot {
-        .@{fa-css-prefix} {
-            margin-left: 8px;
-        }
-        .marketing-buttons {
-            left: 2px;
-        }
-    }
-}
 /* @end */
 
 /* @end */

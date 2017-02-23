@@ -191,7 +191,7 @@ class core_renderer extends \core_renderer {
         $footer = str_replace($this->unique_end_html_token, $this->page->requires->get_end_code(), $footer);
         $this->page->set_state(moodle_page::STATE_DONE);
         $info = '<!-- Essential theme version: '.$this->page->theme->settings->version.
-            ', developed, enhanced and maintained by Gareth J Barnard: about.me/gjbarnard -->';
+            'is developed by Gareth J Barnard: about.me/gjbarnard -->';
 
         return $output . $footer . $info;
     }
@@ -214,21 +214,13 @@ class core_renderer extends \core_renderer {
             if (!$called) {
                 $markup = html_writer::start_tag('div', array('class' => 'row-fluid'));
 
-                if ($this->left) {
-                    $markup .= html_writer::start_tag('div', array('class' => 'span8'));
-                    $markup .= $heading;
-                    $markup .= html_writer::end_tag('div');
-                }
+                $markup .= html_writer::start_tag('div', array('class' => 'span8'));
+                $markup .= $heading;
+                $markup .= html_writer::end_tag('div');
 
                 $markup .= html_writer::start_tag('div', array('class' => 'span4 heading-rts'));
                 $markup .= $this->return_to_section();
                 $markup .= html_writer::end_tag('div');
-
-                if (!$this->left) {
-                    $markup .= html_writer::start_tag('div', array('class' => 'span8'));
-                    $markup .= $heading;
-                    $markup .= html_writer::end_tag('div');
-                }
 
                 $markup .= html_writer::end_tag('div');
                 $called = true;
@@ -1417,10 +1409,7 @@ class core_renderer extends \core_renderer {
             $usermenu .= html_writer::link($userurl, $userpic.get_string('guest').$caret, $userclass);
 
             // Render direct login link.
-            $classes = 'dropdown-menu';
-            if ($this->left) {
-                $classes .= ' pull-right';
-            }
+            $classes = 'dropdown-menu pull-right';
             $usermenu .= html_writer::start_tag('ul', array('class' => $classes));
             $branchlabel = '<em>'.$this->getfontawesomemarkup('sign-in').get_string('login').'</em>';
             $branchurl = new moodle_url('/login/index.php');
@@ -1448,10 +1437,7 @@ class core_renderer extends \core_renderer {
             }
 
             // Start dropdown menu items.
-            $classes = 'dropdown-menu';
-            if ($this->left) {
-                $classes .= ' pull-right';
-            }
+            $classes = 'dropdown-menu pull-right';
             $usermenu .= html_writer::start_tag('ul', array('class' => $classes));
 
             if (\core\session\manager::is_loggedinas()) {
@@ -1730,14 +1716,13 @@ class core_renderer extends \core_renderer {
             'docs' => 'question-circle',
             'generate' => 'gift',
             'help' => 'question-circle-o',
-            'i/marker' => 'lightbulb-o',
+            'i/backup' => 'cloud-download',
+            'i/badge' => 'trophy',
+            'i/checkpermissions' => 'user',
+            'i/cohort' => 'users',
+            'i/competencies' => 'wifi fa-flip-vertical',
             'i/delete' => 'times-circle',
             'i/dragdrop' => 'arrows',
-            'i/loading' => 'refresh fa-spin fa-2x',
-            'i/loading_small' => 'refresh fa-spin',
-            'i/backup' => 'cloud-download',
-            'i/checkpermissions' => 'user',
-            'i/competencies' => 'wifi fa-flip-vertical',
             'i/edit' => 'pencil',
             'i/enrolusers' => 'user-plus',
             'i/filter' => 'filter',
@@ -1748,6 +1733,9 @@ class core_renderer extends \core_renderer {
             'i/groups' => 'user-secret',
             'i/hide' => 'eye',
             'i/import' => 'upload',
+            'i/loading' => 'refresh fa-spin fa-2x',
+            'i/loading_small' => 'refresh fa-spin',
+            'i/marker' => 'lightbulb-o',
             'i/move_2d' => 'arrows',
             'i/navigationitem' => 'file',
             'i/outcomes' => 'magic',
@@ -1758,16 +1746,12 @@ class core_renderer extends \core_renderer {
             'i/restore' => 'cloud-upload',
             'i/return' => 'repeat',
             'i/roles' => 'user',
-            'i/cohort' => 'users',
             'i/scales' => 'signal',
             'i/settings' => 'cogs',
             'i/show' => 'eye-slash',
             'i/switchrole' => 'random',
             'i/user' => 'user',
             'i/users' => 'user',
-            't/right' => 'arrow-right',
-            't/left' => 'arrow-left',
-            't/edit_menu' => 'cogs',
             'i/withsubcat' => 'indent',
             'i/permissions' => 'key',
             'i/assignroles' => 'lock',
@@ -1779,9 +1763,12 @@ class core_renderer extends \core_renderer {
             't/down' => 'arrow-down',
             't/edit' => 'cog',
             't/editstring' => 'pencil-square-o',
+            't/edit_menu' => 'cogs',
             't/grades' => 'th-list',
             't/hide' => 'eye',
+            't/left' => 'arrow-left',
             't/preview' => 'search',
+            't/right' => 'arrow-right',
             't/show' => 'eye-slash',
             't/sort' => 'sort',
             't/sort_asc' => 'sort-asc',
@@ -2116,19 +2103,6 @@ class core_renderer extends \core_renderer {
                 html_writer::tag('div', '', array('class' => 'block_action')).$title.$controlshtml, array('class' => 'title')),
                 array('class' => 'header'));
         }
-        return $output;
-    }
-
-    public function standard_footer_html() {
-        $output = parent::standard_footer_html();
-        $output .= html_writer::start_tag('div', array ('class' => 'themecredit')).
-            get_string('credit', 'theme_essential',
-            array('name' => html_writer::link('https://moodle.org/plugins/theme_essential', 'Essential', array(
-                'target' => '_blank',
-                'title' => get_string('download', 'theme_essential'))))).
-            html_writer::link('//about.me/gjbarnard', 'Gareth J Barnard', array(
-                'target' => '_blank', 'title' => get_string('aboutme', 'theme_essential'))).html_writer::end_tag('div');
-
         return $output;
     }
 

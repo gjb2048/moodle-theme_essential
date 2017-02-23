@@ -63,22 +63,18 @@ a.action-icon,
     }
 
     > a:before {
-        font-family: 'FontAwesome';
         content: "\f067";
+        font-family: 'FontAwesome';
     }
 
     > a:hover:before {
         text-decoration: none;
     }
 }
-.dir-ltr .section-modchooser-link {
+
+.section-modchooser-link {
     > a:before {
         margin-right: 3px;
-    }
-}
-.dir-rtl .section-modchooser-link {
-    > a:before {
-        margin-left: 3px;
     }
 }
 
@@ -88,54 +84,31 @@ a.action-icon,
     }
 
     &:before {
+        content: "\f040";
         font-family: 'FontAwesome';
-        content: "\f040 ";
-    }
-}
-.dir-ltr .editing_title {
-    &:before {
         margin-right: 5px;
-    }
-}
-.dir-rtl .editing_title {
-    &:before {
-        margin-left: 5px;
     }
 }
 
 .moodle-core-dragdrop-draghandle:before {
-    font-family: 'FontAwesome';
     content: "\f047";
     cursor: move;
-}
-.dir-ltr .moodle-core-dragdrop-draghandle:before {
+    font-family: 'FontAwesome';
     margin-right: 5px;
-}
-.dir-rtl .moodle-core-dragdrop-draghandle:before {
-    margin-left: 5px;
 }
 
 .course-content .section .moodle-core-dragdrop-draghandle {
     &:before {
-        font-family: 'FontAwesome';
         content: "\f07d";
+        cursor: n-resize;
+        font-family: 'FontAwesome';
         font-size: 1.4em;
+        margin-right: 0;
         padding-left: 5px;
         padding-right: 5px;
-        cursor: n-resize;
     }
     img {
         display: none;
-    }
-}
-.dir-ltr .course-content .section .moodle-core-dragdrop-draghandle {
-    &:before {
-        margin-right: 0;
-    }
-}
-.dir-rtl .course-content .section .moodle-core-dragdrop-draghandle {
-    &:before {
-        margin-left: 0;
     }
 }
 
@@ -150,18 +123,11 @@ a.action-icon,
     }
 }
 
-.dir-ltr .moodle-actionmenu.show[data-enhanced] .menu a {
+.moodle-actionmenu.show[data-enhanced] .menu a {
     padding-left: 0.35em;
     padding-right: 0.35em;
     .@{fa-css-prefix} {
         margin-right: 5px;
-    }
-}
-.dir-rtl .moodle-actionmenu.show[data-enhanced] .menu a {
-    padding-left: 0.35em;
-    padding-right: 0.35em;
-    .@{fa-css-prefix} {
-        margin-left: 5px;
     }
 }
 

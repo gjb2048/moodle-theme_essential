@@ -22,15 +22,8 @@ body#page-admin-setting-messageinbound_mailsettings fieldset select {
     }
 }
 
-.dir-ltr {
-    .form-item .form-label, .mform .fitem div.fitemtitle {
-        text-align: right;
-    }
-}
-.dir-rtl {
-    .form-item .form-label, .mform .fitem div.fitemtitle {
-        text-align: left;
-    }
+.form-item .form-label, .mform .fitem div.fitemtitle {
+    text-align: right;
 }
 
 @media (max-width: 767px) {
@@ -89,17 +82,6 @@ body#page-admin-setting-messageinbound_mailsettings fieldset select {
                 margin-left: auto;
                 margin-right: auto;
             }
-            //#id_previous,
-            //#id_cancel {
-            //margin-left: 0px;
-            //float: left;
-            //}
-            //#id_next,
-            //#id_submitbutton,
-            //#id_submitbutton2 {
-            //float: right;
-            //margin-right: 0px;
-            //}
             > .fgroup {
                 margin: 0px;
                 padding-top: 15px;
@@ -169,12 +151,7 @@ body {
 
 .mform fieldset.collapsible legend a.fheader {
     background-repeat: no-repeat;
-}
-.dir-ltr .mform fieldset.collapsible legend a.fheader {
     margin-left: 0;
-}
-.dir-rtl .mform fieldset.collapsible legend a.fheader {
-    margin-right: 0;
 }
 
 .mform fieldset {
@@ -186,22 +163,11 @@ body {
 // Checkbox labels. Bootstrap puts the associated checkbox inside the label.
 // Moodle puts it beside the label, so we need to make it inline-block
 // to keep it on the same horizontal level.
-.dir-ltr {
-    input[type="radio"],
-    input[type="checkbox"] {
-        margin-right: auto;
-        + label {
-            padding-right: 0.4em;        
-        }
-    }
-}
-.dir-rtl {
-    input[type="radio"],
-    input[type="checkbox"] {
-        margin-left: auto;
-        + label {
-            padding-left: 0.4em;        
-        }
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: auto;
+    + label {
+        padding-right: 0.4em;        
     }
 }
 
@@ -211,11 +177,8 @@ body {
     }
 }
 
-.dir-ltr .form-item .form-setting .form-colourpicker.defaultsnext {
+.form-item .form-setting .form-colourpicker.defaultsnext {
     margin-right: 0;
-}
-.dir-rtl .form-item .form-setting .form-colourpicker.defaultsnext {
-    margin-left: 0;
 }
 
 .availability-dialogue {
@@ -224,14 +187,9 @@ body {
         margin-right: 0;
     }
 }
-.dir-ltr .availability-dialogue {
+.availability-dialogue {
     ul button {
         margin-right: 1em;
-    }
-}
-.dir-rtl .availability-dialogue {
-    ul button {
-        margin-left: 1em;
     }
 }
 

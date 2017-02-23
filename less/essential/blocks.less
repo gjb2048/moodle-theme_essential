@@ -28,9 +28,6 @@
     li.item_with_icon > p img {
         position: static !important;
     }
-}
-
-.dir-ltr .block {
     .icon {
         margin-right: 5px;
     }
@@ -41,20 +38,6 @@
     }
     li.item_with_icon > p img {
         margin-right: 5px;
-    }
-}
-
-.dir-rtl .block {
-    .icon {
-        margin-left: 5px;
-    }
-    .moodle-core-dragdrop-draghandle {
-        &:before {
-            margin-left: 5px;
-        }
-    }
-    li.item_with_icon > p img {
-        margin-left: 5px;
     }
 }
 
@@ -172,6 +155,10 @@ p.tree_item.leaf a {
 
     &:before {
         font-family: FontAwesome;
+        margin-right: 5px;
+    }
+    &.emptybranch:before {
+        margin-right: 5px;
     }
     &[aria-expanded="false"]:before {
         content: "\f07b";
@@ -187,32 +174,6 @@ p.tree_item.leaf a {
     }
 }
 
-.dir-ltr .tree_item.branch:before {
-    margin-right: 5px;
-}
-
-.dir-rtl .tree_item.branch:before {
-    margin-left: 5px;
-}
-
-.dir-ltr .tree_item.branch {
-    &:before {
-        margin-right: 5px;
-    }
-    &.emptybranch:before {
-        margin-right: 5px;
-    }
-}
-
-.dir-rtl .tree_item.branch {
-    &:before {
-        margin-left: 5px;
-    }
-    &.emptybranch:before {
-        margin-left: 5px;
-    }
-}
-
 .block_navigation.block {
     li.type_user > .tree_item.branch:before {
         content: "\f007";
@@ -224,29 +185,18 @@ p.tree_item.leaf a {
 }
 
 .block_navigation.block .block_tree .tree_item {
+    &.branch {
+        padding-left: 0;
+    }
     &.hasicon .item-content-wrap {
         display: inline !important;
     }
 }
 
-.dir-ltr .block_navigation.block .block_tree .tree_item {
-    &.branch {
-        padding-left: 0;
-    }
-}
-
-.dir-rtl .block_navigation.block .block_tree .tree_item {
-    &.branch {
-        padding-right: 0;
-    }
-}
-
-.dir-ltr.jsenabled .block_settings .block_tree .tree_item {
+.jsenabled .block_settings .block_tree .tree_item {
     padding-left: 0 !important;
 }
-.dir-rtl.jsenabled .block_settings .block_tree .tree_item {
-    padding-right: 0 !important;
-}
+
 .jsenabled .block_settings .block_tree .tree_item.branch.loadingbranch:before {
     font-family: FontAwesome;
     content: "\f110";
@@ -310,37 +260,18 @@ p.tree_item.leaf a {
     margin: 10px 0 10px 0;
 
     h4 {
-        padding-bottom: 8px;
-        margin-bottom: 8px;
         border-bottom: 1px solid #ccc;
-        margin-top: 0;
         color: #ff6666;
-    }
-
-    .block {
-        width: 250px;
-    }
-}
-
-.dir-ltr .hidden-blocks {
-    h4 {
+        margin-bottom: 8px;
+        margin-top: 0;
+        padding-bottom: 8px;
         text-align: left;
     }
 
     .block {
         float: right;
         margin-left: 10px;
-    }
-}
-
-.dir-rtl .hidden-blocks {
-    h4 {
-        text-align: right;
-    }
-
-    .block {
-        float: left;
-        margin-right: 10px;
+        width: 250px;
     }
 }
 
@@ -356,58 +287,27 @@ p.tree_item.leaf a {
 
 .block .header .title {
     border-bottom: 1px solid #EEE;
+    padding-left: 0;
     h2 {
         display: inline;
     }
 
     > .@{fa-css-prefix} {
-        font-size: 1.65em;
         display: inline;
-    }
-}
-
-.dir-ltr .block .header .title {
-    padding-left: 0;
-
-    > .@{fa-css-prefix} {
+        font-size: 1.65em;
         margin-right: .3em;
-    }
-}
-
-.dir-rtl .block .header .title {
-    padding-right: 0;
-
-    > .@{fa-css-prefix} {
-        margin-left: .3em;
-        float: right;
     }
 }
 
 .block_iconic_html .header .title h2:before {
     content: none;
-}
-.dir-ltr .block_iconic_html .header .title h2:before {
     padding-right: 0;
 }
-.dir-rtl .block_iconic_html .header .title h2:before {
-    padding-left: 0;
-}
 .block.block_iconic_html .header .title h2 .@{fa-css-prefix} {
-    &:before {
-        font-size: 1.65em;
-    }
-}
-
-.dir-ltr .block.block_iconic_html .header .title h2 .@{fa-css-prefix} {
     padding-right: 0 !important;
     &:before {
+        font-size: 1.65em;
         margin-right: .3em;
-    }
-}
-.dir-rtl .block.block_iconic_html .header .title h2 .@{fa-css-prefix} {
-    padding-left: 0 !important;
-    &:before {
-        margin-left: .3em;
     }
 }
 
@@ -418,11 +318,8 @@ p.tree_item.leaf a {
     margin-bottom: 0;
 }
 
-.dir-ltr .block_quiz_results {
+.block_quiz_results {
     text-align: left;
-}
-.dir-rtl .block_quiz_results {
-    text-align: right;
 }
 
 .block_rss_client {
@@ -459,11 +356,6 @@ p.tree_item.leaf a {
         }
     }
 }
-.dir-rtl .block_rss_client {
-    .footer {
-        text-align: left;
-    }
-}
 
 /* @group Calendar Block */
 .block .minicalendar {
@@ -488,14 +380,6 @@ p.tree_item.leaf a {
         }
     }
 }
-.dir-rtl .block_myprofile {
-    .content {
-        img.profilepicture {
-            float: right;
-        }
-    }
-}
-
 /* @end */
 
 /* @group Login Block */
@@ -556,26 +440,12 @@ p.tree_item.leaf a {
     .username label:before {
         content: "\f007";
         font-family: FontAwesome;
+        margin-right: 5px;
     }
     .password label:before {
         content: "\f084";
         font-family: FontAwesome;
-    }
-}
-.dir-ltr .block_login {
-    .username label:before {
         margin-right: 5px;
-    }
-    .password label:before {
-        margin-right: 5px;
-    }
-}
-.dir-rtl .block_login {
-    .username label:before {
-        margin-left: 5px;
-    }
-    .password label:before {
-        margin-left: 5px;
     }
 }
 /* @end */
@@ -590,42 +460,26 @@ p.tree_item.leaf a {
 aside.rowblock-edit .block {
     .rowblock-fluid-span(6, @fluidGridColumnWidth, @fluidGridGutterWidth);
     display: block;
-    min-height: 240px;
-    max-height: 240px;
-    overflow-y: auto;
-    .box-sizing(border-box);
-}
-.dir-ltr aside.rowblock-edit .block {
     float: left;
     margin-left: @fluidGridGutterWidth;
-}
-.dir-rtl aside.rowblock-edit .block {
-    float: right;
-    margin-right: @fluidGridGutterWidth;
+    max-height: 240px;
+    min-height: 240px;
+    overflow-y: auto;
+    .box-sizing(border-box);
 }
 
 // MDL-44074.
 @media (min-width: 768px) and (max-width: 979px) {
     aside.rowblock-edit .block {
         .rowblock-fluid-span(6, @fluidGridColumnWidth768, @fluidGridGutterWidth768);
-    }
-    .dir-ltr aside.rowblock-edit .block {
         margin-left: @fluidGridGutterWidth768;
-    }
-    .dir-rtl aside.rowblock-edit .block {
-        margin-right: @fluidGridGutterWidth768;
     }
 }
 
 @media (min-width: 1200px) {
     aside.rowblock-edit .block {
         .rowblock-fluid-span(6, @fluidGridColumnWidth1200, @fluidGridGutterWidth1200);
-    }
-    .dir-ltr aside.rowblock-edit .block {
         margin-left: @fluidGridGutterWidth1200;
-    }
-    .dir-rtl aside.rowblock-edit .block {
-        margin-right: @fluidGridGutterWidth1200;
     }
 }
 
@@ -634,7 +488,7 @@ aside.rowblock-edit .block {
         display: flex;
         // Eliminates need for 'desktop-first-column' but does not work in IE8.
         // Info on: http://www.w3schools.com/cssref/sel_first-of-type.asp
-        .dir-ltr & div.block:first-of-type, .dir-rtl & div.block:last-of-type {
+        div.block:first-of-type {
             margin-left: 0;
         }
     }
@@ -642,11 +496,8 @@ aside.rowblock-edit .block {
 
 // Support multiple rows when editing otherwise above works, see: http://www.w3schools.com/cssref/sel_nth-of-type.asp
 .rowblock-nth(@index) {
-    .dir-ltr aside.rowblock-edit div.block:nth-of-type(@{index}) {
+    aside.rowblock-edit div.block:nth-of-type(@{index}) {
         margin-left: 0;
-    }
-    .dir-rtl aside.rowblock-edit div.block:nth-of-type(@{index}) {
-        margin-right: 0;
     }
 }
 
@@ -657,9 +508,6 @@ aside.rowblock-edit .block {
 
 .rowblock-nthX(37); // Ten rows.
 
-.dir-rtl aside.footer-blocks .block {
-    float: right;
-}
 /* @end */
 
 /* @end */

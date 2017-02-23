@@ -11,10 +11,10 @@
     }
 
     html, body {
-        margin: 0;
-        padding: 0;
         background-color: transparent;
         color: #000;
+        margin: 0;
+        padding: 0;
         text-shadow: none;
     }
 
@@ -38,8 +38,8 @@
     }
 
     #page-content-wrapper {
-        width: auto;
         min-width: auto;
+        width: auto;
     }
 
     #block-region-side-post,
@@ -47,46 +47,25 @@
         width: 0;
     }
 
-    .dir-ltr.side-post-only #page-content #region-main-box {
+    .side-post-only #page-content #region-main-box {
         left: 0;
     }
-    .dir-rtl.side-post-only #page-content #region-main-box {
-        right: 0;
-    }
 
-    .dir-ltr.side-post-only #page-content #region-post-box {
+    .side-post-only #page-content #region-post-box {
         margin-left: 0 !important;
     }
-    .dir-rtl.side-post-only #page-content #region-post-box {
-        margin-right: 0 !important;
-    }
 
-    .dir-ltr {
-        &.side-post-only #page-content #region-main,
-        &.side-post-only #page-content #main-and-pre {
-            margin-left: 0 !important;
-        }
-    }
-    .dir-rtl {
-        &.side-post-only #page-content #region-main,
-        &.side-post-only #page-content #main-and-pre {
-            margin-right: 0 !important;
-        }
+    &.side-post-only #page-content #region-main,
+    &.side-post-only #page-content #main-and-pre {
+        margin-left: 0 !important;
     }
 
     #main-and-pre.span9, #region-main.span8 {
         width: 100%;
     }
 
-    .dir-ltr {
-        [class*="span"].pull-right, .row-fluid [class*="span"].pull-right {
-            float: left;
-        }
-    }
-    .dir-rtl {
-        [class*="span"].pull-right, .row-fluid [class*="span"].pull-right {
-            float: right;
-        }
+    [class*="span"].pull-right, .row-fluid [class*="span"].pull-right {
+        float: left;
     }
 
     #page #region-main .region-content {
@@ -100,18 +79,18 @@
     }
 
     #page .navbar {
-        margin: 0 0;
-        padding: 1em 0px;
         background: @white;
         color: #000;
-        text-shadow: none;
         font-size: 1em;
+        margin: 0 0;
+        padding: 1em 0px;
+        text-shadow: none;
     }
 
     #page .navbar a {
         color: #000;
-        text-shadow: none;
         font-size: 1em;
+        text-shadow: none;
     }
 
     .navbar .sep {

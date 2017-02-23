@@ -18,6 +18,7 @@
  * Essential is a clean and customizable theme.
  *
  * @package     theme_essential
+ * @copyright   2017 Gareth J Barnard
  * @copyright   2016 Gareth J Barnard
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @copyright   2013 Julian Ridden
@@ -31,7 +32,7 @@ defined('MOODLE_INTERNAL') || die;
         <div class="navbar">
             <div class="container-fluid navbar-inner">
                 <div class="row-fluid">
-                    <div class="custommenus pull-<?php echo ($left) ? 'left' : 'right'; ?>">
+                    <div class="custommenus pull-left">
                         <a class="btn btn-navbar" data-toggle="collapse" data-target="#essentialmenus">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -39,7 +40,7 @@ defined('MOODLE_INTERNAL') || die;
                             <span class="icon-bar"></span>
                         </a>
                         <?php echo $OUTPUT->get_title('navbar'); ?>
-                    <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>">
+                    <div class="pull-right">
                         <div class="usermenu navbarrightitem">
                             <?php echo $OUTPUT->custom_menu_user(); ?>
                         </div>
@@ -56,7 +57,7 @@ defined('MOODLE_INTERNAL') || die;
                             <?php echo $OUTPUT->search_box(); ?>
                         </div>
                     </div>
-                        <div id='essentialmenus' class="nav-collapse collapse pull-<?php echo ($left) ? 'left' : 'right'; ?>">
+                        <div id='essentialmenus' class="nav-collapse collapse pull-left">
                             <?php
                             echo $OUTPUT->custom_menu_language();
                             echo $OUTPUT->custom_menu_courses();

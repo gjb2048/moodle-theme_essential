@@ -200,12 +200,6 @@ p.tree_item.branch.emptybranch:focus:before {
 .breadcrumb-nav ul.breadcrumb.style1 li:hover:after a {
   color: [[setting:themecolor]];
 }
-.dir-rtl .breadcrumb-nav ul.breadcrumb.style1 li:after {
-  border-right-color: [[setting:themecolor]];
-}
-.dir-rtl .breadcrumb-nav ul.breadcrumb.style1 li:hover:after {
-  border-right-color: [[setting:themenavcolor]];
-}
 /* @end */
 /* @group Breadcrumb Style Simple */
 ul.breadcrumb.style2 li a {
@@ -936,11 +930,8 @@ body#page-grade-grading-pick #region-main form #fgroup_id_buttonar label {
   height: [[setting:logoheight]];
   width: [[setting:logowidth]];
 }
-.dir-ltr #page-header div.titlearea {
+#page-header div.titlearea {
   border-left: 1px dotted [[setting:themecolor]];
-}
-.dir-rtl #page-header div.titlearea {
-  border-right: 1px dotted [[setting:themecolor]];
 }
 @media (min-width: 980px) {
   #page-header.nologo {
@@ -960,11 +951,8 @@ button.website:focus {
 .socials p {
   color: [[setting:headertextcolor]];
 }
-.dir-ltr #mobileapps {
+#mobileapps {
   border-right: 1px dotted [[setting:themecolor]];
-}
-.dir-rtl #mobileapps {
-  border-left: 1px dotted [[setting:themecolor]];
 }
 /* @end */
 /* @group Navbar */
@@ -1066,12 +1054,19 @@ button.website:focus {
 .navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a:hover .notification img.profilepicture {
   box-shadow: 0 0 3px [[setting:themenavcolor]];
 }
-.navbar-inner .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
+.dropdown-submenu > a:after {
   border-left-color: [[setting:themeiconcolor]];
 }
-.navbar-inner .nav .dropdown-menu .dropdown-submenu:focus .dropdown-toggle:after,
-.navbar-inner .nav .dropdown-menu .dropdown-submenu:hover .dropdown-toggle:after {
+.dropdown-submenu:focus > a:after,
+.dropdown-submenu:hover > a:after {
   border-left-color: [[setting:themenavcolor]];
+}
+.navbar .navbar-inner .usermenu .dropdown .dropdown-submenu > a:after {
+  border-right-color: [[setting:themeiconcolor]];
+}
+.navbar .navbar-inner .usermenu .dropdown .dropdown-submenu:focus > a:after,
+.navbar .navbar-inner .usermenu .dropdown .dropdown-submenu:hover > a:after {
+  border-right-color: [[setting:themenavcolor]];
 }
 @media (max-width: 979px) {
   .navbar .nav-collapse.in .nav .dropdown-submenu .dropdown-toggle:after,
@@ -1097,13 +1092,9 @@ button.website:focus {
   .navbar .nav-collapse.in .nav .dropdown-menu .dropdown-submenu:hover.open > a.dropdown-toggle:after {
     border-top-color: [[setting:themenavcolor]];
   }
-  .dir-ltr .navbar .nav-collapse.in .nav .dropdown-submenu .dropdown-toggle:after,
-  .dir-ltr .navbar .nav-collapse.in .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
+  .navbar .nav-collapse.in .nav .dropdown-submenu .dropdown-toggle:after,
+  .navbar .nav-collapse.in .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
     border-left-color: transparent;
-  }
-  .dir-rtl .navbar .nav-collapse.in .nav .dropdown-submenu .dropdown-toggle:after,
-  .dir-rtl .navbar .nav-collapse.in .nav .dropdown-menu .dropdown-submenu .dropdown-toggle:after {
-    border-right-color: transparent;
   }
 }
 .dropdownmenuscroll div.dropdown-menu > ul,

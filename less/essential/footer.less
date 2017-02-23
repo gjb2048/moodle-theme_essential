@@ -1,17 +1,17 @@
 /* @group Footer */
 
 #page-footer {
-    margin: 0;
-    padding: 0;
     border: 0;
     font-size: 1em;
-    width: 100%;
+    margin: 0;
     padding-top: 10px;
+    padding: 0;
+    width: 100%;
 
     .copy {
         padding-bottom: 5px;
-        width: 100%;
         text-align: center;
+        width: 100%;
     }
     .footerlinks {
         .footnote {
@@ -28,27 +28,19 @@
     }
 
     hr {
-        padding: 0;
         border-bottom: 0 none;
         margin-top: 0;
+        padding: 0;
     }
 
     h4 {
         font-size: 1.2em;
-        padding-bottom: 6px;
         margin-bottom: 4px;
-    }
-
-    .themecredit {
-        font-size: 7pt;
-        text-align: center;
-        a, a:hover {
-            color: inherit;
-        }
+        padding-bottom: 6px;
     }
 }
 
-.dir-ltr #page-footer {
+#page-footer {
     text-align: left;
 
     .copy {
@@ -66,30 +58,11 @@
     }
 }
 
-.dir-rtl #page-footer {
-    text-align: right;
-
-    .copy {
-        float: right;
-    }
-    .footerlinks {
-        .footnote {
-            float: right;
-            margin-right: 0;
-        }
-        .helplink {
-            float: left;
-            padding-left: 20px;
-        }
-    }
-}
 
 #page-footer ul,
 #greyboxright ul {
     list-style-type: none !important;
-    margin: 0;
-    margin-top: 0;
-    margin-bottom: 10px;
+    margin: 0 0 10px;
     li {
         padding: 0;
     }
@@ -112,10 +85,10 @@ body.path-admin-setting #page-footer {
             .title h2:before {
                 background-color: transparent;
                 font-size: 1.2em;
+                font-weight: normal;
                 padding-bottom: 0;
                 margin-bottom: 0;
                 text-transform: none;
-                font-weight: normal;
             }
             .block_action {
                 display: none !important;
@@ -123,20 +96,11 @@ body.path-admin-setting #page-footer {
         }
     }
 }
-.dir-ltr #page-footer {
+#page-footer {
     .block {
         .header {
             .title h2:before {
                 padding-left: 0;
-            }
-        }
-    }
-}
-.dir-rtl #page-footer {
-    .block {
-        .header {
-            .title h2:before {
-                padding-right: 0;
             }
         }
     }
@@ -149,21 +113,9 @@ body.path-admin-setting #page-footer {
 
 #page-footer img.profilepicture,
 #page-footer .myprofileitem.picture {
-    width: 90px;
+    float: left;
     height: 90px;
-}
-
-.dir-ltr {
-    #page-footer img.profilepicture,
-    #page-footer .myprofileitem.picture {
-        float: left;
-    }
-}
-.dir-rtl {
-    #page-footer img.profilepicture,
-    #page-footer .myprofileitem.picture {
-        float: right;
-    }
+    width: 90px;
 }
 
 #page-footer .myprofileitem {
@@ -171,14 +123,9 @@ body.path-admin-setting #page-footer {
         margin-top: 10px;
     }
 }
-.dir-ltr #page-footer .myprofileitem {
+#page-footer .myprofileitem {
     &.picture {
         margin-right: 20px;
-    }
-}
-.dir-rtl #page-footer .myprofileitem {
-    &.picture {
-        margin-left: 20px;
     }
 }
 
@@ -207,21 +154,21 @@ body.path-admin-setting #page-footer {
 
 /* @group Performance Information */
 #page-footer .performanceinfo {
-    padding: 8px;
     border-radius: 6px;
     border-width: 1px;
     border-style: solid;
     margin-top: 5px;
+    padding: 8px;
 
     .span3 {
-        text-align: center;
         margin-top: 10px;
+        text-align: center;
     }
 
     var {
+        border-radius: 5px;
         font-size: 1.2em;
         padding: 5px;
-        border-radius: 5px;
         white-space: nowrap;
     }
 
@@ -231,20 +178,20 @@ body.path-admin-setting #page-footer {
     }
 
     h2 {
-        font-size: 1.4em;
-        line-height: 1.4em;
-        text-transform: uppercase;
-        font-weight: normal;
-        padding-bottom: 5px;
         border-bottom-width: 1px;
         border-bottom-style: solid;
-        margin-top: 5px;
+        font-size: 1.4em;
+        line-height: 1.4em;
+        font-weight: normal;
         margin-bottom: 0;
+        margin-top: 5px;
+        padding-bottom: 5px;
+        text-transform: uppercase;
         &:before {
-            vertical-align: bottom;
+            content: "\f05a";
             font-family: FontAwesome;
             font-size: 1.65em;
-            content: "\f05a";
+            vertical-align: bottom;
         }
     }
 
@@ -256,15 +203,15 @@ body.path-admin-setting #page-footer {
     span.@{fa-css-prefix} {
         color: inherit;
         display: inline;
-        margin-top: 0;
         font-size: 1em;
         font-weight: 100;
+        margin-top: 0;
         &:hover, &:focus {
             color: inherit;
         }
     }
 }
-.dir-ltr #page-footer .performanceinfo {
+#page-footer .performanceinfo {
     h2 {
         &:before {
             margin-right: .3em;
@@ -272,16 +219,6 @@ body.path-admin-setting #page-footer {
     }
     span.@{fa-css-prefix} {
         margin-right: .3em;
-    }
-}
-.dir-rtl #page-footer .performanceinfo {
-    h2 {
-        &:before {
-            margin-left: .3em;
-        }
-    }
-    span.@{fa-css-prefix} {
-        margin-left: .3em;
     }
 }
 /* @end */

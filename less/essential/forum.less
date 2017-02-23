@@ -5,15 +5,10 @@
         display: inline-block;
     }
     img {
-        width: 35px;
         height: 35px;
+        margin-right: 0;
+        width: 35px;
     }
-}
-.dir-ltr .forumheaderlist .picture img {
-    margin-right: 0;
-}
-.dir-rtl .forumheaderlist .picture img {
-    margin-left: 0;
 }
 
 .forumpost,
@@ -29,14 +24,9 @@
     word-break: break-all; /* FireFox */
     word-break: break-word; /* Chrome */
 }
-.dir-ltr .path-mod-forum .forumheaderlist td {
+.path-mod-forum .forumheaderlist td {
     &:last-of-type {
         border-right-width: 1px;
-    }
-}
-.dir-rtl .path-mod-forum .forumheaderlist td {
-    &:last-of-type {
-        border-left-width: 1px;
     }
 }
 
@@ -78,7 +68,7 @@ body {
         margin-bottom: 10px;
     }
 }
-body.dir-ltr {
+body {
     .forumpost {
         .picture img.userpicture {
             margin-right: 3px;
@@ -89,21 +79,6 @@ body.dir-ltr {
             }
             .options .commands {
                 margin-right: 4px;
-            }
-        }
-    }
-}
-body.dir-rtl {
-    .forumpost {
-        .picture img.userpicture {
-            margin-left: 3px;
-        }
-        .row {
-            .content-mask, .options, .topic {
-                margin-right: 84px;
-            }
-            .options .commands {
-                margin-left: 4px;
             }
         }
     }
@@ -133,18 +108,9 @@ body.dir-rtl {
         position: relative;
         width: 100%;
         .helptooltip a {
-            position: absolute;
             bottom: 2px;
-        }
-    }
-    .dir-ltr .forumsearch .invisiblefieldset {
-        .helptooltip a {
             right: 0;
-        }
-    }
-    .dir-rtl .forumsearch .invisiblefieldset {
-        .helptooltip a {
-            left: 0;
+            position: absolute;
         }
     }
 }
@@ -152,6 +118,7 @@ body.dir-rtl {
 @media(max-width: 767px) {
     .forumsearch .invisiblefieldset {
         input[type="text"] {
+            margin-right: 2px;
             width: 310px;
         }
         input[type="submit"] {
@@ -160,16 +127,6 @@ body.dir-rtl {
         }
         .helptooltip a {
             margin-top: 7px;
-        }
-    }
-    .dir-ltr .forumsearch .invisiblefieldset {
-        input[type="text"] {
-            margin-right: 2px;
-        }
-    }
-    .dir-rtl .forumsearch .invisiblefieldset {
-        input[type="text"] {
-            margin-left: 2px;
         }
     }
 }

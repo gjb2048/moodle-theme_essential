@@ -43,14 +43,6 @@ class theme_essential_mod_assign_renderer extends mod_assign_renderer {
         $context->breadcrumb .= '</div>';
         $context->breadcrumb .= '</div>';
 
-        if (right_to_left()) {
-            $context->ltr = false;
-            $context->rtl = true;
-        } else {
-            $context->ltr = true;
-            $context->rtl = false;
-        }
-
         return $this->render_from_template('mod_assign/grading_app', $context);
     }
 }

@@ -80,7 +80,7 @@
     }
 }
 
-.dir-ltr #page-header {
+#page-header {
     .row-fluid [class*="span"] {
         padding-right: 5px;
     }
@@ -109,37 +109,6 @@
         float: left;
         padding-right: 10px;
         margin-right: 10px;
-    }
-}
-.dir-rtl #page-header {
-    .row-fluid [class*="span"] {
-        padding-left: 5px;
-    }
-    .btn-icon {
-        float: left;
-        left: 10px;
-    }
-
-    #essentialicons {
-        button {
-            margin: 0 5px 0 0;
-        }
-    }
-
-    a.logo {
-        float: right;
-        background-position: right center;
-    }
-
-    div.titlearea {
-        margin-right: 80px;
-        padding-right: 10px;
-    }
-
-    #headerlogo {
-        float: right;
-        padding-left: 10px;
-        margin-left: 10px;
     }
 }
 
@@ -176,19 +145,10 @@
 
 /* @group Social Buttons */
 
-.dir-ltr {
-    #socialnetworks,
-    #mobileapps {
-        margin-right: 5px;
-        padding-right: 5px;
-    }
-}
-.dir-rtl {
-    #socialnetworks,
-    #mobileapps {
-        margin-left: 5px;
-        padding-left: 5px;
-    }
+#socialnetworks,
+#mobileapps {
+    margin-right: 5px;
+    padding-right: 5px;
 }
 
 #page-header {
@@ -316,11 +276,8 @@ ul.socials {
 }
 
 @media (min-width: 768px) {
-    .dir-ltr.loggedin #page-header.oldnavbar #essentialicons {
+    .loggedin #page-header.oldnavbar #essentialicons {
         right: 132px;
-    }
-    .dir-rtl.loggedin #page-header.oldnavbar #essentialicons {
-        left: 132px;
     }
 }
 
