@@ -333,7 +333,7 @@ module.exports = function(grunt) { // jshint ignore:line
                 files: [{
                     expand: true,
                     cwd: 'style',
-                    src: ['essential.css', 'bootstrap-pix.css', 'essential-alternative.css', 'editor.css', 'fontawesome.css'], // jshint ignore:line
+                    src: ['bootstrap-pix.css', 'essential-alternative.css', 'editor.css', 'fontawesome.css'], // jshint ignore:line
                     dest: 'style',
                     ext: '.css'
                 }]

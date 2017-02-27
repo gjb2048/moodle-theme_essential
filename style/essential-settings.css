@@ -50,14 +50,14 @@
 /* @end */
 /* @group Autocomplete */
 .ui-autocomplete {
-  background-color: #ffffff;
+  background-color: #fff;
   border-color: [[setting:themecolor]];
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 .ui-autocomplete-loading {
-  background: #ffffff url('[[pix:i/loading_small]]') right center no-repeat;
+  background: white url('[[pix:i/loading_small]]') right center no-repeat;
 }
 .ui-autocomplete .ui-menu-item {
   color: [[setting:themetextcolor]];
@@ -451,17 +451,17 @@ img.profilepicture {
   box-shadow: 0px 0px 3px [[setting:themecolor]];
 }
 .moodle-actionmenu[data-enhanced].show .menu {
-  background-color: #ffffff;
+  background-color: #fff;
 }
 .moodle-actionmenu[data-enhanced].show .menu a {
   color: [[setting:themeurlcolor]];
 }
 .moodle-actionmenu[data-enhanced].show .menu a:hover {
-  color: #ffffff;
+  color: #fff;
   background-color: [[setting:themeurlcolor]];
 }
 .moodle-actionmenu[data-enhanced].show .menu a:hover .fa:before {
-  color: #ffffff;
+  color: #fff;
 }
 /* @end */
 /* @group Course */
@@ -1000,23 +1000,23 @@ button.website:focus {
   color: [[setting:themeurlcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown .dropdown-menu li > a:hover {
-  color: #ffffff;
+  color: #fff;
   background-color: [[setting:themeurlcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown .dropdown-menu li > a:focus,
 .navbar .navbar-inner .nav > li.dropdown .dropdown-menu li > a.open {
-  color: #ffffff;
+  color: #fff;
   background-color: [[setting:themeurlcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown .dropdown-menu li > a:focus .fa,
 .navbar .navbar-inner .nav > li.dropdown .dropdown-menu li > a.open .fa {
-  color: #ffffff;
+  color: #fff;
 }
 .navbar .navbar-inner .nav > li.dropdown .dropdown-menu li > a:hover .dimmed_text {
-  color: #eeeeee;
+  color: #eee;
 }
 .navbar .navbar-inner .nav > li.dropdown .dropdown-menu li.dropdown-submenu:hover > a {
-  color: #ffffff;
+  color: #fff;
   background-color: [[setting:themeurlcolor]];
 }
 .navbar .navbar-inner .nav > li.dropdown .dropdown-menu li.dropdown-submenu:hover > a .fa {
@@ -1025,7 +1025,7 @@ button.website:focus {
 .navbar .navbar-inner .nav li.dropdown.open > .dropdown-toggle,
 .navbar .navbar-inner .nav li.dropdown.active > .dropdown-toggle,
 .navbar .navbar-inner .nav li.dropdown.open.active > .dropdown-toggle {
-  color: #ffffff;
+  color: #fff;
   background-color: [[setting:themehovercolor]];
 }
 .navbar .navbar-inner .usermenu .dropdown img.userpicture {
@@ -1045,7 +1045,7 @@ button.website:focus {
 }
 .navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a:hover .message,
 .navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a:hover .notification {
-  color: #ffffff;
+  color: #fff;
   background-color: [[setting:themehovercolor]];
 }
 .navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a:hover .message img.userpicture,
@@ -1175,7 +1175,7 @@ button.website:focus {
   color: [[setting:themetextcolor]];
 }
 .path-grade-report-grader .gradeparent .user.cell .userpicture {
-  background-color: #ffffff;
+  background-color: #fff;
 }
 table#explaincaps tbody > tr:nth-child(odd) > td,
 table#defineroletable tbody > tr:nth-child(odd) > td,
@@ -1695,7 +1695,7 @@ body .fa:hover {
   color: [[setting:themehovercolor]];
 }
 body .fa-inverse {
-  color: #ffffff;
+  color: #fff;
 }
 body .dimmed .fa {
   color: inherit;
@@ -1953,7 +1953,7 @@ h2.pagetitle {
 }
 .nav-tabs > li.active > a {
   color: [[setting:themetextcolor]];
-  background-color: #ffffff;
+  background-color: #fff;
 }
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
@@ -2038,7 +2038,7 @@ table#user-grades th.courseitem {
   border-right-color: [[setting:themecolor]];
 }
 .path-grade-report-grader .grade_icons img {
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 3px;
   border-radius: 3px;
 }

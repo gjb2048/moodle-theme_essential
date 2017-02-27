@@ -8,13 +8,6 @@
         <licenseversion>1.0</licenseversion>
     </library>
     <library>
-        <location>amd/src/carousel.js</location>
-        <name>Twitter Bootstrap Carousel JavaScript</name>
-        <license>Apache</license>
-        <version>2.3.2</version>
-        <licenseversion>2.0</licenseversion>
-    </library>
-    <library>
         <location>amd/src/jBreadCrumb.js</location>
         <name>jBreadcrumb</name>
         <license>MIT</license>
