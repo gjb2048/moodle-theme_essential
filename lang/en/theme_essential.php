@@ -70,6 +70,11 @@ click here to sponsor.
 <p>
 <h3>Essential for Moodle 3.2 kindly sponsored by:</h3>
 <ul>
+<li>ClassroomRevolution, LLC -- Moodle Partner</li>
+<li>Daniel Méthot - e-learning-facile.com/formations/</li>
+<li>Floyd Saner, Learning Contexts, LLC</li>
+<li>Gemma Lesterhuis</li>
+<li>Mihai Bojonca, TCM International Institute</li>
 </ul>
 </p>
 <h3>Customisation</h3>
