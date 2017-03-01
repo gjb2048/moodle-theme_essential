@@ -95,7 +95,7 @@ if (!$haslogo) {
                     <span class="icon-bar"></span>
                 </a>
 
-                <div id='essentialicons' class="collapse pull-<?php echo ($left) ? 'right' : 'left'; ?>">
+                <div id='essentialicons' class="collapse pull-right">
 <?php
 }
 // If true, displays the heading and available social links; displays nothing if false.
