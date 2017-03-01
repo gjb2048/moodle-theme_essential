@@ -3,6 +3,12 @@
 
 #page-header {
     border-bottom: 1px solid #DDD;
+
+    .container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .btn-icon {
         display: none;
         padding: 7px 10px;
@@ -40,12 +46,6 @@
         border-bottom: 1px solid #e1e1e1;
     }
 
-    a.logo {
-        display: block;
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-
     div.titlearea {
         height: 52px;
         width: 100%;
@@ -81,9 +81,6 @@
 }
 
 #page-header {
-    .row-fluid [class*="span"] {
-        padding-right: 5px;
-    }
     .btn-icon {
         float: right;
         right: 10px;
@@ -152,13 +149,6 @@
 }
 
 #page-header {
-    &.logo {
-        #socialnetworks,
-        #mobileapps {
-            height: ~"[[setting:logoheight]]";
-            max-height: ~"[[setting:logoheight]]";
-        }
-    }
     &.nologo {
         #socialnetworks,
         #mobileapps {
@@ -171,13 +161,6 @@
 
 @media (min-width: @navbarCollapseDesktopWidth) {
     #page-header {
-        &.logo {
-            #socialnetworks,
-            #mobileapps {
-                height: ~"[[setting:logoheight]]";
-                max-height: ~"[[setting:logoheight]]";
-            }
-        }
         &.nologo {
             #socialnetworks,
             #mobileapps {

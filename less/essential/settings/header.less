@@ -1,14 +1,15 @@
 /* @group Header */
 #page-header {
-    &.logo {
-        height: ~"[[setting:logoheight]]";
-        max-height: ~"[[setting:logoheight]]";
-    }
+    color: ~"[[setting:headertextcolor]]";
+
     &.nologo {
         height: 52px;
         max-height: 52px;
     }
-    color: ~"[[setting:headertextcolor]]";
+
+    .logo-container {
+        width: ~"[[setting:logomobilewidth]]%";
+    }
 
     h1#title {
         color: ~"[[setting:headertextcolor]]";
@@ -31,12 +32,6 @@
             background-color: ~"[[setting:themecolor]]";
         }
     }
-
-    a.logo {
-        background-image: ~"[[setting:logo]]";
-        height: ~"[[setting:logoheight]]";
-        width: ~"[[setting:logowidth]]";
-    }
 }
 
 #page-header {
@@ -50,6 +45,9 @@
         &.nologo {
             height: 64px;
             max-height: 64px;
+        }
+        .logo-container {
+            width: ~"[[setting:logodesktopwidth]]%";
         }
     }
 }

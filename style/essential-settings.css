@@ -902,13 +902,12 @@ body#page-grade-grading-pick #region-main form #fgroup_id_buttonar label {
 #page-header {
   color: [[setting:headertextcolor]];
 }
-#page-header.logo {
-  height: [[setting:logoheight]];
-  max-height: [[setting:logoheight]];
-}
 #page-header.nologo {
   height: 52px;
   max-height: 52px;
+}
+#page-header .logo-container {
+  width: [[setting:logomobilewidth]]%;
 }
 #page-header h1#title {
   color: [[setting:headertextcolor]];
@@ -925,11 +924,6 @@ body#page-grade-grading-pick #region-main form #fgroup_id_buttonar label {
 #page-header .btn-icon .icon-bar {
   background-color: [[setting:themecolor]];
 }
-#page-header a.logo {
-  background-image: [[setting:logo]];
-  height: [[setting:logoheight]];
-  width: [[setting:logowidth]];
-}
 #page-header div.titlearea {
   border-left: 1px dotted [[setting:themecolor]];
 }
@@ -937,6 +931,9 @@ body#page-grade-grading-pick #region-main form #fgroup_id_buttonar label {
   #page-header.nologo {
     height: 64px;
     max-height: 64px;
+  }
+  #page-header .logo-container {
+    width: [[setting:logodesktopwidth]]%;
   }
 }
 /* @end */
@@ -956,9 +953,6 @@ button.website:focus {
 }
 /* @end */
 /* @group Navbar */
-#essentialnavbar.oldnavbar.logo {
-  top: [[setting:logoheight]];
-}
 #essentialnavbar.oldnavbar.nologo {
   top: 52px;
 }

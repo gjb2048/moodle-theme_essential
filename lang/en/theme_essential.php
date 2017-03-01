@@ -157,13 +157,13 @@ $string['pagebottomblocksperrow'] = 'Page bottom blocks per row';
 $string['pagebottomblocksperrowdesc'] = 'State up to how many blocks per row between {$a->lower} and {$a->upper} for pages with \'Page bottom blocks\'.  Current pages are: Admin, Course management, Grading and Quiz edit.';
 
 $string['logo'] = 'Logo';
-$string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.<br>The image should be the same width and height as the \'Logo width\' and \'Logo height\' settings below.<br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
+$string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.<br>The image will be scaled to fit into the available percentage width specified for the device below.  This gives a responsive solution.  If you have a lot of social / app icons then do double check the result.<br>If you upload a logo it will replace the standard icon and name that was displayed by default.';
 
-$string['logowidth'] = 'Logo width';
-$string['logowidthdesc'] = 'The width of the logo image.  This can be specified in \'px\' or \'em\', e.g. \'96px\'.';
+$string['logodesktopwidth'] = 'Logo desktop width';
+$string['logodesktopwidthdesc'] = 'The width of the logo image container on a desktop, >= 980px.<br>Please state as a percentage of the available space between {$a->lower} and {$a->upper}.<br>The available space is the width allowed by the \'pagewidth\' setting.  The image will fill the stated percentage up to its resolution width.';
 
-$string['logoheight'] = 'Logo height';
-$string['logoheightdesc'] = 'The height of the logo image.  This can be specified in \'px\' or \'em\', e.g. \'24px\'.';
+$string['logomobilewidth'] = 'Logo mobile width';
+$string['logomobilewidthdesc'] = 'The width of the logo image container on a mobile, < 980px.<br>Please state as a percentage of the available space between {$a->lower} and {$a->upper}.<br>The available space is the width allowed by the \'pagewidth\' setting.  The image will fill the stated percentage up to its resolution width.';
 
 $string['logodimerror'] = ' is invalid.  Please state \'px\' or \'em\' immediately after the unit value and nothing before the unit value.';
 

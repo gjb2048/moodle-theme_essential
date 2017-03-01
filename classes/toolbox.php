@@ -735,37 +735,6 @@ class toolbox {
         return $css;
     }
 
-    static public function set_logo($css, $logo) {
-        $tag = '[[setting:logo]]';
-        if (!($logo)) {
-            $replacement = 'none';
-        } else {
-            $replacement = 'url(\''.$logo.'\')';
-        }
-        $css = str_replace($tag, $replacement, $css);
-        return $css;
-    }
-
-    static public function set_logodimensions($css, $logowidth, $logoheight) {
-        $tag = '[[setting:logowidth]]';
-        if (!($logowidth)) {
-            $replacement = '65px';
-        } else {
-            $replacement = $logowidth;
-        }
-        $css = str_replace($tag, $replacement, $css);
-
-        $tag = '[[setting:logoheight]]';
-        if (!($logoheight)) {
-            $replacement = '65px';
-        } else {
-            $replacement = $logoheight;
-        }
-        $css = str_replace($tag, $replacement, $css);
-
-        return $css;
-    }
-
     static public function set_integer($css, $setting, $integer, $default) {
         $tag = '[[setting:'.$setting.']]';
         if (!($integer)) {

@@ -22260,6 +22260,10 @@ table#greyboxleft h2 {
 #page-header {
   border-bottom: 1px solid #DDD;
 }
+#page-header .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
 #page-header .btn-icon {
   display: none;
   padding: 7px 10px;
@@ -22297,11 +22301,6 @@ table#greyboxleft h2 {
   color: #777;
   border-bottom: 1px solid #e1e1e1;
 }
-#page-header a.logo {
-  display: block;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
 #page-header div.titlearea {
   height: 52px;
   width: 100%;
@@ -22330,9 +22329,6 @@ table#greyboxleft h2 {
 }
 #page-header #headerlogo {
   font-size: 4.5em;
-}
-#page-header .row-fluid [class*="span"] {
-  padding-right: 5px;
 }
 #page-header .btn-icon {
   float: right;
@@ -22383,22 +22379,12 @@ table#greyboxleft h2 {
   margin-right: 5px;
   padding-right: 5px;
 }
-#page-header.logo #socialnetworks,
-#page-header.logo #mobileapps {
-  height: [[setting:logoheight]];
-  max-height: [[setting:logoheight]];
-}
 #page-header.nologo #socialnetworks,
 #page-header.nologo #mobileapps {
   height: 52px;
   max-height: 52px;
 }
 @media (min-width: 980px) {
-  #page-header.logo #socialnetworks,
-  #page-header.logo #mobileapps {
-    height: [[setting:logoheight]];
-    max-height: [[setting:logoheight]];
-  }
   #page-header.nologo #socialnetworks,
   #page-header.nologo #mobileapps {
     height: 64px;

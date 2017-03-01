@@ -24,10 +24,12 @@ define(['jquery', 'theme_bootstrapbase/bootstrap', 'core/log'], function($, boot
                     $essentialnavbar.affix({
                         offset: {
                             top: function() {
+                                pageheaderHeight = $("#page-header").height();
+                                log.debug('Essential affix offset AMD phh: ' + pageheaderHeight);
                                 var wst = $(window).scrollTop();
-                                log.debug('Essential affix AMD wst: ' + wst);
+                                log.debug('Essential affix offset AMD wst: ' + wst);
                                 var diff = pageheaderHeight - wst;
-                                log.debug('Essential affix AMD diff: ' + diff);
+                                log.debug('Essential affix offset AMD diff: ' + diff);
                                 if (diff < 0) {
                                     diff = 0;
                                 }
@@ -35,6 +37,18 @@ define(['jquery', 'theme_bootstrapbase/bootstrap', 'core/log'], function($, boot
                                 return pageheaderHeight;
                             }
                         }
+                    });
+                    $(window).resize(function () {
+                        pageheaderHeight = $("#page-header").height();
+                        log.debug('Essential affix resize AMD phh: ' + pageheaderHeight);
+                        var wst = $(window).scrollTop();
+                        log.debug('Essential affix resize AMD wst: ' + wst);
+                        var diff = pageheaderHeight - wst;
+                        log.debug('Essential affix resize AMD diff: ' + diff);
+                        if (diff < 0) {
+                            diff = 0;
+                        }
+                        $essentialnavbar.css('top', diff + 'px');
                     });
                 }
             });

@@ -930,23 +930,27 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 
-    // Logo width setting.
-    $name = 'theme_essential/logowidth';
-    $title = get_string('logowidth', 'theme_essential');
-    $description = get_string('logowidthdesc', 'theme_essential');
-    $default = '65px';
-    $regex = '/\b(\d)(\d*)(px|em)\b/';
-    $logodimerror = get_string('logodimerror', 'theme_essential');
-    $setting = new essential_admin_setting_configtext($name, $title, $description, $default, $regex, $logodimerror);
+    // Logo desktop width setting.
+    $name = 'theme_essential/logodesktopwidth';
+    $title = get_string('logodesktopwidth', 'theme_essential');
+    $default = 25;
+    $lower = 1;
+    $upper = 100;
+    $description = get_string('logodesktopwidthdesc', 'theme_essential',
+        array('lower' => $lower, 'upper' => $upper));
+    $setting = new essential_admin_setting_configinteger($name, $title, $description, $default, $lower, $upper);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 
-    // Logo height setting.
-    $name = 'theme_essential/logoheight';
-    $title = get_string('logoheight', 'theme_essential');
-    $description = get_string('logoheightdesc', 'theme_essential');
-    $default = '65px';
-    $setting = new essential_admin_setting_configtext($name, $title, $description, $default, $regex, $logodimerror);
+    // Logo mobile width setting.
+    $name = 'theme_essential/logomobilewidth';
+    $title = get_string('logomobilewidth', 'theme_essential');
+    $default = 10;
+    $lower = 1;
+    $upper = 100;
+    $description = get_string('logomobilewidthdesc', 'theme_essential',
+        array('lower' => $lower, 'upper' => $upper));
+    $setting = new essential_admin_setting_configinteger($name, $title, $description, $default, $lower, $upper);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 

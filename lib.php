@@ -438,14 +438,11 @@ function theme_essential_process_css($css, $theme) {
         }
     }
 
-    // Set the background image for the logo.
-    $logo = \theme_essential\toolbox::setting_file_url('logo', 'logo');
-    $css = \theme_essential\toolbox::set_logo($css, $logo);
-
-    // Set the logo width and height.
-    $logowidth = \theme_essential\toolbox::get_setting('logowidth');
-    $logoheight = \theme_essential\toolbox::get_setting('logoheight');
-    $css = \theme_essential\toolbox::set_logodimensions($css, $logowidth, $logoheight);
+    // Set the logo desktop and mobile width.
+    $logodesktopwidth = \theme_essential\toolbox::get_setting('logodesktopwidth');
+    $logomobilewidth = \theme_essential\toolbox::get_setting('logomobilewidth');
+    $css = \theme_essential\toolbox::set_integer($css, 'logodesktopwidth', $logodesktopwidth, 25);
+    $css = \theme_essential\toolbox::set_integer($css, 'logomobilewidth', $logomobilewidth, 10);
 
     // Set the dropdown menu maximum height.
     $dropdownmenumaxheight = \theme_essential\toolbox::get_setting('dropdownmenumaxheight');

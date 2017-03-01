@@ -62,9 +62,9 @@ if (!$oldnavbar) {
         <div class="container-fluid">
             <div class="row-fluid">
                 <!-- HEADER: LOGO AREA -->
-                <div class="pull-left">
 <?php
 if (!$haslogo) {
+    echo '<div class="pull-left">';
     $usesiteicon = \theme_essential\toolbox::get_setting('usesiteicon');
     $headertitle = $OUTPUT->get_title('header');
     if ($usesiteicon || $headertitle) {
@@ -80,7 +80,10 @@ if (!$haslogo) {
         echo '</a>';
     }
 } else {
-    echo '<a class="logo" href="'.preg_replace("(https?:)", "", $CFG->wwwroot).'" title="'.get_string('home').'"></a>';
+    echo '<div class="pull-left logo-container">';
+    echo '<a class="logo" href="'.preg_replace("(https?:)", "", $CFG->wwwroot).'" title="'.get_string('home').'">';
+    echo '<img src="'.\theme_essential\toolbox::get_setting('logo', 'format_file_url').'" class="img-responsive" />';
+    echo '</a>';
 }
 ?>
                 </div>

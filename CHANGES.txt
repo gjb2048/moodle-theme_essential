@@ -6,6 +6,7 @@ New in 3.2.0.1 - Alpha version.
 - UPD: For jQuery 3 needed to escape all '#'s and '"'s in the JS - ref: https://api.jquery.com/category/selectors/.
 - UPD: RTL LESS / CSS and see what can be removed as there is now a 'autoflipping' tool built in to Moodle.
 - UPD: Removed 'essential.css' from production minification so that PHP-RTLCSS comments are preserved and can be processed.
+- UPD: Improved logo to be responsive with different percentage widths for desktops and mobiles.
 
 New in 3.1.1.8
 ==============
