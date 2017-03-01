@@ -1425,16 +1425,35 @@ class core_renderer extends \core_renderer {
             $context = context_course::instance($course->id);
 
             // Output Profile link.
-            $userurl = $this->page->url;
-            $userpic = parent::user_picture($USER, array('link' => false, 'size' => 64));
-            $caret = $this->getfontawesomemarkup('caret-right');
-            $userclass = array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown');
-
-            if (!empty($USER->alternatename)) {
-                $usermenu .= html_writer::link($userurl, $userpic.$USER->alternatename.$caret, $userclass);
+            $rolemenuitem = null;
+            $rolename = null;
+            if (\is_role_switched($course->id)) { // Has switched roles.
+                if ($role = $DB->get_record('role', array('id' => $USER->access['rsw'][$context->path]))) {
+                    $branchlabel = '<em>'.$this->getfontawesomemarkup('user').get_string('switchrolereturn').'</em>';
+                    $branchurl = new moodle_url('/course/switchrole.php', array('id' => $course->id, 'sesskey' => sesskey(),
+                        'switchrole' => 0, 'returnurl' => $this->page->url->out_as_local_url(false)));
+                    $rolemenuitem = html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
+                    $rolename = ' - '.role_get_name($role, $context);
+                }
             } else {
-                $usermenu .= html_writer::link($userurl, $userpic.$USER->firstname.$caret, $userclass);
+                $roles = \get_switchable_roles($context);
+                if (is_array($roles) && (count($roles) > 0)) {
+                    $branchlabel = '<em>'.$this->getfontawesomemarkup('users').get_string('switchroleto').'</em>';
+                    $branchurl = new moodle_url('/course/switchrole.php', array('id' => $course->id,
+                        'switchrole' => -1, 'returnurl' => $this->page->url->out_as_local_url(false)));
+                    $rolemenuitem = html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
+                }
             }
+
+            $username = parent::user_picture($USER, array('link' => false, 'size' => 64));
+            if (!empty($USER->alternatename)) {
+                $username .= $USER->alternatename;
+            } else {
+                $username .= $USER->firstname;
+            }
+            $username .= $this->getfontawesomemarkup('caret-right');
+            $usermenu .= html_writer::link($this->page->url, $username,
+                array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown'));
 
             // Start dropdown menu items.
             $classes = 'dropdown-menu pull-right';
@@ -1445,7 +1464,11 @@ class core_renderer extends \core_renderer {
                 $branchlabel = '<em>'.$this->getfontawesomemarkup('key').fullname($realuser, true).
                     get_string('loggedinas', 'theme_essential').fullname($USER, true).'</em>';
             } else {
-                $branchlabel = '<em>'.$this->getfontawesomemarkup('user').fullname($USER, true).'</em>';
+                $username = fullname($USER, true);
+                if ($rolename) {
+                    $username .= $rolename;
+                }
+                $branchlabel = '<em>'.$this->getfontawesomemarkup('user').$username.'</em>';
             }
             $branchurl = new moodle_url('/user/profile.php', array('id' => $USER->id));
             $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
@@ -1457,11 +1480,8 @@ class core_renderer extends \core_renderer {
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
 
-            if (is_role_switched($course->id)) { // Has switched roles.
-                $branchlabel = '<em>'.$this->getfontawesomemarkup('users').get_string('switchrolereturn').'</em>';
-                $branchurl = new moodle_url('/course/switchrole.php', array('id' => $course->id, 'sesskey' => sesskey(),
-                    'switchrole' => 0, 'returnurl' => $this->page->url->out_as_local_url(false)));
-                $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
+            if ($rolemenuitem) {
+                $usermenu .= $rolemenuitem;
             }
 
             // Add preferences submenu.
