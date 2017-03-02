@@ -463,6 +463,10 @@ img.profilepicture {
 .moodle-actionmenu[data-enhanced].show .menu a:hover .fa:before {
   color: #fff;
 }
+.moodle-actionmenu[data-enhanced].show .menu a:hover img {
+  background-color: #fff;
+  border-radius: 4px;
+}
 /* @end */
 /* @group Course */
 .listitem-category .icon {
