@@ -1,3 +1,7 @@
+New in 3.2.1.0 - First stable version.
+==============
+- FIX: Issue #812: Add icon replacements for t/message and t/addcontact.  Thanks to Jan Dageförde (https://github.com/Dagefoerde) for this fix.
+
 New in 3.2.0.1 - Beta version.
 ==============
 - UPD: Core and plugin pix.
