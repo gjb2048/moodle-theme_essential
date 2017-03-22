@@ -19759,7 +19759,7 @@ p.tree_item.leaf a.action-delete > .fa {
 .hidden-blocks {
   background: #ffe1e1;
   padding: 10px;
-  border: 1px solid #EEE;
+  border: 1px solid #eee;
   border-radius: 5px;
   margin: 10px 0 10px 0;
 }
@@ -19786,7 +19786,7 @@ p.tree_item.leaf a.action-delete > .fa {
   padding: 0;
 }
 .block .header .title {
-  border-bottom: 1px solid #EEE;
+  border-bottom: 1px solid #eee;
   padding-left: 0;
 }
 .block .header .title h2 {
@@ -19829,7 +19829,7 @@ p.tree_item.leaf a.action-delete > .fa {
   text-decoration: none;
 }
 .block_rss_client .content li {
-  border-bottom: 1px dotted #E1E1E1;
+  border-bottom: 1px dotted #e1e1e1;
   padding: 5px;
 }
 .block_rss_client .content li:hover {
@@ -19893,7 +19893,7 @@ p.tree_item.leaf a.action-delete > .fa {
 .block_login .content form input[type="submit"],
 .block_login .content .footer a {
   background-image: none;
-  border-color: #30ADD1;
+  border-color: #30add1;
   border-image: none;
   border-radius: 4px;
   border-style: solid;
@@ -19904,11 +19904,11 @@ p.tree_item.leaf a.action-delete > .fa {
   display: inline-block;
   font-size: 13px;
   line-height: 20px;
+  margin: 10px 0;
   padding: 4px 12px;
   text-align: center;
   text-shadow: none;
   vertical-align: middle;
-  margin: 10px 0;
   width: 100%;
 }
 .block_login .content form input[type="submit"]:hover,
@@ -20028,7 +20028,7 @@ aside.rowblock-edit div.block:nth-of-type(1) {
 /* @end */
 /* @group Breadcrumb Button */
 .breadcrumb-button {
-  margin-top: 0px;
+  margin-top: 0;
 }
 .breadcrumb-button .fa {
   vertical-align: middle;
@@ -20414,13 +20414,13 @@ table.calendarmonth.calendartable {
 #essentialCarousel.carousel .carousel-control {
   display: none;
   background-color: transparent;
-  border: 0px;
+  border: 0;
   font-size: 30px;
 }
 #essentialCarousel.carousel .carousel-control:hover,
 #essentialCarousel.carousel .carousel-control:focus {
   background-color: transparent;
-  border: 0px;
+  border: 0;
 }
 #essentialCarousel.carousel:hover .carousel-control {
   display: block;
@@ -20681,22 +20681,22 @@ table.calendarmonth.calendartable {
   min-width: 24px;
   font-weight: 600;
   font-size: 1em;
-  -moz-box-shadow: 1px 1px 5px 0px #ccc;
-  -webkit-box-shadow: 1px 1px 5px 0px #ccc;
-  box-shadow: 1px 1px 5px 0px #ccc;
+  -moz-box-shadow: 1px 1px 5px 0 #ccc;
+  -webkit-box-shadow: 1px 1px 5px 0 #ccc;
+  box-shadow: 1px 1px 5px 0 #ccc;
   border: 2px solid #fff;
 }
 .categoryicons .course_category_tree .category .content {
   display: none;
 }
 .categoryicons .course_category_tree .category .info .name {
-  padding: 0px;
+  padding: 0;
   text-align: center;
 }
 .categoryicons .course_category_tree .category > .info,
 .categoryicons .course_category_tree .category > .info > .categoryname {
   background-color: transparent;
-  border: 0px none;
+  border: 0 none;
   text-align: center;
   box-shadow: none;
   margin: 0;
@@ -20929,9 +20929,9 @@ body .course-content ul.topics li.section .content {
   float: right;
 }
 #next_section .nav_icon {
+  border-left: 1px solid #eee;
   float: right;
   margin-left: 0.3em;
-  border-left: 1px solid #eee;
 }
 #next_section .text {
   float: right;
@@ -20947,22 +20947,22 @@ body .course-content ul.topics li.section .content {
   text-align: left;
 }
 #previous_section .nav_icon {
+  border-right: 1px solid #eee;
   float: left;
   margin-right: 0.3em;
-  border-right: 1px solid #eee;
 }
 #previous_section .text {
   float: left;
 }
 .nav_guide {
+  font-style: normal;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-style: normal;
 }
 .nav_icon {
   padding: 0.3em;
-  width: 8.3%;
   text-align: center;
+  width: 8.3%;
 }
 /* @end */
 /* @end */
@@ -20983,9 +20983,9 @@ body .course-content ul.topics li.section .content {
 }
 .dockbutton:hover,
 .dockbutton:focus {
+  background-position: 0 -15px;
   color: #7b8a8b;
   text-decoration: none;
-  background-position: 0 -15px;
   -webkit-transition: background-position 0.1s linear;
   -moz-transition: background-position 0.1s linear;
   -o-transition: background-position 0.1s linear;
@@ -21005,10 +21005,10 @@ body .course-content ul.topics li.section .content {
 }
 .dockbutton.disabled,
 .dockbutton[disabled] {
-  cursor: default;
   background-image: none;
-  opacity: .65;
+  cursor: default;
   filter: alpha(opacity=65);
+  opacity: .65;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -21191,7 +21191,7 @@ body.has_dock #dockeditempanel .dockeditempanel_bd .block_navigation .block_tree
 }
 body.has_dock #dockeditempanel .dockeditempanel_hd {
   position: relative;
-  border-bottom: 1px solid #EEE;
+  border-bottom: 1px solid #eee;
 }
 body.has_dock #dockeditempanel .dockeditempanel_hd h2 {
   padding: 5px;
@@ -21360,7 +21360,7 @@ a.action-icon > .fa,
 #studentheader > .fa,
 .heading_name_row a > .fa {
   width: 14px;
-  margin: 0px 3px;
+  margin: 0 3px;
 }
 .menu a.menu-action:hover > .fa {
   color: #fff;
@@ -21425,7 +21425,6 @@ a.action-icon > .fa,
   border: 0;
   font-size: 1em;
   margin: 0;
-  padding-top: 10px;
   padding: 0;
   width: 100%;
 }
@@ -21645,7 +21644,7 @@ body#page-admin-setting-messageinbound_mailsettings fieldset select {
   border-radius: 8px;
 }
 #region-main form .form-buttons input {
-  margin: 0px;
+  margin: 0;
 }
 #region-main form table#form td.submit,
 #region-main form .form-buttons,
@@ -21679,7 +21678,7 @@ body#page-admin-setting-messageinbound_mailsettings fieldset select {
 #region-main form .fp-content-center form + div > .fgroup,
 #region-main form div.backup-section + form > .fgroup,
 #region-main form #fgroup_id_buttonar > .fgroup {
-  margin: 0px;
+  margin: 0;
   padding-top: 15px;
 }
 #region-main form table#form td.submit input[type=submit],
@@ -21874,7 +21873,7 @@ select {
 .forumheaderlist {
   background: #fff;
   border-radius: 10px;
-  border: 1px solid #E1E1E1 !important;
+  border: 1px solid #e1e1e1 !important;
   padding: 10px;
 }
 .path-mod-forum .forumheaderlist td {
@@ -21958,7 +21957,7 @@ body .forumpost .row .options .commands {
   }
   .forumsearch .invisiblefieldset input[type="submit"] {
     line-height: 20px;
-    margin-top: 0px;
+    margin-top: 0;
   }
   .forumsearch .invisiblefieldset .helptooltip a {
     margin-top: 7px;
@@ -21979,11 +21978,11 @@ body .forumpost .row .options .commands {
   padding-top: 25px;
 }
 .headingblock.header {
-  padding: 0px;
-  margin: 0px;
+  color: #777;
   font-size: 1.8em;
   line-height: 35px;
-  color: #777;
+  margin: 0;
+  padding: 0;
 }
 #page-site-index h2.headingblock:before {
   content: "\f0b1";
@@ -22009,7 +22008,7 @@ body .forumpost .row .options .commands {
 .courses .coursebox {
   background: #fff;
   border-radius: 10px;
-  border: 1px solid #E1E1E1 !important;
+  border: 1px solid #e1e1e1 !important;
   padding: 10px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
@@ -22217,32 +22216,32 @@ body .forumpost .row .options .commands {
 /* @end */
 /* @group GreyBox */
 table#greyboxright {
-  background: #F9F9F9;
-  border: 1px solid #EEE;
-  border-bottom: 3px solid #EEE;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-bottom: 3px solid #eee;
   border-radius: 10px !important;
   float: right;
   margin-left: 20px;
 }
 table#greyboxleft {
-  background: #F9F9F9;
-  border: 1px solid #EEE;
-  border-bottom: 3px solid #EEE;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-bottom: 3px solid #eee;
   border-radius: 10px !important;
   float: left;
   margin-right: 20px;
 }
 table#greybox {
-  background: #F9F9F9;
-  border: 1px solid #EEE;
-  border-bottom: 3px solid #EEE;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-bottom: 3px solid #eee;
   border-radius: 10px !important;
   margin-top: 30px;
 }
 table#greyboxright td,
 table#greyboxleft td {
   padding: 10px;
-  padding-top: 0px;
+  padding-top: 0;
   max-width: 360px;
 }
 table#greybox td {
@@ -22250,7 +22249,7 @@ table#greybox td {
 }
 table#greyboxright h2,
 table#greyboxleft h2 {
-  border-bottom: 1px solid #EEE;
+  border-bottom: 1px solid #eee;
   padding-bottom: 8px;
   font-size: 1.2em;
   line-height: 17px;
@@ -22258,28 +22257,28 @@ table#greyboxleft h2 {
 /* @end */
 /* @group Header */
 #page-header {
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #ddd;
 }
 #page-header .container-fluid {
   padding-left: 0;
   padding-right: 0;
 }
 #page-header .btn-icon {
+  background-color: #ededed;
+  background-image: none;
   display: none;
   padding: 7px 10px;
   position: absolute;
   top: 56px;
-  background-image: none;
-  background-color: #ededed;
 }
 #page-header .btn-icon .icon-bar {
-  display: block;
-  width: 18px;
-  height: 2px;
-  background-image: none;
   -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.45);
   -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.45);
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.45);
+  background-image: none;
+  display: block;
+  height: 2px;
+  width: 18px;
 }
 #page-header .btn-icon:hover {
   background-color: #e5e5e5;
@@ -22291,15 +22290,15 @@ table#greyboxleft h2 {
   top: 10px;
 }
 #page-header #essentialicons {
-  overflow: visible;
   background-image: none;
+  overflow: visible;
 }
 #page-header h2.main,
 #page-header #pageheading {
+  border-bottom: 1px solid #e1e1e1;
+  color: #777;
   font-size: 1.4em;
   line-height: 35px;
-  color: #777;
-  border-bottom: 1px solid #e1e1e1;
 }
 #page-header div.titlearea {
   height: 52px;
@@ -22311,8 +22310,8 @@ table#greyboxleft h2 {
 }
 #page-header h1#title {
   font-size: 3em;
-  padding-top: 4px;
   line-height: 40px;
+  padding-top: 4px;
 }
 #page-header h1#smalltitle {
   font-size: 2em;
@@ -22338,8 +22337,8 @@ table#greyboxleft h2 {
   margin: 0 0 0 5px;
 }
 #page-header a.logo {
-  float: left;
   background-position: left center;
+  float: left;
 }
 #page-header div.titlearea {
   margin-left: 80px;
@@ -22364,7 +22363,7 @@ table#greyboxleft h2 {
 .pagelayout-maintenance #page-header,
 #page-admin-upgradesettings #page-header,
 .pagelayout-redirect #page-header {
-  margin-top: 0px;
+  margin-top: 0;
 }
 @media (min-width: 980px) {
   .pagewidthnarrow.custommenuitems header .navbar-inner {
@@ -22392,7 +22391,7 @@ table#greyboxleft h2 {
   }
 }
 .socials {
-  margin: 0px;
+  margin: 0;
 }
 .socials p {
   font-weight: normal;
@@ -22400,13 +22399,13 @@ table#greyboxleft h2 {
 }
 body button.socialicon {
   background-color: #bbbbbb;
+  background-image: none;
   border-radius: 5px;
-  border: 0px none;
+  border: 0 none;
   font-size: 1.6em;
+  min-width: 29px;
   padding: 5px;
   text-align: center;
-  background-image: none;
-  min-width: 29px;
 }
 body button.socialicon .fa {
   color: #fff;
@@ -22433,11 +22432,11 @@ body button.ios:focus {
 }
 body button.windows:hover,
 body button.ios:focus {
-  background-color: #008A00;
+  background-color: #008a00;
 }
 body button.winphone:hover,
 body button.ios:focus {
-  background-color: #9B4F96;
+  background-color: #9b4f96;
 }
 body button.android:hover,
 body button.android:focus {
@@ -22473,20 +22472,20 @@ body button.pinterest:focus {
 }
 body button.linkedin:hover,
 body button.linkedin:focus {
-  background-color: #4A9CC9;
+  background-color: #4a9cc9;
 }
 ul.socials {
   text-align: right;
 }
 ul.socials li {
-  text-align: right;
   display: inline-block;
+  text-align: right;
 }
 #socialheading {
-  text-align: right;
   letter-spacing: .2em;
-  padding: 0;
   margin: 2px 0 0;
+  padding: 0;
+  text-align: right;
 }
 @media (min-width: 768px) {
   .loggedin #page-header.oldnavbar #essentialicons {
@@ -22853,7 +22852,7 @@ a .colours-alternative2,
 a .colours-alternative3,
 a .colours-alternative4 {
   border-radius: 2px;
-  box-shadow: rgba(255, 255, 255, 0.8) 0px 0px 2px 3px;
+  box-shadow: rgba(255, 255, 255, 0.8) 0 0 2px 3px;
 }
 /* @end */
 /* @group Contributed Plugins */
@@ -22999,19 +22998,19 @@ body.format-topcoll .course-content ul.ctopics li.section .content .toggle a h3:
     float: left;
   }
   #page #region-main .region-content {
-    border: 0px solid transparent !important;
-    margin: 0 0 !important;
-    padding: 0px 0px !important;
+    border: 0 solid transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
   #page-content #region-main-box .region-content {
-    padding: 0px 0 0;
+    padding: 0;
   }
   #page .navbar {
     background: #fff;
     color: #000;
     font-size: 1em;
-    margin: 0 0;
-    padding: 1em 0px;
+    margin: 0;
+    padding: 1em 0;
     text-shadow: none;
   }
   #page .navbar a {

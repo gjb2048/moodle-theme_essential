@@ -2,7 +2,7 @@
 @import "../fontawesome/variables";
 
 #page-header {
-    border-bottom: 1px solid #DDD;
+    border-bottom: 1px solid #ddd;
 
     .container-fluid {
         padding-left: 0;
@@ -10,18 +10,18 @@
     }
 
     .btn-icon {
+        background-color: #ededed;
+        background-image: none;
         display: none;
         padding: 7px 10px;
         position: absolute;
         top: 56px;
-        background-image: none;
-        background-color: #ededed;
         .icon-bar {
-            display: block;
-            width: 18px;
-            height: 2px;
-            background-image: none;
             .box-shadow(0 1px 1px 0 rgba(0,0,0,.45));
+            background-image: none;
+            display: block;
+            height: 2px;
+            width: 18px;
         }
         &:hover {
             background-color: #e5e5e5;
@@ -34,16 +34,16 @@
         top: 10px;
     }
     #essentialicons {
-        overflow: visible;
         background-image: none;
+        overflow: visible;
     }
 
     h2.main,
     #pageheading {
+        border-bottom: 1px solid #e1e1e1;
+        color: #777;
         font-size: 1.4em;
         line-height: 35px;
-        color: #777;
-        border-bottom: 1px solid #e1e1e1;
     }
 
     div.titlearea {
@@ -51,14 +51,15 @@
         width: 100%;
     }
 
-    h1, h2 {
+    h1,
+    h2 {
         margin: 0;
     }
 
     h1#title {
         font-size: 3em;
-        padding-top: 4px;
         line-height: 40px;
+        padding-top: 4px;
     }
     h1#smalltitle {
         font-size: 2em;
@@ -93,8 +94,8 @@
     }
 
     a.logo {
-        float: left;
         background-position: left center;
+        float: left;
     }
 
     div.titlearea {
@@ -109,7 +110,7 @@
     }
 }
 
-@media(min-width: 768px) {
+@media (min-width: 768px) {
     #page-header div.titlearea {
         display: block !important;
     }
@@ -125,11 +126,11 @@
 .pagelayout-maintenance #page-header,
 #page-admin-upgradesettings #page-header,
 .pagelayout-redirect #page-header {
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 // Narrow page width with custom menu items can make the navigation bar big.
-@media(min-width: @navbarCollapseDesktopWidth) {
+@media (min-width: @navbarCollapseDesktopWidth) {
     .pagewidthnarrow.custommenuitems {
         header .navbar-inner {
             height: @navbarHeight * 2;
@@ -172,7 +173,7 @@
 }
 
 .socials {
-    margin: 0px;
+    margin: 0;
     p {
         font-weight: normal;
         font-size: 1.1em;
@@ -182,80 +183,96 @@
 body button {
     &.socialicon {
         background-color: #bbbbbb;
+        background-image: none;
         border-radius: 5px;
-        border: 0px none;
+        border: 0 none;
         font-size: 1.6em;
+        min-width: 29px;
         padding: 5px;
         text-align: center;
-        background-image: none;
-        min-width: 29px;
         .@{fa-css-prefix} {
             color: @white;
         }
-        &:hover, &:focus {
+        &:hover, 
+        &:focus {
             background-image: none;
         }
     }
-    &.facebook:hover, &.facebook:focus {
+    &.facebook:hover,
+    &.facebook:focus {
         background-color: #4a6ea9;
     }
-    &.skype:hover, &.skype:focus {
+    &.skype:hover,
+    &.skype:focus {
         background-color: #00adf7;
     }
-    &.instagram:hover, &.instagram:focus {
+    &.instagram:hover,
+    &.instagram:focus {
         background-color: #a5674a;
     }
-    &.ios:hover, &.ios:focus {
+    &.ios:hover,
+    &.ios:focus {
         background-color: #000;
     }
-    &.windows:hover, &.ios:focus {
-        background-color: #008A00;
+    &.windows:hover,
+    &.ios:focus {
+        background-color: #008a00;
     }
-    &.winphone:hover, &.ios:focus {
-        background-color: #9B4F96;
+    &.winphone:hover,
+    &.ios:focus {
+        background-color: #9b4f96;
     }
-    &.android:hover, &.android:focus {
+    &.android:hover,
+    &.android:focus {
         background-color: #98cd32;
     }
-    &.vk:hover, &.vk:focus {
+    &.vk:hover,
+    &.vk:focus {
         background-color: #4a6ea9;
     }
-    &.twitter:hover, &.twitter:focus {
+    &.twitter:hover,
+    &.twitter:focus {
         background-color: #00aced;
     }
-    &.googleplus:hover, &.googleplus:focus {
+    &.googleplus:hover,
+    &.googleplus:focus {
         background-color: #f42941;
     }
-    &.flickr:hover, &.flickr:focus {
+    &.flickr:hover,
+    &.flickr:focus {
         background-color: #ff3096;
     }
-    &.instagram:hover, a.instagram:focus {
+    &.instagram:hover,
+    a.instagram:focus {
         background-color: #b99c6b;
     }
-    &.youtube:hover, &.youtube:focus {
+    &.youtube:hover,
+    &.youtube:focus {
         background-color: #f42941;
     }
-    &.pinterest:hover, &.pinterest:focus {
+    &.pinterest:hover,
+    &.pinterest:focus {
         background-color: #f42941;
     }
-    &.linkedin:hover, &.linkedin:focus {
-        background-color: #4A9CC9;
+    &.linkedin:hover,
+    &.linkedin:focus {
+        background-color: #4a9cc9;
     }
 }
 
 ul.socials {
     text-align: right;
     li {
-        text-align: right;
         display: inline-block;
+        text-align: right;
     }
 }
 
 #socialheading {
-    text-align: right;
     letter-spacing: .2em;
-    padding: 0;
     margin: 2px 0 0;
+    padding: 0;
+    text-align: right;
 }
 
 @media (min-width: 768px) {

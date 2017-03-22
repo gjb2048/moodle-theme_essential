@@ -13,14 +13,30 @@
 #course-category-listings {
     li {
         // Tree item indenting to represent depth.
-        i.icon {margin-left:0;}
-        li i.icon {margin-left:1em;}
-        li li i.icon {margin-left:2em;}
-        li li li i.icon {margin-left:3em;}
-        li li li li i.icon {margin-left:4em;}
-        li li li li li i.icon {margin-left:4.5em;}
-        li li li li li li i.icon {margin-left:5em;}
-        li li li li li li li i.icon {margin-left:5.5em;}
+        i.icon {
+            margin-left: 0;
+        }
+        li i.icon {
+            margin-left: 1em;
+        }
+        li li i.icon {
+            margin-left: 2em;
+        }
+        li li li i.icon {
+            margin-left: 3em;
+        }
+        li li li li i.icon {
+            margin-left: 4em;
+        }
+        li li li li li i.icon {
+            margin-left: 4.5em;
+        }
+        li li li li li li i.icon {
+            margin-left: 5em;
+        }
+        li li li li li li li i.icon {
+            margin-left: 5.5em;
+        }
         .menu li i.icon {
             // Do not affect the menu icon. 
             margin-left: 0;
@@ -40,7 +56,7 @@ div.mdl-align.title {
 
 .course-content ul li.section.hidden {
     .sectionname > span,
-    .content > div,  /* All the divs but the activities which are in a UL. */
+    .content > div, /* All the divs but the activities which are in a UL. */
     .activity .activityinstance {
         opacity: 1;
         color: @grayLight;
@@ -151,7 +167,9 @@ body {
 }
 
 .coursebox .content {
-    .summary, .courseimage, .teachers {
+    .summary, 
+    .courseimage,
+    .teachers {
         // Class 'fullsummarywidth' is an Essential special in the overridded core_course_renderer.php.
         &.fullsummarywidth {
             width: 100%;
@@ -214,9 +232,9 @@ body {
     text-align: right;
     float: right;
     .nav_icon {
+        border-left: 1px solid #eee;
         float: right;
         margin-left: 0.3em;
-        border-left: 1px solid #eee;
     }
 
     .text {
@@ -238,9 +256,9 @@ body {
     text-align: left;
 
     .nav_icon {
+        border-right: 1px solid #eee;
         float: left;
         margin-right: 0.3em;
-        border-right: 1px solid #eee;
     }
 
     .text {
@@ -249,15 +267,15 @@ body {
 }
 
 .nav_guide {
+    font-style: normal;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    font-style: normal;
 }
 
 .nav_icon {
     padding: 0.3em;
-    width: 8.3%;
     text-align: center;
+    width: 8.3%;
 }
 
 /* @end */

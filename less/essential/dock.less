@@ -1,11 +1,15 @@
 /* @group Dock */
 
-.dockbutton:hover, .dockbutton:focus, .dockbutton.disabled, .dockbutton[disabled] {
+.dockbutton:hover,
+.dockbutton:focus,
+.dockbutton.disabled,
+.dockbutton[disabled] {
     color: #7b8a8b;
     background-color: #d0d5d9;
 }
 
-.dockbutton:active, .dockbutton.active {
+.dockbutton:active,
+.dockbutton.active {
     background-color: #b4bcc2;
 }
 
@@ -13,10 +17,11 @@
     *margin-left: 0;
 }
 
-.dockbutton:hover, .dockbutton:focus {
+.dockbutton:hover,
+.dockbutton:focus {
+    background-position: 0 -15px;
     color: #7b8a8b;
     text-decoration: none;
-    background-position: 0 -15px;
     -webkit-transition: background-position .1s linear;
     -moz-transition: background-position .1s linear;
     -o-transition: background-position .1s linear;
@@ -28,7 +33,8 @@
     outline-offset: -2px;
 }
 
-.dockbutton.active, .dockbutton:active {
+.dockbutton.active,
+.dockbutton:active {
     background-image: none;
     outline: 0;
     -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -36,36 +42,41 @@
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05)
 }
 
-.dockbutton.disabled, .dockbutton[disabled] {
-    cursor: default;
+.dockbutton.disabled,
+.dockbutton[disabled] {
     background-image: none;
-    opacity: .65;
+    cursor: default;
     filter: alpha(opacity=65);
+    opacity: .65;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
 }
 
-.dockbutton .label, .dockbutton .badge {
+.dockbutton .label,
+.dockbutton .badge {
     position: relative;
     top: -1px;
 }
 
-.dockbutton:hover, .dockbutton:focus {
+.dockbutton:hover,
+.dockbutton:focus {
     color: white;
     -webkit-transition: .25s;
     -moz-transition: .25s;
     transition: .25s;
 }
 
-.dockbutton:active, .dockbutton.active {
+.dockbutton:active,
+.dockbutton.active {
     color: rgba(255, 255, 255, 0.75);
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
 }
 
-.dockbutton.disabled, .dockbutton[disabled] {
+.dockbutton.disabled,
+.dockbutton[disabled] {
     color: white;
 }
 
@@ -128,16 +139,23 @@ body.has_dock {
     }
 
     #dock {
-        .dockedtitle:hover, .dockedtitle:focus, .dockedtitle:active, .dockedtitle.active, .dockedtitle.disabled, .dockedtitle[disabled] {
+        .dockedtitle:hover,
+        .dockedtitle:focus,
+        .dockedtitle:active,
+        .dockedtitle.active,
+        .dockedtitle.disabled,
+        .dockedtitle[disabled] {
             color: #7b8a8b;
         }
     }
 
-    #dock .dockedtitle:active, #dock .dockedtitle.active {
+    #dock .dockedtitle:active,
+    #dock .dockedtitle.active {
         background-color: #b4bcc2;
     }
 
-    #dock .dockedtitle:hover, #dock .dockedtitle:focus {
+    #dock .dockedtitle:hover,
+    #dock .dockedtitle:focus {
         text-decoration: none;
         background-position: 0 -10px;
         -webkit-transition: background-position .1s linear;
@@ -146,7 +164,8 @@ body.has_dock {
         transition: background-position .1s linear;
     }
 
-    #dock .dockedtitle.active, #dock .dockedtitle:active {
+    #dock .dockedtitle.active,
+    #dock .dockedtitle:active {
         background-image: none;
         outline: 0;
         -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -154,7 +173,8 @@ body.has_dock {
         box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
     }
 
-    #dock .dockedtitle.disabled, #dock .dockedtitle[disabled] {
+    #dock .dockedtitle.disabled,
+    #dock .dockedtitle[disabled] {
         cursor: default;
         background-image: none;
         .opacity(65);
@@ -163,26 +183,30 @@ body.has_dock {
         box-shadow: none;
     }
 
-    #dock .dockedtitle .label, #dock .dockedtitle .badge {
+    #dock .dockedtitle .label,
+    #dock .dockedtitle .badge {
         position: relative;
         top: -1px;
     }
 
-    #dock .dockedtitle:hover, #dock .dockedtitle:focus {
+    #dock .dockedtitle:hover,
+    #dock .dockedtitle:focus {
         color: white;
         -webkit-transition: .25s;
         -moz-transition: .25s;
         transition: .25s
     }
 
-    #dock .dockedtitle:active, #dock .dockedtitle.active {
+    #dock .dockedtitle:active,
+    #dock .dockedtitle.active {
         color: rgba(255, 255, 255, 0.75);
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
         box-shadow: none;
     }
 
-    #dock .dockedtitle.disabled, #dock .dockedtitle[disabled] {
+    #dock .dockedtitle.disabled,
+    #dock .dockedtitle[disabled] {
         color: white;
     }
 
@@ -242,7 +266,7 @@ body.has_dock {
 
     #dockeditempanel .dockeditempanel_hd {
         position: relative;
-        border-bottom: 1px solid #EEE;
+        border-bottom: 1px solid #eee;
     }
 
     #dockeditempanel .dockeditempanel_hd h2 {
@@ -295,7 +319,8 @@ body.has_dock {
         }
     }
     &.empty-region-side-pre.empty-region-side-post {
-        #main-and-pre, #main-and-pre #content {
+        #main-and-pre,
+        #main-and-pre #content {
             width: 100%;
         }
     }

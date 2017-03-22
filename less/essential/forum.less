@@ -15,7 +15,7 @@
 .forumheaderlist {
     background: @white;
     border-radius: 10px;
-    border: 1px solid #E1E1E1 !important;
+    border: 1px solid #e1e1e1 !important;
     padding: 10px;
 }
 
@@ -74,7 +74,9 @@ body {
             margin-right: 3px;
         }
         .row {
-            .content-mask, .options, .topic {
+            .content-mask,
+            .options,
+            .topic {
                 margin-left: 84px;
             }
             .options .commands {
@@ -103,7 +105,7 @@ body {
     margin-top: 2px;
 }
 
-@media(min-width: 768px) {
+@media (min-width: 768px) {
     .forumsearch .invisiblefieldset {
         position: relative;
         width: 100%;
@@ -115,7 +117,7 @@ body {
     }
 }
 
-@media(max-width: 767px) {
+@media (max-width: 767px) {
     .forumsearch .invisiblefieldset {
         input[type="text"] {
             margin-right: 2px;
@@ -123,7 +125,7 @@ body {
         }
         input[type="submit"] {
             line-height: 20px;
-            margin-top: 0px;
+            margin-top: 0;
         }
         .helptooltip a {
             margin-top: 7px;
@@ -131,7 +133,7 @@ body {
     }
 }
 
-@media(max-width: 480px) {
+@media (max-width: 480px) {
     .forumsearch .invisiblefieldset {
         input[type="text"] {
             width: 120px;

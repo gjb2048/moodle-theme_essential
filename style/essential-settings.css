@@ -947,7 +947,7 @@ button.website:focus {
   background-color: [[setting:themecolor]];
 }
 .socials {
-  margin: 0px;
+  margin: 0;
 }
 .socials p {
   color: [[setting:headertextcolor]];
@@ -1827,13 +1827,6 @@ h2.pagetitle {
 .block_rss_client .footer a:hover {
   background-color: [[setting:themehovercolor]];
 }
-.block_login .content .footer a {
-  background-color: [[setting:themecolor]];
-  font-family: [[setting:bodyfont]];
-}
-.block_login .content .footer a:hover {
-  backgroundcolor: [[setting:themehovercolor]];
-}
 .block_login .content form input[type="submit"] {
   background-color: [[setting:themecolor]];
   font-family: [[setting:bodyfont]];
@@ -1936,7 +1929,7 @@ h2.pagetitle {
 /* @end */
 /* @group Profile Image */
 .socials img:hover {
-  box-shadow: 0px 0px 10px 0px [[setting:themecolor]];
+  box-shadow: 0 0 10px 0 [[setting:themecolor]];
 }
 /* @end */
 /* @group Tabs */
@@ -1987,7 +1980,7 @@ h2.pagetitle {
 }
 .performanceinfo h2 {
   color: [[setting:footerblocktextcolour]];
-  border-bottom-color: #EEE;
+  border-bottom-color: #eee;
 }
 .performanceinfo h2:before {
   color: [[setting:themeiconcolor]];
