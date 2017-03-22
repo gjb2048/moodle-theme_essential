@@ -16,7 +16,7 @@ define(['jquery', 'jqueryui', 'core/log'], function($, jqui, log) {
 
     return {
         init: function(data) {
-            $(document).ready(function($, jqui) {
+            $(document).ready(function($) {
 
                 log.debug('Essential Inspector Scourer AMD init');
                 log.debug('Essential Inspector Scourer AJAX File: ' + data.theme);
@@ -34,6 +34,6 @@ define(['jquery', 'jqueryui', 'core/log'], function($, jqui, log) {
                 }).prop("disabled", false);
             });
         }
-    }
+    };
 });
 /* jshint ignore:end */

@@ -38,7 +38,7 @@ define(['jquery', 'theme_bootstrapbase/bootstrap', 'core/log'], function($, boot
                             }
                         }
                     });
-                    $(window).resize(function () {
+                    $(window).resize(function() {
                         pageheaderHeight = $("#page-header").height();
                         log.debug('Essential affix resize AMD phh: ' + pageheaderHeight);
                         var wst = $(window).scrollTop();
@@ -54,6 +54,6 @@ define(['jquery', 'theme_bootstrapbase/bootstrap', 'core/log'], function($, boot
             });
             log.debug('Essential affix AMD init');
         }
-    }
+    };
 });
 /* jshint ignore:end */

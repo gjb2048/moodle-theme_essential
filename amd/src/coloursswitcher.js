@@ -16,7 +16,7 @@ define(['jquery', 'core/log'], function($, log) {
 
     !(function($) {
         // Constructor.
-        var ColoursSwitcher = function (element, data) {
+        var ColoursSwitcher = function(element, data) {
             this.$element = $(element);
             this.SCHEMES = ['default', 'alternative1', 'alternative2', 'alternative3', 'alternative4'];
             this.scheme = 'default';
@@ -73,10 +73,10 @@ define(['jquery', 'core/log'], function($, log) {
         };
 
         // No conflict.
-        $.fn.ColoursSwitcher.noConflict = function () {
+        $.fn.ColoursSwitcher.noConflict = function() {
             $.fn.ColoursSwitcher = old;
             return this;
-        }
+        };
     })($);
 
     return {
@@ -86,6 +86,6 @@ define(['jquery', 'core/log'], function($, log) {
                 return $(document.body).ColoursSwitcher(data);
             });
         }
-    }
+    };
 });
 /* jshint ignore:end */

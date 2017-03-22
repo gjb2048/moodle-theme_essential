@@ -19,11 +19,11 @@ define(['jquery', 'theme_bootstrapbase/bootstrap', 'theme_essential/holder', 'co
             $(document).ready(function($) {
                 $("[data-toggle=tooltip]").tooltip();
                 $("[data-toggle=popover]").popover().click(function(e) {
-                    e.preventDefault()
+                    e.preventDefault();
                 });
             });
             log.debug('Essential Style Guide AMD init');
         }
-    }
+    };
 });
 /* jshint ignore:end */

@@ -49,12 +49,12 @@ define(['jquery', 'core/log'], function($, log) {
                             scrollTo = scrollTo - (navbarHeight * 2);
                         }
                     }
-                    $('html, body').animate({scrollTop : scrollTo}, duration);
+                    $('html, body').animate({scrollTop: scrollTo}, duration);
                     log.debug('Essential Course Navigation AMD navigation page scrollTop: ' + scrollTo);
                     log.debug('Essential Course Navigation AMD navigation page target offset: ' + targetOffset);
                 }
-                $('a[href*="\\#section-"]').each( function() {
-                    var link_href_base = this.href.substring(0,this.href.indexOf('#'));
+                $('a[href*="\\#section-"]').each(function() {
+                    var link_href_base = this.href.substring(0, this.href.indexOf('#'));
                     log.debug('Essential Course Navigation AMD navigation element: ' + $(this).attr('href'));
                     log.debug('Essential Course Navigation AMD navigation link_href_base: ' + link_href_base);
                     if (page_href_base == link_href_base) {
@@ -83,6 +83,6 @@ define(['jquery', 'core/log'], function($, log) {
                 });
             });
         }
-    }
+    };
 });
 /* jshint ignore:end */

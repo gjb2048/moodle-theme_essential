@@ -8,13 +8,13 @@ define(['jquery', 'theme_bootstrapbase/bootstrap', 'core/log'], function($, boot
     return {
         init: function(data) {
             log.debug('Essential carousel AMD init, slide interval: ' + data.slideinterval + ', slideright: ' + data.slideright);
-            $( document ).ready(function($) {
+            $(document).ready(function($) {
                 $("#essentialCarousel").carousel({
                     interval: data.slideinterval,
                     dirright: data.slideright
                 });
             });
         }
-    }
+    };
 });
 /* jshint ignore:end */

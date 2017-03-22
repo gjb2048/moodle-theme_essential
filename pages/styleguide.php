@@ -28,6 +28,8 @@
 require_once('../../../config.php');
 require_once('../lib.php');
 
+require_login();
+
 $PAGE->set_context(context_system::instance());
 $thispageurl = new moodle_url('/theme/essential/pages/styleguide.php');
 $PAGE->set_url($thispageurl, $thispageurl->params());

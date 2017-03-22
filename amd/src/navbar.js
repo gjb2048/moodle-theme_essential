@@ -26,6 +26,6 @@ define(['jquery', 'core/log'], function($, log) {
             });
             log.debug('Essential navbar AMD init: ' + data.oldnavbar);
         }
-    }
+    };
 });
 /* jshint ignore:end */
