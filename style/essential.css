@@ -19416,8 +19416,8 @@ body .chooserdialogue .moodle-dialogue-wrap .moodle-dialogue-bd {
   width: 100%;
 }
 .environmenttable img.iconhelp {
-  padding-right: 2px;
   margin-right: .3em;
+  padding-right: 2px;
 }
 /* @end */
 /* @group Alerts */
@@ -22240,8 +22240,7 @@ table#greybox {
 }
 table#greyboxright td,
 table#greyboxleft td {
-  padding: 10px;
-  padding-top: 0;
+  padding: 10px 0 0;
   max-width: 360px;
 }
 table#greybox td {
@@ -22250,9 +22249,9 @@ table#greybox td {
 table#greyboxright h2,
 table#greyboxleft h2 {
   border-bottom: 1px solid #eee;
-  padding-bottom: 8px;
   font-size: 1.2em;
   line-height: 17px;
+  padding-bottom: 8px;
 }
 /* @end */
 /* @group Header */
