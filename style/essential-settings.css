@@ -906,10 +906,6 @@ body#page-grade-grading-pick #region-main form #fgroup_id_buttonar label {
 #page-header {
   color: [[setting:headertextcolor]];
 }
-#page-header.nologo {
-  height: 52px;
-  max-height: 52px;
-}
 #page-header .logo-container {
   width: [[setting:logomobilewidth]]%;
 }
@@ -932,10 +928,6 @@ body#page-grade-grading-pick #region-main form #fgroup_id_buttonar label {
   border-left: 1px dotted [[setting:themecolor]];
 }
 @media (min-width: 980px) {
-  #page-header.nologo {
-    height: 64px;
-    max-height: 64px;
-  }
   #page-header .logo-container {
     width: [[setting:logodesktopwidth]]%;
   }
@@ -957,17 +949,6 @@ button.website:focus {
 }
 /* @end */
 /* @group Navbar */
-#essentialnavbar.oldnavbar.nologo {
-  top: 52px;
-}
-@media (min-width: 980px) {
-  #essentialnavbar.oldnavbar.nologo {
-    top: 64px;
-  }
-}
-#essentialnavbar.affix.oldnavbar {
-  top: 0;
-}
 .navbar .navbar-inner .brand {
   color: [[setting:themenavcolor]];
 }

@@ -139,6 +139,28 @@
     }
 }
 
+#page-header {
+    &.logo {
+        min-height: 52px;
+    }
+    &.nologo {
+        height: 52px;
+        max-height: 52px;
+    }
+}
+
+@media (min-width: @navbarCollapseDesktopWidth) {
+    #page-header {
+        &.logo {
+            min-height: 64px;
+        }
+        &.nologo {
+            height: 64px;
+            max-height: 64px;
+        }
+    }
+}
+
 /* @end */
 
 /* @group Social Buttons */
@@ -147,16 +169,6 @@
 #mobileapps {
     margin-right: 5px;
     padding-right: 5px;
-}
-
-#page-header {
-    &.nologo {
-        #socialnetworks,
-        #mobileapps {
-            height: 52px;
-            max-height: 52px;
-        }
-    }
 }
 
 

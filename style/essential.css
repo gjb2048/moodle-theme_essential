@@ -22371,17 +22371,28 @@ table#greyboxleft h2 {
     max-height: 80px;
   }
 }
+#page-header.logo {
+  min-height: 52px;
+}
+#page-header.nologo {
+  height: 52px;
+  max-height: 52px;
+}
+@media (min-width: 980px) {
+  #page-header.logo {
+    min-height: 64px;
+  }
+  #page-header.nologo {
+    height: 64px;
+    max-height: 64px;
+  }
+}
 /* @end */
 /* @group Social Buttons */
 #socialnetworks,
 #mobileapps {
   margin-right: 5px;
   padding-right: 5px;
-}
-#page-header.nologo #socialnetworks,
-#page-header.nologo #mobileapps {
-  height: 52px;
-  max-height: 52px;
 }
 @media (min-width: 980px) {
   #page-header.nologo #socialnetworks,
@@ -22544,6 +22555,17 @@ ul.socials li {
     margin-bottom: 80px;
     margin-top: 0;
   }
+}
+#essentialnavbar.oldnavbar.nologo {
+  top: 52px;
+}
+@media (min-width: 980px) {
+  #essentialnavbar.oldnavbar.nologo {
+    top: 64px;
+  }
+}
+#essentialnavbar.affix.oldnavbar {
+  top: 0;
 }
 div.dropdown-menu > ul {
   list-style: inherit;
