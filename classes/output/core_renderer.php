@@ -1736,6 +1736,7 @@ class core_renderer extends \core_renderer {
             'docs' => 'question-circle',
             'generate' => 'gift',
             'help' => 'question-circle-o',
+            'trash' => 'trash-o',
             'i/backup' => 'cloud-download',
             'i/badge' => 'trophy',
             'i/checkpermissions' => 'user',

@@ -1,5 +1,6 @@
 New in 3.2.1.1
 ==============
+- FIX: Font-awesome icon for the recycle bin.
 
 New in 3.2.1.0 - First stable version.
 ==============
