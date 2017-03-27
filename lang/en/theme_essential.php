@@ -186,10 +186,6 @@ $string['logoheightdesc'] = 'The height of the logo image.  This can be specifie
 
 $string['logodimerror'] = ' is invalid.  Please state \'px\' or \'em\' immediately after the unit value and nothing before the unit value.';
 
-$string['credit'] = 'The {$a->name} theme for Moodle is developed by ';
-$string['download'] = 'Go to the download page';
-$string['aboutme'] = 'About me';
-
 $string['profilebarcustomtitle'] = 'Profile bar custom block title';
 $string['profilebarcustomtitledesc'] = 'Title for custom profile bar block.';
 

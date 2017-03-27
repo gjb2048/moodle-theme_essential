@@ -8,6 +8,7 @@ New in 3.1.1.8
 - FIX: User image table even row background.
 - FIX: Forum table user image link height.
 - FIX: Environment table help icon spacing.
+- FIX: Font-awesome icon for the recycle bin.
 - NEW: Issue #622: Custom category icon images.  Gratefully funded by Gemma Lesterhuis.
 - NEW: User image border radius settings.
 

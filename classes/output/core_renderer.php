@@ -191,7 +191,7 @@ class core_renderer extends \core_renderer {
         $footer = str_replace($this->unique_end_html_token, $this->page->requires->get_end_code(), $footer);
         $this->page->set_state(moodle_page::STATE_DONE);
         $info = '<!-- Essential theme version: '.$this->page->theme->settings->version.
-            ', developed, enhanced and maintained by Gareth J Barnard: about.me/gjbarnard -->';
+            ' is developed by Gareth J Barnard: about.me/gjbarnard';
 
         return $output . $footer . $info;
     }
@@ -1730,6 +1730,7 @@ class core_renderer extends \core_renderer {
             'docs' => 'question-circle',
             'generate' => 'gift',
             'help' => 'question-circle-o',
+            'trash' => 'trash-o',
             'i/marker' => 'lightbulb-o',
             'i/delete' => 'times-circle',
             'i/dragdrop' => 'arrows',
@@ -2116,19 +2117,6 @@ class core_renderer extends \core_renderer {
                 html_writer::tag('div', '', array('class' => 'block_action')).$title.$controlshtml, array('class' => 'title')),
                 array('class' => 'header'));
         }
-        return $output;
-    }
-
-    public function standard_footer_html() {
-        $output = parent::standard_footer_html();
-        $output .= html_writer::start_tag('div', array ('class' => 'themecredit')).
-            get_string('credit', 'theme_essential',
-            array('name' => html_writer::link('https://moodle.org/plugins/theme_essential', 'Essential', array(
-                'target' => '_blank',
-                'title' => get_string('download', 'theme_essential'))))).
-            html_writer::link('//about.me/gjbarnard', 'Gareth J Barnard', array(
-                'target' => '_blank', 'title' => get_string('aboutme', 'theme_essential'))).html_writer::end_tag('div');
-
         return $output;
     }
 
