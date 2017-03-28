@@ -1756,6 +1756,7 @@ class core_renderer extends \core_renderer {
             'i/publish' => 'globe',
             'i/reload' => 'refresh',
             'i/report' => 'list-alt',
+            'i/repository' => 'database',
             'i/restore' => 'cloud-upload',
             'i/return' => 'repeat',
             'i/roles' => 'user',
