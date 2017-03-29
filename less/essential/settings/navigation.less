@@ -21,7 +21,8 @@
         .nav > li > a,
         .search-input-wrapper > div .@{fa-css-prefix} {
             color: ~"[[setting:themenavcolor]]";
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
                 color: ~"[[setting:themecolor]]";
                 background-color: ~"[[setting:themenavcolor]]";
             }
@@ -30,7 +31,7 @@
         #custom_menu_courses {
             .dropdown-menu li > a > span.onlyenrolled {
                 background-color: ~"[[setting:mycoursesorderenrolbackcolour]]";
-           }
+            }
         }
 
         .nav > li.dropdown .dropdown-menu li {
@@ -40,7 +41,8 @@
                     color: @white; // TODO: Page background colour needs to be a setting.
                     background-color: ~"[[setting:themeurlcolor]]";
                 }
-                &:focus, &.open {
+                &:focus,
+                &.open {
                     color: @white; // TODO: Page background colour needs to be a setting.
                     background-color: ~"[[setting:themeurlcolor]]";
                     .@{fa-css-prefix} {
@@ -62,7 +64,9 @@
 
         .nav {
             li.dropdown {
-                &.open > .dropdown-toggle, &.active > .dropdown-toggle, &.open.active > .dropdown-toggle {
+                &.open > .dropdown-toggle,
+                &.active > .dropdown-toggle,
+                &.open.active > .dropdown-toggle {
                     color: @white; // TODO: Page background colour needs to be a setting.
                     background-color: ~"[[setting:themehovercolor]]";
                 }
@@ -90,11 +94,13 @@
                     li > a {
                         border-top: 1px dotted ~"[[setting:themecolor]]";
                         &:hover {
-                            .message, .notification {
+                            .message,
+                            .notification {
                                 color: @white; // TODO: Page background colour needs to be a setting.
                                 background-color: ~"[[setting:themehovercolor]]";
                                 img {
-                                    &.userpicture, &.profilepicture {
+                                    &.userpicture,
+                                    &.profilepicture {
                                         box-shadow: 0 0 3px ~"[[setting:themenavcolor]]";
                                     }
                                 }
@@ -107,12 +113,13 @@
     }
 }
 
-.dropdown-submenu  {
-    >a:after {
+.dropdown-submenu {
+    > a:after {
         border-left-color: ~"[[setting:themeiconcolor]]";
     }
-    &:focus, &:hover {
-        >a:after {
+    &:focus,
+    &:hover {
+        > a:after {
             border-left-color: ~"[[setting:themenavcolor]]";
         }
     }
@@ -121,13 +128,14 @@
     .navbar-inner {
         .usermenu {
             .dropdown {
-                .dropdown-submenu  {
-                    >a:after {
+                .dropdown-submenu {
+                    > a:after {
                         border-right-color: ~"[[setting:themeiconcolor]]";
                     }
-                    &:focus, &:hover {
-                       >a:after {
-                           border-right-color: ~"[[setting:themenavcolor]]";
+                    &:focus,
+                    &:hover {
+                       > a:after {
+                            border-right-color: ~"[[setting:themenavcolor]]";
                         }
                     }
                 }
@@ -140,17 +148,19 @@
     .navbar {
         .nav-collapse.in {
             .nav, .nav .dropdown-menu {
-                .dropdown-submenu  {
+                .dropdown-submenu {
                     .dropdown-toggle:after {
                         border-top-color: ~"[[setting:themeiconcolor]]";
                     }
-                    &:focus, &:hover {
+                    &:focus,
+                    &:hover {
                         .dropdown-toggle:after {
                             border-top-color: ~"[[setting:themenavcolor]]";
                         }
                     }
                 }
-                .dropdown-submenu, .dropdown-submenu:hover {
+                .dropdown-submenu,
+                .dropdown-submenu:hover {
                     &.open {
                         > a {
                             color: ~"[[setting:themenavcolor]]";
@@ -166,8 +176,9 @@
     }
     .navbar {
         .nav-collapse.in {
-            .nav, .nav .dropdown-menu {
-                .dropdown-submenu  {
+            .nav,
+            .nav .dropdown-menu {
+                .dropdown-submenu {
                     .dropdown-toggle:after {
                         border-left-color: transparent;
                     }

@@ -114,7 +114,9 @@
                                 &:before {
                                     border-left-color: ~"[[setting:alternativethemecolor@{index}]]";
                                 }
-                                span, a, a:before {
+                                span,
+							    a,
+                                a:before {
                                     color: ~"[[setting:alternativethemecolor@{index}]]";
                                 }
                             }
@@ -148,7 +150,8 @@
 
                 .@{fa-css-prefix} {
                     color: ~"[[setting:alternativethemeiconcolor@{index}]]";
-                    &:focus, &:hover {
+                    &:focus,
+                    &:hover {
                         color: ~"[[setting:alternativethemehovercolor@{index}]]";
                     }
                     &.@{fa-css-prefix}-warning {
@@ -157,7 +160,8 @@
                 }
                 .dimmed .@{fa-css-prefix} {
                     color: inherit;
-                    &:focus, &:hover {
+                    &:focus,
+                    &:hover {
                         color: inherit;
                     }
                 }
@@ -177,10 +181,12 @@
                     }
                 }
 
-                .filemanager, .file-picker {
+                .filemanager,
+                .file-picker {
                     a, a:visited {
                         color: ~"[[setting:alternativethemeurlcolor@{index}]]";
-                        &:hover, &:focus {
+                        &:hover,
+                        &:focus {
                             color: ~"[[setting:alternativethemehovercolor@{index}]]";
                             &:before {
                                 color: ~"[[setting:alternativethemehovercolor@{index}]]";
@@ -230,7 +236,9 @@
                         background-color: ~"[[setting:alternativethemecolor@{index}]]";
                         background-image: none;
                         border-color: ~"[[setting:alternativethemecolor@{index}]]";
-                        &:focus, &:hover, &:active {
+                        &:focus,
+                        &:hover,
+                        &:active {
                             color: ~"[[setting:alternativethemecolor@{index}]]";
                             background-color: ~"[[setting:alternativethemenavcolor@{index}]]";
                             background-image: none;
@@ -273,7 +281,8 @@
                         .nav > li > a,
                         .search-input-wrapper > div .@{fa-css-prefix} {
                             color: ~"[[setting:alternativethemenavcolor@{index}]]";
-                            &:focus, &:hover {
+                            &:focus,
+                            &:hover {
                                 color: ~"[[setting:alternativethemecolor@{index}]]";
                                 background-color: ~"[[setting:alternativethemenavcolor@{index}]]";
                             }
@@ -297,7 +306,8 @@
                                 .dropdown-toggle:after {
                                     border-right-color: inherit;
                                 }
-                                &:focus, &:hover {
+                                &:focus,
+                                &:hover {
                                     .dropdown-toggle:after {
                                         border-right-color: ~"[[setting:alternativethemenavcolor@{index}]]";
                                     }
@@ -372,7 +382,9 @@
                     }
                     .nav {
                         li.dropdown {
-                            &.open > .dropdown-toggle, &.active > .dropdown-toggle, &.open.active > .dropdown-toggle {
+                            &.open > .dropdown-toggle,
+                            &.active > .dropdown-toggle,
+                            &.open.active > .dropdown-toggle {
                                 color: @white; // TODO: Page background colour needs to be a setting.
                                 background-color: ~"[[setting:alternativethemehovercolor@{index}]]";
                             }
@@ -405,7 +417,8 @@
                                             color: @white; // TODO: Page background colour needs to be a setting.
                                             background-color: ~"[[setting:alternativethemehovercolor@{index}]]";
                                             img {
-                                                &.userpicture, &.profilepicture {
+                                                &.userpicture,
+                                                &.profilepicture {
                                                     box-shadow: 0 0 3px ~"[[setting:alternativethemenavcolor@{index}]]";
                                                 }
                                             }
@@ -457,7 +470,12 @@
                     background-image: -o-linear-gradient(bottom, ~"[[setting:alternativethemedefaultbuttonbackgroundcolourimage@{index}]]", ~"[[setting:alternativethemedefaultbuttonbackgroundcolourrgba@{index}]]"); // Opera 11.10
                     background-image: linear-gradient(to top, ~"[[setting:alternativethemedefaultbuttonbackgroundcolourimage@{index}]]", ~"[[setting:alternativethemedefaultbuttonbackgroundcolourrgba@{index}]]"); // Standard, IE10
 
-                    &:hover, &:focus, &:active, &.active, &.disabled, &[disabled] {
+                    &:hover,
+                    &:focus,
+                    &:active,
+                    &.active,
+                    &.disabled,
+                    &[disabled] {
                         color: ~"[[setting:alternativethemedefaultbuttontexthovercolour@{index}]]";
                         text-shadow: 0 1px 1px rgba(64, 64, 64, .75);
                         background-color: ~"[[setting:alternativethemedefaultbuttonbackgroundhovercolour@{index}]]";
@@ -473,7 +491,8 @@
                 }
                 .btn {
                     .buttonBackground(@btnBackground, @btnBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));
-                    &:hover, &:focus {
+                    &:hover,
+                    &:focus {
                         background-image: none;
                     }
 
@@ -609,7 +628,8 @@
                     .@{fa-css-prefix}-warning,
                     .@{fa-css-prefix}-bullhorn {
                         color: ~"[[setting:alternativethemenavcolor@{index}]]";
-                        &:hover, &:focus {
+                        &:hover,
+                        &:focus {
                             color: ~"[[setting:alternativethemenavcolor@{index}]]";
                         }
                     }
@@ -831,7 +851,7 @@
                         color: inherit;
                     }
                     .block_html ul li:before,
-                        #greyboxright ul li:before {
+                    #greyboxright ul li:before {
                         background-color: ~"[[setting:alternativethemecolor@{index}]]";
                     }
                     .block_login input[type="submit"] {
@@ -955,7 +975,8 @@
                     }
                     span.@{fa-css-prefix} {
                         color: inherit;
-                        &:hover, &:focus {
+                        &:hover,
+                        &:focus {
                             color: inherit;
                         }
                     }
@@ -966,7 +987,9 @@
                 }
 
                 table#user-grades {
-                    th.item, th.categoryitem, th.courseitem {
+                    th.item,
+                    th.categoryitem,
+                    th.courseitem {
                         border-bottom-color: ~"[[setting:alternativethemecolor@{index}]]";
                     }
                 }
@@ -1070,7 +1093,8 @@
                     }
                 }
 
-                .moodle-core-dragdrop-draghandle:before, .moodle-core-dragdrop-draghandle a {
+                .moodle-core-dragdrop-draghandle:before,
+                .moodle-core-dragdrop-draghandle a {
                     color: ~"[[setting:alternativethemeurlcolor@{index}]]";
                 }
                 .menu a.menu-action,
@@ -1110,7 +1134,8 @@
                 #page,
                 #region-main {
                     form {
-                        .form-buttons, #fgroup_id_buttonar {
+                        .form-buttons,
+                        #fgroup_id_buttonar {
                             background-color: ~"[[setting:alternativethemecolor@{index}]]";
                         }
                     }
@@ -1136,7 +1161,11 @@
                     .avg {
                         color: ~"[[setting:alternativethemestripetextcolour@{index}]]";
                         background-color: ~"[[setting:alternativethemestripebackgroundcolour@{index}]]";
-                        a, a:hover, a:focus, a:visited, .@{fa-css-prefix} {
+                        a,
+                        a:hover,
+                        a:focus,
+                        a:visited,
+                        .@{fa-css-prefix} {
                             color: ~"[[setting:alternativethemestripeurlcolour@{index}]]";
                         }
                     }
@@ -1315,7 +1344,8 @@
                     }
                     .navbar {
                         .nav-collapse.in {
-                            .nav, .nav .dropdown-menu {
+                            .nav,
+                            .nav .dropdown-menu {
                                 .dropdown-submenu {
                                     .dropdown-toggle:after {
                                         border-left-color: transparent;
@@ -1328,7 +1358,8 @@
                                         }
                                     }
                                 }
-                                .dropdown-submenu, .dropdown-submenu:hover {
+                                .dropdown-submenu,
+                                .dropdown-submenu:hover {
                                     &.open {
                                         > a {
                                             color: ~"[[setting:alternativethemenavcolor@{index}]]";

@@ -19765,7 +19765,7 @@ p.tree_item.leaf a.action-delete > .fa {
 }
 .hidden-blocks h4 {
   border-bottom: 1px solid #ccc;
-  color: #ff6666;
+  color: #f66;
   margin-bottom: 8px;
   margin-top: 0;
   padding-bottom: 8px;
@@ -20986,10 +20986,10 @@ body .course-content ul.topics li.section .content {
   background-position: 0 -15px;
   color: #7b8a8b;
   text-decoration: none;
-  -webkit-transition: background-position 0.1s linear;
-  -moz-transition: background-position 0.1s linear;
-  -o-transition: background-position 0.1s linear;
-  transition: background-position 0.1s linear;
+  -webkit-transition: background-position 0.5s linear;
+  -moz-transition: background-position 0.5s linear;
+  -o-transition: background-position 0.5s linear;
+  transition: background-position 0.5s linear;
 }
 .dockbutton:focus {
   outline: 5px auto -webkit-focus-ring-color;
@@ -21099,10 +21099,10 @@ body.has_dock #dock .dockedtitle:hover,
 body.has_dock #dock .dockedtitle:focus {
   text-decoration: none;
   background-position: 0 -10px;
-  -webkit-transition: background-position 0.1s linear;
-  -moz-transition: background-position 0.1s linear;
-  -o-transition: background-position 0.1s linear;
-  transition: background-position 0.1s linear;
+  -webkit-transition: background-position 0.5s linear;
+  -moz-transition: background-position 0.5s linear;
+  -o-transition: background-position 0.5s linear;
+  transition: background-position 0.5s linear;
 }
 body.has_dock #dock .dockedtitle.active,
 body.has_dock #dock .dockedtitle:active {
@@ -21132,7 +21132,7 @@ body.has_dock #dock .dockedtitle:focus {
   color: white;
   -webkit-transition: .25s;
   -moz-transition: .25s;
-  transition: 0.25s;
+  transition: .25s;
 }
 body.has_dock #dock .dockedtitle:active,
 body.has_dock #dock .dockedtitle.active {
@@ -21574,7 +21574,6 @@ body.path-admin-setting #page-footer {
   display: inline;
   font-size: 1em;
   font-weight: 100;
-  margin-top: 0;
 }
 #page-footer .performanceinfo span.fa:hover,
 #page-footer .performanceinfo span.fa:focus {
@@ -22041,9 +22040,9 @@ body .forumpost .row .options .commands {
 /* @end */
 /* @group Back to Top */
 .back-to-top {
-  -webkit-transition: all .3s ease 0s;
-  -moz-transition: all .3s ease 0s;
-  -o-transition: all .3s ease 0s;
+  -webkit-transition: all .3s ease .5s;
+  -moz-transition: all .3s ease .5s;
+  -o-transition: all .3s ease .5s;
   background-color: #000;
   background-color: rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0 0 1px #fff;
@@ -22408,7 +22407,7 @@ table#greyboxleft h2 {
   font-size: 1.1em;
 }
 body button.socialicon {
-  background-color: #bbbbbb;
+  background-color: #bbb;
   background-image: none;
   border-radius: 5px;
   border: 0 none;

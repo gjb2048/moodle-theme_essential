@@ -22,10 +22,10 @@
     background-position: 0 -15px;
     color: #7b8a8b;
     text-decoration: none;
-    -webkit-transition: background-position .1s linear;
-    -moz-transition: background-position .1s linear;
-    -o-transition: background-position .1s linear;
-    transition: background-position .1s linear;
+    -webkit-transition: background-position .5s linear;
+    -moz-transition: background-position .5s linear;
+    -o-transition: background-position .5s linear;
+    transition: background-position .5s linear;
 }
 
 .dockbutton:focus {
@@ -39,7 +39,7 @@
     outline: 0;
     -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
     -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05)
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .dockbutton.disabled,
@@ -158,10 +158,10 @@ body.has_dock {
     #dock .dockedtitle:focus {
         text-decoration: none;
         background-position: 0 -10px;
-        -webkit-transition: background-position .1s linear;
-        -moz-transition: background-position .1s linear;
-        -o-transition: background-position .1s linear;
-        transition: background-position .1s linear;
+        -webkit-transition: background-position .5s linear;
+        -moz-transition: background-position .5s linear;
+        -o-transition: background-position .5s linear;
+        transition: background-position .5s linear;
     }
 
     #dock .dockedtitle.active,
@@ -194,7 +194,7 @@ body.has_dock {
         color: white;
         -webkit-transition: .25s;
         -moz-transition: .25s;
-        transition: .25s
+        transition: .25s;
     }
 
     #dock .dockedtitle:active,
@@ -294,7 +294,8 @@ body.has_dock {
     }
 
     #dockeditempanel .dockeditempanel_hd .commands {
-        img, input {
+        img,
+        input {
             vertical-align: middle
         }
         img {
@@ -391,7 +392,8 @@ body.has_dock {
 @media (max-width: 767px) {
     body.has_dock.used-region-side-pre.docked-region-side-post {
         #main-and-pre {
-            #content, #block-region-side-pre {
+            #content,
+            #block-region-side-pre {
                 width: 100%;
             }
         }
@@ -433,7 +435,8 @@ body.has_dock {
     }
 
     #dockeditempanel .dockeditempanel_hd .commands {
-        img, input {
+        img,
+        input {
             margin-right: 1px;
         }
     }

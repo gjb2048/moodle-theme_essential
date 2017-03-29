@@ -2,8 +2,9 @@
 
 /* @group Core */
 
-*,p {
-    font-family: ~"[[setting:bodyfont]]"
+*,
+p {
+    font-family: ~"[[setting:bodyfont]]";
 }
 
 @import "../../fontawesome/variables";
@@ -16,7 +17,8 @@ body {
     background-size: ~"[[setting:backgroundsize]]";
     .@{fa-css-prefix} {
         color: ~"[[setting:themeiconcolor]]";
-        &:focus, &:hover {
+        &:focus,
+        &:hover {
             color: ~"[[setting:themehovercolor]]";
         }
     }
@@ -25,7 +27,8 @@ body {
     }
     .dimmed .@{fa-css-prefix} {
         color: inherit;
-        &:focus, &:hover {
+        &:focus,
+        &:hover {
             color: inherit;
         }
     }
@@ -46,15 +49,27 @@ body.loginbackground {
     max-width: ~"[[setting:pagewidth]]";
 }
 
-h1, h2, h3, h4, h5, h6, #adminsettings h3 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+#adminsettings h3 {
     color: ~"[[setting:themetextcolor]]";
 }
 
-a, a:visited, .btn-link, .btn-link:visited {
+a,
+a:visited,
+.btn-link,
+.btn-link:visited {
     color: ~"[[setting:themeurlcolor]]";
 }
 
-a:hover, a:focus, .btn-link:hover, .btn-link:focus {
+a:hover,
+a:focus,
+.btn-link:hover,
+.btn-link:focus {
     color: ~"[[setting:themehovercolor]]";
     &:before {
         color: ~"[[setting:themehovercolor]]";
@@ -112,8 +127,9 @@ a {
 
 /* @group Navbar */
 
-.navbar, .navbar-inner {
-  background-color: ~"[[setting:themecolor]]";
+.navbar,
+.navbar-inner {
+    background-color: ~"[[setting:themecolor]]";
 }
 
 /* @end */
@@ -158,7 +174,8 @@ h2.pagetitle {
     a:hover {
         color: ~"[[setting:themehovercolor]]";
     }
-    .header .title h2:before, &.block_iconic_html .header .title h2 .@{fa-css-prefix}:before {
+    .header .title h2:before,
+    &.block_iconic_html .header .title h2 .@{fa-css-prefix}:before {
         color: ~"[[setting:themeiconcolor]]";
     }
 }
@@ -194,7 +211,7 @@ h2.pagetitle {
 }
 
 #page-site-index h2.headingblock:before {
-  color: ~"[[setting:themetextcolor]]";
+    color: ~"[[setting:themetextcolor]]";
 }
 
 /* @end */
@@ -214,15 +231,18 @@ h2.pagetitle {
     color: ~"[[setting:footertextcolor]]";
     border-top: 2px solid ~"[[setting:themecolor]]";
     border-bottom: 3px solid ~"[[setting:themecolor]]";
-    a, a > .@{fa-css-prefix} {
+    a,
+    a > .@{fa-css-prefix} {
         color: ~"[[setting:footerurlcolor]]";
     }
-    a:hover, a:hover > .@{fa-css-prefix} {
+    a:hover,
+    a:hover > .@{fa-css-prefix} {
         color: ~"[[setting:footerhovercolor]]";
     }
     .footnote {
         color: ~"[[setting:footertextcolor]]";
-        a, a:visited {
+        a,
+        a:visited {
             color: ~"[[setting:footerurlcolor]]";
         }
         a:hover {
@@ -247,10 +267,12 @@ h2.pagetitle {
     .block {
         background-color: ~"[[setting:footerblockbackgroundcolour]]";
         color: ~"[[setting:footerblocktextcolour]]";
-        a, a > .@{fa-css-prefix} {
+        a,
+        a > .@{fa-css-prefix} {
             color: ~"[[setting:footerblockurlcolour]]";
         }
-        a:hover, a:hover > .@{fa-css-prefix} {
+        a:hover,
+        a:hover > .@{fa-css-prefix} {
             color: ~"[[setting:footerblockhovercolour]]";
         }
         .icon {
@@ -268,7 +290,8 @@ h2.pagetitle {
             color: inherit;
         }
     }
-    .header .title h2:before, &.block_iconic_html .header .title h2 span.@{fa-css-prefix}:before {
+    .header .title h2:before,
+    &.block_iconic_html .header .title h2 span.@{fa-css-prefix}:before {
         color: inherit;
     }
     .block_html ul li:before,
@@ -323,7 +346,8 @@ h2.pagetitle {
     .nav-collapse {
         background-color: ~"[[setting:themecolor]]";
         border: 1px solid ~"[[setting:themecolor]]";
-        .nav > li >, .dropdown-menu {
+        .nav > li >,
+        .dropdown-menu {
             a {
                 &:hover, &:focus {
                     color: ~"[[setting:themecolor]]";
@@ -359,7 +383,14 @@ h2.pagetitle {
     span {
         color: ~"[[setting:footerblocktextcolour]]";
     }
-    #cache:before, #load:before, #memory:before, #peakmemory:before, #session:before, #included:before, #dbqueries:before, #dbtime:before {
+    #cache:before,
+    #load:before,
+    #memory:before,
+    #peakmemory:before,
+    #session:before,
+    #included:before,
+    #dbqueries:before,
+    #dbtime:before {
         color: ~"[[setting:themenavcolor]]";
     }
 }
@@ -369,24 +400,25 @@ h2.pagetitle {
 /* @group Quiz */
 
 #page-mod-quiz-edit .questionbankwindow {
-  &.block div.header {
-    background-color: ~"[[setting:themecolor]]";
-    border: 1px solid ~"[[setting:themeiconcolor]]";
-    div.title h2 {
-      color: ~"[[setting:themenavcolor]]";
-      a {
-        &#showbankcmd, &#hidebankcmd {
+    &.block div.header {
+        background-color: ~"[[setting:themecolor]]";
+        border: 1px solid ~"[[setting:themeiconcolor]]";
+        div.title h2 {
             color: ~"[[setting:themenavcolor]]";
-            &:hover {
+            a {
+                &#showbankcmd,
+                &#hidebankcmd {
+                    color: ~"[[setting:themenavcolor]]";
+                    &:hover {
+                        color: ~"[[setting:themenavcolor]]";
+                    }
+                }
+            }
+            &:before {
                 color: ~"[[setting:themenavcolor]]";
             }
         }
-      }
-      &:before {
-          color: ~"[[setting:themenavcolor]]";
-      }
     }
-  }
 }
 
 /* @end */
@@ -394,7 +426,9 @@ h2.pagetitle {
 /* @group Gradebook */
 
 table#user-grades {
-    th.item, th.categoryitem, th.courseitem {
+    th.item,
+    th.categoryitem,
+    th.courseitem {
         border-bottom-color: ~"[[setting:themecolor]]";
     }
 }
@@ -424,7 +458,12 @@ table#user-grades {
 /* @end */
 
 /* @group Headings */
-h1, h2, h3, h4, h5, h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .back-to-top,
 .socials p,
 #profileheading,
@@ -434,7 +473,12 @@ h1, h2, h3, h4, h5, h6,
     font-family: ~"[[setting:headingfont]]";
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     span {
         font-family: inherit;
     }
@@ -445,13 +489,17 @@ h1, h2, h3, h4, h5, h6 {
 .actions {
     a {
         color: ~"[[setting:themeurlcolor]]";
-        &:hover, &:focus, &:active {
+        &:hover,
+        &:focus,
+        &:active {
             color: ~"[[setting:themehovercolor]]";
         }
     }
     .moodle-actionmenu[data-enhanced].show .menu a {
         color: ~"[[setting:themeurlcolor]]";
-        &:hover, &:focus, &:active {
+        &:hover, 
+        &:focus,
+        &:active {
             color: ~"[[setting:themehovercolor]]";
         }
     }
