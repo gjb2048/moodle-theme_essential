@@ -19199,6 +19199,18 @@ textarea {
   float: none;
 }
 /* Moodle fixes message end */
+/* Moodle fixes mod-assign begin */
+.path-mod-assign .gradingtable tr.selectedrow td,
+.path-mod-assign .gradingtable tr.unselectedrow td {
+  color: inherit;
+}
+.path-mod-assign .gradingtable .generaltable > tbody tr:hover > td a:not(.btn):not([role="menuitem"]),
+.path-mod-assign .gradingtable table.flexible > tbody tr:hover > td a:not(.btn):not([role="menuitem"]),
+.path-mod-assign .gradingtable .generaltable > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):hover,
+.path-mod-assign .gradingtable table.flexible > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):hover {
+  background-color: inherit;
+}
+/* Moodle fixes mod-assign end */
 /* Moodle fixes search begin */
 .navbar .search-input-wrapper {
   width: 18px;
