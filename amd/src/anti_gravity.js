@@ -17,7 +17,7 @@ define(['jquery', 'core/log'], function(jQuery, log) {
     jQuery(document).ready(function() {
         var offset = 220;
         var duration = 500;
-        jQuery(window).scroll(function () {
+        jQuery(window).scroll(function() {
             if (jQuery(window).scrollTop() > offset) {
                 jQuery('.back-to-top').fadeIn(duration);
             } else {
@@ -25,7 +25,7 @@ define(['jquery', 'core/log'], function(jQuery, log) {
             }
         });
 
-        jQuery('.back-to-top').click(function (event) {
+        jQuery('.back-to-top').click(function(event) {
             event.preventDefault();
             jQuery('html, body').animate({scrollTop: 0}, duration);
             return false;

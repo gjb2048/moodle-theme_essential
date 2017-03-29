@@ -14,14 +14,14 @@ define(['jquery', 'core/log'], function($, log) {
 
     log.debug('Essential Colour Switcher AMD');
 
-    !(function($) {
+    (function($) {
         // Constructor.
         var ColoursSwitcher = function(element, data) {
             this.$element = $(element);
             this.SCHEMES = ['default', 'alternative1', 'alternative2', 'alternative3', 'alternative4'];
             this.scheme = 'default';
             this.init(data);
-        }
+        };
 
         ColoursSwitcher.prototype = {
             constructor: ColoursSwitcher,

@@ -27,13 +27,13 @@ define(['jquery', 'core/log'], function($, log) {
                     log.debug('Essential Course Navigation AMD navbar height: ' + navbarHeight);
                 }
 
-                var page_href_base = location.href;
+                var pageHrefBase = location.href;
                 var hrefIndex = location.href.indexOf("#");
-                log.debug('Essential Course Navigation AMD navigation page_href_base 1: ' + page_href_base);
+                log.debug('Essential Course Navigation AMD navigation pageHrefBase 1: ' + pageHrefBase);
                 log.debug('Essential Course Navigation AMD navigation hrefIndex: ' + hrefIndex);
                 if (hrefIndex != -1) {
-                    page_href_base = location.href.substring(0, hrefIndex);
-                    log.debug('Essential Course Navigation AMD navigation page_href_base 2: ' + page_href_base);
+                    pageHrefBase = location.href.substring(0, hrefIndex);
+                    log.debug('Essential Course Navigation AMD navigation pageHrefBase 2: ' + pageHrefBase);
                     // We are an anchor on the same site - otherwise why would this run?  Therefore still need to scroll.
                     var url = location.href;
                     var hash = url.substring(url.indexOf("#") + 1);
@@ -54,10 +54,10 @@ define(['jquery', 'core/log'], function($, log) {
                     log.debug('Essential Course Navigation AMD navigation page target offset: ' + targetOffset);
                 }
                 $('a[href*="\\#section-"]').each(function() {
-                    var link_href_base = this.href.substring(0, this.href.indexOf('#'));
+                    var linkHrefBase = this.href.substring(0, this.href.indexOf('#'));
                     log.debug('Essential Course Navigation AMD navigation element: ' + $(this).attr('href'));
-                    log.debug('Essential Course Navigation AMD navigation link_href_base: ' + link_href_base);
-                    if (page_href_base == link_href_base) {
+                    log.debug('Essential Course Navigation AMD navigation linkHrefBase: ' + linkHrefBase);
+                    if (pageHrefBase == linkHrefBase) {
                         $(this).click(function(e) {
                             e.preventDefault();
                             var url = this.href;
@@ -75,7 +75,7 @@ define(['jquery', 'core/log'], function($, log) {
                                     scrollTo = scrollTo - (navbarHeight * 2);
                                 }
                             }
-                            $('html, body').animate({scrollTop : scrollTo}, duration);
+                            $('html, body').animate({scrollTop: scrollTo}, duration);
                             log.debug('Essential Course Navigation AMD navigation element scrollTop: ' + scrollTo);
                             log.debug('Essential Course Navigation AMD navigation element target offset: ' + targetOffset);
                         });
