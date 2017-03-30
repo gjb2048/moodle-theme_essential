@@ -2230,7 +2230,7 @@ if ($ADMIN->fulltree) {
         get_string('categoryctiheadingsub', 'theme_essential'),
         format_text(get_string('categoryctidesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
-    // Category icons.
+    // Category course title images.
     $name = 'theme_essential/enablecategorycti';
     $title = get_string('enablecategorycti', 'theme_essential');
     $description = get_string('enablecategoryctidesc', 'theme_essential');
@@ -2239,7 +2239,7 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingscategorycti->add($setting);
 
-    // Category icons category setting pages.
+    // Category course title image setting pages.
     $name = 'theme_essential/enablecategoryctics';
     $title = get_string('enablecategoryctics', 'theme_essential');
     $description = get_string('enablecategorycticsdesc', 'theme_essential');
@@ -2417,12 +2417,20 @@ if ($ADMIN->fulltree) {
     // We only want to output category icon options if the parent setting is enabled.
     if (get_config('theme_essential', 'enablecategoryicon')) {
 
-        // Default icon selector.
+        // Default icon.
         $name = 'theme_essential/defaultcategoryicon';
         $title = get_string('defaultcategoryicon', 'theme_essential');
         $description = get_string('defaultcategoryicondesc', 'theme_essential');
         $default = 'folder-open';
         $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $essentialsettingscategoryicon->add($setting);
+
+        // Default image.
+        $name = 'theme_essential/defaultcategoryimage';
+        $title = get_string('defaultcategoryimage', 'theme_essential');
+        $description = get_string('defaultcategoryimagedesc', 'theme_essential');
+        $setting = new admin_setting_configstoredfile($name, $title, $description, 'defaultcategoryimage');
         $setting->set_updatedcallback('theme_reset_all_caches');
         $essentialsettingscategoryicon->add($setting);
 
@@ -2435,6 +2443,8 @@ if ($ADMIN->fulltree) {
         $essentialsettingscategoryicon->add($setting);
 
         if (get_config('theme_essential', 'enablecustomcategoryicon')) {
+            $iconstring = get_string('icon', 'theme_essential');
+            $imagestring = get_string('image', 'theme_essential');
 
             // This is the descriptor for custom category icons.
             $name = 'theme_essential/categoryiconinfo';
@@ -2455,12 +2465,20 @@ if ($ADMIN->fulltree) {
             // Go through all categories and create the necessary settings.
             foreach ($coursecats as $key => $value) {
                 $namepath = join(' / ', $value->namechunks);
-                // Category icons for each category.
+                // Category icon for each category.
                 $name = 'theme_essential/categoryicon';
-                $title = $namepath;
+                $title = $namepath.' '.$iconstring;
                 $description = get_string('categoryiconcategory', 'theme_essential', array('category' => $namepath));
                 $default = $defaultcategoryicon;
-                $setting = new admin_setting_configtext($name . $key, $title, $description, $default);
+                $setting = new admin_setting_configtext($name.$key, $title, $description, $default);
+                $setting->set_updatedcallback('theme_reset_all_caches');
+                $essentialsettingscategoryicon->add($setting);
+
+                // Category image for each category.
+                $name = 'theme_essential/categoryimage';
+                $title = $namepath.' '.$imagestring;
+                $description = get_string('categoryimagecategory', 'theme_essential', array('category' => $namepath));
+                $setting = new admin_setting_configstoredfile($name.$key, $title, $description, 'categoryimage'.$key);
                 $setting->set_updatedcallback('theme_reset_all_caches');
                 $essentialsettingscategoryicon->add($setting);
             }

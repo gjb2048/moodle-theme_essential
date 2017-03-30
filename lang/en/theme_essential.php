@@ -657,25 +657,27 @@ $string['ctioverridetextbackgroundopacity'] = 'Default overridden course title t
 $string['ctioverridetextbackgroundopacitydesc'] = 'Default overridden text background opacity for the course title.';
 
 // Category Icons.
-$string['categoryiconheading'] = 'Category icons';
+$string['categoryiconheading'] = 'Category icons / images';
 $string['categoryiconheadingsub'] = 'Use icons to represent your categories';
-$string['categoryicondesc'] = 'If enabled this will allow you to set icons for each category of course.';
+$string['categoryicondesc'] = 'If enabled this will allow you to set icons / images for each category.';
 $string['categoryiconcategory'] = 'The icon for the category: {$a->category}.';
+$string['categoryimagecategory'] = 'The image for the category: {$a->category}.';
 
-$string['enablecategoryicon'] = 'Enable category icons';
-$string['enablecategoryicondesc'] = 'If enabled you will be able to select category icons after clicking "Save changes".';
+$string['enablecategoryicon'] = 'Enable category icons / images';
+$string['enablecategoryicondesc'] = 'If enabled you will be able to select category icons / images after clicking "Save changes".';
 
-$string['usecategoryicon'] = 'Enable category icons';
-$string['usecategoryicondesc'] = 'Use custom icons for categories';
+$string['defaultcategoryicon'] = 'Default category icon';
+$string['defaultcategoryicondesc'] = 'Set a default category icon.';
+$string['defaultcategoryimage'] = 'Default category image';
+$string['defaultcategoryimagedesc'] = 'Set a default category image.  Will override the icon when populated.';
 
-$string['defaultcategoryicon'] = 'Default category icons';
-$string['defaultcategoryicondesc'] = 'Set a default category icon';
-
-$string['enablecustomcategoryicon'] = 'Enable custom category icons';
+$string['enablecustomcategoryicon'] = 'Enable custom category icons / images';
 $string['enablecustomcategoryicondesc'] = 'If enabled below this section you will see each category with a customizable option behind each category, please save after enabling and disabling this option.';
+$string['icon'] = 'icon';
+$string['image'] = 'image';
 
 $string['categoryiconinfo'] = 'Set custom category icons';
-$string['categoryiconinfodesc'] = 'Enter the name of the icon you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after "fa-".';
+$string['categoryiconinfodesc'] = 'Enter the name of the icon or upload an image you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after "fa-".';
 
 $string['numberofcoursesandsubcatcourses'] = 'Number of courses - sub category courses';
 
