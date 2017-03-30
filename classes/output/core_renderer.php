@@ -776,6 +776,9 @@ class core_renderer extends \core_renderer {
                 if ($mycoursescatsubmenu) {
                     $enablecategoryicon = \theme_essential\toolbox::get_setting('enablecategoryicon');
                     $defaultcategoryicon = \theme_essential\toolbox::get_setting('defaultcategoryicon');
+                    if (empty($defaultcategoryicon)) {
+                        $defaultcategoryicon = 'folder-open';
+                    }
                     $enablecustomcategoryicon = \theme_essential\toolbox::get_setting('enablecustomcategoryicon');
                     $mycoursescatsubmenucats = array();
                     $mycoursescatsubmenucatsnumcourses = array();
@@ -811,6 +814,9 @@ class core_renderer extends \core_renderer {
                             if ($enablecategoryicon) {
                                 if ($enablecustomcategoryicon) {
                                     $caticon = \theme_essential\toolbox::get_setting('categoryicon'.$categoriestoplist[$course->category]->topid);
+                                    if (empty($caticon)) {
+                                        $caticon = $defaultcategoryicon;
+                                    }
                                 } else {
                                     $caticon = $defaultcategoryicon;
                                 }
