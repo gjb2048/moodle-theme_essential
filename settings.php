@@ -2443,6 +2443,8 @@ if ($ADMIN->fulltree) {
         $essentialsettingscategoryicon->add($setting);
 
         if (get_config('theme_essential', 'enablecustomcategoryicon')) {
+            $iconstring = get_string('icon', 'theme_essential');
+            $imagestring = get_string('image', 'theme_essential');
 
             // This is the descriptor for custom category icons.
             $name = 'theme_essential/categoryiconinfo';
@@ -2465,7 +2467,7 @@ if ($ADMIN->fulltree) {
                 $namepath = join(' / ', $value->namechunks);
                 // Category icon for each category.
                 $name = 'theme_essential/categoryicon';
-                $title = $namepath;
+                $title = $namepath.' '.$iconstring;
                 $description = get_string('categoryiconcategory', 'theme_essential', array('category' => $namepath));
                 $default = $defaultcategoryicon;
                 $setting = new admin_setting_configtext($name.$key, $title, $description, $default);
@@ -2474,7 +2476,7 @@ if ($ADMIN->fulltree) {
 
                 // Category image for each category.
                 $name = 'theme_essential/categoryimage';
-                $title = $namepath;
+                $title = $namepath.' '.$imagestring;
                 $description = get_string('categoryimagecategory', 'theme_essential', array('category' => $namepath));
                 $setting = new admin_setting_configstoredfile($name.$key, $title, $description, 'categoryimage'.$key);
                 $setting->set_updatedcallback('theme_reset_all_caches');
