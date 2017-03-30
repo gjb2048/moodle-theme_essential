@@ -20723,8 +20723,17 @@ table.calendarmonth.calendartable {
 .categoryicons .course_category_tree .category > .info a > .fa,
 .categoryicons .course_category_tree .category > .info > .categoryname a > .fa {
   font-size: 140px;
-  padding-top: 6px;
+  padding-top: 8px;
   width: 100%;
+}
+.categoryicons .course_category_tree .category > .info a > .categoryimage,
+.categoryicons .course_category_tree .category > .info > .categoryname a > .categoryimage {
+  line-height: 140px;
+  padding-top: 8px;
+}
+.categoryicons .course_category_tree .category > .info a > .categoryimage > img,
+.categoryicons .course_category_tree .category > .info > .categoryname a > .categoryimage > img {
+  max-height: 140px;
 }
 .categoryicons .course_category_tree .category > .info a > span,
 .categoryicons .course_category_tree .category > .info > .categoryname a > span {

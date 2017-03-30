@@ -195,7 +195,7 @@ $string['displaymycoursesdesc'] = 'Display enrolled courses for users on the \'N
 $string['displayhiddenmycourses'] = 'Display hidden courses';
 $string['displayhiddenmycoursesdesc'] = 'Display hidden courses for users in the \'Courses menu\' if they have permission to view hidden courses';
 $string['mycoursescatsubmenu'] = 'Category and course sub-menu';
-$string['mycoursescatsubmenudesc'] = 'Organise courses into a sub-menu based upon the top level category they are in.  When \'enablecategoryicon\' is \'false\' then the category icon used will be the theme default, when \'true\' then will be either the value of \'defaultcategoryicon\' or the category\'s itself if \'enablecustomcategoryicon\' is true.  The \'mycoursesmax\' setting will still apply but on a per-category level.';
+$string['mycoursescatsubmenudesc'] = 'Organise courses into a sub-menu based upon the top level category they are in.  When \'enablecategoryicon\' is \'false\' then the category icon used will be the theme default, when \'true\' then will be either the value of \'defaultcategoryicon\' / \'defaultcategoryimage\' or the category\'s itself if \'enablecustomcategoryicon\' is true.  The \'mycoursesmax\' setting will still apply but on a per-category level.';
 
 $string['mycoursesorder'] = 'Courses order';
 $string['mycoursesorderdesc'] = 'State how the courses should be ordered.  The course sort order can be is set by the core navigation setting \'navsortmycoursessort\'.';
@@ -659,23 +659,23 @@ $string['ctioverridetextbackgroundopacitydesc'] = 'Default overridden text backg
 // Category Icons.
 $string['categoryiconheading'] = 'Category icons';
 $string['categoryiconheadingsub'] = 'Use icons to represent your categories';
-$string['categoryicondesc'] = 'If enabled this will allow you to set icons for each category of course.';
+$string['categoryicondesc'] = 'If enabled this will allow you to set icons / images for each category of course.';
 $string['categoryiconcategory'] = 'The icon for the category: {$a->category}.';
+$string['categoryimagecategory'] = 'The image for the category: {$a->category}.';
 
-$string['enablecategoryicon'] = 'Enable category icons';
-$string['enablecategoryicondesc'] = 'If enabled you will be able to select category icons after clicking "Save changes".';
+$string['enablecategoryicon'] = 'Enable category icons / images';
+$string['enablecategoryicondesc'] = 'If enabled you will be able to select category icons / images after clicking "Save changes".';
 
-$string['usecategoryicon'] = 'Enable category icons';
-$string['usecategoryicondesc'] = 'Use custom icons for categories';
+$string['defaultcategoryicon'] = 'Default category icon';
+$string['defaultcategoryicondesc'] = 'Set a default category icon.';
+$string['defaultcategoryimage'] = 'Default category image';
+$string['defaultcategoryimagedesc'] = 'Set a default category image.  Will override the icon when populated.';
 
-$string['defaultcategoryicon'] = 'Default category icons';
-$string['defaultcategoryicondesc'] = 'Set a default category icon';
-
-$string['enablecustomcategoryicon'] = 'Enable custom category icons';
+$string['enablecustomcategoryicon'] = 'Enable custom category icons / images';
 $string['enablecustomcategoryicondesc'] = 'If enabled below this section you will see each category with a customizable option behind each category, please save after enabling and disabling this option.';
 
 $string['categoryiconinfo'] = 'Set custom category icons';
-$string['categoryiconinfodesc'] = 'Enter the name of the icon you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after "fa-".';
+$string['categoryiconinfodesc'] = 'Enter the name of the icon or upload an image you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after "fa-".';
 
 $string['numberofcoursesandsubcatcourses'] = 'Number of courses - sub category courses';
 

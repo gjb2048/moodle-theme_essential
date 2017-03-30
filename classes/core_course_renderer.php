@@ -107,27 +107,34 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         // Category name.
         $categoryname = html_writer::tag('span', $coursecat->get_formatted_name());
 
-        // Do a settings check to output our icon for the category.
-        if (\theme_essential\toolbox::get_setting('enablecategoryicon')) {
-            $customcategoryicon = \theme_essential\toolbox::get_setting('categoryicon'.$coursecat->id);
-            if ($customcategoryicon &&
-                \theme_essential\toolbox::get_setting('enablecustomcategoryicon')) {
-                // User has set a value for the category.
-                $val = $customcategoryicon;
-            } else {
-                // User hasn't set a value for the category, get the default.
-                $val = \theme_essential\toolbox::get_setting('defaultcategoryicon');
+        // Do a settings check to output our icon / image for the category.
+        if (\theme_essential\toolbox::get_setting('enablecustomcategoryicon')) {
+            // User may have set a value for the category.
+            $image = \theme_essential\toolbox::get_setting('categoryimage'.$coursecat->id, 'format_file_url');
+            if (empty($image)) {
+                $icon = \theme_essential\toolbox::get_setting('categoryicon'.$coursecat->id);;
             }
         }
-        if (!empty($val)) {
-            $icon = html_writer::tag('span', '', array('aria-hidden' => 'true', 'class' => 'fa fa-'.$val));
+        if ((empty($icon)) && (empty($image))) {
+            // User hasn't set a value for the category, get the default.
+            $image = \theme_essential\toolbox::get_setting('defaultcategoryimage', 'format_file_url');
+            if (empty($image)) {
+                $icon = \theme_essential\toolbox::get_setting('defaultcategoryicon');
+            }
+        }
+        if (!empty($image)) {
+            $categoryrepresentation = html_writer::start_tag('div', array('class' => 'categoryimage'));
+            $categoryrepresentation .= html_writer::empty_tag('img', array('src' => $image, 'class' => 'img-responsive'));
+            $categoryrepresentation .= html_writer::end_tag('div');
+        } else if (!empty($icon)) {
+            $categoryrepresentation = html_writer::tag('span', '', array('aria-hidden' => 'true', 'class' => 'fa fa-'.$icon));
         } else {
-            $icon = '';
+            $categoryrepresentation = '';
         }
 
         $categoryname = html_writer::link(new moodle_url('/course/index.php',
                 array('categoryid' => $coursecat->id)),
-            $icon . $categoryname);
+            $categoryrepresentation.$categoryname);
         $content .= html_writer::start_tag('div', array('class' => 'info'));
 
         $content .= html_writer::tag(($depth > 1) ? 'h4' : 'h3', $categoryname, array('class' => 'categoryname'));
