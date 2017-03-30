@@ -659,7 +659,7 @@ $string['ctioverridetextbackgroundopacitydesc'] = 'Default overridden text backg
 // Category Icons.
 $string['categoryiconheading'] = 'Category icons';
 $string['categoryiconheadingsub'] = 'Use icons to represent your categories';
-$string['categoryicondesc'] = 'If enabled this will allow you to set icons / images for each category of course.';
+$string['categoryicondesc'] = 'If enabled this will allow you to set icons / images for each category.';
 $string['categoryiconcategory'] = 'The icon for the category: {$a->category}.';
 $string['categoryimagecategory'] = 'The image for the category: {$a->category}.';
 
