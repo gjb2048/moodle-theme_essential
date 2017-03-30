@@ -1,5 +1,6 @@
 New in 3.2.1.1
 ==============
+- FIX: Issue #817: Incorrect header closing tags in header title area.
 - FIX: Font-awesome icon for the recycle bin.
 - FIX: Font-awesome icon for the repositories.
 - FIX: MyCourses default icon.

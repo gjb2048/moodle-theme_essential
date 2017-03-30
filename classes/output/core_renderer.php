@@ -2206,25 +2206,27 @@ class core_renderer extends \core_renderer {
     }
 
     public function get_title($location) {
-        global $CFG, $SITE;
+        global $SITE;
         $title = '';
         if ($location === 'navbar') {
-            $url = preg_replace("(https?:)", "", $CFG->wwwroot);
             switch (\theme_essential\toolbox::get_setting('navbartitle')) {
                 case 0:
                     return false;
                 break;
                 case 1:
-                    $title = '<a class="brand" href="'.$url.'">'.format_string($SITE->fullname, true,
-                                    array('context' => context_course::instance(SITEID))).'</a>';
+                    $title = html_writer::link(new moodle_url('/'),
+                        format_string($SITE->fullname, true, array('context' => context_course::instance(SITEID))),
+                        array('class' => 'brand'));
                     break;
                 case 2:
-                    $title = '<a class="brand" href="'.$url.'">'.format_string($SITE->shortname, true,
-                                    array('context' => context_course::instance(SITEID))).'</a>';
+                    $title = html_writer::link(new moodle_url('/'),
+                        format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))),
+                        array('class' => 'brand'));
                     break;
                 default:
-                    $title = '<a class="brand" href="'.$url.'">' . format_string($SITE->shortname, true,
-                                    array('context' => context_course::instance(SITEID))).'</a>';
+                    $title = html_writer::link(new moodle_url('/'),
+                        format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))),
+                        array('class' => 'brand'));
                     break;
             }
         } else if ($location === 'header') {
@@ -2233,22 +2235,30 @@ class core_renderer extends \core_renderer {
                     return false;
                     break;
                 case 1:
-                    $title = '<h1 id="title">'.format_string($SITE->fullname, true,
-                                    array('context' => context_course::instance(SITEID))).'</h1>';
+                    $title = html_writer::tag('h1',
+                        format_string($SITE->fullname, true, array('context' => context_course::instance(SITEID))),
+                        array('id' => 'title'));
                     break;
                 case 2:
-                    $title = '<h1 id="title">'.format_string($SITE->shortname, true,
-                                    array('context' => context_course::instance(SITEID))).'</h1>';
+                    $title = html_writer::tag('h1',
+                        format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))),
+                        array('id' => 'title'));
                     break;
                 case 3:
-                    $title = '<h1 id="smalltitle">'.format_string($SITE->fullname, true,
-                                    array('context' => context_course::instance(SITEID))).'</h2>';
-                    $title .= '<h2 id="subtitle">'.format_text($SITE->summary).'</h3>';
+                    $title = html_writer::tag('h1',
+                        format_string($SITE->fullname, true, array('context' => context_course::instance(SITEID))),
+                        array('id' => 'smalltitle'));
+                    $title .= html_writer::tag('h2',
+                        format_text($SITE->summary),
+                        array('id' => 'subtitle'));
                     break;
                 case 4:
-                    $title = '<h1 id="smalltitle">'.format_string($SITE->shortname, true,
-                                    array('context' => context_course::instance(SITEID))).'</h2>';
-                    $title .= '<h2 id="subtitle">'.format_text($SITE->summary).'</h3>';
+                    $title = html_writer::tag('h1',
+                        format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))),
+                        array('id' => 'smalltitle'));
+                    $title .= html_writer::tag('h2',
+                        format_text($SITE->summary),
+                        array('id' => 'subtitle'));
                     break;
                 default:
                     break;
