@@ -1,17 +1,20 @@
+New in 3.1.1.9
+==============
+- FIX: Issue #817: Incorrect header closing tags in header title area.
+- FIX: Font-awesome icon for the recycle bin.
+- FIX: Font-awesome icon for the repositories.
+- NEW: Issue #622: Custom category icon images.  Gratefully funded by Gemma Lesterhuis.
+
 New in 3.1.1.8
 ==============
 - FIX: Issue #794: Hidden grade items in user report not clear as such.
 - FIX: Issue #804: 'Hide default page editing button' hides anything that could be in that place.
 - FIX: Issue #805: Suspended user odd rows.
-- FIX: Issue #817: Incorrect header closing tags in header title area.
 - FIX: Alternative colour table odd row colour.
 - FIX: RTL header dotted separator appearing twice.
 - FIX: User image table even row background.
 - FIX: Forum table user image link height.
 - FIX: Environment table help icon spacing.
-- FIX: Font-awesome icon for the recycle bin.
-- FIX: Font-awesome icon for the repositories.
-- NEW: Issue #622: Custom category icon images.  Gratefully funded by Gemma Lesterhuis.
 - NEW: User image border radius settings.
 
 New in 3.1.1.7
