@@ -1,6 +1,7 @@
 New in 3.2.1.1
 ==============
 - FIX: Issue #817: Incorrect header closing tags in header title area.
+- FIX: Issue #818: Fix Apple touch icon.
 - FIX: Font-awesome icon for the recycle bin.
 - FIX: Font-awesome icon for the repositories.
 - FIX: MyCourses default icon.
