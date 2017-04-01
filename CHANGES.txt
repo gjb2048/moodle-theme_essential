@@ -4,6 +4,7 @@ New in 3.2.1.1
 - FIX: Font-awesome icon for the recycle bin.
 - FIX: Font-awesome icon for the repositories.
 - FIX: MyCourses default icon.
+- FIX: Font-awesome users icon.
 - NEW: Issue #622: Custom category icon images.  Gratefully funded by Gemma Lesterhuis.
 
 New in 3.2.1.0 - First stable version.
