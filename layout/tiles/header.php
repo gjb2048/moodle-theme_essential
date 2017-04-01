@@ -98,7 +98,7 @@ if (!$haslogo) {
 if ($hassocialnetworks) {
 ?>
                         <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>" id="socialnetworks">
-                            <p id="socialheading"><?php echo get_string('socialnetworks', 'theme_essential') ?></p>
+                            <p class="socialheading"><?php echo get_string('socialnetworks', 'theme_essential') ?></p>
                             <ul class="socials unstyled">
                                 <?php
                                 echo $OUTPUT->render_social_network('googleplus');
@@ -120,7 +120,7 @@ if ($hassocialnetworks) {
                     // If true, displays the heading and available social links; displays nothing if false.
 if ($hasmobileapps) { ?>
                         <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>" id="mobileapps">
-                            <p id="socialheading"><?php echo get_string('mobileappsheading', 'theme_essential') ?></p>
+                            <p class="socialheading"><?php echo get_string('mobileappsheading', 'theme_essential') ?></p>
                             <ul class="socials unstyled">
                                 <?php
                                 echo $OUTPUT->render_social_network('ios');
