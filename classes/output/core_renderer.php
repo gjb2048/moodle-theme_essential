@@ -191,7 +191,7 @@ class core_renderer extends \core_renderer {
         $footer = str_replace($this->unique_end_html_token, $this->page->requires->get_end_code(), $footer);
         $this->page->set_state(moodle_page::STATE_DONE);
         $info = '<!-- Essential theme version: '.$this->page->theme->settings->version.
-            ' is developed by Gareth J Barnard: about.me/gjbarnard';
+            ' is developed by Gareth J Barnard: about.me/gjbarnard -->';
 
         return $output . $footer . $info;
     }
@@ -1766,7 +1766,7 @@ class core_renderer extends \core_renderer {
             'i/show' => 'eye-slash',
             'i/switchrole' => 'random',
             'i/user' => 'user',
-            'i/users' => 'user',
+            'i/users' => 'users',
             't/right' => 'arrow-right',
             't/left' => 'arrow-left',
             't/edit_menu' => 'cogs',
