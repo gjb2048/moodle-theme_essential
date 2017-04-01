@@ -22511,7 +22511,7 @@ ul.socials li {
   display: inline-block;
   text-align: right;
 }
-#socialheading {
+.socialheading {
   letter-spacing: .2em;
   margin: 2px 0 0;
   padding: 0;
