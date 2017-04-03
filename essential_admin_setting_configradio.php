@@ -157,7 +157,7 @@ class essential_admin_setting_configradio extends admin_setting {
             if (array_key_exists($key, $this->images)) {
                 global $OUTPUT;
                 $radiohtml .= '<label for="'.$this->get_id().'_'.$key.'" title="'.$value.'">'.
-                    '<img class="img-responsive" src="'.$OUTPUT->pix_url($this->images[$key], $this->plugin).'" alt="'.$value.'">'.
+                    '<img class="img-responsive" src="'.$OUTPUT->image_url($this->images[$key], $this->plugin).'" alt="'.$value.'">'.
                     '</label>';
             } else {
                 $radiohtml .= '<label for="'.$this->get_id().'_'.$key.'">'.$value.'</label>';

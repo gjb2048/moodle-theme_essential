@@ -35,10 +35,10 @@ $THEME->yuicssmodules = array();
 $THEME->parents = array('bootstrapbase');
 $THEME->parents_exclude_sheets = array('bootstrapbase' => array('moodle', 'editor'));
 
-$THEME->sheets[] = 'essential';
-//$THEME->sheets[] = 'bootstrap-pix';
-$THEME->sheets[] = 'essential-settings';
 $THEME->sheets[] = 'fontawesome';
+$THEME->sheets[] = 'essential';
+// $THEME->sheets[] = 'bootstrap-pix';
+$THEME->sheets[] = 'essential-settings';
 
 if ((get_config('theme_essential', 'enablealternativethemecolors1')) ||
         (get_config('theme_essential', 'enablealternativethemecolors2')) ||

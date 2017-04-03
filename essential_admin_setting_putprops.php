@@ -31,7 +31,7 @@ class essential_admin_setting_putprops extends admin_setting_configtextarea {
     /** @var string Name of the theme. */
     private $themename;
     /** @var string Name of the 'callable' function to call with the name of the theme and the properties as an array. */
-    private $callable;
+    private $callme;
     /** @var string Report back from the parsing 'callable' to inform the user in the text area. */
     private $report = '';
 
@@ -44,11 +44,11 @@ class essential_admin_setting_putprops extends admin_setting_configtextarea {
      * @param string $description long localised info
      * @param string $defaultsetting
      * @param string $themename Name of the theme.
-     * @param string $callable Name of the 'callable' function to call with the name of the theme and the properties as an array.
+     * @param string $callme Name of the 'callable' function to call with the name of the theme and the properties as an array.
      */
-    public function __construct($name, $visiblename, $description, $themename, $callable) {
+    public function __construct($name, $visiblename, $description, $themename, $callme) {
         $this->themename = $themename;
-        $this->callable = $callable;
+        $this->callme = $callme;
         parent::__construct($name, $visiblename, $description, ''); // Last parameter is default.
     }
 
@@ -86,7 +86,7 @@ class essential_admin_setting_putprops extends admin_setting_configtextarea {
                             $validated = json_last_error();
                         }
                     } else {
-                        $this->report = call_user_func($this->callable, $this->themename, $props);
+                        $this->report = call_user_func($this->callme, $this->themename, $props);
                     }
                 } else {
                     // Keep what we have.

@@ -19069,6 +19069,39 @@ textarea {
   font-family: inherit;
 }
 /* Bootstrap fixes forms end */
+/* Moodle fixes icons begin */
+.icon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  margin-right: 0.5rem;
+}
+.icon.spacer {
+  margin-right: 0;
+}
+a:first-of-type > .icon,
+span:first-of-type > .icon {
+  margin-left: 0.5rem;
+}
+.action-menu .dropdown a:first-of-type > .icon {
+  margin-left: 0;
+}
+.ygtvcell .icon {
+  margin-left: 0 !important;
+  /* stylelint-disable-line declaration-no-important */
+}
+.block_navigation .tree_item .icon,
+.block_settings .tree_item .icon {
+  margin-left: 0;
+}
+.icon-no-spacing a > .icon {
+  margin: 0;
+}
+/* Moodle fixes icons end */
 /* Moodle fixes message begin */
 .message .message-contacts li div.pix,
 .message .message-contacts li div.contact {
