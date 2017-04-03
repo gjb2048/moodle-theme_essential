@@ -2,7 +2,7 @@ The "Essential" Moodle Theme
 ============================
 ![image1](pix/screenshot.jpg "Essential Screenshot")
 
-[![Build Status](https://travis-ci.org/gjb2048/moodle-theme_essential.svg?branch=master)](https://travis-ci.org/gjb2048/moodle-theme_essential)
+[![Build Status](https://travis-ci.org/gjb2048/moodle-theme_essential.svg?branch=MOODLE_32)](https://travis-ci.org/gjb2048/moodle-theme_essential)
 
 With 2.5 now released Julian thought it time to take the opportunity to build a new theme that would push the new theme engine
 to it's limits a bit.  With that in mind he introduced the new "Essential" theme.  Now Julian has left us for Canvassian
