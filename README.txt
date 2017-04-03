@@ -87,7 +87,7 @@ iZone
 Anis Jradah
 Ute Hlasek, https://hlasek-it.de/moodle
 
-Essential for Moodle 3.2 kindly sponsored by
+Essential for Moodle 3.3 kindly sponsored by
 --------------------------------------------
 ClassroomRevolution, LLC -- Moodle Partner
 Daniel Méthot - e-learning-facile.com/formations/
@@ -106,11 +106,11 @@ above to discuss your requirements.
 
 Required version of Moodle
 ==========================
-This version works with Moodle 3.2 version 2016110800.00 (Build: 20161108) and above within the 3.2 branch until the
+This version works with Moodle 3.3dev version 2017033100.00 (Build: 20170331) and above within the 3.3 branch until the
 next release.
 
 Please ensure that your hardware and software complies with 'Requirements' in 'Installing Moodle' on
-'docs.moodle.org/32/en/Installing_Moodle'.
+'docs.moodle.org/33/en/Installing_Moodle'.
 
 Installation
 ============

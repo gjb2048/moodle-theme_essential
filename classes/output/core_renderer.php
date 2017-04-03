@@ -1729,97 +1729,6 @@ class core_renderer extends \core_renderer {
         }
     }
 
-    /*
-    * This code replaces icons in with
-    * FontAwesome variants where available.
-    */
-
-    public function render_pix_icon(pix_icon $icon) {
-        static $icons = array(
-            'add' => 'plus',
-            'book' => 'book',
-            'chapter' => 'file',
-            'docs' => 'question-circle',
-            'generate' => 'gift',
-            'help' => 'question-circle-o',
-            'trash' => 'trash-o',
-            'i/backup' => 'cloud-download',
-            'i/badge' => 'trophy',
-            'i/checkpermissions' => 'user',
-            'i/cohort' => 'users',
-            'i/competencies' => 'wifi fa-flip-vertical',
-            'i/delete' => 'times-circle',
-            'i/dragdrop' => 'arrows',
-            'i/edit' => 'pencil',
-            'i/enrolusers' => 'user-plus',
-            'i/filter' => 'filter',
-            'i/grades' => 'table',
-            'i/group' => 'group',
-            'i/groupn' => 'user',
-            'i/groupv' => 'user-plus',
-            'i/groups' => 'user-secret',
-            'i/hide' => 'eye',
-            'i/import' => 'upload',
-            'i/loading' => 'refresh fa-spin fa-2x',
-            'i/loading_small' => 'refresh fa-spin',
-            'i/marker' => 'lightbulb-o',
-            'i/move_2d' => 'arrows',
-            'i/navigationitem' => 'file',
-            'i/outcomes' => 'magic',
-            'i/preview' => 'search',
-            'i/publish' => 'globe',
-            'i/reload' => 'refresh',
-            'i/report' => 'list-alt',
-            'i/repository' => 'database',
-            'i/restore' => 'cloud-upload',
-            'i/return' => 'repeat',
-            'i/roles' => 'user',
-            'i/scales' => 'signal',
-            'i/settings' => 'cogs',
-            'i/show' => 'eye-slash',
-            'i/switchrole' => 'random',
-            'i/user' => 'user',
-            'i/users' => 'users',
-            'i/withsubcat' => 'indent',
-            'i/permissions' => 'key',
-            'i/assignroles' => 'lock',
-            't/addcontact' => 'address-card-o',
-            't/assignroles' => 'lock',
-            't/block_to_dock' => 'caret-square-o-left',
-            't/cohort' => 'users',
-            't/copy' => 'copy',
-            't/delete' => 'times-circle',
-            't/down' => 'arrow-down',
-            't/edit' => 'cog',
-            't/editstring' => 'pencil-square-o',
-            't/edit_menu' => 'cogs',
-            't/grades' => 'th-list',
-            't/hide' => 'eye',
-            't/left' => 'arrow-left',
-            't/message' => 'comments-o',
-            't/preview' => 'search',
-            't/right' => 'arrow-right',
-            't/show' => 'eye-slash',
-            't/sort' => 'sort',
-            't/sort_asc' => 'sort-asc',
-            't/sort_desc' => 'sort-desc',
-            't/up' => 'arrow-up'
-        );
-        if (array_key_exists($icon->pix, $icons)) {
-            $pix = $icons[$icon->pix];
-            /* Note: MUST have the 'i' tag instead of 'span' and the embedded icon even though it is not displayed otherwise
-               the editing action menu will break! */
-            if (empty($icon->attributes['alt'])) {
-                return '<i class="fa fa-'.$pix.' icon" aria-hidden="true">'.parent::render_pix_icon($icon).'</i>';
-            } else {
-                $alt = $icon->attributes['alt'];
-                return '<i class="fa fa-'.$pix.' icon" title="'.$alt.'" aria-hidden="true">'.parent::render_pix_icon($icon).'</i>';
-            }
-        } else {
-            return parent::render_pix_icon($icon);
-        }
-    }
-
     /**
      * Returns HTML to display a "Turn editing on/off" button in a form.
      *
@@ -2433,7 +2342,7 @@ class core_renderer extends \core_renderer {
         $favicon = \theme_essential\toolbox::get_setting('favicon', 'format_file_url');
 
         if (empty($favicon)) {
-            return $this->page->theme->pix_url('favicon', 'theme');
+            return $this->page->theme->image_url('favicon', 'theme');
         } else {
             return $favicon;
         }

@@ -61,7 +61,7 @@ trait core_renderer_toolbox {
 
 
     public function pix_url($imagename, $component = 'moodle') {
-        return end($this->themeconfig)->pix_url($imagename, $component);
+        return end($this->themeconfig)->image_url($imagename, $component);
     }
 
     public function get_tile_file($filename) {
