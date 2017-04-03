@@ -2,6 +2,7 @@ New in 3.1.1.9
 ==============
 - FIX: Issue #817: Incorrect header closing tags in header title area.
 - FIX: Issue #818: Fix Apple touch icon.
+- FIX: Issue #819: Site summary in the header: element div not allowed as child of element h2 in this context.
 - FIX: Font-awesome icon for the recycle bin.
 - FIX: Font-awesome icon for the repositories.
 - FIX: MyCourses default icon.

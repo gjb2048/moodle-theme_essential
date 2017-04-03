@@ -2240,7 +2240,7 @@ class core_renderer extends \core_renderer {
                         format_string($SITE->fullname, true, array('context' => context_course::instance(SITEID))),
                         array('id' => 'smalltitle'));
                     $title .= html_writer::tag('h2',
-                        format_text($SITE->summary),
+                        format_string($SITE->summary),
                         array('id' => 'subtitle'));
                     break;
                 case 4:
@@ -2248,7 +2248,7 @@ class core_renderer extends \core_renderer {
                         format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))),
                         array('id' => 'smalltitle'));
                     $title .= html_writer::tag('h2',
-                        format_text($SITE->summary),
+                        format_string($SITE->summary),
                         array('id' => 'subtitle'));
                     break;
                 default:
