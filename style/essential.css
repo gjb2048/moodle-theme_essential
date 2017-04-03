@@ -21344,7 +21344,7 @@ a.action-icon > .fa,
   text-decoration: none;
 }
 #page-footer .footerlinks .helplink a {
-  color: orange !important;
+  color: orange;
 }
 #page-footer hr {
   border-bottom: 0 none;
@@ -21368,7 +21368,6 @@ a.action-icon > .fa,
 }
 #page-footer .footerlinks .helplink {
   float: right;
-  padding-right: 20px;
 }
 #page-footer ul,
 #greyboxright ul {

@@ -64,17 +64,6 @@
  * grunt amd     Create the Asynchronous Module Definition JavaScript files.  See: MDL-49046.
  *               Done here as core Gruntfile.js currently *nix only.
  *
- * grunt svg                 Change the colour of the SVGs in pix_core by
- *                           text replacing #999 with a new hex colour.
- *                           Note this requires the SVGs to be #999 to
- *                           start with or the replace will do nothing
- *                           so should usually be preceded by copying
- *                           a fresh set of the original SVGs.
- *
- *                           Options:
- *
- *                           --svgcolour=<hexcolour> Hex colour to use for SVGs
- *
  * Plumbing tasks & targets:
  * -------------------------
  * Lower level tasks encapsulating a specific piece of functionality
@@ -386,34 +375,6 @@ module.exports = function(grunt) { // jshint ignore:line
                 }]
             }
         },
-        svgmin: {
-            options: {
-                plugins: [{
-                    removeViewBox: false
-                }, {
-                    removeUselessStrokeAndFill: false
-                }, {
-                    convertPathData: {
-                        straightCurves: false
-                    }
-                }]
-            },
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: 'pix_core',
-                    src: ['**/*.svg'],
-                    dest: 'pix_core/',
-                    ext: '.svg'
-                }, {
-                    expand: true,
-                    cwd: 'pix_plugins',
-                    src: ['**/*.svg'],
-                    dest: 'pix_plugins/',
-                    ext: '.svg'
-                }]
-            }
-        },
         jshint: {
             options: {jshintrc: moodleroot + '/.jshintrc'},
             files: ['**/amd/src/*.js']
@@ -447,7 +408,6 @@ module.exports = function(grunt) { // jshint ignore:line
     grunt.loadNpmTasks("grunt-text-replace");
     grunt.loadNpmTasks("grunt-css-metrics");
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-svgmin');
 
     // Load core tasks.
     grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -471,8 +431,5 @@ module.exports = function(grunt) { // jshint ignore:line
         grunt.loadNpmTasks('grunt-contrib-cssmin');
         grunt.registerTask("compile", ["css", "cssmin:essential_p", 'cssmetrics', "decache"]);
     }
-    grunt.registerTask("copy:svg", ["copy:svg_core", "copy:svg_plugins"]);
-    grunt.registerTask("replace:svg_colours", ["replace:svg_colours_core", "replace:svg_colours_plugins"]);
-    grunt.registerTask("svg", ["copy:svg", "replace:svg_colours", "svgmin"]);
     grunt.registerTask("amd", ["jshint", "uglify", "decache"]);
 };
