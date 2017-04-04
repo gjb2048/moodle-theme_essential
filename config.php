@@ -37,7 +37,7 @@ $THEME->parents_exclude_sheets = array('bootstrapbase' => array('moodle', 'edito
 
 $THEME->sheets[] = 'fontawesome';
 $THEME->sheets[] = 'essential';
-// $THEME->sheets[] = 'bootstrap-pix';
+$THEME->sheets[] = 'bootstrap-pix';
 $THEME->sheets[] = 'essential-settings';
 
 if ((get_config('theme_essential', 'enablealternativethemecolors1')) ||

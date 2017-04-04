@@ -1,6 +1,7 @@
 /*
  * @package     theme_essential
- * @copyright   2016 Gareth J Barnard, David Bezemer
+ * @copyright   2017 Gareth J Barnard
+ * @copyright   2016 Gareth J Barnard
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @copyright   2013 Julian Ridden
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -9932,7 +9933,7 @@ table th[class*="span"],
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url("");
+  background-image: url("none");
   background-position: 14px 14px;
   background-repeat: no-repeat;
   margin-top: 1px;
@@ -9955,7 +9956,7 @@ table th[class*="span"],
 .dropdown-submenu:focus > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"],
 .dropdown-submenu:focus > a > [class*=" icon-"] {
-  background-image: url("");
+  background-image: url("none");
 }
 .icon-glass {
   background-position: 0      0;
@@ -19098,8 +19099,8 @@ span:first-of-type > .icon {
 .block_settings .tree_item .icon {
   margin-left: 0;
 }
-.icon-no-spacing a > .icon {
-  margin: 0;
+.fp-navbar a > .icon {
+  margin: 0.5rem;
 }
 /* Moodle fixes icons end */
 /* Moodle fixes message begin */

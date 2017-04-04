@@ -1,7 +1,3 @@
-// Set image location.
-@iconSpritePath: ~"[[pix:theme|glyphicons-halflings]]";
-@iconWhiteSpritePath: ~"[[pix:theme|glyphicons-halflings-white]]";
-
 // bootstrap/sprites.less
 
 // For the white version of the icons, just add the .icon-white class:
@@ -9,7 +5,7 @@
 
 [class^="icon-"],
 [class*=" icon-"] { // Other definitions not overridden and come from the bootstrap original.
-    background-image: url("@{iconSpritePath}");
+    background-image: none;
 }
 
 // White icons with optional class, or on hover/focus/active states of certain elements.
@@ -30,5 +26,5 @@
 .dropdown-submenu:focus > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"],
 .dropdown-submenu:focus > a > [class*=" icon-"] {
-    background-image: url("@{iconWhiteSpritePath}");
+    background-image: none;
 }
