@@ -4,6 +4,8 @@
  * try removing your custom CSS from the theme settings page.
  */
 
+/* stylelint-disable */
+/* Disabling as setting custom styles. */
 [[setting:fontfilesheading]]
 
 [[setting:fontfilesbody]]
@@ -13,3 +15,4 @@
 [[setting:categorycoursetitle]]
 
 [[setting:customcss]]
+/* stylelint-enable */

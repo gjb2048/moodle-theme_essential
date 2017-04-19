@@ -318,6 +318,13 @@ module.exports = function(grunt) { // jshint ignore:line
             }
         },
         cssmin: {
+            options: {
+                format: {
+                    breaks: {
+                        afterComment: true
+                    }
+                }
+            },
             essential_p: {
                 files: [{
                     expand: true,
@@ -373,6 +380,20 @@ module.exports = function(grunt) { // jshint ignore:line
                     from: '/* Essential placeholder */',
                     to: 'div#page::before { content: "Development version - recomplile LESS with \'grunt compile -build=p\' for production CSS."; font-size: 2em; margin-top: 24px; margin-bottom: 24px; line-height: 42px; text-align: center; }' // jshint ignore:line
                 }]
+            },
+            essential_lint: {
+                src: ['style/bootstrap-pix.css', 'style/editor.css', 'style/essential-alternative.css', 'style/fontawesome.css'],
+                overwrite: true,
+                replacements: [
+                    {
+                        from: '! Essential lint disable',
+                        to: ' stylelint-disable'
+                    },
+                    {
+                        from: '! Essential lint enable',
+                        to: ' stylelint-enable'
+                    }
+                ]
             }
         },
         jshint: {
@@ -426,10 +447,10 @@ module.exports = function(grunt) { // jshint ignore:line
         "less:fontawesome_" + build,
         "less:alternative_" + build]);
     if (build == 'd') {
-        grunt.registerTask("compile", ["css", "replace:placeholder", 'cssmetrics', "decache"]);
+        grunt.registerTask("compile", ["css", "replace:placeholder", "replace:essential_lint", 'cssmetrics', "decache"]);
     } else {
         grunt.loadNpmTasks('grunt-contrib-cssmin');
-        grunt.registerTask("compile", ["css", "cssmin:essential_p", 'cssmetrics', "decache"]);
+        grunt.registerTask("compile", ["css", "cssmin:essential_p", "replace:essential_lint", 'cssmetrics', "decache"]);
     }
     grunt.registerTask("amd", ["jshint", "uglify", "decache"]);
 };

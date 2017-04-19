@@ -3,6 +3,8 @@
  * @copyright   2015 Gareth J Barnard
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+/*! Essential lint disable */
+/* Disabling as already linted in the LESS. */
 /* @Group Scrollbars */
 body {
   scrollbar-face-color: [[setting:themecolor]];
@@ -29,3 +31,4 @@ body {
   background-color: [[setting:themecolor]];
 }
 /* @end Scrollbars */
+/*! Essential lint enable */
