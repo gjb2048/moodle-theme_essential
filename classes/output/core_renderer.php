@@ -2014,9 +2014,9 @@ class core_renderer extends \core_renderer {
             $regioncontent = '';
             $flatnavigation = \theme_essential\toolbox::get_setting('flatnavigation');
             if (($flatnavigation) && ($region == 'side-pre')) {
-               global $PAGE;
-               $templatecontext = array('flatnavigation' => $PAGE->flatnav);
-               $regioncontent .= $this->render_from_template('theme_essential/flat_navigation', $templatecontext);
+                global $PAGE;
+                $templatecontext = array('flatnavigation' => $PAGE->flatnav);
+                $regioncontent .= $this->render_from_template('theme_essential/flat_navigation', $templatecontext);
             }
             $editing = $this->page->user_is_editing();
             if ($editing) {

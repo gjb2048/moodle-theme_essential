@@ -384,16 +384,13 @@ module.exports = function(grunt) { // jshint ignore:line
             essential_lint: {
                 src: ['style/bootstrap-pix.css', 'style/editor.css', 'style/essential-alternative.css', 'style/fontawesome.css'],
                 overwrite: true,
-                replacements: [
-                    {
-                        from: '! Essential lint disable',
-                        to: ' stylelint-disable'
-                    },
-                    {
-                        from: '! Essential lint enable',
-                        to: ' stylelint-enable'
-                    }
-                ]
+                replacements: [{
+                    from: '! Essential lint disable',
+                    to: ' stylelint-disable'
+                }, {
+                    from: '! Essential lint enable',
+                    to: ' stylelint-enable'
+                }]
             }
         },
         jshint: {
