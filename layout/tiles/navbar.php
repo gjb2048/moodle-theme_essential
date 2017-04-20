@@ -47,14 +47,14 @@ defined('MOODLE_INTERNAL') || die;
                         <div class="messagemenu navbarrightitem">
                             <?php echo $OUTPUT->custom_menu_messages(); ?>
                         </div>
-                        <div class="navbarrightitem">
+                        <div id="gotobottom" class="navbarrightitem">
                             <?php echo $OUTPUT->custom_menu_goto_bottom(); ?>
                         </div>
                         <?php echo $OUTPUT->context_header_settings_menu(); ?>
                         <div id="custom_menu_editing" class="navbarrightitem">
                             <?php echo $OUTPUT->custom_menu_editing(); ?>
                         </div>
-                        <div class="navbarrightitem">
+                        <div id="globalsearch" class="navbarrightitem">
                             <?php echo $OUTPUT->search_box(); ?>
                         </div>
                     </div>
