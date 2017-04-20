@@ -29,6 +29,8 @@ namespace theme_essential\output;
 
 defined('MOODLE_INTERNAL') || die;
 
+use action_link;
+use action_menu;
 use block_contents;
 use block_move_target;
 use coding_exception;
@@ -38,6 +40,7 @@ use custom_menu_item;
 use html_writer;
 use moodle_page;
 use moodle_url;
+use navigation_node;
 use pix_icon;
 use stdClass;
 
@@ -85,7 +88,7 @@ class core_renderer extends \core_renderer {
                 if ((strlen($item->text) == 1) && ($item->text[0] == ' ')) {
                     continue;
                 }
-                if ((!$showcategories) && ($item->type == \navigation_node::TYPE_CATEGORY)) {
+                if ((!$showcategories) && ($item->type == navigation_node::TYPE_CATEGORY)) {
                     continue;
                 }
                 $item->hideicon = true;
@@ -350,6 +353,185 @@ class core_renderer extends \core_renderer {
         }
 
         return $content;
+    }
+
+    /**
+     * This is an optional menu that can be added to a layout by a theme. It contains the
+     * menu for the course administration, only on the course main page.
+     *
+     * @return string
+     */
+    public function context_header_settings_menu() {
+        $context = $this->page->context;
+        $menu = new action_menu();
+
+        $items = $this->page->navbar->get_items();
+        $currentnode = end($items);
+
+        $showcoursemenu = false;
+        $showfrontpagemenu = false;
+        $showusermenu = false;
+
+        // We are on the course home page.
+        if (($context->contextlevel == CONTEXT_COURSE) &&
+                !empty($currentnode) &&
+                ($currentnode->type == navigation_node::TYPE_COURSE || $currentnode->type == navigation_node::TYPE_SECTION)) {
+            $showcoursemenu = true;
+        }
+
+        $courseformat = course_get_format($this->page->course);
+        // This is a single activity course format, always show the course menu on the activity main page.
+        if ($context->contextlevel == CONTEXT_MODULE &&
+                !$courseformat->has_view_page()) {
+
+            $this->page->navigation->initialise();
+            $activenode = $this->page->navigation->find_active_node();
+            // If the settings menu has been forced then show the menu.
+            if ($this->page->is_settings_menu_forced()) {
+                $showcoursemenu = true;
+            } else if (!empty($activenode) && ($activenode->type == navigation_node::TYPE_ACTIVITY ||
+                    $activenode->type == navigation_node::TYPE_RESOURCE)) {
+
+                // We only want to show the menu on the first page of the activity. This means
+                // the breadcrumb has no additional nodes.
+                if ($currentnode && ($currentnode->key == $activenode->key && $currentnode->type == $activenode->type)) {
+                    $showcoursemenu = true;
+                }
+            }
+        }
+
+        // This is the site front page.
+        if ($context->contextlevel == CONTEXT_COURSE &&
+                !empty($currentnode) &&
+                $currentnode->key === 'home') {
+            $showfrontpagemenu = true;
+        }
+
+        // This is the user profile page.
+        if ($context->contextlevel == CONTEXT_USER &&
+                !empty($currentnode) &&
+                ($currentnode->key === 'myprofile')) {
+            $showusermenu = true;
+        }
+
+        if ($showfrontpagemenu) {
+            $settingsnode = $this->page->settingsnav->find('frontpage', navigation_node::TYPE_SETTING);
+            if ($settingsnode) {
+                // Build an action menu based on the visible nodes from this navigation tree.
+                $skipped = $this->build_action_menu_from_navigation($menu, $settingsnode, false, true);
+                $title = get_string('frontpagesettingstitle', 'theme_essential');
+
+                // We only add a list to the full settings menu if we didn't include every node in the short menu.
+                if ($skipped) {
+                    $text = get_string('morenavigationlinks');
+                    $url = new moodle_url('/course/admin.php', array('courseid' => $this->page->course->id));
+                    $link = new action_link($url, $text, null, null, new pix_icon('t/edit', $text));
+                    $menu->add_secondary_action($link);
+                }
+            }
+        } else if ($showcoursemenu) {
+            $settingsnode = $this->page->settingsnav->find('courseadmin', navigation_node::TYPE_COURSE);
+            if ($settingsnode) {
+                // Build an action menu based on the visible nodes from this navigation tree.
+                $skipped = $this->build_action_menu_from_navigation($menu, $settingsnode, false, true);
+                $title = get_string('coursesettingstitle', 'theme_essential');
+
+                // We only add a list to the full settings menu if we didn't include every node in the short menu.
+                if ($skipped) {
+                    $text = get_string('morenavigationlinks');
+                    $url = new moodle_url('/course/admin.php', array('courseid' => $this->page->course->id));
+                    $link = new action_link($url, $text, null, null, new pix_icon('t/edit', $text));
+                    $menu->add_secondary_action($link);
+                }
+            }
+        } else if ($showusermenu) {
+            // Get the course admin node from the settings navigation.
+            $settingsnode = $this->page->settingsnav->find('useraccount', navigation_node::TYPE_CONTAINER);
+            if ($settingsnode) {
+                // Build an action menu based on the visible nodes from this navigation tree.
+                $this->build_action_menu_from_navigation($menu, $settingsnode);
+                $title = get_string('usersettingstitle', 'theme_essential');
+            }
+        }
+
+        if (($showfrontpagemenu) || ($showcoursemenu) || ($showusermenu)) {
+            return $this->render_navbar_action_menu($menu, $title);
+        } else {
+            return '';
+        }
+    }
+
+    /**
+     * Renders an action menu component.
+     *
+     * ARIA references:
+     *   - http://www.w3.org/WAI/GL/wiki/Using_ARIA_menus
+     *   - http://stackoverflow.com/questions/12279113/recommended-wai-aria-implementation-for-navigation-bar-menu
+     *
+     * @param action_menu $menu.
+     * @param string $title Menu title.
+     * @return string HTML
+     */
+    protected function render_navbar_action_menu(action_menu $menu, $title) {
+        $context = $menu->export_for_template($this);
+        $context->classes .= ' navbarrightitem';
+        $context->primary->caret = $this->getfontawesomemarkup('caret-right');
+        $context->primary->classes .= ' nav';
+        $context->primary->title = $title;
+        $context->primary->icon['title'] = $context->primary->title;
+        $context->primary->menutrigger = true;
+        return $this->render_from_template('theme_essential/navbar_action_menu', $context);
+    }
+
+    /**
+     * Take a node in the nav tree and make an action menu out of it.
+     * The links are injected in the action menu.
+     *
+     * @param action_menu $menu.
+     * @param navigation_node $node.
+     * @param boolean $indent.
+     * @param boolean $onlytopleafnodes.
+     * @return boolean nodesskipped - True if nodes were skipped in building the menu.
+     */
+    private function build_action_menu_from_navigation(action_menu $menu, navigation_node $node, $indent = false,
+        $onlytopleafnodes = false) {
+        $skipped = false;
+        // Build an action menu based on the visible nodes from this navigation tree.
+        foreach ($node->children as $menuitem) {
+            if ($menuitem->display) {
+                if ($onlytopleafnodes && $menuitem->children->count()) {
+                    $skipped = true;
+                    continue;
+                }
+                if ($menuitem->action) {
+                    if ($menuitem->action instanceof action_link) {
+                        $link = $menuitem->action;
+                        // Give preference to setting icon over action icon.
+                        if (!empty($menuitem->icon)) {
+                            $link->icon = $menuitem->icon;
+                        }
+                    } else {
+                        $link = new action_link($menuitem->action, $menuitem->text, null, null, $menuitem->icon);
+                    }
+                } else {
+                    if ($onlytopleafnodes) {
+                        $skipped = true;
+                        continue;
+                    }
+                    $link = new action_link(new moodle_url('#'), $menuitem->text, null, ['disabled' => true], $menuitem->icon);
+                }
+                if ($indent) {
+                    $link->add_class('m-l-1');
+                }
+                if (!empty($menuitem->classes)) {
+                    $link->add_class(implode(" ", $menuitem->classes));
+                }
+
+                $menu->add_secondary_action($link);
+                $skipped = $skipped || $this->build_action_menu_from_navigation($menu, $menuitem, true);
+            }
+        }
+        return $skipped;
     }
 
     /**
@@ -1830,6 +2012,12 @@ class core_renderer extends \core_renderer {
             );
 
             $regioncontent = '';
+            $flatnavigation = \theme_essential\toolbox::get_setting('flatnavigation');
+            if (($flatnavigation) && ($region == 'side-pre')) {
+               global $PAGE;
+               $templatecontext = array('flatnavigation' => $PAGE->flatnav);
+               $regioncontent .= $this->render_from_template('theme_essential/flat_navigation', $templatecontext);
+            }
             $editing = $this->page->user_is_editing();
             if ($editing) {
                 $regioncontent .= html_writer::tag('span', html_writer::tag('span', get_string('region-'.$region, 'theme_essential')),
@@ -1843,6 +2031,9 @@ class core_renderer extends \core_renderer {
                         $attributes['class'] .= ' rowblock-edit';
                     }
                     $regioncontent .= $this->essential_blocks_for_region($region, $blocksperrow, $editing);
+                    $output = html_writer::tag($tag, $regioncontent, $attributes);
+                } else if ($flatnavigation) {
+                    $regioncontent .= $this->essential_flatnav_blocks_for_region($region);
                     $output = html_writer::tag($tag, $regioncontent, $attributes);
                 } else {
                     $regioncontent .= $this->blocks_for_region($region);
@@ -1961,6 +2152,44 @@ class core_renderer extends \core_renderer {
             }
         }
 
+        return $output;
+    }
+
+    /**
+     * Output all the blocks in a particular region without the navigation or settings blocks.
+     *
+     * @param string $region the name of a region on this page.
+     * @return string the HTML to be output.
+     */
+    public function essential_flatnav_blocks_for_region($region) {
+        $blockcontents = $this->page->blocks->get_content_for_region($region, $this);
+        $blocks = $this->page->blocks->get_blocks_for_region($region);
+        $lastblock = null;
+        $zones = array();
+        $excludeblocks = array();
+        foreach ($blocks as $block) {
+            if (($block->instance->blockname == 'navigation') || ($block->instance->blockname == 'settings')) {
+                $excludeblocks[] = $block->instance->id;
+            } else {
+                $zones[] = $block->title;
+            }
+        }
+        $output = '';
+
+        foreach ($blockcontents as $bc) {
+            if ($bc instanceof block_contents) {
+                if (!in_array($bc->blockinstanceid, $excludeblocks)) {
+                    $output .= $this->block($bc, $region);
+                    $lastblock = $bc->title;
+                }
+            } else if ($bc instanceof block_move_target) {
+                if (!in_array($bc->blockinstanceid, $excludeblocks)) {
+                    $output .= $this->block_move_target($bc, $zones, $lastblock, $region);
+                }
+            } else {
+                throw new coding_exception('Unexpected type of thing (' . get_class($bc) . ') found in list of block contents.');
+            }
+        }
         return $output;
     }
 

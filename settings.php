@@ -60,6 +60,15 @@ if ($ADMIN->fulltree) {
         get_string('generalheadingsub', 'theme_essential'),
         format_text(get_string('generalheadingdesc', 'theme_essential'), FORMAT_MARKDOWN)));
 
+    // Toggle flat navigation.
+    $name = 'theme_essential/flatnavigation';
+    $title = get_string('flatnavigation', 'theme_essential');
+    $description = get_string('flatnavigationdesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingsgeneric->add($setting);
+
     // Page background image.
     $name = 'theme_essential/pagebackground';
     $title = get_string('pagebackground', 'theme_essential');

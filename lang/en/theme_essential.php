@@ -145,6 +145,12 @@ $string['genericsettings'] = 'General';
 $string['generalheadingsub'] = 'General settings';
 $string['generalheadingdesc'] = 'Configure the general settings for the theme here.';
 
+$string['flatnavigation'] = 'Enable flat navigation.';
+$string['flatnavigationdesc'] = 'If enabled flat navigation will be used instead of the navigation and settings blocks.';
+$string['coursesettingstitle'] = 'Course settings';
+$string['frontpagesettingstitle'] = 'Frontpage settings';
+$string['usersettingstitle'] = 'User settings';
+
 $string['pagebackground'] = 'Page background image';
 $string['pagebackgrounddesc'] = 'Upload your own background image.  Select the style of the image below.';
 $string['pagebackgroundstyle'] = 'Page background style';

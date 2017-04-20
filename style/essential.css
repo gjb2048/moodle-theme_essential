@@ -23244,6 +23244,12 @@ div.dropdown-menu > ul li a {
   left: auto;
   right: 10px;
 }
+.jsenabled .navbar .moodle-actionmenu[data-enhance] .toggle-display .icon {
+  font-size: inherit;
+  height: inherit;
+  margin: 0;
+  padding: 0;
+}
 #page-mod-forum-view .notification.unread {
   background-color: inherit;
 }
