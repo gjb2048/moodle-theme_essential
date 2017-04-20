@@ -18,6 +18,7 @@
  * Essential is a clean and customizable theme.
  *
  * @package     theme_essential
+ * @copyright   2017 Gareth J Barnard
  * @copyright   2016 Gareth J Barnard
  * @copyright   2015 Gareth J Barnard
  * @copyright   2014 Gareth J Barnard, David Bezemer
@@ -50,10 +51,6 @@ Gareth J. Barnard<br>
 <p>This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider sponsoring by:
 <h4>PayPal</h4>
 <p>Please contact me via my <a href="http://moodle.org/user/profile.php?id=442195" target="_blank">\'Moodle profile\'</a> for details as I am an individual and therefore am unable to have \'buy me now\' buttons under their terms.</p>
-<h4>Flattr</h4>
-<a href="https://flattr.com/profile/gjb2048" target="_blank">
-click here to sponsor.
-</a>
 <br>Sponsorships help to facilitate maintenance and allow me to provide you with more and better features.  Without your support the theme cannot be maintained.</p>
 <p>
 <h3>Sponsors</h3>
@@ -131,9 +128,7 @@ $string['sponsor_title'] = 'Sponsor Essential';
 $string['sponsor_desc'] = 'Please sponsor via PayPal by contacting me via my \'';
 $string['sponsor_desc2'] = ' to keep the Essential development going, or simply to express your gratitude.';
 $string['paypal_desc'] = '{$a->url}\' for details as I am an individual and therefore am unable to have \'buy me now\' buttons under their terms or ';
-$string['flattr_desc'] = '{$a->url}';
 $string['paypal_click'] = 'Moodle profile';
-$string['flattr_click'] = 'sponsor via Flattr';
 
 // Readme.
 $string['readme_title'] = 'Essential read-me';
