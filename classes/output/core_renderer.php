@@ -44,6 +44,8 @@ use navigation_node;
 use pix_icon;
 use stdClass;
 
+require_once($CFG->dirroot."/course/format/lib.php");
+
 class core_renderer extends \core_renderer {
     use core_renderer_toolbox;
     public $language = null;
@@ -378,8 +380,7 @@ class core_renderer extends \core_renderer {
                 ($currentnode->type == navigation_node::TYPE_COURSE || $currentnode->type == navigation_node::TYPE_SECTION)) {
             $showcoursemenu = true;
         }
-
-        $courseformat = course_get_format($this->page->course);
+        $courseformat = \course_get_format($this->page->course);
         // This is a single activity course format, always show the course menu on the activity main page.
         if ($context->contextlevel == CONTEXT_MODULE &&
                 !$courseformat->has_view_page()) {
@@ -416,10 +417,10 @@ class core_renderer extends \core_renderer {
 
         if ($showfrontpagemenu) {
             $settingsnode = $this->page->settingsnav->find('frontpage', navigation_node::TYPE_SETTING);
+            $title = get_string('frontpagesettingstitle', 'theme_essential');
             if ($settingsnode) {
                 // Build an action menu based on the visible nodes from this navigation tree.
                 $skipped = $this->build_action_menu_from_navigation($menu, $settingsnode, false, true);
-                $title = get_string('frontpagesettingstitle', 'theme_essential');
 
                 // We only add a list to the full settings menu if we didn't include every node in the short menu.
                 if ($skipped) {
@@ -431,10 +432,10 @@ class core_renderer extends \core_renderer {
             }
         } else if ($showcoursemenu) {
             $settingsnode = $this->page->settingsnav->find('courseadmin', navigation_node::TYPE_COURSE);
+            $title = get_string('coursesettingstitle', 'theme_essential');
             if ($settingsnode) {
                 // Build an action menu based on the visible nodes from this navigation tree.
                 $skipped = $this->build_action_menu_from_navigation($menu, $settingsnode, false, true);
-                $title = get_string('coursesettingstitle', 'theme_essential');
 
                 // We only add a list to the full settings menu if we didn't include every node in the short menu.
                 if ($skipped) {
@@ -447,10 +448,10 @@ class core_renderer extends \core_renderer {
         } else if ($showusermenu) {
             // Get the course admin node from the settings navigation.
             $settingsnode = $this->page->settingsnav->find('useraccount', navigation_node::TYPE_CONTAINER);
+            $title = get_string('usersettingstitle', 'theme_essential');
             if ($settingsnode) {
                 // Build an action menu based on the visible nodes from this navigation tree.
                 $this->build_action_menu_from_navigation($menu, $settingsnode);
-                $title = get_string('usersettingstitle', 'theme_essential');
             }
         }
 
@@ -1171,7 +1172,7 @@ class core_renderer extends \core_renderer {
         // A copy of block_activity_modules.
         $course = $this->page->course;
         $modinfo = get_fast_modinfo($course);
-        $course = course_get_format($course)->get_course();
+        $course = \course_get_format($course)->get_course();
         $modfullnames = array();
         $archetypes = array();
 
