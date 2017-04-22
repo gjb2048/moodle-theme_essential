@@ -159,12 +159,13 @@ class theme_essential_toolbox_testcase extends advanced_testcase {
 
         $this->setup_renderer();
 
+        global $CFG;
         $theslide1 = \theme_essential\toolbox::render_slide(1, 0);
         $thecontent1 = '<a href="https://about.me/gjbarnard" target="_blank" class="item side-caption active">';
         $thecontent1 .= '<div class="container-fluid"><div class="row-fluid"><div class="span5 the-side-caption">';
         $thecontent1 .= '<div class="the-side-caption-content"><h4>Test slide one</h4><div><p>Test of link in caption: me.</p>';
         $thecontent1 .= '</div></div></div><div class="span7"><div class="carousel-image-container">';
-        $thecontent1 .= '<img src="http://www.example.com/moodle/theme/image.php/_s/essential/theme/1/default_slide" ';
+        $thecontent1 .= '<img src="'.$CFG->wwwroot.'/theme/image.php/_s/essential/theme/1/default_slide" ';
         $thecontent1 .= 'alt="Test slide one" class="carousel-image"></div></div></div></div></a>';
         $this->assertEquals($thecontent1, $theslide1);
 
@@ -174,7 +175,7 @@ class theme_essential_toolbox_testcase extends advanced_testcase {
         $thecontent2 .= '<div class="the-side-caption-content"><h4>Test slide two</h4><div>';
         $thecontent2 .= '<p>Test of link in caption: <a href="https://about.me/gjbarnard" target="_blank">me.</a></p>';
         $thecontent2 .= '</div></div></div><div class="span7"><div class="carousel-image-container">';
-        $thecontent2 .= '<img src="http://www.example.com/moodle/theme/image.php/_s/essential/theme/1/default_slide" ';
+        $thecontent2 .= '<img src="'.$CFG->wwwroot.'/theme/image.php/_s/essential/theme/1/default_slide" ';
         $thecontent2 .= 'alt="Test slide two" class="carousel-image"></div></div></div></div></div>';
         $this->assertEquals($thecontent2, $theslide2);
     }
