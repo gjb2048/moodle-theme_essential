@@ -80,9 +80,6 @@
 .block .icon {
   color: [[setting:themeiconcolor]];
 }
-.block .moodle-core-dragdrop-draghandle:before {
-  color: [[setting:themeiconcolor]];
-}
 .block .menu a.menu-action {
   color: [[setting:themeurlcolor]];
 }
@@ -591,9 +588,6 @@ body.has_dock.essential-colours-alternative4 #dock .dockedtitle[disabled] {
 .course-item-actions a:hover > .fa,
 .actions a:hover > .fa {
   color: [[setting:themehovercolor]];
-}
-.section-modchooser-link > a:before {
-  color: [[setting:themeiconcolor]];
 }
 /* @end */
 /* @Group Editor */
@@ -1881,9 +1875,6 @@ h2.pagetitle {
   color: [[setting:footerblockhovercolour]];
 }
 #page-footer .block .icon {
-  color: [[setting:footerblockurlcolour]];
-}
-#page-footer .block .moodle-core-dragdrop-draghandle:before {
   color: [[setting:footerblockurlcolour]];
 }
 #page-footer .block .header {
