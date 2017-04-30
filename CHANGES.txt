@@ -3,6 +3,7 @@ New in 3.3.0.1
 - NEW: Initial 'Alpha' version for Moodle 3.3.
 - NEW: Exclude CSS that has already been linted in the LESS and would cause errors as minified.
 - NEW: Add flat navigation option and context header settings menu on the navbar.
+- FIX: Issue #821: Marketing spots no longer responsive for mobiles.
 - IFO: Using Essential Font-awesome LESS and font files for easy update.
 
 New in 3.2.1.1
