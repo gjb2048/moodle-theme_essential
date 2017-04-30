@@ -1868,6 +1868,29 @@ class core_renderer extends \core_renderer {
     }
 
     /**
+     * Renders an action menu component.  From Boost - removes 'icon' class from the action menu.
+     *
+     * @param action_menu $menu
+     * @return string HTML
+     */
+    public function render_action_menu(action_menu $menu) {
+
+        // We don't want the class icon there!
+        foreach ($menu->get_secondary_actions() as $action) {
+            if ($action instanceof \action_menu_link && $action->has_class('icon')) {
+                $action->attributes['class'] = preg_replace('/(^|\s+)icon(\s+|$)/i', '', $action->attributes['class']);
+            }
+        }
+
+        if ($menu->is_empty()) {
+            return '';
+        }
+        $context = $menu->export_for_template($this);
+
+        return $this->render_from_template('core/action_menu', $context);
+    }
+
+    /**
      * Renders tabtree
      *
      * @param tabtree $tabtree

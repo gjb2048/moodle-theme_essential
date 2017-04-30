@@ -117,7 +117,7 @@
                                     border-left-color: ~"[[setting:alternativethemecolor@{index}]]";
                                 }
                                 span,
-							    a,
+                                a,
                                 a:before {
                                     color: ~"[[setting:alternativethemecolor@{index}]]";
                                 }
@@ -167,8 +167,78 @@
                         color: inherit;
                     }
                 }
-                button.socialicon .@{fa-css-prefix} {
-                    color: @white;
+                button {
+                    &.socialicon {
+                        background-color: #bbb;
+                        background-image: none;
+                        .@{fa-css-prefix} {
+                            color: @white;
+                        }
+                        &:hover,
+                        &:focus {
+                            background-image: none;
+                        }
+                    }
+                    &.facebook:hover,
+                    &.facebook:focus {
+                        background-color: #4a6ea9;
+                    }
+                    &.skype:hover,
+                    &.skype:focus {
+                        background-color: #00adf7;
+                    }
+                    &.instagram:hover,
+                    &.instagram:focus {
+                        background-color: #a5674a;
+                    }
+                    &.ios:hover,
+                    &.ios:focus {
+                        background-color: #000;
+                    }
+                    &.windows:hover,
+                    &.windows:focus {
+                        background-color: #008a00;
+                    }
+                    &.winphone:hover,
+                    &.winphone:focus {
+                        background-color: #9b4f96;
+                    }
+                    &.android:hover,
+                    &.android:focus {
+                        background-color: #98cd32;
+                    }
+                    &.vk:hover,
+                    &.vk:focus {
+                        background-color: #4a6ea9;
+                    }
+                    &.twitter:hover,
+                    &.twitter:focus {
+                        background-color: #00aced;
+                    }
+                    &.googleplus:hover,
+                    &.googleplus:focus {
+                        background-color: #f42941;
+                    }
+                    &.flickr:hover,
+                    &.flickr:focus {
+                        background-color: #ff3096;
+                    }
+                    &.instagram:hover,
+                    a.instagram:focus {
+                        background-color: #b99c6b;
+                    }
+                    &.youtube:hover,
+                    &.youtube:focus {
+                        background-color: #f42941;
+                    }
+                    &.pinterest:hover,
+                    &.pinterest:focus {
+                        background-color: #f42941;
+                    }
+                    &.linkedin:hover,
+                    &.linkedin:focus {
+                        background-color: #4a9cc9;
+                    }
                 }
 
                 a {
@@ -561,8 +631,13 @@
                     }
                 }
 
+                // Atto.
                 div.editor_atto_toolbar button {
                     background: none;
+                }
+                .editor_atto_content_wrap,
+                div.editor_atto_toolbar button .icon {
+                    color: ~"[[setting:alternativethemetextcolor@{index}]]";
                 }
                 .moodle-dialogue-base .closebutton:hover {
                     background-image: url(~"[[pix:theme|sprite]]");
@@ -1060,32 +1135,6 @@
                                     color: @white; // TODO: Page background colour needs to be a setting.
                                 }
                             }
-                        }
-                    }
-                }
-
-                .actions {
-                    a {
-                        color: ~"[[setting:alternativethemeurlcolor@{index}]]";
-                        &:hover,
-                        &:focus,
-                        &:active {
-                            color: ~"[[setting:alternativethemehovercolor@{index}]]";
-                        }
-                    }
-                    .moodle-actionmenu[data-enhanced].show .menu a {
-                        color: ~"[[setting:alternativethemeurlcolor@{index}]]";
-                        &:hover,
-                        &:focus,
-                        &:active {
-                            color: ~"[[setting:alternativethemehovercolor@{index}]]";
-                        }
-                    }
-                    .moodle-actionmenu[data-enhanced].show .menu a:hover {
-                        color: ~"[[setting:themenavcolor]]";
-                        background-color: ~"[[setting:alternativethemecolor@{index}]]";
-                        .@{fa-css-prefix}:before {
-                            color: ~"[[setting:alternativethemenavcolor@{index}]]";
                         }
                     }
                 }

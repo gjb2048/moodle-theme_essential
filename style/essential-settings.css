@@ -2040,31 +2040,6 @@ h6 span {
   font-family: inherit;
 }
 /* @end */
-/* @group Editicons */
-.actions a {
-  color: [[setting:themeurlcolor]];
-}
-.actions a:hover,
-.actions a:focus,
-.actions a:active {
-  color: [[setting:themehovercolor]];
-}
-.actions .moodle-actionmenu[data-enhanced].show .menu a {
-  color: [[setting:themeurlcolor]];
-}
-.actions .moodle-actionmenu[data-enhanced].show .menu a:hover,
-.actions .moodle-actionmenu[data-enhanced].show .menu a:focus,
-.actions .moodle-actionmenu[data-enhanced].show .menu a:active {
-  color: [[setting:themehovercolor]];
-}
-.actions .moodle-actionmenu[data-enhanced].show .menu a:hover {
-  color: [[setting:themenavcolor]];
-  background-color: [[setting:themecolor]];
-}
-.actions .moodle-actionmenu[data-enhanced].show .menu a:hover .fa:before {
-  color: [[setting:themenavcolor]];
-}
-/* @end */
 /* @group Chat */
 #chat-input-area table.generaltable td.cell {
   background-color: [[setting:themecolor]] !important;

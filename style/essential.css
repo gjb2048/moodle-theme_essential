@@ -201,6 +201,9 @@ a.autolink.glossary:hover {
 .pagingbar .thispage {
   font-weight: bold;
 }
+img.userpicture {
+  margin-right: 5px;
+}
 img.resize {
   height: 1em;
   width: 1em;
@@ -531,7 +534,6 @@ a.skip:active {
 }
 .notepost .userpicture {
   float: left;
-  margin-right: 5px;
 }
 .notepost .content,
 .notepost .footer {
@@ -19985,9 +19987,6 @@ table.ygtvtable td a {
 .block .moodle-actionmenu[data-enhanced].show .menu a:hover {
   text-decoration: none;
 }
-.block .moodle-actionmenu[data-enhanced].show .menu a:hover:before {
-  color: #fff;
-}
 .block li.item_with_icon > p img {
   position: static !important;
 }
@@ -21277,12 +21276,6 @@ body .course-content ul.topics li.section .content {
   margin-right: 5px;
   margin-left: 3px;
 }
-.editing .section .activity .editing_hide .fa-eye-slash:before {
-  content: "\f06e";
-}
-.editing .section .activity .editing_show .fa-eye:before {
-  content: "\f070";
-}
 .editing .section .activity .activityinstance {
   padding-right: 180px;
 }
@@ -21758,15 +21751,6 @@ body.has_dock #dockeditempanel .dockeditempanel_hd .commands input {
 .actions a.action-delete > .fa {
   color: red;
 }
-.actions a.editing_groupsnone > .fa:before {
-  content: "\f007";
-}
-.actions a.editing_groupsseparate > .fa:before {
-  content: "\f21b";
-}
-.actions a.editing_groupsvisible > .fa:before {
-  content: "\f234";
-}
 a.action-icon > .fa,
 #studentheader > .fa,
 .heading_name_row a > .fa {
@@ -21797,6 +21781,7 @@ a.action-icon > .fa,
   padding-right: 0.35em;
 }
 .moodle-actionmenu.show[data-enhanced] .menu a .fa {
+  margin-left: 0;
   margin-right: 5px;
 }
 /* @end */
@@ -22819,11 +22804,11 @@ body button.ios:focus {
   background-color: #000;
 }
 body button.windows:hover,
-body button.ios:focus {
+body button.windows:focus {
   background-color: #008a00;
 }
 body button.winphone:hover,
-body button.ios:focus {
+body button.winphone:focus {
   background-color: #9b4f96;
 }
 body button.android:hover,
