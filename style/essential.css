@@ -22151,9 +22151,6 @@ body .forumpost .row .options .commands {
 #marketing-spots .marketing-spot .marketing-buttons a.marketing-button.responsive {
   display: none;
 }
-#marketing-spots > div {
-  display: flex;
-}
 /* @end */
 /* @end */
 /* @group Gradebook */
@@ -23203,6 +23200,11 @@ body.format-topcoll .course-content ul.ctopics li.section .content .toggle a h3:
   }
   .row-fluid .desktop-first-column {
     margin-left: 0;
+  }
+}
+@media (min-width: 768px) {
+  #marketing-spots > div {
+    display: flex;
   }
 }
 @media (max-width: 767px) {
