@@ -19987,13 +19987,7 @@ table.ygtvtable td a {
 .block .moodle-actionmenu[data-enhanced].show .menu a:hover {
   text-decoration: none;
 }
-.block li.item_with_icon > p img {
-  position: static !important;
-}
 .block .icon {
-  margin-right: 5px;
-}
-.block li.item_with_icon > p img {
   margin-right: 5px;
 }
 body:not(.tabletdevice).empty-region-side-pre #main-and-pre #content,
@@ -22901,7 +22895,7 @@ ul.socials li {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
 }
 #essentialnavbar .navbar {
   position: fixed;

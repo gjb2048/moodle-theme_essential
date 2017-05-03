@@ -1786,12 +1786,6 @@ h2.pagetitle {
 }
 /* @end */
 /* @group Blocks */
-.block a {
-  color: [[setting:themeurlcolor]];
-}
-.block a:hover {
-  color: [[setting:themehovercolor]];
-}
 .block .header .title h2:before,
 .block.block_iconic_html .header .title h2 .fa:before {
   color: [[setting:themeiconcolor]];

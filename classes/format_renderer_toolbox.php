@@ -72,7 +72,8 @@ trait format_renderer_toolbox {
         }
 
         $forward = $sectionno + 1;
-        while ($forward <= $course->numsections and empty($links['next'])) {
+        $numsections = course_get_format($course)->get_last_section_number();
+        while ($forward <= $numsections and empty($links['next'])) {
             if ($canviewhidden || $sections[$forward]->uservisible) {
                 $params = array('id' => 'next_section');
                 if (!$sections[$forward]->visible) {

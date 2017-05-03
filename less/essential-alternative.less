@@ -38,7 +38,7 @@
 
             /* @group Alternative colours @{index} */
 
-            body.essential-colours-alternative@{index} {
+            .essential-colours-alternative@{index} {
                 color: ~"[[setting:alternativethemetextcolor@{index}]]";
                 h1,
                 h2,
@@ -781,12 +781,6 @@
                 }
 
                 .block {
-                    a {
-                        color: ~"[[setting:alternativethemeurlcolor@{index}]]";
-                    }
-                    a:hover {
-                        color: ~"[[setting:alternativethemehovercolor@{index}]]";
-                    }
                     .header .title h2 {
                         color: ~"[[setting:alternativethemetextcolor@{index}]]";
                         &:before {
@@ -1379,7 +1373,7 @@
             }
 
             @media (max-width: @navbarCollapseWidth) {
-                body.essential-colours-alternative@{index} {
+                .essential-colours-alternative@{index} {
                     .nav-collapse {
                         background-color: ~"[[setting:alternativethemecolor@{index}]]";
                         .dropdown-menu li > a,
