@@ -14107,12 +14107,10 @@ body {
   display: block;
 }
 .block_myoverview .empty-placeholder-image-sm {
-  height: 70px;
-  width: 85px;
+  height: 50px;
 }
 .block_myoverview .empty-placeholder-image-lg {
   height: 125px;
-  width: 145px;
 }
 .block_myoverview .courses-view-course-item {
   height: 220px;
@@ -21761,14 +21759,6 @@ a.action-icon > .fa,
   content: "\f040";
   font-family: 'FontAwesome';
   margin-right: 5px;
-}
-.section .summary > a:before {
-  font-family: 'FontAwesome';
-  content: "\f013";
-  margin-right: 5px;
-}
-.section .summary .iconsmall.edit {
-  display: none;
 }
 .moodle-actionmenu.show[data-enhanced] .menu a {
   padding-left: 0.35em;

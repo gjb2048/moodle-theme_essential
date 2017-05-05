@@ -1,5 +1,6 @@
 New in 3.3.0.2
 ==============
+- FIX: Double section summary editing cog.
 
 New in 3.3.0.1
 ==============
