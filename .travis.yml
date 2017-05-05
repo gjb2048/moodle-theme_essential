@@ -22,6 +22,12 @@ matrix:
    env: DB=pgsql
    addons:
       postgresql: 9.3
+ - php: 7.1
+   env: DB=mysqli
+ - php: 7.1
+   env: DB=pgsql
+   addons:
+      postgresql: 9.3
 env:
  global:
   - MOODLE_BRANCH=master
