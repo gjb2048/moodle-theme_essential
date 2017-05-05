@@ -95,11 +95,7 @@ class theme_essential_toolbox_testcase extends advanced_testcase {
             $resultarray[$subcat] = $resultsubcat;
         }
 
-        $beforecalltime = microtime();
-        print(' - toolbox::get_categories_list() - Before: '.$beforecalltime);
         $resultcats = \theme_essential\toolbox::get_categories_list();
-        $aftercalltime = microtime();
-        print(' - toolbox::get_categories_list() - After: '.$aftercalltime.' - diff: '.($aftercalltime - $beforecalltime).' - ');
 
         // Starts at zero for 'Miscellaneous' category and does two assertions for cat and sub cat.
         for ($rescat = 0; $rescat <= $numcats; $rescat++) {
