@@ -19517,6 +19517,9 @@ ul.indented-list {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.carousel-indicators {
+  z-index: 2;
+}
 .muted,
 a.muted:hover,
 a.muted:focus {
