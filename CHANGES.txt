@@ -1,6 +1,7 @@
 New in 3.2.1.2
 ==============
 - FIX: Issue #821: Marketing spots no longer responsive for mobiles.
+- FIX: Issue #824: Header area/slide show/bullet-menu "on top".
 - NEW: Tidy up.
 
 New in 3.2.1.1

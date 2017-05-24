@@ -204,6 +204,9 @@ a.autolink.glossary:hover {
 .pagingbar .thispage {
   font-weight: bold;
 }
+img.userpicture {
+  margin-right: 5px;
+}
 img.resize {
   height: 1em;
   width: 1em;
@@ -527,7 +530,6 @@ a.skip:active {
 }
 .notepost .userpicture {
   float: left;
-  margin-right: 5px;
 }
 .notepost .content,
 .notepost .footer {
@@ -14537,6 +14539,9 @@ body.path-mod-feedback #region-main .mform.feedback_form .feedback-item-pagebrea
 .path-mod-forum .forumheaderlist .discussion .lastpost {
   vertical-align: top;
 }
+.path-mod-forum .forumheaderlist .discussion .unread img {
+  margin: 0;
+}
 .forumpost {
   min-height: 20px;
   padding: 19px;
@@ -16678,6 +16683,7 @@ div[data-flexitour="step-background-fader"],
 }
 span[data-flexitour="container"] div[data-role="flexitour-step"] {
   background-color: #fff;
+  color: #333;
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -19148,6 +19154,9 @@ ul.indented-list {
 }
 .text-nowrap {
   white-space: nowrap !important;
+}
+.carousel-indicators {
+  z-index: 2;
 }
 .muted,
 a.muted:hover,
