@@ -2041,6 +2041,7 @@ class core_renderer extends \core_renderer {
                 global $PAGE;
                 $templatecontext = array('flatnavigation' => $PAGE->flatnav);
                 $regioncontent .= $this->render_from_template('theme_essential/flat_navigation', $templatecontext);
+                $attributes['data-region'] = 'drawer';
             }
             $editing = $this->page->user_is_editing();
             if ($editing) {
