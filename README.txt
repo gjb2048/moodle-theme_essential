@@ -184,6 +184,7 @@ can be really useful in visualising the issue along with any files you consider 
 
 New in 2.8.1.11
 ===============
+- NEW: Remove theme credit.
 
 New in 2.8.1.10
 ===============
