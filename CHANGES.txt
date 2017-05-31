@@ -1,5 +1,6 @@
 New in 2.9.1.24
 ===============
+- NEW: Remove theme credit.
 
 New in 2.9.1.23
 ===============

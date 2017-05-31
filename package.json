@@ -1,6 +1,6 @@
 {
   "name": "theme-essential-tasks",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Grunt tasks for Moodle Essential theme.",
   "main": "Gruntfile.js",
   "author": {
@@ -35,5 +35,5 @@
     "grunt-contrib-uglify": "~0.7.0",
     "grunt-svgmin": "~2.0.0"
   },
-  "license": "GPLv3.0+"
+  "license": "GPL-3.0"
 }
