@@ -65,7 +65,7 @@ Gareth J. Barnard<br>
 </ul>
 </p>
 <p>
-<h3>Essential for Moodle 3.2 kindly sponsored by:</h3>
+<h3>Essential for Moodle 3.3 kindly sponsored by:</h3>
 <ul>
 <li>ClassroomRevolution, LLC -- Moodle Partner</li>
 <li>Daniel Méthot - e-learning-facile.com/formations/</li>

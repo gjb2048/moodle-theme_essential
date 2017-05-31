@@ -49,9 +49,8 @@ if ($ADMIN->fulltree) {
 
     $essentialsettingsgeneric->add(new admin_setting_heading('theme_essential_generalsponsor',
         get_string('sponsor_title', 'theme_essential'),
-        get_string('sponsor_desc', 'theme_essential') . get_string('paypal_desc', 'theme_essential',
-            array('url' => $sponsor)).get_string('sponsor_desc2', 'theme_essential')));
-
+        get_string('sponsor_desc', 'theme_essential').get_string('paypal_desc', 'theme_essential', array('url' => $sponsor)).
+        get_string('sponsor_desc2', 'theme_essential')));
     $essentialsettingsgeneric->add(new admin_setting_heading('theme_essential_generalheading',
         get_string('generalheadingsub', 'theme_essential'),
         format_text(get_string('generalheadingdesc', 'theme_essential'), FORMAT_MARKDOWN)));
