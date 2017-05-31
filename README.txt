@@ -72,8 +72,6 @@ by:
 PayPal - Please contact me (Gareth) via my 'Moodle profile' in 'Developed and maintained by' above for details as I am an individual
 and therefore am unable to have 'buy me now' buttons under their terms.
 
-Flattr - flattr.com/profile/gjb2048
-
 Sponsorships help to facilitate maintenance and allow me to provide you with more and better features.  Without your support the theme
 cannot be maintained.
 

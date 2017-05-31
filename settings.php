@@ -47,15 +47,10 @@ if ($ADMIN->fulltree) {
     $sponsor = new moodle_url('http://moodle.org/user/profile.php?id=442195');
     $sponsor = html_writer::link($sponsor, get_string('paypal_click', 'theme_essential'), array('target' => '_blank'));
 
-    $flattr = new moodle_url('https://flattr.com/profile/gjb2048');
-    $flattr = html_writer::link($flattr, get_string('flattr_click', 'theme_essential'), array('target' => '_blank'));
-
     $essentialsettingsgeneric->add(new admin_setting_heading('theme_essential_generalsponsor',
         get_string('sponsor_title', 'theme_essential'),
-        get_string('sponsor_desc', 'theme_essential') . get_string('paypal_desc', 'theme_essential',
-            array('url' => $sponsor)).get_string('flattr_desc', 'theme_essential',
-            array('url' => $flattr)).get_string('sponsor_desc2', 'theme_essential')));
-
+        get_string('sponsor_desc', 'theme_essential').get_string('paypal_desc', 'theme_essential', array('url' => $sponsor)).
+        get_string('sponsor_desc2', 'theme_essential')));
     $essentialsettingsgeneric->add(new admin_setting_heading('theme_essential_generalheading',
         get_string('generalheadingsub', 'theme_essential'),
         format_text(get_string('generalheadingdesc', 'theme_essential'), FORMAT_MARKDOWN)));
