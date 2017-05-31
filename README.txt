@@ -68,8 +68,6 @@ This theme is provided to you for free, and if you want to express your gratitud
 
 PayPal - Please contact me via my 'Moodle profile' (above) for details as I am an individual and therefore am unable to have 'donation' / 'buy me now' buttons under their terms.
 
-Flattr - https://flattr.com/profile/gjb2048
-
 Donations may allow me to provide you with more or better features in less time.
 
 Donators
@@ -162,6 +160,10 @@ issue.
 It is essential that you provide as much information as possible, the critical information being the contents of the theme's 
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
 can be really useful in visualising the issue along with any files you consider to be relevant.
+
+New in 2.7.9.5.3
+================
+- NEW: Remove theme credit.
 
 New in 2.7.9.5.2
 ================

@@ -37,11 +37,8 @@ if (is_siteadmin()) {
     $donate = new moodle_url('http://moodle.org/user/profile.php?id=442195');
     $donate = html_writer::link($donate, get_string('paypal_click', 'theme_essential'), array('target' => '_blank'));
 
-    $flattr = new moodle_url('https://flattr.com/profile/gjb2048');
-    $flattr = html_writer::link($flattr, get_string('flattr_click', 'theme_essential'), array('target' => '_blank'));
-
     $temp->add(new admin_setting_heading('theme_essential_generaldonate', get_string('donate_title', 'theme_essential'),
-        get_string('donate_desc', 'theme_essential').get_string('paypal_desc', 'theme_essential', array('url' => $donate)).get_string('flattr_desc', 'theme_essential', array('url' => $flattr)).get_string('donate_desc2', 'theme_essential')));
+        get_string('donate_desc', 'theme_essential').get_string('paypal_desc', 'theme_essential', array('url' => $donate)).get_string('donate_desc2', 'theme_essential')));
 
     $temp->add(new admin_setting_heading('theme_essential_generalheading', get_string('generalheadingsub', 'theme_essential'),
         format_text(get_string('generalheadingdesc', 'theme_essential'), FORMAT_MARKDOWN)));
