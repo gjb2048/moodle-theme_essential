@@ -2060,19 +2060,6 @@ class core_renderer extends \core_renderer {
         return $output;
     }
 
-    public function standard_footer_html() {
-        $output = parent::standard_footer_html();
-        $output .= html_writer::start_tag('div', array ('class' => 'themecredit')).
-            get_string('credit', 'theme_essential',
-            array('name' => html_writer::link('https://moodle.org/plugins/theme_essential', 'Essential', array(
-                'target' => '_blank',
-                'title' => get_string('download', 'theme_essential'))))).
-            html_writer::link('//about.me/gjbarnard', 'Gareth J Barnard', array(
-                'target' => '_blank', 'title' => get_string('aboutme', 'theme_essential'))).html_writer::end_tag('div');
-
-        return $output;
-    }
-
     // Essential custom bits.
     public function essential_marketing_button($spot) {
         $o = '';

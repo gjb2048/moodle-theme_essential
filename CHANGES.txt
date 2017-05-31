@@ -1,5 +1,6 @@
 New in 3.0.1.17
 ===============
+- NEW: Remove theme credit.
 
 New in 3.0.1.16
 ===============
