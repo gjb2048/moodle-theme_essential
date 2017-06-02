@@ -463,6 +463,80 @@ class core_renderer extends \core_renderer {
     }
 
     /**
+     * This is an optional menu that can be added to a layout by a theme. It contains the
+     * menu for the most specific thing from the settings block. E.g. Module administration.
+     *
+     * @return string
+     */
+    public function region_main_settings_menu() {
+        $context = $this->page->context;
+        $menu = null;
+
+        if ($context->contextlevel == CONTEXT_MODULE) {
+
+            $this->page->navigation->initialise();
+            $node = $this->page->navigation->find_active_node();
+            $buildmenu = false;
+            // If the settings menu has been forced then show the menu.
+            if ($this->page->is_settings_menu_forced()) {
+                $buildmenu = true;
+            } else if (!empty($node) && ($node->type == navigation_node::TYPE_ACTIVITY ||
+                    $node->type == navigation_node::TYPE_RESOURCE)) {
+
+                $items = $this->page->navbar->get_items();
+                $navbarnode = end($items);
+                // We only want to show the menu on the first page of the activity. This means
+                // the breadcrumb has no additional nodes.
+                if ($navbarnode && ($navbarnode->key === $node->key && $navbarnode->type == $node->type)) {
+                    $buildmenu = true;
+                }
+            }
+            if ($buildmenu) {
+                // Get the course admin node from the settings navigation.
+                $node = $this->page->settingsnav->find('modulesettings', navigation_node::TYPE_SETTING);
+                if ($node) {
+                    // Build an action menu based on the visible nodes from this navigation tree.
+                    $menu = new action_menu();
+                    $title = get_string('modulesettingstitle', 'theme_essential');
+                    $this->build_action_menu_from_navigation($menu, $node);
+                }
+            }
+
+        } else if ($context->contextlevel == CONTEXT_COURSECAT) {
+            // For course category context, show category settings menu, if we're on the course category page.
+            if ($this->page->pagetype === 'course-index-category') {
+                $node = $this->page->settingsnav->find('categorysettings', navigation_node::TYPE_CONTAINER);
+                if ($node) {
+                    // Build an action menu based on the visible nodes from this navigation tree.
+                    $menu = new action_menu();
+                    $title = get_string('coursecategorysettingstitle', 'theme_essential');
+                    $this->build_action_menu_from_navigation($menu, $node);
+                }
+            }
+
+        } else {
+            $items = $this->page->navbar->get_items();
+            $navbarnode = end($items);
+
+            if ($navbarnode && ($navbarnode->key === 'participants')) {
+                $node = $this->page->settingsnav->find('users', navigation_node::TYPE_CONTAINER);
+                if ($node) {
+                    // Build an action menu based on the visible nodes from this navigation tree.
+                    $menu = new action_menu();
+                    $title = get_string('participants');
+                    $this->build_action_menu_from_navigation($menu, $node);
+                }
+
+            }
+        }
+        if ($menu) {
+            return $this->render_navbar_action_menu($menu, $title, 'i/settings');
+        } else {
+            return '';
+        }
+    }
+
+    /**
      * Renders an action menu component.
      *
      * ARIA references:
@@ -471,15 +545,17 @@ class core_renderer extends \core_renderer {
      *
      * @param action_menu $menu.
      * @param string $title Menu title.
+     * @param string $iconkey Icon name.
      * @return string HTML
      */
-    protected function render_navbar_action_menu(action_menu $menu, $title) {
+    protected function render_navbar_action_menu(action_menu $menu, $title, $iconkey = 't/edit_menu') {
         $context = $menu->export_for_template($this);
         $context->classes .= ' navbarrightitem';
         $context->primary->caret = $this->getfontawesomemarkup('caret-right');
         $context->primary->classes .= ' nav';
         $context->primary->title = $title;
         $context->primary->icon['title'] = $context->primary->title;
+        $context->primary->icon['key'] = $iconkey;
         $context->primary->menutrigger = true;
         return $this->render_from_template('theme_essential/navbar_action_menu', $context);
     }

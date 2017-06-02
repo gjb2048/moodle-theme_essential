@@ -143,7 +143,9 @@ $string['generalheadingdesc'] = 'Configure the general settings for the theme he
 $string['flatnavigation'] = 'Enable flat navigation.';
 $string['flatnavigationdesc'] = 'If enabled flat navigation will be used instead of the navigation and settings blocks.';
 $string['coursesettingstitle'] = 'Course settings';
+$string['coursecategorysettingstitle'] = 'Course category settings';
 $string['frontpagesettingstitle'] = 'Frontpage settings';
+$string['modulesettingstitle'] = 'Module settings';
 $string['usersettingstitle'] = 'User settings';
 
 $string['pagebackground'] = 'Page background image';
