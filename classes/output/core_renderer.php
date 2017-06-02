@@ -2082,6 +2082,50 @@ class core_renderer extends \core_renderer {
     }
 
     /**
+     * Returns the CSS classes to apply to the body tag.
+     *
+     * @since Moodle 2.5.1 2.6
+     * @param array $additionalclasses Any additional classes to apply.
+     * @return string
+     */
+    public function body_css_classes(array $additionalclasses = array()) {
+        $flatnavigation = \theme_essential\toolbox::get_setting('flatnavigation');
+        // Add a class for each block region on the page.
+        // We use the block manager here because the theme object makes get_string calls.
+        $usedregions = array();
+        foreach ($this->page->blocks->get_regions() as $region) {
+            $additionalclasses[] = 'has-region-'.$region;
+            if (($this->page->blocks->region_has_content($region, $this)) ||
+                (($flatnavigation) && ($region == 'side-pre'))) {
+                $additionalclasses[] = 'used-region-'.$region;
+                $usedregions[] = $region;
+            } else {
+                $additionalclasses[] = 'empty-region-'.$region;
+            }
+            if (!($flatnavigation) && ($region == 'side-pre')) {
+                if ($this->page->blocks->region_completely_docked($region, $this)) {
+                    $additionalclasses[] = 'docked-region-'.$region;
+                }
+            }
+        }
+        if (!$usedregions) {
+            // No regions means there is only content, add 'content-only' class.
+            $additionalclasses[] = 'content-only';
+        } else if (count($usedregions) === 1) {
+            // Add the -only class for the only used region.
+            $region = array_shift($usedregions);
+            $additionalclasses[] = $region.'-only';
+        }
+        foreach ($this->page->layout_options as $option => $value) {
+            if ($value) {
+                $additionalclasses[] = 'layout-option-'.$option;
+            }
+        }
+        $css = $this->page->bodyclasses.' '.join(' ', $additionalclasses);
+        return $css;
+    }
+
+    /**
      * Output all the blocks in a particular region.
      *
      * @param string $region the name of a region on this page.
