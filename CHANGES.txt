@@ -1,3 +1,6 @@
+New in 2.9.1.24
+===============
+
 New in 2.9.1.23
 ===============
 - FIX: Issue #794: Hidden grade items in user report not clear as such.
