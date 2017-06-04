@@ -65,39 +65,39 @@
     }
 }}
 <div class="block block_flat_navigation">
-<nav class="list-group">
-{{# flatnavigation }}
-    {{#showdivider}}
-</nav>
-<nav class="list-group m-t-1">
-    {{/showdivider}}
-    {{#action}}
-    <a class="list-group-item list-group-item-action {{#isactive}}bold{{/isactive}}" href="{{{action}}}" data-key="{{key}}">
-        <div class="m-l-{{get_indent}}">
-            {{#is_section}}
-                <div class="media">
-                    <span class="media-left">
-                        {{#pix}}i/folder{{/pix}}
-                    </span>
-                    <span class="media-body">{{{text}}}</span>
-                </div>
-            {{/is_section}}
-            {{^is_section}}
-                {{{text}}}
-            {{/is_section}}
-        </div>
-    </a>
-    {{/action}}
-    {{^action}}
-    <div class="list-group-item" data-key="{{key}}">
-        <div class="m-l-{{get_indent}}">
-            {{#is_section}}
-                {{#pix}}i/folder{{/pix}}
-            {{/is_section}}
-            {{{text}}}
-        </div>
-    </div>
-    {{/action}}
-{{/ flatnavigation }}
-</nav>
+    <nav class="list-group">
+    {{# flatnavigation }}
+        {{#showdivider}}
+    </nav>
+    <nav class="list-group m-t-1">
+         {{/showdivider}}
+         {{#action}}
+         <a class="list-group-item list-group-item-action {{#isactive}}bold{{/isactive}}" href="{{{action}}}" data-key="{{key}}">
+             <div class="m-l-{{get_indent}}">
+                 {{#is_section}}
+                     <div class="media">
+                         <span class="media-left">
+                             {{#pix}}i/folder{{/pix}}
+                         </span>
+                         <span class="media-body">{{{text}}}</span>
+                     </div>
+                 {{/is_section}}
+                 {{^is_section}}
+                     {{{text}}}
+                 {{/is_section}}
+             </div>
+         </a>
+         {{/action}}
+         {{^action}}
+         <div class="list-group-item" data-key="{{key}}">
+             <div class="m-l-{{get_indent}}">
+                 {{#is_section}}
+                     {{#pix}}i/folder{{/pix}}
+                 {{/is_section}}
+                 {{{text}}}
+             </div>
+         </div>
+         {{/action}}
+     {{/ flatnavigation }}
+     </nav>
 </div>
