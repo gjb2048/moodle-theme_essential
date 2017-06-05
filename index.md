@@ -26,32 +26,32 @@ Cool things to know about the theme.
 Developed and maintained by
 ===========================
 Gareth J Barnard MSc. BSc(Hons)(Sndw). MBCS. CEng. CITP. PGCE.
-Moodle profile: moodle.org/user/profile.php?id=442195
-Web profile:    about.me/gjbarnard
+Moodle profile: (moodle.org/user/profile.php?id=442195)
+Web profile:    (about.me/gjbarnard)
 
 Original Developer
 ==================
 Julian Ridden
-Moodle profile: moodle.org/user/profile.php?id=39680
-Web profile:    au.linkedin.com/in/eduridden/
+Moodle profile: (moodle.org/user/profile.php?id=39680)
+Web profile:    (au.linkedin.com/in/eduridden/)
 
 Previous Developer
 ==================
 David Bezemer
-Moodle profile: moodle.org/user/profile.php?id=1416592
-Web profile:    www.davidbezemer.nl
+Moodle profile: (moodle.org/user/profile.php?id=1416592)
+Web profile:    (www.davidbezemer.nl)
 
 Free Software
 =============
 The Essential theme is 'free' software under the terms of the GNU GPLv3 License, please see 'COPYING.txt'.
 
 It can be obtained for free from:
-moodle.org/plugins/view.php?plugin=theme_essential
+(moodle.org/plugins/view.php?plugin=theme_essential)
 and
-github.com/gjb2048/moodle-theme_essential/releases
+(github.com/gjb2048/moodle-theme_essential/releases)
 
 You have all the rights granted to you by the GPLv3 license.  If you are unsure about anything, then the
-FAQ - www.gnu.org/licenses/gpl-faq.html - is a good place to look.
+[FAQ](www.gnu.org/licenses/gpl-faq.html) - is a good place to look.
 
 If you reuse any of the code then I kindly ask that you make reference to the theme.
 
@@ -62,7 +62,7 @@ Support
 =======
 As Essential is licensed under the GNU GPLv3 License it comes with NO support.  If you would like support from
 me (Gareth) then I'm happy to provide it for a fee.  Please contact me via my 'Moodle profile' in 'Developed and maintained by'
-above.  Otherwise, the 'Themes' forum: moodle.org/mod/forum/view.php?id=46 is an alternative.
+above.  Otherwise, the ['Themes' forum](moodle.org/mod/forum/view.php?id=46) is an alternative.
 
 Sponsorships
 ============
@@ -79,11 +79,11 @@ Sponsors
 ========
 Sponsorships gratefully received with thanks from:
 Mihai Bojonca, TCM International Institute.
-Guido Hornig, actXcellence http://actxcellence.de
+Guido Hornig, [actXcellence](http://actxcellence.de)
 Delvon Forrester, Esparanza co uk
 iZone
 Anis Jradah
-Ute Hlasek, https://hlasek-it.de/moodle
+Ute Hlasek, (https://hlasek-it.de/moodle)
 
 Essential for Moodle 3.3 kindly sponsored by
 --------------------------------------------
@@ -165,7 +165,7 @@ CSlider
 =======
 The original version of Essential used 'CSlider' - tympanus.net/codrops/2012/03/15/parallax-content-slider-with-css3-and-jquery/.
 
-It has been removed because of licencing issues: github.com/gjb2048/moodle-theme_essential/issues/61
+It has been removed because of licencing issues: ['Check license of cslider if used again'](github.com/gjb2048/moodle-theme_essential/issues/61).
 
 Please do not request that it be put back.  The licence that CSlider has is incompatible with GPLv3 and therefore cannot be a part
 of or redistributed with the theme.
@@ -209,9 +209,9 @@ Please look in CHANGES.txt.
 
 See the theme in Action
 =======================
-A video showing many of the core features is available for viewing at www.youtube.com/watch?v=grhmR5PmWtA
+A video showing many of the core features is available for viewing at ['What is Essential'](www.youtube.com/watch?v=grhmR5PmWtA).
 
 Documentation
 =============
-As always, documentation is a work in progress.  Available documentation is available at docs.moodle.org/31/en/Essential_theme
-If you have questions you can post them in the issue tracker at github.com/gjb2048/moodle-theme_essential/issues
+As always, documentation is a work in progress.  Available documentation is available at ['Moodle docs'](docs.moodle.org/33/en/Essential_theme)
+If you have questions you can post them in the issue tracker at ['GitHub'](github.com/gjb2048/moodle-theme_essential/issues).
