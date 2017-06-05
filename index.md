@@ -14,52 +14,52 @@ on sites where Moodle would potentially serve as a company homepage rather than 
 
 Cool things to know about the theme.
  - It attempts to load as many as possible icons from a font
- - Most of what you think are "graphics" are actually the [Awesome font](fontawesome.io)
+ - Most of what you think are "graphics" are actually the [Awesome font](http://fontawesome.io/)
  - The slider on the front page is completely customisable through theme settings.
- - I am really trying to push what [Bootstrap](twitter.github.io/bootstrap/) Grids can do.  As such the theme is fully
+ - I am really trying to push what [Bootstrap](http://twitter.github.io/bootstrap/) Grids can do.  As such the theme is fully
    responsive.
  - The footer is all custom Moodle regions.  This means blocks can be added.
- - The theme can use [Google web fonts](fonts.google.com) to give it that extra bit of shazam!
+ - The theme can use [Google web fonts](https://fonts.google.com/) to give it that extra bit of shazam!
  - Social network icons appear at the top of the page dynamically based on theme settings.
  - The entire colour scheme can be modified with theme settings.
 
 Developed and maintained by
 ===========================
 Gareth J Barnard MSc. BSc(Hons)(Sndw). MBCS. CEng. CITP. PGCE.
-[Moodle profile](moodle.org/user/profile.php?id=442195), [Web profile](about.me/gjbarnard).
+[Moodle profile](https://moodle.org/user/profile.php?id=442195), [Web profile](https://about.me/gjbarnard).
 
 Original Developer
 ==================
 Julian Ridden,
-[Moodle profile](moodle.org/user/profile.php?id=39680), [Web profile](au.linkedin.com/in/eduridden/).
+[Moodle profile](https://moodle.org/user/profile.php?id=39680), [Web profile](http://au.linkedin.com/in/eduridden/).
 
 Previous Developer
 ==================
 David Bezemer,
-[Moodle profile](moodle.org/user/profile.php?id=1416592), [Web profile](www.davidbezemer.nl).
+[Moodle profile](https://moodle.org/user/profile.php?id=1416592), [Web profile](http://www.davidbezemer.nl/).
 
 Free Software
 =============
 The Essential theme is 'free' software under the terms of the GNU GPLv3 License, please see 'COPYING.txt'.
 
 It can be obtained for free from:
-[Moodle.org](moodle.org/plugins/view.php?plugin=theme_essential)
+[Moodle.org](https://moodle.org/plugins/view.php?plugin=theme_essential)
 and
-[GitHub.com](github.com/gjb2048/moodle-theme_essential/releases).
+[GitHub.com](https://github.com/gjb2048/moodle-theme_essential/releases).
 
 You have all the rights granted to you by the GPLv3 license.  If you are unsure about anything, then the
-[FAQ](www.gnu.org/licenses/gpl-faq.html) - is a good place to look.
+[FAQ](http://www.gnu.org/licenses/gpl-faq.html) - is a good place to look.
 
 If you reuse any of the code then I kindly ask that you make reference to the theme.
 
 If you make improvements or bug fixes then I would appreciate if you would send them back to me by forking from
-[GitHub](github.com/gjb2048/moodle-theme_essential) and doing a 'Pull Request' so that the rest of the Moodle community benefits.
+[GitHub](https://github.com/gjb2048/moodle-theme_essential) and doing a 'Pull Request' so that the rest of the Moodle community benefits.
 
 Support
 =======
 As Essential is licensed under the GNU GPLv3 License it comes with NO support.  If you would like support from
 me (Gareth) then I'm happy to provide it for a fee.  Please contact me via my 'Moodle profile' in 'Developed and maintained by'
-above.  Otherwise, the ['Themes' forum](moodle.org/mod/forum/view.php?id=46) is an alternative.
+above.  Otherwise, the ['Themes' forum](https://moodle.org/mod/forum/view.php?id=46) is an alternative.
 
 Sponsorships
 ============
@@ -76,7 +76,7 @@ Sponsors
 ========
 Sponsorships gratefully received with thanks from:
 Mihai Bojonca - TCM International Institute,
-Guido Hornig - [actXcellence](http://actxcellence.de),
+Guido Hornig - [actXcellence](http://www.actxcellence.de/),
 Delvon Forrester - Esparanza co uk,
 iZone,
 Anis Jradah and
@@ -85,7 +85,7 @@ Anis Jradah and
 Essential for Moodle 3.3 kindly sponsored by
 --------------------------------------------
 ClassroomRevolution - LLC -- Moodle Partner,
-[Daniel Méthot](e-learning-facile.com/formations/),
+[Daniel Méthot](http://e-learning-facile.com/formations/),
 Floyd Saner - Learning Context LLC,
 Gemma Lesterhuis and
 Mihai Bojonca - TCM International Institute
@@ -104,7 +104,7 @@ Required version of Moodle
 This version works with Moodle 3.3beta+ version 2017050300.00 (Build: 20170503) and above within the 3.3 branch until the
 next release.
 
-Please ensure that your hardware and software complies with 'Requirements' in ['Installing Moodle'](docs.moodle.org/33/en/Installing_Moodle).
+Please ensure that your hardware and software complies with 'Requirements' in ['Installing Moodle'](https://docs.moodle.org/33/en/Installing_Moodle).
 
 Installation
 ============
@@ -159,9 +159,9 @@ to do so:
 
 CSlider
 =======
-The original version of Essential used ['CSlider'](tympanus.net/codrops/2012/03/15/parallax-content-slider-with-css3-and-jquery/).
+The original version of Essential used ['CSlider'](https://tympanus.net/codrops/2012/03/15/parallax-content-slider-with-css3-and-jquery/).
 
-It has been removed because of licencing issues: ['Check license of cslider if used again'](github.com/gjb2048/moodle-theme_essential/issues/61).
+It has been removed because of licencing issues: ['Check license of cslider if used again'](https://github.com/gjb2048/moodle-theme_essential/issues/61).
 
 Please do not request that it be put back.  The licence that CSlider has is incompatible with GPLv3 and therefore cannot be a part
 of or redistributed with the theme.
@@ -192,8 +192,8 @@ Before reporting an issue, please ensure that you are running the latest version
 that you are operating the required version of Moodle as stated at the top - this is because the theme relies on core
 functionality that is out of its control.
 
-When reporting an issue you can post in the theme's forum on [Moodle.org](moodle.org/mod/forum/view.php?id=46)
-or check the issue list ['GitHub'](github.com/gjb2048/moodle-theme_essential/issues) and if the problem does not exist, create an issue.
+When reporting an issue you can post in the theme's forum on [Moodle.org](https://moodle.org/mod/forum/view.php?id=46)
+or check the issue list ['GitHub'](https://github.com/gjb2048/moodle-theme_essential/issues) and if the problem does not exist, create an issue.
 
 It is essential that you provide as much information as possible, the critical information being the contents of the theme's 
 'version.php' file.  Other version information such as specific Moodle version, theme name and version also helps.  A screen shot
@@ -205,9 +205,9 @@ Please look in CHANGES.txt.
 
 See the theme in Action
 =======================
-A video showing many of the core features is available for viewing at ['What is Essential'](www.youtube.com/watch?v=grhmR5PmWtA).
+A video showing many of the core features is available for viewing at ['What is Essential'](https://www.youtube.com/watch?v=grhmR5PmWtA).
 
 Documentation
 =============
-As always, documentation is a work in progress.  Available documentation is available at ['Moodle docs'](docs.moodle.org/33/en/Essential_theme)
-If you have questions you can post them in the issue tracker at ['GitHub'](github.com/gjb2048/moodle-theme_essential/issues).
+As always, documentation is a work in progress.  Available documentation is available at ['Moodle docs'](https://docs.moodle.org/33/en/Essential_theme)
+If you have questions you can post them in the issue tracker at ['GitHub'](https://github.com/gjb2048/moodle-theme_essential/issues).
