@@ -72,8 +72,6 @@ by:
 PayPal - Please contact me (Gareth) via my 'Moodle profile' in 'Developed and maintained by' above for details as I am an individual
 and therefore am unable to have 'buy me now' buttons under their terms.
 
-Flattr - flattr.com/profile/gjb2048
-
 Sponsorships help to facilitate maintenance and allow me to provide you with more and better features.  Without your support the theme
 cannot be maintained.
 
@@ -87,26 +85,16 @@ iZone
 Anis Jradah
 Ute Hlasek, https://hlasek-it.de/moodle
 
-Essential for Moodle 3.1 kindly sponsored by
+Essential for Moodle 3.3 kindly sponsored by
 --------------------------------------------
-ClassroomRevolution, LLC -- Moodle Partner  
-Fernando Oliveira
-James Braastad
-Caleb Elcock
-Nadav Kavalerchik
+ClassroomRevolution, LLC -- Moodle Partner
+Daniel Méthot - e-learning-facile.com/formations/
+Floyd Saner, Learning Contexts, LLC
 Gemma Lesterhuis
 Mihai Bojonca, TCM International Institute
-Guido Hornig, lern.link
-Floyd Saner
-Nigel Barnett
-Donald Schwartz
-Joseph Thibault
-Kees Koopman
-Samuli Koskinen
-Dan Raij
-Gregory Reinert
-Jan Willem Knopper
-Toshimi Hatanaka
+
+If you are a valued sponsor and have not already told me, please could you state if you would like a credit here and if so what
+would you like.  Please contact via my 'Moodle profile' above.
 
 Customisation
 =============
@@ -116,11 +104,11 @@ above to discuss your requirements.
 
 Required version of Moodle
 ==========================
-This version works with Moodle 3.1 version 2016052300.00 (Build: 20160523) and above within the 3.1 branch until the
+This version works with Moodle 3.3beta+ version 2017050300.00 (Build: 20170503) and above within the 3.3 branch until the
 next release.
 
 Please ensure that your hardware and software complies with 'Requirements' in 'Installing Moodle' on
-'docs.moodle.org/31/en/Installing_Moodle'.
+'docs.moodle.org/33/en/Installing_Moodle'.
 
 Installation
 ============
