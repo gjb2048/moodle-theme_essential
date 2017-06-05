@@ -26,20 +26,17 @@ Cool things to know about the theme.
 Developed and maintained by
 ===========================
 Gareth J Barnard MSc. BSc(Hons)(Sndw). MBCS. CEng. CITP. PGCE.
-[Moodle profile](moodle.org/user/profile.php?id=442195)
-[Web profile](about.me/gjbarnard)
+[Moodle profile](moodle.org/user/profile.php?id=442195), [Web profile](about.me/gjbarnard).
 
 Original Developer
 ==================
-Julian Ridden
-[Moodle profile](moodle.org/user/profile.php?id=39680)
-[Web profile](au.linkedin.com/in/eduridden/)
+Julian Ridden,
+[Moodle profile](moodle.org/user/profile.php?id=39680), [Web profile](au.linkedin.com/in/eduridden/).
 
 Previous Developer
 ==================
-David Bezemer
-[Moodle profile](moodle.org/user/profile.php?id=1416592)
-[Web profile](www.davidbezemer.nl)
+David Bezemer,
+[Moodle profile](moodle.org/user/profile.php?id=1416592), [Web profile](www.davidbezemer.nl).
 
 Free Software
 =============
@@ -48,7 +45,7 @@ The Essential theme is 'free' software under the terms of the GNU GPLv3 License,
 It can be obtained for free from:
 [Moodle.org](moodle.org/plugins/view.php?plugin=theme_essential)
 and
-[GitHub.com](github.com/gjb2048/moodle-theme_essential/releases)
+[GitHub.com](github.com/gjb2048/moodle-theme_essential/releases).
 
 You have all the rights granted to you by the GPLv3 license.  If you are unsure about anything, then the
 [FAQ](www.gnu.org/licenses/gpl-faq.html) - is a good place to look.
@@ -78,20 +75,20 @@ cannot be maintained.
 Sponsors
 ========
 Sponsorships gratefully received with thanks from:
-Mihai Bojonca, TCM International Institute.
-Guido Hornig, [actXcellence](http://actxcellence.de)
-Delvon Forrester, Esparanza co uk
-iZone
-Anis Jradah
-[Ute Hlasek](https://hlasek-it.de/moodle)
+Mihai Bojonca - TCM International Institute,
+Guido Hornig - [actXcellence](http://actxcellence.de),
+Delvon Forrester - Esparanza co uk,
+iZone,
+Anis Jradah and
+[Ute Hlasek](https://hlasek-it.de/moodle).
 
 Essential for Moodle 3.3 kindly sponsored by
 --------------------------------------------
-ClassroomRevolution, LLC -- Moodle Partner
-[Daniel Méthot](e-learning-facile.com/formations/)
-Floyd Saner, Learning Contexts, LLC
-Gemma Lesterhuis
-Mihai Bojonca, TCM International Institute
+ClassroomRevolution - LLC -- Moodle Partner,
+[Daniel Méthot](e-learning-facile.com/formations/),
+Floyd Saner - Learning Context LLC,
+Gemma Lesterhuis and
+Mihai Bojonca - TCM International Institute
 
 If you are a valued sponsor and have not already told me, please could you state if you would like a credit here and if so what
 would you like.  Please contact via my 'Moodle profile' above.
