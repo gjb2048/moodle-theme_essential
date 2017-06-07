@@ -1,5 +1,6 @@
 New in 3.3.0.3
 ==============
+- FIX: Issue #828: div id# completionprogressid has z-index.
 
 New in 3.3.0.2
 ==============

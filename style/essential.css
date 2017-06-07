@@ -23618,9 +23618,6 @@ a[name="lastused"] {
 .path-mod-feedback .generalbox div table tbody img {
   height: 35px;
 }
-.course-content #completionprogressid {
-  z-index: 10;
-}
 table th,
 table td {
   word-wrap: break-word;
