@@ -2152,7 +2152,8 @@ class core_renderer extends \core_renderer {
                     array('class' => 'regionname'));
             }
 
-            if ($this->page->blocks->region_has_content($region, $this)) {
+            if (($this->page->blocks->region_has_content($region, $this)) ||
+                (($flatnavigation) && ($region == 'side-pre'))) {
                 if ($blocksperrow !== false) {
                     $attributes['class'] .= ' rowblock-blocks';
                     if ($editing) {
