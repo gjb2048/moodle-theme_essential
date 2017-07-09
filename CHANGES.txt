@@ -3,6 +3,7 @@ New in 3.2.1.2
 - FIX: Issue #821: Marketing spots no longer responsive for mobiles.
 - FIX: Issue #824: Header area/slide show/bullet-menu "on top".
 - FIX: Issue #828: div id# completionprogressid has z-index.
+- FIX: Action menu overlapping navbar.
 - NEW: Tidy up.
 
 New in 3.2.1.1

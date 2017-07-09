@@ -19280,6 +19280,7 @@ a:focus {
 }
 .moodle-actionmenu[data-enhanced].show .menu {
   box-shadow: none;
+  z-index: 2;
 }
 .moodle-actionmenu[data-enhanced].show .menu .iconsmall,
 .moodle-actionmenu[data-enhanced].show .menu .smallicon {
@@ -22567,7 +22568,7 @@ ul.socials li {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
 }
 #essentialnavbar .navbar {
   position: fixed;
