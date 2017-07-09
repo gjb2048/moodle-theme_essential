@@ -470,23 +470,13 @@ a.skip:active {
   margin-bottom: 5px;
   margin-top: 15px;
 }
-.loginbox .signuppanel .subcontent {
-  text-align: left;
-}
 .loginbox .loginsub {
   margin-left: 0;
   margin-right: 0;
 }
 .loginbox .guestsub,
-.loginbox .forgotsub,
-.loginbox .potentialidps {
+.loginbox .forgotsub {
   margin: 5px 12%;
-}
-.loginbox .potentialidps .potentialidplist {
-  margin-left: 40%;
-}
-.loginbox .potentialidps .potentialidplist div {
-  text-align: left;
 }
 .loginbox .loginform {
   margin-top: 1em;
@@ -524,6 +514,9 @@ a.skip:active {
   min-height: 30px;
   margin-bottom: -2000px;
   padding-bottom: 2000px;
+}
+.loginbox .potentialidp {
+  margin-bottom: 0.3em;
 }
 .loginbox .potentialidp .smallicon {
   vertical-align: text-bottom;
@@ -13574,6 +13567,9 @@ body {
   margin-left: 5px;
   display: inline;
 }
+.block .content p.hasicon img.icon {
+  padding-right: 0;
+}
 .block .footer {
   margin-bottom: 4px;
   display: block;
@@ -17041,6 +17037,7 @@ div[data-flexitour="step-background-fader"],
 }
 span[data-flexitour="container"] div[data-role="flexitour-step"] {
   background-color: #fff;
+  color: #333;
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -19566,10 +19563,12 @@ textarea {
   margin: 0;
   padding: 0;
   box-sizing: content-box;
-  margin-right: 0.5rem;
 }
 .icon.spacer {
   margin-right: 0;
+}
+.section .filler {
+  margin-left: 0.5rem;
 }
 a:first-of-type > .icon,
 span:first-of-type > .icon {
@@ -19675,6 +19674,7 @@ a:focus {
 }
 .moodle-actionmenu[data-enhanced].show .menu {
   box-shadow: none;
+  z-index: 2;
 }
 .moodle-actionmenu[data-enhanced].show .menu .iconsmall,
 .moodle-actionmenu[data-enhanced].show .menu .smallicon {

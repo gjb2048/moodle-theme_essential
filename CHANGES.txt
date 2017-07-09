@@ -3,6 +3,8 @@ New in 3.3.0.3
 - FIX: Issue #828: div id# completionprogressid has z-index.
 - FIX: Issue #830: Course page hides blocks in Flat Navigation and editing off.
 - FIX: Issue #833: Help icons open a new tab.
+- FIX: Position of completion icons and spacer when editing.
+- FIX: Action menu overlapping navbar.
 
 New in 3.3.0.2
 ==============
