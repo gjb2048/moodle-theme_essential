@@ -67,6 +67,33 @@ class core_renderer extends \core_renderer {
     }
 
     /**
+     * The standard tags that should be included in the <head> tag
+     * including a meta description for the front page
+     *
+     * @return string HTML fragment.
+     */
+    public function standard_head_html() {
+        global $SITE, $PAGE;
+        $output = parent::standard_head_html();
+
+        // Setup help icon overlays.
+        $this->page->requires->yui_module('moodle-core-popuphelp', 'M.core.init_popuphelp');
+        $this->page->requires->strings_for_js(array(
+            'morehelp',
+            'loadinghelp',
+        ), 'moodle');
+
+        if ($PAGE->pagelayout == 'frontpage') {
+            $summary = s(strip_tags(format_text($SITE->summary, FORMAT_HTML)));
+            if (!empty($summary)) {
+                $output .= "<meta name=\"description\" content=\"$summary\" />\n";
+            }
+        }
+
+        return $output;
+    }
+
+    /**
      * This renders the breadcrumbs
      * @return string $breadcrumbs
      */

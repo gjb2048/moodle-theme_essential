@@ -1,6 +1,7 @@
 New in 3.3.0.3
 ==============
 - FIX: Issue #828: div id# completionprogressid has z-index.
+- FIX: Issue #833: Help icons open a new tab.
 
 New in 3.3.0.2
 ==============
