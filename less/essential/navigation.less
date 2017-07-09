@@ -14,7 +14,9 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 200;
+    // Changed to 2 for the Grid format, then 3 for btn-group's.   Not 1 because of breadcrumb style 1 and dropdown menus.  Revert back to 200 if needed.
+    // Change .moodle-actionmenu[data-enhanced].show - .menu in core.less if change.
+    z-index: 3;
     .navbar {
         position: fixed;
     }
