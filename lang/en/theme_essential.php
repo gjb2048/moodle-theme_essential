@@ -240,7 +240,6 @@ $string['helplinktypedesc'] = 'Choose whether you want to enable a help option i
 $string['helplink'] = 'Help link';
 $string['helplinkdesc'] = 'If you chose URL above fill in the complete URL to your help site (must include http:// or https://). If you chose Email address fill in your email address.';
 
-$string['few'] = 'A few ';
 $string['usermenu'] = 'User menu';
 $string['usermenudesc'] = 'The menu for the user.';
 $string['loggedinas'] = ' logged in as ';
@@ -908,11 +907,6 @@ $string['alert_edit'] = 'Edit alerts';
 $string['versionalerttitle'] = 'Version warning: ';
 $string['versionalerttext1'] = 'Theme not designed for Moodle version.';
 $string['versionalerttext2'] = 'Unexpected issues may occur, please get the correct theme version for your Moodle version.';
-
-// Message Menu.
-$string['nomessagesfound'] = 'No messages were found';
-$string['unreadmessages'] = 'Unread messages ({$a})';
-$string['unreadnewnotification'] = 'New notification';
 
 // Preferences.
 $string['badgepreferences'] = 'Badge';

@@ -477,29 +477,15 @@
                         }
                     }
 
-                    .navbar-inner .messagemenu {
-                        ul.nav {
-                            .dropdown-menu {
-                                border: 1px solid ~"[[setting:alternativethemecolor@{index}]]";
-                                li > a {
-                                    border-top: 1px dotted ~"[[setting:alternativethemecolor@{index}]]";
-                                    &:hover {
-                                        .message,
-                                        .notification {
-                                            color: @white; // TODO: Page background colour needs to be a setting.
-                                            background-color: ~"[[setting:alternativethemehovercolor@{index}]]";
-                                            img {
-                                                &.userpicture,
-                                                &.profilepicture {
-                                                    box-shadow: 0 0 3px ~"[[setting:alternativethemenavcolor@{index}]]";
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
+                   .popover-region-toggle {
+                        color: ~"[[setting:alternativethemenavcolor@{index}]]";
+                        &:hover,
+                        &:focus {
+                            color: ~"[[setting:alternativethemecolor@{index}]]";
+                            background-color: ~"[[setting:alternativethemenavcolor@{index}]]";
                         }
                     }
+
                 }
 
                 .course-content ul li.section.main.current {

@@ -82,7 +82,7 @@ div.dropdown-menu > ul {
         line-height: 0;
 
         .btn-navbar {
-            margin: 5px 10px 0;
+            margin: 4px 10px 0;
             .icon-bar {
                 background-image: none;
                 .box-shadow(0 1px 1px 0 rgba(0,0,0,.45));
@@ -193,80 +193,6 @@ div.dropdown-menu > ul {
                 }
             }
         }
-
-        .messagemenu {
-            ul.nav {
-                .dropdown-menu {
-                    margin: 0;
-                    li > a {
-                        background: @white;
-                        padding: 0;
-                        overflow: hidden;
-                        > .message {
-                            padding: 5px 10px;
-                            .@{fa-css-prefix} {
-                                margin: 0 5px;
-                            }
-                            .msg-body {
-                                display: inline-block;
-                                padding-right: 80px;
-                                span.msg-sender,
-                                span.msg-text,
-                                span.msg-time {
-                                    width: 100%;
-                                }
-                            }
-                            &.unread {
-                                background: @grayLighter;
-                                margin: 0;
-                                .msg-text {
-                                    font-weight: 700;
-                                }
-                            }
-                            &.read {
-                                .opacity(75);
-                            }
-                        }
-                        > .notification {
-                            padding: 5px 10px;
-                            overflow: hidden;
-                            width: 255px;
-                            .icon {
-                                float: left;
-                                font-size: 5em;
-                                margin-right: 10px;
-                                margin-top: 5px;
-                            }
-                            .notification-text {
-                                font-size: 12px;
-                                white-space: normal;
-                                width: 185px;
-                            }
-                            &.read {
-                                .opacity(75);
-                            }
-                            &.unread {
-                                background: @grayLighter;
-                                margin: 0;
-                                .msg-text {
-                                    font-weight: 700;
-                                }
-                            }
-                        }
-                        &:hover {
-                            .message {
-                                .opacity(100);
-                            }
-                        }
-                    }
-                    li:first-of-type {
-                        > a {
-                            border-top: none;
-                        }
-                    }
-                }
-            }
-        }
     }
 }
 
@@ -344,49 +270,13 @@ div.dropdown-menu > ul {
                 }
             }
         }
-
-        .messagemenu {
-            ul.nav {
-                > li > a > .@{fa-css-prefix} {
-                    margin-left: 5px;
-                }
-                .dropdown-menu {
-                    left: auto;
-                    right: 10px;
-                    li > a {
-                        > .message {
-                            .msg-picture {
-                                float: left;
-                            }
-                            .msg-body {
-                                padding-right: 80px;
-                                span.msg-sender,
-                                span.msg-text,
-                                span.msg-time {
-                                    float: left;
-                                }
-                            }
-                        }
-                        > .notification {
-                            .icon {
-                                float: left;
-                                margin-right: 10px;
-                            }
-                            .notification-text {
-                                float: right;
-                            }
-                            .msg-time {
-                                clear: right;
-                                float: left;
-                            }
-                        }
-                    }
-                }
-                .dropdown-menu:before,
-                .dropdown-menu:after {
-                    left: auto;
-                    right: 10px;
-                }
+        .popover-region-toggle {
+            height: 40px;
+            line-height: 40px;
+            padding-left: 15px;
+            padding-right: 15px;
+            .@{fa-css-prefix} {
+                color: inherit;
             }
         }
     }

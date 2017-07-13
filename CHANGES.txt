@@ -6,6 +6,7 @@ New in 3.3.0.3
 - FIX: Position of completion icons and spacer when editing.
 - FIX: Action menu overlapping navbar.
 - FIX: Position of group icons, completion icons and spacer when editing.
+- NEW: Issue #832: Use Core Notification and Messages menus.
 
 New in 3.3.0.2
 ==============
