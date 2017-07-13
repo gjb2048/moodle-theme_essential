@@ -5,6 +5,7 @@ New in 3.3.0.3
 - FIX: Issue #833: Help icons open a new tab.
 - FIX: Position of completion icons and spacer when editing.
 - FIX: Action menu overlapping navbar.
+- FIX: Position of group icons, completion icons and spacer when editing.
 
 New in 3.3.0.2
 ==============

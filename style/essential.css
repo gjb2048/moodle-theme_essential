@@ -21741,13 +21741,12 @@ body.has_dock #dockeditempanel .dockeditempanel_hd .commands input {
   display: inline;
 }
 .commands .fa {
-  margin-left: 3px;
-  margin-right: 3px;
+  padding-right: 6px;
 }
 .menu a.menu-action > .fa,
 .course-item-actions a > .fa,
 .actions a > .fa {
-  width: 15px;
+  width: 16px;
 }
 .menu a.menu-action.action-delete > .fa,
 .course-item-actions a.action-delete > .fa,
