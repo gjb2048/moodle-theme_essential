@@ -22468,11 +22468,11 @@ body button.ios:focus {
   background-color: #000;
 }
 body button.windows:hover,
-body button.ios:focus {
+body button.windows:focus {
   background-color: #008a00;
 }
 body button.winphone:hover,
-body button.ios:focus {
+body button.winphone:focus {
   background-color: #9b4f96;
 }
 body button.android:hover,
