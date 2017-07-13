@@ -45,7 +45,7 @@ defined('MOODLE_INTERNAL') || die;
                             <?php echo $OUTPUT->custom_menu_user(); ?>
                         </div>
                         <div class="messagemenu navbarrightitem">
-                            <?php echo $OUTPUT->custom_menu_messages(); ?>
+                            <?php echo $OUTPUT->navbar_plugin_output(); ?>
                         </div>
                         <div class="navbarrightitem">
                             <?php echo $OUTPUT->custom_menu_goto_bottom(); ?>

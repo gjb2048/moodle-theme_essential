@@ -22620,7 +22620,7 @@ div.dropdown-menu > ul li a {
   box-shadow: none;
 }
 .navbar .navbar-inner .btn-navbar {
-  margin: 5px 10px 0;
+  margin: 4px 10px 0;
 }
 .navbar .navbar-inner .btn-navbar .icon-bar {
   background-image: none;
@@ -22705,74 +22705,6 @@ div.dropdown-menu > ul li a {
   height: 0;
   border: none;
 }
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu {
-  margin: 0;
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a {
-  background: #fff;
-  padding: 0;
-  overflow: hidden;
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .message {
-  padding: 5px 10px;
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .message .fa {
-  margin: 0 5px;
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .message .msg-body {
-  display: inline-block;
-  padding-right: 80px;
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .message .msg-body span.msg-sender,
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .message .msg-body span.msg-text,
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .message .msg-body span.msg-time {
-  width: 100%;
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .message.unread {
-  background: #eee;
-  margin: 0;
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .message.unread .msg-text {
-  font-weight: 700;
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .message.read {
-  opacity: 0.75;
-  filter: alpha(opacity=75);
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .notification {
-  padding: 5px 10px;
-  overflow: hidden;
-  width: 255px;
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .notification .icon {
-  float: left;
-  font-size: 5em;
-  margin-right: 10px;
-  margin-top: 5px;
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .notification .notification-text {
-  font-size: 12px;
-  white-space: normal;
-  width: 185px;
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .notification.read {
-  opacity: 0.75;
-  filter: alpha(opacity=75);
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .notification.unread {
-  background: #eee;
-  margin: 0;
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .notification.unread .msg-text {
-  font-weight: 700;
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a:hover .message {
-  opacity: 1;
-  filter: alpha(opacity=100);
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li:first-of-type > a {
-  border-top: none;
-}
 .navbar .navbar-inner .btn-navbar {
   float: left;
 }
@@ -22827,39 +22759,14 @@ div.dropdown-menu > ul li a {
 .navbar .navbar-inner .usermenu .dropdown .dropdown-menu .fa {
   margin-right: 5px;
 }
-.navbar .navbar-inner .messagemenu ul.nav > li > a > .fa {
-  margin-left: 5px;
+.navbar .navbar-inner .popover-region-toggle {
+  height: 40px;
+  line-height: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu {
-  left: auto;
-  right: 10px;
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .message .msg-picture {
-  float: left;
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .message .msg-body {
-  padding-right: 80px;
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .message .msg-body span.msg-sender,
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .message .msg-body span.msg-text,
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .message .msg-body span.msg-time {
-  float: left;
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .notification .icon {
-  float: left;
-  margin-right: 10px;
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .notification .notification-text {
-  float: right;
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a > .notification .msg-time {
-  clear: right;
-  float: left;
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu:before,
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu:after {
-  left: auto;
-  right: 10px;
+.navbar .navbar-inner .popover-region-toggle .fa {
+  color: inherit;
 }
 #page-mod-forum-view .notification.unread {
   background-color: inherit;

@@ -87,29 +87,15 @@
             }
         }
 
-        .messagemenu {
-            ul.nav {
-                .dropdown-menu {
-                    border: 1px solid ~"[[setting:themecolor]]";
-                    li > a {
-                        border-top: 1px dotted ~"[[setting:themecolor]]";
-                        &:hover {
-                            .message,
-                            .notification {
-                                color: @white; // TODO: Page background colour needs to be a setting.
-                                background-color: ~"[[setting:themehovercolor]]";
-                                img {
-                                    &.userpicture,
-                                    &.profilepicture {
-                                        box-shadow: 0 0 3px ~"[[setting:themenavcolor]]";
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+        .popover-region-toggle {
+            color: ~"[[setting:themenavcolor]]";
+            &:hover,
+            &:focus {
+                color: ~"[[setting:themecolor]]";
+                background-color: ~"[[setting:themenavcolor]]";
             }
         }
+
     }
 }
 

@@ -1016,22 +1016,13 @@ button.website:focus {
 .navbar .navbar-inner .usermenu .dropdown .dropdown-menu hr.sep {
   border-bottom: 1px dotted [[setting:themecolor]];
 }
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu {
-  border: 1px solid [[setting:themecolor]];
+.navbar .navbar-inner .popover-region-toggle {
+  color: [[setting:themenavcolor]];
 }
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a {
-  border-top: 1px dotted [[setting:themecolor]];
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a:hover .message,
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a:hover .notification {
-  color: #fff;
-  background-color: [[setting:themehovercolor]];
-}
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a:hover .message img.userpicture,
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a:hover .notification img.userpicture,
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a:hover .message img.profilepicture,
-.navbar .navbar-inner .messagemenu ul.nav .dropdown-menu li > a:hover .notification img.profilepicture {
-  box-shadow: 0 0 3px [[setting:themenavcolor]];
+.navbar .navbar-inner .popover-region-toggle:hover,
+.navbar .navbar-inner .popover-region-toggle:focus {
+  color: [[setting:themecolor]];
+  background-color: [[setting:themenavcolor]];
 }
 .dropdown-submenu > a:after {
   border-left-color: [[setting:themeiconcolor]];
@@ -1935,7 +1926,6 @@ h2.pagetitle {
 @media (max-width: 979px) {
   .nav-collapse {
     background-color: [[setting:themecolor]];
-    border: 1px solid [[setting:themecolor]];
   }
   .nav-collapse .nav > li a:hover,
   .nav-collapse .dropdown-menu a:hover,
