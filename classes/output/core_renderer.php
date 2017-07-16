@@ -1915,12 +1915,14 @@ class core_renderer extends \core_renderer {
             );
 
             $regioncontent = '';
-            $flatnavigation = \theme_essential\toolbox::get_setting('flatnavigation');
-            if (($flatnavigation) && ($region == 'side-pre')) {
+            $flatnavigation = false;
+            $flatnavigationcontent = '';
+            if ((\theme_essential\toolbox::get_setting('flatnavigation')) && ($region == 'side-pre')) {
                 global $PAGE;
                 $templatecontext = array('flatnavigation' => $PAGE->flatnav);
-                $regioncontent .= $this->render_from_template('theme_essential/flat_navigation', $templatecontext);
+                $flatnavigationcontent = $this->render_from_template('theme_essential/flat_navigation', $templatecontext);
                 $attributes['data-region'] = 'drawer';
+                $flatnavigation = true;
             }
             $editing = $this->page->user_is_editing();
             if ($editing) {
@@ -1928,17 +1930,17 @@ class core_renderer extends \core_renderer {
                     array('class' => 'regionname'));
             }
 
-            if (($this->page->blocks->region_has_content($region, $this)) ||
-                (($flatnavigation) && ($region == 'side-pre'))) {
+            if (($this->page->blocks->region_has_content($region, $this)) || ($flatnavigation)) {
                 if ($blocksperrow !== false) {
                     $attributes['class'] .= ' rowblock-blocks';
                     if ($editing) {
                         $attributes['class'] .= ' rowblock-edit';
                     }
-                    $regioncontent .= $this->essential_blocks_for_region($region, $blocksperrow, $editing);
+                    $regioncontent .= $flatnavigationcontent;
+                    $regioncontent .= $this->essential_blocks_for_region($region, $blocksperrow, $editing, $flatnavigation);
                     $output = html_writer::tag($tag, $regioncontent, $attributes);
                 } else if ($flatnavigation) {
-                    $regioncontent .= $this->essential_flatnav_blocks_for_region($region);
+                    $regioncontent .= $this->essential_flatnav_blocks_for_region($region, $flatnavigationcontent);
                     $output = html_writer::tag($tag, $regioncontent, $attributes);
                 } else {
                     $regioncontent .= $this->blocks_for_region($region);
@@ -2011,9 +2013,10 @@ class core_renderer extends \core_renderer {
      * @param string $region the name of a region on this page.
      * @param int $blocksperrow Number of blocks per row, if > 4 will be set at 4.
      * @param boolean $editing If we are editing.
+     * @param boolean $hidenavset Do not show the navigation or settings blocks.
      * @return string the HTML to be output.
      */
-    protected function essential_blocks_for_region($region, $blocksperrow, $editing) {
+    protected function essential_blocks_for_region($region, $blocksperrow, $editing, $hidenavset) {
         $blockcontents = $this->page->blocks->get_content_for_region($region, $this);
         $output = '';
 
@@ -2026,8 +2029,14 @@ class core_renderer extends \core_renderer {
             $blocks = $this->page->blocks->get_blocks_for_region($region);
             $lastblock = null;
             $zones = array();
+            $excludeblocks = array();
             foreach ($blocks as $block) {
-                $zones[] = $block->title;
+                if (($hidenavset) &&
+                       (($block->instance->blockname == 'navigation') || ($block->instance->blockname == 'settings'))) {
+                    $excludeblocks[] = $block->instance->id;
+                } else {
+                    $zones[] = $block->title;
+                }
             }
 
             /* When editing we want all the blocks to be the same as side-pre / side-post so set by CSS:
@@ -2084,14 +2093,18 @@ class core_renderer extends \core_renderer {
 
                     // Class 'desktop-first-column' done in CSS with ':first-of-type' and ':nth-of-type'.
                     // Class 'spanX' done in CSS with calculated special width class as fixed at 'span3' for all.
-                    $bc->attributes['class'] .= ' span' . $span;
+                    $bc->attributes['class'] .= ' span'.$span;
                 }
 
                 if ($bc instanceof block_contents) {
-                    $output .= $this->block($bc, $region);
-                    $lastblock = $bc->title;
+                    if (!in_array($bc->blockinstanceid, $excludeblocks)) {
+                        $output .= $this->block($bc, $region);
+                        $lastblock = $bc->title;
+                    }
                 } else if ($bc instanceof block_move_target) {
-                    $output .= $this->block_move_target($bc, $zones, $lastblock, $region);
+                    if (!in_array($bc->blockinstanceid, $excludeblocks)) {
+                        $output .= $this->block_move_target($bc, $zones, $lastblock, $region);
+                    }
                 } else {
                     throw new coding_exception('Unexpected type of thing ('.get_class($bc).') found in list of block contents.');
                 }
@@ -2108,12 +2121,14 @@ class core_renderer extends \core_renderer {
      * Output all the blocks in a particular region without the navigation or settings blocks.
      *
      * @param string $region the name of a region on this page.
+     * @param string $flatnavigationcontent Flat navigation content passed in so that we may show any fake blocks first.
      * @return string the HTML to be output.
      */
-    public function essential_flatnav_blocks_for_region($region) {
+    public function essential_flatnav_blocks_for_region($region, $flatnavigationcontent) {
         $blockcontents = $this->page->blocks->get_content_for_region($region, $this);
         $blocks = $this->page->blocks->get_blocks_for_region($region);
         $lastblock = null;
+        $hasfakeblock = false;
         $zones = array();
         $excludeblocks = array();
         foreach ($blocks as $block) {
@@ -2125,9 +2140,28 @@ class core_renderer extends \core_renderer {
         }
         $output = '';
 
+        // Fake blocks get outputted first....!
         foreach ($blockcontents as $bc) {
             if ($bc instanceof block_contents) {
-                if (!in_array($bc->blockinstanceid, $excludeblocks)) {
+                if ((!empty($bc->attributes['data-block'])) && ($bc->attributes['data-block'] == '_fake')) {
+                    $output .= $this->block($bc, $region);
+                    $lastblock = $bc->title;
+                    $hasfakeblock = true;
+                }
+            } else if ($bc instanceof block_move_target) {
+                continue;
+            } else {
+                throw new coding_exception('Unexpected type of thing ('.get_class($bc).') found in list of block contents.');
+            }
+        }
+
+        $output .= $flatnavigationcontent;
+
+        foreach ($blockcontents as $bc) {
+            if ($bc instanceof block_contents) {
+                if (($hasfakeblock) && ($bc->attributes['data-block'] == '_fake')) {
+                    continue;
+                } else if (!in_array($bc->blockinstanceid, $excludeblocks)) {
                     $output .= $this->block($bc, $region);
                     $lastblock = $bc->title;
                 }
@@ -2136,7 +2170,7 @@ class core_renderer extends \core_renderer {
                     $output .= $this->block_move_target($bc, $zones, $lastblock, $region);
                 }
             } else {
-                throw new coding_exception('Unexpected type of thing (' . get_class($bc) . ') found in list of block contents.');
+                throw new coding_exception('Unexpected type of thing ('.get_class($bc).') found in list of block contents.');
             }
         }
         return $output;
@@ -2200,7 +2234,7 @@ class core_renderer extends \core_renderer {
             if (array_key_exists($bc->attributes['data-block'], $icons)) {
                 $theicon = $icons[$bc->attributes['data-block']];
             } else {
-                $theicon = 'reorder';
+                $theicon = 'navicon';
             }
             $title = html_writer::tag('h2', $bc->title, $attributes);
             if (!empty($theicon)) {
