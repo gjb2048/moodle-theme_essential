@@ -466,23 +466,13 @@ a.skip:active {
   margin-bottom: 5px;
   margin-top: 15px;
 }
-.loginbox .signuppanel .subcontent {
-  text-align: left;
-}
 .loginbox .loginsub {
   margin-left: 0;
   margin-right: 0;
 }
 .loginbox .guestsub,
-.loginbox .forgotsub,
-.loginbox .potentialidps {
+.loginbox .forgotsub {
   margin: 5px 12%;
-}
-.loginbox .potentialidps .potentialidplist {
-  margin-left: 40%;
-}
-.loginbox .potentialidps .potentialidplist div {
-  text-align: left;
 }
 .loginbox .loginform {
   margin-top: 1em;
@@ -520,6 +510,9 @@ a.skip:active {
   min-height: 30px;
   margin-bottom: -2000px;
   padding-bottom: 2000px;
+}
+.loginbox .potentialidp {
+  margin-bottom: 0.3em;
 }
 .loginbox .potentialidp .smallicon {
   vertical-align: text-bottom;
@@ -22616,7 +22609,6 @@ div.dropdown-menu > ul li a {
   background-image: none;
   border: none;
   box-shadow: none;
-  line-height: 0;
 }
 .navbar .navbar-inner .btn-navbar {
   margin: 5px 10px 0;

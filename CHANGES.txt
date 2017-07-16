@@ -4,6 +4,7 @@ New in 3.2.1.2
 - FIX: Issue #823: Social icons.
 - FIX: Issue #824: Header area/slide show/bullet-menu "on top".
 - FIX: Issue #828: div id# completionprogressid has z-index.
+- FIX: Issue #831: User tour with backdrop alignment off - partial.
 - FIX: Action menu overlapping navbar.
 - NEW: Tidy up.
 
