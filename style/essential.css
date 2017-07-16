@@ -23138,6 +23138,9 @@ div.dropdown-menu > ul li a {
     top: -50px;
     width: 64px;
   }
+  .loggedin #essentialnavbar.oldnavbar.affix .navbar .navbar-inner .custommenus .usermenu ul.nav .dropdown > .dropdown-toggle {
+    min-width: 100px;
+  }
 }
 /* @end */
 /* @group Theme Colours Menu */
