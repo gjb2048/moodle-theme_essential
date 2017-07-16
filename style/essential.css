@@ -14526,11 +14526,14 @@ body.path-mod-feedback #region-main .mform.feedback_form .feedback-item-pagebrea
 .path-mod-forum .forumheaderlist .discussion .topic,
 .path-mod-forum .forumheaderlist .discussion .discussionsubscription,
 .path-mod-forum .forumheaderlist .discussion .topic.starter,
-.path-mod-forum .forumheaderlist .discussion .picture,
 .path-mod-forum .forumheaderlist .discussion .author,
 .path-mod-forum .forumheaderlist .discussion .replies,
 .path-mod-forum .forumheaderlist .discussion .lastpost {
   vertical-align: top;
+}
+.path-mod-forum .forumheaderlist .discussion .picture {
+  margin: 0 20px;
+  float: left;
 }
 .path-mod-forum .forumheaderlist .discussion .unread img {
   margin: 0;
@@ -22882,6 +22885,9 @@ div.dropdown-menu > ul li a {
     right: 32px;
     top: -50px;
     width: 64px;
+  }
+  .loggedin #essentialnavbar.oldnavbar.affix .navbar .navbar-inner .custommenus .usermenu ul.nav .dropdown > .dropdown-toggle {
+    min-width: 100px;
   }
 }
 /* @end */
