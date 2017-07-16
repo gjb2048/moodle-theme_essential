@@ -120,7 +120,7 @@ body:not(.tabletdevice) {
 
 p.tree_item.leaf a {
     > .@{fa-css-prefix} {
-        width: 14px;
+        width: 16px;
     }
     &.action-delete {
         > .@{fa-css-prefix} {
@@ -134,10 +134,11 @@ p.tree_item.leaf a {
 
     &:before {
         font-family: FontAwesome;
-        margin-right: 5px;
+        font-size: 16px;
+        margin-right: 4px;
     }
     &.emptybranch:before {
-        margin-right: 5px;
+        margin-right: 4px;
     }
     &[aria-expanded="false"]:before {
         content: "\f07b";
@@ -163,12 +164,15 @@ p.tree_item.leaf a {
     }
 }
 
-.block_navigation.block .block_tree .tree_item {
-    &.branch {
-        padding-left: 0;
-    }
-    &.hasicon .item-content-wrap {
-        display: inline !important;
+.block_navigation,
+.block_settings {
+    &.block .block_tree .tree_item {
+        &.branch {
+            padding-left: 0;
+        }
+        &.hasicon .item-content-wrap {
+            display: inline !important;
+        }
     }
 }
 
@@ -179,10 +183,6 @@ p.tree_item.leaf a {
     margin-bottom: 0;
     min-height: 0;
     padding: 0;
-}
-
-.jsenabled .block_settings .block_tree .tree_item {
-    padding-left: 0 !important;
 }
 
 .jsenabled .block_settings .block_tree .tree_item.branch.loadingbranch:before {

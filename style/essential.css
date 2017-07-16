@@ -19525,13 +19525,21 @@ a.muted:focus {
 }
 /* Moodle fixes begin */
 /* Moodle fixes blocks begin */
+.block .icon {
+  margin-right: 4px;
+}
 .block_navigation .block_tree .fa[aria-hidden="true"],
 .block_settings .block_tree .fa[aria-hidden="true"] {
   display: inline-block;
 }
 .block_navigation .block_tree p.hasicon,
 .block_settings .block_tree p.hasicon {
+  padding-left: 0;
   text-indent: 0;
+}
+.block_navigation .block_tree ul,
+.block_settings .block_tree ul {
+  margin-left: 21px;
 }
 html[dir='rtl'] .tree_item.branch {
   unicode-bidi: bidi-override;
@@ -20060,7 +20068,7 @@ body:not(.tabletdevice).empty-region-side-post.used-region-side-pre #main-and-pr
   margin-bottom: 20px;
 }
 p.tree_item.leaf a > .fa {
-  width: 14px;
+  width: 16px;
 }
 p.tree_item.leaf a.action-delete > .fa {
   color: red;
@@ -20070,10 +20078,11 @@ p.tree_item.leaf a.action-delete > .fa {
 }
 .tree_item.branch:before {
   font-family: FontAwesome;
-  margin-right: 5px;
+  font-size: 16px;
+  margin-right: 4px;
 }
 .tree_item.branch.emptybranch:before {
-  margin-right: 5px;
+  margin-right: 4px;
 }
 .tree_item.branch[aria-expanded="false"]:before {
   content: "\f07b";
@@ -20093,10 +20102,12 @@ p.tree_item.leaf a.action-delete > .fa {
 .block_navigation.block li.type_unknown.depth_1 > .tree_item.branch:before {
   content: "\f015";
 }
-.block_navigation.block .block_tree .tree_item.branch {
+.block_navigation.block .block_tree .tree_item.branch,
+.block_settings.block .block_tree .tree_item.branch {
   padding-left: 0;
 }
-.block_navigation.block .block_tree .tree_item.hasicon .item-content-wrap {
+.block_navigation.block .block_tree .tree_item.hasicon .item-content-wrap,
+.block_settings.block .block_tree .tree_item.hasicon .item-content-wrap {
   display: inline !important;
 }
 .block.block_flat_navigation {
@@ -20106,9 +20117,6 @@ p.tree_item.leaf a.action-delete > .fa {
   margin-bottom: 0;
   min-height: 0;
   padding: 0;
-}
-.jsenabled .block_settings .block_tree .tree_item {
-  padding-left: 0 !important;
 }
 .jsenabled .block_settings .block_tree .tree_item.branch.loadingbranch:before {
   font-family: FontAwesome;

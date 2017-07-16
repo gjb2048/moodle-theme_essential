@@ -198,4 +198,4 @@ $THEME->layouts = array(
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->csspostprocess = 'theme_essential_process_css';
 
-$THEME->iconsystem = \core\output\icon_system::FONTAWESOME;
+$THEME->iconsystem = '\\theme_essential\\output\\icon_system_fontawesome';

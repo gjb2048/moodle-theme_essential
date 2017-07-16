@@ -3,6 +3,11 @@
 // @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
 
 /* Moodle fixes blocks begin */
+
+.block .icon {
+    margin-right: 4px;
+}
+
 .block_navigation,
 .block_settings {
     .block_tree .fa[aria-hidden="true"] {
@@ -12,7 +17,11 @@
 .block_navigation,
 .block_settings {
     .block_tree p.hasicon {
+        padding-left: 0;
         text-indent: 0;
+    }
+    .block_tree ul {
+        margin-left: 21px;
     }
 }
 
