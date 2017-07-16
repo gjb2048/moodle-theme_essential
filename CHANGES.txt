@@ -10,6 +10,7 @@ New in 3.3.0.3
 - FIX: Action menu overlapping navbar.
 - FIX: Position of group icons, completion icons and spacer when editing.
 - FIX: Reduce navbar icons jumping when old navbar position.
+- FIX: Table hover icon colour.
 - NEW: Issue #832: Use Core Notification and Messages menus.
 
 New in 3.3.0.2

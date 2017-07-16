@@ -1639,6 +1639,53 @@ table#permissions > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):activ
   color: [[setting:themestripeurlcolour]];
   background-color: [[setting:themestripebackgroundcolour]];
 }
+.user-enroller-panel .uep-search-results .users > tbody tr:hover > td a:not(.btn):not([role="menuitem"]) .fa,
+.user-enroller-panel .uep-search-results .cohorts > tbody tr:hover > td a:not(.btn):not([role="menuitem"]) .fa,
+table.grading-report > tbody tr:hover > td a:not(.btn):not([role="menuitem"]) .fa,
+.forumheaderlist > tbody tr:hover > td a:not(.btn):not([role="menuitem"]) .fa,
+.generaltable > tbody tr:hover > td a:not(.btn):not([role="menuitem"]) .fa,
+table.flexible > tbody tr:hover > td a:not(.btn):not([role="menuitem"]) .fa,
+.category_subcategories > tbody tr:hover > td a:not(.btn):not([role="menuitem"]) .fa,
+table#modules > tbody tr:hover > td a:not(.btn):not([role="menuitem"]) .fa,
+table#permissions > tbody tr:hover > td a:not(.btn):not([role="menuitem"]) .fa,
+.user-enroller-panel .uep-search-results .users > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):visited .fa,
+.user-enroller-panel .uep-search-results .cohorts > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):visited .fa,
+table.grading-report > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):visited .fa,
+.forumheaderlist > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):visited .fa,
+.generaltable > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):visited .fa,
+table.flexible > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):visited .fa,
+.category_subcategories > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):visited .fa,
+table#modules > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):visited .fa,
+table#permissions > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):visited .fa,
+.user-enroller-panel .uep-search-results .users > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):hover .fa,
+.user-enroller-panel .uep-search-results .cohorts > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):hover .fa,
+table.grading-report > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):hover .fa,
+.forumheaderlist > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):hover .fa,
+.generaltable > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):hover .fa,
+table.flexible > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):hover .fa,
+.category_subcategories > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):hover .fa,
+table#modules > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):hover .fa,
+table#permissions > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):hover .fa,
+.user-enroller-panel .uep-search-results .users > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):focus .fa,
+.user-enroller-panel .uep-search-results .cohorts > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):focus .fa,
+table.grading-report > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):focus .fa,
+.forumheaderlist > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):focus .fa,
+.generaltable > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):focus .fa,
+table.flexible > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):focus .fa,
+.category_subcategories > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):focus .fa,
+table#modules > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):focus .fa,
+table#permissions > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):focus .fa,
+.user-enroller-panel .uep-search-results .users > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):active .fa,
+.user-enroller-panel .uep-search-results .cohorts > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):active .fa,
+table.grading-report > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):active .fa,
+.forumheaderlist > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):active .fa,
+.generaltable > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):active .fa,
+table.flexible > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):active .fa,
+.category_subcategories > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):active .fa,
+table#modules > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):active .fa,
+table#permissions > tbody tr:hover > td a:not(.btn):not([role="menuitem"]):active .fa {
+  color: inherit;
+}
 /* @end */
 /* @group Settings */
 /* @group Core */
