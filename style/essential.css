@@ -21885,6 +21885,12 @@ select {
 .form-description {
   word-break: break-word;
 }
+.mform label .adv > .icon,
+.mform label .req > .icon {
+  height: 16px;
+  vertical-align: text-bottom;
+  width: 16px;
+}
 /* @end */
 /* @group Forums */
 .forumheaderlist .picture a {

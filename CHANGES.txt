@@ -1,6 +1,7 @@
 New in 3.2.1.3
 ==============
 - FIX: Reduce navbar icons jumping when old navbar position.
+- FIX: Required field icon.
 
 New in 3.2.1.2
 ==============
