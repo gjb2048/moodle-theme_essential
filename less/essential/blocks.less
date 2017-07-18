@@ -2,7 +2,7 @@
 @import "../fontawesome/variables";
 
 .block {
-    background: white;
+    background-color: @white;
     padding: @borderRadiusLarge;
     border: 1px solid darken(@wellBackground, 7%);
     .border-radius(@borderRadiusLarge);
@@ -14,6 +14,13 @@
     }
     .icon {
         margin-right: 5px;
+    }
+}
+
+.block.block_flat_navigation {
+    background-color: transparent;
+    .list-group-item-action {
+        background-color: @white;
     }
 }
 

@@ -19983,7 +19983,7 @@ table.ygtvtable td a {
 /* @end */
 /* @group Blocks */
 .block {
-  background: white;
+  background-color: #fff;
   padding: 6px;
   border: 1px solid #e3e3e3;
   -webkit-border-radius: 6px;
@@ -19998,6 +19998,12 @@ table.ygtvtable td a {
 }
 .block .icon {
   margin-right: 5px;
+}
+.block.block_flat_navigation {
+  background-color: transparent;
+}
+.block.block_flat_navigation .list-group-item-action {
+  background-color: #fff;
 }
 body:not(.tabletdevice).empty-region-side-pre #main-and-pre #content,
 body:not(.tabletdevice).empty-region-side-post #main-and-pre {
