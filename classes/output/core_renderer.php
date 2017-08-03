@@ -259,7 +259,7 @@ class core_renderer extends \core_renderer {
      *
      * @return string the HTML to output.
      */
-    public function course_title() {
+    public function course_title($divider = true) {
         $content = '';
         if ($this->page->course->id > 1) {
             $enablecategorycti = $this->get_setting('enablecategorycti');
@@ -331,7 +331,12 @@ class core_renderer extends \core_renderer {
                 $content .= '</div>';
             }
 
-            $content .= '<div class="bor"></div>';
+            if ($divider) {
+                $borclass = 'bor';
+            } else {
+                $borclass = 'no-bor';
+            }
+            $content .= '<div class="'.$borclass.'"></div>';
         }
 
         return $content;

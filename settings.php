@@ -218,6 +218,19 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsfeature->add($setting);
 
+    // Course title position.
+    $name = 'theme_essential/coursetitleposition';
+    $title = get_string('coursetitleposition', 'theme_essential');
+    $description = get_string('coursetitlepositiondesc', 'theme_essential');
+    $default = 'within';
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default,
+        array(
+            'above' => get_string('above', 'theme_essential'),
+            'within' => get_string('within', 'theme_essential')
+        )
+    );
+    $essentialsettingsfeature->add($setting);
+
     // Categories in the course breadcrumb.
     $name = 'theme_essential/categoryincoursebreadcrumbfeature';
     $title = get_string('categoryincoursebreadcrumbfeature', 'theme_essential');

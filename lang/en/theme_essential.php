@@ -285,6 +285,11 @@ $string['floatingsubmitbuttonsdesc'] = 'Have a \'floating\' area that contains t
 $string['layout'] = 'Use a standard course layout';
 $string['layoutdesc'] = 'This theme is designed to put both block columns on the side.  If you prefer the standard Moodle course layout you can check this box and be returned to the old three column layout.';
 
+$string['coursetitleposition'] = 'Course title postition';
+$string['coursetitlepositiondesc'] = 'Choose between \'Above\' and \'Within\' for the course.  Where \'Above\' is above the side-pre, page-top and course-content regions and \'Within\' is within the course-content region as it was before this setting was introduced.';
+$string['above'] = 'Above';
+$string['within'] = 'Within';
+
 $string['categoryincoursebreadcrumbfeature'] = 'Categories in the course breadcrumb';
 $string['categoryincoursebreadcrumbfeaturedesc'] = 'Show the category links in the breadcrumb of the course.';
 
