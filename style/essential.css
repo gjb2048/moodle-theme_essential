@@ -19744,6 +19744,9 @@ ins {
   height: 20px;
   margin: 0 0 4px;
 }
+.no-bor {
+  margin: 0 0 4px;
+}
 #page-admin-upgradesettings #page,
 .maintenance#page {
   padding-top: 0;

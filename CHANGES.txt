@@ -2,6 +2,7 @@ New in 3.3.0.4
 ==============
 - FIX: No transparency between flat navigation list groups.
 - FIX: Required field icon.
+- NEW: Course title position feature setting.
 
 New in 3.3.0.3
 ==============
