@@ -364,6 +364,46 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingscolour->add($setting);
 
+    // Side-pre block background colour setting.
+    $name = 'theme_essential/themesidepreblockbackgroundcolour';
+    $title = get_string('themesidepreblockbackgroundcolour', 'theme_essential');
+    $description = get_string('themesidepreblockbackgroundcolourdesc', 'theme_essential');
+    $default = '#ffffff';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingscolour->add($setting);
+
+    // Side-pre block text colour setting.
+    $name = 'theme_essential/themesidepreblocktextcolour';
+    $title = get_string('themesidepreblocktextcolour', 'theme_essential');
+    $description = get_string('themesidepreblocktextcolourdesc', 'theme_essential');
+    $default = '#217a94';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingscolour->add($setting);
+
+    // Side-pre block url colour setting.
+    $name = 'theme_essential/themesidepreblockurlcolour';
+    $title = get_string('themesidepreblockurlcolour', 'theme_essential');
+    $description = get_string('themesidepreblockurlcolourdesc', 'theme_essential');
+    $default = '#943b21';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingscolour->add($setting);
+
+    // Side-pre block url hover colour setting.
+    $name = 'theme_essential/themesidepreblockhovercolour';
+    $title = get_string('themesidepreblockhovercolour', 'theme_essential');
+    $description = get_string('themesidepreblockhovercolourdesc', 'theme_essential');
+    $default = '#6a2a18';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingscolour->add($setting);
+
     // Default button text colour setting.
     $name = 'theme_essential/themedefaultbuttontextcolour';
     $title = get_string('themedefaultbuttontextcolour', 'theme_essential');
@@ -670,6 +710,46 @@ if ($ADMIN->fulltree) {
         $title = get_string('alternativethemeiconcolor', 'theme_essential', $alternativethemenumber);
         $description = get_string('alternativethemeiconcolordesc', 'theme_essential', $alternativethemenumber);
         $default = $defaultalternativethemecolors[$alternativethemenumber - 1];
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $essentialsettingscolour->add($setting);
+
+        // Alternative theme side-pre block background colour setting.
+        $name = 'theme_essential/alternativethemesidepreblockbackgroundcolour' . $alternativethemenumber;
+        $title = get_string('alternativethemesidepreblockbackgroundcolour', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemesidepreblockbackgroundcolourdesc', 'theme_essential', $alternativethemenumber);
+        $default = '#ffffff';
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $essentialsettingscolour->add($setting);
+
+        // Alternative theme side-pre block text colour setting.
+        $name = 'theme_essential/alternativethemesidepreblocktextcolour' . $alternativethemenumber;
+        $title = get_string('alternativethemesidepreblocktextcolour', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemesidepreblocktextcolourdesc', 'theme_essential', $alternativethemenumber);
+        $default = $defaultalternativethemecolors[$alternativethemenumber - 1];
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $essentialsettingscolour->add($setting);
+
+        // Alternative theme side-pre block link colour setting.
+        $name = 'theme_essential/alternativethemesidepreblockurlcolour' . $alternativethemenumber;
+        $title = get_string('alternativethemesidepreblockurlcolour', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemesidepreblockurlcolourdesc', 'theme_essential', $alternativethemenumber);
+        $default = $defaultalternativethemecolors[$alternativethemenumber - 1];
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $essentialsettingscolour->add($setting);
+
+        // Alternative theme side-pre block text hover colour setting.
+        $name = 'theme_essential/alternativethemesidepreblockhovercolour' . $alternativethemenumber;
+        $title = get_string('alternativethemesidepreblockhovercolour', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemesidepreblockhovercolourdesc', 'theme_essential', $alternativethemenumber);
+        $default = $defaultalternativethemehovercolors[$alternativethemenumber - 1];
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
