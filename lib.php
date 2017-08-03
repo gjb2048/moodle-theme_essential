@@ -193,6 +193,22 @@ function theme_essential_process_css($css, $theme) {
     $themeiconcolor = \theme_essential\toolbox::get_setting('themeiconcolor');
     $css = \theme_essential\toolbox::set_color($css, $themeiconcolor, '[[setting:themeiconcolor]]', '#30add1');
 
+    // Set the theme side-pre block background colour.
+    $themesidepreblockbackgroundcolour = \theme_essential\toolbox::get_setting('themesidepreblockbackgroundcolour');
+    $css = \theme_essential\toolbox::set_color($css, $themesidepreblockbackgroundcolour, '[[setting:themesidepreblockbackgroundcolour]]', '#ffffff');
+
+    // Set the theme side-pre block text colour.
+    $themesidepreblocktextcolour = \theme_essential\toolbox::get_setting('themesidepreblocktextcolour');
+    $css = \theme_essential\toolbox::set_color($css, $themesidepreblocktextcolour, '[[setting:themesidepreblocktextcolour]]', '#217a94');
+
+    // Set the theme side-pre block url colour.
+    $themesidepreblockurlcolour = \theme_essential\toolbox::get_setting('themesidepreblockurlcolour');
+    $css = \theme_essential\toolbox::set_color($css, $themesidepreblockurlcolour, '[[setting:themesidepreblockurlcolour]]', '#943b21');
+
+    // Set the theme side-pre block url hover colour.
+    $themesidepreblockhovercolour = \theme_essential\toolbox::get_setting('themesidepreblockhovercolour');
+    $css = \theme_essential\toolbox::set_color($css, $themesidepreblockhovercolour, '[[setting:themesidepreblockhovercolour]]', '#6a2a18');
+
     // Set the theme default button text colour.
     $themedefaultbuttontextcolour = \theme_essential\toolbox::get_setting('themedefaultbuttontextcolour');
     $css = \theme_essential\toolbox::set_color($css, $themedefaultbuttontextcolour,
@@ -377,6 +393,18 @@ function theme_essential_process_css($css, $theme) {
 
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'iconcolor'.$alternative,
                 \theme_essential\toolbox::get_setting('alternativethemeiconcolor'.$alternative), $default);
+
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'sidepreblockbackgroundcolour'.$alternative,
+                \theme_essential\toolbox::get_setting('alternativethemesidepreblockbackgroundcolour'.$alternative), '#ffffff');
+
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'sidepreblocktextcolour'.$alternative,
+                \theme_essential\toolbox::get_setting('alternativethemesidepreblocktextcolour'.$alternative), $default);
+
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'sidepreblockurlcolour'.$alternative,
+                \theme_essential\toolbox::get_setting('alternativethemesidepreblockurlcolour'.$alternative), $default);
+
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'sidepreblockhovercolour'.$alternative,
+                \theme_essential\toolbox::get_setting('alternativethemesidepreblockhovercolour'.$alternative), $defaulthover);
 
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'navcolor'.$alternative,
                 \theme_essential\toolbox::get_setting('alternativethemenavcolor'.$alternative), $default);

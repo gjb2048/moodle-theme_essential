@@ -25,6 +25,25 @@
     color: ~"[[setting:themetextcolor]]";
 }
 
+#block-region-side-pre .block {
+    background-color: ~"[[setting:themesidepreblockbackgroundcolour]]";
+    color: ~"[[setting:themesidepreblocktextcolour]]";
+    a,
+    a:visited,
+    .@{fa-css-prefix} { // Compromise with icon colour.
+        color: ~"[[setting:themesidepreblockurlcolour]]";
+    }
+    a:focus,
+    a:hover,
+    .@{fa-css-prefix}:focus,
+    .@{fa-css-prefix}:hover {
+        color: ~"[[setting:themesidepreblockhovercolour]]";
+    }
+    .header .title h2 {
+        color: ~"[[setting:themesidepreblocktextcolour]]";
+    }
+}
+
 p.tree_item {
     &.leaf a {
         > .@{fa-css-prefix} {

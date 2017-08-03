@@ -91,6 +91,24 @@
 .block h3.main {
   color: [[setting:themetextcolor]];
 }
+#block-region-side-pre .block {
+  background-color: [[setting:themesidepreblockbackgroundcolour]];
+  color: [[setting:themesidepreblocktextcolour]];
+}
+#block-region-side-pre .block a,
+#block-region-side-pre .block a:visited,
+#block-region-side-pre .block .fa {
+  color: [[setting:themesidepreblockurlcolour]];
+}
+#block-region-side-pre .block a:focus,
+#block-region-side-pre .block a:hover,
+#block-region-side-pre .block .fa:focus,
+#block-region-side-pre .block .fa:hover {
+  color: [[setting:themesidepreblockhovercolour]];
+}
+#block-region-side-pre .block .header .title h2 {
+  color: [[setting:themesidepreblocktextcolour]];
+}
 p.tree_item.leaf a > .fa {
   color: [[setting:themeiconcolor]];
 }

@@ -763,6 +763,25 @@
                     }
                 }
 
+                #block-region-side-pre .block {
+                    background-color: ~"[[setting:alternativethemesidepreblockbackgroundcolour@{index}]]";
+                    color: ~"[[setting:alternativethemesidepreblocktextcolour@{index}]]";
+                    a,
+                    a:visited,
+                    .@{fa-css-prefix} { // Compromise with icon colour.
+                        color: ~"[[setting:alternativethemesidepreblockurlcolour@{index}]]";
+                    }
+                    a:focus,
+                    a:hover,
+                    .@{fa-css-prefix}:focus,
+                    .@{fa-css-prefix}:hover {
+                        color: ~"[[setting:alternativethemesidepreblockhovercolour@{index}]]";
+                    }
+                    .header .title h2 {
+                        color: ~"[[setting:alternativethemesidepreblocktextcolour@{index}]]";
+                    }
+                }
+
                 &.editing {
                     #page .block-region.yui3-dd-drop-active-valid {
                         border-color: ~"[[setting:alternativethemecolor@{index}]]";
