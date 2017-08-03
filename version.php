@@ -34,5 +34,5 @@ $plugin->release = '3.3.0.4 (Build: 2017040303)';
 $plugin->requires  = 2017051500.00; // 3.3 (Build: 20170515).
 $plugin->component = 'theme_essential';
 $plugin->dependencies = array(
-    'theme_bootstrapbase'  => 2016120500
+    'theme_bootstrapbase'  => 2017051500
 );
