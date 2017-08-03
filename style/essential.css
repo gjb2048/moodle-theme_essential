@@ -20005,7 +20005,7 @@ table.ygtvtable td a {
 .block.block_flat_navigation {
   background-color: transparent;
 }
-.block.block_flat_navigation .list-group-item-action {
+.block.block_flat_navigation .list-group-item {
   background-color: #fff;
 }
 body:not(.tabletdevice).empty-region-side-pre #main-and-pre #content,
