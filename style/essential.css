@@ -6902,6 +6902,9 @@ a.ygtvspacer:hover {
 #categoryquestions label {
   margin: 0;
 }
+#categoryquestions .header {
+  text-align: left;
+}
 #page-mod-quiz-edit div.questionbankwindow div.header {
   margin: 0;
 }
@@ -19336,6 +19339,9 @@ ins {
 }
 .bor {
   height: 20px;
+  margin: 0 0 4px;
+}
+.no-bor {
   margin: 0 0 4px;
 }
 #page-admin-upgradesettings #page,

@@ -3,6 +3,7 @@ New in 3.2.1.3
 - FIX: Reduce navbar icons jumping when old navbar position.
 - FIX: Required field icon.
 - NEW: Issue #832: Use Core Notification and Messages menus.
+- NEW: Course title position feature setting.
 
 New in 3.2.1.2
 ==============

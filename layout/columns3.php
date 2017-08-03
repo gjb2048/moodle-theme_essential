@@ -28,6 +28,10 @@ defined('MOODLE_INTERNAL') || die;
 
 require_once(\theme_essential\toolbox::get_tile_file('additionaljs'));
 require_once(\theme_essential\toolbox::get_tile_file('header'));
+$coursetitleposition = \theme_essential\toolbox::get_setting('coursetitleposition');
+if (empty($coursetitleposition)) {
+    $coursetitleposition = 'within';
+}
 ?>
 
 <div id="page" class="container-fluid">
@@ -35,6 +39,11 @@ require_once(\theme_essential\toolbox::get_tile_file('header'));
     <!-- Start Main Regions -->
     <div id="page-content" class="row-fluid">
         <div id="<?php echo $regionbsid ?>" class="span9<?php echo (!$left) ? ' pull-right' : ''; ?>">
+        <?php
+        if ($coursetitleposition == 'above') {
+            echo $OUTPUT->course_title(false);
+        }
+        ?>
             <div class="row-fluid">
 <?php
 if ($tablet) {
@@ -48,7 +57,9 @@ if (\theme_essential\toolbox::get_setting('pagetopblocks')) {
     echo $OUTPUT->essential_blocks('page-top', 'row-fluid', 'aside', 'pagetopblocksperrow');
 }
 echo '<section id="region-main">';
-echo $OUTPUT->course_title();
+if ($coursetitleposition == 'within') {
+    echo $OUTPUT->course_title();
+}
 echo $OUTPUT->course_content_header();
 echo $OUTPUT->main_content();
 if (empty($PAGE->layout_options['nocoursefooter'])) {
