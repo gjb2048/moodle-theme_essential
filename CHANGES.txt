@@ -1,3 +1,7 @@
+New in 3.3.1.0
+==============
+- NEW: Stable version.
+
 New in 3.3.0.4
 ==============
 - FIX: No transparency between flat navigation list groups.
