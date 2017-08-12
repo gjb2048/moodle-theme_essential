@@ -109,21 +109,6 @@
 #block-region-side-pre .block .header .title h2 {
   color: [[setting:themesidepreblocktextcolour]];
 }
-#block-region-side-pre .block.block_flat_navigation {
-  background-color: transparent;
-}
-#block-region-side-pre .block.block_flat_navigation .list-group-item {
-  background-color: [[setting:themesidepreblockbackgroundcolour]];
-  color: [[setting:themesidepreblocktextcolour]];
-}
-#block-region-side-pre .block.block_flat_navigation .list-group-item a,
-#block-region-side-pre .block.block_flat_navigation .list-group-item a:visited {
-  color: [[setting:themesidepreblockurlcolour]];
-}
-#block-region-side-pre .block.block_flat_navigation .list-group-item a:focus,
-#block-region-side-pre .block.block_flat_navigation .list-group-item a:hover {
-  color: [[setting:themesidepreblockhovercolour]];
-}
 p.tree_item.leaf a > .fa {
   color: [[setting:themeiconcolor]];
 }
