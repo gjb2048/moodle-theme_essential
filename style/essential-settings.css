@@ -94,6 +94,9 @@
   background-color: [[setting:themesidepreblockbackgroundcolour]];
   color: [[setting:themesidepreblocktextcolour]];
 }
+#block-region-side-pre .block p.tree_item.branch {
+  color: [[setting:themesidepreblocktextcolour]];
+}
 #block-region-side-pre .block a,
 #block-region-side-pre .block a:visited,
 #block-region-side-pre .block .fa {
