@@ -25,6 +25,13 @@
 
 defined('MOODLE_INTERNAL') || die;
 
+$coursetitleposition = \theme_essential\toolbox::get_setting('coursetitleposition');
+if (empty($coursetitleposition)) {
+    $coursetitleposition = 'within';
+}
+if ($coursetitleposition == 'above') {
+    echo $OUTPUT->course_title(false);
+}
 if ($pagebottomregion) {
     echo '<div id="content" class="span12">';
 } else if ((($hasboringlayout) && ($left)) || ((!$hasboringlayout) && (!$left))) {
@@ -36,7 +43,9 @@ if (\theme_essential\toolbox::get_setting('pagetopblocks')) {
     echo $OUTPUT->essential_blocks('page-top', 'row-fluid', 'aside', 'pagetopblocksperrow');
 }
 echo '<section id="region-main">';
-echo $OUTPUT->course_title();
+if ($coursetitleposition == 'within') {
+    echo $OUTPUT->course_title();
+}
 echo $OUTPUT->course_content_header();
 echo $OUTPUT->main_content();
 if (empty($PAGE->layout_options['nocoursefooter'])) {
