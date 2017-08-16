@@ -1,6 +1,7 @@
 New in 3.3.1.1
 ==============
 - FIX: Side pre block text colour when 'linkadmincategories' is unticked.
+- FIX: Above setting for 'coursetitleposition' does not work on 'incourse' / two column content pages.
 
 New in 3.3.1.0
 ==============
