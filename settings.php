@@ -39,9 +39,11 @@ if ($ADMIN->fulltree) {
     if (file_exists("{$CFG->dirroot}/theme/essential/essential_admin_setting_configselect.php")) {
         require_once($CFG->dirroot . '/theme/essential/essential_admin_setting_configselect.php');
         require_once($CFG->dirroot . '/theme/essential/essential_admin_setting_configinteger.php');
+        require_once($CFG->dirroot . '/theme/essential/essential_admin_setting_advertising.php');
     } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/essential/essential_admin_setting_configselect.php")) {
         require_once($CFG->themedir . '/essential/essential_admin_setting_configselect.php');
         require_once($CFG->themedir . '/essential/essential_admin_setting_configinteger.php');
+        require_once($CFG->themedir . '/essential/essential_admin_setting_advertising.php');
     }
 
     $sponsor = new moodle_url('http://moodle.org/user/profile.php?id=442195');
@@ -157,6 +159,11 @@ if ($ADMIN->fulltree) {
 
     $essentialsettingsgeneric->add(new admin_setting_heading('theme_essential_generalreadme',
         get_string('readme_title', 'theme_essential'), get_string('readme_desc', 'theme_essential', array('url' => $readme))));
+
+    $essentialsettingsgeneric->add(new essential_admin_setting_advertising('theme_essential_generaladvert',
+        get_string('advert_heading', 'theme_essential'), get_string('advert_tagline', 'theme_essential'),
+        'http://www.moodlebites.com/mod/page/view.php?id=3208',
+        $OUTPUT->image_url('adverts/tdl1', 'theme_essential'), get_string('advert_alttext', 'theme_essential')));
 }
 $ADMIN->add('theme_essential', $essentialsettingsgeneric);
 
