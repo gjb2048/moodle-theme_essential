@@ -157,13 +157,15 @@ if ($ADMIN->fulltree) {
     $readme = new moodle_url('/theme/essential/README.txt');
     $readme = html_writer::link($readme, get_string('readme_click', 'theme_essential'), array('target' => '_blank'));
 
-    $essentialsettingsgeneric->add(new admin_setting_heading('theme_essential_generalreadme',
-        get_string('readme_title', 'theme_essential'), get_string('readme_desc', 'theme_essential', array('url' => $readme))));
+    $essentialreadme = new admin_setting_heading('theme_essential_readme',
+        get_string('readme_title', 'theme_essential'), get_string('readme_desc', 'theme_essential', array('url' => $readme)));
+    $essentialsettingsgeneric->add($essentialreadme);
 
-    $essentialsettingsgeneric->add(new essential_admin_setting_advertising('theme_essential_generaladvert',
+    $essentialadvert = new essential_admin_setting_advertising('theme_essential_advert',
         get_string('advert_heading', 'theme_essential'), get_string('advert_tagline', 'theme_essential'),
         'http://www.moodlebites.com/mod/page/view.php?id=3208',
-        $OUTPUT->image_url('adverts/tdl1', 'theme_essential'), get_string('advert_alttext', 'theme_essential')));
+        $OUTPUT->image_url('adverts/tdl1', 'theme_essential'), get_string('advert_alttext', 'theme_essential'));
+    $essentialsettingsgeneric->add($essentialadvert);
 }
 $ADMIN->add('theme_essential', $essentialsettingsgeneric);
 
@@ -287,30 +289,30 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsfeature->add($setting);
 
-        $opactitychoices = array(
-            '0.0' => '0.0',
-            '0.1' => '0.1',
-            '0.2' => '0.2',
-            '0.3' => '0.3',
-            '0.4' => '0.4',
-            '0.5' => '0.5',
-            '0.6' => '0.6',
-            '0.7' => '0.7',
-            '0.8' => '0.8',
-            '0.9' => '0.9',
-            '1.0' => '1.0'
-        );
+    $opactitychoices = array(
+        '0.0' => '0.0',
+        '0.1' => '0.1',
+        '0.2' => '0.2',
+        '0.3' => '0.3',
+        '0.4' => '0.4',
+        '0.5' => '0.5',
+        '0.6' => '0.6',
+        '0.7' => '0.7',
+        '0.8' => '0.8',
+        '0.9' => '0.9',
+        '1.0' => '1.0'
+    );
 
-        // Overridden course title text background opacity setting.
-        $name = 'theme_essential/loginbackgroundopacity';
-        $title = get_string('loginbackgroundopacity', 'theme_essential');
-        $description = get_string('loginbackgroundopacitydesc', 'theme_essential');
-        $default = '0.8';
-        $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $opactitychoices);
-        $essentialsettingsfeature->add($setting);
+    // Overridden course title text background opacity setting.
+    $name = 'theme_essential/loginbackgroundopacity';
+    $title = get_string('loginbackgroundopacity', 'theme_essential');
+    $description = get_string('loginbackgroundopacitydesc', 'theme_essential');
+    $default = '0.8';
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $opactitychoices);
+    $essentialsettingsfeature->add($setting);
 
-        $essentialsettingsfeature->add(new admin_setting_heading('theme_essential_featurereadme',
-        get_string('readme_title', 'theme_essential'), get_string('readme_desc', 'theme_essential', array('url' => $readme))));
+    $essentialsettingsfeature->add($essentialreadme);
+    $essentialsettingsfeature->add($essentialadvert);
 }
 $ADMIN->add('theme_essential', $essentialsettingsfeature);
 
@@ -916,8 +918,8 @@ if ($ADMIN->fulltree) {
         $essentialsettingscolour->add($setting);
     }
 
-    $essentialsettingscolour->add(new admin_setting_heading('theme_essential_colourreadme',
-        get_string('readme_title', 'theme_essential'), get_string('readme_desc', 'theme_essential', array('url' => $readme))));
+    $essentialsettingscolour->add($essentialreadme);
+    $essentialsettingscolour->add($essentialadvert);
 }
 $ADMIN->add('theme_essential', $essentialsettingscolour);
 
@@ -1463,8 +1465,8 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 
-    $essentialsettingsheader->add(new admin_setting_heading('theme_essential_headerreadme',
-        get_string('readme_title', 'theme_essential'), get_string('readme_desc', 'theme_essential', array('url' => $readme))));
+    $essentialsettingsheader->add($essentialreadme);
+    $essentialsettingsheader->add($essentialadvert);
 }
 $ADMIN->add('theme_essential', $essentialsettingsheader);
 
@@ -1637,8 +1639,8 @@ if ($ADMIN->fulltree) {
         $essentialsettingsfont->add($setting);
     }
 
-    $essentialsettingsfont->add(new admin_setting_heading('theme_essential_fontreadme',
-        get_string('readme_title', 'theme_essential'), get_string('readme_desc', 'theme_essential', array('url' => $readme))));
+    $essentialsettingsfont->add($essentialreadme);
+    $essentialsettingsfont->add($essentialadvert);
 }
 $ADMIN->add('theme_essential', $essentialsettingsfont);
 
@@ -1674,8 +1676,8 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsfooter->add($setting);
 
-    $essentialsettingsfooter->add(new admin_setting_heading('theme_essential_footerreadme',
-        get_string('readme_title', 'theme_essential'), get_string('readme_desc', 'theme_essential', array('url' => $readme))));
+    $essentialsettingsfooter->add($essentialreadme);
+    $essentialsettingsfooter->add($essentialadvert);
 }
 $ADMIN->add('theme_essential', $essentialsettingsfooter);
 
@@ -2040,8 +2042,8 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsfrontpage->add($setting);
 
-    $essentialsettingsfrontpage->add(new admin_setting_heading('theme_essential_frontpagereadme',
-        get_string('readme_title', 'theme_essential'), get_string('readme_desc', 'theme_essential', array('url' => $readme))));
+    $essentialsettingsfrontpage->add($essentialreadme);
+    $essentialsettingsfrontpage->add($essentialadvert);
 }
 $ADMIN->add('theme_essential', $essentialsettingsfrontpage);
 
@@ -2296,8 +2298,8 @@ if ($ADMIN->fulltree) {
         $essentialsettingsslideshow->add($setting);
     }
 
-    $essentialsettingsslideshow->add(new admin_setting_heading('theme_essential_slideshowreadme',
-        get_string('readme_title', 'theme_essential'), get_string('readme_desc', 'theme_essential', array('url' => $readme))));
+    $essentialsettingsslideshow->add($essentialreadme);
+    $essentialsettingsslideshow->add($essentialadvert);
 }
 $ADMIN->add('theme_essential', $essentialsettingsslideshow);
 
@@ -2577,8 +2579,8 @@ if ($ADMIN->fulltree) {
         }
     }
 
-    $essentialsettingscategoryicon->add(new admin_setting_heading('theme_essential_categoryiconreadme',
-        get_string('readme_title', 'theme_essential'), get_string('readme_desc', 'theme_essential', array('url' => $readme))));
+    $essentialsettingscategoryicon->add($essentialreadme);
+    $essentialsettingscategoryicon->add($essentialadvert);
 }
 $ADMIN->add('theme_essential', $essentialsettingscategoryicon);
 
@@ -2660,8 +2662,8 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $essentialsettingsanalytics->add($setting);
 
-    $essentialsettingsanalytics->add(new admin_setting_heading('theme_essential_analyticsreadme',
-        get_string('readme_title', 'theme_essential'), get_string('readme_desc', 'theme_essential', array('url' => $readme))));
+    $essentialsettingsanalytics->add($essentialreadme);
+    $essentialsettingsanalytics->add($essentialadvert);
 }
 $ADMIN->add('theme_essential', $essentialsettingsanalytics);
 
@@ -2700,7 +2702,6 @@ if ($ADMIN->fulltree) {
     );
     $setting->set_updatedcallback('purge_all_caches');
     $essentialsettingsprops->add($setting);
-
 }
 $ADMIN->add('theme_essential', $essentialsettingsprops);
 
