@@ -502,6 +502,46 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingscolour->add($setting);
 
+    // Quiz \'Submit all and finish\' text colour setting.
+    $name = 'theme_essential/themequizsubmittextcolour';
+    $title = get_string('themequizsubmittextcolour', 'theme_essential');
+    $description = get_string('themequizsubmittextcolourdesc', 'theme_essential');
+    $default = '#ffffff';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingscolour->add($setting);
+
+    // Quiz \'Submit all and finish\' text hover colour setting.
+    $name = 'theme_essential/themequizsubmittexthovercolour';
+    $title = get_string('themequizsubmittexthovercolour', 'theme_essential');
+    $description = get_string('themequizsubmittexthovercolourdesc', 'theme_essential');
+    $default = '#ffffff';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingscolour->add($setting);
+
+    // Quiz \'Submit all and finish\' background colour setting.
+    $name = 'theme_essential/themequizsubmitbackgroundcolour';
+    $title = get_string('themequizsubmitbackgroundcolour', 'theme_essential');
+    $description = get_string('themequizsubmitbackgroundcolourdesc', 'theme_essential');
+    $default = '#ff9a34';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingscolour->add($setting);
+
+    // Quiz \'Submit all and finish\' background hover colour setting.
+    $name = 'theme_essential/themequizsubmitbackgroundhovercolour';
+    $title = get_string('themequizsubmitbackgroundhovercolour', 'theme_essential');
+    $description = get_string('themequizsubmitbackgroundhovercolourdesc', 'theme_essential');
+    $default = '#ffaf60';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingscolour->add($setting);
+
     // This is the descriptor for the footer.
     $name = 'theme_essential/footercolorinfo';
     $heading = get_string('footercolors', 'theme_essential');
@@ -808,6 +848,48 @@ if ($ADMIN->fulltree) {
         $title = get_string('alternativethemestripeurlcolour', 'theme_essential', $alternativethemenumber);
         $description = get_string('alternativethemestripeurlcolourdesc', 'theme_essential', $alternativethemenumber);
         $default = $defaultalternativethemestripeurlcolors[$alternativethemenumber - 1];
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $essentialsettingscolour->add($setting);
+
+        // Alternative theme Quiz \'Submit all and finish\' text colour setting.
+        $name = 'theme_essential/alternativethemequizsubmittextcolour' . $alternativethemenumber;
+        $title = get_string('alternativethemequizsubmittextcolour', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemequizsubmittextcolourdesc', 'theme_essential', $alternativethemenumber);
+        $default = '#ffffff';
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $essentialsettingscolour->add($setting);
+
+        // Alternative theme Quiz \'Submit all and finish\' text hover colour setting.
+        $name = 'theme_essential/alternativethemequizsubmittexthovercolour' . $alternativethemenumber;
+        $title = get_string('alternativethemequizsubmittexthovercolour', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemequizsubmittexthovercolourdesc', 'theme_essential',
+            $alternativethemenumber);
+        $default = '#ffffff';
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $essentialsettingscolour->add($setting);
+
+        // Alternative theme Quiz \'Submit all and finish\' background colour setting.
+        $name = 'theme_essential/alternativethemequizsubmitbackgroundcolour' . $alternativethemenumber;
+        $title = get_string('alternativethemequizsubmitbackgroundcolour', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemequizsubmitbackgroundcolourdesc', 'theme_essential', $alternativethemenumber);
+        $default = '#ff9a34';
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $essentialsettingscolour->add($setting);
+
+        // Alternative theme Quiz \'Submit all and finish\' background hover colour setting.
+        $name = 'theme_essential/alternativethemequizsubmitbackgroundhovercolour' . $alternativethemenumber;
+        $title = get_string('alternativethemequizsubmitbackgroundhovercolour', 'theme_essential', $alternativethemenumber);
+        $description = get_string('alternativethemequizsubmitbackgroundhovercolourdesc', 'theme_essential',
+            $alternativethemenumber);
+        $default = '#ffaf60';
         $previewconfig = null;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');

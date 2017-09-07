@@ -254,6 +254,33 @@ function theme_essential_process_css($css, $theme) {
     $themestripeurlcolour = \theme_essential\toolbox::get_setting('themestripeurlcolour');
     $css = \theme_essential\toolbox::set_color($css, $themestripeurlcolour, '[[setting:themestripeurlcolour]]', '#25849F');
 
+    // Set the theme Quiz 'Submit all and finish' colours.
+    $themequizsubmittextcolour = \theme_essential\toolbox::get_setting('themequizsubmittextcolour');
+    $css = \theme_essential\toolbox::set_color($css, $themequizsubmittextcolour,
+        '[[setting:themequizsubmittextcolour]]', '#ffffff');
+
+    $themequizsubmittexthovercolour = \theme_essential\toolbox::get_setting('themequizsubmittexthovercolour');
+    $css = \theme_essential\toolbox::set_color($css, $themequizsubmittexthovercolour,
+        '[[setting:themequizsubmittexthovercolour]]', '#ffffff');
+
+    $themequizsubmitbackgroundcolour = \theme_essential\toolbox::get_setting('themequizsubmitbackgroundcolour');
+    $css = \theme_essential\toolbox::set_color($css, $themequizsubmitbackgroundcolour,
+        '[[setting:themequizsubmitbackgroundcolour]]', '#ff9a34');
+    $css = \theme_essential\toolbox::set_color($css, $themequizsubmitbackgroundcolour,
+        '[[setting:themequizsubmitbackgroundcolourimage]]', '#ff9a34');
+    $css = \theme_essential\toolbox::set_color($css,
+        \theme_essential\toolbox::hexadjust($themequizsubmitbackgroundcolour, 10),
+        '[[setting:themequizsubmitbackgroundcolourrgba]]', '#ff9a34', '0.25');
+
+    $themequizsubmitbackgroundhovercolour = \theme_essential\toolbox::get_setting('themequizsubmitbackgroundhovercolour');
+    $css = \theme_essential\toolbox::set_color($css, $themequizsubmitbackgroundhovercolour,
+        '[[setting:themequizsubmitbackgroundhovercolour]]', '#ffaf60');
+    $css = \theme_essential\toolbox::set_color($css, $themequizsubmitbackgroundhovercolour,
+        '[[setting:themequizsubmitbackgroundhovercolourimage]]', '#ffaf60');
+    $css = \theme_essential\toolbox::set_color($css,
+        \theme_essential\toolbox::hexadjust($themequizsubmitbackgroundhovercolour, 10),
+        '[[setting:themequizsubmitbackgroundhovercolourrgba]]', '#ffaf60', '0.25');
+
     // Enrolled and not accessed course background colour.
     $mycoursesorderenrolbackcolour = \theme_essential\toolbox::get_setting('mycoursesorderenrolbackcolour');
     $css = \theme_essential\toolbox::set_color($css, $mycoursesorderenrolbackcolour,
@@ -420,6 +447,38 @@ function theme_essential_process_css($css, $theme) {
 
             $css = \theme_essential\toolbox::set_alternativecolor($css, 'stripeurlcolour'.$alternative,
                 \theme_essential\toolbox::get_setting('alternativethemestripeurlcolour'.$alternative), $defaultstripeurl);
+
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'quizsubmittextcolour'.$alternative,
+                \theme_essential\toolbox::get_setting('alternativethemequizsubmittextcolour'.$alternative),
+                '#ffffff');
+
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'quizsubmittexthovercolour'.$alternative,
+                \theme_essential\toolbox::get_setting('alternativethemequizsubmittexthovercolour'.$alternative),
+                '#ffffff');
+
+            $alternativethemequizsubmitbackgroundcolour = \theme_essential\toolbox::get_setting(
+                'alternativethemequizsubmitbackgroundcolour'.$alternative);
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'quizsubmitbackgroundcolour'.$alternative,
+                $alternativethemequizsubmitbackgroundcolour,
+                '#ff9a34');
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'quizsubmitbackgroundcolourimage'.$alternative,
+                $alternativethemequizsubmitbackgroundcolour,
+                '#ff9a34');
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'quizsubmitbackgroundcolourrgba'.$alternative,
+                \theme_essential\toolbox::hexadjust($alternativethemequizsubmitbackgroundcolour, 10),
+                '#ff9a34', '0.25');
+
+            $alternativethemequizsubmitbackgroundhovercolour = \theme_essential\toolbox::get_setting(
+                'alternativethemequizsubmitbackgroundhovercolour'.$alternative);
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'quizsubmitbackgroundhovercolour'.$alternative,
+                $alternativethemequizsubmitbackgroundhovercolour,
+                '#ffaf60');
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'quizsubmitbackgroundhovercolourimage'.$alternative,
+                $alternativethemequizsubmitbackgroundhovercolour,
+                '#ffaf60');
+            $css = \theme_essential\toolbox::set_alternativecolor($css, 'quizsubmitbackgroundhovercolourrgba'.$alternative,
+                \theme_essential\toolbox::hexadjust($alternativethemequizsubmitbackgroundhovercolour, 10),
+                '#ffaf60', '0.25');
 
             $alternativethememycoursesorderenrolbackcolour = \theme_essential\toolbox::get_setting(
                 'alternativethememycoursesorderenrolbackcolour'.$alternative);

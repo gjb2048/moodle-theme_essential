@@ -1112,6 +1112,33 @@ button.website:focus {
   }
 }
 /* @end */
+/* @group Quiz */
+body.path-mod-quiz .submitbtns form[action$="processattempt.php"] input[type="submit"] {
+  color: [[setting:themequizsubmittextcolour]];
+  text-shadow: none;
+  background-color: [[setting:themequizsubmitbackgroundcolour]];
+  background-image: -moz-linear-gradient(bottom, [[setting:themequizsubmitbackgroundcolourimage]], [[setting:themequizsubmitbackgroundcolourrgba]]);
+  background-image: -webkit-gradient(linear, 0 100%, 0 0, from([[setting:themequizsubmitbackgroundcolourimage]]), to([[setting:themequizsubmitbackgroundcolourrgba]]));
+  background-image: -webkit-linear-gradient(bottom, [[setting:themequizsubmitbackgroundcolourimage]], [[setting:themequizsubmitbackgroundcolourrgba]]);
+  background-image: -o-linear-gradient(bottom, [[setting:themequizsubmitbackgroundcolourimage]], [[setting:themequizsubmitbackgroundcolourrgba]]);
+  background-image: linear-gradient(to top, [[setting:themequizsubmitbackgroundcolourimage]], [[setting:themequizsubmitbackgroundcolourrgba]]);
+}
+body.path-mod-quiz .submitbtns form[action$="processattempt.php"] input[type="submit"]:hover,
+body.path-mod-quiz .submitbtns form[action$="processattempt.php"] input[type="submit"]:focus,
+body.path-mod-quiz .submitbtns form[action$="processattempt.php"] input[type="submit"]:active,
+body.path-mod-quiz .submitbtns form[action$="processattempt.php"] input[type="submit"].active,
+body.path-mod-quiz .submitbtns form[action$="processattempt.php"] input[type="submit"].disabled,
+body.path-mod-quiz .submitbtns form[action$="processattempt.php"] input[type="submit"][disabled] {
+  color: [[setting:themequizsubmittexthovercolour]];
+  text-shadow: 0 1px 1px rgba(64, 64, 64, 0.75);
+  background-color: [[setting:themequizsubmitbackgroundhovercolour]];
+  background-image: -moz-linear-gradient(bottom, [[setting:themequizsubmitbackgroundhovercolourimage]], [[setting:themequizsubmitbackgroundhovercolourrgba]]);
+  background-image: -webkit-gradient(linear, 0 100%, 0 0, from([[setting:themequizsubmitbackgroundhovercolourimage]]), to([[setting:themequizsubmitbackgroundhovercolourrgba]]));
+  background-image: -webkit-linear-gradient(bottom, [[setting:themequizsubmitbackgroundhovercolourimage]], [[setting:themequizsubmitbackgroundhovercolourrgba]]);
+  background-image: -o-linear-gradient(bottom, [[setting:themequizsubmitbackgroundhovercolourimage]], [[setting:themequizsubmitbackgroundhovercolourrgba]]);
+  background-image: linear-gradient(to top, [[setting:themequizsubmitbackgroundhovercolourimage]], [[setting:themequizsubmitbackgroundhovercolourrgba]]);
+}
+/* @end Quiz */
 /* @group Responsive */
 @media (max-width: 979px) {
   .navbar .navbar-inner .nav-collapse .nav > li.dropdown .dropdown-menu li > a {
