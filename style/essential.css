@@ -19181,6 +19181,12 @@ html[dir='rtl'] .tree_item a {
   unicode-bidi: embed;
 }
 /* Moodle fixes blocks end */
+/* Moodle fixes core begin */
+/* Only set these options if we're showing the js container */
+.jschooser .choosercontainer #chooseform .alloptions .option .typename {
+  display: inline;
+}
+/* Moodle fixes core end */
 /* Moodle fixes dock begin */
 #dockeditempanel .dockeditempanel_hd h2 {
   float: none;
