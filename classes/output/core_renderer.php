@@ -1254,7 +1254,7 @@ class core_renderer extends \core_renderer {
                         $branch->add($icon.$modfullname, new moodle_url('/course/resources.php',
                             array('id' => $this->page->course->id)));
                     } else {
-                        $icon = '<img src="'.$this->pix_url('icon', $modname) . '" class="icon" alt="" />';
+                        $icon = $this->pix_icon('icon', '', $modname, array('class' => 'icon'));
                         $branch->add($icon.$modfullname, new moodle_url('/mod/'.$modname.'/index.php',
                             array('id' => $this->page->course->id)));
                     }
