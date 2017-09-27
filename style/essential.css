@@ -21683,13 +21683,6 @@ body#page-admin-setting-messageinbound_mailsettings fieldset select {
   font-size: 1em;
   font-family: monospace;
 }
-#region-main form .form-buttons {
-  width: 400px;
-  border-radius: 8px;
-}
-#region-main form .form-buttons input {
-  margin: 0;
-}
 #region-main form table#form td.submit,
 #region-main form .form-buttons,
 #region-main form .path-admin .buttons,
