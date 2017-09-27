@@ -22912,6 +22912,14 @@ body.format-topcoll .course-content ul.ctopics li.section .content .toggle a h3:
   border: 1px solid #eee;
 }
 /* @end */
+/* @group User */
+#groupeditform .groups,
+#groupeditform .members {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+/* @end */
 /* @group Print Styling */
 #printonly {
   display: none;

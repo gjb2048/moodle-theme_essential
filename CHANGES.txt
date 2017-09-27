@@ -5,6 +5,7 @@ New in 3.2.1.4
 - FIX: Issue #842: Would it be possible to change a private to a protected?
 - FIX: Issue #843: Add an activity or resource popup display.
 - FIX: Issue #844: While adding images with floating submit buttons.
+- FIX: Issue #846: Group edit form layout.
 
 New in 3.2.1.3
 ==============
