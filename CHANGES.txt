@@ -1,6 +1,7 @@
 New in 3.3.1.2
 ==============
 - FIX: Issue #844: While adding images with floating submit buttons.
+- FIX: Issue #846: Group edit form layout.
 
 New in 3.3.1.1
 ==============
