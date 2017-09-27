@@ -3427,14 +3427,14 @@ img.iconsmall {
   margin-right: 0.5rem;
 }
 .path-calendar .maincalendar .eventlist .event .name,
-.path-calendar .maincalendar .eventlist .event .course {
+.path-calendar .maincalendar .eventlist .event .action {
   margin-bottom: 5px;
 }
 .path-calendar .maincalendar .eventlist .event .date {
   float: right;
 }
-.path-calendar .maincalendar .eventlist .event .course,
-.path-calendar .maincalendar .eventlist .event .subscription {
+.path-calendar .maincalendar .eventlist .event .subscription,
+.path-calendar .maincalendar .eventlist .event .action {
   float: left;
   clear: left;
 }
@@ -13882,6 +13882,12 @@ form {
 .singleselect label {
   margin-right: .3em;
 }
+.custom-select {
+  max-width: 100%;
+}
+.custom-select + input[type="submit"] {
+  margin: 0 0 0 5px;
+}
 #portfolio-add-button {
   display: inline;
 }
@@ -21691,13 +21697,12 @@ body#page-admin-setting-messageinbound_mailsettings fieldset select {
 #region-main form .fp-content-center form + div,
 #region-main form div.backup-section + form,
 #region-main form #fgroup_id_buttonar {
-  width: 30%;
-  text-align: center;
+  border-radius: 4px;
   margin-left: auto;
   margin-right: auto;
+  padding: 10px 10px 0 5px;
+  text-align: center;
   z-index: 101;
-  padding: 10px;
-  border-radius: 4px;
 }
 #region-main form table#form td.submit .felement,
 #region-main form .form-buttons .felement,
@@ -21717,7 +21722,6 @@ body#page-admin-setting-messageinbound_mailsettings fieldset select {
 #region-main form div.backup-section + form > .fgroup,
 #region-main form #fgroup_id_buttonar > .fgroup {
   margin: 0;
-  padding-top: 15px;
 }
 #region-main form table#form td.submit input[type=submit],
 #region-main form .form-buttons input[type=submit],
