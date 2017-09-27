@@ -19637,6 +19637,16 @@ span:first-of-type > .icon {
   background-color: inherit;
 }
 /* Moodle fixes mod-assign end */
+/* Moodle fixes mod-quiz begin */
+#page-mod-quiz-attempt .submitbtns,
+#page-mod-quiz-review .submitbtns {
+  text-align: right;
+}
+#page-mod-quiz-attempt .submitbtns .mod_quiz-next-nav,
+#page-mod-quiz-review .submitbtns .mod_quiz-next-nav {
+  float: none;
+}
+/* Moodle fixes mod-quiz end */
 /* Moodle fixes search begin */
 .navbar .search-input-wrapper {
   width: 18px;

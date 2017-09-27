@@ -60,7 +60,7 @@ echo $OUTPUT->doctype();
 
 <div id="page" class="container-fluid">
     <div id="page-content" class="row-fluid">
-        <div id="region-bs-main-and-pre" class="span9">
+        <div id="<?php echo $regionbsid ?>" class="span9">
             <div class="row-fluid">
                 <div id="content" class="span8 pull-right">
                     <section id="region-main">

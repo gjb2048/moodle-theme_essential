@@ -1,5 +1,6 @@
 New in 3.3.1.2
 ==============
+- FIX: Issue #836: Secure layout broken.
 - FIX: Issue #844: While adding images with floating submit buttons.
 - FIX: Issue #846: Group edit form layout.
 
