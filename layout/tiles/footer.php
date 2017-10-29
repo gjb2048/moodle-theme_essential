@@ -41,6 +41,9 @@ if (empty($PAGE->layout_options['nofooter'])) { ?>
                     <?php echo $OUTPUT->essential_blocks('footer-right'); ?>
                 </div>
             </div>
+            <div class="row-fluid">
+                <div class="tool_usertours-resettourcontainer span12"></div>
+            </div>
             <div class="footerlinks row-fluid">
                 <hr/>
                 <span class="helplink"><?php echo page_doc_link(get_string('moodledocslink')); ?></span>
