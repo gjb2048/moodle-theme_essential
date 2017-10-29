@@ -1572,7 +1572,7 @@ class core_renderer extends \core_renderer {
 
             // Check if messaging is enabled.
             if (!empty($CFG->messaging)) {
-                $branchlabel = '<em>'.$this->getfontawesomemarkup('envelope').get_string('pluginname', 'block_messages').'</em>';
+                $branchlabel = '<em>'.$this->getfontawesomemarkup('envelope').get_string('messages', 'message').'</em>';
                 $branchurl = new moodle_url('/message/index.php');
                 $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
             }
@@ -2538,7 +2538,7 @@ class core_renderer extends \core_renderer {
         global $CFG;
         $result = '';
 
-        if (($CFG->version < 2016122200.00) || ($CFG->version >= 2017110000.00)) {
+        if (($CFG->version < 2017102700.00) || ($CFG->version >= 2018050000.00)) {
             $result = '<div class="useralerts alert alert-error">';
             $result .= '<a class="close" data-dismiss="alert" href="'.$this->page->url.'">'.$this->getfontawesomemarkup('times-circle').'</a>';
             $result .= $this->getfontawesomemarkup('stack', array(), array(), $this->getfontawesomemarkup('square',
