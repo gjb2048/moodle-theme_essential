@@ -18,6 +18,7 @@
  * Essential is a clean and customizable theme.
  *
  * @package     theme_essential
+ * @copyright   2017 Gareth J Barnard
  * @copyright   2016 Gareth J Barnard
  * @copyright   2015 Gareth J Barnard
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -48,6 +49,7 @@ if ($coursetitleposition == 'within') {
 }
 echo $OUTPUT->course_content_header();
 echo $OUTPUT->main_content();
+echo $OUTPUT->activity_navigation();
 if (empty($PAGE->layout_options['nocoursefooter'])) {
     echo $OUTPUT->course_content_footer();
 }
