@@ -164,7 +164,7 @@ if ($ADMIN->fulltree) {
     $essentialadvert = new essential_admin_setting_advertising('theme_essential_advert',
         get_string('advert_heading', 'theme_essential'), get_string('advert_tagline', 'theme_essential'),
         'http://www.moodlebites.com/mod/page/view.php?id=3208',
-        $OUTPUT->image_url('adverts/tdl1', 'theme_essential'), get_string('advert_alttext', 'theme_essential'));
+        $OUTPUT->pix_url('adverts/tdl1', 'theme_essential'), get_string('advert_alttext', 'theme_essential'));
     $essentialsettingsgeneric->add($essentialadvert);
 }
 $ADMIN->add('theme_essential', $essentialsettingsgeneric);
