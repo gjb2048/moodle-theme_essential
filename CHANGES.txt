@@ -1,5 +1,6 @@
 New in 3.4.0.2
 ==============
+- FIX: Alert close icon in alternative colour schemes.
 
 New in 3.4.0.1
 ==============

@@ -2382,6 +2382,9 @@ dd:after {
 .inplaceeditable.inplaceeditable-toggle .quickediticon {
   display: none;
 }
+.inplaceeditable.inplaceeditable-autocomplete {
+  display: block;
+}
 h3.sectionname .inplaceeditable.inplaceeditingon .editinstructions {
   margin-top: -20px;
 }
@@ -3341,6 +3344,12 @@ img.iconsmall {
   max-width: 100%;
   display: inline-block;
 }
+.path-calendar .maincalendar .calendarmonth ul li > a:hover {
+  text-decoration: none;
+}
+.path-calendar .maincalendar .calendarmonth ul li > a:hover .eventname {
+  text-decoration: underline;
+}
 .path-calendar .maincalendar .calendarmonth ul li .icon {
   margin-left: 0.25em;
   margin-right: 0.25em;
@@ -3573,6 +3582,12 @@ img.iconsmall {
   padding: 0;
   margin-left: 0.25em;
 }
+.block .calendar_filters li > a:hover {
+  text-decoration: none;
+}
+.block .calendar_filters li > a:hover .eventname {
+  text-decoration: underline;
+}
 .block .content h3.eventskey {
   margin-top: 0.5em;
 }
@@ -3583,6 +3598,9 @@ img.iconsmall {
 }
 .calendarwrapper {
   position: relative;
+}
+.summary-modal-container .description-content > p {
+  margin: 0;
 }
 /* course.less */
 /* COURSE CONTENT */
@@ -7005,6 +7023,12 @@ body.path-question-type .fitem_fgroup .accesshide {
   width: auto;
   vertical-align: baseline;
 }
+.que.multianswer .formulation .yui3-widget-positioned .feedbackspan {
+  box-sizing: content-box;
+  padding-bottom: 0;
+  max-width: inherit;
+  width: inherit;
+}
 .path-mod-quiz input[size] {
   width: auto;
 }
@@ -7586,15 +7610,29 @@ body.path-question-type .mform fieldset.hidden {
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   border-color: #e3e3e3;
+  position: relative;
 }
 .groupinfobox blockquote {
   border-color: #ddd;
   border-color: rgba(0, 0, 0, 0.15);
 }
+.groupinfobox h3 {
+  margin-top: 0px;
+}
 .groupinfobox .left {
   padding: 10px;
   width: 100px;
   vertical-align: top;
+}
+.group-image {
+  display: block;
+  float: left;
+  margin-right: 1em;
+}
+.group-edit {
+  position: absolute;
+  right: 0;
+  margin-right: 0.6em;
 }
 .course-participation #showall {
   text-align: center;
@@ -15236,11 +15274,18 @@ div#dock {
 .path-mod-lesson .answeroptiongroup .felement label p:last-child {
   margin-bottom: 0;
 }
+.path-mod-lesson .answeroption .fradio label p,
+.path-mod-lesson .answeroption .fcheckbox label p {
+  display: inline;
+}
 /**
  * Style for view.php
  **/
 #page-mod-lesson-view .password-form .submitbutton {
   display: inline;
+}
+#page-mod-lesson-view .branchbuttoncontainer .singlebutton input[type="submit"] {
+  white-space: normal;
 }
 .path-mod-lesson .reviewessay {
   width: 40%;
@@ -15546,6 +15591,15 @@ div#dock {
 .userloggedinas .usermenu .userbutton .avatars .avatar img {
   width: inherit;
   height: inherit;
+}
+#page-mod-quiz-edit ul.slots li.section li.activity .instancemaxmarkcontainer form input {
+  margin: 0;
+  padding: 0.2em;
+  height: 1em;
+}
+#mod_quiz_preflight_form .femptylabel .felement {
+  margin: 0;
+  padding: 0;
 }
 .path-mod-quiz #mod_quiz_navblock .qnbutton {
   text-decoration: none;
