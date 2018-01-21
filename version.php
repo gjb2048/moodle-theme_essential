@@ -28,9 +28,9 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version = 2017102900; // YYYYMMDDVV.
+$plugin->version = 2017102901; // YYYYMMDDVV.
 $plugin->maturity = MATURITY_BETA; // This version's maturity level.
-$plugin->release = '3.4.0.1 (Build: 2017102900)';
+$plugin->release = '3.4.0.2 (Build: 2017102901)';
 $plugin->requires  = 2017102700.00; // 3.4beta+ (Build: 20171027).
 $plugin->component = 'theme_essential';
 $plugin->dependencies = array(
