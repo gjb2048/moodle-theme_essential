@@ -157,7 +157,7 @@ class core_renderer extends \core_renderer {
         // JS to animate the form.
         $this->page->requires->js_call_amd('core/search-input', 'init', array($id));
 
-        $searchicon = $this->getfontawesomemarkup('search', array(), array('title' => get_string('search', 'search')));
+        $searchicon = $this->getfontawesomemarkup('search', 'fa' , array(), array('title' => get_string('search', 'search')));
         $searchicon = html_writer::tag('div', $searchicon, array('role' => 'button', 'tabindex' => 0));
         $formattrs = array('class' => 'search-input-form', 'action' => $CFG->wwwroot . '/search/index.php');
         $inputattrs = array('type' => 'text', 'name' => 'q', 'placeholder' => get_string('search', 'search'),
@@ -763,7 +763,7 @@ class core_renderer extends \core_renderer {
             }
             $title = get_string('returntosection', 'theme_essential', array('section' => $sectionname));
 
-            $markup = html_writer::tag('a', $title.$this->getfontawesomemarkup('sign-in', array('fa-fw')),
+            $markup = html_writer::tag('a', $title.$this->getfontawesomemarkup('sign-in', 'fa', array('fa-fw')),
                 array('href' => $href, 'class' => 'btn btn-default', 'title' => $title));
         }
 
@@ -1200,7 +1200,7 @@ class core_renderer extends \core_renderer {
                 $branch = $colourmenu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 
                 $defaultthemecolorslabel = get_string('defaultcolors', 'theme_essential');
-                $branch->add($this->getfontawesomemarkup('square', array('colours-default')).$defaultthemecolorslabel,
+                $branch->add($this->getfontawesomemarkup('square', 'fa', array('colours-default')).$defaultthemecolorslabel,
                     new moodle_url($this->page->url, array('essentialcolours' => 'default')), $defaultthemecolorslabel);
                 foreach ($alternativethemes as $alternativethemenumber) {
                     if (\theme_essential\toolbox::get_setting('alternativethemename' . $alternativethemenumber)) {
@@ -1242,7 +1242,7 @@ class core_renderer extends \core_renderer {
                 if (((has_capability('gradereport/overview:view', $context) || has_capability('gradereport/user:view', $context)) &&
                         $this->page->course->showgrades) || has_capability('gradereport/grader:view', $context)) {
                     $branchtitle = get_string('grades');
-                    $branchlabel = $this->getfontawesomemarkup('list-alt', array('icon')).$branchtitle;
+                    $branchlabel = $this->getfontawesomemarkup('list-alt', 'fa', array('icon')).$branchtitle;
                     $branchurl = new moodle_url('/grade/report/index.php', array('id' => $this->page->course->id));
                     $branch->add($branchlabel, $branchurl, $branchtitle, 100004);
                 }
@@ -1430,7 +1430,7 @@ class core_renderer extends \core_renderer {
                     $editstring = get_string('turneditingon');
                     $iconclass = 'edit';
                 }
-                $edit = $this->getfontawesomemarkup($iconclass, array('fa-fw'));
+                $edit = $this->getfontawesomemarkup($iconclass, 'fa', array('fa-fw'));
                 $menu->add($edit, $url, $editstring);
                 $html = $this->render_custom_menu($menu);
             }
@@ -1849,7 +1849,7 @@ class core_renderer extends \core_renderer {
                     $title = get_string('turneditingon');
                     $icon = 'edit';
                 }
-                $icon = $this->getfontawesomemarkup($icon, array('fa-fw'));
+                $icon = $this->getfontawesomemarkup($icon, 'fa', array('fa-fw'));
                 $html .= html_writer::tag('a', $icon.$title, array('href' => $url, 'class' => 'btn '.$btn, 'title' => $title));
             }
         }
@@ -2524,8 +2524,8 @@ class core_renderer extends \core_renderer {
         return $html;
     }
 
-    public function getfontawesomemarkup($theicon, $classes = array(), $attributes = array(), $content = '') {
-        $classes[] = 'fa fa-'.$theicon;
+    public function getfontawesomemarkup($theicon, $iconprefix = 'fa', $classes = array(), $attributes = array(), $content = '') {
+        $classes[] = $iconprefix.' fa-'.$theicon;
         $attributes['aria-hidden'] = 'true';
         $attributes['class'] = implode(' ', $classes);
         return html_writer::tag('span', $content, $attributes);
@@ -2541,8 +2541,8 @@ class core_renderer extends \core_renderer {
         if (($CFG->version < 2017102700.00) || ($CFG->version >= 2018050000.00)) {
             $result = '<div class="useralerts alert alert-error">';
             $result .= '<a class="close" data-dismiss="alert" href="'.$this->page->url.'">'.$this->getfontawesomemarkup('times-circle').'</a>';
-            $result .= $this->getfontawesomemarkup('stack', array(), array(), $this->getfontawesomemarkup('square',
-                array('fa-stack-2x')).$this->getfontawesomemarkup('warning', array('fa-stack-1x', 'fa-inverse')));
+            $result .= $this->getfontawesomemarkup('stack', 'fa', array(), array(), $this->getfontawesomemarkup('square',
+                array('fa-stack-2x')).$this->getfontawesomemarkup('warning', 'fa', array('fa-stack-1x', 'fa-inverse')));
             $result .= '<span class="title">'.get_string('versionalerttitle', 'theme_essential').'</span><br />'.
                 get_string('versionalerttext1', 'theme_essential').'<br />'.
                 get_string('versionalerttext2', 'theme_essential');
