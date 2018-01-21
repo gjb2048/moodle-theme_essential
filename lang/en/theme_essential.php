@@ -897,7 +897,7 @@ $string['propertiesvalue'] = 'Value';
 $string['propertiesexport'] = 'Export properties as a JSON string';
 $string['propertiesreturn'] = 'Return';
 $string['putpropertiesname'] = 'Put properties - Experimental!';
-$string['putpropertiesdesc'] = 'Paste the JSON string and \'Save changes\'.  Warning!  Does not valiate setting values and performs a \'Purge all caches\'.';
+$string['putpropertiesdesc'] = 'Paste the JSON string and \'Save changes\'.  Warning!  Does not validate setting values and performs a \'Purge all caches\'.';
 
 $string['putpropertyreport'] = 'Report:';
 $string['putpropertyversion'] = 'version:';
