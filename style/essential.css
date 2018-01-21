@@ -20319,7 +20319,8 @@ p.tree_item.leaf a.action-delete > .fa {
   background-image: none !important;
 }
 .tree_item.branch:before {
-  font-family: FontAwesome;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
   font-size: 16px;
   margin-right: 4px;
 }
@@ -20361,8 +20362,9 @@ p.tree_item.leaf a.action-delete > .fa {
   padding: 0;
 }
 .jsenabled .block_settings .block_tree .tree_item.branch.loadingbranch:before {
-  font-family: FontAwesome;
   content: "\f110";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
   -moz-animation: essential-block-spin 0.8s infinite ease-in-out;
   -webkit-animation: essential-block-spin 0.8s infinite ease-in-out;
   -o-animation: essential-block-spin 0.8s infinite ease-in-out;
@@ -20576,12 +20578,14 @@ p.tree_item.leaf a.action-delete > .fa {
 }
 .block_login .username label:before {
   content: "\f007";
-  font-family: FontAwesome;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
   margin-right: 5px;
 }
 .block_login .password label:before {
   content: "\f084";
-  font-family: FontAwesome;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
   margin-right: 5px;
 }
 /* @end */
@@ -20778,7 +20782,8 @@ aside.rowblock-edit div.block:nth-of-type(1) {
 .breadcrumb-nav ul.breadcrumb.style1 li:first-of-type a:before {
   content: "\f015";
   display: inline-block;
-  font-family: FontAwesome;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
   text-decoration: none;
 }
 .breadcrumb-nav ul.breadcrumb.style1 .last:before,
@@ -20808,7 +20813,8 @@ aside.rowblock-edit div.block:nth-of-type(1) {
   text-shadow: none;
 }
 .breadcrumb-nav ul.breadcrumb.style2 li:after {
-  font-family: FontAwesome;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
   padding: 5px;
   line-height: 20px;
   vertical-align: top;
@@ -20831,7 +20837,8 @@ aside.rowblock-edit div.block:nth-of-type(1) {
 }
 .breadcrumb-nav ul.breadcrumb.style3 li:after {
   content: "\f105";
-  font-family: FontAwesome;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
   padding: 2px;
   vertical-align: top;
 }
@@ -21513,9 +21520,10 @@ body .course-content ul.topics li.section .content {
   background-image: none;
 }
 .coursebox > .info > .coursename a:before {
-  display: inline-block;
-  font-family: FontAwesome;
   content: "\f278";
+  display: inline-block;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
   text-decoration: none;
 }
 .coursebox > .info > .coursename a {
@@ -22017,7 +22025,8 @@ a.action-icon > .fa,
 }
 .editing_title:before {
   content: "\f040";
-  font-family: 'FontAwesome';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
   margin-right: 5px;
 }
 .moodle-actionmenu.show[data-enhanced] .menu a {
@@ -22169,7 +22178,8 @@ body.path-admin-setting #page-footer {
 }
 #page-footer .performanceinfo h2:before {
   content: "\f05a";
-  font-family: FontAwesome;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
   font-size: 1.65em;
   vertical-align: bottom;
 }
@@ -22592,7 +22602,8 @@ body .forumpost .row .options .commands {
   content: "\f0b1";
   display: block;
   float: left;
-  font-family: FontAwesome;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
   font-size: .85em;
   height: 1.3em;
   margin-right: .2em;

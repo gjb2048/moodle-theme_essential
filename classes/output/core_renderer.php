@@ -1209,7 +1209,7 @@ class core_renderer extends \core_renderer {
                     } else {
                         $alternativethemeslabel = get_string('alternativecolors', 'theme_essential', $alternativethemenumber);
                     }
-                    $branch->add($this->getfontawesomemarkup('square', array('colours-alternative'.$alternativethemenumber)).
+                    $branch->add($this->getfontawesomemarkup('square', 'fa', array('colours-alternative'.$alternativethemenumber)).
                         $alternativethemeslabel,
                         new moodle_url($this->page->url, array('essentialcolours' => 'alternative' . $alternativethemenumber)),
                             $alternativethemeslabel);
@@ -1673,7 +1673,7 @@ class core_renderer extends \core_renderer {
                 $branchurl = 'mailto:'.$CFG->supportemail.'?cc='.$USER->email;
             } else if (is_siteadmin()) {
                 $branchurl = preg_replace("(https?:)", "", $CFG->wwwroot).'/admin/settings.php?section=theme_essential_header';
-                $branchlabel = '<em>'.$this->getfontawesomemarkup('exclamation-triangle', array('red')).
+                $branchlabel = '<em>'.$this->getfontawesomemarkup('exclamation-triangle', 'fa', array('red')).
                     get_string('invalidemail').'</em>';
             }
         }
@@ -1690,7 +1690,7 @@ class core_renderer extends \core_renderer {
                 $target = '_blank';
             } else if (is_siteadmin()) {
                 $branchurl = preg_replace("(https?:)", "", $CFG->wwwroot).'/admin/settings.php?section=theme_essential_header';
-                $branchlabel = '<em>'.$this->getfontawesomemarkup('exclamation-triangle', array('red')).
+                $branchlabel = '<em>'.$this->getfontawesomemarkup('exclamation-triangle', 'fa', array('red')).
                     get_string('invalidurl', 'error').'</em>';
             }
 
@@ -1876,7 +1876,7 @@ class core_renderer extends \core_renderer {
                 'title' => $socialnetworklabel,
                 'aria-label' => $socialnetworklabel,
             ));
-            $socialhtml .= $this->getfontawesomemarkup($icon);
+            $socialhtml .= $this->getfontawesomemarkup($icon, 'fab');
             $socialhtml .= html_writer::start_span('sr-only').html_writer::end_span();
             $socialhtml .= html_writer::end_tag('button');
             $socialhtml .= html_writer::end_tag('li');
@@ -2195,55 +2195,57 @@ class core_renderer extends \core_renderer {
                 $attributes['id'] = 'instance-'.$bc->blockinstanceid.'-header';
             }
             static $icons = array(
-                'activity_modules' => 'puzzle-piece',
-                'admin_bookmarks' => 'bookmark',
-                'adminblock' => 'th-large',
-                'blog_menu' => 'book',
-                'blog_tags' => 'tags',
-                'book_toc' => 'book',
-                'calendar_month' => 'calendar',
-                'calendar_upcoming' => 'calendar',
-                'comments' => 'comments',
-                'community' => 'globe',
-                'completionstatus' => 'tachometer',
-                'course_badges' => 'trophy',
-                'course_list' => 'desktop',
-                'feedback' => 'thumbs-o-up',
-                'flickr' => 'flickr',
-                'glossary_random' => 'lightbulb-o',
-                'html' => 'list-alt',
-                'iconic_html' => '', // It decides.
-                'login' => 'user',
-                'messages' => 'envelope',
-                'mentees' => 'tags',
-                'navigation' => 'sitemap',
-                'news_items' => 'bullhorn',
-                'myprofile' => 'user',
-                'online_users' => 'users',
-                'participants' => 'users',
-                'private_files' => 'folder-o',
-                'quiz_navblock' => 'code-fork',
-                'quiz_results' => 'bar-chart',
-                'recent_activity' => 'clock-o',
-                'rss_client' => 'rss',
-                'search_forums' => 'comments-o',
-                'section_links' => 'bookmark',
-                'selfcompletion' => 'tachometer',
-                'settings' => 'cogs',
-                'style_guide' => 'paint-brush',
-                'tags' => 'tags',
-                'theme_selector' => 'paint-brush',
-                'twitter_search' => 'twitter',
-                'youtube' => 'youtube'
+                'activity_modules' => array('prefix' => 'fa', 'icon' => 'puzzle-piece'),
+                'admin_bookmarks' => array('prefix' => 'fa', 'icon' => 'bookmark'),
+                'adminblock' => array('prefix' => 'fa', 'icon' => 'th-large'),
+                'blog_menu' => array('prefix' => 'fa', 'icon' => 'book'),
+                'blog_tags' => array('prefix' => 'fa', 'icon' => 'tags'),
+                'book_toc' => array('prefix' => 'fa', 'icon' => 'book'),
+                'calendar_month' => array('prefix' => 'fa', 'icon' => 'calendar'),
+                'calendar_upcoming' => array('prefix' => 'fa', 'icon' => 'calendar'),
+                'comments' => array('prefix' => 'fa', 'icon' => 'comments'),
+                'community' => array('prefix' => 'fa', 'icon' => 'globe'),
+                'completionstatus' => array('prefix' => 'fa', 'icon' => 'tachometer'),
+                'course_badges' => array('prefix' => 'fa', 'icon' => 'trophy'),
+                'course_list' => array('prefix' => 'fa', 'icon' => 'desktop'),
+                'feedback' => array('prefix' => 'far', 'icon' => 'thumbs-up'),
+                'flickr' => array('prefix' => 'fab', 'icon' => 'flickr'),
+                'glossary_random' => array('prefix' => 'far', 'icon' => 'lightbulb'),
+                'html' => array('prefix' => 'fa', 'icon' => 'list-alt'),
+                'iconic_html' => array('prefix' => '', 'icon' => ''), // It decides.
+                'login' => array('prefix' => 'fa', 'icon' => 'user'),
+                'messages' => array('prefix' => 'fa', 'icon' => 'envelope'),
+                'mentees' => array('prefix' => 'fa', 'icon' => 'tags'),
+                'navigation' => array('prefix' => 'fa', 'icon' => 'sitemap'),
+                'news_items' => array('prefix' => 'fa', 'icon' => 'bullhorn'),
+                'myprofile' => array('prefix' => 'fa', 'icon' => 'user'),
+                'online_users' => array('prefix' => 'fa', 'icon' => 'users'),
+                'participants' => array('prefix' => 'fa', 'icon' => 'users'),
+                'private_files' => array('prefix' => 'far', 'icon' => 'folder'),
+                'quiz_navblock' => array('prefix' => 'fa', 'icon' => 'code-fork'),
+                'quiz_results' => array('prefix' => 'fa', 'icon' => 'bar-chart'),
+                'recent_activity' => array('prefix' => 'far', 'icon' => 'clock'),
+                'rss_client' => array('prefix' => 'fa', 'icon' => 'rss'),
+                'search_forums' => array('prefix' => 'far', 'icon' => 'comments'),
+                'section_links' => array('prefix' => 'fa', 'icon' => 'bookmark'),
+                'selfcompletion' => array('prefix' => 'fa', 'icon' => 'tachometer'),
+                'settings' => array('prefix' => 'fa', 'icon' => 'cogs'),
+                'style_guide' => array('prefix' => 'fa', 'icon' => 'paint-brush'),
+                'tags' => array('prefix' => 'fa', 'icon' => 'tags'),
+                'theme_selector' => array('prefix' => 'fa', 'icon' => 'paint-brush'),
+                'twitter_search' => array('prefix' => 'fab', 'icon' => 'twitter'),
+                'youtube' => array('prefix' => 'fab', 'icon' => 'youtube')
             );
             if (array_key_exists($bc->attributes['data-block'], $icons)) {
-                $theicon = $icons[$bc->attributes['data-block']];
+                $theicon = $icons[$bc->attributes['data-block']]['icon'];
+                $theprefix = $icons[$bc->attributes['data-block']]['prefix'];
             } else {
                 $theicon = 'navicon';
+                $theprefix = 'fa';
             }
             $title = html_writer::tag('h2', $bc->title, $attributes);
             if (!empty($theicon)) {
-                $title = $this->getfontawesomemarkup($theicon).$title;
+                $title = $this->getfontawesomemarkup($theicon, $theprefix).$title;
             }
         }
 
@@ -2541,7 +2543,7 @@ class core_renderer extends \core_renderer {
         if (($CFG->version < 2017102700.00) || ($CFG->version >= 2018050000.00)) {
             $result = '<div class="useralerts alert alert-error">';
             $result .= '<a class="close" data-dismiss="alert" href="'.$this->page->url.'">'.$this->getfontawesomemarkup('times-circle').'</a>';
-            $result .= $this->getfontawesomemarkup('stack', 'fa', array(), array(), $this->getfontawesomemarkup('square',
+            $result .= $this->getfontawesomemarkup('stack', 'fa', array(), array(), $this->getfontawesomemarkup('square', 'fa',
                 array('fa-stack-2x')).$this->getfontawesomemarkup('warning', 'fa', array('fa-stack-1x', 'fa-inverse')));
             $result .= '<span class="title">'.get_string('versionalerttitle', 'theme_essential').'</span><br />'.
                 get_string('versionalerttext1', 'theme_essential').'<br />'.
