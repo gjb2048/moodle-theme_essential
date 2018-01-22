@@ -22937,9 +22937,6 @@ table#greyboxleft h2 {
 #page-header a.textlogo {
   text-decoration: none;
 }
-#page-header #headerlogo {
-  font-size: 4.5em;
-}
 #page-header .btn-icon {
   float: right;
   right: 10px;
@@ -22957,8 +22954,10 @@ table#greyboxleft h2 {
 }
 #page-header #headerlogo {
   float: left;
+  font-size: 4em;
   padding-right: 10px;
   margin-right: 10px;
+  margin-top: 5px;
 }
 @media (min-width: 768px) {
   #page-header div.titlearea {
