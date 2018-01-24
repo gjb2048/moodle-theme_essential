@@ -1090,7 +1090,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_essential/siteicon';
     $title = get_string('siteicon', 'theme_essential');
     $description = get_string('siteicondesc', 'theme_essential');
-    $default = 'laptop';
+    $default = 'fas fa-laptop';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $essentialsettingsheader->add($setting);
 
@@ -1783,7 +1783,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_essential/courselistteachericon';
     $title = get_string('courselistteachericon', 'theme_essential');
     $description = get_string('courselistteachericondesc', 'theme_essential');
-    $default = 'graduation-cap';
+    $default = 'fas fa-graduation-cap';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsfrontpage->add($setting);
@@ -1942,7 +1942,7 @@ if ($ADMIN->fulltree) {
         $name = 'theme_essential/marketing' . $marketingspotnumber . 'icon';
         $title = get_string('marketingicon', 'theme_essential');
         $description = get_string('marketingicondesc', 'theme_essential');
-        $default = 'star';
+        $default = 'fas fa-star';
         $setting = new admin_setting_configtext($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $essentialsettingsfrontpage->add($setting);
@@ -2609,7 +2609,7 @@ if ($ADMIN->fulltree) {
         $name = 'theme_essential/defaultcategoryicon';
         $title = get_string('defaultcategoryicon', 'theme_essential');
         $description = get_string('defaultcategoryicondesc', 'theme_essential');
-        $default = 'folder-open';
+        $default = 'fas fa-folder-open';
         $setting = new admin_setting_configtext($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $essentialsettingscategoryicon->add($setting);
@@ -2644,7 +2644,7 @@ if ($ADMIN->fulltree) {
             // Get the default category icon.
             $defaultcategoryicon = get_config('theme_essential', 'defaultcategoryicon');
             if (empty($defaultcategoryicon)) {
-                $defaultcategoryicon = 'folder-open';
+                $defaultcategoryicon = 'fas fa-folder-open';
             }
 
             // Get all category IDs and their names.

@@ -1068,7 +1068,7 @@ class core_renderer extends \core_renderer {
                     $enablecategoryicon = \theme_essential\toolbox::get_setting('enablecategoryicon');
                     $defaultcategoryicon = \theme_essential\toolbox::get_setting('defaultcategoryicon');
                     if (empty($defaultcategoryicon)) {
-                        $defaultcategoryicon = 'folder-open';
+                        $defaultcategoryicon = 'fas fa-folder-open';
                     }
                     $enablecustomcategoryicon = \theme_essential\toolbox::get_setting('enablecustomcategoryicon');
                     $mycoursescatsubmenucats = array();
@@ -1112,9 +1112,11 @@ class core_renderer extends \core_renderer {
                                     $caticon = $defaultcategoryicon;
                                 }
                             } else {
-                                $caticon = 'folder-open';
+                                $caticon = 'fas fa-folder-open';
                             }
-                            $catlabel = html_writer::tag('span', $this->getfontawesomemarkup($caticon).html_writer::tag('span', ' '.$cattext));
+
+                            $caticonmarkup = html_writer::tag('span', '', array('class' => $caticon, 'aria-hidden' => 'true'));
+                            $catlabel = html_writer::tag('span', $caticonmarkup.html_writer::tag('span', ' '.$cattext));
                             $mycoursescatsubmenucats[$categoriestoplist[$course->category]->topid] = $coursemenubranch->add($catlabel, $this->page->url, $cattext);
                             $mycoursescatsubmenucatsnumcourses[$categoriestoplist[$course->category]->topid] = 0;
                         }
