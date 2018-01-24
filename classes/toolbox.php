@@ -380,9 +380,9 @@ class toolbox {
             $arrownext = 'left';
         }
         $prev = '<a class="left carousel-control" href="#essentialCarousel" data-slide="prev" aria-label="'.$strprev.'">';
-        $prev .= '<span aria-hidden="true" class="fa fa-chevron-circle-'.$arrowprev.'"></span></a>';
+        $prev .= '<span aria-hidden="true" class="fas fa-chevron-circle-'.$arrowprev.'"></span></a>';
         $next = '<a class="right carousel-control" href="#essentialCarousel" data-slide="next" aria-label="'.$strnext.'">';
-        $next .= '<span aria-hidden="true" class="fa fa-chevron-circle-'.$arrownext.'"></span></a>';
+        $next .= '<span aria-hidden="true" class="fas fa-chevron-circle-'.$arrownext.'"></span></a>';
 
         return $prev . $next;
     }

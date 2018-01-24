@@ -34,9 +34,9 @@ $enable2alert = \theme_essential\toolbox::get_setting('enable2alert');
 $enable3alert = \theme_essential\toolbox::get_setting('enable3alert');
 
 if ($enable1alert || $enable2alert || $enable3alert) {
-    $alertinfo = '<span class="fa-stack"><span aria-hidden="true" class="fa fa-info fa-stack-1x fa-inverse"></span></span>';
-    $alerterror = '<span class="fa-stack"><span aria-hidden="true" class="fa fa-warning fa-stack-1x fa-inverse"></span></span>';
-    $alertsuccess = '<span class="fa-stack"><span aria-hidden="true" class="fa fa-bullhorn fa-stack-1x fa-inverse"></span></span>';
+    $alertinfo = '<span class="fa-stack"><span aria-hidden="true" class="fas fa-info fa-stack-1x fa-inverse"></span></span>';
+    $alerterror = '<span class="fa-stack"><span aria-hidden="true" class="fas exclamation-triangle fa-stack-1x fa-inverse"></span></span>';
+    $alertsuccess = '<span class="fa-stack"><span aria-hidden="true" class="fas fa-bullhorn fa-stack-1x fa-inverse"></span></span>';
 }
 ?>
 <div id="page" class="container-fluid">
@@ -70,7 +70,7 @@ if ($enable1alert || $enable2alert || $enable3alert) {
         <!-- Alert #1 -->
         <?php if ($enable1alert) { ?>
             <div class="useralerts alert alert-<?php echo \theme_essential\toolbox::get_setting('alert1type'); ?>">
-                <button type="button" class="close" data-dismiss="alert"><span class="fa fa-times-circle" aria-hidden="true"></span></button>
+                <button type="button" class="close" data-dismiss="alert"><span class="far fa-times-circle" aria-hidden="true"></span></button>
                 <?php
                 $alert1icon = 'alert' . \theme_essential\toolbox::get_setting('alert1type');
                 echo $$alert1icon.'<span class="title">'.\theme_essential\toolbox::get_setting('alert1title', true);
@@ -83,7 +83,7 @@ if ($enable1alert || $enable2alert || $enable3alert) {
         <!-- Alert #2 -->
         <?php if ($enable2alert) { ?>
             <div class="useralerts alert alert-<?php echo \theme_essential\toolbox::get_setting('alert2type'); ?>">
-                <button type="button" class="close" data-dismiss="alert"><span class="fa fa-times-circle" aria-hidden="true"></span></button>
+                <button type="button" class="close" data-dismiss="alert"><span class="far fa-times-circle" aria-hidden="true"></span></button>
                 <?php
                 $alert2icon = 'alert' . \theme_essential\toolbox::get_setting('alert2type');
                 echo $$alert2icon.'<span class="title">'.\theme_essential\toolbox::get_setting('alert2title', true);
@@ -96,7 +96,7 @@ if ($enable1alert || $enable2alert || $enable3alert) {
         <!-- Alert #3 -->
         <?php if ($enable3alert) { ?>
             <div class="useralerts alert alert-<?php echo \theme_essential\toolbox::get_setting('alert3type'); ?>">
-                <button type="button" class="close" data-dismiss="alert"><span class="fa fa-times-circle" aria-hidden="true"></span></button>
+                <button type="button" class="close" data-dismiss="alert"><span class="far fa-times-circle" aria-hidden="true"></span></button>
                 <?php
                 $alert3icon = 'alert' . \theme_essential\toolbox::get_setting('alert3type');
                 echo $$alert3icon.'<span class="title">'.\theme_essential\toolbox::get_setting('alert3title', true);

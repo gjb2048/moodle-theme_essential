@@ -75,7 +75,7 @@ echo $OUTPUT->doctype();
 </div>
 
 <footer>
-    <a href="#top" class="back-to-top" ><span aria-hidden="true" class="fa fa-angle-up "></span></a>
+    <a href="#top" class="back-to-top" ><span aria-hidden="true" class="fas fa-angle-up "></span></a>
 </footer>
 
 <?php echo $OUTPUT->standard_end_of_body_html(); ?>

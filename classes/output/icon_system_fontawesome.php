@@ -368,9 +368,13 @@ class icon_system_fontawesome extends \core\output\icon_system_fontawesome {
         $iconmap = $this->get_updated_core_icon_map();
 
         // Change from core.
-        $iconmap['core:i/navigationitem'] = 'fa fa-angle-right';
+        $iconmap['core:i/navigationitem'] = 'fas fa-angle-right';
 
         return $iconmap;
+    }
+
+    public function get_amd_name() {
+        return 'theme_essential/icon_system_fontawesome';
     }
 
     public function render_pix_icon(\renderer_base $output, \pix_icon $icon) {
@@ -383,7 +387,7 @@ class icon_system_fontawesome extends \core\output\icon_system_fontawesome {
             $data['unmappedIcon'] = $icon->export_for_template($output);
         }
 
-        return $output->render_from_template('core/pix_icon_fontawesome', $data);
+        return $output->render_from_template('theme_essential/pix_icon_fontawesome', $data);
     }
 }
 

@@ -72,7 +72,7 @@ if (!$haslogo) {
         echo preg_replace("(https?:)", "", $CFG->wwwroot);
         echo '">';
         if ($usesiteicon) {
-            echo '<span id="headerlogo" aria-hidden="true" class="fa fa-'.\theme_essential\toolbox::get_setting('siteicon').'"></span>';
+            echo '<span id="headerlogo" aria-hidden="true" class="'.\theme_essential\toolbox::get_setting('siteicon').'"></span>';
         }
         if ($headertitle) {
             echo '<div class="titlearea">'.$headertitle.'</div>';
