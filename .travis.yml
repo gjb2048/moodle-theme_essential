@@ -25,7 +25,7 @@ matrix:
 env:
  global:
   - MOODLE_BRANCH=master
-  - IGNORE_PATHS=amd/build,amd/src/carousel.js,amd/src/fitvids.js,amd/src/jBreadCrumb.js
+  - IGNORE_PATHS=amd/build,amd/src/carousel.js,amd/src/fitvids.js,amd/src/icon_system_fontawesome.js,amd/src/jBreadCrumb.js
   # Ignore custom.css until CSSlint can be instructed to ignore lines for '[[setting:customcss]]'.
   # Also ignore generated CSS files.
   - IGNORE_NAMES=*.txt,custom.css,b*.css,e*.css,f*.css,m*.css
