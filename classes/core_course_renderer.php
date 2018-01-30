@@ -32,6 +32,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
 
     public function __construct(moodle_page $page, $target) {
         parent::__construct($page, $target);
+
         $this->enablecategoryicon = \theme_essential\toolbox::get_setting('enablecategoryicon');
     }
 
@@ -123,7 +124,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
             $categoryrepresentation .= html_writer::empty_tag('img', array('src' => $image, 'class' => 'img-responsive'));
             $categoryrepresentation .= html_writer::end_tag('div');
         } else if (!empty($icon)) {
-            $categoryrepresentation = html_writer::tag('span', '', array('aria-hidden' => 'true', 'class' => 'fa fa-'.$icon));
+            $categoryrepresentation = html_writer::tag('span', '', array('aria-hidden' => 'true', 'class' => $icon));
         } else {
             $categoryrepresentation = '';
         }
@@ -244,7 +245,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
             }
             foreach ($course->get_course_contacts() as $userid => $coursecontact) {
                 $faiconsetting = \theme_essential\toolbox::get_setting('courselistteachericon');
-                $faiconsettinghtml = (empty($faiconsetting)) ? '' : '<span aria-hidden="true" class="fa fa-'.
+                $faiconsettinghtml = (empty($faiconsetting)) ? '' : '<span aria-hidden="true" class="'.
                     $faiconsetting.'"></span> ';
                 $name = $faiconsettinghtml.$coursecontact['rolename'].': '.
                         html_writer::link(new moodle_url('/user/view.php',
