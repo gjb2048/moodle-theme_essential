@@ -988,7 +988,7 @@ class toolbox {
             'fa-glass' => 'fas fa-glass-martini',
             'fa-meetup' => 'fab fa-meetup',
             'fa-star-o' => 'far fa-star',
-            'fa-remove' => => 'fas fa-times',
+            'fa-remove' => 'fas fa-times',
             'fa-close' => 'fas fa-times',
             'fa-gear' => 'fas fa-cog',
             'fa-trash-o' => 'far fa-trash-alt',
