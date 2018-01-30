@@ -1289,7 +1289,7 @@ class toolbox {
             'fa-ils' => 'fas fa-shekel-sign',
             'fa-shekel' => 'fas fa-shekel-sign',
             'fa-sheqel' => 'fas fa-shekel-sign',
-            'fa-meanpath' => 'fab' => 'font-awesome',
+            'fa-meanpath' => 'fab fa-font-awesome',
             'fa-buysellads' => 'fab fa-buysellads',
             'fa-connectdevelop' => 'fab fa-connectdevelop',
             'fa-dashcube' => 'fab fa-dashcube',
