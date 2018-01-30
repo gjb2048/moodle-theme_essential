@@ -1405,7 +1405,7 @@ class toolbox {
             'fa-google-plus-official' => 'fab fa-google-plus',
             'fa-google-plus-circle' => 'fab fa-google-plus',
             'fa-font-awesome' => 'fab fa-font-awesome',
-            'fa-fa' => 'fab' => 'font-awesome',
+            'fa-fa' => 'fab fa-font-awesome',
             'fa-handshake-o' => 'far fa-handshake',
             'fa-envelope-open-o' => 'far fa-envelope-open',
             'fa-linode' => 'fab fa-linode',
