@@ -1136,7 +1136,7 @@ class toolbox {
             'fa-rouble' => 'fas fa-ruble-sign',
             'fa-krw' => 'fas fa-won-sign',
             'fa-won' => 'fas fa-won-sign',
-            'fa-btc' => 'fab' => 'fas ',
+            'fa-btc' => 'fab fa-btc',
             'fa-bitcoin' => 'fab fa-btc',
             'fa-file-text' => 'fas fa-file-alt',
             'fa-sort-alpha-asc' => 'fas fa-sort-alpha-down',
