@@ -5148,18 +5148,18 @@ class essential_admin_setting_styleguide extends admin_setting {
         $return .= 'different sizes.</p>';
         $return .= '<ul class="thumbnails row-fluid">';
         $return .= '<li class="span5">';
-        $return .= '<a href="#" class="thumbnail">';
+        $return .= '<span class="thumbnail">';
         $return .= '<div class="thumbnail-container">';
         $return .= $this->holder('360x270');
         $return .= '</div>';
-        $return .= '</a>';
+        $return .= '</span>';
         $return .= '</li>';
         $return .= '<li class="span4">';
-        $return .= '<a href="#" class="thumbnail">';
+        $return .= '<span class="thumbnail">';
         $return .= '<div class="thumbnail-container">';
         $return .= $this->holder('260x120');
         $return .= '</div>';
-        $return .= '</a>';
+        $return .= '</span>';
         $return .= '</li>';
         $return .= '<li class="span3">';
         $return .= '<a href="#" class="thumbnail">';
@@ -5169,18 +5169,18 @@ class essential_admin_setting_styleguide extends admin_setting {
         $return .= '</a>';
         $return .= '</li>';
         $return .= '<li class="span4">';
-        $return .= '<a href="#" class="thumbnail">';
+        $return .= '<span class="thumbnail">';
         $return .= '<div class="thumbnail-container">';
         $return .= $this->holder('260x120');
         $return .= '</div>';
-        $return .= '</a>';
+        $return .= '</span>';
         $return .= '</li>';
         $return .= '<li class="span3">';
-        $return .= '<a href="#" class="thumbnail">';
+        $return .= '<span class="thumbnail">';
         $return .= '<div class="thumbnail-container">';
         $return .= $this->holder('160x120');
         $return .= '</div>';
-        $return .= '</a>';
+        $return .= '</span>';
         $return .= '</li>';
         $return .= '</ul>';
 
@@ -7606,11 +7606,11 @@ class essential_admin_setting_styleguide extends admin_setting {
         $return = '';
         for ($i = 0; $i < 4; $i++) {
             $return .= '<li class="span3">';
-            $return .= '<a href="#" class="thumbnail">';
+            $return .= '<span class="thumbnail">';
             $return .= '<div class="thumbnail-container">';
             $return .= $this->holder('260x180');
             $return .= '</div>';
-            $return .= '</a>';
+            $return .= '</span>';
             $return .= '</li>';
         }
         return $return;
