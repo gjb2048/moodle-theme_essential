@@ -124,7 +124,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
             $categoryrepresentation .= html_writer::empty_tag('img', array('src' => $image, 'class' => 'img-responsive'));
             $categoryrepresentation .= html_writer::end_tag('div');
         } else if (!empty($icon)) {
-            $categoryrepresentation = html_writer::tag('span', '', array('aria-hidden' => 'true', 'class' => $icon));
+            $categoryrepresentation = \theme_essential\toolbox::getfontawesomemarkup($icon);
         } else {
             $categoryrepresentation = '';
         }
