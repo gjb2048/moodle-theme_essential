@@ -2180,7 +2180,7 @@ class core_renderer extends \core_renderer {
         return $html;
     }
 
-    protected function getfontawesomemarkup($theicon, $classes = array(), $attributes = array(), $content = '') {
+    public function getfontawesomemarkup($theicon, $classes = array(), $attributes = array(), $content = '') {
         $classes[] = 'fa fa-'.$theicon;
         $attributes['aria-hidden'] = 'true';
         $attributes['class'] = implode(' ', $classes);
