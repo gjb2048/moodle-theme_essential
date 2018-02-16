@@ -1159,20 +1159,6 @@ class essential_admin_setting_styleguide extends admin_setting {
         $return .= "margin-left: 0;";
         $return .= "margin-right: 0;";
         $return .= "}";
-        $return .= '.'.$this->name.' .thumbnail-container {';
-        $return .= 'width: 100%;';
-        $return .= 'position: relative;';
-        $return .= 'padding-bottom: 75%;';
-        $return .= '}';
-        $return .= '.'.$this->name.' .thumbnail-container img {';
-        $return .= 'position: absolute;';
-        $return .= 'max-height: 100%;';
-        $return .= 'left: 0;';
-        $return .= 'right: 0;';
-        $return .= 'top: 0;';
-        $return .= 'bottom: 0;';
-        $return .= 'margin: auto;';
-        $return .= '}';
         $return .= '/* ]]> */';
         $return .= '</style>';
 
@@ -7579,7 +7565,7 @@ class essential_admin_setting_styleguide extends admin_setting {
     }
 
     private function holder($resolution) {
-        return '<img data-src="holder.js/'.$resolution.'">';
+        return '<img data-src="holder.js/'.$resolution.'" class="img-responsive">';
     }
 
     private function threethumbnails() {
