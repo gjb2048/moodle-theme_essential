@@ -133,9 +133,9 @@ class toolbox {
         return $us->pix_url($imagename, $component);
     }
 
-    static public function getfontawesomemarkup($theicon, $classes = array(), $attributes = array(), $content = '') {
+    static public function getfontawesomemarkup($theicon, $iconprefix = 'fa', $classes = array(), $attributes = array(), $content = '') {
         $us = self::check_corerenderer();
-        return $us->getfontawesomemarkup($theicon, $classes, $attributes, $content);
+        return $us->getfontawesomemarkup($theicon, $iconprefix, $classes, $attributes, $content);
     }
 
     /**
