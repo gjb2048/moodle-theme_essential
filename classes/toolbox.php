@@ -56,44 +56,6 @@ class toolbox {
         }
     }
 
-    // Moodle CSS file serving.
-    static public function get_csswww() {
-        global $CFG;
-
-        if (!self::lte_ie9()) {
-            if (\right_to_left()) {
-                $moodlecss = 'essential-rtl.css';
-            } else {
-                $moodlecss = 'essential.css';
-            }
-
-            $syscontext = \context_system::instance();
-            $itemid = \theme_get_revision();
-            $url = \moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php",
-                            "/$syscontext->id/theme_essential/style/$itemid/$moodlecss");
-            $url = preg_replace('|^https?://|i', '//', $url->out(false));
-            return '<link rel="stylesheet" href="' . $url . '">';
-        } else {
-            if (\right_to_left()) {
-                $moodlecssone = 'essential-rtl_ie9-blessed1.css';
-                $moodlecsstwo = 'essential-rtl_ie9.css';
-            } else {
-                $moodlecssone = 'essential_ie9-blessed1.css';
-                $moodlecsstwo = 'essential_ie9.css';
-            }
-
-            $syscontext = \context_system::instance();
-            $itemid = \theme_get_revision();
-            $urlone = \moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php",
-                            "/$syscontext->id/theme_essential/style/$itemid/$moodlecssone");
-            $urlone = preg_replace('|^https?://|i', '//', $urlone->out(false));
-            $urltwo = \moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php",
-                            "/$syscontext->id/theme_essential/style/$itemid/$moodlecsstwo");
-            $urltwo = preg_replace('|^https?://|i', '//', $urltwo->out(false));
-            return '<link rel="stylesheet" href="'.$urlone . '"><link rel="stylesheet" href="'.$urltwo.'">';
-        }
-    }
-
     /**
      * Finds the given setting in the theme from the themes' configuration object.
      * @param string $setting Setting name.
@@ -134,16 +96,42 @@ class toolbox {
     }
 
     /**
-     * States if course content search can be used.  Will not work if theme is in $CFG->themedir.
+     * States if course content search can be used.
      * @return boolean false|true if course content search can be used.
      */
     static public function course_content_search() {
         $canwe = false;
-        global $CFG;
-        if ((self::get_setting('coursecontentsearch')) && (file_exists("$CFG->dirroot/theme/essential/"))) {
+        if (self::get_setting('coursecontentsearch')) {
+            global $PAGE;
+            // MyDashboard uses columns3.php.  Change if needed. And 'process_content_search' below.
+            $essentialsearch = new \moodle_url('index.php');
+            $essentialsearch->param('sesskey', sesskey());
+            $inspectorscourerdata = array('data' => array('theme' => $essentialsearch->out(false)));
+            $PAGE->requires->js_call_amd('theme_essential/inspector_scourer', 'init', $inspectorscourerdata);
+
             $canwe = true;
         }
         return $canwe;
+    }
+
+    static public function process_content_search() {
+        $term = \optional_param('term', '', PARAM_TEXT);
+        if ($term) {
+            // Autocomplete AJAX call.
+            global $CFG, $PAGE;
+
+            // Might be overkill but would probably stop DOS attack from lots of DB reads.
+            \require_sesskey();
+
+            if ($CFG->forcelogin) {
+                \require_login();
+            }
+            $courserenderer = $PAGE->get_renderer('core', 'course');
+
+            echo json_encode($courserenderer->inspector_ajax($term));
+
+            die();
+        }
     }
 
     static private function check_corerenderer() {

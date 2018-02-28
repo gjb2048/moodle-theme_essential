@@ -1,5 +1,6 @@
 New in 3.2.1.5
 ==============
+- FIX: Improved course content search so that will work with $CFG->themedir.
 
 New in 3.2.1.4
 ==============
