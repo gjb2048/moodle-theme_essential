@@ -1,8 +1,10 @@
 New in 3.4.0.2
 ==============
+- FIX: Issue #856: Undefined property: stdClass::$numsections.
 - FIX: Issue #859: Gradebook icons not red or green.
 - FIX: Issue #862: Missing folder icon in courses list since commit 77abc460.
 - FIX: Alert close icon in alternative colour schemes.
+- FIX: Improved course content search so that will work with $CFG->themedir.
 
 New in 3.4.0.1
 ==============

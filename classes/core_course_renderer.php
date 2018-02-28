@@ -315,6 +315,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
             $courseformat = course_get_format($course->id);
             $course = $courseformat->get_course();
             $courseformatsettings = $courseformat->get_format_options();
+            $coursenumsections = $courseformat->get_last_section_number();
             $sesskey = sesskey();
 
             foreach ($modinfo->get_section_info_all() as $section => $thissection) {
@@ -332,7 +333,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
                 } else {
                     $sectionname = $courseformat->get_section_name($thissection->section);
                 }
-                if ($thissection->section <= $course->numsections) {
+                if ($thissection->section <= $coursenumsections) {
                     // Do not link 'orphaned' sections.
                     $courseurl = new moodle_url('/course/view.php');
                     $courseurl->param('id', $course->id);
