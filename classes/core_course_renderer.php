@@ -303,7 +303,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         if (is_enabled_auth('mnet')) {
             $remotecourses = get_my_remotecourses();
         }
-        // Remote courses will have -ve remoteid as key, so it can be differentiated from normal courses.
+        // Remote courses will have remoteid as key, so it can be differentiated from normal courses.
         foreach ($remotecourses as $id => $val) {
             $remoteid = $val->remoteid * -1;
             $val->id = $remoteid;
