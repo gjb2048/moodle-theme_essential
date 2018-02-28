@@ -32,10 +32,6 @@ class theme_essential_core_course_renderer extends core_course_renderer {
 
     public function __construct(moodle_page $page, $target) {
         parent::__construct($page, $target);
-        static $theme;
-        if (empty($theme)) {
-            $theme = theme_config::load('essential');
-        }
         $this->enablecategoryicon = \theme_essential\toolbox::get_setting('enablecategoryicon');
     }
 
