@@ -20204,12 +20204,12 @@ p.tree_item.leaf a.action-delete > .fa {
 .block_navigation.block li.type_unknown.depth_1 > .tree_item.branch:before {
   content: "\f015";
 }
-.block_navigation.block .block_tree .tree_item.branch,
-.block_settings.block .block_tree .tree_item.branch {
+.block_navigation .block_tree .tree_item.branch,
+.block_settings .block_tree .tree_item.branch {
   padding-left: 0;
 }
-.block_navigation.block .block_tree .tree_item.hasicon .item-content-wrap,
-.block_settings.block .block_tree .tree_item.hasicon .item-content-wrap {
+.block_navigation .block_tree .tree_item.hasicon .item-content-wrap,
+.block_settings .block_tree .tree_item.hasicon .item-content-wrap {
   display: inline !important;
 }
 .block.block_flat_navigation {
