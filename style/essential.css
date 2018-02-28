@@ -19740,6 +19740,35 @@ a.muted:focus {
   color: inherit;
   font-style: italic;
 }
+.text-warning {
+  color: #8a6d3b !important;
+}
+a.text-warning:hover,
+a.text-warning:focus {
+  color: #66512c !important;
+}
+.text-error,
+.text-danger {
+  color: #b94a48 !important;
+}
+a.text-error:hover,
+a.text-error:focus {
+  color: #953b39 !important;
+}
+.text-info {
+  color: #3a87ad !important;
+}
+a.text-info:hover,
+a.text-info:focus {
+  color: #2d6987 !important;
+}
+.text-success {
+  color: #468847 !important;
+}
+a.text-success:hover,
+a.text-success:focus {
+  color: #356635 !important;
+}
 /* Moodle fixes begin */
 /* Moodle fixes blocks begin */
 .block .icon {
