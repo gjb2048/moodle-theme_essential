@@ -46,11 +46,3 @@ if (\theme_essential\toolbox::not_lte_ie9()) {
         $PAGE->requires->js_call_amd('theme_essential/fitvids', 'init');
     }
 }
-if ($PAGE->pagelayout == 'mydashboard') {
-    if (\theme_essential\toolbox::course_content_search()) {
-        $essentialsearch = new moodle_url('/theme/essential/inspector.ajax.php');
-        $essentialsearch->param('sesskey', sesskey());
-        $inspectorscourerdata = array('data' => array('theme' => $essentialsearch->out(false)));
-        $PAGE->requires->js_call_amd('theme_essential/inspector_scourer', 'init', $inspectorscourerdata);
-    }
-}

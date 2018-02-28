@@ -26,6 +26,8 @@
 
 defined('MOODLE_INTERNAL') || die;
 
+\theme_essential\toolbox::process_content_search();
+
 require_once(\theme_essential\toolbox::get_tile_file('additionaljs'));
 require_once(\theme_essential\toolbox::get_tile_file('header'));
 $coursetitleposition = \theme_essential\toolbox::get_setting('coursetitleposition');
