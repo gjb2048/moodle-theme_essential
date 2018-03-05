@@ -1,5 +1,6 @@
 New in 3.2.1.5
 ==============
+- Possible FIX: Issue #853: Possible solution for "Site logo needs textual description for accessibility".
 - FIX: Issue #862: Missing folder icon in courses list since commit 77abc460.
 - FIX: Improved course content search so that will work with $CFG->themedir.
 - FIX: Alert close icon in alternative colour schemes.
