@@ -1,5 +1,6 @@
 New in 3.4.0.2
 ==============
+- Possible FIX: Issue #853: Possible solution for "Site logo needs textual description for accessibility".
 - FIX: Issue #856: Undefined property: stdClass::$numsections.
 - FIX: Issue #857: Display glitch with docked blocks.
 - FIX: Issue #859: Gradebook icons not red or green.

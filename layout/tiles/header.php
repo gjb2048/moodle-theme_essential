@@ -80,9 +80,10 @@ if (!$haslogo) {
         echo '</a>';
     }
 } else {
+    $home = get_string('home');
     echo '<div class="pull-left logo-container">';
-    echo '<a class="logo" href="'.preg_replace("(https?:)", "", $CFG->wwwroot).'" title="'.get_string('home').'">';
-    echo '<img src="'.\theme_essential\toolbox::get_setting('logo', 'format_file_url').'" class="img-responsive" />';
+    echo '<a class="logo" href="'.preg_replace("(https?:)", "", $CFG->wwwroot).'" title="'.$home.'">';
+    echo '<img src="'.\theme_essential\toolbox::get_setting('logo', 'format_file_url').'" class="img-responsive" alt="'.$home.'" />';
     echo '</a>';
 }
 ?>
