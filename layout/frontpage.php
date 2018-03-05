@@ -188,9 +188,6 @@ if ($PAGE->user_is_editing() && ($frontpagehomeblocks)) {
             <section id="<?php echo $regionbsid; ?>">
 <?php
 $frontpageblocks = \theme_essential\toolbox::get_setting('frontpageblocks');
-if (!$left) {
-    $frontpageblocks = !$frontpageblocks;
-}
 if ($frontpageblocks) {
     echo '<div id="content" class="span9 pull-right">';
 } else {

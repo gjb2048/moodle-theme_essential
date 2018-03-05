@@ -90,10 +90,6 @@ if (($PAGE->pagelayout == 'login') && (\theme_essential\toolbox::get_setting('lo
 }
 
 $regionbsid = 'main-and-pre';
-$left = true;
-if (right_to_left()) {
-    $left = false;
-}
 
 $fontselect = \theme_essential\toolbox::get_setting('fontselect');
 if ($fontselect === '2') {
