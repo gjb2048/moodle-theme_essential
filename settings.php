@@ -1118,6 +1118,14 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 
+    // Logo description setting.
+    $name = 'theme_essential/logodescription';
+    $title = get_string('logodescription', 'theme_essential');
+    $description = get_string('logodescriptiondesc', 'theme_essential');
+    $default = get_string('home');
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $essentialsettingsheader->add($setting);
+
     // Logo desktop width setting.
     $name = 'theme_essential/logodesktopwidth';
     $title = get_string('logodesktopwidth', 'theme_essential');
