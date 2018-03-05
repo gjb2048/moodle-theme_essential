@@ -1,5 +1,6 @@
-New in 3.4.0.2
+New in 3.4.1.0
 ==============
+- FIX: Issue #850: Flip main content and blocks, RTL mode.
 - Possible FIX: Issue #853: Possible solution for "Site logo needs textual description for accessibility".
 - FIX: Issue #856: Undefined property: stdClass::$numsections.
 - FIX: Issue #857: Display glitch with docked blocks.
