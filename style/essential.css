@@ -22056,11 +22056,6 @@ body.path-admin-setting #page-footer {
 /* @end */
 /* @end */
 /* @group Forms */
-fieldset textarea[cols],
-fieldset input[size] {
-  width: 65.95744681%;
-  *width: 65.90425532%;
-}
 body#page-admin-setting-messageinbound_mailsettings fieldset select {
   width: 65.95744681%;
   *width: 65.90425532%;
