@@ -50,7 +50,6 @@ class core_renderer extends \core_renderer {
     use core_renderer_toolbox;
     public $language = null;
     protected $themeconfig;
-    protected $left;
 
     protected $essential = null; // Used for determining if this is a Essential or child of renderer.
 
@@ -63,7 +62,6 @@ class core_renderer extends \core_renderer {
     public function __construct(moodle_page $page, $target) {
         parent::__construct($page, $target);
         $this->themeconfig = array(\theme_config::load('essential'));
-        $this->left = !\right_to_left();
     }
 
     /**
