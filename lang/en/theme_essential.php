@@ -865,29 +865,6 @@ $string['ipadicondesc'] = 'Icon should be a PNG files sized 72px by 72px.';
 $string['ipadretinaicon'] = 'iPad Icon (Retina)';
 $string['ipadretinaicondesc'] = 'Icon should be a PNG files sized 144px by 144px.';
 
-// Analytics.
-$string['analytics'] = 'Analytics';
-$string['analyticsheadingsub'] = 'Powerful analytics for Moodle';
-$string['analyticsdesc'] = 'Choose the type of analytics you want to insert and save to enable the other options.';
-$string['analyticssiteid'] = 'Site ID';
-$string['analyticssiteiddesc'] = 'Enter your Site ID';
-$string['analyticstrackingid'] = 'Site ID';
-$string['analyticstrackingiddesc'] = 'Enter your Tracking ID';
-$string['analyticssiteurl'] = 'Analytics URL';
-$string['analyticssiteurldesc'] = 'Enter your "Piwik Analytics" URL without http(s) or a trailing slash.  For example "mysite.com/analytics".';
-$string['analyticsenabled'] = 'Enabled';
-$string['analyticsenableddesc'] = 'Enable analytics for Moodle';
-$string['analyticsimagetrack'] = 'Image tracking';
-$string['analyticscleanurl'] = 'Clean URLs';
-$string['analyticscleanurldesc'] = 'Generate clean URL for in advanced tracking';
-$string['analyticsimagetrackdesc'] = 'Enable Image Tracking for browsers with JavaScript disabled.';
-$string['analyticstrackadmin'] = 'Tracking Admins';
-$string['analyticstrackadmindesc'] = 'Enable tracking of Admin users (not recommended)';
-$string['analyticsuseuserid'] = 'User ID';
-$string['analyticsuseuseriddesc'] = 'Enable use of User ID in tracking.';
-$string['analyticspiwik'] = 'Piwik';
-$string['analyticsguniversal'] = 'Google Universal Analytics';
-
 // Properties.
 $string['properties'] = 'Properties';
 $string['propertiessub'] = 'The properties';
@@ -963,3 +940,6 @@ $string['findcoursecontent'] = 'Course content: ';
 $string['asconfigintlower'] = '{$a->value} is less than the lower range limit of {$a->lower}';
 $string['asconfigintupper'] = '{$a->value} is greater than the upper range limit of {$a->upper}';
 $string['asconfigintnan'] = '{$a->value} is not a number';
+
+// Privacy.
+$string['privacy:nop'] = 'The Essential theme stores lots of settings that pertain to its configuration.  None of the settings are related to a specific user.  It is your responsibilty to ensure that no user data is entered in any of the free text fields.  Setting a setting will result in that action being logged within the core Moodle logging system against the user whom changed it, this is outside of the themes control, please see the core logging system for privacy compliance for this.  The analytics settings and associated data in the database have been removed until this area is more understood from a legal perspective, as it was possible to request that userid\'s were recorded.  Please examine the code carefully to be sure that it complies with your interpretation of your privacy laws.  I am not a lawyer and my analysis is based on my interpretation.  If you have any doubt then remove the theme forthwith.';

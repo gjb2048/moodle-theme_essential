@@ -18,19 +18,26 @@
  * Essential is a clean and customizable theme.
  *
  * @package     theme_essential
- * @copyright   2016 Gareth J Barnard
- * @copyright   2014 Gareth J Barnard, David Bezemer
- * @copyright   2013 Julian Ridden
+ * @copyright   2018 Gareth J Barnard
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die;
+namespace theme_essential\privacy;
 
-if (\theme_essential\toolbox::get_setting('analyticsenabled')) {
-    $analytics = \theme_essential\toolbox::get_setting('analytics');
-    if ($analytics === "piwik") {
-        require_once(\theme_essential\toolbox::get_tile_file('piwik'));
-    } else if ($analytics === "guniversal") {
-        require_once(\theme_essential\toolbox::get_tile_file('guniversal'));
+defined('MOODLE_INTERNAL') || die();
+
+/**
+ * The Essential theme does not store any user data.
+ */
+class provider implements \core_privacy\local\metadata\null_provider {
+
+    /**
+     * Get the language string identifier with the component's language
+     * file to explain why this plugin stores no data.
+     *
+     * @return  string
+     */
+    public static function get_reason() : string {
+        return 'privacy:nop';
     }
 }

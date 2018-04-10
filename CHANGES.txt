@@ -1,3 +1,7 @@
+New in 3.4.1.1
+==============
+- NEW: Privacy API support.  Requires Moodle 2017111302.00 3.4.2 (Build: 20180319)+.  Analytics removed until such a time as their use with GDPR is clearer.
+
 New in 3.4.1.0
 ==============
 - FIX: Issue #850: Flip main content and blocks, RTL mode.

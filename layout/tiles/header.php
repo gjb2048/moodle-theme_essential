@@ -43,9 +43,6 @@ echo $OUTPUT->doctype();
     <?php require_once(\theme_essential\toolbox::get_tile_file('fonts')); ?>
     <!-- iOS Homescreen Icons -->
     <?php require_once(\theme_essential\toolbox::get_tile_file('iosicons')); ?>
-    <!-- Start Analytics -->
-    <?php require_once(\theme_essential\toolbox::get_tile_file('analytics')); ?>
-    <!-- End Analytics -->
 </head>
 
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
