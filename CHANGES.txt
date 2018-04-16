@@ -1,6 +1,12 @@
+New in 3.4.1.2
+==============
+- FIX: Revert back to M3.4 requirement as new Privacy API support will not confict.  However if you do require
+       it then you will need Moodle 2017111302.00 3.4.2 (Build: 20180319)+.
+
 New in 3.4.1.1
 ==============
-- NEW: Privacy API support.  Requires Moodle 2017111302.00 3.4.2 (Build: 20180319)+.  Analytics removed until such a time as their use with GDPR is clearer.
+- NEW: Privacy API support.  Requires Moodle 2017111302.00 3.4.2 (Build: 20180319)+.  Analytics removed
+       until such a time as their use with GDPR is clearer.
 
 New in 3.4.1.0
 ==============
