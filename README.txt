@@ -92,6 +92,7 @@ Daniel Méthot - e-learning-facile.com/formations/
 Floyd Saner, Learning Contexts, LLC
 Gemma Lesterhuis
 Mihai Bojonca, TCM International Institute
+Amigos Library Services
 
 If you are a valued sponsor and have not already told me, please could you state if you would like a credit here and if so what
 would you like.  Please contact via my 'Moodle profile' above.
