@@ -1,6 +1,9 @@
 New in 3.3.1.4
 ==============
 - NEW: Privacy API support.  Analytics removed until such a time as their use with GDPR is clearer.
+- NEW: Added 'Search all course content' checkbox user preference to search all course content or only the course
+       title when performing a 'Course search' on the dashboard.  Thanks to "Linnaeus University" for funding this
+       enhancement.
 
 New in 3.3.1.3
 ==============

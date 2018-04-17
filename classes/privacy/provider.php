@@ -26,18 +26,48 @@ namespace theme_essential\privacy;
 
 defined('MOODLE_INTERNAL') || die();
 
+use \core_privacy\local\request\writer;
+use \core_privacy\local\metadata\collection;
+
 /**
- * The Essential theme does not store any user data.
+ * The Essential theme can store user data if course search is on or ever has been on.
  */
-class provider implements \core_privacy\local\metadata\null_provider {
+class provider implements
+    // This plugin has data.
+    \core_privacy\local\metadata\provider,
+
+    // This plugin has some sitewide user preferences to export.
+    \core_privacy\local\request\user_preference_provider {
 
     /**
-     * Get the language string identifier with the component's language
-     * file to explain why this plugin stores no data.
+     * Returns meta data about this system.
      *
-     * @return  string
+     * @param   collection $itemcollection The initialised item collection to add items to.
+     * @return  collection A listing of user data stored through this system.
      */
-    public static function get_reason() : string {
-        return 'privacy:nop';
+    public static function get_metadata(collection $items) {
+        $items->add_user_preference('theme_essential_courseitemsearchtype', 'privacy:metadata:preference:courseitemsearchtype');
+        return $items;
+    }
+
+    /**
+     * Store all user preferences for the plugin.
+     *
+     * @param int $userid The userid of the user whose data is to be exported.
+     */
+    public static function export_user_preferences($userid) {
+        $courseitemsearchtype = get_user_preferences('theme_essential_courseitemsearchtype', null, $userid);
+
+        if (!is_null($courseitemsearchtype)) {
+            writer::export_user_preference(
+                'theme_essential',
+                'theme_essential_courseitemsearchtype',
+                $courseitemsearchtype,
+                get_string('privacy:request:preference:courseitemsearchtype', 'theme_essential', (object) [
+                    'name' => 'theme_essential_courseitemsearchtype',
+                    'value' => $courseitemsearchtype
+                ])
+            );
+        }
     }
 }

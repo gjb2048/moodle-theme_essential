@@ -20076,6 +20076,10 @@ table.ygtvtable td a {
   top: 0;
   left: 0;
 }
+.courseitemsearch #courseitemsearchtype {
+  margin-bottom: 0;
+  margin-left: 4px;
+}
 /* @end */
 /* @group Blocks */
 .block {

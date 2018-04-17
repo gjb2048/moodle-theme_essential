@@ -933,8 +933,11 @@ $string['badgepreferences'] = 'Badge';
 // Incourse.
 $string['returntosection'] = 'Return to: {$a->section}';
 
-// Course content search.
-$string['findcoursecontent'] = 'Course content: ';
+// Course fullname and course content search.
+$string['findcoursecontent'] = 'Course search: ';
+$string['searchallcoursecontent'] = 'Search all course content';
+$string['searchallcoursecontentdefault'] = 'Default search all course content';
+$string['searchallcoursecontentdefaultdesc'] = 'Sets the value of the \'Search all course content\' checkbox on the course content search.  If \'Search all course content\' is unticked, then only the course fullname is searched for a match.';
 
 // essential_admin_setting_configinteger.
 $string['asconfigintlower'] = '{$a->value} is less than the lower range limit of {$a->lower}';
@@ -942,4 +945,5 @@ $string['asconfigintupper'] = '{$a->value} is greater than the upper range limit
 $string['asconfigintnan'] = '{$a->value} is not a number';
 
 // Privacy.
-$string['privacy:nop'] = 'The Essential theme stores lots of settings that pertain to its configuration.  None of the settings are related to a specific user.  It is your responsibilty to ensure that no user data is entered in any of the free text fields.  Setting a setting will result in that action being logged within the core Moodle logging system against the user whom changed it, this is outside of the themes control, please see the core logging system for privacy compliance for this.  The analytics settings and associated data in the database have been removed until this area is more understood from a legal perspective, as it was possible to request that userid\'s were recorded.  Please examine the code carefully to be sure that it complies with your interpretation of your privacy laws.  I am not a lawyer and my analysis is based on my interpretation.  If you have any doubt then remove the theme forthwith.';
+$string['privacy:metadata:preference:courseitemsearchtype'] = 'The users choice of course search (\'course fullname\' - \'0\' or all course content - \'1\') if ever stored when \'coursecontentsearch\' was ticked.  If nothing stated then either the course search is off or the user has never viewed the dsahboard it when it was on.';
+$string['privacy:request:preference:courseitemsearchtype'] = 'The user has chosen "{$a->value}" for the course search user preference "{$a->name}" where \'0\' is the \'course fullname only\' and \'1\' is \'all course content\'.';
