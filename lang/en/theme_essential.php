@@ -935,6 +935,7 @@ $string['returntosection'] = 'Return to: {$a->section}';
 
 // Course content search.
 $string['findcoursecontent'] = 'Course content: ';
+$string['searchallcoursecontent'] = 'Search all course content';
 
 // essential_admin_setting_configinteger.
 $string['asconfigintlower'] = '{$a->value} is less than the lower range limit of {$a->lower}';

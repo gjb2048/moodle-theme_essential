@@ -380,6 +380,12 @@ class core_renderer extends \core_renderer {
                 $content .= '<div><p>'.get_string('findcoursecontent', 'theme_essential').'</p></div>';
                 $content .= '<div id="courseitemsearchresults">';
                 $content .= '<input type="text" name="courseitemsearch" id="courseitemsearch" disabled="disabled">';
+                $content .= '<input type="checkbox" name="courseitemsearchtype" id="courseitemsearchtype" disabled="disabled"';
+                $courseitemsearchtype = get_user_preferences('theme_essential_courseitemsearchtype');
+                if ($courseitemsearchtype) {
+                    $content .= ' checked';
+                }
+                $content .= '><label for="courseitemsearchtype">'.get_string('searchallcoursecontent', 'theme_essential').'</label>';
                 $content .= '</div></div>';
             }
         }
