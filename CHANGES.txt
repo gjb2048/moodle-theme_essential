@@ -2,6 +2,9 @@ New in 3.4.1.2
 ==============
 - FIX: Revert back to M3.4 requirement as new Privacy API support will not confict.  However if you do require
        it then you will need Moodle 2017111302.00 3.4.2 (Build: 20180319)+.
+- NEW: Added 'Search all course content' checkbox user preference to search all course content or only the course
+       title when performing a 'Course search' on the dashboard.  Thanks to "Linnaeus University" for funding this
+       enhancement.
 
 New in 3.4.1.1
 ==============

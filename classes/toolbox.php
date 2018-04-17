@@ -114,6 +114,8 @@ class toolbox {
             $inspectorscourerdata = array('data' => array('theme' => $essentialsearch->out(false)));
             $PAGE->requires->js_call_amd('theme_essential/inspector_scourer', 'init', $inspectorscourerdata);
 
+            \user_preference_allow_ajax_update('theme_essential_courseitemsearchtype', PARAM_INT);
+
             $canwe = true;
         }
         return $canwe;
@@ -134,6 +136,34 @@ class toolbox {
             $courserenderer = $PAGE->get_renderer('core', 'course');
 
             echo json_encode($courserenderer->inspector_ajax($term));
+
+            die();
+        }
+
+        $pref = \optional_param('pref', '', PARAM_TEXT);
+        if (($pref) && ($pref == 'courseitemsearchtype')) {
+            // Autocomplete AJAX user preference call.
+            global $CFG;
+
+            // Might be overkill but would probably stop DOS attack from lots of DB reads.
+            \require_sesskey();
+
+            if ($CFG->forcelogin) {
+                \require_login();
+            }
+
+            $value = \optional_param('value', '', PARAM_INT);
+
+            // Update.
+            if (($value == 0) || ($value == 1)) {
+                if (!\set_user_preference('theme_essential_courseitemsearchtype', $value)) {
+                    print_error('errorsettinguserpref');
+                }
+                echo 'OK';
+            } else {
+                header('HTTP/1.1 406 Not Acceptable');
+                echo 'Not Acceptable';
+            }
 
             die();
         }
