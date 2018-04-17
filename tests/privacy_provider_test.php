@@ -83,13 +83,13 @@ class theme_essential_privacy_testcase extends \core_privacy\tests\provider_test
 
         $this->assertCount(1, (array)$prefs);
 
-        $this->assertEquals(1, ((array)$prefs)['theme_essential_courseitemsearchtype']->value);
+        $this->assertEquals(1, (((array)$prefs)['theme_essential_courseitemsearchtype'])->value);
 
         $description = get_string('privacy:request:preference:courseitemsearchtype', 'theme_essential', (object) [
             'name' => 'theme_essential_courseitemsearchtype',
-            'value' => ((array)$prefs)['theme_essential_courseitemsearchtype']->value
+            'value' => (((array)$prefs)['theme_essential_courseitemsearchtype'])->value
         ]);
-        $this->assertEquals($description, ((array)$prefs)['theme_essential_courseitemsearchtype']->description);
+        $this->assertEquals($description, (((array)$prefs)['theme_essential_courseitemsearchtype'])->description);
 
         // And for another user with a different value.
         $user = $this->getDataGenerator()->create_user();
@@ -100,12 +100,12 @@ class theme_essential_privacy_testcase extends \core_privacy\tests\provider_test
 
         $this->assertCount(1, (array)$prefs);
 
-        $this->assertEquals(0, ((array)$prefs)['theme_essential_courseitemsearchtype']->value);
+        $this->assertEquals(0, (((array)$prefs)['theme_essential_courseitemsearchtype'])->value);
         $description = get_string('privacy:request:preference:courseitemsearchtype', 'theme_essential', (object) [
             'name' => 'theme_essential_courseitemsearchtype',
-            'value' => ((array)$prefs)['theme_essential_courseitemsearchtype']->value
+            'value' => (((array)$prefs)['theme_essential_courseitemsearchtype'])->value
         ]);
-        $this->assertEquals($description, ((array)$prefs)['theme_essential_courseitemsearchtype']->description);
+        $this->assertEquals($description, (((array)$prefs)['theme_essential_courseitemsearchtype'])->description);
     }
 
 }

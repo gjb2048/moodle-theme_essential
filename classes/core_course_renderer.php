@@ -337,7 +337,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
                     if (is_object($thissection)) {
                         $thissection = $modinfo->get_section_info($thissection->section);
                     } else {
-                       $thissection = $modinfo->get_section_info($thissection);
+                        $thissection = $modinfo->get_section_info($thissection);
                     }
                     if ((string) $thissection->name !== '') {
                         $sectionname = format_string($thissection->name, true,
