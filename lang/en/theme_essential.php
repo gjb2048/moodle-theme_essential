@@ -933,9 +933,11 @@ $string['badgepreferences'] = 'Badge';
 // Incourse.
 $string['returntosection'] = 'Return to: {$a->section}';
 
-// Course content search.
-$string['findcoursecontent'] = 'Course content: ';
+// Course fullname and course content search.
+$string['findcoursecontent'] = 'Course search: ';
 $string['searchallcoursecontent'] = 'Search all course content';
+$string['searchallcoursecontentdefault'] = 'Default search all course content';
+$string['searchallcoursecontentdefaultdesc'] = 'Sets the value of the \'Search all course content\' checkbox on the course content search.  If \'Search all course content\' is unticked, then only the course fullname is searched for a match.';
 
 // essential_admin_setting_configinteger.
 $string['asconfigintlower'] = '{$a->value} is less than the lower range limit of {$a->lower}';

@@ -139,6 +139,7 @@ class toolbox {
 
             die();
         }
+
         $pref = \optional_param('pref', '', PARAM_TEXT);
         if (($pref) && ($pref == 'courseitemsearchtype')) {
             // Autocomplete AJAX user preference call.
@@ -151,8 +152,7 @@ class toolbox {
                 \require_login();
             }
 
-            $value = \optional_param('value', '', PARAM_TEXT);
-			error_log('E: '.$pref.' - '.$value);
+            $value = \optional_param('value', '', PARAM_INT);
 
             // Update.
             if (($value == 0) || ($value == 1)) {

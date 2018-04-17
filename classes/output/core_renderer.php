@@ -381,7 +381,11 @@ class core_renderer extends \core_renderer {
                 $content .= '<div id="courseitemsearchresults">';
                 $content .= '<input type="text" name="courseitemsearch" id="courseitemsearch" disabled="disabled">';
                 $content .= '<input type="checkbox" name="courseitemsearchtype" id="courseitemsearchtype" disabled="disabled"';
-                $courseitemsearchtype = get_user_preferences('theme_essential_courseitemsearchtype');
+                $searchallcoursecontentdefault = 0;
+                if ($this->get_setting('searchallcoursecontentdefault')) {
+                    $searchallcoursecontentdefault = 1;
+                }
+                $courseitemsearchtype = get_user_preferences('theme_essential_courseitemsearchtype', $searchallcoursecontentdefault);
                 if ($courseitemsearchtype) {
                     $content .= ' checked';
                 }
