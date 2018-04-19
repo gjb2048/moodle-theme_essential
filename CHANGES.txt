@@ -1,3 +1,6 @@
+New in 3.2.1.5
+==============
+
 New in 3.2.1.4
 ==============
 - FIX: Side pre block text colour when 'linkadmincategories' is unticked.
