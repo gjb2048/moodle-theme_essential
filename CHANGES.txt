@@ -2,6 +2,7 @@ New in 3.5.0.1
 ==============
 - NEW: Moodle 3.5 version based on 3.4.1.2 of the theme.
 - FIX: Issue #865: Login box centred instructions.
+- NEW: Issue #867: Skip links for footer blocks sometimes appear over main course page content.
 
 New in 3.4.1.2
 ==============
