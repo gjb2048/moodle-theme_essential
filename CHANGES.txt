@@ -4,6 +4,7 @@ New in 3.3.1.5
 - FIX: Update frontpage home block area information.
 - FIX: LTI tool icon issue, see: https://moodle.org/mod/forum/discuss.php?d=371252#p1516474.
 - FIX: Issue #865: Login box centred instructions.
+- NEW: Issue #867: Skip links for footer blocks sometimes appear over main course page content.
 - NEW: Added a tally to the 'Course search' on the dashboard.  Thanks to "Linnaeus University" for funding this
        enhancement.
 - NEW: Added the ability for the administrator to disable the 'Search all course content' checkbox user preference.
