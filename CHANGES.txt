@@ -1,6 +1,7 @@
 New in 3.4.1.4
 ==============
 - FIX: Issue #865: Login box centred instructions.
+- NEW: Issue #867: Skip links for footer blocks sometimes appear over main course page content.
 
 New in 3.4.1.3
 ==============
