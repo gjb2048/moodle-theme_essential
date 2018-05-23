@@ -1,3 +1,6 @@
+New in 3.3.1.5
+==============
+
 New in 3.3.1.4
 ==============
 - NEW: Privacy API support.  Analytics removed until such a time as their use with GDPR is clearer.
