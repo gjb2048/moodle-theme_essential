@@ -19811,6 +19811,10 @@ html[dir='rtl'] .tree_item a {
 .jschooser .choosercontainer #chooseform .alloptions .option .typename {
   display: inline;
 }
+.loginbox .signuppanel h2,
+.loginbox .signuppanel .subcontent {
+  text-align: left;
+}
 /* Moodle fixes core end */
 /* Moodle fixes dock begin */
 #dockeditempanel .dockeditempanel_hd h2 {

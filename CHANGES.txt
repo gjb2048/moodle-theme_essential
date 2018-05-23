@@ -1,5 +1,6 @@
 New in 3.4.1.4
 ==============
+- FIX: Issue #865: Login box centred instructions.
 
 New in 3.4.1.3
 ==============
