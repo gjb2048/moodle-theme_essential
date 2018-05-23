@@ -1,3 +1,7 @@
+New in 3.5.0.1
+==============
+- NEW: Moodle 3.5 version based on 3.4.1.2 of the theme.
+
 New in 3.4.1.2
 ==============
 - FIX: Revert back to M3.4 requirement as new Privacy API support will not confict.  However if you do require
