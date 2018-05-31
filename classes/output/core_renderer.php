@@ -469,6 +469,8 @@ class core_renderer extends \core_renderer {
                     $link = new action_link($url, $text, null, null, new pix_icon('t/edit', $text));
                     $menu->add_secondary_action($link);
                 }
+            } else {
+                $showfrontpagemenu = false;
             }
         } else if ($showcoursemenu) {
             $settingsnode = $this->page->settingsnav->find('courseadmin', navigation_node::TYPE_COURSE);
@@ -484,6 +486,8 @@ class core_renderer extends \core_renderer {
                     $link = new action_link($url, $text, null, null, new pix_icon('t/edit', $text));
                     $menu->add_secondary_action($link);
                 }
+            } else {
+                $showcoursemenu = false;
             }
         } else if ($showusermenu) {
             // Get the course admin node from the settings navigation.
@@ -492,6 +496,8 @@ class core_renderer extends \core_renderer {
             if ($settingsnode) {
                 // Build an action menu based on the visible nodes from this navigation tree.
                 $this->build_action_menu_from_navigation($menu, $settingsnode);
+            } else {
+                $showusermenu = false;
             }
         }
 
