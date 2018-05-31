@@ -22922,6 +22922,10 @@ body .forumpost .row .options .commands {
 .path-grade-edit-tree .setup-grades.generaltable > tbody tr > td.levelodd a.toggle-display:active {
   background-color: transparent;
 }
+.path-grade-report-user .user-grade.generaltable > tbody tr > td.leveleven a i,
+.path-grade-edit-tree .setup-grades.generaltable > tbody tr > td.leveleven a i {
+  color: inherit;
+}
 .path-grade-report-user .generaltable.user-grade .dimmed_text {
   text-decoration: line-through;
 }
