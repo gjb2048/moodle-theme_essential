@@ -13705,7 +13705,7 @@ body {
   display: none;
 }
 .block.hidden .header .block_action .block-hider-show {
-  display: inline;
+  display: inline-block;
 }
 .block.list_block .unlist > li > .column {
   display: inline-block;
@@ -19848,6 +19848,12 @@ a.skip {
   left: -1000em;
 }
 /* Moodle fixes core end */
+/* Moodle fixes course begin */
+.path-course-view li.activity span.autocompletion img,
+.path-course-view li.activity form.togglecompletion .btn {
+  border-width: 0;
+}
+/* Moodle fixes course end */
 /* Moodle fixes dock begin */
 #dockeditempanel .dockeditempanel_hd h2 {
   float: none;
@@ -19859,6 +19865,25 @@ button,
 select,
 textarea {
   font-family: inherit;
+}
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  font-size: 12px;
 }
 /* Bootstrap fixes forms end */
 /* Moodle fixes icons begin */
@@ -19931,6 +19956,12 @@ span:first-of-type > .icon {
   float: none;
 }
 /* Moodle fixes mod-quiz end */
+/* Moodle fixes navigation begin */
+.jsenabled .moodle-actionmenu[data-enhance] .toggle-display {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+/* Moodle fixes navigation end */
 /* Moodle fixes search begin */
 .navbar .search-input-wrapper {
   width: 18px;
@@ -20309,11 +20340,16 @@ table.ygtvtable td a {
 .block .content {
   padding: 4px 0;
 }
-.block .moodle-actionmenu[data-enhanced].show .menu a:hover {
-  text-decoration: none;
+.block .header .icon {
+  font-size: 15px;
+  height: 15px;
+  width: 15px;
 }
 .block .icon {
   margin-right: 5px;
+}
+.block .moodle-actionmenu[data-enhanced].show .menu a:hover {
+  text-decoration: none;
 }
 .block.block_flat_navigation {
   background-color: transparent;

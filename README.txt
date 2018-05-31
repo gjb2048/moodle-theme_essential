@@ -83,7 +83,7 @@ Guido Hornig, actXcellence http://actxcellence.de
 Delvon Forrester, Esparanza co uk
 iZone
 Anis Jradah
-Ute Hlasek, https://hlasek-it.de/moodle
+Ute Hlasek, https://hlasek-it.de
 Amigos Library Services
 
 Essential for Moodle 3.3 kindly sponsored by
