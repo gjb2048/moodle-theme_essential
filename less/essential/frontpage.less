@@ -18,11 +18,12 @@
 }
 
 #page-site-index h2.headingblock:before {
-    content: "\f0b1";
+    content: @fa-var-briefcase;
     display: block;
     float: left;
-    font-family: FontAwesome;
+    font-family: 'Font Awesome 5 Free';
     font-size: .85em;
+    font-weight: 900;
     height: 1.3em;
     margin-right: .2em;
     text-align: center;
@@ -30,11 +31,15 @@
 }
 
 #page-site-index #site-news-forum h2.headingblock:before {
-    content: "\f0a1";
+    content: @fa-var-bullhorn;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
 }
 
 #frontpage-category-names h2.headingblock:before {
-    content: "\f07c";
+    content: @fa-var-folder-open;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
 }
 
 .coursebox .content .courseimage img {

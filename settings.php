@@ -2617,7 +2617,7 @@ if ($ADMIN->fulltree) {
         $name = 'theme_essential/defaultcategoryicon';
         $title = get_string('defaultcategoryicon', 'theme_essential');
         $description = get_string('defaultcategoryicondesc', 'theme_essential');
-        $default = 'folder-open';
+        $default = 'fas fa-folder-open';
         $setting = new admin_setting_configtext($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $essentialsettingscategoryicon->add($setting);

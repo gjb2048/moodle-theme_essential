@@ -473,7 +473,7 @@ $string['frontpageheading'] = 'Front page';
 $string['frontpageheadingdesc'] = 'Configure here what additional items you want to show on the front page.';
 
 $string['courselistteachericon'] = 'Course list teacher icon';
-$string['courselistteachericondesc'] = 'Name of the icon you wish to use or empty for none.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after "fa-", e.g. "star".';
+$string['courselistteachericondesc'] = 'Name of the icon you wish to use or empty for none.  List is <a href="https://fontawesome.com/icons?d=gallery&m=free" target="_new">here</a>.';
 
 $string['frontcontentheading'] = 'Front page content area';
 $string['frontcontent'] = 'Enable front page content area';
@@ -584,7 +584,7 @@ $string['marketing3'] = 'Marketing spot three';
 $string['marketingtitle'] = 'Title';
 $string['marketingtitledesc'] = 'Title to show in this marketing spot';
 $string['marketingicon'] = 'Icon';
-$string['marketingicondesc'] = 'Name of the icon you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after "fa-", e.g. "star".';
+$string['marketingicondesc'] = 'Name of the icon you wish to use.  List is <a href="https://fontawesome.com/icons?d=gallery&m=free" target="_new">here</a>.';
 $string['marketingimage'] = 'Image';
 $string['marketingimagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot';
 $string['marketingcontent'] = 'Content';
@@ -711,7 +711,7 @@ $string['enablecategoryicon'] = 'Enable category icons / images';
 $string['enablecategoryicondesc'] = 'If enabled you will be able to select category icons / images after clicking "Save changes".';
 
 $string['defaultcategoryicon'] = 'Default category icon';
-$string['defaultcategoryicondesc'] = 'Set a default category icon.';
+$string['defaultcategoryicondesc'] = 'Set a default category icon.  Please refer to: <a href="https://fontawesome.com/icons?d=gallery&m=free" target="_new">fontawesome.com/icons?d=gallery&m=free</a>.';
 $string['defaultcategoryimage'] = 'Default category image';
 $string['defaultcategoryimagedesc'] = 'Set a default category image.  Will override the icon when populated.';
 
@@ -721,7 +721,7 @@ $string['icon'] = 'icon';
 $string['image'] = 'image';
 
 $string['categoryiconinfo'] = 'Set custom category icons';
-$string['categoryiconinfodesc'] = 'Enter the name of the icon or upload an image you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after "fa-".';
+$string['categoryiconinfodesc'] = 'Enter the name of the icon or upload an image you wish to use.  List is <a href="https://fontawesome.com/icons?d=gallery&m=free" target="_new">here</a>.';
 
 $string['numberofcoursesandsubcatcourses'] = 'Number of courses - sub category courses';
 
@@ -751,7 +751,7 @@ $string['usesiteicon'] = 'Use site icon';
 $string['usesiteicondesc'] = 'Use the site icon if there is no logo.';
 
 $string['siteicon'] = 'Site icon';
-$string['siteicondesc'] = 'Do not have a logo? Enter the name of the icon you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "fa-".';
+$string['siteicondesc'] = 'Do not have a logo?  Enter the name of the icon you wish to use.  List is <a href="https://fontawesome.com/icons?d=gallery&m=free" target="_new">here</a>.';
 
 $string['headertextcolor'] = 'Header text colour';
 $string['headertextcolordesc'] = 'Set the text colour for the header.';

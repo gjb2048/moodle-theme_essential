@@ -35,6 +35,9 @@ $THEME->yuicssmodules = array();
 $THEME->parents = array('bootstrapbase');
 $THEME->parents_exclude_sheets = array('bootstrapbase' => array('moodle', 'editor'));
 
+$THEME->sheets[] = 'fa-brands';
+$THEME->sheets[] = 'fa-regular';
+$THEME->sheets[] = 'fa-solid';
 $THEME->sheets[] = 'fontawesome';
 $THEME->sheets[] = 'essential';
 $THEME->sheets[] = 'bootstrap-pix';

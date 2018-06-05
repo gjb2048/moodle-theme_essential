@@ -218,23 +218,31 @@ div.dropdown-menu > ul {
         .nav > li > a {
             .@{fa-css-prefix}-caret-right:before {
                 /*rtl:raw:
-                    content: "\f0d9";
+                    content: @fa-var-caret-left;
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900;
                 */
                 /*rtl:remove*/
-                content: "\f0da";
+                content: @fa-var-caret-right;
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
                 margin-left: 5px;
                 margin-right: 3px;
             }
             &:hover {
                 .@{fa-css-prefix}-caret-right:before {
-                    content: "\f0d7";
+                    content: @fa-var-caret-down;
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900;
                     margin-right: 0;
                 }
             }
         }
         .nav > li.dropdown.open a {
             .@{fa-css-prefix}-caret-right:before {
-                content: "\f0d7";
+                content: @fa-var-caret-down;
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
                 margin-right: 0;
             }
         }

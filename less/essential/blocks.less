@@ -145,21 +145,23 @@ p.tree_item.leaf a {
     background-image: none !important;
 
     &:before {
-        font-family: FontAwesome;
+        font-family: 'Font Awesome 5 Free';
         font-size: 16px;
+        font-weight: 900; // fas.
         margin-right: 4px;
     }
     &.emptybranch:before {
         margin-right: 4px;
     }
     &[aria-expanded="false"]:before {
-        content: "\f07b";
+        content: @fa-var-folder;
     }
     &[aria-expanded="true"]:before {
-        content: "\f07c";
+        content: @fa-var-folder-open;
     }
     &.emptybranch:before {
-        content: "\f114";
+        content: @fa-var-folder;
+        font-weight: 400; // far.
     }
     img.smallicon.navicon {
         display: none;
@@ -168,11 +170,15 @@ p.tree_item.leaf a {
 
 .block_navigation.block {
     li.type_user > .tree_item.branch:before {
-        content: "\f007";
+        content: @fa-var-user;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
     }
 
     li.type_unknown.depth_1 > .tree_item.branch:before {
-        content: "\f015";
+        content: @fa-var-home;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
     }
 }
 
@@ -198,8 +204,9 @@ p.tree_item.leaf a {
 }
 
 .jsenabled .block_settings .block_tree .tree_item.branch.loadingbranch:before {
-    font-family: FontAwesome;
-    content: "\f110";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: @fa-var-spinner;
     -moz-animation: essential-block-spin 0.8s infinite ease-in-out;
     -webkit-animation: essential-block-spin 0.8s infinite ease-in-out;
     -o-animation: essential-block-spin 0.8s infinite ease-in-out;
@@ -439,13 +446,15 @@ p.tree_item.leaf a {
         width: 95%;
     }
     .username label:before {
-        content: "\f007";
-        font-family: FontAwesome;
+        content: @fa-var-user;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
         margin-right: 5px;
     }
     .password label:before {
-        content: "\f084";
-        font-family: FontAwesome;
+        content: @fa-var-key;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
         margin-right: 5px;
     }
 }

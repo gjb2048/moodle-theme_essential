@@ -20435,8 +20435,9 @@ p.tree_item.leaf a.action-delete > .fa {
   background-image: none !important;
 }
 .tree_item.branch:before {
-  font-family: FontAwesome;
+  font-family: 'Font Awesome 5 Free';
   font-size: 16px;
+  font-weight: 900;
   margin-right: 4px;
 }
 .tree_item.branch.emptybranch:before {
@@ -20449,16 +20450,21 @@ p.tree_item.leaf a.action-delete > .fa {
   content: "\f07c";
 }
 .tree_item.branch.emptybranch:before {
-  content: "\f114";
+  content: "\f07b";
+  font-weight: 400;
 }
 .tree_item.branch img.smallicon.navicon {
   display: none;
 }
 .block_navigation.block li.type_user > .tree_item.branch:before {
   content: "\f007";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
 }
 .block_navigation.block li.type_unknown.depth_1 > .tree_item.branch:before {
   content: "\f015";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
 }
 .block_navigation .block_tree .tree_item.branch,
 .block_settings .block_tree .tree_item.branch {
@@ -20477,7 +20483,8 @@ p.tree_item.leaf a.action-delete > .fa {
   padding: 0;
 }
 .jsenabled .block_settings .block_tree .tree_item.branch.loadingbranch:before {
-  font-family: FontAwesome;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
   content: "\f110";
   -moz-animation: essential-block-spin 0.8s infinite ease-in-out;
   -webkit-animation: essential-block-spin 0.8s infinite ease-in-out;
@@ -20692,12 +20699,14 @@ p.tree_item.leaf a.action-delete > .fa {
 }
 .block_login .username label:before {
   content: "\f007";
-  font-family: FontAwesome;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
   margin-right: 5px;
 }
 .block_login .password label:before {
   content: "\f084";
-  font-family: FontAwesome;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
   margin-right: 5px;
 }
 /* @end */

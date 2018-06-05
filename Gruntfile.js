@@ -161,17 +161,6 @@ module.exports = function(grunt) { // jshint ignore:line
                 src: 'less/bootstrap-pix.less',
                 dest: 'style/bootstrap-pix.css'
             },
-            fontawesome_p: {
-                options: {
-                    compress: false,
-                    cleancss: false,
-                    paths: "./less",
-                    report: 'min',
-                    sourceMap: false,
-                },
-                src: 'less/fontawesome.less',
-                dest: 'style/fontawesome.css'
-            },
             scrollbars_p: {
                 options: {
                     compress: false,
@@ -243,19 +232,6 @@ module.exports = function(grunt) { // jshint ignore:line
                 },
                 src: 'less/bootstrap-pix.less',
                 dest: 'style/bootstrap-pix.css'
-            },
-            fontawesome_d: {
-                options: {
-                    compress: false,
-                    cleancss: false,
-                    paths: "./less",
-                    report: 'min',
-                    sourceMap: true,
-                    sourceMapRootpath: MOODLEURLPREFIX + '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'style/fontawesome.treasure.map'
-                },
-                src: 'less/fontawesome.less',
-                dest: 'style/fontawesome.css'
             },
             scrollbars_d: {
                 options: {
@@ -441,7 +417,6 @@ module.exports = function(grunt) { // jshint ignore:line
         "less:scrollbars_" + build,
         "less:settings_" + build,
         "less:bootstrap_pix_" + build,
-        "less:fontawesome_" + build,
         "less:alternative_" + build]);
     if (build == 'd') {
         grunt.registerTask("compile", ["css", "replace:placeholder", "replace:essential_lint", 'cssmetrics', "decache"]);
