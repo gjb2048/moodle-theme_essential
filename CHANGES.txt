@@ -1,6 +1,7 @@
 New in 3.3.1.5
 ==============
 - FIX: Block editing menu item hover.
+- FIX: Update frontpage home block area information.
 - NEW: Added a tally to the 'Course search' on the dashboard.  Thanks to "Linnaeus University" for funding this
        enhancement.
 
