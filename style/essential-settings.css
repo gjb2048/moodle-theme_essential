@@ -492,7 +492,7 @@ img.profilepicture {
   color: [[setting:themeurlcolor]];
 }
 .moodle-actionmenu[data-enhanced].show .menu a:hover {
-  color: #fff;
+  color: #fff !important;
   background-color: [[setting:themeurlcolor]];
 }
 .moodle-actionmenu[data-enhanced].show .menu a:hover .fa:before {
