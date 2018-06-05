@@ -2060,16 +2060,16 @@ class core_renderer extends \core_renderer {
 
             /* When editing we want all the blocks to be the same as side-pre / side-post so set by CSS:
              *
-             * aside.footer-edit .block {
-             *     .footer-fluid-span(3);
+             * aside.rowblock-edit .block {
+             *    .rowblock-fluid-span(6, @fluidGridColumnWidth, @fluidGridGutterWidth);
              * }
              */
-            if (($blocksperrow > 4) || ($editing)) {
-                $blocksperrow = 4; // Will result in a 'span3' when more than one row.
-            }
-            $rows = $blockcount / $blocksperrow; // Maximum blocks per row.
-
             if (!$editing) {
+                if ($blocksperrow > 4) {
+                    $blocksperrow = 4; // Will result in a 'span3' when more than one row.
+                }
+                $rows = $blockcount / $blocksperrow; // Maximum blocks per row.
+
                 if ($rows <= 1) {
                     $span = 12 / $blockcount;
                     if ($span < 1) {
@@ -2086,7 +2086,7 @@ class core_renderer extends \core_renderer {
             $currentrequiredrow = 1;
             foreach ($blockcontents as $bc) {
 
-                if (!$editing) { // Using CSS and special 'span3' only when editing.
+                if (!$editing) { // Using CSS and special 'span3' only when not editing.
                     $currentblockcount++;
                     if ($currentblockcount > ($currentrequiredrow * $blocksperrow)) {
                         // Tripping point.
