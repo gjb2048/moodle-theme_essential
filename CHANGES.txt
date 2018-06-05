@@ -1,3 +1,6 @@
+New in 3.5.0.2
+==============
+
 New in 3.5.0.1
 ==============
 - NEW: Moodle 3.5 version based on 3.4.1.2 of the theme.

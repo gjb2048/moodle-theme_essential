@@ -46,6 +46,10 @@ function xmldb_theme_essential_upgrade($oldversion = 0) {
         upgrade_plugin_savepoint(true, 2017102903, 'theme', 'essential');
     }
 
+    if ($oldversion < 2018051901) {
+        upgrade_plugin_savepoint(true, 2018051901, 'theme', 'essential');
+    }
+
     // Automatic 'Purge all caches'....
     if ($oldversion < 2118041000) {
         purge_all_caches();
