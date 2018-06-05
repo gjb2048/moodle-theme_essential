@@ -1,5 +1,6 @@
 New in 3.5.0.2
 ==============
+- FIX: Block editing menu item hover.
 
 New in 3.5.0.1
 ==============
