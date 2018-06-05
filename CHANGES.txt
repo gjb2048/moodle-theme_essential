@@ -1,5 +1,6 @@
 New in 3.4.1.3
 ==============
+- FIX: Block editing menu item hover.
 - NEW: Added a tally to the 'Course search' on the dashboard.  Thanks to "Linnaeus University" for funding this
        enhancement.
 
