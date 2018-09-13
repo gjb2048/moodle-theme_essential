@@ -1,5 +1,7 @@
 New in 3.3.1.5
 ==============
+- NEW: Added a tally to the 'Course search' on the dashboard.  Thanks to "Linnaeus University" for funding this
+       enhancement.
 
 New in 3.3.1.4
 ==============

@@ -25,6 +25,13 @@ define(['jquery', 'jqueryui', 'core/log'], function($, jqui, log) {
                     source: data.theme,
                     appendTo: "#courseitemsearchresults",
                     minLength: 2,
+                    response: function(event, ui) {
+                        // ui is an array.
+                        log.debug(JSON.stringify(ui));
+                        var tally = ui.content.pop();
+                        log.debug(JSON.stringify(tally));
+                        $('#courseitemsearchtally').text(tally.label);
+                    },
                     select: function(event, ui) {
                         var url = ui.item.id;
                         if (url != '#') {
@@ -32,7 +39,7 @@ define(['jquery', 'jqueryui', 'core/log'], function($, jqui, log) {
                         }
                     }
                 }).prop("disabled", false);
-                $("#courseitemsearchtype").click(function(){
+                $("#courseitemsearchtype").click(function() {
                     var $checked = $(this).prop("checked") | 0; // Convert to integer from true or false.
                     log.debug('Essential Inspector Scourer AJAX SACC: ' + $checked);
 

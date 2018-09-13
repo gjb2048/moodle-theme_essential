@@ -1335,6 +1335,9 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 .moodle-dialogue-base .moodle-dialogue-lightbox {
   background-color: #aaa;
 }
+.pagelayout-popup .moodle-dialogue-base .moodle-dialogue-lightbox {
+  background-color: transparent;
+}
 .moodle-dialogue-base .hidden,
 .moodle-dialogue-base .moodle-dialogue-hidden {
   display: none;
@@ -14229,7 +14232,8 @@ form {
 }
 .mform .fcheckbox > span,
 .mform .fradio > span,
-.mform .fgroup > span {
+.mform .fgroup > span,
+.mform .fadvcheckbox > span {
   display: inline-block;
   margin-top: 5px;
 }
@@ -20068,13 +20072,22 @@ table.ygtvtable td a {
 .courseitemsearch input {
   margin-bottom: 4px;
 }
+.courseitemsearch #courseitemsearch,
 .courseitemsearch #courseitemsearchresults {
   position: relative;
 }
+.courseitemsearch #courseitemsearchtally {
+  color: #595959;
+  color: inherit;
+  font-style: italic;
+  position: absolute;
+  right: 200px;
+  top: 0;
+}
 .courseitemsearch .ui-autocomplete {
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
 }
 .courseitemsearch #courseitemsearchtype {
   margin-bottom: 0;

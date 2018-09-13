@@ -380,6 +380,7 @@ class core_renderer extends \core_renderer {
                 $content .= '<div><p>'.get_string('findcoursecontent', 'theme_essential').'</p></div>';
                 $content .= '<div id="courseitemsearchresults">';
                 $content .= '<input type="text" name="courseitemsearch" id="courseitemsearch" disabled="disabled">';
+                $content .= '<span id="courseitemsearchtally"></span>';
                 $content .= '<input type="checkbox" name="courseitemsearchtype" id="courseitemsearchtype" disabled="disabled"';
                 $searchallcoursecontentdefault = 0;
                 if ($this->get_setting('searchallcoursecontentdefault')) {
