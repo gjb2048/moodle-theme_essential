@@ -316,7 +316,12 @@ class theme_essential_core_course_renderer extends core_course_renderer {
             return $data;
         }
 
-        $courseitemsearchtype = \get_user_preferences('theme_essential_courseitemsearchtype');
+        if ($this->get_setting('searchallcoursecontentenable')) {
+            $courseitemsearchtype = \get_user_preferences('theme_essential_courseitemsearchtype');
+        } else {
+            $courseitemsearchtype = \theme_essential\toolbox::get_setting('searchallcoursecontentdefault');
+        }
+
         $sesskey = sesskey();
         foreach ($courses as $course) {
             if (!$courseitemsearchtype) {
