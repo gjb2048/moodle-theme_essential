@@ -91,8 +91,6 @@ a.dimmed_text:visited,
 }
 .unlist,
 .unlist li,
-.list-unstyled,
-.list-unstyled li,
 .inline-list,
 .inline-list li,
 .block .list,
@@ -349,7 +347,6 @@ form.popupform div {
 }
 .no-overflow > .generaltable {
   margin-bottom: 0;
-  min-height: 10em;
 }
 .accesshide {
   position: absolute;
@@ -1334,6 +1331,9 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
 /* Moodle Dialogue Settings (moodle-core-dialogue)  */
 .moodle-dialogue-base .moodle-dialogue-lightbox {
   background-color: #aaa;
+}
+.pagelayout-popup .moodle-dialogue-base .moodle-dialogue-lightbox {
+  background-color: transparent;
 }
 .moodle-dialogue-base .hidden,
 .moodle-dialogue-base .moodle-dialogue-hidden {
@@ -2332,6 +2332,10 @@ body.lockscroll {
 .progressbar_container {
   max-width: 500px;
   margin: 0 auto;
+}
+progress {
+  display: block;
+  width: 100%;
 }
 /* IE10 only fix for calendar titling */
 .ie10 .yui3-calendar-header-label {
@@ -14324,7 +14328,8 @@ form {
 }
 .mform .fcheckbox > span,
 .mform .fradio > span,
-.mform .fgroup > span {
+.mform .fgroup > span,
+.mform .fadvcheckbox > span {
   display: inline-block;
   margin-top: 5px;
 }
@@ -14401,9 +14406,6 @@ form {
 .mform .fitem .felement:first-child,
 #page-mod-forum-search .c1:first-child {
   *padding-left: 200px;
-}
-.form-inline label:not(.sr-only):not(.accesshide) + select {
-  margin-left: 0.5rem;
 }
 .formsettingheading {
   margin-bottom: 0;
@@ -19510,9 +19512,6 @@ ul.indented-list {
 .card-block {
   padding: 1.25rem;
 }
-.p-0 {
-  padding: 0 !important;
-}
 .p-l-1 {
   padding-left: 14px !important;
 }
@@ -19535,9 +19534,6 @@ ul.indented-list {
 }
 .p-a-1 {
   padding: 14px !important;
-}
-.m-0 {
-  margin: 0 !important;
 }
 .m-l-1 {
   margin-left: 14px !important;
@@ -19745,9 +19741,6 @@ ul.indented-list {
 }
 .bg-faded {
   background-color: #eee;
-}
-.w-100 {
-  width: 100%;
 }
 .carousel-indicators {
   z-index: 2;
@@ -20267,7 +20260,7 @@ table.ygtvtable td a {
   top: 0;
 }
 .courseitemsearch #courseitemsearchtally.searchallcoursecontentenable {
-  right: 200px;
+  right: 210px;
 }
 .courseitemsearch #courseitemsearchtally.searchallcoursecontentdisable {
   right: 10px;
