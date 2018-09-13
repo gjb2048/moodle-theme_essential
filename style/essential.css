@@ -91,6 +91,8 @@ a.dimmed_text:visited,
 }
 .unlist,
 .unlist li,
+.list-unstyled,
+.list-unstyled li,
 .inline-list,
 .inline-list li,
 .block .list,
@@ -347,6 +349,7 @@ form.popupform div {
 }
 .no-overflow > .generaltable {
   margin-bottom: 0;
+  min-height: 10em;
 }
 .accesshide {
   position: absolute;
@@ -2205,22 +2208,6 @@ img#persona_signin {
   color: #fff;
   background-color: #0070a8;
 }
-.moodle-actionmenu[data-enhanced].show .menu a:first-child {
-  -webkit-border-top-right-radius: 4px;
-  -moz-border-radius-topright: 4px;
-  border-top-right-radius: 4px;
-  -webkit-border-top-left-radius: 4px;
-  -moz-border-radius-topleft: 4px;
-  border-top-left-radius: 4px;
-}
-.moodle-actionmenu[data-enhanced].show .menu a:last-child {
-  -webkit-border-bottom-right-radius: 4px;
-  -moz-border-radius-bottomright: 4px;
-  border-bottom-right-radius: 4px;
-  -webkit-border-bottom-left-radius: 4px;
-  -moz-border-radius-bottomleft: 4px;
-  border-bottom-left-radius: 4px;
-}
 .moodle-actionmenu[data-enhanced].show .menu a.hidden {
   display: none;
 }
@@ -2234,6 +2221,22 @@ img#persona_signin {
 }
 .moodle-actionmenu[data-enhanced].show .menu > li {
   display: block;
+}
+.moodle-actionmenu[data-enhanced].show .menu > li:first-child a {
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  border-top-right-radius: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  border-top-left-radius: 4px;
+}
+.moodle-actionmenu[data-enhanced].show .menu > li:last-child a {
+  -webkit-border-bottom-right-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  border-bottom-right-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  border-bottom-left-radius: 4px;
 }
 .moodle-actionmenu[data-enhanced].show .menu.align-tl-bl {
   top: 100%;
@@ -4173,7 +4176,6 @@ span.editinstructions {
 .courses .coursebox.even {
   background-color: #f9f9f9;
 }
-.courses .coursebox:hover,
 .course_category_tree .courses > .paging.paging-morelink:hover {
   background-color: #f5f5f5;
 }
@@ -5829,7 +5831,7 @@ a.ygtvspacer:hover {
   color: #ff6961;
 }
 .messaging-area-container .status.online .online-text {
-  display: block;
+  display: inherit;
 }
 .messaging-area-container .status.online .offline-text {
   display: none;
@@ -13705,7 +13707,7 @@ body {
   display: none;
 }
 .block.hidden .header .block_action .block-hider-show {
-  display: inline-block;
+  display: inline;
 }
 .block.list_block .unlist > li > .column {
   display: inline-block;
@@ -14429,6 +14431,9 @@ form {
 #page-mod-forum-search .c1:first-child {
   *padding-left: 200px;
 }
+.form-inline label:not(.sr-only):not(.accesshide) + select {
+  margin-left: 0.5rem;
+}
 .formsettingheading {
   margin-bottom: 0;
 }
@@ -15045,7 +15050,6 @@ body.path-mod-feedback #region-main .mform.feedback_form .feedback-item-pagebrea
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
-.path-mod-forum .forumheaderlist .discussion .author,
 .path-mod-forum .forumheaderlist .discussion .replies,
 .path-mod-forum .forumheaderlist .discussion .lastpost {
   white-space: normal;
@@ -15057,14 +15061,9 @@ body.path-mod-feedback #region-main .mform.feedback_form .feedback-item-pagebrea
 .path-mod-forum .forumheaderlist .discussion .topic,
 .path-mod-forum .forumheaderlist .discussion .discussionsubscription,
 .path-mod-forum .forumheaderlist .discussion .topic.starter,
-.path-mod-forum .forumheaderlist .discussion .author,
 .path-mod-forum .forumheaderlist .discussion .replies,
 .path-mod-forum .forumheaderlist .discussion .lastpost {
   vertical-align: top;
-}
-.path-mod-forum .forumheaderlist .discussion .picture {
-  margin: 0 20px;
-  float: left;
 }
 .path-mod-forum .forumheaderlist .discussion .unread img {
   margin: 0;
@@ -15315,6 +15314,16 @@ div#dock {
 }
 #page-mod-lesson-view .branchbuttoncontainer .singlebutton input[type="submit"] {
   white-space: normal;
+}
+#page-mod-lesson-view .answeroption .fitemtitle {
+  width: 30%;
+  text-align: left;
+}
+#page-mod-lesson-view .answeroption .fitemtitle label {
+  padding-right: 15px;
+}
+#page-mod-lesson-view .fitem .felement {
+  margin-left: 30%;
 }
 .path-mod-lesson .reviewessay {
   width: 40%;
@@ -19540,6 +19549,9 @@ ul.indented-list {
 .card-block {
   padding: 1.25rem;
 }
+.p-0 {
+  padding: 0 !important;
+}
 .p-l-1 {
   padding-left: 14px !important;
 }
@@ -19562,6 +19574,9 @@ ul.indented-list {
 }
 .p-a-1 {
   padding: 14px !important;
+}
+.m-0 {
+  margin: 0 !important;
 }
 .m-l-1 {
   margin-left: 14px !important;
@@ -19769,6 +19784,9 @@ ul.indented-list {
 }
 .bg-faded {
   background-color: #eee;
+}
+.w-100 {
+  width: 100%;
 }
 .carousel-indicators {
   z-index: 2;
@@ -20315,13 +20333,22 @@ table.ygtvtable td a {
 .courseitemsearch input {
   margin-bottom: 4px;
 }
+.courseitemsearch #courseitemsearch,
 .courseitemsearch #courseitemsearchresults {
   position: relative;
 }
+.courseitemsearch #courseitemsearchtally {
+  color: #595959;
+  color: inherit;
+  font-style: italic;
+  position: absolute;
+  right: 200px;
+  top: 0;
+}
 .courseitemsearch .ui-autocomplete {
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
 }
 .courseitemsearch #courseitemsearchtype {
   margin-bottom: 0;
