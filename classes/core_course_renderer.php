@@ -323,12 +323,14 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         }
 
         $sesskey = sesskey();
+        $coursetally = 0;
         foreach ($courses as $course) {
             if (!$courseitemsearchtype) {
                 $label = $course->fullname;
                 if (stristr($label, $term)) {
                     $courseurl = new moodle_url('/course/view.php', array('id' => $course->id, 'sesskey' => $sesskey));
                     $data[] = array('id' => $courseurl->out(false), 'label' => $label, 'value' => $label);
+                    $coursetally++;
                 }
             } else {
                 $modinfo = get_fast_modinfo($course);
@@ -336,6 +338,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
                 $course = $courseformat->get_course();
                 $courseformatsettings = $courseformat->get_format_options();
                 $coursenumsections = $courseformat->get_last_section_number();
+                $coursetallycounted = false;
 
                 foreach ($modinfo->get_section_info_all() as $section => $thissection) {
                     if (!$thissection->uservisible) {
@@ -365,6 +368,10 @@ class theme_essential_core_course_renderer extends core_course_renderer {
                         $label = $course->fullname.' - '.$sectionname;
                         if (stristr($label, $term)) {
                             $data[] = array('id' => $coursehref, 'label' => $label, 'value' => $label);
+                            if (!$coursetallycounted) {
+                                $coursetally++;
+                                $coursetallycounted = true;
+                            }
                         }
                     }
                     if (!empty($modinfo->sections[$thissection->section])) {
@@ -375,6 +382,10 @@ class theme_essential_core_course_renderer extends core_course_renderer {
                                 $label = $course->fullname.' - '.$sectionname.' - '.$instancename;
                                 if (stristr($label, $term)) {
                                     $data[] = array('id' => $mod->url->out(false), 'label' => $label, 'value' => $label);
+                                    if (!$coursetallycounted) {
+                                        $coursetally++;
+                                        $coursetallycounted = true;
+                                    }
                                 }
                             }
                         }
@@ -383,7 +394,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
             }
         }
 
-        $tallystr = get_string('tallyoftotal', 'theme_essential', array('tally' => count($data), 'total' => count($courses)));
+        $tallystr = get_string('tallyoftotal', 'theme_essential', array('tally' => $coursetally, 'total' => count($courses)));
         $data[] = array('label' => $tallystr, 'value' => '');
         return $data;
     }
