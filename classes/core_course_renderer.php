@@ -394,7 +394,11 @@ class theme_essential_core_course_renderer extends core_course_renderer {
             }
         }
 
-        $tallystr = get_string('tallyoftotal', 'theme_essential', array('tally' => $coursetally, 'total' => count($courses)));
+        if ($courseitemsearchtype) {
+            $tallystr = get_string('tallyinoftotal', 'theme_essential', array('rtally' => count($data), 'ctally' => $coursetally, 'ctotal' => count($courses)));
+        } else {
+            $tallystr = get_string('tallyoftotal', 'theme_essential', array('tally' => $coursetally, 'total' => count($courses)));
+        }
         $data[] = array('label' => $tallystr, 'value' => '');
         return $data;
     }
