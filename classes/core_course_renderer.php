@@ -311,6 +311,8 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         }
 
         if (empty($courses)) {
+            $tallystr = get_string('tallyoftotal', 'theme_essential', array('tally' => 0, 'total' => 0));
+            $data[] = array('label' => $tallystr, 'value' => '');
             return $data;
         }
 
@@ -376,6 +378,8 @@ class theme_essential_core_course_renderer extends core_course_renderer {
             }
         }
 
+        $tallystr = get_string('tallyoftotal', 'theme_essential', array('tally' => count($data), 'total' => count($courses)));
+        $data[] = array('label' => $tallystr, 'value' => '');
         return $data;
     }
 }
