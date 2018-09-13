@@ -30,16 +30,15 @@ define(['jquery', 'jqueryui', 'core/log'], function($, jqui, log) {
                         var tally = ui.content.pop();
                         $('#courseitemsearchtally').text(tally.label);
                     },
-                    close: function(event, ui) {
-                        $('#courseitemsearchtally').text('');
-                    },
                     select: function(event, ui) {
                         var url = ui.item.id;
                         if (url != '#') {
                             location.href = url;
                         }
                     }
-                }).prop("disabled", false);
+                }).prop("disabled", false).on('input', function() {
+                    $('#courseitemsearchtally').text('');
+                });
 
                 var $courseitemsearchtype = $("#courseitemsearchtype");
                 if ($courseitemsearchtype.length) {
