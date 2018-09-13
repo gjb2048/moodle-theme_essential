@@ -27,9 +27,7 @@ define(['jquery', 'jqueryui', 'core/log'], function($, jqui, log) {
                     minLength: 2,
                     response: function(event, ui) {
                         // ui is an array.
-                        log.debug(JSON.stringify(ui));
                         var tally = ui.content.pop();
-                        log.debug(JSON.stringify(tally));
                         $('#courseitemsearchtally').text(tally.label);
                     },
                     select: function(event, ui) {
@@ -39,23 +37,30 @@ define(['jquery', 'jqueryui', 'core/log'], function($, jqui, log) {
                         }
                     }
                 }).prop("disabled", false);
-                $("#courseitemsearchtype").click(function() {
-                    var $checked = $(this).prop("checked") | 0; // Convert to integer from true or false.
-                    log.debug('Essential Inspector Scourer AJAX SACC: ' + $checked);
 
-                    $.ajax({
-                        url: data.theme + '&pref=courseitemsearchtype&value=' + $checked,
-                        statusCode: {
-                            404: function() {
-                                log.debug("Essential Inspector Scourer AJAX SACC - url not found");
-                            },
-                            406: function() {
-                                log.debug("Essential Inspector Scourer AJAX SACC - value not acceptable");
+                var $courseitemsearchtype = $("#courseitemsearchtype");
+                if ($courseitemsearchtype.length) {
+                    log.debug('searchallcoursecontentenable enabled');
+                    $courseitemsearchtype.click(function() {
+                        var $checked = $(this).prop("checked") | 0; // Convert to integer from true or false.
+                        log.debug('Essential Inspector Scourer AJAX SACC: ' + $checked);
+
+                        $.ajax({
+                            url: data.theme + '&pref=courseitemsearchtype&value=' + $checked,
+                            statusCode: {
+                                404: function() {
+                                    log.debug("Essential Inspector Scourer AJAX SACC - url not found");
+                                },
+                                406: function() {
+                                    log.debug("Essential Inspector Scourer AJAX SACC - value not acceptable");
+                                }
                             }
-                        }
+                        });
                     });
-                });
-                $("#courseitemsearchtype").prop("disabled", false);
+                    $courseitemsearchtype.prop("disabled", false);
+                } else {
+                    log.debug('searchallcoursecontentenable disabled');
+                }
             });
         }
     };

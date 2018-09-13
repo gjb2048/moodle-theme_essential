@@ -20264,8 +20264,13 @@ table.ygtvtable td a {
   color: inherit;
   font-style: italic;
   position: absolute;
-  right: 200px;
   top: 0;
+}
+.courseitemsearch #courseitemsearchtally.searchallcoursecontentenable {
+  right: 200px;
+}
+.courseitemsearch #courseitemsearchtally.searchallcoursecontentdisable {
+  right: 10px;
 }
 .courseitemsearch .ui-autocomplete {
   left: 0;

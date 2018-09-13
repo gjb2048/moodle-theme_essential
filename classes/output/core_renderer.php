@@ -380,17 +380,21 @@ class core_renderer extends \core_renderer {
                 $content .= '<div><p>'.get_string('findcoursecontent', 'theme_essential').'</p></div>';
                 $content .= '<div id="courseitemsearchresults">';
                 $content .= '<input type="text" name="courseitemsearch" id="courseitemsearch" disabled="disabled">';
-                $content .= '<span id="courseitemsearchtally"></span>';
-                $content .= '<input type="checkbox" name="courseitemsearchtype" id="courseitemsearchtype" disabled="disabled"';
-                $searchallcoursecontentdefault = 0;
-                if ($this->get_setting('searchallcoursecontentdefault')) {
-                    $searchallcoursecontentdefault = 1;
+                if ($this->get_setting('searchallcoursecontentenable')) {
+                    $content .= '<span id="courseitemsearchtally" class="searchallcoursecontentenable"></span>';
+                    $content .= '<input type="checkbox" name="courseitemsearchtype" id="courseitemsearchtype" disabled="disabled"';
+                    $searchallcoursecontentdefault = 0;
+                    if ($this->get_setting('searchallcoursecontentdefault')) {
+                        $searchallcoursecontentdefault = 1;
+                    }
+                    $courseitemsearchtype = get_user_preferences('theme_essential_courseitemsearchtype', $searchallcoursecontentdefault);
+                    if ($courseitemsearchtype) {
+                        $content .= ' checked';
+                    }
+                    $content .= '><label for="courseitemsearchtype">'.get_string('searchallcoursecontent', 'theme_essential').'</label>';
+                } else {
+                    $content .= '<span id="courseitemsearchtally" class="searchallcoursecontentdisable"></span>';
                 }
-                $courseitemsearchtype = get_user_preferences('theme_essential_courseitemsearchtype', $searchallcoursecontentdefault);
-                if ($courseitemsearchtype) {
-                    $content .= ' checked';
-                }
-                $content .= '><label for="courseitemsearchtype">'.get_string('searchallcoursecontent', 'theme_essential').'</label>';
                 $content .= '</div></div>';
             }
         }

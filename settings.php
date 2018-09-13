@@ -201,6 +201,14 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsfeature->add($setting);
 
+    // Enable course content search user decision.
+    $name = 'theme_essential/searchallcoursecontentenable';
+    $title = get_string('searchallcoursecontentenable', 'theme_essential');
+    $description = get_string('searchallcoursecontentenabledesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $essentialsettingsfeature->add($setting);
+
     // Course content search type default.
     $name = 'theme_essential/searchallcoursecontentdefault';
     $title = get_string('searchallcoursecontentdefault', 'theme_essential');
