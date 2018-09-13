@@ -940,6 +940,7 @@ $string['searchallcoursecontentenable'] = 'Enable search all course content';
 $string['searchallcoursecontentenabledesc'] = 'Allow the user to decide if they want to search all course content.  If disabled then the value of \'searchallcoursecontentdefault\' will be applied for the course search.';
 $string['searchallcoursecontentdefault'] = 'Default search all course content';
 $string['searchallcoursecontentdefaultdesc'] = 'Sets the value of the \'Search all course content\' checkbox on the course content search.  If \'Search all course content\' is unticked, then only the course fullname is searched for a match.';
+$string['tallyinoftotal'] = '{$a->rtally} in {$a->ctally} of {$a->ctotal}';
 $string['tallyoftotal'] = '{$a->tally} of {$a->total}';
 
 // essential_admin_setting_configinteger.
