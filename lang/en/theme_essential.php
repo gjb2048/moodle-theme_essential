@@ -238,21 +238,49 @@ $string['thiscourse'] = 'This course';
 $string['people'] = 'People';
 
 // User menu.
-$string['usermenuuserimageborderradius'] = 'User menu picture border radius';
-$string['usermenuuserimageborderradiusdesc'] = 'Specify the border radius between {$a->lower} and {$a->upper} pixels of the user picture on the user menu.';
-$string['helplinktype'] = 'Enable help link in menu';
-$string['helplinktypedesc'] = 'Choose whether you want to enable a help option in the user menu, you can choose to either provide an URL that will be opened in a new window or an email address.';
-$string['helplink'] = 'Help link';
-$string['helplinkdesc'] = 'If you chose URL above fill in the complete URL to your help site (must include http:// or https://). If you chose Email address fill in your email address.';
-
 $string['usermenu'] = 'User menu';
 $string['usermenudesc'] = 'The menu for the user.';
+
+$string['helplink'] = 'Help link';
+$string['helplinkdesc'] = 'If you chose URL above fill in the complete URL to your help site (must include http:// or https://). If you chose Email address fill in your email address.';
+$string['helplinktype'] = 'Enable help link in menu';
+$string['helplinktypedesc'] = 'Choose whether you want to enable a help option in the user menu, you can choose to either provide an URL that will be opened in a new window or an email address.';
+
 $string['loggedinas'] = ' logged in as ';
 $string['loggedinfrom'] = 'Logged in from ';
+
+$string['profilelinkmi'] = 'Profile link';
+$string['profilelinkmidesc'] = 'Show the profile link menu item.';
+$string['loggedinfrommi'] = 'Logged in from';
+$string['loggedinfrommidesc'] = 'Show the logged in from menu item if the user is an MNET remote user.';
+$string['switchrolemi'] = 'Switch role';
+$string['switchrolemidesc'] = 'Show the switch role menu item if the user can switch roles.';
+$string['preferencesmi'] = 'Preferences';
+$string['preferencesmidesc'] = 'Show the preferences menu item.';
+$string['calendarmi'] = 'Calendar';
+$string['calendarmidesc'] = 'Show the calendar menu item if the user has the \'moodle/calendar:manageownentries\' capability.';
+$string['messagesmi'] = 'Messages';
+$string['messagesmidesc'] = 'Show the messages menu item if messaging is enabled.';
+$string['privatefilesmi'] = 'Private files';
+$string['privatefilesmidesc'] = 'Show the private files menu item if the user has the \'moodle/user:manageownfiles\' capability.';
+$string['forumpostsmi'] = 'Forum posts';
+$string['forumpostsmidesc'] = 'Show the forum posts menu item if the user has the \'mod/forum:viewdiscussion\' capability.';
+$string['forumdiscussionsmi'] = 'Discussions';
+$string['forumdiscussionsmidesc'] = 'Show the discussions (forum) menu item if the user has the \'mod/forum:viewdiscussion\' capability.';
+$string['mygradesmi'] = 'My grades';
+$string['mygradesmidesc'] = 'Show the my grades menu item if the user has the \'gradereport/overview:view\' capability in a course.  Not checked at the site level.';
+$string['coursegradesmi'] = 'Course grades';
+$string['coursegradesmidesc'] = 'Show the course grades menu item if the user has the \'gradereport/user:view\' capability and the course \'showgrades\' setting is set in a course.';
+$string['badgesmi'] = 'Badges';
+$string['badgesmidesc'] = 'Show the badges menu item if the user has the \'moodle/badges:manageownbadges\' capability and badges are enabled at a site level.';
+
+$string['usermenuuserimageborderradius'] = 'User menu picture border radius';
+$string['usermenuuserimageborderradiusdesc'] = 'Specify the border radius between {$a->lower} and {$a->upper} pixels of the user picture on the user menu.';
 
 $string['mygrades'] = 'My grades';
 $string['coursegrades'] = 'Course grades';
 
+// Misc.
 $string['gotobottom'] = 'Go to the bottom of the page';
 
 // Breadcrumb Style.

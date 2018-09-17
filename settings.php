@@ -1349,6 +1349,94 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_heading($name, $heading, $information);
     $essentialsettingsheader->add($setting);
 
+    // Profile link.
+    $name = 'theme_essential/profilelinkmi';
+    $title = get_string('profilelinkmi', 'theme_essential');
+    $description = get_string('profilelinkmidesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $essentialsettingsheader->add($setting);
+
+    // Logged in from.
+    $name = 'theme_essential/loggedinfrommi';
+    $title = get_string('loggedinfrommi', 'theme_essential');
+    $description = get_string('loggedinfrommidesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $essentialsettingsheader->add($setting);
+
+    // Switch role.
+    $name = 'theme_essential/switchrolemi';
+    $title = get_string('switchrolemi', 'theme_essential');
+    $description = get_string('switchrolemidesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $essentialsettingsheader->add($setting);
+
+    // Preferences.
+    $name = 'theme_essential/preferencesmi';
+    $title = get_string('preferencesmi', 'theme_essential');
+    $description = get_string('preferencesmidesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $essentialsettingsheader->add($setting);
+
+    // Calendar.
+    $name = 'theme_essential/calendarmi';
+    $title = get_string('calendarmi', 'theme_essential');
+    $description = get_string('calendarmidesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $essentialsettingsheader->add($setting);
+
+    // Messages.
+    $name = 'theme_essential/messagesmi';
+    $title = get_string('messagesmi', 'theme_essential');
+    $description = get_string('messagesmidesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $essentialsettingsheader->add($setting);
+
+    // Private files.
+    $name = 'theme_essential/privatefilesmi';
+    $title = get_string('privatefilesmi', 'theme_essential');
+    $description = get_string('privatefilesmidesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $essentialsettingsheader->add($setting);
+
+    // Forum posts.
+    $name = 'theme_essential/forumpostsmi';
+    $title = get_string('forumpostsmi', 'theme_essential');
+    $description = get_string('forumpostsmidesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $essentialsettingsheader->add($setting);
+
+    // Forum disucssions.
+    $name = 'theme_essential/forumdiscussionsmi';
+    $title = get_string('forumdiscussionsmi', 'theme_essential');
+    $description = get_string('forumdiscussionsmidesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $essentialsettingsheader->add($setting);
+
+    // My grades.
+    $name = 'theme_essential/mygradesmi';
+    $title = get_string('mygradesmi', 'theme_essential');
+    $description = get_string('mygradesmidesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $essentialsettingsheader->add($setting);
+
+    // Course grades.
+    $name = 'theme_essential/coursegradesmi';
+    $title = get_string('coursegradesmi', 'theme_essential');
+    $description = get_string('coursegradesmidesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $essentialsettingsheader->add($setting);
+
     // Helplink type.
     $name = 'theme_essential/helplinktype';
     $title = get_string('helplinktype', 'theme_essential');
