@@ -1,4 +1,4 @@
-New in 3.5.0.2
+New in 3.5.1.0
 ==============
 - FIX: Block editing menu item hover.
 - FIX: Update frontpage home block area information.
