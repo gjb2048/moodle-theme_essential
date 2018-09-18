@@ -43,6 +43,34 @@ trait core_renderer_toolbox {
         return $settingvalue;
     }
 
+    /**
+     * Gets the setting moodle_url for the given setting if it exists and set.
+     *
+     * See: https://moodle.org/mod/forum/discuss.php?d=371252#p1516474 and change if theme_config::setting_file_url
+     * changes.
+     * My need to do: $url = preg_replace('|^https?://|i', '//', $url->out(false)); separately.
+     */
+    public function get_setting_moodle_url($setting) {
+        $tcr = array_reverse($this->themeconfig, true);
+
+        $settingurl = null;
+        foreach ($tcr as $tconfig) {
+            if (property_exists($tconfig->settings, $setting)) {
+                if (!empty($tconfig->settings->$setting)) {
+                    global $CFG;
+                    $component = 'theme_'.$tconfig->name;
+                    $itemid = \theme_get_revision();
+                    $filepath = $tconfig->settings->$setting;
+                    $syscontext = \context_system::instance();
+
+                    $settingurl = \moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php", "/$syscontext->id/$component/$setting/$itemid".$filepath);
+                    break;
+                }
+            }
+        }
+        return $settingurl;
+    }
+
     public function setting_file_url($setting, $filearea) {
         $tcr = array_reverse($this->themeconfig, true);
         $settingconfig = null;

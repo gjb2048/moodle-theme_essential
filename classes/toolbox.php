@@ -84,6 +84,15 @@ class toolbox {
         }
     }
 
+    /**
+     * Gets the setting moodle_url for the given setting value if it exists.
+     */
+    static public function get_setting_moodle_url($setting) {
+        $us = self::check_corerenderer();
+
+        return $us->get_setting_moodle_url($setting);
+    }
+
     static public function setting_file_url($setting, $filearea) {
         $us = self::check_corerenderer();
 

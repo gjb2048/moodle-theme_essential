@@ -7,6 +7,7 @@ New in 3.3.1.5
 - NEW: Added the ability for the administrator to disable the 'Search all course content' checkbox user preference.
        Thanks to "Linnaeus University" for funding this enhancement.
 - NEW: Added the ability to show / hide all of the items on the user menu bar 'log out'.
+- FIX: LTI tool icon issue, see: https://moodle.org/mod/forum/discuss.php?d=371252#p1516474.
 
 New in 3.3.1.4
 ==============
