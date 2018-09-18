@@ -34,7 +34,7 @@ echo $OUTPUT->doctype();
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>
-    <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
+    <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon()->out(); ?>" />
     <?php
     echo $OUTPUT->standard_head_html();
     ?>
