@@ -316,6 +316,9 @@ $string['coursetitleposition'] = 'Course title position';
 $string['coursetitlepositiondesc'] = 'Choose between \'Above\' and \'Within\' for the course.  Where \'Above\' is above the side-pre, page-top and course-content regions and \'Within\' is within the course-content region as it was before this setting was introduced.';
 $string['above'] = 'Above';
 $string['within'] = 'Within';
+$string['activitynavigationposition'] = 'Activity navigation position';
+$string['activitynavigationpositiondesc'] = 'Choose between \'Above\' and \'Below\' for the activity navigaton.  Where \'Above\' is above the activity and \'Below\' is below it.  If you wish to use custom CSS then use the selector \'#activitynavigation\'.';
+$string['below'] = 'Below';
 
 $string['categoryincoursebreadcrumbfeature'] = 'Categories in the course breadcrumb';
 $string['categoryincoursebreadcrumbfeaturedesc'] = 'Show the category links in the breadcrumb of the course.';

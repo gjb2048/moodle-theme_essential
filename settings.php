@@ -265,6 +265,19 @@ if ($ADMIN->fulltree) {
     );
     $essentialsettingsfeature->add($setting);
 
+    // Activity navigation position.
+    $name = 'theme_essential/activitynavigationposition';
+    $title = get_string('activitynavigationposition', 'theme_essential');
+    $description = get_string('activitynavigationpositiondesc', 'theme_essential');
+    $default = 'below';
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default,
+        array(
+            'above' => get_string('above', 'theme_essential'),
+            'below' => get_string('below', 'theme_essential')
+        )
+    );
+    $essentialsettingsfeature->add($setting);
+
     // Categories in the course breadcrumb.
     $name = 'theme_essential/categoryincoursebreadcrumbfeature';
     $title = get_string('categoryincoursebreadcrumbfeature', 'theme_essential');

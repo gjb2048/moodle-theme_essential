@@ -30,6 +30,10 @@ $coursetitleposition = \theme_essential\toolbox::get_setting('coursetitlepositio
 if (empty($coursetitleposition)) {
     $coursetitleposition = 'within';
 }
+$activitynavigationposition = \theme_essential\toolbox::get_setting('activitynavigationposition');
+if (empty($activitynavigationposition)) {
+    $activitynavigationposition = 'below';
+}
 if ($coursetitleposition == 'above') {
     echo $OUTPUT->course_title(false);
 }
@@ -48,8 +52,13 @@ if ($coursetitleposition == 'within') {
     echo $OUTPUT->course_title();
 }
 echo $OUTPUT->course_content_header();
+if ($activitynavigationposition == 'above') {
+    echo $OUTPUT->activity_navigation();
+}
 echo $OUTPUT->main_content();
-echo $OUTPUT->activity_navigation();
+if ($activitynavigationposition == 'below') {
+    echo $OUTPUT->activity_navigation();
+}
 if (empty($PAGE->layout_options['nocoursefooter'])) {
     echo $OUTPUT->course_content_footer();
 }

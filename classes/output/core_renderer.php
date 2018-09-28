@@ -514,6 +514,15 @@ class core_renderer extends \core_renderer {
     }
 
     /**
+     * Returns standard navigation between activities in a course.
+     *
+     * @return string the navigation HTML.
+     */
+    public function activity_navigation() {
+        return html_writer::tag('div', parent::activity_navigation(), array('id' => 'activitynavigation'));
+    }
+
+    /**
      * This is an optional menu that can be added to a layout by a theme. It contains the
      * menu for the most specific thing from the settings block. E.g. Module administration.
      *

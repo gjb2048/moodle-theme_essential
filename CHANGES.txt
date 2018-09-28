@@ -1,6 +1,7 @@
 New in 3.5.1.1
 ==============
 - FIX: coursetitleposition string typo.
+- NEW: Activity navigation above the activity and setting.
 
 New in 3.5.1.0
 ==============
