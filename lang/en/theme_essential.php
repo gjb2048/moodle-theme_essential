@@ -331,7 +331,7 @@ $string['loginbackgrounddesc'] = 'Upload your own login background image.  Selec
 $string['loginbackgroundstyle'] = 'Login background style';
 $string['loginbackgroundstyledesc'] = 'Select the style for the uploaded image.';
 $string['loginbackgroundopacity'] = 'Login box background opacity when there is a background image';
-$string['loginbackgroundopacitydesc'] = 'Lofin background opacity for the login box when there is a background image.';
+$string['loginbackgroundopacitydesc'] = 'Login background opacity for the login box when there is a background image.';
 
 // Colours.
 $string['colorheading'] = 'Colour';
