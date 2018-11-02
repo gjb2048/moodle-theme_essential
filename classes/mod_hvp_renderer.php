@@ -31,9 +31,6 @@ if (file_exists($h5prenderer)) {
 
     /**
      * Class theme_essential_mod_hvp_renderer
-     *
-     * Extends the H5P renderer so that we are able to override the relevant
-     * functions declared there
      */
     class theme_essential_mod_hvp_renderer extends mod_hvp_renderer {
 
@@ -41,32 +38,26 @@ if (file_exists($h5prenderer)) {
          * Add styles when an H5P is displayed.
          *
          * @param array $styles Styles that will be applied.
-         * @param array $libraries Libraries that wil be shown.
+         * @param array $libraries Libraries that will be shown.
          * @param string $embedType How the H5P is displayed.
          */
         public function hvp_alter_styles(&$styles, $libraries, $embedType) {
-            error_log('HVPR Hullo');
+            $content = \theme_essential\toolbox::get_setting('hvpcustomcss');
+            if (!empty($content)) {
+                $styles[] = (object) array(
+                    'path' => $this->get_style_url($content),
+                    'version' => ''
+                );
+            }
+        }
+
+        protected function get_style_url($content) {
             global $CFG;
 
-            $styles[] = (object) array(
-                'path' => $this->get_style_url(),
-                //'version' => '?ver=3.5.1.2' // Not really needed as theme revision in the URL changes when the HVP custom CSS does.
-                'version' => ''
-            );
-        }
-        
-        protected function get_style_url() {
-            global $CFG;
-            
             $syscontext = \context_system::instance();
-            $itemid = \theme_get_revision();
-            $content = '.h5p-box-wrapper { border: 10px solid #fab; }';
             $itemid = md5($content);
-            $url = \moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php",
-                "/$syscontext->id/theme_essential/hvp/$itemid/hvp.css");
-            //$url = preg_replace('|^https?://|i', '//', $url->out(false));
-            error_log('hvpr url: '.$url);
-            return $url;
+            return \moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php",
+                "/$syscontext->id/theme_essential/hvp/$itemid/themehvp.css");
         }
     }
 }
