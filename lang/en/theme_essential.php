@@ -336,6 +336,9 @@ $string['loginbackgroundstyledesc'] = 'Select the style for the uploaded image.'
 $string['loginbackgroundopacity'] = 'Login box background opacity when there is a background image';
 $string['loginbackgroundopacitydesc'] = 'Login background opacity for the login box when there is a background image.';
 
+$string['hvpcustomcss'] = 'H5P Custom CSS';
+$string['hvpcustomcssdesc'] = 'Custom CSS for the H5P module (moodle.org/plugins/mod_hvp) if installed.';
+
 // Colours.
 $string['colorheading'] = 'Colour';
 $string['colorheadingsub'] = 'Set the colours used in your theme';

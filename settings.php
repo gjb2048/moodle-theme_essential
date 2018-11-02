@@ -18,6 +18,7 @@
  * Essential is a clean and customizable theme.
  *
  * @package     theme_essential
+ * @copyright   2018 Gareth J Barnard
  * @copyright   2016 Gareth J Barnard
  * @copyright   2015 Gareth J Barnard
  * @copyright   2014 Gareth J Barnard, David Bezemer
@@ -154,7 +155,7 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsgeneric->add($setting);
 
-    // Custom CSS file.
+    // Custom CSS.
     $name = 'theme_essential/customcss';
     $title = get_string('customcss', 'theme_essential');
     $description = get_string('customcssdesc', 'theme_essential');
@@ -347,6 +348,15 @@ if ($ADMIN->fulltree) {
     $description = get_string('loginbackgroundopacitydesc', 'theme_essential');
     $default = '0.8';
     $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $opactitychoices);
+    $essentialsettingsfeature->add($setting);
+
+    // H5P Custom CSS.
+    $name = 'theme_essential/hvpcustomcss';
+    $title = get_string('hvpcustomcss', 'theme_essential');
+    $description = get_string('hvpcustomcssdesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsfeature->add($setting);
 
     $essentialsettingsfeature->add($essentialreadme);
