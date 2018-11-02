@@ -26,33 +26,6 @@ define(['jquery', 'core/log'], function($, log) {
                         titlearea.fadeOut();
                     });
                 }
-                if (($("#essentialicons").length) && ($("#essentialnavbar").length)) {
-                    var $essentialnavbar = $("#essentialnavbar");
-                    $("#essentialicons").on('hidden', function() {
-                        var pageheaderHeight = $("#page-header").height();
-                        log.debug('Essential header hidden AMD phh: ' + pageheaderHeight);
-                        var wst = $(window).scrollTop();
-                        log.debug('Essential header hidden AMD wst: ' + wst);
-                        var diff = pageheaderHeight - wst;
-                        log.debug('Essential header hidden AMD diff: ' + diff);
-                        if (diff < 0) {
-                            diff = 0;
-                        }
-                        $essentialnavbar.css('top', diff + 'px');
-                    });
-                    $("#essentialicons").on('shown', function() {
-                        var pageheaderHeight = $("#page-header").height();
-                        log.debug('Essential header shown AMD phh: ' + pageheaderHeight);
-                        var wst = $(window).scrollTop();
-                        log.debug('Essential header shown AMD wst: ' + wst);
-                        var diff = pageheaderHeight - wst;
-                        log.debug('Essential header shown AMD diff: ' + diff);
-                        if (diff < 0) {
-                            diff = 0;
-                        }
-                        $essentialnavbar.css('top', diff + 'px');
-                    });
-                }
             });
             log.debug('Essential header AMD init');
         }
