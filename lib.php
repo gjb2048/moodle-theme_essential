@@ -77,12 +77,56 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
             return $theme->setting_file_serve('ipadretinaicon', $args, $forcedownload, $options);
         } else if ($filearea === 'loginbackground') {
             return $theme->setting_file_serve('loginbackground', $args, $forcedownload, $options);
+        } else if ($filearea === 'hvp') {
+            error_log('hvp args: '.print_r($args, true));
+            theme_essential_serve_hvp_css($args[0], $args[1]);
         } else {
             send_file_not_found();
         }
     } else {
         send_file_not_found();
     }
+}
+
+function theme_essential_serve_hvp_css($itemid, $filename) {
+    global $CFG;
+    require_once($CFG->dirroot . '/lib/configonlylib.php'); // For min_enable_zlib_compression().
+    
+    $content = '.h5p-box-wrapper { border: 10px solid #fab; }';
+    
+    //$etagheader = (isset($_SERVER['HTTP_IF_NONE_MATCH']) ? trim($_SERVER['HTTP_IF_NONE_MATCH']) : false);
+    $md5content = md5($content);
+
+    // 60 days only - the revision may get incremented quite often.
+    $lifetime = 60 * 60 * 24 * 60;
+    //if ($etagheader == $etagcontent) {
+    //if ($itemid == $etagcontent) {
+    if (false) {
+        header('HTTP/1.1 304 Not Modified');
+        header('Expires: ' . gmdate('D, d M Y H:i:s', time() + $lifetime) . ' GMT');
+        header('Cache-Control: public, max-age=' . $lifetime);
+        header('Content-Type: text/css; charset=utf-8');
+        header('Etag: "' . $md5content . '"');
+    } else {
+        header('HTTP/1.1 200 OK');
+
+        header('Etag: "' . $md5content . '"');
+        header('Content-Disposition: inline; filename="' . $filename . '"');
+    /*if ($lastmodified) {
+        header('Last-Modified: ' . gmdate('D, d M Y H:i:s', $lastmodified) . ' GMT');
+    }*/
+        header('Expires: ' . gmdate('D, d M Y H:i:s', time() + $lifetime) . ' GMT');
+        header('Pragma: ');
+        header('Cache-Control: public, max-age=' . $lifetime);
+        header('Accept-Ranges: none');
+        header('Content-Type: text/css; charset=utf-8');
+        if (!min_enable_zlib_compression()) {
+            header('Content-Length: ' . strlen($content));
+        }
+
+        echo $content;
+    }
+    die;
 }
 
 function theme_essential_serve_css($filename) {
