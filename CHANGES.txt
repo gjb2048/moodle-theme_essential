@@ -4,6 +4,7 @@ New in 3.3.1.5
 - FIX: Update frontpage home block area information.
 - FIX: LTI tool icon issue, see: https://moodle.org/mod/forum/discuss.php?d=371252#p1516474.
 - FIX: coursetitleposition string typo.
+- FIX: Position of quiz correction icons.
 - FIX: Issue #865: Login box centred instructions.
 - NEW: H5P Custom CSS setting in 'Features' for the H5P module (https://moodle.org/plugins/mod_hvp) if installed.
 - NEW: Issue #867: Skip links for footer blocks sometimes appear over main course page content.
