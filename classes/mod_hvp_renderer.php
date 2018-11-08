@@ -39,9 +39,9 @@ if (file_exists($h5prenderer)) {
          *
          * @param array $styles Styles that will be applied.
          * @param array $libraries Libraries that will be shown.
-         * @param string $embedType How the H5P is displayed.
+         * @param string $embedtype How the H5P is displayed.
          */
-        public function hvp_alter_styles(&$styles, $libraries, $embedType) {
+        public function hvp_alter_styles(&$styles, $libraries, $embedtype) {
             $content = \theme_essential\toolbox::get_setting('hvpcustomcss');
             if (!empty($content)) {
                 $styles[] = (object) array(
