@@ -19788,6 +19788,15 @@ ul.indented-list {
 .w-100 {
   width: 100%;
 }
+.w-75 {
+  width: 75%;
+}
+.w-50 {
+  width: 50%;
+}
+.w-25 {
+  width: 25%;
+}
 .carousel-indicators {
   z-index: 2;
 }
@@ -19972,6 +19981,13 @@ span:first-of-type > .icon {
 #page-mod-quiz-attempt .submitbtns .mod_quiz-next-nav,
 #page-mod-quiz-review .submitbtns .mod_quiz-next-nav {
   float: none;
+}
+.que.multichoice .answer div.r0 .icon.fa-check,
+.que.multichoice .answer div.r1 .icon.fa-check,
+.que.multichoice .answer div.r0 .icon.fa-remove,
+.que.multichoice .answer div.r1 .icon.fa-remove {
+  text-indent: 0;
+  vertical-align: inherit;
 }
 /* Moodle fixes mod-quiz end */
 /* Moodle fixes navigation begin */
