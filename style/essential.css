@@ -23594,7 +23594,7 @@ body.format-topcoll .course-content ul.ctopics li.section .content .toggle a h3:
 }
 @media (min-width: 768px) and (max-width: 979px) {
   body {
-    font-size: 13px !important;
+    font-size: 13px;
     line-height: 18px;
   }
   #page-header h1#smalltitle {
@@ -23612,7 +23612,7 @@ body.format-topcoll .course-content ul.ctopics li.section .content .toggle a h3:
 }
 @media (max-width: 767px) {
   body {
-    font-size: 12px !important;
+    font-size: 12px;
     font-weight: 500;
     line-height: 16px;
   }
