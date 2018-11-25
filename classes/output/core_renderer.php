@@ -500,11 +500,12 @@ class core_renderer extends \core_renderer {
             }
         }
 
-        if (($showfrontpagemenu) || ($showcoursemenu) || ($showusermenu)) {
-            return $this->render_navbar_action_menu($menu, $title);
-        } else {
+        if ($menu->is_empty()) {
             return '';
+        } else if (($showfrontpagemenu) || ($showcoursemenu) || ($showusermenu)) {
+            return $this->render_navbar_action_menu($menu, $title);
         }
+        return '';
     }
 
     /**
