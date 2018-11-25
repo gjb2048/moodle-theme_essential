@@ -1460,6 +1460,14 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $essentialsettingsheader->add($setting);
 
+    // Badges.
+    $name = 'theme_essential/badgesmi';
+    $title = get_string('badgesmi', 'theme_essential');
+    $description = get_string('badgesmidesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $essentialsettingsheader->add($setting);
+
     // Helplink type.
     $name = 'theme_essential/helplinktype';
     $title = get_string('helplinktype', 'theme_essential');
