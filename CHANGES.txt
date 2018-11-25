@@ -1,6 +1,7 @@
 New in 3.5.1.2
 ==============
 - FIX: Position of quiz correction icons.
+- FIX: Issue #884: Removed important font size declarations from responsive.less.  Thanks to Mike Nodding for the patch.
 - NEW: H5P Custom CSS setting in 'Features' for the H5P module (https://moodle.org/plugins/mod_hvp) if installed.
 
 New in 3.5.1.1
