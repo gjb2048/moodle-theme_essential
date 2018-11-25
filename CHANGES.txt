@@ -7,6 +7,7 @@ New in 3.4.1.4
 - FIX: Issue #882: badgesmi setting missing in settings.php.
 - NEW: H5P Custom CSS setting in 'Features' for the H5P module (https://moodle.org/plugins/mod_hvp) if installed.
 - NEW: Issue #867: Skip links for footer blocks sometimes appear over main course page content.
+- NEW: Issue #883: embed-responsive bootstrap class not supported?
 - NEW: Issue #884: Removed important font size declarations from responsive.less.  Thanks to Mike Nodding for the patch.
 
 New in 3.4.1.3
