@@ -15,6 +15,7 @@ New in 3.3.1.5
        Thanks to "Linnaeus University" for funding this enhancement.
 - NEW: Added the ability to show / hide all of the items on the user menu bar 'log out'.
 - NEW: Issue #867: Skip links for footer blocks sometimes appear over main course page content.
+- NEW: Issue #883: embed-responsive bootstrap class not supported?
 - NEW: Issue #884: Removed important font size declarations from responsive.less.  Thanks to Mike Nodding for the patch.
 
 New in 3.3.1.4
