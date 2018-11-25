@@ -1,6 +1,7 @@
 New in 3.5.1.2
 ==============
 - FIX: Position of quiz correction icons.
+- FIX: Issue #876: Context menu in header near top right empty and showing for non-logged in users and students.
 - FIX: Issue #882: badgesmi setting missing in settings.php.
 - FIX: Issue #884: Removed important font size declarations from responsive.less.  Thanks to Mike Nodding for the patch.
 - NEW: H5P Custom CSS setting in 'Features' for the H5P module (https://moodle.org/plugins/mod_hvp) if installed.
