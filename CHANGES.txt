@@ -7,12 +7,13 @@ New in 3.3.1.5
 - FIX: Position of quiz correction icons.
 - FIX: Issue #865: Login box centred instructions.
 - NEW: H5P Custom CSS setting in 'Features' for the H5P module (https://moodle.org/plugins/mod_hvp) if installed.
-- NEW: Issue #867: Skip links for footer blocks sometimes appear over main course page content.
 - NEW: Added a tally to the 'Course search' on the dashboard.  Thanks to "Linnaeus University" for funding this
        enhancement.
 - NEW: Added the ability for the administrator to disable the 'Search all course content' checkbox user preference.
        Thanks to "Linnaeus University" for funding this enhancement.
 - NEW: Added the ability to show / hide all of the items on the user menu bar 'log out'.
+- NEW: Issue #867: Skip links for footer blocks sometimes appear over main course page content.
+- NEW: Issue #884: Removed important font size declarations from responsive.less.  Thanks to Mike Nodding for the patch.
 
 New in 3.3.1.4
 ==============
