@@ -68,6 +68,7 @@ defined('MOODLE_INTERNAL') || die;
                             }
                             echo $OUTPUT->custom_menu();
                             echo $OUTPUT->custom_menu_activitystream();
+                            echo $OUTPUT->custom_menu_participants();
                             ?>
                         </div>
                     </div>
