@@ -235,7 +235,9 @@ $string['allmodules'] = 'All modules';
 $string['allclasses'] = 'All classes';
 $string['noenrolments'] = 'You have no current enrolments';
 $string['thiscourse'] = 'This course';
-$string['people'] = 'People';
+
+// Participants menu.
+$string['gotopeople'] = 'Go to people';
 
 // User menu.
 $string['usermenu'] = 'User menu';
