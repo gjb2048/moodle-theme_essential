@@ -19983,6 +19983,11 @@ span:first-of-type > .icon {
 .block_navigation .tree_item .icon,
 .block_settings .tree_item .icon {
   margin-left: 0;
+  margin-right: 0;
+}
+.block_navigation .tree_item .navicon,
+.block_settings .tree_item .navicon {
+  margin-right: 3px;
 }
 .fp-navbar a > .icon {
   margin: 0.5rem;

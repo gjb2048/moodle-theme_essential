@@ -1,5 +1,6 @@
 New in 3.5.1.3
 ==============
+- FIX: Issue #888: Margins on block icons.
 
 New in 3.5.1.2
 ==============
