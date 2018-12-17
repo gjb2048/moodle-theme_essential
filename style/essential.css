@@ -23344,11 +23344,9 @@ ul.socials li {
   left: 0;
   position: fixed;
   top: 0;
+  transition: top 0.375s ease;
   width: 100%;
   z-index: 3;
-}
-#essentialnavbar .navbar {
-  position: fixed;
 }
 @media (min-width: 980px) {
   .pagewidthnarrow #page-header {
@@ -23463,6 +23461,9 @@ div.dropdown-menu > ul li a {
   height: auto;
   max-width: 20px;
   max-height: 20px;
+  transition-property: max-height, max-width;
+  transition-duration: 0.375s;
+  transition-timing-function: ease;
   vertical-align: top;
   width: auto;
 }
