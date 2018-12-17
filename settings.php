@@ -62,7 +62,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_essential/flatnavigation';
     $title = get_string('flatnavigation', 'theme_essential');
     $description = get_string('flatnavigationdesc', 'theme_essential');
-    $default = true;
+    $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsgeneric->add($setting);
