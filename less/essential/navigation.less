@@ -13,13 +13,11 @@
     left: 0;
     position: fixed;
     top: 0;
+    transition: top 0.375s ease;
     width: 100%;
     // Changed to 2 for the Grid format, then 3 for btn-group's.   Not 1 because of breadcrumb style 1 and dropdown menus.  Revert back to 200 if needed.
     // Change .moodle-actionmenu[data-enhanced].show - .menu in core.less if change.
     z-index: 3;
-    .navbar {
-        position: fixed;
-    }
 }
 
 @media (min-width: @navbarCollapseDesktopWidth) {
@@ -173,6 +171,9 @@ div.dropdown-menu > ul {
                     height: auto;
                     max-width: 20px;
                     max-height: 20px;
+                    transition-property: max-height, max-width;
+                    transition-duration: 0.375s;
+                    transition-timing-function: ease;
                     vertical-align: top;
                     width: auto;
                 }
