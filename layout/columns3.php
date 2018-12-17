@@ -91,6 +91,7 @@ if (!$tablet) {
 ?>
     </div>
     <!-- End Main Regions -->
+    <?php echo $OUTPUT->standard_after_main_region_html(); ?>
 </div>
 
 <?php require_once(\theme_essential\toolbox::get_tile_file('footer')); ?>

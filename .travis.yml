@@ -15,16 +15,16 @@ matrix:
  - php: 7.0
    env: DB=pgsql
    addons:
-      postgresql: 9.3
+      postgresql: 9.4
  - php: 7.1
    env: DB=mysqli
  - php: 7.1
    env: DB=pgsql
    addons:
-      postgresql: 9.3
+      postgresql: 9.4
 env:
  global:
-  - MOODLE_BRANCH=MOODLE_35_STABLE
+  - MOODLE_BRANCH=MOODLE_36_STABLE
   - IGNORE_PATHS=amd/build,amd/src/carousel.js,amd/src/fitvids.js,amd/src/jBreadCrumb.js
   # Ignore custom.css until CSSlint can be instructed to ignore lines for '[[setting:customcss]]'.
   # Also ignore generated CSS files.

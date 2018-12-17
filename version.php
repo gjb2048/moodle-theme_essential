@@ -29,11 +29,11 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version = 2018051904; // YYYYMMDDVV.
-$plugin->maturity = MATURITY_STABLE; // This version's maturity level.
-$plugin->release = '3.5.1.3 (Build: 2018051904)';
-$plugin->requires  = 2018051700.00; // 3.5 (Build: 20180517).
+$plugin->version = 2018121700; // YYYYMMDDVV.
+$plugin->maturity = MATURITY_BETA; // This version's maturity level.
+$plugin->release = '3.6.0.1 (Build: 2018051904)';
+$plugin->requires  = 2018120301.00; // Moodle 3.6.1 (Build: 20181205).
 $plugin->component = 'theme_essential';
 $plugin->dependencies = array(
-    'theme_bootstrapbase'  => 2018051400
+    'theme_bootstrapbase'  => 2018120300
 );

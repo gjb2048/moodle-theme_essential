@@ -69,6 +69,7 @@ echo $OUTPUT->doctype();
         </div>
         <?php echo $OUTPUT->essential_blocks('side-post', 'span3'); ?>
     </div>
+    <?php echo $OUTPUT->standard_after_main_region_html(); ?>
 </div>
 
 <footer>

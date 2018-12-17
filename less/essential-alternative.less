@@ -505,7 +505,7 @@
                     }
                 }
 
-                button,
+                button:not(.btn-link),
                 .btn-default,
                 a.btn-default,
                 button.btn-cancel,
@@ -546,6 +546,9 @@
                             color: ~"[[setting:alternativethemedefaultbuttontexthovercolour@{index}]]";
                         }
                     }
+                }
+                button:not(.btn-link) .caret {
+                    border-top-color: ~"[[setting:alternativethemedefaultbuttontextcolour@{index}]]";
                 }
 
                 button.close {

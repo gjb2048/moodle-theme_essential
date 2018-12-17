@@ -48,6 +48,7 @@ echo $OUTPUT->doctype();
     <div id="page-content" class="clearfix">
         <?php echo $OUTPUT->main_content(); ?>
     </div>
+    <?php echo $OUTPUT->standard_after_main_region_html(); ?>
 </div>
 <?php echo $OUTPUT->standard_end_of_body_html(); ?>
 </body>

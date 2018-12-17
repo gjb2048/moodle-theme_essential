@@ -50,6 +50,7 @@ echo $OUTPUT->doctype();
             <span aria-hidden="true" class="fa fa-refresh fa-spin fa-2x" style="margin-bottom: 10px;"></span>
         </section>
     </div>
+    <?php echo $OUTPUT->standard_after_main_region_html(); ?>
 </div>
 <?php echo $OUTPUT->standard_end_of_body_html(); ?>
 </body>

@@ -221,6 +221,7 @@ if ($frontpageblocks) {
         </div>
 
         <!-- End Main Regions -->
+        <?php echo $OUTPUT->standard_after_main_region_html(); ?>
 
         <?php if (is_siteadmin()) { ?>
             <div class="hidden-blocks">

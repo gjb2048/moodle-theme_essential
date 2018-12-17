@@ -98,6 +98,7 @@ if ($devicetype !== 'mobile' and $devicetype !== 'tablet') {
             ?>
         </section>
     </div>
+    <?php echo $OUTPUT->standard_after_main_region_html(); ?>
 
     <footer id="page-footer" class="<?php echo $hideclass; ?>">
         <div id="course-footer"><?php echo $OUTPUT->course_footer(); ?></div>
