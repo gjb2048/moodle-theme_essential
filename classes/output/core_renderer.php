@@ -937,7 +937,7 @@ class core_renderer extends \core_renderer {
     }
 
     protected static function timeaccesscompare($a, $b) {
-        // timeaccess is lastaccess entry and timestart an enrol entry.
+        // The timeaccess is lastaccess entry and timestart an enrol entry.
         if ((!empty($a->timeaccess)) && (!empty($b->timeaccess))) {
             // Both last access.
             if ($a->timeaccess == $b->timeaccess) {
@@ -952,13 +952,13 @@ class core_renderer extends \core_renderer {
             return ($a->timestart > $b->timestart) ? -1 : 1;
         }
 
-        // Must be comparing an enrol with a last access.
-        // -1 is to say that 'a' comes before 'b'.
+        /* Must be comparing an enrol with a last access.
+           -1 is to say that 'a' comes before 'b'. */
         if (!empty($a->timestart)) {
-            // 'a' is the enrol entry.
+            // If 'a' is the enrol entry.
             return -1;
         }
-        // 'b' must be the enrol entry.
+        // Then 'b' must be the enrol entry.
         return 1;
     }
 
@@ -1365,7 +1365,7 @@ class core_renderer extends \core_renderer {
             // Limited group access.
             $groups = \groups_get_user_groups($courseid);
             if (!empty($groups[$course->defaultgroupingid])) {
-                foreach ($groups[$course->defaultgroupingid] AS $groupid) {
+                foreach ($groups[$course->defaultgroupingid] as $groupid) {
                     $groupoptions[$groupid] = $groupid;
                 }
             }
@@ -1375,10 +1375,10 @@ class core_renderer extends \core_renderer {
                 // User can see all groups.
                 $allgroups = \groups_get_all_groups($courseid);
             } else {
-                // user can see course level groups
+                // User can see course level groups.
                 $allgroups = \groups_get_all_groups($courseid, 0, $course->defaultgroupingid);
             }
-            foreach($allgroups as $group) {
+            foreach ($allgroups as $group) {
                 $groupoptions[$group->id] = $group->id;
             }
         }
