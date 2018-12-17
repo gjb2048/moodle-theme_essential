@@ -1,6 +1,8 @@
 New in 3.5.1.3
 ==============
+- FIX: Old navbar position scroll linked effects on FireFox.
 - FIX: Issue #888: Margins on block icons.
+- NEW: Separate 'People' from 'This course' menu and create 'Participants' menu.
 
 New in 3.5.1.2
 ==============
