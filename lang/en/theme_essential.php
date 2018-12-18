@@ -145,6 +145,8 @@ $string['genericsettings'] = 'General';
 $string['generalheadingsub'] = 'General settings';
 $string['generalheadingdesc'] = 'Configure the general settings for the theme here.';
 
+$string['docking'] = 'Enable docking.';
+$string['dockingdesc'] = 'If enabled docking will be available.';
 $string['flatnavigation'] = 'Enable flat navigation.';
 $string['flatnavigationdesc'] = 'If enabled flat navigation will be used instead of the navigation and settings blocks.';
 $string['coursesettingstitle'] = 'Course settings';

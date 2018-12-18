@@ -57,7 +57,7 @@ $THEME->sheets[] = 'custom';
 $THEME->supportscssoptimisation = false;
 
 $THEME->javascripts_footer = array('essential');
-$THEME->enable_dock = true;
+$THEME->enable_dock = get_config('theme_essential', 'docking');
 $THEME->javascripts_footer[] = 'dock';
 
 $THEME->editor_sheets = array('editor', 'custom');
