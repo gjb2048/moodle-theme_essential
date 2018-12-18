@@ -20300,6 +20300,17 @@ input[type="color"],
 .message .message-contacts li > div.pix {
   float: none;
 }
+.message-drawer {
+  height: 90%;
+}
+@media (min-width: 980px) {
+  .message-drawer {
+    height: calc(90% - 42px);
+  }
+}
+#essentialnavbar.modal-layer {
+  z-index: 1050;
+}
 /* Moodle fixes message end */
 /* Moodle fixes mod-assign begin */
 .path-mod-assign .gradingtable tr.selectedrow td,

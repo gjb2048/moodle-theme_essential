@@ -39,26 +39,26 @@
 }}
 <div
     id="message-drawer-{{uniqid}}"
-    class="message-drawer bg-light hidden"
+    class="message-drawer bg-light hidden modal essential-message-drawer"
     aria-expanded="false"
     aria-hidden="true"
     data-region="message-drawer"
     role="region"
 >
-    <div class="drawer-top p-2 border-bottom bg-secondary">
+    <div class="p-2 border-bottom bg-secondary modal-header">
         {{#str}} messages, message {{/str}}
         <a id="message-drawer-close-{{uniqid}}" class="pull-right" href="#">
             {{#pix}} i/window_close, core, {{#str}} togglemessagemenu, message {{/str}} {{/pix}}
         </a>
     </div>
-    <div class="header-container position-relative" data-region="header-container">
+    <div class="header-container position-relative modal-body" data-region="header-container">
         {{> core_message/message_drawer_view_contacts_header }}
         {{> core_message/message_drawer_view_conversation_header }}
         {{> core_message/message_drawer_view_overview_header }}
         {{> core_message/message_drawer_view_search_header }}
         {{> core_message/message_drawer_view_settings_header }}
     </div>
-    <div class="body-container position-relative" data-region="body-container">
+    <div class="body-container position-relative modal-body" data-region="body-container">
         {{> core_message/message_drawer_view_contact_body }}
         {{> core_message/message_drawer_view_contacts_body }}
         {{> core_message/message_drawer_view_conversation_body }}
@@ -67,10 +67,11 @@
         {{> core_message/message_drawer_view_search_body }}
         {{> core_message/message_drawer_view_settings_body }}
     </div>
-    <div class="footer-container position-relative" data-region="footer-container">
+    <div class="footer-container position-relative modal-footer" data-region="footer-container">
         {{> core_message/message_drawer_view_conversation_footer }}
     </div>
 </div>
+<div id="message-drawer-backdrop" class="modal-backdrop fade in hidden"></div>
 
 {{#js}}
 require(
@@ -90,5 +91,24 @@ function(
 
     var toggle = $('#message-drawer-close-{{uniqid}}');
     Popover.init(toggle);
+
+    $(document).ready(function() {
+        var backdrop = $('#message-drawer-backdrop');
+        var navbar = $('#essentialnavbar');
+        var checkState = function() {
+            if (root.hasClass('hidden')) {
+                backdrop.addClass('hidden');
+                navbar.removeClass('modal-layer');
+            } else {
+                backdrop.removeClass('hidden');
+                navbar.addClass('modal-layer');
+            }
+        };
+
+        toggle.click(function() {
+            checkState();
+        });
+    });
+
 });
 {{/js}}
