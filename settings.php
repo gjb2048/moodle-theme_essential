@@ -1236,6 +1236,14 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsheader->add($setting);
 
+    // Participants menu.
+    $name = 'theme_essential/participantsmenu';
+    $title = get_string('participantsmenu', 'theme_essential');
+    $description = get_string('participantsmenudesc', 'theme_essential');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+    $essentialsettingsheader->add($setting);
+
     // Choose breadcrumbstyle.
     $name = 'theme_essential/breadcrumbstyle';
     $title = get_string('breadcrumbstyle', 'theme_essential');
