@@ -238,6 +238,8 @@ $string['thiscourse'] = 'This course';
 
 // Participants menu.
 $string['gotopeople'] = 'Go to people';
+$string['participantsmenu'] = 'Participants menu';
+$string['participantsmenudesc'] = 'Show the participants menu in the course and module pages.';
 
 // User menu.
 $string['usermenu'] = 'User menu';

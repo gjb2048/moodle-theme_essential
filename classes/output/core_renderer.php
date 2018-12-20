@@ -1282,7 +1282,10 @@ class core_renderer extends \core_renderer {
      */
     public function custom_menu_participants() {
         $output = '';
-        if (!isguestuser()) {
+        if ((!isguestuser()) &&
+            ((\theme_essential\toolbox::get_setting('participantsmenu')) &&
+            (($this->page->pagelayout == 'course') || ($this->page->pagelayout == 'incourse')))
+        ) {
             $users = $this->get_enrolled_users();
             if (!empty($users)) {
                 /* Not using a custom menu so to make use of the user picture rendering code, otherwise a lot of work to do and

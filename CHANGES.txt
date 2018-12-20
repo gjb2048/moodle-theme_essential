@@ -2,6 +2,8 @@ New in 3.4.1.5
 ==============
 - FIX: Old navbar position scroll linked effects on FireFox.
 - FIX: Issue #888: Margins on block icons.
+- FIX: Participants menu only on course and module pages.
+- NEW: Show / hide the participants menu with the 'participantsmenu' setting in the 'Header' settings.
 - NEW: Separate 'People' from 'This course' menu and create 'Participants' menu.
 
 New in 3.4.1.4
