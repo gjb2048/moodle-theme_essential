@@ -2132,14 +2132,13 @@ class core_renderer extends \core_renderer {
             );
 
             $regioncontent = '';
-            $flatnavigation = false;
+            $flatnavigation = (!empty(\theme_essential\toolbox::get_setting('flatnavigation')));
             $flatnavigationcontent = '';
-            if ((\theme_essential\toolbox::get_setting('flatnavigation')) && ($region == 'side-pre')) {
+            if (($flatnavigation) && ($region == 'side-pre')) {
                 global $PAGE;
                 $templatecontext = array('flatnavigation' => $PAGE->flatnav);
                 $flatnavigationcontent = $this->render_from_template('theme_essential/flat_navigation', $templatecontext);
                 $attributes['data-region'] = 'drawer';
-                $flatnavigation = true;
             }
             $editing = $this->page->user_is_editing();
             if ($editing) {

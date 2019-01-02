@@ -2,6 +2,7 @@ New in 3.6.0.2
 ==============
 - FIX: Participants menu only on course and module pages.
 - FIX: Style improvements to messages.
+- FIX: Administration / Naviagtion menu still appearing when flat navigation is on because they are not in the side-pre region.
 - NEW: Show / hide the participants menu with the 'participantsmenu' setting in the 'Header' settings.
 
 New in 3.6.0.1
