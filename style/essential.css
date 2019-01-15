@@ -21577,6 +21577,11 @@ table.calendarmonth.calendartable {
   padding-top: 8px;
   width: 100%;
 }
+.categoryicons .course_category_tree .category > .info a > .fa.fa-balance-scale,
+.categoryicons .course_category_tree .category > .info > .categoryname a > .fa.fa-balance-scale {
+  font-size: 136px;
+  text-align: right;
+}
 .categoryicons .course_category_tree .category > .info a > .categoryimage,
 .categoryicons .course_category_tree .category > .info > .categoryname a > .categoryimage {
   line-height: 140px;
