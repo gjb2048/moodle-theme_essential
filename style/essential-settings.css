@@ -676,8 +676,7 @@ body.has_dock.essential-colours-alternative4 #dock .dockedtitle[disabled] {
 #tinymce .color {
   color: [[setting:themecolor]];
 }
-body .editor_atto_content_wrap,
-div.editor_atto_toolbar button .icon {
+body .editor_atto_content_wrap {
   color: [[setting:themetextcolor]];
 }
 /* @end */
