@@ -1,3 +1,6 @@
+New in 3.6.0.4
+==============
+
 New in 3.6.0.3
 ==============
 - FIX: Editor buttons and social icons.
