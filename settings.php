@@ -227,6 +227,35 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $essentialsettingsfeature->add($setting);
 
+    // Course content search sort results by.
+    $ccssrchoices = array(
+        'csd' => get_string('csd', 'theme_essential'),
+        'ced' => get_string('ced', 'theme_essential'),
+        'cfn' => get_string('cfn', 'theme_essential'),
+        'ccd' => get_string('ccd', 'theme_essential'),
+        'cid' => get_string('cid', 'theme_essential')
+    );
+
+    $name = 'theme_essential/coursecontentsearchsortattribute';
+    $title = get_string('coursecontentsearchsortattribute', 'theme_essential');
+    $description = get_string('coursecontentsearchsortattributedesc', 'theme_essential');
+    $default = 'cid';
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default, $ccssrchoices);
+    $essentialsettingsfeature->add($setting);
+
+    // Course content search sort order.
+    $name = 'theme_essential/coursecontentsearchsortorder';
+    $title = get_string('coursecontentsearchsortorder', 'theme_essential');
+    $description = get_string('coursecontentsearchsortorderdesc', 'theme_essential');
+    $default = 'asc';
+    $setting = new essential_admin_setting_configselect($name, $title, $description, $default,
+        array(
+            'asc' => get_string('sortasc', 'grades'),
+            'desc' => get_string('sortdesc', 'grades')
+        )
+    );
+    $essentialsettingsfeature->add($setting);
+
     // Custom scrollbars.
     $name = 'theme_essential/customscrollbars';
     $title = get_string('customscrollbars', 'theme_essential');

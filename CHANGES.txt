@@ -1,5 +1,6 @@
 New in 3.6.0.4
 ==============
+- NEW: Course content search attribute and order.
 
 New in 3.6.0.3
 ==============
