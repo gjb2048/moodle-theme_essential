@@ -283,7 +283,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
 
         $data = array();
 
-        $courses = enrol_get_my_courses();
+        $courses = enrol_get_my_courses('timecreated');
         $site = get_site();
 
         if (array_key_exists($site->id, $courses)) {
@@ -324,6 +324,20 @@ class theme_essential_core_course_renderer extends core_course_renderer {
 
         $sesskey = sesskey();
         $coursetally = 0;
+
+        // Presort.
+        $coursecontentsearchsortattribute = \theme_essential\toolbox::get_setting('coursecontentsearchsortattribute');
+        $coursecontentsearchsortorder = \theme_essential\toolbox::get_setting('coursecontentsearchsortorder');
+        if ((empty($coursecontentsearchsortattribute)) || (empty($coursecontentsearchsortorder))) {
+            $sortfunc = 'ccscmp_cid_asc';
+        } else if ((!empty($remotecourses)) && ($coursecontentsearchsortattribute == 'ccd')) {
+            // Remote courses do not have a course started date, timecreated, so use the startdate instead.
+            $sortfunc = 'ccscmp_csd_'.$coursecontentsearchsortorder;
+        } else {
+            $sortfunc = 'ccscmp_'.$coursecontentsearchsortattribute.'_'.$coursecontentsearchsortorder;
+        }
+        usort($courses, array($this, $sortfunc));
+
         foreach ($courses as $course) {
             if (!$courseitemsearchtype) {
                 $label = $course->fullname;
@@ -401,5 +415,48 @@ class theme_essential_core_course_renderer extends core_course_renderer {
         }
         $data[] = array('label' => $tallystr, 'value' => '');
         return $data;
+    }
+
+    public static function ccscmp_csd_asc($courseone, $coursetwo) {
+        return ($courseone->startdate < $coursetwo->startdate) ? -1 : +1;
+    }
+
+    public static function ccscmp_csd_desc($courseone, $coursetwo) {
+        return self::ccscmp_csd_asc($coursetwo, $courseone);
+    }
+
+    public static function ccscmp_ced_asc($courseone, $coursetwo) {
+        // If a course has an empty end date then use the start date.
+        $courseonedate = (empty($courseone->enddate)) ? $courseone->startdate : $courseone->enddate;
+        $coursetwodate = (empty($coursetwo->enddate)) ? $coursetwo->startdate : $coursetwo->enddate;
+        return ($courseonedate < $coursetwodate) ? -1 : +1;
+    }
+
+    public static function ccscmp_ced_desc($courseone, $coursetwo) {
+        return self::ccscmp_ced_asc($coursetwo, $courseone);
+    }
+
+    public static function ccscmp_cfn_asc($courseone, $coursetwo) {
+        return strcmp($courseone->fullname, $coursetwo->fullname);
+    }
+
+    public static function ccscmp_cfn_desc($courseone, $coursetwo) {
+        return self::ccscmp_cfn_asc($coursetwo, $courseone);
+    }
+
+    public static function ccscmp_ccd_asc($courseone, $coursetwo) {
+        return ($courseone->timecreated < $coursetwo->timecreated) ? -1 : +1;
+    }
+
+    public static function ccscmp_ccd_desc($courseone, $coursetwo) {
+        return self::ccscmp_ccd_asc($coursetwo, $courseone);
+    }
+
+    public static function ccscmp_cid_asc($courseone, $coursetwo) {
+        return ($courseone->id < $coursetwo->id) ? -1 : +1;
+    }
+
+    public static function ccscmp_cid_desc($courseone, $coursetwo) {
+        return self::ccscmp_cid_asc($coursetwo, $courseone);
     }
 }

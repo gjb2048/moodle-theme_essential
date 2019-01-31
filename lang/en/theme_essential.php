@@ -307,6 +307,17 @@ $string['customscrollbarsdesc'] = 'Use custom scrollbars. This will replace the 
 $string['coursecontentsearch'] = 'Course content search';
 $string['coursecontentsearchdesc'] = "Enable course content search on the 'Dashboard' page.  Only works when Essential is not in '\$CFG->themedir'.";
 
+$string['csd'] = 'Course start date';
+$string['ced'] = 'Course end date';
+$string['cfn'] = 'Course full name';
+$string['ccd'] = 'Course created date';
+$string['cid'] = 'Course ID';
+$string['coursecontentsearchsortattribute'] = 'Course content search sort attribute';
+$string['coursecontentsearchsortattributedesc'] = "Sort the search results by this attribute.";
+
+$string['coursecontentsearchsortorder'] = 'Course content search sort order';
+$string['coursecontentsearchsortorderdesc'] = "Sort the search results by ascending or descending.";
+
 $string['fitvids'] = 'Use FitVids';
 $string['fitvidsdesc'] = 'Enable FitVids (fitvidsjs.com) to make your embedded videos responsive.  If FitVids is on and you want a video to be excluded then add \'class="fitvidsignore"\' to the \'iframe\' tag in the HTML mode of the editor.  For example: \'iframe class="fitvidsignore" width="420" height="315" src="//www.youtube.com/embed/enmEmym85xc" frameborder="0" allowfullscreen=""></iframe\'.';
 
