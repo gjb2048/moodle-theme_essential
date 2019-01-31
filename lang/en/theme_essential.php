@@ -133,7 +133,7 @@ $string['paypal_click'] = 'Moodle profile';
 // Readme.
 $string['readme_title'] = 'Essential read-me';
 $string['readme_desc'] = 'Please {$a->url} file, which contains more information about the Essential theme including customisation.';
-$string['readme_click'] = 'click here for the README.txt';
+$string['readme_click'] = 'click here for the README.md';
 
 // Advert.
 $string['advert_heading'] = 'Theme Design Level 1';

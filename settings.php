@@ -173,7 +173,7 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsgeneric->add($setting);
 
-    $readme = new moodle_url('/theme/essential/README.txt');
+    $readme = new moodle_url('/theme/essential/README.md');
     $readme = html_writer::link($readme, get_string('readme_click', 'theme_essential'), array('target' => '_blank'));
 
     $essentialreadme = new admin_setting_heading('theme_essential_readme',
