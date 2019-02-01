@@ -1,3 +1,6 @@
+New in 3.5.1.5
+==============
+
 New in 3.5.1.4
 ==============
 - FIX: Participants menu only on course and module pages.
