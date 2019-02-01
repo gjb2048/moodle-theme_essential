@@ -245,7 +245,7 @@ class theme_essential_core_course_renderer extends core_course_renderer {
             }
             foreach ($course->get_course_contacts() as $userid => $coursecontact) {
                 $faiconsetting = \theme_essential\toolbox::get_setting('courselistteachericon');
-                $faiconsettinghtml = (empty($faiconsetting)) ? '' : '<span aria-hidden="true" class="'.
+                $faiconsettinghtml = (empty($faiconsetting)) ? '' : '<span aria-hidden="true" class="fa fa-'.
                     $faiconsetting.'"></span> ';
                 $name = $faiconsettinghtml.$coursecontact['rolename'].': '.
                         html_writer::link(new moodle_url('/user/view.php',
