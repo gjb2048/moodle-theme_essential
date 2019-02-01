@@ -1,6 +1,7 @@
 New in 3.5.1.5
 ==============
 - FIX: Administration / Naviagtion menu still appearing when flat navigation is on because they are not in the side-pre region.
+- FIX: 'courselistteachericon' not showing.
 
 New in 3.5.1.4
 ==============
