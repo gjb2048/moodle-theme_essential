@@ -1,6 +1,7 @@
 New in 3.6.0.4
 ==============
 - FIX: 'courselistteachericon' not showing.
+- FIX: Logo breaks header when using 'old navbar'.
 - NEW: Course content search attribute and order.
 
 New in 3.6.0.3
