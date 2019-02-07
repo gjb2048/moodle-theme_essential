@@ -14305,6 +14305,10 @@ form {
 .mform .fitem .fitemtitle div {
   display: inline;
 }
+.mform .fitem .fitemtitle .mediaplugin,
+.mform .fitem .fitemtitle .mediaplugin div {
+  display: block;
+}
 #adminsettings .error,
 .loginpanel .error,
 .mform .error {
@@ -23149,10 +23153,6 @@ table#greyboxleft h2 {
 #page-header #essentialicons button {
   margin: 0 0 0 5px;
 }
-#page-header a.logo {
-  background-position: left center;
-  float: left;
-}
 #page-header div.titlearea {
   margin-left: 80px;
   padding-left: 10px;
@@ -23184,16 +23184,28 @@ table#greyboxleft h2 {
     max-height: 80px;
   }
 }
-#page-header.logo {
-  min-height: 52px;
+#page-header.logo .logo-container {
+  height: 52px;
+}
+#page-header.logo .logo-container .logo {
+  line-height: 52px;
+}
+#page-header.logo .logo-container .logo img {
+  max-height: 52px;
 }
 #page-header.nologo {
   height: 52px;
   max-height: 52px;
 }
 @media (min-width: 980px) {
-  #page-header.logo {
-    min-height: 64px;
+  #page-header.logo .logo-container {
+    height: 64px;
+  }
+  #page-header.logo .logo-container .logo {
+    line-height: 64px;
+  }
+  #page-header.logo .logo-container .logo img {
+    max-height: 64px;
   }
   #page-header.nologo {
     height: 64px;
@@ -23367,11 +23379,11 @@ ul.socials li {
     margin-top: 0;
   }
 }
-#essentialnavbar.oldnavbar.nologo {
+#essentialnavbar.oldnavbar {
   top: 52px;
 }
 @media (min-width: 980px) {
-  #essentialnavbar.oldnavbar.nologo {
+  #essentialnavbar.oldnavbar {
     top: 64px;
   }
 }

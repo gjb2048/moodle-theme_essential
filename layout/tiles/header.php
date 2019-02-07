@@ -58,7 +58,6 @@ if (!$oldnavbar) {
     <div id="page-header" class="clearfix<?php echo ($oldnavbar) ? ' oldnavbar' : ''; echo ($haslogo) ? ' logo' : ' nologo'; ?>">
         <div class="container-fluid">
             <div class="row-fluid">
-                <!-- HEADER: LOGO AREA -->
 <?php
 if (!$haslogo) {
     echo '<div class="pull-left">';

@@ -93,11 +93,6 @@
         }
     }
 
-    a.logo {
-        background-position: left center;
-        float: left;
-    }
-
     div.titlearea {
         margin-left: 80px;
         padding-left: 10px;
@@ -140,9 +135,16 @@
 }
 
 #page-header {
-    &.logo {
-        min-height: 52px;
+    &.logo .logo-container {
+        height: 52px;
+        .logo {
+            line-height: 52px;
+            img {
+                max-height: 52px;
+            }
+        }
     }
+
     &.nologo {
         height: 52px;
         max-height: 52px;
@@ -151,9 +153,16 @@
 
 @media (min-width: @navbarCollapseDesktopWidth) {
     #page-header {
-        &.logo {
-            min-height: 64px;
+        &.logo .logo-container {
+            height: 64px;
+            .logo {
+                line-height: 64px;
+                img {
+                    max-height: 64px;
+                }
+            }
         }
+
         &.nologo {
             height: 64px;
             max-height: 64px;
