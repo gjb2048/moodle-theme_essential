@@ -5,6 +5,7 @@ New in 3.4.1.5
 - FIX: Participants menu only on course and module pages.
 - FIX: Administration / Naviagtion menu still appearing when flat navigation is on because they are not in the side-pre region.
 - FIX: 'courselistteachericon' not showing.
+- FIX: Logo breaks header when using 'old navbar'.
 - NEW: Show / hide the participants menu with the 'participantsmenu' setting in the 'Header' settings.
 - NEW: Separate 'People' from 'This course' menu and create 'Participants' menu.
 - NEW: Course content search attribute and order.
