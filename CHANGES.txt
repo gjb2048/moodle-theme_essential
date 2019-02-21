@@ -1,3 +1,6 @@
+New in 3.6.0.5
+==============
+
 New in 3.6.0.4
 ==============
 - FIX: 'courselistteachericon' not showing.
