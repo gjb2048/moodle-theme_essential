@@ -1,5 +1,6 @@
 New in 3.6.0.5
 ==============
+- FIX: Coursecat depreciation message when 'enablecategoryicon' is true.
 
 New in 3.6.0.4
 ==============
