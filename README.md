@@ -69,8 +69,7 @@ Sponsorships
 This theme is provided to you for free, and if you want to express your gratitude for using this theme, please consider sponsoring
 by:
 
-PayPal - Please contact me (Gareth) via my 'Moodle profile' in 'Developed and maintained by' above for details as I am an individual
-and therefore am unable to have 'buy me now' buttons under their terms.
+PayPal - Please contact me (Gareth) via my 'Moodle profile' in 'Developed and maintained by' above for details.
 
 Sponsorships help to facilitate maintenance and allow me to provide you with more and better features.  Without your support the theme
 cannot be maintained.
