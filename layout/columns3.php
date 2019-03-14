@@ -40,8 +40,12 @@ if (empty($coursetitleposition)) {
     <?php require_once(\theme_essential\toolbox::get_tile_file('pagetopheader')); ?>
     <!-- Start Main Regions -->
     <div id="page-content" class="row-fluid">
-        <div id="<?php echo $regionbsid ?>" class="span9">
         <?php
+        echo '<div id="'.$regionbsid.'" class="span9';
+        if (($tablet) && ($hasboringlayout)) {
+            echo ' pull-right';
+        }
+        echo '">';
         if ($coursetitleposition == 'above') {
             echo $OUTPUT->course_title(false);
         }
@@ -81,7 +85,11 @@ if (!$tablet) {
         </div>
         <?php
         if ($tablet) {
-            ?> <div class="span3 desktop-first-column"><div class="row-fluid"> <?php
+            echo '<div class="span3';
+            if ($hasboringlayout) {
+                echo ' desktop-first-column';
+            }
+            echo '"><div class="row-fluid">';
             echo $OUTPUT->essential_blocks('side-pre', '');
             echo $OUTPUT->essential_blocks('side-post', '');
 ?> </div></div> <?php
