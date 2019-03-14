@@ -1,5 +1,6 @@
 New in 3.4.1.6
 ==============
+- FIX: Tablet layout issue.
 
 New in 3.4.1.5
 ==============
