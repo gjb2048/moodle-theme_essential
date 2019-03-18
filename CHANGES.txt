@@ -1,3 +1,6 @@
+New in 3.5.1.6
+==============
+
 New in 3.5.1.5
 ==============
 - FIX: Administration / Naviagtion menu still appearing when flat navigation is on because they are not in the side-pre region.
